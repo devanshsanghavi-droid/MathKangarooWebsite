@@ -76,3 +76,19 @@ describe('reportProblemUrl', () => {
     }
   });
 });
+
+describe('unknown ids must be a real 404, not a 200 with a "not found" body', () => {
+  // Regression guard. With Next's default `dynamicParams: true`, an unknown id rendered the
+  // page, hit notFound(), and was then cached and served with HTTP 200 — a wrong URL looked
+  // fine to a crawler and to any client that checks the status rather than the words. The set
+  // of valid ids is fully known at build time, so the routes opt out of dynamic params.
+  it.each([
+    ['problem', () => import('../problem/[id]/page')],
+    ['skill', () => import('../skill/[id]/page')],
+    ['paper', () => import('../papers/[slug]/page')],
+    ['strand', () => import('../atlas/[strand]/page')],
+  ])('the %s route sets dynamicParams = false', async (_name, load) => {
+    const route = (await load()) as { dynamicParams?: boolean };
+    expect(route.dynamicParams).toBe(false);
+  });
+});

@@ -19,7 +19,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M1.6 — the Atlas | `[x]` | `atlas: build the graph and list views with URL-encoded filters` |
 | M1.7 — `/problems` browse | `[x]` | `problems: build the browse page with URL-encoded filters and pagination` |
 | M1.8 — `/papers` | `[x]`* | `papers: build the official paper index routes and tighten the anti-paste tripwire` |
-| M1.9 — home, about, legal, contact | `[ ]` | |
+| M1.9 — home, about, legal, contact | `[x]` | `site: build the home page, about, legal pages, and contact form` |
 
 ---
 
@@ -643,8 +643,89 @@ against the taxonomy"), which is also outstanding for the same reason.
 
 ---
 
+## M1.9 — Home, about, legal, contact
+
+**State:** `[x]`
+
+### Built
+
+- **`/`** — the thesis in one sentence, a **live sample problem with working distractor feedback
+  above the fold** (a test clicks a wrong answer on the home page and asserts the misconception
+  appears), the start-here triad, the seven-strand strip with live counts, a Problem of the Day
+  derived deterministically from the date, and four counters read from the files at build time.
+- **`/about`** — first person, including the four things this site will never do.
+- **`/legal/privacy`** — written for a parent, not a lawyer: the complete list of what an
+  account holds, what is never stored, no-trackers-no-cookies, and a hard delete.
+- **`/legal/terms`** and **`/legal/license`** — two licences, and an explicit section on what
+  neither of them covers.
+- **`/contact`** — a real `<form>` with a server action, so it submits without JavaScript, plus
+  a mailto fallback and a link to open a GitHub issue. 16 tests.
+- 34 more tests and 7 more axe suites.
+
+### Something that was actually broken, and how it was caught
+
+Smoke-testing the **production build** with curl: `/skill/ZZZ-99` and `/problem/KA-9999`
+returned **HTTP 200** with the not-found page in the body. Next's default `dynamicParams: true`
+rendered the page for an unknown id, hit `notFound()`, then cached and served that response as a
+200 — so a wrong URL looked fine to a crawler and to any client that checks the status rather
+than the words on the page. The unit tests could not see this: `notFound()` throws in jsdom, so
+they passed.
+
+All four content routes now set `dynamicParams = false`, which is also simply correct — the
+complete set of valid ids is known at build time. Verified: `/skill/ZZZ-99`, `/problem/KA-9999`,
+`/papers/1999-3-4` and `/atlas/XXX` all return 404. A test asserts the export on each route.
+
+### Measured on the production build
+
+Served with `next start` and measured in the browser:
+
+| | |
+|---|---|
+| TTFB | 10 ms |
+| DOMContentLoaded | 26 ms |
+| Load | 56 ms |
+| Cumulative layout shift | 0 |
+| Total transfer | 132 KB across 11 requests |
+| Third-party hosts | none |
+| Render-blocking scripts | one, the 153-byte inline theme script (deliberate — it prevents the flash of the wrong theme) |
+
+All 15 routes return 200 and the OG image renders as a real 56 KB PNG. The sitemap has 161 URLs.
+
+**Lighthouse itself was not run.** It needs Chrome's own auditing engine; the CLI (`@lhci/cli`)
+is a large dependency outside CLAUDE.md's budget and I did not add one without asking. The
+numbers above are the inputs Lighthouse scores, and the accessibility category is covered
+separately by 35 axe assertions across both themes — but the four scores in M1.9's acceptance
+are unverified until someone runs it. See "Needs you".
+
+### Assumptions made where the spec was ambiguous
+
+1. **The start-here triad leads with the three things that exist** (Atlas, problems, papers)
+   rather than the diagnostic, which is P2. The page says so in a line instead of linking to a
+   route that is not there.
+2. **Problem of the Day is derived from the UTC date**, with the home page revalidating hourly.
+   No database, no cron: the same day gives everyone the same problem, and every problem comes
+   round. The `/potd` archive and the 6pm reveal stay P2.
+3. **There is no "students served" counter.** That number belongs to the database and to
+   `/impact` in Phase 3, where nothing derived from fewer than ten students may be published.
+   Inventing it on the home page is exactly the kind of unbacked claim `/impact` exists to
+   avoid, so the page says where it will live instead.
+4. **Resend is called over its REST API with `fetch`**, not through its SDK. One call, and the
+   dependency budget stays where CLAUDE.md wants it.
+5. **The contact form's email field is optional and there is no CAPTCHA.** Most people here are
+   children; a form that demands an address collects one from every child reporting a typo. Every
+   CAPTCHA worth using is a third-party tracker, which the non-negotiables rule out — spam is
+   handled by a honeypot and a length cap, which is proportionate. The message is emailed and
+   never stored, so there is nothing to leak or delete later. A test asserts the message body and
+   the reply address never reach the logs.
+
+---
+
 ## Needs you (external accounts / credentials)
 
+- [ ] **Run Lighthouse** on a deployed build and confirm ≥95 on performance, accessibility, best
+      practices and SEO (M1.9's acceptance). Everything it measures is in place; the run itself
+      needs Chrome. If you want it in CI, `@lhci/cli` is the tool — it is outside CLAUDE.md's
+      dependency budget, so I did not add it.
 - [ ] Push the repo and turn on branch protection for `main`, requiring the `verify` check.
 - [ ] Connect the Vercel project so preview deploys run on every PR.
 - [ ] `RESEND_API_KEY` for the `/contact` form (M1.9). The form ships with a mailto fallback

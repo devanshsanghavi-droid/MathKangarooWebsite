@@ -16,6 +16,17 @@ interface Params {
   params: Promise<{ strand: string }>;
 }
 
+/**
+ * The complete set of valid ids is known at build time — content lives in git and nothing is
+ * created at runtime — so anything outside that set is a 404, not a page to try rendering.
+ *
+ * This is not a micro-optimisation. With the default `dynamicParams: true`, Next rendered the
+ * page for an unknown id, hit `notFound()`, and then cached and served that not-found body with
+ * an HTTP **200**. A wrong URL looked fine to a crawler and to any client that checks the
+ * status rather than the words on the page.
+ */
+export const dynamicParams = false;
+
 export function generateStaticParams(): Array<{ strand: string }> {
   return STRANDS.map((strand) => ({ strand }));
 }

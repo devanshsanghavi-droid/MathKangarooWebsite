@@ -15,9 +15,6 @@ const nextConfig: NextConfig = {
     // Linting runs as its own CI step so a lint failure is reported separately from a build failure.
     ignoreDuringBuilds: true,
   },
-  experimental: {
-    typedRoutes: false,
-  },
 };
 
 export default nextConfig;

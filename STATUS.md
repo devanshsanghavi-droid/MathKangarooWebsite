@@ -13,7 +13,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | seed problem bank | `[x]` | `content: author 45 original problems and 16 figures` |
 | M1.1 — app shell | `[x]` | `shell: build header, footer, theme toggle, and a11y primitives` |
 | M1.2 — content loading layer | `[x]` | `content: add typed loaders, derived indexes, and a generated sitemap` |
-| M1.3 — problem components | `[ ]` | |
+| M1.3 — problem components | `[x]` | `problem: build the nine problem components with distractor-specific feedback` |
 | M1.4 — `/problem/[id]` | `[ ]` | |
 | M1.5 — `/skill/[id]` | `[ ]` | |
 | M1.6 — the Atlas | `[ ]` | |
@@ -343,6 +343,57 @@ two builds of the same directory.
 5. **`server-only` is aliased to a stub in both Vitest configs** (`test/stubs/server-only.ts`).
    The package throws outside a server bundle, which is right in production and wrong in a
    test; the alias keeps the production guarantee and lets the tests import the module.
+
+---
+
+## M1.3 — Core problem components
+
+**State:** `[x]`
+
+### Built
+
+`PointPill` · `BandPill` · `SkillChip` · `FigureRenderer` · `ChoiceList` · `FeedbackPanel` ·
+`HintLadder` · `SolutionTabs` · `ProblemCard`, plus `ProblemInteractive` (see assumption 1)
+and a generated figure registry. 67 render tests and 5 axe suites, all in both themes.
+
+**The behaviour that is the product**: `FeedbackPanel` shows the misconception recorded for
+*that* choice. A test asserts, for every wrong choice, that the panel contains that choice's
+misconception **and none of the other three** — so a regression that fell back to a generic
+message would fail rather than look fine.
+
+Other things worth stating:
+
+- **`ProblemCard` is a server component.** Statement, figure, choices, all three hints and the
+  solution are in the delivered HTML; only choice selection, hint gating and tab switching
+  hydrate. A test renders the card and asserts every hint and the solution are present in the
+  markup with at least four `<details>` elements, which is the no-JavaScript path.
+- **`SolutionTabs` carries a `<noscript>` style block** that un-hides the inactive panel, so
+  without JavaScript both solutions stack rather than one becoming unreachable.
+- **`HintLadder` fires a `ka:hint-reveal` CustomEvent** per rung, once only — reopening rung 1
+  does not log a second reveal. That is what `POST /api/hint` will consume in M2.3.
+- **Correctness is never carried by colour alone**: a revealed choice is labelled "correct" or
+  "your answer" in text.
+- **`FigureRenderer` gives the figure `role="img"` with the author's alt as its name**, hides
+  the SVG from the accessibility tree, and offers the same description as collapsible text for
+  low-vision readers.
+
+### Assumptions made where the spec was ambiguous
+
+1. **`ProblemInteractive` is a tenth component**, not in §7's inventory. `ChoiceList` and
+   `FeedbackPanel` must agree on the selected key; one small client component owns that state
+   so the other two stay independently testable and `ProblemCard` stays a server component.
+2. **A student may change their answer.** Kangaroo does not penalise a wrong answer and this
+   page exists to teach, so locking the first click would only teach students to fear clicking.
+3. **A wrong answer never reveals the solution** — it shows the misconception and points at the
+   hint ladder. A correct answer does show the reliable method, so a lucky guess still teaches.
+4. **The hint ladder is gated only once JavaScript has run.** Rendering the locked state on the
+   server would hide hints from a reader whose JavaScript never arrives.
+
+### Something that was actually broken, and how it was caught
+
+`ChoiceList` was `<ul role="group">`. Putting `role="group"` on a `<ul>` overrides its implicit
+list role, which orphans every `<li>` — a serious WCAG violation. axe caught it across all five
+suites. The group and the list are now separate elements.
 
 ---
 

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0053",
+  "band": "5-6",
+  "points": 4,
+  "statement": "What is the remainder when 2 to the power 30 is divided by 7?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I found the cycle 2, 4, 1 but read the remainder of 30 divided by 3 as one instead of zero."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the cycle positions from zero, which shifted my answer one step along."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I divided 30 by 7 and used that remainder rather than the remainder of the powers."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I assumed the remainder would be one less than the divisor because the power is large."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "PAT-03",
+      "NUM-07"
+    ]
+  },
+  "hints": [
+    "Work out the first few powers and their remainders.",
+    "Remainders of powers repeat on a short cycle. Find the remainders of 2, 4, 8, 16 and so on when divided by 7, and stop as soon as the list starts repeating.",
+    "The remainders go 2, 4, 1, then 2, 4, 1 again - a cycle of length 3. Since 30 is a multiple of 3, the answer is the last of the cycle, which is 1."
+  ],
+  "solutions": {
+    "reliable": "Build the cycle of remainders. 2 leaves 2, 4 leaves 4, 8 leaves 1, 16 leaves 2, 32 leaves 4, 64 leaves 1 - so the remainders repeat every 3 powers as 2, 4, 1. Because 30 divides exactly by 3, the thirtieth power sits at the end of a full cycle, giving remainder 1. The transferable idea: a remainder of zero lands on the last entry of the cycle, not the first.",
+    "elegant": "2 cubed is 8, which is one more than 7, so 2 to the power 30 is (2 cubed) to the power 10, which leaves the same remainder as 1 to the power 10 - namely 1."
+  },
+  "whyOnTest": "It is the remainder cycle again with a bigger modulus, and the remainder-of-zero edge case is exactly where students slip.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

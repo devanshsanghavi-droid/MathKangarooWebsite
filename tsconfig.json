@@ -19,12 +19,23 @@
     "allowImportingTsExtensions": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [{ "name": "next" }],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "types": ["vitest/globals", "@testing-library/jest-dom"],
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "vitest.setup.ts"],
-  "exclude": ["node_modules", ".next", "out", "scripts/__fixtures__"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "next-env.d.ts",
+    "vitest.setup.ts",
+    ".next-dev/types/**/*.ts"
+  ],
+  "exclude": ["node_modules", ".next", ".next-dev", "out", "scripts/__fixtures__"]
 }

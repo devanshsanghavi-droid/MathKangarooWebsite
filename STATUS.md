@@ -14,7 +14,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M1.1 — app shell | `[x]` | `shell: build header, footer, theme toggle, and a11y primitives` |
 | M1.2 — content loading layer | `[x]` | `content: add typed loaders, derived indexes, and a generated sitemap` |
 | M1.3 — problem components | `[x]` | `problem: build the nine problem components with distractor-specific feedback` |
-| M1.4 — `/problem/[id]` | `[ ]` | |
+| M1.4 — `/problem/[id]` | `[x]` | `problem: build the problem page with OG images and in-skill navigation` |
 | M1.5 — `/skill/[id]` | `[ ]` | |
 | M1.6 — the Atlas | `[ ]` | |
 | M1.7 — `/problems` browse | `[ ]` | |
@@ -394,6 +394,64 @@ Other things worth stating:
 `ChoiceList` was `<ul role="group">`. Putting `role="group"` on a `<ul>` overrides its implicit
 list role, which orphans every `<li>` — a serious WCAG violation. axe caught it across all five
 suites. The group and the list are now separate elements.
+
+---
+
+## M1.4 — `/problem/[id]`
+
+**State:** `[x]`
+
+### Built
+
+- The full problem page per `docs/00-SPEC.md` §1.6: breadcrumb, metadata row, statement,
+  figure, choices with distractor-specific feedback, hint ladder, solution, "why this is on
+  the test", skill chips.
+- **`generateStaticParams` for all 54 problems** — the build emits 116 static pages including
+  one Open Graph card per problem.
+- **Per-problem OG image** via `next/og`, generated at build time, showing the id, point tier,
+  band, primary skill and the statement, with a left border in the tier colour. Its colours are
+  read out of `tokens.css` at build time, because satori cannot resolve custom properties.
+- **Next/previous within the primary skill**, with a stated empty state at each end and a
+  "problem N of M in this skill" line.
+- **Report-an-error** opens a prefilled GitHub issue containing the problem id, the file path
+  and the page URL — and asks for nothing about the reporter. A test asserts the body never
+  contains "name", "email", "age", "school", "grade" or "birthday" as whole words.
+- The point tier is explained in words next to the pill, because knowing that a 5-point
+  question needs an idea rather than more arithmetic is most of CFT-08.
+
+### Something that was actually broken, and how it was caught
+
+Looking at the rendered page, the feedback panel for a wrong answer said **"Try the hints below
+before you look at C"** — it named the correct letter. `ChoiceList` also marked the correct
+choice the moment *any* choice was selected. Between them they handed over the answer and made
+the hint ladder decorative. Both are fixed: the correct choice is marked only once the student
+actually finds it (`revealAnswer`, set by the parent), and the panel now says "take a hint below
+and try again". Three tests lock this down, including one asserting the panel never contains the
+correct letter as a whole word.
+
+Neither the 685-test unit suite nor axe could have caught this. It took reading the page.
+
+### Content change made to serve this milestone
+
+Nine more problems (**54 total**) so that eight skills have a two- or three-problem ladder.
+Before this, every skill had exactly one problem, so next/previous was a permanent empty state
+and the feature could not be exercised at all. `CNT-12` now runs 3 → 4 → 5 points across
+`KA-0001`, `KA-0046`, `KA-0047`. Three more figures were authored for them.
+
+**KA-0049 was caught wrong during authoring and rewritten**: the row of 1–9 with all
+neighbouring sums odd *is* possible (2 880 ways, verified by brute force) — the first draft
+marked "no" as correct while its own solution argued "yes".
+
+### Assumptions made where the spec was ambiguous
+
+1. **The OG card lives at `app/problem/[id]/opengraph-image.tsx`**, not at the `/api/og/[id]`
+   route in §6. The route-segment file is statically generated at build time; the API route is
+   listed as P2 and would be a runtime render.
+2. **Next/previous walks the PRIMARY-skill ladder**, not every skill the problem tags. "Next
+   problem in this skill" has to mean exactly one thing, and a problem tagging three skills
+   would otherwise have three different "next"s.
+3. **`pnpm dev` writes to `.next-dev`.** Running `pnpm build` while the dev server is up
+   deleted the chunks it was serving and every route 500'd. `NEXT_DIST_DIR` separates them.
 
 ---
 

@@ -1,0 +1,71 @@
+{
+  "id": "KA-0052",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A circle of radius 5 is drawn inside a square of side 10, touching all four sides. What fraction of the square is outside the circle, to the nearest tenth?",
+  "figure": {
+    "component": "CircleInSquare",
+    "alt": "A square with a circle drawn inside it, the circle touching the midpoint of each of the four sides. The region inside the square but outside the circle is shaded."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "0.1",
+      "correct": false,
+      "misconception": "I estimated by eye from the four corner pieces without comparing them to the whole square."
+    },
+    {
+      "key": "B",
+      "text": "0.2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "0.5",
+      "correct": false,
+      "misconception": "I assumed the circle covers half the square because it touches all four sides."
+    },
+    {
+      "key": "D",
+      "text": "0.8",
+      "correct": false,
+      "misconception": "I found the fraction covered by the circle and gave that instead of the fraction outside it."
+    },
+    {
+      "key": "E",
+      "text": "0.3",
+      "correct": false,
+      "misconception": "I used a diameter of 5 instead of a radius of 5 when working out the circle's area."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-04",
+    "secondary": [
+      "GEO-03",
+      "GEO-07"
+    ]
+  },
+  "hints": [
+    "Find the whole and the hole, then subtract.",
+    "Work out the area of the square and the area of the circle separately, subtract to get the shaded region, and only then turn it into a fraction of the square.",
+    "The square is 10 x 10 = 100. The circle is pi times 5 squared, about 78.5. The region outside is about 21.5, which is about 0.2 of the square."
+  ],
+  "solutions": {
+    "reliable": "The square has area 10 x 10 = 100. The circle has radius 5, so its area is pi times 25, about 78.5. The shaded region is 100 - 78.5 = 21.5, which as a fraction of the square is 0.215, or 0.2 to the nearest tenth. The transferable idea: subtract to get the odd-shaped region, then convert to a fraction last.",
+    "elegant": "The circle takes up pi over 4 of any square it is inscribed in, about 0.785, so the corners always keep about 0.215 - the side length never matters."
+  },
+  "whyOnTest": "Inscribed-circle questions recur at every band, and the pi-over-four fact turns them into one step regardless of the numbers.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

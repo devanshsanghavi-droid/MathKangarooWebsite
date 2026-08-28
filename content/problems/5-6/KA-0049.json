@@ -1,0 +1,68 @@
+{
+  "id": "KA-0049",
+  "band": "5-6",
+  "points": 5,
+  "statement": "The numbers 1 to 9 are placed in a row in some order. Can every neighbouring pair add up to an odd number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Yes, and many orders work",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "Yes, but only one order works",
+      "correct": false,
+      "misconception": "I found one arrangement that works and assumed a problem this fiddly could only have one answer."
+    },
+    {
+      "key": "C",
+      "text": "No, there are too many odd numbers",
+      "correct": false,
+      "misconception": "I saw five odd numbers against four even ones and called that a mismatch, when a row of nine needs exactly five of one and four of the other."
+    },
+    {
+      "key": "D",
+      "text": "No, nine places is an odd number of places",
+      "correct": false,
+      "misconception": "I blamed the length of the row rather than checking how many odd and even numbers it has to hold."
+    },
+    {
+      "key": "E",
+      "text": "Only if the row starts with an even number",
+      "correct": false,
+      "misconception": "I decided the first number settles it without checking that starting even would need five even numbers, and only four exist."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "LOG-05",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Odd plus even is odd. What does that force?",
+    "A pair adds to an odd number only when one is odd and one is even, so the whole row has to alternate. Then count how many odd and even numbers you actually have.",
+    "Alternating nine places needs five of one parity and four of the other. The numbers 1 to 9 give exactly five odd and four even, so an alternating row exists - and it must start and end odd."
+  ],
+  "solutions": {
+    "reliable": "A pair adds to an odd number exactly when one member is odd and the other even, so the row must alternate parity all the way along. Nine alternating places need five of one parity and four of the other, and 1 to 9 gives exactly five odd numbers and four even ones. So it can be done, with the odd numbers in the first, third, fifth, seventh and ninth places - for example 1, 2, 3, 4, 5, 6, 7, 8, 9. Many orders work: the five odd numbers can be arranged among their places in any order, and so can the four even ones. The transferable idea: turn a question about sums into a question about parity, then count the parities you have.",
+    "elegant": "Alternation is forced, the parity counts match exactly, so the natural order 1 to 9 already works and every reshuffle within each parity works too."
+  },
+  "whyOnTest": "It looks like a search and is really a counting-by-parity argument, which is the jump a 5-point question asks a student to make.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

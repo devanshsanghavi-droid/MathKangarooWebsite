@@ -21,15 +21,19 @@ import { ProblemInteractive } from './ProblemInteractive';
 export function ProblemCard({
   problem,
   headingLevel = 2,
+  headingSuffix,
   showSkills = true,
   linkToProblem = false,
 }: {
   problem: Problem;
-  headingLevel?: 2 | 3;
+  /** 1 on `/problem/[id]`, where the problem is the page; 2 or 3 when it sits inside a list. */
+  headingLevel?: 1 | 2 | 3;
+  /** Appended to the id in the heading, e.g. the primary skill's name on the problem page. */
+  headingSuffix?: string;
   showSkills?: boolean;
   linkToProblem?: boolean;
 }) {
-  const Heading = headingLevel === 2 ? 'h2' : 'h3';
+  const Heading = (['h1', 'h2', 'h3'] as const)[headingLevel - 1] ?? 'h2';
   const { primary, secondary } = getSkillsForProblem(problem);
   const unresolvedPrimary = primary ? null : problem.skills.primary;
 
@@ -39,7 +43,7 @@ export function ProblemCard({
       className="rounded-md border border-rule bg-surface p-4 sm:p-6"
     >
       <div className="flex flex-wrap items-center gap-2">
-        <Heading id={`problem-${problem.id}`} className="m-0 text-sm">
+        <Heading id={`problem-${problem.id}`} className="m-0 text-sm font-normal">
           {linkToProblem ? (
             <Link href={`/problem/${problem.id}`} className="mono no-underline hover:underline">
               {problem.id}
@@ -47,6 +51,9 @@ export function ProblemCard({
           ) : (
             <span className="mono text-ink-3">{problem.id}</span>
           )}
+          {headingSuffix ? (
+            <span className="ml-2 font-medium text-ink">{headingSuffix}</span>
+          ) : null}
         </Heading>
         <PointPill points={problem.points} showMeaning />
         <BandPill band={problem.band} />

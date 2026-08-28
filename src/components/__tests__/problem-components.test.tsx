@@ -212,15 +212,24 @@ describe('ChoiceList', () => {
     expect(buttons[0]).toHaveFocus();
   });
 
-  it('names the outcome in words once an answer is revealed, not in colour alone', () => {
-    render(<ChoiceList choices={CHOICES} selected="A" onSelect={() => {}} revealed />);
-    expect(screen.getByText('correct')).toBeInTheDocument();
+  it('names a wrong selection in words, not in colour alone', () => {
+    render(<ChoiceList choices={CHOICES} selected="A" onSelect={() => {}} />);
     expect(screen.getByText('your answer')).toBeInTheDocument();
+  });
+
+  it('does not point at the correct answer just because something was selected', () => {
+    render(<ChoiceList choices={CHOICES} selected="A" onSelect={() => {}} />);
+    expect(screen.queryByText('correct')).not.toBeInTheDocument();
+  });
+
+  it('marks the correct answer only when the parent asks it to', () => {
+    render(<ChoiceList choices={CHOICES} selected="C" onSelect={() => {}} revealAnswer />);
+    expect(screen.getByText('correct')).toBeInTheDocument();
   });
 
   it.each(THEMES)('renders in the %s theme', (theme) => {
     renderInTheme(
-      <ChoiceList choices={CHOICES} selected="C" onSelect={() => {}} revealed />,
+      <ChoiceList choices={CHOICES} selected="C" onSelect={() => {}} revealAnswer />,
       theme,
     );
     expect(screen.getAllByRole('button')).toHaveLength(5);
@@ -264,6 +273,16 @@ describe('FeedbackPanel — the distractor-specific behaviour that is the produc
     expect(screen.getByTestId('feedback')).not.toHaveTextContent(problem.solutions.reliable);
   });
 
+  it('never names the correct letter to a student who got it wrong', () => {
+    // Handing over the letter would make the hint ladder decorative.
+    for (const wrong of CHOICES.filter((c) => !c.correct)) {
+      const { unmount } = render(<FeedbackPanel problem={problem} selectedKey={wrong.key} />);
+      const panel = screen.getByTestId('feedback');
+      expect(panel.textContent).not.toMatch(/\bC\b/);
+      unmount();
+    }
+  });
+
   it('shows the reliable method when the answer is right, so a guess still teaches', () => {
     render(<FeedbackPanel problem={problem} selectedKey="C" />);
     const panel = screen.getByTestId('feedback');
@@ -293,6 +312,17 @@ describe('FeedbackPanel — the distractor-specific behaviour that is the produc
 });
 
 describe('ProblemInteractive', () => {
+  it('does not mark the correct choice until the student has found it', async () => {
+    render(<ProblemInteractive problem={withFigure} />);
+    const wrong = withFigure.choices.find((c) => !c.correct);
+    const right = withFigure.choices.find((c) => c.correct);
+    if (!wrong || !right) throw new Error('malformed fixture');
+    await userEvent.click(screen.getByRole('button', { name: new RegExp(`^${wrong.key}`) }));
+    expect(screen.queryByText('correct')).not.toBeInTheDocument();
+    await userEvent.click(screen.getByRole('button', { name: new RegExp(`^${right.key}`) }));
+    expect(screen.getByText('correct')).toBeInTheDocument();
+  });
+
   it('feeds the chosen key straight into the feedback panel', async () => {
     render(<ProblemInteractive problem={withFigure} />);
     expect(screen.queryByTestId('feedback')).not.toBeInTheDocument();

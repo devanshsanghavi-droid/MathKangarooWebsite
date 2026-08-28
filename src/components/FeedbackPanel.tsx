@@ -50,8 +50,6 @@ export function FeedbackPanel({
     );
   }
 
-  const correct = problem.choices.find((choice) => choice.correct);
-
   return (
     <div
       role="status"
@@ -70,11 +68,14 @@ export function FeedbackPanel({
       <blockquote className="serif mt-3 mb-0 border-l-2 border-incorrect pl-3 text-ink">
         “{selected.misconception}”
       </blockquote>
-      {correct ? (
-        <p className="mt-3 mb-0 text-sm text-ink-2">
-          Try the hints below before you look at {correct.key}. The nudge gives nothing away.
-        </p>
-      ) : null}
+      {/*
+        Deliberately does not name the correct choice. Handing over the letter here would make
+        the hint ladder decorative, and the student would learn the answer rather than the
+        method. Pick again when you have used a hint.
+      */}
+      <p className="mt-3 mb-0 text-sm text-ink-2">
+        Take a hint below and try again. The first one gives nothing away.
+      </p>
     </div>
   );
 }

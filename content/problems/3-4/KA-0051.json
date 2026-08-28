@@ -1,0 +1,67 @@
+{
+  "id": "KA-0051",
+  "band": "3-4",
+  "points": 3,
+  "statement": "How many of the numbers from 1 to 20 are not multiples of 3?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the multiples of 3 and gave that instead of the numbers that are not multiples."
+    },
+    {
+      "key": "B",
+      "text": "13",
+      "correct": false,
+      "misconception": "I counted 21 as a multiple of 3 inside the range, so I removed one too many."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "17",
+      "correct": false,
+      "misconception": "I removed only the multiples of 3 that are also even, so I subtracted three instead of six."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": false,
+      "misconception": "I gave the size of the whole range and forgot to remove anything at all."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-09",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Count the ones you do not want first.",
+    "The word not is a signal to count the opposite. Count how many multiples of 3 are in the range, then take them away from the size of the range.",
+    "The multiples of 3 up to 20 are 3, 6, 9, 12, 15, 18 - that is 6 of them. So 20 - 6 = 14 numbers are not multiples of 3."
+  ],
+  "solutions": {
+    "reliable": "Count what you do not want, then subtract. The multiples of 3 from 1 to 20 are 3, 6, 9, 12, 15 and 18 - six of them. Everything else is not a multiple of 3, so the answer is 20 - 6 = 14. The transferable idea: the word not almost always means count the complement.",
+    "elegant": "Dividing 20 by 3 gives 6 remainder 2, so there are 6 multiples and 14 non-multiples without listing anything."
+  },
+  "whyOnTest": "It puts the complementary-counting habit on an easy range, so the method is automatic before the harder at-least-one questions arrive.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

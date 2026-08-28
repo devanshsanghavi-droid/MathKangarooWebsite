@@ -1,0 +1,67 @@
+{
+  "id": "KA-0050",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Toma spent 4 euros, then spent half of what was left, and now has 6 euros. How much did she start with?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I added the 4 and the 6 and stopped, forgetting to undo the halving."
+    },
+    {
+      "key": "B",
+      "text": "14",
+      "correct": false,
+      "misconception": "I doubled the 6 first and then added the 4, reversing the steps in the wrong order."
+    },
+    {
+      "key": "C",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "20",
+      "correct": false,
+      "misconception": "I doubled the total at the end rather than doubling only the amount left after the first spend."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I doubled twice because spending half felt like it needed undoing more than once."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-08",
+    "secondary": [
+      "MOD-06"
+    ]
+  },
+  "hints": [
+    "Undo the last step first.",
+    "The halving happened after the 4 euros were spent, so undo the halving before you put the 4 back. Doubling comes first, adding comes second.",
+    "She had 6 after spending half, so she had 12 before that. Adding back the first 4 euros gives 16."
+  ],
+  "solutions": {
+    "reliable": "Run the story backwards. She ends with 6 euros, which is half of what she had after the first purchase, so she had 12 at that point. Before the first purchase she had 12 + 4 = 16. Check forwards: 16 - 4 = 12, half of 12 is 6. The transferable idea: reverse the operations and the order together.",
+    "elegant": null
+  },
+  "whyOnTest": "It is the same working-backwards shape with the halving in a different position, which is where students who memorised a recipe rather than the method fail.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

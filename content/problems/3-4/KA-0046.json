@@ -1,0 +1,67 @@
+{
+  "id": "KA-0046",
+  "band": "3-4",
+  "points": 4,
+  "statement": "How many 2 by 2 squares fit on a 4 by 4 board, if they must line up with the grid?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I cut the board into four separate 2 by 2 blocks instead of sliding the square one step at a time."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the three sliding positions along the top and doubled them for two rows."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the positions along the top row and down the left column and added them."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I counted the sixteen small squares on the board rather than the 2 by 2 squares."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-12",
+    "secondary": [
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Count where the top-left corner can sit.",
+    "A 2 by 2 square needs one more column to its right and one more row below it, so its top-left corner cannot use the last column or the last row.",
+    "The corner can sit in 3 of the 4 columns and 3 of the 4 rows, so 3 x 3 = 9 positions."
+  ],
+  "solutions": {
+    "reliable": "Fix each 2 by 2 square by its top-left corner. That corner needs room for one more column to the right and one more row below, so it can use 3 of the 4 columns and 3 of the 4 rows. That gives 3 x 3 = 9. The transferable idea: count the positions of one corner, sliding one step at a time.",
+    "elegant": "On an n by n board there are (n-1) squared aligned 2 by 2 squares, so a 4 by 4 board gives 3 squared = 9."
+  },
+  "whyOnTest": "It is the same sliding-window count one size up, which is where students who memorised the answer four rather than the method come unstuck.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

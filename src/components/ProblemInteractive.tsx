@@ -17,13 +17,19 @@ import { FeedbackPanel } from './FeedbackPanel';
 export function ProblemInteractive({ problem }: { problem: Problem }) {
   const [selected, setSelected] = useState<ChoiceKey | null>(null);
 
+  // Reveal which answer is correct only once the student has actually found it. Marking it on
+  // any selection would tell a student who guessed wrong exactly where to click next, and the
+  // hint ladder below would never be opened.
+  const answeredCorrectly =
+    selected !== null && problem.choices.some((c) => c.key === selected && c.correct);
+
   return (
     <div>
       <ChoiceList
         choices={problem.choices}
         selected={selected}
         onSelect={setSelected}
-        revealed={selected !== null}
+        revealAnswer={answeredCorrectly}
         idPrefix={`choice-${problem.id}`}
       />
       <FeedbackPanel problem={problem} selectedKey={selected} />

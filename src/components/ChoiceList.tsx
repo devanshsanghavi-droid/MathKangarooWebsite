@@ -22,14 +22,19 @@ export function ChoiceList({
   choices,
   selected,
   onSelect,
-  revealed = false,
+  revealAnswer = false,
   idPrefix = 'choice',
 }: {
   choices: readonly Choice[];
   selected: ChoiceKey | null;
   onSelect: (key: ChoiceKey) => void;
-  /** After a selection, mark the correct answer so a student is never left guessing. */
-  revealed?: boolean;
+  /**
+   * Mark which choice is correct. Deliberately NOT implied by making a selection: telling a
+   * student the right letter the moment they get it wrong makes the hint ladder pointless.
+   * The parent turns this on when the student answers correctly, or when they open the full
+   * solution.
+   */
+  revealAnswer?: boolean;
   idPrefix?: string;
 }) {
   const listRef = useRef<HTMLDivElement>(null);
@@ -63,8 +68,8 @@ export function ChoiceList({
       <ul className="m-0 grid list-none gap-2 p-0">
         {choices.map((choice) => {
           const isSelected = selected === choice.key;
-          const showAsCorrect = revealed && choice.correct;
-          const showAsWrong = revealed && isSelected && !choice.correct;
+          const showAsCorrect = revealAnswer && choice.correct;
+          const showAsWrong = isSelected && !choice.correct;
 
           return (
             <li key={choice.key}>

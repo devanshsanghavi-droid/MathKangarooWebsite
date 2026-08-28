@@ -1,0 +1,70 @@
+{
+  "id": "KA-0054",
+  "band": "3-4",
+  "points": 3,
+  "statement": "A rectangle is divided by two vertical lines into three parts. How many rectangles of any size are in the picture?",
+  "figure": {
+    "component": "RectangleSplitInThree",
+    "alt": "A wide rectangle divided by two vertical lines into three smaller rectangles side by side."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only the three small rectangles drawn as separate cells and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the three small rectangles and the whole one, and forgot the two made of two cells."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I counted a rectangle made of the left and right cells, even though they are not next to each other."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I assumed any pair of the four vertical lines makes a rectangle without checking each one."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-13",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Count runs of neighbouring cells.",
+    "Every rectangle here is a block of cells that sit next to each other. Count the blocks of one cell, then of two, then of three.",
+    "Blocks of one: 3. Blocks of two: the left pair and the right pair, so 2. Blocks of three: 1. Total 3 + 2 + 1 = 6."
+  ],
+  "solutions": {
+    "reliable": "Number the cells 1, 2, 3 from the left. Every rectangle is a run of neighbouring cells. Runs of one: three of them. Runs of two: 1-2 and 2-3, so two. Runs of three: the whole rectangle, one. In total 3 + 2 + 1 = 6. The transferable idea: counting by size stops you missing the middle sizes.",
+    "elegant": "A rectangle is fixed by choosing 2 of the 4 vertical lines, and there are 4 x 3 divided by 2 = 6 such choices."
+  },
+  "whyOnTest": "It is the hidden-shape count in its simplest form, so the by-size habit is established before the triangle and grid versions.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "KA-0048",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Which of these arrangements of six squares cannot be folded into a closed cube?",
+  "figure": {
+    "component": "CubeNetCandidates",
+    "alt": "Four arrangements of six squares labelled A to D. A is a T shape, B is a straight line of six squares, C is a staircase of pairs, and D is a cross with a column of four and one square on each side."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "the T shape",
+      "correct": false,
+      "misconception": "I assumed any arrangement that is not a simple line must fail to fold."
+    },
+    {
+      "key": "B",
+      "text": "the straight line of six",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "the staircase",
+      "correct": false,
+      "misconception": "I thought a staircase would overlap when folded, without tracking a single face through the fold."
+    },
+    {
+      "key": "D",
+      "text": "the cross",
+      "correct": false,
+      "misconception": "I picked the cross because it looks unusual, even though it is the most familiar cube net there is."
+    },
+    {
+      "key": "E",
+      "text": "they all fold",
+      "correct": false,
+      "misconception": "I checked that each arrangement had six squares and assumed six squares is enough."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-10",
+    "secondary": [
+      "GEO-08"
+    ]
+  },
+  "hints": [
+    "A ring around a cube is only four faces long.",
+    "Wrapping a strip around a cube uses exactly four squares before it meets itself. Anything longer in a single straight line has to overlap.",
+    "The straight line of six wraps round after four squares, so squares five and six land on top of squares one and two. It cannot close a cube."
+  ],
+  "solutions": {
+    "reliable": "Wrap each arrangement mentally, one square at a time. A straight strip goes around the cube and meets itself after exactly four squares, so a line of six overlaps itself twice and leaves two faces open. The T, the staircase and the cross each have four squares in a ring plus two flaps, which is exactly what a cube needs. The transferable idea: find the ring of four first; it decides everything.",
+    "elegant": "Every cube net contains a ring of exactly four faces plus two flaps, so any arrangement with five or more squares in a straight line is impossible."
+  },
+  "whyOnTest": "Net questions are answered by counting squares far too often; the ring of four is the fact that actually decides them.",
+  "estSeconds": 65,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

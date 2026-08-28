@@ -1,0 +1,68 @@
+{
+  "id": "KA-0047",
+  "band": "5-6",
+  "points": 5,
+  "statement": "On a 4 by 4 board, how many aligned squares of any size are there, counting 1 by 1, 2 by 2, 3 by 3 and 4 by 4?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "16",
+      "correct": false,
+      "misconception": "I counted only the sixteen smallest squares and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted the small squares and the single big one, and forgot every size in between."
+    },
+    {
+      "key": "C",
+      "text": "26",
+      "correct": false,
+      "misconception": "I counted the 2 by 2 squares as four rather than nine, splitting the board into blocks."
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": false,
+      "misconception": "I used 4 by 4 positions for every size instead of shrinking the range as the square grows."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-12",
+    "secondary": [
+      "CNT-04",
+      "GEO-02"
+    ]
+  },
+  "hints": [
+    "Do each size separately, largest first.",
+    "For a square of side k on a 4 by 4 board, the top-left corner can sit in 5 minus k columns and 5 minus k rows. Work out that count for each size and add.",
+    "Size 1: 4 x 4 = 16. Size 2: 3 x 3 = 9. Size 3: 2 x 2 = 4. Size 4: 1 x 1 = 1. Total 16 + 9 + 4 + 1 = 30."
+  ],
+  "solutions": {
+    "reliable": "Take the sizes one at a time. A square of side k has its top-left corner in (5 - k) columns and (5 - k) rows. Side 1 gives 16, side 2 gives 9, side 3 gives 4, side 4 gives 1. Adding: 16 + 9 + 4 + 1 = 30. The transferable idea: count by size, and let the sliding range shrink as the shape grows.",
+    "elegant": "The total is the sum of the first four square numbers, which is 30 - the same shape of answer on any n by n board."
+  },
+  "whyOnTest": "Counting by size is the habit that stops a student missing the middle sizes, and this is the cleanest place to practise it.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

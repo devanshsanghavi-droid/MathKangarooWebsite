@@ -17,7 +17,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M1.4 — `/problem/[id]` | `[x]` | `problem: build the problem page with OG images and in-skill navigation` |
 | M1.5 — `/skill/[id]` | `[x]` | `skill: build the skill page with all nine sections` |
 | M1.6 — the Atlas | `[x]` | `atlas: build the graph and list views with URL-encoded filters` |
-| M1.7 — `/problems` browse | `[ ]` | |
+| M1.7 — `/problems` browse | `[x]` | `problems: build the browse page with URL-encoded filters and pagination` |
 | M1.8 — `/papers` | `[ ]` | |
 | M1.9 — home, about, legal, contact | `[ ]` | |
 
@@ -552,6 +552,45 @@ they are now `aria-current`), and `AtlasList` starting its headings at `h3` unde
    legend says so in words.
 5. **`/atlas` is server-rendered per request** (it reads `searchParams`), not statically
    generated. The strand pages are static.
+
+---
+
+## M1.7 — `/problems` browse
+
+**State:** `[x]`
+
+### Built
+
+- Filter bar: level, point value, strand, and skill — all as links, all URL-encoded.
+- Sort: id, hardest first, newest.
+- Server-rendered, paginated 12 to a page, with numbered page links carrying every active
+  filter and `rel="prev"`/`rel="next"` so the pages read as one sequence.
+- Written empty state with a way out, and a live result count.
+- **45 tests**, including the M1.7 acceptance directly: a full query round-trips through a real
+  URL and comes back identical, and paginating through every page yields each problem exactly
+  once with none lost or repeated.
+
+### Something that was actually broken, and how it was caught
+
+`toSearchParams` appended multi-select values in click order, so `?strand=GEO&strand=CNT` and
+`?strand=CNT&strand=GEO` were two different URLs for one view — two cache entries, and two
+different links to paste to a student. A round-trip test caught it. Values are now sorted, with
+bands in exam order rather than alphabetically (`11-12` sorts before `3-4` as a string).
+
+### Assumptions made where the spec was ambiguous
+
+1. **The status filter (unseen / missed / mastered) is not built.** It needs the attempts table,
+   which is M2.3. It is a filter over per-student data, so there is nothing honest to show
+   before accounts exist.
+2. **The source filter (original / paper index) is not built either**, because it would be
+   degenerate: every problem in `content/problems/` is original by construction, and the paper
+   index holds no problems at all. It becomes meaningful in Phase 4 when generated variants
+   arrive and have to be labelled.
+3. **Sorting by difficulty says so when there is no difficulty.** `docs/01-DATA-MODEL.md` §3.3
+   is explicit that difficulty is measured, never asserted; no problem has 30 attempts yet, so
+   the sort tells the reader that in a sentence rather than silently falling back to id order
+   and letting a tutor believe the top of the list is the hardest. Uncalibrated problems sort
+   last, not first — null is not the same as easy.
 
 ---
 

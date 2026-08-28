@@ -14,3 +14,8 @@ STATUS.md
 
 # Fixtures are deliberately malformed in places; Prettier must not "fix" them.
 scripts/__fixtures__/
+
+# Content JSON is written by scripts/derive-unlocks.ts with JSON.stringify(_, null, 2).
+# Prettier would collapse short arrays onto one line, the script would expand them again,
+# and every content edit would churn. The Zod schemas govern this shape, not the formatter.
+content/

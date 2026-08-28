@@ -1,0 +1,29 @@
+{
+  "id": "CNT-07",
+  "name": "Counting paths on a grid",
+  "strand": "CNT",
+  "tier": "core",
+  "bands": [
+    "5-6",
+    "7-8",
+    "9-10"
+  ],
+  "definition": "When you may only move right and down, the number of routes to a point is the number of routes to the square above plus the number to the square on the left. Writing that number into every square fills the grid and the corner holds the answer.",
+  "recognizeWhen": [
+    "how many shortest routes from A to B",
+    "you may only move right or down",
+    "count the ways through the street grid",
+    "the ant walks along the edges"
+  ],
+  "canonicalProblem": null,
+  "misconceptions": [
+    "I counted routes that went backwards, which are not shortest routes.",
+    "I multiplied the width by the height instead of building the grid up square by square.",
+    "I forgot that a blocked square makes every route through it impossible."
+  ],
+  "prerequisites": [
+    "CNT-03",
+    "GEO-02"
+  ],
+  "unlocks": []
+}

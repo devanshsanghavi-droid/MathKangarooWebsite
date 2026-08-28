@@ -1,0 +1,31 @@
+{
+  "id": "CNT-12",
+  "name": "Counting by position (sliding window)",
+  "strand": "CNT",
+  "tier": "core",
+  "bands": [
+    "3-4",
+    "5-6",
+    "7-8"
+  ],
+  "definition": "To count how many copies of a fixed shape fit inside a bigger one, count the positions its top-left corner can take rather than cutting the big shape into pieces. A two-by-two square fits into a three-by-three board in four positions, not one.",
+  "recognizeWhen": [
+    "how many two by two squares are in this grid",
+    "count the rectangles of this size",
+    "how many ways can the tile be placed",
+    "the shape may overlap with itself in other positions"
+  ],
+  "canonicalProblem": null,
+  "misconceptions": [
+    "I cut the board into separate blocks instead of sliding the shape one step at a time.",
+    "I counted positions along one direction and forgot to do the same in the other direction.",
+    "I let the shape slide off the edge of the board."
+  ],
+  "prerequisites": [
+    "CNT-01",
+    "GEO-02"
+  ],
+  "unlocks": [
+    "CNT-13"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "CFT-05",
+  "name": "Eliminate impossible choices by bounding",
+  "strand": "CFT",
+  "tier": "core",
+  "bands": [
+    "5-6",
+    "7-8",
+    "9-10",
+    "11-12"
+  ],
+  "definition": "Before calculating, ask how big the answer could possibly be and how small. Choices outside those bounds go immediately. Even when bounding does not name the answer, going from five choices to two changes what a guess is worth.",
+  "recognizeWhen": [
+    "the answer must be less than the total",
+    "some choices are clearly too large",
+    "the answer has to be a whole number",
+    "it must be bigger than the part you can already see"
+  ],
+  "canonicalProblem": null,
+  "misconceptions": [
+    "I calculated exactly when two of the choices were obviously impossible.",
+    "I set a bound but then chose an answer outside it anyway.",
+    "I ruled out a choice using a bound I had not actually justified."
+  ],
+  "prerequisites": [
+    "CFT-01",
+    "NUM-12"
+  ],
+  "unlocks": [
+    "CFT-06",
+    "CFT-07"
+  ]
+}

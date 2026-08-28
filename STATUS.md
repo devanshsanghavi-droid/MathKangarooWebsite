@@ -9,7 +9,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | git init + docs baseline | `[x]` | `docs: add project constitution, specs, and build plan` |
 | M0.2 — repo and rails | `[x]` | `rails: scaffold next 15 app, design tokens, content schemas, validation, and CI` |
 | M0.3 — content guardrails | `[x]` | `content: add the five CI guardrails with proving fixtures` |
-| M0.1 — taxonomy (91 skills) | `[ ]` | |
+| M0.1 — taxonomy (91 skills) | `[x]` | `atlas: author all 91 skills and derive the prerequisite graph` |
 | seed problem bank | `[ ]` | |
 | M1.1 — app shell | `[ ]` | |
 | M1.2 — content loading layer | `[ ]` | |
@@ -128,6 +128,64 @@ is what the test exercises — not just the library function underneath it.
    test can point it at a fixture. Nothing in CI sets them.
 4. **Fixtures are excluded from Prettier, ESLint and `tsc`.** They are deliberately malformed;
    a formatter "fixing" one would silently disarm a guardrail.
+
+---
+
+## M0.1 — Taxonomy v1
+
+**State:** `[x]`
+
+### Built
+
+- All **91 skill files** under `content/skills/<STRAND>/<ID>.json`, matching Part A of
+  `docs/03-CONTENT-GUIDE.md` exactly: NUM 15, CNT 18, GEO 18, LOG 11, PAT 7, MOD 10, CFT 12.
+- Every skill carries a written `definition` (2–3 plain sentences), 3–5 `recognizeWhen`
+  trigger phrases in the wording a student would actually meet, and 2–3 `misconceptions`
+  written in the student's own first-person voice.
+- `scripts/derive-unlocks.ts` generates every `unlocks` array from `prerequisites`, refuses
+  to write on a dangling reference or a cycle, and has a `--check` mode CI runs.
+- `scripts/__tests__/taxonomy.test.ts` **reads `docs/03-CONTENT-GUIDE.md` and asserts the
+  JSON agrees with it** — id set, name, and tier, per skill. Rename a skill in the guide
+  without touching the file and CI says so. 199 assertions.
+
+### The graph
+
+| | |
+|---|---|
+| Skills | 91 |
+| Prerequisite edges | 106 |
+| Cross-strand edges | 22 |
+| Roots (no prerequisite) | 18 |
+| Tiers | 22 foundation · 52 core · 17 gateway |
+| Acyclic | proven by `findCycle`, asserted in two suites |
+
+### Assumptions made where the spec was ambiguous
+
+1. **Band assignments are mine.** The content guide fixes id, name and tier but not which
+   bands a skill appears in. Foundation skills were placed low and wide, gateway skills from
+   5–6 upward. These are the field most likely to move once real papers are classified.
+2. **Prerequisite edges are deliberately sparse** (106 for 91 nodes, ~1.2 per skill). The
+   guide says be conservative, so an edge exists only where the later skill genuinely cannot
+   be done without the earlier one. That leaves 18 roots, which is intended, not an omission.
+3. **Five edges exist to connect otherwise isolated nodes**, and each is defensible on its
+   own: `CFT-02 → LOG-04` and `CFT-02 → GEO-17` (both skills' standard method *is* a drawing),
+   `NUM-13 → MOD-09` (reading a chart's scale is reading a number line), `MOD-06 → NUM-10`
+   (a discount is money and change with a percentage on top), and `GEO-01 → GEO-07` (a circle
+   question is a length-and-region question first). The test now forbids an isolated node
+   rather than forbidding a root, because a root with unlocks is legitimate.
+4. **Three skill names were changed to match the guide's punctuation exactly** (en dash in
+   `Inclusion–exclusion` and `part–whole`, em dash in `Never leave a blank —`), because the
+   test compares against the document character for character.
+5. **`content/` is excluded from Prettier.** Content JSON is written by `derive-unlocks.ts`
+   with `JSON.stringify(_, null, 2)`; Prettier would collapse short arrays onto one line and
+   the script would expand them again, churning every content edit. The Zod schemas govern
+   that shape, not the formatter.
+
+### Deferred
+
+- **Classifying three official past papers** against the taxonomy (the second half of M0.1's
+  acceptance) lands with **M1.8**, where the paper index files are authored. The ≥95% coverage
+  figure and the backlog of unclassifiable questions get reported there.
 
 ---
 

@@ -15,7 +15,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M1.2 — content loading layer | `[x]` | `content: add typed loaders, derived indexes, and a generated sitemap` |
 | M1.3 — problem components | `[x]` | `problem: build the nine problem components with distractor-specific feedback` |
 | M1.4 — `/problem/[id]` | `[x]` | `problem: build the problem page with OG images and in-skill navigation` |
-| M1.5 — `/skill/[id]` | `[ ]` | |
+| M1.5 — `/skill/[id]` | `[x]` | `skill: build the skill page with all nine sections` |
 | M1.6 — the Atlas | `[ ]` | |
 | M1.7 — `/problems` browse | `[ ]` | |
 | M1.8 — `/papers` | `[ ]` | |
@@ -452,6 +452,48 @@ marked "no" as correct while its own solution argued "yes".
    would otherwise have three different "next"s.
 3. **`pnpm dev` writes to `.next-dev`.** Running `pnpm build` while the dev server is up
    deleted the chunks it was serving and every route 500'd. `NEXT_DIST_DIR` separates them.
+
+---
+
+## M1.5 — `/skill/[id]`
+
+**State:** `[x]`
+
+### Built
+
+All nine sections from `docs/00-SPEC.md` §1.4, in order, for all 91 skills:
+
+1. name, id, strand, tier and bands — the tier carries a one-line explanation, because
+   "gateway" means nothing until someone says it is what the 5-point questions ask for;
+2. definition; 3. "you'll recognise it when…" as quoted trigger phrases;
+4. the canonical worked example, rendered as a full interactive `<ProblemCard>`;
+5. misconceptions, quoted in the student's own voice;
+6. prerequisites and unlocks as linked chips;
+7. the practice ladder grouped 3 / 4 / 5 points, each tier labelled with what it demands;
+8. "in official papers", reading from the paper index;
+9. a drill call to action.
+
+**106 tests**, including one per skill asserting that all eight `<section>` landmarks are
+present, none is under 20 characters of content, and the page contains no `TODO`, `TBD` or
+"coming soon". Plus axe over four representative skills and a problem-free one, both themes.
+
+### Assumptions made where the spec was ambiguous
+
+1. **Absent sections are written sentences, not placeholders.** M1.5's acceptance allows "or
+   explicitly marks them absent". A skill with no problems says *"No problems tagged GEO-17
+   have been written yet. Ten new problems are authored every week, so this will not stay
+   empty."* — and a test forbids the word "TODO" anywhere on the page.
+2. **Mastery state is stated as absent rather than faked.** §1.4 section 7 asks for mastery on
+   the ladder; mastery needs the attempts table, which is M2.4. The ladder says so in one line
+   rather than showing a ring that never fills.
+3. **The drill CTA does not link to `/practice/drill`**, which does not exist until M2.6. It
+   explains what a drill will do and points at the first rung of the ladder instead.
+4. **The ladder lists every problem that tags the skill**, primary or secondary, with secondary
+   ones marked "also tests this". A student practising casework should meet the casework inside
+   a geometry problem.
+5. **Section 8 currently renders its empty state for every skill**, because no paper indexes
+   exist until M1.8. Its wording states in both branches that we hold our own analysis and never
+   the problems — a test asserts that, so it survives M1.8 filling the section in.
 
 ---
 

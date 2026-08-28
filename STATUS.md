@@ -12,7 +12,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M0.1 — taxonomy (91 skills) | `[x]` | `atlas: author all 91 skills and derive the prerequisite graph` |
 | seed problem bank | `[x]` | `content: author 45 original problems and 16 figures` |
 | M1.1 — app shell | `[x]` | `shell: build header, footer, theme toggle, and a11y primitives` |
-| M1.2 — content loading layer | `[ ]` | |
+| M1.2 — content loading layer | `[x]` | `content: add typed loaders, derived indexes, and a generated sitemap` |
 | M1.3 — problem components | `[ ]` | |
 | M1.4 — `/problem/[id]` | `[ ]` | |
 | M1.5 — `/skill/[id]` | `[ ]` | |
@@ -293,6 +293,56 @@ declaration so the trap cannot come back.
 - skip link is the first focusable element and expands to 190×45 when focused;
 - `:focus-visible` paints a 3px ring from `--focus`;
 - footer disclaimer clears the mobile tab bar.
+
+---
+
+## M1.2 — Content loading layer
+
+**State:** `[x]`
+
+### Built
+
+`src/lib/content.ts`. `buildContentIndex(dir)` is a **pure function of a directory** — point it
+at a fixture tree and it indexes that tree — and `contentIndex()` memoises the one built from
+the repo's `content/`. Synchronous, no `any`, no async, no runtime I/O after the first call.
+
+Derived indexes:
+
+| Index | Shape | Ordering |
+|---|---|---|
+| `problemsBySkill` | skill id → problems tagging it, primary **or secondary** | points, then id |
+| `primaryProblemsBySkill` | skill id → problems leading with it | points, then id |
+| `skillsByStrand` | strand → skills | foundation, core, gateway, then id |
+| `skillsByBand` | band → skills | same |
+| `problemsByBand` | band → problems | points, then id |
+| `papersBySkill` | skill id → appearances in official papers | newest year, then question number |
+| `graph` | prerequisites, unlocks, roots, **longest-path depth** | ids sorted |
+| `strands`, `stats` | summaries for the strand strip and the impact counters | canonical |
+
+49 unit tests covering every loader and every index, plus the invariants that matter: unlocks
+really are the reverse of prerequisites, every skill sits strictly below all its prerequisites,
+`next`/`previous` chain consistently in both directions, and the index is byte-stable across
+two builds of the same directory.
+
+`sitemap.ts` is now generated from the index: 9 static routes + 7 strands + 91 skills +
+45 problems + every paper.
+
+### Assumptions made where the spec was ambiguous
+
+1. **A problem appears in the ladder of every skill it tags, not only its primary.** A student
+   working on CNT-04 (casework) should meet the casework inside a geometry problem. A separate
+   `primaryProblemsBySkill` keeps the stricter view for next/previous navigation, where "next
+   problem in this skill" has to mean one thing.
+2. **Graph depth is longest-path, not shortest.** The Atlas draws a skill below all of its
+   prerequisites; with shortest paths an edge could point upward and the layout would cross
+   itself. Proven by a test that every skill's depth exceeds all of its prerequisites'.
+3. **Strand problem counts use the primary skill only**, so the seven counts add up to the size
+   of the bank rather than double counting a problem tagged across strands. Asserted in a test.
+4. **The loader throws on invalid content rather than skipping the file.** `pnpm validate:content`
+   is the readable error; this is the backstop that stops a broken file reaching a reader.
+5. **`server-only` is aliased to a stub in both Vitest configs** (`test/stubs/server-only.ts`).
+   The package throws outside a server bundle, which is right in production and wrong in a
+   test; the alias keeps the production guarantee and lets the tests import the module.
 
 ---
 

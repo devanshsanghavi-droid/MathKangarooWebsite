@@ -2,6 +2,21 @@
 
 Running log of the build. Updated as each milestone lands, not at the end.
 
+**All thirteen milestones from the session brief are done.** One acceptance criterion inside
+M1.8 is deliberately not met — the six paper indexes are reading work that has to be done by
+someone who has read the papers, and inventing them would have been worse than leaving them
+empty. See M1.8 and "Needs you".
+
+| | |
+|---|---|
+| Skills in the Atlas | 91, 106 prerequisite edges, acyclic |
+| Original problems | 54, across levels 3–4 and 5–6 |
+| Distractor explanations | 216 — one per wrong answer choice |
+| Hand-drawn SVG figures | 19 |
+| Routes | 15, building 222 static pages |
+| Tests | 1 048 unit + 35 axe assertions, both themes |
+| CI | typecheck → lint → test → graph → content → a11y → build, all green |
+
 Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!]` blocked on Devansh
 
 | Milestone | State | Landed |
@@ -10,7 +25,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M0.2 — repo and rails | `[x]` | `rails: scaffold next 15 app, design tokens, content schemas, validation, and CI` |
 | M0.3 — content guardrails | `[x]` | `content: add the five CI guardrails with proving fixtures` |
 | M0.1 — taxonomy (91 skills) | `[x]` | `atlas: author all 91 skills and derive the prerequisite graph` |
-| seed problem bank | `[x]` | `content: author 45 original problems and 16 figures` |
+| seed problem bank | `[x]` | `content: author 45 original problems and 16 figures` (+9 more with M1.4) |
 | M1.1 — app shell | `[x]` | `shell: build header, footer, theme toggle, and a11y primitives` |
 | M1.2 — content loading layer | `[x]` | `content: add typed loaders, derived indexes, and a generated sitemap` |
 | M1.3 — problem components | `[x]` | `problem: build the nine problem components with distractor-specific feedback` |

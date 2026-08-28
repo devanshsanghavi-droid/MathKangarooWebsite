@@ -149,6 +149,38 @@ a:hover {
   border: 0;
 }
 
+/*
+ * The skip link is written out longhand rather than composed from `visually-hidden` plus
+ * `focus:` utilities. Those utilities live in Tailwind's cascade layer and this file does not,
+ * so an unlayered `.visually-hidden` would beat every one of them and the link would stay 1px
+ * square even while focused - which is exactly the bug this markup exists to avoid.
+ */
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 100;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link:focus {
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip-path: none;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--radius-2);
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-2);
+  text-decoration: none;
+}
+
 .prose-measure {
   max-width: var(--measure);
 }

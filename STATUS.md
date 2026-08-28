@@ -11,7 +11,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M0.3 — content guardrails | `[x]` | `content: add the five CI guardrails with proving fixtures` |
 | M0.1 — taxonomy (91 skills) | `[x]` | `atlas: author all 91 skills and derive the prerequisite graph` |
 | seed problem bank | `[x]` | `content: author 45 original problems and 16 figures` |
-| M1.1 — app shell | `[ ]` | |
+| M1.1 — app shell | `[x]` | `shell: build header, footer, theme toggle, and a11y primitives` |
 | M1.2 — content loading layer | `[ ]` | |
 | M1.3 — problem components | `[ ]` | |
 | M1.4 — `/problem/[id]` | `[ ]` | |
@@ -235,6 +235,64 @@ in Phase 1 real rather than to hit the launch number.
 - **105 more problems** to reach M1.10's launch target of 150, and figures for them.
 - **46 skills still have no problem.** Their skill pages render the practice ladder's empty
   state, which is built and tested rather than a placeholder.
+
+---
+
+## M1.1 — App shell
+
+**State:** `[x]`
+
+### Built
+
+- Root layout with the landmark structure: skip link → header → `<main id="main">` → footer →
+  mobile tab bar. One `main`, one `header`, one `contentinfo`; every `nav` has its own name.
+- `<Header>` with the wordmark, primary nav, and `<ThemeToggle>` (light / dark / system,
+  persisted to `localStorage`). "System" removes `data-theme` entirely so the media query in
+  tokens.css takes over, rather than writing a third value the CSS would have to know about.
+- **No flash of the wrong theme**: a tiny inline script in `<head>` sets `data-theme` before
+  first paint. It only ever sets an explicit theme, and a test asserts it never writes
+  `"system"` — that would defeat the media query.
+- `<Footer>` carrying the non-affiliation disclaimer verbatim from one exported constant, plus
+  licence, GitHub, privacy, terms and contact.
+- `<MobileTabBar>` below `sm`, clear of the iOS home indicator, with the footer padded so the
+  disclaimer is never covered (measured in the browser: 544px vs the bar at 596px).
+- `<SkipLink>`, global `:focus-visible` ring, global `prefers-reduced-motion` stop.
+- `not-found.tsx`, `error.tsx` (shows the digest, never the message — no PII in logs),
+  `loading.tsx`, `robots.ts`, `sitemap.ts`, `manifest.ts`, and an SVG favicon.
+- 27 unit tests plus a 5-test axe suite: **zero axe violations on the shell, the 404 page and
+  the loading state, in both themes.**
+
+### Assumptions made where the spec was ambiguous
+
+1. **Nav shows Atlas · Problems · Papers · About.** `docs/00-SPEC.md` §0.2 lists Practice and
+   Impact too, but those are P2 and P3. A nav link to a 404 is worse than a missing link; each
+   is a one-line addition to `PRIMARY_NAV` in the milestone that builds its route.
+2. **The mobile tab bar is Home · Atlas · Problems · Papers**, not the spec's
+   Atlas / Practice / Search / Me, for the same reason — three of those four are P2.
+3. **The manifest reads its two colours out of `tokens.css` at build time**
+   (`src/lib/theme-colors.ts`). A manifest is JSON read by the OS and cannot use a custom
+   property, and writing the hex a second time would let it drift. The ESLint rule that bans
+   hex literals outside tokens.css is what surfaced this.
+4. **`loading.tsx` is text, not a spinner.** An animation that has to be disabled under
+   `prefers-reduced-motion` anyway is not worth it for a page that appears in well under a
+   second.
+
+### Something that was actually broken, and how it was caught
+
+The first `<SkipLink>` composed `.visually-hidden` with Tailwind `focus:` utilities. Tailwind
+v4 puts its utilities in a cascade layer and `globals.css` is unlayered, so `.visually-hidden`
+beat every focus utility: the link stayed 1px square **while focused**. It passed axe, because
+axe does not measure layout. It was caught by measuring the focused element in a real browser.
+It is now longhand CSS, and `shell.test.tsx` asserts the `:focus` rule undoes every hiding
+declaration so the trap cannot come back.
+
+### Verified in a real browser at localhost:3000
+
+- light and dark, both rendered and legible;
+- no horizontal overflow at 320px, 360px, or 640px (the 200%-zoom equivalent of a 1280px window);
+- skip link is the first focusable element and expands to 190×45 when focused;
+- `:focus-visible` paints a 3px ring from `--focus`;
+- footer disclaimer clears the mobile tab bar.
 
 ---
 

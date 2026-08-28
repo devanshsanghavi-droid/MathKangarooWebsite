@@ -16,7 +16,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M1.3 — problem components | `[x]` | `problem: build the nine problem components with distractor-specific feedback` |
 | M1.4 — `/problem/[id]` | `[x]` | `problem: build the problem page with OG images and in-skill navigation` |
 | M1.5 — `/skill/[id]` | `[x]` | `skill: build the skill page with all nine sections` |
-| M1.6 — the Atlas | `[ ]` | |
+| M1.6 — the Atlas | `[x]` | `atlas: build the graph and list views with URL-encoded filters` |
 | M1.7 — `/problems` browse | `[ ]` | |
 | M1.8 — `/papers` | `[ ]` | |
 | M1.9 — home, about, legal, contact | `[ ]` | |
@@ -494,6 +494,64 @@ present, none is under 20 characters of content, and the page contains no `TODO`
 5. **Section 8 currently renders its empty state for every skill**, because no paper indexes
    exist until M1.8. Its wording states in both branches that we hold our own analysis and never
    the problems — a test asserts that, so it survives M1.8 filling the section in.
+
+---
+
+## M1.6 — The Atlas
+
+**State:** `[x]`
+
+### Built
+
+- **`src/lib/atlas-layout.ts` — a pure layout function.** Same skills in, byte-identical
+  coordinates out (asserted by a test), so a rebuild is never a diff and a node never moves
+  under a reader's cursor. Column by strand; row by
+  `max(tier floor, 1 + deepest prerequisite)`; ties broken on id.
+- **`src/lib/atlas-params.ts`** — the URL state from §1.2, exactly:
+  `/atlas?strand=CNT&band=5-6&focus=CNT-12`. Parsing is total, so a mistyped band shows the
+  unfiltered Atlas rather than an error.
+- **`AtlasGraph`** — SVG, drag to pan, ⌘/Ctrl-scroll to zoom, buttons for both, click to focus.
+- **`AtlasList`** — nested strand → tier → skill lists, keyboard-first.
+- **`AtlasFilters`** — strand, band, point value and has-problems, all as links.
+- **`SkillPanel`** — the focused skill's summary, prerequisites and unlocks, from the URL.
+- **`/atlas/[strand]`** — the ordered walkthrough for each of the seven strands.
+- **49 tests**, including the two acceptance criteria: graph and list return **identical skill
+  sets under seven different filter combinations**, and every one of the 91 graph nodes is a
+  real anchor with an accessible name over 20 characters long.
+
+### Something that was actually broken, and how it was caught
+
+The graph first used a fitted `viewBox`. Ninety-one nodes across seven columns is ~1730px wide;
+fitted into a 774px column that is a 45% scale, so every node rendered at **four pixels** and
+every label below legibility. It passed all 29 unit tests and axe, because neither measures
+size. Looking at it in the browser was the only way to see it.
+
+It now renders at its natural size inside a scrolling container, with zoom changing the rendered
+size rather than the viewBox. Scrolling is native, so it works with the keyboard, a trackpad, a
+screen reader's own navigation, and with JavaScript switched off — which the old pan implementation
+did not.
+
+Two axe findings were also fixed: `aria-pressed` on the filter links (not allowed on a link —
+they are now `aria-current`), and `AtlasList` starting its headings at `h3` under the page's
+`h1`, which skipped a level.
+
+### Assumptions made where the spec was ambiguous
+
+1. **"Used automatically for screen readers" is not implemented by sniffing.** There is no
+   reliable way to detect assistive technology, and trying is a well-known anti-pattern. Instead
+   **the graph itself is accessible** — every node is a focusable link with a full accessible
+   name — and the view toggle is rendered *before* the diagram in the DOM, so the choice is met
+   before the picture. The two views are equals, and a test asserts they hold the same set.
+2. **Filters are links, not form controls.** The whole bar works with JavaScript off, every
+   state is a shareable URL, and Back undoes a filter. The cost is one navigation per toggle,
+   which on a server-rendered page is imperceptible.
+3. **A plain scroll wheel over the graph still scrolls the page.** Hijacking the wheel is the
+   most reliable way to trap a reader halfway down a page; zoom needs ⌘/Ctrl, or the buttons.
+4. **Node colour by tier, hollow centre for "no problems yet".** §1.2 says node colour is tier
+   and fill is mastery; mastery is P2, so the fill currently carries coverage instead, and the
+   legend says so in words.
+5. **`/atlas` is server-rendered per request** (it reads `searchParams`), not statically
+   generated. The strand pages are static.
 
 ---
 

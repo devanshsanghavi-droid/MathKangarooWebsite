@@ -18,7 +18,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M1.5 — `/skill/[id]` | `[x]` | `skill: build the skill page with all nine sections` |
 | M1.6 — the Atlas | `[x]` | `atlas: build the graph and list views with URL-encoded filters` |
 | M1.7 — `/problems` browse | `[x]` | `problems: build the browse page with URL-encoded filters and pagination` |
-| M1.8 — `/papers` | `[ ]` | |
+| M1.8 — `/papers` | `[x]`* | `papers: build the official paper index routes and tighten the anti-paste tripwire` |
 | M1.9 — home, about, legal, contact | `[ ]` | |
 
 ---
@@ -594,13 +594,67 @@ bands in exam order rather than alphabetically (`11-12` sorts before `3-4` as a 
 
 ---
 
+## M1.8 — Paper index
+
+**State:** `[x]` for the routes. **The six paper indexes are NOT authored — see below.**
+
+### Built
+
+- **`/papers`** — the indexed papers grouped by band, the "skills most tested" chart per band,
+  and a plain statement of what the index is and is not. Links to `mathkangaroo.org`; no PDF is
+  ever served from here.
+- **`/papers/[year]-[band]`** — the per-question table (number, points, our skill tags, our
+  note), the point distribution, how much of the paper is indexed, a link to the official PDF,
+  and the skills-most-tested chart for that paper.
+- **`src/lib/papers.ts`** — pure analysis: `mostTestedSkills`, `pointDistribution`,
+  `expectedQuestionCount`, slug parsing. 16 tests.
+- **The tripwire now caps every file under `content/papers/`, not just the `.json`.** It only
+  walked the JSON before, so an official paper pasted into a `.txt` would have sailed through.
+  A fixture proves the new behaviour.
+- `content/papers/README.md` — the authoring contract at the point of use.
+- 45 more tests, including two that assert the repository itself is clean: no file under
+  `content/papers/` over 2KB, and no PDF or image anywhere in `content/`.
+
+### What I did NOT do, and why
+
+**I did not author the six paper indexes.** M1.8's build-plan acceptance asks for at least six,
+across bands 3–4 and 5–6. Producing them means opening each official PDF and classifying its 24
+or 30 questions against the Atlas. I have not read those papers, so anything I wrote in those
+files would be **invented analysis presented as analysis** — it would tell a student "2019
+question 22 tests GEO-10" with nothing behind the claim, and send them to the wrong skill. That
+is worse than an empty index, and it is the exact opposite of what the paper index is for.
+
+So the routes are finished and fully tested against fixture data, `/papers` ships with an empty
+state that says plainly why it is empty, and the authoring is listed under "Needs you". This is
+the same task as M0.1's second acceptance criterion ("classify three full official past papers
+against the taxonomy"), which is also outstanding for the same reason.
+
+### Assumptions made where the spec was ambiguous
+
+1. **The route is `/papers/[slug]` where the slug is `<year>-<band>`**, e.g. `/papers/2019-5-6`,
+   matching `docs/00-SPEC.md` §1.7's `/papers/[year]-[band]`. One dynamic segment is simpler
+   than two, and the band itself contains a hyphen.
+2. **The "most tested" chart is CSS bars with the number written beside each one**, not an SVG
+   chart. Every bar is a row of readable text, so it works for a screen reader, in black and
+   white on a printed worksheet, and for anyone who cannot judge lengths by eye.
+3. **Skill counts add to more than the number of questions**, because a question tagged with two
+   skills is counted for both. The page says so, rather than normalising the number into
+   something tidier and less true.
+
+---
+
 ## Needs you (external accounts / credentials)
 
 - [ ] Push the repo and turn on branch protection for `main`, requiring the `verify` check.
 - [ ] Connect the Vercel project so preview deploys run on every PR.
 - [ ] `RESEND_API_KEY` for the `/contact` form (M1.9). The form ships with a mailto fallback
       that works with no key at all, so nothing is blocked on this.
-- [ ] **Review the 45 seed problems** against `docs/03-CONTENT-GUIDE.md` Part C. They are all
+- [ ] **Author the paper indexes.** Open six official PDFs (bands 3–4 and 5–6), classify every
+      question against the Atlas, and write `content/papers/<year>-<band>.json`. The format and
+      the rules are in `content/papers/README.md`; `/papers` and `/papers/[year]-[band]` are
+      built and tested and will light up the moment the first file lands. This is reading work
+      that has to be done by someone who has read the papers — see M1.8 above.
+- [ ] **Review the 54 seed problems** against `docs/03-CONTENT-GUIDE.md` Part C. They are all
       marked `reviewedBy: ["pending-review"]` because they were drafted in this session and
       nobody has run the checklist on them. The content guide requires two approvals before a
       problem is merged for launch.

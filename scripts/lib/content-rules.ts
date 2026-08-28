@@ -81,6 +81,23 @@ export interface ValidateResult {
  */
 export const PAPER_FILE_MAX_BYTES = 2048;
 
+/** Every file in a directory, not just the JSON — the paper tripwire has to see all of them. */
+function listAllFiles(dir: string): string[] {
+  if (!existsSync(dir)) return [];
+  const out: string[] = [];
+  const walk = (d: string): void => {
+    for (const entry of readdirSync(d, { withFileTypes: true }).sort((a, b) =>
+      a.name.localeCompare(b.name),
+    )) {
+      const full = join(d, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else if (entry.isFile()) out.push(full);
+    }
+  };
+  walk(dir);
+  return out;
+}
+
 function listJsonFiles(dir: string): string[] {
   if (!existsSync(dir)) return [];
   const out: string[] = [];
@@ -454,11 +471,12 @@ export function validateContent(options: ValidateOptions): ValidateResult {
 
   /* ---------------------------------------------------------------- papers */
 
-  const paperFiles = listJsonFiles(join(contentDir, 'papers'));
-  const paperKeySeen = new Map<string, string>();
+  const papersDir = join(contentDir, 'papers');
 
-  for (const file of paperFiles) {
-    // GUARDRAIL (tripwire): paper index files hold analysis, never problem text.
+  // GUARDRAIL (tripwire): EVERY file under content/papers/ is capped, not only the JSON.
+  // Someone pasting an official paper is not going to be considerate enough to put it in a
+  // file the schema would reject.
+  for (const file of listAllFiles(papersDir)) {
     const bytes = statSync(file).size;
     if (bytes > PAPER_FILE_MAX_BYTES) {
       add(
@@ -466,11 +484,16 @@ export function validateContent(options: ValidateOptions): ValidateResult {
         file,
         `${bytes} bytes exceeds the ${PAPER_FILE_MAX_BYTES}-byte cap on content/papers/. ` +
           'This cap is an anti-paste tripwire: a paper index is question numbers, point ' +
-          'values and our skill tags. If it grew, official problem text may have been ' +
-          'pasted in. Do not raise the cap.',
+          'values and our skill tags, which is a few hundred bytes. If a file here grew, ' +
+          'official problem text may have been pasted in. Do not raise the cap.',
       );
     }
+  }
 
+  const paperFiles = listJsonFiles(papersDir);
+  const paperKeySeen = new Map<string, string>();
+
+  for (const file of paperFiles) {
     const raw = readJson(file);
     if (!raw.ok) {
       add('schema/json-parse', file, `not valid JSON — ${raw.message}`);

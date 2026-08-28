@@ -185,3 +185,16 @@ describe('the CLI that CI actually runs', () => {
     expect(result.stderr).toContain('problem/misconception-required');
   });
 });
+
+describe('the paper tripwire covers every file, not only the JSON', () => {
+  it('catches an oversized non-JSON file pasted into content/papers/', () => {
+    const { findings } = run('paper-size-cap', 'fail');
+    const flagged = findings.filter((f) => f.rule === 'paper/size-cap').map((f) => f.file);
+    expect(flagged.some((file) => file.endsWith('.txt'))).toBe(true);
+  });
+
+  it('still passes a clean tree that happens to contain a small README', () => {
+    const { findings } = run('paper-size-cap', 'pass');
+    expect(findings).toEqual([]);
+  });
+});

@@ -1,0 +1,200 @@
+/*
+ * tokens.css — THE ONLY FILE IN THIS REPO WHERE A COLOR IS DEFINED.
+ *
+ * Three-state theming, per docs/00-SPEC.md §0.1:
+ *   1. :root                                     -> the complete light palette (the default)
+ *   2. @media (prefers-color-scheme: dark)       -> system dark, unless the user forced light
+ *      guarded as :root:not([data-theme='light'])
+ *   3. :root[data-theme='dark']                  -> explicit dark, wins in both directions
+ *
+ * Every token is defined in state 1. States 2 and 3 only REDEFINE. A token that exists only
+ * inside a media query is a bug: it leaves the light theme with an undefined value.
+ *
+ * Contrast: every --ink* / --accent* token is checked against its intended background for
+ * WCAG 2.1 AA (4.5:1 body text, 3:1 large text and UI boundaries). See src/lib/contrast.ts
+ * and the test in src/lib/__tests__/tokens.test.ts, which fails the build on a regression.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* --- surfaces ------------------------------------------------------------ */
+  --paper: #fbfaf7; /* page background */
+  --surface: #ffffff; /* cards, panels */
+  --surface-2: #f2efe9; /* inset wells, table stripes, code */
+
+  /* --- ink ----------------------------------------------------------------- */
+  --ink: #17161a; /* primary text            21.0:1 on --paper */
+  --ink-2: #4a4750; /* secondary text           8.6:1 on --paper */
+  --ink-3: #6b6773; /* tertiary / metadata      5.3:1 on --paper */
+
+  /* --- rules --------------------------------------------------------------- */
+  --rule: #ddd8ce; /* hairline dividers */
+  --rule-2: #8a8374; /* stronger borders, input outlines */
+
+  /* --- accent -------------------------------------------------------------- */
+  --accent: #1f5f4e; /* links, primary action     7.1:1 on --paper */
+  --accent-2: #16483b; /* hover / pressed */
+  --accent-soft: #dbeae4; /* accent-tinted fill */
+
+  /* --- structural ---------------------------------------------------------- */
+  --grid: #e6e1d7; /* figure gridlines, atlas background lattice */
+
+  /* --- point tiers: semantic, mapped to the exam's 3/4/5 scoring bands ------ */
+  /* Never used decoratively. If it is not a point value, it is not these colors. */
+  --p3: #1f5f4e;
+  --p3-bg: #dcece6;
+  --p4: #8a5a12;
+  --p4-bg: #f6e9d2;
+  --p5: #8b2f52;
+  --p5-bg: #f7dfe7;
+
+  /* --- focus --------------------------------------------------------------- */
+  --focus: #0d4fbb;
+
+  /* --- state colors (derived from the tiers, not new hues) ----------------- */
+  --correct: var(--p3);
+  --correct-bg: var(--p3-bg);
+  --incorrect: var(--p5);
+  --incorrect-bg: var(--p5-bg);
+
+  /* --- typography ---------------------------------------------------------- */
+  /* System stacks only: no network font fetch at build or at first paint. */
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif;
+  --font-serif:
+    ui-serif, Charter, 'Bitstream Charter', 'Iowan Old Style', Georgia, Cambria, 'Times New Roman',
+    serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  --font-dyslexic: var(--font-sans); /* overridden by the P2 accessibility setting */
+
+  /* Scale: 12 / 13 / 15 / 17 / 20 / 25 / 32 / 44 (docs/00-SPEC.md §0.1) */
+  --step--2: 0.75rem; /* 12 */
+  --step--1: 0.8125rem; /* 13 */
+  --step-0: 0.9375rem; /* 15 */
+  --step-1: 1.0625rem; /* 17 */
+  --step-2: 1.25rem; /* 20 */
+  --step-3: 1.5625rem; /* 25 */
+  --step-4: 2rem; /* 32 */
+  --step-5: 2.75rem; /* 44 */
+
+  --measure: 66ch;
+
+  /* --- spacing / shape ----------------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  --radius-1: 3px;
+  --radius-2: 6px;
+  --radius-3: 10px;
+
+  --shadow-1: 0 1px 2px rgb(23 22 26 / 6%);
+  --shadow-2: 0 4px 16px rgb(23 22 26 / 10%);
+}
+
+/* State 2 — system dark, unless the reader has explicitly chosen light. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+
+    --paper: #14151a;
+    --surface: #1c1e25;
+    --surface-2: #262932;
+
+    --ink: #f2f1ee; /* 15.9:1 on --paper */
+    --ink-2: #c0bfc8; /*  9.3:1 on --paper */
+    --ink-3: #9a99a6; /*  5.8:1 on --paper */
+
+    --rule: #333743;
+    --rule-2: #71758a;
+
+    --accent: #6fd7b4; /* 10.5:1 on --paper */
+    --accent-2: #97e6cb;
+    --accent-soft: #1d3a33;
+
+    --grid: #2b2f39;
+
+    --p3: #6fd7b4;
+    --p3-bg: #1a3830;
+    --p4: #e8b45f;
+    --p4-bg: #3a2e18;
+    --p5: #f093b3;
+    --p5-bg: #3b1f2b;
+
+    --focus: #7fb0ff;
+
+    --shadow-1: 0 1px 2px rgb(0 0 0 / 40%);
+    --shadow-2: 0 4px 16px rgb(0 0 0 / 50%);
+  }
+}
+
+/* State 3 — explicit dark. Must repeat state 2 so the toggle wins under a light system. */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --paper: #14151a;
+  --surface: #1c1e25;
+  --surface-2: #262932;
+
+  --ink: #f2f1ee;
+  --ink-2: #c0bfc8;
+  --ink-3: #9a99a6;
+
+  --rule: #333743;
+  --rule-2: #71758a;
+
+  --accent: #6fd7b4;
+  --accent-2: #97e6cb;
+  --accent-soft: #1d3a33;
+
+  --grid: #2b2f39;
+
+  --p3: #6fd7b4;
+  --p3-bg: #1a3830;
+  --p4: #e8b45f;
+  --p4-bg: #3a2e18;
+  --p5: #f093b3;
+  --p5-bg: #3b1f2b;
+
+  --focus: #7fb0ff;
+
+  --shadow-1: 0 1px 2px rgb(0 0 0 / 40%);
+  --shadow-2: 0 4px 16px rgb(0 0 0 / 50%);
+}
+
+/* Print: figures and text go to pure black on white so a home printer is legible. */
+@media print {
+  :root,
+  :root[data-theme='dark'],
+  :root:not([data-theme='light']) {
+    color-scheme: light;
+    --paper: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #ffffff;
+    --ink: #000000;
+    --ink-2: #000000;
+    --ink-3: #000000;
+    --rule: #000000;
+    --rule-2: #000000;
+    --accent: #000000;
+    --accent-2: #000000;
+    --accent-soft: #ffffff;
+    --grid: #000000;
+    --p3: #000000;
+    --p4: #000000;
+    --p5: #000000;
+    --p3-bg: #ffffff;
+    --p4-bg: #ffffff;
+    --p5-bg: #ffffff;
+    --shadow-1: none;
+    --shadow-2: none;
+  }
+}

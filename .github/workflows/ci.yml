@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: typecheck · lint · test · content · build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable corepack
+        run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Test
+        run: pnpm test
+
+      # `unlocks` is derived from `prerequisites`. If the committed files disagree with what
+      # the script would generate, someone hand-edited the graph. Fail before we ship it.
+      - name: Skill graph is derived and acyclic
+        run: node scripts/derive-unlocks.ts --check
+
+      - name: Validate content
+        run: pnpm validate:content
+
+      - name: Accessibility
+        run: pnpm a11y
+
+      - name: Build
+        run: pnpm build

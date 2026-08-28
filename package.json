@@ -1,0 +1,55 @@
+{
+  "name": "kangaroo-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A free, open, skill-organized Math Kangaroo preparation platform.",
+  "license": "MIT",
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate:content": "node scripts/validate-content.ts",
+    "derive:unlocks": "node scripts/derive-unlocks.ts",
+    "a11y": "vitest run --config vitest.a11y.config.ts"
+  },
+  "dependencies": {
+    "katex": "^0.16.22",
+    "next": "^15.5.24",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-katex": "^3.1.0",
+    "zod": "^4.5.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@testing-library/dom": "^10",
+    "@testing-library/jest-dom": "^6",
+    "@testing-library/react": "^16",
+    "@testing-library/user-event": "^14",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/react-katex": "^3",
+    "@vitejs/plugin-react": "^5",
+    "axe-core": "^4.10.0",
+    "eslint": "^9",
+    "eslint-config-next": "^15.5.24",
+    "eslint-config-prettier": "^10",
+    "jsdom": "^26",
+    "postcss": "^8",
+    "prettier": "^3",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.11"
+  }
+}

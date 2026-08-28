@@ -1,0 +1,67 @@
+{
+  "id": "KA-0030",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A sequence starts 4, 7, 10, 13 and continues in the same way. What is the 20th term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "57",
+      "correct": false,
+      "misconception": "I added the step 18 times, counting the gaps between terms one too few."
+    },
+    {
+      "key": "B",
+      "text": "60",
+      "correct": false,
+      "misconception": "I multiplied the step of 3 by 20 and forgot that the first term is already in place."
+    },
+    {
+      "key": "C",
+      "text": "61",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "63",
+      "correct": false,
+      "misconception": "I used a first term of 3 instead of 4 while adding 20 steps."
+    },
+    {
+      "key": "E",
+      "text": "64",
+      "correct": false,
+      "misconception": "I added the step 20 times to the first term instead of 19 times."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-02",
+    "secondary": [
+      "PAT-04"
+    ]
+  },
+  "hints": [
+    "How many steps from the first term to the twentieth?",
+    "The terms go up by a fixed amount. To reach the 20th term from the 1st you take one fewer step than 20, because the first term costs no steps at all.",
+    "The step is 3. From term 1 to term 20 is 19 steps, so the 20th term is 4 + 19 x 3 = 4 + 57 = 61."
+  ],
+  "solutions": {
+    "reliable": "Each term is 3 more than the one before. Getting from the 1st term to the 20th takes 19 steps, not 20, because the first term is already there. So the 20th term is 4 + 19 x 3 = 4 + 57 = 61. Check on a small case: the 4th term should be 4 + 3 x 3 = 13, which matches. The transferable idea: count the gaps, not the terms.",
+    "elegant": "The nth term is 3n + 1, so the 20th is 60 + 1 = 61."
+  },
+  "whyOnTest": "The one-fewer-step rule is the single most common off-by-one in the patterns strand, and every distractor here is a version of getting it wrong.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

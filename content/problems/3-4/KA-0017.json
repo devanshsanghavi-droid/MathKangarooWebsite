@@ -1,0 +1,68 @@
+{
+  "id": "KA-0017",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Ana says \"Bo is lying.\" Bo says \"Cal is lying.\" Cal says \"Ana and Bo are both lying.\" How many of the three are telling the truth?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed everyone could be lying at once without checking that Cal's statement would then be true."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I found one consistent truth-teller and added another without testing whether both could hold together."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I assumed everyone was telling the truth without noticing that Ana's statement then contradicts Bo's."
+    },
+    {
+      "key": "E",
+      "text": "it cannot be decided",
+      "correct": false,
+      "misconception": "I gave up after one assumption led to a contradiction, instead of trying the other assumption."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-01",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Assume Ana is telling the truth, then follow it.",
+    "Take one speaker, assume they are truthful, and push that through all three statements. If it contradicts itself the assumption was wrong, and that is itself information.",
+    "Suppose Ana is truthful. Then Bo lies, so Cal is truthful. But Cal says Ana lies, contradicting the assumption. So Ana lies, Bo is truthful, and Cal lies - which is consistent. Exactly one tells the truth."
+  ],
+  "solutions": {
+    "reliable": "Try Ana truthful. Then Bo lies, so Cal's claim is true, so Cal is truthful. But Cal claims Ana lies, which contradicts the assumption. So Ana lies. Then Bo tells the truth, so Cal lies. Check Cal: Cal claims Ana and Bo both lie, but Bo is truthful, so Cal's claim is indeed false. Exactly one child, Bo, tells the truth. The transferable idea: assume, follow all the way, and let the contradiction do the work.",
+    "elegant": "The three claims form a chain in which truth must alternate, and Cal's double claim leaves only one arrangement standing."
+  },
+  "whyOnTest": "Liar puzzles reward pushing one assumption to the end rather than stopping at the first thing that looks consistent.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

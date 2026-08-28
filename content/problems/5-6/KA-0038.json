@@ -1,0 +1,70 @@
+{
+  "id": "KA-0038",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A solid block is built from unit cubes and measures 4 by 3 by 2. How many unit cubes does it contain?",
+  "figure": {
+    "component": "UnitCubeBlock",
+    "alt": "A rectangular block built from unit cubes, 4 cubes long, 3 cubes deep and 2 cubes tall, drawn so that both layers are visible."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I added the three measurements together instead of multiplying them."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted one layer of 4 by 3 and forgot that the block is two layers tall."
+    },
+    {
+      "key": "C",
+      "text": "18",
+      "correct": false,
+      "misconception": "I read the block as 3 by 3 by 2 because the drawing hid the far column."
+    },
+    {
+      "key": "D",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted only the cubes whose faces I could actually see in the picture."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-13",
+    "secondary": [
+      "CNT-14"
+    ]
+  },
+  "hints": [
+    "Count one layer, then count the layers.",
+    "A solid block is layers of the same size stacked up. Work out how many cubes are in one horizontal layer, then multiply by the number of layers.",
+    "One layer is 4 x 3 = 12 cubes and there are 2 layers, so 12 x 2 = 24."
+  ],
+  "solutions": {
+    "reliable": "One horizontal layer is 4 by 3, which is 12 cubes. The block is 2 layers tall, so it holds 12 x 2 = 24 unit cubes. The transferable idea: counting a layer at a time reaches the cubes you cannot see, and it keeps working when the layers are not all the same size.",
+    "elegant": null
+  },
+  "whyOnTest": "It anchors the layer-by-layer habit before the harder hidden-cube questions where the layers differ in size.",
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

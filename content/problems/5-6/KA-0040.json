@@ -1,0 +1,68 @@
+{
+  "id": "KA-0040",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A drawer holds 10 red socks, 10 blue socks and 10 green socks, all mixed up in the dark. How many socks must you take out to be sure of having a matching pair?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I answered with the lucky case, where the first two socks happen to match."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I used the number of colours as my answer without adding one for the sock that must repeat."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "11",
+      "correct": false,
+      "misconception": "I worked from the number of socks of each colour instead of the number of colours."
+    },
+    {
+      "key": "E",
+      "text": "31",
+      "correct": false,
+      "misconception": "I took the whole drawer, guaranteeing a pair but far more socks than are needed."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-17",
+    "secondary": [
+      "CNT-18",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Imagine the unluckiest possible draw.",
+    "Ask how many socks you could take while still having no pair at all. One more than that number forces a match, because there is nowhere new for it to go.",
+    "The worst case is one sock of each colour, which is 3 socks and still no pair. The fourth sock must repeat a colour, so 4 socks are enough."
+  ],
+  "solutions": {
+    "reliable": "Think about the worst case rather than the lucky one. You could draw one red, one blue and one green - three socks with no matching pair. But a fourth sock must be red, blue or green, so it repeats a colour you already hold. Four socks therefore guarantee a pair, and three do not. The transferable idea: fill every box once, then add one.",
+    "elegant": "With 3 colours acting as boxes, 4 socks cannot all go in different boxes, so two share a box - that is the pigeonhole principle in one line."
+  },
+  "whyOnTest": "To be sure means the worst case, and answering with the lucky case is the single most common misreading in the counting strand.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

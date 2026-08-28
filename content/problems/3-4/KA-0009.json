@@ -1,0 +1,70 @@
+{
+  "id": "KA-0009",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Small cubes are stacked in a corner as shown. Some are hidden from view. How many small cubes are there altogether?",
+  "figure": {
+    "component": "CornerCubeStack",
+    "alt": "A stack of unit cubes in a corner, three layers tall. The bottom layer is a 3 by 3 square of 9 cubes, the middle layer is a 2 by 2 square of 4 cubes sitting on one corner of it, and the top layer is a single cube."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted only the cubes on the bottom layer and treated the rest as decoration."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted only the cubes whose faces I could actually see in the drawing."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": false,
+      "misconception": "I assumed every layer was a full 3 by 3 square and multiplied 9 by 2 for two layers."
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I assumed the stack was a solid 3 by 3 by 3 block because it sits in a corner."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-14",
+    "secondary": [
+      "GEO-13"
+    ]
+  },
+  "hints": [
+    "Count one layer at a time, from the bottom.",
+    "Work out how many cubes are in each horizontal layer separately, including the ones hidden behind the front. Then add the layers.",
+    "Bottom layer 3 by 3 = 9 cubes, middle layer 2 by 2 = 4 cubes, top layer 1 cube. Total 9 + 4 + 1 = 14."
+  ],
+  "solutions": {
+    "reliable": "Count by layer rather than by what you can see. The bottom layer is a full 3 by 3 square, which is 9 cubes. The middle layer is 2 by 2, which is 4. The top is a single cube. Adding gives 9 + 4 + 1 = 14. The transferable idea: layers reach the cubes the drawing hides.",
+    "elegant": null
+  },
+  "whyOnTest": "Hidden cubes are one of the most common Kangaroo figures, and the only reliable method is layer by layer, not face by face.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

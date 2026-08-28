@@ -1,0 +1,65 @@
+{
+  "id": "KA-0022",
+  "band": "5-6",
+  "points": 3,
+  "statement": "In a triangle, one angle is 90 degrees and another is 35 degrees. What is the third angle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "35 degrees",
+      "correct": false,
+      "misconception": "I assumed the triangle was isosceles because it had a right angle, so I repeated the 35."
+    },
+    {
+      "key": "B",
+      "text": "45 degrees",
+      "correct": false,
+      "misconception": "I assumed a right-angled triangle always has two 45 degree angles."
+    },
+    {
+      "key": "C",
+      "text": "55 degrees",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "65 degrees",
+      "correct": false,
+      "misconception": "I subtracted 35 from 100 instead of from 90, mixing the angle sum up with a round number."
+    },
+    {
+      "key": "E",
+      "text": "145 degrees",
+      "correct": false,
+      "misconception": "I subtracted only the 35 from 180 and forgot to take off the right angle as well."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": []
+  },
+  "hints": [
+    "The three angles add to 180 degrees.",
+    "Add the two angles you know, then subtract from the angle sum of a triangle. Nothing about the picture matters here beyond those two numbers.",
+    "90 + 35 = 125, and 180 - 125 = 55 degrees."
+  ],
+  "solutions": {
+    "reliable": "The angles of any triangle add to 180 degrees. Two of them are 90 and 35, which come to 125. The third is 180 - 125 = 55 degrees. The transferable idea: in a right-angled triangle the two non-right angles always add to 90, which is a faster route to the same answer.",
+    "elegant": "In a right-angled triangle the other two angles must add to 90, so the third is simply 90 - 35 = 55."
+  },
+  "whyOnTest": "Angle chases start here, and assuming a right-angled triangle is also isosceles is the first wrong turn students take.",
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

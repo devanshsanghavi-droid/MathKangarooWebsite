@@ -10,7 +10,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M0.2 — repo and rails | `[x]` | `rails: scaffold next 15 app, design tokens, content schemas, validation, and CI` |
 | M0.3 — content guardrails | `[x]` | `content: add the five CI guardrails with proving fixtures` |
 | M0.1 — taxonomy (91 skills) | `[x]` | `atlas: author all 91 skills and derive the prerequisite graph` |
-| seed problem bank | `[ ]` | |
+| seed problem bank | `[x]` | `content: author 45 original problems and 16 figures` |
 | M1.1 — app shell | `[ ]` | |
 | M1.2 — content loading layer | `[ ]` | |
 | M1.3 — problem components | `[ ]` | |
@@ -189,9 +189,62 @@ is what the test exercises — not just the library function underneath it.
 
 ---
 
+## Seed problem bank (not one of your thirteen — see the note)
+
+**State:** `[x]`
+
+M1.3 through M1.7 render nothing without problems, and M1.10's 150-problem target is
+explicitly outside this session's list. So this is a **seed bank**, sized to make every route
+in Phase 1 real rather than to hit the launch number.
+
+### Built
+
+- **45 original problems** — 20 in band 3–4, 25 in band 5–6. Every one written from scratch;
+  none is traceable to an official Math Kangaroo problem.
+- **45 distinct primary skills**, covering all seven strands. Point tiers 3/4/5 are all present
+  in both bands (3–4: 8/8/4, 5–6: 8/9/8).
+- **180 distractors**, each with its own first-person misconception. No two distractors in a
+  problem share a misconception.
+- **16 figures** as hand-authored SVG React components in `src/components/figures/`, all drawn
+  from tokens, all resolution-independent, all flattened to black under `@media print`.
+- **`scripts/__tests__/content-quality.test.ts`** — 276 assertions enforcing the numeric
+  authoring rules from `docs/03-CONTENT-GUIDE.md` Part B: statement word caps per band, the
+  15-word nudge and 40-word strategy caps, distinct misconceptions, and a check that hint 1
+  never contains the correct answer.
+- Every skill that has a problem now names it as its `canonicalProblem` (45 of 91).
+
+### Assumptions made where the spec was ambiguous
+
+1. **`reviewedBy` is the literal string `pending-review` on all 45.** These problems were
+   drafted in this session; nobody has completed the Part C checklist on them. Writing your
+   name there would have recorded a review that did not happen. See "Needs you".
+2. **Answer keys were rebalanced deliberately.** The first draft never used E and used C for
+   40% of answers, which is a guessable pattern across a paper. Five problems were re-authored
+   or reordered so every key carries answers. Current spread: A 4 · B 10 · C 18 · D 8 · E 5.
+   C is still heavy at 40%; the test caps any key at 50% and requires every key to be used, and
+   this is worth revisiting as the bank grows toward 150.
+3. **Numeric choices are listed in ascending order**, matching the real paper's convention.
+4. **Three problems were caught and rewritten during authoring** because the stated answer was
+   wrong: the blocked-grid path count (8, not 11), the bead cycle colour, and the stone-bag
+   invariant (black, not white — verified by brute force before rewriting). Each was found by
+   working the problem independently of how it was written, which is exactly what Part C's
+   "solved independently" line is for.
+
+### Deferred
+
+- **105 more problems** to reach M1.10's launch target of 150, and figures for them.
+- **46 skills still have no problem.** Their skill pages render the practice ladder's empty
+  state, which is built and tested rather than a placeholder.
+
+---
+
 ## Needs you (external accounts / credentials)
 
 - [ ] Push the repo and turn on branch protection for `main`, requiring the `verify` check.
 - [ ] Connect the Vercel project so preview deploys run on every PR.
 - [ ] `RESEND_API_KEY` for the `/contact` form (M1.9). The form ships with a mailto fallback
       that works with no key at all, so nothing is blocked on this.
+- [ ] **Review the 45 seed problems** against `docs/03-CONTENT-GUIDE.md` Part C. They are all
+      marked `reviewedBy: ["pending-review"]` because they were drafted in this session and
+      nobody has run the checklist on them. The content guide requires two approvals before a
+      problem is merged for launch.

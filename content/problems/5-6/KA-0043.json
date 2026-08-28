@@ -1,0 +1,68 @@
+{
+  "id": "KA-0043",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A bag holds 5 black and 6 white stones. You repeatedly remove two stones: if they match you put a black one in, if they differ you put a white one in. What colour is the last stone?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "black",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "white",
+      "correct": false,
+      "misconception": "I noticed there are more white stones than black ones and guessed the majority colour would survive."
+    },
+    {
+      "key": "C",
+      "text": "it depends on the order of the moves",
+      "correct": false,
+      "misconception": "I tried a few orders, saw different-looking positions along the way, and assumed the ending must vary too."
+    },
+    {
+      "key": "D",
+      "text": "the bag never gets down to one stone",
+      "correct": false,
+      "misconception": "I did not notice that every move takes two stones out and puts one back, so the count falls by exactly one each time."
+    },
+    {
+      "key": "E",
+      "text": "white if the first two stones match",
+      "correct": false,
+      "misconception": "I assumed the first move settles the outcome instead of looking for a quantity that no move can change."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "LOG-05",
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "Watch what happens to the number of white stones.",
+    "Check each kind of move and ask how the white count changes. If it only ever changes by an even amount, then whether it is odd or even can never change at all.",
+    "Two blacks: white count unchanged. Two whites: white count falls by 2. One of each: one white out, one white in, so unchanged. The white count starts at 6 and stays even, so the last stone cannot be white."
+  ],
+  "solutions": {
+    "reliable": "Track the number of white stones. Two blacks out and a black in leaves it unchanged. Two whites out and a black in lowers it by 2. One of each out and a white in removes one white and returns one, leaving it unchanged. Every move therefore changes the white count by 0 or by 2, so it stays even forever. It starts at 6, which is even, so the final single stone cannot be white - it is black. The transferable idea: find a quantity no move can change, and the ending is decided before you start.",
+    "elegant": "The parity of the white count is invariant, so the answer depends only on whether the bag starts with an odd or even number of white stones - never on how you play."
+  },
+  "whyOnTest": "Invariants turn an unbounded search into one observation, and this is the cleanest place for a student to meet the idea.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

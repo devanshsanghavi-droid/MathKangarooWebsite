@@ -1,0 +1,70 @@
+{
+  "id": "KA-0005",
+  "band": "3-4",
+  "points": 4,
+  "statement": "A net of six squares folds into a cube. One square is shaded. Which square ends up opposite the shaded one?",
+  "figure": {
+    "component": "CubeNetCross",
+    "alt": "A net of six squares in a cross shape: a vertical column of four squares labelled 1, 2, 3, 4 from the top, with square 5 attached to the left of square 2 and square 6 attached to the right of square 2. Square 1 is shaded."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "square 2",
+      "correct": false,
+      "misconception": "I picked the square directly next to the shaded one in the net, but neighbours in the net share an edge on the cube."
+    },
+    {
+      "key": "B",
+      "text": "square 3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "square 4",
+      "correct": false,
+      "misconception": "I counted to the far end of the column, assuming the square furthest away in the net is the one opposite."
+    },
+    {
+      "key": "D",
+      "text": "square 5",
+      "correct": false,
+      "misconception": "I picked one of the side flaps because it is not touching the shaded square in the drawing."
+    },
+    {
+      "key": "E",
+      "text": "square 6",
+      "correct": false,
+      "misconception": "I picked the other side flap for the same reason, without tracking what happens as the net folds."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-10",
+    "secondary": [
+      "GEO-11"
+    ]
+  },
+  "hints": [
+    "In a strip, opposite faces are two apart.",
+    "Fold the four-square column into a ring around the cube. In a ring of four faces, each face is opposite the one two steps along, not the one next to it and not the one at the end.",
+    "Squares 1, 2, 3, 4 form a ring around the cube. Going round the ring, 1 is opposite 3 and 2 is opposite 4. Squares 5 and 6 become the remaining pair, top and bottom. So the shaded square 1 is opposite square 3."
+  ],
+  "solutions": {
+    "reliable": "The column of four squares wraps into a ring around the cube. Walk around that ring: 1, 2, 3, 4, then back to 1. Two faces are opposite when they are two steps apart in the ring, so 1 faces 3 and 2 faces 4. The two flaps, 5 and 6, take the last pair of opposite faces. The shaded square 1 is therefore opposite square 3. The transferable idea: find the ring of four first, then read opposites two apart.",
+    "elegant": "In any cube net, two squares two apart in a straight strip always land opposite each other, so you can read the answer without folding anything."
+  },
+  "whyOnTest": "Nets separate students who track one face through the fold from students who judge by how far apart the squares look on the page.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0010",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Sam has only 2-cent and 5-cent coins. What is the largest amount under 15 cents that he cannot make exactly?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1 cent",
+      "correct": false,
+      "misconception": "I found the smallest amount that cannot be made rather than the largest one."
+    },
+    {
+      "key": "B",
+      "text": "3 cents",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "7 cents",
+      "correct": false,
+      "misconception": "I did not notice that 7 is 2 plus 5, so I marked it as impossible without testing it."
+    },
+    {
+      "key": "D",
+      "text": "9 cents",
+      "correct": false,
+      "misconception": "I only tried using coins of one kind at a time and never mixed the two denominations."
+    },
+    {
+      "key": "E",
+      "text": "13 cents",
+      "correct": false,
+      "misconception": "I assumed odd amounts are impossible because one of the coins is even."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-06",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "List every amount from 1 to 14 and test it.",
+    "Go through the amounts in order and ask whether each can be built from twos and fives. Once you can make two amounts in a row, everything after them follows by adding twos.",
+    "1 no, 2 yes, 3 no, 4 yes, 5 yes, 6 yes, 7 = 2 + 5 yes, and from 4 onwards every amount works because you can add twos. So the largest impossible amount is 3."
+  ],
+  "solutions": {
+    "reliable": "Test the amounts in order: 1 no, 2 yes, 3 no, 4 yes (2+2), 5 yes, 6 yes, 7 yes (2+5), 8 yes, 9 yes (2+2+5). Once 4 and 5 are both possible, every larger amount is possible too, because you can keep adding 2. So the largest amount that cannot be made is 3 cents. The transferable idea: once two consecutive amounts work, all larger ones do.",
+    "elegant": "With coins of 2 and 5 the only unreachable amounts are 1 and 3, because every number from 4 upwards is 4 or 5 plus a multiple of 2."
+  },
+  "whyOnTest": "It looks like a coin question but is really systematic listing with a stopping argument, which is the skill being tested.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

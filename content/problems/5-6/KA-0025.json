@@ -1,0 +1,68 @@
+{
+  "id": "KA-0025",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Four beads - one red, one green, one blue, one yellow - are threaded on a circular bracelet. Two bracelets are the same if one can be rotated into the other. How many different bracelets are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I also treated bracelets that are mirror images as the same, but only rotations were allowed."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I divided the number of beads by itself rather than dividing the number of arrangements by the number of rotations."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I divided the 24 arrangements by 2 instead of by the 4 rotations of a circle of four beads."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted every arrangement in a line and forgot that rotating a bracelet gives the same bracelet."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-05",
+      "GEO-08"
+    ]
+  },
+  "hints": [
+    "Count the arrangements first, then divide.",
+    "Count all the ways to place four different beads in four positions, then work out how many of those arrangements are just rotations of each other. Each bracelet appears once per rotation.",
+    "There are 4 x 3 x 2 x 1 = 24 arrangements in a line. A circle of four positions has 4 rotations, and every arrangement is counted once per rotation, so 24 divided by 4 = 6."
+  ],
+  "solutions": {
+    "reliable": "First count arrangements as if the positions were fixed: 4 x 3 x 2 x 1 = 24. Now notice that rotating a bracelet by one, two or three positions gives the same bracelet, so each genuine bracelet has been counted 4 times. Divide: 24 divided by 4 = 6. The transferable idea: overcount deliberately, then divide by exactly how many times each object was counted.",
+    "elegant": "Hold the red bead fixed and arrange the other three around it: 3 x 2 x 1 = 6, with no division needed."
+  },
+  "whyOnTest": "Counting up to symmetry is a genuine 5-point idea, and it is the first place students meet a deliberate overcount-and-correct.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0035",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Eight people meet and everyone shakes hands with everyone else exactly once. How many handshakes take place?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "16",
+      "correct": false,
+      "misconception": "I doubled the number of people, as if each person made two handshakes in total."
+    },
+    {
+      "key": "B",
+      "text": "28",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": false,
+      "misconception": "I let each person shake hands with all eight people including themselves before halving."
+    },
+    {
+      "key": "D",
+      "text": "56",
+      "correct": false,
+      "misconception": "I multiplied 8 by 7 and forgot that each handshake was counted from both sides."
+    },
+    {
+      "key": "E",
+      "text": "64",
+      "correct": false,
+      "misconception": "I multiplied 8 by 8, counting every ordered pair including a person with themselves."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-08",
+    "secondary": [
+      "CNT-06"
+    ]
+  },
+  "hints": [
+    "Each handshake involves two people.",
+    "Count how many hands each person shakes, multiply by the number of people, and then correct for the fact that every handshake has been counted twice, once from each side.",
+    "Each of the 8 people shakes 7 hands, giving 8 x 7 = 56, but each handshake was counted twice, so the answer is 56 divided by 2 = 28."
+  ],
+  "solutions": {
+    "reliable": "Each of the 8 people shakes hands with the other 7, which gives 8 x 7 = 56 - but that counts every handshake twice, once from each participant. Halving gives 28. The transferable idea: when each object is counted once from each end, divide by two.",
+    "elegant": "A handshake is a choice of 2 people from 8, and there are 8 x 7 divided by 2 = 28 such pairs."
+  },
+  "whyOnTest": "The handshake shape reappears as lines between points and games in a league, and forgetting to halve is the universal error.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

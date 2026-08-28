@@ -1,0 +1,67 @@
+{
+  "id": "KA-0023",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A password is one letter from A, B, C followed by two digits from 1 to 5. Digits may repeat. How many passwords are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "13",
+      "correct": false,
+      "misconception": "I added the number of options at each step instead of multiplying them."
+    },
+    {
+      "key": "B",
+      "text": "30",
+      "correct": false,
+      "misconception": "I treated the two digits as one choice of ten rather than two independent choices of five."
+    },
+    {
+      "key": "C",
+      "text": "60",
+      "correct": false,
+      "misconception": "I assumed the two digits had to be different, so I used 5 times 4 for them."
+    },
+    {
+      "key": "D",
+      "text": "75",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "125",
+      "correct": false,
+      "misconception": "I used 5 choices for the letter position as well, forgetting there are only three letters."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-03",
+    "secondary": [
+      "CNT-05"
+    ]
+  },
+  "hints": [
+    "Count the options at each position.",
+    "The three positions are chosen independently, so multiply the number of options at each one. Repeats are allowed, so the digit count does not shrink for the second digit.",
+    "3 letters times 5 digits times 5 digits = 75."
+  ],
+  "solutions": {
+    "reliable": "There are three independent positions. The letter has 3 options; the first digit has 5; the second digit also has 5, because repeats are allowed. Multiply: 3 x 5 x 5 = 75. The transferable idea: independent choices multiply, and repeats allowed means the count does not drop for later positions.",
+    "elegant": null
+  },
+  "whyOnTest": "The multiplication principle is the backbone of contest counting, and adding instead of multiplying is the most common single error in the strand.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

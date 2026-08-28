@@ -1,0 +1,68 @@
+{
+  "id": "KA-0004",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Four road signs are shown. Exactly one of them has two lines of symmetry. Which one is it?",
+  "figure": {
+    "component": "SymmetryCandidates",
+    "alt": "Four outlined shapes side by side, labelled A to D: a plain rectangle, an isosceles triangle, a five-pointed star, and an arrow pointing right."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "the rectangle",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "the isosceles triangle",
+      "correct": false,
+      "misconception": "I found the vertical fold that works and assumed a second one must work as well without testing it."
+    },
+    {
+      "key": "C",
+      "text": "the star",
+      "correct": false,
+      "misconception": "I saw that the star looks very symmetric and picked it without counting how many lines of symmetry it actually has."
+    },
+    {
+      "key": "D",
+      "text": "the arrow",
+      "correct": false,
+      "misconception": "I counted the horizontal fold and then counted the vertical one too, even though the two halves do not match."
+    },
+    {
+      "key": "E",
+      "text": "none of them",
+      "correct": false,
+      "misconception": "I only tested vertical folds on every shape and concluded that no shape had two lines."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-08",
+    "secondary": []
+  },
+  "hints": [
+    "Try folding each shape every way you can.",
+    "A line of symmetry has to make the two halves land exactly on each other. Test the vertical fold, the horizontal fold, and both diagonals on every shape.",
+    "The rectangle folds along its vertical midline and along its horizontal midline, so it has two. Its diagonals do not work unless it is a square. The triangle has one, the star has five, the arrow has one."
+  ],
+  "solutions": {
+    "reliable": "Test the candidate folds one at a time on each shape: vertical, horizontal, and the two diagonals. The rectangle matches on the vertical and the horizontal midlines but not on its diagonals, so it has exactly two. The isosceles triangle has one, the five-pointed star has five, and the arrow has one. The transferable idea: check every candidate fold rather than judging by how symmetric a shape looks.",
+    "elegant": null
+  },
+  "whyOnTest": "Symmetry questions are graded by whether a student tests the folds or eyeballs the picture, and eyeballing fails on the rectangle every time.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,71 @@
+{
+  "id": "KA-0020",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A square sheet is folded in half top to bottom, then in half left to right. One hole is punched through all the layers. How many holes are in the unfolded sheet?",
+  "figure": {
+    "component": "FoldPunchSquare",
+    "alt": "Three steps in a row: a square sheet, the same sheet folded in half top to bottom into a wide rectangle, and that rectangle folded in half left to right into a small square with a single punched hole near its centre."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I forgot that the punch goes through every layer at once, not just the top one."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I undid only one of the two folds before counting the holes."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I doubled for the first fold and then added two more rather than doubling a second time."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted a fold that was never made, doubling three times instead of twice."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-15",
+    "secondary": [
+      "GEO-08",
+      "GEO-09"
+    ]
+  },
+  "hints": [
+    "Unfold one fold at a time, in reverse order.",
+    "Each fold doubles the number of layers, so a punch through all layers makes one hole per layer. Undo the folds in reverse order and mirror the holes across each fold line.",
+    "Two folds make 2 x 2 = 4 layers, so the punch passes through 4 layers and leaves 4 holes, arranged symmetrically about both fold lines."
+  ],
+  "solutions": {
+    "reliable": "Count the layers. The first fold gives 2 layers, the second gives 4. A punch through all of them makes one hole in each layer, so the unfolded sheet has 4 holes. Unfolding in reverse confirms the arrangement: undoing the left-right fold mirrors the single hole into two, and undoing the top-bottom fold mirrors those two into four. The transferable idea: count layers, then unfold in reverse order to place the holes.",
+    "elegant": "Each fold doubles the layers, so n folds punched through give 2 to the power n holes; two folds give 4."
+  },
+  "whyOnTest": "Folding questions test reversing a process step by step, the same habit that solves working-backwards problems.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

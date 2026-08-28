@@ -1,0 +1,67 @@
+{
+  "id": "KA-0011",
+  "band": "3-4",
+  "points": 4,
+  "statement": "The four-digit number 27_4 is divisible by 3. Which digit could go in the gap?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I added the known digits to get 13 and then checked whether the missing digit itself was a multiple of 3."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I chose 3 because the question mentioned dividing by 3, without testing the digit sum at all."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I tested the last two digits, which is the rule for 4, not the rule for 3."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I added the digits but left out the 4 at the end, so my sum was four too small."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "NUM-02"
+    ]
+  },
+  "hints": [
+    "Add the digits you already know.",
+    "A number is divisible by 3 exactly when its digits add to a multiple of 3. Add the three known digits, then ask what the missing digit must be to push the total onto a multiple of 3.",
+    "2 + 7 + 4 = 13. The next multiple of 3 above 13 is 15, so the missing digit is 2. (8 would also work, but it is not offered.)"
+  ],
+  "solutions": {
+    "reliable": "The test for 3 is the digit sum. The known digits give 2 + 7 + 4 = 13, so the full digit sum is 13 plus the missing digit. For that to be a multiple of 3 the missing digit must be 2, giving 15, or 5, giving 18, or 8, giving 21. Only 2 is among the choices. The transferable idea: convert a divisibility question into a question about the digit sum.",
+    "elegant": null
+  },
+  "whyOnTest": "Divisibility rules are pure speed on a timed paper, and the common failure is testing the missing digit instead of the whole digit sum.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0013",
+  "band": "3-4",
+  "points": 3,
+  "statement": "The L-shaped figure is made of unit squares. What is its perimeter?",
+  "figure": {
+    "component": "LShapeUnits",
+    "alt": "An L-shaped figure made of unit squares: a vertical column 3 squares tall and 1 square wide, with 2 extra squares attached along the bottom to the right, so the shape covers 5 unit squares in total."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I counted the unit squares that make up the shape, which is the area rather than the perimeter."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I walked around the outline but skipped the two short steps at the inner corner."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": false,
+      "misconception": "I added the perimeters of the two rectangles the shape is made of, counting the shared edge twice."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I counted the edges of all five unit squares, which counts every internal edge as well."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": []
+  },
+  "hints": [
+    "Walk right around the outline, counting unit edges.",
+    "Perimeter is the total length of the boundary, so trace the outside of the shape and count how many unit edges you cross, including the two edges at the step.",
+    "Walk round the outline from the bottom-left corner: 3 up, 1 right, 2 down, 2 right, 1 down, 3 left. That is 3 + 1 + 2 + 2 + 1 + 3 = 12 unit edges."
+  ],
+  "solutions": {
+    "reliable": "Trace the boundary once, counting unit edges as you go. Starting at the bottom-left corner and going up the tall side: 3 up, 1 right, 2 down, 2 right, 1 down, 3 left back to the start. That is 3 + 1 + 2 + 2 + 1 + 3 = 12 unit edges, so the perimeter is 12. The transferable idea: trace the outline once and count edges, rather than adding rectangle perimeters.",
+    "elegant": null
+  },
+  "whyOnTest": "Perimeter and area get confused constantly, and rectilinear shapes with a step are where that confusion shows up on the paper.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

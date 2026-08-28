@@ -1,0 +1,65 @@
+{
+  "id": "KA-0002",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Ana adds up the first seven odd numbers: 1 + 3 + 5 + 7 + 9 + 11 + 13. Is her total odd or even, and what is it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "odd, 47",
+      "correct": false,
+      "misconception": "I decided that adding odd numbers always keeps the total odd, and made an arithmetic slip as well."
+    },
+    {
+      "key": "B",
+      "text": "odd, 49",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "even, 48",
+      "correct": false,
+      "misconception": "I paired the numbers up and forgot that with seven numbers one is left over, so I expected an even total."
+    },
+    {
+      "key": "D",
+      "text": "even, 49",
+      "correct": false,
+      "misconception": "I added correctly but then labelled 49 as even because I had already decided the pairs would make it even."
+    },
+    {
+      "key": "E",
+      "text": "odd, 45",
+      "correct": false,
+      "misconception": "I added only the first six numbers and stopped before including the thirteen."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": []
+  },
+  "hints": [
+    "Pair the numbers from the outside in.",
+    "Odd plus odd is even, so pairs of odd numbers give an even total. Seven numbers make three pairs with one number spare, and that spare number decides the parity.",
+    "Pair 1 with 13, 3 with 11, 5 with 9. Each pair makes 14, giving 42, and the 7 in the middle is left over. 42 + 7 = 49, which is odd because an even total plus one odd number is odd."
+  ],
+  "solutions": {
+    "reliable": "Pair the first with the last: 1 + 13 = 14, 3 + 11 = 14, 5 + 9 = 14. That is three pairs making 42, and 7 sits alone in the middle. The total is 42 + 7 = 49. Since 42 is even and 7 is odd, the answer is odd. The transferable idea: pairing from the outside in turns a long sum into a short multiplication.",
+    "elegant": "The sum of the first n odd numbers is always n squared, so seven odd numbers add to 49 - and a square of an odd number is odd."
+  },
+  "whyOnTest": "It rewards pairing over grinding, and it punishes the belief that a pile of odd numbers must add to something odd.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

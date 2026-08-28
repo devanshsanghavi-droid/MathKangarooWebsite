@@ -1,0 +1,67 @@
+{
+  "id": "KA-0014",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Beads are threaded in the repeating order red, green, blue, yellow. What colour is the 30th bead?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "red",
+      "correct": false,
+      "misconception": "I got a remainder of 2 but started counting the colours at zero, which shifted me back one bead."
+    },
+    {
+      "key": "B",
+      "text": "green",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "blue",
+      "correct": false,
+      "misconception": "I counted the seven whole repeats and then counted three more beads instead of two."
+    },
+    {
+      "key": "D",
+      "text": "yellow",
+      "correct": false,
+      "misconception": "I divided 30 by 4, got 7 remainder 2, and used the last colour of a repeat as though the remainder were zero."
+    },
+    {
+      "key": "E",
+      "text": "it depends where you start",
+      "correct": false,
+      "misconception": "I thought the repeating pattern had no fixed starting point, even though bead one is given."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "The pattern repeats every four beads.",
+    "Divide the position by the length of one repeat and keep the remainder, not the quotient. The remainder tells you how far into a fresh repeat you have landed.",
+    "30 divided by 4 is 7 remainder 2. Seven whole repeats use 28 beads, so bead 29 is red and bead 30 is green, the second colour of the repeat."
+  ],
+  "solutions": {
+    "reliable": "One repeat is four beads: position 1 red, 2 green, 3 blue, 4 yellow. Divide 30 by 4 to get 7 remainder 2, so bead 30 sits at position 2 of a repeat, which is green. Note the edge case: a remainder of 0 would mean the last colour of a repeat, not the first. The transferable idea: the remainder gives the position inside the cycle.",
+    "elegant": null
+  },
+  "whyOnTest": "Cycle questions turn a huge position into one division, and reading the remainder is what separates a correct answer from a near miss.",
+  "estSeconds": 65,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

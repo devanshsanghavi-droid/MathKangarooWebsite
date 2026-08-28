@@ -1,0 +1,67 @@
+{
+  "id": "KA-0026",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A jacket costs 80 euros. Its price is reduced by 25%. What is the new price?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20",
+      "correct": false,
+      "misconception": "I worked out the size of the discount and gave that as the new price instead of subtracting it."
+    },
+    {
+      "key": "B",
+      "text": "40",
+      "correct": false,
+      "misconception": "I treated a quarter off as half off and took the price down to 40."
+    },
+    {
+      "key": "C",
+      "text": "45",
+      "correct": false,
+      "misconception": "I applied the 25% reduction twice, taking 80 down to 60 and then 60 down to 45."
+    },
+    {
+      "key": "D",
+      "text": "55",
+      "correct": false,
+      "misconception": "I subtracted 25 euros rather than 25 percent, treating the percentage as an amount of money."
+    },
+    {
+      "key": "E",
+      "text": "60",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-10",
+    "secondary": [
+      "NUM-09"
+    ]
+  },
+  "hints": [
+    "A quarter off means three quarters left.",
+    "Either find 25% and subtract it, or find 75% of the price directly. The second route is one step and avoids reporting the discount as though it were the price.",
+    "25% of 80 is 20, so the new price is 80 - 20 = 60. Equivalently, 75% of 80 is 60."
+  ],
+  "solutions": {
+    "reliable": "25% of 80 is 80 divided by 4, which is 20. Take that off the original price: 80 - 20 = 60 euros. The transferable idea: reducing by 25% is the same as keeping 75%, and computing what remains directly avoids reporting the discount by mistake.",
+    "elegant": "Keeping three quarters of 80 gives 60 in a single step, with no subtraction at all."
+  },
+  "whyOnTest": "Percentage questions are frequently answered with the discount rather than the price, and the choices here make that mistake reachable.",
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

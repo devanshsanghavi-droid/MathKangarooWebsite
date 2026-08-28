@@ -1,0 +1,70 @@
+{
+  "id": "KA-0015",
+  "band": "3-4",
+  "points": 3,
+  "statement": "The chart shows how many pets four children own. How many more pets does Mia own than Leo?",
+  "figure": {
+    "component": "PetsBarChart",
+    "alt": "A bar chart with four bars labelled Ana, Leo, Mia and Sam. The vertical axis is marked in steps of 2 from 0 to 10. The bars reach 4, 2, 8 and 6 respectively."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I read the vertical scale as going up in ones instead of in twos."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted the gridlines between the two bar tops instead of reading the values off the scale."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I gave Mia's total instead of the difference between Mia and Leo."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I added the two amounts together rather than subtracting to find how many more."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-09",
+    "secondary": [
+      "NUM-13"
+    ]
+  },
+  "hints": [
+    "Check what one step on the scale is worth.",
+    "Read the axis before reading the bars. Once you know what one gridline is worth, read both bars and subtract, because the question asks how many more, not how many.",
+    "Each step on the axis is 2 pets. Mia's bar reaches 8 and Leo's reaches 2, so Mia has 8 - 2 = 6 more pets."
+  ],
+  "solutions": {
+    "reliable": "Read the scale first: the axis goes up in twos, so a bar reaching the fourth gridline means 8. Mia is at 8, Leo is at 2. The question asks how many more, so subtract: 8 - 2 = 6. The transferable idea: read the axis, then the bars, then the exact question.",
+    "elegant": null
+  },
+  "whyOnTest": "Chart questions are lost on the scale and on the word more, not on the arithmetic, and both traps are live here.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

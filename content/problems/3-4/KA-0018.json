@@ -1,0 +1,68 @@
+{
+  "id": "KA-0018",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A three-digit code uses only the digits 1, 2 and 3, and digits may repeat. How many such codes contain at least one 3?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the codes that avoid 3 entirely and gave that as my answer without subtracting."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted the codes with a 3 in the first position only and forgot the other two positions."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted the codes with exactly one 3 and forgot the ones with two or three of them."
+    },
+    {
+      "key": "D",
+      "text": "19",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I counted every possible code and forgot to remove the ones with no 3 at all."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-09",
+    "secondary": [
+      "CNT-03",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Count the codes with no 3 at all.",
+    "At least one is a signal to count the opposite. Find how many codes avoid the digit 3 completely, then take that away from the total number of codes.",
+    "There are 3 x 3 x 3 = 27 codes altogether. Codes using only 1 and 2 number 2 x 2 x 2 = 8. So codes containing at least one 3 number 27 - 8 = 19."
+  ],
+  "solutions": {
+    "reliable": "Count everything, then remove what you do not want. Each of the three positions has 3 choices, so there are 27 codes in total. Codes with no 3 use only 1 and 2, so there are 8 of them. Codes with at least one 3 number 27 - 8 = 19. The transferable idea: at least one almost always means count the complement.",
+    "elegant": null
+  },
+  "whyOnTest": "At least one is the standard trigger for complementary counting; counting the wanted cases directly here means three overlapping cases and a wrong answer.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

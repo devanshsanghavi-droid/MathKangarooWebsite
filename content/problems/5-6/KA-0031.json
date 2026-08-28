@@ -1,0 +1,71 @@
+{
+  "id": "KA-0031",
+  "band": "5-6",
+  "points": 5,
+  "statement": "On the street grid shown you may only walk right or down. One junction is closed. How many routes go from the top-left corner to the bottom-right corner?",
+  "figure": {
+    "component": "BlockedGridPaths",
+    "alt": "A grid of streets with junctions arranged 4 across and 4 down. The junction one step right and one step down from the top-left corner is marked closed with a cross."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I assumed closing one junction removes about half the routes and halved the total of 20."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted the routes that pass through the closed junction and gave that instead of the ones that avoid it."
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": false,
+      "misconception": "I subtracted only the 2 routes that reach the closed junction, not all the routes that continue through it."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted every route on the open grid and forgot to remove the ones through the closed junction."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-07",
+    "secondary": [
+      "CNT-03",
+      "GEO-02"
+    ]
+  },
+  "hints": [
+    "Write a number into every junction.",
+    "The number of routes to a junction is the number of routes to the junction above it plus the number to the junction on its left. A closed junction simply gets a zero and everything downstream follows.",
+    "Fill the grid from the top-left. The top row and left column are all 1, the closed junction is 0, and adding down and across gives 8 at the bottom-right corner."
+  ],
+  "solutions": {
+    "reliable": "Label each junction with the number of routes that reach it. The top-left is 1, and every junction on the top row and the left column is 1 because there is a single way along the edge. Any other junction gets the sum of the junction above and the junction to its left, and the closed junction is set to 0. The rows come out as 1 1 1 1, then 1 0 1 2, then 1 1 2 4, then 1 2 4 8. So there are 8 routes. The transferable idea: build the count up junction by junction, and treat a blockage as a zero.",
+    "elegant": "The open grid has 20 routes. The closed junction is reached by 2 routes and leads onward by 6, so 12 routes pass through it and 20 - 12 = 8 survive."
+  },
+  "whyOnTest": "Grid paths are a classic 5-point figure, and filling the grid is the only method that keeps working once a junction is blocked.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

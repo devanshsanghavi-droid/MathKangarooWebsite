@@ -1,0 +1,70 @@
+{
+  "id": "KA-0003",
+  "band": "3-4",
+  "points": 4,
+  "statement": "A large triangle is cut by two lines from its top corner into three small triangles side by side. How many triangles of any size appear in the picture?",
+  "figure": {
+    "component": "TriangleSplitInThree",
+    "alt": "A large triangle with two straight lines drawn from its top vertex down to the base, dividing it into three small triangles side by side."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only the three small triangles I could see as separate cells and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the three small triangles and added the whole big one, but forgot the two made of two cells."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": false,
+      "misconception": "I found the three small ones and one pair, but missed the second pair of neighbouring triangles."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I assumed every choice of two of the four lines would make a triangle, without checking each one."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-13",
+    "secondary": [
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Count by size: one cell, two cells, three cells.",
+    "Every triangle here is a run of neighbouring small triangles. Count how many runs of length one there are, then length two, then length three.",
+    "Runs of one: 3. Runs of two: the left pair and the right pair, so 2. Runs of three: the whole triangle, so 1. Total 3 + 2 + 1 = 6."
+  ],
+  "solutions": {
+    "reliable": "Number the small triangles 1, 2, 3 from the left. Every triangle in the picture is a block of neighbouring small ones. Blocks of size one: 1, 2, 3 - that is three. Blocks of size two: 1-2 and 2-3 - that is two. Blocks of size three: 1-2-3 - that is one. In total 3 + 2 + 1 = 6. The transferable idea: counting by size stops you missing the middle sizes.",
+    "elegant": "Any triangle is fixed by choosing two of the four lines from the top corner, and there are 4 times 3 divided by 2 = 6 such choices."
+  },
+  "whyOnTest": "Hidden-shape counting is a Kangaroo staple, and the standard error is stopping at the shapes that are drawn as separate cells.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

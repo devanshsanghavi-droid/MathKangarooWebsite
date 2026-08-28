@@ -1,0 +1,70 @@
+{
+  "id": "KA-0001",
+  "band": "3-4",
+  "points": 3,
+  "statement": "A 3 by 3 board is drawn. How many 2 by 2 squares can be found on it, if they must line up with the grid?",
+  "figure": {
+    "component": "BoardThreeByThree",
+    "alt": "A square board divided into a 3 by 3 arrangement of nine equal small squares."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I split the board into separate 2 by 2 blocks and only one whole block fitted, so I answered one."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I slid the square across the top row and found two positions, then forgot it can also move down."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the four sliding positions and then added the two whole rows of the board as well."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted the nine small squares on the board instead of the 2 by 2 squares."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-12",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Slide the small square one step at a time.",
+    "A 2 by 2 square is fixed by where its top-left corner sits. Count the corner positions instead of trying to see every square at once.",
+    "The top-left corner of a 2 by 2 square can sit in the left or middle column, and in the top or middle row. That is 2 times 2, so 4 positions in total."
+  ],
+  "solutions": {
+    "reliable": "Fix the 2 by 2 square by its top-left corner. That corner must leave room for one more column to the right and one more row below, so it can sit in 2 of the 3 columns and 2 of the 3 rows. That gives 2 times 2 = 4 positions. The transferable idea: count the positions of one corner, not the shapes.",
+    "elegant": "On an n by n board the number of 2 by 2 squares is (n-1) squared, because each of the two directions loses exactly one position at the edge."
+  },
+  "whyOnTest": "Students who cut a board into blocks instead of sliding a window undercount every question of this shape.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

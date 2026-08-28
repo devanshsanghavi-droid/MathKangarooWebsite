@@ -1,0 +1,71 @@
+{
+  "id": "KA-0034",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A 4 by 4 board has two opposite corner squares removed, leaving 14 squares. Each domino covers exactly two squares that share an edge. Can 7 dominoes cover the board?",
+  "figure": {
+    "component": "BoardMissingCorners",
+    "alt": "A 4 by 4 chessboard-style grid coloured in alternating light and dark squares, with the top-left and bottom-right squares removed. Both removed squares were the same colour."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "Yes, and there is exactly one way",
+      "correct": false,
+      "misconception": "I assumed that because 14 is even, seven dominoes must fit somehow."
+    },
+    {
+      "key": "B",
+      "text": "Yes, and there are several ways",
+      "correct": false,
+      "misconception": "I tried a few arrangements, got most of the board covered, and assumed a full covering existed."
+    },
+    {
+      "key": "C",
+      "text": "No, because 14 is not divisible by 2",
+      "correct": false,
+      "misconception": "I claimed the right answer for the wrong reason, since 14 is in fact divisible by 2."
+    },
+    {
+      "key": "D",
+      "text": "It depends which corners are removed",
+      "correct": false,
+      "misconception": "I thought removing a different pair of opposite corners could change the colour balance, but opposite corners always share a colour."
+    },
+    {
+      "key": "E",
+      "text": "No, because the colours do not balance",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-07",
+    "secondary": [
+      "LOG-05",
+      "GEO-14"
+    ]
+  },
+  "hints": [
+    "Colour the board like a chessboard.",
+    "A domino always covers one light and one dark square, whatever way it is placed. Count how many of each colour the board has after the corners are removed.",
+    "The full board has 8 light and 8 dark squares. Opposite corners are the same colour, so removing them leaves 8 of one colour and 6 of the other. Seven dominoes would need 7 of each."
+  ],
+  "solutions": {
+    "reliable": "Colour the board like a chessboard. Whichever way a domino is laid, it covers exactly one light and one dark square, so seven dominoes must cover 7 light and 7 dark squares. The full board has 8 of each, and the two removed corners are the same colour because opposite corners always are. That leaves 8 of one colour and 6 of the other, which no set of dominoes can cover. So it is impossible. The transferable idea: choose a colouring that forces every piece to cover a fixed mixture, then count.",
+    "elegant": "Every domino is colour-balanced, so any coverable region must be too; removing two same-coloured squares destroys that balance immediately."
+  },
+  "whyOnTest": "Colouring arguments prove impossibility in one line where trial and error can run forever, and this is the canonical example.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

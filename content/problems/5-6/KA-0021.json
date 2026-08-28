@@ -1,0 +1,67 @@
+{
+  "id": "KA-0021",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Today is Tuesday. What day of the week will it be in 100 days?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Monday",
+      "correct": false,
+      "misconception": "I found the remainder 2 but counted the two days starting from today rather than starting from tomorrow."
+    },
+    {
+      "key": "B",
+      "text": "Tuesday",
+      "correct": false,
+      "misconception": "I divided 100 by 7 and used the quotient of 14, treating the leftover days as if there were none."
+    },
+    {
+      "key": "C",
+      "text": "Wednesday",
+      "correct": false,
+      "misconception": "I remembered there was a remainder but used a remainder of 1 instead of working it out."
+    },
+    {
+      "key": "D",
+      "text": "Thursday",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "Friday",
+      "correct": false,
+      "misconception": "I counted 100 divided by 7 as 14 remainder 3 instead of remainder 2."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "Days repeat every seven.",
+    "Only the remainder when you divide by 7 matters, because 7 days always brings you back to the same weekday. Work out that remainder and count that many days forward.",
+    "100 divided by 7 is 14 remainder 2. Fourteen whole weeks land back on Tuesday, and 2 more days is Thursday."
+  ],
+  "solutions": {
+    "reliable": "Weekdays repeat every 7 days, so divide 100 by 7: that is 14 remainder 2. The 14 whole weeks bring you back to Tuesday, and then 2 more days gives Wednesday, Thursday. The answer is Thursday. The transferable idea: with anything cyclic, throw away the whole cycles and keep only the remainder.",
+    "elegant": null
+  },
+  "whyOnTest": "Calendar questions are remainder questions in disguise, and using the quotient instead of the remainder is the standard slip.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

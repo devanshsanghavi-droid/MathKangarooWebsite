@@ -1,0 +1,70 @@
+{
+  "id": "KA-0008",
+  "band": "3-4",
+  "points": 3,
+  "statement": "The first three patterns are made of dots and follow a rule. How many dots will the fifth pattern have?",
+  "figure": {
+    "component": "DotStages",
+    "alt": "Three dot patterns in a row. The first has one column of 2 dots with a single dot above it, making 3. The second has two columns of 2 dots with a single dot above, making 5. The third has three columns of 2 dots with a single dot above, making 7."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I continued the pattern to the fourth stage and stopped one stage early."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted only the columns of two and forgot the single dot sitting on top of each pattern."
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": false,
+      "misconception": "I continued the pattern one stage too far and gave the sixth pattern instead of the fifth."
+    },
+    {
+      "key": "E",
+      "text": "14",
+      "correct": false,
+      "misconception": "I doubled the third pattern's count, assuming the pattern doubles rather than grows by a fixed amount."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "Write the counts down as numbers first.",
+    "Turn the pictures into a list of numbers, then look at the difference between one number and the next. A steady difference means you can count on rather than draw.",
+    "The counts are 3, 5, 7, so each stage adds 2. Stage four is 9 and stage five is 11."
+  ],
+  "solutions": {
+    "reliable": "Write the dot counts as a list: 3, 5, 7. Each pattern adds one more column of 2 dots, so the counts go on 9 and then 11. The fifth pattern has 11 dots. The transferable idea: convert a picture pattern into numbers before you look for the rule.",
+    "elegant": "Stage n is n columns of 2 dots plus a single dot on top, so it has 2n + 1 dots, giving 11 at stage five."
+  },
+  "whyOnTest": "It checks whether a student reads the picture into numbers, which is the step that makes every later pattern question tractable.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

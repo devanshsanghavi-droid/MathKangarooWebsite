@@ -1,0 +1,68 @@
+{
+  "id": "KA-0044",
+  "band": "5-6",
+  "points": 4,
+  "statement": "One tap fills a tank in 6 hours and another fills it in 3 hours. With both running, how long does the tank take to fill?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1 hour",
+      "correct": false,
+      "misconception": "I subtracted the two times from each other rather than adding the rates."
+    },
+    {
+      "key": "B",
+      "text": "2 hours",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "4.5 hours",
+      "correct": false,
+      "misconception": "I averaged the two times, which would only be right if the taps took turns instead of running together."
+    },
+    {
+      "key": "D",
+      "text": "9 hours",
+      "correct": false,
+      "misconception": "I added the two times together, which makes the tank slower with two taps than with one."
+    },
+    {
+      "key": "E",
+      "text": "3 hours",
+      "correct": false,
+      "misconception": "I used the faster tap's time alone and ignored the contribution of the slower one."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-04",
+    "secondary": [
+      "MOD-03",
+      "NUM-09"
+    ]
+  },
+  "hints": [
+    "Ask how much each tap fills in one hour.",
+    "Work in tanks per hour rather than hours per tank. Add the two hourly amounts to get how much the pair fills in an hour, then turn that back into a time.",
+    "In one hour the first tap fills one sixth and the second fills one third, which is two sixths. Together that is three sixths, or half the tank, so the whole tank takes 2 hours."
+  ],
+  "solutions": {
+    "reliable": "Switch to rates. In one hour the first tap fills 1/6 of the tank and the second fills 1/3 = 2/6. Together they fill 3/6 = 1/2 of the tank per hour, so the full tank takes 2 hours. Sanity check: two taps must be faster than the faster tap alone, and 2 hours is less than 3. The transferable idea: add rates, never times.",
+    "elegant": "The second tap is twice as fast as the first, so together they work at three times the first tap's rate and take a third of its 6 hours."
+  },
+  "whyOnTest": "Adding times instead of rates produces an answer slower than one tap alone, and spotting that absurdity is itself the lesson.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

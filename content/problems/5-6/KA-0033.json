@@ -1,0 +1,67 @@
+{
+  "id": "KA-0033",
+  "band": "5-6",
+  "points": 4,
+  "statement": "The mean of five numbers is 12. One of the numbers is removed and the mean of the remaining four is 11. What number was removed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I subtracted the two means from each other and gave the difference as the removed number."
+    },
+    {
+      "key": "B",
+      "text": "11",
+      "correct": false,
+      "misconception": "I assumed the removed number must be the new mean, since the mean dropped to 11."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I assumed removing a number equal to the old mean is what changes the mean."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "23",
+      "correct": false,
+      "misconception": "I added the two totals instead of subtracting one from the other."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-15",
+    "secondary": [
+      "LOG-08"
+    ]
+  },
+  "hints": [
+    "Turn each mean into a total.",
+    "A mean and a count give you a total. Find the total before the removal and the total after it; the difference between those totals is the number that left.",
+    "Five numbers with mean 12 total 60. Four numbers with mean 11 total 44. The removed number is 60 - 44 = 16."
+  ],
+  "solutions": {
+    "reliable": "Convert both means into totals. Five numbers averaging 12 have a total of 5 x 12 = 60. The remaining four averaging 11 have a total of 4 x 11 = 44. The number removed is 60 - 44 = 16. The transferable idea: a mean is only useful once you turn it into a total.",
+    "elegant": "Removing the number dropped the mean of the other four by 1 each, so it carried 12 plus 4 extra, which is 16."
+  },
+  "whyOnTest": "Contest questions almost always use the mean backwards, and going through totals is the only route that does not guess.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

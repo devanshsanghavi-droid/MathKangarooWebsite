@@ -12,10 +12,12 @@ import { validateContent, type Finding } from './lib/content-rules.ts';
 
 const root = process.cwd();
 
-const result = validateContent({
-  contentDir: join(root, 'content'),
-  figuresDir: join(root, 'src', 'components', 'figures'),
-});
+// CONTENT_DIR / FIGURES_DIR exist so the CLI itself can be exercised against
+// scripts/__fixtures__/ in a test. Nothing in CI sets them.
+const contentDir = process.env.CONTENT_DIR ?? join(root, 'content');
+const figuresDir = process.env.FIGURES_DIR ?? join(root, 'src', 'components', 'figures');
+
+const result = validateContent({ contentDir, figuresDir });
 
 const { findings, counts } = result;
 

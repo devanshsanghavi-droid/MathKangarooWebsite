@@ -52,6 +52,8 @@ export interface Finding {
   message: string;
 }
 
+type AddFinding = (rule: RuleId, file: string, message: string) => void;
+
 export interface ContentBundle {
   skills: Map<string, Skill>;
   problems: Map<string, Problem>;
@@ -169,6 +171,58 @@ export function deriveUnlocks(prerequisites: Map<string, string[]>): Map<string,
   }
   for (const list of unlocks.values()) list.sort();
   return unlocks;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Raw guardrails                                                              */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * The two rules that ARE the product run against the raw JSON, before Zod.
+ *
+ * If they ran after the schema, a missing `alt` or a one-word `misconception` would surface
+ * as a generic "string too short" and the author would never read the sentence explaining
+ * why the field exists. Running first costs one extra pass and buys a failure message that
+ * teaches. Both rules are re-expressed in the schema, so neither can slip through.
+ */
+function rawProblemGuardrails(value: unknown, file: string, add: AddFinding): void {
+  if (typeof value !== 'object' || value === null) return;
+  const record = value as Record<string, unknown>;
+
+  const choices = record.choices;
+  if (Array.isArray(choices)) {
+    for (const entry of choices) {
+      if (typeof entry !== 'object' || entry === null) continue;
+      const choice = entry as Record<string, unknown>;
+      const key = typeof choice.key === 'string' ? choice.key : '?';
+      const isCorrect = choice.correct === true;
+      const misconception = choice.misconception;
+      const written = typeof misconception === 'string' && misconception.trim().length > 0;
+      if (!isCorrect && !written) {
+        add(
+          'problem/misconception-required',
+          file,
+          `choice ${key} is incorrect and has no misconception. Distractor-specific feedback ` +
+            'is the product: write the student thinking that produces this answer, in the ' +
+            "student's own voice.",
+        );
+      }
+    }
+  }
+
+  const figure = record.figure;
+  if (figure && typeof figure === 'object') {
+    const alt = (figure as Record<string, unknown>).alt;
+    const text = typeof alt === 'string' ? alt.trim() : '';
+    if (text.length < 20) {
+      add(
+        'problem/figure-alt-required',
+        file,
+        'figure is present but its alt text is missing, blank, or too short. Describe what a ' +
+          'sighted solver EXTRACTS from the figure, not what it looks like.',
+      );
+    }
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -293,6 +347,8 @@ export function validateContent(options: ValidateOptions): ValidateResult {
       add('schema/json-parse', file, `not valid JSON — ${raw.message}`);
       continue;
     }
+    rawProblemGuardrails(raw.value, file, add);
+
     const parsed = ProblemSchema.safeParse(raw.value);
     if (!parsed.success) {
       add('schema/problem', file, formatZodIssues(parsed.error));
@@ -340,19 +396,9 @@ export function validateContent(options: ValidateOptions): ValidateResult {
       add('problem/choice-keys', file, `choice keys must be exactly A–E, found ${keys.join('')}`);
     }
 
-    // GUARDRAIL: every wrong choice explains the thinking that produces it.
+    // The other half of the biconditional: a correct choice carries no misconception.
+    // (The "wrong choice must have one" half runs before the schema, in rawProblemGuardrails.)
     for (const choice of problem.choices) {
-      if (
-        !choice.correct &&
-        (choice.misconception === null || choice.misconception === undefined)
-      ) {
-        add(
-          'problem/misconception-required',
-          file,
-          `choice ${choice.key} is incorrect and has no misconception. Distractor-specific ` +
-            'feedback is the product — write the student thinking that produces this answer.',
-        );
-      }
       if (choice.correct && choice.misconception !== null) {
         add(
           'problem/correct-choice-no-misconception',
@@ -362,17 +408,8 @@ export function validateContent(options: ValidateOptions): ValidateResult {
       }
     }
 
-    // GUARDRAIL: a figure without author-written alt text is not shippable.
+    // The figure component named in the JSON must resolve to a real file.
     if (problem.figure) {
-      const alt = problem.figure.alt?.trim() ?? '';
-      if (alt.length < 20) {
-        add(
-          'problem/figure-alt-required',
-          file,
-          'figure is present but alt text is missing or too short — describe what a sighted ' +
-            'solver extracts, not what the picture looks like',
-        );
-      }
       if (figuresDir) {
         const candidates = [
           join(figuresDir, `${problem.figure.component}.tsx`),

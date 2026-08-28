@@ -7,8 +7,8 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | Milestone | State | Landed |
 |---|---|---|
 | git init + docs baseline | `[x]` | `docs: add project constitution, specs, and build plan` |
-| M0.2 — repo and rails | `[~]` | |
-| M0.3 — content guardrails | `[ ]` | |
+| M0.2 — repo and rails | `[x]` | `rails: scaffold next 15 app, design tokens, content schemas, validation, and CI` |
+| M0.3 — content guardrails | `[x]` | `content: add the five CI guardrails with proving fixtures` |
 | M0.1 — taxonomy (91 skills) | `[ ]` | |
 | seed problem bank | `[ ]` | |
 | M1.1 — app shell | `[ ]` | |
@@ -25,7 +25,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 
 ## M0.2 — Repo and rails
 
-**State:** `[~]`
+**State:** `[x]`
 
 ### Built
 
@@ -90,6 +90,44 @@ No runtime dependency was added outside the stack table.
   access I do not have. Everything they gate on (`CI` as a required check, preview deploys) is
   already defined in `.github/workflows/ci.yml`; they are two clicks once the repo is pushed.
   See "Needs you" at the bottom of this file.
+
+---
+
+## M0.3 — Content guardrails in CI
+
+**State:** `[x]`
+
+### Built
+
+Five guardrails, each with a fixture that must fail, a fixture that must pass, and a Vitest
+assertion on both. Fixtures live in `scripts/__fixtures__/<rule>/{pass,fail}/content/`.
+
+| Rule id | Fails the build when |
+|---|---|
+| `problem/misconception-required` | an incorrect choice has no written misconception |
+| `problem/figure-alt-required` | a problem has a figure and no author-written alt text |
+| `paper/size-cap` | any file in `content/papers/` exceeds 2048 bytes |
+| `problem/duplicate-id`, `skill/duplicate-id` | an id appears in two files |
+| `problem/skill-exists`, `paper/skill-exists` | content points at a skill not in the Atlas |
+
+Two further tests run the real CLI (`scripts/validate-content.ts`) as a subprocess against a
+clean tree and a broken one, asserting exit code 0 and 1. That is what CI depends on, so it
+is what the test exercises — not just the library function underneath it.
+
+### Assumptions made where the spec was ambiguous
+
+1. **The two product-critical rules run BEFORE Zod, not after.** A blank `alt` or an empty
+   `misconception` would otherwise surface as a generic "string too short" and the author
+   would never read the sentence explaining why the field exists. Both rules are still
+   expressed in the schema as well, so neither can slip through if the raw pass is changed.
+2. **The 2KB cap is checked on file size before parsing**, so a file that is both oversized
+   and malformed still reports the tripwire. The cap is commented in three places as an
+   anti-paste tripwire rather than a performance limit, because the next person to hit it
+   will be tempted to raise it.
+3. **`CONTENT_DIR` / `FIGURES_DIR` environment overrides** were added to the CLI purely so a
+   test can point it at a fixture. Nothing in CI sets them.
+4. **Fixtures are excluded from Prettier, ESLint and `tsc`.** They are deliberately malformed;
+   a formatter "fixing" one would silently disarm a guardrail.
 
 ---
 

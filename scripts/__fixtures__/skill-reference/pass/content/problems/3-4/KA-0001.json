@@ -1,0 +1,67 @@
+{
+  "id": "KA-0001",
+  "band": "3-4",
+  "points": 3,
+  "statement": "A fixture problem statement, long enough to satisfy the schema floor.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I only counted the squares that sit on the outer border."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted the rows but forgot to count the final column."
+    },
+    {
+      "key": "C",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted every corner twice because two edges meet there."
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": false,
+      "misconception": "I used the number of gridlines instead of the number of cells."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-01",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Count by rows.",
+    "Every row holds the same number of cells, so count one row and multiply.",
+    "There are four rows of four cells, so there are sixteen cells in total."
+  ],
+  "solutions": {
+    "reliable": "Count the cells in one row, then multiply by the number of rows. Four times four is sixteen.",
+    "elegant": null
+  },
+  "whyOnTest": "Fixture problems exercise the validator, not a student.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Fixture",
+  "reviewedBy": [
+    "Fixture"
+  ],
+  "createdAt": "2026-01-01",
+  "license": "CC-BY-NC-SA-4.0"
+}

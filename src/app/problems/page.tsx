@@ -11,7 +11,7 @@ import {
 } from '@/lib/problem-query';
 import { ProblemFilters } from '@/components/problems/ProblemFilters';
 import { Pagination } from '@/components/problems/Pagination';
-import { PointPill } from '@/components/PointPill';
+import { DifficultyPill } from '@/components/DifficultyPill';
 import { BandPill } from '@/components/BandPill';
 import { EmptyState } from '@/components/EmptyState';
 
@@ -73,7 +73,7 @@ export default async function ProblemsPage({
             const { primary, secondary } = getSkillsForProblem(problem);
             return (
               <li key={problem.id}>
-                <article className="rounded-md border border-rule bg-surface p-4 transition-colors hover:border-rule-2">
+                <article className="rounded-md border border-rule bg-surface p-4 transition-colors hover:border-rule-strong">
                   <div className="flex flex-wrap items-center gap-2">
                     <h2 className="m-0 text-sm font-normal">
                       <Link
@@ -83,7 +83,7 @@ export default async function ProblemsPage({
                         {problem.id}
                       </Link>
                     </h2>
-                    <PointPill points={problem.points} showMeaning />
+                    <DifficultyPill points={problem.points} showMeaning />
                     <BandPill band={problem.band} />
                     {problem.figure ? (
                       <span className="mono text-2xs text-ink-3">has a figure</span>
@@ -95,7 +95,7 @@ export default async function ProblemsPage({
                     </span>
                   </div>
 
-                  <p className="serif prose-measure mt-3 mb-0 text-ink">
+                  <p className="reading prose-measure mt-3 mb-0 text-ink">
                     <Link
                       href={`/problem/${problem.id}`}
                       className="text-ink no-underline hover:underline"

@@ -14,7 +14,7 @@ import {
 import { POINT_VALUES } from '@/lib/schemas';
 import { PaperQuestionTable } from '@/components/papers/PaperQuestionTable';
 import { MostTestedSkills } from '@/components/papers/MostTestedSkills';
-import { PointPill } from '@/components/PointPill';
+import { DifficultyPill } from '@/components/DifficultyPill';
 import { BandPill } from '@/components/BandPill';
 import { Callout } from '@/components/Callout';
 
@@ -59,7 +59,7 @@ export default async function PaperPage({ params }: Params) {
   const frequencies = mostTestedSkills([paper]);
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
+    <div className="content-column px-4 py-8">
       <nav aria-label="Breadcrumb" className="mb-5 text-xs text-ink-3">
         <ol className="m-0 flex list-none flex-wrap items-center gap-2 p-0">
           <li>
@@ -78,7 +78,7 @@ export default async function PaperPage({ params }: Params) {
           <BandPill band={paper.band} />
           {POINT_VALUES.map((points) => (
             <span key={points} className="inline-flex items-center gap-1.5">
-              <PointPill points={points} />
+              <DifficultyPill points={points} />
               <span className="mono text-2xs text-ink-3">{distribution.get(points) ?? 0}</span>
             </span>
           ))}

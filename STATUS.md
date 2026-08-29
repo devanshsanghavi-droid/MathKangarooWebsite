@@ -5,7 +5,8 @@ Running log of the build. Updated as each milestone lands, not at the end.
 **All thirteen milestones from the session brief are done**, plus **M0.4** and **M1.10** —
 which completes every part of Phase 1 except M1.11, which needs your accounts. Seven Phase 2
 milestones followed: everything that could be built and verified without a database or a
-credential.
+credential. Then **design v2** (`docs/05-DESIGN-DIRECTION.md`) replaced the palette, the type
+stack and the structure of `/skill/[id]`.
 
 Two acceptance criteria are deliberately unmet and are called out where they belong: the six
 paper indexes in M1.8 (reading work that has to be done by someone who has read the papers) and
@@ -18,9 +19,9 @@ here at all — Lighthouse and the service worker. All four are in "Needs you".
 | Original problems | **150**, across levels 3–4 and 5–6 |
 | Distractor explanations | **600** — one per wrong answer choice |
 | Hand-drawn SVG figures | 25 |
-| Routes | 21, building 419 static pages |
-| Tests | **1 918** unit + 89 axe assertions, both themes |
-| CI | typecheck → lint → test → graph → content → a11y → build, all green |
+| Routes | 24, building **874** static pages |
+| Tests | **2 117** unit + **102** axe assertions, both themes |
+| CI | typecheck → lint → test → graph → content → **palette** → a11y → build, all green |
 
 Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!]` blocked on Devansh
 
@@ -49,6 +50,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M2.4 — mastery and scheduling | `[x]` | `practice: implement the mastery state machine and FSRS skill scheduling` |
 | M2.1 — Supabase foundation | `[~]` | `db: write the schema, the RLS policies, and a shape test that runs without a database` |
 | M1.9 — home, about, legal, contact | `[x]` | `site: build the home page, about, legal pages, and contact form` |
+| **Design v2** — docs/05 in full | `[x]` | `design: replace the palette, retire the point tokens, and rebuild the skill page as a unit` |
 
 ---
 
@@ -1158,6 +1160,177 @@ down, including one that the rendered output contains no `<details>` element at 
 
 ---
 
+## Design v2 — `docs/05-DESIGN-DIRECTION.md`, in full
+
+**State:** `[x]` — every item on §9's acceptance list verified, listed at the bottom of this
+section with how each was checked.
+
+### The change that mattered
+
+`tokens.css` contained this:
+
+```css
+--correct: var(--p3);      /* green — also means "3 points" */
+--incorrect: var(--p5);    /* rose  — also means "5 points" */
+```
+
+The colour that told a student they were **wrong** was literally the same variable that
+labelled a **5-point question**. Every hard problem was painted as failure before it was read,
+in the one place on the site where colour has to mean exactly one thing. That is now impossible
+to reintroduce: `--p3/--p4/--p5` do not exist, the feedback tokens are literal colours with no
+`var()` in them (a test asserts that), and `pnpm check:palette` fails the build if a reserved
+colour appears outside a feedback surface.
+
+### Built
+
+- **`src/styles/tokens.css`, replaced.** `--ground / --surface / --surface-2 / --surface-3`,
+  `--ink*`, `--rule / --rule-strong`, `--accent-700..100`, the reserved
+  `--correct* / --wrong* / --hint*`, the neutral difficulty ramp `--d1..--d3`, the teal mastery
+  ramp `--m0..--m3`. Three-state theming kept; the `[data-theme="dark"]` block is a literal copy
+  of the media query, and the test still proves they are identical.
+- **Type swapped** to Figtree (UI) / Source Sans 3 (reading, 17/1.65; statements 19/1.55) /
+  IBM Plex Mono (ids and metadata). The v1 serif is retired. Scale
+  12 / 13.5 / 15 / 17 / 19 / 22 / 26 / 31 / 44, measure 64ch.
+- **Shape** per §6: 12px cards and answer choices, 10px buttons, 20px pills; choices carry a 2px
+  border, 14px padding and a 44px floor; focus is a 3px ring at 2px offset.
+- **`PointPill` → `DifficultyPill`** with `●○○ / ●●○ / ●●●` and the point value in text, so the
+  tier is carried three times over and survives greyscale.
+- **Mastery layer:** `mastery-display.ts` (names, glyphs, ramp), `MasteryDot`, `MasteryBar`,
+  `SkillMasteryDot`, and `local-progress.ts` — a signed-out progress store in localStorage that
+  feeds the *same* `computeMastery` the server will use.
+- **`/skill/[id]` rebuilt as a unit page**: breadcrumb → title + one-line definition + difficulty
+  pill → segmented mastery bar with a legend → the five lesson rows → prerequisites/unlocks →
+  in official papers. Nothing was deleted: the four reading sections moved to
+  **`/skill/[id]/learn`** (with the full problem list) and the practice moved into
+  **`/skill/[id]/practice/[tier]`** and **`/skill/[id]/quiz`**.
+- **The exercise view** (§7.3): one problem at a time, streak dots and "3 in a row to finish this
+  ladder", 44px+ choices, a sticky Show a hint · Skip · Next problem bar, hints in the reserved
+  amber — and **immediate distractor-specific feedback, kept exactly as it was**. Not
+  check-then-reveal. It is the reason the site exists.
+- **The sidebar shell** (§7.1): a 260px strand → skill rail with the student's position marked
+  and a mastery dot per row, collapsing to a keyboard-operable drawer below 900px.
+- **Atlas** (§7.4): node fill is the mastery ramp; tier moved to border weight at exactly
+  1 / 1.5 / 2.5px; hue is entirely free for mastery.
+- **`scripts/check-palette.ts` + `pnpm check:palette`**, wired into CI, implementing §10.4 — plus
+  amber, which §10.4 omits but §2 reserves.
+- **`CLAUDE.md`** gained the reserved-colour rule as a non-negotiable.
+
+### Six things that were actually broken
+
+1. **`docs/05` §4's own palette fails §9's own acceptance test.** `--ink-3` is 3.6:1 on
+   `--surface-2` and 3.3:1 on `--surface-3` — below AA for the 12–13px metadata it is used for,
+   and the exact pair §9 says to check. Darkened to the lightest value that clears 4.5:1 on all
+   four surfaces, in both themes. Six other tokens needed the same treatment; every deviation is
+   listed below.
+2. **`--m0` and `--m1` were 1.01:1 apart in light** — identical in greyscale. §9 says "test:
+   print a worksheet", and on paper the segmented mastery bar collapsed into one flat grey band.
+   The ramp was respaced to even ~1.42:1 steps, keeping the doc's slate → teal progression and
+   its endpoint. The test now asserts monotonic luminance and a minimum step separation instead
+   of a contrast floor no four-step ramp between two light values could meet.
+3. **The mastery ramp told a student who got their first answer wrong that they were
+   "Proficient".** `shaky` is reached two ways — accuracy under 70%, *and* missing a harder
+   version of something you can already do — and §3 maps it to Proficient, which is right only
+   for the second. Caught by looking at the rendered page, not by a test. `shaky` now displays
+   as Proficient only once the student has actually been right about something in that skill.
+   `mastery.ts` is untouched, exactly as §3 requires.
+4. **Two of five answer choices were unreachable on a 360px phone.** The sticky action bar
+   settled directly over choices B and C and no amount of scrolling moved them clear. (The first
+   version of the bar had the opposite bug: `fixed inset-x-0` spanned under the 260px rail and
+   sat ~130px left of the problem it acted on.) It is now fixed, with its left edge pinned to the
+   content area and matching page padding, so every choice can always be scrolled clear —
+   verified analytically, because `scroll-behavior: smooth` makes `scrollIntoView` asynchronous
+   and my first measurement was reading stale rectangles.
+5. **The header overflowed horizontally at 200% zoom.** Six nav items in the wider v2 UI face
+   pushed the theme toggle 19px off the right edge at 640px — which is what a 1280px window is at
+   the 200% zoom CLAUDE.md requires. Fixed with `flex-wrap` and a `min-w-0` nav; all 16 key
+   routes now show zero horizontal overflow at both 360px and 640px.
+6. **Every OG card rendered tofu where the difficulty should be.** satori only has the fonts it
+   is handed, so `●` and `○` made each card try to fetch a font it could not get
+   ("Failed to download dynamic font. Status: 400"). The dots are drawn as shapes now.
+
+Also: axe caught two `<nav aria-label="Skills">` landmarks in one document once the drawer
+opened. The drawer is already a dialog named "Skills", so its contents no longer nest a second
+landmark.
+
+### Where I deviated from `docs/05` §4's literal hex values, and why
+
+Every one of these is forced by §9's own acceptance criteria, which the literal values fail.
+The design intent — slate difficulty, teal mastery, soft tinted feedback panels — is unchanged.
+
+| Token | §4 says | Now | Why |
+|---|---|---|---|
+| `--ink-3` light | `#767F8C` | `#626974` | 3.3:1 on `--surface-3`; AA needs 4.5 |
+| `--ink-3` dark | `#818B99` | `#919AA6` | 3.7:1 on `--surface-3` |
+| `--rule-strong` light | `#C9D0DA` | `#888C93` | 1.5:1 — but `--surface` on `--ground` is 1.06:1, so this border is the only thing identifying an answer choice or an input. WCAG 1.4.11 applies |
+| `--rule-strong` dark | `#3C434F` | `#6B7079` | same, 1.7:1 |
+| `--correct-border` | `#96D4B0` / `#2C6B47` | `#69947B` / `#427B5A` | 1.5:1 and 2.4:1 on their own tint — the panel edge was invisible |
+| `--wrong-border` | `#EFAEA8` / `#6E312B` | `#AC7D79` / `#8C5C58` | 1.6:1 and 1.7:1 |
+| `--hint-border` | `#E5C67F` / `#5C4A22` | `#9E8958` / `#7B6C4C` | 1.5:1 and 1.8:1 |
+| `--m0/--m1/--m2` light | `#CDD4DE` / `#A5DCE1` / `#4CB2BC` | `#BFC6CF` / `#82ADB1` / `#40959E` | the greyscale collapse in (2) above |
+
+### Assumptions made where the spec was ambiguous
+
+1. **`--paper` became `--ground`, `--rule-2` became `--rule-strong`**, and the accent split into
+   `700/600/500/100`. §4 presents a "full replacement", so I took its names rather than keeping
+   v1's alongside. `700` is the text-weight step in *both* themes — dark teal on light, pale
+   teal on dark — which is what §4's own dark block implies.
+2. **`--shadow-2` became `--shadow`** (§4 names one shadow). `--shadow-1` stayed for the hairline
+   lift; two names for one value would have been worse than either.
+3. **The fonts load through `next/font`**, which downloads them at build time and serves them
+   from our own origin. No dependency added — `next/font` is part of Next. This matters more than
+   usual here: a plain `<link>` to `fonts.googleapis.com` would hand a font CDN an IP address and
+   a referer on every page load, and the users are minors. Verified: the built output contains
+   woff2 files under `.next/static/media/` and **no reference to any Google host**.
+4. **The unit page's difficulty pill** shows the point tier most of the skill's problems sit at,
+   falling back to what its Atlas tier implies when nothing is written. A skill has no point
+   value of its own and §7.2 does not say which to use.
+5. **The lesson rows link to real routes** — `/learn`, `/practice/[tier]`, `/quiz` — rather than
+   expanding in place. §7.2 describes rows with an "action"; separate routes are linkable,
+   bookmarkable and work without JavaScript for navigation.
+6. **The skill quiz is five problems** (2 × 3pt, 2 × 4pt, 1 × 5pt, backfilled), marked at the
+   end, deterministic so a tutor and a student see the same five. §7.2 does not size it.
+7. **A ladder counts as finished at three correct in a row**, matching §7.3's on-screen promise.
+   A tier with nothing written on it cannot block the quiz, or a skill with no 5-pointers would
+   have a quiz nobody could open.
+8. **The rail is hidden on `/`, `/about`, `/legal/*`, `/contact`, `/print`, `/offline` and
+   `/author/*`.** §7.1 says "persistent", but 91 skill links beside a privacy policy is noise,
+   and `/print`'s entire output is a sheet of paper. The list is one constant in `lib/site.ts`
+   and is unit tested.
+9. **The reserved colours are allowed in nine files**, each with a written reason in
+   `scripts/lib/palette-rules.ts`. Two are judgement calls worth your eye: the contact form and
+   the authoring form use them for validation state. A validation error is "you did something and
+   it was wrong" — the same semantic §2 reserves them for — and neither is a category or a
+   difficulty. If you disagree, delete those two entries and the build will tell you where they
+   are used.
+10. **`shaky` is still called `shaky` internally** and `MASTERY_RANK` still ranks it *below*
+    `seen`, while the display ramp puts Proficient *above* Familiar. Both are right: the rank
+    orders by urgency (what to put in front of the student next), the ramp orders by exposure.
+    They are different questions about the same four states.
+
+### §9's acceptance list, and how each item was verified
+
+| Item | Verified by |
+|---|---|
+| No component references `--p3/--p4/--p5`; those tokens are deleted | A comment-stripped sweep of `src/` and `scripts/`: zero live references. The only mentions left are the sentences explaining why they are gone, and the test asserting their absence |
+| A repo-wide grep finds no green or red outside feedback components | `pnpm check:palette` — 9 allowlisted files, no reserved hex outside `tokens.css`, in CI, with pass/fail fixtures |
+| Every difficulty and mastery indicator is legible in greyscale | Glyphs (`●○○`, `○ ◔ ◕ ✓`) on every indicator; the bar's ramp is monotonic with ≥1.35:1 steps and carries a counted legend; `@media print` keeps a four-step grey mastery ramp. All asserted in `tokens.test.ts` |
+| All text passes WCAG AA at its rendered size, both themes — check `--ink-3` on `--surface-2` | `tokens.test.ts`, now **95 assertions**: 4.93:1 light and 5.27:1 dark on that exact pair, plus every difficulty `fg` on its `bg`, every reserved `700` on its `100`, and every surface |
+| Answer choices are ≥44px tall and keyboard operable | Measured in a real browser: **60px** each. Arrow/Home/End movement asserted in the a11y suite |
+| `/skill/[id]` renders as a unit page with a working mastery bar for a signed-out visitor | 91 unit-page render tests; the bar's `aria-label` is asserted against the real problem count with an empty localStorage, and driven end to end in the exercise-view tests |
+| Sidebar collapses cleanly at 900px and is reachable by keyboard | `@media (min-width:900px)` confirmed in the built CSS; 27 rail tests cover Enter to open, focus moved in, Tab cycled inside, Escape to close, focus handed back |
+| Full CI green, both themes checked, axe clean | typecheck · lint · **2 117** tests · graph · content · palette · **102** axe assertions · 874-page build |
+
+### Deferred
+
+- **The exercise view needs JavaScript.** The statement, choices and a `<details>` solution still
+  render without it at `/problem/[id]`, and every ladder problem is reachable there, so nothing
+  is unreachable — but the ladder itself is an enhancement.
+- **Per-problem mastery is heuristic.** `problemProgress` asks "did you get it, and did you get
+  it cleanly", which is not the skill-level state machine and is not meant to be. It is tested
+  and documented as its own rule.
+
+---
+
 ## Needs you (external accounts / credentials)
 
 - [ ] **Run Lighthouse** on a deployed build and confirm ≥95 on performance, accessibility, best
@@ -1180,7 +1353,11 @@ down, including one that the rendered output contains no `<details>` element at 
       the rules are in `content/papers/README.md`; `/papers` and `/papers/[year]-[band]` are
       built and tested and will light up the moment the first file lands. This is reading work
       that has to be done by someone who has read the papers — see M1.8 above.
-- [ ] **Review the 54 seed problems** against `docs/03-CONTENT-GUIDE.md` Part C. They are all
+- [ ] **Look at design v2 and tell me if the palette is right.** Eight of `docs/05` §4's literal
+      hex values had to move to clear the AA floor §9 itself asks for — the table in the design
+      v2 section above lists every one with its measured ratio. The intent is unchanged, but they
+      are your colours.
+- [ ] **Review the 150 seed problems** against `docs/03-CONTENT-GUIDE.md` Part C. They are all
       marked `reviewedBy: ["pending-review"]` because they were drafted in this session and
       nobody has run the checklist on them. The content guide requires two approvals before a
       problem is merged for launch.

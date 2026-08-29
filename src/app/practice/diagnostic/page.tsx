@@ -23,7 +23,7 @@ export default function DiagnosticPage() {
   const skillNames = Object.fromEntries(skills.map((skill) => [skill.id, skill.name]));
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
+    <div className="content-column px-4 py-8">
       <header className="max-w-prose">
         <h1 className="m-0 text-2xl">Take the diagnostic</h1>
         <p className="mt-3 mb-0 text-ink-2">

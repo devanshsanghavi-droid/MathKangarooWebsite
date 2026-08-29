@@ -14,7 +14,7 @@ export const metadata: Metadata = {
  */
 export default function OfflinePage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-16">
+    <div className="content-column px-4 py-16">
       <p className="mono m-0 text-xs text-ink-3">Offline</p>
       <h1 className="mt-2 text-2xl">You are not connected</h1>
       <p className="prose-measure mt-4 text-ink-2">

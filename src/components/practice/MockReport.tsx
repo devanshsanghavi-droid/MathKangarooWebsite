@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import type { Problem } from '@/lib/schemas';
 import type { MockReport } from '@/lib/mock';
-import { PointPill } from '@/components/PointPill';
+import { DifficultyPill } from '@/components/DifficultyPill';
 
 /**
  * The post-exam report.
@@ -34,8 +34,12 @@ export function MockReportView({
         <span className="text-base font-normal text-ink-3"> / {report.maxScore}</span>
       </p>
 
+      {/*
+        A scoring summary, not answer feedback: the reserved red belongs to a wrong choice, not
+        to an empty one. Strong neutral instead (docs/05 §2).
+      */}
       {report.blanks > 0 ? (
-        <div className="mb-6 rounded-sm border border-p5 bg-p5-bg p-3">
+        <div className="mb-6 rounded-sm border-2 border-rule-strong bg-surface-3 p-3">
           <p className="m-0 text-sm text-ink">
             You left <strong>{report.blanks}</strong> blank, worth {report.blankCost} points. A
             wrong answer costs nothing here, so every one of those was a guaranteed zero where a
@@ -56,7 +60,7 @@ export function MockReportView({
             key={tier.points}
             className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-sm border border-rule bg-surface px-3 py-2"
           >
-            <PointPill points={tier.points} />
+            <DifficultyPill points={tier.points} />
             <span className="flex-1 text-sm text-ink">
               {tier.correct} of {tier.asked} right
             </span>
@@ -84,7 +88,7 @@ export function MockReportView({
             y1={height - pad}
             x2={width - 6}
             y2={height - pad}
-            className="stroke-rule-2"
+            className="stroke-rule-strong"
             strokeWidth={1}
           />
           <line
@@ -92,7 +96,7 @@ export function MockReportView({
             y1={8}
             x2={pad}
             y2={height - pad}
-            className="stroke-rule-2"
+            className="stroke-rule-strong"
             strokeWidth={1}
           />
           <text
@@ -116,18 +120,53 @@ export function MockReportView({
             const base = point.correct ? 34 : height - pad - 34;
             const y = base + ((index % 7) - 3) * 5;
             return (
-              <circle
-                key={point.problemId}
-                cx={x}
-                cy={y}
-                r={4}
-                className={point.correct ? 'fill-p3' : 'fill-p5'}
-                opacity={0.85}
-              />
+              /*
+                Correct and incorrect, which is exactly what the reserved colours are for. The
+                SHAPE differs too — a disc for a solve, a cross for a miss — because a scatter
+                plot separated only by hue is unreadable to a colour-blind student and prints
+                as one cloud of grey.
+              */
+              point.correct ? (
+                <circle
+                  key={point.problemId}
+                  cx={x}
+                  cy={y}
+                  r={4}
+                  className="fill-correct-600"
+                  opacity={0.85}
+                />
+              ) : (
+                <path
+                  key={point.problemId}
+                  d={`M${x - 4} ${y - 4} L${x + 4} ${y + 4} M${x + 4} ${y - 4} L${x - 4} ${y + 4}`}
+                  className="stroke-wrong-600"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                />
+              )
             );
           })}
         </svg>
       </div>
+      <p className="mt-2 mb-0 flex flex-wrap gap-x-4 text-2xs text-ink-3">
+        <span className="inline-flex items-center gap-1.5">
+          <svg aria-hidden="true" width="10" height="10" viewBox="0 0 10 10">
+            <circle cx="5" cy="5" r="4" className="fill-correct-600" />
+          </svg>
+          Correct
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <svg aria-hidden="true" width="10" height="10" viewBox="0 0 10 10">
+            <path
+              d="M1 1 L9 9 M9 1 L1 9"
+              className="stroke-wrong-600"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+          </svg>
+          Not correct
+        </span>
+      </p>
 
       <h3 className="mt-8 text-base">The three to fix first</h3>
       {report.topFixes.length === 0 ? (
@@ -142,7 +181,7 @@ export function MockReportView({
               <li key={skillId}>
                 <Link
                   href={`/skill/${skillId}`}
-                  className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-sm border border-rule bg-surface px-3 py-2 no-underline hover:border-rule-2"
+                  className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-sm border border-rule bg-surface px-3 py-2 no-underline hover:border-rule-strong"
                 >
                   <span className="mono text-2xs text-ink-3">{index + 1}</span>
                   <span className="mono text-2xs text-ink-3">{skillId}</span>
@@ -173,8 +212,8 @@ export function MockReportView({
                 <Link href={`/problem/${point.problemId}`} className="mono text-xs">
                   {point.problemId}
                 </Link>
-                <PointPill points={point.points} />
-                <span className={point.correct ? 'text-correct' : 'text-incorrect'}>
+                <DifficultyPill points={point.points} />
+                <span className={point.correct ? 'text-correct-700' : 'text-wrong-700'}>
                   {point.correct ? 'right' : 'wrong'}
                 </span>
                 <span className="text-ink-2">answer {correct?.key}</span>

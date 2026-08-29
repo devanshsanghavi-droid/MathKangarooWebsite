@@ -47,7 +47,7 @@ export function SkillPanel({
         {skill.bands.map((band) => band.replace('-', '–')).join(', ')}
       </p>
 
-      <p className="serif mt-3 mb-0 text-sm text-ink-2">{skill.definition}</p>
+      <p className="reading mt-3 mb-0 text-sm text-ink-2">{skill.definition}</p>
 
       {prerequisites.length > 0 ? (
         <div className="mt-4">

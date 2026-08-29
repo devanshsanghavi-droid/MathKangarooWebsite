@@ -168,7 +168,7 @@ export function MockRunner({
           <button
             type="button"
             onClick={discard}
-            className="cursor-pointer rounded-sm border border-rule-2 bg-surface px-4 py-2 text-sm text-ink"
+            className="cursor-pointer rounded-sm border border-rule-strong bg-surface px-4 py-2 text-sm text-ink"
           >
             Take another
           </button>
@@ -193,7 +193,7 @@ export function MockRunner({
 
     return (
       <div>
-        <div className="sticky top-16 z-20 -mx-4 mb-5 border-b border-rule bg-paper/95 px-4 py-3 backdrop-blur-sm">
+        <div className="sticky top-16 z-20 -mx-4 mb-5 border-b border-rule bg-ground/95 px-4 py-3 backdrop-blur-sm">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <p
               className="mono m-0 text-lg font-semibold text-ink tabular-nums"
@@ -209,7 +209,7 @@ export function MockRunner({
             <button
               type="button"
               onClick={finish}
-              className="ml-auto cursor-pointer rounded-sm border border-rule-2 bg-surface px-3 py-1.5 text-sm text-ink"
+              className="ml-auto cursor-pointer rounded-sm border border-rule-strong bg-surface px-3 py-1.5 text-sm text-ink"
             >
               Finish now
             </button>
@@ -217,8 +217,19 @@ export function MockRunner({
         </div>
 
         {shouldNudge(state, now) && !dismissedNudge ? (
-          <div role="alert" className="mb-5 rounded-sm border border-p5 bg-p5-bg p-3">
+          /*
+            A clock warning, not answer feedback — so no reserved red (docs/05 §2). Urgency is
+            carried by role="alert", a 2px neutral border and the glyph, which also survives
+            greyscale.
+          */
+          <div
+            role="alert"
+            className="mb-5 rounded-sm border-2 border-rule-strong bg-surface-3 p-3"
+          >
             <p className="m-0 text-sm font-medium text-ink">
+              <span aria-hidden="true" className="mr-2">
+                ⏱
+              </span>
               Five minutes left, and {blanks} question{blanks === 1 ? ' is' : 's are'} blank.
             </p>
             <p className="m-0 mt-1 text-sm text-ink-2">
@@ -261,10 +272,13 @@ export function MockRunner({
                 className={[
                   'cursor-pointer rounded-sm border px-3 py-1.5 text-sm',
                   answer?.flagged
-                    ? 'border-p4 bg-p4-bg text-ink'
-                    : 'border-rule bg-surface text-ink-2',
+                    ? 'border-2 border-accent-600 bg-accent-100 font-medium text-ink'
+                    : 'border border-rule-strong bg-surface text-ink-2',
                 ].join(' ')}
               >
+                <span aria-hidden="true" className="mr-1.5">
+                  {answer?.flagged ? '⚑' : '⚐'}
+                </span>
                 {answer?.flagged ? 'Flagged for review' : 'Flag for review'}
               </button>
               <div className="ml-auto flex gap-2">
@@ -280,7 +294,7 @@ export function MockRunner({
                   type="button"
                   onClick={() => goTo(Math.min(state.problemIds.length - 1, state.current + 1))}
                   disabled={state.current === state.problemIds.length - 1}
-                  className="cursor-pointer rounded-sm border border-rule-2 bg-surface px-3 py-1.5 text-sm text-ink disabled:opacity-40"
+                  className="cursor-pointer rounded-sm border border-rule-strong bg-surface px-3 py-1.5 text-sm text-ink disabled:opacity-40"
                 >
                   Next
                 </button>
@@ -304,14 +318,20 @@ export function MockRunner({
                     aria-label={`Question ${index + 1}${answered ? ', answered' : ', blank'}${
                       entry?.flagged ? ', flagged' : ''
                     }`}
+                    /*
+                      Answered and flagged are two independent facts, so they are carried by
+                      two independent properties — fill for answered, border WEIGHT for
+                      flagged. Setting both from the same `border-color` utility let whichever
+                      rule happened to come later in the stylesheet win, which is not a
+                      decision this component gets to make.
+                    */
                     className={[
-                      'mono h-8 w-8 cursor-pointer rounded-xs border text-xs',
+                      'mono h-8 w-8 cursor-pointer rounded-xs text-xs',
                       index === state.current ? 'ring-2 ring-focus' : '',
-                      entry?.flagged
-                        ? 'border-p4 bg-p4-bg text-ink'
-                        : answered
-                          ? 'border-accent bg-accent-soft text-ink'
-                          : 'border-rule bg-surface text-ink-3',
+                      entry?.flagged ? 'border-[3px] font-bold' : 'border',
+                      answered
+                        ? 'border-accent-600 bg-accent-100 text-ink'
+                        : 'border-rule-strong bg-surface text-ink-2',
                     ].join(' ')}
                   >
                     {index + 1}
@@ -322,7 +342,7 @@ export function MockRunner({
           </ul>
           <p className="mt-3 mb-0 flex flex-wrap gap-x-4 text-2xs text-ink-3">
             <span>Filled: answered</span>
-            <span>Amber: flagged</span>
+            <span>Thick border: flagged for review</span>
             <span>Empty: blank, and a blank scores zero</span>
           </p>
         </nav>
@@ -347,7 +367,7 @@ export function MockRunner({
             <button
               type="button"
               onClick={() => begin(band)}
-              className="cursor-pointer rounded-sm border border-accent bg-accent-soft px-4 py-2 text-sm font-medium text-ink"
+              className="cursor-pointer rounded-sm border border-accent-600 bg-accent-100 px-4 py-2 text-sm font-medium text-ink"
             >
               Level {band.replace('-', '–')} · {paperSize(band)} questions · {maxScore(band)} points
             </button>

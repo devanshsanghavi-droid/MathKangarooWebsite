@@ -10,6 +10,13 @@ Legend: **P1** ship in Phase 1 · **P2** Phase 2 · **P3** Phase 3 · **P4** Pha
 ## 0. Global
 
 ### 0.1 Design system — `src/styles/tokens.css` **P1**
+
+> **SUPERSEDED by `docs/05-DESIGN-DIRECTION.md`.** The palette, the type stack and the shape
+> scale below are v1 and are no longer what ships. `--p3/--p4/--p5` in particular no longer
+> exist: they coloured difficulty green/amber/rose and were aliased to the feedback colours.
+> The three-state theming rule is the one part of this section that survived unchanged.
+> `05` also replaces the nine-section `/skill/[id]` described in §1.4.
+
 The only file where colors exist. Defines light palette on `:root`, redefines tokens under
 `@media (prefers-color-scheme: dark)` and `[data-theme="dark"]`.
 

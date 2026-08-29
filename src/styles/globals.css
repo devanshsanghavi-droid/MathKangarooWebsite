@@ -6,35 +6,57 @@
  * Bridge the design tokens into Tailwind's utility namespace. `inline` keeps the utilities
  * pointing at the live custom properties, so a theme switch re-paints without a rebuild.
  * Adding a color here is only legal if the token already exists in tokens.css.
+ *
+ * The reserved feedback colours (--correct-*, --wrong-*, --hint-*) are bridged here because
+ * that is the only way a utility class can reach them — but scripts/check-palette.ts then
+ * restricts WHICH files may use those classes. See docs/05-DESIGN-DIRECTION.md §2 and §10.4.
  */
 @theme inline {
-  --color-paper: var(--paper);
+  --color-ground: var(--ground);
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
   --color-ink-3: var(--ink-3);
   --color-rule: var(--rule);
-  --color-rule-2: var(--rule-2);
-  --color-accent: var(--accent);
-  --color-accent-2: var(--accent-2);
-  --color-accent-soft: var(--accent-soft);
+  --color-rule-strong: var(--rule-strong);
   --color-grid: var(--grid);
-  --color-p3: var(--p3);
-  --color-p3-bg: var(--p3-bg);
-  --color-p4: var(--p4);
-  --color-p4-bg: var(--p4-bg);
-  --color-p5: var(--p5);
-  --color-p5-bg: var(--p5-bg);
-  --color-focus: var(--focus);
-  --color-correct: var(--correct);
-  --color-correct-bg: var(--correct-bg);
-  --color-incorrect: var(--incorrect);
-  --color-incorrect-bg: var(--incorrect-bg);
 
-  --font-sans: var(--font-sans);
-  --font-serif: var(--font-serif);
-  --font-mono: var(--font-mono);
+  --color-accent-700: var(--accent-700);
+  --color-accent-600: var(--accent-600);
+  --color-accent-500: var(--accent-500);
+  --color-accent-100: var(--accent-100);
+
+  --color-correct-700: var(--correct-700);
+  --color-correct-600: var(--correct-600);
+  --color-correct-100: var(--correct-100);
+  --color-correct-border: var(--correct-border);
+  --color-wrong-700: var(--wrong-700);
+  --color-wrong-600: var(--wrong-600);
+  --color-wrong-100: var(--wrong-100);
+  --color-wrong-border: var(--wrong-border);
+  --color-hint-700: var(--hint-700);
+  --color-hint-100: var(--hint-100);
+  --color-hint-border: var(--hint-border);
+
+  --color-d1-bg: var(--d1-bg);
+  --color-d1-fg: var(--d1-fg);
+  --color-d2-bg: var(--d2-bg);
+  --color-d2-fg: var(--d2-fg);
+  --color-d3-bg: var(--d3-bg);
+  --color-d3-fg: var(--d3-fg);
+
+  --color-m0: var(--m0);
+  --color-m1: var(--m1);
+  --color-m2: var(--m2);
+  --color-m3: var(--m3);
+
+  --color-focus: var(--focus);
+
+  --font-ui: var(--ui);
+  --font-body: var(--body);
+  --font-mono: var(--mono);
 
   --text-2xs: var(--step--2);
   --text-xs: var(--step--1);
@@ -44,10 +66,23 @@
   --text-xl: var(--step-3);
   --text-2xl: var(--step-4);
   --text-3xl: var(--step-5);
+  --text-4xl: var(--step-6);
 
   --radius-xs: var(--radius-1);
   --radius-sm: var(--radius-2);
   --radius-md: var(--radius-3);
+  --radius-lg: var(--radius-pill);
+
+  --shadow-xs: var(--shadow-1);
+  --shadow-lg: var(--shadow);
+}
+
+/*
+ * The one breakpoint docs/05 §7.1 names: the sidebar is a persistent rail at and above it,
+ * and a drawer below it. Declared here rather than inline so the number lives in one place.
+ */
+@theme {
+  --breakpoint-shell: 900px;
 }
 
 /* --------------------------------------------------------------------------
@@ -67,23 +102,36 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--paper);
+  background-color: var(--ground);
   color: var(--ink);
-  font-family: var(--font-sans);
+  /* docs/05 §5: reading is Source Sans 3 at 17/1.65. Headings and UI opt into --ui. */
+  font-family: var(--body);
   font-size: var(--step-1);
-  line-height: 1.6;
+  line-height: var(--leading-body);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   min-height: 100dvh;
 }
 
+/* Headings, buttons and form controls are UI, not reading. */
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
+  font-family: var(--ui);
+  font-weight: 600;
   line-height: 1.2;
   text-wrap: balance;
   margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: var(--ui);
 }
 
 p {
@@ -91,16 +139,16 @@ p {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-700);
   text-underline-offset: 0.18em;
 }
 
 a:hover {
-  color: var(--accent-2);
+  color: var(--accent-600);
 }
 
 /* --------------------------------------------------------------------------
- * Focus — one visible ring, everywhere, in both themes.
+ * Focus — docs/05 §6: a 3px ring at 2px offset. Never removed, never subtle.
  * ------------------------------------------------------------------------ */
 
 :focus-visible {
@@ -173,11 +221,11 @@ a:hover {
   overflow: visible;
   clip-path: none;
   padding: var(--space-2) var(--space-4);
-  border: 1px solid var(--rule-2);
+  border: 1px solid var(--rule-strong);
   border-radius: var(--radius-2);
   background: var(--surface);
   color: var(--ink);
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow);
   text-decoration: none;
 }
 
@@ -185,19 +233,47 @@ a:hover {
   max-width: var(--measure);
 }
 
+/* docs/05 §7.1: the content column is 720px, centred in whatever space the rail leaves. */
+.content-column {
+  max-width: var(--content-width);
+  margin-inline: auto;
+}
+
 /* A table caption that stays in the accessibility tree but does not repeat on screen. */
 .sr-only-caption {
   caption-side: top;
 }
 
-/* Problem statements and long-form prose are set in the serif face. */
-.serif {
-  font-family: var(--font-serif);
+/*
+ * docs/05 §5. The v1 serif is retired: at 17px a humanist sans reads better on the low-end
+ * screens this has to work on.
+ *
+ *   .reading    prose, solutions, explanations — 17/1.65 (the body default)
+ *   .statement  problem statements — 19/1.55, the one place we go bigger
+ */
+.reading {
+  font-family: var(--body);
+  line-height: var(--leading-body);
+}
+
+.statement {
+  font-family: var(--body);
+  font-size: var(--step-2);
+  line-height: var(--leading-statement);
+}
+
+.ui {
+  font-family: var(--ui);
 }
 
 .mono {
-  font-family: var(--font-mono);
+  font-family: var(--mono);
   font-variant-ligatures: none;
+}
+
+/* docs/05 §6: every tap target, and every answer choice, is at least 44px tall. */
+.tap-target {
+  min-height: var(--tap-min);
 }
 
 /* KaTeX inherits our color rather than shipping its own. */

@@ -16,7 +16,7 @@ export function ContactForm({ mailConfigured }: { mailConfigured: boolean }) {
     return (
       <div
         role="status"
-        className="rounded-md border border-correct bg-correct-bg p-4 text-sm text-ink"
+        className="rounded-md border border-correct-border bg-correct-100 p-4 text-sm text-ink"
       >
         <p className="m-0 font-medium">Sent. Thank you.</p>
         <p className="mt-2 mb-0 text-ink-2">
@@ -30,7 +30,7 @@ export function ContactForm({ mailConfigured }: { mailConfigured: boolean }) {
   return (
     <form action={action} className="grid gap-4">
       {!mailConfigured ? (
-        <p className="m-0 rounded-sm border border-rule-2 bg-surface-2 px-3 py-2 text-sm text-ink-2">
+        <p className="m-0 rounded-sm border border-rule-strong bg-surface-2 px-3 py-2 text-sm text-ink-2">
           This deployment has no mail service configured yet, so the form cannot send. The email
           link below goes to the same place and works now.
         </p>
@@ -53,10 +53,10 @@ export function ContactForm({ mailConfigured }: { mailConfigured: boolean }) {
           maxLength={2000}
           aria-describedby="message-help"
           aria-invalid={state.fieldErrors?.message ? true : undefined}
-          className="w-full rounded-sm border border-rule-2 bg-surface px-3 py-2 text-ink"
+          className="w-full rounded-sm border border-rule-strong bg-surface px-3 py-2 text-ink"
         />
         {state.fieldErrors?.message ? (
-          <p className="mt-1 mb-0 text-sm text-incorrect">{state.fieldErrors.message}</p>
+          <p className="mt-1 mb-0 text-sm text-wrong-700">{state.fieldErrors.message}</p>
         ) : null}
       </div>
 
@@ -75,10 +75,10 @@ export function ContactForm({ mailConfigured }: { mailConfigured: boolean }) {
           autoComplete="email"
           aria-describedby="replyTo-help"
           aria-invalid={state.fieldErrors?.replyTo ? true : undefined}
-          className="w-full rounded-sm border border-rule-2 bg-surface px-3 py-2 text-ink"
+          className="w-full rounded-sm border border-rule-strong bg-surface px-3 py-2 text-ink"
         />
         {state.fieldErrors?.replyTo ? (
-          <p className="mt-1 mb-0 text-sm text-incorrect">{state.fieldErrors.replyTo}</p>
+          <p className="mt-1 mb-0 text-sm text-wrong-700">{state.fieldErrors.replyTo}</p>
         ) : null}
       </div>
 
@@ -91,7 +91,7 @@ export function ContactForm({ mailConfigured }: { mailConfigured: boolean }) {
       {state.status === 'error' && state.message ? (
         <p
           role="alert"
-          className="m-0 rounded-sm border border-incorrect bg-incorrect-bg px-3 py-2 text-sm text-ink"
+          className="m-0 rounded-sm border border-wrong-border bg-wrong-100 px-3 py-2 text-sm text-ink"
         >
           {state.message}
         </p>
@@ -101,7 +101,7 @@ export function ContactForm({ mailConfigured }: { mailConfigured: boolean }) {
         <button
           type="submit"
           disabled={pending}
-          className="cursor-pointer rounded-sm border border-accent bg-accent-soft px-4 py-2 font-medium text-ink disabled:cursor-wait disabled:opacity-60"
+          className="cursor-pointer rounded-sm border border-accent-600 bg-accent-100 px-4 py-2 font-medium text-ink disabled:cursor-wait disabled:opacity-60"
         >
           {pending ? 'Sending…' : 'Send'}
         </button>

@@ -13,7 +13,7 @@ export function NavLinks({ items }: { items: NavItem[] }) {
   const pathname = usePathname() ?? '/';
 
   return (
-    <ul className="flex list-none items-center gap-1 p-0">
+    <ul className="m-0 flex list-none flex-wrap items-center gap-x-1 gap-y-0.5 p-0">
       {items.map((item) => {
         const active = isActivePath(pathname, item.href);
         return (
@@ -24,7 +24,7 @@ export function NavLinks({ items }: { items: NavItem[] }) {
               className={[
                 'rounded-xs px-2.5 py-1.5 text-sm no-underline transition-colors',
                 active
-                  ? 'font-medium text-ink underline decoration-accent decoration-2 underline-offset-8'
+                  ? 'font-medium text-ink underline decoration-accent-600 decoration-2 underline-offset-8'
                   : 'text-ink-2 hover:text-ink',
               ].join(' ')}
             >

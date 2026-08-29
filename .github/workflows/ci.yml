@@ -47,6 +47,12 @@ jobs:
       - name: Validate content
         run: pnpm validate:content
 
+      # docs/05-DESIGN-DIRECTION.md §2 and §10.4. v1 aliased --correct to --p3 and --incorrect
+      # to --p5: the colour that told a student they were wrong was the same variable that
+      # labelled a 5-point question, and nothing caught it for a whole phase. This does.
+      - name: Reserved colours stay reserved
+        run: pnpm check:palette
+
       # The full RLS proof (supabase/tests/rls.test.sql) needs a running Postgres with pgTAP.
       # The shape checks in scripts/__tests__/rls-shape.test.ts run as part of `pnpm test`
       # above and need no database. See supabase/README.md.

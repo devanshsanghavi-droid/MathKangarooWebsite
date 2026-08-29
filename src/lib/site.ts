@@ -64,6 +64,27 @@ export const FOOTER_LINKS: NavItem[] = [
   { href: '/contact', label: 'Contact' },
 ];
 
+/**
+ * Where the skill rail (docs/05 §7.1) appears.
+ *
+ * The rail is the Atlas in miniature, so it belongs on every surface where a student is
+ * working through the material. It does not belong on the marketing, legal or utility pages,
+ * where 91 skill links would be noise beside a privacy policy — and it is deliberately absent
+ * from /print, whose whole output is a sheet of paper.
+ */
+export const RAIL_ROUTES: readonly string[] = [
+  '/atlas',
+  '/skill',
+  '/problem',
+  '/problems',
+  '/practice',
+  '/papers',
+];
+
+export function hasRail(pathname: string): boolean {
+  return RAIL_ROUTES.some((route) => pathname === route || pathname.startsWith(`${route}/`));
+}
+
 /** Is `pathname` inside the section rooted at `href`? Used for nav highlighting. */
 export function isActivePath(pathname: string, href: string): boolean {
   if (href === '/') return pathname === '/';

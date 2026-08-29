@@ -20,7 +20,7 @@ export function FigureRenderer({ figure, problemId }: { figure: Figure; problemI
     // Content validation catches this in CI. If one ever slips through, show the description
     // rather than a hole where the information should be.
     return (
-      <div className="my-4 rounded-sm border border-rule-2 bg-surface-2 p-4">
+      <div className="my-4 rounded-sm border border-rule-strong bg-surface-2 p-4">
         <p className="m-0 text-sm text-ink-2">{figure.alt}</p>
         <p className="mono m-0 mt-2 text-2xs text-ink-3">
           Figure “{figure.component}” could not be rendered.

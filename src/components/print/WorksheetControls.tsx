@@ -24,8 +24,8 @@ export function WorksheetControls({
     [
       'inline-flex items-center gap-1.5 rounded-sm border px-2.5 py-1 text-xs no-underline transition-colors',
       active
-        ? 'border-accent bg-accent-soft font-medium text-ink'
-        : 'border-rule bg-surface text-ink-2 hover:border-rule-2 hover:text-ink',
+        ? 'border-accent-600 bg-accent-100 font-medium text-ink'
+        : 'border-rule bg-surface text-ink-2 hover:border-rule-strong hover:text-ink',
     ].join(' ');
 
   const toggle = <T,>(list: readonly T[], value: T): T[] =>

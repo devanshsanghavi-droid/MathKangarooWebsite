@@ -13,7 +13,7 @@ export function StrandStrip({ strands }: { strands: readonly StrandSummary[] }) 
         <li key={strand.strand}>
           <Link
             href={`/atlas/${strand.strand}`}
-            className="flex h-full flex-col rounded-md border border-rule bg-surface p-4 no-underline transition-colors hover:border-rule-2"
+            className="flex h-full flex-col rounded-md border border-rule bg-surface p-4 no-underline transition-colors hover:border-rule-strong"
           >
             <span className="flex items-baseline gap-2">
               <span className="mono text-2xs text-ink-3">{strand.strand}</span>

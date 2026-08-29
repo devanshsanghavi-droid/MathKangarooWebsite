@@ -52,6 +52,18 @@ const config = [
     },
   },
   {
+    /*
+     * The two suites whose subject IS the palette. A contrast test has to name the colours it
+     * is asserting about, and the reserved-hue checker has to be fed real greens and reds to
+     * prove it catches them. Deliberately two files by name rather than all of __tests__:
+     * everywhere else, a hex literal in a test is the same mistake it is in a component.
+     */
+    files: ['src/lib/__tests__/tokens.test.ts', 'scripts/__tests__/palette-rules.test.ts'],
+    rules: {
+      'no-restricted-syntax': 'off',
+    },
+  },
+  {
     // The service worker is plain JS running in a worker global scope, not in the app bundle.
     files: ['public/sw.js'],
     languageOptions: {

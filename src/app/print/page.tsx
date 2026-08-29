@@ -34,7 +34,7 @@ export default async function PrintPage({
   const title = query.title || 'Math Kangaroo practice';
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
+    <div className="content-column px-4 py-8">
       <div className="no-print">
         <h1 className="m-0 text-2xl">Worksheet generator</h1>
         <p className="prose-measure mt-3 mb-6 text-ink-2">
@@ -71,7 +71,7 @@ export default async function PrintPage({
             <ol className="m-0 grid list-none gap-8 p-0 pt-6">
               {selected.map((problem, index) => (
                 <li key={problem.id} className="worksheet-item">
-                  <p className="serif m-0 text-ink">
+                  <p className="reading m-0 text-ink">
                     <span className="mono mr-2 font-semibold">{index + 1}.</span>
                     {problem.statement}
                     <span className="mono ml-2 text-2xs text-ink-3">[{problem.points}]</span>
@@ -81,7 +81,7 @@ export default async function PrintPage({
                   ) : null}
                   <ul className="m-0 mt-3 grid list-none gap-1 p-0 pl-6 sm:grid-cols-2">
                     {problem.choices.map((choice) => (
-                      <li key={choice.key} className="serif text-sm text-ink">
+                      <li key={choice.key} className="reading text-sm text-ink">
                         <span className="mono mr-2 text-ink-3">{choice.key}</span>
                         {choice.text}
                       </li>

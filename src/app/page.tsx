@@ -11,7 +11,7 @@ import { problemOfTheDay, formatDay } from '@/lib/potd';
 import { ProblemCard } from '@/components/ProblemCard';
 import { StrandStrip } from '@/components/StrandStrip';
 import { StatTile } from '@/components/StatTile';
-import { PointPill } from '@/components/PointPill';
+import { DifficultyPill } from '@/components/DifficultyPill';
 import { BandPill } from '@/components/BandPill';
 import { SITE } from '@/lib/site';
 
@@ -69,7 +69,7 @@ export default function HomePage() {
             <li>
               <Link
                 href="/practice/diagnostic"
-                className="flex items-baseline gap-2 rounded-sm border border-accent bg-accent-soft px-4 py-3 no-underline"
+                className="flex items-baseline gap-2 rounded-sm border border-accent-600 bg-accent-100 px-4 py-3 no-underline"
               >
                 <span className="font-medium text-ink">Take the diagnostic</span>
                 <span className="text-sm text-ink-2">— 15 questions, no account needed</span>
@@ -78,7 +78,7 @@ export default function HomePage() {
             <li>
               <Link
                 href="/atlas"
-                className="flex items-baseline gap-2 rounded-sm border border-rule bg-surface px-4 py-3 no-underline hover:border-rule-2"
+                className="flex items-baseline gap-2 rounded-sm border border-rule bg-surface px-4 py-3 no-underline hover:border-rule-strong"
               >
                 <span className="font-medium text-ink">Browse the Atlas</span>
                 <span className="text-sm text-ink-2">— the map of all {stats.skills} skills</span>
@@ -87,7 +87,7 @@ export default function HomePage() {
             <li>
               <Link
                 href="/problems"
-                className="flex items-baseline gap-2 rounded-sm border border-rule bg-surface px-4 py-3 no-underline hover:border-rule-2"
+                className="flex items-baseline gap-2 rounded-sm border border-rule bg-surface px-4 py-3 no-underline hover:border-rule-strong"
               >
                 <span className="font-medium text-ink">Practice a skill</span>
                 <span className="text-sm text-ink-2">— {stats.problems} original problems</span>
@@ -96,7 +96,7 @@ export default function HomePage() {
             <li>
               <Link
                 href="/papers"
-                className="flex items-baseline gap-2 rounded-sm border border-rule bg-surface px-4 py-3 no-underline hover:border-rule-2"
+                className="flex items-baseline gap-2 rounded-sm border border-rule bg-surface px-4 py-3 no-underline hover:border-rule-strong"
               >
                 <span className="font-medium text-ink">Index an official paper</span>
                 <span className="text-sm text-ink-2">— what each question actually tests</span>
@@ -134,15 +134,15 @@ export default function HomePage() {
           <p className="mt-2 mb-4 text-sm text-ink-3">{today}</p>
           <Link
             href={`/problem/${potd.id}`}
-            className="block rounded-md border border-rule bg-surface p-5 no-underline hover:border-rule-2"
+            className="block rounded-md border border-rule bg-surface p-5 no-underline hover:border-rule-strong"
           >
             <span className="flex flex-wrap items-center gap-2">
               <span className="mono text-xs text-ink-3">{potd.id}</span>
-              <PointPill points={potd.points} />
+              <DifficultyPill points={potd.points} />
               <BandPill band={potd.band} />
               {potdSkill ? <span className="text-sm text-ink-2">{potdSkill.name}</span> : null}
             </span>
-            <span className="serif prose-measure mt-3 block text-lg text-ink">
+            <span className="reading prose-measure mt-3 block text-lg text-ink">
               {potd.statement}
             </span>
           </Link>

@@ -81,7 +81,7 @@ export function ServiceWorkerRegistration() {
         <button
           type="button"
           onClick={install}
-          className="cursor-pointer rounded-sm border border-accent bg-accent-soft px-3 py-1.5 text-sm font-medium text-ink"
+          className="cursor-pointer rounded-sm border border-accent-600 bg-accent-100 px-3 py-1.5 text-sm font-medium text-ink"
         >
           Add it
         </button>

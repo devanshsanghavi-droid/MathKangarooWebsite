@@ -78,25 +78,33 @@ export function ChoiceList({
                 id={`${idPrefix}-${choice.key}`}
                 aria-pressed={isSelected}
                 onClick={() => onSelect(choice.key)}
+                /*
+                  docs/05 §6: 2px border, 14px padding, at least 44px tall. The resting border
+                  is --rule-strong rather than --rule because --surface on --ground is 1.06:1 —
+                  the border is the only thing identifying this as a control, so WCAG 1.4.11
+                  applies to it and it has to clear 3:1.
+                */
                 className={[
-                  'flex w-full cursor-pointer items-baseline gap-3 rounded-sm border px-3 py-2.5 text-left transition-colors',
+                  'tap-target flex w-full cursor-pointer items-center gap-3 rounded-md border-2 p-[14px] text-left transition-colors',
                   showAsCorrect
-                    ? 'border-correct bg-correct-bg text-ink'
+                    ? 'border-correct-border bg-correct-100 text-ink'
                     : showAsWrong
-                      ? 'border-incorrect bg-incorrect-bg text-ink'
+                      ? 'border-wrong-border bg-wrong-100 text-ink'
                       : isSelected
-                        ? 'border-accent bg-accent-soft text-ink'
-                        : 'border-rule bg-surface text-ink hover:border-rule-2',
+                        ? 'border-accent-600 bg-accent-100 text-ink'
+                        : 'border-rule-strong bg-surface text-ink hover:border-accent-600',
                 ].join(' ')}
               >
-                <span className="mono shrink-0 text-sm font-semibold text-ink-3">{choice.key}</span>
-                <span className="serif flex-1">{choice.text}</span>
+                <span className="mono shrink-0 text-sm font-semibold text-ink-2">{choice.key}</span>
+                <span className="reading flex-1 text-base">{choice.text}</span>
                 {/* The outcome is spelled out in words as well as in colour. */}
                 {showAsCorrect ? (
-                  <span className="mono shrink-0 text-2xs font-medium text-correct">correct</span>
+                  <span className="mono shrink-0 text-2xs font-medium text-correct-700">
+                    correct
+                  </span>
                 ) : null}
                 {showAsWrong ? (
-                  <span className="mono shrink-0 text-2xs font-medium text-incorrect">
+                  <span className="mono shrink-0 text-2xs font-medium text-wrong-700">
                     your answer
                   </span>
                 ) : null}

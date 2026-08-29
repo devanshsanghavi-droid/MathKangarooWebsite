@@ -4,6 +4,7 @@ import { STRAND_META, TIER_META, TIER_ORDER } from '@/lib/content';
 import { STRANDS } from '@/lib/schemas';
 import { atlasHref, type AtlasQuery } from '@/lib/atlas-params';
 import { EmptyState } from '@/components/EmptyState';
+import { SkillMasteryDot } from '@/components/mastery/SkillMasteryDot';
 
 /**
  * The nested-list view of the Atlas.
@@ -75,9 +76,10 @@ export function AtlasList({
                             aria-current={focused ? 'true' : undefined}
                             className={[
                               'flex flex-wrap items-baseline gap-x-2.5 gap-y-0.5 rounded-sm px-2 py-1.5 no-underline transition-colors',
-                              focused ? 'bg-accent-soft' : 'hover:bg-surface-2',
+                              focused ? 'bg-accent-100' : 'hover:bg-surface-2',
                             ].join(' ')}
                           >
+                            <SkillMasteryDot skillId={skill.id} />
                             <span className="mono text-2xs text-ink-3">{skill.id}</span>
                             <span className="text-sm text-ink">{skill.name}</span>
                             <span className="mono ml-auto text-2xs text-ink-3">

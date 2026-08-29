@@ -1,31 +1,62 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, within } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { render, within, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import SkillPage, { generateStaticParams, generateMetadata } from '../skill/[id]/page';
+import SkillLearnPage from '../skill/[id]/learn/page';
+import LadderPage, {
+  generateStaticParams as ladderParams,
+} from '../skill/[id]/practice/[tier]/page';
+import SkillQuizPage from '../skill/[id]/quiz/page';
 import type * as contentModule from '@/lib/content';
 import { getAllSkills, getSkill, getProblemsForSkill } from '@/lib/content';
+import { resetProgressCache } from '@/components/mastery/useProgress';
 
 type ContentModule = typeof contentModule;
 
-/** docs/00-SPEC.md §1.4 — the nine sections, in order. */
-const SECTIONS = [
+/**
+ * docs/05-DESIGN-DIRECTION.md §7.2 replaced the nine stacked sections with a unit page.
+ * Nothing was deleted — the reading moved to /skill/[id]/learn and the problems moved into
+ * the ladders — so these tests follow the content to where it went rather than dropping the
+ * assertions that used to guard it.
+ */
+
+/** The unit page's own sections. */
+const UNIT_SECTIONS = ['unit-progress', 'unit-lessons', 'unit-graph', 'unit-papers'] as const;
+
+/** The four reading sections that moved to /learn, plus the full problem list. */
+const LEARN_SECTIONS = [
   'definition',
   'recognise',
   'example',
   'misconceptions',
-  'prerequisites',
-  'practice',
-  'papers',
-  'drill',
+  'every-problem',
 ] as const;
 
+beforeEach(() => {
+  window.localStorage.clear();
+  resetProgressCache();
+});
+
 async function renderSkill(id: string) {
-  const ui = await SkillPage({ params: Promise.resolve({ id }) });
-  return render(ui);
+  return render(await SkillPage({ params: Promise.resolve({ id }) }));
+}
+
+async function renderLearn(id: string) {
+  return render(await SkillLearnPage({ params: Promise.resolve({ id }) }));
 }
 
 describe('generateStaticParams', () => {
-  it('emits one page per skill', () => {
+  it('emits one unit page per skill', () => {
     expect(generateStaticParams()).toHaveLength(91);
+  });
+
+  it('emits one ladder page per skill per point tier', () => {
+    expect(ladderParams()).toHaveLength(91 * 3);
+    expect(
+      ladderParams()
+        .filter((p) => p.id === 'CNT-12')
+        .map((p) => p.tier),
+    ).toEqual(['3', '4', '5']);
   });
 });
 
@@ -44,57 +75,129 @@ describe('generateMetadata', () => {
   });
 });
 
-describe('every one of the 91 skills renders all nine sections', () => {
+describe('every one of the 91 skills renders as a unit page', () => {
   it.each(getAllSkills().map((s) => [s.id] as const))('%s', async (id) => {
     const { container, unmount } = await renderSkill(id);
 
-    // Section 1 is the header itself; the other eight are landmarked <section>s.
     expect(container.querySelector('h1')?.textContent, id).toBe(getSkill(id)?.name);
-    for (const section of SECTIONS) {
-      expect(container.querySelector(`#${section}`), `${id} is missing #${section}`).not.toBeNull();
-    }
-
-    // "or explicitly marks them absent" — no section may be silently blank.
-    for (const section of SECTIONS) {
+    for (const section of UNIT_SECTIONS) {
       const node = container.querySelector(`#${section}`);
-      expect(node?.textContent?.trim().length, `${id} #${section} is empty`).toBeGreaterThan(20);
+      expect(node, `${id} is missing #${section}`).not.toBeNull();
+      expect(node?.textContent?.trim().length, `${id} #${section} is empty`).toBeGreaterThan(10);
     }
 
-    // And no placeholder ever ships.
+    // The five lesson rows: Learn, three ladders, the quiz.
+    const lessons = container.querySelector('#unit-lessons');
+    expect(lessons?.querySelectorAll('li'), id).toHaveLength(5);
+
     expect(container.textContent).not.toMatch(/TODO|TBD|coming soon|lorem ipsum/i);
     unmount();
   });
 });
 
-describe('a skill with problems', () => {
+describe('the unit page', () => {
   const id = 'CNT-12';
 
-  it('shows the canonical worked example', async () => {
+  it('breadcrumbs strand, band and skill (docs/05 §7.2)', async () => {
     const { container } = await renderSkill(id);
-    const example = container.querySelector('#example');
-    expect(example?.textContent).toContain(getSkill(id)?.canonicalProblem ?? 'missing');
+    const crumb = container.querySelector('nav[aria-label="Breadcrumb"]')?.textContent ?? '';
+    expect(crumb).toContain('Counting');
+    expect(crumb).toContain(id);
+    // The band segment: "5–6" style, from the skill's own bands.
+    expect(crumb).toMatch(/\d+–\d+/);
   });
 
-  it('groups the practice ladder by point value, in order', async () => {
+  it('shows a difficulty pill built from the neutral ramp, never a feedback colour', async () => {
     const { container } = await renderSkill(id);
-    const practice = container.querySelector('#practice');
-    const pills = [...(practice?.querySelectorAll('h3') ?? [])].map((h) =>
-      h.textContent?.trim().slice(0, 4),
+    const classes = [...(container.querySelectorAll('header *') ?? [])]
+      .map((node) => node.className)
+      .join(' ');
+    expect(classes).toMatch(/bg-d[123]-bg/);
+    expect(classes).not.toMatch(/correct|wrong|hint/);
+  });
+
+  it('draws a working mastery bar for a signed-out visitor (docs/05 §9)', async () => {
+    const { container } = await renderSkill(id);
+    const bar = within(container.querySelector('#unit-progress') as HTMLElement).getByRole('img');
+    const total = getProblemsForSkill(id).length;
+    expect(bar.getAttribute('aria-label')).toBe(
+      `Progress through this skill: 0 of ${total} problems solved cleanly.`,
     );
-    expect(pills).toEqual(['3 pt', '4 pt', '5 pt']);
+    expect(bar.querySelectorAll('[data-mastery="unseen"]')).toHaveLength(total);
   });
 
-  it('lists every problem tagged with the skill', async () => {
+  it('says plainly that progress is local and needs no account', async () => {
     const { container } = await renderSkill(id);
-    const practice = container.querySelector('#practice');
-    for (const problem of getProblemsForSkill(id)) {
-      expect(practice?.textContent, problem.id).toContain(problem.id);
+    expect(container.querySelector('#unit-progress')?.textContent).toMatch(
+      /Saved in this browser only\. No account, nothing sent anywhere\./,
+    );
+  });
+
+  it('links each ladder to its own exercise page', async () => {
+    const { container } = await renderSkill(id);
+    const lessons = container.querySelector('#unit-lessons') as HTMLElement;
+    expect(within(lessons).getByRole('link', { name: /Learn/ })).toHaveAttribute(
+      'href',
+      `/skill/${id}/learn`,
+    );
+    for (const points of [3, 4, 5]) {
+      const row = within(lessons).queryByRole('link', {
+        name: new RegExp(`${points}-point ladder`),
+      });
+      // A tier with no problems is a locked row, not a link — asserted separately below.
+      if (row) expect(row).toHaveAttribute('href', `/skill/${id}/practice/${points}`);
     }
   });
 
-  it('offers a starting point for a drill', async () => {
+  it('locks the skill quiz until the ladders are finished', async () => {
     const { container } = await renderSkill(id);
-    expect(container.querySelector('#drill')?.textContent).toMatch(/Start with KA-/);
+    const lessons = container.querySelector('#unit-lessons') as HTMLElement;
+    expect(within(lessons).queryByRole('link', { name: /Skill quiz/ })).toBeNull();
+    expect(lessons.textContent).toMatch(/Finish the ladders above first/);
+  });
+});
+
+describe('the learn page — where the reading moved', () => {
+  const id = 'CNT-12';
+
+  it('renders all four reading sections and the full problem list', async () => {
+    const { container } = await renderLearn(id);
+    for (const section of LEARN_SECTIONS) {
+      const node = container.querySelector(`#${section}`);
+      expect(node, `missing #${section}`).not.toBeNull();
+      expect(node?.textContent?.trim().length, `#${section} is empty`).toBeGreaterThan(20);
+    }
+  });
+
+  it('shows the canonical worked example', async () => {
+    const { container } = await renderLearn(id);
+    expect(container.querySelector('#example')?.textContent).toContain(
+      getSkill(id)?.canonicalProblem ?? 'missing',
+    );
+  });
+
+  it('groups every problem by point value, in order', async () => {
+    const { container } = await renderLearn(id);
+    const list = container.querySelector('#every-problem');
+    const pills = [...(list?.querySelectorAll('h3') ?? [])].map((h) => h.textContent ?? '');
+    expect(pills).toHaveLength(3);
+    [3, 4, 5].forEach((points, index) => {
+      expect(pills[index], `rung ${index}`).toContain(`${points} pt`);
+    });
+    for (const problem of getProblemsForSkill(id)) {
+      expect(list?.textContent, problem.id).toContain(problem.id);
+    }
+  });
+
+  it('does not paint the misconceptions list in the reserved red', async () => {
+    // docs/05 §2: a list of misconceptions is a CATEGORY, not a response to something the
+    // reader just did. v1 gave it the same border as a wrong answer.
+    const { container } = await renderLearn(id);
+    const classes = [...container.querySelectorAll('#misconceptions *')]
+      .map((node) => node.className)
+      .join(' ');
+    expect(classes).toMatch(/border-rule-strong/);
+    expect(classes).not.toMatch(/correct|wrong|hint/);
   });
 });
 
@@ -112,9 +215,8 @@ describe('every skill in the bank now has problems', () => {
 
 describe('a skill with no problems — the empty state', () => {
   // No real skill is uncovered any more, which is the point of M1.10. The empty branches still
-  // have to work, because a new skill lands with no problems the day it is added, so they are
-  // exercised against a skill whose content has been emptied rather than against a real gap.
-  it('says so in a sentence rather than showing a blank ladder', async () => {
+  // have to work, because a new skill lands with no problems the day it is added.
+  async function withEmptySkill<T>(run: (mod: ContentModule) => Promise<T>): Promise<T> {
     vi.resetModules();
     vi.doMock('@/lib/content', async () => {
       const actual = (await vi.importActual('@/lib/content')) as ContentModule;
@@ -129,18 +231,35 @@ describe('a skill with no problems — the empty state', () => {
         getPapersForSkill: () => [],
       };
     });
+    try {
+      return await run((await import('@/lib/content')) as ContentModule);
+    } finally {
+      vi.doUnmock('@/lib/content');
+      vi.resetModules();
+    }
+  }
 
-    const EmptyPage = (await import('../skill/[id]/page')).default;
-    const { container } = render(await EmptyPage({ params: Promise.resolve({ id: 'GEO-17' }) }));
+  it('locks every ladder and says why, rather than showing empty rungs', async () => {
+    await withEmptySkill(async () => {
+      const EmptyPage = (await import('../skill/[id]/page')).default;
+      const { container } = render(await EmptyPage({ params: Promise.resolve({ id: 'GEO-17' }) }));
+      const lessons = container.querySelector('#unit-lessons');
+      expect(lessons?.textContent).toMatch(/Nothing written at this tier yet/);
+      expect(container.querySelector('#unit-progress')?.textContent).toMatch(
+        /No problems in this skill yet/,
+      );
+    });
+  });
 
-    expect(container.querySelector('#practice')?.textContent).toMatch(
-      /No problems tagged .* have been written yet/,
-    );
-    expect(container.querySelector('#example')?.textContent).toMatch(/No worked example/);
-    expect(container.querySelector('#drill')?.textContent).toMatch(/A drill needs problems/);
-
-    vi.doUnmock('@/lib/content');
-    vi.resetModules();
+  it('says so in a sentence on the learn page too', async () => {
+    await withEmptySkill(async () => {
+      const EmptyLearn = (await import('../skill/[id]/learn/page')).default;
+      const { container } = render(await EmptyLearn({ params: Promise.resolve({ id: 'GEO-17' }) }));
+      expect(container.querySelector('#every-problem')?.textContent).toMatch(
+        /No problems tagged .* have been written yet/,
+      );
+      expect(container.querySelector('#example')?.textContent).toMatch(/No worked example/);
+    });
   });
 });
 
@@ -149,8 +268,8 @@ describe('prerequisites and unlocks', () => {
     const skill = getSkill('CNT-13');
     if (!skill) throw new Error('CNT-13 is missing');
     const { container } = await renderSkill(skill.id);
-    const section = container.querySelector('#prerequisites');
-    if (!section) throw new Error('#prerequisites is missing');
+    const section = container.querySelector('#unit-graph');
+    if (!section) throw new Error('#unit-graph is missing');
     for (const related of [...skill.prerequisites, ...skill.unlocks]) {
       expect(
         within(section as HTMLElement).getByRole('link', { name: new RegExp(related) }),
@@ -161,7 +280,7 @@ describe('prerequisites and unlocks', () => {
 
   it('tells a root skill it is a root, rather than showing an empty box', async () => {
     const { container } = await renderSkill('NUM-01');
-    expect(container.querySelector('#prerequisites')?.textContent).toMatch(/the Atlas starts from/);
+    expect(container.querySelector('#unit-graph')?.textContent).toMatch(/the Atlas starts from/);
   });
 });
 
@@ -171,11 +290,77 @@ describe('the official-papers section', () => {
     // this assertion has to survive M1.8 filling the section in.
     for (const id of ['CNT-12', 'GEO-10', 'CFT-08']) {
       const { container, unmount } = await renderSkill(id);
-      const papers = container.querySelector('#papers')?.textContent ?? '';
-      expect(papers, `${id} #papers`).toMatch(/never/i);
-      expect(papers, `${id} #papers`).toMatch(/our (own )?(skill tags|analysis)/i);
+      const papers = container.querySelector('#unit-papers')?.textContent ?? '';
+      expect(papers, `${id} #unit-papers`).toMatch(/never/i);
+      expect(papers, `${id} #unit-papers`).toMatch(/our (own )?(skill tags|analysis)/i);
       unmount();
     }
+  });
+});
+
+describe('the exercise view', () => {
+  async function renderLadder(id: string, tier: string) {
+    return render(await LadderPage({ params: Promise.resolve({ id, tier }) }));
+  }
+
+  it('serves one problem at a time with its streak target', async () => {
+    const { container } = await renderLadder('CNT-12', '3');
+    expect(container.textContent).toMatch(/3 in a row to finish this ladder/);
+    expect(container.querySelectorAll('article')).toHaveLength(1);
+  });
+
+  it('keeps immediate distractor-specific feedback (docs/05 §7.3)', async () => {
+    const { container } = await renderLadder('CNT-12', '3');
+    const group = within(container).getByRole('group', { name: /answer choices/i });
+    const wrong = within(group)
+      .getAllByRole('button')
+      .find((button) => !button.textContent?.includes('correct'));
+    await userEvent.click(wrong as HTMLElement);
+    const feedback = await screen.findByTestId('feedback');
+    expect(feedback).toBeInTheDocument();
+    // Not a generic "incorrect": the misconception recorded for THAT choice.
+    expect(feedback.textContent).toMatch(/Here is the thinking that leads there/);
+  });
+
+  it('records the first answer in local progress and nowhere else', async () => {
+    const { container } = await renderLadder('CNT-12', '3');
+    const group = within(container).getByRole('group', { name: /answer choices/i });
+    await userEvent.click(within(group).getAllByRole('button')[0] as HTMLElement);
+    const stored = window.localStorage.getItem('ka-progress');
+    expect(stored).toBeTruthy();
+    expect(JSON.parse(stored ?? '{}').attempts['CNT-12']).toHaveLength(1);
+  });
+
+  it('offers a hint, a skip and a next problem', async () => {
+    const { container } = await renderLadder('CNT-12', '3');
+    for (const label of [/Show a hint/, /^Skip$/, /Next problem/]) {
+      expect(within(container).getByRole('button', { name: label })).toBeInTheDocument();
+    }
+  });
+
+  it('404s on a tier that is not 3, 4 or 5', async () => {
+    await expect(renderLadder('CNT-12', '7')).rejects.toThrow();
+  });
+});
+
+describe('the skill quiz', () => {
+  it('asks five problems and marks nothing until the end', async () => {
+    const { container } = render(
+      await SkillQuizPage({ params: Promise.resolve({ id: 'CNT-12' }) }),
+    );
+    expect(container.querySelectorAll('article').length).toBeLessThanOrEqual(5);
+    expect(container.textContent).toMatch(/Nothing is marked until you finish/);
+    expect(screen.queryByTestId('feedback')).toBeNull();
+  });
+
+  it('shows every explanation once finished', async () => {
+    render(await SkillQuizPage({ params: Promise.resolve({ id: 'CNT-12' }) }));
+    const groups = screen.getAllByRole('group', { name: /answer choices/i });
+    for (const group of groups) {
+      await userEvent.click(within(group).getAllByRole('button')[0] as HTMLElement);
+    }
+    await userEvent.click(screen.getByRole('button', { name: /Finish and see the explanations/ }));
+    expect(screen.getAllByTestId('feedback').length).toBe(groups.length);
   });
 });
 
@@ -183,15 +368,18 @@ describe('accessibility structure', () => {
   it('has exactly one h1 and gives every section a heading', async () => {
     const { container } = await renderSkill('GEO-10');
     expect(container.querySelectorAll('h1')).toHaveLength(1);
-    for (const section of SECTIONS) {
+    for (const section of UNIT_SECTIONS) {
       const node = container.querySelector(`#${section}`);
-      expect(node?.getAttribute('aria-labelledby')).toBe(`${section}-heading`);
+      expect(node?.getAttribute('aria-labelledby'), section).toBe(`${section}-heading`);
       expect(container.querySelector(`#${section}-heading`), section).not.toBeNull();
     }
   });
 
-  it('does not skip a heading level', async () => {
-    const { container } = await renderSkill('CNT-12');
+  it.each([
+    ['unit', (id: string) => renderSkill(id)],
+    ['learn', (id: string) => renderLearn(id)],
+  ])('does not skip a heading level on the %s page', async (_name, renderPage) => {
+    const { container } = await renderPage('CNT-12');
     const levels = [...container.querySelectorAll('h1,h2,h3,h4')].map((h) =>
       Number(h.tagName.slice(1)),
     );
@@ -204,7 +392,11 @@ describe('accessibility structure', () => {
 });
 
 describe('unknown skill', () => {
-  it('is a 404 rather than a broken page', async () => {
-    await expect(renderSkill('ZZZ-99')).rejects.toThrow();
+  it.each([
+    ['unit', (id: string) => SkillPage({ params: Promise.resolve({ id }) })],
+    ['learn', (id: string) => SkillLearnPage({ params: Promise.resolve({ id }) })],
+    ['quiz', (id: string) => SkillQuizPage({ params: Promise.resolve({ id }) })],
+  ])('is a 404 rather than a broken %s page', async (_name, load) => {
+    await expect(load('ZZZ-99')).rejects.toThrow();
   });
 });

@@ -15,10 +15,10 @@ export default function AboutPage() {
   const stats = getContentStats();
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10">
+    <div className="content-column px-4 py-10">
       <h1 className="m-0 text-2xl">About this site</h1>
 
-      <div className="serif prose-measure mt-6 text-ink-2 [&>p]:mt-5 [&>p:first-child]:mt-0">
+      <div className="reading prose-measure mt-6 text-ink-2 [&>p]:mt-5 [&>p:first-child]:mt-0">
         <p className="text-lg text-ink">
           I tutor about sixty students a year for Math Kangaroo, and I kept running into the same
           wall.
@@ -59,16 +59,16 @@ export default function AboutPage() {
 
       <h2 className="mt-12 text-lg">What this will never do</h2>
       <ul className="prose-measure mt-3 grid list-none gap-2 p-0 text-ink-2">
-        <li className="rounded-sm border-l-2 border-accent bg-surface px-3 py-2">
+        <li className="rounded-sm border-l-2 border-accent-600 bg-surface px-3 py-2">
           Charge for anything. There is no premium tier and there never will be.
         </li>
-        <li className="rounded-sm border-l-2 border-accent bg-surface px-3 py-2">
+        <li className="rounded-sm border-l-2 border-accent-600 bg-surface px-3 py-2">
           Require an account to practise. Accounts exist only to save progress.
         </li>
-        <li className="rounded-sm border-l-2 border-accent bg-surface px-3 py-2">
+        <li className="rounded-sm border-l-2 border-accent-600 bg-surface px-3 py-2">
           Track you. No ad networks, no third-party analytics, no cookies. The users are children.
         </li>
-        <li className="rounded-sm border-l-2 border-accent bg-surface px-3 py-2">
+        <li className="rounded-sm border-l-2 border-accent-600 bg-surface px-3 py-2">
           Reproduce an official Math Kangaroo problem. Not the text, not a reword, not the figures.
         </li>
       </ul>

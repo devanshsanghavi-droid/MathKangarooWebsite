@@ -16,7 +16,7 @@ import {
   type DiagnosticState,
 } from '@/lib/diagnostic';
 import { ProblemCardView } from '@/components/ProblemCardView';
-import { PointPill } from '@/components/PointPill';
+import { DifficultyPill } from '@/components/DifficultyPill';
 
 /**
  * The diagnostic, running entirely in the browser.
@@ -163,7 +163,7 @@ export function DiagnosticRunner({
                         <li key={id}>
                           <Link
                             href={`/skill/${id}`}
-                            className="inline-flex items-baseline gap-1.5 rounded-sm border border-rule px-2 py-1 text-xs no-underline hover:border-rule-2"
+                            className="inline-flex items-baseline gap-1.5 rounded-sm border border-rule px-2 py-1 text-xs no-underline hover:border-rule-strong"
                           >
                             <span className="mono text-2xs text-ink-3">{id}</span>
                             <span className="text-ink">{skillNames[id] ?? id}</span>
@@ -181,13 +181,13 @@ export function DiagnosticRunner({
           <button
             type="button"
             onClick={discard}
-            className="cursor-pointer rounded-sm border border-rule-2 bg-surface px-4 py-2 text-sm text-ink"
+            className="cursor-pointer rounded-sm border border-rule-strong bg-surface px-4 py-2 text-sm text-ink"
           >
             Start again
           </button>
           <Link
             href={`/atlas?band=${result.band}`}
-            className="rounded-sm border border-accent bg-accent-soft px-4 py-2 text-sm font-medium text-ink no-underline"
+            className="rounded-sm border border-accent-600 bg-accent-100 px-4 py-2 text-sm font-medium text-ink no-underline"
           >
             See it on the Atlas
           </Link>
@@ -210,7 +210,7 @@ export function DiagnosticRunner({
             <span className="mono">
               {done + 1} of at most {MAX_ITEMS}
             </span>
-            <PointPill points={problem.points} />
+            <DifficultyPill points={problem.points} />
             <span className="text-xs text-ink-3">
               No feedback until the end — this is a measurement, not practice.
             </span>
@@ -224,7 +224,7 @@ export function DiagnosticRunner({
             aria-label="Diagnostic progress"
           >
             <div
-              className="h-full bg-accent"
+              className="h-full bg-accent-600"
               style={{ width: `${Math.round((done / MAX_ITEMS) * 100)}%` }}
             />
           </div>
@@ -251,7 +251,7 @@ export function DiagnosticRunner({
   return (
     <div>
       {resumable ? (
-        <div className="mb-6 rounded-sm border border-accent bg-accent-soft p-4">
+        <div className="mb-6 rounded-sm border border-accent-600 bg-accent-100 p-4">
           <p className="m-0 text-sm text-ink">
             You have a diagnostic in progress — {resumable.state.answers.length} question
             {resumable.state.answers.length === 1 ? '' : 's'} answered.
@@ -260,7 +260,7 @@ export function DiagnosticRunner({
             <button
               type="button"
               onClick={() => setState(resumable.state)}
-              className="cursor-pointer rounded-sm border border-accent bg-surface px-3 py-1.5 text-sm font-medium text-ink"
+              className="cursor-pointer rounded-sm border border-accent-600 bg-surface px-3 py-1.5 text-sm font-medium text-ink"
             >
               Carry on
             </button>
@@ -288,7 +288,7 @@ export function DiagnosticRunner({
               type="button"
               onClick={() => begin(option)}
               aria-pressed={band === option}
-              className="cursor-pointer rounded-sm border border-rule-2 bg-surface px-4 py-2 text-sm text-ink hover:border-accent"
+              className="cursor-pointer rounded-sm border border-rule-strong bg-surface px-4 py-2 text-sm text-ink hover:border-accent-600"
             >
               Level {option.replace('-', '–')}
             </button>

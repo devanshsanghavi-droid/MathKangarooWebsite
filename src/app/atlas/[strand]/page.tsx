@@ -62,7 +62,7 @@ export default async function StrandPage({ params }: Params) {
   const totalProblems = skills.reduce((n, skill) => n + getProblemsForSkill(skill.id).length, 0);
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
+    <div className="content-column px-4 py-8">
       <nav aria-label="Breadcrumb" className="mb-5 text-xs text-ink-3">
         <ol className="m-0 flex list-none flex-wrap items-center gap-2 p-0">
           <li>
@@ -109,7 +109,7 @@ export default async function StrandPage({ params }: Params) {
                     <li key={skill.id}>
                       <Link
                         href={`/skill/${skill.id}`}
-                        className="block rounded-sm border border-rule bg-surface p-3 no-underline hover:border-rule-2"
+                        className="block rounded-sm border border-rule bg-surface p-3 no-underline hover:border-rule-strong"
                       >
                         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                           <span className="mono text-2xs text-ink-3">
@@ -123,7 +123,7 @@ export default async function StrandPage({ params }: Params) {
                               : `${problems.length} problem${problems.length === 1 ? '' : 's'}`}
                           </span>
                         </div>
-                        <p className="serif mt-2 mb-0 text-sm text-ink-2">
+                        <p className="reading mt-2 mb-0 text-sm text-ink-2">
                           “{skill.recognizeWhen[0]}”
                         </p>
                       </Link>
@@ -143,7 +143,7 @@ export default async function StrandPage({ params }: Params) {
             <li key={other}>
               <Link
                 href={`/atlas/${other}`}
-                className="inline-flex items-baseline gap-1.5 rounded-sm border border-rule px-2 py-1 text-xs no-underline hover:border-rule-2"
+                className="inline-flex items-baseline gap-1.5 rounded-sm border border-rule px-2 py-1 text-xs no-underline hover:border-rule-strong"
               >
                 <span className="mono text-2xs text-ink-3">{other}</span>
                 <span className="text-ink-2">{STRAND_META[other].name}</span>

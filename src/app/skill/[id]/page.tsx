@@ -4,33 +4,35 @@ import { notFound } from 'next/navigation';
 import {
   getAllSkills,
   getPapersForSkill,
-  getProblem,
   getProblemsForSkill,
   getSkill,
-  getGraph,
+  paperKey,
   STRAND_META,
 } from '@/lib/content';
 import { POINT_VALUES, type Points, type Skill } from '@/lib/schemas';
-import { ProblemCard } from '@/components/ProblemCard';
 import { SkillChip } from '@/components/SkillChip';
-import { SkillMeta } from '@/components/SkillMeta';
-import { PointPill, TIER_MEANING } from '@/components/PointPill';
-import { BandPill } from '@/components/BandPill';
+import { DifficultyPill } from '@/components/DifficultyPill';
+import { BandPill, bandLabel } from '@/components/BandPill';
 import { EmptyState } from '@/components/EmptyState';
-import { paperKey } from '@/lib/content';
+import { SkillUnit } from '@/components/skill/SkillUnit';
+import { typicalDifficulty } from '@/lib/skill-unit';
 
 interface Params {
   params: Promise<{ id: string }>;
 }
 
 /**
+ * The unit page — docs/05-DESIGN-DIRECTION.md §7.2.
+ *
+ * v1 was nine stacked sections: a document you read top to bottom and then closed. v2 is a
+ * unit you work through — breadcrumb, title, mastery bar, then a lesson list of Learn, three
+ * practice ladders and a skill quiz. Nothing was deleted; the nine sections' content moved
+ * into /skill/[id]/learn and the ladders.
+ *
  * The complete set of valid ids is known at build time — content lives in git and nothing is
  * created at runtime — so anything outside that set is a 404, not a page to try rendering.
- *
- * This is not a micro-optimisation. With the default `dynamicParams: true`, Next rendered the
- * page for an unknown id, hit `notFound()`, and then cached and served that not-found body with
- * an HTTP **200**. A wrong URL looked fine to a crawler and to any client that checks the
- * status rather than the words on the page.
+ * With the default `dynamicParams: true`, Next rendered the page for an unknown id, hit
+ * `notFound()`, and then cached and served that not-found body with an HTTP **200**.
  */
 export const dynamicParams = false;
 
@@ -56,26 +58,6 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
-/** Every section on this page renders. One that has no content says so in a sentence. */
-function Section({
-  id,
-  title,
-  children,
-}: {
-  id: string;
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <section id={id} aria-labelledby={`${id}-heading`} className="mt-10">
-      <h2 id={`${id}-heading`} className="m-0 text-lg">
-        {title}
-      </h2>
-      <div className="mt-3">{children}</div>
-    </section>
-  );
-}
-
 function relatedChips(ids: readonly string[]) {
   return ids
     .map((id) => getSkill(id))
@@ -89,19 +71,24 @@ export default async function SkillPage({ params }: Params) {
   if (!skill) notFound();
 
   const problems = getProblemsForSkill(skill.id);
-  const canonical = skill.canonicalProblem ? getProblem(skill.canonicalProblem) : undefined;
   const prerequisites = relatedChips(skill.prerequisites);
   const unlocks = relatedChips(skill.unlocks);
   const papers = getPapersForSkill(skill.id);
-  const graph = getGraph();
 
-  const ladder: Array<[Points, typeof problems]> = POINT_VALUES.map((points) => [
-    points,
-    problems.filter((problem) => problem.points === points),
-  ]);
+  const problemIdsByTier = Object.fromEntries(
+    POINT_VALUES.map((points) => [
+      points,
+      problems.filter((problem) => problem.points === points).map((problem) => problem.id),
+    ]),
+  ) as Record<Points, string[]>;
+
+  const counts = Object.fromEntries(
+    POINT_VALUES.map((points) => [points, problemIdsByTier[points]?.length ?? 0]),
+  ) as Record<Points, number>;
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
+    <div className="content-column px-4 py-8">
+      {/* 1 — breadcrumb: strand › band › skill */}
       <nav aria-label="Breadcrumb" className="mb-5 text-xs text-ink-3">
         <ol className="m-0 flex list-none flex-wrap items-center gap-2 p-0">
           <li>
@@ -116,74 +103,38 @@ export default async function SkillPage({ params }: Params) {
             </Link>
           </li>
           <li aria-hidden="true">/</li>
+          <li>
+            {skill.bands.map((band) => bandLabel(band).replace('Level ', '')).join(' · ')}
+            <span className="visually-hidden"> levels</span>
+          </li>
+          <li aria-hidden="true">/</li>
           <li className="mono text-ink-2">{skill.id}</li>
         </ol>
       </nav>
 
-      {/* 1 — name, id, strand, tier, bands */}
+      {/* 2 — title, one-line definition, difficulty */}
       <header>
-        <p className="mono m-0 text-xs text-ink-3">{skill.id}</p>
-        <h1 className="mt-1 text-2xl">{skill.name}</h1>
-        <div className="mt-5 rounded-sm border border-rule bg-surface p-4">
-          <SkillMeta skill={skill} />
+        <div className="flex flex-wrap items-center gap-3">
+          <h1 className="m-0 text-2xl">{skill.name}</h1>
+          <DifficultyPill points={typicalDifficulty(counts, skill.tier)} showMeaning />
         </div>
+        <p className="reading prose-measure mt-3 mb-0 text-ink-2">{skill.definition}</p>
       </header>
 
-      {/* 2 — definition */}
-      <Section id="definition" title="What it is">
-        <p className="serif prose-measure m-0 text-lg text-ink">{skill.definition}</p>
-      </Section>
+      {/* 3 and 4 — mastery bar and the lesson list */}
+      <SkillUnit
+        skillId={skill.id}
+        problemIdsByTier={problemIdsByTier}
+        allProblemIds={problems.map((problem) => problem.id)}
+        hasWorkedExample={skill.canonicalProblem !== null}
+      />
 
-      {/* 3 — you'll recognise it when… */}
-      <Section id="recognise" title="You'll recognise it when…">
-        <ul className="m-0 grid list-none gap-2 p-0">
-          {skill.recognizeWhen.map((trigger) => (
-            <li
-              key={trigger}
-              className="serif rounded-sm border-l-2 border-accent bg-surface px-3 py-2 text-ink-2"
-            >
-              “{trigger}”
-            </li>
-          ))}
-        </ul>
-      </Section>
-
-      {/* 4 — canonical worked example */}
-      <Section id="example" title="Worked example">
-        {canonical ? (
-          <ProblemCard problem={canonical} headingLevel={3} showSkills={false} linkToProblem />
-        ) : (
-          <EmptyState
-            action={
-              <Link href={`/problems?skill=${skill.id}`}>See every problem tagged {skill.id}</Link>
-            }
-          >
-            No worked example has been written for this skill yet. When one is, it appears here
-            fully solved, with its figure.
-          </EmptyState>
-        )}
-      </Section>
-
-      {/* 5 — common misconceptions */}
-      <Section id="misconceptions" title="Where it goes wrong">
-        <p className="mt-0 mb-3 text-sm text-ink-3">
-          Each of these is written the way a student would say it to themselves.
-        </p>
-        <ul className="m-0 grid list-none gap-2 p-0">
-          {skill.misconceptions.map((misconception) => (
-            <li
-              key={misconception}
-              className="serif rounded-sm border-l-2 border-incorrect bg-surface px-3 py-2 text-ink-2"
-            >
-              “{misconception}”
-            </li>
-          ))}
-        </ul>
-      </Section>
-
-      {/* 6 — prerequisites and unlocks */}
-      <Section id="prerequisites" title="Before and after">
-        <div className="grid gap-5 sm:grid-cols-2">
+      {/* 5 — prerequisites and unlocks */}
+      <section id="unit-graph" aria-labelledby="unit-graph-heading" className="mt-8">
+        <h2 id="unit-graph-heading" className="m-0 text-lg">
+          Before and after
+        </h2>
+        <div className="mt-3 grid gap-5 sm:grid-cols-2">
           <div>
             <h3 className="m-0 text-sm font-semibold text-ink">Needs first</h3>
             <div className="mt-2 flex flex-wrap gap-2">
@@ -192,9 +143,7 @@ export default async function SkillPage({ params }: Params) {
                   <SkillChip key={prerequisite.id} skill={prerequisite} />
                 ))
               ) : (
-                <EmptyState>
-                  Nothing. This is one of the {graph.roots.length} skills the Atlas starts from.
-                </EmptyState>
+                <EmptyState>Nothing. This is one of the skills the Atlas starts from.</EmptyState>
               )}
             </div>
           </div>
@@ -211,125 +160,48 @@ export default async function SkillPage({ params }: Params) {
             </div>
           </div>
         </div>
-      </Section>
+      </section>
 
-      {/* 7 — practice ladder, grouped by point value */}
-      <Section id="practice" title="Practice ladder">
-        {problems.length === 0 ? (
-          <EmptyState action={<Link href="/problems">Browse the whole problem bank</Link>}>
-            No problems tagged {skill.id} have been written yet. Ten new problems are authored every
-            week, so this will not stay empty.
-          </EmptyState>
-        ) : (
-          <div className="grid gap-4">
-            {ladder.map(([points, group]) => (
-              <div key={points}>
-                <h3 className="m-0 flex items-center gap-2 text-sm font-semibold text-ink">
-                  <PointPill points={points} />
-                  <span className="font-normal text-ink-3">{TIER_MEANING[points]}</span>
-                </h3>
-                {group.length === 0 ? (
-                  <p className="mt-2 mb-0 text-sm text-ink-3">
-                    Nothing at this tier yet for {skill.id}.
-                  </p>
-                ) : (
-                  <ul className="mt-2 grid list-none gap-2 p-0">
-                    {group.map((problem) => (
-                      <li key={problem.id}>
-                        <Link
-                          href={`/problem/${problem.id}`}
-                          className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-sm border border-rule bg-surface px-3 py-2 no-underline hover:border-rule-2"
-                        >
-                          <span className="mono text-xs text-ink-3">{problem.id}</span>
-                          <BandPill band={problem.band} />
-                          <span className="serif flex-1 text-sm text-ink">
-                            {problem.statement.length > 96
-                              ? `${problem.statement.slice(0, 93)}…`
-                              : problem.statement}
-                          </span>
-                          {problem.skills.primary === skill.id ? null : (
-                            <span className="mono text-2xs text-ink-3">also tests this</span>
-                          )}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
-            {/*
-              Mastery state per problem is P2: it needs an account and the attempts table.
-              Saying so is better than showing an empty ring that never fills.
-            */}
-            <p className="m-0 text-xs text-ink-3">
-              Your progress through this ladder is saved once accounts exist. Practice never
-              requires one.
-            </p>
-          </div>
-        )}
-      </Section>
-
-      {/* 8 — in official papers */}
-      <Section id="papers" title="In official papers">
-        {papers.length === 0 ? (
-          <EmptyState action={<Link href="/papers">See the papers indexed so far</Link>}>
-            No indexed official paper question has been tagged with {skill.id} yet. The index grows
-            one paper at a time, and it records only question numbers, point values and our own
-            skill tags — never the problems themselves.
-          </EmptyState>
-        ) : (
-          <>
-            <p className="mt-0 mb-3 text-sm text-ink-3">
-              Our analysis of official past papers. We link to the official PDFs; we never host
-              them, and we never reproduce a question.
-            </p>
-            <ul className="m-0 grid list-none gap-2 p-0">
-              {papers.map((reference) => (
-                <li key={`${reference.year}-${reference.band}-${reference.questionNumber}`}>
-                  <Link
-                    href={`/papers/${paperKey(reference.year, reference.band)}`}
-                    className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-sm border border-rule bg-surface px-3 py-2 no-underline hover:border-rule-2"
-                  >
-                    <span className="mono text-xs text-ink-2">{reference.year}</span>
-                    <BandPill band={reference.band} />
-                    <span className="text-sm text-ink">Question {reference.questionNumber}</span>
-                    <PointPill points={reference.points} />
-                    {reference.note ? (
-                      <span className="flex-1 text-xs text-ink-3">{reference.note}</span>
-                    ) : null}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-      </Section>
-
-      {/* 9 — start a drill */}
-      <Section id="drill" title="Drill this skill">
-        {problems.length > 0 ? (
-          <div className="rounded-sm border border-rule bg-surface p-4">
-            <p className="m-0 text-sm text-ink-2">
-              Spaced-repetition drills arrive with accounts, in Phase 2 — they schedule the{' '}
-              <em>skill</em> and serve a problem you have not seen. Until then, work the ladder
-              above in order, lowest tier first.
-            </p>
-            <p className="mt-3 mb-0 text-sm">
-              <Link href={`/problem/${problems[0]?.id ?? ''}`}>
-                Start with {problems[0]?.id} ({problems[0]?.points}-point)
-              </Link>
-            </p>
-          </div>
-        ) : (
-          <EmptyState
-            action={
-              <Link href={`/atlas/${skill.strand}`}>Walk the {skill.strand} strand instead</Link>
-            }
-          >
-            A drill needs problems, and this skill has none yet.
-          </EmptyState>
-        )}
-      </Section>
+      {/* 6 — in official papers, unchanged */}
+      <section id="unit-papers" aria-labelledby="unit-papers-heading" className="mt-8">
+        <h2 id="unit-papers-heading" className="m-0 text-lg">
+          In official papers
+        </h2>
+        <div className="mt-3">
+          {papers.length === 0 ? (
+            <EmptyState action={<Link href="/papers">See the papers indexed so far</Link>}>
+              No indexed official paper question has been tagged with {skill.id} yet. The index
+              grows one paper at a time, and it records only question numbers, point values and our
+              own skill tags — never the problems themselves.
+            </EmptyState>
+          ) : (
+            <>
+              <p className="mt-0 mb-3 text-sm text-ink-3">
+                Our analysis of official past papers. We link to the official PDFs; we never host
+                them, and we never reproduce a question.
+              </p>
+              <ul className="m-0 grid list-none gap-2 p-0">
+                {papers.map((reference) => (
+                  <li key={`${reference.year}-${reference.band}-${reference.questionNumber}`}>
+                    <Link
+                      href={`/papers/${paperKey(reference.year, reference.band)}`}
+                      className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-sm border border-rule bg-surface px-3 py-2 no-underline hover:border-rule-strong"
+                    >
+                      <span className="mono text-xs text-ink-2">{reference.year}</span>
+                      <BandPill band={reference.band} />
+                      <span className="text-sm text-ink">Question {reference.questionNumber}</span>
+                      <DifficultyPill points={reference.points} />
+                      {reference.note ? (
+                        <span className="flex-1 text-xs text-ink-3">{reference.note}</span>
+                      ) : null}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </div>
+      </section>
     </div>
   );
 }

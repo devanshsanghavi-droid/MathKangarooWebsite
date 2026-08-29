@@ -12,7 +12,7 @@ export function AtlasViewToggle({ query }: { query: AtlasQuery }) {
   const item = (active: boolean) =>
     [
       'rounded-xs px-3 py-1.5 text-sm no-underline transition-colors',
-      active ? 'bg-accent-soft font-medium text-ink' : 'text-ink-2 hover:text-ink',
+      active ? 'bg-accent-100 font-medium text-ink' : 'text-ink-2 hover:text-ink',
     ].join(' ');
 
   return (

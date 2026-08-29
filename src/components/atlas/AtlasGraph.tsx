@@ -7,15 +7,32 @@ import { LAYOUT_CONSTANTS } from '@/lib/atlas-layout';
 import { STRAND_META, TIER_META } from '@/lib/taxonomy-meta';
 import type { Tier } from '@/lib/schemas';
 import { atlasHref, type AtlasQuery } from '@/lib/atlas-params';
+import type { MasteryState } from '@/lib/mastery';
+import { MASTERY_DISPLAY, MASTERY_LEGEND } from '@/lib/mastery-display';
+import { useProgress } from '@/components/mastery/useProgress';
+import { masteryStateFor } from '@/lib/local-progress';
 
 const ZOOM_MIN = 0.4;
 const ZOOM_MAX = 3;
 const ZOOM_STEP = 1.25;
 
-const TIER_NODE_CLASS: Record<Tier, string> = {
-  foundation: 'fill-surface stroke-rule-2',
-  core: 'fill-accent-soft stroke-accent',
-  gateway: 'fill-p5-bg stroke-p5',
+/**
+ * docs/05-DESIGN-DIRECTION.md §7.4: tier moves to BORDER WEIGHT so hue is free for mastery.
+ * v1 spent three different fills on the tier, which left nothing to say how the student was
+ * actually doing — and gave every gateway skill a rose ring that read as "you failed this".
+ */
+const TIER_STROKE_WIDTH: Record<Tier, number> = {
+  foundation: 1,
+  core: 1.5,
+  gateway: 2.5,
+};
+
+/** Node fill is the mastery ramp, and only the mastery ramp. */
+const MASTERY_FILL: Record<MasteryState, string> = {
+  unseen: 'fill-m0',
+  seen: 'fill-m1',
+  shaky: 'fill-m2',
+  mastered: 'fill-m3',
 };
 
 /**
@@ -45,6 +62,8 @@ export function AtlasGraph({
   query: AtlasQuery;
   bands: Array<{ tier: Tier; from: number; to: number }>;
 }) {
+  const progress = useProgress();
+  const now = new Date();
   const [zoom, setZoom] = useState(1);
   const surfaceRef = useRef<HTMLDivElement>(null);
   const dragging = useRef<{ x: number; y: number; left: number; top: number } | null>(null);
@@ -177,7 +196,7 @@ export function AtlasGraph({
                   y={top + 14}
                   className="fill-ink-3"
                   fontSize={10}
-                  fontFamily="var(--font-mono)"
+                  fontFamily="var(--mono)"
                 >
                   {TIER_META[band.tier].label}
                 </text>
@@ -194,7 +213,7 @@ export function AtlasGraph({
               textAnchor="middle"
               className="fill-ink-2"
               fontSize={11}
-              fontFamily="var(--font-mono)"
+              fontFamily="var(--mono)"
             >
               {column.strand}
               <title>{STRAND_META[column.strand].name}</title>
@@ -210,7 +229,7 @@ export function AtlasGraph({
                 y1={edge.y1}
                 x2={edge.x2}
                 y2={edge.y2}
-                className={edge.crossStrand ? 'stroke-rule-2' : 'stroke-rule'}
+                className={edge.crossStrand ? 'stroke-rule-strong' : 'stroke-rule'}
                 strokeWidth={edge.crossStrand ? 0.8 : 1.4}
                 strokeDasharray={edge.crossStrand ? '3 3' : undefined}
               />
@@ -220,6 +239,7 @@ export function AtlasGraph({
           {/* Nodes. */}
           {layout.nodes.map((node) => {
             const focused = query.focus === node.id;
+            const mastery = masteryStateFor(progress, node.id, now);
             return (
               <Link
                 key={node.id}
@@ -227,19 +247,20 @@ export function AtlasGraph({
                 scroll={false}
                 aria-label={`${node.name}. ${TIER_META[node.tier].label} skill in ${
                   STRAND_META[node.strand].name
-                }. ${node.problemCount === 0 ? 'No problems yet' : `${node.problemCount} problem${node.problemCount === 1 ? '' : 's'}`}.`}
+                }. ${MASTERY_DISPLAY[mastery].label}. ${node.problemCount === 0 ? 'No problems yet' : `${node.problemCount} problem${node.problemCount === 1 ? '' : 's'}`}.`}
                 aria-current={focused ? 'true' : undefined}
               >
                 <circle
                   cx={node.x}
                   cy={node.y}
                   r={focused ? LAYOUT_CONSTANTS.nodeRadius + 3 : LAYOUT_CONSTANTS.nodeRadius}
-                  className={TIER_NODE_CLASS[node.tier]}
-                  strokeWidth={focused ? 3 : 1.5}
+                  data-mastery={mastery}
+                  className={`${MASTERY_FILL[mastery]} stroke-rule-strong`}
+                  strokeWidth={focused ? 3.5 : TIER_STROKE_WIDTH[node.tier]}
                 />
                 {/* A hollow ring marks a skill with no problems yet: honest, and not colour-only. */}
                 {node.problemCount === 0 ? (
-                  <circle cx={node.x} cy={node.y} r={3} className="fill-paper" />
+                  <circle cx={node.x} cy={node.y} r={3} className="fill-ground" />
                 ) : null}
                 <text
                   x={node.x}
@@ -247,7 +268,7 @@ export function AtlasGraph({
                   textAnchor="middle"
                   className="fill-ink-2"
                   fontSize={9}
-                  fontFamily="var(--font-mono)"
+                  fontFamily="var(--mono)"
                 >
                   {node.id.slice(4)}
                 </text>
@@ -258,6 +279,16 @@ export function AtlasGraph({
       </div>
 
       <ul className="m-0 mt-2 flex flex-wrap list-none gap-x-4 gap-y-1 p-0 text-2xs text-ink-3">
+        {MASTERY_LEGEND.map((state) => (
+          <li key={state} className="inline-flex items-center gap-1.5">
+            <span
+              aria-hidden="true"
+              className={`inline-block h-2.5 w-2.5 rounded-lg border border-rule-strong ${MASTERY_DISPLAY[state].fill}`}
+            />
+            {MASTERY_DISPLAY[state].label}
+          </li>
+        ))}
+        <li>Ring weight: foundation, core, gateway (thinnest to thickest)</li>
         <li>Solid line: prerequisite within a strand</li>
         <li>Dashed line: prerequisite from another strand</li>
         <li>Hollow centre: no problems written yet</li>

@@ -32,6 +32,11 @@ These are hard rules. If a task appears to require breaking one, stop and say so
 - **Trademark hygiene.** "Math Kangaroo" is used descriptively only. Every page footer
   carries: *"Independent project. Not affiliated with or endorsed by Math Kangaroo in USA,
   NFP."*
+- **Green, red and amber are reserved.** They appear only in response to something the student
+  did: correct, incorrect, hint taken. Never for difficulty, never for a category, never for
+  decoration. If a component needs a colour and none of the reserved three apply, it uses a
+  neutral or the single teal accent — there is no fourth option. `pnpm check:palette` fails the
+  build on a violation. See `docs/05-DESIGN-DIRECTION.md` §2.
 - **Accessibility is not a phase.** WCAG 2.1 AA contrast, full keyboard operation, visible
   focus, `prefers-reduced-motion` respected. A component that fails this is not done.
 - **No scope creep.** Forums, leaderboards, AMC content, video courses, AI tutors: all
@@ -68,6 +73,7 @@ pnpm lint                # eslint + prettier check
 pnpm typecheck           # tsc --noEmit
 pnpm test                # vitest unit tests
 pnpm validate:content    # zod-validate every skill + problem JSON file
+pnpm check:palette       # reserved-colour rule: no green/red/amber outside feedback
 pnpm a11y                # axe-core run against key routes
 pnpm db:types            # regenerate Supabase types into src/lib/db.types.ts
 ```
@@ -98,12 +104,16 @@ docs/                              the specs below — read before building
 - `docs/02-BUILD-PLAN.md` — the phased checklist. Work top to bottom.
 - `docs/03-CONTENT-GUIDE.md` — the 91-skill taxonomy and problem authoring rules.
 - `docs/04-CLAUDE-CODE-PROMPTS.md` — session kickoff prompts.
+- `docs/05-DESIGN-DIRECTION.md` — the v2 palette, type and unit structure. Supersedes §0.1 of
+  `00-SPEC.md` and the structure of `/skill/[id]` described there.
 
 ## Conventions
 
 - TypeScript `strict: true`. No `any`. No non-null assertions without a comment explaining why.
 - **All colors come from `src/styles/tokens.css`.** Never write a hex literal in a component.
-  Light and dark are both first-class; test both before calling anything done.
+  Light and dark are both first-class; test both before calling anything done. The token set,
+  the type scale and the shape scale are defined by `docs/05-DESIGN-DIRECTION.md`, which
+  supersedes `docs/00-SPEC.md` §0.1.
 - Server Components by default. `"use client"` only where interaction genuinely requires it.
 - Content files are the source of truth. Never hardcode a problem or skill in a component.
 - Figures are React components in `components/figures/`, referenced by id from problem JSON.
@@ -115,7 +125,8 @@ docs/                              the specs below — read before building
 
 A task is not complete until all of these pass:
 
-- [ ] `pnpm build && pnpm typecheck && pnpm lint && pnpm test && pnpm validate:content` clean
+- [ ] `pnpm build && pnpm typecheck && pnpm lint && pnpm test && pnpm validate:content &&
+      pnpm check:palette` clean
 - [ ] Works in light and dark theme
 - [ ] Keyboard-operable with a visible focus state
 - [ ] Readable at 360px wide and at 200% zoom

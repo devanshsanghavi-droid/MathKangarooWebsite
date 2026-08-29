@@ -20,7 +20,7 @@ export const STROKE_SOFT = 'var(--ink-3)';
 export const GRID = 'var(--grid)';
 export const FILL_NONE = 'none';
 export const FILL_SURFACE = 'var(--surface)';
-export const FILL_ACCENT = 'var(--accent-soft)';
+export const FILL_ACCENT = 'var(--accent-100)';
 export const FILL_SOLID = 'var(--ink-2)';
 
 /** Line weights are in user units and scale with the viewBox, so they hold at any size. */
@@ -88,7 +88,7 @@ export function Label({ x, y, children }: { x: number; y: number; children: Reac
       textAnchor="middle"
       dominantBaseline="middle"
       fill={STROKE}
-      fontFamily="var(--font-mono)"
+      fontFamily="var(--mono)"
       fontSize={11}
     >
       {children}

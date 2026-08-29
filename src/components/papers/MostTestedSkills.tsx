@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { SkillFrequency } from '@/lib/papers';
-import { PointPill } from '@/components/PointPill';
+import { DifficultyPill } from '@/components/DifficultyPill';
 
 /**
  * "Skills most tested in this band."
@@ -37,7 +37,7 @@ export function MostTestedSkills({
                   {skillNames.get(frequency.skillId) ?? 'Not in the Atlas'}
                 </span>
                 {frequency.points.map((points) => (
-                  <PointPill key={points} points={points} />
+                  <DifficultyPill key={points} points={points} />
                 ))}
                 <span className="mono text-2xs text-ink-2">
                   {frequency.count} of {questionCount}
@@ -45,7 +45,7 @@ export function MostTestedSkills({
               </span>
               <span
                 aria-hidden="true"
-                className="mt-1 block h-1.5 rounded-full bg-accent"
+                className="mt-1 block h-1.5 rounded-full bg-accent-600"
                 style={{ width: `${Math.max(4, (frequency.count / busiest) * 100)}%` }}
               />
             </Link>

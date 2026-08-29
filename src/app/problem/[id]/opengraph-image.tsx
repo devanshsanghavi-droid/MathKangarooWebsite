@@ -12,18 +12,25 @@ export function generateStaticParams(): Array<{ id: string }> {
   return getAllProblems().map((problem) => ({ id: problem.id }));
 }
 
-const POINT_TOKEN = { 3: '--p3', 4: '--p4', 5: '--p5' } as const;
+/**
+ * docs/05-DESIGN-DIRECTION.md §3: difficulty is the neutral slate ramp with filled dots. The
+ * card's left rail is the tier's shade and the dots repeat it in glyphs, so the card still
+ * reads as "hard" when it is scaled to a thumbnail or rendered in a monochrome preview.
+ */
+const TIER_BG = { 3: '--d1-bg', 4: '--d2-bg', 5: '--d3-bg' } as const;
+const TIER_FG = { 3: '--d1-fg', 4: '--d2-fg', 5: '--d3-fg' } as const;
+const TIER_FILLED = { 3: 1, 4: 2, 5: 3 } as const;
 
 export default async function OpenGraphImage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const problem = getProblem(id);
 
   // Colours come from tokens.css at build time; satori cannot resolve custom properties.
-  const paper = themeColor('--paper');
+  const paper = themeColor('--ground');
   const ink = themeColor('--ink');
   const ink3 = themeColor('--ink-3');
   const rule = themeColor('--rule');
-  const accent = themeColor('--accent');
+  const accent = themeColor('--accent-700');
 
   if (!problem) {
     return new ImageResponse(
@@ -46,7 +53,8 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ id:
   }
 
   const skill = getSkill(problem.skills.primary);
-  const tier = themeColor(POINT_TOKEN[problem.points]);
+  const tierBg = themeColor(TIER_BG[problem.points]);
+  const tierFg = themeColor(TIER_FG[problem.points]);
 
   return new ImageResponse(
     <div
@@ -59,12 +67,34 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ id:
         background: paper,
         color: ink,
         padding: 72,
-        borderLeft: `24px solid ${tier}`,
+        borderLeft: `24px solid ${tierBg}`,
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 24, fontSize: 30, color: ink3 }}>
         <span>{problem.id}</span>
-        <span style={{ color: tier, fontWeight: 700 }}>{problem.points} point</span>
+        {/*
+          The difficulty dots are drawn as shapes, not as ● / ○ glyphs. satori only has the
+          fonts it is handed, and asking it for U+25CF made every card try to fetch a font it
+          could not get — "Failed to download dynamic font. Status: 400" — and render tofu
+          where the tier should be. A circle it can draw from a border-radius on its own.
+        */}
+        <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          {[0, 1, 2].map((index) => (
+            <span
+              key={index}
+              style={{
+                width: 18,
+                height: 18,
+                borderRadius: 9,
+                border: `3px solid ${tierFg}`,
+                background: index < TIER_FILLED[problem.points] ? tierFg : 'transparent',
+              }}
+            />
+          ))}
+          <span style={{ color: tierFg, fontWeight: 700, marginLeft: 6 }}>
+            {problem.points} point
+          </span>
+        </span>
         <span>Level {problem.band.replace('-', '–')}</span>
       </div>
 

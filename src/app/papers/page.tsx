@@ -37,7 +37,7 @@ export default function PapersPage() {
   const skillNames = new Map(getAllSkills().map((skill) => [skill.id, skill.name]));
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
+    <div className="content-column px-4 py-8">
       <header className="max-w-prose">
         <h1 className="m-0 text-2xl">Official paper index</h1>
         <p className="mt-3 mb-0 text-ink-2">
@@ -92,7 +92,7 @@ export default function PapersPage() {
                       <li key={paperSlug(paper)}>
                         <Link
                           href={`/papers/${paperSlug(paper)}`}
-                          className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-sm border border-rule bg-surface px-3 py-2 no-underline hover:border-rule-2"
+                          className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-sm border border-rule bg-surface px-3 py-2 no-underline hover:border-rule-strong"
                         >
                           <span className="text-sm text-ink">{paperTitle(paper)}</span>
                           <span className="mono text-2xs text-ink-3">

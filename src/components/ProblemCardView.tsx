@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { ChoiceKey, Problem, Skill } from '@/lib/schemas';
-import { PointPill } from './PointPill';
+import { DifficultyPill } from './DifficultyPill';
 import { ChoiceList } from './ChoiceList';
 import { BandPill } from './BandPill';
 import { SkillChip, UnknownSkillChip } from './SkillChip';
@@ -78,14 +78,14 @@ export function ProblemCardView({
             <span className="ml-2 font-medium text-ink">{headingSuffix}</span>
           ) : null}
         </Heading>
-        <PointPill points={problem.points} showMeaning />
+        <DifficultyPill points={problem.points} showMeaning />
         <BandPill band={problem.band} />
         <span className="mono ml-auto text-2xs text-ink-3">
           about {Math.round(problem.estSeconds / 15) * 15}s
         </span>
       </div>
 
-      <p className="serif prose-measure mt-4 mb-0 text-lg text-ink">{problem.statement}</p>
+      <p className="reading prose-measure mt-4 mb-0 text-lg text-ink">{problem.statement}</p>
 
       {problem.figure ? <FigureRenderer figure={problem.figure} problemId={problem.id} /> : null}
 

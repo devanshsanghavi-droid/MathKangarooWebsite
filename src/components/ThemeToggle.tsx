@@ -76,7 +76,7 @@ export function ThemeToggle() {
             onClick={() => select(option.value)}
             className={[
               'cursor-pointer rounded-xs px-2 py-1 text-xs leading-none transition-colors',
-              selected ? 'bg-accent-soft text-ink' : 'text-ink-3 hover:text-ink',
+              selected ? 'bg-accent-100 text-ink' : 'text-ink-3 hover:text-ink',
             ].join(' ')}
           >
             <span aria-hidden="true">{option.glyph}</span>

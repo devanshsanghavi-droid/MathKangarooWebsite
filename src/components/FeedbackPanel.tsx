@@ -40,7 +40,7 @@ export function FeedbackPanel({
         aria-live="polite"
         data-testid="feedback"
         data-outcome="correct"
-        className="mt-4 rounded-sm border border-correct bg-correct-bg p-4"
+        className="mt-4 rounded-sm border border-correct-border bg-correct-100 p-4"
       >
         <p className="m-0 text-sm font-semibold text-ink">
           Correct — {selected.key} is {selected.text}.
@@ -56,7 +56,7 @@ export function FeedbackPanel({
       aria-live="polite"
       data-testid="feedback"
       data-outcome="incorrect"
-      className="mt-4 rounded-sm border border-incorrect bg-incorrect-bg p-4"
+      className="mt-4 rounded-sm border border-wrong-border bg-wrong-100 p-4"
     >
       <p className="m-0 text-sm font-semibold text-ink">
         Not {selected.key}. Here is the thinking that leads there:
@@ -65,7 +65,7 @@ export function FeedbackPanel({
         Quoted and set in the first person because it is written in the student's own voice.
         Reading your own mistake back is what makes it stick.
       */}
-      <blockquote className="serif mt-3 mb-0 border-l-2 border-incorrect pl-3 text-ink">
+      <blockquote className="reading mt-3 mb-0 border-l-2 border-wrong-border pl-3 text-ink">
         “{selected.misconception}”
       </blockquote>
       {/*

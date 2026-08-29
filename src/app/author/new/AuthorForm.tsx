@@ -61,7 +61,7 @@ export function AuthorForm({
   const issuesFor = (path: string) =>
     result.issues.filter((issue) => issue.path === path || issue.path.startsWith(`${path}.`));
 
-  const field = 'w-full rounded-sm border border-rule-2 bg-surface px-3 py-2 text-ink';
+  const field = 'w-full rounded-sm border border-rule-strong bg-surface px-3 py-2 text-ink';
   const label = 'block text-sm font-medium text-ink';
   const help = 'mt-1 mb-2 text-xs text-ink-3';
 
@@ -71,7 +71,7 @@ export function AuthorForm({
     return (
       <ul className="m-0 mt-1 grid list-none gap-0.5 p-0">
         {found.map((issue) => (
-          <li key={`${issue.path}-${issue.message}`} className="text-sm text-incorrect">
+          <li key={`${issue.path}-${issue.message}`} className="text-sm text-wrong-700">
             {issue.message}
           </li>
         ))}
@@ -215,7 +215,7 @@ export function AuthorForm({
                 key={choice.key}
                 className={[
                   'grid gap-2 rounded-sm border p-3',
-                  isCorrect ? 'border-correct bg-correct-bg' : 'border-rule',
+                  isCorrect ? 'border-correct-border bg-correct-100' : 'border-rule',
                 ].join(' ')}
               >
                 <div className="flex items-center gap-3">
@@ -436,7 +436,7 @@ export function AuthorForm({
           aria-live="polite"
           className={[
             'rounded-sm border p-4',
-            result.ok ? 'border-correct bg-correct-bg' : 'border-rule bg-surface-2',
+            result.ok ? 'border-correct-border bg-correct-100' : 'border-rule bg-surface-2',
           ].join(' ')}
         >
           {result.ok ? (
@@ -470,7 +470,7 @@ export function AuthorForm({
           <button
             type="button"
             onClick={copyJson}
-            className="cursor-pointer rounded-sm border border-rule-2 bg-surface px-4 py-2 text-sm text-ink"
+            className="cursor-pointer rounded-sm border border-rule-strong bg-surface px-4 py-2 text-sm text-ink"
           >
             {copied ? 'Copied' : 'Copy JSON'}
           </button>
@@ -481,7 +481,7 @@ export function AuthorForm({
             className={[
               'rounded-sm border px-4 py-2 text-sm no-underline',
               result.ok
-                ? 'border-accent bg-accent-soft font-medium text-ink'
+                ? 'border-accent-600 bg-accent-100 font-medium text-ink'
                 : 'pointer-events-none border-rule text-ink-3 opacity-60',
             ].join(' ')}
           >

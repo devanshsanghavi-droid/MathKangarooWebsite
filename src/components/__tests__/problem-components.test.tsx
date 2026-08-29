@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { PointPill } from '../PointPill';
+import { difficultyLabel, DifficultyPill } from '../DifficultyPill';
 import { BandPill, bandLabel } from '../BandPill';
 import { SkillChip, UnknownSkillChip } from '../SkillChip';
 import { FigureRenderer } from '../FigureRenderer';
@@ -39,22 +39,48 @@ const THEMES = ['light', 'dark'] as const;
 
 /* -------------------------------------------------------------------------- */
 
-describe('PointPill', () => {
+describe('DifficultyPill', () => {
   it.each([3, 4, 5] as const)('states the %s-point tier in words, not colour alone', (points) => {
-    render(<PointPill points={points} />);
+    render(<DifficultyPill points={points} />);
     expect(screen.getByText(`${points} pt`)).toBeInTheDocument();
   });
 
-  it('uses the semantic tier token for each tier', () => {
-    const { container: p3 } = render(<PointPill points={3} />);
-    const { container: p5 } = render(<PointPill points={5} />);
-    expect(p3.firstElementChild?.className).toContain('text-p3');
-    expect(p5.firstElementChild?.className).toContain('text-p5');
+  it('uses the neutral difficulty ramp, never a reserved feedback colour', () => {
+    // docs/05 §3. v1 painted the 5-point tier rose — the same variable as "incorrect" — so a
+    // student saw red on the hardest problems before reading a word of them.
+    for (const [points, expected] of [
+      [3, 'bg-d1-bg text-d1-fg'],
+      [4, 'bg-d2-bg text-d2-fg'],
+      [5, 'bg-d3-bg text-d3-fg'],
+    ] as const) {
+      const { container, unmount } = render(<DifficultyPill points={points} />);
+      const className = container.firstElementChild?.className ?? '';
+      expect(className, `${points}pt`).toContain(expected);
+      expect(className, `${points}pt must not use a reserved colour`).not.toMatch(
+        /correct|wrong|hint/,
+      );
+      unmount();
+    }
+  });
+
+  it.each([
+    [3, '\u25cf\u25cb\u25cb'],
+    [4, '\u25cf\u25cf\u25cb'],
+    [5, '\u25cf\u25cf\u25cf'],
+  ] as const)('carries the tier as %s filled dots, so it survives greyscale', (points, dots) => {
+    const { container } = render(<DifficultyPill points={points} />);
+    expect(container.textContent).toContain(dots);
+  });
+
+  it('gives a screen reader words rather than three circle glyphs', () => {
+    render(<DifficultyPill points={5} />);
+    expect(screen.getByText('5 points, difficulty 3 of 3')).toBeInTheDocument();
+    expect(difficultyLabel(3)).toBe('3 points, difficulty 1 of 3');
   });
 
   it.each(THEMES)('renders in the %s theme', (theme) => {
-    const { container } = renderInTheme(<PointPill points={4} />, theme);
-    expect(container.textContent).toBe('4 pt');
+    const { container } = renderInTheme(<DifficultyPill points={4} />, theme);
+    expect(container.textContent).toContain('4 pt');
     expect(document.documentElement.getAttribute('data-theme')).toBe(theme);
   });
 });
@@ -86,8 +112,8 @@ describe('SkillChip', () => {
   it('marks the primary skill differently from the secondary ones', () => {
     const { container: primary } = render(<SkillChip skill={skill} variant="primary" />);
     const { container: normal } = render(<SkillChip skill={skill} />);
-    expect(primary.firstElementChild?.className).toContain('border-accent');
-    expect(normal.firstElementChild?.className).not.toContain('border-accent');
+    expect(primary.firstElementChild?.className).toContain('border-accent-600');
+    expect(normal.firstElementChild?.className).not.toContain('border-accent-600');
   });
 
   it('shows an unresolved id rather than dropping it silently', () => {

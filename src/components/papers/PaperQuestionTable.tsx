@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { PaperIndex } from '@/lib/schemas';
-import { PointPill } from '@/components/PointPill';
+import { DifficultyPill } from '@/components/DifficultyPill';
 
 /**
  * Our analysis of one official paper, question by question.
@@ -25,7 +25,7 @@ export function PaperQuestionTable({
           reproduced here.
         </caption>
         <thead>
-          <tr className="border-b border-rule-2 text-left">
+          <tr className="border-b border-rule-strong text-left">
             <th scope="col" className="py-2 pr-3 font-medium text-ink-2">
               #
             </th>
@@ -47,7 +47,7 @@ export function PaperQuestionTable({
                 {question.number}
               </th>
               <td className="py-2 pr-3">
-                <PointPill points={question.points} />
+                <DifficultyPill points={question.points} />
               </td>
               <td className="py-2 pr-3">
                 <ul className="m-0 flex flex-wrap list-none gap-x-3 gap-y-1 p-0">

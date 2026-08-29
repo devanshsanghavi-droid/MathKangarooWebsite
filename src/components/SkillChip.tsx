@@ -19,8 +19,8 @@ export function SkillChip({
       className={[
         'inline-flex items-baseline gap-1.5 rounded-sm border px-2 py-1 text-xs no-underline transition-colors',
         primary
-          ? 'border-accent bg-accent-soft font-medium text-ink hover:border-accent-2'
-          : 'border-rule text-ink-2 hover:border-rule-2 hover:text-ink',
+          ? 'border-accent-600 bg-accent-100 font-medium text-ink hover:border-accent-500'
+          : 'border-rule text-ink-2 hover:border-rule-strong hover:text-ink',
       ].join(' ')}
     >
       <span className="mono text-2xs text-ink-3">{skill.id}</span>

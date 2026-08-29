@@ -15,7 +15,7 @@ export function MobileTabBar() {
   return (
     <nav
       aria-label="Sections"
-      className="no-print fixed inset-x-0 bottom-0 z-30 border-t border-rule bg-paper pb-[env(safe-area-inset-bottom)] sm:hidden"
+      className="no-print fixed inset-x-0 bottom-0 z-30 border-t border-rule bg-ground pb-[env(safe-area-inset-bottom)] sm:hidden"
     >
       <ul className="m-0 flex list-none justify-around p-0">
         {MOBILE_NAV.map((item) => {
@@ -34,7 +34,7 @@ export function MobileTabBar() {
                   aria-hidden="true"
                   className={[
                     'block h-0.5 w-6 rounded-full',
-                    active ? 'bg-accent' : 'bg-transparent',
+                    active ? 'bg-accent-600' : 'bg-transparent',
                   ].join(' ')}
                 />
                 {item.short ?? item.label}

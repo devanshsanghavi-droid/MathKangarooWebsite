@@ -17,8 +17,8 @@ export default function manifest(): MetadataRoute.Manifest {
     // A manifest is JSON read by the operating system, so it needs literal colours rather than
     // custom properties. They are read out of tokens.css at build time so tokens.css stays the
     // only place a colour is defined. See src/lib/theme-colors.ts.
-    background_color: themeColor('--paper'),
-    theme_color: themeColor('--accent'),
+    background_color: themeColor('--ground'),
+    theme_color: themeColor('--accent-700'),
     icons: [
       { src: '/icon.svg', sizes: 'any', type: 'image/svg+xml' },
       { src: '/icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'maskable' },

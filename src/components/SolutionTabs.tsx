@@ -86,7 +86,7 @@ export function SolutionTabs({
               className={[
                 'cursor-pointer rounded-t-xs px-3 py-1.5 text-sm transition-colors',
                 active === tab.id
-                  ? 'border-b-2 border-accent font-medium text-ink'
+                  ? 'border-b-2 border-accent-600 font-medium text-ink'
                   : 'border-b-2 border-transparent text-ink-3 hover:text-ink',
               ].join(' ')}
             >

@@ -9,7 +9,7 @@ import {
   getSkillsForProblem,
 } from '@/lib/content';
 import { ProblemCard } from '@/components/ProblemCard';
-import { PointPill, TIER_MEANING } from '@/components/PointPill';
+import { DifficultyPill, TIER_MEANING } from '@/components/DifficultyPill';
 import { bandLabel } from '@/components/BandPill';
 import { reportProblemUrl } from '@/lib/report';
 
@@ -63,7 +63,7 @@ export default async function ProblemPage({ params }: Params) {
   const { previous, next, position, total } = getAdjacentInSkill(problem.id);
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
+    <div className="content-column px-4 py-8">
       <nav aria-label="Breadcrumb" className="mb-5 text-xs text-ink-3">
         <ol className="m-0 flex list-none flex-wrap items-center gap-2 p-0">
           <li>
@@ -98,7 +98,7 @@ export default async function ProblemPage({ params }: Params) {
         is the whole of CFT-08.
       */}
       <p className="mt-6 flex flex-wrap items-baseline gap-2 text-sm text-ink-2">
-        <PointPill points={problem.points} />
+        <DifficultyPill points={problem.points} />
         <span>{TIER_MEANING[problem.points]}</span>
         <span className="text-ink-3">{bandLabel(problem.band)}.</span>
       </p>
@@ -111,10 +111,10 @@ export default async function ProblemPage({ params }: Params) {
           <Link
             href={`/problem/${previous.id}`}
             rel="prev"
-            className="rounded-sm border border-rule bg-surface p-3 no-underline hover:border-rule-2"
+            className="rounded-sm border border-rule bg-surface p-3 no-underline hover:border-rule-strong"
           >
             <span className="block text-2xs text-ink-3">Previous in this skill</span>
-            <span className="mono mt-1 block text-sm text-accent">{previous.id}</span>
+            <span className="mono mt-1 block text-sm text-accent-700">{previous.id}</span>
             <span className="mt-1 block text-xs text-ink-2">{previous.points}-point</span>
           </Link>
         ) : (
@@ -127,10 +127,10 @@ export default async function ProblemPage({ params }: Params) {
           <Link
             href={`/problem/${next.id}`}
             rel="next"
-            className="rounded-sm border border-rule bg-surface p-3 text-right no-underline hover:border-rule-2"
+            className="rounded-sm border border-rule bg-surface p-3 text-right no-underline hover:border-rule-strong"
           >
             <span className="block text-2xs text-ink-3">Next in this skill</span>
-            <span className="mono mt-1 block text-sm text-accent">{next.id}</span>
+            <span className="mono mt-1 block text-sm text-accent-700">{next.id}</span>
             <span className="mt-1 block text-xs text-ink-2">{next.points}-point</span>
           </Link>
         ) : (

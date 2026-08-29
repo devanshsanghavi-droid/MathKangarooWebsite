@@ -50,8 +50,8 @@ export function Pagination({
                 className={[
                   item,
                   number === page.page
-                    ? 'border-accent bg-accent-soft font-medium text-ink'
-                    : 'border-rule text-ink-2 hover:border-rule-2',
+                    ? 'border-accent-600 bg-accent-100 font-medium text-ink'
+                    : 'border-rule text-ink-2 hover:border-rule-strong',
                 ].join(' ')}
               >
                 {number}

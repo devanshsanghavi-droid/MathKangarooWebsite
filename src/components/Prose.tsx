@@ -6,7 +6,7 @@ import type { ReactNode } from 'react';
  */
 export function Prose({ children }: { children: ReactNode }) {
   return (
-    <div className="serif prose-measure text-ink-2 [&>p]:mt-4 [&>p:first-child]:mt-0">
+    <div className="reading prose-measure text-ink-2 [&>p]:mt-4 [&>p:first-child]:mt-0">
       {children}
     </div>
   );

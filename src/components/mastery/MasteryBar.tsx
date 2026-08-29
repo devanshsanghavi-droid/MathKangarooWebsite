@@ -20,7 +20,7 @@ export function MasteryBar({
   label?: string;
 }) {
   const counts = MASTERY_LEGEND.map((state) => ({
-    state: state as MasteryState,
+    state,
     count: segments.filter((segment) => segment.state === state).length,
   }));
   const done = segments.filter((segment) => segment.state === 'mastered').length;

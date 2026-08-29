@@ -20,7 +20,7 @@ here at all — Lighthouse and the service worker. All four are in "Needs you".
 | Distractor explanations | **600** — one per wrong answer choice |
 | Hand-drawn SVG figures | 25 |
 | Routes | 24, building **874** static pages |
-| Tests | **2 128** unit + **102** axe assertions, both themes |
+| Tests | **2 129** unit + **102** axe assertions, both themes |
 | CI | typecheck → lint → test → graph → content → **palette** → a11y → build, all green |
 
 Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!]` blocked on Devansh
@@ -1311,7 +1311,11 @@ The design intent — slate difficulty, teal mastery, soft tinted feedback panel
    it was wrong" — the same semantic §2 reserves them for — and neither is a category or a
    difficulty. If you disagree, delete those two entries and the build will tell you where they
    are used.
-10. **`shaky` is still called `shaky` internally** and `MASTERY_RANK` still ranks it *below*
+10. **§7.1 says the header "keeps the theme toggle, search, and account" — it keeps the theme
+    toggle.** Search is `<CommandPalette>` (⌘K) and account is sign-in; both are marked **P2**
+    in `00-SPEC.md` §0.2 and neither has ever existed. "Keeps" is accurate for the one that
+    does. Nothing was removed; there was nothing there to remove.
+11. **`shaky` is still called `shaky` internally** and `MASTERY_RANK` still ranks it *below*
     `seen`, while the display ramp puts Proficient *above* Familiar. Both are right: the rank
     orders by urgency (what to put in front of the student next), the ramp orders by exposure.
     They are different questions about the same four states.
@@ -1328,6 +1332,14 @@ The design intent — slate difficulty, teal mastery, soft tinted feedback panel
 | `/skill/[id]` renders as a unit page with a working mastery bar for a signed-out visitor | 91 unit-page render tests; the bar's `aria-label` is asserted against the real problem count with an empty localStorage, and driven end to end in the exercise-view tests |
 | Sidebar collapses cleanly at 900px and is reachable by keyboard | `@media (min-width:900px)` confirmed in the built CSS; 27 rail tests cover Enter to open, focus moved in, Tab cycled inside, Escape to close, focus handed back |
 | Full CI green, both themes checked, axe clean | typecheck · lint · **2 117** tests · graph · content · palette · **102** axe assertions · 874-page build |
+
+### Two seams closed after a browser measurement
+
+- The rail's sticky offset was written as `57px` against a header that is `53px` tall, so a 4px
+  sliver of page content showed between them on every scroll. Both now read one
+  `--header-height` token, and a test refuses a literal pixel offset in that class.
+- Problem statements pick up `.statement` (19/1.55) rather than an ad-hoc `text-lg` at the body's
+  leading.
 
 ### Also done here
 

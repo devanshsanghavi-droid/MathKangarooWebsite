@@ -133,6 +133,15 @@ describe('the rail', () => {
     expect(screen.getByRole('link', { name: /Place value/ }).textContent).toContain('Mastered');
   });
 
+  it('takes its sticky offset from the header-height token, not a literal', () => {
+    // The two were written out separately and drifted: 57px here against a 53px header, which
+    // showed a 4px sliver of the page between them on every scroll.
+    const { container } = render(<SkillRail strands={STRANDS} />);
+    const nav = container.querySelector('nav[aria-label="Skills"]');
+    expect(nav?.className).toContain('shell:top-[var(--header-height)]');
+    expect(nav?.className).not.toMatch(/top-\[\d+px\]/);
+  });
+
   it('always offers a way back to the whole Atlas', () => {
     render(<SkillRail strands={STRANDS} />);
     expect(screen.getByRole('link', { name: /The whole Atlas/ })).toHaveAttribute('href', '/atlas');

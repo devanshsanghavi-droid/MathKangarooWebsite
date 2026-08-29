@@ -148,6 +148,14 @@
   --measure: 64ch;
   --content-width: 720px; /* docs/05 §7.1 */
   --sidebar-width: 260px;
+  /*
+   * The sticky header's height, measured in a browser rather than guessed: the wordmark's
+   * line box plus its py-3. The skill rail sticks directly beneath it and clamps its own
+   * scroll height against it, so the number lives here rather than being written out twice —
+   * it was 57px in one place and 53px in reality, which left a 4px seam of page content
+   * showing between the header and the rail on every scroll.
+   */
+  --header-height: 53px;
 
   /* --- spacing / shape ----------------------------------------------------- */
   --space-1: 0.25rem;

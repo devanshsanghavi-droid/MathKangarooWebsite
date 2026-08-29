@@ -192,7 +192,7 @@ function RailBody({
     <Container
       id={id}
       aria-label={landmark ? 'Skills' : undefined}
-      className="shell:sticky shell:top-[57px] shell:max-h-[calc(100dvh-57px)] shell:w-[var(--sidebar-width)] shell:overflow-y-auto shell:border-r shell:border-rule shell:bg-surface-3/40"
+      className="shell:sticky shell:top-[var(--header-height)] shell:max-h-[calc(100dvh-var(--header-height))] shell:w-[var(--sidebar-width)] shell:overflow-y-auto shell:border-r shell:border-rule shell:bg-surface-3/40"
     >
       <p className="m-0 px-3 pt-3 pb-1 text-2xs text-ink-3">
         <Link href="/atlas" className="no-underline hover:underline">

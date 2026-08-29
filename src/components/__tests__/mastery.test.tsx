@@ -22,6 +22,9 @@ describe('the mastery vocabulary', () => {
       expect(MASTERY_DISPLAY[state], state).toBeDefined();
     }
     expect(MASTERY_LEGEND).toHaveLength(MASTERY_STATES.length);
+    // The legend and the state machine must agree on the order, or the ramp in the legend
+    // would not be the ramp on screen.
+    expect([...MASTERY_LEGEND]).toEqual([...MASTERY_STATES]);
   });
 
   it('renames shaky to Proficient for display only (docs/05 §3)', () => {

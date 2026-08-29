@@ -87,13 +87,8 @@ export function resolveMasteryState(state: MasteryState, everCorrect: boolean): 
   return state === 'shaky' && !everCorrect ? 'seen' : state;
 }
 
-/** The ramp in display order, for legends. */
-export const MASTERY_LEGEND: ReadonlyArray<MasteryState & string> = [
-  'unseen',
-  'seen',
-  'shaky',
-  'mastered',
-];
+/** The ramp in display order, for legends. Same order as MASTERY_STATES, and a test says so. */
+export const MASTERY_LEGEND: readonly MasteryState[] = ['unseen', 'seen', 'shaky', 'mastered'];
 
 export function masteryLabel(state: MasteryState): string {
   return MASTERY_DISPLAY[state].label;

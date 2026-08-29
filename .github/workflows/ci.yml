@@ -47,6 +47,10 @@ jobs:
       - name: Validate content
         run: pnpm validate:content
 
+      # The full RLS proof (supabase/tests/rls.test.sql) needs a running Postgres with pgTAP.
+      # The shape checks in scripts/__tests__/rls-shape.test.ts run as part of `pnpm test`
+      # above and need no database. See supabase/README.md.
+
       - name: Accessibility
         run: pnpm a11y
 

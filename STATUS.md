@@ -36,6 +36,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M1.8 — `/papers` | `[x]`* | `papers: build the official paper index routes and tighten the anti-paste tripwire` |
 | M0.4 — legal and naming | `[x]` | `legal: draft the outreach note and record the locked public name` |
 | M1.10 — launch content (150 problems) | `[x]` | `content: reach the 150-problem launch bank` |
+| M2.1 — Supabase foundation | `[~]` | `db: write the schema, the RLS policies, and a shape test that runs without a database` |
 | M1.9 — home, about, legal, contact | `[x]` | `site: build the home page, about, legal pages, and contact form` |
 
 ---
@@ -799,12 +800,78 @@ than something to maintain.
 
 ---
 
+## M2.1 — Supabase foundation
+
+**State:** `[~]` — written in full, **the runtime proof has not been executed.**
+
+### Built
+
+- **Migrations 001–009**, exactly the ten tables from `docs/01-DATA-MODEL.md` §2, each followed
+  immediately by `enable row level security`. RLS with no policy denies everything, so there is
+  no window during a migration run in which a row is readable.
+- **`010_policies.sql`** — every policy plus three `security definer` helpers and the two
+  aggregate functions. The four student-owned tables (`attempts`, `mastery`, `runs`,
+  `journal_entries`) are owner-only across all four operations, with **no mentor path at all**.
+  `parent_consents` has RLS on and deliberately no policy, which denies every client role.
+- **`supabase/tests/rls.test.sql`** — 40 pgTAP assertions, including the one that matters most:
+  *a mentor reading `attempts` directly gets zero rows*, while the aggregate function still
+  returns counts. Also covers two students in one cohort seeing nothing of each other, a mentor
+  of a different class getting nothing through either path, and account deletion cascading.
+- **`scripts/__tests__/rls-shape.test.ts`** — 73 assertions that read the SQL and check its
+  structure **with no database**, so they run on every commit.
+
+### What I could not verify, and why
+
+**There is no Postgres, Docker or Supabase CLI on this machine**, so `supabase test db` has
+never been run. CLAUDE.md's definition of done says "if it touches student data: RLS policy
+written and tested", and only half of that is met. The policies are written and their shape is
+checked; their runtime behaviour is not proven. Run `supabase test db` before any real student
+data exists — see "Needs you".
+
+So the shape test exists to make the gap smaller rather than to paper over it. It cannot prove
+isolation. It does catch the failures that are silent and total: a table added later with no
+RLS, a policy that says `using (true)`, a `security definer` function with an unpinned
+`search_path`, or a mentor policy appearing on a student-owned table.
+
+### Two real problems it caught immediately
+
+1. **The pgTAP plan count was wrong** — `plan(28)` against 40 assertions. pgTAP aborts the
+   whole file on a plan mismatch, so this would have failed the first time it was ever run,
+   probably months from now. The shape test now recounts the assertions and asserts the plan
+   matches.
+2. A regex in the checker missed SQL's doubled apostrophe (`student''s`), which would have made
+   two coverage assertions pass vacuously.
+
+### Assumptions made where the spec was ambiguous
+
+1. **Policies live in `010`, not beside their tables.** §2.1 says to write them with the tables.
+   The deny-by-default half is with the tables. The policies themselves cannot be, because a
+   policy on `cohorts` that checks `cohort_members` and one on `cohort_members` that checks
+   `cohorts` recurse forever — the way out is a `security definer` helper, which needs every
+   table to exist first. The reasoning is written at the top of `010_policies.sql`.
+2. **A mentor sees a student's name and band through a function, not a policy.** §2.1 permits
+   `display_name` and `band` and "nothing else". RLS is row-level, so any row policy on
+   `profiles` would also expose `role` and `locale`. `cohort_roster()` returns exactly four
+   named columns instead, and a test asserts its body never selects `role`, `locale` or `p.*`.
+3. **`teaching_sessions` has no member-read policy.** §2.1 lists it as mentor-owned, and `notes`
+   is the mentor's own writing about a lesson. Members read assignments, not lesson notes.
+4. **Every `security definer` function pins `search_path = ''`** and schema-qualifies every
+   table it reads. Without that, a caller can create their own `public` schema and change what
+   a function reads while it runs with the owner's privileges — the standard escalation. Two
+   tests enforce both halves.
+
+---
+
 ## Needs you (external accounts / credentials)
 
 - [ ] **Run Lighthouse** on a deployed build and confirm ≥95 on performance, accessibility, best
       practices and SEO (M1.9's acceptance). Everything it measures is in place; the run itself
       needs Chrome. If you want it in CI, `@lhci/cli` is the tool — it is outside CLAUDE.md's
       dependency budget, so I did not add it.
+- [ ] **Run `supabase test db`** once you have a project, and confirm all 40 RLS assertions
+      pass. This is the half of M2.1's definition of done I could not meet: there is no
+      Postgres, Docker or Supabase CLI on this machine. Do it before any real student data
+      exists.
 - [ ] Push the repo and turn on branch protection for `main`, requiring the `verify` check.
 - [ ] Connect the Vercel project so preview deploys run on every PR.
 - [ ] `RESEND_API_KEY` for the `/contact` form (M1.9). The form ships with a mailto fallback

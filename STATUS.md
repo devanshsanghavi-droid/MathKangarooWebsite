@@ -36,6 +36,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M1.8 — `/papers` | `[x]`* | `papers: build the official paper index routes and tighten the anti-paste tripwire` |
 | M0.4 — legal and naming | `[x]` | `legal: draft the outreach note and record the locked public name` |
 | M1.10 — launch content (150 problems) | `[x]` | `content: reach the 150-problem launch bank` |
+| M2.4 — mastery and scheduling | `[x]` | `practice: implement the mastery state machine and FSRS skill scheduling` |
 | M2.1 — Supabase foundation | `[~]` | `db: write the schema, the RLS policies, and a shape test that runs without a database` |
 | M1.9 — home, about, legal, contact | `[x]` | `site: build the home page, about, legal pages, and contact form` |
 
@@ -859,6 +860,50 @@ RLS, a policy that says `using (true)`, a `security definer` function with an un
    table it reads. Without that, a caller can create their own `public` schema and change what
    a function reads while it runs with the owner's privileges — the standard escalation. Two
    tests enforce both halves.
+
+---
+
+## M2.4 — Mastery and scheduling
+
+**State:** `[x]` — pure logic, so this one is fully verified. 71 tests.
+
+### Built
+
+- **`src/lib/mastery.ts`** — the state machine from `docs/01-DATA-MODEL.md` §3.1 as pure
+  functions of one skill's attempts. `unseen` / `seen` / `shaky` / `mastered`, the 70%-over-five
+  rule, the 4-or-5-point-miss-after-a-3-point-solve rule, and the 14-day decay. State is always
+  **recomputed from the attempts** rather than advanced incrementally: a stored state that
+  drifts from the attempts that produced it is a bug nobody ever notices.
+- **`src/lib/schedule.ts`** — `ts-fsrs` wrapped so that FSRS schedules the **skill** and the
+  server then serves an unseen **problem** from it. Also `pointCeiling`, which decides how hard
+  a version of the skill a student has earned.
+- **40 mastery tests** including a table covering every transition out of every state, both
+  sides of the decay boundary, and the precedence question below.
+- **31 scheduling tests**, including M2.6's acceptance expressed directly: *a missed skill comes
+  back within the week with a different problem*.
+
+### Assumptions made where the spec was ambiguous
+
+1. **Mastered outranks shaky when both conditions hold.** A history of `wrong, wrong, right,
+   right, right` is 60% over five (shaky) *and* a clean three-in-a-row across two days
+   (mastered). Recent unaided evidence is the better signal, so mastered wins; two tests pin
+   this down. The alternative — shaky always winning — would make mastery almost unreachable
+   for a student who struggled early.
+2. **All three mastery conditions apply to the same three attempts.** A clean two-day run in
+   March cannot be combined with a hint-free run in April.
+3. **Decay applies only to mastered.** §3.1 says "mastery decays to shaky", so a `seen` skill
+   sitting past its due date stays `seen` rather than being demoted for inactivity.
+4. **A higher-tier miss only counts if a 3-point solve came first.** Missing a 5-pointer having
+   never solved a 3-pointer is not shakiness, it is simply not knowing the skill yet.
+5. **Rating mapping is strict about hints**: wrong → Again; right but needed hint 2 or 3 → Hard;
+   right with only the nudge → Good; right, unaided and inside the estimated time → Easy. Rating
+   a hint-assisted solve as Good would push the next review out and the student would meet the
+   skill again having never done it alone.
+6. **FSRS fuzz is off.** Fuzz spreads reviews to stop a pile-up in a thousand-card deck; here it
+   would only make the scheduler non-deterministic and its tests flaky.
+7. **`pointCeiling` starts at 3 and moves one tier at a time**, up on an unaided solve at the
+   ceiling and down on a miss there. Nobody meets a 5-point version of a skill they have not yet
+   solved at 4.
 
 ---
 

@@ -82,7 +82,12 @@
  * and a drawer below it. Declared here rather than inline so the number lives in one place.
  */
 @theme {
-  --breakpoint-shell: 900px;
+  /*
+   * 900px at the default root size, written in rem to match Tailwind's own scale (40 / 48 /
+   * 64 / 80 / 96rem). A px breakpoint would ignore a reader who raises their browser's default
+   * font size rather than zooming — the rail would stay a rail while everything in it grew.
+   */
+  --breakpoint-shell: 56.25rem;
 }
 
 /* --------------------------------------------------------------------------

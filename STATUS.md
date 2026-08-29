@@ -20,7 +20,7 @@ here at all — Lighthouse and the service worker. All four are in "Needs you".
 | Distractor explanations | **600** — one per wrong answer choice |
 | Hand-drawn SVG figures | 25 |
 | Routes | 24, building **874** static pages |
-| Tests | **2 134** unit + **102** axe assertions, both themes |
+| Tests | **2 138** unit + **102** axe assertions, both themes |
 | CI | typecheck → lint → test → graph → content → **palette** → a11y → build, all green |
 
 Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!]` blocked on Devansh
@@ -1215,7 +1215,7 @@ colour appears outside a feedback surface.
   amber, which §10.4 omits but §2 reserves.
 - **`CLAUDE.md`** gained the reserved-colour rule as a non-negotiable.
 
-### Six things that were actually broken
+### Eight things that were actually broken
 
 1. **`docs/05` §4's own palette fails §9's own acceptance test.** `--ink-3` is 3.6:1 on
    `--surface-2` and 3.3:1 on `--surface-3` — below AA for the 12–13px metadata it is used for,
@@ -1330,8 +1330,8 @@ The design intent — slate difficulty, teal mastery, soft tinted feedback panel
 | All text passes WCAG AA at its rendered size, both themes — check `--ink-3` on `--surface-2` | `tokens.test.ts`, now **95 assertions**: 4.93:1 light and 5.27:1 dark on that exact pair, plus every difficulty `fg` on its `bg`, every reserved `700` on its `100`, and every surface |
 | Answer choices are ≥44px tall and keyboard operable | Measured in a real browser: **60px** each. Arrow/Home/End movement asserted in the a11y suite |
 | `/skill/[id]` renders as a unit page with a working mastery bar for a signed-out visitor | 91 unit-page render tests; the bar's `aria-label` is asserted against the real problem count with an empty localStorage, and driven end to end in the exercise-view tests |
-| Sidebar collapses cleanly at 900px and is reachable by keyboard | `@media (min-width:900px)` confirmed in the built CSS; 27 rail tests cover Enter to open, focus moved in, Tab cycled inside, Escape to close, focus handed back |
-| Full CI green, both themes checked, axe clean | typecheck · lint · **2 117** tests · graph · content · palette · **102** axe assertions · 874-page build |
+| Sidebar collapses cleanly at 900px and is reachable by keyboard | Measured in a browser at 360 / 640 / **899 / 900 / 901** / 1280px: the drawer trigger is the only one showing at 899, the rail is the only one showing at 900, and no width overflows. 28 rail tests cover Enter to open, focus moved in, Tab cycled inside, Escape to close, focus handed back |
+| Full CI green, both themes checked, axe clean | typecheck · lint · **2 138** tests · graph · content · palette · **102** axe assertions · 874-page build. Plus a link check over **539 distinct route paths** and their filter variants: zero broken links, and the only external hosts are creativecommons.org, github.com, mathkangaroo.org and our own Vercel domain |
 
 ### Two more contrast failures, found by testing the pairs the components actually use
 
@@ -1347,6 +1347,9 @@ The design intent — slate difficulty, teal mastery, soft tinted feedback panel
 
 ### Two seams closed after a browser measurement
 
+- The shell breakpoint was the only one in the scale written in px. In rem (56.25rem) it now
+  behaves like Tailwind's own 40 / 48 / 64 / 80 / 96rem for a reader who raises their browser's
+  default font size rather than zooming.
 - The rail's sticky offset was written as `57px` against a header that is `53px` tall, so a 4px
   sliver of page content showed between them on every scroll. Both now read one
   `--header-height` token, and a test refuses a literal pixel offset in that class.
@@ -1360,6 +1363,20 @@ The design intent — slate difficulty, teal mastery, soft tinted feedback panel
   deliberately left out — 364 pages reading "practise X at tier N" is thin content by the
   cartload, and they are reachable from the unit page anyway. A new test asserts both halves of
   that, plus that the sitemap never advertises a route that would 404.
+
+### A note on the link check
+
+The exhaustive crawl that ran clean in earlier milestones does not terminate usefully any more.
+`/atlas` and `/problems` encode their filters in the query string, so strand × band × points ×
+coverage × focus × page is a combinatorial space — it ran past **116,000 URLs** and was still
+finding more. That measures the filter grammar, not link integrity. The check now walks every
+distinct route *path* plus the first few filter variants of each: 539 paths, zero broken links.
+
+The 874-page build minus those 539 is accounted for and is not a gap: 150 are `opengraph-image`
+routes, which are never `href`s; 91 are skill quizzes and the rest are ladders on tiers with no
+problems — both render as locked rows rather than links until they are earned, which is the
+point. All of them return 200 when opened directly, and unknown ids in all four content routes
+still return a real 404 rather than a 200 with a not-found body.
 
 ### Deferred
 

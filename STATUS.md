@@ -36,6 +36,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M1.8 — `/papers` | `[x]`* | `papers: build the official paper index routes and tighten the anti-paste tripwire` |
 | M0.4 — legal and naming | `[x]` | `legal: draft the outreach note and record the locked public name` |
 | M1.10 — launch content (150 problems) | `[x]` | `content: reach the 150-problem launch bank` |
+| M2.12 — PWA and offline | `[~]` | `pwa: add the service worker, offline page, and offline attempt queue` |
 | M2.13 — `/author/new` | `[x]`* | `author: build the problem authoring form with shared validation` |
 | M2.11 — `/print` worksheet generator | `[x]` | `print: build the worksheet generator and its per-distractor answer key` |
 | M2.4 — mastery and scheduling | `[x]` | `practice: implement the mastery state machine and FSRS skill scheduling` |
@@ -1001,12 +1002,71 @@ rest rather than silently truncating.
 
 ---
 
+## M2.12 — PWA and offline
+
+**State:** `[~]` — written and unit-tested; **service worker registration could not be exercised
+in this environment.**
+
+### Built
+
+- **`public/sw.js`** — hand-written, 120 lines, no Workbox. Network-first for navigations
+  (a stale page must never hide a newly added problem), cache-first for `/_next/static/`
+  (those filenames carry a content hash, so a cached one cannot be wrong), and everything else
+  passed straight through. **Nothing that is not a GET is ever touched, and nothing under
+  `/api/` is ever touched** — caching a write would be a bug with real consequences.
+- **`/offline`** — names the pages that *do* still work rather than only apologising, because
+  on a train the useful thing to know is which links still open.
+- **Install prompt** — appears only when the browser itself decides the site is installable,
+  is dismissible, and the dismissal is remembered. A prompt that reappears every visit is an
+  advertisement.
+- **`src/lib/offline-queue.ts`** — the exactly-once attempt queue. Every item carries a
+  client-generated id; a flush removes an item only after the send resolves, and stops at the
+  first failure so the time series keeps its order. 15 tests, including *"never sends the same
+  attempt twice across two flushes"*, which is M2.3's acceptance.
+- **13 source-invariant tests** on the service worker: it never handles a non-GET, never touches
+  `/api/`, ignores cross-origin, is network-first for navigations and cache-first only for
+  hashed assets, caps its page cache, and deletes its own old caches on activate.
+
+### What I could not verify, and why
+
+**The embedded browser available here refuses service worker registration** — `/sw.js` is
+served correctly (200, `application/javascript`, valid source, `node --check` clean) but
+`navigator.serviceWorker.register` fails with "an unknown error occurred when fetching the
+script" even when called by hand. That is the pane, not the app.
+
+So the caching behaviour itself is unproven. What *is* proven, live: **registration failing does
+not affect the site at all.** With the registration erroring, the home page rendered completely,
+the sample problem's five choices worked, and the console was clean — which is the guarantee the
+`.catch(() => undefined)` exists to make.
+
+M2.12's acceptance ("the site opens and serves cached problems with the network switched off")
+and its throttled-Android test both need a real browser. See "Needs you".
+
+### Assumptions made where the spec was ambiguous
+
+1. **The service worker is production-only.** In development it would cache the dev server's
+   chunks and serve them after a rebuild, producing a broken page and an hour of confusion.
+2. **The precache is four URLs, not the whole site.** A student on a metered connection should
+   not pay for 400 pages on their first visit; the rest is cached as they visit it, capped at 60
+   pages so the cache never becomes a reason a phone runs out of room.
+3. **The offline queue takes its sender as an argument.** `POST /api/attempt` is M2.3 and does
+   not exist yet, so the queue is complete and tested but not yet wired to anything. The server
+   half of exactly-once is a unique index on `clientId`, which belongs with that endpoint.
+4. **Icons are the single SVG.** Modern Android and iOS both accept an SVG icon; generating a
+   ladder of PNGs would add a build step and three hundred kilobytes for browsers this project
+   does not target.
+
+---
+
 ## Needs you (external accounts / credentials)
 
 - [ ] **Run Lighthouse** on a deployed build and confirm ≥95 on performance, accessibility, best
       practices and SEO (M1.9's acceptance). Everything it measures is in place; the run itself
       needs Chrome. If you want it in CI, `@lhci/cli` is the tool — it is outside CLAUDE.md's
       dependency budget, so I did not add it.
+- [ ] **Test the PWA on a real device**: install it, then turn the network off and confirm a
+      previously visited problem still opens (M2.12's acceptance). The service worker could not
+      be registered in this environment at all, so its caching behaviour is unproven.
 - [ ] **Run `supabase test db`** once you have a project, and confirm all 40 RLS assertions
       pass. This is the half of M2.1's definition of done I could not meet: there is no
       Postgres, Docker or Supabase CLI on this machine. Do it before any real student data

@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import { MobileTabBar } from '@/components/MobileTabBar';
 import { SkipLink } from '@/components/SkipLink';
 import { THEME_INIT_SCRIPT } from '@/components/ThemeToggle';
+import { ServiceWorkerRegistration } from '@/components/ServiceWorkerRegistration';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <MobileTabBar />
+        <ServiceWorkerRegistration />
       </body>
     </html>
   );

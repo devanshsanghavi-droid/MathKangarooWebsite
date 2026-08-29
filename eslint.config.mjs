@@ -51,6 +51,23 @@ const config = [
       'no-console': 'off',
     },
   },
+  {
+    // The service worker is plain JS running in a worker global scope, not in the app bundle.
+    files: ['public/sw.js'],
+    languageOptions: {
+      sourceType: 'script',
+      globals: {
+        self: 'readonly',
+        caches: 'readonly',
+        clients: 'readonly',
+        fetch: 'readonly',
+        Response: 'readonly',
+        Request: 'readonly',
+        URL: 'readonly',
+        Promise: 'readonly',
+      },
+    },
+  },
   prettier,
 ];
 

@@ -53,7 +53,8 @@ export default function HomePage() {
       {/* ---------------------------------------------------------------- hero */}
       <section aria-labelledby="hero-heading" className="grid gap-8 lg:grid-cols-2 lg:gap-10">
         <div className="max-w-prose">
-          <h1 id="hero-heading" className="m-0 text-2xl sm:text-3xl">
+          {/* The top of docs/05 §5's scale — 44px — exists for exactly one thing on the site. */}
+          <h1 id="hero-heading" className="m-0 text-3xl sm:text-4xl">
             Math Kangaroo preparation organised by skill, not by year.
           </h1>
           <p className="mt-5 mb-0 text-lg text-ink-2">

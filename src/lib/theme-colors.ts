@@ -20,7 +20,7 @@ function lightPalette(): Record<string, string> {
   return cached;
 }
 
-/** Returns the literal value of a light-theme token, e.g. themeColor('--paper'). */
+/** Returns the literal value of a light-theme token, e.g. themeColor('--ground'). */
 export function themeColor(token: string): string {
   const value = lightPalette()[token];
   if (!value) {

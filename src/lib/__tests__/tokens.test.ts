@@ -92,8 +92,16 @@ const PAIRS: Array<[string, string, number, string]> = [
   ['--accent-700', '--surface', 4.5, 'links on a card'],
   ['--accent-700', '--surface-2', 4.5, 'links in a well'],
   ['--accent-700', '--accent-100', 4.5, 'accent text on an accent-tinted fill'],
+  /*
+   * --accent-600 is a FILL and a BORDER, never text: a hover that used it dropped a link from
+   * 11:1 to 3.9:1 in a dark well, so `a:hover` thickens the underline instead. 3:1 is the
+   * right floor for what it actually does (WCAG 1.4.11), not a relaxation of the 4.5 the v1
+   * `--accent-2` link-hover pair needed.
+   */
   ['--accent-600', '--ground', 3, 'accent as a control border'],
   ['--accent-600', '--surface', 3, 'accent border on a card'],
+  ['--accent-600', '--surface-2', 3, 'accent border in a well'],
+  ['--accent-700', '--surface-3', 4.5, 'a link on the sidebar rail'],
 
   // --- focus and control boundaries (WCAG 1.4.11, 3:1) --------------------
   ['--focus', '--ground', 3, 'focus ring against the page'],
@@ -108,6 +116,8 @@ const PAIRS: Array<[string, string, number, string]> = [
       ' so this border is the only thing identifying the control',
   ],
   ['--rule-strong', '--surface-2', 3, 'control borders in a well'],
+  ['--rule-strong', '--surface-3', 3, "the Skip button's border on the sticky action bar"],
+  ['--focus', '--surface-3', 3, 'focus ring on the sticky action bar and the sidebar rail'],
 
   // --- RESERVED feedback: every 700 on its own 100 (docs/05 §10.3) --------
   ['--correct-700', '--correct-100', 4.5, '"Correct" text on the correct panel'],

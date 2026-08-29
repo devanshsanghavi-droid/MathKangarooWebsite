@@ -63,8 +63,12 @@
    * docs/05 §4 specifies #C9D0DA (1.5:1 on --surface). --rule-strong is the border that
    * *identifies* a control — an answer choice and a text input have no other boundary, and
    * --surface on --ground is 1.06:1 — so WCAG 1.4.11 applies and it must clear 3:1.
+   *
+   * It clears it on ALL FOUR surfaces, including --surface-3. The sticky action bar in the
+   * exercise view is --surface-3 and has a bordered Skip button sitting on it; at the first
+   * value that only cleared --surface, that border was 2.8:1.
    */
-  --rule-strong: #888c93; /* control borders, input outlines   3.4:1 on --surface */
+  --rule-strong: #82858c; /* control borders, input outlines   3.0:1 on --surface-3, 3.7:1 on --surface */
 
   /* --- structural ---------------------------------------------------------- */
   --grid: #dbe1e9; /* figure gridlines, atlas background lattice */
@@ -192,7 +196,7 @@
     --ink-3: #919aa6; /*  6.4:1 on --ground, 4.5:1 on --surface-3 (doc's #818B99 was 3.7:1) */
 
     --rule: #2a303a;
-    --rule-strong: #6b7079; /* 3.4:1 on --surface (doc's #3C434F was 1.7:1) */
+    --rule-strong: #767b83; /* 3.0:1 on --surface-3 (doc's #3C434F was 1.7:1 on --surface) */
 
     --grid: #2b313b;
 
@@ -250,7 +254,7 @@
   --ink-3: #919aa6;
 
   --rule: #2a303a;
-  --rule-strong: #6b7079;
+  --rule-strong: #767b83;
 
   --grid: #2b313b;
 

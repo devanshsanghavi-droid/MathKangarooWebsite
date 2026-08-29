@@ -28,6 +28,17 @@ describe('SkipLink', () => {
   });
 });
 
+describe('link hover', () => {
+  const css = readFileSync(join(process.cwd(), 'src/styles/globals.css'), 'utf8');
+
+  it('thickens the underline rather than dropping the colour contrast', () => {
+    // Hovering to --accent-600 took a link from 11:1 to 3.9:1 in a dark well. A hover state
+    // must not make text harder to read than it was at rest.
+    expect(css).toMatch(/a:hover\s*\{[^}]*text-decoration-thickness/);
+    expect(css).not.toMatch(/a:hover\s*\{[^}]*color:/);
+  });
+});
+
 describe('Footer', () => {
   it('carries the non-affiliation disclaimer verbatim', () => {
     render(<Footer />);

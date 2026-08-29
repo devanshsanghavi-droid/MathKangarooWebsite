@@ -143,8 +143,17 @@ a {
   text-underline-offset: 0.18em;
 }
 
+/*
+ * Hover thickens the underline rather than changing the colour.
+ *
+ * The obvious move — hover to --accent-600 — makes the link LESS readable: 4.4:1 on a card in
+ * dark and 3.9:1 in a well, both under AA, on text that was 11:1 a moment earlier. A hover
+ * state that degrades contrast is backwards, and --accent-700 is already the darkest step of
+ * the ramp in light, so there is nowhere further to go. Thickness is the honest affordance,
+ * and it is not a colour cue at all.
+ */
 a:hover {
-  color: var(--accent-600);
+  text-decoration-thickness: 2px;
 }
 
 /* --------------------------------------------------------------------------

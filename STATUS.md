@@ -20,7 +20,7 @@ here at all — Lighthouse and the service worker. All four are in "Needs you".
 | Distractor explanations | **600** — one per wrong answer choice |
 | Hand-drawn SVG figures | 25 |
 | Routes | 24, building **874** static pages |
-| Tests | **2 129** unit + **102** axe assertions, both themes |
+| Tests | **2 134** unit + **102** axe assertions, both themes |
 | CI | typecheck → lint → test → graph → content → **palette** → a11y → build, all green |
 
 Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!]` blocked on Devansh
@@ -1270,8 +1270,8 @@ The design intent — slate difficulty, teal mastery, soft tinted feedback panel
 |---|---|---|---|
 | `--ink-3` light | `#767F8C` | `#626974` | 3.3:1 on `--surface-3`; AA needs 4.5 |
 | `--ink-3` dark | `#818B99` | `#919AA6` | 3.7:1 on `--surface-3` |
-| `--rule-strong` light | `#C9D0DA` | `#888C93` | 1.5:1 — but `--surface` on `--ground` is 1.06:1, so this border is the only thing identifying an answer choice or an input. WCAG 1.4.11 applies |
-| `--rule-strong` dark | `#3C434F` | `#6B7079` | same, 1.7:1 |
+| `--rule-strong` light | `#C9D0DA` | `#82858C` | 1.5:1 — but `--surface` on `--ground` is 1.06:1, so this border is the only thing identifying an answer choice or an input. WCAG 1.4.11 applies. Clears 3:1 on all four surfaces |
+| `--rule-strong` dark | `#3C434F` | `#767B83` | same, 1.7:1 |
 | `--correct-border` | `#96D4B0` / `#2C6B47` | `#69947B` / `#427B5A` | 1.5:1 and 2.4:1 on their own tint — the panel edge was invisible |
 | `--wrong-border` | `#EFAEA8` / `#6E312B` | `#AC7D79` / `#8C5C58` | 1.6:1 and 1.7:1 |
 | `--hint-border` | `#E5C67F` / `#5C4A22` | `#9E8958` / `#7B6C4C` | 1.5:1 and 1.8:1 |
@@ -1332,6 +1332,18 @@ The design intent — slate difficulty, teal mastery, soft tinted feedback panel
 | `/skill/[id]` renders as a unit page with a working mastery bar for a signed-out visitor | 91 unit-page render tests; the bar's `aria-label` is asserted against the real problem count with an empty localStorage, and driven end to end in the exercise-view tests |
 | Sidebar collapses cleanly at 900px and is reachable by keyboard | `@media (min-width:900px)` confirmed in the built CSS; 27 rail tests cover Enter to open, focus moved in, Tab cycled inside, Escape to close, focus handed back |
 | Full CI green, both themes checked, axe clean | typecheck · lint · **2 117** tests · graph · content · palette · **102** axe assertions · 874-page build |
+
+### Two more contrast failures, found by testing the pairs the components actually use
+
+- **Link hover made links harder to read.** `a:hover` dropped to `--accent-600`, taking a link
+  from 11:1 to 3.9:1 in a dark well — under AA, on text that had been fine a moment earlier.
+  Hover now thickens the underline and leaves the colour alone, which is a better affordance
+  anyway: it is not a colour cue at all. `--accent-600` is now purely a fill and a border, and
+  is tested at the 3:1 that use requires.
+- **`--rule-strong` was 2.8:1 on `--surface-3`.** The exercise view's sticky action bar is
+  `--surface-3` and carries a bordered Skip button, so the one thing identifying that control
+  was under the 1.4.11 floor. Darkened again to clear 3:1 on all four surfaces rather than just
+  the three I had tested; `--focus` on `--surface-3` is now covered too.
 
 ### Two seams closed after a browser measurement
 

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0143",
+  "band": "5-6",
+  "points": 3,
+  "statement": "How many three-digit numbers can be written using only the digits 1 and 2, with repeats allowed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted the two available digits rather than the numbers they can build."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted the three positions instead of the numbers."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I used only two of the three positions when multiplying."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I multiplied 2 by 3, mixing the number of digits with the number of positions."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "CNT-03",
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "Two choices in each of three positions.",
+    "Each position independently takes one of two digits, and using a digit does not use it up. Multiply the options position by position rather than adding them.",
+    "2 x 2 x 2 = 8. Listing them: 111, 112, 121, 122, 211, 212, 221, 222."
+  ],
+  "solutions": {
+    "reliable": "Each of the three positions can hold either digit, and repeats are allowed so nothing gets used up. That gives 2 x 2 x 2 = 8. Listing confirms it: 111, 112, 121, 122, 211, 212, 221, 222. The transferable idea: independent choices multiply, and the number of positions is an exponent, not a factor to multiply the digits by.",
+    "elegant": null
+  },
+  "whyOnTest": "Multiplying the digit count by the position count instead of raising it to that power is the standard slip, and choice D is exactly it.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

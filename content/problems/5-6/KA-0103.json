@@ -1,0 +1,67 @@
+{
+  "id": "KA-0103",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A sequence starts at 3. Each term after that is double the one before it, minus 1. What is the sixth term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "17",
+      "correct": false,
+      "misconception": "I stopped at the fourth term, counting the starting number as the first step rather than the first term."
+    },
+    {
+      "key": "B",
+      "text": "33",
+      "correct": false,
+      "misconception": "I generated one term too few, giving the fifth term instead of the sixth."
+    },
+    {
+      "key": "C",
+      "text": "65",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "96",
+      "correct": false,
+      "misconception": "I doubled six times and subtracted 1 only once at the end."
+    },
+    {
+      "key": "E",
+      "text": "129",
+      "correct": false,
+      "misconception": "I generated one term too many, giving the seventh instead of the sixth."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "Write the terms out one at a time.",
+    "A recursive rule tells you how to get the next term from the last one. There is no formula to jump to - generate the terms in order and count them as you go.",
+    "3, then 5, then 9, then 17, then 33, then 65. Counting the starting 3 as the first term, the sixth is 65."
+  ],
+  "solutions": {
+    "reliable": "Apply the rule term by term, writing each one down and numbering it. Term 1 is 3. Term 2 is 2 x 3 - 1 = 5. Then 2 x 5 - 1 = 9, then 17, then 33, then 65. Counting carefully, the sixth term is 65. The transferable idea: with a recursive rule, number the terms as you write them - almost every error here is being one term out.",
+    "elegant": "Each term is one more than a power of two: 3, 5, 9, 17, 33, 65 are 2 to the powers 1 to 6, each plus one."
+  },
+  "whyOnTest": "Recursive rules cannot be jumped, only generated, and being one term out is by far the most common way to lose the mark.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

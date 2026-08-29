@@ -1,0 +1,67 @@
+{
+  "id": "KA-0146",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Suppose it is true that some birds cannot fly. Which of these must also be true?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "No birds can fly",
+      "correct": false,
+      "misconception": "I read some cannot as meaning none can, which is a far stronger claim."
+    },
+    {
+      "key": "B",
+      "text": "All birds can fly",
+      "correct": false,
+      "misconception": "I chose a statement that directly contradicts the one I was given."
+    },
+    {
+      "key": "C",
+      "text": "Most birds cannot fly",
+      "correct": false,
+      "misconception": "I read some as meaning a majority, when it only guarantees at least one."
+    },
+    {
+      "key": "D",
+      "text": "Exactly one bird cannot fly",
+      "correct": false,
+      "misconception": "I read some as meaning exactly one, when it means at least one."
+    },
+    {
+      "key": "E",
+      "text": "Not all birds can fly",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-01",
+    "secondary": [
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "How few birds could some be?",
+    "Some means at least one, and nothing more. Test each choice against the smallest situation the statement allows: exactly one bird in the whole world that cannot fly.",
+    "If exactly one bird cannot fly, then it is false that all birds can fly - but every other choice would also have to be false."
+  ],
+  "solutions": {
+    "reliable": "Some means at least one, and no more than that. Test each choice against the case where exactly one bird cannot fly and every other bird can. No birds can fly is false there. All birds can fly is false there. Most birds cannot fly is false there. Exactly one bird cannot fly happens to be true there but would be false if two birds could not fly, so it is not guaranteed. Not all birds can fly is true in every case allowed by the statement. The transferable idea: to test must be true, find the weakest situation the statement allows and check each choice against it.",
+    "elegant": "Some A are not B is precisely the negation of all A are B, so the two are equivalent and nothing stronger follows."
+  },
+  "whyOnTest": "Some, most and all are read interchangeably by students under time pressure, and every wrong choice here is one of those readings.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

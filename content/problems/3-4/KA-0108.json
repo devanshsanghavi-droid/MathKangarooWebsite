@@ -1,0 +1,67 @@
+{
+  "id": "KA-0108",
+  "band": "3-4",
+  "points": 3,
+  "statement": "A pattern of tiles repeats: black, black, white. What colour is the 100th tile?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "black",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "white",
+      "correct": false,
+      "misconception": "I got a remainder of 1 but read the last colour of the repeat rather than the first."
+    },
+    {
+      "key": "C",
+      "text": "it depends where you start counting",
+      "correct": false,
+      "misconception": "I thought the pattern had no fixed first tile, even though tile one is given."
+    },
+    {
+      "key": "D",
+      "text": "grey, because the pattern breaks",
+      "correct": false,
+      "misconception": "I assumed a repeating pattern must eventually change."
+    },
+    {
+      "key": "E",
+      "text": "there is no 100th tile",
+      "correct": false,
+      "misconception": "I assumed the pattern runs only for as many tiles as one repeat contains."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "The pattern repeats every three tiles.",
+    "Divide the position by the length of one repeat and keep the remainder, not the answer. The remainder tells you how far into a fresh repeat the tile sits.",
+    "100 divided by 3 is 33 remainder 1, so tile 100 is the first tile of a repeat, which is black."
+  ],
+  "solutions": {
+    "reliable": "One repeat is three tiles: position 1 black, 2 black, 3 white. Divide 100 by 3 to get 33 remainder 1, so 33 whole repeats use 99 tiles and tile 100 is the first of the next repeat - black. Careful: a remainder of 0 would mean the last tile of a repeat, which is white. The transferable idea: the remainder gives the position inside the cycle, and remainder zero is the end of a cycle, not the start.",
+    "elegant": null
+  },
+  "whyOnTest": "Cycle questions turn a huge position into one division, and reading the remainder is where the mark is won or lost.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

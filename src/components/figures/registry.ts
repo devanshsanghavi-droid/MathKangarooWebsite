@@ -1,7 +1,9 @@
 import type { ComponentType } from 'react';
+import { BarModelParts } from './BarModelParts';
 import { BlockedGridPaths } from './BlockedGridPaths';
 import { BoardMissingCorners } from './BoardMissingCorners';
 import { BoardThreeByThree } from './BoardThreeByThree';
+import { BooksBarChart } from './BooksBarChart';
 import { CircleInSquare } from './CircleInSquare';
 import { ClockThree } from './ClockThree';
 import { CornerCubeStack } from './CornerCubeStack';
@@ -12,6 +14,7 @@ import { FlagRotation } from './FlagRotation';
 import { FoldPunchSquare } from './FoldPunchSquare';
 import { LShapeUnits } from './LShapeUnits';
 import { MenuTree } from './MenuTree';
+import { NumberGridRule } from './NumberGridRule';
 import { NumberLineArrow } from './NumberLineArrow';
 import { PetsBarChart } from './PetsBarChart';
 import { RectangleSplitInThree } from './RectangleSplitInThree';
@@ -32,9 +35,11 @@ import { UnitCubeBlock } from './UnitCubeBlock';
  * renders and every figure a problem references is registered.
  */
 export const FIGURES: Record<string, ComponentType> = {
+  BarModelParts,
   BlockedGridPaths,
   BoardMissingCorners,
   BoardThreeByThree,
+  BooksBarChart,
   CircleInSquare,
   ClockThree,
   CornerCubeStack,
@@ -45,6 +50,7 @@ export const FIGURES: Record<string, ComponentType> = {
   FoldPunchSquare,
   LShapeUnits,
   MenuTree,
+  NumberGridRule,
   NumberLineArrow,
   PetsBarChart,
   RectangleSplitInThree,

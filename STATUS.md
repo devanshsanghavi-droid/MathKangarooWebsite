@@ -2,19 +2,19 @@
 
 Running log of the build. Updated as each milestone lands, not at the end.
 
-**All thirteen milestones from the session brief are done.** One acceptance criterion inside
-M1.8 is deliberately not met — the six paper indexes are reading work that has to be done by
-someone who has read the papers, and inventing them would have been worse than leaving them
-empty. See M1.8 and "Needs you".
+**All thirteen milestones from the session brief are done**, plus **M0.4** and **M1.10**. One
+acceptance criterion inside M1.8 is deliberately not met — the six paper indexes are reading
+work that has to be done by someone who has read the papers, and inventing them would have been
+worse than leaving them empty. See M1.8 and "Needs you".
 
 | | |
 |---|---|
 | Skills in the Atlas | 91, 106 prerequisite edges, acyclic |
-| Original problems | 54, across levels 3–4 and 5–6 |
-| Distractor explanations | 216 — one per wrong answer choice |
-| Hand-drawn SVG figures | 19 |
-| Routes | 15, building 222 static pages |
-| Tests | 1 048 unit + 35 axe assertions, both themes |
+| Original problems | **150**, across levels 3–4 and 5–6 |
+| Distractor explanations | **600** — one per wrong answer choice |
+| Hand-drawn SVG figures | 25 |
+| Routes | 15, building 414 static pages |
+| Tests | **1 625** unit + 35 axe assertions, both themes |
 | CI | typecheck → lint → test → graph → content → a11y → build, all green |
 
 Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!]` blocked on Devansh
@@ -34,6 +34,8 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M1.6 — the Atlas | `[x]` | `atlas: build the graph and list views with URL-encoded filters` |
 | M1.7 — `/problems` browse | `[x]` | `problems: build the browse page with URL-encoded filters and pagination` |
 | M1.8 — `/papers` | `[x]`* | `papers: build the official paper index routes and tighten the anti-paste tripwire` |
+| M0.4 — legal and naming | `[x]` | `legal: draft the outreach note and record the locked public name` |
+| M1.10 — launch content (150 problems) | `[x]` | `content: reach the 150-problem launch bank` |
 | M1.9 — home, about, legal, contact | `[x]` | `site: build the home page, about, legal pages, and contact form` |
 
 ---
@@ -732,6 +734,68 @@ are unverified until someone runs it. See "Needs you".
    handled by a honeypot and a length cap, which is proportionate. The message is emailed and
    never stored, so there is nothing to leak or delete later. A test asserts the message body and
    the reply address never reach the logs.
+
+---
+
+## M0.4 — Legal and naming
+
+**State:** `[x]`
+
+The footer disclaimer and the three legal pages landed with M1.1 and M1.9. This milestone
+added `docs/05-OUTREACH-DRAFT.md`: the note to Math Kangaroo USA, written but **not sent** —
+M0.4 asks for it to exist, and writing it is what forces you to be able to describe the project
+in terms that survive contact with the organisation whose trademark you use. It also records
+what changes under each realistic response, and confirms the public name is **Kangaroo Atlas**,
+defined once in `src/lib/site.ts` and read from there by every surface.
+
+Send it when the site is live and has been in front of students, not before.
+
+---
+
+## M1.10 — Launch content
+
+**State:** `[x]`
+
+### Built
+
+| | before | after |
+|---|---|---|
+| Problems | 54 | **150** |
+| Distractor explanations | 216 | **600** |
+| Skills with at least one problem | 60 | **91 of 91** |
+| Skills with a canonical worked example | 45 | **91** |
+| Skills with three or more problems | 15 | 56 |
+| Figures | 19 | 25 |
+
+Point tiers now sit much closer to a real paper's thirds: band 3–4 runs 27 / 27 / 12 and band
+5–6 runs 19 / 36 / 29. Every one of the 96 new problems was written from scratch, and **every
+numeric answer was computed independently before the problem was authored** — the verification
+scripts are in the session transcript, not in the repo, because they are working notes rather
+than something to maintain.
+
+### Things caught and fixed while authoring
+
+- **KA-0105 had the wrong answer.** The stated answer was 13; building the grid explicitly gave
+  12. Rewritten with new distractors, including one for each of the two off-by-one errors.
+- **KA-0049 contradicted itself** in the first session — marked "no" while its own solution
+  argued "yes". Brute force confirmed 2 880 valid arrangements; rewritten.
+- The authoring checker was upgraded to **report every rule violation in a batch at once**
+  rather than failing on the first, after a single over-long hint cost a round trip.
+- Choice sets were re-sorted ascending after authoring, matching the real paper's convention.
+
+### Assumptions and known limits
+
+1. **The answer key still leans to the middle**: A 16 · B 44 · C 52 · D 26 · E 12. That is a
+   consequence of listing numeric choices in ascending order, as the real papers do — a correct
+   answer with distractors above and below lands in the middle. Every key is used and no key
+   exceeds the 50% cap the test enforces, but a deliberate pass to flatten it further is worth
+   doing as the bank grows past 150.
+2. **All 150 are still `reviewedBy: ["pending-review"]`.** The content guide requires two
+   approvals before launch. See "Needs you".
+3. **The CFT strand includes four scenario questions** (KA-0126, KA-0127, KA-0130 and the
+   triage-flavoured parts of others) that ask what to *do* rather than what a number *is*.
+   Math Kangaroo itself never asks these, but `docs/00-SPEC.md` §2.4 builds a whole practice
+   surface on exactly this skill, so the bank has to be able to teach it.
 
 ---
 

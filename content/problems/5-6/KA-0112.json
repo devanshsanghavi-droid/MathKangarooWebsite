@@ -1,0 +1,68 @@
+{
+  "id": "KA-0112",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A class of 12 scored an average of 8. Another class of 18 scored an average of 13. What is the average for all 30 students together?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10.5",
+      "correct": false,
+      "misconception": "I averaged the two averages, ignoring that the classes are different sizes."
+    },
+    {
+      "key": "B",
+      "text": "11",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "11.5",
+      "correct": false,
+      "misconception": "I weighted the averages but used the wrong class size against each one."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I leaned towards the larger class's average without computing the totals."
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I added the two averages together instead of combining them."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-08",
+    "secondary": [
+      "NUM-15",
+      "NUM-11"
+    ]
+  },
+  "hints": [
+    "Turn both averages into totals.",
+    "An average multiplied by its group size gives that group's total. Add the two totals, then divide by the number of students altogether. Never average two averages of different-sized groups.",
+    "The totals are 12 x 8 = 96 and 18 x 13 = 234, adding to 330. Then 330 divided by 30 = 11."
+  ],
+  "solutions": {
+    "reliable": "Turn each average into a total. The first class scored 12 x 8 = 96 and the second 18 x 13 = 234, so together 330 across 30 students. The combined average is 330 divided by 30 = 11. Note it is not 10.5, the average of the two averages - the larger class pulls the result towards 13. The transferable idea: averages of different-sized groups combine through their totals, never by averaging the averages.",
+    "elegant": "The classes split 2 to 3, so the answer sits two fifths of the way from 13 to 8: 13 - 2 = 11."
+  },
+  "whyOnTest": "Averaging the averages is the defining error of weighted-average problems and it produces an answer that looks completely reasonable.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

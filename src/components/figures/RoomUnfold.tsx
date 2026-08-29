@@ -1,4 +1,13 @@
-import { FigureSvg, Label, STROKE, GRID, FILL_NONE, W_THICK, W_THIN, W_HAIR } from './primitives.tsx';
+import {
+  FigureSvg,
+  Label,
+  STROKE,
+  GRID,
+  FILL_NONE,
+  W_THICK,
+  W_THIN,
+  W_HAIR,
+} from './primitives.tsx';
 
 /**
  * KA-0082 — the floor and one wall of a room, unfolded flat, with the straight line an ant

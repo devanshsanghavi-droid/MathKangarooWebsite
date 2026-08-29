@@ -1,0 +1,68 @@
+{
+  "id": "KA-0132",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Ana has exactly 5 coins, each worth either 2 cents or 5 cents. Which of these could NOT be her total?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "13",
+      "correct": false,
+      "misconception": "I did not try one five and four twos, so I judged this total impossible."
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I missed the combination of two fives and three twos."
+    },
+    {
+      "key": "C",
+      "text": "19",
+      "correct": false,
+      "misconception": "I stopped listing after two fives and never reached three fives and two twos."
+    },
+    {
+      "key": "D",
+      "text": "21",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": false,
+      "misconception": "I forgot the case where every coin is a five, which is allowed by the wording."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-05",
+    "secondary": [
+      "CNT-04",
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "List every total from 0 fives up to 5 fives.",
+    "With exactly five coins, the only thing that varies is how many are fives. Run that from zero to five and write down each total - six totals in all, and everything else is impossible.",
+    "The totals are 10, 13, 16, 19, 22 and 25. Each extra five adds 3. There is no 21 in the list."
+  ],
+  "solutions": {
+    "reliable": "With exactly five coins, the only choice is how many are 5-cent coins. With none, the total is 10. Each time a 2 is swapped for a 5 the total rises by 3, so the possible totals are 10, 13, 16, 19, 22 and 25. Every offered value appears except 21, so 21 is impossible. The transferable idea: when one quantity controls everything, run it through its whole range and read the possibilities off - the answer to a could-not question is whatever the list misses.",
+    "elegant": "Every total is 10 plus a multiple of 3, and 21 - 10 = 11 is not a multiple of 3."
+  },
+  "whyOnTest": "Could-not questions need the full set of possibilities, and building the list is faster and safer than testing the odd one out.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

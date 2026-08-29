@@ -1,0 +1,68 @@
+{
+  "id": "KA-0133",
+  "band": "3-4",
+  "points": 5,
+  "statement": "How many squares of any size can be found on a 3 by 3 board?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted the nine small squares and stopped, missing every larger one."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted the small squares and the whole board, forgetting the middle size entirely."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found the 2 by 2 squares by splitting the board into blocks, getting two instead of four."
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": false,
+      "misconception": "I slid the 2 by 2 square across and down but missed one of its four positions."
+    },
+    {
+      "key": "E",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-13",
+    "secondary": [
+      "CNT-12",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Count by size: 1 by 1, then 2 by 2, then 3 by 3.",
+    "Take the sizes one at a time. For each size, slide the square across and down and count where its top-left corner can sit, rather than trying to see them all at once.",
+    "Size 1: 3 x 3 = 9. Size 2: 2 x 2 = 4. Size 3: 1. Total 9 + 4 + 1 = 14."
+  ],
+  "solutions": {
+    "reliable": "Take the sizes separately. A 1 by 1 square has 3 x 3 = 9 positions. A 2 by 2 square needs one spare column and one spare row, so its corner sits in 2 x 2 = 4 places. A 3 by 3 square fits in exactly 1 way. Adding: 9 + 4 + 1 = 14. The transferable idea: counting by size, largest or smallest first, is what stops the middle sizes being forgotten - and every wrong answer here is a missing middle size.",
+    "elegant": "On an n by n board the total is the sum of the first n square numbers, so a 3-board gives 9 + 4 + 1 = 14."
+  },
+  "whyOnTest": "Hidden-shape counting is a Kangaroo staple, and stopping at the sizes that are drawn is the error the question is built around.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

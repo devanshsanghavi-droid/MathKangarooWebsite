@@ -1,0 +1,68 @@
+{
+  "id": "KA-0131",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Twice a number, with 3 added, gives 17. Which of the choices is the number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I tested the first choice, got 13, and picked it anyway because it was close."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I added the 3 to 17 instead of subtracting it, then halved the 20 that gave me."
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": false,
+      "misconception": "I subtracted 3 from 17 and gave that without halving it."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": false,
+      "misconception": "I added 3 to 17 instead of undoing the addition by subtracting it."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-04",
+    "secondary": [
+      "MOD-01",
+      "LOG-08"
+    ]
+  },
+  "hints": [
+    "Test a choice rather than solving.",
+    "The answer is one of the five, so pick a middle one, double it, add 3, and see whether you land on 17. The result tells you which way to move next.",
+    "Test 10: double is 20, plus 3 is 23 - too big. Test 7: double is 14, plus 3 is 17. That works."
+  ],
+  "solutions": {
+    "reliable": "Back-solve. Take the middle choice, 10: doubling gives 20, plus 3 is 23, which overshoots 17 - so the number is smaller. Try 7: doubling gives 14, plus 3 is 17. That is it. Starting in the middle means one test tells you which direction to go. The transferable idea: on a multiple-choice paper, checking a candidate is often cheaper than deriving the answer, and starting in the middle halves the work.",
+    "elegant": "Undoing gives (17 - 3) divided by 2 = 7, which is worth doing as a check even after back-solving."
+  },
+  "whyOnTest": "Deciding whether to test or to derive is a real exam skill, and starting from choice A rather than the middle wastes the information each test gives.",
+  "estSeconds": 65,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

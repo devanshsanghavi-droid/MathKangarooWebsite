@@ -1,0 +1,68 @@
+{
+  "id": "KA-0139",
+  "band": "3-4",
+  "points": 5,
+  "statement": "On a die, opposite faces add to 7. A die rests on a table with 3 on top. What do the four side faces add up to?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I subtracted only the top face from 21, forgetting the hidden bottom face as well."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I guessed four middling numbers and added them without using the total of all six faces."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "17",
+      "correct": false,
+      "misconception": "I subtracted only the bottom face of 4 from the total of 21."
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": false,
+      "misconception": "I added the four largest numbers on the die rather than the four that are actually at the sides."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-11",
+    "secondary": [
+      "NUM-08",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "What do all six faces add to?",
+    "Add the numbers 1 to 6 to get the total of the whole die. Then take away the top and the bottom, which you can find from the opposite-faces rule.",
+    "All six faces add to 21. The top is 3, so the bottom is 7 - 3 = 4. The sides are 21 - 3 - 4 = 14."
+  ],
+  "solutions": {
+    "reliable": "All six faces together are 1 + 2 + 3 + 4 + 5 + 6 = 21. The top shows 3, so the bottom is 7 - 3 = 4. The four side faces are everything else: 21 - 3 - 4 = 14. Notice that 3 and 4 always add to 7, so the sides come to 21 - 7 = 14 whatever is on top - the number 3 never mattered. The transferable idea: work with the total and subtract, and look for the quantity the question's specific number does not actually affect.",
+    "elegant": "Top and bottom always add to 7, so the four sides always add to 21 - 7 = 14, whichever face is up."
+  },
+  "whyOnTest": "The answer is the same whatever the top face shows, and noticing that is worth far more than the arithmetic.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0140",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A code uses the letters A, B and C, each exactly once. How many codes do not start with A?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted the codes that do start with A rather than the ones that do not."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted the letters available for the first position instead of counting whole codes."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted every arrangement of the three letters and forgot the restriction."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I allowed letters to repeat, which the words each exactly once rule out."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-03",
+    "secondary": [
+      "CNT-11",
+      "CNT-09"
+    ]
+  },
+  "hints": [
+    "Count them all, then take away the bad ones.",
+    "Work out how many codes there are with no restriction, then how many break the rule by starting with A, and subtract. That is fewer cases than counting the good ones directly.",
+    "All arrangements: 3 x 2 x 1 = 6. Those starting with A: the other two letters can go 2 ways. So 6 - 2 = 4."
+  ],
+  "solutions": {
+    "reliable": "Count everything first: three different letters arrange in 3 x 2 x 1 = 6 ways. Now count the ones that break the rule: if A is fixed at the front, the remaining two letters can be arranged in 2 ways, so 2 codes start with A. That leaves 6 - 2 = 4. Listing confirms it: BAC, BCA, CAB, CBA. The transferable idea: with a restriction, counting everything and subtracting the bad cases is usually fewer steps than counting the good ones.",
+    "elegant": "The first letter must be B or C, and the remaining two can go either way round: 2 x 2 = 4."
+  },
+  "whyOnTest": "It is the smallest setting where complementary counting genuinely beats direct counting, so the habit forms before the numbers get large.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

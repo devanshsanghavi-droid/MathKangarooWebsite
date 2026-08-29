@@ -1,0 +1,68 @@
+{
+  "id": "KA-0149",
+  "band": "5-6",
+  "points": 4,
+  "statement": "What is the units digit of 3 multiplied by itself 100 times, that is 3 to the power 100?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I assumed every power of 3 ends in 3."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I found the cycle 3, 9, 7, 1 but counted its positions from zero, landing one step early."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I used a remainder of 2 instead of 0 when dividing 100 by the cycle length of 4."
+    },
+    {
+      "key": "E",
+      "text": "it cannot be found without a calculator",
+      "correct": false,
+      "misconception": "I assumed a number this large has no reachable last digit, rather than looking for a repeat."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-07",
+    "secondary": [
+      "NUM-06",
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "List the last digits of the first few powers.",
+    "The last digit of a product depends only on the last digits being multiplied. Work out the last digits of the first few powers until the list repeats, then locate 100 inside that cycle.",
+    "The last digits run 3, 9, 7, 1 and then repeat. 100 divides exactly by 4, so it lands on the last entry of a cycle, which is 1."
+  ],
+  "solutions": {
+    "reliable": "Build the cycle of last digits: 3, then 9, then 27 ends in 7, then 81 ends in 1, then it starts again at 3. The cycle has length 4. Now 100 divided by 4 is 25 with remainder 0, and a remainder of 0 means the last entry of a cycle, not the first - so the answer is 1. The transferable idea: find the cycle, then use the remainder as a position inside it, remembering that remainder zero lands at the end.",
+    "elegant": "3 to the power 4 is 81, which ends in 1, and 100 is a multiple of 4 - so the answer ends in 1."
+  },
+  "whyOnTest": "The remainder-of-zero case is the one students get wrong, and choices C and D are the two ways of being one step out.",
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0117",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A train covers 150 km at a steady 60 km per hour. How many minutes does the journey take?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "25",
+      "correct": false,
+      "misconception": "I divided 150 by 60 and read the answer as minutes rather than hours."
+    },
+    {
+      "key": "B",
+      "text": "90",
+      "correct": false,
+      "misconception": "I used 1.5 hours instead of 2.5, dividing 90 by 60 rather than 150."
+    },
+    {
+      "key": "C",
+      "text": "150",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "210",
+      "correct": false,
+      "misconception": "I converted 2.5 hours as two hours and fifty minutes."
+    },
+    {
+      "key": "E",
+      "text": "9000",
+      "correct": false,
+      "misconception": "I multiplied the distance by 60 instead of dividing, then converted."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-03",
+    "secondary": [
+      "MOD-07"
+    ]
+  },
+  "hints": [
+    "Find the time in hours first.",
+    "Time is distance divided by speed, which gives an answer in hours. Convert to minutes only at the end, and check the size of the number after converting.",
+    "150 divided by 60 is 2.5 hours, and 2.5 x 60 = 150 minutes."
+  ],
+  "solutions": {
+    "reliable": "Time is distance divided by speed: 150 divided by 60 = 2.5 hours. The question asks for minutes, so convert at the end: 2.5 x 60 = 150 minutes. It is a coincidence that the answer in minutes matches the distance in kilometres, which is exactly why the working matters more than the number. The transferable idea: compute in the natural unit, convert last, and check the answer's size after converting.",
+    "elegant": null
+  },
+  "whyOnTest": "A coincidence between two numbers in the question makes it easy to arrive at the right answer for the wrong reason, and the unit conversion is the real test.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

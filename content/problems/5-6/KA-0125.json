@@ -1,0 +1,68 @@
+{
+  "id": "KA-0125",
+  "band": "5-6",
+  "points": 5,
+  "statement": "What is the value of (1 - 1/2) x (1 - 1/3) x (1 - 1/4) x ... x (1 - 1/10)?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1/10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "1/9",
+      "correct": false,
+      "misconception": "I cancelled the chain but stopped one factor early, leaving a 9 on the bottom."
+    },
+    {
+      "key": "C",
+      "text": "1/2",
+      "correct": false,
+      "misconception": "I worked out the first bracket and assumed the rest made no difference."
+    },
+    {
+      "key": "D",
+      "text": "9/10",
+      "correct": false,
+      "misconception": "I gave the last bracket on its own instead of the whole product."
+    },
+    {
+      "key": "E",
+      "text": "1",
+      "correct": false,
+      "misconception": "I assumed everything cancels completely, leaving nothing behind."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "NUM-09",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Write each bracket as a single fraction.",
+    "Turn every bracket into one fraction before multiplying anything. Then write the whole product out in a line and look at what appears on the top and on the bottom.",
+    "The brackets are 1/2, 2/3, 3/4, ... , 9/10. Every top cancels the bottom before it, leaving 1 on top and 10 underneath."
+  ],
+  "solutions": {
+    "reliable": "Write each bracket as one fraction: 1 - 1/2 is 1/2, 1 - 1/3 is 2/3, 1 - 1/4 is 3/4, and so on up to 9/10. The product is (1 x 2 x 3 x ... x 9) over (2 x 3 x 4 x ... x 10). Everything cancels except the 1 on top and the 10 underneath, giving 1/10. Grinding it out multiplication by multiplication gives the same answer and takes ten times as long. The transferable idea: rewrite before you calculate - the shortcut only becomes visible once the terms are in a comparable form.",
+    "elegant": "Each bracket is (k - 1)/k, so the product telescopes to 1/10 whatever the last denominator is."
+  },
+  "whyOnTest": "It is the clearest case of a problem that is two minutes of grinding or fifteen seconds of noticing, and the decision between the two is the skill.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

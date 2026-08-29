@@ -1,0 +1,68 @@
+{
+  "id": "KA-0106",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A machine turns 3 into 7, 5 into 11 and 8 into 17. What does it turn 12 into?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "19",
+      "correct": false,
+      "misconception": "I used the rule add 4, which fits the first example but not the others."
+    },
+    {
+      "key": "B",
+      "text": "21",
+      "correct": false,
+      "misconception": "I found a rule from two examples only and never tested it against the third."
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": false,
+      "misconception": "I doubled the input and forgot the extra one that every example needs."
+    },
+    {
+      "key": "D",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "29",
+      "correct": false,
+      "misconception": "I used double and add five, which fits none of the examples exactly."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "PAT-05",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Compare each output with double its input.",
+    "Try the simplest families in order: add something, multiply by something, or multiply and then add. Whatever you find has to fit every example, not just the first two.",
+    "Double 3 is 6 and the output is 7. Double 5 is 10 and the output is 11. Double 8 is 16 and the output is 17. So the rule is double and add one, giving 25."
+  ],
+  "solutions": {
+    "reliable": "Test the simple families in order. Adding a fixed amount fails: 3 to 7 is plus 4, but 5 to 11 is plus 6. Try doubling: 3 doubles to 6, one short of 7; 5 doubles to 10, one short of 11; 8 doubles to 16, one short of 17. So the rule is double and add one, and 12 becomes 25. The transferable idea: a candidate rule must fit every example given, and the awkward one is there precisely to kill the wrong rules.",
+    "elegant": null
+  },
+  "whyOnTest": "Several rules fit two examples and only one fits three, so the discipline is testing against all of them before answering.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

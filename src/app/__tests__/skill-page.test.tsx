@@ -1,7 +1,10 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render, within } from '@testing-library/react';
 import SkillPage, { generateStaticParams, generateMetadata } from '../skill/[id]/page';
+import type * as contentModule from '@/lib/content';
 import { getAllSkills, getSkill, getProblemsForSkill } from '@/lib/content';
+
+type ContentModule = typeof contentModule;
 
 /** docs/00-SPEC.md §1.4 — the nine sections, in order. */
 const SECTIONS = [
@@ -95,21 +98,49 @@ describe('a skill with problems', () => {
   });
 });
 
-describe('a skill with no problems', () => {
-  const empty = getAllSkills().find((s) => getProblemsForSkill(s.id).length === 0);
-
-  it('exists in the taxonomy, so this case is real', () => {
-    expect(empty).toBeDefined();
+describe('every skill in the bank now has problems', () => {
+  it('leaves no skill with an empty practice ladder', () => {
+    const empty = getAllSkills().filter((s) => getProblemsForSkill(s.id).length === 0);
+    expect(empty.map((s) => s.id)).toEqual([]);
   });
 
+  it('gives every skill a canonical worked example', () => {
+    const missing = getAllSkills().filter((s) => s.canonicalProblem === null);
+    expect(missing.map((s) => s.id)).toEqual([]);
+  });
+});
+
+describe('a skill with no problems — the empty state', () => {
+  // No real skill is uncovered any more, which is the point of M1.10. The empty branches still
+  // have to work, because a new skill lands with no problems the day it is added, so they are
+  // exercised against a skill whose content has been emptied rather than against a real gap.
   it('says so in a sentence rather than showing a blank ladder', async () => {
-    if (!empty) return;
-    const { container } = await renderSkill(empty.id);
+    vi.resetModules();
+    vi.doMock('@/lib/content', async () => {
+      const actual = (await vi.importActual('@/lib/content')) as ContentModule;
+      const skill = actual.getSkill('GEO-17');
+      if (!skill) throw new Error('GEO-17 is missing');
+      return {
+        ...actual,
+        getSkill: (id: string) =>
+          id === 'GEO-17' ? { ...skill, canonicalProblem: null } : actual.getSkill(id),
+        getProblemsForSkill: (id: string) =>
+          id === 'GEO-17' ? [] : actual.getProblemsForSkill(id),
+        getPapersForSkill: () => [],
+      };
+    });
+
+    const EmptyPage = (await import('../skill/[id]/page')).default;
+    const { container } = render(await EmptyPage({ params: Promise.resolve({ id: 'GEO-17' }) }));
+
     expect(container.querySelector('#practice')?.textContent).toMatch(
       /No problems tagged .* have been written yet/,
     );
     expect(container.querySelector('#example')?.textContent).toMatch(/No worked example/);
     expect(container.querySelector('#drill')?.textContent).toMatch(/A drill needs problems/);
+
+    vi.doUnmock('@/lib/content');
+    vi.resetModules();
   });
 });
 

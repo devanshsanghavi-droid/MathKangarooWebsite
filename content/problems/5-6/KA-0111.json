@@ -1,0 +1,68 @@
+{
+  "id": "KA-0111",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A mother is 32 and her child is 8. In how many years will the mother be exactly three times as old as the child?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I aged only the child and left the mother's age unchanged."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I looked for when the mother is four times as old rather than three times."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I used the age difference of 24 and halved it, without checking the ratio it gives."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I gave the difference between their ages, which never changes, instead of a number of years."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-05",
+    "secondary": [
+      "MOD-01",
+      "LOG-08"
+    ]
+  },
+  "hints": [
+    "Age both of them, not just one.",
+    "In x years the mother is 32 + x and the child is 8 + x. Write the condition as an equation between those two and solve it. The difference between their ages never changes.",
+    "32 + x = 3(8 + x) gives 32 + x = 24 + 3x, so 8 = 2x and x = 4. Check: 36 is three times 12."
+  ],
+  "solutions": {
+    "reliable": "In x years the mother is 32 + x and the child is 8 + x. The condition is 32 + x = 3(8 + x), which is 32 + x = 24 + 3x, so 8 = 2x and x = 4. Check: in 4 years they are 36 and 12, and 36 is exactly three times 12. The transferable idea: everyone ages at the same rate, so add the same x to every age - and the difference between two ages never changes.",
+    "elegant": "The gap is always 24. When the mother is three times as old, the gap is two of the child's ages, so the child is 12 - which is 4 years away."
+  },
+  "whyOnTest": "Ageing only one person is the classic mistake, and the constant difference is the fact that makes the elegant route possible.",
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

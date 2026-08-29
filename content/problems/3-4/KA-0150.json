@@ -1,0 +1,68 @@
+{
+  "id": "KA-0150",
+  "band": "3-4",
+  "points": 4,
+  "statement": "A diagonal joins two corners of a shape that are not next to each other. How many diagonals does a hexagon have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted one diagonal from each corner and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted three diagonals from each corner but forgot that each one gets counted from both ends."
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": false,
+      "misconception": "I counted every line joining two corners, including the six sides."
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": false,
+      "misconception": "I multiplied six corners by three diagonals each and never halved."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "CNT-08",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Try a square first, then a pentagon.",
+    "Count the diagonals of a shape small enough to draw, then the next one up. The pattern in those counts is easier to trust than trying to see all the hexagon's at once.",
+    "A square has 2 diagonals, a pentagon 5, a hexagon 9. From each of 6 corners there are 3 diagonals, and each is counted twice: 6 x 3 / 2 = 9."
+  ],
+  "solutions": {
+    "reliable": "Start small. A square has 2 diagonals and a pentagon has 5 - both easy to draw and count. For the hexagon, each of the 6 corners joins to 3 others that are not its neighbours, giving 6 x 3 = 18 ends of diagonals. Every diagonal has two ends, so there are 18 divided by 2 = 9. Check against the small cases: the same reasoning gives 4 x 1 / 2 = 2 for a square and 5 x 2 / 2 = 5 for a pentagon, both correct. The transferable idea: build the rule on cases you can draw, then trust it on the one you cannot.",
+    "elegant": "A shape with n corners has n(n - 3)/2 diagonals, giving 6 x 3 / 2 = 9."
+  },
+  "whyOnTest": "Forgetting to halve is the same error as in the handshake count, and small cases are what let a student check the rule instead of hoping.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

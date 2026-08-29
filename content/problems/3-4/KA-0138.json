@@ -1,0 +1,68 @@
+{
+  "id": "KA-0138",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Squares of dots grow: 1 dot, then 4, then 9, then 16. How many dots are in the seventh square?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "25",
+      "correct": false,
+      "misconception": "I continued the pattern to the fifth square instead of the seventh."
+    },
+    {
+      "key": "B",
+      "text": "36",
+      "correct": false,
+      "misconception": "I stopped one square short, giving the sixth instead of the seventh."
+    },
+    {
+      "key": "C",
+      "text": "42",
+      "correct": false,
+      "misconception": "I added 6 to the sixth square's 36, treating the differences as constant."
+    },
+    {
+      "key": "D",
+      "text": "49",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "64",
+      "correct": false,
+      "misconception": "I continued one square too far and gave the eighth."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-04",
+    "secondary": [
+      "PAT-02",
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "What shape are these numbers?",
+    "Look at the counts rather than the pictures. Each one is a number multiplied by itself, and the position tells you which number to use.",
+    "1, 4, 9, 16 are 1 x 1, 2 x 2, 3 x 3, 4 x 4. So the seventh is 7 x 7 = 49."
+  ],
+  "solutions": {
+    "reliable": "Write the counts as products: 1 = 1 x 1, 4 = 2 x 2, 9 = 3 x 3, 16 = 4 x 4. The nth square holds n x n dots, so the seventh holds 7 x 7 = 49. Check against a term you can see: the fourth should be 4 x 4 = 16, and it is. The transferable idea: the differences here grow (3, 5, 7, ...), so continuing by a constant step fails - recognise the shape of the numbers instead.",
+    "elegant": null
+  },
+  "whyOnTest": "It is the first place a constant-difference habit breaks down, and choice C is exactly the answer that habit produces.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

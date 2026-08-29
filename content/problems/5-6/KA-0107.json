@@ -1,0 +1,68 @@
+{
+  "id": "KA-0107",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Dots are arranged in triangles: 1 dot, then 3, then 6, then 10, and so on. How many dots does the tenth triangle have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "36",
+      "correct": false,
+      "misconception": "I stopped at the eighth triangle, losing count while adding the rows."
+    },
+    {
+      "key": "B",
+      "text": "45",
+      "correct": false,
+      "misconception": "I gave the ninth triangle instead of the tenth, being one row short."
+    },
+    {
+      "key": "C",
+      "text": "55",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "66",
+      "correct": false,
+      "misconception": "I gave the eleventh triangle, adding one row too many."
+    },
+    {
+      "key": "E",
+      "text": "100",
+      "correct": false,
+      "misconception": "I squared the position number, which describes square patterns rather than triangular ones."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-04",
+    "secondary": [
+      "NUM-08",
+      "CNT-08"
+    ]
+  },
+  "hints": [
+    "What is added from one triangle to the next?",
+    "The jumps are not equal: each new triangle adds one more row than the last one added. Write the differences down and you will see the pattern in them.",
+    "The differences are 2, 3, 4, 5 and so on, so the tenth triangle is 1 + 2 + 3 + ... + 10 = 55."
+  ],
+  "solutions": {
+    "reliable": "Look at what is added: 1 to 3 adds 2, 3 to 6 adds 3, 6 to 10 adds 4. Each step adds one more than the last, because each new triangle gains a longer bottom row. So the tenth triangle is 1 + 2 + 3 + ... + 10, which pairs up as five lots of 11 = 55. The transferable idea: when the differences themselves form a pattern, add the differences rather than continuing the drawing.",
+    "elegant": "The nth triangular number is n times n plus one, halved: 10 x 11 / 2 = 55."
+  },
+  "whyOnTest": "Growth patterns are the first place a constant difference fails, and noticing that the differences themselves grow is the whole move.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

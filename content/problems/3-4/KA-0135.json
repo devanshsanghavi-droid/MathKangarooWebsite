@@ -1,0 +1,68 @@
+{
+  "id": "KA-0135",
+  "band": "3-4",
+  "points": 5,
+  "statement": "How many two-digit numbers have both of their digits odd?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted the odd numbers in one row of ten and treated that as the whole answer."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I used four odd digits instead of five, forgetting that 9 is odd."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "45",
+      "correct": false,
+      "misconception": "I counted every two-digit number that is itself odd, which only fixes the last digit."
+    },
+    {
+      "key": "E",
+      "text": "50",
+      "correct": false,
+      "misconception": "I let the first digit be any of ten values rather than only the five odd ones."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-02",
+    "secondary": [
+      "NUM-03",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "How many odd digits are there?",
+    "Both positions must hold an odd digit. Count how many odd digits are available for the first position and how many for the second, and remember that neither choice uses the other up.",
+    "The odd digits are 1, 3, 5, 7 and 9 - five of them. Five choices for each position gives 5 x 5 = 25."
+  ],
+  "solutions": {
+    "reliable": "The odd digits are 1, 3, 5, 7 and 9, so there are five. The first digit must be one of those five, and so must the second - and using one for the first position does not stop it being used again for the second. So the count is 5 x 5 = 25. Note that no odd digit is 0, so the leading-zero problem never arises here. The transferable idea: check whether a choice uses anything up before deciding what to multiply by.",
+    "elegant": null
+  },
+  "whyOnTest": "Both digits odd is a much stronger condition than the number being odd, and choice D is exactly that confusion.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

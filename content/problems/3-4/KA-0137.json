@@ -1,0 +1,68 @@
+{
+  "id": "KA-0137",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A jug holds 900 ml of juice. A third is poured out, then 150 ml is added. How many millilitres are in the jug?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "450",
+      "correct": false,
+      "misconception": "I poured out half instead of a third and then forgot to add the 150 ml back."
+    },
+    {
+      "key": "B",
+      "text": "600",
+      "correct": false,
+      "misconception": "I poured out the third correctly but never added the 150 ml."
+    },
+    {
+      "key": "C",
+      "text": "750",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "900",
+      "correct": false,
+      "misconception": "I assumed the 150 ml added back was the same as the amount poured out, so nothing changed."
+    },
+    {
+      "key": "E",
+      "text": "1050",
+      "correct": false,
+      "misconception": "I added the 150 ml to the full jug without pouring anything out first."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-10",
+    "secondary": [
+      "NUM-09",
+      "MOD-07"
+    ]
+  },
+  "hints": [
+    "Do the two steps in order.",
+    "Work out how much is poured out, subtract it, and only then add the 150 ml. Doing the addition first changes the size of the third that gets poured away.",
+    "A third of 900 is 300, so 600 is left. Adding 150 gives 750 ml."
+  ],
+  "solutions": {
+    "reliable": "A third of 900 ml is 300 ml, so pouring that out leaves 900 - 300 = 600 ml. Adding 150 ml gives 600 + 150 = 750 ml. Note that the third is a third of the original 900, not of anything later - the order in the sentence is the order of the arithmetic. The transferable idea: fractions are always a fraction of something specific, so name that something before you compute.",
+    "elegant": "Pouring away a third leaves two thirds, which is 600, and 600 + 150 = 750."
+  },
+  "whyOnTest": "Multi-step problems are lost by reordering the steps, and the fraction here is of the starting amount rather than of what is left at the end.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

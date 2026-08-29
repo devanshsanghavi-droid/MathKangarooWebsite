@@ -1,0 +1,68 @@
+{
+  "id": "KA-0136",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Four children stand in a line. Ana is not first. Bo stands directly behind Ana. Cal is last. Who is first?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Ana",
+      "correct": false,
+      "misconception": "I ignored the very first clue, which rules Ana out of the front directly."
+    },
+    {
+      "key": "B",
+      "text": "Bo",
+      "correct": false,
+      "misconception": "I put Bo at the front, but Bo must have Ana immediately in front of him."
+    },
+    {
+      "key": "C",
+      "text": "Cal",
+      "correct": false,
+      "misconception": "I forgot that Cal is fixed at the back of the line."
+    },
+    {
+      "key": "D",
+      "text": "Dee",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "it cannot be decided",
+      "correct": false,
+      "misconception": "I stopped once two arrangements seemed possible, without testing whether the second one actually fits every clue."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-04",
+    "secondary": [
+      "LOG-03",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Try Ana in each allowed position.",
+    "Cal is fixed at position four. Ana cannot be first, so try Ana second and Ana third in turn, remembering that Bo must be immediately behind her.",
+    "If Ana were third, Bo would be fourth - but Cal is fourth. So Ana is second, Bo third, and Dee is left for first."
+  ],
+  "solutions": {
+    "reliable": "Cal takes position 4. Ana is not first, so she is second or third. If Ana were third, Bo would have to be fourth, which Cal already occupies - impossible. So Ana is second and Bo is third, leaving Dee at the front. The line is Dee, Ana, Bo, Cal. The transferable idea: when one clue leaves only two possibilities, test both - a contradiction in one of them settles the whole arrangement.",
+    "elegant": null
+  },
+  "whyOnTest": "Directly behind is a much stronger clue than behind, and using it to eliminate rather than to place is what cracks the question.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

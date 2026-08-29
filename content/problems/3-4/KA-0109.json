@@ -1,0 +1,67 @@
+{
+  "id": "KA-0109",
+  "band": "3-4",
+  "points": 4,
+  "statement": "A staircase of blocks has 4 blocks in the first step, 7 in the second and 10 in the third. How many blocks are in the eighth step?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "22",
+      "correct": false,
+      "misconception": "I added the step of 3 six times instead of seven, stopping at the seventh step."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I multiplied 3 by 8 without adding the first step's blocks."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "28",
+      "correct": false,
+      "misconception": "I multiplied the step of 3 by 8 and added 4, taking one step too many."
+    },
+    {
+      "key": "E",
+      "text": "32",
+      "correct": false,
+      "misconception": "I multiplied the first step's 4 blocks by the step number instead of following the pattern."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-02",
+    "secondary": [
+      "PAT-01"
+    ]
+  },
+  "hints": [
+    "How many steps of 3 to reach the eighth?",
+    "The blocks go up by the same amount each time. Getting from the first step to the eighth takes one fewer jump than eight, because the first step costs no jumps at all.",
+    "From step 1 to step 8 is 7 jumps of 3, so the eighth step is 4 + 7 x 3 = 25."
+  ],
+  "solutions": {
+    "reliable": "The counts rise by 3 each step. Getting from step 1 to step 8 takes 7 jumps, not 8, because step 1 is already there. So the eighth step has 4 + 7 x 3 = 4 + 21 = 25 blocks. Check the rule on a step you can see: step 3 should be 4 + 2 x 3 = 10, which matches. The transferable idea: count the gaps between terms, not the terms.",
+    "elegant": "The nth step has 3n + 1 blocks, so the eighth has 24 + 1 = 25."
+  },
+  "whyOnTest": "The one-fewer-jump rule is the defining off-by-one of the whole patterns strand.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

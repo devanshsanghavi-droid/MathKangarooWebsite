@@ -1,0 +1,67 @@
+{
+  "id": "KA-0104",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A sequence starts 1, 1, and every term after that is the sum of the two before it. What is the eighth term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "13",
+      "correct": false,
+      "misconception": "I counted the two starting terms as one, so I stopped at the seventh term."
+    },
+    {
+      "key": "B",
+      "text": "21",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "29",
+      "correct": false,
+      "misconception": "I added the two before it but slipped once in the middle of the chain."
+    },
+    {
+      "key": "D",
+      "text": "34",
+      "correct": false,
+      "misconception": "I generated one term too many and gave the ninth."
+    },
+    {
+      "key": "E",
+      "text": "64",
+      "correct": false,
+      "misconception": "I doubled each term instead of adding the two before it."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "PAT-04"
+    ]
+  },
+  "hints": [
+    "Write the terms in a numbered row.",
+    "Each term needs the two before it, so there is no shortcut. Write them across the page with their positions underneath, and read off the one you were asked for.",
+    "1, 1, 2, 3, 5, 8, 13, 21. The eighth term is 21."
+  ],
+  "solutions": {
+    "reliable": "Generate the terms and number them: term 1 is 1, term 2 is 1, then 1 + 1 = 2, 1 + 2 = 3, 2 + 3 = 5, 3 + 5 = 8, 5 + 8 = 13, 8 + 13 = 21. The eighth term is 21. The transferable idea: write the position under every term - with two starting values it is very easy to be one out.",
+    "elegant": null
+  },
+  "whyOnTest": "Two starting terms rather than one is exactly what makes students miscount the position, and this sequence appears in some form most years.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

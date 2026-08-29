@@ -1,0 +1,68 @@
+{
+  "id": "KA-0134",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A square sheet is folded in half, then in half again. Two holes are punched through all the layers. How many holes are there when it is unfolded?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I forgot that the punch goes through every layer, not just the top one."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I undid only one of the two folds before counting."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I doubled twice for the folds but added the second hole instead of doubling for it too."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I counted three folds instead of two, doubling one time too many."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-15",
+    "secondary": [
+      "GEO-09",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Count the layers first, then the holes.",
+    "Each fold doubles the number of layers. Work out how many layers the punch goes through, then multiply by how many holes were punched.",
+    "Two folds make 2 x 2 = 4 layers, and each of the 2 holes goes through all of them: 4 x 2 = 8."
+  ],
+  "solutions": {
+    "reliable": "Count the layers. One fold gives 2 layers, a second fold gives 4. Each punch goes through all 4 layers, leaving 4 holes in the unfolded sheet. With 2 punches that is 4 x 2 = 8 holes. The transferable idea: layers first, then holes - the two numbers multiply, they do not add.",
+    "elegant": "n folds give 2 to the power n layers, so h holes punched through become h times 2 to the power n: 2 x 4 = 8."
+  },
+  "whyOnTest": "Folding questions combine a doubling and a multiplication, and mixing up which is which produces every wrong answer offered.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

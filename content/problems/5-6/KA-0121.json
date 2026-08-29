@@ -1,0 +1,68 @@
+{
+  "id": "KA-0121",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Everyone at a meeting shakes hands with everyone else exactly once. There are 66 handshakes in total. How many people are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "11",
+      "correct": false,
+      "misconception": "I used the number of hands each person shakes rather than the number of people."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "22",
+      "correct": false,
+      "misconception": "I doubled the answer, forgetting that the halving has already been done."
+    },
+    {
+      "key": "D",
+      "text": "33",
+      "correct": false,
+      "misconception": "I halved 66 and treated that as the number of people."
+    },
+    {
+      "key": "E",
+      "text": "66",
+      "correct": false,
+      "misconception": "I gave the number of handshakes back as the number of people."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "CNT-08",
+      "PAT-04"
+    ]
+  },
+  "hints": [
+    "Try 3 people, then 4, then 5.",
+    "Work out the handshakes for a few small groups and write the results in a list. The pattern that appears lets you climb to 66 without any algebra.",
+    "3 people give 3 handshakes, 4 give 6, 5 give 10. The counts are 3, 6, 10, 15, 21, 28, 36, 45, 55, 66 - and 66 is reached at 12 people."
+  ],
+  "solutions": {
+    "reliable": "Try small cases and list the results. With 3 people there are 3 handshakes, with 4 there are 6, with 5 there are 10. Continuing: 15, 21, 28, 36, 45, 55, 66. Counting along, 66 handshakes happens with 12 people. Check: each of 12 shakes 11 hands, giving 132 ends, and each handshake has two ends: 66. The transferable idea: small cases turn a question you cannot start into a list you can read the answer off.",
+    "elegant": "n people give n(n - 1)/2 handshakes, so n(n - 1) = 132 = 12 x 11, giving n = 12."
+  },
+  "whyOnTest": "Starting small is the single most reliable way into a question that looks like it needs algebra a student has not met yet.",
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

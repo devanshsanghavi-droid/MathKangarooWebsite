@@ -1,0 +1,67 @@
+{
+  "id": "KA-0116",
+  "band": "5-6",
+  "points": 4,
+  "statement": "One pipe fills a pool in 12 hours and another fills it in 4 hours. With both running, how many hours does the pool take to fill?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I gave the faster pipe's time on its own, forgetting the slower one helps as well."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I halved the slower pipe's time rather than adding the two rates."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I averaged the two times, which would only be right if the pipes took turns."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I added the two times, which makes two pipes slower than one - an impossible answer."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-04",
+    "secondary": [
+      "MOD-03"
+    ]
+  },
+  "hints": [
+    "How much does each pipe fill in an hour?",
+    "Work in pools per hour rather than hours per pool. Add the two hourly amounts to get the pair's rate, then turn that back into a time.",
+    "In an hour the pipes fill one twelfth and one quarter, which is one twelfth plus three twelfths = four twelfths, or a third. So 3 hours."
+  ],
+  "solutions": {
+    "reliable": "Switch to rates. In one hour the first pipe fills 1/12 of the pool and the second fills 1/4 = 3/12. Together they fill 4/12 = 1/3 of the pool per hour, so the whole pool takes 3 hours. Sanity check: two pipes must beat the faster pipe alone, and 3 is less than 4. The transferable idea: add rates, never times - and check the answer beats the faster worker on its own.",
+    "elegant": "The second pipe is three times as fast as the first, so together they work at four times the first pipe's rate: 12 divided by 4 = 3 hours."
+  },
+  "whyOnTest": "Adding the times gives an answer slower than one pipe alone, and noticing that absurdity is itself the lesson.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0072",
+  "band": "3-4",
+  "points": 3,
+  "statement": "How many different two-digit numbers can be written using only the digits 1, 2 and 3, if a digit may be used twice?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only the numbers with two identical digits, like 11, 22 and 33."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I required the two digits to be different, even though repeats are allowed."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I allowed a fourth digit that was not in the list."
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I counted three-digit numbers instead of two-digit ones."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "List them in order, smallest first.",
+    "Fix the first digit, then run the second digit through all three options. Repeat for each first digit. Listing in that order guarantees nothing is skipped or repeated.",
+    "11, 12, 13, 21, 22, 23, 31, 32, 33 — nine numbers, which is 3 choices times 3 choices."
+  ],
+  "solutions": {
+    "reliable": "List by first digit. Starting with 1: 11, 12, 13. Starting with 2: 21, 22, 23. Starting with 3: 31, 32, 33. That is nine numbers. It is also 3 choices for the first digit times 3 for the second, because repeats are allowed and the first choice does not use anything up. The transferable idea: read whether repeats are allowed before you decide what to multiply by.",
+    "elegant": null
+  },
+  "whyOnTest": "Whether repeats are allowed changes 3 x 3 into 3 x 2, and students often decide it from habit rather than from the sentence.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

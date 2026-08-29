@@ -1,0 +1,68 @@
+{
+  "id": "KA-0071",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Five beads of five different colours are threaded on a circular bracelet. Two bracelets count as the same if one can be turned or flipped into the other. How many different bracelets are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I divided the 120 arrangements by 6 rather than by the 10 movements that leave a bracelet looking the same."
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": false,
+      "misconception": "I allowed for turning the bracelet but forgot it can also be flipped over."
+    },
+    {
+      "key": "D",
+      "text": "60",
+      "correct": false,
+      "misconception": "I halved the 120 for flipping but forgot that turning also gives the same bracelet."
+    },
+    {
+      "key": "E",
+      "text": "120",
+      "correct": false,
+      "misconception": "I counted every arrangement in a line, as if the bracelet had a fixed first bead."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-15",
+      "CNT-05"
+    ]
+  },
+  "hints": [
+    "Count the arrangements, then count the repeats.",
+    "Start from all the arrangements as if the positions were fixed. Then work out how many of those are really the same bracelet: each one appears once per turn and again for each turn of the flipped version.",
+    "There are 120 arrangements. Each bracelet appears 5 times from turning and twice over from flipping, so 10 times in all: 120 divided by 10 = 12."
+  ],
+  "solutions": {
+    "reliable": "Overcount deliberately, then correct. Five distinct beads in five fixed positions give 5 x 4 x 3 x 2 x 1 = 120 arrangements. But turning the bracelet by one, two, three or four positions gives the same bracelet, and so does flipping it over and turning it. That is 5 turns times 2 for the flip = 10 arrangements per genuine bracelet. So 120 divided by 10 = 12. The transferable idea: name exactly how many times each object was counted before dividing.",
+    "elegant": "Hold one bead fixed to kill the turning, leaving 4 x 3 x 2 x 1 = 24 arrangements of the rest, then halve for the flip: 12."
+  },
+  "whyOnTest": "Deliberate overcounting followed by an exact correction is a genuine 5-point idea, and guessing the correction factor is what separates a right answer from a plausible one.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

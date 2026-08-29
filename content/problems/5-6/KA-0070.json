@@ -1,0 +1,67 @@
+{
+  "id": "KA-0070",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Five children sit in a row. Two of them are twins who insist on sitting next to each other. In how many orders can the five sit?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I treated the twins as one child and forgot they can also swap places with each other."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I glued the twins together into a single block but then forgot that the block can be arranged with the others in more ways than I counted."
+    },
+    {
+      "key": "C",
+      "text": "48",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "60",
+      "correct": false,
+      "misconception": "I halved the 120 total, assuming the twins are together in exactly half the arrangements."
+    },
+    {
+      "key": "E",
+      "text": "120",
+      "correct": false,
+      "misconception": "I counted every arrangement of five children and forgot the twins' condition entirely."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-11",
+    "secondary": [
+      "CNT-05"
+    ]
+  },
+  "hints": [
+    "Glue the twins together into one block.",
+    "Treat the pair as a single object, so you are arranging four things rather than five. Then remember the two inside the block can be in either order.",
+    "Four objects arrange in 4 x 3 x 2 x 1 = 24 ways, and the twins can be either way round inside the block, so 24 x 2 = 48."
+  ],
+  "solutions": {
+    "reliable": "Tie the twins together and treat them as one object. You now have four objects to arrange, which can be done in 4 x 3 x 2 x 1 = 24 ways. Inside the block the twins can sit in 2 orders, so the total is 24 x 2 = 48. Sanity check: 48 is less than the 120 unrestricted arrangements, as it must be. The transferable idea: place the restricted objects first by gluing them, then multiply by their internal orders.",
+    "elegant": "The twins occupy one of 4 adjacent pairs of seats, in 2 orders, and the other three children fill the rest in 3 x 2 x 1 = 6 ways: 4 x 2 x 6 = 48."
+  },
+  "whyOnTest": "The glue-them-together move is the standard technique for a must-sit-together restriction, and forgetting the internal swap halves the answer.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

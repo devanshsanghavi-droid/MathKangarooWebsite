@@ -1,0 +1,68 @@
+{
+  "id": "KA-0101",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Can a 10 by 10 board be covered exactly by T-shaped tiles of four squares each, with no gaps and no overlaps?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Yes, and it is straightforward",
+      "correct": false,
+      "misconception": "I checked that 100 divides by 4 and treated that as proof that a covering exists."
+    },
+    {
+      "key": "B",
+      "text": "Yes, but the arrangement is fiddly",
+      "correct": false,
+      "misconception": "I assumed a covering must exist somewhere and that I simply had not found it yet."
+    },
+    {
+      "key": "C",
+      "text": "No, because 100 is not a multiple of 4",
+      "correct": false,
+      "misconception": "I gave a reason that is not even true, since 100 really is a multiple of 4."
+    },
+    {
+      "key": "D",
+      "text": "No, because the two colours cannot balance",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "It depends how the tiles are turned",
+      "correct": false,
+      "misconception": "I thought orientation could rescue it, but every turn of a T covers the same mixture of colours."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-07",
+    "secondary": [
+      "GEO-14",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Colour the board like a chessboard.",
+    "Count the black and white squares one T-tile covers, whichever way it is turned. Then ask whether twenty-five such tiles can add up to the fifty black squares the board has.",
+    "Every T covers either 3 black and 1 white or 1 black and 3 white. With 25 tiles the black total always comes out odd, and 50 is even."
+  ],
+  "solutions": {
+    "reliable": "Colour the board like a chessboard: 50 black and 50 white squares. However a T-tile is placed, it covers either 3 black and 1 white, or 1 black and 3 white. Suppose k tiles are of the first kind and the other 25 - k of the second. The black squares covered come to 3k + (25 - k) = 2k + 25, which is odd for every whole k, so it can never equal 50. No covering exists. Note that the area check passes, since 100 divides by 4, which is exactly why an area check is not enough. The transferable idea: an area check is necessary and never sufficient; a colouring can rule out what the area allows.",
+    "elegant": "Each T covers an odd number of black squares, and twenty-five odd numbers add to an odd total, but the board has an even 50."
+  },
+  "whyOnTest": "It is the cleanest demonstration that an area check proves nothing, and choice C is the reason a student gives when they have not found the real one.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

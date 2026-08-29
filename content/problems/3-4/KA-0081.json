@@ -1,0 +1,71 @@
+{
+  "id": "KA-0081",
+  "band": "3-4",
+  "points": 4,
+  "statement": "A solid is built from unit cubes. The two pictures show it from above and from the front. What is the smallest number of cubes it could be made of?",
+  "figure": {
+    "component": "TwoViewsOfSolid",
+    "alt": "Two views side by side. The view from above is a solid 2 by 2 square of four cells. The view from the front is a solid 2 by 2 square, so the solid is two columns wide and reaches two cubes high."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I used the view from above only, giving one cube per square, and ignored the height the front view demands."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I made just one column two cubes tall, forgetting that the front view is two cubes high across its whole width."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I added an extra cube that neither view requires."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I assumed the solid is a filled 2 by 2 by 2 block, which is the largest that fits rather than the smallest."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-12",
+    "secondary": [
+      "GEO-13",
+      "CNT-14"
+    ]
+  },
+  "hints": [
+    "Each view is a maximum, not a count.",
+    "The view from above says which squares of the base have at least one cube. The front view says how tall the tallest column is in each left-to-right position. Give every column the least height that still satisfies both.",
+    "All four base squares need at least one cube. Both the left and the right side must reach height 2, so one column on each side is 2 tall: 2 + 1 + 2 + 1 = 6."
+  ],
+  "solutions": {
+    "reliable": "The view from above shows all four base squares filled, so every one of the four columns holds at least one cube. The front view is two cubes tall on both the left and the right, so on each side at least one column must reach height 2 — but only one of the two columns behind it needs to. Taking the smallest heights that work: 2 and 1 on the left, 2 and 1 on the right, giving 2 + 1 + 2 + 1 = 6. The transferable idea: a view records the maximum along a direction, so several solids can match and the question asks for the smallest.",
+    "elegant": null
+  },
+  "whyOnTest": "Reading a view as a count rather than as a maximum is the defining error, and it is why several different solids can match the same pair of pictures.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

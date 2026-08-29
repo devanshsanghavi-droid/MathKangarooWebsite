@@ -1,0 +1,68 @@
+{
+  "id": "KA-0076",
+  "band": "3-4",
+  "points": 4,
+  "statement": "In how many ways can 7 be written as the sum of two different whole numbers bigger than zero? Swapping the order does not make a new way.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I included 0 and 7 as a pair, even though both numbers have to be bigger than zero."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted both orders of each pair, even though swapping does not make a new way."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I counted every starting number from 1 to 7 without checking which pairs repeat."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted both orders and also allowed pairs of equal numbers."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-04",
+    "secondary": [
+      "CNT-01",
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "Start from the smaller number and count up.",
+    "Let the smaller number run 1, 2, 3 and so on. The larger one is forced each time. Stop as soon as the smaller number would overtake the larger, because after that the pairs repeat.",
+    "1 + 6, 2 + 5, 3 + 4. The next would be 4 + 3, which repeats the third pair. So there are 3 ways."
+  ],
+  "solutions": {
+    "reliable": "Let the smaller number lead. 1 + 6, 2 + 5, 3 + 4 — and then 4 + 3 is the same pair as 3 + 4, so stop. Three ways. The transferable idea: fixing an order on the pair, such as smaller first, is what stops a list from double counting.",
+    "elegant": null
+  },
+  "whyOnTest": "Deciding a listing order that cannot repeat itself is the underlying skill; without it, every unordered count comes out doubled.",
+  "estSeconds": 65,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

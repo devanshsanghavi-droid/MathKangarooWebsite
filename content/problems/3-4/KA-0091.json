@@ -1,0 +1,67 @@
+{
+  "id": "KA-0091",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Ana, Bo and Cal each keep a different pet: a cat, a dog and a fish. Ana does not keep the cat. Bo keeps neither the cat nor the fish. Who keeps the cat?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Ana",
+      "correct": false,
+      "misconception": "I used Bo's clue and forgot the very first clue, which rules Ana out directly."
+    },
+    {
+      "key": "B",
+      "text": "Bo",
+      "correct": false,
+      "misconception": "I read Bo's clue as telling me what Bo has rather than what Bo does not have."
+    },
+    {
+      "key": "C",
+      "text": "Cal",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "it cannot be decided",
+      "correct": false,
+      "misconception": "I stopped after using each clue once, without going back to see what the ticks had ruled out."
+    },
+    {
+      "key": "E",
+      "text": "either Ana or Cal",
+      "correct": false,
+      "misconception": "I applied Bo's clue but never came back to Ana's, so I left two people in the running."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-03",
+    "secondary": [
+      "LOG-01"
+    ]
+  },
+  "hints": [
+    "Draw a three-by-three grid and cross boxes out.",
+    "People down the side, pets across the top. Every clue crosses a box out, and every tick crosses out the rest of its own row and column.",
+    "Bo has neither cat nor fish, so Bo has the dog. Ana has no cat and the dog is taken, so Ana has the fish. Cal is left with the cat."
+  ],
+  "solutions": {
+    "reliable": "Draw the grid. Bo's clue crosses out cat and fish for Bo, leaving only dog - so tick Bo and dog, and cross dog out for everyone else. Ana's clue crosses out cat for Ana, and dog is now gone, so Ana has the fish. That leaves the cat for Cal. The transferable idea: every tick immediately crosses out the rest of its row and its column, and that is where most of the progress comes from.",
+    "elegant": null
+  },
+  "whyOnTest": "Matching puzzles are pure bookkeeping, and the grid is what stops a student holding four facts in their head and dropping one.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

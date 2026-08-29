@@ -1,0 +1,67 @@
+{
+  "id": "KA-0058",
+  "band": "5-6",
+  "points": 4,
+  "statement": "What is 2 + 4 + 6 + ... + 100?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1275",
+      "correct": false,
+      "misconception": "I found the sum of 1 to 50 and forgot that every term here is twice as big."
+    },
+    {
+      "key": "B",
+      "text": "2450",
+      "correct": false,
+      "misconception": "I used 49 pairs instead of 25, losing one pair from the count."
+    },
+    {
+      "key": "C",
+      "text": "2500",
+      "correct": false,
+      "misconception": "I estimated the answer as a round number rather than pairing properly."
+    },
+    {
+      "key": "D",
+      "text": "2550",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "5100",
+      "correct": false,
+      "misconception": "I paired the terms but forgot that pairing counts every number twice, so I never halved."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-08",
+    "secondary": [
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "Pair the outside in, then count the pairs.",
+    "Every term is even, so the whole sum is twice the sum of 1 to 50. Alternatively pair 2 with 100, 4 with 98, and so on, and count how many pairs fifty terms give.",
+    "There are 50 terms, so 25 pairs, each adding to 102. That is 25 x 102 = 2550."
+  ],
+  "solutions": {
+    "reliable": "There are 50 even numbers from 2 to 100. Pair the outside in: 2 + 100 = 102, 4 + 98 = 102, and so on, giving 25 pairs of 102. The total is 25 x 102 = 2550. Check the other way: the sum is twice 1 + 2 + ... + 50 = 2 x 1275 = 2550. The transferable idea: two routes that agree is worth more than one route checked twice.",
+    "elegant": "Every term is double the matching term of 1 to 50, so the sum is twice 1275, which is 2550."
+  },
+  "whyOnTest": "Counting the pairs is where this goes wrong: fifty terms make twenty-five pairs, not fifty and not forty-nine.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

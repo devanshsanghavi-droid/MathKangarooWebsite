@@ -1,0 +1,68 @@
+{
+  "id": "KA-0102",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Cards numbered 1 to 10 lie face up. You take any six of them. Must two of your cards add up to 11?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Yes, always",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "Yes, but only if you take the card numbered 1",
+      "correct": false,
+      "misconception": "I found one pair that works and assumed the argument depended on that particular card."
+    },
+    {
+      "key": "C",
+      "text": "No, six cards can be chosen that avoid it",
+      "correct": false,
+      "misconception": "I tried a couple of selections, did not find a pair, and stopped looking."
+    },
+    {
+      "key": "D",
+      "text": "Only if the six numbers are consecutive",
+      "correct": false,
+      "misconception": "I looked for a pattern in the numbers rather than at how many pairs there are to avoid."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be decided without knowing the cards",
+      "correct": false,
+      "misconception": "I thought the answer depended on which six were taken, when the counting settles it for every choice."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "CNT-17",
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "Which pairs add to 11?",
+    "List the pairs adding to 11 and count them. Every card sits in exactly one pair, so treat the pairs as boxes and ask how many cards avoid filling a box twice.",
+    "The pairs are 1 and 10, 2 and 9, 3 and 8, 4 and 7, 5 and 6 - five pairs. Taking at most one from each gives only five cards."
+  ],
+  "solutions": {
+    "reliable": "The pairs adding to 11 are (1, 10), (2, 9), (3, 8), (4, 7) and (5, 6). Every card from 1 to 10 sits in exactly one of these five pairs. Suppose you took six cards and no two added to 11: then you took at most one card from each pair, which is at most five cards, fewer than six. That is impossible, so two of your six must add to 11. The transferable idea: assume what you doubt, count what it would force, and let the contradiction finish the argument.",
+    "elegant": "Five pairs act as five boxes, and six cards cannot go into five boxes one apiece."
+  },
+  "whyOnTest": "Proving something always happens needs an argument rather than examples, and this is the smallest setting where trying cases genuinely cannot work.",
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

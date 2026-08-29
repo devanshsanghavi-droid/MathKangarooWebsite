@@ -1,0 +1,67 @@
+{
+  "id": "KA-0088",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Three angles of a quadrilateral are 80, 95 and 110 degrees. What is the fourth angle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "65",
+      "correct": false,
+      "misconception": "I added the three angles wrongly, getting 295 instead of 285."
+    },
+    {
+      "key": "B",
+      "text": "75",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "85",
+      "correct": false,
+      "misconception": "I used an angle sum of 370, mis-remembering the total for a quadrilateral."
+    },
+    {
+      "key": "D",
+      "text": "95",
+      "correct": false,
+      "misconception": "I repeated one of the given angles instead of computing the missing one."
+    },
+    {
+      "key": "E",
+      "text": "105",
+      "correct": false,
+      "misconception": "I used the triangle's 180 degrees and then adjusted, rather than the quadrilateral's 360."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "A quadrilateral's angles add to 360.",
+    "Add the three angles you are given, then take the total from 360. Nothing about the shape of the quadrilateral matters — the sum is the same for every one.",
+    "80 + 95 + 110 = 285, and 360 - 285 = 75."
+  ],
+  "solutions": {
+    "reliable": "The four angles of any quadrilateral add to 360 degrees. The three given add to 80 + 95 + 110 = 285, so the fourth is 360 - 285 = 75 degrees. The transferable idea: the angle sum of an n-sided polygon is (n - 2) times 180, which gives 180 for a triangle and 360 for a quadrilateral.",
+    "elegant": null
+  },
+  "whyOnTest": "Using 180 instead of 360 is the single most common angle-sum error once shapes get more than three sides.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

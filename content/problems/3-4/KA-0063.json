@@ -1,0 +1,67 @@
+{
+  "id": "KA-0063",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Which of these numbers can be divided exactly by both 4 and 9?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "96",
+      "correct": false,
+      "misconception": "I checked that it divides by 4 and stopped without testing the 9."
+    },
+    {
+      "key": "B",
+      "text": "117",
+      "correct": false,
+      "misconception": "I checked the digit sum for 9 and stopped without testing the 4."
+    },
+    {
+      "key": "C",
+      "text": "132",
+      "correct": false,
+      "misconception": "I saw an even number with a digit sum of 6 and treated 6 as good enough for 9."
+    },
+    {
+      "key": "D",
+      "text": "144",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "153",
+      "correct": false,
+      "misconception": "I tested 9 with the digit sum and assumed any odd multiple of 9 also divides by 4."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "Test both rules on each number.",
+    "For 4, look at the last two digits. For 9, add the digits and see whether the total is a multiple of 9. A number has to pass both tests, not just one.",
+    "144: the last two digits are 44, which is a multiple of 4, and 1 + 4 + 4 = 9. So 144 passes both."
+  ],
+  "solutions": {
+    "reliable": "Apply both tests to each choice. Divisible by 4 means the last two digits form a multiple of 4; divisible by 9 means the digits add to a multiple of 9. 96 passes the 4 test only. 117 and 153 pass the 9 test only. 132 passes the 4 test but its digits add to 6. 144 has last two digits 44, a multiple of 4, and digits adding to 9. The transferable idea: an and question needs both tests run, and the first pass is not the answer.",
+    "elegant": "A number divisible by both 4 and 9 is divisible by 36, and 144 is 4 times 36."
+  },
+  "whyOnTest": "Students routinely stop at the first rule that passes; making both rules necessary is what turns a recall question into a checking one.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

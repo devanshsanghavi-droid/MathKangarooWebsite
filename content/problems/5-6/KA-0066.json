@@ -1,0 +1,67 @@
+{
+  "id": "KA-0066",
+  "band": "5-6",
+  "points": 4,
+  "statement": "The mean of four numbers is 9. Three of them are 5, 8 and 12. What is the fourth?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I assumed the missing number must be the mean itself."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I averaged the three known numbers instead of working from the total."
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I repeated one of the numbers already given rather than computing the missing one."
+    },
+    {
+      "key": "E",
+      "text": "13",
+      "correct": false,
+      "misconception": "I used a total of 37 instead of 36, adding the mean in once too often."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-15",
+    "secondary": [
+      "LOG-08"
+    ]
+  },
+  "hints": [
+    "Turn the mean into a total first.",
+    "Four numbers with a mean of 9 have a fixed total. Work that total out, add up the three you know, and the difference is the one you do not.",
+    "The total is 4 x 9 = 36. The three known numbers add to 5 + 8 + 12 = 25, so the fourth is 36 - 25 = 11."
+  ],
+  "solutions": {
+    "reliable": "A mean of 9 across four numbers means the total is 4 x 9 = 36. The three given numbers add to 25, so the missing one is 36 - 25 = 11. Check: 5 + 8 + 12 + 11 = 36, and 36 divided by 4 is 9. The transferable idea: a mean is only useful once you have turned it into a total.",
+    "elegant": "Measure each number against the mean: 5 is 4 below, 8 is 1 below, 12 is 3 above, a net 2 below. The last number must be 2 above the mean, so 11."
+  },
+  "whyOnTest": "Almost every contest mean question runs backwards from the mean, and going through the total is the only route that does not guess.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

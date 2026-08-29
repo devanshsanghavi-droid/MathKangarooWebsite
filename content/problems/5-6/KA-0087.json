@@ -1,0 +1,67 @@
+{
+  "id": "KA-0087",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Two similar triangles have areas of 9 and 25 square units. A side of the smaller one is 6 units. How long is the matching side of the larger one?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I added the difference between the areas' square roots to the side rather than multiplying by their ratio."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I doubled the side because the larger area is roughly double the smaller."
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": false,
+      "misconception": "I used the ratio of the areas as if it were the ratio of the lengths, then adjusted."
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": false,
+      "misconception": "I multiplied the side by the ratio of the areas divided by three, mixing up which ratio applies to lengths."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-16",
+    "secondary": [
+      "NUM-11"
+    ]
+  },
+  "hints": [
+    "Areas scale by the square of the length factor.",
+    "If every length is multiplied by k then every area is multiplied by k squared. Work backwards from the area ratio to find k, and only then apply it to the side.",
+    "The area ratio is 25 to 9, so the length ratio is 5 to 3. Then 6 x 5 divided by 3 = 10."
+  ],
+  "solutions": {
+    "reliable": "Lengths scale by k and areas by k squared. Here the areas are in the ratio 25 to 9, so k squared is 25/9 and k is 5/3. Applying that to the side: 6 x 5/3 = 10. Check: the larger triangle's area should be (5/3) squared = 25/9 times the smaller, which it is. The transferable idea: take the square root of an area ratio before applying it to a length.",
+    "elegant": "9 and 25 are 3 squared and 5 squared, so the shapes are in the ratio 3 to 5 and the side goes 6 to 10."
+  },
+  "whyOnTest": "Applying an area ratio directly to a length is one of the highest-frequency errors on the whole paper, at every band.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

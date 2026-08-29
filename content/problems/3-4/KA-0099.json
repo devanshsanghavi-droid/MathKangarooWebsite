@@ -1,0 +1,67 @@
+{
+  "id": "KA-0099",
+  "band": "3-4",
+  "points": 4,
+  "statement": "All the red boxes are heavy. Box X is not heavy. What must be true?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Box X is red",
+      "correct": false,
+      "misconception": "I read the rule backwards, as if being heavy were what makes a box red."
+    },
+    {
+      "key": "B",
+      "text": "Box X is not red",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "Box X is blue",
+      "correct": false,
+      "misconception": "I assumed not red must mean one particular other colour, when the rule says nothing about which."
+    },
+    {
+      "key": "D",
+      "text": "Some red boxes are light",
+      "correct": false,
+      "misconception": "I contradicted the rule I was given rather than applying it to box X."
+    },
+    {
+      "key": "E",
+      "text": "Nothing can be said about box X",
+      "correct": false,
+      "misconception": "I decided one fact could not settle anything, without testing what would follow if X were red."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-01",
+    "secondary": [
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Suppose box X were red. What then?",
+    "Assume the thing you want to test. If assuming it forces something you know is false, it cannot be true, and the opposite must be.",
+    "If X were red, the rule would make it heavy. But X is not heavy. So X cannot be red."
+  ],
+  "solutions": {
+    "reliable": "Suppose box X were red. The rule says all red boxes are heavy, so X would be heavy - but we are told it is not. The assumption breaks, so X is not red. Nothing follows about what colour it is instead: the rule is silent on that. The transferable idea: from all A are B and this is not B, you may conclude this is not A, and nothing more.",
+    "elegant": null
+  },
+  "whyOnTest": "Reading a rule backwards is the most common logical slip on the paper, and going one step too far by naming a colour is the second.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

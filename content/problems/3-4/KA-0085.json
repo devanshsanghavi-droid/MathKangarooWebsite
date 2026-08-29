@@ -1,0 +1,67 @@
+{
+  "id": "KA-0085",
+  "band": "3-4",
+  "points": 4,
+  "statement": "How many lines of symmetry does a regular hexagon have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I checked only the vertical and horizontal folds and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted the lines through opposite corners and forgot the ones through opposite edges."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I assumed a hexagon behaves like a rectangle with a couple of extra folds."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted each line twice, once from each end."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-08",
+    "secondary": [
+      "GEO-09"
+    ]
+  },
+  "hints": [
+    "Two kinds of fold work here.",
+    "A regular polygon has folds through opposite corners and folds through the middles of opposite sides. Count each kind separately, then add — but count each line once, not once per end.",
+    "Three lines join opposite corners and three join the middles of opposite sides, giving 6 in all."
+  ],
+  "solutions": {
+    "reliable": "There are two families of fold. Three lines join opposite corners, and three lines join the midpoints of opposite sides. That is 6 lines of symmetry. Each line is one line, not two, even though it has two ends. The transferable idea: a regular polygon with n sides has exactly n lines of symmetry, and for an even n they split into two equal families.",
+    "elegant": "A regular n-sided polygon has n lines of symmetry, so a hexagon has 6."
+  },
+  "whyOnTest": "Counting only one family of folds is the standard undercount, and doubling for the two ends is the standard overcount.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

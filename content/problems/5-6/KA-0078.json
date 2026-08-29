@@ -1,0 +1,68 @@
+{
+  "id": "KA-0078",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Ten different whole numbers, each bigger than zero, add up to 100. What is the largest that the biggest of them can be?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "45",
+      "correct": false,
+      "misconception": "I found the smallest possible total of the other nine and gave that instead of what is left."
+    },
+    {
+      "key": "B",
+      "text": "50",
+      "correct": false,
+      "misconception": "I assumed the biggest number could be at most half the total."
+    },
+    {
+      "key": "C",
+      "text": "55",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "91",
+      "correct": false,
+      "misconception": "I made the other nine numbers all equal to 1, forgetting that they have to be different from each other."
+    },
+    {
+      "key": "E",
+      "text": "100",
+      "correct": false,
+      "misconception": "I ignored the other nine numbers entirely, as if the biggest could take the whole total."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "LOG-11",
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "Make the other nine as small as you can.",
+    "The biggest number is what is left after the other nine. To leave as much as possible, the other nine must be the smallest nine different positive whole numbers there are.",
+    "The smallest nine different positive numbers are 1 to 9, adding to 45. So the biggest can be 100 - 45 = 55."
+  ],
+  "solutions": {
+    "reliable": "To make one number as large as possible, make the other nine as small as possible. They must all be different and bigger than zero, so the smallest they can be is 1, 2, 3, 4, 5, 6, 7, 8, 9, which add to 45. That leaves 100 - 45 = 55, and 55 is different from all of 1 to 9, so the set really works. The transferable idea: an extreme question needs both halves — build an example that reaches the number, and show nothing can beat it.",
+    "elegant": null
+  },
+  "whyOnTest": "Extremal questions demand a construction and a bound, and answering with only one of the two is how most of the marks are lost.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0056",
+  "band": "3-4",
+  "points": 4,
+  "statement": "The two digits of a number are swapped and the number gets bigger by 36. Which of these could be the number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "13",
+      "correct": false,
+      "misconception": "I checked that the digits differ and stopped, without working out how much the swap actually changes the number."
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": false,
+      "misconception": "I saw a difference of 2 between the digits and expected that to give a change of 36."
+    },
+    {
+      "key": "D",
+      "text": "41",
+      "correct": false,
+      "misconception": "I ignored the direction: swapping this number makes it smaller, not bigger."
+    },
+    {
+      "key": "E",
+      "text": "62",
+      "correct": false,
+      "misconception": "I picked a number whose digits differ by 4 without noticing that the larger digit is already in front."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-01",
+    "secondary": [
+      "NUM-02"
+    ]
+  },
+  "hints": [
+    "Try swapping each one and see.",
+    "Swapping the digits of a two-digit number changes it by nine times the difference between the digits. For the number to grow, the second digit has to be the larger one.",
+    "Swapping changes the number by 9 times the digit difference, so a change of 36 needs a difference of 4 with the bigger digit second. 15 becomes 51, and 51 - 15 = 36."
+  ],
+  "solutions": {
+    "reliable": "Test each option by swapping. 13 becomes 31, a rise of 18. 15 becomes 51, a rise of 36 — that works. 24 becomes 42, a rise of 18. 41 becomes 14 and 62 becomes 26, both of which fall. So the number is 15. The transferable idea: check the direction of a change as well as its size.",
+    "elegant": "Swapping the digits of a two-digit number changes it by 9 times the difference between the digits, so a rise of 36 means a digit difference of 4 with the larger digit second."
+  },
+  "whyOnTest": "Digit-swap questions are pure place value, and the trap is a number whose digits are right but in the wrong order.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

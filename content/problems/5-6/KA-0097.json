@@ -1,0 +1,68 @@
+{
+  "id": "KA-0097",
+  "band": "5-6",
+  "points": 5,
+  "statement": "The numbers 1 to 10 stand in a row. A move swaps two neighbours. After exactly 45 moves, can the row be back in its starting order?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Yes, always",
+      "correct": false,
+      "misconception": "I assumed enough moves can undo anything, without asking what each move preserves."
+    },
+    {
+      "key": "B",
+      "text": "Yes, if the swaps are chosen well",
+      "correct": false,
+      "misconception": "I tried a few sequences that nearly worked and assumed a better choice would finish the job."
+    },
+    {
+      "key": "C",
+      "text": "No, because 45 is not a multiple of 10",
+      "correct": false,
+      "misconception": "I reached for the number of items rather than for what a single swap actually changes."
+    },
+    {
+      "key": "D",
+      "text": "No, because the number of moves is odd",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "It depends which numbers are swapped",
+      "correct": false,
+      "misconception": "I thought the choice of swaps could change the outcome, when every swap has the same effect."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-05",
+    "secondary": [
+      "NUM-03",
+      "LOG-06"
+    ]
+  },
+  "hints": [
+    "What does one swap change, whatever you swap?",
+    "Count the pairs of numbers standing in the wrong order relative to each other. Work out how one swap of neighbours changes that count - it is always by the same amount.",
+    "Swapping two neighbours changes the number of out-of-order pairs by exactly one, so the count flips between odd and even every move. It starts at zero."
+  ],
+  "solutions": {
+    "reliable": "Count how many pairs of numbers are in the wrong order relative to each other. A swap of two neighbours changes the order of exactly one pair, so this count goes up or down by exactly 1 every move - flipping between odd and even. In the starting row the count is 0, which is even. After 45 moves, an odd number, the count must be odd, so it cannot be 0. The row cannot be back where it started. The transferable idea: find a quantity that every move changes in the same predictable way, and the answer follows without trying anything.",
+    "elegant": "Each neighbour swap flips the arrangement's parity, so an odd number of swaps can never return to the arrangement you started from."
+  },
+  "whyOnTest": "It is the clearest case of a parity argument beating a search, and every distractor is a plausible reason that does not actually work.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0057",
+  "band": "3-4",
+  "points": 3,
+  "statement": "What is 1 + 2 + 3 + ... + 20?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "190",
+      "correct": false,
+      "misconception": "I paired the numbers from the outside in but left the 20 out of every pair, so I added only up to 19."
+    },
+    {
+      "key": "B",
+      "text": "200",
+      "correct": false,
+      "misconception": "I estimated the total as a round number instead of working it out."
+    },
+    {
+      "key": "C",
+      "text": "210",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "220",
+      "correct": false,
+      "misconception": "I used eleven pairs of 20 instead of ten pairs of 21."
+    },
+    {
+      "key": "E",
+      "text": "420",
+      "correct": false,
+      "misconception": "I multiplied 20 by 21 and forgot that pairing counts every number twice."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-08",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Pair the first with the last.",
+    "Reorder the sum so the pieces make round numbers: 1 with 20, 2 with 19, and so on. Count how many pairs there are before you multiply.",
+    "Each pair adds to 21, and twenty numbers make ten pairs. So the total is 10 times 21 = 210."
+  ],
+  "solutions": {
+    "reliable": "Pair the outside in: 1 + 20 = 21, 2 + 19 = 21, 3 + 18 = 21, and so on. Twenty numbers give ten such pairs, each worth 21, so the total is 10 x 21 = 210. The transferable idea: reordering a long sum into equal pairs turns a page of arithmetic into one multiplication.",
+    "elegant": "The sum of 1 to n is n times n plus one, all divided by two: 20 x 21 / 2 = 210."
+  },
+  "whyOnTest": "Pairing to round numbers is the difference between a ten-second question and a two-minute one, and the halving is where it goes wrong.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

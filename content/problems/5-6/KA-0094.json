@@ -1,0 +1,68 @@
+{
+  "id": "KA-0094",
+  "band": "5-6",
+  "points": 5,
+  "statement": "One of nine identical-looking coins is slightly heavier. Using only a balance, what is the smallest number of weighings that is certain to find it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I assumed one weighing could separate nine possibilities, but it has only three outcomes."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I split the coins into halves each time, which wastes the balance's third outcome."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I weighed the coins one against another in pairs rather than in groups."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I compared each coin with a known good one in turn, which always works but is nowhere near the fewest."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-10",
+    "secondary": [
+      "CNT-04",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "A balance has three outcomes, not two.",
+    "Left heavier, right heavier, or level. One weighing can therefore separate three groups and two weighings can separate nine, so split into three groups rather than two.",
+    "Weigh 3 against 3. Whichever side is heavier holds the coin, and if they balance it is in the third group. Then weigh 1 against 1 from that group."
+  ],
+  "solutions": {
+    "reliable": "A balance has three outcomes, so a good weighing splits the coins into three groups, not two. Weigh three coins against three. If one side sinks the heavy coin is there; if they balance it is in the untouched three. Either way you are down to three coins. Now weigh one of those against another: if one sinks it is the heavy one, and if they balance it is the third. Two weighings, always. The transferable idea: use all three outcomes, so each weighing divides the possibilities by three rather than by two.",
+    "elegant": "Two weighings distinguish 3 x 3 = 9 cases, exactly the number of coins, so two is both enough and necessary."
+  },
+  "whyOnTest": "Forgetting that level is a useful third outcome is what turns a two-weighing problem into a three-weighing one.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

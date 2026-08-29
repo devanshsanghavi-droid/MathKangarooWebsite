@@ -1,0 +1,68 @@
+{
+  "id": "KA-0092",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Five children queue up. Ana is somewhere ahead of Bo. Cal is behind Bo but ahead of Dee. Eve is last. Who is second in the queue?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Ana",
+      "correct": false,
+      "misconception": "I gave the child who is first rather than the one who is second."
+    },
+    {
+      "key": "B",
+      "text": "Bo",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "Cal",
+      "correct": false,
+      "misconception": "I placed Cal directly after Ana, reading ahead of Dee as meaning immediately ahead."
+    },
+    {
+      "key": "D",
+      "text": "Dee",
+      "correct": false,
+      "misconception": "I built the order backwards from the last position instead of forwards from the first."
+    },
+    {
+      "key": "E",
+      "text": "it cannot be decided",
+      "correct": false,
+      "misconception": "I assumed the clues left several orders open without checking that they chain into a single one."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-04",
+    "secondary": [
+      "LOG-01",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Draw one line and place them on it.",
+    "Each clue is a link in a chain. Write the links down as you read them, then see whether they join end to end - if they do, the whole order is fixed.",
+    "Ana is before Bo, Bo before Cal, Cal before Dee, and Eve is last. That chains to Ana, Bo, Cal, Dee, Eve - so Bo is second."
+  ],
+  "solutions": {
+    "reliable": "Turn each clue into a link. Ana before Bo. Cal after Bo but before Dee, so Bo before Cal before Dee. Chaining: Ana, Bo, Cal, Dee. Eve is last, which is the fifth place, and the chain fills the first four exactly. So the order is fully determined and Bo is second. The transferable idea: draw one line and place people on it as the clues arrive - the moment the links chain end to end, the order is fixed.",
+    "elegant": null
+  },
+  "whyOnTest": "Reading before as immediately before is the classic misreading, and it is what makes students think an order is ambiguous when it is not.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

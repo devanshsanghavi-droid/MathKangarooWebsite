@@ -1,0 +1,68 @@
+{
+  "id": "KA-0096",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Ana says: \"Bo and I are both liars.\" Each child is either always truthful or always a liar. Who is telling the truth?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Ana only",
+      "correct": false,
+      "misconception": "I took Ana's statement at face value without checking whether a truthful person could say it."
+    },
+    {
+      "key": "B",
+      "text": "Bo only",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "both of them",
+      "correct": false,
+      "misconception": "I decided nobody was lying without testing Ana's statement against that assumption."
+    },
+    {
+      "key": "D",
+      "text": "neither of them",
+      "correct": false,
+      "misconception": "I believed Ana's statement even after concluding she was a liar, which is what a liar's statement cannot be."
+    },
+    {
+      "key": "E",
+      "text": "it cannot be decided",
+      "correct": false,
+      "misconception": "I gave up when Ana's statement looked circular, instead of testing one assumption all the way through."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-09",
+      "LOG-01"
+    ]
+  },
+  "hints": [
+    "Could a truthful person say that sentence?",
+    "Suppose Ana is truthful and read her own sentence back. If it makes her a liar, the supposition is impossible - and knowing she lies tells you her sentence is false.",
+    "If Ana were truthful, her sentence would make her a liar - impossible. So Ana lies, and her sentence is false: they are not both liars. Ana is one, so Bo is not."
+  ],
+  "solutions": {
+    "reliable": "Suppose Ana is truthful. Then her sentence is true, so she is a liar - a contradiction. So Ana is a liar, and her sentence is false. Both of us are liars being false means they are not both liars. Ana is one, so Bo is not: Bo tells the truth. Check: Bo being truthful makes Ana's claim genuinely false, which is exactly what a liar should say. The transferable idea: a statement that makes its own speaker a liar settles who is lying in one step.",
+    "elegant": "Nobody truthful can ever call themselves a liar, so Ana lies - and the negation of her sentence then hands you Bo."
+  },
+  "whyOnTest": "A self-referring statement is the fastest kind to resolve, and students who hunt for extra clues rather than reading it back miss that.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

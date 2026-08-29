@@ -1,0 +1,68 @@
+{
+  "id": "KA-0060",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A and B are different digits. The two-digit number AB added to the two-digit number BA gives 132. What is A + B?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I added the digits of 132 instead of working out what A and B must be."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I found A + B correctly and then halved it, as if the question wanted one digit."
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": false,
+      "misconception": "I spotted the 11 in the working and gave that instead of the sum it multiplies."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "13",
+      "correct": false,
+      "misconception": "I found a pair of digits by trial and misadded them by one."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "NUM-01",
+      "LOG-08"
+    ]
+  },
+  "hints": [
+    "Write both numbers out in tens and ones.",
+    "AB means ten A plus B, and BA means ten B plus A. Add those two expressions and see what the total is a multiple of. The answer falls out without finding A and B separately.",
+    "(10A + B) + (10B + A) = 11A + 11B = 11(A + B). So 11(A + B) = 132, and A + B = 12."
+  ],
+  "solutions": {
+    "reliable": "Write each number in terms of its digits. AB is 10A + B and BA is 10B + A. Adding gives 11A + 11B, which is 11 times (A + B). So 11(A + B) = 132, and A + B = 132 divided by 11 = 12. You never need to know A and B separately — and in fact several pairs work, such as 48 and 84. The transferable idea: write the digits out algebraically and the structure appears.",
+    "elegant": "Any two-digit number plus its reverse is 11 times the digit sum, so the answer is 132 divided by 11."
+  },
+  "whyOnTest": "It rewards writing a digit puzzle out in tens and ones instead of guessing pairs, which is the technique every harder cryptarithm needs.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

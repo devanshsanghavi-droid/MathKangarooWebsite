@@ -1,0 +1,68 @@
+{
+  "id": "KA-0090",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A cube 3 units on each side is painted all over and then cut into unit cubes. How many of them have exactly two painted faces?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the middle cube of each face, which has exactly one painted face rather than two."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the corner cubes, which have three painted faces."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted every cube that is painted at all except the corners, without separating one face from two."
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I gave the total number of small cubes rather than the ones with exactly two painted faces."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-14",
+    "secondary": [
+      "GEO-13",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Where does a cube meet exactly two outside faces?",
+    "Sort the small cubes by position: corners touch three outside faces, edges touch two, face centres touch one, and the core touches none. Count the positions, not the cubes you can see.",
+    "The cubes with two painted faces sit along the edges but not at the corners. A cube has 12 edges, and each holds 3 - 2 = 1 such cube: 12 in all."
+  ],
+  "solutions": {
+    "reliable": "Sort the 27 small cubes by where they sit. The 8 corners touch three outside faces. The edge cubes that are not corners touch exactly two: a cube has 12 edges and each edge of a 3-cube holds 3 - 2 = 1 non-corner cube, so 12 of them. The 6 face centres touch one, and the single core touches none. Check the total: 8 + 12 + 6 + 1 = 27. The transferable idea: classify by position — corner, edge, face, core — and the counts follow from the cube's own structure.",
+    "elegant": "Non-corner edge cubes number 12 times (n - 2), which for n = 3 is 12."
+  },
+  "whyOnTest": "Sorting the cubes by position is the method, and the check that the four groups add back to n cubed is what catches an error before it is submitted.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

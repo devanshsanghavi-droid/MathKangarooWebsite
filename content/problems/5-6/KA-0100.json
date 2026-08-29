@@ -1,0 +1,67 @@
+{
+  "id": "KA-0100",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A number is doubled, then 6 is added, then the result is halved. The answer is 11. What was the original number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I undid the operations in the order they were written instead of in reverse order."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": false,
+      "misconception": "I gave the final answer back, assuming the three steps cancelled each other out."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I doubled the 11 and subtracted the 6 but forgot the final halving that undoes the doubling."
+    },
+    {
+      "key": "E",
+      "text": "22",
+      "correct": false,
+      "misconception": "I undid only the halving and stopped there without touching the other two steps."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-08",
+    "secondary": [
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Start at 11 and undo each step.",
+    "Reverse both the operations and their order. The halving happened last, so undo it first, then the addition, then the doubling.",
+    "Undo the halving: 11 x 2 = 22. Undo the addition: 22 - 6 = 16. Undo the doubling: 16 divided by 2 = 8."
+  ],
+  "solutions": {
+    "reliable": "Run the machine backwards. The last step was halving, so undo it first: 11 x 2 = 22. Before the 6 was added it was 22 - 6 = 16. Before doubling it was 16 divided by 2 = 8. Check forwards: 8 doubled is 16, plus 6 is 22, halved is 11. The transferable idea: reverse the operations and the order together, and always check forwards at the end.",
+    "elegant": "Doubling and then halving cancel, so the machine is really add 6 then halve, making the start 2 x 11 - 6 all halved: 8."
+  },
+  "whyOnTest": "Working backwards is worth several marks a paper, and reversing the operations while keeping the original order is the reliable way to get it wrong.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

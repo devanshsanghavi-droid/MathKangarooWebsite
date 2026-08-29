@@ -1,0 +1,67 @@
+{
+  "id": "KA-0069",
+  "band": "5-6",
+  "points": 4,
+  "statement": "In a class of 30, 18 play football and 14 play chess. 6 play both. How many play neither?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I added 18 and 14 without removing the overlap, then subtracted from 30."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I subtracted the 6 who play both twice instead of once."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I subtracted only the footballers from the class and forgot the chess players entirely."
+    },
+    {
+      "key": "E",
+      "text": "26",
+      "correct": false,
+      "misconception": "I found how many play at least one sport and gave that instead of how many play neither."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-10",
+    "secondary": [
+      "CNT-09"
+    ]
+  },
+  "hints": [
+    "Fill in the middle of the two circles first.",
+    "Draw two overlapping circles and write the 6 who do both in the overlap. The rest of each circle is what is left after taking the overlap out, and everything outside is the answer.",
+    "Playing at least one is 18 + 14 - 6 = 26. So 30 - 26 = 4 play neither."
+  ],
+  "solutions": {
+    "reliable": "Adding 18 and 14 counts the 6 who do both twice, so the number playing at least one is 18 + 14 - 6 = 26. Everyone else plays neither: 30 - 26 = 4. Drawing it confirms the parts: 12 football only, 6 both, 8 chess only, 4 neither — and 12 + 6 + 8 + 4 = 30. The transferable idea: fill the overlap in first, then the rest follows.",
+    "elegant": null
+  },
+  "whyOnTest": "Two overlapping groups is one of the most reliably examined shapes at this level, and the double-counted overlap is the whole difficulty.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

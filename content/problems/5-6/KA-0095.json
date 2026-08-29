@@ -1,0 +1,68 @@
+{
+  "id": "KA-0095",
+  "band": "5-6",
+  "points": 5,
+  "statement": "One hundred apples are packed into twelve boxes. What is the largest number n for which you can always be sure that some box holds at least n apples?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I divided 100 by 12 and rounded down instead of up."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I rounded the division to a convenient number without checking that a packing with a smaller maximum exists."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I gave the number of boxes as the answer rather than a number of apples."
+    },
+    {
+      "key": "E",
+      "text": "100",
+      "correct": false,
+      "misconception": "I described the case where one box holds everything, which is possible but not guaranteed."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "CNT-17",
+      "NUM-15"
+    ]
+  },
+  "hints": [
+    "Look at the fullest box.",
+    "Suppose every box held fewer than n. Work out the largest total that would allow, and find the smallest n making that total fall short of 100. Then build a packing that reaches exactly n.",
+    "If every box held at most 8 the total would be at most 96, short of 100 - so some box holds at least 9. And 9 is achievable: four boxes of 9 and eight of 8 make exactly 100."
+  ],
+  "solutions": {
+    "reliable": "Both halves are needed. First the bound: if every box held 8 or fewer, the total would be at most 12 x 8 = 96, which is less than 100 - so some box must hold at least 9. Then the example: four boxes of 9 and eight boxes of 8 add to 36 + 64 = 100, and no box holds more than 9. So 9 is guaranteed and 10 is not. The transferable idea: an always question needs a bound and a matching example, and only the two together pin the answer down.",
+    "elegant": "The fullest box holds at least the average rounded up, which is 100 divided by 12 rounded up - that is 9."
+  },
+  "whyOnTest": "Looking at the extreme object rather than a typical one is the whole method, and the answer is the average rounded up rather than down.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0062",
+  "band": "5-6",
+  "points": 4,
+  "statement": "24 pencils and 36 erasers are shared into identical gift bags, using every item. What is the largest number of bags possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found a number that divides both but not the largest one, stopping at the first that worked."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I used the difference between 36 and 24 divided by 2 rather than a common factor."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": false,
+      "misconception": "I used a factor of 36 without checking that it also divides 24."
+    },
+    {
+      "key": "E",
+      "text": "72",
+      "correct": false,
+      "misconception": "I found the least common multiple instead of the greatest common divisor."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-05",
+    "secondary": [
+      "NUM-04"
+    ]
+  },
+  "hints": [
+    "The bags must be identical, so the number divides both.",
+    "Every bag holds the same number of pencils and the same number of erasers, so the number of bags divides 24 and divides 36. You want the largest number that does both.",
+    "The common factors of 24 and 36 are 1, 2, 3, 4, 6 and 12. The largest is 12, giving 2 pencils and 3 erasers per bag."
+  ],
+  "solutions": {
+    "reliable": "Identical bags with nothing left over means the number of bags divides both 24 and 36. List the factors: 24 gives 1, 2, 3, 4, 6, 8, 12, 24 and 36 gives 1, 2, 3, 4, 6, 9, 12, 18, 36. The largest number in both lists is 12, so 12 bags, each with 2 pencils and 3 erasers. The transferable idea: sharing equally with nothing left over is a greatest-common-divisor question, while coinciding cycles are a least-common-multiple one.",
+    "elegant": "24 = 2 x 2 x 2 x 3 and 36 = 2 x 2 x 3 x 3, so the shared part is 2 x 2 x 3 = 12."
+  },
+  "whyOnTest": "Choosing between the greatest common divisor and the least common multiple is the whole question, and picking the wrong one gives an answer that looks reasonable.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -11,12 +11,15 @@ import { DotStages } from './DotStages';
 import { FlagRotation } from './FlagRotation';
 import { FoldPunchSquare } from './FoldPunchSquare';
 import { LShapeUnits } from './LShapeUnits';
+import { MenuTree } from './MenuTree';
 import { NumberLineArrow } from './NumberLineArrow';
 import { PetsBarChart } from './PetsBarChart';
 import { RectangleSplitInThree } from './RectangleSplitInThree';
+import { RoomUnfold } from './RoomUnfold';
 import { SquareWithCorner } from './SquareWithCorner';
 import { SymmetryCandidates } from './SymmetryCandidates';
 import { TriangleSplitInThree } from './TriangleSplitInThree';
+import { TwoViewsOfSolid } from './TwoViewsOfSolid';
 import { UnitCubeBlock } from './UnitCubeBlock';
 
 /**
@@ -41,12 +44,15 @@ export const FIGURES: Record<string, ComponentType> = {
   FlagRotation,
   FoldPunchSquare,
   LShapeUnits,
+  MenuTree,
   NumberLineArrow,
   PetsBarChart,
   RectangleSplitInThree,
+  RoomUnfold,
   SquareWithCorner,
   SymmetryCandidates,
   TriangleSplitInThree,
+  TwoViewsOfSolid,
   UnitCubeBlock,
 };
 

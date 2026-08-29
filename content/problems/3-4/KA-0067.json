@@ -1,0 +1,70 @@
+{
+  "id": "KA-0067",
+  "band": "3-4",
+  "points": 3,
+  "statement": "A cafe offers 3 main courses and 2 puddings. How many different two-course meals can be ordered?",
+  "figure": {
+    "component": "MenuTree",
+    "alt": "A tree diagram. One starting point branches into three main courses, and each of those branches into two puddings, giving six paths in all."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted the puddings only and forgot that the main course is also a choice."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I added the number of mains to the number of puddings instead of multiplying them."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I used three puddings as well as three mains, without reading how many puddings there are."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I doubled the answer, as if the order of the two courses made a different meal."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Draw a branch for each main course.",
+    "Start one branch per main course, then split each of those into one branch per pudding. The number of meals is the number of endings, not the number of lines.",
+    "Three mains, each splitting into two puddings, gives 3 x 2 = 6 endings."
+  ],
+  "solutions": {
+    "reliable": "Draw the tree. From the start there are three branches, one per main course. Each of those splits into two, one per pudding. That gives 3 x 2 = 6 complete paths, and each path is one meal. The transferable idea: the meals are the endings of the tree, not the branches you drew.",
+    "elegant": "Two independent choices multiply: 3 x 2 = 6."
+  },
+  "whyOnTest": "Adding instead of multiplying is the first and most persistent error in the counting strand, and a tree makes the multiplication visible.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

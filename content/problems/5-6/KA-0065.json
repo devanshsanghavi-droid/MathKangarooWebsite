@@ -1,0 +1,67 @@
+{
+  "id": "KA-0065",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A price goes up by 20%, then down by 20%. Compared with the original price, the final price is:",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20% lower",
+      "correct": false,
+      "misconception": "I applied only the decrease and forgot that the price had already risen."
+    },
+    {
+      "key": "B",
+      "text": "4% lower",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "the same",
+      "correct": false,
+      "misconception": "I assumed a rise and a fall of the same percentage cancel each other out exactly."
+    },
+    {
+      "key": "D",
+      "text": "4% higher",
+      "correct": false,
+      "misconception": "I got the size of the change right but the direction wrong."
+    },
+    {
+      "key": "E",
+      "text": "40% higher",
+      "correct": false,
+      "misconception": "I added the two percentages together instead of applying them one after the other."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-10",
+    "secondary": [
+      "NUM-09"
+    ]
+  },
+  "hints": [
+    "Start from 100 and follow it through.",
+    "Pick a convenient starting price and apply the two changes in order. The second percentage is taken of the new price, not the original one, which is the whole point.",
+    "Start at 100. Up 20% gives 120. Down 20% of 120 is a fall of 24, giving 96 — which is 4% below 100."
+  ],
+  "solutions": {
+    "reliable": "Take a starting price of 100. A 20% rise gives 120. A 20% fall is now 20% of 120, which is 24, so the price becomes 96. That is 4 below 100, or 4% lower. The transferable idea: name what the percentage is a percentage of, every single time — the second one is not of the original price.",
+    "elegant": "Multiplying by 1.2 and then by 0.8 gives 0.96 whatever the starting price, so the order does not matter and the loss is always 4%."
+  },
+  "whyOnTest": "The belief that a rise and a fall of the same percentage cancel is one of the most durable misconceptions in the whole syllabus.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

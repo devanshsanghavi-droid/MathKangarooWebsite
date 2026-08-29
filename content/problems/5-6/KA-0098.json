@@ -1,0 +1,68 @@
+{
+  "id": "KA-0098",
+  "band": "5-6",
+  "points": 5,
+  "statement": "The numbers 1 to 8 are on a board. A move rubs out two of them and writes their difference, larger minus smaller. After seven moves one number is left. Can it be 1?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Yes, and there are many ways",
+      "correct": false,
+      "misconception": "I found sequences ending in small numbers and assumed 1 was among the reachable ones."
+    },
+    {
+      "key": "B",
+      "text": "Yes, but only one way",
+      "correct": false,
+      "misconception": "I assumed a hard-looking question must have exactly one answer."
+    },
+    {
+      "key": "C",
+      "text": "No, the last number is always even",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "No, the last number is always 0",
+      "correct": false,
+      "misconception": "I found one sequence ending in 0 and assumed every sequence must end there."
+    },
+    {
+      "key": "E",
+      "text": "It depends on the order of the moves",
+      "correct": false,
+      "misconception": "I thought the order could change the outcome, when the quantity that decides it never changes."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "LOG-05",
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "Watch what happens to the total.",
+    "Add everything on the board and see how one move changes that total. Replacing a and b by their difference always changes it by the same kind of amount.",
+    "The total starts at 1 + 2 + ... + 8 = 36, which is even. A move changes the total by twice the smaller number, so it stays even and the last number cannot be odd."
+  ],
+  "solutions": {
+    "reliable": "Track the total of everything on the board. It starts at 1 + 2 + ... + 8 = 36, which is even. A move replaces a and b with a - b, so the total drops by (a + b) - (a - b) = 2b, always an even amount. The total therefore stays even for ever, and the single number left at the end is that total, so it is even. Since 1 is odd, it can never be the last number. The transferable idea: a quantity no move can change decides the answer before you try anything.",
+    "elegant": "Differences preserve parity, so the last number always matches the parity of 1 + 2 + ... + 8, which is even."
+  },
+  "whyOnTest": "Invariants replace an unbounded search with one observation, and choice D punishes stopping at the first example you happen to find.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

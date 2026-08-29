@@ -1,0 +1,68 @@
+{
+  "id": "KA-0068",
+  "band": "3-4",
+  "points": 4,
+  "statement": "A coin is tossed three times. In how many of the possible outcomes are there exactly two heads?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I read the two in exactly two heads as the answer rather than as a condition to count."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the outcomes with two or more heads, so I included the three-head one as well."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the orderings of three different objects instead of listing the eight outcomes."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I gave the total number of possible outcomes rather than the number with exactly two heads."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-01",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "List all eight outcomes in order.",
+    "Three tosses give eight outcomes. Write them in a fixed order so none is missed, then count the ones with exactly two heads — not two or more.",
+    "The eight are HHH, HHT, HTH, HTT, THH, THT, TTH, TTT. Exactly two heads: HHT, HTH, THH. That is 3."
+  ],
+  "solutions": {
+    "reliable": "Write out all eight outcomes systematically: HHH, HHT, HTH, HTT, THH, THT, TTH, TTT. Now pick the ones with exactly two heads: HHT, HTH, THH — three of them. HHH has three heads, so it does not count. The transferable idea: exactly means exactly, and a full list in a fixed order is the safest way to obey it.",
+    "elegant": "Two heads means choosing which one of the three tosses is the tail, and there are 3 ways to do that."
+  },
+  "whyOnTest": "Reading exactly as at least is a comprehension error that turns a correct method into a wrong answer.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

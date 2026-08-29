@@ -1,0 +1,67 @@
+{
+  "id": "KA-0089",
+  "band": "3-4",
+  "points": 4,
+  "statement": "A cube 3 units on each side is built from unit cubes and painted all over the outside. How many of the small cubes have no paint on them at all?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed every small cube touches the outside somewhere."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the cubes at the centre of each face, which are painted on one side."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the corner cubes, which are the most painted rather than the least."
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I gave the total number of small cubes instead of the unpainted ones."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-13",
+    "secondary": [
+      "CNT-14"
+    ]
+  },
+  "hints": [
+    "Which cubes touch no outside face?",
+    "A cube has no paint only if it is strictly inside — not on any face, edge or corner. Peel one layer off every side of the block and see what is left.",
+    "Removing one layer from all six sides of a 3 by 3 by 3 block leaves a 1 by 1 by 1 block: a single cube."
+  ],
+  "solutions": {
+    "reliable": "An unpainted cube must not touch any outside face, so strip one layer from each of the six sides. That takes the 3 by 3 by 3 block down to 1 by 1 by 1 — a single cube, right in the middle. The transferable idea: the unpainted core of an n by n by n block is an (n - 2) cube, which is why a 3-cube has exactly one.",
+    "elegant": "The hidden core is (3 - 2) cubed = 1."
+  },
+  "whyOnTest": "It builds the peel-a-layer picture that every painted-cube question uses, including the ones asking for exactly one or exactly two painted faces.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

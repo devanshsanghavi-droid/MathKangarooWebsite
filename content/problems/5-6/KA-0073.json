@@ -1,0 +1,67 @@
+{
+  "id": "KA-0073",
+  "band": "5-6",
+  "points": 4,
+  "statement": "How many different four-letter arrangements can be made from the letters of the word MATH, using each letter once?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the letters rather than their arrangements."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I multiplied 4 by 3 and stopped, forgetting the last two positions."
+    },
+    {
+      "key": "C",
+      "text": "16",
+      "correct": false,
+      "misconception": "I used 4 choices for every position, as if letters could repeat."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "256",
+      "correct": false,
+      "misconception": "I used 4 choices in each of four positions, which allows every letter to repeat."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-05",
+    "secondary": [
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "How many letters are left for each position?",
+    "Fill the positions one at a time. Every letter used is no longer available, so the number of options falls by one at each step.",
+    "4 choices for the first letter, then 3, then 2, then 1: 4 x 3 x 2 x 1 = 24."
+  ],
+  "solutions": {
+    "reliable": "Fill the four positions in turn. The first has 4 letters available, the second 3, the third 2, the last 1. Multiplying: 4 x 3 x 2 x 1 = 24. The transferable idea: when items are used up, the count falls by one at each step — that is what makes this different from a code where digits may repeat.",
+    "elegant": null
+  },
+  "whyOnTest": "It fixes the difference between arranging distinct objects and filling positions that allow repeats, which is the most common mix-up in the strand.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

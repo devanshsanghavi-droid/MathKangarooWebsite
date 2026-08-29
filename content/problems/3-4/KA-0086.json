@@ -1,0 +1,67 @@
+{
+  "id": "KA-0086",
+  "band": "3-4",
+  "points": 3,
+  "statement": "A floor measuring 6 by 4 units is covered exactly with tiles measuring 2 by 1, with no gaps and no overlaps. How many tiles are needed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I divided the floor area by 3 instead of by the tile area of 2."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I laid tiles along the edges only and never filled the middle."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I gave the area of the floor rather than the number of tiles that cover it."
+    },
+    {
+      "key": "E",
+      "text": "48",
+      "correct": false,
+      "misconception": "I multiplied the floor area by the tile area instead of dividing."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-14",
+    "secondary": [
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "How much floor does one tile cover?",
+    "Every tile covers the same area and none overlap, so the number of tiles is the floor area divided by the tile area. Check that the division comes out whole, otherwise the tiling is impossible.",
+    "The floor is 6 x 4 = 24 units and each tile is 2 x 1 = 2, so 24 divided by 2 = 12 tiles."
+  ],
+  "solutions": {
+    "reliable": "The floor covers 6 x 4 = 24 unit squares and each tile covers 2, so 24 divided by 2 = 12 tiles. Because 24 divides exactly by 2 the count is at least possible; laying six tiles across each of two double rows shows it really works. The transferable idea: dividing the areas gives a necessary check, never a sufficient one — a shape can pass it and still be untileable.",
+    "elegant": null
+  },
+  "whyOnTest": "It sets up the area check that harder tiling questions rely on, including the ones where the area divides but the tiling is still impossible.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-08-28",
+  "license": "CC-BY-NC-SA-4.0"
+}

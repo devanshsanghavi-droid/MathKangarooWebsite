@@ -36,6 +36,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M1.8 — `/papers` | `[x]`* | `papers: build the official paper index routes and tighten the anti-paste tripwire` |
 | M0.4 — legal and naming | `[x]` | `legal: draft the outreach note and record the locked public name` |
 | M1.10 — launch content (150 problems) | `[x]` | `content: reach the 150-problem launch bank` |
+| M2.13 — `/author/new` | `[x]`* | `author: build the problem authoring form with shared validation` |
 | M2.11 — `/print` worksheet generator | `[x]` | `print: build the worksheet generator and its per-distractor answer key` |
 | M2.4 — mastery and scheduling | `[x]` | `practice: implement the mastery state machine and FSRS skill scheduling` |
 | M2.1 — Supabase foundation | `[~]` | `db: write the schema, the RLS policies, and a shape test that runs without a database` |
@@ -944,6 +945,59 @@ the whole point is that the sequence is fixed and inspectable.
    of them; none of them is a page a search engine should be offered.
 4. **The sheet carries the non-affiliation line and the licence** in its footer, because a
    printed page travels away from the site that explains it.
+
+---
+
+## M2.13 — `/author/new`
+
+**State:** `[x]` for the authoring form. `/author/queue` is deferred — see below.
+
+### Built
+
+- **`/author/new`** — a form that produces a problem file, with live validation and a live
+  preview rendered by the **real `<ProblemCardView>`**, so an author sees the distractor feedback
+  their misconceptions actually produce *while writing them*.
+- **"Open a pull request"** builds a GitHub new-file URL with the path and the JSON already
+  filled in. No backend, no write access, no direct database write — content still arrives
+  through git and through review, as `docs/00-SPEC.md` §5.1 requires.
+- **27 library tests and 10 form tests**, including M2.13's acceptance directly: a draft the
+  form calls valid is written into a temporary content tree and run through the **actual**
+  `scripts/validate-content.ts`, which must report zero findings.
+
+### Something that was actually broken, and how it was caught
+
+The form validated against the Zod schema alone. But the rule that *matters* — a wrong choice
+must carry a written misconception — is a cross-field rule, so the schema only says
+`misconception: string | null` and the real check lives in `scripts/validate-content.ts`. **The
+form therefore accepted problems that CI rejects**, which is the exact opposite of the guarantee
+M2.13 is supposed to make. The acceptance test caught it on its first run.
+
+The fix was not to copy the rule. Both product rules now live in `src/lib/problem-rules.ts` —
+no filesystem imports, so a browser can run them — and **both the CI validator and the form call
+that one implementation**. A test asserts both files reference it, so a future edit cannot
+quietly re-fork them.
+
+A second, smaller thing: the summary panel showed the first eight issues, and a duplicate id
+could be pushed off the end by eight empty-field messages — hiding the one problem that blocks
+everything. Issues are now ordered with the blocking ones first, and a count is shown for the
+rest rather than silently truncating.
+
+### Assumptions made where the spec was ambiguous
+
+1. **`<ProblemCard>` was split in two.** The presentational half (`ProblemCardView`) takes its
+   skills as props; the server wrapper looks them up. `@/lib/content` is server-only, so without
+   the split the live preview could not use the real component — and a preview that is a
+   different component is not a preview.
+2. **A new problem is written as `reviewedBy: ["pending-review"]`.** The form cannot know who
+   has reviewed anything, and writing an author's own name there would record a review that has
+   not happened.
+3. **`/author/new` is `noindex`** and is not linked from the primary nav. It is a contributor
+   tool, not a page for students.
+4. **`/author/queue` is deferred.** Two-approval review with a checklist is a pull-request
+   workflow, and GitHub already does it — with CODEOWNERS and required reviews, which M4.5
+   plans anyway. Building a second review queue that does not gate the merge would be
+   ceremony rather than a control. Revisit if peer contributors arrive and GitHub's own review
+   turns out not to fit.
 
 ---
 

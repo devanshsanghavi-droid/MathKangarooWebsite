@@ -11,6 +11,7 @@
 
 import { readdirSync, readFileSync, statSync, existsSync } from 'node:fs';
 import { join, basename, relative, sep } from 'node:path';
+import { checkProblemRules } from '../../src/lib/problem-rules.ts';
 import {
   SkillSchema,
   ProblemSchema,
@@ -197,48 +198,17 @@ export function deriveUnlocks(prerequisites: Map<string, string[]>): Map<string,
 /**
  * The two rules that ARE the product run against the raw JSON, before Zod.
  *
- * If they ran after the schema, a missing `alt` or a one-word `misconception` would surface
- * as a generic "string too short" and the author would never read the sentence explaining
- * why the field exists. Running first costs one extra pass and buys a failure message that
- * teaches. Both rules are re-expressed in the schema, so neither can slip through.
+ * If they ran after the schema, a missing `alt` or a one-word `misconception` would surface as
+ * a generic "string too short" and the author would never read the sentence explaining why the
+ * field exists. Running first costs one extra pass and buys a failure message that teaches.
+ *
+ * The rules themselves live in `src/lib/problem-rules.ts` because the authoring form at
+ * `/author/new` has to apply exactly the same ones - a form that accepts what CI rejects is
+ * worse than no form. Sharing the implementation is the only way to keep them identical.
  */
 function rawProblemGuardrails(value: unknown, file: string, add: AddFinding): void {
-  if (typeof value !== 'object' || value === null) return;
-  const record = value as Record<string, unknown>;
-
-  const choices = record.choices;
-  if (Array.isArray(choices)) {
-    for (const entry of choices) {
-      if (typeof entry !== 'object' || entry === null) continue;
-      const choice = entry as Record<string, unknown>;
-      const key = typeof choice.key === 'string' ? choice.key : '?';
-      const isCorrect = choice.correct === true;
-      const misconception = choice.misconception;
-      const written = typeof misconception === 'string' && misconception.trim().length > 0;
-      if (!isCorrect && !written) {
-        add(
-          'problem/misconception-required',
-          file,
-          `choice ${key} is incorrect and has no misconception. Distractor-specific feedback ` +
-            'is the product: write the student thinking that produces this answer, in the ' +
-            "student's own voice.",
-        );
-      }
-    }
-  }
-
-  const figure = record.figure;
-  if (figure && typeof figure === 'object') {
-    const alt = (figure as Record<string, unknown>).alt;
-    const text = typeof alt === 'string' ? alt.trim() : '';
-    if (text.length < 20) {
-      add(
-        'problem/figure-alt-required',
-        file,
-        'figure is present but its alt text is missing, blank, or too short. Describe what a ' +
-          'sighted solver EXTRACTS from the figure, not what it looks like.',
-      );
-    }
+  for (const violation of checkProblemRules(value)) {
+    add(violation.rule, file, violation.message);
   }
 }
 

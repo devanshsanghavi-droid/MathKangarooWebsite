@@ -42,6 +42,7 @@ export const PRIMARY_NAV: NavItem[] = [
   { href: '/atlas', label: 'Atlas' },
   { href: '/problems', label: 'Problems' },
   { href: '/practice/diagnostic', label: 'Diagnostic' },
+  { href: '/practice/mock', label: 'Mock' },
   { href: '/papers', label: 'Papers' },
   { href: '/about', label: 'About' },
 ];

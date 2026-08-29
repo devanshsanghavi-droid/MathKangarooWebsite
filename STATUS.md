@@ -2,10 +2,15 @@
 
 Running log of the build. Updated as each milestone lands, not at the end.
 
-**All thirteen milestones from the session brief are done**, plus **M0.4** and **M1.10**. One
-acceptance criterion inside M1.8 is deliberately not met — the six paper indexes are reading
-work that has to be done by someone who has read the papers, and inventing them would have been
-worse than leaving them empty. See M1.8 and "Needs you".
+**All thirteen milestones from the session brief are done**, plus **M0.4** and **M1.10** —
+which completes every part of Phase 1 except M1.11, which needs your accounts. Seven Phase 2
+milestones followed: everything that could be built and verified without a database or a
+credential.
+
+Two acceptance criteria are deliberately unmet and are called out where they belong: the six
+paper indexes in M1.8 (reading work that has to be done by someone who has read the papers) and
+the runtime RLS proof in M2.1 (no Postgres on this machine). Two more could not be exercised
+here at all — Lighthouse and the service worker. All four are in "Needs you".
 
 | | |
 |---|---|
@@ -13,8 +18,8 @@ worse than leaving them empty. See M1.8 and "Needs you".
 | Original problems | **150**, across levels 3–4 and 5–6 |
 | Distractor explanations | **600** — one per wrong answer choice |
 | Hand-drawn SVG figures | 25 |
-| Routes | 15, building 414 static pages |
-| Tests | **1 625** unit + 35 axe assertions, both themes |
+| Routes | 21, building 419 static pages |
+| Tests | **1 918** unit + 89 axe assertions, both themes |
 | CI | typecheck → lint → test → graph → content → a11y → build, all green |
 
 Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!]` blocked on Devansh
@@ -36,6 +41,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M1.8 — `/papers` | `[x]`* | `papers: build the official paper index routes and tighten the anti-paste tripwire` |
 | M0.4 — legal and naming | `[x]` | `legal: draft the outreach note and record the locked public name` |
 | M1.10 — launch content (150 problems) | `[x]` | `content: reach the 150-problem launch bank` |
+| M2.8 — `/practice/mock` | `[x]` | `practice: build the signed-out timed mock exam and its report` |
 | M2.7 — `/practice/diagnostic` | `[x]` | `practice: build the signed-out adaptive diagnostic` |
 | M2.12 — PWA and offline | `[~]` | `pwa: add the service worker, offline page, and offline attempt queue` |
 | M2.13 — `/author/new` | `[x]`* | `author: build the problem authoring form with shared validation` |
@@ -1112,6 +1118,43 @@ down, including one that the rendered output contains no `<details>` element at 
    ask more as the bank grows.
 4. **No feedback until the end**, stated on screen. A diagnostic that told a student each answer
    would teach them to stop after the first miss.
+
+---
+
+## M2.8 — `/practice/mock`
+
+**State:** `[x]` — signed out, like the diagnostic.
+
+### Built
+
+- **The real shape of the paper**: 24 items out of 96 for bands 1–2 and 3–4, 30 out of 120
+  above, in **exact thirds** at 3, 4 and 5 points, drawn deterministically from a seed.
+- **A 75-minute timer that survives a refresh.** It is never counted down in memory: the state
+  records when the paper started and the time left is computed from the clock. M2.8's acceptance
+  is a test — *a paper started 40 minutes ago comes back with 35 minutes left, and its answers* —
+  and closing the laptop for ten minutes costs ten minutes, exactly as it would in a hall.
+- **Flag for review, and a navigator grid** where every button is named for a screen reader
+  ("Question 12, answered, flagged"), not just coloured.
+- **The no-blanks nudge at five minutes**, which states the actual argument: a wrong answer costs
+  nothing, so a blank is a decision to score zero.
+- **Automatic submission when time runs out**, as an invigilator would.
+- **The post-exam report**: score, per-tier accuracy, the **time-against-outcome scatter** with a
+  written description for screen readers, skill heat, the three skills to fix first, and every
+  question with its answer. It leads with what the blanks cost rather than with the total.
+- **38 logic tests and 22 UI tests**, including that a blank scores exactly the same as a wrong
+  answer, and that the score can never go negative.
+
+### Assumptions made where the spec was ambiguous
+
+1. **A band with too few problems is not offered at all.** A 22-question "mock" scored out of 96
+   would be worse than no mock: the student would draw a conclusion from a number that does not
+   mean what they think. `buildPaper` reports the shortfall by tier, and the page says why the
+   other levels are missing rather than hiding them. Today only levels 3–4 and 5–6 can be built.
+2. **The paper runs easiest first**, in tier order, matching the real pacing.
+3. **The report leads with the cost of the blanks**, not the score. The score is the least
+   actionable number on the page.
+4. **Time per question is accumulated across visits**, banked whenever a question is left, so
+   the scatter measures attention rather than the last visit.
 
 ---
 

@@ -68,8 +68,17 @@ export default function HomePage() {
           <ul className="mt-7 grid list-none gap-2 p-0">
             <li>
               <Link
-                href="/atlas"
+                href="/practice/diagnostic"
                 className="flex items-baseline gap-2 rounded-sm border border-accent bg-accent-soft px-4 py-3 no-underline"
+              >
+                <span className="font-medium text-ink">Take the diagnostic</span>
+                <span className="text-sm text-ink-2">— 15 questions, no account needed</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/atlas"
+                className="flex items-baseline gap-2 rounded-sm border border-rule bg-surface px-4 py-3 no-underline hover:border-rule-2"
               >
                 <span className="font-medium text-ink">Browse the Atlas</span>
                 <span className="text-sm text-ink-2">— the map of all {stats.skills} skills</span>
@@ -94,14 +103,9 @@ export default function HomePage() {
               </Link>
             </li>
           </ul>
-          {/*
-            §1.1 asks for a "take the diagnostic" entry point. The diagnostic is P2 and needs the
-            skill graph plus attempt recording, so the triad leads with the three things that
-            exist. Saying what is coming beats a link to a page that is not there.
-          */}
           <p className="mt-4 mb-0 text-xs text-ink-3">
-            The 15-question adaptive diagnostic arrives in Phase 2, along with saved progress.
-            Practice will never require an account.
+            The diagnostic runs entirely on your own device — no account, nothing sent anywhere.
+            Saved progress across devices arrives with accounts in Phase 2.
           </p>
         </div>
 

@@ -34,13 +34,14 @@ export interface NavItem {
 }
 
 /**
- * docs/00-SPEC.md §0.2 lists Atlas · Problems · Practice · Papers · Impact. Practice is P2 and
- * Impact is P3, so they are absent here rather than present as links to a 404. Add each one to
- * this array in the milestone that builds its route.
+ * docs/00-SPEC.md §0.2 lists Atlas · Problems · Practice · Papers · Impact. The diagnostic is
+ * the first Practice surface to exist, and it works signed out. Impact is P3 and stays absent
+ * rather than being a link to a 404. Add each route here in the milestone that builds it.
  */
 export const PRIMARY_NAV: NavItem[] = [
   { href: '/atlas', label: 'Atlas' },
   { href: '/problems', label: 'Problems' },
+  { href: '/practice/diagnostic', label: 'Diagnostic' },
   { href: '/papers', label: 'Papers' },
   { href: '/about', label: 'About' },
 ];

@@ -1,4 +1,3 @@
-/* eslint-env serviceworker */
 //
 // Kangaroo Atlas service worker.
 //

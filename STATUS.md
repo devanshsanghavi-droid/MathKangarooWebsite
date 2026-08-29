@@ -36,6 +36,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M1.8 — `/papers` | `[x]`* | `papers: build the official paper index routes and tighten the anti-paste tripwire` |
 | M0.4 — legal and naming | `[x]` | `legal: draft the outreach note and record the locked public name` |
 | M1.10 — launch content (150 problems) | `[x]` | `content: reach the 150-problem launch bank` |
+| M2.7 — `/practice/diagnostic` | `[x]` | `practice: build the signed-out adaptive diagnostic` |
 | M2.12 — PWA and offline | `[~]` | `pwa: add the service worker, offline page, and offline attempt queue` |
 | M2.13 — `/author/new` | `[x]`* | `author: build the problem authoring form with shared validation` |
 | M2.11 — `/print` worksheet generator | `[x]` | `print: build the worksheet generator and its per-distractor answer key` |
@@ -1055,6 +1056,62 @@ and its throttled-Android test both need a real browser. See "Needs you".
 4. **Icons are the single SVG.** Modern Android and iOS both accept an SVG icon; generating a
    ladder of PNGs would add a build step and three hundred kilobytes for browsers this project
    does not target.
+
+---
+
+## M2.7 — `/practice/diagnostic`
+
+**State:** `[x]` — and it works **signed out**, which is what made it buildable now rather than
+with the rest of Phase 2.
+
+### Built
+
+- **`src/lib/diagnostic.ts`** — the adaptive algorithm from `docs/01-DATA-MODEL.md` §3.4, as
+  pure functions. Starts every strand at a foundation skill with a 3-point problem; **a miss
+  descends to a prerequisite and lowers the tier, a solve climbs to an unlocked skill and raises
+  it**. Round-robins the strands least-asked-first, so fifteen items produce a map rather than a
+  deep dive into whichever strand failed first. Stops at 15 items or when every strand is
+  bounded.
+- **`/practice/diagnostic`** — the whole run in the browser. No account, no network, no
+  database. State is plain JSON in `localStorage`, so closing the tab loses nothing and a
+  half-finished run is offered back rather than silently restarted.
+- **The result**: strand by strand, plus a **six-week plan ordered by the graph** — every missed
+  skill and the prerequisites it rests on, topologically sorted so nothing is studied before
+  what it needs. That ordering is the entire reason for having a graph; a plan that puts
+  "invariants" before "parity" is a list, not a plan.
+- **27 algorithm tests and 12 UI tests**, including M2.7's acceptance directly: *two students
+  with different weaknesses receive visibly different plans*.
+- The home page triad now leads with the diagnostic, as `docs/00-SPEC.md` §1.1 always wanted,
+  and `Diagnostic` is in the primary nav.
+
+### Something that was actually broken, and how it was caught
+
+The runner first rendered the ordinary `<ProblemCardView>`. That card carries the hint ladder
+and the solution — so **a student could open the full worked solution in the middle of the
+measurement**, and clicking a choice inside the card showed the distractor feedback. The
+diagnostic would have measured nothing.
+
+It was invisible in the tests, because those clicked a separate row of answer buttons rather
+than the card's own. Looking at the running page is what found it.
+
+`ProblemCardView` now has an `assessment` mode: the choices are the buttons, and there is no
+feedback, no hint ladder, no solution and no "why this is on the test". Three assertions pin it
+down, including one that the rendered output contains no `<details>` element at all.
+
+### Assumptions made where the spec was ambiguous
+
+1. **The whole bank is sent to the client** (~150 problems of JSON). The alternative is a round
+   trip between every question, and the point of this page is that it needs no server. Revisit
+   if the bank passes a few hundred problems.
+2. **Band is a preference, not a constraint, when picking an item.** With 150 problems a
+   band-and-tier combination is often empty, and asking a slightly off-band question is far
+   better than abandoning a strand and reporting nothing about it.
+3. **A strand that runs out of problems is "bounded" and stops consuming items.** In practice
+   this ends most runs at 8–12 questions rather than 15, and the result says "not reached in 15
+   questions" for any strand it never got to. That is a content-density fact, not a bug: it will
+   ask more as the bank grows.
+4. **No feedback until the end**, stated on screen. A diagnostic that told a student each answer
+   would teach them to stop after the first miss.
 
 ---
 

@@ -338,6 +338,51 @@ describe('the exercise view', () => {
     }
   });
 
+  it('resumes at the first problem the student has not solved', async () => {
+    // The problem on screen follows stored progress until the student touches something.
+    //
+    // Worth knowing what this does and does not prove: the bug it was written for only
+    // appears on the hydration path, where useSyncExternalStore hands back the SERVER
+    // snapshot and a `useState(startIndex)` initialiser therefore always saw an empty
+    // progress file. Testing Library mounts client-side, so it would have passed against the
+    // broken version too. It guards the behaviour; the hydration path itself needs a browser.
+    const ladder = getProblemsForSkill('CNT-12').filter((p) => p.points === 5);
+    const first = ladder[0];
+    if (!first || ladder.length < 2) throw new Error('CNT-12 needs two 5-point problems');
+    window.localStorage.setItem(
+      'ka-progress',
+      JSON.stringify({
+        version: 1,
+        attempts: {
+          'CNT-12': [
+            {
+              problemId: first.id,
+              points: 5,
+              correct: true,
+              hintsUsed: 0,
+              at: '2026-03-01T10:00:00.000Z',
+            },
+          ],
+        },
+      }),
+    );
+    resetProgressCache();
+    const { container } = await renderLadder('CNT-12', '5');
+    expect(container.textContent).toContain(ladder[1]?.id);
+    expect(container.querySelector('article')?.textContent).not.toContain(first.id);
+  });
+
+  it('does not yank the next problem onto the screen while feedback is being read', async () => {
+    const { container } = await renderLadder('CNT-12', '5');
+    const shown = container.querySelector('article h2')?.textContent;
+    const group = within(container).getByRole('group', { name: /answer choices/i });
+    const correct = within(group)
+      .getAllByRole('button')
+      .find((button) => button.textContent?.includes('30'));
+    await userEvent.click(correct ?? (within(group).getAllByRole('button')[0] as HTMLElement));
+    expect(container.querySelector('article h2')?.textContent).toBe(shown);
+  });
+
   it('404s on a tier that is not 3, 4 or 5', async () => {
     await expect(renderLadder('CNT-12', '7')).rejects.toThrow();
   });

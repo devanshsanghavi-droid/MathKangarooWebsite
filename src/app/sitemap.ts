@@ -43,6 +43,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     });
+    /*
+     * The unit page is mostly navigation now (docs/05 §7.2); /learn is where the definition,
+     * the recognition cues, the worked example and the misconceptions actually live, so it is
+     * listed in its own right.
+     *
+     * The three ladders and the quiz are deliberately NOT listed. They are tools rather than
+     * documents — 364 pages whose prose is "practise X at tier N" — and they are reachable
+     * from the unit page anyway. Listing them would be thin content by the cartload.
+     */
+    entries.push({
+      url: `${SITE.url}/skill/${skill.id}/learn`,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    });
   }
 
   for (const problem of index.problems) {

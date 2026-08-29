@@ -20,7 +20,7 @@ here at all — Lighthouse and the service worker. All four are in "Needs you".
 | Distractor explanations | **600** — one per wrong answer choice |
 | Hand-drawn SVG figures | 25 |
 | Routes | 24, building **874** static pages |
-| Tests | **2 117** unit + **102** axe assertions, both themes |
+| Tests | **2 128** unit + **102** axe assertions, both themes |
 | CI | typecheck → lint → test → graph → content → **palette** → a11y → build, all green |
 
 Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!]` blocked on Devansh
@@ -1247,6 +1247,15 @@ colour appears outside a feedback surface.
 6. **Every OG card rendered tofu where the difficulty should be.** satori only has the fonts it
    is handed, so `●` and `○` made each card try to fetch a font it could not get
    ("Failed to download dynamic font. Status: 400"). The dots are drawn as shapes now.
+7. **Returning students were dropped back on problem 1 of every ladder.** `useSyncExternalStore`
+   hands back the *server* snapshot during hydration, so a `useState(startIndex)` initialiser
+   always saw an empty progress file. Found by reading my own diff, not by a test — Testing
+   Library mounts client-side and would have passed against the broken version. Fixed by
+   following stored progress until the student's first interaction, then pinning; verified in a
+   real browser, where seeding one solved problem now opens the ladder on the other one.
+8. **Problem statements were still set at the body's leading.** §5 gives them 19px/1.55, one
+   step above the 17/1.65 reading size, and the card and the Problem of the Day were using an
+   ad-hoc `text-lg` at 1.65.
 
 Also: axe caught two `<nav aria-label="Skills">` landmarks in one document once the drawer
 opened. The drawer is already a dialog named "Skills", so its contents no longer nest a second
@@ -1319,6 +1328,14 @@ The design intent — slate difficulty, teal mastery, soft tinted feedback panel
 | `/skill/[id]` renders as a unit page with a working mastery bar for a signed-out visitor | 91 unit-page render tests; the bar's `aria-label` is asserted against the real problem count with an empty localStorage, and driven end to end in the exercise-view tests |
 | Sidebar collapses cleanly at 900px and is reachable by keyboard | `@media (min-width:900px)` confirmed in the built CSS; 27 rail tests cover Enter to open, focus moved in, Tab cycled inside, Escape to close, focus handed back |
 | Full CI green, both themes checked, axe clean | typecheck · lint · **2 117** tests · graph · content · palette · **102** axe assertions · 874-page build |
+
+### Also done here
+
+- **`/skill/[id]/learn` is in the sitemap**, at its own priority. The unit page is mostly
+  navigation now; the learn page is where the prose lives. The three ladders and the quiz are
+  deliberately left out — 364 pages reading "practise X at tier N" is thin content by the
+  cartload, and they are reachable from the unit page anyway. A new test asserts both halves of
+  that, plus that the sitemap never advertises a route that would 404.
 
 ### Deferred
 

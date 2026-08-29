@@ -44,16 +44,29 @@ export function LadderRunner({
   const problemIds = useMemo(() => problems.map((problem) => problem.id), [problems]);
   const state = ladderState(problemIds, attempts);
 
-  const [index, setIndex] = useState(state.startIndex);
+  /*
+   * `index` stays null until the student actually does something, and the problem on screen
+   * follows `state.startIndex` until then.
+   *
+   * `useState(state.startIndex)` was wrong: useSyncExternalStore hands back the SERVER
+   * snapshot during hydration, so the initialiser always saw an empty progress file and every
+   * returning student was dropped back on problem 1 rather than the first one they had not
+   * solved. Pinning on first interaction rather than in an effect also stops the opposite
+   * failure — answering correctly changes startIndex, which would otherwise yank the next
+   * problem onto the screen while the student was still reading their feedback.
+   */
+  const [index, setIndex] = useState<number | null>(null);
   const [selected, setSelected] = useState<ChoiceKey | null>(null);
   const [hintLevel, setHintLevel] = useState(0);
   const [scored, setScored] = useState<Set<string>>(() => new Set());
 
-  const problem = problems[index];
+  const current = index ?? state.startIndex;
+  const problem = problems[current];
 
   const onSelect = useCallback(
     (key: ChoiceKey) => {
       setSelected(key);
+      setIndex(current);
       if (!problem || scored.has(problem.id)) return;
       const choice = problem.choices.find((candidate) => candidate.key === key);
       setScored((current) => new Set(current).add(problem.id));
@@ -65,14 +78,14 @@ export function LadderRunner({
         at: new Date().toISOString(),
       });
     },
-    [hintLevel, problem, scored],
+    [current, hintLevel, problem, scored],
   );
 
   const next = useCallback(() => {
-    setIndex((current) => advance(current, problems.length));
+    setIndex(advance(current, problems.length));
     setSelected(null);
     setHintLevel(0);
-  }, [problems.length]);
+  }, [current, problems.length]);
 
   if (!problem) {
     return (

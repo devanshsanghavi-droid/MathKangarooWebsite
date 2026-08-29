@@ -85,7 +85,7 @@ export function ProblemCardView({
         </span>
       </div>
 
-      <p className="reading prose-measure mt-4 mb-0 text-lg text-ink">{problem.statement}</p>
+      <p className="statement prose-measure mt-4 mb-0 text-ink">{problem.statement}</p>
 
       {problem.figure ? <FigureRenderer figure={problem.figure} problemId={problem.id} /> : null}
 

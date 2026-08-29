@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -82,6 +84,31 @@ describe('DifficultyPill', () => {
     const { container } = renderInTheme(<DifficultyPill points={4} />, theme);
     expect(container.textContent).toContain('4 pt');
     expect(document.documentElement.getAttribute('data-theme')).toBe(theme);
+  });
+});
+
+describe('the type stack (docs/05 §5)', () => {
+  const css = readFileSync(join(process.cwd(), 'src/styles/globals.css'), 'utf8');
+
+  it('sets problem statements at 19px / 1.55, larger than the reading size', () => {
+    expect(css).toMatch(/\.statement\s*\{[^}]*font-size:\s*var\(--step-2\)/);
+    expect(css).toMatch(/\.statement\s*\{[^}]*line-height:\s*var\(--leading-statement\)/);
+  });
+
+  it('renders the statement in that class rather than an ad-hoc size', () => {
+    const { container } = render(<ProblemCard problem={withFigure} />);
+    const statement = [...container.querySelectorAll('p')].find(
+      (node) => node.textContent === withFigure.statement,
+    );
+    expect(statement?.className).toContain('statement');
+  });
+
+  it('has retired the v1 serif', () => {
+    // docs/05 §5: at 17px a humanist sans reads better on the low-end screens this has to
+    // work on. The class is gone, so a stray `serif` would be a no-op rather than a silent
+    // fallback to the browser default.
+    expect(css).not.toMatch(/^\.serif\s*\{/m);
+    expect(css).toMatch(/\.reading\s*\{/);
   });
 });
 

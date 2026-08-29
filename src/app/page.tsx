@@ -142,9 +142,7 @@ export default function HomePage() {
               <BandPill band={potd.band} />
               {potdSkill ? <span className="text-sm text-ink-2">{potdSkill.name}</span> : null}
             </span>
-            <span className="reading prose-measure mt-3 block text-lg text-ink">
-              {potd.statement}
-            </span>
+            <span className="statement prose-measure mt-3 block text-ink">{potd.statement}</span>
           </Link>
           <p className="mt-3 mb-0 text-xs text-ink-3">
             A different problem every day, the same one for everyone. The dated archive and the 6pm

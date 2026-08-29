@@ -36,6 +36,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | M1.8 — `/papers` | `[x]`* | `papers: build the official paper index routes and tighten the anti-paste tripwire` |
 | M0.4 — legal and naming | `[x]` | `legal: draft the outreach note and record the locked public name` |
 | M1.10 — launch content (150 problems) | `[x]` | `content: reach the 150-problem launch bank` |
+| M2.11 — `/print` worksheet generator | `[x]` | `print: build the worksheet generator and its per-distractor answer key` |
 | M2.4 — mastery and scheduling | `[x]` | `practice: implement the mastery state machine and FSRS skill scheduling` |
 | M2.1 — Supabase foundation | `[~]` | `db: write the schema, the RLS policies, and a shape test that runs without a database` |
 | M1.9 — home, about, legal, contact | `[x]` | `site: build the home page, about, legal pages, and contact form` |
@@ -904,6 +905,45 @@ RLS, a policy that says `using (true)`, a `security definer` function with an un
 7. **`pointCeiling` starts at 3 and moves one tier at a time**, up on an unaided solve at the
    ceiling and down on a miss there. Nobody meets a 5-point version of a skill they have not yet
    solved at 4.
+
+---
+
+## M2.11 — `/print` worksheet generator
+
+**State:** `[x]` — needs no database, so it ships now rather than with Phase 2.
+
+### Built
+
+- **`/print`** — pick by level, point value, strand, skill and count; include or exclude figures;
+  print. The worksheet and the answer key are on one page, and `@media print` starts the key on
+  its own sheet so a tutor can hand out the questions without the answers.
+- **The answer key is the part that exists nowhere else**: for every wrong choice it prints the
+  misconception that produces it. A tutor marking a stack of sheets sees what the student was
+  *thinking*, not only that they were wrong. 39 tests, including one asserting all four
+  distractors on every problem of a full 30-question sheet carry a written note.
+- **`src/lib/worksheet.ts`** — pure selection, with a seeded shuffle.
+
+### The decision that matters most here
+
+**The shuffle seed is in the URL.** A tutor prints the worksheet, then prints the answer key,
+and the two must be the same worksheet. A random shuffle that re-rolled on the second page load
+would quietly hand out a key that did not match the sheet, and nobody would find out until a
+room full of students did. The same URL therefore always produces the same sheet — this term,
+next term, on any machine — and "Reshuffle" is a link to the next seed rather than a dice roll.
+`mulberry32` is written out longhand (nine lines) rather than pulled in as a dependency, because
+the whole point is that the sequence is fixed and inspectable.
+
+### Assumptions made where the spec was ambiguous
+
+1. **The sheet is ordered easiest first** after the shuffle picks which problems appear. A
+   worksheet that opens with a 5-point question teaches a student to give up.
+2. **"Text only" removes every problem that has a figure**, rather than printing the figure's
+   alt text. A worksheet is for solving; a described figure a student cannot see is not a
+   question they can answer.
+3. **`/print` is `noindex`.** Every filter combination is a distinct URL and there are millions
+   of them; none of them is a page a search engine should be offered.
+4. **The sheet carries the non-affiliation line and the licence** in its footer, because a
+   printed page travels away from the site that explains it.
 
 ---
 

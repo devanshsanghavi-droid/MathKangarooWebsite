@@ -231,4 +231,30 @@ a:hover {
   a[href^='/']::after {
     content: '';
   }
+
+  /*
+   * The worksheet generator. The answer key starts on its own sheet so a tutor can hand out
+   * the questions without handing out the answers, and no question is ever split across a
+   * page break - half a problem at the foot of a page is worse than a short page.
+   */
+  .answer-key {
+    break-before: page;
+    margin-top: 0 !important;
+  }
+
+  .worksheet-item {
+    break-inside: avoid;
+  }
+
+  .worksheet figure,
+  .answer-key figure {
+    border: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* The figure's text description is for the screen; on paper the figure itself is there. */
+  .worksheet details,
+  .answer-key details {
+    display: none;
+  }
 }

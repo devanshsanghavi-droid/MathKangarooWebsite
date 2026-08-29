@@ -55,6 +55,7 @@ export const MOBILE_NAV: NavItem[] = [
 
 export const FOOTER_LINKS: NavItem[] = [
   { href: '/about', label: 'About' },
+  { href: '/print', label: 'Worksheets' },
   { href: '/legal/privacy', label: 'Privacy' },
   { href: '/legal/terms', label: 'Terms' },
   { href: '/legal/license', label: 'License' },

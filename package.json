@@ -16,6 +16,7 @@
     "cf:build": "opennextjs-cloudflare build && node scripts/check-build-secrets.ts",
     "check:build-secrets": "node scripts/check-build-secrets.ts",
     "cf:deploy": "opennextjs-cloudflare deploy",
+    "cf:secrets": "bash scripts/push-secrets.sh",
     "cf:preview": "opennextjs-cloudflare preview",
     "start": "next start",
     "lint": "eslint . && prettier --check .",

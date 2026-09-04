@@ -57,6 +57,9 @@ export const MOBILE_NAV: NavItem[] = [
 
 export const FOOTER_LINKS: NavItem[] = [
   { href: '/about', label: 'About' },
+  // Reachable, but not in the primary nav: an account only saves progress, and putting
+  // "Sign in" beside the practice links would imply the practice needs one. It does not.
+  { href: '/login', label: 'Sign in' },
   { href: '/print', label: 'Worksheets' },
   { href: '/legal/privacy', label: 'Privacy' },
   { href: '/legal/terms', label: 'Terms' },

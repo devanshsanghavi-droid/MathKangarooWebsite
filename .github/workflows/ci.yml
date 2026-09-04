@@ -47,6 +47,12 @@ jobs:
       - name: Validate content
         run: pnpm validate:content
 
+      # src/lib/content.bundle.json is what the deployed worker actually reads: there is no
+      # filesystem on workerd, so a stale bundle means the live site serves different content
+      # from the repository. Same arrangement as the derived skill graph above.
+      - name: Content bundle matches content/
+        run: pnpm check:bundle
+
       # docs/05-DESIGN-DIRECTION.md §2 and §10.4. v1 aliased --correct to --p3 and --incorrect
       # to --p5: the colour that told a student they were wrong was the same variable that
       # labelled a 5-point question, and nothing caught it for a whole phase. This does.
@@ -62,3 +68,9 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+      # OpenNext bakes anything Next's env loader reads into the deployed worker script, with
+      # no NEXT_PUBLIC_ prefix to warn you. AUTH_SECRET alone is enough to forge an admin
+      # session, so a baked credential is a full compromise of the operator login.
+      - name: No credential baked into the build artifact
+        run: pnpm check:build-secrets

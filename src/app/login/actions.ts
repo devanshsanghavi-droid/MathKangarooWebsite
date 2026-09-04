@@ -3,7 +3,7 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { adminConfigured, authConfig } from '@/lib/auth/config';
-import { timingSafeEqual, verifyPassword } from '@/lib/auth/password';
+import { placeholderHash, timingSafeEqual, verifyPassword } from '@/lib/auth/password';
 import { cookieOptions, encodeSession, MAX_AGE_SECONDS, SESSION_COOKIE } from '@/lib/auth/session';
 import { GENERIC_FAILURE, type LoginState } from './login-state';
 
@@ -23,10 +23,6 @@ import { GENERIC_FAILURE, type LoginState } from './login-state';
  *   signs in. A misconfigured deployment locks the operator out; it does not let the world in.
  */
 
-/** A real hash of a value nobody knows, so the miss path costs the same as the hit path. */
-const DUMMY_HASH =
-  'pbkdf2$210000$AAAAAAAAAAAAAAAAAAAAAA==$AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=';
-
 export async function signIn(_previous: LoginState, formData: FormData): Promise<LoginState> {
   const username = String(formData.get('username') ?? '');
   const password = String(formData.get('password') ?? '');
@@ -38,7 +34,7 @@ export async function signIn(_previous: LoginState, formData: FormData): Promise
   // Always derive, so the timing of a wrong username matches that of a wrong password.
   const passwordMatches = await verifyPassword(
     password,
-    (usernameMatches && config.adminPasswordHash) || DUMMY_HASH,
+    (usernameMatches && config.adminPasswordHash) || (await placeholderHash()),
   );
 
   if (!configured || !usernameMatches || !passwordMatches) {

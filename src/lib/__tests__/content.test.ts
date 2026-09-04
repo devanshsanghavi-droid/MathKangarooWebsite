@@ -363,3 +363,37 @@ describe('memoisation', () => {
     expect(contentIndex()).toBe(real);
   });
 });
+
+describe('the bundled content the deployed worker actually reads', () => {
+  /*
+   * There is no filesystem on Cloudflare Workers — process.cwd() is /bundle and content/ does
+   * not exist at any path. Prerendered pages never noticed, but /problems, /atlas and /print
+   * render per-request and silently served an EMPTY index while answering HTTP 200. These
+   * assertions are what keep the bundle honest; `pnpm check:bundle` repeats them in CI.
+   */
+  it('holds exactly what the content directory holds', () => {
+    const fromDisk = buildContentIndex(join(process.cwd(), 'content'));
+    const fromBundle = contentIndex();
+    expect(fromBundle.skills.map((s) => s.id)).toEqual(fromDisk.skills.map((s) => s.id));
+    expect(fromBundle.problems.map((p) => p.id)).toEqual(fromDisk.problems.map((p) => p.id));
+    expect(fromBundle.papers).toHaveLength(fromDisk.papers.length);
+  });
+
+  it('derives the same indexes, not just the same records', () => {
+    const fromDisk = buildContentIndex(join(process.cwd(), 'content'));
+    const fromBundle = contentIndex();
+    expect(fromBundle.stats).toEqual(fromDisk.stats);
+    expect(fromBundle.graph.roots).toEqual(fromDisk.graph.roots);
+    for (const skill of fromDisk.skills) {
+      expect(
+        fromBundle.problemsBySkill.get(skill.id)?.map((p) => p.id),
+        skill.id,
+      ).toEqual(fromDisk.problemsBySkill.get(skill.id)?.map((p) => p.id));
+    }
+  });
+
+  it('is not empty, which is the failure mode that hid for a whole deploy', () => {
+    expect(contentIndex().skills.length).toBeGreaterThan(0);
+    expect(contentIndex().problems.length).toBeGreaterThan(0);
+  });
+});

@@ -100,3 +100,25 @@ export async function verifyPassword(password: string, stored: string): Promise<
     return false;
   }
 }
+
+/**
+ * A well-formed hash of a value nobody can usefully submit, derived once and memoised.
+ *
+ * Its only job is to make a failed username lookup cost the same as a failed password check.
+ * It lives here rather than beside the login action because a `'use server'` module may only
+ * export async functions, and every function it exports becomes a callable server-action
+ * endpoint — so a testable constant cannot live there without also becoming a public route.
+ *
+ * DERIVED, never a literal. The literal version of this was left in the old `$`-separated
+ * form when the separator changed to a dot, and `verifyPassword` rejects a malformed hash
+ * before it reaches the key derivation. The miss path therefore did no work at all: a wrong
+ * username answered in microseconds while a correct one paid the full 210,000 iterations,
+ * which is a ~1000x timing oracle for the operator's username. Producing it with the same
+ * function that produces the real one means it cannot fall out of format again.
+ */
+let placeholder: Promise<string> | null = null;
+
+export function placeholderHash(): Promise<string> {
+  placeholder ??= hashPassword(`unusable-placeholder-${PBKDF2_ITERATIONS}`);
+  return placeholder;
+}

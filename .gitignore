@@ -30,6 +30,11 @@ yarn-error.log*
 # env
 .env
 .env*.local
+# Wrangler's local secrets. The operator credentials live HERE rather than in .env.local,
+# because anything Next's env loader reads gets baked into the deployed worker bundle.
+# See scripts/check-build-secrets.ts.
+.dev.vars
+.dev.vars.*
 
 # vercel
 .vercel

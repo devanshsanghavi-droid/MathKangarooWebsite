@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { hashPassword, timingSafeEqual, verifyPassword } from '../password.ts';
+import { hashPassword, placeholderHash, timingSafeEqual, verifyPassword } from '../password.ts';
 import {
   cookieOptions,
   decodeSession,
@@ -64,6 +64,42 @@ describe('the stored hash survives an environment variable', () => {
     const line = `ADMIN_PASSWORD_HASH=${stored}`;
     const readBack = line.slice(line.indexOf('=') + 1);
     expect(await verifyPassword('a-long-enough-password', readBack)).toBe(true);
+  });
+});
+
+describe('the placeholder hash that equalises login timing', () => {
+  /*
+   * The bug this guards is the one an adversarial review found and five independent lenses
+   * flagged: the placeholder was a hand-written literal in the old `$`-separated form, so
+   * verifyPassword rejected it on its second line and never ran a derivation. The miss path
+   * cost nothing while the hit path cost 210,000 iterations — a ~1000x timing oracle for the
+   * operator's username, sitting directly under a comment claiming the opposite.
+   *
+   * Asserting `verifyPassword(x, placeholder) === false` would NOT have caught it: a malformed
+   * hash and a wrong password both answer false. The shape is what has to be asserted.
+   */
+  it('is well-formed, so verification actually performs the key derivation', async () => {
+    const hash = await placeholderHash();
+    expect(hash.split('.')).toHaveLength(4);
+    expect(hash.startsWith('pbkdf2.')).toBe(true);
+    expect(hash).not.toContain('$');
+  });
+
+  it('carries the same iteration count as a real credential, so the cost matches', async () => {
+    const [, placeholderIterations] = (await placeholderHash()).split('.');
+    const [, realIterations] = (await hashPassword('a-real-password')).split('.');
+    expect(placeholderIterations).toBe(realIterations);
+  });
+
+  it('is memoised, so the login path does not re-derive it on every request', async () => {
+    expect(await placeholderHash()).toBe(await placeholderHash());
+  });
+
+  it('does not match a password anyone could submit', async () => {
+    const hash = await placeholderHash();
+    for (const guess of ['', 'password', 'admin', 'unusable-placeholder']) {
+      expect(await verifyPassword(guess, hash), guess).toBe(false);
+    }
   });
 });
 

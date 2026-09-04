@@ -11,8 +11,10 @@
   },
   "scripts": {
     "dev": "NEXT_DIST_DIR=.next-dev next dev",
+    "prebuild": "node scripts/bundle-content.ts",
     "build": "next build",
-    "cf:build": "opennextjs-cloudflare build",
+    "cf:build": "opennextjs-cloudflare build && node scripts/check-build-secrets.ts",
+    "check:build-secrets": "node scripts/check-build-secrets.ts",
     "cf:deploy": "opennextjs-cloudflare deploy",
     "cf:preview": "opennextjs-cloudflare preview",
     "start": "next start",
@@ -22,6 +24,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "validate:content": "node scripts/validate-content.ts",
+    "bundle:content": "node scripts/bundle-content.ts",
+    "check:bundle": "node scripts/bundle-content.ts --check",
     "check:palette": "node scripts/check-palette.ts",
     "derive:unlocks": "node scripts/derive-unlocks.ts",
     "a11y": "vitest run --config vitest.a11y.config.ts"

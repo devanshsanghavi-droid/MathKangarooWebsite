@@ -111,5 +111,12 @@ export function readMigrations(dir: string): MigrationShape {
 /** Tables holding one identifiable person's work. Nobody but the owner reads a row. */
 export const STUDENT_OWNED_TABLES = ['attempts', 'mastery', 'runs', 'journal_entries'] as const;
 
-/** Tables with RLS enabled and deliberately no policy, which denies every client role. */
-export const SERVICE_ROLE_ONLY_TABLES = ['parent_consents'] as const;
+/**
+ * Tables with RLS enabled and deliberately no policy, which denies every client role.
+ *
+ * `telemetry_events` belongs here rather than with the student-owned tables because it has no
+ * owner: rows carry a tab-scoped session id and no user id at all. Nothing reads it through
+ * anon or authenticated — aggregates are computed by a job running as the service role, and
+ * only figures with n >= 10 are ever published (docs/01-DATA-MODEL.md §4).
+ */
+export const SERVICE_ROLE_ONLY_TABLES = ['parent_consents', 'telemetry_events'] as const;

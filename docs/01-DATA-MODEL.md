@@ -202,6 +202,28 @@ create table parent_consents (
 );
 ```
 
+```sql
+create table telemetry_events (
+  id bigserial primary key,
+  name text not null,
+  -- 16 hex chars, scoped to a browser TAB (sessionStorage). Not a user id; there is no user
+  -- id on this table, and two visits by the same child share nothing.
+  session_id char(16) not null,
+  seq integer not null check (seq >= 0),
+  received_at timestamptz not null default now(),
+  -- Enumerated values only: skill ids, problem ids, choice keys, route names, point tiers.
+  -- src/lib/telemetry/events.ts is `.strict()`, so a payload carrying anything else is
+  -- dropped rather than trimmed. There is no free-text field here and there never may be.
+  props jsonb not null default '{}'::jsonb,
+  schema_version smallint not null
+);
+```
+
+Pruned to 90 days by `prune_telemetry()`. Never stores an IP address (§4). Because sessions
+are unlinkable by design, a conventional retention cohort is impossible — `props.returning`
+carries a coarse bucket the *client* computes about itself instead, which gives the split
+without the identifier.
+
 ### 2.1 Row Level Security — write these with the tables, not after
 
 - `profiles`: a user reads and updates only their own row. Mentors read `display_name` and
@@ -211,6 +233,9 @@ create table parent_consents (
   never raw rows for another person.
 - `cohorts`, `assignments`, `teaching_sessions`: mentor owns; members read.
 - `parent_consents`: service role only.
+- `telemetry_events`: service role only. RLS on, deliberately no policy — nothing reads it
+  through `anon` or `authenticated`. Aggregates are computed by a job and published only at
+  n >= 10 (§4).
 - Default deny on every table. Write a `supabase/tests/rls.test.sql` proving each policy.
 
 ---

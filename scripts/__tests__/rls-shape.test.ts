@@ -24,7 +24,7 @@ const MIGRATIONS = join(process.cwd(), 'supabase', 'migrations');
 const shape = readMigrations(MIGRATIONS);
 
 describe('every table denies by default', () => {
-  it('creates the ten tables the data model specifies', () => {
+  it('creates the eleven tables the data model specifies', () => {
     expect([...shape.tables].sort()).toEqual([
       'assignments',
       'attempts',
@@ -36,6 +36,7 @@ describe('every table denies by default', () => {
       'profiles',
       'runs',
       'teaching_sessions',
+      'telemetry_events',
     ]);
   });
 

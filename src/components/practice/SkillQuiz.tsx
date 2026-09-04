@@ -8,6 +8,7 @@ import { FeedbackPanel } from '@/components/FeedbackPanel';
 import { FigureRenderer } from '@/components/FigureRenderer';
 import { DifficultyPill } from '@/components/DifficultyPill';
 import { saveAttempt } from '@/lib/local-progress';
+import { track } from '@/lib/telemetry/client';
 
 /**
  * The skill quiz — the last row of a unit (docs/05 §7.2).
@@ -47,8 +48,28 @@ export function SkillQuiz({
         hintsUsed: 0,
         at,
       });
+      track('choice_select', {
+        surface: 'skill-quiz',
+        context: 'quiz',
+        problemId: problem.id,
+        skillId,
+        points: problem.points,
+        band: problem.band,
+        choiceKey: key,
+        correct: choice?.correct ?? false,
+        hintLevel: 0,
+      });
     }
-  }, [answers, problems]);
+    const score = problems.filter((problem) =>
+      problem.choices.some((c) => c.key === answers[problem.id] && c.correct),
+    ).length;
+    track('quiz_complete', {
+      surface: 'skill-quiz',
+      skillId,
+      score,
+      outOf: problems.length,
+    });
+  }, [answers, problems, skillId]);
 
   if (problems.length === 0) {
     return (

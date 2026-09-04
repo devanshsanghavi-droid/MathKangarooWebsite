@@ -8,6 +8,7 @@ import { MobileTabBar } from '@/components/MobileTabBar';
 import { SkipLink } from '@/components/SkipLink';
 import { THEME_INIT_SCRIPT } from '@/components/ThemeToggle';
 import { ServiceWorkerRegistration } from '@/components/ServiceWorkerRegistration';
+import { TelemetryProvider } from '@/components/telemetry/TelemetryProvider';
 import { SkillRail } from '@/components/shell/SkillRail';
 import { railStrands } from '@/lib/rail';
 
@@ -105,6 +106,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <MobileTabBar />
         <ServiceWorkerRegistration />
+        <TelemetryProvider />
       </body>
     </html>
   );

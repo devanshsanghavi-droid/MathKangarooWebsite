@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import type { ChoiceKey, Points, Problem } from '@/lib/schemas';
 import { ChoiceList } from '@/components/ChoiceList';
@@ -10,6 +10,7 @@ import { HintLadder } from '@/components/HintLadder';
 import { DifficultyPill, TIER_MEANING } from '@/components/DifficultyPill';
 import { advance, LADDER_TARGET, ladderState, streakDots } from '@/lib/ladder';
 import { ladderAttempts, saveAttempt } from '@/lib/local-progress';
+import { track } from '@/lib/telemetry/client';
 import { useProgress } from '@/components/mastery/useProgress';
 
 /**
@@ -63,6 +64,31 @@ export function LadderRunner({
   const current = index ?? state.startIndex;
   const problem = problems[current];
 
+  /*
+   * `ladder_start` fires once per mount and `ladder_complete` once per rung finished. Both are
+   * guarded by refs rather than by the render: a re-render caused by the progress store
+   * updating would otherwise re-announce a completion the student reached a moment ago, and
+   * the funnel would count one student finishing a ladder several times.
+   */
+  const announcedStart = useRef(false);
+  const announcedComplete = useRef(false);
+  useEffect(() => {
+    if (announcedStart.current) return;
+    announcedStart.current = true;
+    track('ladder_start', { surface: 'skill-ladder', skillId, points });
+  }, [points, skillId]);
+  useEffect(() => {
+    if (!state.complete || announcedComplete.current) return;
+    announcedComplete.current = true;
+    track('ladder_complete', {
+      surface: 'skill-ladder',
+      skillId,
+      points,
+      score: state.solved,
+      outOf: state.total,
+    });
+  }, [points, skillId, state.complete, state.solved, state.total]);
+
   const onSelect = useCallback(
     (key: ChoiceKey) => {
       setSelected(key);
@@ -77,8 +103,24 @@ export function LadderRunner({
         hintsUsed: hintLevel,
         at: new Date().toISOString(),
       });
+      /*
+       * WHICH option, not just right or wrong. This single field is what turns the bank into
+       * a live map of how students actually think: every wrong choice already stores the
+       * misconception that produces it, so counting the choices counts the misconceptions.
+       */
+      track('choice_select', {
+        surface: 'skill-ladder',
+        context: 'ladder',
+        problemId: problem.id,
+        skillId,
+        points: problem.points,
+        band: problem.band,
+        choiceKey: key,
+        correct: choice?.correct ?? false,
+        hintLevel,
+      });
     },
-    [current, hintLevel, problem, scored],
+    [current, hintLevel, problem, scored, skillId],
   );
 
   const next = useCallback(() => {
@@ -212,7 +254,16 @@ export function LadderRunner({
         <div className="content-column flex items-center gap-2">
           <button
             type="button"
-            onClick={() => setHintLevel((current) => Math.min(3, current + 1))}
+            onClick={() => {
+              const next = Math.min(3, hintLevel + 1);
+              setHintLevel(next);
+              track('hint_reveal', {
+                surface: 'skill-ladder',
+                problemId: problem.id,
+                skillId,
+                hintLevel: next,
+              });
+            }}
             disabled={hintLevel >= 3}
             className="tap-target ui cursor-pointer rounded-sm border border-hint-border bg-hint-100 px-3 text-sm font-medium text-hint-700 disabled:cursor-not-allowed disabled:opacity-60"
           >

@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mathkangaroowebsite",
+  "main": ".open-next/worker.js",
+
+  // OpenNext needs Node built-ins (buffer, crypto, stream) inside workerd. Both the flag and
+  // a compatibility_date at or after 2024-09-23 are required for it to boot at all.
+  "compatibility_date": "2026-09-03",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // The 874 prerendered pages and every hashed asset are served straight from the edge; only
+  // the four dynamic routes ever reach the worker.
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS",
+  },
+
+  "observability": {
+    "enabled": true,
+  },
+}

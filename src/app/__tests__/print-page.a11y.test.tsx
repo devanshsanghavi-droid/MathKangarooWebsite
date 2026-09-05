@@ -3,6 +3,8 @@ import { render, screen, within } from '@testing-library/react';
 import { auditBothThemes } from '@/lib/a11y';
 import PrintPage from '../print/page';
 import type { RawSearchParams } from '@/lib/worksheet';
+import { BANDS } from '@/lib/schemas';
+import { getAllProblems } from '@/lib/content';
 
 async function renderPrint(searchParams: RawSearchParams = {}) {
   return render(await PrintPage({ searchParams: Promise.resolve(searchParams) }));
@@ -53,7 +55,12 @@ describe('the worksheet generator', () => {
   });
 
   it('shows a written empty state when nothing matches', async () => {
-    const { container } = await renderPrint({ band: '11-12' });
+    // Derived rather than hard-coded; see the note in problems-page.test.tsx.
+    const emptyBand = BANDS.find(
+      (band) => !getAllProblems().some((problem) => problem.band === band),
+    );
+    if (!emptyBand) throw new Error('every band now has problems - pick a new empty case');
+    const { container } = await renderPrint({ band: emptyBand });
     expect(container.textContent).toMatch(/No problem matches these filters/);
     expect(container.querySelector('.worksheet')).toBeNull();
   });

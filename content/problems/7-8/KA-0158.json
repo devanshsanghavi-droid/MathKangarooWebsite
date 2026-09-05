@@ -1,0 +1,68 @@
+{
+  "id": "KA-0158",
+  "band": "7-8",
+  "points": 5,
+  "statement": "What is the last digit of 3 multiplied by itself 2026 times, that is, of 3 to the power 2026?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I used the first entry of the cycle because 2026 is even, without working out where in the cycle it lands."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I counted the cycle starting from zero, so a remainder of 2 put me one place too far along."
+    },
+    {
+      "key": "D",
+      "text": "1",
+      "correct": false,
+      "misconception": "I assumed a power that large must end in 1."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I multiplied 3 by 2 and used the last digit of that."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-07",
+    "secondary": [
+      "NUM-06",
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "List the last digits of the first few powers.",
+    "3, 9, 27, 81, 243 end in 3, 9, 7, 1, 3 - the last digits repeat every four powers.",
+    "2026 divided by 4 leaves remainder 2, so 3 to the power 2026 ends like 3 squared, which is 9."
+  ],
+  "solutions": {
+    "reliable": "Last digits of powers always repeat. Listing them: 3^1 ends in 3, 3^2 in 9, 3^3 in 7, 3^4 in 1, and then 3^5 ends in 3 again. The cycle is 3, 9, 7, 1 and it has length 4. To find where 2026 lands, divide by 4: 2026 = 4 x 506 + 2, so the remainder is 2 and the answer matches the second entry of the cycle, which is 9. Watch the off-by-one: remainder 1 means the first entry, remainder 0 means the last. The transferable idea: every last-digit question is a cycle question, and the work is locating the exponent in the cycle.",
+    "elegant": "3^4 ends in 1, so 3^2024 ends in 1 and two more threes take it to 9."
+  },
+  "whyOnTest": "Every last-digit question is really a cycle question, and the marks are lost on where the remainder lands, not on finding the cycle.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

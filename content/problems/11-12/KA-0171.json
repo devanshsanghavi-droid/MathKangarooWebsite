@@ -1,0 +1,68 @@
+{
+  "id": "KA-0171",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A sequence is defined by a(1) = 2 and a(n+1) = 2 a(n) - 1 for every n. What is a(6)?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "33",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "31",
+      "correct": false,
+      "misconception": "I used the rule 2a(n) - 1 but started the sequence at 1 instead of 2."
+    },
+    {
+      "key": "C",
+      "text": "64",
+      "correct": false,
+      "misconception": "I doubled six times and ignored the minus one entirely."
+    },
+    {
+      "key": "D",
+      "text": "17",
+      "correct": false,
+      "misconception": "I stopped at a(5), one term early."
+    },
+    {
+      "key": "E",
+      "text": "63",
+      "correct": false,
+      "misconception": "I computed 2^6 - 1, applying the minus one only once at the very end."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "CFT-03",
+      "PAT-07"
+    ]
+  },
+  "hints": [
+    "Just generate the terms one at a time; six is not many.",
+    "a1 = 2, a2 = 2(2) - 1 = 3, a3 = 2(3) - 1 = 5. Keep going.",
+    "a4 = 9, a5 = 17, a6 = 33."
+  ],
+  "solutions": {
+    "reliable": "Generate the terms directly: a1 = 2; a2 = 2 x 2 - 1 = 3; a3 = 2 x 3 - 1 = 5; a4 = 2 x 5 - 1 = 9; a5 = 2 x 9 - 1 = 17; a6 = 2 x 17 - 1 = 33. With only six terms wanted there is no reason to look for a closed form, and doing so is where mistakes creep in. If you do want one, notice each term is one more than a power of two: a(n) = 2^(n-1) + 1, and 2^5 + 1 = 33. The transferable idea: when only a few terms are wanted, generating them beats deriving a formula.",
+    "elegant": "Each term is one more than a power of 2, so a(6) = 2^5 + 1 = 33."
+  },
+  "whyOnTest": "Recursive rules reward just computing, and the marks are lost by reaching for a formula or stopping one term short.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

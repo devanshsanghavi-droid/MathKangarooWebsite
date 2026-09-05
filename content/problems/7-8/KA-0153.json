@@ -1,0 +1,68 @@
+{
+  "id": "KA-0153",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A jacket costs 80 pounds. In January the price rises by 20 percent. In February the new price falls by 20 percent. What is the price at the end of February?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "80 pounds",
+      "correct": false,
+      "misconception": "I assumed a 20 percent rise and a 20 percent fall must cancel because the percentages match."
+    },
+    {
+      "key": "B",
+      "text": "76.80 pounds",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "64 pounds",
+      "correct": false,
+      "misconception": "I applied only the fall and forgot the rise."
+    },
+    {
+      "key": "D",
+      "text": "83.20 pounds",
+      "correct": false,
+      "misconception": "I got the size of the change right but the direction wrong."
+    },
+    {
+      "key": "E",
+      "text": "96 pounds",
+      "correct": false,
+      "misconception": "I applied only the rise and forgot the fall."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-10",
+    "secondary": [
+      "CFT-11",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "The two 20 percents are not taken from the same amount.",
+    "The rise is 20 percent of 80. The fall is 20 percent of the NEW price, which is bigger.",
+    "80 x 1.2 = 96, then 96 x 0.8 = 76.80. The jacket ends up cheaper than it started."
+  ],
+  "solutions": {
+    "reliable": "Work the two changes in order and never reuse the old base. The rise: 80 x 1.2 = 96 pounds. The fall is 20 percent of 96, not of 80, so the new price is 96 x 0.8 = 76.80 pounds. The jacket ends 3.20 pounds cheaper than it began. The transferable idea: a percentage is always a percentage OF something, and after the first change that something has moved.",
+    "elegant": "Multiplying by 1.2 and then by 0.8 is multiplying by 0.96, so any starting price ends 4 percent lower."
+  },
+  "whyOnTest": "The belief that equal percentage rises and falls cancel is one of the most common errors on the paper.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

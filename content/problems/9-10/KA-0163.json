@@ -1,0 +1,68 @@
+{
+  "id": "KA-0163",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A club has 8 members. In how many ways can a group of 3 be chosen to attend a conference, if the three places are all the same?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "56",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "336",
+      "correct": false,
+      "misconception": "I counted ordered selections, so I counted the same three people once for every order they could stand in."
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": false,
+      "misconception": "I multiplied the 8 members by the 3 places, which counts something quite different from a selection."
+    },
+    {
+      "key": "D",
+      "text": "112",
+      "correct": false,
+      "misconception": "I divided the 336 ordered selections by 3 instead of by 3 factorial."
+    },
+    {
+      "key": "E",
+      "text": "28",
+      "correct": false,
+      "misconception": "I chose 2 people rather than 3."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-16",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "The three places are identical.",
+    "There are 8 x 7 x 6 = 336 ways to pick three people in order. Each group of three has been counted several times.",
+    "Each group of 3 appears 3! = 6 times in that list, so the answer is 336 / 6 = 56."
+  ],
+  "solutions": {
+    "reliable": "Count the ordered picks first, then correct for the overcounting. Choosing three people in order gives 8 x 7 x 6 = 336 possibilities. But the places are identical, so a group like {Ana, Ben, Cara} has been counted once for each of the 3! = 6 orders those three could be named in. Dividing gives 336 / 6 = 56. The transferable idea: when order does not matter, count as if it did and then divide by the number of orderings.",
+    "elegant": "This is 8 choose 3, which is (8 x 7 x 6) / (3 x 2 x 1) = 56."
+  },
+  "whyOnTest": "Overcount-then-correct is the workhorse of every selection question, and dividing by the wrong number is the usual slip.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

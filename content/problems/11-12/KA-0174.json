@@ -1,0 +1,68 @@
+{
+  "id": "KA-0174",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A driver travels from one town to another at an average of 60 km/h and returns along the same road at an average of 40 km/h. What is the average speed for the whole journey?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "48 km/h",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "50 km/h",
+      "correct": false,
+      "misconception": "I averaged the two speeds, which would only be right if equal TIME were spent at each, not equal distance."
+    },
+    {
+      "key": "C",
+      "text": "52 km/h",
+      "correct": false,
+      "misconception": "I weighted the two speeds by their own values instead of by the time each leg took."
+    },
+    {
+      "key": "D",
+      "text": "24 km/h",
+      "correct": false,
+      "misconception": "I halved the correct answer, dividing by the total distance twice."
+    },
+    {
+      "key": "E",
+      "text": "100 km/h",
+      "correct": false,
+      "misconception": "I added the two speeds together, which gives a number faster than either leg and so cannot be an average of them."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-03",
+    "secondary": [
+      "MOD-08",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Average speed is never the average of two speeds.",
+    "Pick a convenient distance, say 120 km each way, and work out the two times.",
+    "120/60 = 2 hours out and 120/40 = 3 hours back, so 240 km in 5 hours, which is 48 km/h."
+  ],
+  "solutions": {
+    "reliable": "Average speed means total distance divided by total time, and here the two legs take different times, so the two speeds cannot simply be averaged. Choose a convenient one-way distance - 120 km works because both speeds divide it - giving 120/60 = 2 hours out and 120/40 = 3 hours back. That is 240 km in 5 hours, so the average is 240/5 = 48 km/h. Notice it is below the midpoint of 50, because more of the journey's TIME is spent at the slower speed. Any distance gives the same answer. The transferable idea: average speed is total distance over total time, and equal distances weight the slower leg more heavily.",
+    "elegant": "Equal distances at two speeds give their harmonic mean: 2 x 60 x 40 / (60 + 40) = 4800/100 = 48."
+  },
+  "whyOnTest": "The plain average is the trap, and knowing the answer must fall below it eliminates two choices instantly.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

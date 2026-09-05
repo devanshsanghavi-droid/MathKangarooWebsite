@@ -113,10 +113,20 @@ describe('ThemeToggle', () => {
     expect(screen.getAllByRole('radio')).toHaveLength(3);
   });
 
-  it('defaults to system, which means no data-theme attribute at all', () => {
+  it('defaults to LIGHT, not to the machine\u2019s dark mode', () => {
+    // The problem statements, the figures and every printed worksheet were designed against
+    // paper white, so a reader who has never touched the toggle gets light even on a
+    // dark-mode machine. "System" remains one click away.
     render(<ThemeToggle />);
-    expect(screen.getByRole('radio', { name: 'System' })).toHaveAttribute('aria-checked', 'true');
+    expect(screen.getByRole('radio', { name: 'Light' })).toHaveAttribute('aria-checked', 'true');
+    expect(document.documentElement.getAttribute('data-theme')).toBe('light');
+  });
+
+  it('still honours an explicit system choice by removing the attribute', async () => {
+    render(<ThemeToggle />);
+    await userEvent.click(screen.getByRole('radio', { name: 'System' }));
     expect(document.documentElement.hasAttribute('data-theme')).toBe(false);
+    expect(window.localStorage.getItem(THEME_STORAGE_KEY)).toBe('system');
   });
 
   it('applies and persists an explicit dark choice', async () => {
@@ -177,9 +187,17 @@ describe('the no-flash init script', () => {
     expect(THEME_INIT_SCRIPT).toContain(THEME_STORAGE_KEY);
   });
 
-  it('only ever sets an explicit theme, so "system" falls through to the media query', () => {
-    expect(THEME_INIT_SCRIPT).toContain("t==='light'||t==='dark'");
-    expect(THEME_INIT_SCRIPT).not.toContain("'system'");
+  it('stamps light when nothing is stored, rather than deferring to the media query', () => {
+    // Leaving the attribute off would hand the decision to prefers-color-scheme, which is
+    // exactly what opened the site in dark on a dark-mode machine despite light being the
+    // default the design is built around.
+    expect(THEME_INIT_SCRIPT).toContain("'light'");
+    expect(THEME_INIT_SCRIPT).toContain("t==='dark'?'dark':'light'");
+  });
+
+  it('lets an explicit "system" choice fall through to the media query', () => {
+    expect(THEME_INIT_SCRIPT).toContain("t==='system'");
+    expect(THEME_INIT_SCRIPT).toContain('removeAttribute');
   });
 
   it('is wrapped so a browser with storage disabled still paints', () => {

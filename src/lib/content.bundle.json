@@ -2774,6 +2774,618 @@
   ],
   "problems": [
     {
+      "id": "KA-0169",
+      "band": "11-12",
+      "points": 3,
+      "statement": "What is the remainder when 7 to the power 100 is divided by 5?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "1",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "2",
+          "correct": false,
+          "misconception": "I reduced 7 to 2 correctly but then used a remainder of 1 when dividing 100 by 4."
+        },
+        {
+          "key": "C",
+          "text": "3",
+          "correct": false,
+          "misconception": "I read the cycle backwards and landed on the entry before the right one."
+        },
+        {
+          "key": "D",
+          "text": "4",
+          "correct": false,
+          "misconception": "I used 100 divided by 4 giving 25 and read off the 25th entry as if the cycle had length 25."
+        },
+        {
+          "key": "E",
+          "text": "0",
+          "correct": false,
+          "misconception": "I assumed a power that large must be divisible by 5."
+        }
+      ],
+      "skills": {
+        "primary": "NUM-06",
+        "secondary": [
+          "NUM-07",
+          "PAT-03"
+        ]
+      },
+      "hints": [
+        "Replace 7 by its remainder on division by 5 before doing anything else.",
+        "7 leaves 2, so 7^100 leaves the same remainder as 2^100. Now find the cycle of 2 modulo 5.",
+        "2, 4, 3, 1 repeats with length 4, and 100 is a multiple of 4, so the remainder is the last entry: 1."
+      ],
+      "solutions": {
+        "reliable": "First reduce the base: 7 leaves remainder 2 on division by 5, so 7^100 and 2^100 leave the same remainder. Now find the cycle of powers of 2 modulo 5: 2, 4, 8 -> 3, 16 -> 1, and then it repeats. The cycle is 2, 4, 3, 1 with length 4. Since 100 = 4 x 25 is an exact multiple of 4, the exponent lands on the LAST entry of the cycle, giving remainder 1. The transferable idea: reduce the base first, then find the cycle length, then locate the exponent within it.",
+        "elegant": "2^4 = 16 leaves 1, so 2^100 = (2^4)^25 leaves 1^25 = 1."
+      },
+      "whyOnTest": "Reducing the base before finding the cycle is what keeps these arithmetic-free, and an exact multiple landing on the last entry is the usual off-by-one.",
+      "estSeconds": 85,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0170",
+      "band": "11-12",
+      "points": 3,
+      "statement": "What is the size of one interior angle of a regular twelve-sided polygon?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "150 degrees",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "30 degrees",
+          "correct": false,
+          "misconception": "I found the exterior angle and answered with that instead of the interior one."
+        },
+        {
+          "key": "C",
+          "text": "165 degrees",
+          "correct": false,
+          "misconception": "I used 360 divided by 12 subtracted from 195, or otherwise slipped a step in the arithmetic."
+        },
+        {
+          "key": "D",
+          "text": "1800 degrees",
+          "correct": false,
+          "misconception": "I gave the total of all twelve interior angles rather than one of them."
+        },
+        {
+          "key": "E",
+          "text": "144 degrees",
+          "correct": false,
+          "misconception": "I used a ten-sided polygon by mistake."
+        }
+      ],
+      "skills": {
+        "primary": "GEO-05",
+        "secondary": [
+          "CFT-10",
+          "CFT-11"
+        ]
+      },
+      "hints": [
+        "The exterior angles of any polygon always add to 360 degrees.",
+        "Each exterior angle of a regular 12-gon is 360 / 12 = 30 degrees.",
+        "Interior and exterior angles sit on a straight line, so the interior angle is 180 - 30 = 150 degrees."
+      ],
+      "solutions": {
+        "reliable": "The exterior angles of any convex polygon sum to 360 degrees, so in a regular twelve-sided figure each exterior angle is 360 / 12 = 30 degrees. An interior angle and its exterior angle lie on a straight line, so the interior angle is 180 - 30 = 150 degrees. Cross-check with the other formula: the interior angles total (12 - 2) x 180 = 1800 degrees, and 1800 / 12 = 150. The transferable idea: the exterior route is shorter and almost always safer.",
+        "elegant": "Exterior angles share 360 degrees twelve ways, giving 30 each, so the interior angle is 150."
+      },
+      "whyOnTest": "Answering with the exterior angle, or with the total rather than one angle, are the two errors this question is built to catch.",
+      "estSeconds": 75,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0171",
+      "band": "11-12",
+      "points": 3,
+      "statement": "A sequence is defined by a(1) = 2 and a(n+1) = 2 a(n) - 1 for every n. What is a(6)?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "33",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "31",
+          "correct": false,
+          "misconception": "I used the rule 2a(n) - 1 but started the sequence at 1 instead of 2."
+        },
+        {
+          "key": "C",
+          "text": "64",
+          "correct": false,
+          "misconception": "I doubled six times and ignored the minus one entirely."
+        },
+        {
+          "key": "D",
+          "text": "17",
+          "correct": false,
+          "misconception": "I stopped at a(5), one term early."
+        },
+        {
+          "key": "E",
+          "text": "63",
+          "correct": false,
+          "misconception": "I computed 2^6 - 1, applying the minus one only once at the very end."
+        }
+      ],
+      "skills": {
+        "primary": "PAT-05",
+        "secondary": [
+          "CFT-03",
+          "PAT-07"
+        ]
+      },
+      "hints": [
+        "Just generate the terms one at a time; six is not many.",
+        "a1 = 2, a2 = 2(2) - 1 = 3, a3 = 2(3) - 1 = 5. Keep going.",
+        "a4 = 9, a5 = 17, a6 = 33."
+      ],
+      "solutions": {
+        "reliable": "Generate the terms directly: a1 = 2; a2 = 2 x 2 - 1 = 3; a3 = 2 x 3 - 1 = 5; a4 = 2 x 5 - 1 = 9; a5 = 2 x 9 - 1 = 17; a6 = 2 x 17 - 1 = 33. With only six terms wanted there is no reason to look for a closed form, and doing so is where mistakes creep in. If you do want one, notice each term is one more than a power of two: a(n) = 2^(n-1) + 1, and 2^5 + 1 = 33. The transferable idea: when only a few terms are wanted, generating them beats deriving a formula.",
+        "elegant": "Each term is one more than a power of 2, so a(6) = 2^5 + 1 = 33."
+      },
+      "whyOnTest": "Recursive rules reward just computing, and the marks are lost by reaching for a formula or stopping one term short.",
+      "estSeconds": 80,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0172",
+      "band": "11-12",
+      "points": 4,
+      "statement": "A committee of 4 must be formed from 5 boys and 4 girls, and it must contain exactly 2 boys and 2 girls. How many different committees are possible?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "60",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "126",
+          "correct": false,
+          "misconception": "I chose any 4 from all 9 people and ignored the two-and-two requirement."
+        },
+        {
+          "key": "C",
+          "text": "20",
+          "correct": false,
+          "misconception": "I added the two counts instead of multiplying them."
+        },
+        {
+          "key": "D",
+          "text": "240",
+          "correct": false,
+          "misconception": "I treated the choices as ordered, counting the same committee several times."
+        },
+        {
+          "key": "E",
+          "text": "40",
+          "correct": false,
+          "misconception": "I used 5 x 4 x 2 or a similar shortcut rather than counting each selection properly."
+        }
+      ],
+      "skills": {
+        "primary": "CNT-06",
+        "secondary": [
+          "CNT-04",
+          "CNT-16"
+        ]
+      },
+      "hints": [
+        "Choose the boys and the girls as two separate jobs.",
+        "The number of ways to pick 2 boys from 5 is 5 choose 2, and 2 girls from 4 is 4 choose 2.",
+        "5 choose 2 = 10 and 4 choose 2 = 6, and the two choices are independent, so 10 x 6 = 60."
+      ],
+      "solutions": {
+        "reliable": "Split the task into two independent choices. Picking 2 boys from 5 can be done in C(5,2) = (5 x 4)/2 = 10 ways. Picking 2 girls from 4 can be done in C(4,2) = (4 x 3)/2 = 6 ways. Every choice of boys can pair with every choice of girls, so the multiplication principle gives 10 x 6 = 60 committees. The transferable idea: independent choices multiply, and only mutually exclusive cases add.",
+        "elegant": "C(5,2) x C(4,2) = 10 x 6 = 60."
+      },
+      "whyOnTest": "Adding when you should multiply, and ignoring a composition constraint, are the two errors that account for most lost marks here.",
+      "estSeconds": 120,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0173",
+      "band": "11-12",
+      "points": 4,
+      "statement": "Each of the four edges of a square is painted either black or white. Two paintings count as the same if one can be rotated onto the other. How many genuinely different paintings are there?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "6",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "16",
+          "correct": false,
+          "misconception": "I counted every colouring of the four edges and forgot that rotations make some of them identical."
+        },
+        {
+          "key": "C",
+          "text": "4",
+          "correct": false,
+          "misconception": "I divided 16 by 4, but that only works when no painting is left unchanged by a rotation, and some are."
+        },
+        {
+          "key": "D",
+          "text": "8",
+          "correct": false,
+          "misconception": "I halved 16, treating only the 180 degree turn as a symmetry."
+        },
+        {
+          "key": "E",
+          "text": "5",
+          "correct": false,
+          "misconception": "I listed by how many edges are black but forgot that two black edges can be adjacent or opposite."
+        }
+      ],
+      "skills": {
+        "primary": "CNT-15",
+        "secondary": [
+          "CNT-04",
+          "LOG-11"
+        ]
+      },
+      "hints": [
+        "Some paintings survive a turn unchanged.",
+        "Group the paintings by how many edges are black: 0, 1, 2, 3 or 4.",
+        "Zero black: 1 way. One black: 1. Two black: 2 (adjacent or opposite). Three black: 1. Four black: 1. Total 1+1+2+1+1 = 6."
+      ],
+      "solutions": {
+        "reliable": "Divide-by-four fails here, because some paintings are unchanged by a rotation, so classify by hand instead. Group by the number of black edges. All white: 1 painting. Exactly one black edge: any single edge can be rotated to any other, so 1. Exactly two black: the two black edges are either adjacent or opposite, and rotation cannot turn one into the other, so 2. Exactly three black: 1, by the same argument as one. All black: 1. The total is 1 + 1 + 2 + 1 + 1 = 6. The transferable idea: when symmetry is involved, case-splitting on an invariant feature - here the number of black edges - is safer than dividing.",
+        "elegant": "The count of black edges survives any rotation, so classify by it and only the two-black case splits, into adjacent and opposite."
+      },
+      "whyOnTest": "Dividing by the number of symmetries is the standard trap, and it is wrong exactly when some object is fixed by a symmetry.",
+      "estSeconds": 140,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0174",
+      "band": "11-12",
+      "points": 4,
+      "statement": "A driver travels from one town to another at an average of 60 km/h and returns along the same road at an average of 40 km/h. What is the average speed for the whole journey?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "48 km/h",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "50 km/h",
+          "correct": false,
+          "misconception": "I averaged the two speeds, which would only be right if equal TIME were spent at each, not equal distance."
+        },
+        {
+          "key": "C",
+          "text": "52 km/h",
+          "correct": false,
+          "misconception": "I weighted the two speeds by their own values instead of by the time each leg took."
+        },
+        {
+          "key": "D",
+          "text": "24 km/h",
+          "correct": false,
+          "misconception": "I halved the correct answer, dividing by the total distance twice."
+        },
+        {
+          "key": "E",
+          "text": "100 km/h",
+          "correct": false,
+          "misconception": "I added the two speeds together, which gives a number faster than either leg and so cannot be an average of them."
+        }
+      ],
+      "skills": {
+        "primary": "MOD-03",
+        "secondary": [
+          "MOD-08",
+          "CFT-11"
+        ]
+      },
+      "hints": [
+        "Average speed is never the average of two speeds.",
+        "Pick a convenient distance, say 120 km each way, and work out the two times.",
+        "120/60 = 2 hours out and 120/40 = 3 hours back, so 240 km in 5 hours, which is 48 km/h."
+      ],
+      "solutions": {
+        "reliable": "Average speed means total distance divided by total time, and here the two legs take different times, so the two speeds cannot simply be averaged. Choose a convenient one-way distance - 120 km works because both speeds divide it - giving 120/60 = 2 hours out and 120/40 = 3 hours back. That is 240 km in 5 hours, so the average is 240/5 = 48 km/h. Notice it is below the midpoint of 50, because more of the journey's TIME is spent at the slower speed. Any distance gives the same answer. The transferable idea: average speed is total distance over total time, and equal distances weight the slower leg more heavily.",
+        "elegant": "Equal distances at two speeds give their harmonic mean: 2 x 60 x 40 / (60 + 40) = 4800/100 = 48."
+      },
+      "whyOnTest": "The plain average is the trap, and knowing the answer must fall below it eliminates two choices instantly.",
+      "estSeconds": 130,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0175",
+      "band": "11-12",
+      "points": 5,
+      "statement": "What is the smallest number n such that ANY collection of n whole numbers must contain two of them whose difference is divisible by 7?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "8",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "7",
+          "correct": false,
+          "misconception": "I used the number of possible remainders without adding one for the pair that must collide."
+        },
+        {
+          "key": "C",
+          "text": "14",
+          "correct": false,
+          "misconception": "I doubled 7, thinking I needed two full sets of remainders."
+        },
+        {
+          "key": "D",
+          "text": "15",
+          "correct": false,
+          "misconception": "I doubled 7 and added one, applying the pigeonhole idea to the wrong number of boxes."
+        },
+        {
+          "key": "E",
+          "text": "4",
+          "correct": false,
+          "misconception": "I guessed from small cases without identifying what the boxes actually are."
+        }
+      ],
+      "skills": {
+        "primary": "CNT-17",
+        "secondary": [
+          "NUM-06",
+          "LOG-09"
+        ]
+      },
+      "hints": [
+        "Two numbers differ by a multiple of 7 when their remainders agree.",
+        "There are only 7 possible remainders: 0, 1, 2, 3, 4, 5, 6. Those are the pigeonholes.",
+        "Seven numbers could have all seven different remainders, so seven is not enough. Eight numbers must repeat a remainder, so n = 8."
+      ],
+      "solutions": {
+        "reliable": "The difference of two numbers is divisible by 7 precisely when the two leave the same remainder on division by 7. There are exactly 7 possible remainders, so treat those as boxes. With 7 numbers you could get one in each box - for example 0, 1, 2, 3, 4, 5, 6, no two of which differ by a multiple of 7 - so 7 is not enough. With 8 numbers there are more numbers than boxes, so some box holds two, and those two differ by a multiple of 7. The answer is 8. The transferable idea: identify the boxes precisely, then the answer is boxes plus one.",
+        "elegant": "Seven remainders are seven pigeonholes, so the eighth number forces a repeat."
+      },
+      "whyOnTest": "Naming the pigeonholes correctly is the whole problem; once they are remainders modulo 7 the answer is immediate.",
+      "estSeconds": 155,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0176",
+      "band": "11-12",
+      "points": 5,
+      "statement": "An 8 by 8 chessboard has two opposite corner squares removed, leaving 62 squares. Each domino covers exactly two squares that share an edge. Can the 62 squares be covered exactly by 31 dominoes?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "No, because the two removed corners share a colour, so 32 squares of one colour remain and only 30 of the other",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "Yes, because 62 is even and 31 dominoes cover exactly 62 squares",
+          "correct": false,
+          "misconception": "I checked that the counts match but a matching count does not make a covering possible."
+        },
+        {
+          "key": "C",
+          "text": "No, because 62 is not divisible by 4",
+          "correct": false,
+          "misconception": "I invented a divisibility condition; dominoes cover two squares, so only divisibility by 2 could matter."
+        },
+        {
+          "key": "D",
+          "text": "Yes, but only if the dominoes may be placed diagonally",
+          "correct": false,
+          "misconception": "I changed the rules rather than testing them; the question says dominoes cover squares sharing an edge."
+        },
+        {
+          "key": "E",
+          "text": "No, because the board is no longer rectangular",
+          "correct": false,
+          "misconception": "I appealed to the shape, but plenty of non-rectangular regions can be tiled by dominoes."
+        }
+      ],
+      "skills": {
+        "primary": "LOG-07",
+        "secondary": [
+          "LOG-09",
+          "CNT-15"
+        ]
+      },
+      "hints": [
+        "Colour the board like a real chessboard and look at what each domino must cover.",
+        "Every domino covers exactly one black and one white square, whatever its position or orientation.",
+        "Opposite corners of a chessboard share a colour, so removing them leaves 32 of one colour and 30 of the other - and 31 dominoes would need 31 of each."
+      ],
+      "solutions": {
+        "reliable": "Colour the board in the usual alternating pattern. Because neighbouring squares always differ in colour, every domino - however placed - covers exactly one square of each colour. So 31 dominoes must cover 31 black and 31 white squares. Now, the two opposite corners of a chessboard are always the SAME colour. Removing them leaves 32 squares of one colour and 30 of the other, which no set of 31 dominoes can match. The covering is therefore impossible. The transferable idea: a colouring turns an impossible search over arrangements into a single counting statement.",
+        "elegant": "Every domino takes one square of each colour, and the mutilated board has 32 of one and 30 of the other."
+      },
+      "whyOnTest": "This is the cleanest example of a colouring argument, where proving impossibility is easier than any amount of searching.",
+      "estSeconds": 170,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0177",
+      "band": "11-12",
+      "points": 5,
+      "statement": "How many diagonals does a convex polygon with 12 sides have? A diagonal joins two vertices that are not already joined by a side.",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "54",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "66",
+          "correct": false,
+          "misconception": "I counted every line joining two vertices and forgot to remove the 12 sides."
+        },
+        {
+          "key": "C",
+          "text": "108",
+          "correct": false,
+          "misconception": "I counted each diagonal from both of its endpoints and forgot to halve."
+        },
+        {
+          "key": "D",
+          "text": "120",
+          "correct": false,
+          "misconception": "I used 12 x 10 without halving, double counting every diagonal."
+        },
+        {
+          "key": "E",
+          "text": "42",
+          "correct": false,
+          "misconception": "I subtracted 24 rather than 12, removing each side twice."
+        }
+      ],
+      "skills": {
+        "primary": "CNT-16",
+        "secondary": [
+          "CNT-06",
+          "GEO-05"
+        ]
+      },
+      "hints": [
+        "Count from each vertex, then think about how many times each diagonal got counted.",
+        "From any one of the 12 vertices you can draw a diagonal to 9 others: not to itself, and not to its two neighbours.",
+        "That gives 12 x 9 = 108 endpoint-counts, but each diagonal has two endpoints, so divide by 2 to get 54."
+      ],
+      "solutions": {
+        "reliable": "From a single vertex, you can reach 11 other vertices, but two of them are its neighbours and those lines are sides, not diagonals. So each vertex is the endpoint of 12 - 3 = 9 diagonals. Multiplying gives 12 x 9 = 108, but this counts every diagonal twice, once from each end, so the true number is 108 / 2 = 54. Equivalently: all C(12,2) = 66 vertex pairs, minus the 12 that are sides, gives 66 - 12 = 54. The transferable idea: whenever you count from each object, ask how many times the thing you want has been counted.",
+        "elegant": "All 66 vertex pairs minus the 12 that are sides leaves 54 diagonals."
+      },
+      "whyOnTest": "Forgetting to halve is the standard error, and having a second method that agrees is the fastest way to catch it.",
+      "estSeconds": 150,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
       "id": "KA-0001",
       "band": "3-4",
       "points": 3,
@@ -12952,6 +13564,1230 @@
         "pending-review"
       ],
       "createdAt": "2026-08-28",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0151",
+      "band": "7-8",
+      "points": 3,
+      "statement": "A bread recipe uses flour and sugar in the ratio 5 to 3. The two together weigh 320 grams. How much of that is flour?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "120 g",
+          "correct": false,
+          "misconception": "I worked out the part size correctly and then answered for the sugar instead of the flour."
+        },
+        {
+          "key": "B",
+          "text": "160 g",
+          "correct": false,
+          "misconception": "I split the 320 grams into two halves instead of into eight equal parts."
+        },
+        {
+          "key": "C",
+          "text": "200 g",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "D",
+          "text": "192 g",
+          "correct": false,
+          "misconception": "I took three fifths of 320 rather than five eighths, using the ratio numbers as a fraction of each other."
+        },
+        {
+          "key": "E",
+          "text": "64 g",
+          "correct": false,
+          "misconception": "I divided 320 by the 5 in the ratio and stopped, treating 5 as the number of parts."
+        }
+      ],
+      "skills": {
+        "primary": "NUM-11",
+        "secondary": [
+          "CFT-01",
+          "CFT-10"
+        ]
+      },
+      "hints": [
+        "The ratio counts parts, not grams.",
+        "Five parts flour and three parts sugar make eight parts altogether. Find what one part weighs first.",
+        "320 divided by 8 is 40 grams per part. Flour is five parts, so 5 times 40 = 200 grams."
+      ],
+      "solutions": {
+        "reliable": "A ratio of 5 to 3 means the mixture is made of 5 + 3 = 8 equal parts. Divide the total by the number of parts: 320 / 8 = 40 grams per part. Flour is 5 parts, so it weighs 5 x 40 = 200 grams (and sugar is 3 x 40 = 120 grams, which checks out because 200 + 120 = 320). The transferable move: turn a ratio into a part size before you touch either quantity. The transferable idea: turn a ratio into a part size before you touch either quantity.",
+        "elegant": "Flour is 5 of the 8 parts, so it is five eighths of 320, and five eighths of 320 is 200."
+      },
+      "whyOnTest": "Almost every ratio mistake is answering for the wrong part or forgetting the parts must add to the whole.",
+      "estSeconds": 70,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0152",
+      "band": "7-8",
+      "points": 3,
+      "statement": "In a triangle, one angle measures 30 degrees. Of the other two angles, one is exactly twice the other. What is the largest angle in the triangle?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "50 degrees",
+          "correct": false,
+          "misconception": "I found the smaller of the two unknown angles and stopped before doubling it."
+        },
+        {
+          "key": "B",
+          "text": "75 degrees",
+          "correct": false,
+          "misconception": "I split the remaining 150 degrees into two equal halves instead of a one-to-two split."
+        },
+        {
+          "key": "C",
+          "text": "100 degrees",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "D",
+          "text": "150 degrees",
+          "correct": false,
+          "misconception": "I split the remainder evenly into 75 and 75, then doubled one of them."
+        },
+        {
+          "key": "E",
+          "text": "90 degrees",
+          "correct": false,
+          "misconception": "I assumed that the largest angle in a triangle like this must be a right angle."
+        }
+      ],
+      "skills": {
+        "primary": "GEO-05",
+        "secondary": [
+          "MOD-01",
+          "CFT-02"
+        ]
+      },
+      "hints": [
+        "The three angles add to 180 degrees, so the two unknown ones add to 150.",
+        "Call the smaller unknown angle x. Then the other is 2x, and x + 2x = 150.",
+        "3x = 150, so x = 50 and 2x = 100. The angles are 30, 50 and 100, which sum to 180."
+      ],
+      "solutions": {
+        "reliable": "The angles of a triangle sum to 180 degrees, so the two unknown angles together make 180 - 30 = 150. Writing the smaller as x makes the larger 2x, so x + 2x = 3x = 150 and x = 50. The two unknown angles are therefore 50 and 100, and the largest angle in the triangle is 100 degrees. Check: 30 + 50 + 100 = 180. The transferable idea: naming the smaller share x keeps an uneven split from collapsing into an even one.",
+        "elegant": "The remainder of 150 splits into three equal shares of 50; the larger angle takes two of them, giving 100."
+      },
+      "whyOnTest": "Naming the smaller quantity x is what keeps a one-to-two split from collapsing into an even one.",
+      "estSeconds": 80,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0153",
+      "band": "7-8",
+      "points": 3,
+      "statement": "A jacket costs 80 pounds. In January the price rises by 20 percent. In February the new price falls by 20 percent. What is the price at the end of February?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "80 pounds",
+          "correct": false,
+          "misconception": "I assumed a 20 percent rise and a 20 percent fall must cancel because the percentages match."
+        },
+        {
+          "key": "B",
+          "text": "76.80 pounds",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "C",
+          "text": "64 pounds",
+          "correct": false,
+          "misconception": "I applied only the fall and forgot the rise."
+        },
+        {
+          "key": "D",
+          "text": "83.20 pounds",
+          "correct": false,
+          "misconception": "I got the size of the change right but the direction wrong."
+        },
+        {
+          "key": "E",
+          "text": "96 pounds",
+          "correct": false,
+          "misconception": "I applied only the rise and forgot the fall."
+        }
+      ],
+      "skills": {
+        "primary": "NUM-10",
+        "secondary": [
+          "CFT-11",
+          "CFT-10"
+        ]
+      },
+      "hints": [
+        "The two 20 percents are not taken from the same amount.",
+        "The rise is 20 percent of 80. The fall is 20 percent of the NEW price, which is bigger.",
+        "80 x 1.2 = 96, then 96 x 0.8 = 76.80. The jacket ends up cheaper than it started."
+      ],
+      "solutions": {
+        "reliable": "Work the two changes in order and never reuse the old base. The rise: 80 x 1.2 = 96 pounds. The fall is 20 percent of 96, not of 80, so the new price is 96 x 0.8 = 76.80 pounds. The jacket ends 3.20 pounds cheaper than it began. The transferable idea: a percentage is always a percentage OF something, and after the first change that something has moved.",
+        "elegant": "Multiplying by 1.2 and then by 0.8 is multiplying by 0.96, so any starting price ends 4 percent lower."
+      },
+      "whyOnTest": "The belief that equal percentage rises and falls cancel is one of the most common errors on the paper.",
+      "estSeconds": 85,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0154",
+      "band": "7-8",
+      "points": 4,
+      "statement": "In a class of 30 students, 18 play football and 15 play chess. Exactly 7 students do both. How many students play neither?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "4",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "26",
+          "correct": false,
+          "misconception": "I found how many students play at least one of the two and answered with that instead."
+        },
+        {
+          "key": "C",
+          "text": "3",
+          "correct": false,
+          "misconception": "I added 18 and 15 to get 33, subtracted the 30 in the class, and used the 3 left over."
+        },
+        {
+          "key": "D",
+          "text": "11",
+          "correct": false,
+          "misconception": "I removed the 7 from both groups and subtracted 11 and 8 from 30, taking the overlap away twice."
+        },
+        {
+          "key": "E",
+          "text": "7",
+          "correct": false,
+          "misconception": "I answered with the number who play both, which is what the question gave me rather than what it asked for."
+        }
+      ],
+      "skills": {
+        "primary": "CNT-10",
+        "secondary": [
+          "CNT-09",
+          "CFT-01"
+        ]
+      },
+      "hints": [
+        "Adding 18 and 15 counts the 7 who do both twice.",
+        "Work out how many play at least one sport first, then take that away from the class.",
+        "18 + 15 - 7 = 26 play at least one. 30 - 26 = 4 play neither."
+      ],
+      "solutions": {
+        "reliable": "Adding the two groups counts every student who does both exactly twice, so subtract the overlap once to correct it: 18 + 15 - 7 = 26 students play at least one of the two. Everyone else plays neither, so the answer is 30 - 26 = 4. A useful check is to split the class into four boxes: 11 football only, 8 chess only, 7 both, 4 neither, and 11 + 8 + 7 + 4 = 30. The transferable idea: when two groups overlap, add them and subtract the overlap exactly once.",
+        "elegant": "Football only is 11 and chess only is 8, so 11 + 8 + 7 = 26 are accounted for and 4 are left."
+      },
+      "whyOnTest": "Two overlapping groups appear on every paper, and the whole difficulty is remembering to subtract the overlap exactly once.",
+      "estSeconds": 100,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0155",
+      "band": "7-8",
+      "points": 4,
+      "statement": "A photograph measures 8 cm by 12 cm. It is enlarged so that the shorter side becomes 20 cm, and the shape is not distorted. How long is the longer side of the enlargement?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "24 cm",
+          "correct": false,
+          "misconception": "I kept the difference of 4 cm between the two sides instead of keeping their ratio."
+        },
+        {
+          "key": "B",
+          "text": "30 cm",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "C",
+          "text": "32 cm",
+          "correct": false,
+          "misconception": "I added 20 to 12 rather than scaling 12."
+        },
+        {
+          "key": "D",
+          "text": "4.8 cm",
+          "correct": false,
+          "misconception": "I used the scale factor upside down and multiplied 12 by 8/20 instead of 20/8."
+        },
+        {
+          "key": "E",
+          "text": "18 cm",
+          "correct": false,
+          "misconception": "I multiplied 12 by 1.5, the ratio between the original sides, instead of by the enlargement factor."
+        }
+      ],
+      "skills": {
+        "primary": "GEO-16",
+        "secondary": [
+          "NUM-11",
+          "CFT-11"
+        ]
+      },
+      "hints": [
+        "An enlargement multiplies both sides by the same number.",
+        "The shorter side went from 8 to 20. What number multiplies 8 to give 20?",
+        "20 / 8 = 2.5, so the longer side is 12 x 2.5 = 30 cm."
+      ],
+      "solutions": {
+        "reliable": "An enlargement multiplies every length by one scale factor. The shorter side went from 8 cm to 20 cm, so the factor is 20 / 8 = 2.5. Applying the same factor to the longer side gives 12 x 2.5 = 30 cm. Check the shape is preserved by comparing ratios: 8/12 = 20/30 = 2/3. The transferable idea: enlargements multiply, they do not add.",
+        "elegant": "The sides are in the ratio 2 to 3, so a shorter side of 20 forces a longer side of 30."
+      },
+      "whyOnTest": "Adding a constant instead of multiplying is the single most common scaling error, and it always distorts the shape.",
+      "estSeconds": 95,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0156",
+      "band": "7-8",
+      "points": 4,
+      "statement": "A pattern is built in rows. The first figure has 1 row, the second has 2 rows, and so on. In every figure, the first row has 1 dot, the second has 3 dots, the third has 5 dots, and each row after has 2 more dots than the one above it. How many dots are in the eighth figure?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "64",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "15",
+          "correct": false,
+          "misconception": "I gave the number of dots in the eighth ROW instead of the whole figure."
+        },
+        {
+          "key": "C",
+          "text": "36",
+          "correct": false,
+          "misconception": "I added the row numbers 1 through 8 instead of the odd numbers of dots."
+        },
+        {
+          "key": "D",
+          "text": "72",
+          "correct": false,
+          "misconception": "I multiplied 8 rows by 9, using a rough average row that is one too large."
+        },
+        {
+          "key": "E",
+          "text": "81",
+          "correct": false,
+          "misconception": "I counted the rows starting from zero and used the ninth square number."
+        }
+      ],
+      "skills": {
+        "primary": "PAT-04",
+        "secondary": [
+          "CFT-03",
+          "PAT-02"
+        ]
+      },
+      "hints": [
+        "Write out the rows for a small figure and add them, before trying figure eight.",
+        "Figure 1 has 1 dot. Figure 2 has 1 + 3 = 4. Figure 3 has 1 + 3 + 5 = 9. Those are square numbers.",
+        "The nth figure holds n squared dots, so the eighth holds 8 x 8 = 64."
+      ],
+      "solutions": {
+        "reliable": "Build the small cases first. Figure 1 is 1 dot; figure 2 is 1 + 3 = 4; figure 3 is 1 + 3 + 5 = 9; figure 4 is 1 + 3 + 5 + 7 = 16. Those are 1, 4, 9, 16 - the square numbers - so the nth figure holds n squared dots and the eighth holds 8 x 8 = 64. You can also just add the eight odd numbers directly: 1 + 3 + 5 + 7 + 9 + 11 + 13 + 15 = 64. The transferable idea: build the small cases and read the pattern off them, rather than guessing a formula.",
+        "elegant": "The first n odd numbers always sum to n squared, because they stack into an n by n square."
+      },
+      "whyOnTest": "Growth patterns are the cheapest place to practise trying small cases before reaching for a formula.",
+      "estSeconds": 110,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0157",
+      "band": "7-8",
+      "points": 5,
+      "statement": "A drawer holds 12 red socks, 10 blue socks and 8 green socks, all mixed up. You take socks out one at a time in the dark. What is the smallest number of socks you must take to be certain of having three of the same colour?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "4",
+          "correct": false,
+          "misconception": "I thought that one more than the number of colours must give three of a kind, which only guarantees a PAIR."
+        },
+        {
+          "key": "B",
+          "text": "7",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "C",
+          "text": "9",
+          "correct": false,
+          "misconception": "I got to two of each colour, then added one more for each colour instead of one more in total."
+        },
+        {
+          "key": "D",
+          "text": "13",
+          "correct": false,
+          "misconception": "I assumed the worst case meant emptying the largest pile of 12 reds first."
+        },
+        {
+          "key": "E",
+          "text": "3",
+          "correct": false,
+          "misconception": "I answered with the number of socks I want rather than the number I must take to be sure of them."
+        }
+      ],
+      "skills": {
+        "primary": "CNT-17",
+        "secondary": [
+          "CNT-18",
+          "LOG-09"
+        ]
+      },
+      "hints": [
+        "Ask what the unluckiest possible draw looks like.",
+        "The worst case is taking two of every colour without ever getting a third. How many socks is that?",
+        "Two of each colour is 2 x 3 = 6 socks with no colour reaching three. The seventh sock must complete a set, so the answer is 7."
+      ],
+      "solutions": {
+        "reliable": "Imagine the unluckiest draw possible. You could take 2 red, 2 blue and 2 green - six socks - and still have no colour three times over. So six is not enough. But there are only three colours, so the seventh sock has to be red, blue or green, and whichever it is, that colour now has three. The answer is 7. The transferable idea: to guarantee something, work out the largest number of picks that could still fail, then add one.",
+        "elegant": "Two of each colour is the largest failing draw at six socks, so seven forces success."
+      },
+      "whyOnTest": "Guarantee questions are answered by the worst case, never by the likely case, and that reversal is the whole skill.",
+      "estSeconds": 130,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0158",
+      "band": "7-8",
+      "points": 5,
+      "statement": "What is the last digit of 3 multiplied by itself 2026 times, that is, of 3 to the power 2026?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "3",
+          "correct": false,
+          "misconception": "I used the first entry of the cycle because 2026 is even, without working out where in the cycle it lands."
+        },
+        {
+          "key": "B",
+          "text": "9",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "C",
+          "text": "7",
+          "correct": false,
+          "misconception": "I counted the cycle starting from zero, so a remainder of 2 put me one place too far along."
+        },
+        {
+          "key": "D",
+          "text": "1",
+          "correct": false,
+          "misconception": "I assumed a power that large must end in 1."
+        },
+        {
+          "key": "E",
+          "text": "6",
+          "correct": false,
+          "misconception": "I multiplied 3 by 2 and used the last digit of that."
+        }
+      ],
+      "skills": {
+        "primary": "NUM-07",
+        "secondary": [
+          "NUM-06",
+          "PAT-03"
+        ]
+      },
+      "hints": [
+        "List the last digits of the first few powers.",
+        "3, 9, 27, 81, 243 end in 3, 9, 7, 1, 3 - the last digits repeat every four powers.",
+        "2026 divided by 4 leaves remainder 2, so 3 to the power 2026 ends like 3 squared, which is 9."
+      ],
+      "solutions": {
+        "reliable": "Last digits of powers always repeat. Listing them: 3^1 ends in 3, 3^2 in 9, 3^3 in 7, 3^4 in 1, and then 3^5 ends in 3 again. The cycle is 3, 9, 7, 1 and it has length 4. To find where 2026 lands, divide by 4: 2026 = 4 x 506 + 2, so the remainder is 2 and the answer matches the second entry of the cycle, which is 9. Watch the off-by-one: remainder 1 means the first entry, remainder 0 means the last. The transferable idea: every last-digit question is a cycle question, and the work is locating the exponent in the cycle.",
+        "elegant": "3^4 ends in 1, so 3^2024 ends in 1 and two more threes take it to 9."
+      },
+      "whyOnTest": "Every last-digit question is really a cycle question, and the marks are lost on where the remainder lands, not on finding the cycle.",
+      "estSeconds": 120,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0159",
+      "band": "7-8",
+      "points": 5,
+      "statement": "One tap fills a tank in 6 hours. A second tap fills the same tank in 4 hours. Both taps are opened together on an empty tank. How long does it take to fill?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "2 hours 24 minutes",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "5 hours",
+          "correct": false,
+          "misconception": "I averaged the two times, but two taps together must be faster than either one alone."
+        },
+        {
+          "key": "C",
+          "text": "10 hours",
+          "correct": false,
+          "misconception": "I added the two times, which would be right for filling two tanks one after the other."
+        },
+        {
+          "key": "D",
+          "text": "2 hours",
+          "correct": false,
+          "misconception": "I halved the smaller of the two times, guessing that two taps must simply be twice as fast as one."
+        },
+        {
+          "key": "E",
+          "text": "1 hour 12 minutes",
+          "correct": false,
+          "misconception": "I found 2 hours 24 minutes correctly and then halved it a second time."
+        }
+      ],
+      "skills": {
+        "primary": "MOD-04",
+        "secondary": [
+          "NUM-09",
+          "CFT-11"
+        ]
+      },
+      "hints": [
+        "Times do not add. Think about how much each tap does in one hour.",
+        "In one hour the first tap fills 1/6 of the tank and the second fills 1/4. Together that is 1/6 + 1/4 of a tank per hour.",
+        "1/6 + 1/4 = 5/12 of a tank per hour, so a whole tank takes 12/5 = 2.4 hours, which is 2 hours 24 minutes."
+      ],
+      "solutions": {
+        "reliable": "Work in rates rather than times, because rates add and times do not. In one hour the first tap fills 1/6 of the tank and the second fills 1/4, so together they fill 1/6 + 1/4 = 2/12 + 3/12 = 5/12 of the tank each hour. Filling the whole tank therefore takes 1 divided by 5/12 = 12/5 = 2.4 hours, which is 2 hours and 24 minutes. Sanity check: the answer must be less than 4 hours, the faster tap's time on its own. The transferable idea: rates add, times do not.",
+        "elegant": "In 12 hours the taps would fill 2 and 3 tanks, so 5 tanks in 12 hours, which is 12/5 hours per tank."
+      },
+      "whyOnTest": "Adding times instead of rates is the standard trap, and the sanity check - faster than either alone - catches it every time.",
+      "estSeconds": 140,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0160",
+      "band": "9-10",
+      "points": 3,
+      "statement": "A sequence begins 7, 11, 15, 19, and continues with the same constant step. What is the 30th term?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "123",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "127",
+          "correct": false,
+          "misconception": "I multiplied the step by 30 instead of by 29, forgetting that the first term needs no steps."
+        },
+        {
+          "key": "C",
+          "text": "120",
+          "correct": false,
+          "misconception": "I used 4 times 30 and forgot to add the starting value."
+        },
+        {
+          "key": "D",
+          "text": "119",
+          "correct": false,
+          "misconception": "I added 28 steps instead of 29, counting the gaps one short."
+        },
+        {
+          "key": "E",
+          "text": "137",
+          "correct": false,
+          "misconception": "I treated the first term as the step and used 7 times 30 minus something close."
+        }
+      ],
+      "skills": {
+        "primary": "PAT-02",
+        "secondary": [
+          "MOD-01",
+          "CFT-10"
+        ]
+      },
+      "hints": [
+        "Count the gaps between terms, not the terms themselves.",
+        "Going from the 1st term to the 30th takes 29 steps of 4.",
+        "7 + 29 x 4 = 7 + 116 = 123."
+      ],
+      "solutions": {
+        "reliable": "The step is 11 - 7 = 4. Reaching the 30th term from the 1st takes 29 steps, not 30, because the first term is already there before any step is taken. So the 30th term is 7 + 29 x 4 = 7 + 116 = 123. Check on a small case: the 2nd term should be 7 + 1 x 4 = 11, which matches. The transferable idea: the nth term is first + (n - 1) x step, and the minus one is where the marks go.",
+        "elegant": "Every term is 3 less than a multiple of 4, so the 30th is 4 x 31 - 1 = 123."
+      },
+      "whyOnTest": "The off-by-one between terms and gaps is the single most common arithmetic-sequence error.",
+      "estSeconds": 70,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0161",
+      "band": "9-10",
+      "points": 3,
+      "statement": "What is the remainder when 2 to the power 50 is divided by 7?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "1",
+          "correct": false,
+          "misconception": "I assumed the cycle ends on 1 at every exponent that is a multiple of 2."
+        },
+        {
+          "key": "B",
+          "text": "2",
+          "correct": false,
+          "misconception": "I used a remainder of 1 rather than 2 when dividing 50 by 3."
+        },
+        {
+          "key": "C",
+          "text": "4",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "D",
+          "text": "6",
+          "correct": false,
+          "misconception": "I doubled my way to 2 cubed = 8 and used 8 minus 2."
+        },
+        {
+          "key": "E",
+          "text": "0",
+          "correct": false,
+          "misconception": "I assumed a large power of 2 must eventually be divisible by 7."
+        }
+      ],
+      "skills": {
+        "primary": "NUM-06",
+        "secondary": [
+          "NUM-07",
+          "PAT-03"
+        ]
+      },
+      "hints": [
+        "Work out the remainders of the first few powers of 2 when divided by 7.",
+        "2, 4, 8, 16, 32, 64 leave 2, 4, 1, 2, 4, 1 - the remainders cycle with length 3.",
+        "50 divided by 3 leaves remainder 2, so 2^50 leaves the same remainder as 2^2, which is 4."
+      ],
+      "solutions": {
+        "reliable": "Powers repeat their remainders. Dividing by 7: 2^1 leaves 2, 2^2 leaves 4, 2^3 = 8 leaves 1, and then the pattern restarts because multiplying by 2 again gives 2. So the cycle is 2, 4, 1 with length 3. Now 50 = 3 x 16 + 2, so 2^50 sits in the same place as 2^2 and leaves remainder 4. The transferable idea: find the first exponent that returns a remainder of 1, and the cycle length is that exponent.",
+        "elegant": "2^3 leaves 1, so 2^48 leaves 1, and two more doublings give 4."
+      },
+      "whyOnTest": "Modular cycles turn an impossible calculation into a division you can do in your head.",
+      "estSeconds": 80,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0162",
+      "band": "9-10",
+      "points": 3,
+      "statement": "Two towns are 300 km apart. A car leaves each town at the same moment driving toward the other, one at 60 km/h and the other at 90 km/h. How long until they meet?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "2 hours",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "3 hours 20 minutes",
+          "correct": false,
+          "misconception": "I used only the slower car's speed and divided 300 by 90 the wrong way round."
+        },
+        {
+          "key": "C",
+          "text": "4 hours",
+          "correct": false,
+          "misconception": "I averaged the two speeds to 75 km/h and divided 300 by it, which ignores that both cars move at once."
+        },
+        {
+          "key": "D",
+          "text": "5 hours",
+          "correct": false,
+          "misconception": "I divided 300 by 60, using only the slower car."
+        },
+        {
+          "key": "E",
+          "text": "1 hour",
+          "correct": false,
+          "misconception": "I halved the distance to 150 and then divided by 150, applying the closing speed twice."
+        }
+      ],
+      "skills": {
+        "primary": "MOD-03",
+        "secondary": [
+          "CFT-02",
+          "CFT-11"
+        ]
+      },
+      "hints": [
+        "The gap closes from both ends at once.",
+        "Every hour the gap closes by 60 + 90 = 150 km.",
+        "300 / 150 = 2 hours."
+      ],
+      "solutions": {
+        "reliable": "When two objects move toward each other, the distance between them closes at the sum of their speeds. Here the gap shrinks by 60 + 90 = 150 km every hour, so a 300 km gap closes in 300 / 150 = 2 hours. Check it directly: in 2 hours the first car covers 120 km and the second covers 180 km, and 120 + 180 = 300. The transferable idea: approaching speeds add, receding speeds also add, and same-direction speeds subtract.",
+        "elegant": "In two hours the cars cover 120 and 180 km, and those already fill the 300 km road."
+      },
+      "whyOnTest": "Closing speed is the one idea that turns most two-object motion problems into a single division.",
+      "estSeconds": 75,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0163",
+      "band": "9-10",
+      "points": 4,
+      "statement": "A club has 8 members. In how many ways can a group of 3 be chosen to attend a conference, if the three places are all the same?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "56",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "336",
+          "correct": false,
+          "misconception": "I counted ordered selections, so I counted the same three people once for every order they could stand in."
+        },
+        {
+          "key": "C",
+          "text": "24",
+          "correct": false,
+          "misconception": "I multiplied the 8 members by the 3 places, which counts something quite different from a selection."
+        },
+        {
+          "key": "D",
+          "text": "112",
+          "correct": false,
+          "misconception": "I divided the 336 ordered selections by 3 instead of by 3 factorial."
+        },
+        {
+          "key": "E",
+          "text": "28",
+          "correct": false,
+          "misconception": "I chose 2 people rather than 3."
+        }
+      ],
+      "skills": {
+        "primary": "CNT-06",
+        "secondary": [
+          "CNT-16",
+          "CFT-01"
+        ]
+      },
+      "hints": [
+        "The three places are identical.",
+        "There are 8 x 7 x 6 = 336 ways to pick three people in order. Each group of three has been counted several times.",
+        "Each group of 3 appears 3! = 6 times in that list, so the answer is 336 / 6 = 56."
+      ],
+      "solutions": {
+        "reliable": "Count the ordered picks first, then correct for the overcounting. Choosing three people in order gives 8 x 7 x 6 = 336 possibilities. But the places are identical, so a group like {Ana, Ben, Cara} has been counted once for each of the 3! = 6 orders those three could be named in. Dividing gives 336 / 6 = 56. The transferable idea: when order does not matter, count as if it did and then divide by the number of orderings.",
+        "elegant": "This is 8 choose 3, which is (8 x 7 x 6) / (3 x 2 x 1) = 56."
+      },
+      "whyOnTest": "Overcount-then-correct is the workhorse of every selection question, and dividing by the wrong number is the usual slip.",
+      "estSeconds": 110,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0164",
+      "band": "9-10",
+      "points": 4,
+      "statement": "Two triangles are similar. The sides of the smaller are 3/5 as long as the matching sides of the larger. The smaller triangle has area 18 square cm. What is the area of the larger triangle?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "30 sq cm",
+          "correct": false,
+          "misconception": "I scaled the area by 5/3, using the side ratio directly instead of its square."
+        },
+        {
+          "key": "B",
+          "text": "50 sq cm",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "C",
+          "text": "45 sq cm",
+          "correct": false,
+          "misconception": "I multiplied the area by 2.5, halfway between the side ratio and its square."
+        },
+        {
+          "key": "D",
+          "text": "10.8 sq cm",
+          "correct": false,
+          "misconception": "I scaled by 3/5 instead of 5/3, making the larger triangle smaller."
+        },
+        {
+          "key": "E",
+          "text": "90 sq cm",
+          "correct": false,
+          "misconception": "I multiplied by 5 and ignored the 3 in the ratio entirely."
+        }
+      ],
+      "skills": {
+        "primary": "GEO-16",
+        "secondary": [
+          "NUM-11",
+          "CFT-11"
+        ]
+      },
+      "hints": [
+        "Area does not scale the same way length does.",
+        "If every length is multiplied by k, the area is multiplied by k squared.",
+        "The larger sides are 5/3 of the smaller, so its area is (5/3) squared = 25/9 times as big: 18 x 25/9 = 50."
+      ],
+      "solutions": {
+        "reliable": "Under a scale factor k, every length multiplies by k but area multiplies by k squared, because area is a product of two lengths. Going from the smaller triangle to the larger multiplies lengths by 5/3, so it multiplies area by (5/3)^2 = 25/9. The larger area is therefore 18 x 25/9 = 50 square cm. Sanity check the direction: the larger triangle must have the larger area, which rules out anything below 18. The transferable idea: lengths scale by k and areas by k squared, because an area is a product of two lengths.",
+        "elegant": "Areas of similar figures are in the ratio 9 to 25, and 18 is 9 x 2, so the larger is 25 x 2 = 50."
+      },
+      "whyOnTest": "Scaling area by the length factor rather than its square is one of the most reliably examined mistakes in geometry.",
+      "estSeconds": 120,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0165",
+      "band": "9-10",
+      "points": 4,
+      "statement": "Four litres of a solution that is 25 percent acid are mixed with six litres of a solution that is 50 percent acid. What percentage of the mixture is acid?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "40 percent",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "37.5 percent",
+          "correct": false,
+          "misconception": "I averaged 25 and 50 without weighting by how much of each solution there was."
+        },
+        {
+          "key": "C",
+          "text": "75 percent",
+          "correct": false,
+          "misconception": "I added the two percentages together, which cannot be right because a mixture can never be stronger than its strongest ingredient."
+        },
+        {
+          "key": "D",
+          "text": "35 percent",
+          "correct": false,
+          "misconception": "I weighted the percentages by the wrong volumes, giving the 25 percent solution the larger share."
+        },
+        {
+          "key": "E",
+          "text": "30 percent",
+          "correct": false,
+          "misconception": "I used only the acid from the weaker solution and spread it over all ten litres."
+        }
+      ],
+      "skills": {
+        "primary": "MOD-08",
+        "secondary": [
+          "NUM-10",
+          "CFT-10"
+        ]
+      },
+      "hints": [
+        "Percentages only average when the amounts match.",
+        "Work out how many litres of pure acid are in each solution, then add them.",
+        "0.25 x 4 = 1 litre and 0.50 x 6 = 3 litres, so 4 litres of acid in 10 litres of mixture, which is 40 percent."
+      ],
+      "solutions": {
+        "reliable": "Track the acid itself rather than the percentages. The first solution contributes 0.25 x 4 = 1 litre of acid; the second contributes 0.50 x 6 = 3 litres. Together that is 4 litres of acid in 4 + 6 = 10 litres of mixture, so the concentration is 4/10 = 40 percent. The transferable idea: a weighted average always lands nearer the ingredient you used more of - here nearer 50 than 25, which a plain average of 37.5 would miss.",
+        "elegant": "There is more of the strong solution, so the answer must exceed the midpoint of 37.5, and only 40 does."
+      },
+      "whyOnTest": "The plain average is the trap, and noticing which side the answer must fall on eliminates it before any arithmetic.",
+      "estSeconds": 125,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0166",
+      "band": "9-10",
+      "points": 5,
+      "statement": "Six friends sit around a circular table. Two seatings count as the same if one can be turned into the other by rotating the table. How many genuinely different seatings are there?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "120",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "720",
+          "correct": false,
+          "misconception": "I counted every arrangement in a row, so each circular seating got counted once for every rotation."
+        },
+        {
+          "key": "C",
+          "text": "36",
+          "correct": false,
+          "misconception": "I divided 720 by 20 or some other number instead of by the 6 rotations."
+        },
+        {
+          "key": "D",
+          "text": "60",
+          "correct": false,
+          "misconception": "I divided by 12, treating reflections as identical too, though the question only allows rotations."
+        },
+        {
+          "key": "E",
+          "text": "24",
+          "correct": false,
+          "misconception": "I fixed two people rather than one, dividing by an extra factor."
+        }
+      ],
+      "skills": {
+        "primary": "CNT-15",
+        "secondary": [
+          "CNT-16",
+          "CNT-05"
+        ]
+      },
+      "hints": [
+        "Rotating a circular seating does not change who is next to whom.",
+        "There are 6! = 720 ways to seat six people in labelled chairs. Each circular seating appears once for every rotation of the table.",
+        "There are 6 rotations, so the answer is 720 / 6 = 120."
+      ],
+      "solutions": {
+        "reliable": "Start by pretending the chairs are labelled: that gives 6! = 720 arrangements. But turning the table produces a seating that the question calls the same, and there are 6 rotations of a six-seat table, so every genuinely different seating has been counted 6 times. Dividing gives 720 / 6 = 120. An equivalent and often faster route: seat one person first to kill the rotation, then arrange the remaining five in 5! = 120 ways. The transferable idea: to count up to a symmetry, either divide by the number of symmetries or fix one object to remove them.",
+        "elegant": "Fix one friend's seat to remove the rotations, then the other five can be arranged in 5! = 120 ways."
+      },
+      "whyOnTest": "Counting up to symmetry is exactly where a correct count becomes a wrong answer, and fixing one object is the cleanest fix.",
+      "estSeconds": 145,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0167",
+      "band": "9-10",
+      "points": 5,
+      "statement": "The numbers 1 to 10 are written on a board. You repeatedly rub out any two of them and write down their positive difference instead, until a single number is left. What can be said about that final number?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "It is always odd",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "It is always even",
+          "correct": false,
+          "misconception": "I checked the parity of the count of numbers rather than of their sum."
+        },
+        {
+          "key": "C",
+          "text": "It can be either odd or even",
+          "correct": false,
+          "misconception": "I tried two examples, got different answers, and concluded nothing is forced."
+        },
+        {
+          "key": "D",
+          "text": "It is always zero",
+          "correct": false,
+          "misconception": "I assumed differences must shrink all the way to nothing."
+        },
+        {
+          "key": "E",
+          "text": "It is always 1",
+          "correct": false,
+          "misconception": "I found one sequence of moves ending at 1 and assumed every sequence must."
+        }
+      ],
+      "skills": {
+        "primary": "LOG-05",
+        "secondary": [
+          "LOG-06",
+          "CFT-03"
+        ]
+      },
+      "hints": [
+        "Look for something about the whole board that never changes when you make a move.",
+        "Replacing a and b by their difference changes the total by a + b - |a - b|, which is always an even amount.",
+        "The starting sum 1 + 2 + ... + 10 = 55 is odd, and every move changes the sum by an even number, so the final single number is odd."
+      ],
+      "solutions": {
+        "reliable": "Track the parity of the total. The starting sum is 1 + 2 + ... + 10 = 55, which is odd. A move replaces a and b by |a - b|, so the sum drops by a + b - |a - b|, which equals 2b or 2a - either way, an even number. Since the sum starts odd and only ever changes by an even amount, it stays odd forever. At the end one number remains and it IS the sum, so that number is odd. The transferable idea: when a process looks chaotic, look for a quantity it cannot change.",
+        "elegant": "Differences preserve parity, so the whole board's parity is locked to the parity of 55 from the first move to the last."
+      },
+      "whyOnTest": "An invariant turns a question with countless possible move orders into a single observation about parity.",
+      "estSeconds": 160,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "id": "KA-0168",
+      "band": "9-10",
+      "points": 5,
+      "statement": "An ordinary six-sided die is rolled three times. What is the probability that at least one roll shows a six?",
+      "figure": null,
+      "choices": [
+        {
+          "key": "A",
+          "text": "91/216",
+          "correct": true,
+          "misconception": null
+        },
+        {
+          "key": "B",
+          "text": "1/2",
+          "correct": false,
+          "misconception": "I added 1/6 three times, which counts the overlapping cases more than once and would exceed 1 for seven rolls."
+        },
+        {
+          "key": "C",
+          "text": "125/216",
+          "correct": false,
+          "misconception": "I worked out the probability of NO six and forgot to subtract it from 1."
+        },
+        {
+          "key": "D",
+          "text": "3/216",
+          "correct": false,
+          "misconception": "I found the probability of three sixes instead of at least one."
+        },
+        {
+          "key": "E",
+          "text": "1/6",
+          "correct": false,
+          "misconception": "I gave the probability for a single roll and ignored that there are three."
+        }
+      ],
+      "skills": {
+        "primary": "CNT-09",
+        "secondary": [
+          "CNT-16",
+          "CFT-11"
+        ]
+      },
+      "hints": [
+        "At least one is much easier to count by asking about the opposite.",
+        "The opposite of at least one six is no sixes at all in three rolls.",
+        "Each roll avoids a six with probability 5/6, so no sixes has probability (5/6)^3 = 125/216, and the answer is 1 - 125/216 = 91/216."
+      ],
+      "solutions": {
+        "reliable": "The phrase at least one is a signal to count the complement. The opposite event is no six on any of the three rolls. Each roll avoids a six with probability 5/6, and the rolls are independent, so no sixes has probability (5/6)^3 = 125/216. The event we want is everything else: 1 - 125/216 = 91/216, which is a little over 42 percent. The transferable idea: at least one almost always means one minus none.",
+        "elegant": "One minus (5/6)^3 = 1 - 125/216 = 91/216."
+      },
+      "whyOnTest": "Adding 1/6 three times is the classic error, and it visibly breaks at seven rolls where it would give a probability above 1.",
+      "estSeconds": 155,
+      "calibration": {
+        "pValue": null,
+        "medianMs": null,
+        "n": 0
+      },
+      "author": "Devansh Sanghavi",
+      "reviewedBy": [
+        "pending-review"
+      ],
+      "createdAt": "2026-09-04",
       "license": "CC-BY-NC-SA-4.0"
     }
   ],

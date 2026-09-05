@@ -1,0 +1,68 @@
+{
+  "id": "KA-0164",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Two triangles are similar. The sides of the smaller are 3/5 as long as the matching sides of the larger. The smaller triangle has area 18 square cm. What is the area of the larger triangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "30 sq cm",
+      "correct": false,
+      "misconception": "I scaled the area by 5/3, using the side ratio directly instead of its square."
+    },
+    {
+      "key": "B",
+      "text": "50 sq cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "45 sq cm",
+      "correct": false,
+      "misconception": "I multiplied the area by 2.5, halfway between the side ratio and its square."
+    },
+    {
+      "key": "D",
+      "text": "10.8 sq cm",
+      "correct": false,
+      "misconception": "I scaled by 3/5 instead of 5/3, making the larger triangle smaller."
+    },
+    {
+      "key": "E",
+      "text": "90 sq cm",
+      "correct": false,
+      "misconception": "I multiplied by 5 and ignored the 3 in the ratio entirely."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-16",
+    "secondary": [
+      "NUM-11",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Area does not scale the same way length does.",
+    "If every length is multiplied by k, the area is multiplied by k squared.",
+    "The larger sides are 5/3 of the smaller, so its area is (5/3) squared = 25/9 times as big: 18 x 25/9 = 50."
+  ],
+  "solutions": {
+    "reliable": "Under a scale factor k, every length multiplies by k but area multiplies by k squared, because area is a product of two lengths. Going from the smaller triangle to the larger multiplies lengths by 5/3, so it multiplies area by (5/3)^2 = 25/9. The larger area is therefore 18 x 25/9 = 50 square cm. Sanity check the direction: the larger triangle must have the larger area, which rules out anything below 18. The transferable idea: lengths scale by k and areas by k squared, because an area is a product of two lengths.",
+    "elegant": "Areas of similar figures are in the ratio 9 to 25, and 18 is 9 x 2, so the larger is 25 x 2 = 50."
+  },
+  "whyOnTest": "Scaling area by the length factor rather than its square is one of the most reliably examined mistakes in geometry.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

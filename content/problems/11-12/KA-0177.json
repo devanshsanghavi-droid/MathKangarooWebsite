@@ -1,0 +1,68 @@
+{
+  "id": "KA-0177",
+  "band": "11-12",
+  "points": 5,
+  "statement": "How many diagonals does a convex polygon with 12 sides have? A diagonal joins two vertices that are not already joined by a side.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "54",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "66",
+      "correct": false,
+      "misconception": "I counted every line joining two vertices and forgot to remove the 12 sides."
+    },
+    {
+      "key": "C",
+      "text": "108",
+      "correct": false,
+      "misconception": "I counted each diagonal from both of its endpoints and forgot to halve."
+    },
+    {
+      "key": "D",
+      "text": "120",
+      "correct": false,
+      "misconception": "I used 12 x 10 without halving, double counting every diagonal."
+    },
+    {
+      "key": "E",
+      "text": "42",
+      "correct": false,
+      "misconception": "I subtracted 24 rather than 12, removing each side twice."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-06",
+      "GEO-05"
+    ]
+  },
+  "hints": [
+    "Count from each vertex, then think about how many times each diagonal got counted.",
+    "From any one of the 12 vertices you can draw a diagonal to 9 others: not to itself, and not to its two neighbours.",
+    "That gives 12 x 9 = 108 endpoint-counts, but each diagonal has two endpoints, so divide by 2 to get 54."
+  ],
+  "solutions": {
+    "reliable": "From a single vertex, you can reach 11 other vertices, but two of them are its neighbours and those lines are sides, not diagonals. So each vertex is the endpoint of 12 - 3 = 9 diagonals. Multiplying gives 12 x 9 = 108, but this counts every diagonal twice, once from each end, so the true number is 108 / 2 = 54. Equivalently: all C(12,2) = 66 vertex pairs, minus the 12 that are sides, gives 66 - 12 = 54. The transferable idea: whenever you count from each object, ask how many times the thing you want has been counted.",
+    "elegant": "All 66 vertex pairs minus the 12 that are sides leaves 54 diagonals."
+  },
+  "whyOnTest": "Forgetting to halve is the standard error, and having a second method that agrees is the fastest way to catch it.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

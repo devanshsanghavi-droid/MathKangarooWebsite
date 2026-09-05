@@ -1,0 +1,68 @@
+{
+  "id": "KA-0167",
+  "band": "9-10",
+  "points": 5,
+  "statement": "The numbers 1 to 10 are written on a board. You repeatedly rub out any two of them and write down their positive difference instead, until a single number is left. What can be said about that final number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "It is always odd",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "It is always even",
+      "correct": false,
+      "misconception": "I checked the parity of the count of numbers rather than of their sum."
+    },
+    {
+      "key": "C",
+      "text": "It can be either odd or even",
+      "correct": false,
+      "misconception": "I tried two examples, got different answers, and concluded nothing is forced."
+    },
+    {
+      "key": "D",
+      "text": "It is always zero",
+      "correct": false,
+      "misconception": "I assumed differences must shrink all the way to nothing."
+    },
+    {
+      "key": "E",
+      "text": "It is always 1",
+      "correct": false,
+      "misconception": "I found one sequence of moves ending at 1 and assumed every sequence must."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-05",
+    "secondary": [
+      "LOG-06",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Look for something about the whole board that never changes when you make a move.",
+    "Replacing a and b by their difference changes the total by a + b - |a - b|, which is always an even amount.",
+    "The starting sum 1 + 2 + ... + 10 = 55 is odd, and every move changes the sum by an even number, so the final single number is odd."
+  ],
+  "solutions": {
+    "reliable": "Track the parity of the total. The starting sum is 1 + 2 + ... + 10 = 55, which is odd. A move replaces a and b by |a - b|, so the sum drops by a + b - |a - b|, which equals 2b or 2a - either way, an even number. Since the sum starts odd and only ever changes by an even amount, it stays odd forever. At the end one number remains and it IS the sum, so that number is odd. The transferable idea: when a process looks chaotic, look for a quantity it cannot change.",
+    "elegant": "Differences preserve parity, so the whole board's parity is locked to the parity of 55 from the first move to the last."
+  },
+  "whyOnTest": "An invariant turns a question with countless possible move orders into a single observation about parity.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

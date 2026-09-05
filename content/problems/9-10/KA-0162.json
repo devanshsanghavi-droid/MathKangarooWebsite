@@ -1,0 +1,68 @@
+{
+  "id": "KA-0162",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Two towns are 300 km apart. A car leaves each town at the same moment driving toward the other, one at 60 km/h and the other at 90 km/h. How long until they meet?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2 hours",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "3 hours 20 minutes",
+      "correct": false,
+      "misconception": "I used only the slower car's speed and divided 300 by 90 the wrong way round."
+    },
+    {
+      "key": "C",
+      "text": "4 hours",
+      "correct": false,
+      "misconception": "I averaged the two speeds to 75 km/h and divided 300 by it, which ignores that both cars move at once."
+    },
+    {
+      "key": "D",
+      "text": "5 hours",
+      "correct": false,
+      "misconception": "I divided 300 by 60, using only the slower car."
+    },
+    {
+      "key": "E",
+      "text": "1 hour",
+      "correct": false,
+      "misconception": "I halved the distance to 150 and then divided by 150, applying the closing speed twice."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-03",
+    "secondary": [
+      "CFT-02",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "The gap closes from both ends at once.",
+    "Every hour the gap closes by 60 + 90 = 150 km.",
+    "300 / 150 = 2 hours."
+  ],
+  "solutions": {
+    "reliable": "When two objects move toward each other, the distance between them closes at the sum of their speeds. Here the gap shrinks by 60 + 90 = 150 km every hour, so a 300 km gap closes in 300 / 150 = 2 hours. Check it directly: in 2 hours the first car covers 120 km and the second covers 180 km, and 120 + 180 = 300. The transferable idea: approaching speeds add, receding speeds also add, and same-direction speeds subtract.",
+    "elegant": "In two hours the cars cover 120 and 180 km, and those already fill the 300 km road."
+  },
+  "whyOnTest": "Closing speed is the one idea that turns most two-object motion problems into a single division.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0169",
+  "band": "11-12",
+  "points": 3,
+  "statement": "What is the remainder when 7 to the power 100 is divided by 5?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I reduced 7 to 2 correctly but then used a remainder of 1 when dividing 100 by 4."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I read the cycle backwards and landed on the entry before the right one."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I used 100 divided by 4 giving 25 and read off the 25th entry as if the cycle had length 25."
+    },
+    {
+      "key": "E",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed a power that large must be divisible by 5."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "NUM-07",
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "Replace 7 by its remainder on division by 5 before doing anything else.",
+    "7 leaves 2, so 7^100 leaves the same remainder as 2^100. Now find the cycle of 2 modulo 5.",
+    "2, 4, 3, 1 repeats with length 4, and 100 is a multiple of 4, so the remainder is the last entry: 1."
+  ],
+  "solutions": {
+    "reliable": "First reduce the base: 7 leaves remainder 2 on division by 5, so 7^100 and 2^100 leave the same remainder. Now find the cycle of powers of 2 modulo 5: 2, 4, 8 -> 3, 16 -> 1, and then it repeats. The cycle is 2, 4, 3, 1 with length 4. Since 100 = 4 x 25 is an exact multiple of 4, the exponent lands on the LAST entry of the cycle, giving remainder 1. The transferable idea: reduce the base first, then find the cycle length, then locate the exponent within it.",
+    "elegant": "2^4 = 16 leaves 1, so 2^100 = (2^4)^25 leaves 1^25 = 1."
+  },
+  "whyOnTest": "Reducing the base before finding the cycle is what keeps these arithmetic-free, and an exact multiple landing on the last entry is the usual off-by-one.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

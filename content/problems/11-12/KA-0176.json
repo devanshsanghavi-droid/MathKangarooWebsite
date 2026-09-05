@@ -1,0 +1,68 @@
+{
+  "id": "KA-0176",
+  "band": "11-12",
+  "points": 5,
+  "statement": "An 8 by 8 chessboard has two opposite corner squares removed, leaving 62 squares. Each domino covers exactly two squares that share an edge. Can the 62 squares be covered exactly by 31 dominoes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "No, because the two removed corners share a colour, so 32 squares of one colour remain and only 30 of the other",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "Yes, because 62 is even and 31 dominoes cover exactly 62 squares",
+      "correct": false,
+      "misconception": "I checked that the counts match but a matching count does not make a covering possible."
+    },
+    {
+      "key": "C",
+      "text": "No, because 62 is not divisible by 4",
+      "correct": false,
+      "misconception": "I invented a divisibility condition; dominoes cover two squares, so only divisibility by 2 could matter."
+    },
+    {
+      "key": "D",
+      "text": "Yes, but only if the dominoes may be placed diagonally",
+      "correct": false,
+      "misconception": "I changed the rules rather than testing them; the question says dominoes cover squares sharing an edge."
+    },
+    {
+      "key": "E",
+      "text": "No, because the board is no longer rectangular",
+      "correct": false,
+      "misconception": "I appealed to the shape, but plenty of non-rectangular regions can be tiled by dominoes."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-07",
+    "secondary": [
+      "LOG-09",
+      "CNT-15"
+    ]
+  },
+  "hints": [
+    "Colour the board like a real chessboard and look at what each domino must cover.",
+    "Every domino covers exactly one black and one white square, whatever its position or orientation.",
+    "Opposite corners of a chessboard share a colour, so removing them leaves 32 of one colour and 30 of the other - and 31 dominoes would need 31 of each."
+  ],
+  "solutions": {
+    "reliable": "Colour the board in the usual alternating pattern. Because neighbouring squares always differ in colour, every domino - however placed - covers exactly one square of each colour. So 31 dominoes must cover 31 black and 31 white squares. Now, the two opposite corners of a chessboard are always the SAME colour. Removing them leaves 32 squares of one colour and 30 of the other, which no set of 31 dominoes can match. The covering is therefore impossible. The transferable idea: a colouring turns an impossible search over arrangements into a single counting statement.",
+    "elegant": "Every domino takes one square of each colour, and the mutilated board has 32 of one and 30 of the other."
+  },
+  "whyOnTest": "This is the cleanest example of a colouring argument, where proving impossibility is easier than any amount of searching.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

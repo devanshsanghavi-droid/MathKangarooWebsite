@@ -1,0 +1,68 @@
+{
+  "id": "KA-0166",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Six friends sit around a circular table. Two seatings count as the same if one can be turned into the other by rotating the table. How many genuinely different seatings are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "120",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "720",
+      "correct": false,
+      "misconception": "I counted every arrangement in a row, so each circular seating got counted once for every rotation."
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": false,
+      "misconception": "I divided 720 by 20 or some other number instead of by the 6 rotations."
+    },
+    {
+      "key": "D",
+      "text": "60",
+      "correct": false,
+      "misconception": "I divided by 12, treating reflections as identical too, though the question only allows rotations."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I fixed two people rather than one, dividing by an extra factor."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-16",
+      "CNT-05"
+    ]
+  },
+  "hints": [
+    "Rotating a circular seating does not change who is next to whom.",
+    "There are 6! = 720 ways to seat six people in labelled chairs. Each circular seating appears once for every rotation of the table.",
+    "There are 6 rotations, so the answer is 720 / 6 = 120."
+  ],
+  "solutions": {
+    "reliable": "Start by pretending the chairs are labelled: that gives 6! = 720 arrangements. But turning the table produces a seating that the question calls the same, and there are 6 rotations of a six-seat table, so every genuinely different seating has been counted 6 times. Dividing gives 720 / 6 = 120. An equivalent and often faster route: seat one person first to kill the rotation, then arrange the remaining five in 5! = 120 ways. The transferable idea: to count up to a symmetry, either divide by the number of symmetries or fix one object to remove them.",
+    "elegant": "Fix one friend's seat to remove the rotations, then the other five can be arranged in 5! = 120 ways."
+  },
+  "whyOnTest": "Counting up to symmetry is exactly where a correct count becomes a wrong answer, and fixing one object is the cleanest fix.",
+  "estSeconds": 145,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

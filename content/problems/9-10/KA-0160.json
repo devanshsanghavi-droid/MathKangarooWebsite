@@ -1,0 +1,68 @@
+{
+  "id": "KA-0160",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A sequence begins 7, 11, 15, 19, and continues with the same constant step. What is the 30th term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "123",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "127",
+      "correct": false,
+      "misconception": "I multiplied the step by 30 instead of by 29, forgetting that the first term needs no steps."
+    },
+    {
+      "key": "C",
+      "text": "120",
+      "correct": false,
+      "misconception": "I used 4 times 30 and forgot to add the starting value."
+    },
+    {
+      "key": "D",
+      "text": "119",
+      "correct": false,
+      "misconception": "I added 28 steps instead of 29, counting the gaps one short."
+    },
+    {
+      "key": "E",
+      "text": "137",
+      "correct": false,
+      "misconception": "I treated the first term as the step and used 7 times 30 minus something close."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-02",
+    "secondary": [
+      "MOD-01",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "Count the gaps between terms, not the terms themselves.",
+    "Going from the 1st term to the 30th takes 29 steps of 4.",
+    "7 + 29 x 4 = 7 + 116 = 123."
+  ],
+  "solutions": {
+    "reliable": "The step is 11 - 7 = 4. Reaching the 30th term from the 1st takes 29 steps, not 30, because the first term is already there before any step is taken. So the 30th term is 7 + 29 x 4 = 7 + 116 = 123. Check on a small case: the 2nd term should be 7 + 1 x 4 = 11, which matches. The transferable idea: the nth term is first + (n - 1) x step, and the minus one is where the marks go.",
+    "elegant": "Every term is 3 less than a multiple of 4, so the 30th is 4 x 31 - 1 = 123."
+  },
+  "whyOnTest": "The off-by-one between terms and gaps is the single most common arithmetic-sequence error.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

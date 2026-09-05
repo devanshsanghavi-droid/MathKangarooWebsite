@@ -11,6 +11,7 @@ import {
   toSearchParams,
 } from '../worksheet';
 import { getAllProblems } from '../content';
+import { BANDS } from '../schemas.ts';
 
 const problems = getAllProblems();
 
@@ -205,7 +206,11 @@ describe('selectProblems', () => {
   });
 
   it('returns nothing, without throwing, when no problem matches', () => {
-    const query = { ...base, bands: ['11-12'] as const, count: 10 };
+    // The empty band is derived, not hard-coded: this used to name 11-12, which stopped being
+    // empty the moment problems were authored for that level.
+    const emptyBand = BANDS.find((band) => !problems.some((problem) => problem.band === band));
+    if (!emptyBand) throw new Error('every band now has problems - pick a new empty case');
+    const query = { ...base, bands: [emptyBand], count: 10 };
     expect(selectProblems(problems, query)).toEqual({ selected: [], available: 0 });
   });
 

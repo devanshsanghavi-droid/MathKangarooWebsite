@@ -1,0 +1,68 @@
+{
+  "id": "KA-0172",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A committee of 4 must be formed from 5 boys and 4 girls, and it must contain exactly 2 boys and 2 girls. How many different committees are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "60",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "126",
+      "correct": false,
+      "misconception": "I chose any 4 from all 9 people and ignored the two-and-two requirement."
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": false,
+      "misconception": "I added the two counts instead of multiplying them."
+    },
+    {
+      "key": "D",
+      "text": "240",
+      "correct": false,
+      "misconception": "I treated the choices as ordered, counting the same committee several times."
+    },
+    {
+      "key": "E",
+      "text": "40",
+      "correct": false,
+      "misconception": "I used 5 x 4 x 2 or a similar shortcut rather than counting each selection properly."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-04",
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "Choose the boys and the girls as two separate jobs.",
+    "The number of ways to pick 2 boys from 5 is 5 choose 2, and 2 girls from 4 is 4 choose 2.",
+    "5 choose 2 = 10 and 4 choose 2 = 6, and the two choices are independent, so 10 x 6 = 60."
+  ],
+  "solutions": {
+    "reliable": "Split the task into two independent choices. Picking 2 boys from 5 can be done in C(5,2) = (5 x 4)/2 = 10 ways. Picking 2 girls from 4 can be done in C(4,2) = (4 x 3)/2 = 6 ways. Every choice of boys can pair with every choice of girls, so the multiplication principle gives 10 x 6 = 60 committees. The transferable idea: independent choices multiply, and only mutually exclusive cases add.",
+    "elegant": "C(5,2) x C(4,2) = 10 x 6 = 60."
+  },
+  "whyOnTest": "Adding when you should multiply, and ignoring a composition constraint, are the two errors that account for most lost marks here.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

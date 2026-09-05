@@ -1,0 +1,68 @@
+{
+  "id": "KA-0156",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A pattern is built in rows. The first figure has 1 row, the second has 2 rows, and so on. In every figure, the first row has 1 dot, the second has 3 dots, the third has 5 dots, and each row after has 2 more dots than the one above it. How many dots are in the eighth figure?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "64",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": false,
+      "misconception": "I gave the number of dots in the eighth ROW instead of the whole figure."
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": false,
+      "misconception": "I added the row numbers 1 through 8 instead of the odd numbers of dots."
+    },
+    {
+      "key": "D",
+      "text": "72",
+      "correct": false,
+      "misconception": "I multiplied 8 rows by 9, using a rough average row that is one too large."
+    },
+    {
+      "key": "E",
+      "text": "81",
+      "correct": false,
+      "misconception": "I counted the rows starting from zero and used the ninth square number."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-04",
+    "secondary": [
+      "CFT-03",
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "Write out the rows for a small figure and add them, before trying figure eight.",
+    "Figure 1 has 1 dot. Figure 2 has 1 + 3 = 4. Figure 3 has 1 + 3 + 5 = 9. Those are square numbers.",
+    "The nth figure holds n squared dots, so the eighth holds 8 x 8 = 64."
+  ],
+  "solutions": {
+    "reliable": "Build the small cases first. Figure 1 is 1 dot; figure 2 is 1 + 3 = 4; figure 3 is 1 + 3 + 5 = 9; figure 4 is 1 + 3 + 5 + 7 = 16. Those are 1, 4, 9, 16 - the square numbers - so the nth figure holds n squared dots and the eighth holds 8 x 8 = 64. You can also just add the eight odd numbers directly: 1 + 3 + 5 + 7 + 9 + 11 + 13 + 15 = 64. The transferable idea: build the small cases and read the pattern off them, rather than guessing a formula.",
+    "elegant": "The first n odd numbers always sum to n squared, because they stack into an n by n square."
+  },
+  "whyOnTest": "Growth patterns are the cheapest place to practise trying small cases before reaching for a formula.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

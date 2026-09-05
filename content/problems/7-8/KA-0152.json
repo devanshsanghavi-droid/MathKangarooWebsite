@@ -1,0 +1,68 @@
+{
+  "id": "KA-0152",
+  "band": "7-8",
+  "points": 3,
+  "statement": "In a triangle, one angle measures 30 degrees. Of the other two angles, one is exactly twice the other. What is the largest angle in the triangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "50 degrees",
+      "correct": false,
+      "misconception": "I found the smaller of the two unknown angles and stopped before doubling it."
+    },
+    {
+      "key": "B",
+      "text": "75 degrees",
+      "correct": false,
+      "misconception": "I split the remaining 150 degrees into two equal halves instead of a one-to-two split."
+    },
+    {
+      "key": "C",
+      "text": "100 degrees",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "150 degrees",
+      "correct": false,
+      "misconception": "I split the remainder evenly into 75 and 75, then doubled one of them."
+    },
+    {
+      "key": "E",
+      "text": "90 degrees",
+      "correct": false,
+      "misconception": "I assumed that the largest angle in a triangle like this must be a right angle."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "MOD-01",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "The three angles add to 180 degrees, so the two unknown ones add to 150.",
+    "Call the smaller unknown angle x. Then the other is 2x, and x + 2x = 150.",
+    "3x = 150, so x = 50 and 2x = 100. The angles are 30, 50 and 100, which sum to 180."
+  ],
+  "solutions": {
+    "reliable": "The angles of a triangle sum to 180 degrees, so the two unknown angles together make 180 - 30 = 150. Writing the smaller as x makes the larger 2x, so x + 2x = 3x = 150 and x = 50. The two unknown angles are therefore 50 and 100, and the largest angle in the triangle is 100 degrees. Check: 30 + 50 + 100 = 180. The transferable idea: naming the smaller share x keeps an uneven split from collapsing into an even one.",
+    "elegant": "The remainder of 150 splits into three equal shares of 50; the larger angle takes two of them, giving 100."
+  },
+  "whyOnTest": "Naming the smaller quantity x is what keeps a one-to-two split from collapsing into an even one.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

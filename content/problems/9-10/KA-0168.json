@@ -1,0 +1,68 @@
+{
+  "id": "KA-0168",
+  "band": "9-10",
+  "points": 5,
+  "statement": "An ordinary six-sided die is rolled three times. What is the probability that at least one roll shows a six?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "91/216",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "1/2",
+      "correct": false,
+      "misconception": "I added 1/6 three times, which counts the overlapping cases more than once and would exceed 1 for seven rolls."
+    },
+    {
+      "key": "C",
+      "text": "125/216",
+      "correct": false,
+      "misconception": "I worked out the probability of NO six and forgot to subtract it from 1."
+    },
+    {
+      "key": "D",
+      "text": "3/216",
+      "correct": false,
+      "misconception": "I found the probability of three sixes instead of at least one."
+    },
+    {
+      "key": "E",
+      "text": "1/6",
+      "correct": false,
+      "misconception": "I gave the probability for a single roll and ignored that there are three."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-09",
+    "secondary": [
+      "CNT-16",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "At least one is much easier to count by asking about the opposite.",
+    "The opposite of at least one six is no sixes at all in three rolls.",
+    "Each roll avoids a six with probability 5/6, so no sixes has probability (5/6)^3 = 125/216, and the answer is 1 - 125/216 = 91/216."
+  ],
+  "solutions": {
+    "reliable": "The phrase at least one is a signal to count the complement. The opposite event is no six on any of the three rolls. Each roll avoids a six with probability 5/6, and the rolls are independent, so no sixes has probability (5/6)^3 = 125/216. The event we want is everything else: 1 - 125/216 = 91/216, which is a little over 42 percent. The transferable idea: at least one almost always means one minus none.",
+    "elegant": "One minus (5/6)^3 = 1 - 125/216 = 91/216."
+  },
+  "whyOnTest": "Adding 1/6 three times is the classic error, and it visibly breaks at seven rolls where it would give a probability above 1.",
+  "estSeconds": 155,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

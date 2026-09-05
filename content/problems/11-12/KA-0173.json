@@ -1,0 +1,68 @@
+{
+  "id": "KA-0173",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Each of the four edges of a square is painted either black or white. Two paintings count as the same if one can be rotated onto the other. How many genuinely different paintings are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I counted every colouring of the four edges and forgot that rotations make some of them identical."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I divided 16 by 4, but that only works when no painting is left unchanged by a rotation, and some are."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I halved 16, treating only the 180 degree turn as a symmetry."
+    },
+    {
+      "key": "E",
+      "text": "5",
+      "correct": false,
+      "misconception": "I listed by how many edges are black but forgot that two black edges can be adjacent or opposite."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-04",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "Some paintings survive a turn unchanged.",
+    "Group the paintings by how many edges are black: 0, 1, 2, 3 or 4.",
+    "Zero black: 1 way. One black: 1. Two black: 2 (adjacent or opposite). Three black: 1. Four black: 1. Total 1+1+2+1+1 = 6."
+  ],
+  "solutions": {
+    "reliable": "Divide-by-four fails here, because some paintings are unchanged by a rotation, so classify by hand instead. Group by the number of black edges. All white: 1 painting. Exactly one black edge: any single edge can be rotated to any other, so 1. Exactly two black: the two black edges are either adjacent or opposite, and rotation cannot turn one into the other, so 2. Exactly three black: 1, by the same argument as one. All black: 1. The total is 1 + 1 + 2 + 1 + 1 = 6. The transferable idea: when symmetry is involved, case-splitting on an invariant feature - here the number of black edges - is safer than dividing.",
+    "elegant": "The count of black edges survives any rotation, so classify by it and only the two-black case splits, into adjacent and opposite."
+  },
+  "whyOnTest": "Dividing by the number of symmetries is the standard trap, and it is wrong exactly when some object is fixed by a symmetry.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -3,6 +3,27 @@ import { render, screen } from '@testing-library/react';
 import ProblemsPage from '../problems/page';
 import { getAllProblems, getProblemsForSkill } from '@/lib/content';
 import { PAGE_SIZE, type RawSearchParams } from '@/lib/problem-query';
+import { BANDS, STRANDS } from '@/lib/schemas';
+
+/**
+ * A filter that currently matches no problem. Prefers a band with nothing in it, and falls
+ * back to a band-and-strand pair that is empty, so this keeps working as the bank grows.
+ */
+function emptyFilter(): Record<string, string> {
+  const problems = getAllProblems();
+  for (const band of BANDS) {
+    if (!problems.some((problem) => problem.band === band)) return { band };
+  }
+  for (const band of BANDS) {
+    for (const strand of STRANDS) {
+      const hit = problems.some(
+        (problem) => problem.band === band && problem.skills.primary.startsWith(strand),
+      );
+      if (!hit) return { band, strand };
+    }
+  }
+  throw new Error('every band and strand now has problems - pick a new empty case');
+}
 
 async function renderProblems(searchParams: RawSearchParams = {}) {
   return render(await ProblemsPage({ searchParams: Promise.resolve(searchParams) }));
@@ -91,7 +112,13 @@ describe('the browse page', () => {
   });
 
   it('shows a written empty state, with a way out', async () => {
-    const { container } = await renderProblems({ band: '11-12' });
+    /*
+     * The empty filter is DERIVED from the bank rather than hard-coded. It used to be
+     * band 11-12, which stopped being empty the day problems were authored for that level and
+     * took three tests down with it. Asking the content which combination is empty means the
+     * test keeps testing the empty state instead of quietly testing a populated one.
+     */
+    const { container } = await renderProblems(emptyFilter());
     expect(container.textContent).toMatch(/No problem matches these filters/);
     const clear = [...container.querySelectorAll('a')].find((a) =>
       /clear all filters/i.test(a.textContent ?? ''),

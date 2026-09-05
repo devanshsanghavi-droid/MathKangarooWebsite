@@ -1,0 +1,68 @@
+{
+  "id": "KA-0159",
+  "band": "7-8",
+  "points": 5,
+  "statement": "One tap fills a tank in 6 hours. A second tap fills the same tank in 4 hours. Both taps are opened together on an empty tank. How long does it take to fill?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2 hours 24 minutes",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "5 hours",
+      "correct": false,
+      "misconception": "I averaged the two times, but two taps together must be faster than either one alone."
+    },
+    {
+      "key": "C",
+      "text": "10 hours",
+      "correct": false,
+      "misconception": "I added the two times, which would be right for filling two tanks one after the other."
+    },
+    {
+      "key": "D",
+      "text": "2 hours",
+      "correct": false,
+      "misconception": "I halved the smaller of the two times, guessing that two taps must simply be twice as fast as one."
+    },
+    {
+      "key": "E",
+      "text": "1 hour 12 minutes",
+      "correct": false,
+      "misconception": "I found 2 hours 24 minutes correctly and then halved it a second time."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-04",
+    "secondary": [
+      "NUM-09",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Times do not add. Think about how much each tap does in one hour.",
+    "In one hour the first tap fills 1/6 of the tank and the second fills 1/4. Together that is 1/6 + 1/4 of a tank per hour.",
+    "1/6 + 1/4 = 5/12 of a tank per hour, so a whole tank takes 12/5 = 2.4 hours, which is 2 hours 24 minutes."
+  ],
+  "solutions": {
+    "reliable": "Work in rates rather than times, because rates add and times do not. In one hour the first tap fills 1/6 of the tank and the second fills 1/4, so together they fill 1/6 + 1/4 = 2/12 + 3/12 = 5/12 of the tank each hour. Filling the whole tank therefore takes 1 divided by 5/12 = 12/5 = 2.4 hours, which is 2 hours and 24 minutes. Sanity check: the answer must be less than 4 hours, the faster tap's time on its own. The transferable idea: rates add, times do not.",
+    "elegant": "In 12 hours the taps would fill 2 and 3 tanks, so 5 tanks in 12 hours, which is 12/5 hours per tank."
+  },
+  "whyOnTest": "Adding times instead of rates is the standard trap, and the sanity check - faster than either alone - catches it every time.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

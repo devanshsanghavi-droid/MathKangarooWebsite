@@ -1,0 +1,68 @@
+{
+  "id": "KA-0161",
+  "band": "9-10",
+  "points": 3,
+  "statement": "What is the remainder when 2 to the power 50 is divided by 7?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I assumed the cycle ends on 1 at every exponent that is a multiple of 2."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I used a remainder of 1 rather than 2 when dividing 50 by 3."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I doubled my way to 2 cubed = 8 and used 8 minus 2."
+    },
+    {
+      "key": "E",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed a large power of 2 must eventually be divisible by 7."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "NUM-07",
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "Work out the remainders of the first few powers of 2 when divided by 7.",
+    "2, 4, 8, 16, 32, 64 leave 2, 4, 1, 2, 4, 1 - the remainders cycle with length 3.",
+    "50 divided by 3 leaves remainder 2, so 2^50 leaves the same remainder as 2^2, which is 4."
+  ],
+  "solutions": {
+    "reliable": "Powers repeat their remainders. Dividing by 7: 2^1 leaves 2, 2^2 leaves 4, 2^3 = 8 leaves 1, and then the pattern restarts because multiplying by 2 again gives 2. So the cycle is 2, 4, 1 with length 3. Now 50 = 3 x 16 + 2, so 2^50 sits in the same place as 2^2 and leaves remainder 4. The transferable idea: find the first exponent that returns a remainder of 1, and the cycle length is that exponent.",
+    "elegant": "2^3 leaves 1, so 2^48 leaves 1, and two more doublings give 4."
+  },
+  "whyOnTest": "Modular cycles turn an impossible calculation into a division you can do in your head.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

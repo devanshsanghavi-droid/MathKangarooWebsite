@@ -18,6 +18,11 @@ const OPTIONS: Array<{ value: ThemeChoice; label: string; glyph: string }> = [
  * "system" removes the attribute entirely rather than writing data-theme="system", so the
  * prefers-color-scheme media query in tokens.css takes over. This is the same logic the
  * blocking script in <head> runs before first paint; keep the two in step.
+ *
+ * Note that the DEFAULT is light, not system — see readStoredTheme. A reader who has never
+ * touched the toggle gets the light theme even on a dark-mode machine, because the problem
+ * statements, the figures and the printed worksheets were all designed against paper white.
+ * "System" is one click away for anyone who wants it.
  */
 export function applyTheme(choice: ThemeChoice): void {
   const root = document.documentElement;
@@ -30,20 +35,25 @@ function readStoredTheme(): ThemeChoice {
     const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
     if (stored === 'light' || stored === 'dark' || stored === 'system') return stored;
   } catch {
-    // Private browsing, or storage disabled. The system theme is a perfectly good default.
+    // Private browsing, or storage disabled. Fall through to the same default.
   }
-  return 'system';
+  return 'light';
 }
 
 export function ThemeToggle() {
-  // Render "system" on the server and on the first client pass so the markup matches; the
+  // Render the default on the server and on the first client pass so the markup matches; the
   // effect below corrects it immediately. The paint itself is already right, because the
   // blocking script set data-theme before React ever ran.
-  const [choice, setChoice] = useState<ThemeChoice>('system');
+  const [choice, setChoice] = useState<ThemeChoice>('light');
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    setChoice(readStoredTheme());
+    const stored = readStoredTheme();
+    setChoice(stored);
+    // Apply on mount as well as in the blocking script. Normally this is a no-op because the
+    // script in <head> already stamped the attribute — but if a strict Content-Security-Policy
+    // ever blocks that inline script, this is what stops the page rendering in the wrong theme.
+    applyTheme(stored);
     setReady(true);
   }, []);
 
@@ -94,4 +104,14 @@ export function ThemeToggle() {
  * no theme toggle at all. It is deliberately tiny, dependency-free, and wrapped in try/catch so
  * a browser with storage disabled still paints.
  */
-export const THEME_INIT_SCRIPT = `(function(){try{var t=localStorage.getItem('${THEME_STORAGE_KEY}');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}})();`;
+/*
+ * Runs before first paint, so nobody sees a flash of the wrong theme.
+ *
+ * It must agree with readStoredTheme exactly: light is the DEFAULT, so with nothing stored it
+ * stamps data-theme="light" rather than leaving the attribute off. Leaving it off would hand
+ * the decision to prefers-color-scheme, which is what made a dark-mode machine open the site
+ * dark even though light is the default the design is built around.
+ *
+ * Only an explicit "system" choice removes the attribute and lets the media query decide.
+ */
+export const THEME_INIT_SCRIPT = `(function(){try{var t=localStorage.getItem('${THEME_STORAGE_KEY}');if(t==='system'){document.documentElement.removeAttribute('data-theme')}else{document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light')}}catch(e){document.documentElement.setAttribute('data-theme','light')}})();`;

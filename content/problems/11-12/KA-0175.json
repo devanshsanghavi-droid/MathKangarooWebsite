@@ -1,0 +1,68 @@
+{
+  "id": "KA-0175",
+  "band": "11-12",
+  "points": 5,
+  "statement": "What is the smallest number n such that ANY collection of n whole numbers must contain two of them whose difference is divisible by 7?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": false,
+      "misconception": "I used the number of possible remainders without adding one for the pair that must collide."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": false,
+      "misconception": "I doubled 7, thinking I needed two full sets of remainders."
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": false,
+      "misconception": "I doubled 7 and added one, applying the pigeonhole idea to the wrong number of boxes."
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": false,
+      "misconception": "I guessed from small cases without identifying what the boxes actually are."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-17",
+    "secondary": [
+      "NUM-06",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Two numbers differ by a multiple of 7 when their remainders agree.",
+    "There are only 7 possible remainders: 0, 1, 2, 3, 4, 5, 6. Those are the pigeonholes.",
+    "Seven numbers could have all seven different remainders, so seven is not enough. Eight numbers must repeat a remainder, so n = 8."
+  ],
+  "solutions": {
+    "reliable": "The difference of two numbers is divisible by 7 precisely when the two leave the same remainder on division by 7. There are exactly 7 possible remainders, so treat those as boxes. With 7 numbers you could get one in each box - for example 0, 1, 2, 3, 4, 5, 6, no two of which differ by a multiple of 7 - so 7 is not enough. With 8 numbers there are more numbers than boxes, so some box holds two, and those two differ by a multiple of 7. The answer is 8. The transferable idea: identify the boxes precisely, then the answer is boxes plus one.",
+    "elegant": "Seven remainders are seven pigeonholes, so the eighth number forces a repeat."
+  },
+  "whyOnTest": "Naming the pigeonholes correctly is the whole problem; once they are remainders modulo 7 the answer is immediate.",
+  "estSeconds": 155,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-09-04",
+  "license": "CC-BY-NC-SA-4.0"
+}

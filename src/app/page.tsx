@@ -7,12 +7,11 @@ import {
   getStrandSummaries,
   getSkill,
 } from '@/lib/content';
-import { problemOfTheDay, formatDay } from '@/lib/potd';
+import { dayNumber } from '@/lib/potd';
+import { ProblemOfTheDay } from '@/components/ProblemOfTheDay';
 import { ProblemCard } from '@/components/ProblemCard';
 import { StrandStrip } from '@/components/StrandStrip';
 import { StatTile } from '@/components/StatTile';
-import { DifficultyPill } from '@/components/DifficultyPill';
-import { BandPill } from '@/components/BandPill';
 import { SITE } from '@/lib/site';
 import { StructuredData } from '@/components/StructuredData';
 
@@ -23,13 +22,6 @@ export const metadata: Metadata = {
   description: SITE.description,
   alternates: { canonical: '/' },
 };
-
-/**
- * Problem of the Day is derived from today's date, so the page has to be regenerated daily.
- * An hour is short enough that the change lands promptly and long enough that the page is
- * served from cache for essentially every visit - which is what keeps LCP where §1.1 wants it.
- */
-export const revalidate = 3600;
 
 /**
  * The sample problem in the hero.
@@ -45,9 +37,6 @@ export default function HomePage() {
   const stats = getContentStats();
   const problems = getAllProblems();
   const hero = getProblem(HERO_PROBLEM_ID) ?? problems[0];
-  const potd = problemOfTheDay(problems, new Date());
-  const potdSkill = potd ? getSkill(potd.skills.primary) : undefined;
-  const today = formatDay(new Date());
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10">
@@ -129,30 +118,16 @@ export default function HomePage() {
       </section>
 
       {/* ------------------------------------------------------ problem of the day */}
-      {potd ? (
-        <section aria-labelledby="potd-heading" className="mt-16">
-          <h2 id="potd-heading" className="m-0 text-lg">
-            Problem of the day
-          </h2>
-          <p className="mt-2 mb-4 text-sm text-ink-3">{today}</p>
-          <Link
-            href={`/problem/${potd.id}`}
-            className="block rounded-md border border-rule bg-surface p-5 no-underline hover:border-rule-strong"
-          >
-            <span className="flex flex-wrap items-center gap-2">
-              <span className="mono text-xs text-ink-3">{potd.id}</span>
-              <DifficultyPill points={potd.points} />
-              <BandPill band={potd.band} />
-              {potdSkill ? <span className="text-sm text-ink-2">{potdSkill.name}</span> : null}
-            </span>
-            <span className="statement prose-measure mt-3 block text-ink">{potd.statement}</span>
-          </Link>
-          <p className="mt-3 mb-0 text-xs text-ink-3">
-            A different problem every day, the same one for everyone. The dated archive and the 6pm
-            solution reveal arrive with <code className="mono">/potd</code> in Phase 2.
-          </p>
-        </section>
-      ) : null}
+      <ProblemOfTheDay
+        buildDay={dayNumber(new Date())}
+        candidates={problems.map((problem) => ({
+          id: problem.id,
+          points: problem.points,
+          band: problem.band,
+          statement: problem.statement,
+          skillName: getSkill(problem.skills.primary)?.name ?? null,
+        }))}
+      />
 
       {/* --------------------------------------------------------------- counters */}
       <section aria-labelledby="counters-heading" className="mt-16">

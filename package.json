@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "NEXT_DIST_DIR=.next-dev next dev",
-    "prebuild": "node scripts/bundle-content.ts",
+    "prebuild": "node scripts/validate-content.ts && node scripts/bundle-content.ts",
     "build": "next build",
     "cf:build": "opennextjs-cloudflare build && node scripts/check-build-secrets.ts",
     "check:build-secrets": "node scripts/check-build-secrets.ts",
@@ -56,7 +56,7 @@
     "@vitejs/plugin-react": "^5",
     "axe-core": "^4.10.0",
     "eslint": "^9",
-    "eslint-config-next": "^15.5.24",
+    "eslint-config-next": "^15.5.28",
     "eslint-config-prettier": "^10",
     "jsdom": "^26",
     "postcss": "^8",

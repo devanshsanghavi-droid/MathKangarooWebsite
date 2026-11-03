@@ -29,8 +29,8 @@ import {
  * Ordering is deterministic everywhere (id, then a stated tiebreak) so that a rebuild produces
  * byte-identical pages and a diff means something changed.
  *
- * Anything invalid throws at build time. `pnpm validate:content` is the friendly error
- * message; this is the backstop that stops a broken file reaching a reader.
+ * `buildContentIndex` (tests and scripts) throws on anything invalid. The deployed site reads
+ * the prebuilt bundle instead, and relies on `prebuild` having validated it - see contentIndex.
  */
 
 /* -------------------------------------------------------------------------- */
@@ -418,8 +418,10 @@ let cached: ContentIndex | null = null;
  *
  * Nothing is lost by trusting it. `pnpm validate:content` validates every source file against
  * the same schemas, and `pnpm check:bundle` proves byte-for-byte that the bundle still matches
- * content/. Both run in CI, so an invalid bundle cannot reach a deploy. Re-checking at request
- * time paid for a guarantee that was already bought at build time.
+ * content/. Validation also runs in `prebuild`, ahead of the bundle step, so every build -
+ * including Cloudflare's own, which deploys on push without waiting for CI - fails on an
+ * invalid file before the bundle is written. Re-checking at request time paid for a guarantee
+ * that was already bought at build time.
  */
 export function contentIndex(): ContentIndex {
   cached ??= indexRecords(readBundle());

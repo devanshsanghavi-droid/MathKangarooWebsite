@@ -20,7 +20,6 @@ export function StructuredData() {
         '@id': `${SITE.url}/#website`,
         url: SITE.url,
         name: SITE.name,
-        alternateName: 'Kangaroo Atlas Math Kangaroo practice',
         description: SITE.description,
         inLanguage: 'en',
         publisher: { '@id': `${SITE.url}/#org` },
@@ -34,16 +33,6 @@ export function StructuredData() {
           'A free, open platform for Math Kangaroo preparation, organised by skill rather ' +
           'than by past paper. Independent, not affiliated with Math Kangaroo in USA, NFP.',
         sameAs: [SITE.repo],
-        /* The whole point of the project, stated where a crawler can read it. */
-        teaches: [
-          'Number and arithmetic',
-          'Counting and combinatorics',
-          'Geometry and visualisation',
-          'Logic and deduction',
-          'Patterns and sequences',
-          'Modeling and word problems',
-          'Contest craft',
-        ],
         isAccessibleForFree: true,
       },
       {
@@ -53,7 +42,6 @@ export function StructuredData() {
         name: `${SITE.name} - ${SITE.tagline}`,
         isPartOf: { '@id': `${SITE.url}/#website` },
         about: { '@id': `${SITE.url}/#org` },
-        primaryImageOfPage: undefined,
       },
     ],
   };

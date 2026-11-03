@@ -12,8 +12,14 @@ export const SITE = {
     'A free, open platform for Math Kangaroo preparation. ~91 named skills in a prerequisite ' +
     'graph, an original problem bank, and an explanation written for the specific mistake you ' +
     'made. No account required, nothing paywalled.',
-  /** Overridden by NEXT_PUBLIC_SITE_URL in a deployment; the fallback keeps builds hermetic. */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kangaroo-atlas.vercel.app',
+  /**
+   * The live origin. Every canonical URL, the sitemap, robots.txt and the JSON-LD are built
+   * from it, so it must be a host that actually serves the site: when it pointed at an unused
+   * vercel.app name, search engines were handed a sitemap on a dead host and the home page's
+   * canonical pointed nowhere. NEXT_PUBLIC_SITE_URL overrides it, and must be set as a BUILD
+   * variable, because it is inlined and the pages are prerendered.
+   */
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://mathkangaroowebsite.notdev42.workers.dev',
   repo: 'https://github.com/devanshsanghavi-droid/MathKangarooWebsite',
   contactEmail: 'devansh.sanghavi@gmail.com',
   locale: 'en',

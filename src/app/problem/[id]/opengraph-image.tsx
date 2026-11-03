@@ -7,6 +7,12 @@ export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 export const alt = 'A Kangaroo Atlas problem card';
 
+/**
+ * Only the ids that exist. Without this an unknown id fell through to an on-demand satori
+ * render, the heaviest work in the app, and answered 500 - triggerable by anyone typing a URL.
+ */
+export const dynamicParams = false;
+
 /** One card per problem, generated at build time. */
 export function generateStaticParams(): Array<{ id: string }> {
   return getAllProblems().map((problem) => ({ id: problem.id }));

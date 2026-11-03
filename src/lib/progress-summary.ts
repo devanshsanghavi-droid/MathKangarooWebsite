@@ -39,9 +39,23 @@ export interface BankProgress {
   activeDays: number;
 }
 
-/** The UTC calendar day an attempt falls on. Matches calendarDay in mastery.ts. */
+/**
+ * The student's LOCAL calendar day, as YYYY-MM-DD.
+ *
+ * Not UTC. The streak is display only, and a day means the student's day: for a US student the
+ * after-school window crosses UTC midnight, so UTC days would merge one evening with the next
+ * afternoon and split a single afternoon in two. (mastery.ts still uses UTC days for its
+ * "two distinct days" rule, which is a separate decision this does not touch.)
+ */
+export function localDay(date: Date): string {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const d = String(date.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
+}
+
 function dayOf(iso: string): string {
-  return new Date(iso).toISOString().slice(0, 10);
+  return localDay(new Date(iso));
 }
 
 function shiftDay(day: string, deltaDays: number): string {
@@ -98,6 +112,10 @@ export function statusOfProblem(
     seen.add(attempt.at);
     return true;
   });
+  // Concatenating per-skill lists puts attempts in skill order, not time order, and
+  // problemProgress judges "right first time" by position. Each skill's list is also capped,
+  // so one list can have lost an early miss that another kept. Sort before judging.
+  unique.sort((a, b) => a.at.localeCompare(b.at));
   return problemProgress(unique);
 }
 
@@ -128,6 +146,12 @@ export function bankProgress(
   });
 
   const days = activeDaysOf(file);
+  // Count only skills the bank actually teaches: progress files can hold ids of skills that
+  // have since been retired, and those would let "opened" exceed the total.
+  const known = new Set(problems.flatMap((problem) => problem.skillIds));
+  const skillsTouched = Object.entries(file.attempts).filter(
+    ([skillId, attempts]) => known.has(skillId) && attempts.length > 0,
+  ).length;
 
   return {
     problems: problems.length,
@@ -135,9 +159,17 @@ export function bankProgress(
     attempted,
     untouched: problems.length - solved - attempted,
     byTier,
-    skillsTouched: Object.keys(file.attempts).length,
+    skillsTouched,
     skillsTotal,
     streakDays: streakFrom(days, today),
     activeDays: days.length,
   };
+}
+
+/** The three buckets the problem bank filters on. Not started, tried and missed, solved. */
+export type StatusBucket = 'todo' | 'attempted' | 'solved';
+
+export function bucketOf(state: MasteryState): StatusBucket {
+  if (state === 'mastered' || state === 'shaky') return 'solved';
+  return state === 'seen' ? 'attempted' : 'todo';
 }

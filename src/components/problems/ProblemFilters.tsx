@@ -8,7 +8,14 @@ import {
   toggle,
   type ProblemQuery,
   type ProblemSort,
+  type ProblemStatusFilter,
 } from '@/lib/problem-query';
+
+const STATUS_LABEL: Record<Exclude<ProblemStatusFilter, 'all'>, string> = {
+  todo: 'To do',
+  attempted: 'Attempted',
+  solved: 'Solved',
+};
 
 const SORT_LABEL: Record<ProblemSort, string> = {
   id: 'Id',
@@ -45,6 +52,28 @@ export function ProblemFilters({
 
   return (
     <div className="grid gap-4 rounded-md border border-rule bg-surface p-4">
+      <fieldset className="m-0 border-0 p-0">
+        <legend className="mb-2 p-0 text-2xs text-ink-3">
+          Status <span className="text-ink-3">(from this browser)</span>
+        </legend>
+        <ul className="m-0 flex flex-wrap list-none gap-1.5 p-0">
+          {(['todo', 'attempted', 'solved'] as const).map((status) => {
+            const active = query.status === status;
+            return (
+              <li key={status}>
+                <Link
+                  href={problemsHref({ ...query, ...reset, status: active ? 'all' : status })}
+                  aria-current={active ? 'true' : undefined}
+                  className={chip(active)}
+                >
+                  {STATUS_LABEL[status]}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </fieldset>
+
       <fieldset className="m-0 border-0 p-0">
         <legend className="mb-2 p-0 text-2xs text-ink-3">Level</legend>
         <ul className="m-0 flex flex-wrap list-none gap-1.5 p-0">
@@ -159,6 +188,7 @@ export function ProblemFilters({
         <span>
           <strong className="font-medium text-ink">{resultCount}</strong>{' '}
           {resultCount === 1 ? 'problem' : 'problems'}
+          {query.status !== 'all' ? ' before the status filter' : null}
         </span>
         {isFiltered(query) ? (
           <Link href={problemsHref({ sort: query.sort })} className="no-underline hover:underline">

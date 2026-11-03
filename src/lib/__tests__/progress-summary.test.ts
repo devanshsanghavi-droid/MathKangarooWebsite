@@ -1,11 +1,18 @@
 import { describe, it, expect } from 'vitest';
-import { activeDaysOf, bankProgress, statusOfProblem, streakFrom } from '../progress-summary.ts';
+import {
+  activeDaysOf,
+  bankProgress,
+  localDay,
+  statusOfProblem,
+  streakFrom,
+} from '../progress-summary.ts';
 import { EMPTY_PROGRESS, recordAttempt } from '../local-progress.ts';
 import type { AttemptRecord } from '../mastery.ts';
 import type { Points } from '../schemas.ts';
 
-const at = (day: number, hour = 10) =>
-  `2026-03-${String(day).padStart(2, '0')}T${String(hour).padStart(2, '0')}:00:00.000Z`;
+// Built in LOCAL time: days are the student's calendar days, so a fixture written in UTC would
+// land on a different day depending on the machine running the tests.
+const at = (day: number, hour = 10) => new Date(2026, 2, day, hour).toISOString();
 
 const attempt = (over: Partial<AttemptRecord> = {}): AttemptRecord => ({
   problemId: 'KA-0001',
@@ -51,6 +58,14 @@ describe('streaks', () => {
     file = recordAttempt(['CNT-12'], attempt({ at: at(3, 18) }), file);
     file = recordAttempt(['CNT-12'], attempt({ at: at(5) }), file);
     expect(activeDaysOf(file)).toEqual(['2026-03-05', '2026-03-03']);
+  });
+
+  it("uses the student's calendar day, so one afternoon is one day", () => {
+    // 15:00 and 23:00 local straddle UTC midnight anywhere in the Americas.
+    let file = recordAttempt(['CNT-12'], attempt({ at: at(3, 15) }), EMPTY_PROGRESS);
+    file = recordAttempt(['CNT-12'], attempt({ at: at(3, 23) }), file);
+    expect(activeDaysOf(file)).toEqual(['2026-03-03']);
+    expect(localDay(new Date(2026, 2, 3, 23, 30))).toBe('2026-03-03');
   });
 });
 
@@ -118,6 +133,19 @@ describe('whole-bank progress', () => {
     const p = bankProgress(file, BANK, 91, '2026-03-05');
     expect(p.byTier.find((t) => t.points === 5)).toMatchObject({ total: 1, solved: 1, share: 1 });
     expect(p.byTier.find((t) => t.points === 3)).toMatchObject({ total: 2, solved: 0, share: 0 });
+  });
+
+  it('judges first-try in time order, whatever order the skills were stored in', () => {
+    // The wrong answer sits only in GEO-02's list, the later right answer in CNT-12's, so a
+    // skill-ordered merge would read correct-then-wrong and call it solved first try.
+    let file = recordAttempt(['GEO-02'], attempt({ correct: false, at: at(1) }), EMPTY_PROGRESS);
+    file = recordAttempt(['CNT-12'], attempt({ correct: true, at: at(2) }), file);
+    expect(statusOfProblem(file, 'KA-0001', ['CNT-12', 'GEO-02'])).toBe('shaky');
+  });
+
+  it('does not count retired skills as opened', () => {
+    const file = recordAttempt(['RETIRED-01', 'CNT-12'], attempt(), EMPTY_PROGRESS);
+    expect(bankProgress(file, BANK, 91, '2026-03-05').skillsTouched).toBe(1);
   });
 
   it('counts skills touched, not skills mastered', () => {

@@ -12,7 +12,10 @@ import {
 import { ProblemFilters } from '@/components/problems/ProblemFilters';
 import { Pagination } from '@/components/problems/Pagination';
 import { EmptyState } from '@/components/EmptyState';
-import { ProblemTable } from '@/components/problems/ProblemTable';
+import { ProblemTable, StatusLegend, type ProblemRow } from '@/components/problems/ProblemTable';
+import { StatusFilteredTable } from '@/components/problems/StatusFilteredTable';
+import { RandomUnsolved } from '@/components/problems/RandomUnsolved';
+import type { Problem } from '@/lib/schemas';
 import { ProgressBanner } from '@/components/progress/ProgressBanner';
 
 export const metadata: Metadata = {
@@ -22,6 +25,21 @@ export const metadata: Metadata = {
     'original, all with an explanation written for each wrong answer.',
   alternates: { canonical: '/problems' },
 };
+
+function toRow(problem: Problem): ProblemRow {
+  const { primary, secondary } = getSkillsForProblem(problem);
+  return {
+    id: problem.id,
+    band: problem.band,
+    points: problem.points,
+    statement: problem.statement,
+    hasFigure: problem.figure !== null,
+    pValue: problem.calibration.pValue,
+    skillIds: [problem.skills.primary, ...problem.skills.secondary],
+    primarySkill: primary ? { id: primary.id, name: primary.name } : null,
+    secondaryCount: secondary.length,
+  };
+}
 
 export default async function ProblemsPage({
   searchParams,
@@ -67,35 +85,50 @@ export default async function ProblemsPage({
         />
       </div>
 
-      {page.items.length === 0 ? (
+      <div className="mt-4">
+        <RandomUnsolved
+          candidates={filtered.map((problem) => ({
+            id: problem.id,
+            skillIds: [problem.skills.primary, ...problem.skills.secondary],
+          }))}
+        />
+      </div>
+
+      <StatusLegend />
+
+      {filtered.length === 0 ? (
         <div className="mt-6">
           <EmptyState
             action={<Link href={problemsHref({ sort: query.sort })}>Clear all filters</Link>}
           >
             No problem matches these filters. There are {stats.problems} problems in the bank
-            altogether, across levels 3-4 up to 11-12.
+            altogether, across every level from 1–2 to 11–12.
           </EmptyState>
         </div>
+      ) : query.status === 'all' ? (
+        <>
+          <ProblemTable rows={page.items.map(toRow)} showSolveRate={calibrated > 0} />
+          <Pagination page={page} href={(number) => problemsHref({ ...query, page: number })} />
+        </>
       ) : (
-        <ProblemTable
-          rows={page.items.map((problem) => {
-            const { primary, secondary } = getSkillsForProblem(problem);
-            return {
-              id: problem.id,
-              band: problem.band,
-              points: problem.points,
-              statement: problem.statement,
-              hasFigure: problem.figure !== null,
-              pValue: problem.calibration.pValue,
-              skillIds: [problem.skills.primary, ...problem.skills.secondary],
-              primarySkill: primary ? { id: primary.id, name: primary.name } : null,
-              secondaryCount: secondary.length,
-            };
-          })}
+        /*
+          Status is the one filter the server cannot apply: progress lives in the student's
+          browser. So the whole matching list goes to the client, which narrows and paginates.
+          Only on this path - the default view stays twelve server-rendered rows.
+        */
+        <StatusFilteredTable
+          rows={filtered.map(toRow)}
+          query={query}
+          showSolveRate={calibrated > 0}
         />
       )}
 
-      <Pagination page={page} href={(number) => problemsHref({ ...query, page: number })} />
+      {calibrated === 0 ? (
+        <p className="mt-4 mb-0 text-xs text-ink-3">
+          Solve rates are not yet calibrated for any problem. Each one gets a measured rate once 30
+          students have tried it, and the column appears then.
+        </p>
+      ) : null}
     </div>
   );
 }

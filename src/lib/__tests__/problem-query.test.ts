@@ -63,12 +63,19 @@ describe('URLs are shareable and survive a reload - M1.7 acceptance', () => {
       strands: ['CNT', 'GEO'] as const,
       skill: 'CNT-12',
       sort: 'newest' as const,
+      status: 'attempted' as const,
       page: 3,
     };
     const url = new URL(problemsHref(query), 'https://example.test');
     const raw: Record<string, string[]> = {};
     for (const key of new Set(url.searchParams.keys())) raw[key] = url.searchParams.getAll(key);
     expect(parseProblemQuery(raw)).toEqual(query);
+  });
+
+  it('reads the status filter, and ignores a status it does not know', () => {
+    expect(parseProblemQuery({ status: 'solved' }).status).toBe('solved');
+    expect(parseProblemQuery({ status: 'mastered' }).status).toBe('all');
+    expect(problemsHref({ status: 'all' })).toBe('/problems');
   });
 
   it('produces a clean URL for the default state', () => {

@@ -23,12 +23,22 @@ export type ProblemSort = (typeof SORTS)[number];
 
 export const PAGE_SIZE = 12;
 
+/**
+ * Status, as LeetCode and OnePrep split a bank: what you have not touched, what you tried and
+ * missed, and what you have solved. It lives in the URL like every other filter, but the
+ * SERVER cannot apply it - progress is in the student's own browser, never on our server - so
+ * `matches()` ignores it and the page hands the status step to a client component.
+ */
+export const STATUSES = ['all', 'todo', 'attempted', 'solved'] as const;
+export type ProblemStatusFilter = (typeof STATUSES)[number];
+
 export interface ProblemQuery {
   bands: readonly Band[];
   points: readonly Points[];
   strands: readonly Strand[];
   skill: string | null;
   sort: ProblemSort;
+  status: ProblemStatusFilter;
   page: number;
 }
 
@@ -38,6 +48,7 @@ export const EMPTY_PROBLEM_QUERY: ProblemQuery = {
   strands: [],
   skill: null,
   sort: 'id',
+  status: 'all',
   page: 1,
 };
 
@@ -67,6 +78,9 @@ export function parseProblemQuery(raw: RawSearchParams): ProblemQuery {
   const sort = values(raw, 'sort').find((v): v is ProblemSort =>
     (SORTS as readonly string[]).includes(v),
   );
+  const status = values(raw, 'status').find((v): v is ProblemStatusFilter =>
+    (STATUSES as readonly string[]).includes(v),
+  );
   const page = Number(values(raw, 'page')[0] ?? '1');
 
   return {
@@ -75,6 +89,7 @@ export function parseProblemQuery(raw: RawSearchParams): ProblemQuery {
     strands: [...new Set(strands)].sort(),
     skill: skill ?? null,
     sort: sort ?? 'id',
+    status: status ?? 'all',
     page: Number.isInteger(page) && page > 0 ? page : 1,
   };
 }
@@ -97,6 +112,7 @@ export function toSearchParams(query: Partial<ProblemQuery>): URLSearchParams {
   for (const strand of [...(query.strands ?? [])].sort()) params.append('strand', strand);
   if (query.skill) params.set('skill', query.skill);
   if (query.sort && query.sort !== 'id') params.set('sort', query.sort);
+  if (query.status && query.status !== 'all') params.set('status', query.status);
   if (query.page && query.page > 1) params.set('page', String(query.page));
   return params;
 }
@@ -116,7 +132,8 @@ export function isFiltered(query: ProblemQuery): boolean {
     query.bands.length > 0 ||
     query.points.length > 0 ||
     query.strands.length > 0 ||
-    query.skill !== null
+    query.skill !== null ||
+    query.status !== 'all'
   );
 }
 

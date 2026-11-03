@@ -32,6 +32,12 @@ export interface MasteryDisplay {
   token: `--m${0 | 1 | 2 | 3}`;
   /** Tailwind background utility for the same step. */
   fill: string;
+  /**
+   * Tailwind text utility for the glyph drawn ON `fill`. Ink on every step but the last: in
+   * the dark theme --m3 is a light teal, and ink on it measured 1.88:1, so the tick on a
+   * mastered or solved item all but vanished. Ground reverses it.
+   */
+  glyph: string;
   blurb: string;
 }
 
@@ -42,6 +48,7 @@ export const MASTERY_DISPLAY: Record<MasteryState, MasteryDisplay> = {
     icon: '○',
     token: '--m0',
     fill: 'bg-m0',
+    glyph: 'text-ink',
     blurb: 'You have not attempted a problem in this skill.',
   },
   seen: {
@@ -50,6 +57,7 @@ export const MASTERY_DISPLAY: Record<MasteryState, MasteryDisplay> = {
     icon: '◔',
     token: '--m1',
     fill: 'bg-m1',
+    glyph: 'text-ink',
     blurb: 'You have attempted it. Nothing conclusive yet.',
   },
   shaky: {
@@ -58,6 +66,7 @@ export const MASTERY_DISPLAY: Record<MasteryState, MasteryDisplay> = {
     icon: '◕',
     token: '--m2',
     fill: 'bg-m2',
+    glyph: 'text-ink',
     blurb: 'You can do it, but not reliably yet - or a harder version caught you out.',
   },
   mastered: {
@@ -66,6 +75,7 @@ export const MASTERY_DISPLAY: Record<MasteryState, MasteryDisplay> = {
     icon: '✓',
     token: '--m3',
     fill: 'bg-m3',
+    glyph: 'text-ground',
     blurb: 'Three in a row, across two days, without leaning on a hint.',
   },
 };

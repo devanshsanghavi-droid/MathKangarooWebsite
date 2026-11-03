@@ -229,6 +229,19 @@ describe('tokens.css', () => {
       expect(Number(contrastRatio(from, to).toFixed(2))).toBeGreaterThanOrEqual(1.35);
     });
 
+    it.each([
+      ['--m0', '--ink'],
+      ['--m1', '--ink'],
+      ['--m2', '--ink'],
+      ['--m3', '--ground'],
+    ])('the glyph drawn on %s (%s) clears 3:1 for a graphic', (fill, glyph) => {
+      // Mirrors MASTERY_DISPLAY[...].glyph. The tick on a solved item is a meaningful graphic,
+      // so WCAG 1.4.11 asks for 3:1 against the fill it sits on.
+      expect(
+        Number(contrastRatio(palette[glyph] ?? '', palette[fill] ?? '').toFixed(2)),
+      ).toBeGreaterThanOrEqual(3);
+    });
+
     it('ends on a step that can also carry text or an icon on any surface', () => {
       for (const surface of SURFACES) {
         expect(contrastRatio(palette['--m3'] ?? '', palette[surface] ?? '')).toBeGreaterThanOrEqual(

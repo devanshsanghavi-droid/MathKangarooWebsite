@@ -1,7 +1,7 @@
 'use client';
 
 import { useProgress } from '@/components/mastery/useProgress';
-import { bankProgress } from '@/lib/progress-summary';
+import { bankProgress, localDay } from '@/lib/progress-summary';
 import type { Points } from '@/lib/schemas';
 
 /**
@@ -24,7 +24,7 @@ export function ProgressBanner({
   skillsTotal: number;
 }) {
   const file = useProgress();
-  const today = new Date().toISOString().slice(0, 10);
+  const today = localDay(new Date());
   const p = bankProgress(file, problems, skillsTotal, today);
   const started = p.solved + p.attempted > 0;
 

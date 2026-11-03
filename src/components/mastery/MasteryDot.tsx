@@ -27,7 +27,7 @@ export function MasteryDot({
       <span
         aria-hidden="true"
         data-mastery={state}
-        className={`inline-flex shrink-0 items-center justify-center rounded-lg border border-rule-strong ${display.fill} ${box} leading-none text-ink`}
+        className={`inline-flex shrink-0 items-center justify-center rounded-lg border border-rule-strong ${display.fill} ${box} leading-none ${display.glyph}`}
       >
         {display.icon}
       </span>

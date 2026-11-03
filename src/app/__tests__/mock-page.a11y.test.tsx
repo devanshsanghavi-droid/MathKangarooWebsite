@@ -4,10 +4,12 @@ import userEvent from '@testing-library/user-event';
 import { auditBothThemes } from '@/lib/a11y';
 import { MockRunner } from '@/components/practice/MockRunner';
 import { getAllProblems, getAllSkills } from '@/lib/content';
+import { toAssessmentProblem } from '@/lib/assessment';
 import { MOCK_DURATION_MS, itemsPerTier, startMock, type MockState } from '@/lib/mock';
 import { BANDS, POINT_VALUES } from '@/lib/schemas';
 
-const problems = getAllProblems();
+// The trimmed bank, exactly as /practice/mock passes it.
+const problems = getAllProblems().map(toAssessmentProblem);
 const props = {
   problems,
   skillNames: Object.fromEntries(getAllSkills().map((s) => [s.id, s.name])),

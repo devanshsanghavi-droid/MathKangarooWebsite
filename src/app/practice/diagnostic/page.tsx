@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllProblems, getAllSkills } from '@/lib/content';
 import { DiagnosticRunner } from '@/components/practice/DiagnosticRunner';
+import { toAssessmentProblem, toAssessmentSkill } from '@/lib/assessment';
 
 export const metadata: Metadata = {
   title: 'Take the diagnostic',
@@ -13,14 +14,19 @@ export const metadata: Metadata = {
 
 /**
  * The whole content bank is handed to the client so the diagnostic can branch without a round
- * trip. That is ~150 problems of JSON, which is a real cost - but the alternative is an API
- * call between every question, and the point of this page is that it needs no account and no
- * server at all.
+ * trip - the alternative is an API call between every question, and the point of this page is
+ * that it needs no account and no server at all.
+ *
+ * It is handed over TRIMMED (`@/lib/assessment`): only what an assessment shows and the
+ * branching reads. Hints, solutions, misconceptions and authoring metadata never render here,
+ * and serialising them made this page's prerendered payload about four times larger - a
+ * payload the Cloudflare worker parses on every request.
  */
 export default function DiagnosticPage() {
-  const skills = getAllSkills();
-  const problems = getAllProblems();
-  const skillNames = Object.fromEntries(skills.map((skill) => [skill.id, skill.name]));
+  const allSkills = getAllSkills();
+  const skills = allSkills.map(toAssessmentSkill);
+  const problems = getAllProblems().map(toAssessmentProblem);
+  const skillNames = Object.fromEntries(allSkills.map((skill) => [skill.id, skill.name]));
 
   return (
     <div className="content-column px-4 py-8">

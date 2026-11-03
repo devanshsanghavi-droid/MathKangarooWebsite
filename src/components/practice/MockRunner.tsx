@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import type { Band, ChoiceKey, Problem } from '@/lib/schemas';
+import type { Band, ChoiceKey } from '@/lib/schemas';
+import type { AssessmentProblem } from '@/lib/assessment';
 import { BANDS } from '@/lib/schemas';
 import {
   countBlanks,
@@ -36,7 +37,8 @@ export function MockRunner({
   problems,
   skillNames,
 }: {
-  problems: readonly Problem[];
+  /** The trimmed bank from `@/lib/assessment`: a mock shows no hints, solutions or feedback. */
+  problems: readonly AssessmentProblem[];
   skillNames: Record<string, string>;
 }) {
   const [state, setState] = useState<MockState | null>(null);

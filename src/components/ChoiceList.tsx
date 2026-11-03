@@ -25,7 +25,8 @@ export function ChoiceList({
   revealAnswer = false,
   idPrefix = 'choice',
 }: {
-  choices: readonly Choice[];
+  /** Only key, text and correctness are read, so an assessment can pass a trimmed choice. */
+  choices: readonly Pick<Choice, 'key' | 'text' | 'correct'>[];
   selected: ChoiceKey | null;
   onSelect: (key: ChoiceKey) => void;
   /**
@@ -80,7 +81,8 @@ export function ChoiceList({
                 onClick={() => onSelect(choice.key)}
                 /*
                   docs/05 §6: 2px border, 14px padding, at least 44px tall. The resting border
-                  is --rule-strong rather than --rule because --surface on --ground is 1.06:1 -                   the border is the only thing identifying this as a control, so WCAG 1.4.11
+                  is --rule-strong rather than --rule because --surface on --ground is 1.06:1 -
+                  the border is the only thing identifying this as a control, so WCAG 1.4.11
                   applies to it and it has to clear 3:1.
                 */
                 className={[

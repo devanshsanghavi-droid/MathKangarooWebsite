@@ -1,4 +1,5 @@
-import { POINT_VALUES, type Band, type ChoiceKey, type Points, type Problem } from './schemas';
+import { POINT_VALUES, type Band, type ChoiceKey, type Points } from './schemas';
+import type { AssessmentProblem } from './assessment';
 import { seededRandom, shuffle } from './worksheet';
 
 /**
@@ -64,7 +65,11 @@ export interface BuildResult {
  * short paper. A 22-question "mock" scored out of 96 would be worse than no mock at all: the
  * student would draw a conclusion from a number that does not mean what they think.
  */
-export function buildPaper(problems: readonly Problem[], band: Band, seed: number): BuildResult {
+export function buildPaper(
+  problems: readonly AssessmentProblem[],
+  band: Band,
+  seed: number,
+): BuildResult {
   const per = itemsPerTier(band);
   const problemIds: string[] = [];
   const shortfall: BuildResult['shortfall'] = [];
@@ -90,7 +95,7 @@ export function buildPaper(problems: readonly Problem[], band: Band, seed: numbe
 }
 
 export function startMock(
-  problems: readonly Problem[],
+  problems: readonly AssessmentProblem[],
   band: Band,
   seed: number,
   now: Date,
@@ -176,7 +181,7 @@ export interface MockReport {
   blankCost: number;
 }
 
-export function scoreMock(problems: readonly Problem[], state: MockState): MockReport {
+export function scoreMock(problems: readonly AssessmentProblem[], state: MockState): MockReport {
   const byId = new Map(problems.map((problem) => [problem.id, problem]));
   const tiers = new Map<Points, TierResult>(
     POINT_VALUES.map((points) => [points, { points, asked: 0, correct: 0, blank: 0, scored: 0 }]),

@@ -4,11 +4,13 @@ import userEvent from '@testing-library/user-event';
 import { auditBothThemes } from '@/lib/a11y';
 import { DiagnosticRunner } from '@/components/practice/DiagnosticRunner';
 import { getAllProblems, getAllSkills } from '@/lib/content';
+import { toAssessmentProblem, toAssessmentSkill } from '@/lib/assessment';
 
 const skills = getAllSkills();
-const problems = getAllProblems();
+// The trimmed bank, exactly as /practice/diagnostic passes it.
+const problems = getAllProblems().map(toAssessmentProblem);
 const props = {
-  content: { skills, problems },
+  content: { skills: skills.map(toAssessmentSkill), problems },
   skillNames: Object.fromEntries(skills.map((s) => [s.id, s.name])),
 };
 

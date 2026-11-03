@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import type { Problem } from '@/lib/schemas';
+import type { AssessmentProblem } from '@/lib/assessment';
 import type { MockReport } from '@/lib/mock';
 import { DifficultyPill } from '@/components/DifficultyPill';
 
@@ -19,7 +19,7 @@ export function MockReportView({
 }: {
   report: MockReport;
   skillNames: Record<string, string>;
-  problemsById: Map<string, Problem>;
+  problemsById: ReadonlyMap<string, AssessmentProblem>;
 }) {
   const maxSeconds = Math.max(60, ...report.scatter.map((point) => point.seconds));
   const width = 320;

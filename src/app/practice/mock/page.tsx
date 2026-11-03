@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getAllProblems, getAllSkills } from '@/lib/content';
 import { MockRunner } from '@/components/practice/MockRunner';
 import { MOCK_MINUTES } from '@/lib/mock';
+import { toAssessmentProblem } from '@/lib/assessment';
 
 export const metadata: Metadata = {
   title: 'Sit a mock exam',
@@ -12,8 +13,13 @@ export const metadata: Metadata = {
   alternates: { canonical: '/practice/mock' },
 };
 
+/**
+ * The bank goes to the client trimmed to what a sitting and its report use (`@/lib/assessment`)
+ * - no hints, solutions or misconceptions - because the worker parses this page's payload on
+ * every request. The student picks the level in the browser, so every band is still sent.
+ */
 export default function MockPage() {
-  const problems = getAllProblems();
+  const problems = getAllProblems().map(toAssessmentProblem);
   const skillNames = Object.fromEntries(getAllSkills().map((skill) => [skill.id, skill.name]));
 
   return (

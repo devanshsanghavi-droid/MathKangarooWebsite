@@ -1,4 +1,5 @@
-import { STRANDS, type Band, type Points, type Problem, type Skill, type Strand } from './schemas';
+import { STRANDS, type Band, type Points, type Strand } from './schemas';
+import type { AssessmentProblem, AssessmentSkill } from './assessment';
 
 /**
  * The adaptive diagnostic, from `docs/01-DATA-MODEL.md` §3.4.
@@ -37,10 +38,14 @@ export interface DiagnosticState {
   frontier: Record<Strand, { skillId: string | null; points: Points; bounded: boolean }>;
 }
 
+/**
+ * Only the fields the branching reads (see `./assessment`). A full `Skill` / `Problem` is
+ * assignable, so the whole bank can still be passed in.
+ */
 export interface DiagnosticContent {
-  skills: readonly Skill[];
+  skills: readonly AssessmentSkill[];
   /** Every problem, already filtered to the bank. */
-  problems: readonly Problem[];
+  problems: readonly AssessmentProblem[];
 }
 
 export interface StrandEstimate {
@@ -73,7 +78,7 @@ export interface DiagnosticResult {
 /* Graph helpers                                                               */
 /* -------------------------------------------------------------------------- */
 
-function indexSkills(skills: readonly Skill[]): Map<string, Skill> {
+function indexSkills(skills: readonly AssessmentSkill[]): Map<string, AssessmentSkill> {
   return new Map(skills.map((skill) => [skill.id, skill]));
 }
 
@@ -83,7 +88,7 @@ function problemsFor(
   skillId: string,
   points: Points,
   band: Band,
-): Problem[] {
+): AssessmentProblem[] {
   return content.problems
     .filter(
       (problem) =>
@@ -103,7 +108,7 @@ function problemsForAnyBand(
   content: DiagnosticContent,
   skillId: string,
   points: Points,
-): Problem[] {
+): AssessmentProblem[] {
   return content.problems
     .filter((problem) => problem.skills.primary === skillId && problem.points === points)
     .sort((a, b) => a.id.localeCompare(b.id));
@@ -184,7 +189,10 @@ export function isFinished(state: DiagnosticState): boolean {
 }
 
 /** The next problem to ask, or null when the diagnostic is over. */
-export function nextItem(content: DiagnosticContent, state: DiagnosticState): Problem | null {
+export function nextItem(
+  content: DiagnosticContent,
+  state: DiagnosticState,
+): AssessmentProblem | null {
   if (isFinished(state)) return null;
 
   const seen = new Set(state.answers.map((answer) => answer.problemId));
@@ -209,7 +217,7 @@ export function nextItem(content: DiagnosticContent, state: DiagnosticState): Pr
 export function recordAnswer(
   content: DiagnosticContent,
   state: DiagnosticState,
-  problem: Problem,
+  problem: AssessmentProblem,
   correct: boolean,
 ): DiagnosticState {
   const skills = indexSkills(content.skills);

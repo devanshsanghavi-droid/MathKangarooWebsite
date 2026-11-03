@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import type { Band, ChoiceKey, Problem } from '@/lib/schemas';
+import type { Band, ChoiceKey } from '@/lib/schemas';
+import type { AssessmentProblem } from '@/lib/assessment';
 import { BANDS } from '@/lib/schemas';
 import { STRAND_META } from '@/lib/taxonomy-meta';
 import {
@@ -76,7 +77,7 @@ export function DiagnosticRunner({
     }
   }, [state]);
 
-  const problem: Problem | null = useMemo(
+  const problem: AssessmentProblem | null = useMemo(
     () => (state ? nextItem(content, state) : null),
     [content, state],
   );

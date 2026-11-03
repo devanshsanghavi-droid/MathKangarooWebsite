@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ChoiceKey, Problem, Skill } from '@/lib/schemas';
+import type { AssessmentProblem } from '@/lib/assessment';
 import { DifficultyPill } from './DifficultyPill';
 import { ChoiceList } from './ChoiceList';
 import { BandPill } from './BandPill';
@@ -30,19 +31,7 @@ import { ProblemInteractive } from './ProblemInteractive';
  *                mid-run would measure nothing, and one that revealed each answer would teach
  *                them to stop after the first miss.
  */
-export function ProblemCardView({
-  problem,
-  primarySkill,
-  secondarySkills = [],
-  unresolvedPrimary = null,
-  headingLevel = 2,
-  headingSuffix,
-  showSkills = true,
-  linkToProblem = false,
-  mode = 'practice',
-  onAnswer,
-}: {
-  problem: Problem;
+interface CommonProps {
   primarySkill?: Pick<Skill, 'id' | 'name'> | undefined;
   secondarySkills?: readonly Pick<Skill, 'id' | 'name'>[];
   unresolvedPrimary?: string | null;
@@ -52,13 +41,40 @@ export function ProblemCardView({
   headingSuffix?: string;
   showSkills?: boolean;
   linkToProblem?: boolean;
-  /** 'assessment' hides feedback, hints and the solution. See the note above. */
-  mode?: 'practice' | 'assessment';
-  /** Called with the chosen key in assessment mode. Ignored in practice mode. */
-  onAnswer?: (key: ChoiceKey) => void;
-}) {
+}
+
+/**
+ * Practice needs the whole problem. Assessment needs only what it shows - which is why the
+ * diagnostic and the mock can ship a trimmed bank (`@/lib/assessment`) instead of every hint,
+ * solution and misconception in it.
+ */
+type ProblemCardViewProps = CommonProps &
+  (
+    | { mode?: 'practice'; problem: Problem; onAnswer?: undefined }
+    | {
+        /** 'assessment' hides feedback, hints and the solution. See the note above. */
+        mode: 'assessment';
+        problem: AssessmentProblem;
+        /** Called with the chosen key. */
+        onAnswer?: (key: ChoiceKey) => void;
+      }
+  );
+
+export function ProblemCardView(props: ProblemCardViewProps) {
+  const {
+    problem,
+    primarySkill,
+    secondarySkills = [],
+    unresolvedPrimary = null,
+    headingLevel = 2,
+    headingSuffix,
+    showSkills = true,
+    linkToProblem = false,
+  } = props;
+  /** The full problem when practising; null when assessing, so nothing beyond the choices renders. */
+  const practice = props.mode === 'assessment' ? null : props.problem;
+  const onAnswer = props.mode === 'assessment' ? props.onAnswer : undefined;
   const Heading = (['h1', 'h2', 'h3'] as const)[headingLevel - 1] ?? 'h2';
-  const assessing = mode === 'assessment';
 
   return (
     <article
@@ -90,30 +106,33 @@ export function ProblemCardView({
       {problem.figure ? <FigureRenderer figure={problem.figure} problemId={problem.id} /> : null}
 
       <div className="mt-5">
-        {assessing ? (
+        {practice ? (
+          <ProblemInteractive problem={practice} />
+        ) : (
           <ChoiceList
             choices={problem.choices}
             selected={null}
             onSelect={(key) => onAnswer?.(key)}
             idPrefix={`assess-${problem.id}`}
           />
-        ) : (
-          <ProblemInteractive problem={problem} />
         )}
       </div>
 
-      {assessing ? null : (
+      {practice ? (
         <>
-          <HintLadder problemId={problem.id} hints={problem.hints} />
+          <HintLadder problemId={practice.id} hints={practice.hints} />
 
-          <SolutionTabs reliable={problem.solutions.reliable} elegant={problem.solutions.elegant} />
+          <SolutionTabs
+            reliable={practice.solutions.reliable}
+            elegant={practice.solutions.elegant}
+          />
 
           <p className="mt-6 mb-0 border-t border-rule pt-4 text-sm text-ink-2">
             <span className="font-medium text-ink">Why this is on the test: </span>
-            {problem.whyOnTest}
+            {practice.whyOnTest}
           </p>
         </>
-      )}
+      ) : null}
 
       {showSkills ? (
         <div className="mt-4 flex flex-wrap items-center gap-2">

@@ -2,7 +2,8 @@
 
 Running log of the build. Updated as each milestone lands, not at the end.
 
-**All thirteen milestones from the session brief are done**, plus **M0.4** and **M1.10** - which completes every part of Phase 1 except M1.11, which needs your accounts. Seven Phase 2
+**All thirteen milestones from the session brief are done**, plus **M0.4** and **M1.10** -
+which completes every part of Phase 1 except M1.11, which needs your accounts. Seven Phase 2
 milestones followed: everything that could be built and verified without a database or a
 credential. Then **design v2** (`docs/05-DESIGN-DIRECTION.md`) replaced the palette, the type
 stack and the structure of `/skill/[id]`.
@@ -562,7 +563,8 @@ size rather than the viewBox. Scrolling is native, so it works with the keyboard
 screen reader's own navigation, and with JavaScript switched off - which the old pan implementation
 did not.
 
-Two axe findings were also fixed: `aria-pressed` on the filter links (not allowed on a link - they are now `aria-current`), and `AtlasList` starting its headings at `h3` under the page's
+Two axe findings were also fixed: `aria-pressed` on the filter links (not allowed on a link -
+they are now `aria-current`), and `AtlasList` starting its headings at `h3` under the page's
 `h1`, which skipped a level.
 
 ### Assumptions made where the spec was ambiguous
@@ -755,7 +757,8 @@ are unverified until someone runs it. See "Needs you".
 **State:** `[x]`
 
 The footer disclaimer and the three legal pages landed with M1.1 and M1.9. This milestone
-added `docs/05-OUTREACH-DRAFT.md`: the note to Math Kangaroo USA, written but **not sent** - M0.4 asks for it to exist, and writing it is what forces you to be able to describe the project
+added `docs/05-OUTREACH-DRAFT.md`: the note to Math Kangaroo USA, written but **not sent** -
+M0.4 asks for it to exist, and writing it is what forces you to be able to describe the project
 in terms that survive contact with the organisation whose trademark you use. It also records
 what changes under each realistic response, and confirms the public name is **Kangaroo Atlas**,
 defined once in `src/lib/site.ts` and read from there by every surface.
@@ -980,7 +983,8 @@ must carry a written misconception - is a cross-field rule, so the schema only s
 form therefore accepted problems that CI rejects**, which is the exact opposite of the guarantee
 M2.13 is supposed to make. The acceptance test caught it on its first run.
 
-The fix was not to copy the rule. Both product rules now live in `src/lib/problem-rules.ts` - no filesystem imports, so a browser can run them - and **both the CI validator and the form call
+The fix was not to copy the rule. Both product rules now live in `src/lib/problem-rules.ts` -
+no filesystem imports, so a browser can run them - and **both the CI validator and the form call
 that one implementation**. A test asserts both files reference it, so a future edit cannot
 quietly re-fork them.
 
@@ -1130,7 +1134,8 @@ down, including one that the rendered output contains no `<details>` element at 
   above, in **exact thirds** at 3, 4 and 5 points, drawn deterministically from a seed.
 - **A 75-minute timer that survives a refresh.** It is never counted down in memory: the state
   records when the paper started and the time left is computed from the clock. M2.8's acceptance
-  is a test - *a paper started 40 minutes ago comes back with 35 minutes left, and its answers* -   and closing the laptop for ten minutes costs ten minutes, exactly as it would in a hall.
+  is a test - *a paper started 40 minutes ago comes back with 35 minutes left, and its answers* -
+  and closing the laptop for ten minutes costs ten minutes, exactly as it would in a hall.
 - **Flag for review, and a navigator grid** where every button is named for a screen reader
   ("Question 12, answered, flagged"), not just coloured.
 - **The no-blanks nudge at five minutes**, which states the actual argument: a wrong answer costs
@@ -1233,7 +1238,8 @@ colour appears outside a feedback surface.
    settled directly over choices B and C and no amount of scrolling moved them clear. (The first
    version of the bar had the opposite bug: `fixed inset-x-0` spanned under the 260px rail and
    sat ~130px left of the problem it acted on.) It is now fixed, with its left edge pinned to the
-   content area and matching page padding, so every choice can always be scrolled clear -    verified analytically, because `scroll-behavior: smooth` makes `scrollIntoView` asynchronous
+   content area and matching page padding, so every choice can always be scrolled clear -
+   verified analytically, because `scroll-behavior: smooth` makes `scrollIntoView` asynchronous
    and my first measurement was reading stale rectangles.
 5. **The header overflowed horizontally at 200% zoom.** Six nav items in the wider v2 UI face
    pushed the theme toggle 19px off the right edge at 640px - which is what a 1280px window is at

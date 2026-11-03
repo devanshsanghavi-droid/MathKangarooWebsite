@@ -25,7 +25,8 @@ import { BANDS, CHOICE_KEYS, POINT_VALUES, STRANDS } from '../schemas';
  *   product analytics   acquisition, activation, engagement, retention, funnels, path
  *                       analysis, feature adoption, performance - the things any product team
  *                       would instrument.
- *   learning analytics  item difficulty, discrimination, and per-option distractor behaviour -  *                       the things that actually tell you whether the teaching works.
+ *   learning analytics  item difficulty, discrimination, and per-option distractor behaviour -
+ *                       the things that actually tell you whether the teaching works.
  *
  * The second is where this site earns its keep: every wrong answer already stores the
  * misconception that produces it, so recording WHICH distractor was chosen turns the problem

@@ -108,7 +108,8 @@ Filterable, sortable table/grid. Filters: band, point value, strand, skill, stat
 **Job:** the legal, useful bridge to official material.
 - Table of every published official paper with a link to the **official PDF on
   mathkangaroo.org** (never a local copy).
-- Per paper: a numbered list of its 24 or 30 questions with our skill tags and point values -   *our analysis, not their content*. No problem text, no figures, no answers.
+- Per paper: a numbered list of its 24 or 30 questions with our skill tags and point values -
+  *our analysis, not their content*. No problem text, no figures, no answers.
 - "Skills most tested in this band" summary chart.
 **Done when:** a reviewer can confirm no official problem text or figure exists in the repo.
 

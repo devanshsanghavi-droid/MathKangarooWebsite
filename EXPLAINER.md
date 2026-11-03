@@ -55,8 +55,7 @@ project real work rather than a link farm.
 **The explanations** are the thing I haven't seen anywhere else. Writing a problem is easy; the
 hard part is writing five answer choices where each wrong one comes from a real mistake a real
 kid makes. I store that mistake alongside the choice. So the feedback is written for *your*
-error. There's also a three-step hint ladder - a nudge, then a strategy, then the full solution
- - and where they differ, two solutions: the elegant one and the reliable-under-time-pressure one.
+error. There's also a three-step hint ladder - a nudge, then a strategy, then the full solution - and where they differ, two solutions: the elegant one and the reliable-under-time-pressure one.
 
 **The practice modes** each exist because a different thing goes wrong in March. A diagnostic
 that gives you a map instead of a number. A daily spaced-repetition drill. A full 75-minute mock

@@ -85,7 +85,8 @@ const PaperIndex = z.object({
 });
 ```
 
-A CI check greps the repo for any file over 2KB inside `content/papers/` and fails - a defensive tripwire against someone pasting problem text in later.
+A CI check greps the repo for any file over 2KB inside `content/papers/` and fails -
+a defensive tripwire against someone pasting problem text in later.
 
 ---
 
@@ -228,7 +229,8 @@ without the identifier.
 - `profiles`: a user reads and updates only their own row. Mentors read `display_name` and
   `band` of students in their cohorts, nothing else.
 - `attempts`, `mastery`, `runs`, `journal_entries`: owner-only read/write. Mentors get an
-  **aggregate-only** path via a `security definer` function that returns counts per skill -   never raw rows for another person.
+  **aggregate-only** path via a `security definer` function that returns counts per skill -
+  never raw rows for another person.
 - `cohorts`, `assignments`, `teaching_sessions`: mentor owns; members read.
 - `parent_consents`: service role only.
 - `telemetry_events`: service role only. RLS on, deliberately no policy - nothing reads it

@@ -152,8 +152,7 @@ One problem at a time, with:
 - Hint panel in the reserved amber; feedback panel in reserved green or red
 
 ### 7.4 Atlas
-Node fill uses the mastery ramp. Tier (foundation / core / gateway) moves to **border weight**
- - 1px / 1.5px / 2.5px - freeing hue entirely for mastery.
+Node fill uses the mastery ramp. Tier (foundation / core / gateway) moves to **border weight** - 1px / 1.5px / 2.5px - freeing hue entirely for mastery.
 
 ### 7.5 Everywhere
 Mastery level shown as name + icon + colour, never colour alone.

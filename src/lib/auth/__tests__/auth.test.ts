@@ -53,7 +53,8 @@ describe('password hashing', () => {
 
 describe('the stored hash survives an environment variable', () => {
   it('contains no character that dotenv, a shell or docker-compose would expand', async () => {
-    // The bug this guards: with `$` separators, Next handed the app a 9-character string -     // everything past the first `$` expanded to nothing - and the correct password was
+    // The bug this guards: with `$` separators, Next handed the app a 9-character string -
+    // everything past the first `$` expanded to nothing - and the correct password was
     // rejected exactly like a wrong one.
     const stored = await hashPassword('a-long-enough-password', 1000);
     expect(stored).not.toContain('$');

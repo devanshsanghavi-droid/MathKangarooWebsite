@@ -12,7 +12,8 @@ import type { ProgressFile } from '@/lib/local-progress';
  * hydration-mismatching; and it means several bars on one page share one read rather than
  * each hitting localStorage on every render.
  *
- * The snapshot is cached because getSnapshot must return a referentially stable value -  * parsing the JSON afresh on every call would hand React a new object each time and spin.
+ * The snapshot is cached because getSnapshot must return a referentially stable value -
+ * parsing the JSON afresh on every call would hand React a new object each time and spin.
  */
 
 let cache: ProgressFile | null = null;

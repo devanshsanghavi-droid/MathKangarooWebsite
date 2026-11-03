@@ -3,7 +3,8 @@ import type { Choice, ChoiceKey, Problem } from '@/lib/schemas';
 /**
  * The point of the whole project.
  *
- * When a student picks a wrong answer they get the misconception recorded for THAT choice -  * the specific piece of reasoning that produces that number - not a generic solution and not
+ * When a student picks a wrong answer they get the misconception recorded for THAT choice -
+ * the specific piece of reasoning that produces that number - not a generic solution and not
  * "incorrect, try again". When they pick the right one they get the reliable method, so a
  * lucky guess still teaches something.
  *

@@ -2,7 +2,7 @@
   "id": "KA-0204",
   "band": "9-10",
   "points": 5,
-  "statement": "A board shows the numbers 1 to 10. You may erase any two and write their difference. Repeating until one number remains, which totals are possible for that last number?",
+  "statement": "A board shows the numbers 1 to 10. You may erase any two and write their positive difference. Repeating until one number remains, which values are possible for that last number?",
   "figure": null,
   "choices": [
     {
@@ -49,7 +49,7 @@
     "1 + 2 + ... + 10 = 55, which is odd, and every move leaves the parity of the sum untouched."
   ],
   "solutions": {
-    "reliable": "Replacing a and b by their difference reduces the sum by 2 times the smaller, so the sum's parity is invariant. The starting sum 55 is odd, so the final single number is odd. Every odd value in range is reachable. The transferable idea: when moves look unconstrained, look for a quantity they cannot change, and parity of a sum is the first one to try.",
+    "reliable": "Replacing a and b by their difference reduces the sum by 2 times the smaller, so the sum's parity is invariant. The starting sum 55 is odd, so the final single number is odd. Every odd value from 1 to 9 is reachable. The transferable idea: when moves look unconstrained, look for a quantity they cannot change, and parity of a sum is the first one to try.",
     "elegant": "55 is odd, and no move can change that, so the answer needs no search at all."
   },
   "whyOnTest": "Invariant questions are the backbone of the 5-point block, and the distractors are all results of trying examples instead of finding the invariant.",

@@ -13,27 +13,27 @@
     },
     {
       "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I found that each power ends in 1 and gave that digit without adding the two."
+    },
+    {
+      "key": "C",
       "text": "2",
       "correct": true,
       "misconception": null
     },
     {
-      "key": "C",
-      "text": "4",
-      "correct": false,
-      "misconception": "I used a cycle of length 2 for both powers rather than the cycle of length 4."
-    },
-    {
       "key": "D",
-      "text": "6",
+      "text": "8",
       "correct": false,
-      "misconception": "I took the last digit of the sum of the exponents instead of the sum of the powers."
+      "misconception": "I assumed the last digits cycle with length 2, so both even powers end in 9, and 9 + 9 = 18."
     },
     {
       "key": "E",
-      "text": "8",
+      "text": "9",
       "correct": false,
-      "misconception": "I added the two bases and used the last digit of that sum."
+      "misconception": "I used a cycle of length 2 (3, 9) for the powers of 3, got 9, and forgot to add the power of 7."
     }
   ],
   "skills": {
@@ -50,7 +50,7 @@
   ],
   "solutions": {
     "reliable": "Last digits of powers of 3 run 3, 9, 7, 1 and of 7 run 7, 9, 3, 1, both with period 4. Since 2024 is a multiple of 4, each power ends in 1, so the sum ends in 2. The transferable idea: reduce each term to its own cycle before combining, never the exponents.",
-    "elegant": "3 x 7 = 21, so the two cycles end together, and both powers finish on 1."
+    "elegant": "3 to the 4 is 81 and 7 to the 4 is 2401, so both fourth powers end in 1, and every multiple-of-4 power does too."
   },
   "whyOnTest": "Combining two cyclic last digits is a 4-point staple, and every distractor comes from mixing the two cycles or the two exponents.",
   "estSeconds": 100,

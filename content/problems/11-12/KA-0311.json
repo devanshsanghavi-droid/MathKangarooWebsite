@@ -7,27 +7,27 @@
   "choices": [
     {
       "key": "A",
-      "text": "6",
+      "text": "5",
       "correct": false,
-      "misconception": "I counted only the shares where the amounts are all different."
+      "misconception": "I treated shares that differ only by which child gets what as the same."
     },
     {
       "key": "B",
-      "text": "10",
+      "text": "12",
       "correct": false,
-      "misconception": "I treated shares that differ only by which child got what as the same."
+      "misconception": "I counted only the shares where all three children get different amounts."
     },
     {
       "key": "C",
-      "text": "28",
+      "text": "15",
       "correct": false,
-      "misconception": "I allowed a child to receive nothing, which the question forbids."
+      "misconception": "I gave each child one sweet, then put the two dividers in different gaps between the 5 sweets left, so no child could get none of the rest."
     },
     {
       "key": "D",
-      "text": "56",
+      "text": "45",
       "correct": false,
-      "misconception": "I treated the sweets as distinguishable from each other."
+      "misconception": "I allowed a child to receive nothing, which the question forbids."
     },
     {
       "key": "E",
@@ -49,7 +49,7 @@
     "After one each, 5 sweets remain to split between 3 children with no restriction."
   ],
   "solutions": {
-    "reliable": "Give each child one sweet, leaving 5 to split freely between 3 children. Lining the 5 sweets up and placing 2 dividers among the 6 gaps and ends gives 7 x 6 / 2 = 21 ways. The transferable idea: satisfy a minimum first, then count the unrestricted remainder, which turns a constrained problem into a standard one.",
+    "reliable": "Give each child one sweet, leaving 5 to split freely between 3 children. Lining up the 5 sweets and 2 dividers makes 7 positions, and choosing which 2 are dividers gives 7 x 6 / 2 = 21. The transferable idea: satisfy a minimum first, then count the unrestricted remainder, which turns a constrained problem into a standard one.",
     "elegant": "Five sweets and two dividers in a row is seven positions, and choosing which two are dividers gives the count."
   },
   "whyOnTest": "Clearing the minimum before counting is the move that makes these tractable, and the unrestricted count is on offer.",

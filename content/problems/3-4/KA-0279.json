@@ -2,36 +2,36 @@
   "id": "KA-0279",
   "band": "3-4",
   "points": 5,
-  "statement": "Three cats catch three mice in three minutes. How many cats are needed to catch 100 mice in 100 minutes?",
+  "statement": "Three cats catch three mice in three minutes. How many cats are needed to catch 99 mice in 99 minutes?",
   "figure": null,
   "choices": [
     {
       "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought each cat catches a mouse every minute, forgetting it took them three minutes."
+    },
+    {
+      "key": "B",
       "text": "3",
       "correct": true,
       "misconception": null
     },
     {
-      "key": "B",
-      "text": "9",
-      "correct": false,
-      "misconception": "I multiplied the cats by three because the mice went up, without checking the time also went up."
-    },
-    {
       "key": "C",
       "text": "33",
       "correct": false,
-      "misconception": "I divided the hundred mice among three-minute blocks and scaled the cats with them."
+      "misconception": "I split the 99 minutes into three-minute blocks and used one cat per block."
     },
     {
       "key": "D",
-      "text": "100",
+      "text": "99",
       "correct": false,
       "misconception": "I matched one cat to each mouse, ignoring that the time grew as well."
     },
     {
       "key": "E",
-      "text": "300",
+      "text": "297",
       "correct": false,
       "misconception": "I multiplied the mice by the cats with no reasoning about the rate."
     }
@@ -49,7 +49,7 @@
     "Three cats in three minutes is one mouse per cat, so a cat catches a mouse every three minutes."
   ],
   "solutions": {
-    "reliable": "Three cats catching three mice in three minutes means each cat catches one mouse in three minutes, so three cats catch 100 mice in 300 cat-minutes, which is 100 minutes for three cats. The transferable idea: reduce to one worker and one unit of time before scaling, because the time grew by the same factor as the mice.",
+    "reliable": "Three cats catching three mice in three minutes means each cat catches one mouse every three minutes. In 99 minutes one cat catches 33 mice, so three cats catch 99. The transferable idea: reduce to one worker and one unit of time before scaling, because the time grew by the same factor as the mice.",
     "elegant": "Both the mice and the minutes grew by the same factor, so the number of cats cannot change."
   },
   "whyOnTest": "This is the classic question where scaling only one quantity gives a wrong answer, and three of the choices come from doing exactly that.",

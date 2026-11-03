@@ -49,7 +49,7 @@
   ],
   "solutions": {
     "reliable": "The step is 4, and the 50th term is 49 steps past the first, so it equals 5 + 49 x 4 = 201. The transferable idea: in any arithmetic sequence the count of steps is one less than the term's position, which is where nearly every error in these comes from.",
-    "elegant": "Each term is one less than a multiple of 4, so the 50th is 4 x 50 + 1 adjusted once, landing at 201."
+    "elegant": "Each term is one more than a multiple of 4: the nth term is 4n + 1, so the 50th is 4 x 50 + 1."
   },
   "whyOnTest": "The off-by-one between position and step count is the single most common sequence error, and both nearby distractors are built from it.",
   "estSeconds": 65,

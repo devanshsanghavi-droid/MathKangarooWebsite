@@ -63,7 +63,7 @@ export async function sendContactMessage(
       status: 'error',
       message:
         'The mail service is not configured on this deployment yet, so this form cannot send. ' +
-        'Please use the email link below instead — it goes to the same place.',
+        'Please use the email link below instead - it goes to the same place.',
     };
   }
 
@@ -99,7 +99,7 @@ export async function sendContactMessage(
   } catch {
     return {
       status: 'error',
-      message: 'That did not send — the network or the mail service is unreachable right now.',
+      message: 'That did not send - the network or the mail service is unreachable right now.',
     };
   }
 

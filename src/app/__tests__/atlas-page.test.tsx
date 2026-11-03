@@ -27,7 +27,7 @@ const allIds = getAllSkills()
   .map((s) => s.id)
   .sort();
 
-describe('graph and list parity — M1.6 acceptance', () => {
+describe('graph and list parity - M1.6 acceptance', () => {
   it('the graph reaches every skill', async () => {
     const { container } = await renderAtlas({});
     expect(skillIdsIn(container)).toEqual(allIds);
@@ -62,7 +62,7 @@ describe('graph and list parity — M1.6 acceptance', () => {
   });
 });
 
-describe('keyboard reachability — M1.6 acceptance', () => {
+describe('keyboard reachability - M1.6 acceptance', () => {
   it('makes every skill in the graph a real link, not a click handler', async () => {
     const { container } = await renderAtlas({});
     const svg = container.querySelector('svg');

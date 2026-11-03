@@ -70,7 +70,7 @@ export async function hashPassword(
  *
  * A `===` on secrets returns as soon as it finds a differing byte, and that difference is
  * measurable over enough requests. It matters more for the session signature than for the
- * password — a forged signature can be built a byte at a time, whereas a password guess still
+ * password - a forged signature can be built a byte at a time, whereas a password guess still
  * has to pay for a PBKDF2 derivation.
  */
 export function timingSafeEqual(a: string, b: string): boolean {
@@ -85,7 +85,7 @@ export function timingSafeEqual(a: string, b: string): boolean {
   return mismatch === 0;
 }
 
-/** Verify a candidate against the stored form. False on anything malformed — never throws. */
+/** Verify a candidate against the stored form. False on anything malformed - never throws. */
 export async function verifyPassword(password: string, stored: string): Promise<boolean> {
   const parts = stored.split('.');
   if (parts.length !== 4 || parts[0] !== 'pbkdf2') return false;
@@ -107,7 +107,7 @@ export async function verifyPassword(password: string, stored: string): Promise<
  * Its only job is to make a failed username lookup cost the same as a failed password check.
  * It lives here rather than beside the login action because a `'use server'` module may only
  * export async functions, and every function it exports becomes a callable server-action
- * endpoint — so a testable constant cannot live there without also becoming a public route.
+ * endpoint - so a testable constant cannot live there without also becoming a public route.
  *
  * DERIVED, never a literal. The literal version of this was left in the old `$`-separated
  * form when the separator changed to a dot, and `verifyPassword` rejects a malformed hash

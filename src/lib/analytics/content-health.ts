@@ -18,7 +18,7 @@ export interface ContentHealth {
   figures: number;
   byStrand: Array<{ strand: string; skills: number; problems: number }>;
   byTier: Array<{ points: Points; problems: number; share: number }>;
-  /** Skills with no problems at all — the gaps worth authoring into next. */
+  /** Skills with no problems at all - the gaps worth authoring into next. */
   uncovered: string[];
   /** Skills whose whole ladder sits on one tier: practisable, but not progressively. */
   singleTier: Array<{ skillId: string; points: Points; count: number }>;

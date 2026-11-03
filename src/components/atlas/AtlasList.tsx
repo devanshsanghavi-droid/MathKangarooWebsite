@@ -11,7 +11,7 @@ import { SkillMasteryDot } from '@/components/mastery/SkillMasteryDot';
  *
  * Strand → tier → skill, as real nested lists, so a screen reader announces the depth and the
  * item counts, and so every skill is one Tab away with no pointer at all. It shows exactly the
- * same set as the graph — a test asserts that, because a fallback that quietly holds fewer
+ * same set as the graph - a test asserts that, because a fallback that quietly holds fewer
  * skills is worse than no fallback.
  *
  * Headings run h2 (strand) then h3 (tier), continuing from the page's single h1. Starting at

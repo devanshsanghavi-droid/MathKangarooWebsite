@@ -1,7 +1,7 @@
 import { FigureSvg, Cell, Label } from './primitives.tsx';
 
 /**
- * KA-0048 — four arrangements of six squares. Only one of them (the straight line) cannot fold
+ * KA-0048 - four arrangements of six squares. Only one of them (the straight line) cannot fold
  * into a closed cube, because a strip wrapped round a cube meets itself after four squares.
  */
 const LAYOUTS: Array<{ label: string; cells: Array<[number, number]> }> = [

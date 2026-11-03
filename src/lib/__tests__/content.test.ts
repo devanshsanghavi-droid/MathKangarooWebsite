@@ -366,7 +366,7 @@ describe('memoisation', () => {
 
 describe('the bundled content the deployed worker actually reads', () => {
   /*
-   * There is no filesystem on Cloudflare Workers — process.cwd() is /bundle and content/ does
+   * There is no filesystem on Cloudflare Workers - process.cwd() is /bundle and content/ does
    * not exist at any path. Prerendered pages never noticed, but /problems, /atlas and /print
    * render per-request and silently served an EMPTY index while answering HTTP 200. These
    * assertions are what keep the bundle honest; `pnpm check:bundle` repeats them in CI.

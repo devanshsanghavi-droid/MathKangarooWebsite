@@ -1,0 +1,68 @@
+{
+  "id": "KA-0232",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Numbers are chosen from 1 to 10. How many must be chosen to be certain that two of them add to 11?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I assumed the first two chosen would pair up, which is possible but not certain."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I counted the pairs that add to 11 and gave that count rather than one more."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I added one to the number of values rather than to the number of pairs."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I assumed every number had to be chosen before a pair was guaranteed."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-17",
+    "secondary": [
+      "CNT-18",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "Group the numbers into the pairs that add to eleven.",
+    "The ten numbers split into pairs summing to 11. Choosing at most one from each pair avoids a match, so the answer is one more than the number of pairs.",
+    "The pairs are 1 with 10, 2 with 9, 3 with 8, 4 with 7 and 5 with 6."
+  ],
+  "solutions": {
+    "reliable": "The numbers fall into the five pairs 1 and 10, 2 and 9, 3 and 8, 4 and 7, 5 and 6. Five numbers can avoid a pair by taking one from each, but a sixth must complete one, so six is needed. The transferable idea: build the pigeonholes out of the forbidden condition itself, then take one more than the number of holes.",
+    "elegant": "Five holes and six items settles it with no case checking at all."
+  },
+  "whyOnTest": "Pigeonhole arguments in the 5-point block turn on finding the right pigeonholes, and the count of holes is always offered instead of the answer.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

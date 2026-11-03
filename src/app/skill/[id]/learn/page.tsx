@@ -20,7 +20,7 @@ interface Params {
 }
 
 /**
- * "Learn" — the first row of the unit's lesson list (docs/05 §7.2).
+ * "Learn" - the first row of the unit's lesson list (docs/05 §7.2).
  *
  * This is where four of v1's nine skill-page sections moved, unchanged in substance: what the
  * skill is, how to recognise it, a fully worked example, and where it goes wrong. The unit

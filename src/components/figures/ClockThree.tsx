@@ -1,6 +1,6 @@
 import { FigureSvg, STROKE, GRID, FILL_NONE, W_THICK, W_THIN, W_HAIR } from './primitives.tsx';
 
-/** KA-0032 — a clock face at exactly three o'clock, with the angle between the hands marked. */
+/** KA-0032 - a clock face at exactly three o'clock, with the angle between the hands marked. */
 export function ClockThree() {
   const cx = 70;
   const cy = 70;

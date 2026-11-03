@@ -8,7 +8,7 @@ type TabId = 'reliable' | 'elegant';
  * The two ways to solve a problem.
  *
  * "Reliable" is the method that always works under time pressure. "Elegant" is the insight,
- * where there is one — `docs/03-CONTENT-GUIDE.md` B5 says to state plainly when there is not,
+ * where there is one - `docs/03-CONTENT-GUIDE.md` B5 says to state plainly when there is not,
  * so a null elegant solution removes the tab rather than showing an empty panel.
  *
  * Both panels are always in the DOM; the inactive one carries `hidden`. The <noscript> block
@@ -56,7 +56,7 @@ export function SolutionTabs({
       <summary className="cursor-pointer text-sm font-semibold text-ink marker:text-ink-3">
         Solution
         {elegant ? null : (
-          <span className="ml-2 text-xs font-normal text-ink-3">— no shortcut on this one</span>
+          <span className="ml-2 text-xs font-normal text-ink-3"> - no shortcut on this one</span>
         )}
       </summary>
 

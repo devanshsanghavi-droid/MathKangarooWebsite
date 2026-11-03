@@ -1,6 +1,6 @@
 import { FigureSvg, Label, STROKE, GRID, FILL_ACCENT, W_THIN, W_HAIR } from './primitives.tsx';
 
-/** KA-0118 — books read by four children, on an axis marked in steps of five. */
+/** KA-0118 - books read by four children, on an axis marked in steps of five. */
 export function BooksBarChart() {
   const bars = [
     { name: 'Ana', value: 10 },

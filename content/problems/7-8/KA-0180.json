@@ -1,0 +1,67 @@
+{
+  "id": "KA-0180",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Every interior angle of a regular polygon measures 150 degrees. How many sides does it have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I divided 1500 by 150 without first working out how many angles there were."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": false,
+      "misconception": "I read the 150 as a count of something and divided 2250 by 150 to get a side count."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I used the exterior angle but subtracted 150 from 180 and then divided 720 rather than 360 by it."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": false,
+      "misconception": "I divided 180 by 150 and then multiplied by 25, chasing a number rather than a reason."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Exterior angles are easier here than interior ones.",
+    "Each exterior angle is 180 minus the interior angle. The exterior angles of any polygon add to 360, so divide 360 by one of them.",
+    "Each exterior angle is 180 - 150 = 30 degrees. The exterior angles total 360, and 360 / 30 gives the number of sides."
+  ],
+  "solutions": {
+    "reliable": "Interior and exterior angles at a vertex add to 180, so each exterior angle is 30 degrees. Every polygon's exterior angles total 360, so the polygon has 360 / 30 = 12 sides. The transferable idea: switch to exterior angles, because their total never depends on the number of sides.",
+    "elegant": "Turning once round the outside of the shape is one full revolution, and each corner turns 30 degrees, so there are twelve corners."
+  },
+  "whyOnTest": "The interior angle formula is the slow route and runs out of time; the exterior-angle total of 360 is the one fact that makes these instant.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

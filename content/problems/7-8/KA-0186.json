@@ -1,0 +1,67 @@
+{
+  "id": "KA-0186",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Two lighthouses flash together at midnight. One flashes every 12 seconds, the other every 18 seconds. How many seconds after midnight do they next flash together?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I found the largest common factor of 12 and 18 instead of their smallest common multiple."
+    },
+    {
+      "key": "B",
+      "text": "30",
+      "correct": false,
+      "misconception": "I added the two intervals, as though the flashes took turns."
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "108",
+      "correct": false,
+      "misconception": "I multiplied 12 by 18 and treated the product as the first shared moment."
+    },
+    {
+      "key": "E",
+      "text": "216",
+      "correct": false,
+      "misconception": "I multiplied the two intervals and then doubled, with no reason beyond wanting a big number."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-05",
+    "secondary": [
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "List the moments each lighthouse flashes.",
+    "The shared moments are the common multiples of the two intervals, so the next one is the smallest number both intervals divide into.",
+    "Multiples of 12 are 12, 24, 36. Multiples of 18 are 18, 36. The first number in both lists is the answer."
+  ],
+  "solutions": {
+    "reliable": "Shared flashes happen at common multiples of 12 and 18, so the next one is their lowest common multiple, 36 seconds. The transferable idea: 'next time both happen' is always a lowest common multiple, while 'largest group both split into' is a greatest common factor, and the two are routinely swapped.",
+    "elegant": "12 = 2 x 2 x 3 and 18 = 2 x 3 x 3, so the smallest number carrying both is 2 x 2 x 3 x 3."
+  },
+  "whyOnTest": "Factor and multiple questions hinge on which of the two is wanted, and the greatest common factor is offered as the first choice for exactly that reason.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

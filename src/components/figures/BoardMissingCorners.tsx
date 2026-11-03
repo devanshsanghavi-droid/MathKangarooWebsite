@@ -1,7 +1,7 @@
 import { FigureSvg, STROKE, GRID, FILL_SOLID, FILL_NONE, W_THIN, W_THICK } from './primitives.tsx';
 
 /**
- * KA-0034 — a 4 by 4 board coloured like a chessboard with the top-left and bottom-right
+ * KA-0034 - a 4 by 4 board coloured like a chessboard with the top-left and bottom-right
  * squares removed. Those two corners are always the same colour, which is the whole point.
  */
 export function BoardMissingCorners() {

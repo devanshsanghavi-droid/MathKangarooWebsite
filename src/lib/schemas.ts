@@ -1,5 +1,5 @@
 /**
- * Content schemas — the shape of everything in `content/`.
+ * Content schemas - the shape of everything in `content/`.
  *
  * These schemas validate a SINGLE file in isolation. Rules that need to see the whole
  * corpus (id uniqueness, prerequisite existence, acyclicity, `unlocks` being the exact
@@ -34,16 +34,16 @@ export type Tier = z.infer<typeof TierSchema>;
 export type ChoiceKey = z.infer<typeof ChoiceKeySchema>;
 export type Points = z.infer<typeof PointsSchema>;
 
-/** `NUM-01`, `CFT-12`, … — permanent once published; never renumbered. */
+/** `NUM-01`, `CFT-12`, … - permanent once published; never renumbered. */
 export const SKILL_ID_RE = /^(NUM|CNT|GEO|LOG|PAT|MOD|CFT)-\d{2}$/;
-/** `KA-0001` — our own problems only. Official problems are never stored. */
+/** `KA-0001` - our own problems only. Official problems are never stored. */
 export const PROBLEM_ID_RE = /^KA-\d{4}$/;
 
 export const SkillIdSchema = z.string().regex(SKILL_ID_RE, 'must look like NUM-01');
 export const ProblemIdSchema = z.string().regex(PROBLEM_ID_RE, 'must look like KA-0001');
 
 /* -------------------------------------------------------------------------- */
-/* Skill — content/skills/<STRAND>/<ID>.json                                   */
+/* Skill - content/skills/<STRAND>/<ID>.json                                   */
 /* -------------------------------------------------------------------------- */
 
 export const SkillSchema = z
@@ -73,11 +73,11 @@ export const SkillSchema = z
 export type Skill = z.infer<typeof SkillSchema>;
 
 /* -------------------------------------------------------------------------- */
-/* Problem — content/problems/<band>/<ID>.json                                 */
+/* Problem - content/problems/<band>/<ID>.json                                 */
 /* -------------------------------------------------------------------------- */
 
 /**
- * A choice. `misconception` is required exactly when the choice is wrong — this is the
+ * A choice. `misconception` is required exactly when the choice is wrong - this is the
  * product, not a nicety, so it is enforced at the schema level AND re-checked as a named
  * guardrail in the validator so the failure message says why it matters.
  */
@@ -121,7 +121,7 @@ export const ProblemSchema = z
     figure: FigureSchema.nullable(),
     choices: z.array(ChoiceSchema).length(5),
     skills: z.object({ primary: SkillIdSchema, secondary: z.array(SkillIdSchema) }).strict(),
-    /** nudge, strategy, full — strictly graduated. */
+    /** nudge, strategy, full - strictly graduated. */
     hints: z.tuple([z.string().min(5), z.string().min(10), z.string().min(20)]),
     solutions: z
       .object({ reliable: z.string().min(50), elegant: z.string().min(30).nullable() })
@@ -143,12 +143,12 @@ export const ProblemSchema = z
 export type Problem = z.infer<typeof ProblemSchema>;
 
 /* -------------------------------------------------------------------------- */
-/* Paper index — content/papers/<year>-<band>.json                             */
+/* Paper index - content/papers/<year>-<band>.json                             */
 /* -------------------------------------------------------------------------- */
 
 /**
  * OUR ANALYSIS OF an official paper. Contains no official problem text, no figures and no
- * answers — question number, point value, our skill tags, and an optional ≤120-character
+ * answers - question number, point value, our skill tags, and an optional ≤120-character
  * characterization in our own words. See CLAUDE.md, non-negotiable #1.
  */
 export const PaperQuestionSchema = z

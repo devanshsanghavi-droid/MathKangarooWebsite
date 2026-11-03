@@ -1,0 +1,67 @@
+{
+  "id": "KA-0189",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Alone, Ana paints a fence in 6 hours and Ben paints it in 12 hours. Working together at those rates, how many hours do they need?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I averaged the two times, which would only be right if one of them stopped halfway."
+    },
+    {
+      "key": "C",
+      "text": "18",
+      "correct": false,
+      "misconception": "I added the two times, so my answer is slower than either of them working alone."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I halved the faster time, assuming a second helper always doubles the speed."
+    },
+    {
+      "key": "E",
+      "text": "2",
+      "correct": false,
+      "misconception": "I divided the faster time by three for no reason beyond wanting a small answer."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-04",
+    "secondary": [
+      "NUM-09"
+    ]
+  },
+  "hints": [
+    "Think about how much fence each paints in one hour.",
+    "Convert both times into fences per hour, add those rates, then turn the combined rate back into a time by taking its reciprocal.",
+    "Ana does one sixth an hour and Ben one twelfth, so together a quarter of the fence each hour."
+  ],
+  "solutions": {
+    "reliable": "In one hour Ana paints 1/6 of the fence and Ben 1/12, so together 1/6 + 1/12 = 1/4 each hour, and the job takes 4 hours. The transferable idea: times do not add or average, rates do, so always convert to work-per-hour first and invert at the end.",
+    "elegant": "Ben is half as fast as Ana, so the two of them are like one and a half Anas, and 6 divided by 1.5 is 4."
+  },
+  "whyOnTest": "Adding or averaging the times is almost universal on a first attempt, and the answer must come out faster than the quicker worker alone.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

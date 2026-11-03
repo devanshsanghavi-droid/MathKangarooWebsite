@@ -8,7 +8,7 @@ import type { Problem } from './schemas';
  * with its 6pm reveal and its archive is P2; this is the card `docs/00-SPEC.md` §1.1 asks the
  * home page for, and it works today.
  *
- * The hash is deliberately trivial — this needs to be stable and readable, not unpredictable.
+ * The hash is deliberately trivial - this needs to be stable and readable, not unpredictable.
  */
 export function dayNumber(date: Date): number {
   const utc = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());

@@ -2,7 +2,7 @@
  * Every content rule this repo enforces, in one place.
  *
  * `validateContent()` walks a content root and returns a flat list of findings. It never
- * throws on bad content and never calls process.exit — that is the CLI's job — so the same
+ * throws on bad content and never calls process.exit - that is the CLI's job - so the same
  * function can be pointed at `scripts/__fixtures__/` from a unit test.
  *
  * Rule ids are stable strings. Tests assert on them; do not rename one without updating
@@ -82,7 +82,7 @@ export interface ValidateResult {
  */
 export const PAPER_FILE_MAX_BYTES = 2048;
 
-/** Every file in a directory, not just the JSON — the paper tripwire has to see all of them. */
+/** Every file in a directory, not just the JSON - the paper tripwire has to see all of them. */
 function listAllFiles(dir: string): string[] {
   if (!existsSync(dir)) return [];
   const out: string[] = [];
@@ -236,7 +236,7 @@ export function validateContent(options: ValidateOptions): ValidateResult {
   for (const file of skillFiles) {
     const raw = readJson(file);
     if (!raw.ok) {
-      add('schema/json-parse', file, `not valid JSON — ${raw.message}`);
+      add('schema/json-parse', file, `not valid JSON - ${raw.message}`);
       continue;
     }
     const parsed = SkillSchema.safeParse(raw.value);
@@ -317,7 +317,7 @@ export function validateContent(options: ValidateOptions): ValidateResult {
       add(
         'skill/unlocks-derived',
         skillIdSeen.get(id) ?? id,
-        `unlocks is stale — expected [${expected.join(', ')}], found [${actual.join(', ')}]. ` +
+        `unlocks is stale - expected [${expected.join(', ')}], found [${actual.join(', ')}]. ` +
           'Run `pnpm derive:unlocks`; never hand-edit this field.',
       );
     }
@@ -331,7 +331,7 @@ export function validateContent(options: ValidateOptions): ValidateResult {
   for (const file of problemFiles) {
     const raw = readJson(file);
     if (!raw.ok) {
-      add('schema/json-parse', file, `not valid JSON — ${raw.message}`);
+      add('schema/json-parse', file, `not valid JSON - ${raw.message}`);
       continue;
     }
     rawProblemGuardrails(raw.value, file, add);
@@ -466,7 +466,7 @@ export function validateContent(options: ValidateOptions): ValidateResult {
   for (const file of paperFiles) {
     const raw = readJson(file);
     if (!raw.ok) {
-      add('schema/json-parse', file, `not valid JSON — ${raw.message}`);
+      add('schema/json-parse', file, `not valid JSON - ${raw.message}`);
       continue;
     }
     const parsed = PaperIndexSchema.safeParse(raw.value);

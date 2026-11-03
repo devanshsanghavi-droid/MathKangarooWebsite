@@ -1,0 +1,67 @@
+{
+  "id": "KA-0179",
+  "band": "7-8",
+  "points": 3,
+  "statement": "What is the last digit of 7 x 7 x 7 x ... x 7, where there are 20 sevens?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found the cycle 7, 9, 3, 1 but counted the first term as position zero, landing one step early."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I assumed the last digit of a power matches the last digit of the base, no matter the exponent."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I squared 7 to get 49 and used its last digit, ignoring the other eighteen factors."
+    },
+    {
+      "key": "E",
+      "text": "0",
+      "correct": false,
+      "misconception": "I expected a long product to end in 0 the way multiples of ten do."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-07",
+    "secondary": [
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "Work out the first few last digits and look for a cycle.",
+    "Last digits of powers repeat. Find the length of the repeat, then divide the exponent by that length and use the remainder to pick the position.",
+    "The last digits run 7, 9, 3, then back to 7. The cycle has length 4, and 20 is a multiple of 4, so the twentieth sits at the end of a full cycle."
+  ],
+  "solutions": {
+    "reliable": "The last digits of successive powers of 7 are 7, 9, 3, 1 and then repeat. Since 20 is divisible by 4, the twentieth power sits at the end of a complete cycle, so the last digit is 1. The transferable idea: last digits are periodic, so an enormous exponent collapses to a remainder.",
+    "elegant": "7 x 7 x 7 x 7 ends in 1, and 20 sevens is five such blocks, so the whole product ends the same way one does."
+  },
+  "whyOnTest": "Powers far beyond calculator range are standard in the middle block, and the periodic last digit is the only route that scales.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

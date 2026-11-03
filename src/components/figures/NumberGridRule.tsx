@@ -1,7 +1,7 @@
 import { FigureSvg, Cell, Label, FILL_ACCENT } from './primitives.tsx';
 
 /**
- * KA-0105 — the first two rows of the grid filled in, the rest blank, and the target cell
+ * KA-0105 - the first two rows of the grid filled in, the rest blank, and the target cell
  * shaded. Showing two rows is deliberate: it gives the reader a cell to check their rule
  * against before they use it on the one they cannot see.
  */

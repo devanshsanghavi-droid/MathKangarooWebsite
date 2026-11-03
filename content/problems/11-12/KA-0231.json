@@ -1,0 +1,68 @@
+{
+  "id": "KA-0231",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A sequence begins 1, 1 and each later term is the sum of the two before it. How many of the first twenty terms are divisible by 3?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I checked only the small terms, where multiples of 3 are still rare."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found the pattern but counted one occurrence short across twenty positions."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I assumed every third term was divisible by 3, matching the divisor to the spacing."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I assumed half the terms would be divisible, with no pattern behind the guess."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "NUM-06",
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "Replace each term by its remainder on division by three.",
+    "Work the recursion entirely in remainders modulo 3. The remainders repeat in a short block, and counting the zeros in that block across twenty positions gives the answer.",
+    "The remainders run 1, 1, 2, 0, 2, 2, 1, 0 and then repeat every eight terms."
+  ],
+  "solutions": {
+    "reliable": "Taking the recursion modulo 3 gives remainders 1, 1, 2, 0, 2, 2, 1, 0, repeating with period 8, so a zero appears at every fourth position. Among the first twenty terms the fourth, eighth, twelfth, sixteenth and twentieth are divisible by 3, which is five. The transferable idea: run a recursion in remainders and the terms become a short cycle.",
+    "elegant": "Zeros sit at every fourth position, so twenty terms hold twenty divided by four of them."
+  },
+  "whyOnTest": "Fibonacci-style terms outgrow any calculator quickly, and working modulo the divisor is the only finishable route.",
+  "estSeconds": 165,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -19,7 +19,7 @@ import {
  *   because there is nothing here that survives the tab.
  *
  *   Refusal is honoured.  Do Not Track and Global Privacy Control both switch the whole
- *   system off — not "anonymise harder", off. So does a `ka-telemetry=off` opt-out, which
+ *   system off - not "anonymise harder", off. So does a `ka-telemetry=off` opt-out, which
  *   /legal/privacy exposes as a real control.
  *
  *   Validated before it leaves.  Every event is parsed against the schema on the CLIENT as
@@ -36,7 +36,7 @@ export const SESSION_KEY = 'ka-telemetry-session';
 export const FIRST_VISIT_KEY = 'ka-first-visit';
 export const OPT_OUT_KEY = 'ka-telemetry';
 
-/** Flush when this many events are buffered, or when the page is hidden — whichever first. */
+/** Flush when this many events are buffered, or when the page is hidden - whichever first. */
 export const BATCH_SIZE = 12;
 
 function safeSession(): Storage | null {
@@ -84,7 +84,7 @@ export function sessionId(): string {
 
 /**
  * Which coarse returning-bucket this browser is in, computed HERE from a date this browser
- * holds. The server never sees the date, only the bucket — which is what lets a retention
+ * holds. The server never sees the date, only the bucket - which is what lets a retention
  * split exist without any cross-visit identifier. See the note in aggregate.ts.
  */
 export function returningBucket(now: Date = new Date()): EventProps['returning'] {
@@ -174,7 +174,7 @@ export function flush(send: Sender = defaultSender): number {
 }
 
 /**
- * Record one event. Returns whether it was accepted, which the tests assert on — a silent
+ * Record one event. Returns whether it was accepted, which the tests assert on - a silent
  * no-op and a silent drop look identical from the outside otherwise.
  */
 export function track(

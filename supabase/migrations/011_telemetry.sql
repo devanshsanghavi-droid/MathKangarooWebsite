@@ -4,7 +4,7 @@
 --
 -- What makes that true is not this table's policies but the SHAPE of what reaches it:
 -- src/lib/telemetry/events.ts admits only enumerated values drawn from content that is already
--- public — a skill id, a problem id, a choice key, a route name. There is no free-text column
+-- public - a skill id, a problem id, a choice key, a route name. There is no free-text column
 -- here because there is no free-text field in the schema, and there never may be one. The
 -- users are minors; COPPA is a build constraint, not a legal appendix.
 --

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0184",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A drawer holds 10 black socks, 10 white socks and 10 grey socks, all mixed up. Reaching in without looking, how many socks must be taken to be certain of two of the same colour?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I assumed the first two socks would match, which is possible but not certain."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted one sock for each colour and stopped, forgetting that three socks can be all different."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "11",
+      "correct": false,
+      "misconception": "I used the ten socks of one colour as the worst case, as though all ten had to come out first."
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I added two whole colours together, treating the worst case as emptying them."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-17",
+    "secondary": [
+      "CNT-18"
+    ]
+  },
+  "hints": [
+    "Imagine the unluckiest possible draw.",
+    "Ask what the largest number of socks is that could still avoid a match. One more than that is the answer, and the drawer's size does not matter.",
+    "Three socks could be one of each colour. A fourth sock must repeat a colour, since there are only three colours."
+  ],
+  "solutions": {
+    "reliable": "The worst case is one sock of each colour, which is three socks with no match. The fourth sock must repeat a colour, so four is enough and three is not. The transferable idea: pigeonhole answers are always one more than the largest collection that avoids the condition, and the number of items per colour is a distraction.",
+    "elegant": "Three colours are three pigeonholes, so four socks force a shared one."
+  },
+  "whyOnTest": "Pigeonhole questions dress the same argument in new clothes each year, and the quantity per category is always there to mislead.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

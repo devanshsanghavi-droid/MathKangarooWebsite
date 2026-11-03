@@ -32,8 +32,8 @@ export default function AboutPage() {
         <p>So this site is that diagnosis, made into software.</p>
         <p>
           <strong className="text-ink">The Skill Atlas</strong> is the spine: {stats.skills} named
-          skills — things like <em>counting by position</em>, <em>nets and folding</em>,{' '}
-          <em>invariants</em> — grouped into seven strands and joined by prerequisite arrows. Each
+          skills - things like <em>counting by position</em>, <em>nets and folding</em>,{' '}
+          <em>invariants</em> - grouped into seven strands and joined by prerequisite arrows. Each
           one has its own page: what it is, the phrases that tell you it is showing up in a problem,
           the mistakes students actually make, and a ladder of practice at the 3-, 4- and 5-point
           difficulties the real exam uses.
@@ -42,7 +42,7 @@ export default function AboutPage() {
           <strong className="text-ink">The problem bank is entirely original</strong>, and that part
           matters enough to say out loud. Math Kangaroo&rsquo;s papers are copyrighted, so I do not
           host them. I link to their official free PDFs and publish my own{' '}
-          <Link href="/papers">skill index</Link> of them — &ldquo;2019, level 5–6, question 22
+          <Link href="/papers">skill index</Link> of them - &ldquo;2019, level 5–6, question 22
           tests these two skills&rdquo;. Everything else here is a problem I wrote. That constraint
           is what made this real work rather than a link farm.
         </p>
@@ -51,7 +51,7 @@ export default function AboutPage() {
             The explanations are the part I have not seen anywhere else.
           </strong>{' '}
           Writing a problem is easy. The hard part is writing five answer choices where each wrong
-          one comes from a real mistake a real student makes — and then storing that mistake next to
+          one comes from a real mistake a real student makes - and then storing that mistake next to
           the choice. So the feedback is written for <em>your</em> error, not the average one. There
           are {stats.misconceptions} of those explanations so far.
         </p>
@@ -79,7 +79,7 @@ export default function AboutPage() {
         <a href={SITE.repo} rel="noreferrer">
           one public repository
         </a>{' '}
-        — including the problems, so anyone can check my work, correct a mistake, or run a Kangaroo
+        - including the problems, so anyone can check my work, correct a mistake, or run a Kangaroo
         club somewhere I will never visit. If you find an error in a problem, the fastest way to get
         it fixed is the report link at the bottom of that problem&rsquo;s page.
       </p>

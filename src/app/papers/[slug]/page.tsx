@@ -23,8 +23,8 @@ interface Params {
 }
 
 /**
- * The complete set of valid ids is known at build time — content lives in git and nothing is
- * created at runtime — so anything outside that set is a 404, not a page to try rendering.
+ * The complete set of valid ids is known at build time - content lives in git and nothing is
+ * created at runtime - so anything outside that set is a 404, not a page to try rendering.
  *
  * This is not a micro-optimisation. With the default `dynamicParams: true`, Next rendered the
  * page for an unknown id, hit `notFound()`, and then cached and served that not-found body with
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!paper) return { title: 'Paper not indexed', robots: { index: false } };
 
   return {
-    title: `${paperTitle(paper)} — skill index`,
+    title: `${paperTitle(paper)} - skill index`,
     description: `Our skill analysis of the ${paperTitle(paper)} Math Kangaroo paper: every question mapped to the skills it tests. No question text, figures or answers.`,
     alternates: { canonical: `/papers/${paperSlug(paper)}` },
   };
@@ -102,7 +102,7 @@ export default async function PaperPage({ params }: Params) {
           <p className="m-0">
             Below is <strong>our analysis</strong> of this paper, not the paper. It holds question
             numbers, point values, the skills we tagged, and our own short notes. It contains no
-            question text, no figures and no answers — read those in the official PDF above.
+            question text, no figures and no answers - read those in the official PDF above.
           </p>
         </Callout>
       </div>

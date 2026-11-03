@@ -66,7 +66,7 @@ describe('the diagnostic', () => {
     expect(container.textContent).not.toMatch(/your answer/);
   });
 
-  it('shows no hints and no solution during the run — it is a measurement', async () => {
+  it('shows no hints and no solution during the run - it is a measurement', async () => {
     // Rendering the full practice card here would let a student open the worked solution
     // mid-diagnostic, which would measure nothing at all.
     const { container } = render(<DiagnosticRunner {...props} />);

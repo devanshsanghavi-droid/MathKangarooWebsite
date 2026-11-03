@@ -7,7 +7,7 @@ import { DifficultyPill } from '@/components/DifficultyPill';
  *
  * What this table contains: a question number, a point value, our skill tags, and sometimes a
  * short characterisation in our own words. What it does not and will never contain: the
- * question, the figure, or the answer. See CLAUDE.md's first non-negotiable — the reader is
+ * question, the figure, or the answer. See CLAUDE.md's first non-negotiable - the reader is
  * told this in plain language above the table, not just in a licence file.
  */
 export function PaperQuestionTable({

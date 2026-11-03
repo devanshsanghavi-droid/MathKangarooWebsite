@@ -1,4 +1,4 @@
-# CLAUDE.md — Kangaroo Atlas
+# CLAUDE.md - Kangaroo Atlas
 
 Repo: `git@github.com:devanshsanghavi-droid/MathKangarooWebsite.git`
 Owner: Devansh Sanghavi. Read this file before every task.
@@ -7,11 +7,11 @@ Owner: Devansh Sanghavi. Read this file before every task.
 
 A free, open web platform for Math Kangaroo preparation, organized by **skill** rather than
 by past-paper year. It is the real infrastructure behind a tutoring program that serves ~60
-students a year — not a demo. Three things make it what it is:
+students a year - not a demo. Three things make it what it is:
 
-1. **The Skill Atlas** — ~91 named atomic skills (growing to ~140) in a prerequisite graph.
-2. **An original problem bank** — every problem written from scratch, tagged into the Atlas.
-3. **Distractor-specific explanations** — each wrong answer choice stores the exact
+1. **The Skill Atlas** - ~91 named atomic skills (growing to ~140) in a prerequisite graph.
+2. **An original problem bank** - every problem written from scratch, tagged into the Atlas.
+3. **Distractor-specific explanations** - each wrong answer choice stores the exact
    misconception that produces it, so feedback is written for the student's actual error.
 
 ## Non-negotiables
@@ -35,7 +35,7 @@ These are hard rules. If a task appears to require breaking one, stop and say so
 - **Green, red and amber are reserved.** They appear only in response to something the student
   did: correct, incorrect, hint taken. Never for difficulty, never for a category, never for
   decoration. If a component needs a colour and none of the reserved three apply, it uses a
-  neutral or the single teal accent — there is no fourth option. `pnpm check:palette` fails the
+  neutral or the single teal accent - there is no fourth option. `pnpm check:palette` fails the
   build on a violation. See `docs/05-DESIGN-DIRECTION.md` §2.
 - **Accessibility is not a phase.** WCAG 2.1 AA contrast, full keyboard operation, visible
   focus, `prefers-reduced-motion` respected. A component that fails this is not done.
@@ -53,9 +53,9 @@ this project's realistic scale.
 | Styling | Tailwind CSS v4 + CSS custom properties for theme tokens | free |
 | Math typesetting | KaTeX (`react-katex`) | free |
 | Figures | Hand-authored inline SVG React components | free |
-| Content | JSON + MDX committed to the repo — **git is the CMS** | free |
+| Content | JSON + MDX committed to the repo - **git is the CMS** | free |
 | Validation | Zod schemas + a `pnpm validate:content` script run in CI | free |
-| Database & auth | Supabase (Postgres, Auth, RLS) — free tier | free |
+| Database & auth | Supabase (Postgres, Auth, RLS) - free tier | free |
 | Spaced repetition | `ts-fsrs` | free |
 | Hosting | Vercel Hobby | free |
 | Analytics | Umami, self-hosted on the same Supabase Postgres | free |
@@ -94,17 +94,17 @@ src/
   styles/tokens.css                the only place colors are defined
 scripts/                           validate-content.ts, calibrate.ts, seed.ts
 supabase/migrations/               SQL migrations, numbered
-docs/                              the specs below — read before building
+docs/                              the specs below - read before building
 ```
 
 ## Documents
 
-- `docs/00-SPEC.md` — every route, page, and component. The definition of the product.
-- `docs/01-DATA-MODEL.md` — content schemas, Postgres tables, RLS, mastery + scheduling.
-- `docs/02-BUILD-PLAN.md` — the phased checklist. Work top to bottom.
-- `docs/03-CONTENT-GUIDE.md` — the 91-skill taxonomy and problem authoring rules.
-- `docs/04-CLAUDE-CODE-PROMPTS.md` — session kickoff prompts.
-- `docs/05-DESIGN-DIRECTION.md` — the v2 palette, type and unit structure. Supersedes §0.1 of
+- `docs/00-SPEC.md` - every route, page, and component. The definition of the product.
+- `docs/01-DATA-MODEL.md` - content schemas, Postgres tables, RLS, mastery + scheduling.
+- `docs/02-BUILD-PLAN.md` - the phased checklist. Work top to bottom.
+- `docs/03-CONTENT-GUIDE.md` - the 91-skill taxonomy and problem authoring rules.
+- `docs/04-CLAUDE-CODE-PROMPTS.md` - session kickoff prompts.
+- `docs/05-DESIGN-DIRECTION.md` - the v2 palette, type and unit structure. Supersedes §0.1 of
   `00-SPEC.md` and the structure of `/skill/[id]` described there.
 
 ## Conventions

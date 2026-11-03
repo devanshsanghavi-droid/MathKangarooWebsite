@@ -2,7 +2,7 @@ import { readdirSync, readFileSync, writeFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 
 /**
- * `pnpm bundle:content` — freeze content/ into a module the JavaScript bundler can see.
+ * `pnpm bundle:content` - freeze content/ into a module the JavaScript bundler can see.
  *
  * ---------------------------------------------------------------------------------------
  * WHY THIS EXISTS
@@ -12,16 +12,16 @@ import { join, relative } from 'node:path';
  * where there is a filesystem and a sensible working directory.
  *
  * There is neither on Cloudflare Workers. On workerd `process.cwd()` is `/bundle`, and the
- * only things there are worker.js and a few wasm blobs — no content directory at any path.
+ * only things there are worker.js and a few wasm blobs - no content directory at any path.
  * Every prerendered page was fine, because its HTML was baked at build time. But the three
- * routes that render at request time because they read searchParams — /problems, /atlas and
- * /print — silently produced an EMPTY index and rendered a site with no problems and no
+ * routes that render at request time because they read searchParams - /problems, /atlas and
+ * /print - silently produced an EMPTY index and rendered a site with no problems and no
  * skills in it. They returned HTTP 200 the whole time, which is how a route check missed it.
  *
  * Bundling the content into a JSON module puts it in the graph the bundler traces, so it
  * ships inside the worker and needs no filesystem at all.
  *
- * The output is committed, and `--check` fails CI when it drifts from content/ — the same
+ * The output is committed, and `--check` fails CI when it drifts from content/ - the same
  * arrangement scripts/derive-unlocks.ts already uses for the skill graph, for the same
  * reason: derived data that can silently disagree with its source is worse than no derived
  * data at all.
@@ -81,7 +81,7 @@ if (process.argv.includes('--check')) {
     process.exit(1);
   }
   console.log(
-    `content bundle in sync — ${bundle.skills.length} skills, ${bundle.problems.length} problems, ` +
+    `content bundle in sync - ${bundle.skills.length} skills, ${bundle.problems.length} problems, ` +
       `${bundle.papers.length} paper indexes`,
   );
   process.exit(0);
@@ -90,7 +90,7 @@ if (process.argv.includes('--check')) {
 writeFileSync(OUTPUT, serialised);
 const bytes = statSync(OUTPUT).size;
 console.log(
-  `wrote ${relative(ROOT, OUTPUT)} — ${bundle.skills.length} skills, ` +
+  `wrote ${relative(ROOT, OUTPUT)} - ${bundle.skills.length} skills, ` +
     `${bundle.problems.length} problems, ${bundle.papers.length} paper indexes, ` +
     `${Math.round(bytes / 1024)} KB`,
 );

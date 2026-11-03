@@ -1,0 +1,68 @@
+{
+  "id": "KA-0234",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A two-digit number equals the product of its digits plus the sum of its digits. How many such numbers are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I found one example and assumed it was unique without solving the equation."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I found two examples by trial and stopped searching."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": false,
+      "misconception": "I guessed at roughly half the possible tens digits without deriving the condition."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": false,
+      "misconception": "I counted every two-digit number ending in 9 and then doubled, with no reason."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "NUM-01",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Write the number in terms of its digits and simplify.",
+    "Let the digits be a and b, so the number is 10a + b. Set that equal to ab plus a plus b, cancel what appears on both sides, and read off what the remaining equation forces.",
+    "10a + b = ab + a + b simplifies to 9a = ab, so b must equal 9."
+  ],
+  "solutions": {
+    "reliable": "With digits a and b the condition is 10a + b = ab + a + b, which simplifies to 9a = ab. Since a is not zero, b = 9, so the numbers are 19, 29 and so on to 99, which is nine of them. The transferable idea: write place value out, cancel, and the puzzle becomes a one-line equation rather than a search.",
+    "elegant": "Every number ending in 9 works, which is visible at once from 9a = ab."
+  },
+  "whyOnTest": "Digit puzzles reward algebra over trial, and every distractor is what partial searching produces.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

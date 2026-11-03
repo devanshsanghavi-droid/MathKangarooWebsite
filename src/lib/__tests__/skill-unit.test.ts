@@ -29,7 +29,7 @@ describe('the lesson list', () => {
     5: [],
   };
 
-  it('is Learn, three ladders, then the quiz — in that order', () => {
+  it('is Learn, three ladders, then the quiz - in that order', () => {
     const rows = buildLessonRows({
       skillId: 'CNT-12',
       problemIdsByTier,
@@ -101,7 +101,7 @@ describe('the quiz lock', () => {
     ).toBe(false);
   });
 
-  it('opens once every stocked ladder is finished — an empty tier cannot be a barrier', () => {
+  it('opens once every stocked ladder is finished - an empty tier cannot be a barrier', () => {
     const done = ladderState(
       ['KA-0001', 'KA-0002', 'KA-0003'],
       [solved('KA-0001', 3, 1), solved('KA-0002', 3, 1), solved('KA-0003', 3, 2)],

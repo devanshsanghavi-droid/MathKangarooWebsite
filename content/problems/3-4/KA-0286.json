@@ -1,0 +1,68 @@
+{
+  "id": "KA-0286",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A number is doubled, then 6 is added, and the answer is 20. What was the number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I subtracted 6 and then subtracted 2 instead of halving."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": false,
+      "misconception": "I halved 20 and then added 3, undoing the steps out of order."
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": false,
+      "misconception": "I subtracted 6 and gave the result without halving."
+    },
+    {
+      "key": "E",
+      "text": "26",
+      "correct": false,
+      "misconception": "I added 6 rather than taking it away."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-08",
+    "secondary": [
+      "MOD-01",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Undo the adding first, then the doubling.",
+    "The last thing done was adding 6, so undo that first by subtracting. Then undo the doubling by halving. Running the steps forwards on your answer is a free check.",
+    "20 - 6 = 14, and 14 came from doubling the number."
+  ],
+  "solutions": {
+    "reliable": "Undoing in reverse order, 20 - 6 = 14 and half of 14 is 7. Checking forwards, 7 doubled is 14 and 14 + 6 = 20. The transferable idea: undo operations in the opposite order to the one they were applied, because reversing the order is what produces the near-miss answers.",
+    "elegant": "Testing the five choices forwards takes seconds and only one lands on 20."
+  },
+  "whyOnTest": "Undoing out of order gives an answer that is close enough to look right, and it is on the list.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

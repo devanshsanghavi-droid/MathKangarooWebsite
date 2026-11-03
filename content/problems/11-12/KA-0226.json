@@ -1,0 +1,68 @@
+{
+  "id": "KA-0226",
+  "band": "11-12",
+  "points": 5,
+  "statement": "What is the remainder when 3 to the power 2024 is divided by 13?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I treated 2024 as a multiple of the cycle length 3 and read off the end of the cycle."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I used a remainder of 1 where dividing 2024 by 3 actually leaves 2."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I used a cycle of length 4 from habit with last digits rather than finding the cycle for 13."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I assumed a large power would land just below the divisor."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "PAT-03",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Find the smallest power of 3 that leaves remainder 1.",
+    "Compute powers of 3 modulo 13 until the remainder returns to 1. That gives the cycle length, and the exponent's remainder on division by it picks the answer.",
+    "3 cubed is 27, which leaves remainder 1, so the cycle has length 3, and 2024 leaves remainder 2 on division by 3."
+  ],
+  "solutions": {
+    "reliable": "Since 3 cubed is 27 and 27 leaves remainder 1 on division by 13, the powers of 3 repeat with period 3. As 2024 leaves remainder 2 on division by 3, the answer matches 3 squared, which is 9. The transferable idea: find the first exponent returning to remainder 1, because that period controls every larger exponent.",
+    "elegant": "2024 = 3 x 674 + 2, so 3 to the 2024 behaves exactly like 3 squared."
+  },
+  "whyOnTest": "Modular cycles are the only route to exponents this size, and the cycle length has to be discovered rather than assumed.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

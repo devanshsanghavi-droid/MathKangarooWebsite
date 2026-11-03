@@ -1,0 +1,67 @@
+{
+  "id": "KA-0181",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A canteen offers 4 soups, 5 main courses and 3 desserts. How many different three-course meals can be chosen?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I multiplied only the first two numbers and forgot the dessert course entirely."
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": false,
+      "misconception": "I multiplied the courses I thought were the main decisions and left the soup out."
+    },
+    {
+      "key": "C",
+      "text": "60",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "12.5",
+      "correct": false,
+      "misconception": "I averaged the three numbers instead of combining the choices."
+    },
+    {
+      "key": "E",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought a meal needed every item on the menu, which is impossible, so I answered zero."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-03",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Each course is an independent decision.",
+    "When choices are made one after another and none restricts the next, multiply the number of options at each step rather than adding them.",
+    "There are 4 ways to pick soup, then 5 for the main, then 3 for dessert, so multiply all three."
+  ],
+  "solutions": {
+    "reliable": "The three courses are chosen independently, so the number of meals is 4 x 5 x 3 = 60. The transferable idea: independent decisions multiply, and the giveaway that you should multiply rather than add is the word 'and' joining the stages.",
+    "elegant": null
+  },
+  "whyOnTest": "The multiplication principle is the single most reused counting tool on the paper, and the adding trap sits right next to it in the choices.",
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

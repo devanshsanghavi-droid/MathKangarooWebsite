@@ -1,0 +1,68 @@
+{
+  "id": "KA-0258",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Ana has 2 hats and 3 scarves. How many different hat-and-scarf pairs can she wear?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted only the hats and forgot the scarves."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only the scarves and forgot the hats."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": false,
+      "misconception": "I added the hats and the scarves instead of pairing them up."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I used three hats rather than two when making the pairs."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-01",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Try every scarf with the first hat, then with the second.",
+    "Take one hat and count the pairs it can make with each scarf. Then do the same for the other hat. Adding those counts gives every pair exactly once.",
+    "The first hat makes 3 pairs and so does the second hat."
+  ],
+  "solutions": {
+    "reliable": "The first hat pairs with each of the 3 scarves, and so does the second hat, giving 3 + 3 = 6 pairs. The idea to keep: when two choices are made together, count the second choice once for every option of the first, which is why these counts multiply rather than add.",
+    "elegant": null
+  },
+  "whyOnTest": "Adding instead of pairing is the error that this question is built around, and that answer is sitting in the list.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

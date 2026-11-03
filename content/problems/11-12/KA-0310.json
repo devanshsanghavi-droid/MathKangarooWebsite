@@ -1,0 +1,68 @@
+{
+  "id": "KA-0310",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A positive whole number leaves remainder 3 on division by 5 and remainder 4 on division by 7. What is the smallest such number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I took the first number leaving remainder 3 on division by 5 without testing the second condition."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I tested the second candidate but misread its remainder on division by 7."
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": false,
+      "misconception": "I satisfied the condition for 7 but not the one for 5."
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": false,
+      "misconception": "I satisfied the condition for 5 but not the one for 7."
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "CFT-03",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "List the numbers satisfying one condition and test them against the other.",
+    "Write out the numbers leaving remainder 3 on division by 5, which go up in fives. Test each against the second condition in turn, and stop at the first that works.",
+    "The candidates are 3, 8, 13, 18, 23, 28, 33 and so on."
+  ],
+  "solutions": {
+    "reliable": "Numbers leaving remainder 3 on division by 5 are 3, 8, 13, 18, 23, 28, 33. Testing each against division by 7, the first leaving remainder 4 is 18, since 18 = 2 x 7 + 4. The transferable idea: list one condition's solutions, which go up by that divisor, and test them against the other, rather than solving both at once.",
+    "elegant": "Stepping up in fives from 3, the remainders on division by 7 run 3, 1, 6, 4, so the fourth candidate is the one."
+  },
+  "whyOnTest": "Two simultaneous remainder conditions are solved by listing one and testing, and every distractor is a shortcut that skips the test.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

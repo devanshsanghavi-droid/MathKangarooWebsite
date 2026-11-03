@@ -1,0 +1,67 @@
+{
+  "id": "KA-0299",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A recipe for 4 people uses 300 g of rice. How much rice is needed for 6 people?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "200",
+      "correct": false,
+      "misconception": "I scaled the recipe down to three people rather than up to six."
+    },
+    {
+      "key": "B",
+      "text": "350",
+      "correct": false,
+      "misconception": "I added 50 g for each extra person rather than scaling in proportion."
+    },
+    {
+      "key": "C",
+      "text": "450",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "500",
+      "correct": false,
+      "misconception": "I added 200 g because two more people were eating, without using the per-person amount."
+    },
+    {
+      "key": "E",
+      "text": "1800",
+      "correct": false,
+      "misconception": "I multiplied by six instead of by six divided by four."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-07",
+    "secondary": [
+      "NUM-11"
+    ]
+  },
+  "hints": [
+    "Work out the rice for one person first.",
+    "Divide to find the amount per person, then multiply by the number of people wanted. Scaling the whole recipe by the same factor is a useful second check.",
+    "300 g for 4 people is 75 g each."
+  ],
+  "solutions": {
+    "reliable": "One person needs 300 / 4 = 75 g, so 6 people need 75 x 6 = 450 g. Equivalently the recipe scales by 1.5. The transferable idea: reduce to one unit before scaling, because adding a fixed amount per extra person is not the same as scaling and gives a different answer.",
+    "elegant": "Six people is one and a half recipes, so add half of 300 to 300."
+  },
+  "whyOnTest": "Adding per extra person rather than scaling is the standard proportion error, and that answer sits in the list.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

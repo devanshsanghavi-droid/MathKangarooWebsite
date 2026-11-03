@@ -3,8 +3,7 @@ import type { Choice, ChoiceKey, Problem } from '@/lib/schemas';
 /**
  * The point of the whole project.
  *
- * When a student picks a wrong answer they get the misconception recorded for THAT choice —
- * the specific piece of reasoning that produces that number — not a generic solution and not
+ * When a student picks a wrong answer they get the misconception recorded for THAT choice -  * the specific piece of reasoning that produces that number - not a generic solution and not
  * "incorrect, try again". When they pick the right one they get the reliable method, so a
  * lucky guess still teaches something.
  *
@@ -43,7 +42,7 @@ export function FeedbackPanel({
         className="mt-4 rounded-sm border border-correct-border bg-correct-100 p-4"
       >
         <p className="m-0 text-sm font-semibold text-ink">
-          Correct — {selected.key} is {selected.text}.
+          Correct - {selected.key} is {selected.text}.
         </p>
         <p className="prose-measure mt-3 mb-0 text-sm text-ink-2">{problem.solutions.reliable}</p>
       </div>

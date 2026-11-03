@@ -33,13 +33,13 @@ function groupByRule(items: Finding[]): Map<string, Finding[]> {
 
 if (findings.length === 0) {
   console.log(
-    `content ok — ${counts.skills} skills, ${counts.problems} problems, ${counts.papers} paper indexes`,
+    `content ok - ${counts.skills} skills, ${counts.problems} problems, ${counts.papers} paper indexes`,
   );
   process.exit(0);
 }
 
 console.error(
-  `content validation failed — ${findings.length} problem${findings.length === 1 ? '' : 's'} ` +
+  `content validation failed - ${findings.length} problem${findings.length === 1 ? '' : 's'} ` +
     `across ${counts.skills} skills, ${counts.problems} problems, ${counts.papers} paper indexes\n`,
 );
 

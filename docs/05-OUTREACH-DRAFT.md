@@ -1,6 +1,6 @@
-# 05 — Outreach draft
+# 05 - Outreach draft
 
-*Not sent. M0.4 asks for this to be written, not necessarily sent — writing it forces you to be
+*Not sent. M0.4 asks for this to be written, not necessarily sent - writing it forces you to be
 able to describe the project in a way that survives contact with the organisation whose
 trademark you are using.*
 
@@ -15,7 +15,7 @@ says "I built this" is worth more than one that says "I am planning to build thi
 
 Hello,
 
-My name is Devansh Sanghavi. I tutor Math Kangaroo — about sixty students a year — and I have
+My name is Devansh Sanghavi. I tutor Math Kangaroo - about sixty students a year - and I have
 built a free, open, non-commercial site to support that work. I am writing because it uses your
 competition's name descriptively, and I would rather tell you about it directly than have you
 find it.
@@ -31,7 +31,7 @@ USA, NFP, and every page says so in the footer. I understand that "Math Kangaroo
 trademark and I use it only descriptively, to say what the material prepares students for.
 
 **On your papers.** No official Math Kangaroo problem appears anywhere on the site or in its
-public repository — not the text, not a reworded version, and not the figures. Every problem is
+public repository - not the text, not a reworded version, and not the figures. Every problem is
 written from scratch by a named author. Where I refer to a past paper, I publish only my own
 analysis of it: a question number, a point value, and the skills I think that question tests.
 Those files are capped in size by an automated check specifically to make it impossible for
@@ -66,7 +66,7 @@ The realistic outcomes, and what each one means:
 ## Naming, locked
 
 The public name is **Kangaroo Atlas**. It is defined once, in `src/lib/site.ts`, and every
-surface reads it from there — the wordmark, page titles, the manifest, the OG cards and the
+surface reads it from there - the wordmark, page titles, the manifest, the OG cards and the
 content licence. Changing it is a one-line change in one file.
 
 It deliberately does not contain "Math Kangaroo": the name is ours, and the relationship to the

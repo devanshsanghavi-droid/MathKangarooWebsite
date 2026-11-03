@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     'MIT for the code, CC BY-NC-SA 4.0 for the problems and explanations, and nothing at all ' +
     'for the official papers, which are not ours to license.',
   alternates: { canonical: '/legal/license' },
+  // Boilerplate with no search intent behind it. It was competing with the home page
+  // for the site's own name, so it stays reachable and linked but out of the index.
+  robots: { index: false, follow: true },
 };
 
 export default function LicensePage() {
@@ -22,7 +25,7 @@ export default function LicensePage() {
       <p className="prose-measure mt-3 text-ink-2">
         Everything under <code className="mono">src/</code> and{' '}
         <code className="mono">scripts/</code> is MIT licensed. Take it, change it, ship it, sell it
-        if you like — the only condition is that the copyright notice travels with it. If you want
+        if you like - the only condition is that the copyright notice travels with it. If you want
         to build a study site for a different competition, this is the half to fork.
       </p>
 
@@ -37,15 +40,15 @@ export default function LicensePage() {
       </p>
       <ul className="prose-measure mt-4 grid list-none gap-2 p-0 text-ink-2">
         <li className="rounded-sm border border-rule bg-surface px-3 py-2">
-          <strong className="text-ink">Attribution</strong> — credit &ldquo;{SITE.name}&rdquo; with
+          <strong className="text-ink">Attribution</strong> - credit &ldquo;{SITE.name}&rdquo; with
           a link back, and say if you changed something.
         </li>
         <li className="rounded-sm border border-rule bg-surface px-3 py-2">
-          <strong className="text-ink">NonCommercial</strong> — you may not sell it. Math Kangaroo
+          <strong className="text-ink">NonCommercial</strong> - you may not sell it. Math Kangaroo
           preparation should not cost money; that is the whole reason this exists.
         </li>
         <li className="rounded-sm border border-rule bg-surface px-3 py-2">
-          <strong className="text-ink">ShareAlike</strong> — if you build on it, release your
+          <strong className="text-ink">ShareAlike</strong> - if you build on it, release your
           version under the same licence.
         </li>
       </ul>
@@ -62,7 +65,7 @@ export default function LicensePage() {
       </p>
       <p className="prose-measure mt-3 text-ink-2">
         The files under <code className="mono">content/papers/</code> are <em>our analysis</em> of
-        official papers — a question number, a point value, our skill tags, and sometimes a short
+        official papers - a question number, a point value, our skill tags, and sometimes a short
         note in our own words. That analysis is ours and is covered by the content licence. The
         papers it describes are not ours and are not. See the{' '}
         <Link href="/papers">paper index</Link> for how that line is drawn, and{' '}

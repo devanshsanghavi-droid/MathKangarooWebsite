@@ -1,0 +1,68 @@
+{
+  "id": "KA-0235",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Six people sit around a round table. Two seatings count as the same if one is a rotation of the other. How many different seatings are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": false,
+      "misconception": "I fixed two people rather than one before arranging the rest."
+    },
+    {
+      "key": "B",
+      "text": "120",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "144",
+      "correct": false,
+      "misconception": "I divided the 720 arrangements by five rather than by the six rotations."
+    },
+    {
+      "key": "D",
+      "text": "720",
+      "correct": false,
+      "misconception": "I counted the arrangements in a row and never merged the rotations of each other."
+    },
+    {
+      "key": "E",
+      "text": "4320",
+      "correct": false,
+      "misconception": "I multiplied the 720 arrangements by the six rotations instead of dividing."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-15",
+      "CNT-05"
+    ]
+  },
+  "hints": [
+    "Pin one person down and arrange the rest around them.",
+    "Each circular seating appears once for every rotation, so divide the straight-line count by the number of seats. Equivalently, fix one person and arrange the others relative to them.",
+    "720 arrangements in a row, each circular seating counted once per each of the six rotations."
+  ],
+  "solutions": {
+    "reliable": "There are 6 x 5 x 4 x 3 x 2 x 1 = 720 arrangements in a row, and each circular seating corresponds to 6 of them, so the answer is 720 / 6 = 120. The transferable idea: when a symmetry makes arrangements equivalent, divide by the exact size of that symmetry group, which here is the number of rotations.",
+    "elegant": "Fixing one person removes the rotation entirely, leaving five people to arrange freely."
+  },
+  "whyOnTest": "Circular arrangements are a standard 4-point item, and the undivided count is always on the list.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

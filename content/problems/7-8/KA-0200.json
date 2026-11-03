@@ -1,0 +1,67 @@
+{
+  "id": "KA-0200",
+  "band": "7-8",
+  "points": 3,
+  "statement": "In how many different orders can four people stand in a queue?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I multiplied four by itself, which would allow the same person to fill two positions."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I multiplied four by three and stopped before placing the last two people."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the people rather than the arrangements of them."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I doubled the number of people, as though each one simply had two options."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-05",
+    "secondary": [
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Fill the positions one at a time and count the choices left.",
+    "The first position has four candidates, the second three, and so on, because each person placed is no longer available. Multiply those shrinking counts together.",
+    "4 x 3 x 2 x 1 counts the queues, since every placement removes one person from the pool."
+  ],
+  "solutions": {
+    "reliable": "Fill the queue from the front: 4 choices, then 3, then 2, then 1, giving 4 x 3 x 2 x 1 = 24. The transferable idea: arrangements multiply shrinking counts, whereas repeated independent choices multiply the same count, and confusing the two produces the 16 on offer.",
+    "elegant": null
+  },
+  "whyOnTest": "Arrangements and repeated choices look identical in words and differ in arithmetic, so both answers sit side by side in the choices.",
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

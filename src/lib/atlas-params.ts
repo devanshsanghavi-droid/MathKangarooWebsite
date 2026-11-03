@@ -5,7 +5,7 @@ import { BANDS, POINT_VALUES, STRANDS, type Band, type Points, type Strand } fro
  *
  * `docs/00-SPEC.md` §1.2 fixes the shape: `/atlas?strand=CNT&band=5-6&focus=CNT-12`. Filters
  * live in the URL rather than in component state so a view is shareable, survives a reload and
- * works with the back button — and so the page can stay server-rendered.
+ * works with the back button - and so the page can stay server-rendered.
  *
  * Parsing is total: anything unrecognised is dropped rather than throwing, because a URL is
  * user input and a mistyped band should show the unfiltered Atlas, not an error page.
@@ -89,7 +89,7 @@ export function atlasHref(query: Partial<AtlasQuery>): string {
   return params ? `/atlas?${params}` : '/atlas';
 }
 
-/** The same query with one strand toggled on or off — what a strand checkbox link does. */
+/** The same query with one strand toggled on or off - what a strand checkbox link does. */
 export function withStrandToggled(query: AtlasQuery, strand: Strand): AtlasQuery {
   const strands = query.strands.includes(strand)
     ? query.strands.filter((value) => value !== strand)

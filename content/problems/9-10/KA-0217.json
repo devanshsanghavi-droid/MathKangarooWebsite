@@ -1,0 +1,68 @@
+{
+  "id": "KA-0217",
+  "band": "9-10",
+  "points": 5,
+  "statement": "An ant walks on the surface of a box measuring 4 by 3 by 2, from one corner to the opposite corner. What is the shortest distance it can walk?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I used only two of the three dimensions and ignored the third face entirely."
+    },
+    {
+      "key": "B",
+      "text": "square root of 29",
+      "correct": false,
+      "misconception": "I used the straight line through the inside of the box, which the ant cannot take."
+    },
+    {
+      "key": "C",
+      "text": "square root of 41",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "square root of 45",
+      "correct": false,
+      "misconception": "I unfolded the box across the pair of faces that gives a longer path than the best choice."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I added the three edge lengths, walking along the edges rather than across the faces."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-17",
+    "secondary": [
+      "GEO-10",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Flatten the two faces the ant crosses into one rectangle.",
+    "Unfolding turns a surface path into a straight line. There are three ways to pair up the faces, each giving a rectangle, so compute all three and keep the smallest diagonal.",
+    "Unfolding gives rectangles of 4 by 5, 3 by 6 and 2 by 7, so compare 41, 45 and 53."
+  ],
+  "solutions": {
+    "reliable": "Unfolding the box turns the shortest surface path into the diagonal of a rectangle. The three possible unfoldings give rectangles 4 by 5, 3 by 6 and 2 by 7, with squared diagonals 41, 45 and 53, so the shortest is the square root of 41. The transferable idea: a shortest path across faces is straight once the faces are flattened, so the work is choosing which pair to flatten.",
+    "elegant": "The best unfolding always pairs the two smaller dimensions into one side, so only that one needs computing."
+  },
+  "whyOnTest": "The straight line through the inside is the standard trap, and the choice of unfolding is the part the question is really testing.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0204",
+  "band": "9-10",
+  "points": 5,
+  "statement": "A board shows the numbers 1 to 10. You may erase any two and write their difference. Repeating until one number remains, which totals are possible for that last number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Any number from 0 to 55",
+      "correct": false,
+      "misconception": "I assumed every total was reachable because the moves look unrestricted."
+    },
+    {
+      "key": "B",
+      "text": "Only 55",
+      "correct": false,
+      "misconception": "I gave the sum of 1 to 10, which is the starting total rather than anything reachable."
+    },
+    {
+      "key": "C",
+      "text": "Only even numbers",
+      "correct": false,
+      "misconception": "I checked one example, found an even result, and generalised from the single case."
+    },
+    {
+      "key": "D",
+      "text": "Only odd numbers",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "Only 1",
+      "correct": false,
+      "misconception": "I assumed the process always drives the board down to the smallest positive value."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "LOG-05",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Watch what each move does to the parity of the total.",
+    "Replacing two numbers by their difference changes the sum by twice the smaller one, so the sum's parity never changes. Work out the parity of the starting sum.",
+    "1 + 2 + ... + 10 = 55, which is odd, and every move leaves the parity of the sum untouched."
+  ],
+  "solutions": {
+    "reliable": "Replacing a and b by their difference reduces the sum by 2 times the smaller, so the sum's parity is invariant. The starting sum 55 is odd, so the final single number is odd. Every odd value in range is reachable. The transferable idea: when moves look unconstrained, look for a quantity they cannot change, and parity of a sum is the first one to try.",
+    "elegant": "55 is odd, and no move can change that, so the answer needs no search at all."
+  },
+  "whyOnTest": "Invariant questions are the backbone of the 5-point block, and the distractors are all results of trying examples instead of finding the invariant.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

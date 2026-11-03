@@ -75,7 +75,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ id:
         {/*
           The difficulty dots are drawn as shapes, not as ● / ○ glyphs. satori only has the
           fonts it is handed, and asking it for U+25CF made every card try to fetch a font it
-          could not get — "Failed to download dynamic font. Status: 400" — and render tofu
+          could not get - "Failed to download dynamic font. Status: 400" - and render tofu
           where the tier should be. A circle it can draw from a border-radius on its own.
         */}
         <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>

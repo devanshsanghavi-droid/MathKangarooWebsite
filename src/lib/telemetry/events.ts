@@ -7,14 +7,14 @@ import { BANDS, CHOICE_KEYS, POINT_VALUES, STRANDS } from '../schemas';
  * ---------------------------------------------------------------------------------------
  * THE RULE THIS FILE EXISTS TO ENFORCE
  *
- *   Every field is an ENUMERATED value drawn from content that already ships publicly — a
+ *   Every field is an ENUMERATED value drawn from content that already ships publicly - a
  *   skill id, a problem id, a choice key, a route name, a point tier. There is no free-text
  *   field anywhere in this schema, and there never may be.
  *
  * That is not a stylistic preference. The users are minors, so CLAUDE.md forbids PII beyond a
  * first name, and COPPA is a build constraint here rather than a legal appendix. A telemetry
- * payload with a string field is a payload a child can type their name into — via a search
- * box, a journal reflection, a mistyped URL — and once it is in the events table it is in
+ * payload with a string field is a payload a child can type their name into - via a search
+ * box, a journal reflection, a mistyped URL - and once it is in the events table it is in
  * every backup and every aggregate. The schema is the control: `.strict()` rejects unknown
  * keys, and the collector drops anything that fails to parse rather than storing it "just in
  * case".
@@ -23,10 +23,9 @@ import { BANDS, CHOICE_KEYS, POINT_VALUES, STRANDS } from '../schemas';
  * Coverage is deliberately the union of two literatures:
  *
  *   product analytics   acquisition, activation, engagement, retention, funnels, path
- *                       analysis, feature adoption, performance — the things any product team
+ *                       analysis, feature adoption, performance - the things any product team
  *                       would instrument.
- *   learning analytics  item difficulty, discrimination, and per-option distractor behaviour —
- *                       the things that actually tell you whether the teaching works.
+ *   learning analytics  item difficulty, discrimination, and per-option distractor behaviour -  *                       the things that actually tell you whether the teaching works.
  *
  * The second is where this site earns its keep: every wrong answer already stores the
  * misconception that produces it, so recording WHICH distractor was chosen turns the problem
@@ -70,13 +69,13 @@ export type Context = (typeof CONTEXTS)[number];
 export const EVENT_NAMES = [
   // --- acquisition and navigation ----------------------------------------
   'surface_view', // a page was shown
-  'entry', // the FIRST surface of a session — answers "what do people seek out first"
+  'entry', // the FIRST surface of a session - answers "what do people seek out first"
   'nav_click', // an internal link followed, with source and destination surface
   'exit_intent', // last surface before the session ended
 
   // --- activation and the learning loop -----------------------------------
   'problem_view',
-  'choice_select', // WHICH option — the distractor analysis feed
+  'choice_select', // WHICH option - the distractor analysis feed
   'hint_reveal',
   'solution_open',
   'figure_description_open',
@@ -192,7 +191,7 @@ export const MAX_MS = 1_800_000;
 /**
  * Durations are stored in buckets rather than exactly.
  *
- * A precise millisecond count is a surprisingly strong fingerprint — a handful of exact
+ * A precise millisecond count is a surprisingly strong fingerprint - a handful of exact
  * durations picks one person out of a cohort. Buckets keep every question this system needs to
  * answer ("do students who rush get more wrong?") and answer none of the ones it should not.
  */

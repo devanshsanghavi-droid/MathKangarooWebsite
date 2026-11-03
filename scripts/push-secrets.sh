@@ -4,7 +4,7 @@
 #   pnpm cf:secrets
 #
 # Secrets, not build variables. Anything Next's env loader can see at build time gets baked
-# into the deployed worker script in plaintext — see scripts/check-build-secrets.ts. A Worker
+# into the deployed worker script in plaintext - see scripts/check-build-secrets.ts. A Worker
 # secret is injected at runtime instead, so it never touches the bundle.
 #
 # Values are piped from .dev.vars rather than typed, so they are not left in shell history.

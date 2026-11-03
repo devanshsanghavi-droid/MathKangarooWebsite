@@ -1,0 +1,68 @@
+{
+  "id": "KA-0212",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Two opposite corner squares are removed from an 8 by 8 chessboard. Can the remaining 62 squares be covered exactly by 31 dominoes, each covering two squares?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Yes, and there are many ways",
+      "correct": false,
+      "misconception": "I checked that 62 is twice 31 and assumed the count was the only obstacle."
+    },
+    {
+      "key": "B",
+      "text": "Yes, but only one way",
+      "correct": false,
+      "misconception": "I assumed a tight fit meant a unique arrangement rather than none at all."
+    },
+    {
+      "key": "C",
+      "text": "Only if the dominoes may overlap",
+      "correct": false,
+      "misconception": "I looked for a way to relax the rules instead of testing whether the colours allow it."
+    },
+    {
+      "key": "D",
+      "text": "No, because the two removed squares share a colour",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "No, because 62 is not divisible by 2",
+      "correct": false,
+      "misconception": "I claimed a divisibility obstacle that does not exist, since 62 is even."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-07",
+    "secondary": [
+      "LOG-05",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Colour the board and count what a domino must cover.",
+    "Every domino covers one square of each colour, so any covered region needs equal numbers of the two colours. Check the colours of the squares that were removed.",
+    "Opposite corners are the same colour, so the board is left with 32 of one colour and 30 of the other."
+  ],
+  "solutions": {
+    "reliable": "Each domino covers exactly one dark and one light square, so a fully covered region must hold equal numbers of each. Opposite corners share a colour, so removing them leaves 32 of one and 30 of the other, and no covering exists. The transferable idea: a colouring gives a quantity every piece must respect, which proves impossibility without any searching.",
+    "elegant": "31 dominoes cover 31 of each colour, and 30 is not 31."
+  },
+  "whyOnTest": "Colouring arguments prove impossibility in one line where a search would take the whole paper, and the counting-only answer is the trap.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

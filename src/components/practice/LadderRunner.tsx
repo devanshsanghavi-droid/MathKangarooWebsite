@@ -14,7 +14,7 @@ import { track } from '@/lib/telemetry/client';
 import { useProgress } from '@/components/mastery/useProgress';
 
 /**
- * The exercise view — docs/05-DESIGN-DIRECTION.md §7.3.
+ * The exercise view - docs/05-DESIGN-DIRECTION.md §7.3.
  *
  * One problem at a time, streak dots at the top, a sticky action bar at the bottom, and
  * **immediate distractor-specific feedback**. That last part is the whole reason the site
@@ -22,7 +22,7 @@ import { useProgress } from '@/components/mastery/useProgress';
  * check-then-reveal: the moment a student picks the wrong answer, they read the exact piece
  * of reasoning that produces it, in their own voice.
  *
- * Attempts are recorded once per problem per visit — the FIRST selection. A student may then
+ * Attempts are recorded once per problem per visit - the FIRST selection. A student may then
  * change their answer freely; Kangaroo has no penalty for a wrong answer and the point here is
  * to learn, not to score. But scoring the second click would let a student walk the choices
  * until the panel turned green and record that as a solve.
@@ -53,7 +53,7 @@ export function LadderRunner({
    * snapshot during hydration, so the initialiser always saw an empty progress file and every
    * returning student was dropped back on problem 1 rather than the first one they had not
    * solved. Pinning on first interaction rather than in an effect also stops the opposite
-   * failure — answering correctly changes startIndex, which would otherwise yank the next
+   * failure - answering correctly changes startIndex, which would otherwise yank the next
    * problem onto the screen while the student was still reading their feedback.
    */
   const [index, setIndex] = useState<number | null>(null);
@@ -195,7 +195,7 @@ export function LadderRunner({
         </span>
         <p className="m-0 flex-1 text-sm text-ink-2">
           {state.complete
-            ? `Ladder finished — ${LADDER_TARGET} in a row. Keep going, or move up a tier.`
+            ? `Ladder finished - ${LADDER_TARGET} in a row. Keep going, or move up a tier.`
             : `${LADDER_TARGET} in a row to finish this ladder.`}
         </p>
         <span className="mono text-2xs text-ink-3">
@@ -243,10 +243,10 @@ export function LadderRunner({
         the left of the problem it acts on. `sticky` fixed the alignment but broke something
         worse: a sticky element still occupies its place in the flow, so on a 360px phone it
         settled directly over answer choices B and C and no amount of scrolling could move them
-        clear — two of the five answers were simply unreachable.
+        clear - two of the five answers were simply unreachable.
 
         So: fixed, but with its left edge pinned to the start of the content area rather than to
-        the window, and `content-column` inside it — which lands it in exactly the same 720px
+        the window, and `content-column` inside it - which lands it in exactly the same 720px
         column as the problem. The page carries matching bottom padding, so the last thing on it
         is space rather than covered content, and every choice can always be scrolled clear.
       */}

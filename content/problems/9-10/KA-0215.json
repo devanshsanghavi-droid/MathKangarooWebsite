@@ -1,0 +1,68 @@
+{
+  "id": "KA-0215",
+  "band": "9-10",
+  "points": 5,
+  "statement": "How many litres of a 10 percent acid solution must be added to 4 litres of a 50 percent solution to produce a 20 percent solution?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I assumed equal volumes of the two solutions would land halfway between them."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I set up the equation correctly but divided by 0.2 rather than by 0.1 at the end."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I aimed for the midpoint of the two concentrations instead of the 20 percent asked for."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I used 10 percent of the final mixture as the acid total rather than 20 percent."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-08",
+    "secondary": [
+      "MOD-01",
+      "NUM-10"
+    ]
+  },
+  "hints": [
+    "Count litres of acid on each side of the mixing.",
+    "Let the unknown volume be x. Write the acid in each solution, add them, and set the total equal to 20 percent of the combined volume. Then solve for x.",
+    "Acid: 0.5 x 4 + 0.1x must equal 0.2 times the total volume of 4 + x."
+  ],
+  "solutions": {
+    "reliable": "Let x litres be added. Acid before is 0.5 x 4 + 0.1x = 2 + 0.1x, and the target is 0.2(4 + x) = 0.8 + 0.2x. Setting them equal gives 1.2 = 0.1x, so x = 12. The transferable idea: write the conserved quantity, here litres of acid, on both sides of the mixing and let the volume be the unknown.",
+    "elegant": "The target is 10 points above the weak solution and 30 below the strong one, so the weak volume must be three times the strong one."
+  },
+  "whyOnTest": "Mixture questions in the 5-point block hinge on tracking the solute rather than the percentages, and the equal-volume guess is on the list.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

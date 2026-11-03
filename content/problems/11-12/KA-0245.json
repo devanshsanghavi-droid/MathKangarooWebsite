@@ -1,0 +1,68 @@
+{
+  "id": "KA-0245",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A jar holds 20 black and 16 white balls. Repeatedly remove two: if they match, add one black; if they differ, add one white. What colour is the final ball?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Black",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "White",
+      "correct": false,
+      "misconception": "I tracked the black balls, whose count can change by one, instead of the white ones."
+    },
+    {
+      "key": "C",
+      "text": "It depends on the order of the moves",
+      "correct": false,
+      "misconception": "I tried a few orders and assumed the result was not forced."
+    },
+    {
+      "key": "D",
+      "text": "Either colour is possible",
+      "correct": false,
+      "misconception": "I assumed a random process cannot have a determined outcome."
+    },
+    {
+      "key": "E",
+      "text": "The process never reaches one ball",
+      "correct": false,
+      "misconception": "I did not notice that each move reduces the number of balls by exactly one."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "LOG-05",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Watch what each move does to the number of white balls.",
+    "Check each of the three cases for the pair removed and see how the white count changes. One of the two counts never changes its parity, and that settles the final ball.",
+    "Two blacks leaves white unchanged, two whites removes two whites, and a mixed pair removes one white and adds one."
+  ],
+  "solutions": {
+    "reliable": "Two blacks removed leaves the white count unchanged. Two whites removed drops it by two. A mixed pair removes one white and adds one, leaving it unchanged. So the white count's parity never changes, and starting at 16, an even number, it can never reach 1. The last ball is black. The transferable idea: find the quantity whose parity no move can alter.",
+    "elegant": "16 is even, so white can never be the last one standing."
+  },
+  "whyOnTest": "Invariant questions are decided before any simulation, and the choices reward a student who tries orders instead of finding the invariant.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

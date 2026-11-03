@@ -2,8 +2,7 @@
 
 Running log of the build. Updated as each milestone lands, not at the end.
 
-**All thirteen milestones from the session brief are done**, plus **M0.4** and **M1.10** —
-which completes every part of Phase 1 except M1.11, which needs your accounts. Seven Phase 2
+**All thirteen milestones from the session brief are done**, plus **M0.4** and **M1.10** - which completes every part of Phase 1 except M1.11, which needs your accounts. Seven Phase 2
 milestones followed: everything that could be built and verified without a database or a
 credential. Then **design v2** (`docs/05-DESIGN-DIRECTION.md`) replaced the palette, the type
 stack and the structure of `/skill/[id]`.
@@ -11,16 +10,17 @@ stack and the structure of `/skill/[id]`.
 Two acceptance criteria are deliberately unmet and are called out where they belong: the six
 paper indexes in M1.8 (reading work that has to be done by someone who has read the papers) and
 the runtime RLS proof in M2.1 (no Postgres on this machine). Two more could not be exercised
-here at all — Lighthouse and the service worker. All four are in "Needs you".
+here at all - Lighthouse and the service worker. All four are in "Needs you".
 
 | | |
 |---|---|
 | Skills in the Atlas | 91, 106 prerequisite edges, acyclic |
-| Original problems | **150**, across levels 3–4 and 5–6 |
-| Distractor explanations | **600** — one per wrong answer choice |
+| Mock papers | every one of the six levels can now fill a full timed paper |
+| Original problems | **311**, across every level from 1–2 to 11–12 |
+| Distractor explanations | **1 244** - one per wrong answer choice |
 | Hand-drawn SVG figures | 25 |
 | Routes | 24, building **874** static pages |
-| Tests | **2 138** unit + **102** axe assertions, both themes |
+| Tests | **3 244** unit + **102** axe assertions, both themes |
 | CI | typecheck → lint → test → graph → content → **palette** → a11y → build, all green |
 
 Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!]` blocked on Devansh
@@ -28,33 +28,33 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
 | Milestone | State | Landed |
 |---|---|---|
 | git init + docs baseline | `[x]` | `docs: add project constitution, specs, and build plan` |
-| M0.2 — repo and rails | `[x]` | `rails: scaffold next 15 app, design tokens, content schemas, validation, and CI` |
-| M0.3 — content guardrails | `[x]` | `content: add the five CI guardrails with proving fixtures` |
-| M0.1 — taxonomy (91 skills) | `[x]` | `atlas: author all 91 skills and derive the prerequisite graph` |
+| M0.2 - repo and rails | `[x]` | `rails: scaffold next 15 app, design tokens, content schemas, validation, and CI` |
+| M0.3 - content guardrails | `[x]` | `content: add the five CI guardrails with proving fixtures` |
+| M0.1 - taxonomy (91 skills) | `[x]` | `atlas: author all 91 skills and derive the prerequisite graph` |
 | seed problem bank | `[x]` | `content: author 45 original problems and 16 figures` (+9 more with M1.4) |
-| M1.1 — app shell | `[x]` | `shell: build header, footer, theme toggle, and a11y primitives` |
-| M1.2 — content loading layer | `[x]` | `content: add typed loaders, derived indexes, and a generated sitemap` |
-| M1.3 — problem components | `[x]` | `problem: build the nine problem components with distractor-specific feedback` |
-| M1.4 — `/problem/[id]` | `[x]` | `problem: build the problem page with OG images and in-skill navigation` |
-| M1.5 — `/skill/[id]` | `[x]` | `skill: build the skill page with all nine sections` |
-| M1.6 — the Atlas | `[x]` | `atlas: build the graph and list views with URL-encoded filters` |
-| M1.7 — `/problems` browse | `[x]` | `problems: build the browse page with URL-encoded filters and pagination` |
-| M1.8 — `/papers` | `[x]`* | `papers: build the official paper index routes and tighten the anti-paste tripwire` |
-| M0.4 — legal and naming | `[x]` | `legal: draft the outreach note and record the locked public name` |
-| M1.10 — launch content (150 problems) | `[x]` | `content: reach the 150-problem launch bank` |
-| M2.8 — `/practice/mock` | `[x]` | `practice: build the signed-out timed mock exam and its report` |
-| M2.7 — `/practice/diagnostic` | `[x]` | `practice: build the signed-out adaptive diagnostic` |
-| M2.12 — PWA and offline | `[~]` | `pwa: add the service worker, offline page, and offline attempt queue` |
-| M2.13 — `/author/new` | `[x]`* | `author: build the problem authoring form with shared validation` |
-| M2.11 — `/print` worksheet generator | `[x]` | `print: build the worksheet generator and its per-distractor answer key` |
-| M2.4 — mastery and scheduling | `[x]` | `practice: implement the mastery state machine and FSRS skill scheduling` |
-| M2.1 — Supabase foundation | `[~]` | `db: write the schema, the RLS policies, and a shape test that runs without a database` |
-| M1.9 — home, about, legal, contact | `[x]` | `site: build the home page, about, legal pages, and contact form` |
-| **Design v2** — docs/05 in full | `[x]` | `design: replace the palette, retire the point tokens, and rebuild the skill page as a unit` |
+| M1.1 - app shell | `[x]` | `shell: build header, footer, theme toggle, and a11y primitives` |
+| M1.2 - content loading layer | `[x]` | `content: add typed loaders, derived indexes, and a generated sitemap` |
+| M1.3 - problem components | `[x]` | `problem: build the nine problem components with distractor-specific feedback` |
+| M1.4 - `/problem/[id]` | `[x]` | `problem: build the problem page with OG images and in-skill navigation` |
+| M1.5 - `/skill/[id]` | `[x]` | `skill: build the skill page with all nine sections` |
+| M1.6 - the Atlas | `[x]` | `atlas: build the graph and list views with URL-encoded filters` |
+| M1.7 - `/problems` browse | `[x]` | `problems: build the browse page with URL-encoded filters and pagination` |
+| M1.8 - `/papers` | `[x]`* | `papers: build the official paper index routes and tighten the anti-paste tripwire` |
+| M0.4 - legal and naming | `[x]` | `legal: draft the outreach note and record the locked public name` |
+| M1.10 - launch content (150 problems) | `[x]` | `content: reach the 150-problem launch bank` |
+| M2.8 - `/practice/mock` | `[x]` | `practice: build the signed-out timed mock exam and its report` |
+| M2.7 - `/practice/diagnostic` | `[x]` | `practice: build the signed-out adaptive diagnostic` |
+| M2.12 - PWA and offline | `[~]` | `pwa: add the service worker, offline page, and offline attempt queue` |
+| M2.13 - `/author/new` | `[x]`* | `author: build the problem authoring form with shared validation` |
+| M2.11 - `/print` worksheet generator | `[x]` | `print: build the worksheet generator and its per-distractor answer key` |
+| M2.4 - mastery and scheduling | `[x]` | `practice: implement the mastery state machine and FSRS skill scheduling` |
+| M2.1 - Supabase foundation | `[~]` | `db: write the schema, the RLS policies, and a shape test that runs without a database` |
+| M1.9 - home, about, legal, contact | `[x]` | `site: build the home page, about, legal pages, and contact form` |
+| **Design v2** - docs/05 in full | `[x]` | `design: replace the palette, retire the point tokens, and rebuild the skill page as a unit` |
 
 ---
 
-## M0.2 — Repo and rails
+## M0.2 - Repo and rails
 
 **State:** `[x]`
 
@@ -64,14 +64,14 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
   `erasableSyntaxOnly`, `verbatimModuleSyntax`. Path alias `@/*`.
 - Tailwind v4 via `@tailwindcss/postcss`, wired to the tokens through `@theme inline` so a
   theme switch repaints without a rebuild.
-- `src/styles/tokens.css` — the complete token set from `docs/00-SPEC.md` §0.1, in the
+- `src/styles/tokens.css` - the complete token set from `docs/00-SPEC.md` §0.1, in the
   three-state form (`:root` light, `@media (prefers-color-scheme: dark)` guarded by
   `:root:not([data-theme='light'])`, and `:root[data-theme='dark']`), plus a `@media print`
   block that flattens everything to pure black on white for worksheets.
-- `src/lib/schemas.ts` — Zod schemas for Skill, Problem, PaperIndex exactly per
+- `src/lib/schemas.ts` - Zod schemas for Skill, Problem, PaperIndex exactly per
   `docs/01-DATA-MODEL.md` §1, all `.strict()`.
-- `scripts/lib/content-rules.ts` + `scripts/validate-content.ts` — every cross-file rule.
-- `scripts/derive-unlocks.ts` — regenerates `unlocks` from `prerequisites`, refuses to write
+- `scripts/lib/content-rules.ts` + `scripts/validate-content.ts` - every cross-file rule.
+- `scripts/derive-unlocks.ts` - regenerates `unlocks` from `prerequisites`, refuses to write
   on a dangling reference or a cycle, and has a `--check` mode CI uses.
 - Vitest (unit) and a separate `pnpm a11y` config, ESLint flat config, Prettier, `.editorconfig`,
   `.nvmrc`.
@@ -90,7 +90,7 @@ Legend: `[x]` done and verified · `[~]` in progress · `[ ]` not started · `[!
    `tsx` to the dependency budget. This is why `.nvmrc` pins 22 and why `scripts/` imports use
    explicit `.ts` extensions.
 3. **`pnpm a11y` runs axe-core in jsdom** through a second Vitest project, not a real browser.
-   A browser run would mean Playwright — a very large dependency for a project whose budget is
+   A browser run would mean Playwright - a very large dependency for a project whose budget is
    deliberately small. jsdom + axe catches structural violations (roles, names, labels,
    landmarks, contrast on inline styles); it cannot catch anything that needs layout. Noted as
    a known gap, not a claim of full coverage.
@@ -109,7 +109,7 @@ so they are logged here:
 | Package | Why | Alternative rejected |
 |---|---|---|
 | `axe-core` | `pnpm a11y` is a required command | writing an a11y checker by hand |
-| `@testing-library/react`, `@testing-library/dom`, `@testing-library/jest-dom`, `@testing-library/user-event`, `jsdom` | `pnpm test` has to render components; M1.3 requires render tests | none — you cannot render-test without a DOM |
+| `@testing-library/react`, `@testing-library/dom`, `@testing-library/jest-dom`, `@testing-library/user-event`, `jsdom` | `pnpm test` has to render components; M1.3 requires render tests | none - you cannot render-test without a DOM |
 | `@vitejs/plugin-react` | Vitest cannot compile JSX without it | none |
 | `@eslint/eslintrc`, `eslint-config-prettier` | flat-config glue for `eslint-config-next` | none |
 
@@ -124,7 +124,7 @@ No runtime dependency was added outside the stack table.
 
 ---
 
-## M0.3 — Content guardrails in CI
+## M0.3 - Content guardrails in CI
 
 **State:** `[x]`
 
@@ -143,7 +143,7 @@ assertion on both. Fixtures live in `scripts/__fixtures__/<rule>/{pass,fail}/con
 
 Two further tests run the real CLI (`scripts/validate-content.ts`) as a subprocess against a
 clean tree and a broken one, asserting exit code 0 and 1. That is what CI depends on, so it
-is what the test exercises — not just the library function underneath it.
+is what the test exercises - not just the library function underneath it.
 
 ### Assumptions made where the spec was ambiguous
 
@@ -162,7 +162,7 @@ is what the test exercises — not just the library function underneath it.
 
 ---
 
-## M0.1 — Taxonomy v1
+## M0.1 - Taxonomy v1
 
 **State:** `[x]`
 
@@ -176,7 +176,7 @@ is what the test exercises — not just the library function underneath it.
 - `scripts/derive-unlocks.ts` generates every `unlocks` array from `prerequisites`, refuses
   to write on a dangling reference or a cycle, and has a `--check` mode CI runs.
 - `scripts/__tests__/taxonomy.test.ts` **reads `docs/03-CONTENT-GUIDE.md` and asserts the
-  JSON agrees with it** — id set, name, and tier, per skill. Rename a skill in the guide
+  JSON agrees with it** - id set, name, and tier, per skill. Rename a skill in the guide
   without touching the file and CI says so. 199 assertions.
 
 ### The graph
@@ -205,7 +205,7 @@ is what the test exercises — not just the library function underneath it.
    question is a length-and-region question first). The test now forbids an isolated node
    rather than forbidding a root, because a root with unlocks is legitimate.
 4. **Three skill names were changed to match the guide's punctuation exactly** (en dash in
-   `Inclusion–exclusion` and `part–whole`, em dash in `Never leave a blank —`), because the
+   `Inclusion–exclusion` and `part–whole`, em dash in `Never leave a blank - `), because the
    test compares against the document character for character.
 5. **`content/` is excluded from Prettier.** Content JSON is written by `derive-unlocks.ts`
    with `JSON.stringify(_, null, 2)`; Prettier would collapse short arrays onto one line and
@@ -220,7 +220,7 @@ is what the test exercises — not just the library function underneath it.
 
 ---
 
-## Seed problem bank (not one of your thirteen — see the note)
+## Seed problem bank (not one of your thirteen - see the note)
 
 **State:** `[x]`
 
@@ -230,7 +230,7 @@ in Phase 1 real rather than to hit the launch number.
 
 ### Built
 
-- **45 original problems** — 20 in band 3–4, 25 in band 5–6. Every one written from scratch;
+- **45 original problems** - 20 in band 3–4, 25 in band 5–6. Every one written from scratch;
   none is traceable to an official Math Kangaroo problem.
 - **45 distinct primary skills**, covering all seven strands. Point tiers 3/4/5 are all present
   in both bands (3–4: 8/8/4, 5–6: 8/9/8).
@@ -238,7 +238,7 @@ in Phase 1 real rather than to hit the launch number.
   problem share a misconception.
 - **16 figures** as hand-authored SVG React components in `src/components/figures/`, all drawn
   from tokens, all resolution-independent, all flattened to black under `@media print`.
-- **`scripts/__tests__/content-quality.test.ts`** — 276 assertions enforcing the numeric
+- **`scripts/__tests__/content-quality.test.ts`** - 276 assertions enforcing the numeric
   authoring rules from `docs/03-CONTENT-GUIDE.md` Part B: statement word caps per band, the
   15-word nudge and 40-word strategy caps, distinct misconceptions, and a check that hint 1
   never contains the correct answer.
@@ -257,7 +257,7 @@ in Phase 1 real rather than to hit the launch number.
 3. **Numeric choices are listed in ascending order**, matching the real paper's convention.
 4. **Three problems were caught and rewritten during authoring** because the stated answer was
    wrong: the blocked-grid path count (8, not 11), the bead cycle colour, and the stone-bag
-   invariant (black, not white — verified by brute force before rewriting). Each was found by
+   invariant (black, not white - verified by brute force before rewriting). Each was found by
    working the problem independently of how it was written, which is exactly what Part C's
    "solved independently" line is for.
 
@@ -269,7 +269,7 @@ in Phase 1 real rather than to hit the launch number.
 
 ---
 
-## M1.1 — App shell
+## M1.1 - App shell
 
 **State:** `[x]`
 
@@ -282,13 +282,13 @@ in Phase 1 real rather than to hit the launch number.
   tokens.css takes over, rather than writing a third value the CSS would have to know about.
 - **No flash of the wrong theme**: a tiny inline script in `<head>` sets `data-theme` before
   first paint. It only ever sets an explicit theme, and a test asserts it never writes
-  `"system"` — that would defeat the media query.
+  `"system"` - that would defeat the media query.
 - `<Footer>` carrying the non-affiliation disclaimer verbatim from one exported constant, plus
   licence, GitHub, privacy, terms and contact.
 - `<MobileTabBar>` below `sm`, clear of the iOS home indicator, with the footer padded so the
   disclaimer is never covered (measured in the browser: 544px vs the bar at 596px).
 - `<SkipLink>`, global `:focus-visible` ring, global `prefers-reduced-motion` stop.
-- `not-found.tsx`, `error.tsx` (shows the digest, never the message — no PII in logs),
+- `not-found.tsx`, `error.tsx` (shows the digest, never the message - no PII in logs),
   `loading.tsx`, `robots.ts`, `sitemap.ts`, `manifest.ts`, and an SVG favicon.
 - 27 unit tests plus a 5-test axe suite: **zero axe violations on the shell, the 404 page and
   the loading state, in both themes.**
@@ -299,7 +299,7 @@ in Phase 1 real rather than to hit the launch number.
    Impact too, but those are P2 and P3. A nav link to a 404 is worse than a missing link; each
    is a one-line addition to `PRIMARY_NAV` in the milestone that builds its route.
 2. **The mobile tab bar is Home · Atlas · Problems · Papers**, not the spec's
-   Atlas / Practice / Search / Me, for the same reason — three of those four are P2.
+   Atlas / Practice / Search / Me, for the same reason - three of those four are P2.
 3. **The manifest reads its two colours out of `tokens.css` at build time**
    (`src/lib/theme-colors.ts`). A manifest is JSON read by the OS and cannot use a custom
    property, and writing the hex a second time would let it drift. The ESLint rule that bans
@@ -327,14 +327,14 @@ declaration so the trap cannot come back.
 
 ---
 
-## M1.2 — Content loading layer
+## M1.2 - Content loading layer
 
 **State:** `[x]`
 
 ### Built
 
-`src/lib/content.ts`. `buildContentIndex(dir)` is a **pure function of a directory** — point it
-at a fixture tree and it indexes that tree — and `contentIndex()` memoises the one built from
+`src/lib/content.ts`. `buildContentIndex(dir)` is a **pure function of a directory** - point it
+at a fixture tree and it indexes that tree - and `contentIndex()` memoises the one built from
 the repo's `content/`. Synchronous, no `any`, no async, no runtime I/O after the first call.
 
 Derived indexes:
@@ -377,7 +377,7 @@ two builds of the same directory.
 
 ---
 
-## M1.3 — Core problem components
+## M1.3 - Core problem components
 
 **State:** `[x]`
 
@@ -389,7 +389,7 @@ and a generated figure registry. 67 render tests and 5 axe suites, all in both t
 
 **The behaviour that is the product**: `FeedbackPanel` shows the misconception recorded for
 *that* choice. A test asserts, for every wrong choice, that the panel contains that choice's
-misconception **and none of the other three** — so a regression that fell back to a generic
+misconception **and none of the other three** - so a regression that fell back to a generic
 message would fail rather than look fine.
 
 Other things worth stating:
@@ -400,7 +400,7 @@ Other things worth stating:
   markup with at least four `<details>` elements, which is the no-JavaScript path.
 - **`SolutionTabs` carries a `<noscript>` style block** that un-hides the inactive panel, so
   without JavaScript both solutions stack rather than one becoming unreachable.
-- **`HintLadder` fires a `ka:hint-reveal` CustomEvent** per rung, once only — reopening rung 1
+- **`HintLadder` fires a `ka:hint-reveal` CustomEvent** per rung, once only - reopening rung 1
   does not log a second reveal. That is what `POST /api/hint` will consume in M2.3.
 - **Correctness is never carried by colour alone**: a revealed choice is labelled "correct" or
   "your answer" in text.
@@ -415,7 +415,7 @@ Other things worth stating:
    so the other two stay independently testable and `ProblemCard` stays a server component.
 2. **A student may change their answer.** Kangaroo does not penalise a wrong answer and this
    page exists to teach, so locking the first click would only teach students to fear clicking.
-3. **A wrong answer never reveals the solution** — it shows the misconception and points at the
+3. **A wrong answer never reveals the solution** - it shows the misconception and points at the
    hint ladder. A correct answer does show the reliable method, so a lucky guess still teaches.
 4. **The hint ladder is gated only once JavaScript has run.** Rendering the locked state on the
    server would hide hints from a reader whose JavaScript never arrives.
@@ -423,12 +423,12 @@ Other things worth stating:
 ### Something that was actually broken, and how it was caught
 
 `ChoiceList` was `<ul role="group">`. Putting `role="group"` on a `<ul>` overrides its implicit
-list role, which orphans every `<li>` — a serious WCAG violation. axe caught it across all five
+list role, which orphans every `<li>` - a serious WCAG violation. axe caught it across all five
 suites. The group and the list are now separate elements.
 
 ---
 
-## M1.4 — `/problem/[id]`
+## M1.4 - `/problem/[id]`
 
 **State:** `[x]`
 
@@ -437,7 +437,7 @@ suites. The group and the list are now separate elements.
 - The full problem page per `docs/00-SPEC.md` §1.6: breadcrumb, metadata row, statement,
   figure, choices with distractor-specific feedback, hint ladder, solution, "why this is on
   the test", skill chips.
-- **`generateStaticParams` for all 54 problems** — the build emits 116 static pages including
+- **`generateStaticParams` for all 54 problems** - the build emits 116 static pages including
   one Open Graph card per problem.
 - **Per-problem OG image** via `next/og`, generated at build time, showing the id, point tier,
   band, primary skill and the statement, with a left border in the tier colour. Its colours are
@@ -445,7 +445,7 @@ suites. The group and the list are now separate elements.
 - **Next/previous within the primary skill**, with a stated empty state at each end and a
   "problem N of M in this skill" line.
 - **Report-an-error** opens a prefilled GitHub issue containing the problem id, the file path
-  and the page URL — and asks for nothing about the reporter. A test asserts the body never
+  and the page URL - and asks for nothing about the reporter. A test asserts the body never
   contains "name", "email", "age", "school", "grade" or "birthday" as whole words.
 - The point tier is explained in words next to the pill, because knowing that a 5-point
   question needs an idea rather than more arithmetic is most of CFT-08.
@@ -453,7 +453,7 @@ suites. The group and the list are now separate elements.
 ### Something that was actually broken, and how it was caught
 
 Looking at the rendered page, the feedback panel for a wrong answer said **"Try the hints below
-before you look at C"** — it named the correct letter. `ChoiceList` also marked the correct
+before you look at C"** - it named the correct letter. `ChoiceList` also marked the correct
 choice the moment *any* choice was selected. Between them they handed over the answer and made
 the hint ladder decorative. Both are fixed: the correct choice is marked only once the student
 actually finds it (`revealAnswer`, set by the parent), and the panel now says "take a hint below
@@ -470,7 +470,7 @@ and the feature could not be exercised at all. `CNT-12` now runs 3 → 4 → 5 p
 `KA-0001`, `KA-0046`, `KA-0047`. Three more figures were authored for them.
 
 **KA-0049 was caught wrong during authoring and rewritten**: the row of 1–9 with all
-neighbouring sums odd *is* possible (2 880 ways, verified by brute force) — the first draft
+neighbouring sums odd *is* possible (2 880 ways, verified by brute force) - the first draft
 marked "no" as correct while its own solution argued "yes".
 
 ### Assumptions made where the spec was ambiguous
@@ -486,7 +486,7 @@ marked "no" as correct while its own solution argued "yes".
 
 ---
 
-## M1.5 — `/skill/[id]`
+## M1.5 - `/skill/[id]`
 
 **State:** `[x]`
 
@@ -494,7 +494,7 @@ marked "no" as correct while its own solution argued "yes".
 
 All nine sections from `docs/00-SPEC.md` §1.4, in order, for all 91 skills:
 
-1. name, id, strand, tier and bands — the tier carries a one-line explanation, because
+1. name, id, strand, tier and bands - the tier carries a one-line explanation, because
    "gateway" means nothing until someone says it is what the 5-point questions ask for;
 2. definition; 3. "you'll recognise it when…" as quoted trigger phrases;
 4. the canonical worked example, rendered as a full interactive `<ProblemCard>`;
@@ -513,7 +513,7 @@ present, none is under 20 characters of content, and the page contains no `TODO`
 1. **Absent sections are written sentences, not placeholders.** M1.5's acceptance allows "or
    explicitly marks them absent". A skill with no problems says *"No problems tagged GEO-17
    have been written yet. Ten new problems are authored every week, so this will not stay
-   empty."* — and a test forbids the word "TODO" anywhere on the page.
+   empty."* - and a test forbids the word "TODO" anywhere on the page.
 2. **Mastery state is stated as absent rather than faked.** §1.4 section 7 asks for mastery on
    the ladder; mastery needs the attempts table, which is M2.4. The ladder says so in one line
    rather than showing a ring that never fills.
@@ -524,28 +524,28 @@ present, none is under 20 characters of content, and the page contains no `TODO`
    a geometry problem.
 5. **Section 8 currently renders its empty state for every skill**, because no paper indexes
    exist until M1.8. Its wording states in both branches that we hold our own analysis and never
-   the problems — a test asserts that, so it survives M1.8 filling the section in.
+   the problems - a test asserts that, so it survives M1.8 filling the section in.
 
 ---
 
-## M1.6 — The Atlas
+## M1.6 - The Atlas
 
 **State:** `[x]`
 
 ### Built
 
-- **`src/lib/atlas-layout.ts` — a pure layout function.** Same skills in, byte-identical
+- **`src/lib/atlas-layout.ts` - a pure layout function.** Same skills in, byte-identical
   coordinates out (asserted by a test), so a rebuild is never a diff and a node never moves
   under a reader's cursor. Column by strand; row by
   `max(tier floor, 1 + deepest prerequisite)`; ties broken on id.
-- **`src/lib/atlas-params.ts`** — the URL state from §1.2, exactly:
+- **`src/lib/atlas-params.ts`** - the URL state from §1.2, exactly:
   `/atlas?strand=CNT&band=5-6&focus=CNT-12`. Parsing is total, so a mistyped band shows the
   unfiltered Atlas rather than an error.
-- **`AtlasGraph`** — SVG, drag to pan, ⌘/Ctrl-scroll to zoom, buttons for both, click to focus.
-- **`AtlasList`** — nested strand → tier → skill lists, keyboard-first.
-- **`AtlasFilters`** — strand, band, point value and has-problems, all as links.
-- **`SkillPanel`** — the focused skill's summary, prerequisites and unlocks, from the URL.
-- **`/atlas/[strand]`** — the ordered walkthrough for each of the seven strands.
+- **`AtlasGraph`** - SVG, drag to pan, ⌘/Ctrl-scroll to zoom, buttons for both, click to focus.
+- **`AtlasList`** - nested strand → tier → skill lists, keyboard-first.
+- **`AtlasFilters`** - strand, band, point value and has-problems, all as links.
+- **`SkillPanel`** - the focused skill's summary, prerequisites and unlocks, from the URL.
+- **`/atlas/[strand]`** - the ordered walkthrough for each of the seven strands.
 - **49 tests**, including the two acceptance criteria: graph and list return **identical skill
   sets under seven different filter combinations**, and every one of the 91 graph nodes is a
   real anchor with an accessible name over 20 characters long.
@@ -559,19 +559,18 @@ size. Looking at it in the browser was the only way to see it.
 
 It now renders at its natural size inside a scrolling container, with zoom changing the rendered
 size rather than the viewBox. Scrolling is native, so it works with the keyboard, a trackpad, a
-screen reader's own navigation, and with JavaScript switched off — which the old pan implementation
+screen reader's own navigation, and with JavaScript switched off - which the old pan implementation
 did not.
 
-Two axe findings were also fixed: `aria-pressed` on the filter links (not allowed on a link —
-they are now `aria-current`), and `AtlasList` starting its headings at `h3` under the page's
+Two axe findings were also fixed: `aria-pressed` on the filter links (not allowed on a link - they are now `aria-current`), and `AtlasList` starting its headings at `h3` under the page's
 `h1`, which skipped a level.
 
 ### Assumptions made where the spec was ambiguous
 
 1. **"Used automatically for screen readers" is not implemented by sniffing.** There is no
    reliable way to detect assistive technology, and trying is a well-known anti-pattern. Instead
-   **the graph itself is accessible** — every node is a focusable link with a full accessible
-   name — and the view toggle is rendered *before* the diagram in the DOM, so the choice is met
+   **the graph itself is accessible** - every node is a focusable link with a full accessible
+   name - and the view toggle is rendered *before* the diagram in the DOM, so the choice is met
    before the picture. The two views are equals, and a test asserts they hold the same set.
 2. **Filters are links, not form controls.** The whole bar works with JavaScript off, every
    state is a shareable URL, and Back undoes a filter. The cost is one navigation per toggle,
@@ -586,13 +585,13 @@ they are now `aria-current`), and `AtlasList` starting its headings at `h3` unde
 
 ---
 
-## M1.7 — `/problems` browse
+## M1.7 - `/problems` browse
 
 **State:** `[x]`
 
 ### Built
 
-- Filter bar: level, point value, strand, and skill — all as links, all URL-encoded.
+- Filter bar: level, point value, strand, and skill - all as links, all URL-encoded.
 - Sort: id, hardest first, newest.
 - Server-rendered, paginated 12 to a page, with numbered page links carrying every active
   filter and `rel="prev"`/`rel="next"` so the pages read as one sequence.
@@ -604,7 +603,7 @@ they are now `aria-current`), and `AtlasList` starting its headings at `h3` unde
 ### Something that was actually broken, and how it was caught
 
 `toSearchParams` appended multi-select values in click order, so `?strand=GEO&strand=CNT` and
-`?strand=CNT&strand=GEO` were two different URLs for one view — two cache entries, and two
+`?strand=CNT&strand=GEO` were two different URLs for one view - two cache entries, and two
 different links to paste to a student. A round-trip test caught it. Values are now sorted, with
 bands in exam order rather than alphabetically (`11-12` sorts before `3-4` as a string).
 
@@ -621,28 +620,28 @@ bands in exam order rather than alphabetically (`11-12` sorts before `3-4` as a 
    is explicit that difficulty is measured, never asserted; no problem has 30 attempts yet, so
    the sort tells the reader that in a sentence rather than silently falling back to id order
    and letting a tutor believe the top of the list is the hardest. Uncalibrated problems sort
-   last, not first — null is not the same as easy.
+   last, not first - null is not the same as easy.
 
 ---
 
-## M1.8 — Paper index
+## M1.8 - Paper index
 
-**State:** `[x]` for the routes. **The six paper indexes are NOT authored — see below.**
+**State:** `[x]` for the routes. **The six paper indexes are NOT authored - see below.**
 
 ### Built
 
-- **`/papers`** — the indexed papers grouped by band, the "skills most tested" chart per band,
+- **`/papers`** - the indexed papers grouped by band, the "skills most tested" chart per band,
   and a plain statement of what the index is and is not. Links to `mathkangaroo.org`; no PDF is
   ever served from here.
-- **`/papers/[year]-[band]`** — the per-question table (number, points, our skill tags, our
+- **`/papers/[year]-[band]`** - the per-question table (number, points, our skill tags, our
   note), the point distribution, how much of the paper is indexed, a link to the official PDF,
   and the skills-most-tested chart for that paper.
-- **`src/lib/papers.ts`** — pure analysis: `mostTestedSkills`, `pointDistribution`,
+- **`src/lib/papers.ts`** - pure analysis: `mostTestedSkills`, `pointDistribution`,
   `expectedQuestionCount`, slug parsing. 16 tests.
 - **The tripwire now caps every file under `content/papers/`, not just the `.json`.** It only
   walked the JSON before, so an official paper pasted into a `.txt` would have sailed through.
   A fixture proves the new behaviour.
-- `content/papers/README.md` — the authoring contract at the point of use.
+- `content/papers/README.md` - the authoring contract at the point of use.
 - 45 more tests, including two that assert the repository itself is clean: no file under
   `content/papers/` over 2KB, and no PDF or image anywhere in `content/`.
 
@@ -651,7 +650,7 @@ bands in exam order rather than alphabetically (`11-12` sorts before `3-4` as a 
 **I did not author the six paper indexes.** M1.8's build-plan acceptance asks for at least six,
 across bands 3–4 and 5–6. Producing them means opening each official PDF and classifying its 24
 or 30 questions against the Atlas. I have not read those papers, so anything I wrote in those
-files would be **invented analysis presented as analysis** — it would tell a student "2019
+files would be **invented analysis presented as analysis** - it would tell a student "2019
 question 22 tests GEO-10" with nothing behind the claim, and send them to the wrong skill. That
 is worse than an empty index, and it is the exact opposite of what the paper index is for.
 
@@ -674,22 +673,22 @@ against the taxonomy"), which is also outstanding for the same reason.
 
 ---
 
-## M1.9 — Home, about, legal, contact
+## M1.9 - Home, about, legal, contact
 
 **State:** `[x]`
 
 ### Built
 
-- **`/`** — the thesis in one sentence, a **live sample problem with working distractor feedback
+- **`/`** - the thesis in one sentence, a **live sample problem with working distractor feedback
   above the fold** (a test clicks a wrong answer on the home page and asserts the misconception
   appears), the start-here triad, the seven-strand strip with live counts, a Problem of the Day
   derived deterministically from the date, and four counters read from the files at build time.
-- **`/about`** — first person, including the four things this site will never do.
-- **`/legal/privacy`** — written for a parent, not a lawyer: the complete list of what an
+- **`/about`** - first person, including the four things this site will never do.
+- **`/legal/privacy`** - written for a parent, not a lawyer: the complete list of what an
   account holds, what is never stored, no-trackers-no-cookies, and a hard delete.
-- **`/legal/terms`** and **`/legal/license`** — two licences, and an explicit section on what
+- **`/legal/terms`** and **`/legal/license`** - two licences, and an explicit section on what
   neither of them covers.
-- **`/contact`** — a real `<form>` with a server action, so it submits without JavaScript, plus
+- **`/contact`** - a real `<form>` with a server action, so it submits without JavaScript, plus
   a mailto fallback and a link to open a GitHub issue. 16 tests.
 - 34 more tests and 7 more axe suites.
 
@@ -698,11 +697,11 @@ against the taxonomy"), which is also outstanding for the same reason.
 Smoke-testing the **production build** with curl: `/skill/ZZZ-99` and `/problem/KA-9999`
 returned **HTTP 200** with the not-found page in the body. Next's default `dynamicParams: true`
 rendered the page for an unknown id, hit `notFound()`, then cached and served that response as a
-200 — so a wrong URL looked fine to a crawler and to any client that checks the status rather
+200 - so a wrong URL looked fine to a crawler and to any client that checks the status rather
 than the words on the page. The unit tests could not see this: `notFound()` throws in jsdom, so
 they passed.
 
-All four content routes now set `dynamicParams = false`, which is also simply correct — the
+All four content routes now set `dynamicParams = false`, which is also simply correct - the
 complete set of valid ids is known at build time. Verified: `/skill/ZZZ-99`, `/problem/KA-9999`,
 `/papers/1999-3-4` and `/atlas/XXX` all return 404. A test asserts the export on each route.
 
@@ -718,14 +717,14 @@ Served with `next start` and measured in the browser:
 | Cumulative layout shift | 0 |
 | Total transfer | 132 KB across 11 requests |
 | Third-party hosts | none |
-| Render-blocking scripts | one, the 153-byte inline theme script (deliberate — it prevents the flash of the wrong theme) |
+| Render-blocking scripts | one, the 153-byte inline theme script (deliberate - it prevents the flash of the wrong theme) |
 
 All 15 routes return 200 and the OG image renders as a real 56 KB PNG. The sitemap has 161 URLs.
 
 **Lighthouse itself was not run.** It needs Chrome's own auditing engine; the CLI (`@lhci/cli`)
 is a large dependency outside CLAUDE.md's budget and I did not add one without asking. The
 numbers above are the inputs Lighthouse scores, and the accessibility category is covered
-separately by 35 axe assertions across both themes — but the four scores in M1.9's acceptance
+separately by 35 axe assertions across both themes - but the four scores in M1.9's acceptance
 are unverified until someone runs it. See "Needs you".
 
 ### Assumptions made where the spec was ambiguous
@@ -744,20 +743,19 @@ are unverified until someone runs it. See "Needs you".
    dependency budget stays where CLAUDE.md wants it.
 5. **The contact form's email field is optional and there is no CAPTCHA.** Most people here are
    children; a form that demands an address collects one from every child reporting a typo. Every
-   CAPTCHA worth using is a third-party tracker, which the non-negotiables rule out — spam is
+   CAPTCHA worth using is a third-party tracker, which the non-negotiables rule out - spam is
    handled by a honeypot and a length cap, which is proportionate. The message is emailed and
    never stored, so there is nothing to leak or delete later. A test asserts the message body and
    the reply address never reach the logs.
 
 ---
 
-## M0.4 — Legal and naming
+## M0.4 - Legal and naming
 
 **State:** `[x]`
 
 The footer disclaimer and the three legal pages landed with M1.1 and M1.9. This milestone
-added `docs/05-OUTREACH-DRAFT.md`: the note to Math Kangaroo USA, written but **not sent** —
-M0.4 asks for it to exist, and writing it is what forces you to be able to describe the project
+added `docs/05-OUTREACH-DRAFT.md`: the note to Math Kangaroo USA, written but **not sent** - M0.4 asks for it to exist, and writing it is what forces you to be able to describe the project
 in terms that survive contact with the organisation whose trademark you use. It also records
 what changes under each realistic response, and confirms the public name is **Kangaroo Atlas**,
 defined once in `src/lib/site.ts` and read from there by every surface.
@@ -766,7 +764,7 @@ Send it when the site is live and has been in front of students, not before.
 
 ---
 
-## M1.10 — Launch content
+## M1.10 - Launch content
 
 **State:** `[x]`
 
@@ -783,7 +781,7 @@ Send it when the site is live and has been in front of students, not before.
 
 Point tiers now sit much closer to a real paper's thirds: band 3–4 runs 27 / 27 / 12 and band
 5–6 runs 19 / 36 / 29. Every one of the 96 new problems was written from scratch, and **every
-numeric answer was computed independently before the problem was authored** — the verification
+numeric answer was computed independently before the problem was authored** - the verification
 scripts are in the session transcript, not in the repo, because they are working notes rather
 than something to maintain.
 
@@ -791,7 +789,7 @@ than something to maintain.
 
 - **KA-0105 had the wrong answer.** The stated answer was 13; building the grid explicitly gave
   12. Rewritten with new distractors, including one for each of the two off-by-one errors.
-- **KA-0049 contradicted itself** in the first session — marked "no" while its own solution
+- **KA-0049 contradicted itself** in the first session - marked "no" while its own solution
   argued "yes". Brute force confirmed 2 880 valid arrangements; rewritten.
 - The authoring checker was upgraded to **report every rule violation in a batch at once**
   rather than failing on the first, after a single over-long hint cost a round trip.
@@ -800,7 +798,7 @@ than something to maintain.
 ### Assumptions and known limits
 
 1. **The answer key still leans to the middle**: A 16 · B 44 · C 52 · D 26 · E 12. That is a
-   consequence of listing numeric choices in ascending order, as the real papers do — a correct
+   consequence of listing numeric choices in ascending order, as the real papers do - a correct
    answer with distractors above and below lands in the middle. Every key is used and no key
    exceeds the 50% cap the test enforces, but a deliberate pass to flatten it further is worth
    doing as the bank grows past 150.
@@ -813,24 +811,24 @@ than something to maintain.
 
 ---
 
-## M2.1 — Supabase foundation
+## M2.1 - Supabase foundation
 
-**State:** `[~]` — written in full, **the runtime proof has not been executed.**
+**State:** `[~]` - written in full, **the runtime proof has not been executed.**
 
 ### Built
 
 - **Migrations 001–009**, exactly the ten tables from `docs/01-DATA-MODEL.md` §2, each followed
   immediately by `enable row level security`. RLS with no policy denies everything, so there is
   no window during a migration run in which a row is readable.
-- **`010_policies.sql`** — every policy plus three `security definer` helpers and the two
+- **`010_policies.sql`** - every policy plus three `security definer` helpers and the two
   aggregate functions. The four student-owned tables (`attempts`, `mastery`, `runs`,
   `journal_entries`) are owner-only across all four operations, with **no mentor path at all**.
   `parent_consents` has RLS on and deliberately no policy, which denies every client role.
-- **`supabase/tests/rls.test.sql`** — 40 pgTAP assertions, including the one that matters most:
+- **`supabase/tests/rls.test.sql`** - 40 pgTAP assertions, including the one that matters most:
   *a mentor reading `attempts` directly gets zero rows*, while the aggregate function still
   returns counts. Also covers two students in one cohort seeing nothing of each other, a mentor
   of a different class getting nothing through either path, and account deletion cascading.
-- **`scripts/__tests__/rls-shape.test.ts`** — 73 assertions that read the SQL and check its
+- **`scripts/__tests__/rls-shape.test.ts`** - 73 assertions that read the SQL and check its
   structure **with no database**, so they run on every commit.
 
 ### What I could not verify, and why
@@ -839,7 +837,7 @@ than something to maintain.
 never been run. CLAUDE.md's definition of done says "if it touches student data: RLS policy
 written and tested", and only half of that is met. The policies are written and their shape is
 checked; their runtime behaviour is not proven. Run `supabase test db` before any real student
-data exists — see "Needs you".
+data exists - see "Needs you".
 
 So the shape test exists to make the gap smaller rather than to paper over it. It cannot prove
 isolation. It does catch the failures that are silent and total: a table added later with no
@@ -848,7 +846,7 @@ RLS, a policy that says `using (true)`, a `security definer` function with an un
 
 ### Two real problems it caught immediately
 
-1. **The pgTAP plan count was wrong** — `plan(28)` against 40 assertions. pgTAP aborts the
+1. **The pgTAP plan count was wrong** - `plan(28)` against 40 assertions. pgTAP aborts the
    whole file on a plan mismatch, so this would have failed the first time it was ever run,
    probably months from now. The shape test now recounts the assertions and asserts the plan
    matches.
@@ -860,7 +858,7 @@ RLS, a policy that says `using (true)`, a `security definer` function with an un
 1. **Policies live in `010`, not beside their tables.** §2.1 says to write them with the tables.
    The deny-by-default half is with the tables. The policies themselves cannot be, because a
    policy on `cohorts` that checks `cohort_members` and one on `cohort_members` that checks
-   `cohorts` recurse forever — the way out is a `security definer` helper, which needs every
+   `cohorts` recurse forever - the way out is a `security definer` helper, which needs every
    table to exist first. The reasoning is written at the top of `010_policies.sql`.
 2. **A mentor sees a student's name and band through a function, not a policy.** §2.1 permits
    `display_name` and `band` and "nothing else". RLS is row-level, so any row policy on
@@ -870,23 +868,23 @@ RLS, a policy that says `using (true)`, a `security definer` function with an un
    is the mentor's own writing about a lesson. Members read assignments, not lesson notes.
 4. **Every `security definer` function pins `search_path = ''`** and schema-qualifies every
    table it reads. Without that, a caller can create their own `public` schema and change what
-   a function reads while it runs with the owner's privileges — the standard escalation. Two
+   a function reads while it runs with the owner's privileges - the standard escalation. Two
    tests enforce both halves.
 
 ---
 
-## M2.4 — Mastery and scheduling
+## M2.4 - Mastery and scheduling
 
-**State:** `[x]` — pure logic, so this one is fully verified. 71 tests.
+**State:** `[x]` - pure logic, so this one is fully verified. 71 tests.
 
 ### Built
 
-- **`src/lib/mastery.ts`** — the state machine from `docs/01-DATA-MODEL.md` §3.1 as pure
+- **`src/lib/mastery.ts`** - the state machine from `docs/01-DATA-MODEL.md` §3.1 as pure
   functions of one skill's attempts. `unseen` / `seen` / `shaky` / `mastered`, the 70%-over-five
   rule, the 4-or-5-point-miss-after-a-3-point-solve rule, and the 14-day decay. State is always
   **recomputed from the attempts** rather than advanced incrementally: a stored state that
   drifts from the attempts that produced it is a bug nobody ever notices.
-- **`src/lib/schedule.ts`** — `ts-fsrs` wrapped so that FSRS schedules the **skill** and the
+- **`src/lib/schedule.ts`** - `ts-fsrs` wrapped so that FSRS schedules the **skill** and the
   server then serves an unseen **problem** from it. Also `pointCeiling`, which decides how hard
   a version of the skill a student has earned.
 - **40 mastery tests** including a table covering every transition out of every state, both
@@ -899,7 +897,7 @@ RLS, a policy that says `using (true)`, a `security definer` function with an un
 1. **Mastered outranks shaky when both conditions hold.** A history of `wrong, wrong, right,
    right, right` is 60% over five (shaky) *and* a clean three-in-a-row across two days
    (mastered). Recent unaided evidence is the better signal, so mastered wins; two tests pin
-   this down. The alternative — shaky always winning — would make mastery almost unreachable
+   this down. The alternative - shaky always winning - would make mastery almost unreachable
    for a student who struggled early.
 2. **All three mastery conditions apply to the same three attempts.** A clean two-day run in
    March cannot be combined with a hint-free run in April.
@@ -919,28 +917,28 @@ RLS, a policy that says `using (true)`, a `security definer` function with an un
 
 ---
 
-## M2.11 — `/print` worksheet generator
+## M2.11 - `/print` worksheet generator
 
-**State:** `[x]` — needs no database, so it ships now rather than with Phase 2.
+**State:** `[x]` - needs no database, so it ships now rather than with Phase 2.
 
 ### Built
 
-- **`/print`** — pick by level, point value, strand, skill and count; include or exclude figures;
+- **`/print`** - pick by level, point value, strand, skill and count; include or exclude figures;
   print. The worksheet and the answer key are on one page, and `@media print` starts the key on
   its own sheet so a tutor can hand out the questions without the answers.
 - **The answer key is the part that exists nowhere else**: for every wrong choice it prints the
   misconception that produces it. A tutor marking a stack of sheets sees what the student was
   *thinking*, not only that they were wrong. 39 tests, including one asserting all four
   distractors on every problem of a full 30-question sheet carry a written note.
-- **`src/lib/worksheet.ts`** — pure selection, with a seeded shuffle.
+- **`src/lib/worksheet.ts`** - pure selection, with a seeded shuffle.
 
 ### The decision that matters most here
 
 **The shuffle seed is in the URL.** A tutor prints the worksheet, then prints the answer key,
 and the two must be the same worksheet. A random shuffle that re-rolled on the second page load
 would quietly hand out a key that did not match the sheet, and nobody would find out until a
-room full of students did. The same URL therefore always produces the same sheet — this term,
-next term, on any machine — and "Reshuffle" is a link to the next seed rather than a dice roll.
+room full of students did. The same URL therefore always produces the same sheet - this term,
+next term, on any machine - and "Reshuffle" is a link to the next seed rather than a dice roll.
 `mulberry32` is written out longhand (nine lines) rather than pulled in as a dependency, because
 the whole point is that the sequence is fixed and inspectable.
 
@@ -958,17 +956,17 @@ the whole point is that the sequence is fixed and inspectable.
 
 ---
 
-## M2.13 — `/author/new`
+## M2.13 - `/author/new`
 
-**State:** `[x]` for the authoring form. `/author/queue` is deferred — see below.
+**State:** `[x]` for the authoring form. `/author/queue` is deferred - see below.
 
 ### Built
 
-- **`/author/new`** — a form that produces a problem file, with live validation and a live
+- **`/author/new`** - a form that produces a problem file, with live validation and a live
   preview rendered by the **real `<ProblemCardView>`**, so an author sees the distractor feedback
   their misconceptions actually produce *while writing them*.
 - **"Open a pull request"** builds a GitHub new-file URL with the path and the JSON already
-  filled in. No backend, no write access, no direct database write — content still arrives
+  filled in. No backend, no write access, no direct database write - content still arrives
   through git and through review, as `docs/00-SPEC.md` §5.1 requires.
 - **27 library tests and 10 form tests**, including M2.13's acceptance directly: a draft the
   form calls valid is written into a temporary content tree and run through the **actual**
@@ -976,19 +974,18 @@ the whole point is that the sequence is fixed and inspectable.
 
 ### Something that was actually broken, and how it was caught
 
-The form validated against the Zod schema alone. But the rule that *matters* — a wrong choice
-must carry a written misconception — is a cross-field rule, so the schema only says
+The form validated against the Zod schema alone. But the rule that *matters* - a wrong choice
+must carry a written misconception - is a cross-field rule, so the schema only says
 `misconception: string | null` and the real check lives in `scripts/validate-content.ts`. **The
 form therefore accepted problems that CI rejects**, which is the exact opposite of the guarantee
 M2.13 is supposed to make. The acceptance test caught it on its first run.
 
-The fix was not to copy the rule. Both product rules now live in `src/lib/problem-rules.ts` —
-no filesystem imports, so a browser can run them — and **both the CI validator and the form call
+The fix was not to copy the rule. Both product rules now live in `src/lib/problem-rules.ts` - no filesystem imports, so a browser can run them - and **both the CI validator and the form call
 that one implementation**. A test asserts both files reference it, so a future edit cannot
 quietly re-fork them.
 
 A second, smaller thing: the summary panel showed the first eight issues, and a duplicate id
-could be pushed off the end by eight empty-field messages — hiding the one problem that blocks
+could be pushed off the end by eight empty-field messages - hiding the one problem that blocks
 everything. Issues are now ordered with the blocking ones first, and a count is shown for the
 rest rather than silently truncating.
 
@@ -996,7 +993,7 @@ rest rather than silently truncating.
 
 1. **`<ProblemCard>` was split in two.** The presentational half (`ProblemCardView`) takes its
    skills as props; the server wrapper looks them up. `@/lib/content` is server-only, so without
-   the split the live preview could not use the real component — and a preview that is a
+   the split the live preview could not use the real component - and a preview that is a
    different component is not a preview.
 2. **A new problem is written as `reviewedBy: ["pending-review"]`.** The form cannot know who
    has reviewed anything, and writing an author's own name there would record a review that has
@@ -1004,31 +1001,31 @@ rest rather than silently truncating.
 3. **`/author/new` is `noindex`** and is not linked from the primary nav. It is a contributor
    tool, not a page for students.
 4. **`/author/queue` is deferred.** Two-approval review with a checklist is a pull-request
-   workflow, and GitHub already does it — with CODEOWNERS and required reviews, which M4.5
+   workflow, and GitHub already does it - with CODEOWNERS and required reviews, which M4.5
    plans anyway. Building a second review queue that does not gate the merge would be
    ceremony rather than a control. Revisit if peer contributors arrive and GitHub's own review
    turns out not to fit.
 
 ---
 
-## M2.12 — PWA and offline
+## M2.12 - PWA and offline
 
-**State:** `[~]` — written and unit-tested; **service worker registration could not be exercised
+**State:** `[~]` - written and unit-tested; **service worker registration could not be exercised
 in this environment.**
 
 ### Built
 
-- **`public/sw.js`** — hand-written, 120 lines, no Workbox. Network-first for navigations
+- **`public/sw.js`** - hand-written, 120 lines, no Workbox. Network-first for navigations
   (a stale page must never hide a newly added problem), cache-first for `/_next/static/`
   (those filenames carry a content hash, so a cached one cannot be wrong), and everything else
   passed straight through. **Nothing that is not a GET is ever touched, and nothing under
-  `/api/` is ever touched** — caching a write would be a bug with real consequences.
-- **`/offline`** — names the pages that *do* still work rather than only apologising, because
+  `/api/` is ever touched** - caching a write would be a bug with real consequences.
+- **`/offline`** - names the pages that *do* still work rather than only apologising, because
   on a train the useful thing to know is which links still open.
-- **Install prompt** — appears only when the browser itself decides the site is installable,
+- **Install prompt** - appears only when the browser itself decides the site is installable,
   is dismissible, and the dismissal is remembered. A prompt that reappears every visit is an
   advertisement.
-- **`src/lib/offline-queue.ts`** — the exactly-once attempt queue. Every item carries a
+- **`src/lib/offline-queue.ts`** - the exactly-once attempt queue. Every item carries a
   client-generated id; a flush removes an item only after the send resolves, and stops at the
   first failure so the time series keeps its order. 15 tests, including *"never sends the same
   attempt twice across two flushes"*, which is M2.3's acceptance.
@@ -1038,14 +1035,14 @@ in this environment.**
 
 ### What I could not verify, and why
 
-**The embedded browser available here refuses service worker registration** — `/sw.js` is
+**The embedded browser available here refuses service worker registration** - `/sw.js` is
 served correctly (200, `application/javascript`, valid source, `node --check` clean) but
 `navigator.serviceWorker.register` fails with "an unknown error occurred when fetching the
 script" even when called by hand. That is the pane, not the app.
 
 So the caching behaviour itself is unproven. What *is* proven, live: **registration failing does
 not affect the site at all.** With the registration erroring, the home page rendered completely,
-the sample problem's five choices worked, and the console was clean — which is the guarantee the
+the sample problem's five choices worked, and the console was clean - which is the guarantee the
 `.catch(() => undefined)` exists to make.
 
 M2.12's acceptance ("the site opens and serves cached problems with the network switched off")
@@ -1067,23 +1064,23 @@ and its throttled-Android test both need a real browser. See "Needs you".
 
 ---
 
-## M2.7 — `/practice/diagnostic`
+## M2.7 - `/practice/diagnostic`
 
-**State:** `[x]` — and it works **signed out**, which is what made it buildable now rather than
+**State:** `[x]` - and it works **signed out**, which is what made it buildable now rather than
 with the rest of Phase 2.
 
 ### Built
 
-- **`src/lib/diagnostic.ts`** — the adaptive algorithm from `docs/01-DATA-MODEL.md` §3.4, as
+- **`src/lib/diagnostic.ts`** - the adaptive algorithm from `docs/01-DATA-MODEL.md` §3.4, as
   pure functions. Starts every strand at a foundation skill with a 3-point problem; **a miss
   descends to a prerequisite and lowers the tier, a solve climbs to an unlocked skill and raises
   it**. Round-robins the strands least-asked-first, so fifteen items produce a map rather than a
   deep dive into whichever strand failed first. Stops at 15 items or when every strand is
   bounded.
-- **`/practice/diagnostic`** — the whole run in the browser. No account, no network, no
+- **`/practice/diagnostic`** - the whole run in the browser. No account, no network, no
   database. State is plain JSON in `localStorage`, so closing the tab loses nothing and a
   half-finished run is offered back rather than silently restarted.
-- **The result**: strand by strand, plus a **six-week plan ordered by the graph** — every missed
+- **The result**: strand by strand, plus a **six-week plan ordered by the graph** - every missed
   skill and the prerequisites it rests on, topologically sorted so nothing is studied before
   what it needs. That ordering is the entire reason for having a graph; a plan that puts
   "invariants" before "parity" is a list, not a plan.
@@ -1095,7 +1092,7 @@ with the rest of Phase 2.
 ### Something that was actually broken, and how it was caught
 
 The runner first rendered the ordinary `<ProblemCardView>`. That card carries the hint ladder
-and the solution — so **a student could open the full worked solution in the middle of the
+and the solution - so **a student could open the full worked solution in the middle of the
 measurement**, and clicking a choice inside the card showed the distractor feedback. The
 diagnostic would have measured nothing.
 
@@ -1123,9 +1120,9 @@ down, including one that the rendered output contains no `<details>` element at 
 
 ---
 
-## M2.8 — `/practice/mock`
+## M2.8 - `/practice/mock`
 
-**State:** `[x]` — signed out, like the diagnostic.
+**State:** `[x]` - signed out, like the diagnostic.
 
 ### Built
 
@@ -1133,8 +1130,7 @@ down, including one that the rendered output contains no `<details>` element at 
   above, in **exact thirds** at 3, 4 and 5 points, drawn deterministically from a seed.
 - **A 75-minute timer that survives a refresh.** It is never counted down in memory: the state
   records when the paper started and the time left is computed from the clock. M2.8's acceptance
-  is a test — *a paper started 40 minutes ago comes back with 35 minutes left, and its answers* —
-  and closing the laptop for ten minutes costs ten minutes, exactly as it would in a hall.
+  is a test - *a paper started 40 minutes ago comes back with 35 minutes left, and its answers* -   and closing the laptop for ten minutes costs ten minutes, exactly as it would in a hall.
 - **Flag for review, and a navigator grid** where every button is named for a screen reader
   ("Question 12, answered, flagged"), not just coloured.
 - **The no-blanks nudge at five minutes**, which states the actual argument: a wrong answer costs
@@ -1160,9 +1156,9 @@ down, including one that the rendered output contains no `<details>` element at 
 
 ---
 
-## Design v2 — `docs/05-DESIGN-DIRECTION.md`, in full
+## Design v2 - `docs/05-DESIGN-DIRECTION.md`, in full
 
-**State:** `[x]` — every item on §9's acceptance list verified, listed at the bottom of this
+**State:** `[x]` - every item on §9's acceptance list verified, listed at the bottom of this
 section with how each was checked.
 
 ### The change that mattered
@@ -1170,8 +1166,8 @@ section with how each was checked.
 `tokens.css` contained this:
 
 ```css
---correct: var(--p3);      /* green — also means "3 points" */
---incorrect: var(--p5);    /* rose  — also means "5 points" */
+--correct: var(--p3);      /* green - also means "3 points" */
+--incorrect: var(--p5);    /* rose - also means "5 points" */
 ```
 
 The colour that told a student they were **wrong** was literally the same variable that
@@ -1196,7 +1192,7 @@ colour appears outside a feedback surface.
 - **`PointPill` → `DifficultyPill`** with `●○○ / ●●○ / ●●●` and the point value in text, so the
   tier is carried three times over and survives greyscale.
 - **Mastery layer:** `mastery-display.ts` (names, glyphs, ramp), `MasteryDot`, `MasteryBar`,
-  `SkillMasteryDot`, and `local-progress.ts` — a signed-out progress store in localStorage that
+  `SkillMasteryDot`, and `local-progress.ts` - a signed-out progress store in localStorage that
   feeds the *same* `computeMastery` the server will use.
 - **`/skill/[id]` rebuilt as a unit page**: breadcrumb → title + one-line definition + difficulty
   pill → segmented mastery bar with a legend → the five lesson rows → prerequisites/unlocks →
@@ -1205,31 +1201,31 @@ colour appears outside a feedback surface.
   **`/skill/[id]/practice/[tier]`** and **`/skill/[id]/quiz`**.
 - **The exercise view** (§7.3): one problem at a time, streak dots and "3 in a row to finish this
   ladder", 44px+ choices, a sticky Show a hint · Skip · Next problem bar, hints in the reserved
-  amber — and **immediate distractor-specific feedback, kept exactly as it was**. Not
+  amber - and **immediate distractor-specific feedback, kept exactly as it was**. Not
   check-then-reveal. It is the reason the site exists.
 - **The sidebar shell** (§7.1): a 260px strand → skill rail with the student's position marked
   and a mastery dot per row, collapsing to a keyboard-operable drawer below 900px.
 - **Atlas** (§7.4): node fill is the mastery ramp; tier moved to border weight at exactly
   1 / 1.5 / 2.5px; hue is entirely free for mastery.
-- **`scripts/check-palette.ts` + `pnpm check:palette`**, wired into CI, implementing §10.4 — plus
+- **`scripts/check-palette.ts` + `pnpm check:palette`**, wired into CI, implementing §10.4 - plus
   amber, which §10.4 omits but §2 reserves.
 - **`CLAUDE.md`** gained the reserved-colour rule as a non-negotiable.
 
 ### Eight things that were actually broken
 
 1. **`docs/05` §4's own palette fails §9's own acceptance test.** `--ink-3` is 3.6:1 on
-   `--surface-2` and 3.3:1 on `--surface-3` — below AA for the 12–13px metadata it is used for,
+   `--surface-2` and 3.3:1 on `--surface-3` - below AA for the 12–13px metadata it is used for,
    and the exact pair §9 says to check. Darkened to the lightest value that clears 4.5:1 on all
    four surfaces, in both themes. Six other tokens needed the same treatment; every deviation is
    listed below.
-2. **`--m0` and `--m1` were 1.01:1 apart in light** — identical in greyscale. §9 says "test:
+2. **`--m0` and `--m1` were 1.01:1 apart in light** - identical in greyscale. §9 says "test:
    print a worksheet", and on paper the segmented mastery bar collapsed into one flat grey band.
    The ramp was respaced to even ~1.42:1 steps, keeping the doc's slate → teal progression and
    its endpoint. The test now asserts monotonic luminance and a minimum step separation instead
    of a contrast floor no four-step ramp between two light values could meet.
 3. **The mastery ramp told a student who got their first answer wrong that they were
-   "Proficient".** `shaky` is reached two ways — accuracy under 70%, *and* missing a harder
-   version of something you can already do — and §3 maps it to Proficient, which is right only
+   "Proficient".** `shaky` is reached two ways - accuracy under 70%, *and* missing a harder
+   version of something you can already do - and §3 maps it to Proficient, which is right only
    for the second. Caught by looking at the rendered page, not by a test. `shaky` now displays
    as Proficient only once the student has actually been right about something in that skill.
    `mastery.ts` is untouched, exactly as §3 requires.
@@ -1237,11 +1233,10 @@ colour appears outside a feedback surface.
    settled directly over choices B and C and no amount of scrolling moved them clear. (The first
    version of the bar had the opposite bug: `fixed inset-x-0` spanned under the 260px rail and
    sat ~130px left of the problem it acted on.) It is now fixed, with its left edge pinned to the
-   content area and matching page padding, so every choice can always be scrolled clear —
-   verified analytically, because `scroll-behavior: smooth` makes `scrollIntoView` asynchronous
+   content area and matching page padding, so every choice can always be scrolled clear -    verified analytically, because `scroll-behavior: smooth` makes `scrollIntoView` asynchronous
    and my first measurement was reading stale rectangles.
 5. **The header overflowed horizontally at 200% zoom.** Six nav items in the wider v2 UI face
-   pushed the theme toggle 19px off the right edge at 640px — which is what a 1280px window is at
+   pushed the theme toggle 19px off the right edge at 640px - which is what a 1280px window is at
    the 200% zoom CLAUDE.md requires. Fixed with `flex-wrap` and a `min-w-0` nav; all 16 key
    routes now show zero horizontal overflow at both 360px and 640px.
 6. **Every OG card rendered tofu where the difficulty should be.** satori only has the fonts it
@@ -1249,7 +1244,7 @@ colour appears outside a feedback surface.
    ("Failed to download dynamic font. Status: 400"). The dots are drawn as shapes now.
 7. **Returning students were dropped back on problem 1 of every ladder.** `useSyncExternalStore`
    hands back the *server* snapshot during hydration, so a `useState(startIndex)` initialiser
-   always saw an empty progress file. Found by reading my own diff, not by a test — Testing
+   always saw an empty progress file. Found by reading my own diff, not by a test - Testing
    Library mounts client-side and would have passed against the broken version. Fixed by
    following stored progress until the student's first interaction, then pinning; verified in a
    real browser, where seeding one solved problem now opens the ladder on the other one.
@@ -1264,15 +1259,15 @@ landmark.
 ### Where I deviated from `docs/05` §4's literal hex values, and why
 
 Every one of these is forced by §9's own acceptance criteria, which the literal values fail.
-The design intent — slate difficulty, teal mastery, soft tinted feedback panels — is unchanged.
+The design intent - slate difficulty, teal mastery, soft tinted feedback panels - is unchanged.
 
 | Token | §4 says | Now | Why |
 |---|---|---|---|
 | `--ink-3` light | `#767F8C` | `#626974` | 3.3:1 on `--surface-3`; AA needs 4.5 |
 | `--ink-3` dark | `#818B99` | `#919AA6` | 3.7:1 on `--surface-3` |
-| `--rule-strong` light | `#C9D0DA` | `#82858C` | 1.5:1 — but `--surface` on `--ground` is 1.06:1, so this border is the only thing identifying an answer choice or an input. WCAG 1.4.11 applies. Clears 3:1 on all four surfaces |
+| `--rule-strong` light | `#C9D0DA` | `#82858C` | 1.5:1 - but `--surface` on `--ground` is 1.06:1, so this border is the only thing identifying an answer choice or an input. WCAG 1.4.11 applies. Clears 3:1 on all four surfaces |
 | `--rule-strong` dark | `#3C434F` | `#767B83` | same, 1.7:1 |
-| `--correct-border` | `#96D4B0` / `#2C6B47` | `#69947B` / `#427B5A` | 1.5:1 and 2.4:1 on their own tint — the panel edge was invisible |
+| `--correct-border` | `#96D4B0` / `#2C6B47` | `#69947B` / `#427B5A` | 1.5:1 and 2.4:1 on their own tint - the panel edge was invisible |
 | `--wrong-border` | `#EFAEA8` / `#6E312B` | `#AC7D79` / `#8C5C58` | 1.6:1 and 1.7:1 |
 | `--hint-border` | `#E5C67F` / `#5C4A22` | `#9E8958` / `#7B6C4C` | 1.5:1 and 1.8:1 |
 | `--m0/--m1/--m2` light | `#CDD4DE` / `#A5DCE1` / `#4CB2BC` | `#BFC6CF` / `#82ADB1` / `#40959E` | the greyscale collapse in (2) above |
@@ -1281,19 +1276,19 @@ The design intent — slate difficulty, teal mastery, soft tinted feedback panel
 
 1. **`--paper` became `--ground`, `--rule-2` became `--rule-strong`**, and the accent split into
    `700/600/500/100`. §4 presents a "full replacement", so I took its names rather than keeping
-   v1's alongside. `700` is the text-weight step in *both* themes — dark teal on light, pale
-   teal on dark — which is what §4's own dark block implies.
+   v1's alongside. `700` is the text-weight step in *both* themes - dark teal on light, pale
+   teal on dark - which is what §4's own dark block implies.
 2. **`--shadow-2` became `--shadow`** (§4 names one shadow). `--shadow-1` stayed for the hairline
    lift; two names for one value would have been worse than either.
 3. **The fonts load through `next/font`**, which downloads them at build time and serves them
-   from our own origin. No dependency added — `next/font` is part of Next. This matters more than
+   from our own origin. No dependency added - `next/font` is part of Next. This matters more than
    usual here: a plain `<link>` to `fonts.googleapis.com` would hand a font CDN an IP address and
    a referer on every page load, and the users are minors. Verified: the built output contains
    woff2 files under `.next/static/media/` and **no reference to any Google host**.
 4. **The unit page's difficulty pill** shows the point tier most of the skill's problems sit at,
    falling back to what its Atlas tier implies when nothing is written. A skill has no point
    value of its own and §7.2 does not say which to use.
-5. **The lesson rows link to real routes** — `/learn`, `/practice/[tier]`, `/quiz` — rather than
+5. **The lesson rows link to real routes** - `/learn`, `/practice/[tier]`, `/quiz` - rather than
    expanding in place. §7.2 describes rows with an "action"; separate routes are linkable,
    bookmarkable and work without JavaScript for navigation.
 6. **The skill quiz is five problems** (2 × 3pt, 2 × 4pt, 1 × 5pt, backfilled), marked at the
@@ -1308,10 +1303,10 @@ The design intent — slate difficulty, teal mastery, soft tinted feedback panel
 9. **The reserved colours are allowed in nine files**, each with a written reason in
    `scripts/lib/palette-rules.ts`. Two are judgement calls worth your eye: the contact form and
    the authoring form use them for validation state. A validation error is "you did something and
-   it was wrong" — the same semantic §2 reserves them for — and neither is a category or a
+   it was wrong" - the same semantic §2 reserves them for - and neither is a category or a
    difficulty. If you disagree, delete those two entries and the build will tell you where they
    are used.
-10. **§7.1 says the header "keeps the theme toggle, search, and account" — it keeps the theme
+10. **§7.1 says the header "keeps the theme toggle, search, and account" - it keeps the theme
     toggle.** Search is `<CommandPalette>` (⌘K) and account is sign-in; both are marked **P2**
     in `00-SPEC.md` §0.2 and neither has ever existed. "Keeps" is accurate for the one that
     does. Nothing was removed; there was nothing there to remove.
@@ -1325,9 +1320,9 @@ The design intent — slate difficulty, teal mastery, soft tinted feedback panel
 | Item | Verified by |
 |---|---|
 | No component references `--p3/--p4/--p5`; those tokens are deleted | A comment-stripped sweep of `src/` and `scripts/`: zero live references. The only mentions left are the sentences explaining why they are gone, and the test asserting their absence |
-| A repo-wide grep finds no green or red outside feedback components | `pnpm check:palette` — 9 allowlisted files, no reserved hex outside `tokens.css`, in CI, with pass/fail fixtures |
+| A repo-wide grep finds no green or red outside feedback components | `pnpm check:palette` - 9 allowlisted files, no reserved hex outside `tokens.css`, in CI, with pass/fail fixtures |
 | Every difficulty and mastery indicator is legible in greyscale | Glyphs (`●○○`, `○ ◔ ◕ ✓`) on every indicator; the bar's ramp is monotonic with ≥1.35:1 steps and carries a counted legend; `@media print` keeps a four-step grey mastery ramp. All asserted in `tokens.test.ts` |
-| All text passes WCAG AA at its rendered size, both themes — check `--ink-3` on `--surface-2` | `tokens.test.ts`, now **95 assertions**: 4.93:1 light and 5.27:1 dark on that exact pair, plus every difficulty `fg` on its `bg`, every reserved `700` on its `100`, and every surface |
+| All text passes WCAG AA at its rendered size, both themes - check `--ink-3` on `--surface-2` | `tokens.test.ts`, now **95 assertions**: 4.93:1 light and 5.27:1 dark on that exact pair, plus every difficulty `fg` on its `bg`, every reserved `700` on its `100`, and every surface |
 | Answer choices are ≥44px tall and keyboard operable | Measured in a real browser: **60px** each. Arrow/Home/End movement asserted in the a11y suite |
 | `/skill/[id]` renders as a unit page with a working mastery bar for a signed-out visitor | 91 unit-page render tests; the bar's `aria-label` is asserted against the real problem count with an empty localStorage, and driven end to end in the exercise-view tests |
 | Sidebar collapses cleanly at 900px and is reachable by keyboard | Measured in a browser at 360 / 640 / **899 / 900 / 901** / 1280px: the drawer trigger is the only one showing at 899, the rail is the only one showing at 900, and no width overflows. 28 rail tests cover Enter to open, focus moved in, Tab cycled inside, Escape to close, focus handed back |
@@ -1336,7 +1331,7 @@ The design intent — slate difficulty, teal mastery, soft tinted feedback panel
 ### Two more contrast failures, found by testing the pairs the components actually use
 
 - **Link hover made links harder to read.** `a:hover` dropped to `--accent-600`, taking a link
-  from 11:1 to 3.9:1 in a dark well — under AA, on text that had been fine a moment earlier.
+  from 11:1 to 3.9:1 in a dark well - under AA, on text that had been fine a moment earlier.
   Hover now thickens the underline and leaves the colour alone, which is a better affordance
   anyway: it is not a colour cue at all. `--accent-600` is now purely a fill and a border, and
   is tested at the 3:1 that use requires.
@@ -1360,7 +1355,7 @@ The design intent — slate difficulty, teal mastery, soft tinted feedback panel
 
 - **`/skill/[id]/learn` is in the sitemap**, at its own priority. The unit page is mostly
   navigation now; the learn page is where the prose lives. The three ladders and the quiz are
-  deliberately left out — 364 pages reading "practise X at tier N" is thin content by the
+  deliberately left out - 364 pages reading "practise X at tier N" is thin content by the
   cartload, and they are reachable from the unit page anyway. A new test asserts both halves of
   that, plus that the sitemap never advertises a route that would 404.
 
@@ -1368,13 +1363,13 @@ The design intent — slate difficulty, teal mastery, soft tinted feedback panel
 
 The exhaustive crawl that ran clean in earlier milestones does not terminate usefully any more.
 `/atlas` and `/problems` encode their filters in the query string, so strand × band × points ×
-coverage × focus × page is a combinatorial space — it ran past **116,000 URLs** and was still
+coverage × focus × page is a combinatorial space - it ran past **116,000 URLs** and was still
 finding more. That measures the filter grammar, not link integrity. The check now walks every
 distinct route *path* plus the first few filter variants of each: 539 paths, zero broken links.
 
 The 874-page build minus those 539 is accounted for and is not a gap: 150 are `opengraph-image`
 routes, which are never `href`s; 91 are skill quizzes and the rest are ladders on tiers with no
-problems — both render as locked rows rather than links until they are earned, which is the
+problems - both render as locked rows rather than links until they are earned, which is the
 point. All of them return 200 when opened directly, and unknown ids in all four content routes
 still return a real 404 rather than a 200 with a not-found body.
 
@@ -1382,7 +1377,7 @@ still return a real 404 rather than a 200 with a not-found body.
 
 - **The exercise view needs JavaScript.** The statement, choices and a `<details>` solution still
   render without it at `/problem/[id]`, and every ladder problem is reachable there, so nothing
-  is unreachable — but the ladder itself is an enhancement.
+  is unreachable - but the ladder itself is an enhancement.
 - **Per-problem mastery is heuristic.** `problemProgress` asks "did you get it, and did you get
   it cleanly", which is not the skill-level state machine and is not meant to be. It is tested
   and documented as its own rule.
@@ -1393,7 +1388,7 @@ still return a real 404 rather than a 200 with a not-found body.
 
 - [ ] **Run Lighthouse** on a deployed build and confirm ≥95 on performance, accessibility, best
       practices and SEO (M1.9's acceptance). Everything it measures is in place; the run itself
-      needs Chrome. If you want it in CI, `@lhci/cli` is the tool — it is outside CLAUDE.md's
+      needs Chrome. If you want it in CI, `@lhci/cli` is the tool - it is outside CLAUDE.md's
       dependency budget, so I did not add it.
 - [ ] **Test the PWA on a real device**: install it, then turn the network off and confirm a
       previously visited problem still opens (M2.12's acceptance). The service worker could not
@@ -1410,9 +1405,9 @@ still return a real 404 rather than a 200 with a not-found body.
       question against the Atlas, and write `content/papers/<year>-<band>.json`. The format and
       the rules are in `content/papers/README.md`; `/papers` and `/papers/[year]-[band]` are
       built and tested and will light up the moment the first file lands. This is reading work
-      that has to be done by someone who has read the papers — see M1.8 above.
+      that has to be done by someone who has read the papers - see M1.8 above.
 - [ ] **Look at design v2 and tell me if the palette is right.** Eight of `docs/05` §4's literal
-      hex values had to move to clear the AA floor §9 itself asks for — the table in the design
+      hex values had to move to clear the AA floor §9 itself asks for - the table in the design
       v2 section above lists every one with its measured ratio. The intent is unchanged, but they
       are your colours.
 - [ ] **Review the 150 seed problems** against `docs/03-CONTENT-GUIDE.md` Part C. They are all

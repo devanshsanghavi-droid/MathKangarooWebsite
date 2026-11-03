@@ -148,7 +148,7 @@ export function AuthorForm({
               Statement
             </label>
             <p className={help}>
-              Under 35 words for levels 1–4, under 60 above. Keep the numbers small — Kangaroo
+              Under 35 words for levels 1–4, under 60 above. Keep the numbers small - Kangaroo
               rewards insight, not arithmetic stamina.
             </p>
             <textarea
@@ -205,7 +205,7 @@ export function AuthorForm({
           <legend className="mb-1 p-0 text-sm font-semibold text-ink">The five choices</legend>
           <p className="m-0 text-xs text-ink-3">
             Write the misconception first, then the number it produces. Every wrong choice must be
-            reachable by a defensible mistake — no joke answers, nothing wildly out of range.
+            reachable by a defensible mistake - no joke answers, nothing wildly out of range.
           </p>
 
           {draft.choices.map((choice) => {
@@ -238,7 +238,7 @@ export function AuthorForm({
                 </div>
                 {isCorrect ? (
                   <p className="m-0 text-xs text-ink-2">
-                    The correct choice carries no misconception — the schema requires it to be null.
+                    The correct choice carries no misconception - the schema requires it to be null.
                   </p>
                 ) : (
                   <textarea
@@ -280,7 +280,7 @@ export function AuthorForm({
                 Secondary skills
               </label>
               <p className={help}>
-                Comma separated. Not padding — only what the problem really uses.
+                Comma separated. Not padding - only what the problem really uses.
               </p>
               <input
                 id="secondarySkills"
@@ -490,14 +490,14 @@ export function AuthorForm({
         </div>
         <p className="mt-2 mb-0 text-xs text-ink-3">
           The pull request link opens GitHub&rsquo;s editor with the file named and filled in. No
-          problem is ever written straight to a database — content arrives through git and through
+          problem is ever written straight to a database - content arrives through git and through
           review.
         </p>
 
         {result.problem ? (
           <div className="mt-6">
             <h2 className="m-0 mb-3 text-sm font-semibold text-ink">
-              Live preview — try a wrong answer
+              Live preview - try a wrong answer
             </h2>
             <ProblemCardView problem={result.problem} headingLevel={3} showSkills={false} />
           </div>

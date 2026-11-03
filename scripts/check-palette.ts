@@ -1,7 +1,7 @@
 import { checkPalette, FEEDBACK_FILES } from './lib/palette-rules.ts';
 
 /**
- * `pnpm check:palette` — enforces the reserved-colour rule from
+ * `pnpm check:palette` - enforces the reserved-colour rule from
  * docs/05-DESIGN-DIRECTION.md §2, as §10.4 requires.
  *
  * v1's tokens.css contained `--correct: var(--p3)` and `--incorrect: var(--p5)`: the colour
@@ -12,7 +12,7 @@ const violations = checkPalette(process.cwd());
 
 if (violations.length === 0) {
   console.log(
-    `palette ok — green, red and amber confined to ${FEEDBACK_FILES.length} feedback files, ` +
+    `palette ok - green, red and amber confined to ${FEEDBACK_FILES.length} feedback files, ` +
       `no reserved hex outside tokens.css, no retired point tokens`,
   );
   process.exit(0);

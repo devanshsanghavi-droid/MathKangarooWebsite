@@ -2,7 +2,7 @@ import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 
 /**
- * The reserved-colour rule, enforced — docs/05-DESIGN-DIRECTION.md §2 and §10.4.
+ * The reserved-colour rule, enforced - docs/05-DESIGN-DIRECTION.md §2 and §10.4.
  *
  *   Green, red and amber appear only in response to something the student did: correct,
  *   incorrect, hint taken. Never for difficulty, never for a category, never for decoration.
@@ -35,7 +35,7 @@ export const FEEDBACK_FILES: ReadonlyArray<{ path: string; because: string }> = 
   { path: 'src/styles/globals.css', because: 'bridges them into the Tailwind namespace' },
   {
     path: 'src/components/FeedbackPanel.tsx',
-    because: 'the distractor-specific feedback panel — the reason the site exists',
+    because: 'the distractor-specific feedback panel - the reason the site exists',
   },
   {
     path: 'src/components/ChoiceList.tsx',
@@ -53,7 +53,7 @@ export const FEEDBACK_FILES: ReadonlyArray<{ path: string; because: string }> = 
   {
     path: 'src/app/author/new/AuthorForm.tsx',
     because:
-      'marks which choice the author flagged correct, and marks a problem CI would reject — ' +
+      'marks which choice the author flagged correct, and marks a problem CI would reject - ' +
       'the same "you did this and here is how it went" meaning',
   },
   {
@@ -109,7 +109,7 @@ export function hexToHsl(hex: string): Hsl | null {
 
 /**
  * Is this hex one of the three reserved hues, saturated and mid-toned enough to actually read
- * as green / red / amber? Near-greys and near-blacks are not — `#fff` and `#000` in a print
+ * as green / red / amber? Near-greys and near-blacks are not - `#fff` and `#000` in a print
  * block are not a rule violation.
  */
 export function reservedHue(hex: string): 'red' | 'green' | 'amber' | null {
@@ -138,7 +138,7 @@ function walk(dir: string, out: string[] = []): string[] {
 /**
  * Blank out comments while keeping every newline, so reported line numbers stay true.
  *
- * Needed because the files that explain this rule quote the very tokens it bans — the header
+ * Needed because the files that explain this rule quote the very tokens it bans - the header
  * of tokens.css names `--p3` in the sentence describing why `--p3` no longer exists. A checker
  * that cannot tell prose from code makes documenting the rule impossible.
  */
@@ -196,7 +196,7 @@ function findings(file: string, source: string, relPath: string): PaletteViolati
           line,
           detail:
             `\`${match[0]}\` is a RESERVED feedback colour. It may only appear in response to ` +
-            `something the student did — correct, incorrect, hint taken. Use a neutral or the ` +
+            `something the student did - correct, incorrect, hint taken. Use a neutral or the ` +
             `teal accent, or add this file to FEEDBACK_FILES with a reason it qualifies.`,
         });
       }

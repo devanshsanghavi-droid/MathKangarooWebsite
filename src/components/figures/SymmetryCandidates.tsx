@@ -1,6 +1,6 @@
 import { FigureSvg, Label, STROKE, FILL_NONE, W_THIN } from './primitives.tsx';
 
-/** KA-0004 — four candidate shapes: rectangle, isosceles triangle, five-pointed star, arrow. */
+/** KA-0004 - four candidate shapes: rectangle, isosceles triangle, five-pointed star, arrow. */
 function starPoints(cx: number, cy: number, outer: number, inner: number) {
   const pts: string[] = [];
   for (let i = 0; i < 10; i += 1) {

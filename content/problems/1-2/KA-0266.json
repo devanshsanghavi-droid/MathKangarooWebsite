@@ -1,0 +1,67 @@
+{
+  "id": "KA-0266",
+  "band": "1-2",
+  "points": 5,
+  "statement": "A tower is built in layers using 1 block, then 3, then 5, then 7. How many blocks are in the fifth layer?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I added one to the previous layer instead of two."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I added three to the previous layer rather than two."
+    },
+    {
+      "key": "D",
+      "text": "11",
+      "correct": false,
+      "misconception": "I went one layer too far before stopping."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I gave the total number of blocks in the first four layers."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "Look at how much each layer grows by.",
+    "Find the gap between each layer and the next. If the gap is the same every time, add that gap once more to the last layer you know to get the next one.",
+    "Each layer has two more blocks than the one before it, and the fourth has 7."
+  ],
+  "solutions": {
+    "reliable": "Each layer grows by 2 blocks, so after 7 comes 9. The idea to keep: look at the gaps between the terms rather than the terms themselves, because a steady gap tells you exactly what comes next.",
+    "elegant": "The layers are the odd numbers in order, so the fifth layer is the fifth odd number."
+  },
+  "whyOnTest": "Finding the gap and then adding it once more is the whole of early sequence work, and both off-by-one gaps are offered.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

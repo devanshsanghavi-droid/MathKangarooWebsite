@@ -1,0 +1,68 @@
+{
+  "id": "KA-0241",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Are there positive integers a and b, both greater than 4, with one over a plus one over b equal to one half?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Yes, a = 5 and b = 5",
+      "correct": false,
+      "misconception": "I guessed a pair without checking that one fifth plus one fifth is less than one half."
+    },
+    {
+      "key": "B",
+      "text": "Yes, a = 6 and b = 6",
+      "correct": false,
+      "misconception": "I picked equal values whose sum is one third rather than one half."
+    },
+    {
+      "key": "C",
+      "text": "Yes, but only with a and b different",
+      "correct": false,
+      "misconception": "I assumed unequal values could rescue a sum that is already too small."
+    },
+    {
+      "key": "D",
+      "text": "No, because the sum would be less than one half",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "No, because one half cannot be written as such a sum at all",
+      "correct": false,
+      "misconception": "I overstated the obstacle, since 1/3 + 1/6 and 1/4 + 1/4 both work."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "CFT-05",
+      "NUM-09"
+    ]
+  },
+  "hints": [
+    "Bound each fraction from above.",
+    "If both numbers exceed 4, then each fraction is less than one fifth, so bound the sum and compare it with one half. A bound that already fails rules out every pair at once.",
+    "Each of a and b being at least 5 makes each fraction at most one fifth, so the sum is at most two fifths."
+  ],
+  "solutions": {
+    "reliable": "If a and b are both at least 5 then each reciprocal is at most 1/5, so the sum is at most 2/5, which is below 1/2. No such pair exists. The transferable idea: bound the expression before searching, because a bound that already fails disposes of infinitely many cases in one line.",
+    "elegant": "Two fifths is less than a half, so there is nothing left to check."
+  },
+  "whyOnTest": "Bounding replaces an endless search, and the distractors are all pairs a student would try before thinking to bound.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

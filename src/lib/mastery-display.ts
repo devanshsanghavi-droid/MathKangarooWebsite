@@ -11,15 +11,15 @@ import type { MasteryState } from './mastery';
  * Two orderings of the same four states coexist on purpose, and it is worth knowing which is
  * which before reading either:
  *
- *   step (here)            exposure  — how far through the skill the student is
- *   MASTERY_RANK (mastery) urgency   — what to put in front of them next, worst first
+ *   step (here)            exposure - how far through the skill the student is
+ *   MASTERY_RANK (mastery) urgency - what to put in front of them next, worst first
  *
  * They disagree about `seen` vs `shaky`, and that is not a bug: a student who has missed a
  * 5-pointer after solving a 3-pointer knows more than one with two neutral attempts, and also
  * needs help sooner.
  *
  * Every indicator carries `label` and `icon` as well as `token`. docs/05 §7.5: mastery is
- * shown as name + icon + colour, never colour alone — which is also what makes it survive a
+ * shown as name + icon + colour, never colour alone - which is also what makes it survive a
  * greyscale print.
  */
 export interface MasteryDisplay {
@@ -58,7 +58,7 @@ export const MASTERY_DISPLAY: Record<MasteryState, MasteryDisplay> = {
     icon: '◕',
     token: '--m2',
     fill: 'bg-m2',
-    blurb: 'You can do it, but not reliably yet — or a harder version caught you out.',
+    blurb: 'You can do it, but not reliably yet - or a harder version caught you out.',
   },
   mastered: {
     step: 3,
@@ -75,13 +75,13 @@ export const MASTERY_DISPLAY: Record<MasteryState, MasteryDisplay> = {
  *
  * `shaky` is reached two different ways: by accuracy below 70%, and by missing a harder
  * version of something you have already solved. docs/05 §3 maps it to "Proficient", which is
- * right for the second reading and badly wrong for the first — a student who gets their very
+ * right for the second reading and badly wrong for the first - a student who gets their very
  * first question wrong is `shaky` by accuracy, and telling them they are Proficient is a claim
  * the site has no evidence for. Seen on screen within a minute of the ramp going in.
  *
  * So `shaky` displays as Proficient only once the student has actually been right about
  * something in this skill. Otherwise it displays as Familiar: you have met this, nothing more.
- * mastery.ts is untouched, exactly as §3 asks — this is the display layer doing display.
+ * mastery.ts is untouched, exactly as §3 asks - this is the display layer doing display.
  */
 export function resolveMasteryState(state: MasteryState, everCorrect: boolean): MasteryState {
   return state === 'shaky' && !everCorrect ? 'seen' : state;

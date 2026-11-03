@@ -1,0 +1,67 @@
+{
+  "id": "KA-0195",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Today is Tuesday. What day of the week will it be in 100 days?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Monday",
+      "correct": false,
+      "misconception": "I divided 100 by 7 and moved back by the remainder instead of forward."
+    },
+    {
+      "key": "B",
+      "text": "Tuesday",
+      "correct": false,
+      "misconception": "I assumed 100 days was a whole number of weeks, so the day would not change."
+    },
+    {
+      "key": "C",
+      "text": "Thursday",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "Friday",
+      "correct": false,
+      "misconception": "I used a remainder of 3 because I divided 100 by 7 and rounded rather than taking the remainder."
+    },
+    {
+      "key": "E",
+      "text": "Sunday",
+      "correct": false,
+      "misconception": "I counted 100 as fourteen weeks and two days but started counting from Saturday."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "Only the remainder after dividing by seven matters.",
+    "Days of the week repeat every 7, so split the 100 days into whole weeks plus a remainder and move forward by the remainder alone.",
+    "100 = 14 x 7 + 2, so move forward two days from Tuesday."
+  ],
+  "solutions": {
+    "reliable": "Weeks repeat every 7 days and 100 = 14 x 7 + 2, so the whole weeks change nothing and only the 2 extra days count. Two days after Tuesday is Thursday. The transferable idea: anything that repeats with period n is governed entirely by the remainder on division by n.",
+    "elegant": "98 is a whole number of weeks, so the question is simply two days after Tuesday."
+  },
+  "whyOnTest": "Cycle questions reduce to a remainder, and the common slips are counting backwards or losing the direction of travel.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

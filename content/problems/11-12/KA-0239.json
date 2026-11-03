@@ -1,0 +1,67 @@
+{
+  "id": "KA-0239",
+  "band": "11-12",
+  "points": 3,
+  "statement": "What is the last digit of 2 to the power 2024?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I used the base's last digit, as though the exponent made no difference."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I used a remainder of 2 where dividing 2024 by 4 leaves none."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I used a remainder of 3 rather than finishing the division of 2024 by 4."
+    },
+    {
+      "key": "E",
+      "text": "0",
+      "correct": false,
+      "misconception": "I expected a very large power of 2 to end in zero."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-07",
+    "secondary": [
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "List the last digits until they repeat.",
+    "The last digits of powers of 2 cycle with length four. Divide the exponent by four and use the remainder to pick the position, remembering that a remainder of zero means the last position.",
+    "The last digits run 2, 4, 8, 6 and then repeat, and 2024 is a multiple of 4."
+  ],
+  "solutions": {
+    "reliable": "Last digits of powers of 2 run 2, 4, 8, 6 and repeat with period 4. Since 2024 is a multiple of 4, the power sits at the end of a complete cycle, so the last digit is 6. The transferable idea: a remainder of zero points to the last entry of the cycle, not the first, which is where most errors in these come from.",
+    "elegant": "2 to the fourth ends in 6, and any number ending in 6 raised to a power still ends in 6."
+  },
+  "whyOnTest": "A remainder of zero landing on the final cycle entry rather than the first is the single most common slip here.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

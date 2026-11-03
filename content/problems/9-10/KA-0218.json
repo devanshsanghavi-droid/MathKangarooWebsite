@@ -1,0 +1,68 @@
+{
+  "id": "KA-0218",
+  "band": "9-10",
+  "points": 4,
+  "statement": "What is the sum of all the odd numbers from 1 to 99?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2500",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "4950",
+      "correct": false,
+      "misconception": "I summed every number from 1 to 99 rather than only the odd ones."
+    },
+    {
+      "key": "C",
+      "text": "5000",
+      "correct": false,
+      "misconception": "I used 100 terms instead of the 50 odd numbers there actually are."
+    },
+    {
+      "key": "D",
+      "text": "1250",
+      "correct": false,
+      "misconception": "I halved the correct total, as though pairing had already doubled it."
+    },
+    {
+      "key": "E",
+      "text": "99",
+      "correct": false,
+      "misconception": "I gave the last term rather than the sum of the list."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-02",
+    "secondary": [
+      "CNT-16",
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "Pair the smallest with the largest and work inwards.",
+    "Count the terms first, then pair the list from both ends. Every pair has the same total, so the sum is that total times the number of pairs.",
+    "There are 50 odd numbers, and 1 + 99, 3 + 97 and so on each make 100."
+  ],
+  "solutions": {
+    "reliable": "There are 50 odd numbers from 1 to 99. Pairing 1 with 99, 3 with 97 and so on gives 25 pairs each totalling 100, so the sum is 2500. The transferable idea: pair an arithmetic list from both ends, since every pair shares the same total, and count the terms before anything else.",
+    "elegant": "The sum of the first n odd numbers is always n squared, and 50 squared is the answer."
+  },
+  "whyOnTest": "Series sums come up every year, and the usual error is miscounting the terms, which is exactly what the nearby distractor rewards.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -143,8 +143,7 @@ describe('what may be recorded', () => {
   });
 
   it('has no string field anywhere in the schema except enumerated ones', () => {
-    // Walk the schema and assert every leaf is an enum, a literal, a number, or a boolean —
-    // never a free string. If someone adds `z.string()` here, this fails.
+    // Walk the schema and assert every leaf is an enum, a literal, a number, or a boolean -     // never a free string. If someone adds `z.string()` here, this fails.
     const shape = EventSchema.shape.props.shape as Record<string, { _def: { typeName?: string } }>;
     for (const [key, field] of Object.entries(shape)) {
       const json = JSON.stringify(field, (_k, v) => (typeof v === 'bigint' ? String(v) : v));

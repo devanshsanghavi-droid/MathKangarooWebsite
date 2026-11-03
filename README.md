@@ -9,9 +9,9 @@ made into software.
 
 Three things make it what it is:
 
-1. **The Skill Atlas** — ~91 named atomic skills in a prerequisite graph, across seven strands.
-2. **An original problem bank** — every problem written from scratch and tagged into the Atlas.
-3. **Distractor-specific explanations** — each wrong answer choice stores the exact
+1. **The Skill Atlas** - ~91 named atomic skills in a prerequisite graph, across seven strands.
+2. **An original problem bank** - every problem written from scratch and tagged into the Atlas.
+3. **Distractor-specific explanations** - each wrong answer choice stores the exact
    misconception that produces it, so the feedback is written for _your_ error, not for the
    average error.
 
@@ -23,7 +23,7 @@ third-party trackers. The users are minors; that is a build constraint, not a le
 **This is an independent project. It is not affiliated with, sponsored by, or endorsed by
 Math Kangaroo in USA, NFP.**
 
-No official Math Kangaroo problem appears in this repository — not the text, not a reword,
+No official Math Kangaroo problem appears in this repository - not the text, not a reword,
 not the figures. We link to the official free PDFs and publish our own _skill index_ of them:
 question number, point value, our skill tags. CI enforces this with a hard size cap on
 `content/papers/` as an anti-paste tripwire.
@@ -55,7 +55,7 @@ All five must pass.
 ## Repository layout
 
 ```
-content/    the source of truth — skills, problems, paper indexes, essays (git is the CMS)
+content/    the source of truth - skills, problems, paper indexes, essays (git is the CMS)
 docs/       the specs; read docs/README.md first
 src/app/    Next.js App Router routes
 src/lib/    schemas, content loaders, derived indexes
@@ -73,5 +73,5 @@ Read `docs/03-CONTENT-GUIDE.md` before writing a problem. The rules that matter 
 
 ## License
 
-- **Code** (`src/`, `scripts/`, config): MIT — see `LICENSE`.
-- **Content** (`content/`, `docs/`): CC BY-NC-SA 4.0 — see `CONTENT-LICENSE`.
+- **Code** (`src/`, `scripts/`, config): MIT - see `LICENSE`.
+- **Content** (`content/`, `docs/`): CC BY-NC-SA 4.0 - see `CONTENT-LICENSE`.

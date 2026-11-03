@@ -4,7 +4,7 @@ import { STRANDS, TIERS, type Skill, type Strand, type Tier } from './schemas';
  * The Atlas layout.
  *
  * A pure function: same skills in, byte-identical coordinates out. That matters because the
- * SVG is server-rendered into every build — a layout that drifted between builds would make
+ * SVG is server-rendered into every build - a layout that drifted between builds would make
  * every deploy a diff, and would move a node under a reader's cursor for no reason.
  *
  * The rules, in priority order:
@@ -20,7 +20,7 @@ import { STRANDS, TIERS, type Skill, type Strand, type Tier } from './schemas';
  *   3. **Ties break on id.** Two skills in the same cell are placed left to right by id, which
  *      is permanent, so the layout is stable as the taxonomy grows.
  *
- * Cross-strand edges are unavoidable — GEO-16 really does need NUM-11 — and are returned
+ * Cross-strand edges are unavoidable - GEO-16 really does need NUM-11 - and are returned
  * flagged so the graph can draw them more faintly than the within-strand ones.
  */
 
@@ -80,7 +80,7 @@ const TIER_FLOOR: Record<Tier, number> = { foundation: 0, core: 1, gateway: 2 };
  * Assign each skill a row. Relaxes in dependency order, so a skill is only placed once every
  * prerequisite it has inside the visible set has been placed.
  *
- * A prerequisite that has been filtered out of view does not hold its dependant up — otherwise
+ * A prerequisite that has been filtered out of view does not hold its dependant up - otherwise
  * filtering to one strand would push every cross-strand dependant off the bottom of the page.
  */
 export function computeLayers(skills: readonly Skill[]): Map<string, number> {

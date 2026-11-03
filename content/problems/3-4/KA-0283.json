@@ -1,0 +1,68 @@
+{
+  "id": "KA-0283",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Ana has some stickers. She gives half to Ben, then half of what is left to Carl, and has 5 stickers remaining. How many did she start with?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I doubled once rather than twice, undoing only one of the two gifts."
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": false,
+      "misconception": "I added five for each person rather than undoing the halving."
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "25",
+      "correct": false,
+      "misconception": "I doubled and then added five again, counting the leftover twice."
+    },
+    {
+      "key": "E",
+      "text": "40",
+      "correct": false,
+      "misconception": "I doubled three times rather than twice."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-08",
+    "secondary": [
+      "NUM-09",
+      "MOD-02"
+    ]
+  },
+  "hints": [
+    "Work backwards and undo each step.",
+    "Start from the five she has left and undo the steps in reverse order. Each gift was half of what she held, so undoing one means doubling, and there are two to undo.",
+    "Five left means ten before Carl, since Carl took half of what was there."
+  ],
+  "solutions": {
+    "reliable": "Working backwards, 5 left means 10 before Carl's half, and 10 means 20 before Ben's half. Checking forwards, 20 gives 10 to Ben, then 5 to Carl, leaving 5. The transferable idea: undo the steps in reverse order and then check forwards, since the forward check costs seconds and catches every slip.",
+    "elegant": "Two halvings leave a quarter, so the start was four times what remains."
+  },
+  "whyOnTest": "Doubling the wrong number of times is the usual error, and the choices include both one doubling too few and one too many.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

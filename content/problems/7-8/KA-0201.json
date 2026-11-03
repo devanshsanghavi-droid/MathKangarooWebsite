@@ -1,0 +1,68 @@
+{
+  "id": "KA-0201",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Nine coins look identical but one is lighter. Using a balance that compares two groups, what is the fewest weighings that always finds the light coin?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I split the coins in half each time instead of into three groups."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I weighed coins against each other one pair at a time."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I compared each coin with one known coin in turn, which is the worst possible plan."
+    },
+    {
+      "key": "E",
+      "text": "1",
+      "correct": false,
+      "misconception": "I assumed a single weighing could separate nine coins, which it cannot."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-10",
+    "secondary": [
+      "CNT-18",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "A balance has three outcomes, not two.",
+    "Split the coins into three equal groups and weigh two of them. Whichever way the balance tips, or if it does not, you are left with a group of three.",
+    "Weigh three against three. The result points at a group of three, and one more weighing of one against one finds the coin."
+  ],
+  "solutions": {
+    "reliable": "Weigh three coins against three. If one side rises the light coin is there; if they balance it is in the untouched three. Either way you are down to three coins, and one more weighing of one against one settles it, so two weighings suffice. The transferable idea: a balance returns one of three answers, so plan in thirds rather than in halves.",
+    "elegant": "Two weighings distinguish at most nine cases, and there are exactly nine coins, so two is both achievable and unbeatable."
+  },
+  "whyOnTest": "Halving is the instinct and thirding is correct, so the 3 answer that halving produces is always among the choices.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

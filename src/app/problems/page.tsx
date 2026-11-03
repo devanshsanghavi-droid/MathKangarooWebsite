@@ -11,9 +11,9 @@ import {
 } from '@/lib/problem-query';
 import { ProblemFilters } from '@/components/problems/ProblemFilters';
 import { Pagination } from '@/components/problems/Pagination';
-import { DifficultyPill } from '@/components/DifficultyPill';
-import { BandPill } from '@/components/BandPill';
 import { EmptyState } from '@/components/EmptyState';
+import { ProblemTable } from '@/components/problems/ProblemTable';
+import { ProgressBanner } from '@/components/progress/ProgressBanner';
 
 export const metadata: Metadata = {
   title: 'Browse the problems',
@@ -40,7 +40,7 @@ export default async function ProblemsPage({
   const calibrated = all.filter((problem) => problem.calibration.pValue !== null).length;
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8">
+    <div className="mx-auto max-w-6xl px-4 py-8">
       <header className="max-w-prose">
         <h1 className="m-0 text-2xl">Browse the problems</h1>
         <p className="mt-3 mb-0 text-ink-2">
@@ -48,6 +48,15 @@ export default async function ProblemsPage({
           mistake that produces it. {stats.misconceptions} explanations in all.
         </p>
       </header>
+
+      <ProgressBanner
+        problems={all.map((problem) => ({
+          id: problem.id,
+          points: problem.points,
+          skillIds: [problem.skills.primary, ...problem.skills.secondary],
+        }))}
+        skillsTotal={stats.skills}
+      />
 
       <div className="mt-6">
         <ProblemFilters
@@ -64,64 +73,26 @@ export default async function ProblemsPage({
             action={<Link href={problemsHref({ sort: query.sort })}>Clear all filters</Link>}
           >
             No problem matches these filters. There are {stats.problems} problems in the bank
-            altogether, across levels 3–4 and 5–6.
+            altogether, across levels 3-4 up to 11-12.
           </EmptyState>
         </div>
       ) : (
-        <ul className="mt-6 grid list-none gap-3 p-0">
-          {page.items.map((problem) => {
+        <ProblemTable
+          rows={page.items.map((problem) => {
             const { primary, secondary } = getSkillsForProblem(problem);
-            return (
-              <li key={problem.id}>
-                <article className="rounded-md border border-rule bg-surface p-4 transition-colors hover:border-rule-strong">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <h2 className="m-0 text-sm font-normal">
-                      <Link
-                        href={`/problem/${problem.id}`}
-                        className="mono no-underline hover:underline"
-                      >
-                        {problem.id}
-                      </Link>
-                    </h2>
-                    <DifficultyPill points={problem.points} showMeaning />
-                    <BandPill band={problem.band} />
-                    {problem.figure ? (
-                      <span className="mono text-2xs text-ink-3">has a figure</span>
-                    ) : null}
-                    <span className="mono ml-auto text-2xs text-ink-3">
-                      {problem.calibration.pValue === null
-                        ? 'not yet calibrated'
-                        : `${Math.round(problem.calibration.pValue * 100)}% solve it`}
-                    </span>
-                  </div>
-
-                  <p className="reading prose-measure mt-3 mb-0 text-ink">
-                    <Link
-                      href={`/problem/${problem.id}`}
-                      className="text-ink no-underline hover:underline"
-                    >
-                      {problem.statement}
-                    </Link>
-                  </p>
-
-                  <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
-                    {primary ? (
-                      <Link href={`/skill/${primary.id}`} className="no-underline hover:underline">
-                        <span className="mono mr-1.5 text-2xs text-ink-3">{primary.id}</span>
-                        {primary.name}
-                      </Link>
-                    ) : null}
-                    {secondary.length > 0 ? (
-                      <span className="text-ink-3">
-                        also {secondary.map((s) => s.id).join(', ')}
-                      </span>
-                    ) : null}
-                  </div>
-                </article>
-              </li>
-            );
+            return {
+              id: problem.id,
+              band: problem.band,
+              points: problem.points,
+              statement: problem.statement,
+              hasFigure: problem.figure !== null,
+              pValue: problem.calibration.pValue,
+              skillIds: [problem.skills.primary, ...problem.skills.secondary],
+              primarySkill: primary ? { id: primary.id, name: primary.name } : null,
+              secondaryCount: secondary.length,
+            };
           })}
-        </ul>
+        />
       )}
 
       <Pagination page={page} href={(number) => problemsHref({ ...query, page: number })} />

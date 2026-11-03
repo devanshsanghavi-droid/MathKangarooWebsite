@@ -2,7 +2,7 @@ import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 
 /**
- * `pnpm check:build-secrets` — fail the build if a credential got baked into the artifact.
+ * `pnpm check:build-secrets` - fail the build if a credential got baked into the artifact.
  *
  * ---------------------------------------------------------------------------------------
  * WHY THIS EXISTS
@@ -10,19 +10,19 @@ import { join, relative } from 'node:path';
  * OpenNext's build runs Next's env loader, which reads `.env.local`, and writes the resolved
  * values verbatim into `.open-next/cloudflare/next-env.mjs`. wrangler then inlines that file
  * into the worker script it uploads. So an ordinary, non-NEXT_PUBLIC_ server-side secret in
- * `.env.local` ends up in plaintext inside the deployed bundle, with no warning — the
+ * `.env.local` ends up in plaintext inside the deployed bundle, with no warning - the
  * NEXT_PUBLIC_ convention that normally signals "this is going to be public" does not apply.
  *
  * It was worse than disclosure. `.open-next/cloudflare/init.js` does
  * `process.env[key] ??= nextEnvVars[mode][key]` AFTER binding the Cloudflare env, so a baked
  * value is used whenever the matching secret is absent. A deploy that forgot
- * `wrangler secret put` would not fail closed as `adminConfigured()` promises — it would
+ * `wrangler secret put` would not fail closed as `adminConfigured()` promises - it would
  * quietly authenticate against whatever was on the developer's laptop.
  *
  * And AUTH_SECRET alone is enough: `decodeSession` verifies an HMAC and nothing else, so
  * anyone able to read the deployed script can mint an admin cookie without the password.
  *
- * The fix is to keep these three out of every file Next's loader reads — they live in
+ * The fix is to keep these three out of every file Next's loader reads - they live in
  * `.dev.vars`, which wrangler reads and Next does not. This check is what stops that
  * arrangement from silently regressing.
  * ---------------------------------------------------------------------------------------
@@ -76,7 +76,7 @@ for (const root of ROOTS) {
     const rel = relative(process.cwd(), file);
 
     for (const key of FORBIDDEN_KEYS) {
-      // A bare mention of the NAME is fine — `process.env.AUTH_SECRET` is how the code reads
+      // A bare mention of the NAME is fine - `process.env.AUTH_SECRET` is how the code reads
       // it. What must never appear is the name bound to a literal value.
       const assigned = new RegExp(`["']${key}["']\\s*:\\s*["'][^"']+["']`);
       if (assigned.test(source)) hits.push(`${rel}: ${key} is present with a literal value`);
@@ -88,7 +88,7 @@ for (const root of ROOTS) {
 }
 
 if (hits.length === 0) {
-  console.log('build secrets ok — no credential literal in .open-next or .next');
+  console.log('build secrets ok - no credential literal in .open-next or .next');
   process.exit(0);
 }
 

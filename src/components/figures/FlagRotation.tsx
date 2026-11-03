@@ -1,7 +1,7 @@
 import { FigureSvg, Label, STROKE, FILL_ACCENT, W_THICK, W_THIN } from './primitives.tsx';
 
 /**
- * KA-0039 — a flag: an upright pole with a triangle on its upper right, standing on a marked
+ * KA-0039 - a flag: an upright pole with a triangle on its upper right, standing on a marked
  * corner point. The marked point is the centre of the rotation.
  */
 export function FlagRotation() {

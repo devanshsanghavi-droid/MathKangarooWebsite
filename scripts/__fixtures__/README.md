@@ -2,8 +2,8 @@
 
 One directory per content guardrail. Each holds two complete, tiny `content/` trees:
 
-- `pass/` — valid content. `validateContent()` must return **zero** findings.
-- `fail/` — content that breaks exactly the rule the directory is named for.
+- `pass/` - valid content. `validateContent()` must return **zero** findings.
+- `fail/` - content that breaks exactly the rule the directory is named for.
 
 Both halves matter. A rule with only a failing fixture proves it can fire but not that it
 can stay quiet; a rule with only a passing fixture proves the opposite. A guardrail that is

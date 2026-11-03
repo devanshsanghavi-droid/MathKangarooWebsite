@@ -1,7 +1,7 @@
 import { FigureSvg, Cell, STROKE, FILL_NONE, W_THICK } from './primitives.tsx';
 
 /**
- * KA-0013 — an L of five unit squares: a column three tall, with two more squares extending
+ * KA-0013 - an L of five unit squares: a column three tall, with two more squares extending
  * to the right along the bottom.
  */
 export function LShapeUnits() {

@@ -13,8 +13,8 @@ import { CHOICE_KEYS, type ChoiceKey } from '../schemas';
  * The per-option point-biserial is the interesting one. Correlate "chose option C" with the
  * student's total score, and the sign tells you what C is doing:
  *
- *   negative   weaker students pick it — the distractor is working as designed
- *   near zero  nobody's ability predicts picking it — it is noise, or a guess magnet
+ *   negative   weaker students pick it - the distractor is working as designed
+ *   near zero  nobody's ability predicts picking it - it is noise, or a guess magnet
  *   POSITIVE   STRONGER students pick it, which means one of two things, both worth knowing:
  *              the item is flawed and C is arguably defensible, or C is a genuinely subtle
  *              trap that catches people precisely because they know enough to fall for it.
@@ -123,7 +123,7 @@ export function pointBiserial(
 
 /**
  * Discrimination index: success rate in the top group minus the bottom group, split at 27% of
- * the cohort — the split that maximises the statistic's stability for normally distributed
+ * the cohort - the split that maximises the statistic's stability for normally distributed
  * ability, and the one classical item analysis has used since Kelley.
  */
 export function discriminationIndex(
@@ -211,20 +211,20 @@ export function analyseItems(
 
     const discrimination = discriminationIndex(rights, totals);
     const flags: string[] = [];
-    if (pValue > 0.95) flags.push('too easy — nearly everyone gets it (p > 0.95)');
-    if (pValue < 0.15) flags.push('too hard — almost nobody gets it (p < 0.15)');
+    if (pValue > 0.95) flags.push('too easy - nearly everyone gets it (p > 0.95)');
+    if (pValue < 0.15) flags.push('too hard - almost nobody gets it (p < 0.15)');
     if (discrimination !== null && discrimination < 0.1) {
       flags.push('barely separates strong from weak students (D < 0.1)');
     }
     if (correctOption?.pointBiserial !== null && (correctOption?.pointBiserial ?? 0) < 0) {
-      flags.push('the correct answer correlates NEGATIVELY with ability — check the key');
+      flags.push('the correct answer correlates NEGATIVELY with ability - check the key');
     }
     for (const option of distractors) {
       if (option.attractsStrongStudents) {
-        flags.push(`${option.key} attracts stronger students — flawed item, or a subtle trap`);
+        flags.push(`${option.key} attracts stronger students - flawed item, or a subtle trap`);
       }
       if (option.nonFunctioning) {
-        flags.push(`${option.key} is chosen by under 5% — the distractor is doing no work`);
+        flags.push(`${option.key} is chosen by under 5% - the distractor is doing no work`);
       }
     }
 

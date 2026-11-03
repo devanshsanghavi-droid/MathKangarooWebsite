@@ -1,0 +1,68 @@
+{
+  "id": "KA-0230",
+  "band": "11-12",
+  "points": 5,
+  "statement": "One pipe fills a tank in 4 hours and another in 6 hours. An open drain empties it in 12 hours. With all three open, how long does filling take?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I added the two filling rates and ignored the drain completely."
+    },
+    {
+      "key": "B",
+      "text": "2.4",
+      "correct": false,
+      "misconception": "I combined the two filling pipes correctly but then halved the result arbitrarily."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I subtracted the drain's time from the combined filling time rather than working in rates."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I added and subtracted the three times directly instead of converting them into rates."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-04",
+    "secondary": [
+      "NUM-09",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Turn every pipe into a fraction of the tank per hour.",
+    "Write each pipe's contribution as tank per hour, make the drain negative, add all three, then take the reciprocal of the total to get the time.",
+    "One quarter plus one sixth minus one twelfth of the tank fills each hour."
+  ],
+  "solutions": {
+    "reliable": "Per hour the pipes add 1/4 and 1/6 and the drain removes 1/12, so the net rate is 3/12 + 2/12 - 1/12 = 1/3 of the tank per hour, and filling takes 3 hours. The transferable idea: rates add with signs while times do not, so a drain is simply a negative rate.",
+    "elegant": "Working in twelfths of a tank makes the three numbers 3, 2 and minus 1, which total 4 twelfths."
+  },
+  "whyOnTest": "A drain in the problem makes signed rates essential, and ignoring it or subtracting times gives two of the choices.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

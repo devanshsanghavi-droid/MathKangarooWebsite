@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * `/print` — a worksheet and its answer key, on one page, both driven entirely by the URL.
+ * `/print` - a worksheet and its answer key, on one page, both driven entirely by the URL.
  *
  * The answer key is the part that does not exist anywhere else: for every wrong choice it
  * gives the misconception that produces it, so a tutor marking a stack of sheets can see what
@@ -39,7 +39,7 @@ export default async function PrintPage({
         <h1 className="m-0 text-2xl">Worksheet generator</h1>
         <p className="prose-measure mt-3 mb-6 text-ink-2">
           Pick what you want, print the page. The answer key comes with it, on its own sheet, and it
-          tells you the mistake behind every wrong choice — not just which letter is right.
+          tells you the mistake behind every wrong choice - not just which letter is right.
         </p>
         <WorksheetControls query={query} available={available} selected={selected.length} />
       </div>
@@ -101,7 +101,7 @@ export default async function PrintPage({
           <section aria-labelledby="key-heading" className="answer-key mt-16">
             <header className="border-b border-rule pb-3">
               <h2 id="key-heading" className="m-0 text-lg">
-                Answer key — {title}
+                Answer key - {title}
               </h2>
               <p className="mt-1 mb-0 text-xs text-ink-3">
                 Each wrong choice carries the thinking that produces it. When a student picks C,
@@ -118,7 +118,7 @@ export default async function PrintPage({
                     <p className="m-0 flex flex-wrap items-baseline gap-x-3 text-sm">
                       <span className="mono font-semibold text-ink">{index + 1}.</span>
                       <span className="font-semibold text-ink">
-                        {correct?.key} — {correct?.text}
+                        {correct?.key} - {correct?.text}
                       </span>
                       <span className="mono text-2xs text-ink-3">{problem.id}</span>
                       {skill ? <span className="text-xs text-ink-3">{skill.name}</span> : null}

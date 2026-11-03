@@ -1,0 +1,67 @@
+{
+  "id": "KA-0306",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A point is at coordinates (2, 3). It is moved 4 right and 5 down. Where does it end up?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "(6, 8)",
+      "correct": false,
+      "misconception": "I added the downward move instead of subtracting it."
+    },
+    {
+      "key": "B",
+      "text": "(2, 8)",
+      "correct": false,
+      "misconception": "I applied the vertical move but left the horizontal one out."
+    },
+    {
+      "key": "C",
+      "text": "(6, 3)",
+      "correct": false,
+      "misconception": "I applied the horizontal move but left the vertical one out."
+    },
+    {
+      "key": "D",
+      "text": "(negative 2, 8)",
+      "correct": false,
+      "misconception": "I subtracted the rightward move and added the downward one, reversing both."
+    },
+    {
+      "key": "E",
+      "text": "(6, negative 2)",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-02",
+    "secondary": [
+      "GEO-09"
+    ]
+  },
+  "hints": [
+    "Right adds to the first number and down subtracts from the second.",
+    "Handle the two directions separately. Moving right increases the first coordinate and moving down decreases the second, so apply one move at a time and keep the signs straight.",
+    "2 + 4 gives the first coordinate, and 3 - 5 gives the second."
+  ],
+  "solutions": {
+    "reliable": "Moving 4 right takes the first coordinate from 2 to 6, and moving 5 down takes the second from 3 to minus 2, giving (6, minus 2). The transferable idea: treat the two coordinates independently and let the direction fix the sign, rather than trying to picture the whole move at once.",
+    "elegant": null
+  },
+  "whyOnTest": "Sign errors on the vertical move are the whole difficulty here, and each one-move-only answer is offered.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

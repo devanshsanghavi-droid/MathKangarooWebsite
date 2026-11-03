@@ -8,7 +8,7 @@ import { resolveMasteryState } from './mastery-display';
 import type { Points } from './schemas';
 
 /**
- * Progress for a student who has not signed in — which, per CLAUDE.md, is every student who
+ * Progress for a student who has not signed in - which, per CLAUDE.md, is every student who
  * has not chosen to. Practice never requires an account, so the mastery bar on a unit page
  * has to work with nothing but the browser.
  *
@@ -18,7 +18,7 @@ import type { Points } from './schemas';
  * and the only difference is where the attempts live.
  *
  * What is stored: problem id, point value, right or wrong, hints used, and a timestamp.
- * Nothing else. No name, no identifier, nothing that leaves this browser — there is no
+ * Nothing else. No name, no identifier, nothing that leaves this browser - there is no
  * network call anywhere in this file, and that is a COPPA constraint, not a preference.
  *
  * Every read and write is wrapped: Safari private browsing throws on localStorage access, and
@@ -100,7 +100,7 @@ export function writeProgress(file: ProgressFile): void {
 export const PROGRESS_EVENT = 'ka:progress';
 
 /**
- * Records one attempt against every skill the problem is tagged with — primary and secondary.
+ * Records one attempt against every skill the problem is tagged with - primary and secondary.
  * A problem that exercises three skills is evidence about all three.
  */
 export function recordAttempt(
@@ -171,7 +171,7 @@ export function clearProgress(): void {
  *
  * This is deliberately not `computeMastery` applied to a single problem: that bar asks for
  * three correct answers across two days, which no single problem is meant to carry. The
- * question here is narrower — did you get it, and did you get it cleanly?
+ * question here is narrower - did you get it, and did you get it cleanly?
  *
  *   unseen    never attempted
  *   seen      attempted, never yet correct

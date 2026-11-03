@@ -1,0 +1,68 @@
+{
+  "id": "KA-0202",
+  "band": "9-10",
+  "points": 4,
+  "statement": "What is the remainder when 2 to the power 100 is divided by 7?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I worked out the last digit of the power first and then divided that by 7."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found the cycle 2, 4, 1 but used a remainder of 2 where dividing 100 by 3 gives 1."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I assumed the cycle had length 4 out of habit from last-digit questions, so I landed in the wrong place."
+    },
+    {
+      "key": "D",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "1",
+      "correct": false,
+      "misconception": "I treated 100 as a multiple of the cycle length 3 and took the value at the end of the cycle."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "PAT-03",
+      "NUM-07"
+    ]
+  },
+  "hints": [
+    "Work out the first few remainders and watch for a repeat.",
+    "Powers of a fixed base leave remainders that cycle. Find the cycle length, divide the exponent by it, and read off the position the remainder points to.",
+    "The remainders run 2, 4, 1 and then repeat, so the cycle has length 3. Since 100 = 33 x 3 + 1, the answer sits at the first position."
+  ],
+  "solutions": {
+    "reliable": "Powers of 2 leave remainders 2, 4, 1 on division by 7, repeating with period 3. Because 100 leaves remainder 1 on division by 3, the hundredth power sits at the first position in the cycle. The transferable idea: modular arithmetic turns an unreachable exponent into a remainder on a tiny cycle length.",
+    "elegant": "2 cubed is 8, which is one more than 7, so 2 to the 99 behaves like 1 and only one factor of 2 is left over."
+  },
+  "whyOnTest": "Exponents far beyond any calculator are standard in the 4-point block, and the cycle length is what a student must find rather than recall.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

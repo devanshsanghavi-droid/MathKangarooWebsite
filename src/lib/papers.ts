@@ -7,7 +7,7 @@ import { POINT_VALUES } from './schemas';
  * Everything in `content/papers/` is OUR analysis of an official paper: a question number, a
  * point value, our skill tags, and an optional short characterisation in our own words. There
  * is no official problem text, no figure and no answer anywhere in it, and there never will be
- * — see CLAUDE.md's first non-negotiable and the 2KB tripwire in the content validator.
+ * - see CLAUDE.md's first non-negotiable and the 2KB tripwire in the content validator.
  *
  * These functions turn that analysis into the two things a student or tutor actually wants:
  * what a given paper tested, and which skills a band leans on most.
@@ -54,7 +54,7 @@ export function pointDistribution(paper: PaperIndex): Map<Points, number> {
  * The skills a set of papers tests most, commonest first.
  *
  * A question tagged with two skills counts once for each, so the counts add to more than the
- * number of questions — which is the honest thing to report, because a question really does
+ * number of questions - which is the honest thing to report, because a question really does
  * test both. `share` is therefore a share of questions, not a share of a whole.
  */
 export function mostTestedSkills(papers: readonly PaperIndex[], limit?: number): SkillFrequency[] {

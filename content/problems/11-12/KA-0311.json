@@ -1,0 +1,68 @@
+{
+  "id": "KA-0311",
+  "band": "11-12",
+  "points": 5,
+  "statement": "In how many ways can 8 identical sweets be shared between 3 children so that each child gets at least one?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted only the shares where the amounts are all different."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I treated shares that differ only by which child got what as the same."
+    },
+    {
+      "key": "C",
+      "text": "28",
+      "correct": false,
+      "misconception": "I allowed a child to receive nothing, which the question forbids."
+    },
+    {
+      "key": "D",
+      "text": "56",
+      "correct": false,
+      "misconception": "I treated the sweets as distinguishable from each other."
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-16",
+      "CNT-11"
+    ]
+  },
+  "hints": [
+    "Give each child one sweet first, then share the rest freely.",
+    "Hand out one sweet to each child to satisfy the condition, then the remaining sweets can be split any way at all. Counting those free splits is a standard gaps-between-items count.",
+    "After one each, 5 sweets remain to split between 3 children with no restriction."
+  ],
+  "solutions": {
+    "reliable": "Give each child one sweet, leaving 5 to split freely between 3 children. Lining the 5 sweets up and placing 2 dividers among the 6 gaps and ends gives 7 x 6 / 2 = 21 ways. The transferable idea: satisfy a minimum first, then count the unrestricted remainder, which turns a constrained problem into a standard one.",
+    "elegant": "Five sweets and two dividers in a row is seven positions, and choosing which two are dividers gives the count."
+  },
+  "whyOnTest": "Clearing the minimum before counting is the move that makes these tractable, and the unrestricted count is on offer.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

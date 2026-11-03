@@ -116,7 +116,7 @@ export function DiagnosticRunner({
       <div>
         <h2 className="m-0 text-lg">Your map</h2>
         <p className="prose-measure mt-2 mb-6 text-ink-2">
-          {result.correct} of {result.asked} correct. What matters is not the score — it is which
+          {result.correct} of {result.asked} correct. What matters is not the score - it is which
           skills the misses point at, and what has to come first.
         </p>
 
@@ -212,7 +212,7 @@ export function DiagnosticRunner({
             </span>
             <DifficultyPill points={problem.points} />
             <span className="text-xs text-ink-3">
-              No feedback until the end — this is a measurement, not practice.
+              No feedback until the end - this is a measurement, not practice.
             </span>
           </p>
           <div
@@ -253,7 +253,7 @@ export function DiagnosticRunner({
       {resumable ? (
         <div className="mb-6 rounded-sm border border-accent-600 bg-accent-100 p-4">
           <p className="m-0 text-sm text-ink">
-            You have a diagnostic in progress — {resumable.state.answers.length} question
+            You have a diagnostic in progress - {resumable.state.answers.length} question
             {resumable.state.answers.length === 1 ? '' : 's'} answered.
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
@@ -278,7 +278,7 @@ export function DiagnosticRunner({
       <h2 className="m-0 text-lg">Which level do you sit?</h2>
       <p className="prose-measure mt-2 mb-4 text-ink-2">
         About fifteen questions, roughly twenty-five minutes. It gets harder when you are right and
-        easier when you are wrong, and it follows the skill graph — so a miss sends you to what that
+        easier when you are wrong, and it follows the skill graph - so a miss sends you to what that
         skill rests on, not to an unrelated easier question.
       </p>
       <ul className="m-0 flex flex-wrap list-none gap-2 p-0">

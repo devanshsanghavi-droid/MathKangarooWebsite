@@ -1,0 +1,68 @@
+{
+  "id": "KA-0242",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A sequence begins 1, 4, 9, 61, 52, 63. What is the next term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "64",
+      "correct": false,
+      "misconception": "I continued the squares without reversing their digits as the earlier terms do."
+    },
+    {
+      "key": "B",
+      "text": "74",
+      "correct": false,
+      "misconception": "I added the same gap as the last step rather than looking for a rule behind the digits."
+    },
+    {
+      "key": "C",
+      "text": "94",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": false,
+      "misconception": "I reversed the wrong square, going back a step instead of forward."
+    },
+    {
+      "key": "E",
+      "text": "72",
+      "correct": false,
+      "misconception": "I doubled the previous term and subtracted, fitting one step rather than the whole list."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "NUM-01",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Look at what each term would be with its digits reversed.",
+    "The terms do not grow smoothly, which rules out a simple gap rule. Try reversing the digits of each term and compare the results with a familiar sequence.",
+    "Reversed, the terms read 1, 4, 9, 16, 25, 36, which are the square numbers."
+  ],
+  "solutions": {
+    "reliable": "Reversing the digits gives 1, 4, 9, 16, 25, 36, the square numbers. The next square is 49, which reversed is 94. The transferable idea: when a sequence jumps around, test a transformation of the terms rather than a rule on the gaps, because the pattern often lives in the digits.",
+    "elegant": "The dip from 9 to 61 is the signal: only a digit operation can make a sequence jump like that."
+  },
+  "whyOnTest": "Rule-inference questions punish fitting the first two gaps, and a sequence that is not monotonic is the clue that the rule acts on digits.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -65,7 +65,7 @@ export async function auditBothThemes(element: Element): Promise<string[]> {
   for (const theme of ['light', 'dark'] as const) {
     for (const violation of await auditTheme(element, theme)) {
       found.push(
-        `[${theme}] ${violation.id} (${violation.impact}): ${violation.help} — ${violation.nodes[0] ?? ''}`,
+        `[${theme}] ${violation.id} (${violation.impact}): ${violation.help} - ${violation.nodes[0] ?? ''}`,
       );
     }
   }

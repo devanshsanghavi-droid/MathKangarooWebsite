@@ -1,6 +1,6 @@
 import { FigureSvg, Cell, W_THICK, STROKE, FILL_NONE } from './primitives.tsx';
 
-/** KA-0001 — a 3 by 3 board of nine equal squares. */
+/** KA-0001 - a 3 by 3 board of nine equal squares. */
 export function BoardThreeByThree() {
   const s = 34;
   const pad = 6;

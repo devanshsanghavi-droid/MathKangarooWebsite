@@ -101,7 +101,7 @@ describe('recording an attempt', () => {
   });
 
   it('stores nothing that identifies the student', () => {
-    // CLAUDE.md: the users are minors. No PII, and no network — this file has no fetch in it.
+    // CLAUDE.md: the users are minors. No PII, and no network - this file has no fetch in it.
     saveAttempt(['CNT-12'], attempt());
     const stored = JSON.parse(window.localStorage.getItem(PROGRESS_KEY) ?? '{}');
     const keys = new Set(Object.keys(stored.attempts['CNT-12'][0]));
@@ -121,7 +121,7 @@ describe('mastery over stored attempts', () => {
   });
 
   it('uses the same state machine as the server will', () => {
-    // Three correct across two days, no hint above the nudge — the mastery bar from
+    // Three correct across two days, no hint above the nudge - the mastery bar from
     // docs/01-DATA-MODEL.md §3.1, unchanged.
     let file = recordAttempt(['CNT-12'], attempt({ problemId: 'KA-1', at: at(1) }), EMPTY_PROGRESS);
     file = recordAttempt(['CNT-12'], attempt({ problemId: 'KA-2', at: at(1) }), file);

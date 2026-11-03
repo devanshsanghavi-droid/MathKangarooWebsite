@@ -42,7 +42,7 @@ export function ContactForm({ mailConfigured }: { mailConfigured: boolean }) {
         </label>
         <p id="message-help" className="mt-1 mb-2 text-xs text-ink-3">
           Please do not include your last name, your school, or anything else about who you are. For
-          a problem that looks wrong, the report link on that problem&rsquo;s own page is faster —
+          a problem that looks wrong, the report link on that problem&rsquo;s own page is faster -
           it opens a public issue with the id already filled in.
         </p>
         <textarea
@@ -65,7 +65,7 @@ export function ContactForm({ mailConfigured }: { mailConfigured: boolean }) {
           Email <span className="font-normal text-ink-3">(optional)</span>
         </label>
         <p id="replyTo-help" className="mt-1 mb-2 text-xs text-ink-3">
-          Only if you want a reply. It is used to answer you and for nothing else — it is not stored
+          Only if you want a reply. It is used to answer you and for nothing else - it is not stored
           anywhere on this site.
         </p>
         <input

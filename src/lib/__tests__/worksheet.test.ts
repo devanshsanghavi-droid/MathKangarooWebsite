@@ -66,7 +66,7 @@ describe('parseWorksheetQuery', () => {
   });
 });
 
-describe('the URL is the worksheet — M2.11 acceptance', () => {
+describe('the URL is the worksheet - M2.11 acceptance', () => {
   it('round-trips a full query', () => {
     const query = {
       skills: ['CNT-12', 'GEO-10'],
@@ -150,7 +150,7 @@ describe('selectProblems', () => {
     expect(available).toBeGreaterThan(0);
   });
 
-  it('gives the identical sheet for the identical URL — the answer key must match', () => {
+  it('gives the identical sheet for the identical URL - the answer key must match', () => {
     const query = { ...base, seed: 77, count: 8 };
     const first = selectProblems(problems, query).selected.map((p) => p.id);
     const second = selectProblems(problems, query).selected.map((p) => p.id);
@@ -206,12 +206,13 @@ describe('selectProblems', () => {
   });
 
   it('returns nothing, without throwing, when no problem matches', () => {
-    // The empty band is derived, not hard-coded: this used to name 11-12, which stopped being
-    // empty the moment problems were authored for that level.
-    const emptyBand = BANDS.find((band) => !problems.some((problem) => problem.band === band));
-    if (!emptyBand) throw new Error('every band now has problems - pick a new empty case');
-    const query = { ...base, bands: [emptyBand], count: 10 };
-    expect(selectProblems(problems, query)).toEqual({ selected: [], available: 0 });
+    // The empty case is constructed rather than hard-coded. Naming a band that happens to be
+    // empty breaks the moment that level gets authored, which has now happened twice, so the
+    // bank is thinned instead: hold out one band's problems, then ask for exactly that band.
+    const heldOut = BANDS[0];
+    const thinned = problems.filter((problem) => problem.band !== heldOut);
+    const query = { ...base, bands: [heldOut], count: 10 };
+    expect(selectProblems(thinned, query)).toEqual({ selected: [], available: 0 });
   });
 
   it('matches a single problem the same way the filter function does', () => {

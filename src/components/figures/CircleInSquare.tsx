@@ -9,7 +9,7 @@ import {
 } from './primitives.tsx';
 
 /**
- * KA-0052 — a circle inscribed in a square, touching the midpoint of each side. The four
+ * KA-0052 - a circle inscribed in a square, touching the midpoint of each side. The four
  * corner pieces are shaded: that is the region the question asks about.
  */
 export function CircleInSquare() {

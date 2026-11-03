@@ -1,0 +1,67 @@
+{
+  "id": "KA-0233",
+  "band": "11-12",
+  "points": 4,
+  "statement": "The midpoints of a triangle's three sides are joined to make a smaller triangle. What fraction of the original area does it cover?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "one eighth",
+      "correct": false,
+      "misconception": "I cubed the length ratio, which would be right for volumes rather than areas."
+    },
+    {
+      "key": "B",
+      "text": "one quarter",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "one third",
+      "correct": false,
+      "misconception": "I assumed the original split into three equal pieces rather than four."
+    },
+    {
+      "key": "D",
+      "text": "one half",
+      "correct": false,
+      "misconception": "I used the length ratio directly instead of squaring it."
+    },
+    {
+      "key": "E",
+      "text": "three quarters",
+      "correct": false,
+      "misconception": "I gave the area of the three corner triangles rather than the middle one."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-16",
+    "secondary": [
+      "GEO-03"
+    ]
+  },
+  "hints": [
+    "Compare one side of each triangle.",
+    "Each side of the inner triangle is half the side it is parallel to, so the triangles are similar with length ratio one half. Areas scale by the square of that ratio.",
+    "Lengths halve, so areas are multiplied by one half squared."
+  ],
+  "solutions": {
+    "reliable": "The midpoint triangle is similar to the original with every side halved, so its area is one half squared, a quarter. The three corner triangles make up the other three quarters, each also a quarter. The transferable idea: similar figures scale area by the square of the length ratio, which is why halving the sides quarters the area.",
+    "elegant": "The four pieces are all congruent, so each is a quarter without any ratio being squared."
+  },
+  "whyOnTest": "Using the length ratio rather than its square is the usual error, and that answer sits in the list.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

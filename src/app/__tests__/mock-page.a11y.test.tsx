@@ -4,7 +4,8 @@ import userEvent from '@testing-library/user-event';
 import { auditBothThemes } from '@/lib/a11y';
 import { MockRunner } from '@/components/practice/MockRunner';
 import { getAllProblems, getAllSkills } from '@/lib/content';
-import { MOCK_DURATION_MS, startMock, type MockState } from '@/lib/mock';
+import { MOCK_DURATION_MS, itemsPerTier, startMock, type MockState } from '@/lib/mock';
+import { BANDS, POINT_VALUES } from '@/lib/schemas';
 
 const problems = getAllProblems();
 const props = {
@@ -26,15 +27,27 @@ async function startPaper() {
 }
 
 describe('starting a mock', () => {
-  it('offers only the levels the bank can fill', async () => {
+  it('offers every level the bank can fill', async () => {
+    // The bank now fills all six, so this asserts the offer rather than the gap. The levels
+    // are derived from the bank, not listed, so authoring more problems cannot stale it.
     render(<MockRunner {...props} />);
-    expect(await screen.findByRole('button', { name: /Level 3–4/ })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Level 5–6/ })).toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: /Level 11–12/ })).toBeNull();
+    await screen.findByRole('button', { name: /Level 3–4/ });
+    for (const band of BANDS) {
+      const label = new RegExp(`Level ${band.replace('-', '[-–]')}`);
+      const fillable = POINT_VALUES.every(
+        (points) =>
+          problems.filter((p) => p.band === band && p.points === points).length >=
+          itemsPerTier(band),
+      );
+      expect(Boolean(screen.queryByRole('button', { name: label })), `${band}`).toBe(fillable);
+    }
   });
 
-  it('says why the other levels are missing rather than hiding it', async () => {
-    const { container } = render(<MockRunner {...props} />);
+  it('says why a thin level is missing rather than hiding it', async () => {
+    // Thinned on purpose: the explanation only has to appear when a level is short, and every
+    // level the real bank holds is now full.
+    const thinned = problems.filter((p) => !(p.band === '11-12' && p.points === 5));
+    const { container } = render(<MockRunner {...props} problems={thinned} />);
     await screen.findByRole('button', { name: /Level 3–4/ });
     expect(container.textContent).toMatch(/A short paper scored\s+out of the full total/);
   });
@@ -110,7 +123,7 @@ describe('sitting the paper', () => {
     expect(state.startedAt).toBeTruthy();
   });
 
-  it('restores a run in progress with the timer still running — M2.8 acceptance', async () => {
+  it('restores a run in progress with the timer still running - M2.8 acceptance', async () => {
     // A paper started 40 minutes ago must come back with 35 minutes left, not 75.
     const started = startMock(problems, '5-6', 1, new Date(Date.now() - 40 * 60_000));
     if (!started) throw new Error('cannot build a 5-6 paper');

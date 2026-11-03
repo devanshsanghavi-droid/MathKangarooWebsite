@@ -1,0 +1,67 @@
+{
+  "id": "KA-0216",
+  "band": "9-10",
+  "points": 3,
+  "statement": "How many of the numbers 112, 124, 136, 142 and 158 are divisible by 4?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I tested only the final digit, which settles divisibility by 2 rather than by 4."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I treated every even number ending in a multiple of 4 as divisible by 4."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I checked the digit sums, which is the test for 3 and 9 rather than 4."
+    },
+    {
+      "key": "E",
+      "text": "5",
+      "correct": false,
+      "misconception": "I assumed every even number is divisible by 4."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "Only the last two digits decide divisibility by four.",
+    "A number is divisible by 4 exactly when the number formed by its last two digits is. Test each candidate's final pair rather than its final digit or its digit sum.",
+    "Check 12, 24, 36, 42 and 58 against the four times table."
+  ],
+  "solutions": {
+    "reliable": "Divisibility by 4 depends only on the last two digits, because 100 is already a multiple of 4. Of 12, 24, 36, 42 and 58, the multiples of 4 are 12 and 36, so two of the numbers qualify. The transferable idea: each divisibility test looks at exactly the part of the number that the divisor cannot see past.",
+    "elegant": null
+  },
+  "whyOnTest": "The last-two-digits rule for 4 is routinely replaced by the last-digit rule for 2, and that confusion produces most of the choices.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

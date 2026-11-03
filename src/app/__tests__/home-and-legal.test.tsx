@@ -11,7 +11,7 @@ import { DISCLAIMER } from '@/lib/site';
 
 const stats = getContentStats();
 
-describe('/ — the home page', () => {
+describe('/ - the home page', () => {
   it('leads with the thesis, not with a feature list', () => {
     render(HomePage());
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(

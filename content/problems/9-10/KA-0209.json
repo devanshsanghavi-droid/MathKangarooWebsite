@@ -1,0 +1,68 @@
+{
+  "id": "KA-0209",
+  "band": "9-10",
+  "points": 4,
+  "statement": "On a grid, a token moves only right or up from one corner of a 3 by 3 square of cells to the opposite corner. How many different routes are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted only the routes that stay on the two outer edges of the grid."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I multiplied the three rights by the three ups, which is not how a route is built."
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": false,
+      "misconception": "I squared the six steps, double counting every route many times over."
+    },
+    {
+      "key": "E",
+      "text": "64",
+      "correct": false,
+      "misconception": "I gave two choices at each of six steps, ignoring that the counts of rights and ups are fixed."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-07",
+    "secondary": [
+      "CNT-06",
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "Every route uses the same number of steps.",
+    "A route is three rights and three ups in some order, so counting routes means counting which of the six steps are the rights. That is a selection, not a product.",
+    "Choose which three of the six steps are rights: 6 x 5 x 4 divided by 3 x 2 x 1."
+  ],
+  "solutions": {
+    "reliable": "Every route is a sequence of three rights and three ups, so a route is fixed by choosing which three of the six steps are rights, giving 6 x 5 x 4 / 6 = 20. The transferable idea: a lattice path is a word in two letters, so counting paths is counting positions, which is a selection.",
+    "elegant": "Writing the running totals into the grid gives Pascal's triangle, and the far corner holds the answer directly."
+  },
+  "whyOnTest": "Grid paths recur every few years, and the product of the two step counts is the plausible wrong answer sitting right there.",
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

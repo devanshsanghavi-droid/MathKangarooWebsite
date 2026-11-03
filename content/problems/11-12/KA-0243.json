@@ -1,0 +1,67 @@
+{
+  "id": "KA-0243",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A class of 20 scored a mean of 70. Another class of 30 scored a mean of 80. What is the mean of all 50 students?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "74",
+      "correct": false,
+      "misconception": "I weighted the means towards the smaller class by mistake."
+    },
+    {
+      "key": "B",
+      "text": "75",
+      "correct": false,
+      "misconception": "I averaged the two means, which would only be right for equal class sizes."
+    },
+    {
+      "key": "C",
+      "text": "76",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "77",
+      "correct": false,
+      "misconception": "I weighted correctly but divided by 49 rather than 50."
+    },
+    {
+      "key": "E",
+      "text": "150",
+      "correct": false,
+      "misconception": "I added the two means rather than combining the totals."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-08",
+    "secondary": [
+      "NUM-15"
+    ]
+  },
+  "hints": [
+    "Add the two totals before dividing anything.",
+    "Turn each mean into a total by multiplying by the class size, add the two totals, then divide by the combined number of students. Means cannot be averaged when the groups differ in size.",
+    "The totals are 20 x 70 = 1400 and 30 x 80 = 2400, over 50 students."
+  ],
+  "solutions": {
+    "reliable": "The totals are 1400 and 2400, so 3800 points are spread over 50 students, giving a mean of 76. The transferable idea: a combined mean is a weighted one, so convert to totals and divide once at the end, which automatically weights each group by its size.",
+    "elegant": "The larger class is 30 of the 50, so the answer sits three fifths of the way from 70 up to 80."
+  },
+  "whyOnTest": "Averaging the two means is the standard error, and the class sizes are deliberately unequal so that it gives a different answer.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

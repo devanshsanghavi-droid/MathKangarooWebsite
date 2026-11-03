@@ -1,7 +1,7 @@
 import { FigureSvg, Label, STROKE, GRID, W_THIN, W_THICK } from './primitives.tsx';
 
 /**
- * KA-0031 — a street grid with junctions 4 across and 4 down. The junction one step right and
+ * KA-0031 - a street grid with junctions 4 across and 4 down. The junction one step right and
  * one step down from the top-left is closed, marked with a cross.
  */
 export function BlockedGridPaths() {

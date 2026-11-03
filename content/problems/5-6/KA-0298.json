@@ -1,0 +1,68 @@
+{
+  "id": "KA-0298",
+  "band": "5-6",
+  "points": 3,
+  "statement": "How many whole numbers are there from 17 to 43, counting both ends?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "25",
+      "correct": false,
+      "misconception": "I subtracted the two numbers and then took one away instead of adding one."
+    },
+    {
+      "key": "B",
+      "text": "26",
+      "correct": false,
+      "misconception": "I subtracted the two numbers and gave the difference, which leaves out one end."
+    },
+    {
+      "key": "C",
+      "text": "27",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "28",
+      "correct": false,
+      "misconception": "I added two to the difference rather than one."
+    },
+    {
+      "key": "E",
+      "text": "43",
+      "correct": false,
+      "misconception": "I gave the larger number rather than how many numbers there are."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "CFT-10",
+      "NUM-13"
+    ]
+  },
+  "hints": [
+    "Try the same method on a short range you can check.",
+    "Subtracting the ends counts the gaps, not the numbers, so add one. Test the rule on something tiny, such as 3 to 5, where you can count the numbers on your fingers.",
+    "43 - 17 = 26 counts the steps, and there is one more number than there are steps."
+  ],
+  "solutions": {
+    "reliable": "Subtracting gives 43 - 17 = 26, which counts the steps between the ends, and there is always one more number than step, so the answer is 27. The transferable idea: check an off-by-one rule on a range small enough to count by hand, which settles it in seconds.",
+    "elegant": null
+  },
+  "whyOnTest": "Counting inclusive ranges is where off-by-one errors live, and both neighbouring answers are offered.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

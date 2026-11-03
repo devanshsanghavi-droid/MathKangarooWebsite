@@ -1,0 +1,68 @@
+{
+  "id": "KA-0277",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A shop sells pencils in packs of 4 and packs of 7. What is the largest number of pencils you cannot buy exactly?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "11",
+      "correct": false,
+      "misconception": "I found a number I could not make and stopped before checking the larger ones."
+    },
+    {
+      "key": "B",
+      "text": "13",
+      "correct": false,
+      "misconception": "I checked a few numbers but missed that 7 + 7 = 14 and 4 + 4 + 4 + 4 = 16 close the gap."
+    },
+    {
+      "key": "C",
+      "text": "17",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "21",
+      "correct": false,
+      "misconception": "I picked a multiple of 7, but three packs of seven make it exactly."
+    },
+    {
+      "key": "E",
+      "text": "28",
+      "correct": false,
+      "misconception": "I multiplied the two pack sizes, but that number is a multiple of both."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "NUM-05",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Try every number in turn and mark the ones you can make.",
+    "Work upwards and mark each number you can build from fours and sevens. Once four numbers in a row can all be made, every larger number can too, because you can add another four.",
+    "Once 18, 19, 20 and 21 can all be made, adding fours reaches everything above."
+  ],
+  "solutions": {
+    "reliable": "Checking upwards, 17 cannot be made, but 18, 19, 20 and 21 all can, and from four consecutive makeable numbers you reach every larger one by adding fours. So 17 is the largest that fails. The transferable idea: four consecutive successes close the question, because the smaller pack size then carries you forever.",
+    "elegant": "With packs of 4, you only ever need to find four consecutive makeable numbers."
+  },
+  "whyOnTest": "Trying small cases in order, and knowing when to stop, is the whole method, and the choices reward stopping early.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

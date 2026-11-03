@@ -8,8 +8,8 @@ import { FIGURES } from './figures/registry';
  * Two things carry the alt text, deliberately:
  *   - `role="img"` plus `aria-label` on the <figure>, which is what a screen reader announces
  *     and which hides the SVG's internals from the accessibility tree;
- *   - a collapsed text description below it, so a low-vision or colour-blind reader — or one
- *     on a phone at 200% zoom where the drawing is awkward — can read the same information
+ *   - a collapsed text description below it, so a low-vision or colour-blind reader - or one
+ *     on a phone at 200% zoom where the drawing is awkward - can read the same information
  *     instead of squinting at it. The alt describes what a solver EXTRACTS, so exposing it
  *     visibly gives away nothing the picture does not already give away.
  */

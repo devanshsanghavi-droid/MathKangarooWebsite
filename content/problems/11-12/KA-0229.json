@@ -1,0 +1,68 @@
+{
+  "id": "KA-0229",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Ten different positive integers add to 100. What is the largest the smallest of them can be?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I stopped one step early after finding that a smallest value of 4 was achievable."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I ignored that ten different integers starting at 6 already exceed 100."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I divided 100 by 10 and then nudged upward, without checking the numbers can be distinct."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I divided 100 by 10 and used that, forgetting the numbers have to differ from each other."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "CFT-05",
+      "CNT-18"
+    ]
+  },
+  "hints": [
+    "Push the smallest up and see what the others are forced to be.",
+    "If the smallest is s, the ten different integers are at least s, s + 1, up to s + 9, so their total is at least ten times s plus forty-five. Compare that bound with 100.",
+    "Ten times s plus 45 must not exceed 100, which forces s to be at most five and a half."
+  ],
+  "solutions": {
+    "reliable": "If the smallest is s, the ten distinct values total at least 10s + 45. Requiring 10s + 45 to be at most 100 gives s at most 5, and 5, 6, 7, 8, 9, 10, 11, 12, 13, 19 shows 5 is reached. The transferable idea: bound the quantity first, then construct one example meeting the bound, because an extremal answer needs both halves.",
+    "elegant": "The tightest ten distinct integers from s are forced, so the bound is a single inequality."
+  },
+  "whyOnTest": "Extremal questions need a bound and a construction, and every distractor here comes from supplying only one of the two.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

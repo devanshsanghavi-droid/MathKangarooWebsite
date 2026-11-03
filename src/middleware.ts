@@ -8,8 +8,8 @@ import { decodeSession, SESSION_COOKIE } from '@/lib/auth/session';
  * THIS IS THE OUTER LAYER, NOT THE ONLY ONE
  *
  * `src/app/admin/page.tsx` re-checks the session itself and redirects on its own. That is not
- * belt-and-braces pedantry: Next.js middleware has been bypassable before — CVE-2025-29927
- * let a crafted `x-middleware-subrequest` header skip it entirely — and any authorisation
+ * belt-and-braces pedantry: Next.js middleware has been bypassable before - CVE-2025-29927
+ * let a crafted `x-middleware-subrequest` header skip it entirely - and any authorisation
  * that exists only in middleware is one header away from not existing. Middleware is here to
  * keep unauthenticated traffic off the route cheaply; the page is what actually decides.
  * ---------------------------------------------------------------------------------------

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0309",
+  "band": "9-10",
+  "points": 5,
+  "statement": "How many ways can 10 be written as a sum of three positive whole numbers, where the order of the numbers does not matter?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I missed some cases by not working through the smallest number in order."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted a case twice or missed one while listing without a system."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted the ordered sums for one of the cases rather than the unordered ones."
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": false,
+      "misconception": "I counted every ordered triple rather than treating reorderings as the same."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-04",
+    "secondary": [
+      "CNT-15",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "List them with the smallest number first.",
+    "Fix the smallest of the three numbers and work upwards through its possible values. For each one, list the ways the other two can split the rest, keeping them in order so no reordering is counted twice.",
+    "With smallest 1 the rest splits as 1 and 8, 2 and 7, 3 and 6, 4 and 5."
+  ],
+  "solutions": {
+    "reliable": "Writing each sum with its parts in order: 1+1+8, 1+2+7, 1+3+6, 1+4+5, 2+2+6, 2+3+5, 2+4+4 and 3+3+4, which is 8. The transferable idea: force a fixed order on the parts, so each unordered sum is written exactly once and the list is complete by construction.",
+    "elegant": null
+  },
+  "whyOnTest": "Unordered partitions are a 5-point staple, and listing without a system gives the near-miss counts on offer.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

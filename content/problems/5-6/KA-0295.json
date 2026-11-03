@@ -1,0 +1,68 @@
+{
+  "id": "KA-0295",
+  "band": "5-6",
+  "points": 3,
+  "statement": "The sum of three consecutive whole numbers is 42. What is the largest of them?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "13",
+      "correct": false,
+      "misconception": "I gave the smallest of the three numbers rather than the largest."
+    },
+    {
+      "key": "B",
+      "text": "14",
+      "correct": false,
+      "misconception": "I gave the middle number, which is the sum divided by three."
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I went one past the largest while counting up from the middle."
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I halved 42, as though there were two numbers rather than three."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-01",
+    "secondary": [
+      "NUM-15",
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "The middle number is the average of the three.",
+    "Three consecutive numbers are balanced around the middle one, so the middle number is the sum divided by three. Then step up once to reach the largest.",
+    "42 divided by 3 is the middle number."
+  ],
+  "solutions": {
+    "reliable": "Three consecutive numbers average to the middle one, so the middle is 42 / 3 = 14 and the numbers are 13, 14, 15. The largest is 15. The transferable idea: in any evenly spaced list, the sum divided by the count gives the middle value, which is faster than setting up an equation.",
+    "elegant": null
+  },
+  "whyOnTest": "The middle number is what the division gives, and answering with it instead of the largest is the mistake the choices reward.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

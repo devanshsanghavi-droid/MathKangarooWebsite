@@ -53,8 +53,7 @@ describe('password hashing', () => {
 
 describe('the stored hash survives an environment variable', () => {
   it('contains no character that dotenv, a shell or docker-compose would expand', async () => {
-    // The bug this guards: with `$` separators, Next handed the app a 9-character string —
-    // everything past the first `$` expanded to nothing — and the correct password was
+    // The bug this guards: with `$` separators, Next handed the app a 9-character string -     // everything past the first `$` expanded to nothing - and the correct password was
     // rejected exactly like a wrong one.
     const stored = await hashPassword('a-long-enough-password', 1000);
     expect(stored).not.toContain('$');
@@ -72,7 +71,7 @@ describe('the placeholder hash that equalises login timing', () => {
    * The bug this guards is the one an adversarial review found and five independent lenses
    * flagged: the placeholder was a hand-written literal in the old `$`-separated form, so
    * verifyPassword rejected it on its second line and never ran a derivation. The miss path
-   * cost nothing while the hit path cost 210,000 iterations — a ~1000x timing oracle for the
+   * cost nothing while the hit path cost 210,000 iterations - a ~1000x timing oracle for the
    * operator's username, sitting directly under a comment claiming the opposite.
    *
    * Asserting `verifyPassword(x, placeholder) === false` would NOT have caught it: a malformed

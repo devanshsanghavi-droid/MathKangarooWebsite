@@ -10,7 +10,7 @@ import {
 } from './primitives.tsx';
 
 /**
- * KA-0082 — the floor and one wall of a room, unfolded flat, with the straight line an ant
+ * KA-0082 - the floor and one wall of a room, unfolded flat, with the straight line an ant
  * would take across them. Unfolding is the whole method: a path that curves round a corner in
  * three dimensions is a straight line once the surfaces are laid out.
  */

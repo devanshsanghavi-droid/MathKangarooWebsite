@@ -1,0 +1,68 @@
+{
+  "id": "KA-0287",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Six identical books weigh the same as nine identical notebooks. How many notebooks weigh the same as four books?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I matched one notebook to one book, ignoring the given weights."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I added the difference of three rather than scaling in proportion."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I doubled the four books, which is not the ratio given."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I reused the nine from the question without scaling it down."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-11",
+    "secondary": [
+      "LOG-10",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Find how many notebooks balance two books.",
+    "Simplify the given balance by dividing both sides by the same number, so that the book count becomes a factor of four. Then scale back up to four books.",
+    "Six books balance nine notebooks, so two books balance three notebooks."
+  ],
+  "solutions": {
+    "reliable": "Dividing the balance by three, 2 books weigh the same as 3 notebooks. Four books are two lots of that, so they balance 6 notebooks. The transferable idea: simplify a balance to its smallest whole-number form first, then scale once, rather than scaling a large ratio directly.",
+    "elegant": null
+  },
+  "whyOnTest": "Simplifying the balance first makes this a single step, and adding the difference rather than scaling is the usual error.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

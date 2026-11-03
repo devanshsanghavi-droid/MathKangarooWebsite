@@ -6,7 +6,7 @@ import { MASTERY_DISPLAY } from '@/lib/mastery-display';
  *
  * docs/05-DESIGN-DIRECTION.md §7.5: name + icon + colour, never colour alone. So the dot is a
  * filled circle carrying its glyph, with a --rule-strong outline that gives it a 3:1 boundary
- * against any surface — which is what lets the two palest steps exist at all. The name is
+ * against any surface - which is what lets the two palest steps exist at all. The name is
  * always present, either beside the dot or as its accessible name.
  */
 export function MasteryDot({

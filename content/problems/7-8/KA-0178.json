@@ -1,0 +1,67 @@
+{
+  "id": "KA-0178",
+  "band": "7-8",
+  "points": 3,
+  "statement": "The three-digit number 4A6 is divisible by 9. What digit does A stand for?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I only checked that the number was even, since 4 and 6 are both even, and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I used the divisibility test for 3 rather than the one for 9, and 4 + 2 + 6 = 12 passes it."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I added 4 + 6 to get 10 and then reached for 17, thinking that was the next multiple of 9."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I put a 9 in the gap because the number is divisible by 9, so I expected a 9 to show up in it."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "Divisibility by 9 is a question about the digit sum.",
+    "Add the digits you already have, then ask which single digit pushes that total up to the next multiple of nine.",
+    "4 + 6 = 10. The next multiple of 9 above 10 is 18, so the missing digit is 18 - 10, and the number is 486."
+  ],
+  "solutions": {
+    "reliable": "A number is divisible by 9 exactly when its digits add to a multiple of 9. Here 4 + 6 = 10, so the missing digit must bring the sum to 18, giving 486. The transferable idea: a divisibility test turns a question about a whole number into a question about a small digit sum.",
+    "elegant": "Only one digit from 0 to 9 can lift a sum of 10 to a multiple of nine at all, so there is nothing to test."
+  },
+  "whyOnTest": "Digit-sum tests appear every year in the 3-point block, and the trap answer is always the digit that matches the divisor.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

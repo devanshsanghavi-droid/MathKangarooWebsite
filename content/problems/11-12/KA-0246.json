@@ -1,0 +1,68 @@
+{
+  "id": "KA-0246",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Each face of a cube is painted either red or blue. Two cubes count as the same if one can be rotated to look like the other. How many different cubes are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted only by the number of red faces and missed that some counts split in two."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted by red faces and added one case without checking the arrangements."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "20",
+      "correct": false,
+      "misconception": "I divided the sixty-four colourings by the wrong number, since not all have 24 distinct rotations."
+    },
+    {
+      "key": "E",
+      "text": "64",
+      "correct": false,
+      "misconception": "I counted every colouring and never merged the ones that rotate onto each other."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-16",
+      "GEO-11"
+    ]
+  },
+  "hints": [
+    "Sort the colourings by how many faces are red.",
+    "Group by the number of red faces, then within each group ask how the red faces can sit relative to each other. Two of the groups split into an adjacent and an opposite arrangement.",
+    "Red counts of 0, 1, 5 and 6 give one each; counts of 2 and 4 give two each; a count of 3 gives two."
+  ],
+  "solutions": {
+    "reliable": "Group by red faces. Zero, one, five and six reds give one cube each, which is 4. Two reds can be adjacent or opposite, giving 2, and four reds likewise 2. Three reds can meet at a corner or form a band, giving 2. The total is 4 + 2 + 2 + 2 = 10. The transferable idea: counting up to symmetry means classifying arrangements, not dividing by the number of rotations.",
+    "elegant": "Red counts above three mirror those below it, so only the cases up to three reds need any thought."
+  },
+  "whyOnTest": "Dividing 64 by 24 does not even give a whole number, which is the signal that symmetry counting needs cases rather than division.",
+  "estSeconds": 190,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

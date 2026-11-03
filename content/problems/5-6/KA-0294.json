@@ -1,0 +1,68 @@
+{
+  "id": "KA-0294",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A cube is painted on the outside and then cut into 27 small cubes. How many small cubes have no paint at all?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed every small cube touched the outside somewhere."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the centres of the six faces, which are painted on one side."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the corner cubes, which are painted on three sides."
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I counted every small cube, as though cutting removed the paint."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-13",
+    "secondary": [
+      "CNT-14",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Think about the very middle of the big cube.",
+    "A small cube has no paint only if none of its faces lay on the surface. Picture the big cube as three layers of nine and ask which positions are completely surrounded.",
+    "Only the position at the very centre is surrounded on all six sides."
+  ],
+  "solutions": {
+    "reliable": "A small cube escapes paint only if it touches no face of the big cube, which means it is surrounded on all six sides. In a 3 by 3 by 3 cube only the single centre position qualifies, so the answer is 1. The transferable idea: count by how many faces each position exposes, since corners expose three, edges two, face centres one and the middle none.",
+    "elegant": "Strip one layer off every side of a 3 by 3 by 3 cube and a 1 by 1 by 1 cube is left."
+  },
+  "whyOnTest": "Painted-cube questions are a fixture, and the corner and face-centre counts are both offered as traps.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

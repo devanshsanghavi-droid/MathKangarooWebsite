@@ -1,0 +1,68 @@
+{
+  "id": "KA-0214",
+  "band": "9-10",
+  "points": 4,
+  "statement": "In a group of 40 people, 25 speak French, 20 speak German and 8 speak neither. How many speak both?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I subtracted the two language counts from each other and ignored the group size."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I reused the number who speak neither as though it were the overlap."
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "32",
+      "correct": false,
+      "misconception": "I found the number who speak at least one language and stopped there."
+    },
+    {
+      "key": "E",
+      "text": "45",
+      "correct": false,
+      "misconception": "I added the two language counts and ignored both the group size and the eight."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-10",
+    "secondary": [
+      "LOG-01",
+      "CNT-09"
+    ]
+  },
+  "hints": [
+    "Set aside the people who speak neither first.",
+    "Take the eight away from the group to find how many speak at least one language, then compare that with the sum of the two language counts. The excess is the overlap.",
+    "40 - 8 = 32 speak at least one, while 25 + 20 = 45 counts the bilingual people twice."
+  ],
+  "solutions": {
+    "reliable": "Removing the 8 leaves 32 speaking at least one language, while 25 + 20 = 45 counts the bilingual people twice, so the overlap is 45 - 32 = 13. The transferable idea: handle the 'neither' group before anything else, so the inclusion and exclusion step compares two totals that describe the same people.",
+    "elegant": null
+  },
+  "whyOnTest": "The 'neither' category is what turns a routine overlap question into a two-step one, and forgetting it produces an answer on the list.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

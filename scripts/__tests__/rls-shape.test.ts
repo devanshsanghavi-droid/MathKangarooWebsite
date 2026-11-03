@@ -12,7 +12,7 @@ import {
  * What this suite can and cannot do.
  *
  * It CANNOT prove that student A is unable to read student B's attempts. Only a running
- * Postgres can do that, and `supabase/tests/rls.test.sql` does it — but that needs a database,
+ * Postgres can do that, and `supabase/tests/rls.test.sql` does it - but that needs a database,
  * so it is not part of `pnpm test`.
  *
  * It CAN prove the structural properties that, when they break, break silently and totally:

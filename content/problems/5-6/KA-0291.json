@@ -1,0 +1,68 @@
+{
+  "id": "KA-0291",
+  "band": "5-6",
+  "points": 3,
+  "statement": "What is the smallest number of coins needed to make 48 cents, using coins worth 1, 5, 10 and 25 cents?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I used four 10-cent coins and had the wrong amount left over."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I started with two 25-cent coins, which overshoots, and then corrected clumsily."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I used 10-cent coins throughout instead of starting with the largest coin."
+    },
+    {
+      "key": "E",
+      "text": "48",
+      "correct": false,
+      "misconception": "I paid the whole amount in 1-cent coins, which uses the most coins rather than the fewest."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-06",
+    "secondary": [
+      "CFT-05",
+      "NUM-12"
+    ]
+  },
+  "hints": [
+    "Start with the largest coin that still fits.",
+    "Take the biggest coin that does not overshoot, subtract it, and repeat with the remainder. With these coin values that greedy route always gives the fewest coins.",
+    "25 leaves 23, then 10 leaves 13, then 10 leaves 3."
+  ],
+  "solutions": {
+    "reliable": "Taking the largest coin each time gives 25, 10, 10, 1, 1, 1, which is 6 coins. The transferable idea: with these coin values, always take the largest that fits, because each large coin replaces several smaller ones and that greedy choice cannot be beaten.",
+    "elegant": null
+  },
+  "whyOnTest": "Starting from the smallest coin or overshooting with two large ones both give answers on the list.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

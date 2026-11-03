@@ -1,0 +1,67 @@
+{
+  "id": "KA-0192",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Two similar triangles have corresponding sides in the ratio 2 to 5. The smaller one has area 12. What is the area of the larger one?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "30",
+      "correct": false,
+      "misconception": "I scaled the area by the side ratio of 5 over 2, as though area grew in step with length."
+    },
+    {
+      "key": "B",
+      "text": "75",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "60",
+      "correct": false,
+      "misconception": "I multiplied the area by 5 and ignored the 2 in the ratio."
+    },
+    {
+      "key": "D",
+      "text": "120",
+      "correct": false,
+      "misconception": "I squared the 5 and multiplied without dividing by the squared 2."
+    },
+    {
+      "key": "E",
+      "text": "48",
+      "correct": false,
+      "misconception": "I doubled twice, treating the scale factor as 2 rather than 2.5."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-16",
+    "secondary": [
+      "GEO-03"
+    ]
+  },
+  "hints": [
+    "Area does not scale the way length does.",
+    "When every length is multiplied by k, every area is multiplied by k squared. Find the length scale factor first, then square it before touching the area.",
+    "Lengths scale by 5 / 2, so areas scale by 25 / 4, and 12 x 25 / 4 is the larger area."
+  ],
+  "solutions": {
+    "reliable": "Lengths scale by 5/2, so areas scale by the square, 25/4. The larger area is 12 x 25 / 4 = 75. The transferable idea: a length scale factor of k multiplies areas by k squared and volumes by k cubed, and skipping the square is the error the question is built to catch.",
+    "elegant": "A quarter of 12 is 3, and twenty-five of those quarters is 75."
+  },
+  "whyOnTest": "Scaling area by the length ratio is the predictable mistake in similarity questions, and it is sitting there as the first choice.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -17,7 +17,7 @@ into. Do not raise the cap.
 ## Writing one
 
 Open the official PDF, read question 1, and ask which Atlas skill a student needs to answer it.
-Tag one or two — three means you have not decided. Then question 2. It takes about an hour for
+Tag one or two - three means you have not decided. Then question 2. It takes about an hour for
 a 24-question paper and it is the single best way to find out where the taxonomy is wrong: any
 question you cannot classify is either a missing skill or a badly drawn one, and it belongs in
 the backlog rather than being forced into the nearest node.

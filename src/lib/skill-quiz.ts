@@ -1,12 +1,12 @@
 import { POINT_VALUES, type Points, type Problem } from './schemas';
 
 /**
- * Choosing the five problems in a skill quiz — docs/05-DESIGN-DIRECTION.md §7.2, row five.
+ * Choosing the five problems in a skill quiz - docs/05-DESIGN-DIRECTION.md §7.2, row five.
  *
  * The quiz is the last row of a unit, so it should look like the exam rather than like one
  * rung: two 3-pointers, two 4-pointers and a 5-pointer, backfilled from whatever the skill
- * actually has when a tier is short. Deterministic — the same skill always gives the same five
- * problems — because a quiz whose contents change on reload cannot be discussed with a tutor.
+ * actually has when a tier is short. Deterministic - the same skill always gives the same five
+ * problems - because a quiz whose contents change on reload cannot be discussed with a tutor.
  */
 
 export const QUIZ_SIZE = 5;

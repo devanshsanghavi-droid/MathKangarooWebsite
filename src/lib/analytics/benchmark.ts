@@ -11,7 +11,7 @@ import { PUBLISH_MIN_N } from './item-analysis';
  * position relative to named peers, it makes a bad week feel like a verdict, and it turns a
  * cohort of sixty into a table where the bottom is identifiable by elimination.
  *
- * A percentile band answers the same question — am I roughly where others are? — while being
+ * A percentile band answers the same question - am I roughly where others are? - while being
  * unable to identify anyone, and stays stable when one person has an off day. Below
  * PUBLISH_MIN_N respondents nothing is reported at all: with eight students a quartile is one
  * person, and "bottom quarter" is then a name.
@@ -95,7 +95,7 @@ export function bandFor(percentile: number): BenchmarkBand {
 /**
  * Compare one student's figure against the cohort's.
  *
- * `cohort` should EXCLUDE the student being compared where that is knowable — comparing
+ * `cohort` should EXCLUDE the student being compared where that is knowable - comparing
  * someone against a distribution they are inside pulls the answer toward the middle, and on a
  * cohort of sixty that is a visible bias.
  */
@@ -112,7 +112,7 @@ export function benchmark(
       band: null,
       suppressed: true,
       message:
-        `Not enough students have worked on this yet to compare against — ` +
+        `Not enough students have worked on this yet to compare against - ` +
         `${cohort.length} of the ${minN} needed. Your own progress is still recorded.`,
     };
   }

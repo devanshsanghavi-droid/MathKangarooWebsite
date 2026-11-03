@@ -1,4 +1,4 @@
-# 00 — Site Spec
+# 00 - Site Spec
 
 Every surface of the website. If it is not here, it does not get built. Each route lists its
 job, its content, its states, and its acceptance criteria.
@@ -9,7 +9,7 @@ Legend: **P1** ship in Phase 1 · **P2** Phase 2 · **P3** Phase 3 · **P4** Pha
 
 ## 0. Global
 
-### 0.1 Design system — `src/styles/tokens.css` **P1**
+### 0.1 Design system - `src/styles/tokens.css` **P1**
 
 > **SUPERSEDED by `docs/05-DESIGN-DIRECTION.md`.** The palette, the type stack and the shape
 > scale below are v1 and are no longer what ships. `--p3/--p4/--p5` in particular no longer
@@ -30,17 +30,17 @@ Type: display/UI sans, serif for problem text and prose, mono for IDs and metada
 Scale: 12 / 13 / 15 / 17 / 20 / 25 / 32 / 44 px. Prose max-width 66ch.
 
 ### 0.2 App shell **P1**
-- `<Header>` — wordmark, nav (Atlas · Problems · Practice · Papers · Impact), theme toggle,
+- `<Header>` - wordmark, nav (Atlas · Problems · Practice · Papers · Impact), theme toggle,
   sign-in (P2). Mobile: bottom tab bar for Atlas / Practice / Search / Me.
-- `<Footer>` — license line, GitHub link, privacy, **the non-affiliation disclaimer**, contact.
-- `<CommandPalette>` (⌘K) — jump to any skill, problem id, or route. **P2**
-- `<ThemeToggle>` — light / dark / system, persisted in `localStorage`.
+- `<Footer>` - license line, GitHub link, privacy, **the non-affiliation disclaimer**, contact.
+- `<CommandPalette>` (⌘K) - jump to any skill, problem id, or route. **P2**
+- `<ThemeToggle>` - light / dark / system, persisted in `localStorage`.
 - `<SkipLink>` to main content.
 
 ### 0.3 Cross-cutting **P1**
 - `not-found.tsx`, `error.tsx`, `loading.tsx` at the app root.
 - `robots.txt`, `sitemap.xml` generated from content.
-- OG image generation via `next/og` — problem cards render the id, band, and point value.
+- OG image generation via `next/og` - problem cards render the id, band, and point value.
 - PWA: manifest, service worker, offline shell, "install" prompt. **P2**
 - i18n routing `/` and `/es` with content-level translation fields. **P4**
 
@@ -48,7 +48,7 @@ Scale: 12 / 13 / 15 / 17 / 20 / 25 / 32 / 44 px. Prose max-width 66ch.
 
 ## 1. Public surfaces
 
-### 1.1 `/` — Home **P1**
+### 1.1 `/` - Home **P1**
 **Job:** in ten seconds, make a student or parent understand this is different from a PDF dump.
 - Hero: one sentence thesis + a live embedded sample problem with distractor feedback.
 - "Start here" triad: Take the diagnostic · Browse the Atlas · Practice a skill.
@@ -58,7 +58,7 @@ Scale: 12 / 13 / 15 / 17 / 20 / 25 / 32 / 44 px. Prose max-width 66ch.
 - Footer disclaimer.
 **Done when:** LCP < 1.5s on throttled 3G; the sample problem works without JS hydration errors.
 
-### 1.2 `/atlas` — The Skill Atlas **P1**
+### 1.2 `/atlas` - The Skill Atlas **P1**
 **Job:** the map. The single most important page on the site.
 - Interactive SVG graph, pan + zoom, nodes = skills, edges = prerequisites.
 - Grouped by strand (7 columns or 7 clusters); toggle strand visibility.
@@ -70,54 +70,53 @@ Scale: 12 / 13 / 15 / 17 / 20 / 25 / 32 / 44 px. Prose max-width 66ch.
 - URL state: `/atlas?strand=CNT&band=5-6&focus=CNT-12`.
 **Done when:** keyboard-only user can reach every skill; list view has parity with graph view.
 
-### 1.3 `/atlas/[strand]` — Strand overview **P1**
+### 1.3 `/atlas/[strand]` - Strand overview **P1**
 Ordered walkthrough of one strand: foundation → core → gateway, with a one-line description
 of each skill and its problem count.
 
-### 1.4 `/skill/[id]` — Skill page **P1**
+### 1.4 `/skill/[id]` - Skill page **P1**
 **Job:** teach one idea completely.
 Sections, in order:
 1. Name, id, strand, tier, bands where it appears.
-2. **Definition** — plain language, 2–3 sentences.
-3. **You'll recognize it when…** — 3–5 concrete trigger phrases.
-4. **Canonical worked example** — one problem, fully solved, with figure.
-5. **Common misconceptions** — bulleted, each phrased as the student's own reasoning.
-6. **Prerequisites** and **unlocks** — linked skill chips.
-7. **Practice ladder** — problems grouped 3 / 4 / 5 points, with mastery state.
-8. **In official papers** — links into the paper index for problems testing this skill.
+2. **Definition** - plain language, 2–3 sentences.
+3. **You'll recognize it when…** - 3–5 concrete trigger phrases.
+4. **Canonical worked example** - one problem, fully solved, with figure.
+5. **Common misconceptions** - bulleted, each phrased as the student's own reasoning.
+6. **Prerequisites** and **unlocks** - linked skill chips.
+7. **Practice ladder** - problems grouped 3 / 4 / 5 points, with mastery state.
+8. **In official papers** - links into the paper index for problems testing this skill.
 9. "Start a drill on this skill" CTA.
 **Done when:** every skill file renders all nine sections or explicitly marks them absent.
 
-### 1.5 `/problems` — Browse **P1**
+### 1.5 `/problems` - Browse **P1**
 Filterable, sortable table/grid. Filters: band, point value, strand, skill, status
 (unseen / missed / mastered), source (original / paper index). Sort: id, difficulty
 (calibrated p-value), newest. URL-encoded filter state. Paginated, server-rendered.
 
-### 1.6 `/problem/[id]` — Single problem **P1**
+### 1.6 `/problem/[id]` - Single problem **P1**
 - Metadata row: id, band, point-value pill, primary skill chip, calibrated difficulty.
 - Statement + figure.
 - Five choices as buttons. On select: distractor-specific feedback panel.
 - Hint ladder: nudge → strategy → full solution, revealed one at a time; each reveal logged.
 - "The elegant way" and "The reliable way" solutions where they differ.
-- "Why this is on the test" — one line.
+- "Why this is on the test" - one line.
 - Skill chips → skill pages. "Next problem in this skill" navigation.
 - Report-a-problem link (opens a prefilled GitHub issue).
 **Done when:** works with JavaScript disabled down to statement + solution disclosure.
 
-### 1.7 `/papers` and `/papers/[year]-[band]` — Official paper index **P1**
+### 1.7 `/papers` and `/papers/[year]-[band]` - Official paper index **P1**
 **Job:** the legal, useful bridge to official material.
 - Table of every published official paper with a link to the **official PDF on
   mathkangaroo.org** (never a local copy).
-- Per paper: a numbered list of its 24 or 30 questions with our skill tags and point values —
-  *our analysis, not their content*. No problem text, no figures, no answers.
+- Per paper: a numbered list of its 24 or 30 questions with our skill tags and point values -   *our analysis, not their content*. No problem text, no figures, no answers.
 - "Skills most tested in this band" summary chart.
 **Done when:** a reviewer can confirm no official problem text or figure exists in the repo.
 
-### 1.8 `/potd` — Problem of the Day **P2**
+### 1.8 `/potd` - Problem of the Day **P2**
 Today's problem, a countdown to the 6pm solution reveal, and an archive by date. Solutions
 open into the standard problem view. Static generation with daily revalidation.
 
-### 1.9 `/impact` — Impact dashboard **P3**
+### 1.9 `/impact` - Impact dashboard **P3**
 Live from the database. Tiles: problems authored, skills mapped, explanations written,
 students who practiced, states/countries reached, hours of instruction logged, median
 pre→post diagnostic delta with `n`.
@@ -140,7 +139,7 @@ Who built it and why, in the first person. Contact is a form → Resend, plus a 
 Privacy written in language a 5th grader's parent can read: what we store (little), what we
 never store, how to delete it. License page explains CC BY-NC-SA on content, MIT on code.
 
-### 1.14 `/print` — Worksheet generator **P2**
+### 1.14 `/print` - Worksheet generator **P2**
 Pick skills, bands, point values, and count → generates a clean printable worksheet plus a
 separate answer key with per-distractor tutor notes. `@media print` stylesheet, no header/nav,
 figures render in pure black. Also reachable from any skill page.
@@ -194,12 +193,12 @@ language, **export my data** (JSON), **delete my account** (hard delete, confirm
 
 ## 4. Mentor surfaces (role: `mentor`) **P2**
 
-### 4.1 `/teach` — Overview
+### 4.1 `/teach` - Overview
 Cohorts, upcoming sessions, assignments needing review, class-wide alerts
 ("18 of 24 red on GEO-10").
 
 ### 4.2 `/teach/cohorts` and `/teach/cohort/[id]`
-Roster with join codes (no student email required — a code plus a first name is enough).
+Roster with join codes (no student email required - a code plus a first name is enough).
 Per-student mastery sparkline. Add/remove members. Parent-consent status per member.
 
 ### 4.3 `/teach/heatmap`
@@ -228,7 +227,7 @@ improved, what's next). **Human approves before anything sends.** Resend deliver
 ### 5.1 `/author/new`
 A form that produces a valid problem JSON file: statement, 5 choices each with a required
 misconception field, 3 hints, skill tags, band, points, figure id, alt text. Live Zod
-validation, live preview, "copy JSON" and "open PR" actions. No direct DB writes — content
+validation, live preview, "copy JSON" and "open PR" actions. No direct DB writes - content
 still lands in git through a pull request.
 
 ### 5.2 `/author/queue`

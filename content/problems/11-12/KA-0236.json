@@ -1,0 +1,68 @@
+{
+  "id": "KA-0236",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Can the numbers 1 to 9 be split into two groups whose sums are equal?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Yes, in exactly one way",
+      "correct": false,
+      "misconception": "I found a near-equal split and rounded it off as equal."
+    },
+    {
+      "key": "B",
+      "text": "Yes, in several ways",
+      "correct": false,
+      "misconception": "I assumed nine numbers were flexible enough to balance, without checking the total."
+    },
+    {
+      "key": "C",
+      "text": "No, because the total is odd",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "No, because the groups would differ in size",
+      "correct": false,
+      "misconception": "I objected to the group sizes, which are allowed to differ."
+    },
+    {
+      "key": "E",
+      "text": "Only if one group may be empty",
+      "correct": false,
+      "misconception": "I looked for a loophole instead of testing the total."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-05",
+    "secondary": [
+      "LOG-09",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Add the nine numbers before trying any split.",
+    "If two groups had equal sums, the total would be twice one group's sum and therefore even. Work out the total and check its parity.",
+    "1 + 2 + ... + 9 = 45, and 45 is odd, so no equal split can exist."
+  ],
+  "solutions": {
+    "reliable": "Equal groups would make the total twice one group's sum, so the total must be even. But 1 + 2 + ... + 9 = 45 is odd, so no such split exists. The transferable idea: a parity check on the total rules out whole families of splits in one line, before any example is attempted.",
+    "elegant": "45 is odd, which closes the question immediately."
+  },
+  "whyOnTest": "Parity rules out an exhaustive search in a single step, and three of the choices are what searching without the check produces.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -3,8 +3,8 @@ import type { Strand, Tier } from './schemas';
 /**
  * Display names and one-line descriptions for the taxonomy's vocabularies.
  *
- * This lives apart from `content.ts` because client components need it — the Atlas graph
- * labels its columns with strand names — and `content.ts` imports `server-only` and the
+ * This lives apart from `content.ts` because client components need it - the Atlas graph
+ * labels its columns with strand names - and `content.ts` imports `server-only` and the
  * filesystem. Splitting the prose out keeps the loader server-only without forcing the graph
  * to pass every label down as a prop.
  */

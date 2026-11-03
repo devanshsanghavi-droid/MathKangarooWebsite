@@ -8,7 +8,7 @@
  * Adding a color here is only legal if the token already exists in tokens.css.
  *
  * The reserved feedback colours (--correct-*, --wrong-*, --hint-*) are bridged here because
- * that is the only way a utility class can reach them — but scripts/check-palette.ts then
+ * that is the only way a utility class can reach them - but scripts/check-palette.ts then
  * restricts WHICH files may use those classes. See docs/05-DESIGN-DIRECTION.md §2 and §10.4.
  */
 @theme inline {
@@ -85,7 +85,7 @@
   /*
    * 900px at the default root size, written in rem to match Tailwind's own scale (40 / 48 /
    * 64 / 80 / 96rem). A px breakpoint would ignore a reader who raises their browser's default
-   * font size rather than zooming — the rail would stay a rail while everything in it grew.
+   * font size rather than zooming - the rail would stay a rail while everything in it grew.
    */
   --breakpoint-shell: 56.25rem;
 }
@@ -151,7 +151,7 @@ a {
 /*
  * Hover thickens the underline rather than changing the colour.
  *
- * The obvious move — hover to --accent-600 — makes the link LESS readable: 4.4:1 on a card in
+ * The obvious move - hover to --accent-600 - makes the link LESS readable: 4.4:1 on a card in
  * dark and 3.9:1 in a well, both under AA, on text that was 11:1 a moment earlier. A hover
  * state that degrades contrast is backwards, and --accent-700 is already the darkest step of
  * the ramp in light, so there is nowhere further to go. Thickness is the honest affordance,
@@ -162,7 +162,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
- * Focus — docs/05 §6: a 3px ring at 2px offset. Never removed, never subtle.
+ * Focus - docs/05 §6: a 3px ring at 2px offset. Never removed, never subtle.
  * ------------------------------------------------------------------------ */
 
 :focus-visible {
@@ -177,7 +177,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
- * Reduced motion — a global stop, not a per-component opt-in.
+ * Reduced motion - a global stop, not a per-component opt-in.
  * ------------------------------------------------------------------------ */
 
 @media (prefers-reduced-motion: reduce) {
@@ -262,8 +262,8 @@ a:hover {
  * docs/05 §5. The v1 serif is retired: at 17px a humanist sans reads better on the low-end
  * screens this has to work on.
  *
- *   .reading    prose, solutions, explanations — 17/1.65 (the body default)
- *   .statement  problem statements — 19/1.55, the one place we go bigger
+ *   .reading    prose, solutions, explanations - 17/1.65 (the body default)
+ *   .statement  problem statements - 19/1.55, the one place we go bigger
  */
 .reading {
   font-family: var(--body);

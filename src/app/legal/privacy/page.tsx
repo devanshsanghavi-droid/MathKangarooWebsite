@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     'What we store (almost nothing), what we never store, and how to delete it. Written to be ' +
     'read by a parent, not by a lawyer.',
   alternates: { canonical: '/legal/privacy' },
+  // Boilerplate with no search intent behind it. It was competing with the home page
+  // for the site's own name, so it stays reachable and linked but out of the index.
+  robots: { index: false, follow: true },
 };
 
 export default function PrivacyPage() {
@@ -16,13 +19,13 @@ export default function PrivacyPage() {
       <h1 className="m-0 text-2xl">Privacy</h1>
       <p className="prose-measure mt-3 mb-0 text-ink-3">
         This page is written to be read by a fifth grader&rsquo;s parent. If any of it is unclear,
-        that is a bug — <Link href="/contact">tell me</Link> and I will rewrite it.
+        that is a bug - <Link href="/contact">tell me</Link> and I will rewrite it.
       </p>
 
       <h2 className="mt-10 text-lg">The short version</h2>
       <p className="prose-measure mt-3 text-ink-2">
         You can use everything on this site without an account. If you use it that way, we store
-        nothing about you at all — no cookie, no identifier, nothing that comes back to you later.
+        nothing about you at all - no cookie, no identifier, nothing that comes back to you later.
       </p>
 
       <h2 className="mt-10 text-lg">If you do make an account</h2>
@@ -81,7 +84,7 @@ export default function PrivacyPage() {
         Most people using this site are between about eight and eighteen. We treat COPPA as a design
         constraint rather than a legal appendix: the reason an account holds so little is that we do
         not want to be responsible for more. A student can join a tutor&rsquo;s class with a join
-        code and a first name — no email address is needed from a child at any point. For students
+        code and a first name - no email address is needed from a child at any point. For students
         under 13 in a class, a parent&rsquo;s consent is recorded before any progress is saved.
       </p>
 

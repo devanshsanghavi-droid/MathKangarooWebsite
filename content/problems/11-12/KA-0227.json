@@ -1,0 +1,67 @@
+{
+  "id": "KA-0227",
+  "band": "11-12",
+  "points": 4,
+  "statement": "How many four-member teams can be chosen from ten people?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "40",
+      "correct": false,
+      "misconception": "I multiplied the ten people by the four places, which counts neither orderings nor selections."
+    },
+    {
+      "key": "B",
+      "text": "210",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "720",
+      "correct": false,
+      "misconception": "I divided the ordered count by 7 rather than by the 24 orderings of four people."
+    },
+    {
+      "key": "D",
+      "text": "5040",
+      "correct": false,
+      "misconception": "I counted the ordered selections and never divided out the orderings within a team."
+    },
+    {
+      "key": "E",
+      "text": "10000",
+      "correct": false,
+      "misconception": "I allowed each of the four places to be filled by any of the ten, repeating people."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "A team has no internal order.",
+    "Count the ordered picks first, then divide by the number of ways the chosen four could be arranged, since each team was counted once for every arrangement.",
+    "10 x 9 x 8 x 7 = 5040 ordered picks, and each team of four appears 4 x 3 x 2 x 1 = 24 times."
+  ],
+  "solutions": {
+    "reliable": "Ordered picks give 10 x 9 x 8 x 7 = 5040, and each team appears in all 24 of its orderings, so the count is 5040 / 24 = 210. The transferable idea: overcount in a way you can measure exactly, then divide by that measured overcount.",
+    "elegant": "Choosing four to include is the same as choosing six to leave out, so the two calculations must agree."
+  },
+  "whyOnTest": "Selections are arrangements divided by the internal orderings, and the undivided count is the distractor that catches a rushed answer.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

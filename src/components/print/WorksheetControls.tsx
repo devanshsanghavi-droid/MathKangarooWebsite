@@ -145,7 +145,7 @@ export function WorksheetControls({
         <span className="mono">seed {query.seed}</span>
       </p>
       <p className="m-0 text-xs text-ink-3">
-        This exact URL always produces this exact sheet — bookmark it and the answer key will still
+        This exact URL always produces this exact sheet - bookmark it and the answer key will still
         match next term. Print with your browser; the controls and the site navigation are left off
         the page.
       </p>

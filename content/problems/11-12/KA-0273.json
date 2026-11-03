@@ -1,0 +1,68 @@
+{
+  "id": "KA-0273",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A recipe uses 250 g of flour for 10 biscuits. How much flour is needed for 24 biscuits?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "264",
+      "correct": false,
+      "misconception": "I added 14 g for the 14 extra biscuits rather than scaling the whole amount."
+    },
+    {
+      "key": "B",
+      "text": "500",
+      "correct": false,
+      "misconception": "I doubled the recipe and ignored the last four biscuits."
+    },
+    {
+      "key": "C",
+      "text": "600",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "625",
+      "correct": false,
+      "misconception": "I scaled by 25 rather than by 2.4."
+    },
+    {
+      "key": "E",
+      "text": "6000",
+      "correct": false,
+      "misconception": "I multiplied by 24 instead of by 24 divided by 10."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-07",
+    "secondary": [
+      "NUM-11",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "Find the flour for one biscuit first.",
+    "Divide to get the amount per biscuit, then multiply by the number of biscuits wanted. Scaling the whole recipe by the same factor gives the same answer and is a useful check.",
+    "250 g for 10 biscuits is 25 g each, and 24 biscuits are wanted."
+  ],
+  "solutions": {
+    "reliable": "One biscuit needs 250 / 10 = 25 g, so 24 biscuits need 25 x 24 = 600 g. Equivalently the recipe scales by 2.4, and 250 x 2.4 = 600. The transferable idea: reduce to a single unit first, because every proportional question then becomes one multiplication.",
+    "elegant": "24 biscuits is 2.4 recipes, and 2.4 of 250 is 600."
+  },
+  "whyOnTest": "Adding the difference rather than scaling is the standard proportion error, and that answer is on the list.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

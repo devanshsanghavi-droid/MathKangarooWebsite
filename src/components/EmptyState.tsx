@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
  * A section with nothing in it yet.
  *
  * Written as a sentence, never as a placeholder. `docs/02-BUILD-PLAN.md` M1.5 requires every
- * skill page to render all nine sections or explicitly mark them absent — so "no problems yet"
+ * skill page to render all nine sections or explicitly mark them absent - so "no problems yet"
  * has to say what that means and what to do instead, not show a grey box.
  */
 export function EmptyState({ children, action }: { children: ReactNode; action?: ReactNode }) {

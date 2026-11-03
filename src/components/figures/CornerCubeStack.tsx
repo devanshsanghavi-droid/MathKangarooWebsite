@@ -1,7 +1,7 @@
 import { FigureSvg, IsoCube, sortIsometric } from './primitives.tsx';
 
 /**
- * KA-0009 — a stepped stack: a 3 by 3 bottom layer, a 2 by 2 layer on one corner of it, and a
+ * KA-0009 - a stepped stack: a 3 by 3 bottom layer, a 2 by 2 layer on one corner of it, and a
  * single cube on top. Fourteen cubes in all, several of them hidden from this viewpoint.
  */
 export function CornerCubeStack() {

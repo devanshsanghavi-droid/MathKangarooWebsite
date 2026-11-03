@@ -1,5 +1,5 @@
 /*
- * tokens.css — THE ONLY FILE IN THIS REPO WHERE A COLOR IS DEFINED.
+ * tokens.css - THE ONLY FILE IN THIS REPO WHERE A COLOR IS DEFINED.
  *
  * v2, per docs/05-DESIGN-DIRECTION.md, which supersedes docs/00-SPEC.md §0.1.
  *
@@ -7,7 +7,7 @@
  * THE RULE THIS PALETTE HANGS ON (docs/05 §2, and a non-negotiable in CLAUDE.md)
  *
  *   Green, red and amber are RESERVED. They appear only in response to something the student
- *   did — correct, incorrect, hint taken. Never for difficulty, never for a category, never
+ *   did - correct, incorrect, hint taken. Never for difficulty, never for a category, never
  *   for decoration. Everything else is neutral or the single teal accent.
  *
  * v1 broke this in the worst possible place: `--correct` was literally `var(--p3)` and
@@ -22,7 +22,7 @@
  * scripts/check-palette.ts enforces both halves of the rule in CI.
  * ---------------------------------------------------------------------------------------
  *
- * Three-state theming, kept from 00-SPEC.md §0.1 — that part was right:
+ * Three-state theming, kept from 00-SPEC.md §0.1 - that part was right:
  *   1. :root                                     -> the complete light palette (the default)
  *   2. @media (prefers-color-scheme: dark)       -> system dark, unless the user forced light
  *      guarded as :root:not([data-theme='light'])
@@ -33,7 +33,7 @@
  * the light theme with an undefined value.
  *
  * Contrast: src/lib/__tests__/tokens.test.ts reads this file and fails the build on any
- * regression, for every pair below — including the difficulty ramp, the mastery ramp and
+ * regression, for every pair below - including the difficulty ramp, the mastery ramp and
  * every reserved feedback colour on its own tint.
  */
 
@@ -50,19 +50,18 @@
   --ink: #181b21; /* primary text            16.2:1 on --ground */
   --ink-2: #4b5563; /* secondary text           7.1:1 on --ground */
   /*
-   * docs/05 §4 specifies #767F8C. That is 3.6:1 on --surface-2 and 3.3:1 on --surface-3 —
-   * below AA for the 12-13px metadata it is used for, which is the exact pair §9's acceptance
+   * docs/05 §4 specifies #767F8C. That is 3.6:1 on --surface-2 and 3.3:1 on --surface-3 -    * below AA for the 12-13px metadata it is used for, which is the exact pair §9's acceptance
    * list tells us to check. Darkened to the lightest value that clears 4.5:1 on all four
    * surfaces. See STATUS.md.
    */
   --ink-3: #626974; /* tertiary / metadata      5.2:1 on --ground, 4.5:1 on --surface-3 */
 
   /* --- rules --------------------------------------------------------------- */
-  --rule: #e1e6ec; /* hairline dividers — decorative only */
+  --rule: #e1e6ec; /* hairline dividers - decorative only */
   /*
    * docs/05 §4 specifies #C9D0DA (1.5:1 on --surface). --rule-strong is the border that
-   * *identifies* a control — an answer choice and a text input have no other boundary, and
-   * --surface on --ground is 1.06:1 — so WCAG 1.4.11 applies and it must clear 3:1.
+   * *identifies* a control - an answer choice and a text input have no other boundary, and
+   * --surface on --ground is 1.06:1 - so WCAG 1.4.11 applies and it must clear 3:1.
    *
    * It clears it on ALL FOUR surfaces, including --surface-3. The sticky action bar in the
    * exercise view is --surface-3 and has a bordered Skip button sitting on it; at the first
@@ -73,14 +72,14 @@
   /* --- structural ---------------------------------------------------------- */
   --grid: #dbe1e9; /* figure gridlines, atlas background lattice */
 
-  /* --- accent — the only saturated colour in ordinary use ------------------- */
+  /* --- accent - the only saturated colour in ordinary use ------------------- */
   /* 700 is the text-weight step in BOTH themes: dark teal on light, pale teal on dark. */
   --accent-700: #0b5c66; /* links, primary action text   7.2:1 on --ground */
   --accent-600: #0e7c86; /* solid fills, strong borders */
   --accent-500: #17939e; /* hover on a solid fill */
   --accent-100: #ddf0f2; /* accent-tinted background */
 
-  /* --- RESERVED — feedback only. See the rule at the top of this file. ------ */
+  /* --- RESERVED - feedback only. See the rule at the top of this file. ------ */
   --correct-700: #146c43; /* "Correct" text            5.7:1 on --correct-100 */
   --correct-600: #1a8a55; /* solid correct fill */
   --correct-100: #e3f5ea; /* correct panel background */
@@ -95,7 +94,7 @@
   --hint-100: #fbf0d9;
   --hint-border: #9e8958; /* 3.0:1 on --hint-100 */
 
-  /* --- difficulty ramp — weight, not alarm (docs/05 §3) --------------------- */
+  /* --- difficulty ramp - weight, not alarm (docs/05 §3) --------------------- */
   /* Always rendered with its ●○○ / ●●○ / ●●● glyph, so colour is never the sole carrier. */
   --d1-bg: #edf1f6;
   --d1-fg: #4b5563; /* 6.7:1 */
@@ -104,7 +103,7 @@
   --d3-bg: #c6cfdd;
   --d3-fg: #1f2937; /* 9.4:1 */
 
-  /* --- mastery ramp — one teal ramp, four steps (docs/05 §3) ---------------- */
+  /* --- mastery ramp - one teal ramp, four steps (docs/05 §3) ---------------- */
   /*
    * docs/05 §4 gives #CDD4DE / #A5DCE1 for --m0 / --m1. Those are 1.01:1 apart: identical in
    * greyscale, so on a printed worksheet "not started" and "familiar" are the same grey and
@@ -126,7 +125,7 @@
 
   /* --- typography (docs/05 §5) --------------------------------------------- */
   /*
-   * Loaded by next/font in src/app/layout.tsx, which self-hosts them at build time — no
+   * Loaded by next/font in src/app/layout.tsx, which self-hosts them at build time - no
    * request leaves the student's browser to a third party. The families below are the
    * fallbacks used before the face loads and if it never does.
    */
@@ -155,8 +154,7 @@
   /*
    * The sticky header's height, measured in a browser rather than guessed: the wordmark's
    * line box plus its py-3. The skill rail sticks directly beneath it and clamps its own
-   * scroll height against it, so the number lives here rather than being written out twice —
-   * it was 57px in one place and 53px in reality, which left a 4px seam of page content
+   * scroll height against it, so the number lives here rather than being written out twice -    * it was 57px in one place and 53px in reality, which left a 4px seam of page content
    * showing between the header and the rail on every scroll.
    */
   --header-height: 53px;
@@ -181,7 +179,7 @@
   --tap-min: 44px;
 }
 
-/* State 2 — system dark, unless the reader has explicitly chosen light. */
+/* State 2 - system dark, unless the reader has explicitly chosen light. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
@@ -226,7 +224,7 @@
     --d3-bg: #3b4555;
     --d3-fg: #dde3eb;
 
-    /* The doc's dark ramp already steps 1.46 / 1.69 / 1.87 — kept as written. */
+    /* The doc's dark ramp already steps 1.46 / 1.69 / 1.87 - kept as written. */
     --m0: #39414d;
     --m1: #2c6068;
     --m2: #1b8993;
@@ -239,7 +237,7 @@
   }
 }
 
-/* State 3 — explicit dark. A literal copy of state 2's body, so the toggle wins under a
+/* State 3 - explicit dark. A literal copy of state 2's body, so the toggle wins under a
    light system. The token test asserts the two blocks stay identical. */
 :root[data-theme='dark'] {
   color-scheme: dark;
@@ -299,7 +297,7 @@
  * Print. Text and figures go to pure black on white so a home printer is legible.
  *
  * The two ramps are the interesting case, and they are why docs/05 §9 says "test: print a
- * worksheet". Difficulty flattens to white — the ●○○ glyph carries the tier on paper, and a
+ * worksheet". Difficulty flattens to white - the ●○○ glyph carries the tier on paper, and a
  * grey pill behind it would only muddy it. Mastery keeps a four-step GREYSCALE ramp, because
  * the segmented mastery bar has no glyph inside a segment and would otherwise print as one
  * solid black bar.

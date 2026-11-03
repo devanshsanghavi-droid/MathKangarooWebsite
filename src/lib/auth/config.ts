@@ -5,7 +5,7 @@ import 'server-only';
  *
  * ---------------------------------------------------------------------------------------
  * The repository is PUBLIC. A password written into tracked source is readable by anyone who
- * clones it, and stays readable in `git log` after it is changed — and behind this login sits
+ * clones it, and stays readable in `git log` after it is changed - and behind this login sits
  * every piece of data the site holds about children. So the credential lives in the
  * environment: `.env.local` for development (gitignored) and a Cloudflare secret in
  * production. `scripts/hash-password.ts` prints the value to set.

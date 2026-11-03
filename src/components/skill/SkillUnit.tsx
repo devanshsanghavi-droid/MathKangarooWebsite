@@ -11,7 +11,7 @@ import { buildLessonRows, type LessonRow } from '@/lib/skill-unit';
 import { LADDER_TARGET } from '@/lib/ladder';
 
 /**
- * The interactive half of the unit page — docs/05-DESIGN-DIRECTION.md §7.2, items 3 and 4.
+ * The interactive half of the unit page - docs/05-DESIGN-DIRECTION.md §7.2, items 3 and 4.
  *
  * The mastery bar and the lesson list both depend on what this browser has stored, so they are
  * client-side; the breadcrumb, title, prerequisites and paper index stay on the server. §9

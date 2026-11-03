@@ -1,4 +1,4 @@
-# 01 — Data Model
+# 01 - Data Model
 
 Two stores, deliberately separated.
 
@@ -8,9 +8,9 @@ Two stores, deliberately separated.
 
 ---
 
-## 1. Content schemas — `src/lib/schemas.ts` (Zod)
+## 1. Content schemas - `src/lib/schemas.ts` (Zod)
 
-### 1.1 Skill — `content/skills/<STRAND>/<ID>.json`
+### 1.1 Skill - `content/skills/<STRAND>/<ID>.json`
 
 ```ts
 const Skill = z.object({
@@ -32,7 +32,7 @@ const Skill = z.object({
 Validator must additionally assert: every prerequisite id exists; the prerequisite graph is
 **acyclic**; `unlocks` is exactly the reverse of `prerequisites` (regenerate, never hand-edit).
 
-### 1.2 Problem — `content/problems/<band>/<ID>.json`
+### 1.2 Problem - `content/problems/<band>/<ID>.json`
 
 ```ts
 const Choice = z.object({
@@ -67,7 +67,7 @@ Validator asserts: exactly one `correct: true`; every incorrect choice has a `mi
 `skills.primary` exists in the Atlas; the referenced figure component file exists; `alt` is
 present whenever `figure` is; the id is unique across the repo.
 
-### 1.3 Paper index — `content/papers/<year>-<band>.json`
+### 1.3 Paper index - `content/papers/<year>-<band>.json`
 
 **Contains no official problem text, figures, or answers.** Our analysis only.
 
@@ -75,7 +75,7 @@ present whenever `figure` is; the id is unique across the repo.
 const PaperIndex = z.object({
   year: z.number().int(),
   band: z.enum(['1-2','3-4','5-6','7-8','9-10','11-12']),
-  officialPdfUrl: z.string().url(),      // mathkangaroo.org — always remote
+  officialPdfUrl: z.string().url(),      // mathkangaroo.org - always remote
   questions: z.array(z.object({
     number: z.number().int(),
     points: z.union([z.literal(3), z.literal(4), z.literal(5)]),
@@ -85,12 +85,11 @@ const PaperIndex = z.object({
 });
 ```
 
-A CI check greps the repo for any file over 2KB inside `content/papers/` and fails —
-a defensive tripwire against someone pasting problem text in later.
+A CI check greps the repo for any file over 2KB inside `content/papers/` and fails - a defensive tripwire against someone pasting problem text in later.
 
 ---
 
-## 2. Postgres — `supabase/migrations/`
+## 2. Postgres - `supabase/migrations/`
 
 ```sql
 -- 001_profiles.sql
@@ -220,27 +219,26 @@ create table telemetry_events (
 ```
 
 Pruned to 90 days by `prune_telemetry()`. Never stores an IP address (§4). Because sessions
-are unlinkable by design, a conventional retention cohort is impossible — `props.returning`
+are unlinkable by design, a conventional retention cohort is impossible - `props.returning`
 carries a coarse bucket the *client* computes about itself instead, which gives the split
 without the identifier.
 
-### 2.1 Row Level Security — write these with the tables, not after
+### 2.1 Row Level Security - write these with the tables, not after
 
 - `profiles`: a user reads and updates only their own row. Mentors read `display_name` and
   `band` of students in their cohorts, nothing else.
 - `attempts`, `mastery`, `runs`, `journal_entries`: owner-only read/write. Mentors get an
-  **aggregate-only** path via a `security definer` function that returns counts per skill —
-  never raw rows for another person.
+  **aggregate-only** path via a `security definer` function that returns counts per skill -   never raw rows for another person.
 - `cohorts`, `assignments`, `teaching_sessions`: mentor owns; members read.
 - `parent_consents`: service role only.
-- `telemetry_events`: service role only. RLS on, deliberately no policy — nothing reads it
+- `telemetry_events`: service role only. RLS on, deliberately no policy - nothing reads it
   through `anon` or `authenticated`. Aggregates are computed by a job and published only at
   n >= 10 (§4).
 - Default deny on every table. Write a `supabase/tests/rls.test.sql` proving each policy.
 
 ---
 
-## 3. Derived logic — `src/lib/`
+## 3. Derived logic - `src/lib/`
 
 ### 3.1 Mastery (`mastery.ts`)
 ```
@@ -271,7 +269,7 @@ frontier is bounded on all seven strands. Output: per-strand mastery estimate + 
 ### 3.5 Scoring (`score.ts`)
 Bands 1–2 and 3–4: 24 items, 8/8/8 at 3/4/5 points, max 96.
 Bands 5–6 through 11–12: 30 items, 10/10/10, max 120.
-No deduction for wrong answers — the UI must actively discourage blanks.
+No deduction for wrong answers - the UI must actively discourage blanks.
 
 ---
 

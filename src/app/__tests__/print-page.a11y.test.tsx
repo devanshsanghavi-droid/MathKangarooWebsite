@@ -3,8 +3,6 @@ import { render, screen, within } from '@testing-library/react';
 import { auditBothThemes } from '@/lib/a11y';
 import PrintPage from '../print/page';
 import type { RawSearchParams } from '@/lib/worksheet';
-import { BANDS } from '@/lib/schemas';
-import { getAllProblems } from '@/lib/content';
 
 async function renderPrint(searchParams: RawSearchParams = {}) {
   return render(await PrintPage({ searchParams: Promise.resolve(searchParams) }));
@@ -55,12 +53,9 @@ describe('the worksheet generator', () => {
   });
 
   it('shows a written empty state when nothing matches', async () => {
-    // Derived rather than hard-coded; see the note in problems-page.test.tsx.
-    const emptyBand = BANDS.find(
-      (band) => !getAllProblems().some((problem) => problem.band === band),
-    );
-    if (!emptyBand) throw new Error('every band now has problems - pick a new empty case');
-    const { container } = await renderPrint({ band: emptyBand });
+    // Every band now holds problems, so an empty result has to be asked for rather than
+    // found: a level filtered down to a strand that level never covers matches nothing.
+    const { container } = await renderPrint({ band: '1-2', strand: 'MOD', points: '5' });
     expect(container.textContent).toMatch(/No problem matches these filters/);
     expect(container.querySelector('.worksheet')).toBeNull();
   });

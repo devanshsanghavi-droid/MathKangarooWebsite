@@ -1,0 +1,68 @@
+{
+  "id": "KA-0280",
+  "band": "3-4",
+  "points": 5,
+  "statement": "The digits 1, 2, 3 and 4 are each used once to make two two-digit numbers. What is the largest possible sum?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "37",
+      "correct": false,
+      "misconception": "I made two numbers from the digits but put the small ones in the tens places."
+    },
+    {
+      "key": "B",
+      "text": "46",
+      "correct": false,
+      "misconception": "I added one two-digit number to a single digit instead of making two two-digit numbers."
+    },
+    {
+      "key": "C",
+      "text": "55",
+      "correct": false,
+      "misconception": "I built one large number and one small one rather than putting both large digits in the tens places."
+    },
+    {
+      "key": "D",
+      "text": "73",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "97",
+      "correct": false,
+      "misconception": "I wrote down a large sum without checking it can be built from the digits 1, 2, 3 and 4."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-01",
+    "secondary": [
+      "CFT-01",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Think about which digits should sit in the tens places.",
+    "A digit in the tens place counts ten times as much, so the two largest digits belong there. The two smaller digits then fill the ones places, and their order does not change the sum.",
+    "Putting 4 and 3 in the tens places contributes 40 + 30 before the ones digits are added."
+  ],
+  "solutions": {
+    "reliable": "Tens digits count for ten times as much, so 4 and 3 belong there. That gives 40 + 30 = 70 from the tens, plus 1 + 2 = 3 from the ones, so the largest sum is 73, reached by 41 + 32 or 42 + 31. The transferable idea: put the largest digits where the place value is highest, and the order of the remaining digits then makes no difference.",
+    "elegant": null
+  },
+  "whyOnTest": "Place value decides this, not trial and error, and the distractors are what trial produces.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

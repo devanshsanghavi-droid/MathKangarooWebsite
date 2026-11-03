@@ -1,0 +1,68 @@
+{
+  "id": "KA-0292",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A bus leaves every 15 minutes starting at 7:00 am. What time does the sixth bus leave?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "7:75",
+      "correct": false,
+      "misconception": "I added 75 minutes to the hour without converting past sixty."
+    },
+    {
+      "key": "B",
+      "text": "8:00",
+      "correct": false,
+      "misconception": "I counted six gaps of fifteen minutes rather than five."
+    },
+    {
+      "key": "C",
+      "text": "8:15",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "7:90",
+      "correct": false,
+      "misconception": "I added ninety minutes but wrote it as a time without converting."
+    },
+    {
+      "key": "E",
+      "text": "8:30",
+      "correct": false,
+      "misconception": "I counted six gaps and then added one more."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-02",
+    "secondary": [
+      "MOD-07",
+      "GEO-18"
+    ]
+  },
+  "hints": [
+    "The first bus leaves after no waiting at all.",
+    "Count the gaps rather than the buses: reaching the sixth bus takes five gaps of fifteen minutes. Work out the total minutes, then convert into hours before adding to the start time.",
+    "Five gaps of 15 minutes is 75 minutes after 7:00."
+  ],
+  "solutions": {
+    "reliable": "The sixth bus is five gaps after the first, so 5 x 15 = 75 minutes after 7:00, which is 8:15. The transferable idea: count the gaps, not the items, because the first item takes no gaps to reach, and convert minutes into hours before writing a time.",
+    "elegant": null
+  },
+  "whyOnTest": "Counting buses instead of gaps, and writing more than sixty minutes into a time, are both offered as choices.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

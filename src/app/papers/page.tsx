@@ -67,7 +67,7 @@ export default function PapersPage() {
         <div className="mt-8">
           <EmptyState action={<Link href="/atlas">Browse the Skill Atlas instead</Link>}>
             No paper has been indexed yet. Indexing one means sitting down with the official PDF and
-            classifying all {expectedQuestionCount('5-6')} questions against the Atlas — it is
+            classifying all {expectedQuestionCount('5-6')} questions against the Atlas - it is
             reading work, not code, and it is the honest kind: an index someone guessed at would
             send a student to the wrong skill.
           </EmptyState>
@@ -140,7 +140,7 @@ export default function PapersPage() {
         </h2>
         <p className="prose-measure mt-3 mb-0 text-ink-2">
           Math Kangaroo publishes sample and past papers on its own site. Go there for the
-          questions; come back here for what they test. We deliberately do not mirror them — a copy
+          questions; come back here for what they test. We deliberately do not mirror them - a copy
           on our server would be both a copyright problem and one more thing to go stale.
         </p>
         <p className="mt-3 mb-0">

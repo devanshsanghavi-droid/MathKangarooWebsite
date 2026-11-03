@@ -3,7 +3,7 @@ import { trailingStreak, type AttemptRecord } from './mastery';
 /**
  * One rung of a skill's practice ladder: every problem in the skill at one point value.
  *
- * docs/05-DESIGN-DIRECTION.md §7.3 — "3 in a row to finish this ladder". The bar is a trailing
+ * docs/05-DESIGN-DIRECTION.md §7.3 - "3 in a row to finish this ladder". The bar is a trailing
  * run of three correct answers on this rung, which is the same shape as the mastery streak in
  * mastery.ts but scoped to one tier: a student who can do three 3-pointers in a row has
  * finished the 3-point ladder, whatever their 5-point record looks like.
@@ -23,7 +23,7 @@ export interface LadderState {
   total: number;
   /**
    * Index of the problem to open on arrival: the first one never yet solved, or the first
-   * problem if they have all been solved. Never null — a finished ladder can still be redone.
+   * problem if they have all been solved. Never null - a finished ladder can still be redone.
    */
   startIndex: number;
 }
@@ -49,7 +49,7 @@ export function ladderState(
 
 /**
  * The streak dots along the top of the exercise view. Always LADDER_TARGET of them, filled
- * from the left — a progress display a student can read at a glance without counting.
+ * from the left - a progress display a student can read at a glance without counting.
  */
 export function streakDots(streak: number): Array<'filled' | 'empty'> {
   return Array.from({ length: LADDER_TARGET }, (_unused, index) =>

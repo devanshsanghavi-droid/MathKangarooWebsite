@@ -1,0 +1,67 @@
+{
+  "id": "KA-0211",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Two circles of radius 5 touch each other on the outside. A third circle of radius 5 touches both. What is the perimeter of the triangle joining the three centres?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "15",
+      "correct": false,
+      "misconception": "I used the three radii as the side lengths of the triangle."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I added a diameter to two radii, mixing the two measurements."
+    },
+    {
+      "key": "C",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "45",
+      "correct": false,
+      "misconception": "I used three diameters and then added a radius for the third contact point."
+    },
+    {
+      "key": "E",
+      "text": "60",
+      "correct": false,
+      "misconception": "I used three diameters, which double counts because the sides are centre to centre."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-07",
+    "secondary": [
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "The distance between centres of touching circles is a sum of radii.",
+    "Two circles that touch on the outside have centres exactly the sum of their radii apart. Work out one side that way, then use the symmetry of the arrangement.",
+    "Each side joins two centres, so each is 5 + 5 = 10, and the triangle is equilateral."
+  ],
+  "solutions": {
+    "reliable": "When two circles touch externally the distance between centres equals the sum of the radii, here 5 + 5 = 10. All three sides are 10, so the perimeter is 30. The transferable idea: in touching-circle problems, replace every contact with the centre-to-centre distance and the picture becomes a plain polygon.",
+    "elegant": "The three centres form an equilateral triangle of side one diameter, so the perimeter is three diameters."
+  },
+  "whyOnTest": "Converting tangency into centre distances is the whole technique, and the radius-only and diameter-tripled answers are both on offer.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

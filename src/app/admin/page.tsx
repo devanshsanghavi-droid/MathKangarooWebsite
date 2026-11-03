@@ -99,7 +99,7 @@ export default async function AdminPage() {
           <div className="rounded-md border border-rule bg-surface p-4">
             <h3 className="m-0 text-sm font-semibold text-ink">Ladders on a single tier</h3>
             <p className="mt-1 mb-2 text-xs text-ink-3">
-              Practisable, but not progressively — there is nowhere to move up to.
+              Practisable, but not progressively - there is nowhere to move up to.
             </p>
             {health.singleTier.length === 0 ? (
               <p className="m-0 text-sm text-ink-2">None.</p>
@@ -155,7 +155,7 @@ export default async function AdminPage() {
         <div className="mt-3 rounded-md border border-dashed border-rule-strong bg-surface-2 p-5">
           <p className="reading m-0 max-w-prose text-ink-2">
             No usage data yet. Events are collected the moment the site is deployed and someone
-            visits — entry points, the learning funnel, error rates per skill and tier, feature
+            visits - entry points, the learning funnel, error rates per skill and tier, feature
             adoption, and per-distractor item analysis.
           </p>
           <p className="reading mt-3 mb-0 max-w-prose text-sm text-ink-3">

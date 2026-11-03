@@ -1,4 +1,4 @@
-# 04 — Claude Code Session Prompts
+# 04 - Claude Code Session Prompts
 
 Copy-paste prompts, one per milestone. They assume Claude Code is running in the repo root
 with `CLAUDE.md` present.
@@ -18,7 +18,7 @@ with `CLAUDE.md` present.
 
 ## Phase 0
 
-### M0.1 — Taxonomy files
+### M0.1 - Taxonomy files
 ```
 Read CLAUDE.md and docs/03-CONTENT-GUIDE.md.
 
@@ -40,7 +40,7 @@ Show me NUM-01, CNT-12, GEO-10, and CFT-08 first and wait for my approval on the
 writing the other 87.
 ```
 
-### M0.2 — Repo and rails
+### M0.2 - Repo and rails
 ```
 Read CLAUDE.md and docs/00-SPEC.md §0.
 
@@ -60,7 +60,7 @@ Tailwind v4, ESLint, Prettier, Vitest. Then:
 Plan first. Do not add any dependency not in CLAUDE.md's table without telling me why.
 ```
 
-### M0.3 — CI guardrails
+### M0.3 - CI guardrails
 ```
 Read CLAUDE.md's non-negotiables and docs/02-BUILD-PLAN.md M0.3.
 
@@ -74,7 +74,7 @@ pasting official problem text - comment it as such.
 
 ## Phase 1
 
-### M1.1 — App shell
+### M1.1 - App shell
 ```
 Read CLAUDE.md and docs/00-SPEC.md §0.2 and §1.
 
@@ -87,7 +87,7 @@ Every color from tokens.css. Verify in both themes at 360px and at 200% zoom bef
 tell me it's done, and run pnpm a11y.
 ```
 
-### M1.2 — Content layer
+### M1.2 - Content layer
 ```
 Read docs/01-DATA-MODEL.md.
 
@@ -97,7 +97,7 @@ graph as adjacency lists). Pure functions, cached at module scope, no async, no 
 Unit test every loader and index against fixtures.
 ```
 
-### M1.3 — Problem components
+### M1.3 - Problem components
 ```
 Read docs/00-SPEC.md §1.6 and §7, and docs/03-CONTENT-GUIDE.md Part B.
 
@@ -115,7 +115,7 @@ statement, choices, and a <details> solution must still render.
 Render tests for each component in light and dark.
 ```
 
-### M1.4 / M1.5 — Problem and skill pages
+### M1.4 / M1.5 - Problem and skill pages
 ```
 Read docs/00-SPEC.md §1.4 and §1.6.
 
@@ -127,7 +127,7 @@ Add next/previous navigation within a skill, and a report-a-problem link that op
 prefilled GitHub issue.
 ```
 
-### M1.6 — The Atlas
+### M1.6 - The Atlas
 ```
 Read docs/00-SPEC.md §1.2 and §1.3.
 
@@ -145,7 +145,7 @@ so it is testable and stable across builds. Add /atlas/[strand] walkthrough page
 Plan the layout algorithm before implementing it.
 ```
 
-### M1.8 — Paper index
+### M1.8 - Paper index
 ```
 Read docs/00-SPEC.md §1.7, docs/01-DATA-MODEL.md §1.3, and the first non-negotiable in CLAUDE.md.
 
@@ -158,7 +158,7 @@ Also add the "skills most tested in this band" summary. Confirm the 2KB tripwire
 still passes.
 ```
 
-### M1.9 — Home
+### M1.9 - Home
 ```
 Read docs/00-SPEC.md §1.1.
 
@@ -174,7 +174,7 @@ Target Lighthouse >= 95 on all four categories. Tell me the numbers.
 
 ## Phase 2
 
-### M2.1 — Database
+### M2.1 - Database
 ```
 Read docs/01-DATA-MODEL.md §2 and CLAUDE.md's non-negotiables.
 
@@ -186,7 +186,7 @@ only through the security definer function - never raw rows.
 The users are minors. Treat any policy gap as a build failure.
 ```
 
-### M2.4 — Mastery and scheduling
+### M2.4 - Mastery and scheduling
 ```
 Read docs/01-DATA-MODEL.md §3.1 and §3.2.
 
@@ -198,7 +198,7 @@ Unit test every transition including decay and the "no hint above level 1" condi
 mastery.
 ```
 
-### M2.8 — Mock exam
+### M2.8 - Mock exam
 ```
 Read docs/00-SPEC.md §2.3 and docs/01-DATA-MODEL.md §3.5.
 
@@ -212,7 +212,7 @@ answers. Post-exam report: score, per-tier accuracy, a time-vs-accuracy scatter 
 points were lost, skill heat overlay, and the top three skills to fix.
 ```
 
-### M2.10 — Mentor layer
+### M2.10 - Mentor layer
 ```
 Read docs/00-SPEC.md §4 and docs/01-DATA-MODEL.md §2.1.
 
@@ -228,7 +228,7 @@ test that a mentor calling the raw tables directly gets zero rows.
 
 ## Phase 3+
 
-### M3.3 — Calibration
+### M3.3 - Calibration
 ```
 Read docs/01-DATA-MODEL.md §3.3.
 
@@ -238,7 +238,7 @@ GitHub Action that runs it and opens a PR with the diff. Flag problems above 0.9
 0.15 in the PR body as rewrite candidates.
 ```
 
-### M3.5 — Impact dashboard
+### M3.5 - Impact dashboard
 ```
 Read docs/00-SPEC.md §1.9 and docs/01-DATA-MODEL.md §4.
 
@@ -250,7 +250,7 @@ the honest claim is association not causation. Suppress any figure derived from 
 Then re-read the page and flag any sentence that implies causation. There should be none.
 ```
 
-### M4.4 — Variant generator
+### M4.4 - Variant generator
 ```
 Read docs/03-CONTENT-GUIDE.md Part D.
 

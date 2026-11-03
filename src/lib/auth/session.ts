@@ -8,8 +8,7 @@ import { timingSafeEqual } from './password';
  * explicit: a session cannot be killed server-side before it expires, so `MAX_AGE` is short
  * and rotating `AUTH_SECRET` invalidates every outstanding session at once.
  *
- * The payload carries no name, no email and no student identifier beyond an opaque subject —
- * a stolen cookie discloses a role and an expiry, and nothing about a child.
+ * The payload carries no name, no email and no student identifier beyond an opaque subject -  * a stolen cookie discloses a role and an expiry, and nothing about a child.
  */
 
 export const SESSION_COOKIE = 'ka_session';
@@ -59,8 +58,7 @@ export async function encodeSession(payload: SessionPayload, secret: string): Pr
 }
 
 /**
- * Verify and decode. Returns null for anything that is not a currently-valid session —
- * a bad signature, a malformed body, an unknown role, or an expired token.
+ * Verify and decode. Returns null for anything that is not a currently-valid session -  * a bad signature, a malformed body, an unknown role, or an expired token.
  *
  * The signature is checked BEFORE the payload is parsed, and the expiry is checked after.
  * Parsing first would run JSON.parse over attacker-controlled bytes for no reason.

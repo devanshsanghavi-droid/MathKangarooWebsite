@@ -1,0 +1,68 @@
+{
+  "id": "KA-0265",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Using the digits 1, 2 and 3, each exactly once, how many different three-digit numbers can be made?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted the digits rather than the numbers they can make."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found four numbers by trying and stopped before finding them all."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I allowed digits to repeat, which the question does not."
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I let each of the three places hold any of the three digits."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "CNT-05",
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "List them in order, smallest first.",
+    "Work through them in order so none is missed: start with the numbers beginning with 1, then those beginning with 2, then with 3. Each start gives the same small count.",
+    "Starting with 1 gives 123 and 132, and the same happens for each of the other two starts."
+  ],
+  "solutions": {
+    "reliable": "Each digit can lead, and the remaining two digits can go in either order, so each start gives 2 numbers and there are 3 x 2 = 6 in all: 123, 132, 213, 231, 312, 321. The idea to keep: list in a fixed order so nothing is missed, and count the pattern rather than trusting the list.",
+    "elegant": null
+  },
+  "whyOnTest": "Listing without a system is how the 4 answer happens, and a fixed order is the habit the question is teaching.",
+  "estSeconds": 65,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

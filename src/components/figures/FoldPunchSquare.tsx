@@ -1,7 +1,7 @@
 import { FigureSvg, Label, STROKE, GRID, FILL_NONE, W_THIN, W_HAIR } from './primitives.tsx';
 
 /**
- * KA-0020 — three steps: the flat square, the same square folded top to bottom, and that
+ * KA-0020 - three steps: the flat square, the same square folded top to bottom, and that
  * rectangle folded left to right with one hole punched through every layer.
  */
 export function FoldPunchSquare() {

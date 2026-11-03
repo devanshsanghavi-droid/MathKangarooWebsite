@@ -1,0 +1,68 @@
+{
+  "id": "KA-0196",
+  "band": "7-8",
+  "points": 5,
+  "statement": "How many three-digit numbers contain at least one digit 7?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "252",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "243",
+      "correct": false,
+      "misconception": "I counted the numbers with no 7 at all and gave that figure instead."
+    },
+    {
+      "key": "C",
+      "text": "270",
+      "correct": false,
+      "misconception": "I counted one hundred for each position where a 7 could sit and ignored the double counting."
+    },
+    {
+      "key": "D",
+      "text": "300",
+      "correct": false,
+      "misconception": "I assumed a tenth of the nine hundred three-digit numbers had a 7 in each of three places."
+    },
+    {
+      "key": "E",
+      "text": "100",
+      "correct": false,
+      "misconception": "I counted only the numbers starting with 7 and forgot the other two positions."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-09",
+    "secondary": [
+      "CNT-16",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Counting the ones without a 7 is far easier.",
+    "When 'at least one' appears, count the cases with none of the thing and subtract from the total. Here that means choosing each digit from those that are not 7.",
+    "There are 900 three-digit numbers. Those with no 7 have 8 choices of leading digit and 9 for each of the others."
+  ],
+  "solutions": {
+    "reliable": "There are 900 three-digit numbers. A number with no 7 has 8 choices for the leading digit, since it cannot be 0 or 7, and 9 for each of the other two, giving 8 x 9 x 9 = 648. So 900 - 648 = 252 contain a 7. The transferable idea: 'at least one' almost always means count the complement, because the direct count double counts the numbers with two or three sevens.",
+    "elegant": "Counting directly forces you to track numbers with two or three sevens; the complement has no overlaps at all."
+  },
+  "whyOnTest": "Complementary counting is the difference between a clean line of arithmetic and an inclusion-exclusion mess, and the complement itself is offered as a distractor.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

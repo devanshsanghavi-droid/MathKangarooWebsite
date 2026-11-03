@@ -5,7 +5,7 @@
  * Postgres and is therefore not part of `pnpm test`. This module exists so that the *shape* of
  * the policies is still checked on every commit, with no database at all.
  *
- * It cannot prove that student A is unable to read student B's attempts — only a database can
+ * It cannot prove that student A is unable to read student B's attempts - only a database can
  * do that. What it does catch is the failure that actually happens in practice: a table added
  * later with no `enable row level security`, a policy that quietly says `using (true)`, or a
  * `security definer` function without a pinned `search_path`. Those are silent, total, and
@@ -116,7 +116,7 @@ export const STUDENT_OWNED_TABLES = ['attempts', 'mastery', 'runs', 'journal_ent
  *
  * `telemetry_events` belongs here rather than with the student-owned tables because it has no
  * owner: rows carry a tab-scoped session id and no user id at all. Nothing reads it through
- * anon or authenticated — aggregates are computed by a job running as the service role, and
+ * anon or authenticated - aggregates are computed by a job running as the service role, and
  * only figures with n >= 10 are ever published (docs/01-DATA-MODEL.md §4).
  */
 export const SERVICE_ROLE_ONLY_TABLES = ['parent_consents', 'telemetry_events'] as const;

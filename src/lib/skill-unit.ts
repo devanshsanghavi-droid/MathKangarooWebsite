@@ -3,7 +3,7 @@ import { ladderState, type LadderState } from './ladder';
 import type { AttemptRecord } from './mastery';
 
 /**
- * The unit page's lesson list — docs/05-DESIGN-DIRECTION.md §7.2.
+ * The unit page's lesson list - docs/05-DESIGN-DIRECTION.md §7.2.
  *
  * Five rows: Learn, then a ladder per point tier, then the skill quiz. The quiz is locked
  * until every ladder that HAS problems has been finished; a tier with nothing written in it
@@ -43,7 +43,7 @@ export function quizUnlocked(ladders: readonly LadderState[]): boolean {
 
 /**
  * The typical difficulty of a skill, for the pill beside its title. A skill has no point value
- * of its own, so this is the point tier most of its problems sit at — and when it has no
+ * of its own, so this is the point tier most of its problems sit at - and when it has no
  * problems yet, the value its Atlas tier implies.
  */
 export const TIER_IMPLIED_POINTS: Record<Tier, Points> = {
@@ -97,7 +97,7 @@ export function buildLessonRows({
     rows.push({
       kind: 'ladder',
       key: `ladder-${points}`,
-      title: `Practice — ${points}-point ladder`,
+      title: `Practice - ${points}-point ladder`,
       blurb:
         state.total === 0
           ? 'No problems written at this tier yet.'

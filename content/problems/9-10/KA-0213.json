@@ -1,0 +1,68 @@
+{
+  "id": "KA-0213",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Roughly how many seconds are there in a year?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "About 500 thousand",
+      "correct": false,
+      "misconception": "I multiplied the days by the hours and stopped before the minutes and seconds."
+    },
+    {
+      "key": "B",
+      "text": "About 3 million",
+      "correct": false,
+      "misconception": "I used minutes rather than seconds for the final step."
+    },
+    {
+      "key": "C",
+      "text": "About 30 million",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "About 300 million",
+      "correct": false,
+      "misconception": "I used 3650 days in a year, slipping a factor of ten into the day count."
+    },
+    {
+      "key": "E",
+      "text": "About 3 billion",
+      "correct": false,
+      "misconception": "I multiplied by 60 twice and then by 60 again, using one conversion too many."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-12",
+    "secondary": [
+      "MOD-07",
+      "CFT-06"
+    ]
+  },
+  "hints": [
+    "Build the answer one conversion at a time.",
+    "Go from a year to days, days to hours, hours to minutes and minutes to seconds, checking after each step that the size of the number has grown by about the right factor.",
+    "365 x 24 is about 8800 hours, times 3600 seconds in an hour."
+  ],
+  "solutions": {
+    "reliable": "A year is about 365 x 24 = 8760 hours, and each hour holds 3600 seconds, giving roughly 31.5 million. The transferable idea: estimate one conversion at a time and sanity-check the order of magnitude after each, because a single missed factor of sixty moves the answer by a whole choice.",
+    "elegant": "A useful fact worth carrying: a year is close to pi times ten million seconds."
+  },
+  "whyOnTest": "Order-of-magnitude questions are won by the student who tracks powers of ten, and every distractor here is one conversion away from right.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

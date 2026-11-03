@@ -22,15 +22,15 @@ interface Params {
 }
 
 /**
- * The unit page — docs/05-DESIGN-DIRECTION.md §7.2.
+ * The unit page - docs/05-DESIGN-DIRECTION.md §7.2.
  *
  * v1 was nine stacked sections: a document you read top to bottom and then closed. v2 is a
- * unit you work through — breadcrumb, title, mastery bar, then a lesson list of Learn, three
+ * unit you work through - breadcrumb, title, mastery bar, then a lesson list of Learn, three
  * practice ladders and a skill quiz. Nothing was deleted; the nine sections' content moved
  * into /skill/[id]/learn and the ladders.
  *
- * The complete set of valid ids is known at build time — content lives in git and nothing is
- * created at runtime — so anything outside that set is a 404, not a page to try rendering.
+ * The complete set of valid ids is known at build time - content lives in git and nothing is
+ * created at runtime - so anything outside that set is a 404, not a page to try rendering.
  * With the default `dynamicParams: true`, Next rendered the page for an unknown id, hit
  * `notFound()`, and then cached and served that not-found body with an HTTP **200**.
  */
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     description: skill.definition,
     alternates: { canonical: `/skill/${skill.id}` },
     openGraph: {
-      title: `${skill.name} — ${STRAND_META[skill.strand].name}`,
+      title: `${skill.name} - ${STRAND_META[skill.strand].name}`,
       description: skill.definition,
       type: 'article',
       url: `/skill/${skill.id}`,
@@ -88,7 +88,7 @@ export default async function SkillPage({ params }: Params) {
 
   return (
     <div className="content-column px-4 py-8">
-      {/* 1 — breadcrumb: strand › band › skill */}
+      {/* 1 - breadcrumb: strand › band › skill */}
       <nav aria-label="Breadcrumb" className="mb-5 text-xs text-ink-3">
         <ol className="m-0 flex list-none flex-wrap items-center gap-2 p-0">
           <li>
@@ -112,7 +112,7 @@ export default async function SkillPage({ params }: Params) {
         </ol>
       </nav>
 
-      {/* 2 — title, one-line definition, difficulty */}
+      {/* 2 - title, one-line definition, difficulty */}
       <header>
         <div className="flex flex-wrap items-center gap-3">
           <h1 className="m-0 text-2xl">{skill.name}</h1>
@@ -121,7 +121,7 @@ export default async function SkillPage({ params }: Params) {
         <p className="reading prose-measure mt-3 mb-0 text-ink-2">{skill.definition}</p>
       </header>
 
-      {/* 3 and 4 — mastery bar and the lesson list */}
+      {/* 3 and 4 - mastery bar and the lesson list */}
       <SkillUnit
         skillId={skill.id}
         problemIdsByTier={problemIdsByTier}
@@ -129,7 +129,7 @@ export default async function SkillPage({ params }: Params) {
         hasWorkedExample={skill.canonicalProblem !== null}
       />
 
-      {/* 5 — prerequisites and unlocks */}
+      {/* 5 - prerequisites and unlocks */}
       <section id="unit-graph" aria-labelledby="unit-graph-heading" className="mt-8">
         <h2 id="unit-graph-heading" className="m-0 text-lg">
           Before and after
@@ -162,7 +162,7 @@ export default async function SkillPage({ params }: Params) {
         </div>
       </section>
 
-      {/* 6 — in official papers, unchanged */}
+      {/* 6 - in official papers, unchanged */}
       <section id="unit-papers" aria-labelledby="unit-papers-heading" className="mt-8">
         <h2 id="unit-papers-heading" className="m-0 text-lg">
           In official papers
@@ -172,7 +172,7 @@ export default async function SkillPage({ params }: Params) {
             <EmptyState action={<Link href="/papers">See the papers indexed so far</Link>}>
               No indexed official paper question has been tagged with {skill.id} yet. The index
               grows one paper at a time, and it records only question numbers, point values and our
-              own skill tags — never the problems themselves.
+              own skill tags - never the problems themselves.
             </EmptyState>
           ) : (
             <>

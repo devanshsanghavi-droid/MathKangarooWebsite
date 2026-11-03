@@ -15,7 +15,7 @@ import {
  *
  * Same principle as the Atlas: every filter lives in the URL, so a filtered view is a link you
  * can paste into a message to a student, it survives a reload, and Back undoes it. Parsing is
- * total — bad input narrows to nothing rather than throwing.
+ * total - bad input narrows to nothing rather than throwing.
  */
 
 export const SORTS = ['id', 'difficulty', 'newest'] as const;
@@ -106,7 +106,7 @@ export function problemsHref(query: Partial<ProblemQuery>): string {
   return params ? `/problems?${params}` : '/problems';
 }
 
-/** Toggle one value of a multi-select filter, and reset to page 1 — the old page may not exist. */
+/** Toggle one value of a multi-select filter, and reset to page 1 - the old page may not exist. */
 export function toggle<T>(list: readonly T[], value: T): T[] {
   return list.includes(value) ? list.filter((item) => item !== value) : [...list, value];
 }
@@ -136,7 +136,7 @@ export function matches(problem: Problem, query: ProblemQuery): boolean {
 
 /**
  * Sorting. "Difficulty" means the measured p-value, which is null until a problem has 30
- * first attempts — so uncalibrated problems sort last rather than pretending to be easy, and
+ * first attempts - so uncalibrated problems sort last rather than pretending to be easy, and
  * the page says as much.
  */
 export function sortProblems(problems: readonly Problem[], sort: ProblemSort): Problem[] {

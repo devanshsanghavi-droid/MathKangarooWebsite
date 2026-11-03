@@ -1,0 +1,68 @@
+{
+  "id": "KA-0193",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Three friends each say one sentence. Ana: 'Ben is lying.' Ben: 'Carl is lying.' Carl: 'Ana and Ben are both lying.' How many of them are telling the truth?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed everybody could be lying at once, but then Carl's sentence would be true."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I let two of them be truthful without checking that their sentences then contradict each other."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I took every sentence at face value, although they accuse one another."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be decided",
+      "correct": false,
+      "misconception": "I gave up once the statements referred to each other, rather than testing the two cases."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-09",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Test the two cases for Ana and follow each one through.",
+    "Assume Ana is truthful and work out what every other sentence must then be. Repeat assuming she is lying. Only one of the two cases survives without contradiction.",
+    "If Ana is truthful then Ben lies, so Carl is truthful, so Ana lies. That contradiction rules the case out."
+  ],
+  "solutions": {
+    "reliable": "Suppose Ana is truthful. Then Ben lies, so Carl is truthful, so Ana and Ben both lie, contradicting the start. So Ana lies, Ben is truthful, Carl lies, and his sentence is false because Ben is truthful. Exactly one tells the truth. The transferable idea: assume one speaker's status, propagate it, and keep the case that survives.",
+    "elegant": "Ana and Ben contradict each other in every case, so exactly one of the pair is truthful, and Carl's sentence then rules out his own."
+  },
+  "whyOnTest": "Self-referential statements are solved by case analysis, not by reading tone, and the 'cannot be decided' choice is there to tempt a surrender.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

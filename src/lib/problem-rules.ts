@@ -11,7 +11,7 @@
  *   2. `src/lib/author.ts`, so the authoring form cannot call a draft valid that CI rejects;
  *   3. the Zod schema, which expresses them again as types.
  *
- * Before this was shared, the form used only the Zod schema — and the schema permits
+ * Before this was shared, the form used only the Zod schema - and the schema permits
  * `misconception: string | null` on any choice, because the "required exactly when the choice
  * is wrong" half is a cross-field rule. The form therefore accepted a problem that
  * `pnpm validate:content` would reject, which is precisely the guarantee M2.13 is supposed to
@@ -69,7 +69,7 @@ export function checkProblemRules(value: unknown): ProblemRuleViolation[] {
           path: `choices.${index}.misconception`,
           message:
             `Choice ${key}'s misconception is ${text.length} characters. It needs at least ` +
-            `${MIN_MISCONCEPTION} — enough to name the mistake, not just label it.`,
+            `${MIN_MISCONCEPTION} - enough to name the mistake, not just label it.`,
         });
       }
 

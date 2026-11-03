@@ -1,6 +1,6 @@
 import { FigureSvg, STROKE, FILL_NONE, W_THICK, W_THIN } from './primitives.tsx';
 
-/** KA-0003 — one large triangle cut by two lines from the apex into three small triangles. */
+/** KA-0003 - one large triangle cut by two lines from the apex into three small triangles. */
 export function TriangleSplitInThree() {
   const apex = { x: 100, y: 8 };
   const left = { x: 8, y: 108 };

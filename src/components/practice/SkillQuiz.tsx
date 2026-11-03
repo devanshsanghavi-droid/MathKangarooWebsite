@@ -11,7 +11,7 @@ import { saveAttempt } from '@/lib/local-progress';
 import { track } from '@/lib/telemetry/client';
 
 /**
- * The skill quiz — the last row of a unit (docs/05 §7.2).
+ * The skill quiz - the last row of a unit (docs/05 §7.2).
  *
  * Unlike the ladder, this is a MEASUREMENT: no feedback, no hints, no solution while it is
  * running. A quiz that told you the answer as you went would measure nothing, which is the
@@ -107,7 +107,7 @@ export function SkillQuiz({
       <p className="reading mt-2 mb-0 text-ink-2">
         {submitted
           ? `You got ${score} of ${problems.length}. Every explanation below is written for the answer you actually chose.`
-          : `${problems.length} problems. Nothing is marked until you finish — this one is a measurement.`}
+          : `${problems.length} problems. Nothing is marked until you finish - this one is a measurement.`}
       </p>
 
       <ol className="mt-6 grid list-none gap-8 p-0">

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0208",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Two cubes have edges in the ratio 1 to 3. How many of the smaller cube fit inside the larger one?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I used the edge ratio directly, as though volume grew in step with length."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I squared the ratio, which would compare surface areas rather than volumes."
+    },
+    {
+      "key": "C",
+      "text": "18",
+      "correct": false,
+      "misconception": "I doubled the squared ratio in a half-remembered attempt at the volume rule."
+    },
+    {
+      "key": "D",
+      "text": "27",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "81",
+      "correct": false,
+      "misconception": "I raised the ratio to the fourth power, going one step past the three dimensions."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-16",
+    "secondary": [
+      "GEO-13"
+    ]
+  },
+  "hints": [
+    "Count how the ratio acts along each of three directions.",
+    "A length scale factor acts once for each dimension, so volume is multiplied by the factor cubed. Work out the factor from the edges first.",
+    "The edges scale by 3, so volumes scale by 3 x 3 x 3."
+  ],
+  "solutions": {
+    "reliable": "Scaling every edge by 3 multiplies the volume by 3 cubed, so 27 small cubes fill the large one. The transferable idea: a length factor of k multiplies areas by k squared and volumes by k cubed, because it acts once per dimension.",
+    "elegant": "The large cube is a 3 by 3 by 3 stack of small ones, which can simply be counted."
+  },
+  "whyOnTest": "Squaring instead of cubing is the standard scaling error, and both the squared and the unscaled answers are on offer.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

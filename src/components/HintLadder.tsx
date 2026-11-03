@@ -15,7 +15,7 @@ export interface HintRevealDetail {
 /**
  * Three hints, revealed one rung at a time.
  *
- * Each is a real <details>, so with JavaScript disabled all three still open — the content is
+ * Each is a real <details>, so with JavaScript disabled all three still open - the content is
  * in the HTML, which matters more than enforcing the order. With JavaScript on, a rung refuses
  * to open until the one above it has been opened, and every reveal fires a
  * `ka:hint-reveal` CustomEvent on `window`. Phase 2 listens for that and posts it; nothing
@@ -114,7 +114,7 @@ export function HintLadder({
                   {HINT_LABELS[index]}
                   {locked ? (
                     <span className="ml-2 text-xs font-normal text-ink-3">
-                      — open hint {level - 1} first
+                      - open hint {level - 1} first
                     </span>
                   ) : null}
                 </summary>

@@ -7,13 +7,13 @@ import { atlasHref, isFiltered, withStrandToggled, type AtlasQuery } from '@/lib
  * Every filter is a link, not a form control.
  *
  * That means the whole filter bar works with JavaScript switched off, every state is a real
- * URL you can share or bookmark, and the browser's back button undoes a filter — none of which
+ * URL you can share or bookmark, and the browser's back button undoes a filter - none of which
  * a client-side control gives you for free. The cost is that toggling two strands takes two
  * navigations, which on a statically rendered page is imperceptible.
  *
  * Active filters are marked with `aria-current`, not `aria-pressed`: `aria-pressed` belongs to
- * buttons, and axe flags it as a critical violation on a link. These really are links — they
- * navigate — so `aria-current` is both allowed and more accurate.
+ * buttons, and axe flags it as a critical violation on a link. These really are links - they
+ * navigate - so `aria-current` is both allowed and more accurate.
  */
 export function AtlasFilters({ query, resultCount }: { query: AtlasQuery; resultCount: number }) {
   const chip = (active: boolean) =>

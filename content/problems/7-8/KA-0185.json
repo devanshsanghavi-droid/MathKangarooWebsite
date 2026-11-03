@@ -1,0 +1,67 @@
+{
+  "id": "KA-0185",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A sequence starts 5, 9, 13, 17 and keeps going up by the same amount. What is its 50th term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "201",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "205",
+      "correct": false,
+      "misconception": "I multiplied 50 by the step of 4 and added the first term, counting fifty steps instead of forty-nine."
+    },
+    {
+      "key": "C",
+      "text": "200",
+      "correct": false,
+      "misconception": "I multiplied 50 by 4 and ignored the starting value altogether."
+    },
+    {
+      "key": "D",
+      "text": "54",
+      "correct": false,
+      "misconception": "I added 4 to 50, treating the position as if it were a term."
+    },
+    {
+      "key": "E",
+      "text": "197",
+      "correct": false,
+      "misconception": "I counted forty-eight steps because I subtracted two from the position rather than one."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-02",
+    "secondary": [
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "The first term takes no steps to reach.",
+    "Write the rule as first term plus step times the number of steps. Getting to the nth term takes n minus one steps, not n.",
+    "The step is 4, and reaching the 50th term takes 49 steps, so it is 5 + 49 x 4."
+  ],
+  "solutions": {
+    "reliable": "The step is 4, and the 50th term is 49 steps past the first, so it equals 5 + 49 x 4 = 201. The transferable idea: in any arithmetic sequence the count of steps is one less than the term's position, which is where nearly every error in these comes from.",
+    "elegant": "Each term is one less than a multiple of 4, so the 50th is 4 x 50 + 1 adjusted once, landing at 201."
+  },
+  "whyOnTest": "The off-by-one between position and step count is the single most common sequence error, and both nearby distractors are built from it.",
+  "estSeconds": 65,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

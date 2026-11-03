@@ -34,14 +34,14 @@ export default async function ContactPage() {
         </h2>
         <ul className="mt-3 grid list-none gap-2 p-0 text-sm text-ink-2">
           <li>
-            <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a> — the same inbox the
+            <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a> - the same inbox the
             form writes to.
           </li>
           <li>
             <a href={`${SITE.repo}/issues`} rel="noreferrer">
               Open an issue
             </a>{' '}
-            — best for anything about a specific problem, because the discussion stays attached to
+            - best for anything about a specific problem, because the discussion stays attached to
             the fix.
           </li>
           <li>

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0207",
+  "band": "9-10",
+  "points": 5,
+  "statement": "A sequence has first term 1, second term 2, and every later term is the sum of the two before it. How many of the first twelve terms are even?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I spotted that even terms are rare and guessed without writing out the sequence."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I wrote the terms but lost track of the parity pattern partway through."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I assumed the terms alternated between odd and even all the way along."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the odd terms by mistake and reported that total instead."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "LOG-05",
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "Track only whether each term is odd or even.",
+    "Replace every term by the word odd or even and apply the rule to those labels alone. The labels fall into a short repeating block, which you can then count across twelve positions.",
+    "The parities run odd, even, odd, odd, even, odd, and then repeat every three terms."
+  ],
+  "solutions": {
+    "reliable": "Keeping only parity, the rule odd plus even is odd, and so on, produces the repeating block odd, even, odd. Over twelve terms that block appears four times, so four terms are even. The transferable idea: when a recursion is only being asked about parity, work entirely in parities and the problem collapses to a cycle of length three.",
+    "elegant": "Every third term is the even one, so twelve terms contain exactly twelve divided by three of them."
+  },
+  "whyOnTest": "Recursive sequences grow too fast to write out at contest length, and reducing the recursion to parity is the move that makes it finishable.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

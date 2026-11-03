@@ -1,0 +1,68 @@
+{
+  "id": "KA-0219",
+  "band": "9-10",
+  "points": 5,
+  "statement": "The four cells of a 2 by 2 square are each painted red or blue. Two paintings count as the same if one can be turned into the other by rotating the square. How many different paintings are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted only the number of red cells and treated each count as one painting."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I halved the sixteen colourings, assuming every one had exactly one partner."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I divided the sixteen colourings by four without noticing some are unchanged by rotation."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I counted all the colourings and never merged the ones that rotate onto each other."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-04",
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "Group the sixteen colourings by how many cells are red.",
+    "Sort the colourings by the number of red cells, then within each group work out how many rotations of the square give genuinely different pictures. Dividing by four is wrong because some colourings are unchanged by rotation.",
+    "Zero reds gives 1, one red gives 1, two reds gives 2, three reds gives 1 and four reds gives 1."
+  ],
+  "solutions": {
+    "reliable": "Sort by red count. Zero reds: 1 painting. One red: all four positions rotate onto each other, so 1. Two reds: adjacent or diagonal, so 2. Three reds: 1. Four reds: 1. That totals 6. The transferable idea: counting up to symmetry is not simply dividing by the number of symmetries, because some objects are fixed by some of them.",
+    "elegant": "Only the two-red case splits, into the adjacent pair and the diagonal pair, so the count is five obvious cases plus one."
+  },
+  "whyOnTest": "Dividing by the number of rotations is the natural but wrong move, and the answer it gives is on the list.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

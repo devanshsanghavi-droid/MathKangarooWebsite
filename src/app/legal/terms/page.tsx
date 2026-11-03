@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Terms',
   description: 'Plain terms for a free, open, non-commercial study site.',
   alternates: { canonical: '/legal/terms' },
+  // Boilerplate with no search intent behind it. It was competing with the home page
+  // for the site's own name, so it stays reachable and linked but out of the index.
+  robots: { index: false, follow: true },
 };
 
 export default function TermsPage() {
@@ -30,7 +33,7 @@ export default function TermsPage() {
 
       <h2 className="mt-10 text-lg">What you may do with the material</h2>
       <p className="prose-measure mt-3 text-ink-2">
-        Print it, hand it out, translate it, build on it — for teaching, for a club, for your own
+        Print it, hand it out, translate it, build on it - for teaching, for a club, for your own
         children. The problems and explanations are CC BY-NC-SA 4.0, which asks three things: credit
         the source, do not sell it, and share what you build under the same terms. The code is MIT.
         See the <Link href="/legal/license">licence page</Link>.
@@ -52,7 +55,7 @@ export default function TermsPage() {
       <h2 className="mt-10 text-lg">No guarantees</h2>
       <p className="prose-measure mt-3 text-ink-2">
         Problems are written and reviewed by people, and people make mistakes. If an answer here is
-        wrong, please report it from the problem&rsquo;s own page — every problem has a link that
+        wrong, please report it from the problem&rsquo;s own page - every problem has a link that
         opens a public issue. Nothing on this site is a promise about how anyone will score on a
         real exam.
       </p>
@@ -60,7 +63,7 @@ export default function TermsPage() {
       <h2 className="mt-10 text-lg">Availability</h2>
       <p className="prose-measure mt-3 text-ink-2">
         This runs on free hosting and could go down, change, or move. If it ever disappears, the
-        whole thing — every problem, every explanation — stays available in the{' '}
+        whole thing - every problem, every explanation - stays available in the{' '}
         <a href={SITE.repo} rel="noreferrer">
           public repository
         </a>

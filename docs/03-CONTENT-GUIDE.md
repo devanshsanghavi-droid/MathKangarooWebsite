@@ -1,16 +1,16 @@
-# 03 — Content Guide
+# 03 - Content Guide
 
 Content is the bottleneck, not code. Code is maybe six weeks of work; the problem bank is a
 year. Treat this document as the more important half of the project.
 
 ---
 
-## Part A — The taxonomy, v1 (91 skills)
+## Part A - The taxonomy, v1 (91 skills)
 
 Seven strands. IDs are permanent once published; never renumber. Tier is
 `F` foundation · `C` core · `G` 5-point gateway.
 
-### NUM — Number & Arithmetic (15)
+### NUM - Number & Arithmetic (15)
 | ID | Skill | Tier |
 |---|---|---|
 | NUM-01 | Place value and digit positions | F |
@@ -29,7 +29,7 @@ Seven strands. IDs are permanent once published; never renumber. Tier is
 | NUM-14 | Operation puzzles and cryptarithms | G |
 | NUM-15 | Means, and working backwards from a mean | C |
 
-### CNT — Counting (18)
+### CNT - Counting (18)
 | ID | Skill | Tier |
 |---|---|---|
 | CNT-01 | Systematic listing | F |
@@ -51,7 +51,7 @@ Seven strands. IDs are permanent once published; never renumber. Tier is
 | CNT-17 | The pigeonhole principle | G |
 | CNT-18 | Extremal / worst-case counting | G |
 
-### GEO — Geometry & Visualization (18)
+### GEO - Geometry & Visualization (18)
 | ID | Skill | Tier |
 |---|---|---|
 | GEO-01 | Perimeter and area of rectilinear shapes | F |
@@ -73,7 +73,7 @@ Seven strands. IDs are permanent once published; never renumber. Tier is
 | GEO-17 | Shortest paths on and around shapes | G |
 | GEO-18 | Clock geometry: hands, angles, times | C |
 
-### LOG — Logic & Deduction (11)
+### LOG - Logic & Deduction (11)
 | ID | Skill | Tier |
 |---|---|---|
 | LOG-01 | Reading a logical statement precisely | F |
@@ -88,7 +88,7 @@ Seven strands. IDs are permanent once published; never renumber. Tier is
 | LOG-10 | Weighing and balance puzzles | C |
 | LOG-11 | The extremal principle | G |
 
-### PAT — Patterns & Sequences (7)
+### PAT - Patterns & Sequences (7)
 | ID | Skill | Tier |
 |---|---|---|
 | PAT-01 | Continuing a visual pattern | F |
@@ -99,7 +99,7 @@ Seven strands. IDs are permanent once published; never renumber. Tier is
 | PAT-06 | Patterns in tables and grids | C |
 | PAT-07 | Inferring a rule from examples | G |
 
-### MOD — Modeling & Word Problems (10)
+### MOD - Modeling & Word Problems (10)
 | ID | Skill | Tier |
 |---|---|---|
 | MOD-01 | Translating a sentence into an equation | F |
@@ -113,7 +113,7 @@ Seven strands. IDs are permanent once published; never renumber. Tier is
 | MOD-09 | Reading tables, charts, and graphs | F |
 | MOD-10 | Multi-step arithmetic word problems | C |
 
-### CFT — Contest Craft (12) — *the strand nobody else teaches*
+### CFT - Contest Craft (12) - *the strand nobody else teaches*
 | ID | Skill | Tier |
 |---|---|---|
 | CFT-01 | Find what is actually being asked | F |
@@ -124,7 +124,7 @@ Seven strands. IDs are permanent once published; never renumber. Tier is
 | CFT-06 | Estimate to the nearest choice | C |
 | CFT-07 | Spot the trick vs. decide to grind | G |
 | CFT-08 | Time triage: now, later, or guess | G |
-| CFT-09 | Never leave a blank — there is no penalty | F |
+| CFT-09 | Never leave a blank - there is no penalty | F |
 | CFT-10 | Check units and re-read before bubbling | F |
 | CFT-11 | Sanity-check with a second method | C |
 | CFT-12 | Managing the 5-point block | G |
@@ -134,9 +134,9 @@ behaving like two different skills. Split, never rename.
 
 ---
 
-## Part B — Authoring rules
+## Part B - Authoring rules
 
-### B1. Legality — the rule that protects the whole project
+### B1. Legality - the rule that protects the whole project
 1. Never copy, retype, translate, or closely paraphrase an official Math Kangaroo problem.
 2. "Closely paraphrase" means: same objects, same numbers, same structure with words swapped.
    Change the mathematical situation, not just the nouns.
@@ -153,7 +153,7 @@ behaving like two different skills. Split, never rename.
 - **Point value must match reality:** 3-point = one step from a known skill; 4-point = two
   steps, or one step plus a trap; 5-point = requires an idea, not just a procedure.
 
-### B3. Distractors — the highest-value 20 minutes you'll spend on any problem
+### B3. Distractors - the highest-value 20 minutes you'll spend on any problem
 Every wrong choice answers the question *"what real student thinking produces this number?"*
 Write the misconception first, then the number it produces. Standard families:
 
@@ -172,12 +172,12 @@ Rules: no joke answers; no wildly out-of-range values; every distractor must be 
 defensible mistake; the correct answer must not be the only "round" number, the only one in the
 middle, or predictable by length.
 
-### B4. Hints — exactly three, strictly graduated
-1. **Nudge** (≤15 words) — points attention, gives nothing away. *"Count by size, largest first."*
-2. **Strategy** (≤40 words) — names the skill and why it applies. No arithmetic.
-3. **Full solution** — complete, with the figure, ending in the general principle.
+### B4. Hints - exactly three, strictly graduated
+1. **Nudge** (≤15 words) - points attention, gives nothing away. *"Count by size, largest first."*
+2. **Strategy** (≤40 words) - names the skill and why it applies. No arithmetic.
+3. **Full solution** - complete, with the figure, ending in the general principle.
 
-### B5. Solutions — two, where they differ
+### B5. Solutions - two, where they differ
 - **Reliable**: the method that always works under time pressure, written for a tired student.
 - **Elegant**: the insight, if one exists. Say plainly when there isn't one.
 Every solution ends with one line naming the transferable idea.
@@ -194,18 +194,18 @@ builds a model of the exam rather than a pile of tricks.
 
 ### B8. Translation
 Translate `statement`, `choices`, `solutions`, and the skill `definition`. Never translate ids.
-Check that no wordplay-dependent problem was translated — rewrite it for that locale instead.
+Check that no wordplay-dependent problem was translated - rewrite it for that locale instead.
 
 ---
 
-## Part C — Review checklist (both reviewers complete this)
+## Part C - Review checklist (both reviewers complete this)
 
-- [ ] Original — not traceable to any official problem
+- [ ] Original - not traceable to any official problem
 - [ ] Exactly one correct answer, and it is actually correct (solved independently)
 - [ ] All four distractors have a written, plausible misconception
 - [ ] Primary skill is right; secondary skills are not padding
 - [ ] Point value matches the difficulty of the reasoning, not the arithmetic
-- [ ] Statement is unambiguous — no second reading required
+- [ ] Statement is unambiguous - no second reading required
 - [ ] Figure is necessary, correct, theme-safe, print-safe, and alt-texted
 - [ ] Three hints are strictly graduated, and hint 1 gives nothing away
 - [ ] Reliable solution is complete; elegant solution present or explicitly null
@@ -215,7 +215,7 @@ Check that no wordplay-dependent problem was translated — rewrite it for that 
 
 ---
 
-## Part D — Production cadence
+## Part D - Production cadence
 
 - **10 problems per week, every week.** 40/month, ~480/year. Non-negotiable, small enough to survive a bad week.
 - Write in **skill blocks**: five problems for one skill in one sitting beats five scattered ones.

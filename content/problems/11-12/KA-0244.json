@@ -1,0 +1,67 @@
+{
+  "id": "KA-0244",
+  "band": "11-12",
+  "points": 5,
+  "statement": "What is the smallest number of people in a room that guarantees three of them share a birth month?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "13",
+      "correct": false,
+      "misconception": "I used the condition for two sharing a month rather than three."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I doubled the twelve months but forgot to add the one that forces the third."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": false,
+      "misconception": "I used three per month rather than two per month before adding one."
+    },
+    {
+      "key": "E",
+      "text": "37",
+      "correct": false,
+      "misconception": "I used three per month and then added one on top of that."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "CNT-17"
+    ]
+  },
+  "hints": [
+    "Build the largest room that still fails.",
+    "Find the largest group in which no month holds three people, which is two per month. The answer is one more than that group's size.",
+    "Two people in each of the twelve months is 24 people with no month reaching three."
+  ],
+  "solutions": {
+    "reliable": "The largest group avoiding three in a month is two per month, which is 24 people. The twenty-fifth person must give some month a third, so 25 is the answer. The transferable idea: a guarantee question is always one more than the largest failing configuration, which here is the number of categories times one less than the target.",
+    "elegant": "Twelve months times two, plus one, is the whole calculation."
+  },
+  "whyOnTest": "The two-per-month ceiling is what makes this 25 rather than 13 or 37, and both of those sit in the choices.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

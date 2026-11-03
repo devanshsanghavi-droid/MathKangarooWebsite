@@ -31,7 +31,7 @@ describe('the sitemap', () => {
     }
   });
 
-  it('leaves the ladders and quizzes out — they are tools, not documents', () => {
+  it('leaves the ladders and quizzes out - they are tools, not documents', () => {
     const tools = entries.filter((entry) => /\/(practice\/[345]|quiz)$/.test(entry.url));
     expect(tools).toEqual([]);
   });

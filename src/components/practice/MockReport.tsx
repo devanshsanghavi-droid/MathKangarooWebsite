@@ -122,7 +122,7 @@ export function MockReportView({
             return (
               /*
                 Correct and incorrect, which is exactly what the reserved colours are for. The
-                SHAPE differs too — a disc for a solve, a cross for a miss — because a scatter
+                SHAPE differs too - a disc for a solve, a cross for a miss - because a scatter
                 plot separated only by hue is unreadable to a colour-blind student and prints
                 as one cloud of grey.
               */

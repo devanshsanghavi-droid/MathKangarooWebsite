@@ -48,7 +48,7 @@ describe('DifficultyPill', () => {
   });
 
   it('uses the neutral difficulty ramp, never a reserved feedback colour', () => {
-    // docs/05 §3. v1 painted the 5-point tier rose — the same variable as "incorrect" — so a
+    // docs/05 §3. v1 painted the 5-point tier rose - the same variable as "incorrect" - so a
     // student saw red on the hardest problems before reading a word of them.
     for (const [points, expected] of [
       [3, 'bg-d1-bg text-d1-fg'],
@@ -291,7 +291,7 @@ describe('ChoiceList', () => {
 
 /* -------------------------------------------------------------------------- */
 
-describe('FeedbackPanel — the distractor-specific behaviour that is the product', () => {
+describe('FeedbackPanel - the distractor-specific behaviour that is the product', () => {
   const problem = {
     choices: CHOICES,
     solutions: {

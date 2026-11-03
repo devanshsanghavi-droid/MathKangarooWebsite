@@ -1,0 +1,68 @@
+{
+  "id": "KA-0199",
+  "band": "7-8",
+  "points": 5,
+  "statement": "In the sum AB + BA = 121, the letters A and B stand for different digits. What is A + B?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "11",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found a pair of digits adding to 12 without checking the sum came to 121."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I assumed the two digits had to add to a round ten because the answer ends in one."
+    },
+    {
+      "key": "D",
+      "text": "1",
+      "correct": false,
+      "misconception": "I read the leading 1 of 121 as the digit sum rather than a carry."
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I read the last two digits of 121 as the answer to what was asked."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "NUM-01",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Write each two-digit number in terms of its digits.",
+    "AB is 10A + B and BA is 10B + A. Add them and the expression collapses into a single multiple of A + B, which you can then match against 121.",
+    "10A + B + 10B + A = 11A + 11B = 11(A + B), and 121 is 11 x 11."
+  ],
+  "solutions": {
+    "reliable": "AB means 10A + B and BA means 10B + A, so the sum is 11A + 11B = 11(A + B). Since 121 = 11 x 11, A + B = 11. The transferable idea: replace digit letters with place-value expressions at once, because the algebra usually collapses to something far simpler than the puzzle looks.",
+    "elegant": "Reversing a two-digit number and adding always gives a multiple of 11, so 121 fixes the digit sum immediately."
+  },
+  "whyOnTest": "Cryptarithms become algebra once place value is written out, and guessing digit pairs is slower and lands on the offered traps.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

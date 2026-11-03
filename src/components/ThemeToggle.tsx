@@ -19,7 +19,7 @@ const OPTIONS: Array<{ value: ThemeChoice; label: string; glyph: string }> = [
  * prefers-color-scheme media query in tokens.css takes over. This is the same logic the
  * blocking script in <head> runs before first paint; keep the two in step.
  *
- * Note that the DEFAULT is light, not system — see readStoredTheme. A reader who has never
+ * Note that the DEFAULT is light, not system - see readStoredTheme. A reader who has never
  * touched the toggle gets the light theme even on a dark-mode machine, because the problem
  * statements, the figures and the printed worksheets were all designed against paper white.
  * "System" is one click away for anyone who wants it.
@@ -51,7 +51,7 @@ export function ThemeToggle() {
     const stored = readStoredTheme();
     setChoice(stored);
     // Apply on mount as well as in the blocking script. Normally this is a no-op because the
-    // script in <head> already stamped the attribute — but if a strict Content-Security-Policy
+    // script in <head> already stamped the attribute - but if a strict Content-Security-Policy
     // ever blocks that inline script, this is what stops the page rendering in the wrong theme.
     applyTheme(stored);
     setReady(true);

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0210",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Adding one more number to a list of nine numbers raises the mean from 12 to 13. What number was added?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "13",
+      "correct": false,
+      "misconception": "I assumed the new number had to equal the new mean."
+    },
+    {
+      "key": "B",
+      "text": "14",
+      "correct": false,
+      "misconception": "I added the rise of 1 to the old mean, forgetting the other nine numbers also pulled upward."
+    },
+    {
+      "key": "C",
+      "text": "21",
+      "correct": false,
+      "misconception": "I added nine to the old mean, mixing up the count with the rise."
+    },
+    {
+      "key": "D",
+      "text": "22",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "130",
+      "correct": false,
+      "misconception": "I gave the new total rather than the number that produced it."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-15",
+    "secondary": [
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Compare the two totals rather than the two means.",
+    "Turn each mean into a total: nine numbers at 12, then ten numbers at 13. The difference between those totals is the number that was added.",
+    "Nine numbers at mean 12 total 108, and ten at mean 13 total 130."
+  ],
+  "solutions": {
+    "reliable": "Nine numbers with mean 12 total 108, and ten with mean 13 total 130, so the number added is 130 - 108 = 22. The transferable idea: means never subtract usefully but totals do, so convert to totals before comparing anything.",
+    "elegant": "The newcomer must be the new mean plus the 1 it lifted each of the nine others, which is 13 + 9."
+  },
+  "whyOnTest": "Changing-mean questions are routine once both means become totals, and the tempting answers are the new mean itself and the new total.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

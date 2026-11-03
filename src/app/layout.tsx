@@ -46,8 +46,8 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} — ${SITE.tagline}`,
-    template: `%s — ${SITE.name}`,
+    default: `${SITE.name} - ${SITE.tagline}`,
+    template: `%s - ${SITE.name}`,
   },
   description: SITE.description,
   applicationName: SITE.name,
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     locale: 'en_US',
     url: SITE.url,
-    title: `${SITE.name} — ${SITE.tagline}`,
+    title: `${SITE.name} - ${SITE.tagline}`,
     description: SITE.description,
   },
   twitter: { card: 'summary_large_image' },
@@ -93,7 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/*
           docs/05 §7.1. At 900px and up this is two columns: a 260px rail and the content. The
           rail returns null on routes that do not want it, and the grid definition is
-          conditional on its presence rather than the other way round — `grid-cols-[auto_1fr]`
+          conditional on its presence rather than the other way round - `grid-cols-[auto_1fr]`
           collapses to a single column when the rail renders nothing, so a legal page is not
           left with a 260px hole.
         */}

@@ -1,6 +1,6 @@
 import { FigureSvg, Label, STROKE, W_THIN, FILL_ACCENT, FILL_SURFACE } from './primitives.tsx';
 
-/** KA-0067 — a tree: one start, three main courses, two puddings on each, six endings. */
+/** KA-0067 - a tree: one start, three main courses, two puddings on each, six endings. */
 export function MenuTree() {
   const startX = 22;
   const midX = 100;

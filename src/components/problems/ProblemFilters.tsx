@@ -149,7 +149,7 @@ export function ProblemFilters({
           */
           <p className="mt-2 mb-0 text-xs text-ink-3">
             No problem has been attempted 30 times yet, so nothing has a measured difficulty.
-            Difficulty on this site comes from data, never from a hand-set field — until it exists,
+            Difficulty on this site comes from data, never from a hand-set field - until it exists,
             this order is the same as by id.
           </p>
         ) : null}

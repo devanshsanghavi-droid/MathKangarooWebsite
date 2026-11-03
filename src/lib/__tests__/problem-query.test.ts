@@ -55,7 +55,7 @@ describe('parseProblemQuery', () => {
   });
 });
 
-describe('URLs are shareable and survive a reload — M1.7 acceptance', () => {
+describe('URLs are shareable and survive a reload - M1.7 acceptance', () => {
   it('round-trips every filter through a real URL', () => {
     const query = {
       bands: ['3-4', '5-6'] as const,

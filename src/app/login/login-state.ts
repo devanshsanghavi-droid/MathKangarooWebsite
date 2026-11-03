@@ -1,12 +1,12 @@
 /**
  * The login form's state shape.
  *
- * In its own module because a `'use server'` file may only export async functions — exporting
+ * In its own module because a `'use server'` file may only export async functions - exporting
  * a type or a constant from one is a build error, and the same mistake already cost this repo
  * a debugging session on the contact form.
  */
 export interface LoginState {
-  /** Shown above the form. Deliberately identical for every failure — see actions.ts. */
+  /** Shown above the form. Deliberately identical for every failure - see actions.ts. */
   error: string | null;
 }
 

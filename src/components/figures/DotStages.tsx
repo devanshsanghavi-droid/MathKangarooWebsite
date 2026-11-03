@@ -1,6 +1,6 @@
 import { FigureSvg, Label, STROKE } from './primitives.tsx';
 
-/** KA-0008 — three pattern stages of 3, 5 and 7 dots: n columns of two, plus one on top. */
+/** KA-0008 - three pattern stages of 3, 5 and 7 dots: n columns of two, plus one on top. */
 export function DotStages() {
   const gap = 16;
   const stageWidth = 74;

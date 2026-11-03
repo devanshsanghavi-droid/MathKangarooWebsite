@@ -1,0 +1,68 @@
+{
+  "id": "KA-0284",
+  "band": "3-4",
+  "points": 5,
+  "statement": "How many times does the digit 1 appear when all the numbers from 1 to 30 are written out?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only 1, 10 and 21, missing most of the teens."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted the numbers containing a 1 rather than the times the digit appears."
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "21",
+      "correct": false,
+      "misconception": "I counted every digit written rather than only the ones."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": false,
+      "misconception": "I assumed one digit 1 for each number in the list."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "NUM-01",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Count the ones place and the tens place separately.",
+    "Split the job: first count the numbers whose last digit is 1, then those whose tens digit is 1. Add the two counts, remembering that 11 is counted in both because it has two ones.",
+    "Last digit 1: 1, 11, 21. Tens digit 1: 10 up to 19."
+  ],
+  "solutions": {
+    "reliable": "Numbers ending in 1 are 1, 11 and 21, which is 3 ones. Numbers with 1 in the tens place are 10 to 19, which is another 10. Together that is 13, with 11 contributing one from each count. The transferable idea: count one digit position at a time, because a number with two ones must be counted twice.",
+    "elegant": null
+  },
+  "whyOnTest": "Counting numbers rather than digit appearances is the standard error, and that answer is on the list.",
+  "estSeconds": 105,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

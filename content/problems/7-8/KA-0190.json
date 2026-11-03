@@ -1,0 +1,67 @@
+{
+  "id": "KA-0190",
+  "band": "7-8",
+  "points": 4,
+  "statement": "In a class of 30, 18 play football and 14 play chess. Every pupil plays at least one of the two. How many play both?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I subtracted 14 from 18, comparing the two clubs with each other rather than with the class."
+    },
+    {
+      "key": "C",
+      "text": "32",
+      "correct": false,
+      "misconception": "I added the two club sizes and ignored the class total completely."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I subtracted 18 from 30 and gave the number who do not play football."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I subtracted 14 from 30 and gave the number who do not play chess."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-10",
+    "secondary": [
+      "LOG-01"
+    ]
+  },
+  "hints": [
+    "Add the two clubs and compare with the class size.",
+    "Pupils in both clubs get counted twice when the two club sizes are added, so the excess over the class total is exactly the overlap.",
+    "18 + 14 = 32, which is 2 more than 30 because the pupils in both were counted twice."
+  ],
+  "solutions": {
+    "reliable": "Adding the clubs gives 18 + 14 = 32, two more than the 30 pupils, and that excess is the number counted twice, so 2 play both. The transferable idea: the overlap of two sets is the amount by which their sizes overshoot the total, which is why inclusion and exclusion works.",
+    "elegant": "The overshoot is the overlap, so the subtraction 32 - 30 is the whole calculation."
+  },
+  "whyOnTest": "Two-set overlap questions are a fixture, and the trap is comparing the sets with each other rather than with the whole group.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

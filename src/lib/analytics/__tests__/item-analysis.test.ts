@@ -11,7 +11,7 @@ import type { ChoiceKey } from '../../schemas.ts';
 
 /**
  * These are hand-computable on purpose. A psychometric statistic that is subtly wrong does
- * not throw — it quietly recommends rewriting the wrong problems, forever.
+ * not throw - it quietly recommends rewriting the wrong problems, forever.
  */
 
 describe('point-biserial correlation', () => {
@@ -160,7 +160,7 @@ describe('the signal worth having', () => {
   it('flags a mis-keyed item, where the correct answer anti-correlates with ability', () => {
     // Two further items rank the cohort, so the strong students still out-total the weak ones
     // despite losing KA-0001. Without them every total is 1, there is no variance to correlate
-    // against, and the statistic is undefined rather than negative — which is what the first
+    // against, and the statistic is undefined rather than negative - which is what the first
     // draft of this fixture accidentally tested.
     const records: RespondentRecord[] = [];
     for (let i = 0; i < 20; i += 1) {
@@ -168,7 +168,7 @@ describe('the signal worth having', () => {
       records.push({
         respondent: `s${i}`,
         responses: [
-          // The weak students "get it right" — a classic sign the key is wrong.
+          // The weak students "get it right" - a classic sign the key is wrong.
           { problemId: 'KA-0001', choiceKey: strong ? 'B' : 'C', correct: !strong },
           { problemId: 'KA-0002', choiceKey: strong ? 'A' : 'B', correct: strong },
           { problemId: 'KA-0003', choiceKey: strong ? 'A' : 'B', correct: strong },

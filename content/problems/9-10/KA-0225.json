@@ -1,0 +1,68 @@
+{
+  "id": "KA-0225",
+  "band": "9-10",
+  "points": 5,
+  "statement": "A regular hexagon is divided into six equal triangles by its three main diagonals. A second hexagon is drawn joining the midpoints of the first one's sides. What fraction of the first hexagon's area does the second cover?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "one half",
+      "correct": false,
+      "misconception": "I assumed joining midpoints always halves the area, which holds for a square rather than a hexagon."
+    },
+    {
+      "key": "B",
+      "text": "two thirds",
+      "correct": false,
+      "misconception": "I guessed a simple fraction without comparing the two side lengths."
+    },
+    {
+      "key": "C",
+      "text": "three quarters",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "four fifths",
+      "correct": false,
+      "misconception": "I estimated from the picture rather than working out the ratio of the sides."
+    },
+    {
+      "key": "E",
+      "text": "the same area",
+      "correct": false,
+      "misconception": "I assumed the inner hexagon touched the outer one closely enough to match it."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-16",
+    "secondary": [
+      "GEO-03",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Compare the two hexagons' side lengths first.",
+    "Both shapes are regular hexagons, so their areas are in the square of the ratio of their sides. Find the inner side using the triangle cut off at one corner.",
+    "The inner side is the square root of three over two times the outer side, and areas scale by the square of that."
+  ],
+  "solutions": {
+    "reliable": "Both hexagons are regular, so their areas are in the ratio of the squares of their sides. The midpoint hexagon's side is the square root of 3 divided by 2 times the original, and squaring gives three quarters. The transferable idea: for similar figures, find the length ratio once and square it, rather than attempting either area directly.",
+    "elegant": "The six small corner triangles cut off make up a quarter of the hexagon, which can be seen by splitting it into 24 congruent pieces."
+  },
+  "whyOnTest": "Midpoint figures invite the one-half answer carried over from squares, and the square of the length ratio is the only reliable route.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 /**
  * One counter.
  *
- * Every tile states what it counts, in words, underneath the number — the same discipline
+ * Every tile states what it counts, in words, underneath the number - the same discipline
  * `/impact` will need in Phase 3, where "every tile links to its definition". A number with no
  * definition is a number nobody can check.
  */

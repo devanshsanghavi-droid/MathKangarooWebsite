@@ -10,7 +10,7 @@ const darkSystem = extractTokenBlock(css, ":root:not([data-theme='light'])");
 const darkExplicit = extractTokenBlock(css, ":root[data-theme='dark']");
 
 /**
- * The palette proves itself on every run rather than on a manual audit — CLAUDE.md,
+ * The palette proves itself on every run rather than on a manual audit - CLAUDE.md,
  * "accessibility is not a phase". Extended for v2 (docs/05-DESIGN-DIRECTION.md §10.3): every
  * difficulty pair, every mastery step, and every reserved feedback colour on its own tint.
  */
@@ -84,7 +84,7 @@ const PAIRS: Array<[string, string, number, string]> = [
   // --- metadata. docs/05 §9 names --ink-3 on --surface-2 specifically. -----
   ['--ink-3', '--ground', 4.5, 'metadata and ids'],
   ['--ink-3', '--surface', 4.5, 'metadata on a card'],
-  ['--ink-3', '--surface-2', 4.5, 'metadata inside an inset well — the pair §9 calls out'],
+  ['--ink-3', '--surface-2', 4.5, 'metadata inside an inset well - the pair §9 calls out'],
   ['--ink-3', '--surface-3', 4.5, 'metadata on the sidebar rail'],
 
   // --- accent -------------------------------------------------------------
@@ -112,7 +112,7 @@ const PAIRS: Array<[string, string, number, string]> = [
     '--rule-strong',
     '--surface',
     3,
-    'the same border on a card — --surface on --ground is 1.06:1,' +
+    'the same border on a card - --surface on --ground is 1.06:1,' +
       ' so this border is the only thing identifying the control',
   ],
   ['--rule-strong', '--surface-2', 3, 'control borders in a well'],
@@ -200,7 +200,7 @@ describe('tokens.css', () => {
    *
    * A mastery indicator is never colour alone (docs/05 §7.5): every one carries its name and
    * its glyph, and every dot is drawn with a --rule-strong outline, which is where its 3:1
-   * boundary comes from — that pair is asserted above. So the question for --m0..--m3 is not
+   * boundary comes from - that pair is asserted above. So the question for --m0..--m3 is not
    * "does each step contrast with the surface", which no four-step ramp between two light
    * values can satisfy. It is "is this a ramp at all once the colour is gone", because the
    * segmented mastery bar has no room for a glyph inside a segment and photocopies flat.
@@ -265,7 +265,7 @@ describe('tokens.css', () => {
       }
     });
 
-    it('drops the reserved hues entirely — a photocopy has no green or red', () => {
+    it('drops the reserved hues entirely - a photocopy has no green or red', () => {
       for (const token of ['--correct-700', '--wrong-700', '--hint-700']) {
         expect(print[token]).toBe('#000000');
       }

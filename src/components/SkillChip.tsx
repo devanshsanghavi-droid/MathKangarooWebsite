@@ -29,7 +29,7 @@ export function SkillChip({
   );
 }
 
-/** The same chip for a skill we could not resolve — shows the id rather than silently vanishing. */
+/** The same chip for a skill we could not resolve - shows the id rather than silently vanishing. */
 export function UnknownSkillChip({ id }: { id: string }) {
   return (
     <span className="mono inline-flex items-center rounded-sm border border-rule px-2 py-1 text-2xs text-ink-3">

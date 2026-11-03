@@ -27,7 +27,7 @@ export default async function LoginPage() {
         privacy policy: an account saves progress and does nothing else. Nothing is gated.
       */}
       <p className="reading prose-measure mt-3 mb-0 text-ink-2">
-        Signing in saves your progress across devices. It is not required for anything — every
+        Signing in saves your progress across devices. It is not required for anything - every
         problem, every ladder, every mock exam and the whole Atlas work without an account, and
         nothing here is ever paywalled.
       </p>
@@ -36,7 +36,7 @@ export default async function LoginPage() {
 
       {studentAccountsConfigured() ? null : (
         <p className="mt-8 mb-0 max-w-prose text-sm text-ink-3">
-          Student accounts are not open yet — they arrive with the progress database in Phase 2.
+          Student accounts are not open yet - they arrive with the progress database in Phase 2.
           Until then your work is saved in this browser, and{' '}
           <Link href="/legal/privacy">nothing about it leaves your device</Link>.
         </p>

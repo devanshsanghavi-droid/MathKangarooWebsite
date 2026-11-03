@@ -25,7 +25,7 @@ describe('generateStaticParams', () => {
 describe('generateMetadata', () => {
   it('names the problem and its primary skill in the title', async () => {
     const meta = await generateMetadata({ params: Promise.resolve({ id: 'KA-0001' }) });
-    expect(meta.title).toBe('KA-0001 — Counting by position (sliding window)');
+    expect(meta.title).toBe('KA-0001 - Counting by position (sliding window)');
   });
 
   it('uses whyOnTest as the description, so no page has a generated-looking summary', async () => {
@@ -40,7 +40,7 @@ describe('generateMetadata', () => {
     for (const problem of getAllProblems()) {
       const meta = await generateMetadata({ params: Promise.resolve({ id: problem.id }) });
       const skill = getSkill(problem.skills.primary);
-      expect(meta.title, problem.id).toBe(skill ? `${problem.id} — ${skill.name}` : problem.id);
+      expect(meta.title, problem.id).toBe(skill ? `${problem.id} - ${skill.name}` : problem.id);
     }
   });
 
@@ -79,7 +79,7 @@ describe('reportProblemUrl', () => {
 
 describe('unknown ids must be a real 404, not a 200 with a "not found" body', () => {
   // Regression guard. With Next's default `dynamicParams: true`, an unknown id rendered the
-  // page, hit notFound(), and was then cached and served with HTTP 200 — a wrong URL looked
+  // page, hit notFound(), and was then cached and served with HTTP 200 - a wrong URL looked
   // fine to a crawler and to any client that checks the status rather than the words. The set
   // of valid ids is fully known at build time, so the routes opt out of dynamic params.
   it.each([

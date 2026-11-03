@@ -99,7 +99,7 @@ describe('enqueue', () => {
   });
 });
 
-describe('flush — attempts made offline appear exactly once', () => {
+describe('flush - attempts made offline appear exactly once', () => {
   it('sends everything and empties the queue', async () => {
     const storage = memoryStorage();
     enqueue(storage, attempt('a'));

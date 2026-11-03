@@ -1,0 +1,68 @@
+{
+  "id": "KA-0279",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Three cats catch three mice in three minutes. How many cats are needed to catch 100 mice in 100 minutes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I multiplied the cats by three because the mice went up, without checking the time also went up."
+    },
+    {
+      "key": "C",
+      "text": "33",
+      "correct": false,
+      "misconception": "I divided the hundred mice among three-minute blocks and scaled the cats with them."
+    },
+    {
+      "key": "D",
+      "text": "100",
+      "correct": false,
+      "misconception": "I matched one cat to each mouse, ignoring that the time grew as well."
+    },
+    {
+      "key": "E",
+      "text": "300",
+      "correct": false,
+      "misconception": "I multiplied the mice by the cats with no reasoning about the rate."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-03",
+    "secondary": [
+      "CFT-01",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Work out what one cat does in one minute.",
+    "Reduce the statement to a single cat over a single minute. Then scale that rate up to the time and the number of mice the question asks about, and see how many cats it needs.",
+    "Three cats in three minutes is one mouse per cat, so a cat catches a mouse every three minutes."
+  ],
+  "solutions": {
+    "reliable": "Three cats catching three mice in three minutes means each cat catches one mouse in three minutes, so three cats catch 100 mice in 300 cat-minutes, which is 100 minutes for three cats. The transferable idea: reduce to one worker and one unit of time before scaling, because the time grew by the same factor as the mice.",
+    "elegant": "Both the mice and the minutes grew by the same factor, so the number of cats cannot change."
+  },
+  "whyOnTest": "This is the classic question where scaling only one quantity gives a wrong answer, and three of the choices come from doing exactly that.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

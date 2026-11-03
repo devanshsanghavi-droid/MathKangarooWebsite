@@ -1,0 +1,68 @@
+{
+  "id": "KA-0222",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A shape is reflected in a vertical line, then reflected again in a second vertical line 5 cm to the right of the first. What single movement has the same effect?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "a reflection in a line between the two",
+      "correct": false,
+      "misconception": "I assumed two reflections always give another reflection."
+    },
+    {
+      "key": "B",
+      "text": "a rotation of 90 degrees",
+      "correct": false,
+      "misconception": "I used the rule for two reflections in perpendicular lines rather than parallel ones."
+    },
+    {
+      "key": "C",
+      "text": "a translation of 5 cm to the right",
+      "correct": false,
+      "misconception": "I used the distance between the lines rather than twice that distance."
+    },
+    {
+      "key": "D",
+      "text": "a translation of 10 cm to the right",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "no movement at all",
+      "correct": false,
+      "misconception": "I assumed the second reflection undoes the first, which only happens in the same line."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-09",
+    "secondary": [
+      "GEO-08",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Follow a single point through both reflections.",
+    "Pick one point, mark where the first reflection sends it, then where the second sends that. The distance it ends up moving is the answer, and it is not the gap between the lines.",
+    "A point 1 cm right of the first line lands 1 cm left of it, then 11 cm right of the first line."
+  ],
+  "solutions": {
+    "reliable": "Track a point: reflecting in two parallel lines a distance d apart translates every point by 2d in the direction from the first line to the second, here 10 cm right. The transferable idea: composing transformations is settled by following one point, which is faster and safer than recalling a rule.",
+    "elegant": "Each reflection reverses the direction of travel, so the reversals cancel and only the shift survives, at twice the gap."
+  },
+  "whyOnTest": "Two reflections in parallel lines give a translation of twice the gap, and the single-gap answer is the one most students write.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

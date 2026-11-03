@@ -1,0 +1,68 @@
+{
+  "id": "KA-0240",
+  "band": "11-12",
+  "points": 3,
+  "statement": "How many of the numbers from 1 to 100 are divisible by 3 or by 5?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted only the multiples of 5 and stopped."
+    },
+    {
+      "key": "B",
+      "text": "33",
+      "correct": false,
+      "misconception": "I counted only the multiples of 3 and stopped."
+    },
+    {
+      "key": "C",
+      "text": "47",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "53",
+      "correct": false,
+      "misconception": "I added the two counts and ignored the numbers divisible by both."
+    },
+    {
+      "key": "E",
+      "text": "60",
+      "correct": false,
+      "misconception": "I added the counts and then rounded upward towards a convenient figure."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-10",
+    "secondary": [
+      "NUM-04",
+      "CNT-09"
+    ]
+  },
+  "hints": [
+    "Count each set, then fix the double counting.",
+    "Count the multiples of 3, then of 5, then subtract the multiples of 15, because those were counted in both lists.",
+    "There are 33 multiples of 3, 20 of 5 and 6 of 15 up to 100."
+  ],
+  "solutions": {
+    "reliable": "There are 33 multiples of 3 and 20 of 5 up to 100, but the 6 multiples of 15 appear in both, so the count is 33 + 20 - 6 = 47. The transferable idea: 'or' means add the sets and subtract the overlap, and the overlap for two divisors is the multiples of their lowest common multiple.",
+    "elegant": null
+  },
+  "whyOnTest": "Forgetting to remove the multiples of 15 gives the 53 that sits in the list, and the overlap is the whole point of the question.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -5,7 +5,7 @@ import { STRANDS } from '@/lib/schemas';
 
 /**
  * The sitemap is generated from content, not hand-listed: adding a skill file adds its page
- * here with no second edit. Priorities encode what the site is for — the Atlas and the skill
+ * here with no second edit. Priorities encode what the site is for - the Atlas and the skill
  * pages are the point, the legal pages are not.
  */
 export const STATIC_ROUTES = [
@@ -15,10 +15,13 @@ export const STATIC_ROUTES = [
   { path: '/papers', priority: 0.7 },
   { path: '/about', priority: 0.5 },
   { path: '/contact', priority: 0.3 },
-  { path: '/legal/privacy', priority: 0.3 },
-  { path: '/legal/terms', priority: 0.3 },
-  { path: '/legal/license', priority: 0.3 },
 ] as const;
+
+/*
+ * The three /legal pages are deliberately absent. They are marked noindex, and listing a
+ * noindex URL in a sitemap sends a crawler two contradictory instructions. They were also
+ * the pages outranking the home page for the site's own name.
+ */
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const index = contentIndex();
@@ -49,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
      * listed in its own right.
      *
      * The three ladders and the quiz are deliberately NOT listed. They are tools rather than
-     * documents — 364 pages whose prose is "practise X at tier N" — and they are reachable
+     * documents - 364 pages whose prose is "practise X at tier N" - and they are reachable
      * from the unit page anyway. Listing them would be thin content by the cartload.
      */
     entries.push({

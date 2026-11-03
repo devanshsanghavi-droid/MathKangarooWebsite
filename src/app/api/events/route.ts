@@ -11,7 +11,7 @@ import { BatchSchema, bucketMs } from '@/lib/telemetry/events';
  * Three rules it enforces, in order:
  *
  *   1. VALIDATE, THEN DROP. A batch that fails BatchSchema is discarded whole. Nothing is
- *      "cleaned up" and stored anyway — a payload that does not match the taxonomy is either a
+ *      "cleaned up" and stored anyway - a payload that does not match the taxonomy is either a
  *      bug or an attempt to smuggle a field past it, and both deserve the bin.
  *   2. NO IP, EVER. docs/01-DATA-MODEL.md §4 forbids IP addresses in analytics, so the address
  *      is never read, never hashed, and never used for geolocation. There is no country tile
@@ -74,7 +74,7 @@ type Row = {
  * Writes the batch, when there is somewhere to write it.
  *
  * Supabase is not connected yet, so this is a no-op with the shape of the eventual insert
- * rather than a stub that throws. The site behaves identically with and without it — which is
+ * rather than a stub that throws. The site behaves identically with and without it - which is
  * also the behaviour we want in production the day the database is briefly unreachable.
  */
 async function store(rows: readonly Row[]): Promise<void> {

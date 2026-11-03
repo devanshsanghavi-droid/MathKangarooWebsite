@@ -29,7 +29,7 @@ const { bundle, findings } = validateContent({
   figuresDir: join(process.cwd(), 'src', 'components', 'figures'),
 });
 
-/** Counts from the strand headings in Part A, e.g. "### NUM — Number & Arithmetic (15)". */
+/** Counts from the strand headings in Part A, e.g. "### NUM - Number & Arithmetic (15)". */
 const EXPECTED_PER_STRAND: Record<Strand, number> = {
   NUM: 15,
   CNT: 18,
@@ -102,7 +102,7 @@ describe('the prerequisite graph', () => {
     }
   });
 
-  it('has no isolated node — every skill either needs something or is needed by something', () => {
+  it('has no isolated node - every skill either needs something or is needed by something', () => {
     // A root with unlocks is fine: some ideas genuinely start the graph. A node with neither
     // is a skill nobody can reach and nothing leads out of, which is a taxonomy bug.
     const isolated = [...bundle.skills.values()]
@@ -115,7 +115,7 @@ describe('the prerequisite graph', () => {
     const roots = [...bundle.skills.values()]
       .filter((s) => s.prerequisites.length === 0)
       .map((s) => s.id);
-    // Conservative edges are the goal, so roots are expected — but a graph that is mostly
+    // Conservative edges are the goal, so roots are expected - but a graph that is mostly
     // roots is a graph nobody drew. Fail if fewer than two thirds of skills have a parent.
     expect(roots.length).toBeLessThan(bundle.skills.size / 3);
   });

@@ -10,7 +10,7 @@ import type { Choice, ChoiceKey } from '@/lib/schemas';
  * value and two components reading one piece of state beats two copies of it.
  *
  * Keyboard: these are ordinary buttons, so every one is a tab stop and Enter/Space activate
- * them. Arrow keys, Home and End move between them as well — an addition, not a replacement,
+ * them. Arrow keys, Home and End move between them as well - an addition, not a replacement,
  * because a five-item group is small enough that a roving tabindex would take away more than
  * it gives.
  *
@@ -62,7 +62,7 @@ export function ChoiceList({
     /*
       The group carries the label and the arrow-key handling; the list inside carries the list
       semantics. Putting role="group" on the <ul> itself would override its implicit list role
-      and orphan every <li> — axe catches exactly that, and it did.
+      and orphan every <li> - axe catches exactly that, and it did.
     */
     <div ref={listRef} role="group" aria-label="Answer choices" onKeyDown={handleKeyDown}>
       <ul className="m-0 grid list-none gap-2 p-0">
@@ -80,8 +80,7 @@ export function ChoiceList({
                 onClick={() => onSelect(choice.key)}
                 /*
                   docs/05 §6: 2px border, 14px padding, at least 44px tall. The resting border
-                  is --rule-strong rather than --rule because --surface on --ground is 1.06:1 —
-                  the border is the only thing identifying this as a control, so WCAG 1.4.11
+                  is --rule-strong rather than --rule because --surface on --ground is 1.06:1 -                   the border is the only thing identifying this as a control, so WCAG 1.4.11
                   applies to it and it has to clear 3:1.
                 */
                 className={[

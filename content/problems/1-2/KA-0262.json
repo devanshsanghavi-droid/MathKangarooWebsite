@@ -1,0 +1,67 @@
+{
+  "id": "KA-0262",
+  "band": "1-2",
+  "points": 4,
+  "statement": "How many different ways can three children line up one behind another?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted the children rather than the orders they can stand in."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I multiplied three by three, which would let one child stand in two places."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found four lines by trial and stopped before finding them all."
+    },
+    {
+      "key": "E",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought there was only one way to make a line."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "CNT-05"
+    ]
+  },
+  "hints": [
+    "Choose who goes first, then who goes next.",
+    "Decide the front of the line first: there are three choices. For each of those, two children are left for second place, and the last one has to go at the back.",
+    "Three choices for the front, then two for the middle, then one left over."
+  ],
+  "solutions": {
+    "reliable": "There are 3 choices for the front, then 2 for the middle, then 1 left, so 3 x 2 x 1 = 6 lines. The idea to keep: fill one place at a time and notice that each child used up is no longer available, which is why the count shrinks at each step.",
+    "elegant": null
+  },
+  "whyOnTest": "Listing all six lines and getting a count that matches the reasoning is how this skill is learned, and most students stop at four.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

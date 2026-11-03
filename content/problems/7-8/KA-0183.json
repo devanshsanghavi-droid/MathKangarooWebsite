@@ -1,0 +1,68 @@
+{
+  "id": "KA-0183",
+  "band": "7-8",
+  "points": 5,
+  "statement": "The numbers 1 to 9 are written in a row. You may swap any two neighbours as often as you like. Can the row ever end up exactly reversed after an odd number of swaps?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Yes, and 9 swaps is enough",
+      "correct": false,
+      "misconception": "I counted the nine numbers and assumed the swap count would match them."
+    },
+    {
+      "key": "B",
+      "text": "Yes, after 35 swaps",
+      "correct": false,
+      "misconception": "I guessed an odd number near the right size without checking what each swap does to the ordering."
+    },
+    {
+      "key": "C",
+      "text": "No, because reversing needs an even number of swaps",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "No, because the row can never be reversed at all",
+      "correct": false,
+      "misconception": "I concluded that an impossible parity meant the reversal itself was impossible, rather than just the odd count."
+    },
+    {
+      "key": "E",
+      "text": "Only if the middle number stays put",
+      "correct": false,
+      "misconception": "I noticed the middle number does not move and treated that as the whole constraint."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-05",
+    "secondary": [
+      "CNT-16",
+      "LOG-06"
+    ]
+  },
+  "hints": [
+    "Count the pairs that are in the wrong order.",
+    "Each neighbour swap changes the number of out-of-order pairs by exactly one, so that count's parity flips every move. Compare the start and the target.",
+    "Reversing 1 to 9 puts all 36 pairs out of order, and 36 is even, so the number of single swaps must be even too."
+  ],
+  "solutions": {
+    "reliable": "Count inversions: pairs that appear in the wrong order. A swap of neighbours changes that count by exactly one, so its parity alternates with every move. The reversed row has 9 x 8 / 2 = 36 inversions, an even number, so only an even number of swaps can reach it. The transferable idea: find a quantity whose parity every move must flip, then compare the two ends.",
+    "elegant": "36 is even, so the answer is settled before any swapping is attempted."
+  },
+  "whyOnTest": "Parity invariants turn an impossible search into a one-line argument, and the 5-point block relies on them most years.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

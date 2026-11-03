@@ -1,6 +1,6 @@
 import { FigureSvg, STROKE, FILL_NONE, W_THICK, W_THIN } from './primitives.tsx';
 
-/** KA-0054 — one wide rectangle cut by two vertical lines into three side-by-side parts. */
+/** KA-0054 - one wide rectangle cut by two vertical lines into three side-by-side parts. */
 export function RectangleSplitInThree() {
   const width = 210;
   const height = 70;

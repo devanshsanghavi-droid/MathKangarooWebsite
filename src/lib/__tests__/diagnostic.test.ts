@@ -86,7 +86,7 @@ describe('item selection', () => {
   });
 });
 
-describe('branching on the skill graph — the whole point', () => {
+describe('branching on the skill graph - the whole point', () => {
   it('descends to a prerequisite after a miss', () => {
     let state = startDiagnostic(content, '5-6');
     const problem = nextItem(content, state);
@@ -147,7 +147,7 @@ describe('branching on the skill graph — the whole point', () => {
   });
 });
 
-describe('two students with different weaknesses get different plans — M2.7 acceptance', () => {
+describe('two students with different weaknesses get different plans - M2.7 acceptance', () => {
   it('produces visibly different plans', () => {
     const strongCounter = run('5-6', (_index, skillId) => skillId.startsWith('CNT'));
     const strongGeometer = run('5-6', (_index, skillId) => skillId.startsWith('GEO'));
@@ -202,7 +202,7 @@ describe('the plan is ordered by the graph, not by the order things were missed'
     expect(buildPlan(content, state)).not.toContain(solved);
   });
 
-  it('is deterministic — same answers, same plan', () => {
+  it('is deterministic - same answers, same plan', () => {
     const policy = (index: number) => index % 3 === 0;
     expect(buildPlan(content, run('5-6', policy).state)).toEqual(
       buildPlan(content, run('5-6', policy).state),

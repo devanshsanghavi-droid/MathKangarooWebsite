@@ -35,7 +35,7 @@ describe('parseAtlasQuery', () => {
     expect(parseAtlasQuery({ strand: ['CNT', 'CNT'] }).strands).toEqual(['CNT']);
   });
 
-  it('drops anything unrecognised rather than throwing — a URL is user input', () => {
+  it('drops anything unrecognised rather than throwing - a URL is user input', () => {
     const query = parseAtlasQuery({
       strand: 'NOPE',
       band: '99-100',

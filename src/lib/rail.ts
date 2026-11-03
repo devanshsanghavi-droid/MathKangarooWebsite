@@ -7,7 +7,7 @@ import type { RailStrand } from '@/components/shell/rail-data';
  * The sidebar's tree, built once at build time from the content files.
  *
  * The rail is a client component, so this is the boundary: everything it needs is flattened
- * here into plain data. Only the four fields it draws are included — a rail that carried whole
+ * here into plain data. Only the four fields it draws are included - a rail that carried whole
  * Skill objects would put 91 definitions and 273 misconceptions into the payload of every page
  * on the site.
  */

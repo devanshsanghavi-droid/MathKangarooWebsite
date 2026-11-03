@@ -186,7 +186,7 @@ describe('validateDraft catches what CI would', () => {
   });
 });
 
-describe('a problem authored through the form passes the real validator — M2.13 acceptance', () => {
+describe('a problem authored through the form passes the real validator - M2.13 acceptance', () => {
   it('writes a file that scripts/validate-content.ts accepts unmodified', () => {
     const draft = goodDraft();
     const result = validateDraft(draft, context);
@@ -245,7 +245,7 @@ describe('the pull request link', () => {
   });
 });
 
-describe('the form and CI apply the same rules — they cannot drift', () => {
+describe('the form and CI apply the same rules - they cannot drift', () => {
   it('rejects a short misconception in both places, with the same message', async () => {
     const { checkProblemRules } = await import('../problem-rules');
     const draft = goodDraft();

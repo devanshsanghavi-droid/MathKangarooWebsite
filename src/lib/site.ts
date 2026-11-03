@@ -72,7 +72,7 @@ export const FOOTER_LINKS: NavItem[] = [
  *
  * The rail is the Atlas in miniature, so it belongs on every surface where a student is
  * working through the material. It does not belong on the marketing, legal or utility pages,
- * where 91 skill links would be noise beside a privacy policy — and it is deliberately absent
+ * where 91 skill links would be noise beside a privacy policy - and it is deliberately absent
  * from /print, whose whole output is a sheet of paper.
  */
 export const RAIL_ROUTES: readonly string[] = [

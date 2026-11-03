@@ -98,7 +98,7 @@ describe('distractors', () => {
       const texts = wrong.map((c) => c.misconception?.trim().toLowerCase());
       expect(new Set(texts).size, 'two distractors share a misconception').toBe(4);
       for (const choice of wrong) {
-        // "in the student's own voice" — first person, not "students often think".
+        // "in the student's own voice" - first person, not "students often think".
         expect(choice.misconception, `${problem.id} ${choice.key}`).toMatch(/^I\b/);
       }
     },

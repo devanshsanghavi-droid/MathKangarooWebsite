@@ -2,7 +2,7 @@
 /**
  * `pnpm derive:unlocks`
  *
- * `unlocks` is the reverse of `prerequisites`. It is generated, never hand-written — a
+ * `unlocks` is the reverse of `prerequisites`. It is generated, never hand-written - a
  * hand-written reverse edge is how a graph silently stops agreeing with itself.
  *
  * This script:
@@ -129,12 +129,12 @@ if (checkOnly) {
     );
     process.exit(1);
   }
-  console.log(`unlocks in sync — ${nodeCount} skills, ${edgeCount} prerequisite edges, acyclic`);
+  console.log(`unlocks in sync - ${nodeCount} skills, ${edgeCount} prerequisite edges, acyclic`);
   process.exit(0);
 }
 
 console.log(
-  `derived unlocks for ${nodeCount} skills over ${edgeCount} prerequisite edges — graph is acyclic`,
+  `derived unlocks for ${nodeCount} skills over ${edgeCount} prerequisite edges - graph is acyclic`,
 );
 console.log(
   changed.length === 0

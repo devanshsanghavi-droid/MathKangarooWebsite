@@ -23,7 +23,7 @@ const problems = getAllProblems();
 const NOW = new Date('2026-03-01T09:00:00Z');
 const at = (minutes: number) => new Date(NOW.getTime() + minutes * 60_000);
 
-describe('paper structure — docs/01-DATA-MODEL.md §3.5', () => {
+describe('paper structure - docs/01-DATA-MODEL.md §3.5', () => {
   it('uses 24 items out of 96 for the lower bands', () => {
     for (const band of ['1-2', '3-4'] as const) {
       expect(itemsPerTier(band)).toBe(8);
@@ -83,13 +83,19 @@ describe('building the paper', () => {
 
   it('reports a shortfall rather than silently building a short paper', () => {
     // A 22-question "mock" scored out of 96 is worse than no mock: the number lies.
-    const { shortfall } = buildPaper(problems, '11-12', 1);
+    //
+    // The thin band is constructed, not named. This used to point at 11-12, and then at the
+    // band that happened to be emptiest, both of which stopped being thin as the bank grew.
+    // Holding out all but two problems of a band tests the guard itself rather than a count.
+    const band = '11-12';
+    const thinned = problems.filter((problem) => !(problem.band === band && problem.points === 5));
+    const { shortfall } = buildPaper(thinned, band, 1);
     expect(shortfall.length).toBeGreaterThan(0);
-    expect(startMock(problems, '11-12', 1, NOW)).toBeNull();
+    expect(startMock(thinned, band, 1, NOW)).toBeNull();
   });
 
-  it('can build both bands the bank actually covers', () => {
-    for (const band of ['3-4', '5-6'] as const) {
+  it('can build every band the bank covers', () => {
+    for (const band of ['1-2', '3-4', '5-6', '7-8', '9-10', '11-12'] as const) {
       expect(startMock(problems, band, 1, NOW), band).not.toBeNull();
     }
   });
@@ -109,7 +115,7 @@ function freshRun(band: Band = '5-6'): MockState {
   return state;
 }
 
-describe('the timer survives a refresh — M2.8 acceptance', () => {
+describe('the timer survives a refresh - M2.8 acceptance', () => {
   it('starts at 75 minutes', () => {
     expect(remainingMs(freshRun(), NOW)).toBe(MOCK_DURATION_MS);
   });
@@ -187,7 +193,7 @@ describe('flags and counts', () => {
   });
 });
 
-describe('scoring — no deduction for a wrong answer', () => {
+describe('scoring - no deduction for a wrong answer', () => {
   function answerAll(
     state: MockState,
     chooser: (problemId: string) => 'right' | 'wrong' | 'blank',

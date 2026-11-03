@@ -1,0 +1,68 @@
+{
+  "id": "KA-0249",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Which of these numbers cannot be written as the product of two consecutive positive integers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I overlooked that 3 x 4 gives exactly this number."
+    },
+    {
+      "key": "B",
+      "text": "30",
+      "correct": false,
+      "misconception": "I overlooked that 5 x 6 gives exactly this number."
+    },
+    {
+      "key": "C",
+      "text": "42",
+      "correct": false,
+      "misconception": "I overlooked that 6 x 7 gives exactly this number."
+    },
+    {
+      "key": "D",
+      "text": "50",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "56",
+      "correct": false,
+      "misconception": "I overlooked that 7 x 8 gives exactly this number."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-05",
+    "secondary": [
+      "NUM-05",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "List the products of consecutive pairs and compare.",
+    "Rather than testing each choice separately, write out the products of consecutive integers in order and check which of the five numbers never appears in that list.",
+    "The products run 2, 6, 12, 20, 30, 42, 56, 72."
+  ],
+  "solutions": {
+    "reliable": "The products of consecutive positive integers are 2, 6, 12, 20, 30, 42, 56 and 72. Of the five numbers offered, only 50 is missing from that list, since 42 and 56 straddle it. The transferable idea: generate the whole family once and compare, rather than testing each candidate against a condition separately.",
+    "elegant": "50 sits between 42 and 56, and consecutive products never land in between."
+  },
+  "whyOnTest": "Generating the family once is far faster than five separate tests, and it is the bounding habit the 3-point block rewards.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

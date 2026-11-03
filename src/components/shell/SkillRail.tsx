@@ -10,7 +10,7 @@ import { masteryStateFor } from '@/lib/local-progress';
 import { hasRail } from '@/lib/site';
 
 /**
- * The persistent skill rail — docs/05-DESIGN-DIRECTION.md §7.1.
+ * The persistent skill rail - docs/05-DESIGN-DIRECTION.md §7.1.
  *
  * Strand -> skill, the student's position marked with `aria-current`, and a mastery dot on
  * every row. At 900px and up it is a column of the page grid. Below that it is a drawer
@@ -22,7 +22,7 @@ import { hasRail } from '@/lib/site';
  *  - **Each strand is a real `<details>`.** Collapse works with the keyboard, works with
  *    JavaScript off, and needs no ARIA of its own. The strand containing the current page is
  *    open on arrival; the rest are shut, because 91 links unrolled is not navigation.
- *  - **The rail is hidden on pages it would only clutter** — home, legal, contact, the
+ *  - **The rail is hidden on pages it would only clutter** - home, legal, contact, the
  *    worksheet printer. `hasRail` in lib/site.ts is the single list, and it is unit tested.
  *  - **Mastery comes from localStorage.** Practice never requires an account, so a signed-out
  *    student sees their own progress here. Nothing is sent anywhere.

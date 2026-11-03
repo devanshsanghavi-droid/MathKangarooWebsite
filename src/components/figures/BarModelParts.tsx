@@ -8,7 +8,7 @@ import {
   W_THICK,
 } from './primitives.tsx';
 
-/** KA-0110 — Bo as one box, Ana as three of the same size, with the total bracketed across all four. */
+/** KA-0110 - Bo as one box, Ana as three of the same size, with the total bracketed across all four. */
 export function BarModelParts() {
   const box = 44;
   const height = 26;

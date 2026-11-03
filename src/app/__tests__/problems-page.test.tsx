@@ -93,8 +93,12 @@ describe('the browse page', () => {
   it('filters by skill, including problems that tag it as secondary', async () => {
     const { container } = await renderProblems({ skill: 'CNT-01' });
     const shown = problemIdsIn(container);
-    const expected = getProblemsForSkill('CNT-01').map((p) => p.id);
-    expect(shown.sort()).toEqual([...expected].sort());
+    const all = getProblemsForSkill('CNT-01').map((p) => p.id);
+    // A popular skill now carries more problems than fit on a page, so the page is a subset
+    // of the skill's problems rather than all of them. Both halves still matter: nothing from
+    // another skill leaks in, and the first page is full.
+    expect(shown.length).toBe(Math.min(all.length, PAGE_SIZE));
+    for (const id of shown) expect(all, id).toContain(id);
   });
 
   it('names the filtered skill so a shared link explains itself', async () => {

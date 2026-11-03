@@ -1,0 +1,68 @@
+{
+  "id": "KA-0248",
+  "band": "11-12",
+  "points": 3,
+  "statement": "What is the remainder when 1 + 2 + 3 + ... + 100 is divided by 7?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed a sum this large would divide evenly by a small number."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I computed the sum correctly but made an arithmetic slip in the final division."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I used 5000 as the sum rather than the exact total."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I divided 100 rather than the sum by 7 and used that remainder."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "PAT-02",
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "Find the sum first, then divide once.",
+    "Pair the list from both ends to get the total quickly, then divide that single number by 7 and keep the remainder rather than the quotient.",
+    "The sum is 100 x 101 / 2 = 5050, and 7 x 721 = 5047."
+  ],
+  "solutions": {
+    "reliable": "Pairing from both ends gives 50 pairs of 101, so the sum is 5050. Since 7 x 721 = 5047, the remainder is 3. The transferable idea: collapse the series to one number before any modular work, because a remainder is only meaningful once there is a single value to divide.",
+    "elegant": "5050 = 5047 + 3, and 5047 is 7 x 721."
+  },
+  "whyOnTest": "Combining a series formula with a remainder is routine in the 3-point block, and dividing the wrong number gives one of the choices.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

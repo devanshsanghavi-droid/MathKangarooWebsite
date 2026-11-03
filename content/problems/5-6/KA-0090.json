@@ -49,7 +49,7 @@
     "The cubes with two painted faces sit along the edges but not at the corners. A cube has 12 edges, and each holds 3 - 2 = 1 such cube: 12 in all."
   ],
   "solutions": {
-    "reliable": "Sort the 27 small cubes by where they sit. The 8 corners touch three outside faces. The edge cubes that are not corners touch exactly two: a cube has 12 edges and each edge of a 3-cube holds 3 - 2 = 1 non-corner cube, so 12 of them. The 6 face centres touch one, and the single core touches none. Check the total: 8 + 12 + 6 + 1 = 27. The transferable idea: classify by position — corner, edge, face, core — and the counts follow from the cube's own structure.",
+    "reliable": "Sort the 27 small cubes by where they sit. The 8 corners touch three outside faces. The edge cubes that are not corners touch exactly two: a cube has 12 edges and each edge of a 3-cube holds 3 - 2 = 1 non-corner cube, so 12 of them. The 6 face centres touch one, and the single core touches none. Check the total: 8 + 12 + 6 + 1 = 27. The transferable idea: classify by position - corner, edge, face, core - and the counts follow from the cube's own structure.",
     "elegant": "Non-corner edge cubes number 12 times (n - 2), which for n = 3 is 12."
   },
   "whyOnTest": "Sorting the cubes by position is the method, and the check that the four groups add back to n cubed is what catches an error before it is submitted.",

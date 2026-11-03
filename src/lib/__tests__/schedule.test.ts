@@ -100,7 +100,7 @@ describe('cards and due dates', () => {
     expect(JSON.stringify(card)).toBe(before);
   });
 
-  it('is deterministic — fuzz is off, so two identical reviews agree exactly', () => {
+  it('is deterministic - fuzz is off, so two identical reviews agree exactly', () => {
     const one = reviewSkill(newSkillCard(NOW), Rating.Good, NOW);
     const two = reviewSkill(newSkillCard(NOW), Rating.Good, NOW);
     expect(one.due.toISOString()).toBe(two.due.toISOString());
@@ -177,7 +177,7 @@ describe('pointCeiling', () => {
   });
 });
 
-describe('pickProblem — the point of scheduling the skill', () => {
+describe('pickProblem - the point of scheduling the skill', () => {
   const problems = getProblemsForSkill('CNT-12');
 
   it('has real problems to choose from', () => {

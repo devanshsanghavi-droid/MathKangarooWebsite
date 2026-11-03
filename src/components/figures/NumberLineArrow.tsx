@@ -1,6 +1,6 @@
 import { FigureSvg, Label, STROKE, W_THICK, W_THIN } from './primitives.tsx';
 
-/** KA-0006 — a number line from 0 to 60 with seven equally spaced ticks; arrow on the fourth. */
+/** KA-0006 - a number line from 0 to 60 with seven equally spaced ticks; arrow on the fourth. */
 export function NumberLineArrow() {
   const pad = 16;
   const width = 240;

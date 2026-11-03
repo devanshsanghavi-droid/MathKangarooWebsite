@@ -1,0 +1,68 @@
+{
+  "id": "KA-0307",
+  "band": "7-8",
+  "points": 5,
+  "statement": "How many three-digit numbers have all three digits different and do not contain a zero?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "729",
+      "correct": false,
+      "misconception": "I allowed digits to repeat, using nine choices in every one of the three places."
+    },
+    {
+      "key": "B",
+      "text": "720",
+      "correct": false,
+      "misconception": "I used ten digits for the first place, although zero is excluded throughout."
+    },
+    {
+      "key": "C",
+      "text": "648",
+      "correct": false,
+      "misconception": "I allowed a zero in the last two places, which the question forbids."
+    },
+    {
+      "key": "D",
+      "text": "512",
+      "correct": false,
+      "misconception": "I excluded one digit too many, leaving eight choices for every place."
+    },
+    {
+      "key": "E",
+      "text": "504",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-11",
+    "secondary": [
+      "CNT-03",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Count the choices for each place in turn.",
+    "Fill the places one at a time. Nine digits are available for the first, then one fewer for each later place, because digits may not repeat and zero is excluded throughout.",
+    "Nine choices, then eight, then seven."
+  ],
+  "solutions": {
+    "reliable": "Zero is excluded, so nine digits are available. The first place has 9 choices, the second 8 and the third 7, giving 9 x 8 x 7 = 504. The transferable idea: handle the restriction by shrinking the pool before counting, then let each placement reduce the count by one.",
+    "elegant": null
+  },
+  "whyOnTest": "Restricted counting goes wrong when repeats slip back in, and the unrestricted counts are all offered.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

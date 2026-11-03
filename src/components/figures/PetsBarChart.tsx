@@ -1,6 +1,6 @@
 import { FigureSvg, Label, STROKE, GRID, FILL_ACCENT, W_THIN, W_HAIR } from './primitives.tsx';
 
-/** KA-0015 — a bar chart of four children's pets, with an axis marked in steps of two. */
+/** KA-0015 - a bar chart of four children's pets, with an axis marked in steps of two. */
 export function PetsBarChart() {
   const bars = [
     { name: 'Ana', value: 4 },

@@ -4,12 +4,12 @@ import type { Points } from '@/lib/schemas';
  * The exam's 3/4/5-point tier, shown as difficulty.
  *
  * v1 coloured these green / amber / rose, which meant a student saw red on the hardest
- * problems before reading a word of them — and red already means *wrong* everywhere else on
+ * problems before reading a word of them - and red already means *wrong* everywhere else on
  * the site. The problems we most want them to attempt were pre-labelled as failure.
  *
  * v2 (docs/05-DESIGN-DIRECTION.md §3) uses a neutral slate ramp: weight, not alarm. The tier
- * is carried three times over — by the filled dots, by the point value in text, and only then
- * by the shade — so it survives greyscale, a printed worksheet, and any form of colour
+ * is carried three times over - by the filled dots, by the point value in text, and only then
+ * by the shade - so it survives greyscale, a printed worksheet, and any form of colour
  * blindness. Green, red and amber are reserved for feedback and appear nowhere near it.
  */
 const TIER: Record<Points, { className: string; dots: string; filled: number }> = {
@@ -24,7 +24,7 @@ export const TIER_MEANING: Record<Points, string> = {
   5: 'Needs an idea, not just a procedure.',
 };
 
-/** "3 pt · one dot of three filled" — what a screen reader hears instead of "●○○". */
+/** "3 pt · one dot of three filled" - what a screen reader hears instead of "●○○". */
 export function difficultyLabel(points: Points): string {
   return `${points} points, difficulty ${TIER[points].filled} of 3`;
 }

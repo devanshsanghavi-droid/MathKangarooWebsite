@@ -1,7 +1,7 @@
 import { FigureSvg, Cell, Label, FILL_ACCENT } from './primitives.tsx';
 
 /**
- * KA-0005 — a cross-shaped cube net: a column of four squares (1–4) with squares 5 and 6
+ * KA-0005 - a cross-shaped cube net: a column of four squares (1–4) with squares 5 and 6
  * attached left and right of square 2. Square 1 is shaded.
  */
 export function CubeNetCross() {

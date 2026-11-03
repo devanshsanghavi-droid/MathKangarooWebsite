@@ -1,0 +1,68 @@
+{
+  "id": "KA-0268",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Ana thought of a number, added 4, then doubled the result and got 18. What number did she think of?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I halved 18 and then took away 5 instead of 4."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I halved 18 and forgot to undo the adding of 4."
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": false,
+      "misconception": "I took 4 away from 18 and ignored the doubling."
+    },
+    {
+      "key": "E",
+      "text": "14",
+      "correct": false,
+      "misconception": "I halved 18 and then added 4 instead of taking it away."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-08",
+    "secondary": [
+      "MOD-02",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Undo the steps in the opposite order.",
+    "Work backwards from 18. The last thing she did was double, so undo that first by halving. Then undo the adding of 4 by taking 4 away.",
+    "Half of 18 is 9, and 9 is what she had after adding 4."
+  ],
+  "solutions": {
+    "reliable": "Working backwards, half of 18 is 9, and 9 came from adding 4, so the number was 5. Checking forwards, 5 + 4 = 9 and 9 doubled is 18. The idea to keep: undo the steps in reverse order, then check by running the steps forwards again.",
+    "elegant": "Trying the five choices forwards is just as fast here, and only one of them lands on 18."
+  },
+  "whyOnTest": "Undoing steps in the wrong order is the main error, and both wrong-order answers are among the choices.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

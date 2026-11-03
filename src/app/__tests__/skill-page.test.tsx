@@ -15,8 +15,8 @@ type ContentModule = typeof contentModule;
 
 /**
  * docs/05-DESIGN-DIRECTION.md §7.2 replaced the nine stacked sections with a unit page.
- * Nothing was deleted — the reading moved to /skill/[id]/learn and the problems moved into
- * the ladders — so these tests follow the content to where it went rather than dropping the
+ * Nothing was deleted - the reading moved to /skill/[id]/learn and the problems moved into
+ * the ladders - so these tests follow the content to where it went rather than dropping the
  * assertions that used to guard it.
  */
 
@@ -144,7 +144,7 @@ describe('the unit page', () => {
       const row = within(lessons).queryByRole('link', {
         name: new RegExp(`${points}-point ladder`),
       });
-      // A tier with no problems is a locked row, not a link — asserted separately below.
+      // A tier with no problems is a locked row, not a link - asserted separately below.
       if (row) expect(row).toHaveAttribute('href', `/skill/${id}/practice/${points}`);
     }
   });
@@ -157,7 +157,7 @@ describe('the unit page', () => {
   });
 });
 
-describe('the learn page — where the reading moved', () => {
+describe('the learn page - where the reading moved', () => {
   const id = 'CNT-12';
 
   it('renders all four reading sections and the full problem list', async () => {
@@ -213,7 +213,7 @@ describe('every skill in the bank now has problems', () => {
   });
 });
 
-describe('a skill with no problems — the empty state', () => {
+describe('a skill with no problems - the empty state', () => {
   // No real skill is uncovered any more, which is the point of M1.10. The empty branches still
   // have to work, because a new skill lands with no problems the day it is added.
   async function withEmptySkill<T>(run: (mod: ContentModule) => Promise<T>): Promise<T> {

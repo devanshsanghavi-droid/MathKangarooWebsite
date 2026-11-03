@@ -13,7 +13,7 @@ import { PUBLISH_MIN_N } from './item-analysis';
  *
  * There is no per-user retention curve, no user journey, and no "same person came back on
  * day 7". Those all require recognising an individual across visits, which is precisely what
- * a tracking cookie is for and precisely what this design forbids — the users are minors.
+ * a tracking cookie is for and precisely what this design forbids - the users are minors.
  *
  * `returningMix` is the honest substitute: each client reads its OWN first-visit date from its
  * OWN storage and reports which coarse bucket it is in. That yields a true returning-vs-new
@@ -57,12 +57,12 @@ export function sessionStats(events: readonly TelemetryEvent[]) {
     sessions: sessions.size,
     events: events.length,
     medianEventsPerSession: median,
-    /** A session with one event and nothing else — the closest cookie-free analogue to a bounce. */
+    /** A session with one event and nothing else - the closest cookie-free analogue to a bounce. */
     singleEventSessions: [...perSession.values()].filter((depth) => depth === 1).length,
   };
 }
 
-/** "What do most people seek out first" — the entry surface of each session. */
+/** "What do most people seek out first" - the entry surface of each session. */
 export function entryPoints(events: readonly TelemetryEvent[]): Count[] {
   return tally(
     named(events, 'entry')
@@ -107,7 +107,7 @@ export interface FunnelStep {
 
 /**
  * A funnel over event names, counted in sessions rather than events, and counted as "ever
- * reached" rather than "reached in this order" — a student who opens a hint before answering
+ * reached" rather than "reached in this order" - a student who opens a hint before answering
  * has still answered.
  */
 export function funnel(
@@ -157,7 +157,7 @@ export interface ErrorRate {
 }
 
 /**
- * "What types are more wrong", sliced however you like — by skill, by point tier, by strand,
+ * "What types are more wrong", sliced however you like - by skill, by point tier, by strand,
  * by band. Cells below `minN` report a null rate rather than a noisy one, per
  * docs/01-DATA-MODEL.md §4: nothing published is derived from fewer than ten students.
  */

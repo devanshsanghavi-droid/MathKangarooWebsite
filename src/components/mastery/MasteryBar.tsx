@@ -5,7 +5,7 @@ import { MASTERY_DISPLAY, MASTERY_LEGEND } from '@/lib/mastery-display';
  * The unit page's progress bar: one segment per problem in the skill, plus a legend.
  *
  * The segments are the only mastery indicator on the site with no room for a glyph inside
- * them, which is why the ramp in tokens.css was respaced to even ~1.42:1 steps — at the
+ * them, which is why the ramp in tokens.css was respaced to even ~1.42:1 steps - at the
  * colours docs/05 §4 originally specified, "not started" and "familiar" were 1.01:1 apart and
  * this bar printed as one flat grey.
  *
@@ -44,7 +44,7 @@ export function MasteryBar({
           <span
             key={segment.problemId}
             data-mastery={segment.state}
-            title={`${segment.problemId} — ${MASTERY_DISPLAY[segment.state].label}`}
+            title={`${segment.problemId} - ${MASTERY_DISPLAY[segment.state].label}`}
             className={`h-3 flex-1 rounded-xs ${MASTERY_DISPLAY[segment.state].fill}`}
           />
         ))}

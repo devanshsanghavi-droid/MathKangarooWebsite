@@ -19,7 +19,7 @@ const ZOOM_STEP = 1.25;
 /**
  * docs/05-DESIGN-DIRECTION.md §7.4: tier moves to BORDER WEIGHT so hue is free for mastery.
  * v1 spent three different fills on the tier, which left nothing to say how the student was
- * actually doing — and gave every gateway skill a rose ring that read as "you failed this".
+ * actually doing - and gave every gateway skill a rose ring that read as "you failed this".
  */
 const TIER_STROKE_WIDTH: Record<Tier, number> = {
   foundation: 1,

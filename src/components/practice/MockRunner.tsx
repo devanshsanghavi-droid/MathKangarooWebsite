@@ -218,7 +218,7 @@ export function MockRunner({
 
         {shouldNudge(state, now) && !dismissedNudge ? (
           /*
-            A clock warning, not answer feedback — so no reserved red (docs/05 §2). Urgency is
+            A clock warning, not answer feedback - so no reserved red (docs/05 §2). Urgency is
             carried by role="alert", a 2px neutral border and the glyph, which also survives
             greyscale.
           */
@@ -320,7 +320,7 @@ export function MockRunner({
                     }`}
                     /*
                       Answered and flagged are two independent facts, so they are carried by
-                      two independent properties — fill for answered, border WEIGHT for
+                      two independent properties - fill for answered, border WEIGHT for
                       flagged. Setting both from the same `border-color` utility let whichever
                       rule happened to come later in the stylesheet win, which is not a
                       decision this component gets to make.
@@ -358,7 +358,7 @@ export function MockRunner({
       <h2 className="m-0 text-lg">Sit a full paper</h2>
       <p className="prose-measure mt-2 mb-4 text-ink-2">
         {MOCK_MINUTES} minutes, timed. Exactly the shape of the real thing: a third at 3 points, a
-        third at 4, a third at 5, and <strong>nothing deducted for a wrong answer</strong> — so a
+        third at 4, a third at 5, and <strong>nothing deducted for a wrong answer</strong> - so a
         blank is a decision to score zero.
       </p>
       <ul className="m-0 flex flex-wrap list-none gap-2 p-0">
@@ -382,7 +382,7 @@ export function MockRunner({
         </p>
       ) : null}
       <p className="mt-4 mb-0 text-xs text-ink-3">
-        No account needed. The run is saved on this device, so a refresh — or closing the laptop —
+        No account needed. The run is saved on this device, so a refresh - or closing the laptop -
         restores your answers and the timer keeps running, exactly as it would in a hall.
       </p>
     </div>

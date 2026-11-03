@@ -1,0 +1,68 @@
+{
+  "id": "KA-0203",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A club has 8 members. How many different three-member committees can be formed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "336",
+      "correct": false,
+      "misconception": "I counted the ordered selections and never divided out the orderings of a committee."
+    },
+    {
+      "key": "B",
+      "text": "112",
+      "correct": false,
+      "misconception": "I divided the ordered count by 3 rather than by the 6 ways to order three people."
+    },
+    {
+      "key": "C",
+      "text": "56",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I multiplied 8 by 3, treating this as a single pass through the membership."
+    },
+    {
+      "key": "E",
+      "text": "11",
+      "correct": false,
+      "misconception": "I added the two numbers in the question instead of combining the choices."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-16",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Order does not matter inside a committee.",
+    "First count the selections as if order mattered, then divide by the number of ways the chosen people could have been ordered, because each committee was counted that many times.",
+    "8 x 7 x 6 = 336 counts ordered picks, and each committee of three appears 3 x 2 x 1 = 6 times."
+  ],
+  "solutions": {
+    "reliable": "Picking in order gives 8 x 7 x 6 = 336, but each committee of three has been counted in all 6 of its orders, so the answer is 336 / 6 = 56. The transferable idea: overcount deliberately, then divide by the exact size of the overcount, which is safer than trying to count unordered objects directly.",
+    "elegant": "Choosing three to include is the same as choosing five to leave out, and the smaller calculation is the same number."
+  },
+  "whyOnTest": "Selections and arrangements differ only by the division at the end, and the undivided count is always offered as a choice.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-02",
+  "license": "CC-BY-NC-SA-4.0"
+}

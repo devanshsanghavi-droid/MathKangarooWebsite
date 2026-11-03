@@ -58,7 +58,7 @@ const GUARDRAILS: Array<{ fixture: string; rules: RuleId[]; what: string }> = [
 ];
 
 describe('content guardrails', () => {
-  describe.each(GUARDRAILS)('$fixture — rejects $what', ({ fixture, rules }) => {
+  describe.each(GUARDRAILS)('$fixture - rejects $what', ({ fixture, rules }) => {
     it('fails on the failing fixture, naming the right rule', () => {
       const { findings } = run(fixture, 'fail');
       const fired = new Set(findings.map((f) => f.rule));
@@ -131,7 +131,7 @@ describe('prerequisite graph', () => {
     expect(cycle?.length).toBeGreaterThan(3);
   });
 
-  it('is deterministic — the same graph always reports the same cycle', () => {
+  it('is deterministic - the same graph always reports the same cycle', () => {
     const build = () =>
       new Map([
         ['A', ['C']],

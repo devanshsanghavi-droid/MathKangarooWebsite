@@ -9,7 +9,7 @@ import {
   W_HAIR,
 } from './primitives.tsx';
 
-/** KA-0027 — a square of side 10 with a square of side 4 removed from the top-right corner. */
+/** KA-0027 - a square of side 10 with a square of side 4 removed from the top-right corner. */
 export function SquareWithCorner() {
   const u = 13; // pixels per unit of length
   const pad = 22;

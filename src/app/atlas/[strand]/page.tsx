@@ -17,8 +17,8 @@ interface Params {
 }
 
 /**
- * The complete set of valid ids is known at build time — content lives in git and nothing is
- * created at runtime — so anything outside that set is a 404, not a page to try rendering.
+ * The complete set of valid ids is known at build time - content lives in git and nothing is
+ * created at runtime - so anything outside that set is a 404, not a page to try rendering.
  *
  * This is not a micro-optimisation. With the default `dynamicParams: true`, Next rendered the
  * page for an unknown id, hit `notFound()`, and then cached and served that not-found body with

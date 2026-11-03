@@ -1,6 +1,6 @@
 import { FigureSvg, IsoCube, sortIsometric } from './primitives.tsx';
 
-/** KA-0038 — a solid 4 by 3 by 2 block of unit cubes, drawn so both layers are visible. */
+/** KA-0038 - a solid 4 by 3 by 2 block of unit cubes, drawn so both layers are visible. */
 export function UnitCubeBlock() {
   const cubes: Array<[number, number, number]> = [];
   for (let c = 0; c < 4; c += 1)

@@ -1,7 +1,7 @@
 import { FigureSvg, Cell, Label, FILL_SOLID } from './primitives.tsx';
 
 /**
- * KA-0081 — the view from above and the view from the front of a solid built on a 2 by 2 base.
+ * KA-0081 - the view from above and the view from the front of a solid built on a 2 by 2 base.
  * Together they pin the shape down enough to ask for the smallest number of cubes.
  */
 export function TwoViewsOfSolid() {

@@ -9,8 +9,8 @@ type ContentModule = typeof contentModule;
 
 /**
  * The papers pages read from the global content index. To exercise the populated path without
- * inventing an analysis of a real paper — which would be worse than no analysis, because it
- * would send a student to the wrong skill — these tests inject the fixture paper instead.
+ * inventing an analysis of a real paper - which would be worse than no analysis, because it
+ * would send a student to the wrong skill - these tests inject the fixture paper instead.
  */
 const state = vi.hoisted(() => ({ papers: [] as PaperIndex[] }));
 
@@ -102,7 +102,7 @@ describe('/papers/[year]-[band]', () => {
     const meta = await paperModule.generateMetadata({
       params: Promise.resolve({ slug: '2019-3-4' }),
     });
-    expect(meta.title).toBe('2019, level 3–4 — skill index');
+    expect(meta.title).toBe('2019, level 3–4 - skill index');
     expect(meta.description).toMatch(/No question text, figures or answers/);
   });
 
@@ -160,7 +160,7 @@ describe('/papers/[year]-[band]', () => {
   });
 });
 
-describe('the repository holds no official content — CLAUDE.md non-negotiable #1', () => {
+describe('the repository holds no official content - CLAUDE.md non-negotiable #1', () => {
   it('has no paper file over the tripwire cap', async () => {
     const { readdirSync, statSync, existsSync } = await import('node:fs');
     const dir = join(process.cwd(), 'content', 'papers');

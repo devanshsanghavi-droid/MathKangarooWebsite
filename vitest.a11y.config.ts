@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { fileURLToPath } from 'node:url';
 
 /**
- * `pnpm a11y` — axe-core against rendered routes and components, in both themes.
+ * `pnpm a11y` - axe-core against rendered routes and components, in both themes.
  * Split from the unit suite because it is slower and because a11y regressions deserve
  * their own signal rather than being buried in a 300-test run.
  */

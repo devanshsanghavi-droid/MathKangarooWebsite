@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import { getAllProblems, getSkill } from '@/lib/content';
 import { parseWorksheetQuery, selectProblems, type RawSearchParams } from '@/lib/worksheet';
 import { WorksheetControls } from '@/components/print/WorksheetControls';
@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     'Build a printable worksheet from the problem bank, with an answer key that gives the ' +
     'misconception behind every wrong choice.',
   alternates: { canonical: '/print' },
-  robots: { index: false },
+  // A generator, not content: every control is a new URL, so neither index it nor follow it.
+  robots: { index: false, follow: false },
 };
 
 /**

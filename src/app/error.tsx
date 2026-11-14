@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 
 /**
  * The root error boundary. It shows the digest rather than the message: the digest is what

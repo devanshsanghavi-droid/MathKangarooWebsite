@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import type { ChoiceKey, Problem, Skill } from '@/lib/schemas';
 import type { AssessmentProblem } from '@/lib/assessment';
 import { DifficultyPill } from './DifficultyPill';

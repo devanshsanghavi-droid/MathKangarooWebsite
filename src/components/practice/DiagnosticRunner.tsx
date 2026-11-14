@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import type { Band, ChoiceKey } from '@/lib/schemas';
 import type { AssessmentProblem } from '@/lib/assessment';
 import { BANDS } from '@/lib/schemas';

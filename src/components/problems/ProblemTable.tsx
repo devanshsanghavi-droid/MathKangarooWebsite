@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import { useProgress } from '@/components/mastery/useProgress';
 import { statusOfProblem } from '@/lib/progress-summary';
 import { MASTERY_DISPLAY } from '@/lib/mastery-display';

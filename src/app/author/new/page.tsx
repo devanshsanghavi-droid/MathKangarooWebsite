@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import { getAllProblems, getAllSkills } from '@/lib/content';
 import { FIGURE_NAMES } from '@/components/figures/registry';
 import { nextProblemId } from '@/lib/author';

@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import type { AssessmentProblem } from '@/lib/assessment';
 import type { MockReport } from '@/lib/mock';
 import { DifficultyPill } from '@/components/DifficultyPill';

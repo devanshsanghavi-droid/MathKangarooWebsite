@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import type { PaperIndex } from '@/lib/schemas';
 import { DifficultyPill } from '@/components/DifficultyPill';
 

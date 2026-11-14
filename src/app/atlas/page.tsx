@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import {
   getAllSkills,
   getProblemsForSkill,
@@ -17,13 +17,29 @@ import { SkillPanel } from '@/components/atlas/SkillPanel';
 import { EmptyState } from '@/components/EmptyState';
 import type { Skill } from '@/lib/schemas';
 
-export const metadata: Metadata = {
+const BASE_METADATA: Metadata = {
   title: 'The Skill Atlas',
   description:
     'Every skill Math Kangaroo tests, in a prerequisite graph. Seven strands, 91 skills, ' +
     'foundation through to the 5-point gateways. Browse it as a diagram or as a list.',
   alternates: { canonical: '/atlas' },
 };
+
+/**
+ * Filtered views are not pages in their own right. Every filter chip links to a new URL and the
+ * filters combine, so a crawler that follows them meets hundreds of thousands of variants, each
+ * rendered fresh by the worker. That is what exhausted the Workers free plan's daily request
+ * allowance. robots.txt closes query-string URLs; this says the same thing to any crawler that
+ * fetched one anyway, and the canonical already points at the unfiltered page.
+ */
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<RawSearchParams>;
+}): Promise<Metadata> {
+  const filtered = Object.keys(await searchParams).length > 0;
+  return filtered ? { ...BASE_METADATA, robots: { index: false, follow: false } } : BASE_METADATA;
+}
 
 /**
  * The map. `docs/00-SPEC.md` §1.2 calls it the single most important page on the site.

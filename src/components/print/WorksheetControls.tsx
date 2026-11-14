@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import { BANDS, POINT_VALUES, STRANDS } from '@/lib/schemas';
 import { STRAND_META } from '@/lib/taxonomy-meta';
 import { printHref, MAX_PROBLEMS, type WorksheetQuery } from '@/lib/worksheet';
@@ -39,6 +39,7 @@ export function WorksheetControls({
           {BANDS.map((band) => (
             <li key={band}>
               <Link
+                rel="nofollow"
                 href={printHref({ ...query, bands: toggle(query.bands, band) })}
                 aria-current={query.bands.includes(band) ? 'true' : undefined}
                 className={chip(query.bands.includes(band))}
@@ -56,6 +57,7 @@ export function WorksheetControls({
           {POINT_VALUES.map((points) => (
             <li key={points}>
               <Link
+                rel="nofollow"
                 href={printHref({ ...query, points: toggle(query.points, points) })}
                 aria-current={query.points.includes(points) ? 'true' : undefined}
                 className={chip(query.points.includes(points))}
@@ -73,6 +75,7 @@ export function WorksheetControls({
           {STRANDS.map((strand) => (
             <li key={strand}>
               <Link
+                rel="nofollow"
                 href={printHref({ ...query, strands: toggle(query.strands, strand) })}
                 aria-current={query.strands.includes(strand) ? 'true' : undefined}
                 className={chip(query.strands.includes(strand))}
@@ -92,6 +95,7 @@ export function WorksheetControls({
             {[5, 10, 15, 20, MAX_PROBLEMS].map((count) => (
               <li key={count}>
                 <Link
+                  rel="nofollow"
                   href={printHref({ ...query, count })}
                   aria-current={query.count === count ? 'true' : undefined}
                   className={chip(query.count === count)}
@@ -108,6 +112,7 @@ export function WorksheetControls({
           <ul className="m-0 flex flex-wrap list-none gap-1.5 p-0">
             <li>
               <Link
+                rel="nofollow"
                 href={printHref({ ...query, figures: true })}
                 aria-current={query.figures ? 'true' : undefined}
                 className={chip(query.figures)}
@@ -117,6 +122,7 @@ export function WorksheetControls({
             </li>
             <li>
               <Link
+                rel="nofollow"
                 href={printHref({ ...query, figures: false })}
                 aria-current={!query.figures ? 'true' : undefined}
                 className={chip(!query.figures)}
@@ -134,12 +140,13 @@ export function WorksheetControls({
           match these filters
         </span>
         <Link
+          rel="nofollow"
           href={printHref({ ...query, seed: query.seed + 1 })}
           className="no-underline hover:underline"
         >
           Reshuffle
         </Link>
-        <Link href={printHref({})} className="no-underline hover:underline">
+        <Link rel="nofollow" href={printHref({})} className="no-underline hover:underline">
           Start over
         </Link>
         <span className="mono">seed {query.seed}</span>

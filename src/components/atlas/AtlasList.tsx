@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import type { Skill } from '@/lib/schemas';
 import { STRAND_META, TIER_META, TIER_ORDER } from '@/lib/content';
 import { STRANDS } from '@/lib/schemas';

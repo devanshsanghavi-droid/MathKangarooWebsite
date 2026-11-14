@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import { BANDS, POINT_VALUES, STRANDS } from '@/lib/schemas';
 import { STRAND_META } from '@/lib/content';
 import { atlasHref, isFiltered, withStrandToggled, type AtlasQuery } from '@/lib/atlas-params';
@@ -34,6 +34,7 @@ export function AtlasFilters({ query, resultCount }: { query: AtlasQuery; result
             return (
               <li key={strand}>
                 <Link
+                  rel="nofollow"
                   href={atlasHref(withStrandToggled(query, strand))}
                   aria-current={active ? 'true' : undefined}
                   className={chip(active)}
@@ -54,6 +55,7 @@ export function AtlasFilters({ query, resultCount }: { query: AtlasQuery; result
           <ul className="m-0 flex flex-wrap list-none gap-1.5 p-0">
             <li>
               <Link
+                rel="nofollow"
                 href={atlasHref({ ...query, band: null })}
                 className={chip(query.band === null)}
               >
@@ -63,6 +65,7 @@ export function AtlasFilters({ query, resultCount }: { query: AtlasQuery; result
             {BANDS.map((band) => (
               <li key={band}>
                 <Link
+                  rel="nofollow"
                   href={atlasHref({ ...query, band })}
                   aria-current={query.band === band ? 'true' : undefined}
                   className={chip(query.band === band)}
@@ -79,6 +82,7 @@ export function AtlasFilters({ query, resultCount }: { query: AtlasQuery; result
           <ul className="m-0 flex flex-wrap list-none gap-1.5 p-0">
             <li>
               <Link
+                rel="nofollow"
                 href={atlasHref({ ...query, points: null })}
                 className={chip(query.points === null)}
               >
@@ -88,6 +92,7 @@ export function AtlasFilters({ query, resultCount }: { query: AtlasQuery; result
             {POINT_VALUES.map((points) => (
               <li key={points}>
                 <Link
+                  rel="nofollow"
                   href={atlasHref({ ...query, points })}
                   aria-current={query.points === points ? 'true' : undefined}
                   className={chip(query.points === points)}
@@ -102,6 +107,7 @@ export function AtlasFilters({ query, resultCount }: { query: AtlasQuery; result
         <fieldset className="m-0 border-0 p-0">
           <legend className="mb-2 p-0 text-2xs text-ink-3">Coverage</legend>
           <Link
+            rel="nofollow"
             href={atlasHref({ ...query, hasProblems: !query.hasProblems })}
             aria-current={query.hasProblems ? 'true' : undefined}
             className={chip(query.hasProblems)}
@@ -117,7 +123,11 @@ export function AtlasFilters({ query, resultCount }: { query: AtlasQuery; result
           {resultCount === 1 ? 'skill' : 'skills'} shown
         </span>
         {isFiltered(query) ? (
-          <Link href={atlasHref({ view: query.view })} className="no-underline hover:underline">
+          <Link
+            rel="nofollow"
+            href={atlasHref({ view: query.view })}
+            className="no-underline hover:underline"
+          >
             Clear all filters
           </Link>
         ) : null}

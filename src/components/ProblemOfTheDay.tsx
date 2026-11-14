@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import { useSyncExternalStore } from 'react';
 import { DifficultyPill } from '@/components/DifficultyPill';
 import { BandPill } from '@/components/BandPill';

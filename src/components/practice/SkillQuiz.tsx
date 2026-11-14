@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import type { ChoiceKey, Problem } from '@/lib/schemas';
 import { ChoiceList } from '@/components/ChoiceList';
 import { FeedbackPanel } from '@/components/FeedbackPanel';

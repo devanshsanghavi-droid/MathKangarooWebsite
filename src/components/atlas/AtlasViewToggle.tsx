@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import { atlasHref, type AtlasQuery } from '@/lib/atlas-params';
 
 /**
@@ -22,6 +22,7 @@ export function AtlasViewToggle({ query }: { query: AtlasQuery }) {
       className="inline-flex items-center gap-0.5 rounded-sm border border-rule p-0.5"
     >
       <Link
+        rel="nofollow"
         href={atlasHref({ ...query, view: 'graph' })}
         aria-current={query.view === 'graph' ? 'true' : undefined}
         className={item(query.view === 'graph')}
@@ -29,6 +30,7 @@ export function AtlasViewToggle({ query }: { query: AtlasQuery }) {
         Graph
       </Link>
       <Link
+        rel="nofollow"
         href={atlasHref({ ...query, view: 'list' })}
         aria-current={query.view === 'list' ? 'true' : undefined}
         className={item(query.view === 'list')}

@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import { useProgress } from '@/components/mastery/useProgress';
 import { bucketOf, statusOfProblem } from '@/lib/progress-summary';
 import { paginate, problemsHref, type ProblemQuery } from '@/lib/problem-query';

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import { getAllProblems, getAllSkills } from '@/lib/content';
 import { MockRunner } from '@/components/practice/MockRunner';
 import { MOCK_MINUTES } from '@/lib/mock';

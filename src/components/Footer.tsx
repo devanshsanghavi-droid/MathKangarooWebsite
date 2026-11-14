@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import { DISCLAIMER, FOOTER_LINKS, SITE } from '@/lib/site';
 
 /**

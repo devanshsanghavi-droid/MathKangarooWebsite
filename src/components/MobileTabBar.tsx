@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import { usePathname } from 'next/navigation';
 import { isActivePath, MOBILE_NAV } from '@/lib/site';
 

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import type { Skill } from '@/lib/schemas';
 
 /**

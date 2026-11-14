@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useId, useRef, useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import { usePathname } from 'next/navigation';
 import type { RailStrand } from './rail-data';
 import { MasteryDot } from '@/components/mastery/MasteryDot';

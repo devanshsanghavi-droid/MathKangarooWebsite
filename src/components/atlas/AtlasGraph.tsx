@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import type { AtlasLayout } from '@/lib/atlas-layout';
 import { LAYOUT_CONSTANTS } from '@/lib/atlas-layout';
 import { STRAND_META, TIER_META } from '@/lib/taxonomy-meta';

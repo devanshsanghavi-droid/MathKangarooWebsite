@@ -36,6 +36,18 @@ const config = [
         'error',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: 'next/link',
+              message:
+                "Import Link from '@/components/AppLink'. It turns viewport prefetch off: every prefetch is a billed Workers request, and they took the site past the free plan's daily limit.",
+            },
+          ],
+        },
+      ],
       'no-restricted-syntax': [
         'error',
         {
@@ -47,6 +59,11 @@ const config = [
         },
       ],
     },
+  },
+  {
+    // The one file allowed to wrap next/link.
+    files: ['src/components/AppLink.tsx'],
+    rules: { 'no-restricted-imports': 'off' },
   },
   {
     files: ['scripts/**/*.ts', 'vitest.setup.ts', '**/*.config.{ts,mjs}'],

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import { BANDS, POINT_VALUES, STRANDS, type Skill } from '@/lib/schemas';
 import { STRAND_META } from '@/lib/taxonomy-meta';
 import {
@@ -62,6 +62,8 @@ export function ProblemFilters({
             return (
               <li key={status}>
                 <Link
+                  rel="nofollow"
+
                   href={problemsHref({ ...query, ...reset, status: active ? 'all' : status })}
                   aria-current={active ? 'true' : undefined}
                   className={chip(active)}
@@ -82,6 +84,8 @@ export function ProblemFilters({
             return (
               <li key={band}>
                 <Link
+                  rel="nofollow"
+
                   href={problemsHref({ ...query, ...reset, bands: toggle(query.bands, band) })}
                   aria-current={active ? 'true' : undefined}
                   className={chip(active)}
@@ -102,6 +106,8 @@ export function ProblemFilters({
             return (
               <li key={points}>
                 <Link
+                  rel="nofollow"
+
                   href={problemsHref({ ...query, ...reset, points: toggle(query.points, points) })}
                   aria-current={active ? 'true' : undefined}
                   className={chip(active)}
@@ -122,6 +128,8 @@ export function ProblemFilters({
             return (
               <li key={strand}>
                 <Link
+                  rel="nofollow"
+
                   href={problemsHref({
                     ...query,
                     ...reset,
@@ -146,6 +154,8 @@ export function ProblemFilters({
           <span className="mono text-xs text-ink-2">{skill.id}</span>
           <span className="text-ink">{skill.name}</span>
           <Link
+            rel="nofollow"
+
             href={problemsHref({ ...query, ...reset, skill: null })}
             className="text-xs no-underline hover:underline"
           >
@@ -160,6 +170,8 @@ export function ProblemFilters({
           {SORTS.map((sort) => (
             <li key={sort}>
               <Link
+                rel="nofollow"
+
                 href={problemsHref({ ...query, ...reset, sort })}
                 aria-current={query.sort === sort ? 'true' : undefined}
                 className={chip(query.sort === sort)}
@@ -191,7 +203,12 @@ export function ProblemFilters({
           {query.status !== 'all' ? ' before the status filter' : null}
         </span>
         {isFiltered(query) ? (
-          <Link href={problemsHref({ sort: query.sort })} className="no-underline hover:underline">
+          <Link
+            rel="nofollow"
+
+            href={problemsHref({ sort: query.sort })}
+            className="no-underline hover:underline"
+          >
             Clear all filters
           </Link>
         ) : null}

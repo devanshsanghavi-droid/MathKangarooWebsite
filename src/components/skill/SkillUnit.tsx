@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import type { Points } from '@/lib/schemas';
 import { POINT_VALUES } from '@/lib/schemas';
 import { MasteryBar } from '@/components/mastery/MasteryBar';

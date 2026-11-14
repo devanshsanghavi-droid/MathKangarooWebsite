@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import { getContentStats } from '@/lib/content';
 import { SITE } from '@/lib/site';
 

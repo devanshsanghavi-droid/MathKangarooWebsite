@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/AppLink';
 import { getAllPapers, getAllSkills } from '@/lib/content';
 import {
   expectedQuestionCount,

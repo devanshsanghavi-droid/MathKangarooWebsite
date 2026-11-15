@@ -1,10 +1,14 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ProblemInteractive } from '../ProblemInteractive';
 import { getAllProblems } from '@/lib/content';
 import { readProgress } from '@/lib/local-progress';
 import { statusOfProblem } from '@/lib/progress-summary';
+import { PracticeSession } from '../practice-session';
+import { kaPracticeItem } from '@/lib/practice-item';
+
+vi.mock('@/lib/telemetry/client', () => ({ track: vi.fn(() => true) }));
 
 /**
  * Solving from the bank has to count. The table's status column and the progress strip both
@@ -42,6 +46,33 @@ describe('answering on the problem page', () => {
     render(<ProblemInteractive problem={problem} />);
     await pick(wrong.key);
     await pick(right.key);
+    expect(statusOfProblem(readProgress(), problem.id, skillIds)).toBe('seen');
+  });
+});
+
+describe('answering on the problem page (the practice engine, a set of one)', () => {
+  const item = kaPracticeItem(problem, (id) => id);
+  const check = () => userEvent.click(screen.getByRole('button', { name: 'Check' }));
+
+  it('records a right first answer as solved first try', async () => {
+    render(<PracticeSession items={[item]} title={problem.id} mode="single" headingLevel={1} />);
+    await pick(right.key);
+    await check();
+    expect(statusOfProblem(readProgress(), problem.id, skillIds)).toBe('mastered');
+  });
+
+  it('records nothing for a pick that was never checked', async () => {
+    render(<PracticeSession items={[item]} title={problem.id} mode="single" headingLevel={1} />);
+    await pick(right.key);
+    expect(statusOfProblem(readProgress(), problem.id, skillIds)).toBe('unseen');
+  });
+
+  it('records only the first check', async () => {
+    render(<PracticeSession items={[item]} title={problem.id} mode="single" headingLevel={1} />);
+    await pick(wrong.key);
+    await check();
+    await pick(right.key);
+    await check();
     expect(statusOfProblem(readProgress(), problem.id, skillIds)).toBe('seen');
   });
 });

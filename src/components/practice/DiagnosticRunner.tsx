@@ -18,6 +18,7 @@ import {
 } from '@/lib/diagnostic';
 import { ProblemCardView } from '@/components/ProblemCardView';
 import { DifficultyPill } from '@/components/DifficultyPill';
+import { Button, ButtonLink, Card, CardHeader, ProgressBar } from '@/components/ui';
 
 /**
  * The diagnostic, running entirely in the browser.
@@ -113,87 +114,107 @@ export function DiagnosticRunner({
 
   /* ------------------------------------------------------------ the result */
   if (result) {
+    const plannedWeeks = result.plan.filter((week) => week.skillIds.length > 0);
     return (
-      <div>
-        <h2 className="m-0 text-lg">Your map</h2>
-        <p className="prose-measure mt-2 mb-6 text-ink-2">
-          {result.correct} of {result.asked} correct. What matters is not the score - it is which
-          skills the misses point at, and what has to come first.
-        </p>
-
-        <h3 className="m-0 text-base">Strand by strand</h3>
-        <ul className="mt-3 grid list-none gap-2 p-0">
-          {result.strands.map((strand) => (
-            <li
-              key={strand.strand}
-              className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-sm border border-rule bg-surface px-3 py-2"
-            >
-              <span className="mono text-2xs text-ink-3">{strand.strand}</span>
-              <span className="flex-1 text-sm text-ink">{STRAND_META[strand.strand].name}</span>
-              {strand.asked === 0 ? (
-                <span className="text-xs text-ink-3">not reached in 15 questions</span>
-              ) : (
-                <span className="mono text-2xs text-ink-2">
-                  {strand.correct} / {strand.asked}
-                </span>
-              )}
-            </li>
-          ))}
-        </ul>
-
-        <h3 className="mt-8 text-base">Six weeks, in order</h3>
-        {result.planOrder.length === 0 ? (
-          <p className="prose-measure mt-2 text-ink-2">
-            Nothing came up that needs fixing first. Work the Atlas by strand, or take a longer run
-            at the 5-point gateways.
-          </p>
-        ) : (
-          <>
-            <p className="prose-measure mt-2 mb-4 text-sm text-ink-3">
-              Ordered so nothing is studied before what it needs. The first week is the deepest
-              thing the misses rest on, not the first thing you got wrong.
+      <div className="grid gap-6">
+        <Card as="section" aria-labelledby="diagnostic-result" padding="lg">
+          <CardHeader
+            titleId="diagnostic-result"
+            title="Your map"
+            description={`Level ${result.band}, ${result.asked} questions.`}
+          />
+          <div className="mt-4 flex flex-wrap items-end gap-x-8 gap-y-4">
+            <p className="ui m-0">
+              <span className="text-4xl leading-none font-semibold text-ink tabular-nums">
+                {result.correct}
+              </span>
+              <span className="ml-1 text-lg text-ink-2 tabular-nums">/ {result.asked}</span>
+              <span className="mt-1 block text-xs text-ink-2">correct</span>
             </p>
-            <ol className="m-0 grid list-none gap-3 p-0">
-              {result.plan
-                .filter((week) => week.skillIds.length > 0)
-                .map((week) => (
-                  <li key={week.week} className="rounded-sm border border-rule bg-surface p-3">
-                    <p className="m-0 text-xs font-semibold text-ink">Week {week.week}</p>
-                    <ul className="m-0 mt-2 flex flex-wrap list-none gap-2 p-0">
-                      {week.skillIds.map((id) => (
-                        <li key={id}>
-                          <Link
-                            href={`/skill/${id}`}
-                            className="inline-flex items-baseline gap-1.5 rounded-sm border border-rule px-2 py-1 text-xs no-underline hover:border-rule-strong"
-                          >
-                            <span className="mono text-2xs text-ink-3">{id}</span>
-                            <span className="text-ink">{skillNames[id] ?? id}</span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </li>
-                ))}
-            </ol>
-          </>
-        )}
+            <p className="prose-measure m-0 text-ink-2">
+              {result.correct} of {result.asked} correct. What matters is not the score: it is which
+              skills the misses point at, and what has to come first.
+            </p>
+          </div>
 
-        <div className="mt-8 flex flex-wrap gap-3 border-t border-rule pt-6">
-          <button
-            type="button"
-            onClick={discard}
-            className="cursor-pointer rounded-sm border border-rule-strong bg-surface px-4 py-2 text-sm text-ink"
-          >
-            Start again
-          </button>
-          <Link
-            href={`/atlas?band=${result.band}`}
-            className="rounded-sm border border-accent-600 bg-accent-100 px-4 py-2 text-sm font-medium text-ink no-underline"
-          >
+          <h3 className="ui mt-6 mb-0 text-base font-semibold">Strand by strand</h3>
+          <ul className="m-0 mt-3 grid list-none gap-x-8 gap-y-4 p-0 md:grid-cols-2">
+            {result.strands.map((strand) => (
+              <li key={strand.strand}>
+                {strand.asked === 0 ? (
+                  <div className="ui flex flex-wrap items-baseline justify-between gap-2 text-xs">
+                    <span className="font-medium text-ink">
+                      <span className="mono mr-2 text-2xs text-ink-3">{strand.strand}</span>
+                      {STRAND_META[strand.strand].name}
+                    </span>
+                    <span className="text-ink-2">not reached in 15 questions</span>
+                  </div>
+                ) : (
+                  <ProgressBar
+                    value={strand.correct}
+                    max={strand.asked}
+                    unit="correct"
+                    label={
+                      <>
+                        <span className="mono mr-2 text-2xs text-ink-3">{strand.strand}</span>
+                        {STRAND_META[strand.strand].name}
+                      </>
+                    }
+                  />
+                )}
+              </li>
+            ))}
+          </ul>
+        </Card>
+
+        <Card as="section" aria-labelledby="diagnostic-plan" padding="lg">
+          <CardHeader
+            titleId="diagnostic-plan"
+            title="Six weeks, in order"
+            description={
+              result.planOrder.length === 0
+                ? undefined
+                : 'Ordered so nothing is studied before what it needs. The first week is the deepest thing the misses rest on, not the first thing you got wrong.'
+            }
+          />
+          {result.planOrder.length === 0 ? (
+            <p className="prose-measure mt-3 mb-0 text-ink-2">
+              Nothing came up that needs fixing first. Work the Atlas by strand, or take a longer
+              run at the 5-point gateways.
+            </p>
+          ) : (
+            <ol className="m-0 mt-4 grid list-none gap-3 p-0 md:grid-cols-2">
+              {plannedWeeks.map((week) => (
+                <li key={week.week} className="rounded-control border border-rule p-3">
+                  <p className="ui m-0 text-xs font-semibold text-ink">Week {week.week}</p>
+                  <ul className="m-0 mt-2 flex flex-wrap list-none gap-2 p-0">
+                    {week.skillIds.map((id) => (
+                      <li key={id}>
+                        <Link
+                          href={`/skill/${id}`}
+                          className="ui inline-flex min-h-8 items-center gap-1.5 rounded-pill border border-rule-strong px-3 text-xs no-underline hover:bg-surface-2"
+                        >
+                          <span className="mono text-2xs text-ink-3">{id}</span>
+                          <span className="text-ink">{skillNames[id] ?? id}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ol>
+          )}
+        </Card>
+
+        <div className="flex flex-wrap gap-3">
+          <ButtonLink href={`/atlas?band=${result.band}`} variant="primary">
             See it on the Atlas
-          </Link>
+          </ButtonLink>
+          <Button variant="secondary" onClick={discard}>
+            Start again
+          </Button>
         </div>
-        <p className="mt-4 mb-0 text-xs text-ink-3">
+        <p className="ui m-0 text-xs text-ink-2">
           This result is saved on this device only. Nothing was sent anywhere, and no account was
           needed. When accounts arrive you will be offered the chance to keep it.
         </p>
@@ -205,27 +226,29 @@ export function DiagnosticRunner({
   if (state && problem) {
     const done = state.answers.length;
     return (
-      <div>
-        <div className="mb-5">
-          <p className="m-0 flex flex-wrap items-baseline gap-x-3 text-sm text-ink-2">
-            <span className="mono">
-              {done + 1} of at most {MAX_ITEMS}
-            </span>
+      <div className="grid gap-4">
+        <div className="ui sticky top-[var(--header-height)] z-20 -mx-4 border-b border-rule bg-surface px-4 py-3 sm:mx-0 sm:rounded-card sm:border sm:shadow-xs">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <p className="m-0 text-sm font-semibold text-ink tabular-nums">
+              Question {done + 1}{' '}
+              <span className="font-normal text-ink-2">of at most {MAX_ITEMS}</span>
+            </p>
             <DifficultyPill points={problem.points} />
-            <span className="text-xs text-ink-3">
-              No feedback until the end - this is a measurement, not practice.
-            </span>
-          </p>
+            <Button variant="ghost" size="sm" onClick={discard} className="ml-auto">
+              Stop and discard
+            </Button>
+          </div>
           <div
-            className="mt-2 h-1 w-full overflow-hidden rounded-full bg-surface-2"
+            className="mt-2 h-1.5 w-full overflow-hidden rounded-pill bg-track"
             role="progressbar"
             aria-valuenow={done}
             aria-valuemin={0}
             aria-valuemax={MAX_ITEMS}
+            aria-valuetext={`${done} of at most ${MAX_ITEMS} answered`}
             aria-label="Diagnostic progress"
           >
             <div
-              className="h-full bg-accent-600"
+              className="h-full rounded-pill bg-accent-600 transition-[width] duration-300 motion-reduce:transition-none"
               style={{ width: `${Math.round((done / MAX_ITEMS) * 100)}%` }}
             />
           </div>
@@ -239,10 +262,8 @@ export function DiagnosticRunner({
           onAnswer={answer}
         />
 
-        <p className="mt-6 mb-0 text-xs text-ink-3">
-          <button type="button" onClick={discard} className="cursor-pointer underline">
-            Stop and discard
-          </button>
+        <p className="ui m-0 text-xs text-ink-2">
+          No feedback until the end. This is a measurement, not practice.
         </p>
       </div>
     );
@@ -250,56 +271,51 @@ export function DiagnosticRunner({
 
   /* -------------------------------------------------------------- the start */
   return (
-    <div>
+    <div className="grid gap-6">
       {resumable ? (
-        <div className="mb-6 rounded-sm border border-accent-600 bg-accent-100 p-4">
-          <p className="m-0 text-sm text-ink">
-            You have a diagnostic in progress - {resumable.state.answers.length} question
+        <Card padding="md" className="border-accent-600">
+          <p className="ui m-0 text-sm text-ink">
+            You have a diagnostic in progress: {resumable.state.answers.length} question
             {resumable.state.answers.length === 1 ? '' : 's'} answered.
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={() => setState(resumable.state)}
-              className="cursor-pointer rounded-sm border border-accent-600 bg-surface px-3 py-1.5 text-sm font-medium text-ink"
-            >
+            <Button variant="primary" size="sm" onClick={() => setState(resumable.state)}>
               Carry on
-            </button>
-            <button
-              type="button"
-              onClick={discard}
-              className="cursor-pointer rounded-sm border border-rule px-3 py-1.5 text-sm text-ink-2"
-            >
+            </Button>
+            <Button variant="secondary" size="sm" onClick={discard}>
               Discard it
-            </button>
+            </Button>
           </div>
-        </div>
+        </Card>
       ) : null}
 
-      <h2 className="m-0 text-lg">Which level do you sit?</h2>
-      <p className="prose-measure mt-2 mb-4 text-ink-2">
-        About fifteen questions, roughly twenty-five minutes. It gets harder when you are right and
-        easier when you are wrong, and it follows the skill graph - so a miss sends you to what that
-        skill rests on, not to an unrelated easier question.
-      </p>
-      <ul className="m-0 flex flex-wrap list-none gap-2 p-0">
-        {BANDS.map((option) => (
-          <li key={option}>
-            <button
-              type="button"
-              onClick={() => begin(option)}
-              aria-pressed={band === option}
-              className="cursor-pointer rounded-sm border border-rule-strong bg-surface px-4 py-2 text-sm text-ink hover:border-accent-600"
-            >
-              Level {option.replace('-', '–')}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <p className="mt-6 mb-0 text-xs text-ink-3">
-        No account, no sign-in, nothing sent anywhere. The result is saved on this device so you can
-        close the tab and come back.
-      </p>
+      <Card as="section" aria-labelledby="diagnostic-start" padding="lg">
+        <CardHeader titleId="diagnostic-start" title="Which level do you sit?" />
+        <p className="prose-measure mt-2 mb-0 text-ink-2">
+          About fifteen questions, roughly twenty-five minutes. It gets harder when you are right
+          and easier when you are wrong, and it follows the skill graph, so a miss sends you to what
+          that skill rests on, not to an unrelated easier question.
+        </p>
+        <ul className="m-0 mt-5 grid list-none grid-cols-2 gap-2 p-0 sm:grid-cols-3 lg:grid-cols-6">
+          {BANDS.map((option) => (
+            <li key={option}>
+              <Button
+                variant={band === option ? 'primary' : 'secondary'}
+                size="lg"
+                fullWidth
+                onClick={() => begin(option)}
+                aria-pressed={band === option}
+              >
+                Level {option}
+              </Button>
+            </li>
+          ))}
+        </ul>
+        <p className="ui mt-5 mb-0 text-xs text-ink-2">
+          No account, no sign-in, nothing sent anywhere. The result is saved on this device so you
+          can close the tab and come back.
+        </p>
+      </Card>
     </div>
   );
 }

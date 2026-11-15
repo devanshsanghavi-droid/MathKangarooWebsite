@@ -25,7 +25,7 @@ afterEach(() => {
 
 async function startPaper() {
   render(<MockRunner {...props} />);
-  await userEvent.click(await screen.findByRole('button', { name: /Level 5–6/ }));
+  await userEvent.click(await screen.findByRole('button', { name: /Level 5-6/ }));
 }
 
 describe('starting a mock', () => {
@@ -33,9 +33,9 @@ describe('starting a mock', () => {
     // The bank now fills all six, so this asserts the offer rather than the gap. The levels
     // are derived from the bank, not listed, so authoring more problems cannot stale it.
     render(<MockRunner {...props} />);
-    await screen.findByRole('button', { name: /Level 3–4/ });
+    await screen.findByRole('button', { name: /Level 3-4/ });
     for (const band of BANDS) {
-      const label = new RegExp(`Level ${band.replace('-', '[-–]')}`);
+      const label = new RegExp(`^Level ${band}`);
       const fillable = POINT_VALUES.every(
         (points) =>
           problems.filter((p) => p.band === band && p.points === points).length >=
@@ -50,13 +50,13 @@ describe('starting a mock', () => {
     // level the real bank holds is now full.
     const thinned = problems.filter((p) => !(p.band === '11-12' && p.points === 5));
     const { container } = render(<MockRunner {...props} problems={thinned} />);
-    await screen.findByRole('button', { name: /Level 3–4/ });
+    await screen.findByRole('button', { name: /Level 3-4/ });
     expect(container.textContent).toMatch(/A short paper scored\s+out of the full total/);
   });
 
   it('states that a wrong answer costs nothing, before the paper starts', async () => {
     const { container } = render(<MockRunner {...props} />);
-    await screen.findByRole('button', { name: /Level 3–4/ });
+    await screen.findByRole('button', { name: /Level 3-4/ });
     expect(container.textContent).toMatch(/nothing deducted for a wrong answer/i);
   });
 });
@@ -217,19 +217,19 @@ describe('the report', () => {
 describe('accessibility', () => {
   it('has no axe violations at the start, in either theme', async () => {
     const { container } = render(<MockRunner {...props} />);
-    await screen.findByRole('button', { name: /Level 3–4/ });
+    await screen.findByRole('button', { name: /Level 3-4/ });
     expect(await auditBothThemes(container)).toEqual([]);
   });
 
   it('has no axe violations while sitting the paper, in either theme', async () => {
     const { container } = render(<MockRunner {...props} />);
-    await userEvent.click(await screen.findByRole('button', { name: /Level 5–6/ }));
+    await userEvent.click(await screen.findByRole('button', { name: /Level 5-6/ }));
     expect(await auditBothThemes(container)).toEqual([]);
   });
 
   it('has no axe violations on the report, in either theme', async () => {
     const { container } = render(<MockRunner {...props} />);
-    await userEvent.click(await screen.findByRole('button', { name: /Level 5–6/ }));
+    await userEvent.click(await screen.findByRole('button', { name: /Level 5-6/ }));
     await userEvent.click(screen.getByRole('button', { name: /Finish now/ }));
     await screen.findByText(/Your paper/);
     expect(await auditBothThemes(container)).toEqual([]);

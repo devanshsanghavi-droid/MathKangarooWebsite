@@ -27,11 +27,11 @@ export function MockReportView({
   const pad = 26;
 
   return (
-    <div>
-      <h2 className="m-0 text-lg">Your paper</h2>
-      <p className="mt-2 mb-6 text-2xl font-semibold text-ink tabular-nums">
+    <div className="rounded-card border border-rule bg-surface p-5 shadow-xs sm:p-6">
+      <h2 className="ui m-0 text-lg font-semibold">Your paper</h2>
+      <p className="ui mt-2 mb-6 text-4xl font-semibold text-ink tabular-nums">
         {report.score}
-        <span className="text-base font-normal text-ink-3"> / {report.maxScore}</span>
+        <span className="text-lg font-normal text-ink-2"> / {report.maxScore}</span>
       </p>
 
       {/*
@@ -39,7 +39,7 @@ export function MockReportView({
         to an empty one. Strong neutral instead (docs/05 §2).
       */}
       {report.blanks > 0 ? (
-        <div className="mb-6 rounded-sm border-2 border-rule-strong bg-surface-3 p-3">
+        <div className="mb-6 rounded-control border-2 border-rule-strong bg-surface-3 p-3">
           <p className="m-0 text-sm text-ink">
             You left <strong>{report.blanks}</strong> blank, worth {report.blankCost} points. A
             wrong answer costs nothing here, so every one of those was a guaranteed zero where a
@@ -58,7 +58,7 @@ export function MockReportView({
         {report.tiers.map((tier) => (
           <li
             key={tier.points}
-            className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-sm border border-rule bg-surface px-3 py-2"
+            className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-control border border-rule bg-surface px-3 py-2"
           >
             <DifficultyPill points={tier.points} />
             <span className="flex-1 text-sm text-ink">
@@ -75,7 +75,7 @@ export function MockReportView({
         Each mark is one question: how long you spent on it, and whether you got it right. A cluster
         of long, wrong marks on the right is where the points bled out.
       </p>
-      <div className="overflow-x-auto rounded-sm border border-rule bg-surface p-3">
+      <div className="overflow-x-auto rounded-control border border-rule bg-surface p-3">
         <svg
           viewBox={`0 0 ${width} ${height}`}
           width="100%"
@@ -181,7 +181,7 @@ export function MockReportView({
               <li key={skillId}>
                 <Link
                   href={`/skill/${skillId}`}
-                  className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-sm border border-rule bg-surface px-3 py-2 no-underline hover:border-rule-strong"
+                  className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-control border border-rule bg-surface px-3 py-2 no-underline hover:border-rule-strong"
                 >
                   <span className="mono text-2xs text-ink-3">{index + 1}</span>
                   <span className="mono text-2xs text-ink-3">{skillId}</span>
@@ -198,7 +198,7 @@ export function MockReportView({
         </ol>
       )}
 
-      <details className="mt-8 rounded-sm border border-rule bg-surface px-3 py-2">
+      <details className="mt-8 rounded-control border border-rule bg-surface px-3 py-2">
         <summary className="cursor-pointer text-sm font-semibold text-ink">
           Every question, with the answer
         </summary>

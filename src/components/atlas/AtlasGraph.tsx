@@ -6,7 +6,6 @@ import type { AtlasLayout } from '@/lib/atlas-layout';
 import { LAYOUT_CONSTANTS } from '@/lib/atlas-layout';
 import { STRAND_META, TIER_META } from '@/lib/taxonomy-meta';
 import type { Tier } from '@/lib/schemas';
-import { atlasHref, type AtlasQuery } from '@/lib/atlas-params';
 import type { MasteryState } from '@/lib/mastery';
 import { MASTERY_DISPLAY, MASTERY_LEGEND } from '@/lib/mastery-display';
 import { useProgress } from '@/components/mastery/useProgress';
@@ -40,10 +39,11 @@ const MASTERY_FILL: Record<MasteryState, string> = {
  *
  * Three things it does that a naive SVG would not:
  *
- *  - **Every node is a real link.** Not a `<g onClick>`: an anchor, so it is in the tab order,
- *    Enter activates it, the browser shows the target, and it works with scripting off. The
- *    accessible name says the skill's name, its tier and how many problems it has, because
- *    "CNT-12" alone tells a screen-reader user nothing.
+ *  - **Every node is a real link.** Not a `<g onClick>`: an anchor to the skill's own page, so
+ *    it is in the tab order, Enter activates it, and it works with scripting off. With
+ *    scripting on, a plain click opens the skill in the side panel instead (a modified click
+ *    still opens the page). The accessible name says the skill's name, its tier and how many
+ *    problems it has, because "CNT-12" alone tells a screen-reader user nothing.
  *  - **The canvas scrolls at its natural size rather than shrinking to fit.** Ninety-one nodes
  *    across seven columns is about 1700px wide; fitting that into a 780px column scaled every
  *    node down to four pixels and every label below legibility. So the SVG keeps its intrinsic
@@ -55,11 +55,15 @@ const MASTERY_FILL: Record<MasteryState, string> = {
  */
 export function AtlasGraph({
   layout,
-  query,
+  focus,
+  onFocus,
   bands,
 }: {
   layout: AtlasLayout;
-  query: AtlasQuery;
+  /** The skill shown in the side panel, if any. */
+  focus: string | null;
+  /** Opens a skill in the side panel. */
+  onFocus: (skillId: string) => void;
   bands: Array<{ tier: Tier; from: number; to: number }>;
 }) {
   const progress = useProgress();
@@ -105,7 +109,7 @@ export function AtlasGraph({
       left: node.scrollLeft,
       top: node.scrollTop,
     };
-    node.setPointerCapture(event.pointerId);
+    if (typeof node.setPointerCapture === 'function') node.setPointerCapture(event.pointerId);
   }
 
   function onPointerMove(event: React.PointerEvent<HTMLDivElement>) {
@@ -118,13 +122,15 @@ export function AtlasGraph({
 
   function onPointerUp(event: React.PointerEvent<HTMLDivElement>) {
     dragging.current = null;
-    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
-      event.currentTarget.releasePointerCapture(event.pointerId);
+    const node = event.currentTarget;
+    // Older engines (and jsdom) lack pointer capture; there is then nothing to release.
+    if (typeof node.hasPointerCapture === 'function' && node.hasPointerCapture(event.pointerId)) {
+      node.releasePointerCapture(event.pointerId);
     }
   }
 
   const button =
-    'cursor-pointer rounded-xs border border-rule bg-surface px-2 py-1 text-xs text-ink-2 hover:text-ink';
+    'ui min-h-8 min-w-8 cursor-pointer rounded-control border border-rule-strong bg-surface px-2.5 text-xs font-semibold text-ink-2 hover:bg-surface-2 hover:text-ink';
 
   return (
     <div>
@@ -169,7 +175,7 @@ export function AtlasGraph({
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
-        className="max-h-[62vh] cursor-grab overflow-auto rounded-md border border-rule bg-surface"
+        className="max-h-[62vh] cursor-grab overflow-auto rounded-card border border-rule bg-surface"
       >
         <svg
           viewBox={`0 0 ${layout.width} ${layout.height}`}
@@ -238,13 +244,17 @@ export function AtlasGraph({
 
           {/* Nodes. */}
           {layout.nodes.map((node) => {
-            const focused = query.focus === node.id;
+            const focused = focus === node.id;
             const mastery = masteryStateFor(progress, node.id, now);
             return (
               <Link
                 key={node.id}
-                href={atlasHref({ ...query, focus: node.id })}
-                scroll={false}
+                href={`/skill/${node.id}`}
+                onClick={(event) => {
+                  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                  event.preventDefault();
+                  onFocus(node.id);
+                }}
                 aria-label={`${node.name}. ${TIER_META[node.tier].label} skill in ${
                   STRAND_META[node.strand].name
                 }. ${MASTERY_DISPLAY[mastery].label}. ${node.problemCount === 0 ? 'No problems yet' : `${node.problemCount} problem${node.problemCount === 1 ? '' : 's'}`}.`}

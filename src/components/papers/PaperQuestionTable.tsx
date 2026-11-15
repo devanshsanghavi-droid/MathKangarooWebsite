@@ -25,7 +25,7 @@ export function PaperQuestionTable({
           reproduced here.
         </caption>
         <thead>
-          <tr className="border-b border-rule-strong text-left">
+          <tr className="ui border-b border-rule-strong text-left text-xs">
             <th scope="col" className="py-2 pr-3 font-medium text-ink-2">
               #
             </th>

@@ -29,7 +29,7 @@ export function MostTestedSkills({
           <li key={frequency.skillId}>
             <Link
               href={`/skill/${frequency.skillId}`}
-              className="block rounded-sm px-2 py-1.5 no-underline hover:bg-surface-2"
+              className="ui block rounded-control px-2 py-1.5 no-underline hover:bg-surface-2"
             >
               <span className="flex flex-wrap items-baseline gap-x-2.5 gap-y-0.5">
                 <span className="mono text-2xs text-ink-3">{frequency.skillId}</span>
@@ -43,16 +43,17 @@ export function MostTestedSkills({
                   {frequency.count} of {questionCount}
                 </span>
               </span>
-              <span
-                aria-hidden="true"
-                className="mt-1 block h-1.5 rounded-full bg-accent-600"
-                style={{ width: `${Math.max(4, (frequency.count / busiest) * 100)}%` }}
-              />
+              <span aria-hidden="true" className="mt-1 block h-1.5 rounded-pill bg-track">
+                <span
+                  className="block h-full rounded-pill bg-accent-600"
+                  style={{ width: `${Math.max(4, (frequency.count / busiest) * 100)}%` }}
+                />
+              </span>
             </Link>
           </li>
         ))}
       </ol>
-      <p className="mt-3 mb-0 text-xs text-ink-3">
+      <p className="ui mt-3 mb-0 text-xs text-ink-2">
         A question tagged with two skills counts once for each, so these add up to more than the
         number of questions. That is the honest reading: the question really does test both.
       </p>

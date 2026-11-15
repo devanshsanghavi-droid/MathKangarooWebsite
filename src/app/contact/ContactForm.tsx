@@ -3,6 +3,7 @@
 import { useActionState } from 'react';
 import { sendContactMessage } from './actions';
 import { INITIAL_CONTACT_STATE } from './contact-state';
+import { buttonClasses } from '@/components/ui';
 
 /**
  * Progressive enhancement: this is a real `<form>` with a server action, so it submits and
@@ -53,7 +54,7 @@ export function ContactForm({ mailConfigured }: { mailConfigured: boolean }) {
           maxLength={2000}
           aria-describedby="message-help"
           aria-invalid={state.fieldErrors?.message ? true : undefined}
-          className="w-full rounded-sm border border-rule-strong bg-surface px-3 py-2 text-ink"
+          className="w-full rounded-control border border-rule-strong bg-surface px-3 py-2 text-ink"
         />
         {state.fieldErrors?.message ? (
           <p className="mt-1 mb-0 text-sm text-wrong-700">{state.fieldErrors.message}</p>
@@ -75,7 +76,7 @@ export function ContactForm({ mailConfigured }: { mailConfigured: boolean }) {
           autoComplete="email"
           aria-describedby="replyTo-help"
           aria-invalid={state.fieldErrors?.replyTo ? true : undefined}
-          className="w-full rounded-sm border border-rule-strong bg-surface px-3 py-2 text-ink"
+          className="w-full rounded-control border border-rule-strong bg-surface px-3 py-2 text-ink"
         />
         {state.fieldErrors?.replyTo ? (
           <p className="mt-1 mb-0 text-sm text-wrong-700">{state.fieldErrors.replyTo}</p>
@@ -101,7 +102,7 @@ export function ContactForm({ mailConfigured }: { mailConfigured: boolean }) {
         <button
           type="submit"
           disabled={pending}
-          className="cursor-pointer rounded-sm border border-accent-600 bg-accent-100 px-4 py-2 font-medium text-ink disabled:cursor-wait disabled:opacity-60"
+          className={buttonClasses({ variant: 'primary', className: 'disabled:cursor-wait' })}
         >
           {pending ? 'Sending…' : 'Send'}
         </button>

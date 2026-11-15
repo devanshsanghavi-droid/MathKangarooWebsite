@@ -188,7 +188,10 @@ describe('the plan is ordered by the graph, not by the order things were missed'
   });
 
   it('pulls in the prerequisites of a missed skill even if they were never asked', () => {
-    const { state } = run('5-6', () => false);
+    // Missing everything stops at the foundation skills, which have no prerequisites. A
+    // student who clears the opening item of every strand and then misses the next one is
+    // asked skills whose prerequisites were skipped, so the plan has to reach back for them.
+    const { state } = run('5-6', (index) => index < STRANDS.length);
     const plan = buildPlan(content, state);
     const asked = new Set(state.answers.map((answer) => answer.skillId));
     expect(plan.some((id) => !asked.has(id))).toBe(true);

@@ -25,6 +25,7 @@ export function surfaceFor(pathname: string): Surface {
   if (path === '/papers') return 'papers';
   if (path === '/practice/diagnostic') return 'diagnostic';
   if (path === '/practice/mock') return 'mock';
+  if (path === '/practice/set') return 'practice-set';
   if (path === '/print') return 'worksheet';
   if (path === '/about') return 'about';
   if (path.startsWith('/legal')) return 'legal';

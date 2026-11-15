@@ -53,6 +53,9 @@ const COLOR_TOKENS = [
   '--m2',
   '--m3',
   '--focus',
+  // v3 (docs/06 §1)
+  '--on-accent',
+  '--track',
 ] as const;
 
 /** The tokens v2 retired. Their continued absence is part of the contract. */
@@ -132,6 +135,12 @@ const PAIRS: Array<[string, string, number, string]> = [
   ['--hint-700', '--surface', 4.5, 'the "Show a hint" control'],
   ['--hint-border', '--hint-100', 3, 'the opened-hint edge'],
 
+  // --- v3 practice-app shell (docs/06 §1) ---------------------------------
+  ['--on-accent', '--accent-600', 4.5, 'the label on a primary button and a selected segment'],
+  ['--on-accent', '--accent-700', 4.5, 'the same label while the primary button is hovered'],
+  ['--accent-600', '--track', 3, 'a progress bar fill against its empty track'],
+  ['--accent-600', '--surface-3', 3, 'a selected chip edge on the deepest well'],
+
   // --- difficulty ramp: each fg on its own bg (docs/05 §10.3) -------------
   ['--d1-fg', '--d1-bg', 4.5, '3-point difficulty pill'],
   ['--d2-fg', '--d2-bg', 4.5, '4-point difficulty pill'],
@@ -144,6 +153,13 @@ describe('tokens.css', () => {
       expect(light[token], `${token} missing from :root`).toBeDefined();
       expect(parseHex(light[token] ?? ''), `${token} is not a hex color`).not.toBeNull();
     }
+  });
+
+  it('defines the v3 shape scale: card, control and pill radii (docs/06 §1)', () => {
+    expect(light['--radius-card']).toBe('12px');
+    expect(light['--radius-control']).toBe('8px');
+    expect(light['--radius-pill']).toBe('999px');
+    expect(light['--app-width']).toBe('1200px');
   });
 
   it('has retired --p3/--p4/--p5 and --paper entirely', () => {

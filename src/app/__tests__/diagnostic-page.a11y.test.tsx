@@ -39,7 +39,7 @@ describe('the diagnostic', () => {
   it('offers a level to start at, with no sign-in anywhere', async () => {
     render(<DiagnosticRunner {...props} />);
     expect(await screen.findByText(/Which level do you sit/)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Level 5–6/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Level 5-6/ })).toBeInTheDocument();
     expect(screen.queryByText(/sign in/i)).toBeNull();
   });
 
@@ -51,7 +51,7 @@ describe('the diagnostic', () => {
 
   it('asks a question once a level is chosen', async () => {
     render(<DiagnosticRunner {...props} />);
-    await userEvent.click(await screen.findByRole('button', { name: /Level 5–6/ }));
+    await userEvent.click(await screen.findByRole('button', { name: /Level 5-6/ }));
     expect(screen.getByRole('progressbar')).toBeInTheDocument();
     const group = screen.getByRole('group', { name: /answer choices/i });
     expect(within(group).getAllByRole('button')).toHaveLength(5);
@@ -59,7 +59,7 @@ describe('the diagnostic', () => {
 
   it('never tells the student whether an answer was right, mid-run', async () => {
     const { container } = render(<DiagnosticRunner {...props} />);
-    await userEvent.click(await screen.findByRole('button', { name: /Level 5–6/ }));
+    await userEvent.click(await screen.findByRole('button', { name: /Level 5-6/ }));
     const choices = within(screen.getByRole('group', { name: /answer choices/i })).getAllByRole(
       'button',
     );
@@ -72,7 +72,7 @@ describe('the diagnostic', () => {
     // Rendering the full practice card here would let a student open the worked solution
     // mid-diagnostic, which would measure nothing at all.
     const { container } = render(<DiagnosticRunner {...props} />);
-    await userEvent.click(await screen.findByRole('button', { name: /Level 5–6/ }));
+    await userEvent.click(await screen.findByRole('button', { name: /Level 5-6/ }));
     expect(container.textContent).not.toMatch(/A nudge|The strategy|The full solution/);
     expect(container.querySelector('details')).toBeNull();
     expect(container.textContent).not.toMatch(/Why this is on the test/);
@@ -80,7 +80,7 @@ describe('the diagnostic', () => {
 
   it('reaches a result and reports every strand', async () => {
     render(<DiagnosticRunner {...props} />);
-    await userEvent.click(await screen.findByRole('button', { name: /Level 5–6/ }));
+    await userEvent.click(await screen.findByRole('button', { name: /Level 5-6/ }));
     const answered = await runThrough(() => 'A');
     expect(answered).toBeGreaterThan(0);
     expect(await screen.findByText(/Your map/)).toBeInTheDocument();
@@ -90,7 +90,7 @@ describe('the diagnostic', () => {
 
   it('saves progress so the tab can be closed', async () => {
     render(<DiagnosticRunner {...props} />);
-    await userEvent.click(await screen.findByRole('button', { name: /Level 3–4/ }));
+    await userEvent.click(await screen.findByRole('button', { name: /Level 3-4/ }));
     const buttons = within(screen.getByRole('group', { name: /answer choices/i })).getAllByRole(
       'button',
     );
@@ -127,7 +127,7 @@ describe('the diagnostic', () => {
 
   it('has an accessible progress indicator', async () => {
     render(<DiagnosticRunner {...props} />);
-    await userEvent.click(await screen.findByRole('button', { name: /Level 5–6/ }));
+    await userEvent.click(await screen.findByRole('button', { name: /Level 5-6/ }));
     const bar = screen.getByRole('progressbar');
     expect(bar).toHaveAttribute('aria-valuemax', '15');
     expect(bar).toHaveAttribute('aria-label', 'Diagnostic progress');
@@ -141,13 +141,13 @@ describe('the diagnostic', () => {
 
   it('has no axe violations mid-run, in either theme', async () => {
     const { container } = render(<DiagnosticRunner {...props} />);
-    await userEvent.click(await screen.findByRole('button', { name: /Level 5–6/ }));
+    await userEvent.click(await screen.findByRole('button', { name: /Level 5-6/ }));
     expect(await auditBothThemes(container)).toEqual([]);
   });
 
   it('has no axe violations on the result, in either theme', async () => {
     const { container } = render(<DiagnosticRunner {...props} />);
-    await userEvent.click(await screen.findByRole('button', { name: /Level 5–6/ }));
+    await userEvent.click(await screen.findByRole('button', { name: /Level 5-6/ }));
     await runThrough(() => 'A');
     await screen.findByText(/Your map/);
     expect(await auditBothThemes(container)).toEqual([]);

@@ -11,6 +11,8 @@ import {
 import { STRANDS, type Strand } from '@/lib/schemas';
 import { atlasHref } from '@/lib/atlas-params';
 import { EmptyState } from '@/components/EmptyState';
+import { SkillMasteryDot } from '@/components/mastery/SkillMasteryDot';
+import { ButtonLink, Card, CardHeader, PageContainer, PageHeader } from '@/components/ui';
 
 interface Params {
   params: Promise<{ strand: string }>;
@@ -62,8 +64,8 @@ export default async function StrandPage({ params }: Params) {
   const totalProblems = skills.reduce((n, skill) => n + getProblemsForSkill(skill.id).length, 0);
 
   return (
-    <div className="content-column px-4 py-8">
-      <nav aria-label="Breadcrumb" className="mb-5 text-xs text-ink-3">
+    <PageContainer>
+      <nav aria-label="Breadcrumb" className="ui mb-4 text-xs text-ink-2">
         <ol className="m-0 flex list-none flex-wrap items-center gap-2 p-0">
           <li>
             <Link href="/atlas" className="no-underline hover:underline">
@@ -71,87 +73,97 @@ export default async function StrandPage({ params }: Params) {
             </Link>
           </li>
           <li aria-hidden="true">/</li>
-          <li className="mono text-ink-2">{strand}</li>
+          <li className="mono">{strand}</li>
         </ol>
       </nav>
 
-      <header>
-        <p className="mono m-0 text-xs text-ink-3">{strand}</p>
-        <h1 className="mt-1 text-2xl">{meta.name}</h1>
-        <p className="prose-measure mt-3 mb-0 text-ink-2">{meta.blurb}</p>
-        <p className="mt-3 mb-0 text-sm text-ink-3">
-          {skills.length} skills · {totalProblems} problems ·{' '}
-          <Link href={atlasHref({ strands: [strand] })} className="no-underline hover:underline">
-            see this strand in the graph
-          </Link>
-        </p>
-      </header>
+      <PageHeader
+        eyebrow={<span className="mono">{strand}</span>}
+        title={meta.name}
+        description={meta.blurb}
+        actions={
+          <ButtonLink href={atlasHref({ strands: [strand] })} rel="nofollow" variant="secondary">
+            See this strand in the graph
+          </ButtonLink>
+        }
+      />
+      <p className="ui -mt-2 mb-0 text-sm text-ink-2">
+        <span className="font-semibold text-ink tabular-nums">{skills.length}</span> skills,{' '}
+        <span className="font-semibold text-ink tabular-nums">{totalProblems}</span> problems
+      </p>
 
-      {TIER_ORDER.map((tier) => {
-        const tierSkills = skills.filter((skill) => skill.tier === tier);
-        return (
-          <section key={tier} aria-labelledby={`tier-${tier}`} className="mt-10">
-            <h2 id={`tier-${tier}`} className="m-0 text-lg">
-              {TIER_META[tier].label}
-            </h2>
-            <p className="mt-1 mb-3 text-sm text-ink-3">{TIER_META[tier].blurb}</p>
+      <div className="mt-6 grid gap-6">
+        {TIER_ORDER.map((tier) => {
+          const tierSkills = skills.filter((skill) => skill.tier === tier);
+          return (
+            <Card as="section" key={tier} aria-labelledby={`tier-${tier}`} padding="lg">
+              <CardHeader
+                titleId={`tier-${tier}`}
+                title={TIER_META[tier].label}
+                description={TIER_META[tier].blurb}
+              />
 
-            {tierSkills.length === 0 ? (
-              <EmptyState>
-                {meta.name} has no {TIER_META[tier].label.toLowerCase()} skills. Not every strand
-                spans all three tiers, and that is a fact about the strand rather than a gap.
-              </EmptyState>
-            ) : (
-              <ol className="m-0 grid list-none gap-3 p-0">
-                {tierSkills.map((skill, index) => {
-                  const problems = getProblemsForSkill(skill.id);
-                  return (
-                    <li key={skill.id}>
-                      <Link
-                        href={`/skill/${skill.id}`}
-                        className="block rounded-sm border border-rule bg-surface p-3 no-underline hover:border-rule-strong"
-                      >
-                        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                          <span className="mono text-2xs text-ink-3">
-                            {String(index + 1).padStart(2, '0')}
+              {tierSkills.length === 0 ? (
+                <div className="mt-4">
+                  <EmptyState>
+                    {meta.name} has no {TIER_META[tier].label.toLowerCase()} skills. Not every
+                    strand spans all three tiers, and that is a fact about the strand rather than a
+                    gap.
+                  </EmptyState>
+                </div>
+              ) : (
+                <ol className="m-0 mt-4 grid list-none gap-2 p-0 md:grid-cols-2">
+                  {tierSkills.map((skill, index) => {
+                    const problems = getProblemsForSkill(skill.id);
+                    return (
+                      <li key={skill.id}>
+                        <Link
+                          href={`/skill/${skill.id}`}
+                          className="flex h-full flex-col rounded-control border border-rule bg-surface p-3 no-underline transition-colors hover:border-rule-strong hover:bg-surface-2 motion-reduce:transition-none"
+                        >
+                          <span className="ui flex flex-wrap items-center gap-x-2.5 gap-y-1">
+                            <SkillMasteryDot skillId={skill.id} />
+                            <span className="mono text-2xs text-ink-3">
+                              {String(index + 1).padStart(2, '0')}
+                            </span>
+                            <span className="mono text-2xs text-ink-3">{skill.id}</span>
+                            <span className="text-sm font-semibold text-ink">{skill.name}</span>
+                            <span className="mono ml-auto text-2xs text-ink-2">
+                              {problems.length === 0
+                                ? 'no problems yet'
+                                : `${problems.length} problem${problems.length === 1 ? '' : 's'}`}
+                            </span>
                           </span>
-                          <span className="mono text-2xs text-ink-3">{skill.id}</span>
-                          <span className="font-medium text-ink">{skill.name}</span>
-                          <span className="mono ml-auto text-2xs text-ink-3">
-                            {problems.length === 0
-                              ? 'no problems yet'
-                              : `${problems.length} problem${problems.length === 1 ? '' : 's'}`}
+                          <span className="reading mt-2 block text-sm text-ink-2">
+                            &ldquo;{skill.recognizeWhen[0]}&rdquo;
                           </span>
-                        </div>
-                        <p className="reading mt-2 mb-0 text-sm text-ink-2">
-                          “{skill.recognizeWhen[0]}”
-                        </p>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ol>
-            )}
-          </section>
-        );
-      })}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ol>
+              )}
+            </Card>
+          );
+        })}
+      </div>
 
-      <nav aria-label="Other strands" className="mt-12 border-t border-rule pt-6">
-        <h2 className="m-0 text-sm font-semibold text-ink">The other six strands</h2>
+      <nav aria-label="Other strands" className="mt-10">
+        <h2 className="ui m-0 text-sm font-semibold text-ink">The other six strands</h2>
         <ul className="mt-3 flex flex-wrap list-none gap-2 p-0">
           {STRANDS.filter((other) => other !== strand).map((other) => (
             <li key={other}>
               <Link
                 href={`/atlas/${other}`}
-                className="inline-flex items-baseline gap-1.5 rounded-sm border border-rule px-2 py-1 text-xs no-underline hover:border-rule-strong"
+                className="ui inline-flex min-h-9 items-center gap-1.5 rounded-pill border border-rule-strong bg-surface px-3 text-xs no-underline hover:bg-surface-2"
               >
                 <span className="mono text-2xs text-ink-3">{other}</span>
-                <span className="text-ink-2">{STRAND_META[other].name}</span>
+                <span className="text-ink">{STRAND_META[other].name}</span>
               </Link>
             </li>
           ))}
         </ul>
       </nav>
-    </div>
+    </PageContainer>
   );
 }

@@ -38,12 +38,23 @@ describe('where the rail appears', () => {
     expect(hasRail(`${route}/anything`)).toBe(true);
   });
 
-  it.each(['/', '/about', '/legal/privacy', '/contact', '/print', '/offline', '/author/new'])(
-    'stays out of the way on %s',
-    (route) => {
-      expect(hasRail(route)).toBe(false);
-    },
-  );
+  it.each([
+    '/',
+    '/about',
+    '/legal/privacy',
+    '/contact',
+    '/print',
+    '/offline',
+    '/author/new',
+    // v3 (docs/06): app pages with their own layout, not the rail.
+    '/problems',
+    '/problem/KA-0001',
+    '/practice/set',
+    '/papers',
+    '/amc',
+  ])('stays out of the way on %s', (route) => {
+    expect(hasRail(route)).toBe(false);
+  });
 
   it('does not match a route that merely starts with the same letters', () => {
     expect(hasRail('/problems-archive')).toBe(false);

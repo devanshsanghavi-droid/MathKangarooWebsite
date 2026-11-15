@@ -27,6 +27,8 @@
   --color-accent-600: var(--accent-600);
   --color-accent-500: var(--accent-500);
   --color-accent-100: var(--accent-100);
+  --color-on-accent: var(--on-accent);
+  --color-track: var(--track);
 
   --color-correct-700: var(--correct-700);
   --color-correct-600: var(--correct-600);
@@ -72,6 +74,18 @@
   --radius-sm: var(--radius-2);
   --radius-md: var(--radius-3);
   --radius-lg: var(--radius-pill);
+  /*
+   * v3 (docs/06 §1): rounded-card (12px), rounded-control (8px), rounded-pill (999px). The
+   * names repeat the token names on purpose. `inline` writes `var(--radius-card)` straight
+   * into the utility, and the unlayered :root in tokens.css beats any copy Tailwind emits in
+   * its theme layer, so the utility always resolves to the token's real value.
+   */
+  --radius-card: var(--radius-card);
+  --radius-control: var(--radius-control);
+  --radius-pill: var(--radius-pill);
+
+  /* max-w-app: the 1200px app column (docs/06 §2). */
+  --container-app: var(--app-width);
 
   --shadow-xs: var(--shadow-1);
   --shadow-lg: var(--shadow);
@@ -143,9 +157,17 @@ p {
   text-wrap: pretty;
 }
 
-a {
-  color: var(--accent-700);
-  text-underline-offset: 0.18em;
+/*
+ * In the base layer, not unlayered. Tailwind v4 puts utilities in `@layer utilities`, and any
+ * unlayered rule beats every layered one regardless of specificity, so an unlayered `a` colour
+ * overrode `text-on-accent` on every <ButtonLink> (teal text on a teal button, about 1.6:1)
+ * and `text-ink-2` on every nav link. Inside `@layer base` it is only the default.
+ */
+@layer base {
+  a {
+    color: var(--accent-700);
+    text-underline-offset: 0.18em;
+  }
 }
 
 /*

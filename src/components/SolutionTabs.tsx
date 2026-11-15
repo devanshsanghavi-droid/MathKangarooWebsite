@@ -1,6 +1,7 @@
 'use client';
 
 import { useId, useRef, useState } from 'react';
+import { RichText } from './math/RichText';
 
 type TabId = 'reliable' | 'elegant';
 
@@ -20,10 +21,13 @@ export function SolutionTabs({
   reliable,
   elegant,
   defaultOpen = false,
+  math = false,
 }: {
   reliable: string;
   elegant: string | null;
   defaultOpen?: boolean;
+  /** Render `$...$` as math (AMC, under a <MathProvider>). */
+  math?: boolean;
 }) {
   const base = useId();
   const [active, setActive] = useState<TabId>('reliable');
@@ -115,7 +119,9 @@ export function SolutionTabs({
               {tab.label}
             </h4>
           ) : null}
-          <p className="prose-measure mt-2 mb-2 text-sm text-ink-2">{tab.body}</p>
+          <p className="prose-measure mt-2 mb-2 text-sm text-ink-2">
+            <RichText text={tab.body} math={math} />
+          </p>
         </div>
       ))}
     </details>

@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import type { Choice, ChoiceKey } from '@/lib/schemas';
+import { RichText } from './math/RichText';
 
 /**
  * The five answer choices.
@@ -24,6 +25,8 @@ export function ChoiceList({
   onSelect,
   revealAnswer = false,
   idPrefix = 'choice',
+  math = false,
+  pending = false,
 }: {
   /** Only key, text and correctness are read, so an assessment can pass a trimmed choice. */
   choices: readonly Pick<Choice, 'key' | 'text' | 'correct'>[];
@@ -37,6 +40,13 @@ export function ChoiceList({
    */
   revealAnswer?: boolean;
   idPrefix?: string;
+  /** Render `$...$` in choice text as math (AMC, under a <MathProvider>). */
+  math?: boolean;
+  /**
+   * The selection is not yet an answer: a practice set picks first and judges on Check, so a
+   * pending pick is drawn as selected (teal), never as wrong.
+   */
+  pending?: boolean;
 }) {
   const listRef = useRef<HTMLDivElement>(null);
 
@@ -70,7 +80,7 @@ export function ChoiceList({
         {choices.map((choice) => {
           const isSelected = selected === choice.key;
           const showAsCorrect = revealAnswer && choice.correct;
-          const showAsWrong = isSelected && !choice.correct;
+          const showAsWrong = !pending && isSelected && !choice.correct;
 
           return (
             <li key={choice.key}>
@@ -97,7 +107,9 @@ export function ChoiceList({
                 ].join(' ')}
               >
                 <span className="mono shrink-0 text-sm font-semibold text-ink-2">{choice.key}</span>
-                <span className="reading flex-1 text-base">{choice.text}</span>
+                <span className="reading flex-1 text-base">
+                  <RichText text={choice.text} math={math} />
+                </span>
                 {/* The outcome is spelled out in words as well as in colour. */}
                 {showAsCorrect ? (
                   <span className="mono shrink-0 text-2xs font-medium text-correct-700">

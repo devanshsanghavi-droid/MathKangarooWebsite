@@ -1,13 +1,26 @@
-import { describe, it, expect } from 'vitest';
+import { afterEach, describe, it, expect } from 'vitest';
 import { render } from '@testing-library/react';
 import { auditBothThemes } from '@/lib/a11y';
 import AtlasPage from '../atlas/page';
 import StrandPage from '../atlas/[strand]/page';
 import type { RawSearchParams } from '@/lib/atlas-params';
 
+/** The page reads its view from the address bar after hydration, so set the URL first. */
 async function renderAtlas(searchParams: RawSearchParams = {}) {
-  return render(await AtlasPage({ searchParams: Promise.resolve(searchParams) }));
+  const params = new URLSearchParams();
+  for (const [key, value] of Object.entries(searchParams)) {
+    for (const entry of Array.isArray(value) ? value : value === undefined ? [] : [value]) {
+      params.append(key, entry);
+    }
+  }
+  const qs = params.toString();
+  window.history.replaceState(null, '', qs ? `/atlas?${qs}` : '/atlas');
+  return render(AtlasPage());
 }
+
+afterEach(() => {
+  window.history.replaceState(null, '', '/');
+});
 
 describe('the Atlas', () => {
   it('has no axe violations in the graph view, in either theme', async () => {

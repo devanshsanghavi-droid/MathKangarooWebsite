@@ -1,137 +1,121 @@
-import Link from '@/components/AppLink';
-import { BANDS, POINT_VALUES, STRANDS } from '@/lib/schemas';
-import { STRAND_META } from '@/lib/content';
-import { atlasHref, isFiltered, withStrandToggled, type AtlasQuery } from '@/lib/atlas-params';
+'use client';
+
+import { BANDS, POINT_VALUES, STRANDS, type Band, type Points } from '@/lib/schemas';
+import { STRAND_META } from '@/lib/taxonomy-meta';
+import { isFiltered, withStrandToggled, type AtlasQuery } from '@/lib/atlas-params';
+import { Button, SegmentedControl, ToggleChip } from '@/components/ui';
 
 /**
- * Every filter is a link, not a form control.
+ * The Atlas filters: buttons, never links (docs/06-V3-REDESIGN.md §3).
  *
- * That means the whole filter bar works with JavaScript switched off, every state is a real
- * URL you can share or bookmark, and the browser's back button undoes a filter - none of which
- * a client-side control gives you for free. The cost is that toggling two strands takes two
- * navigations, which on a statically rendered page is imperceptible.
+ * They used to be links, one URL per combination, and crawlers followed every one of them:
+ * hundreds of thousands of variants, each a request to the worker. Now the page is a single
+ * static file and the filtering happens here, in the browser. The selection is still mirrored
+ * into the address bar (by the parent, with history.replaceState) so a view stays shareable.
  *
- * Active filters are marked with `aria-current`, not `aria-pressed`: `aria-pressed` belongs to
- * buttons, and axe flags it as a critical violation on a link. These really are links - they
- * navigate - so `aria-current` is both allowed and more accurate.
+ * Strands are independent toggles (aria-pressed); level and point value are one-of-several
+ * choices, so they are radio groups.
  */
-export function AtlasFilters({ query, resultCount }: { query: AtlasQuery; resultCount: number }) {
-  const chip = (active: boolean) =>
-    [
-      'inline-flex items-center gap-1.5 rounded-sm border px-2.5 py-1 text-xs no-underline transition-colors',
-      active
-        ? 'border-accent-600 bg-accent-100 font-medium text-ink'
-        : 'border-rule bg-surface text-ink-2 hover:border-rule-strong hover:text-ink',
-    ].join(' ');
+export function AtlasFilters({
+  query,
+  resultCount,
+  onChange,
+}: {
+  query: AtlasQuery;
+  resultCount: number;
+  onChange: (next: AtlasQuery) => void;
+}) {
+  const bandValue: Band | 'any' = query.band ?? 'any';
+  const pointsValue = query.points === null ? 'any' : (String(query.points) as `${Points}`);
 
   return (
-    <div className="grid gap-4 rounded-md border border-rule bg-surface p-4">
-      <fieldset className="m-0 border-0 p-0">
-        <legend className="mb-2 p-0 text-2xs text-ink-3">Strands</legend>
+    <div className="ui grid gap-4 rounded-card border border-rule bg-surface p-4 shadow-xs">
+      <div role="group" aria-labelledby="atlas-filter-strands">
+        <p id="atlas-filter-strands" className="m-0 mb-2 text-2xs font-semibold text-ink-2">
+          Strands
+        </p>
         <ul className="m-0 flex flex-wrap list-none gap-1.5 p-0">
-          {STRANDS.map((strand) => {
-            const active = query.strands.includes(strand);
-            return (
-              <li key={strand}>
-                <Link
-                  rel="nofollow"
-                  href={atlasHref(withStrandToggled(query, strand))}
-                  aria-current={active ? 'true' : undefined}
-                  className={chip(active)}
-                  title={STRAND_META[strand].name}
-                >
-                  <span className="mono">{strand}</span>
-                  <span className="hidden sm:inline">{STRAND_META[strand].name}</span>
-                </Link>
-              </li>
-            );
-          })}
+          {STRANDS.map((strand) => (
+            <li key={strand}>
+              <ToggleChip
+                pressed={query.strands.includes(strand)}
+                onPressedChange={() => onChange(withStrandToggled(query, strand))}
+                title={STRAND_META[strand].name}
+              >
+                <span className="mono">{strand}</span>
+                <span className="hidden sm:inline">{STRAND_META[strand].name}</span>
+                <span className="visually-hidden sm:hidden"> {STRAND_META[strand].name}</span>
+              </ToggleChip>
+            </li>
+          ))}
         </ul>
-      </fieldset>
-
-      <div className="grid gap-4 sm:grid-cols-3">
-        <fieldset className="m-0 border-0 p-0">
-          <legend className="mb-2 p-0 text-2xs text-ink-3">Level</legend>
-          <ul className="m-0 flex flex-wrap list-none gap-1.5 p-0">
-            <li>
-              <Link
-                rel="nofollow"
-                href={atlasHref({ ...query, band: null })}
-                className={chip(query.band === null)}
-              >
-                Any
-              </Link>
-            </li>
-            {BANDS.map((band) => (
-              <li key={band}>
-                <Link
-                  rel="nofollow"
-                  href={atlasHref({ ...query, band })}
-                  aria-current={query.band === band ? 'true' : undefined}
-                  className={chip(query.band === band)}
-                >
-                  {band.replace('-', '–')}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </fieldset>
-
-        <fieldset className="m-0 border-0 p-0">
-          <legend className="mb-2 p-0 text-2xs text-ink-3">Point value</legend>
-          <ul className="m-0 flex flex-wrap list-none gap-1.5 p-0">
-            <li>
-              <Link
-                rel="nofollow"
-                href={atlasHref({ ...query, points: null })}
-                className={chip(query.points === null)}
-              >
-                Any
-              </Link>
-            </li>
-            {POINT_VALUES.map((points) => (
-              <li key={points}>
-                <Link
-                  rel="nofollow"
-                  href={atlasHref({ ...query, points })}
-                  aria-current={query.points === points ? 'true' : undefined}
-                  className={chip(query.points === points)}
-                >
-                  {points} pt
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </fieldset>
-
-        <fieldset className="m-0 border-0 p-0">
-          <legend className="mb-2 p-0 text-2xs text-ink-3">Coverage</legend>
-          <Link
-            rel="nofollow"
-            href={atlasHref({ ...query, hasProblems: !query.hasProblems })}
-            aria-current={query.hasProblems ? 'true' : undefined}
-            className={chip(query.hasProblems)}
-          >
-            Has problems
-          </Link>
-        </fieldset>
       </div>
 
-      <p className="m-0 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs text-ink-3">
-        <span>
-          <strong className="font-medium text-ink">{resultCount}</strong>{' '}
+      <div className="flex flex-wrap items-end gap-x-6 gap-y-4">
+        <SegmentedControl
+          label="Level"
+          showLabel
+          size="sm"
+          value={bandValue}
+          onChange={(value) => onChange({ ...query, band: value === 'any' ? null : value })}
+          options={[
+            { value: 'any', label: 'Any' },
+            ...BANDS.map((band) => ({ value: band, label: band, ariaLabel: `Level ${band}` })),
+          ]}
+        />
+        <SegmentedControl
+          label="Point value"
+          showLabel
+          size="sm"
+          value={pointsValue}
+          onChange={(value) =>
+            onChange({ ...query, points: value === 'any' ? null : (Number(value) as Points) })
+          }
+          options={[
+            { value: 'any', label: 'Any' },
+            ...POINT_VALUES.map((points) => ({
+              value: String(points) as `${Points}`,
+              label: `${points} pt`,
+              ariaLabel: `${points} points`,
+            })),
+          ]}
+        />
+        <div>
+          <p aria-hidden="true" className="m-0 mb-1.5 text-2xs font-semibold text-ink-2">
+            Coverage
+          </p>
+          <ToggleChip
+            pressed={query.hasProblems}
+            onPressedChange={(pressed) => onChange({ ...query, hasProblems: pressed })}
+          >
+            Has problems
+          </ToggleChip>
+        </div>
+      </div>
+
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-ink-2">
+        <p className="m-0" aria-live="polite">
+          <strong className="font-semibold text-ink tabular-nums">{resultCount}</strong>{' '}
           {resultCount === 1 ? 'skill' : 'skills'} shown
-        </span>
+        </p>
         {isFiltered(query) ? (
-          <Link
-            rel="nofollow"
-            href={atlasHref({ view: query.view })}
-            className="no-underline hover:underline"
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() =>
+              onChange({
+                ...query,
+                strands: [],
+                band: null,
+                points: null,
+                hasProblems: false,
+              })
+            }
           >
             Clear all filters
-          </Link>
+          </Button>
         ) : null}
-      </p>
+      </div>
     </div>
   );
 }

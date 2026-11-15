@@ -16,7 +16,15 @@ import { PaperQuestionTable } from '@/components/papers/PaperQuestionTable';
 import { MostTestedSkills } from '@/components/papers/MostTestedSkills';
 import { DifficultyPill } from '@/components/DifficultyPill';
 import { BandPill } from '@/components/BandPill';
-import { Callout } from '@/components/Callout';
+import {
+  buttonClasses,
+  Card,
+  CardHeader,
+  PageContainer,
+  PageHeader,
+  ProgressBar,
+  StatTile,
+} from '@/components/ui';
 
 interface Params {
   params: Promise<{ slug: string }>;
@@ -58,9 +66,11 @@ export default async function PaperPage({ params }: Params) {
   const distribution = pointDistribution(paper);
   const frequencies = mostTestedSkills([paper]);
 
+  const expected = expectedQuestionCount(paper.band);
+
   return (
-    <div className="content-column px-4 py-8">
-      <nav aria-label="Breadcrumb" className="mb-5 text-xs text-ink-3">
+    <PageContainer>
+      <nav aria-label="Breadcrumb" className="ui mb-4 text-xs text-ink-2">
         <ol className="m-0 flex list-none flex-wrap items-center gap-2 p-0">
           <li>
             <Link href="/papers" className="no-underline hover:underline">
@@ -68,77 +78,95 @@ export default async function PaperPage({ params }: Params) {
             </Link>
           </li>
           <li aria-hidden="true">/</li>
-          <li className="mono text-ink-2">{paperSlug(paper)}</li>
+          <li className="mono">{paperSlug(paper)}</li>
         </ol>
       </nav>
 
-      <header>
-        <h1 className="m-0 text-2xl">{paperTitle(paper)}</h1>
-        <div className="mt-3 flex flex-wrap items-center gap-2">
-          <BandPill band={paper.band} />
-          {POINT_VALUES.map((points) => (
-            <span key={points} className="inline-flex items-center gap-1.5">
-              <DifficultyPill points={points} />
-              <span className="mono text-2xs text-ink-3">{distribution.get(points) ?? 0}</span>
-            </span>
-          ))}
-          <span className="mono text-2xs text-ink-3">
-            {paper.questions.length} of {expectedQuestionCount(paper.band)} questions indexed
-          </span>
-        </div>
-        <p className="mt-4 mb-0">
-          {/*
+      <PageHeader
+        eyebrow={<BandPill band={paper.band} />}
+        title={paperTitle(paper)}
+        actions={
+          /*
             The official PDF is always remote. We never host a copy: not in the repo, not on the
             CDN, not "temporarily".
-          */}
-          <a href={paper.officialPdfUrl} rel="noreferrer">
+          */
+          <a
+            href={paper.officialPdfUrl}
+            rel="noreferrer"
+            className={buttonClasses({ variant: 'primary' })}
+          >
             Read the official paper on mathkangaroo.org
           </a>
-        </p>
-      </header>
+        }
+      />
 
-      <div className="mt-6">
-        <Callout>
-          <p className="m-0">
-            Below is <strong>our analysis</strong> of this paper, not the paper. It holds question
-            numbers, point values, the skills we tagged, and our own short notes. It contains no
-            question text, no figures and no answers - read those in the official PDF above.
-          </p>
-        </Callout>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <StatTile
+          label="Indexed"
+          value={`${paper.questions.length} / ${expected}`}
+          detail={`${paper.questions.length} of ${expected} questions indexed`}
+          footer={
+            <ProgressBar
+              hideLabel
+              value={paper.questions.length}
+              max={expected}
+              unit="indexed"
+              label="Questions indexed"
+            />
+          }
+        />
+        {POINT_VALUES.map((points) => (
+          <StatTile
+            key={points}
+            label={`${points}-point questions`}
+            value={distribution.get(points) ?? 0}
+            detail={<DifficultyPill points={points} />}
+          />
+        ))}
       </div>
 
-      {isComplete(paper) ? null : (
-        <p className="mt-4 mb-0 text-sm text-ink-3">
-          This index is partial: {paper.questions.length} of the {expectedQuestionCount(paper.band)}{' '}
-          questions have been classified so far.
+      <Card as="aside" aria-label="About this index" padding="md" className="mt-6 bg-surface-2">
+        <p className="prose-measure m-0 text-sm text-ink-2">
+          Below is <strong>our analysis</strong> of this paper, not the paper. It holds question
+          numbers, point values, the skills we tagged, and our own short notes. It contains no
+          question text, no figures and no answers. Read those in the official PDF above.
         </p>
-      )}
+        {isComplete(paper) ? null : (
+          <p className="mt-2 mb-0 text-sm text-ink-2">
+            This index is partial: {paper.questions.length} of the {expected} questions have been
+            classified so far.
+          </p>
+        )}
+      </Card>
 
-      <section aria-labelledby="questions-heading" className="mt-10">
-        <h2 id="questions-heading" className="m-0 text-lg">
-          Question by question
-        </h2>
-        <div className="mt-3">
-          <PaperQuestionTable paper={paper} skillNames={skillNames} />
-        </div>
-      </section>
+      <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_380px]">
+        <Card as="section" aria-labelledby="questions-heading" padding="lg">
+          <CardHeader titleId="questions-heading" title="Question by question" />
+          <div className="mt-3">
+            <PaperQuestionTable paper={paper} skillNames={skillNames} />
+          </div>
+        </Card>
 
-      <section aria-labelledby="most-tested-heading" className="mt-10">
-        <h2 id="most-tested-heading" className="m-0 text-lg">
-          Skills most tested in this paper
-        </h2>
-        <div className="mt-3">
-          <MostTestedSkills
-            frequencies={frequencies}
-            skillNames={skillNames}
-            questionCount={paper.questions.length}
-          />
-        </div>
-      </section>
+        <Card
+          as="section"
+          aria-labelledby="most-tested-heading"
+          padding="lg"
+          className="self-start"
+        >
+          <CardHeader titleId="most-tested-heading" title="Skills most tested in this paper" />
+          <div className="mt-4">
+            <MostTestedSkills
+              frequencies={frequencies}
+              skillNames={skillNames}
+              questionCount={paper.questions.length}
+            />
+          </div>
+        </Card>
+      </div>
 
-      <p className="mt-10 border-t border-rule pt-6 text-sm">
+      <p className="mt-8 mb-0 text-sm">
         <Link href="/papers">All indexed papers</Link>
       </p>
-    </div>
+    </PageContainer>
   );
 }

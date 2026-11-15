@@ -65,7 +65,7 @@ describe('/papers with an index', () => {
 
   it('lists the paper, grouped by band', () => {
     render(PapersPage());
-    expect(screen.getByRole('link', { name: /2019, level 3–4/ })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /2019, level 3-4/ })).toHaveAttribute(
       'href',
       '/papers/2019-3-4',
     );
@@ -79,7 +79,7 @@ describe('/papers with an index', () => {
 
   it('shows the skills most tested in the band', () => {
     const { container } = render(PapersPage());
-    expect(container.textContent).toMatch(/Skills most tested at level 3–4/);
+    expect(container.textContent).toMatch(/Skills most tested at level 3-4/);
     expect(container.textContent).toContain('NUM-01');
   });
 
@@ -102,7 +102,7 @@ describe('/papers/[year]-[band]', () => {
     const meta = await paperModule.generateMetadata({
       params: Promise.resolve({ slug: '2019-3-4' }),
     });
-    expect(meta.title).toBe('2019, level 3–4 - skill index');
+    expect(meta.title).toBe('2019, level 3-4 - skill index');
     expect(meta.description).toMatch(/No question text, figures or answers/);
   });
 

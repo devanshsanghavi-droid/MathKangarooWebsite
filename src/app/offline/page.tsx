@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from '@/components/AppLink';
+import { ButtonLink, Card, PageContainer } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'Offline',
@@ -14,28 +14,30 @@ export const metadata: Metadata = {
  */
 export default function OfflinePage() {
   return (
-    <div className="content-column px-4 py-16">
-      <p className="mono m-0 text-xs text-ink-3">Offline</p>
-      <h1 className="mt-2 text-2xl">You are not connected</h1>
-      <p className="prose-measure mt-4 text-ink-2">
-        This page has not been opened on this device before, so there is no copy saved. Anything you
-        have already visited still works, and so do these:
-      </p>
-      <ul className="mt-6 flex flex-wrap list-none gap-4 p-0">
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/atlas">The Atlas</Link>
-        </li>
-        <li>
-          <Link href="/problems">Browse problems</Link>
-        </li>
-      </ul>
-      <p className="prose-measure mt-8 text-sm text-ink-3">
-        Problems you have opened before are saved on this device and will still open. Nothing you do
-        offline is lost: answers are kept locally and sent when the connection comes back.
-      </p>
-    </div>
+    <PageContainer width="reading" className="sm:py-16">
+      <Card padding="lg">
+        <p className="mono m-0 text-xs text-ink-2">Offline</p>
+        <h1 className="mt-2 mb-0 text-2xl sm:text-3xl">You are not connected</h1>
+        <p className="prose-measure mt-4 mb-0 text-ink-2">
+          This page has not been opened on this device before, so there is no copy saved. Anything
+          you have already visited still works, and so do these:
+        </p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <ButtonLink href="/" variant="primary">
+            Practice
+          </ButtonLink>
+          <ButtonLink href="/atlas" variant="secondary">
+            The Atlas
+          </ButtonLink>
+          <ButtonLink href="/problems" variant="secondary">
+            Browse problems
+          </ButtonLink>
+        </div>
+        <p className="prose-measure mt-6 mb-0 text-sm text-ink-2">
+          Problems you have opened before are saved on this device and will still open. Nothing you
+          do offline is lost: answers are kept locally and sent when the connection comes back.
+        </p>
+      </Card>
+    </PageContainer>
   );
 }

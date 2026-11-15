@@ -27,6 +27,18 @@ const TIER_BG = { 3: '--d1-bg', 4: '--d2-bg', 5: '--d3-bg' } as const;
 const TIER_FG = { 3: '--d1-fg', 4: '--d2-fg', 5: '--d3-fg' } as const;
 const TIER_FILLED = { 3: 1, 4: 2, 5: 3 } as const;
 
+/**
+ * Symbols the bundled satori font does not carry. Left in, each one made the build try to
+ * download a font for it ("Failed to download dynamic font. Status: 400") and drew tofu. The
+ * card is a preview, so a plain ASCII stand-in reads well enough.
+ */
+const OG_GLYPHS: Record<string, string> = { '√': 'sqrt', '★': '*', '□': '_', '◇': '#' };
+
+/** Swap every unsupported symbol for its stand-in. */
+function ogSafeText(text: string): string {
+  return text.replace(/[√★□◇]/g, (glyph) => OG_GLYPHS[glyph] ?? '');
+}
+
 export default async function OpenGraphImage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const problem = getProblem(id);
@@ -59,6 +71,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ id:
   }
 
   const skill = getSkill(problem.skills.primary);
+  const statement = ogSafeText(problem.statement);
   const tierBg = themeColor(TIER_BG[problem.points]);
   const tierFg = themeColor(TIER_FG[problem.points]);
 
@@ -101,15 +114,13 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ id:
             {problem.points} point
           </span>
         </span>
-        <span>Level {problem.band.replace('-', '–')}</span>
+        <span>Level {problem.band}</span>
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
         {skill ? <div style={{ fontSize: 34, color: accent }}>{skill.name}</div> : null}
         <div style={{ fontSize: 52, lineHeight: 1.25 }}>
-          {problem.statement.length > 190
-            ? `${problem.statement.slice(0, 187)}…`
-            : problem.statement}
+          {statement.length > 190 ? `${statement.slice(0, 187)}…` : statement}
         </div>
       </div>
 

@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { SITE } from '@/lib/site';
 import { contentIndex, paperKey } from '@/lib/content';
 import { STRANDS } from '@/lib/schemas';
+import { getAllAmcProblems, getAmcTaxonomy } from '@/lib/amc-content';
 
 /**
  * The sitemap is generated from content, not hand-listed: adding a skill file adds its page
@@ -15,6 +16,19 @@ export const STATIC_ROUTES = [
   { path: '/papers', priority: 0.7 },
   { path: '/about', priority: 0.5 },
   { path: '/contact', priority: 0.3 },
+] as const;
+
+/**
+ * The AMC beta's own pages (docs/06 §5). /amc/practice is left out: it is a noindex tool page
+ * whose content comes from the query string. The flashcards are a tool too, but the page is
+ * the only explanation of the drill, so it is listed at a low priority.
+ */
+export const AMC_ROUTES = [
+  { path: '/amc', priority: 0.7 },
+  { path: '/amc/problems', priority: 0.6 },
+  { path: '/amc/types', priority: 0.6 },
+  { path: '/amc/formulas', priority: 0.6 },
+  { path: '/amc/formulas/drill', priority: 0.3 },
 ] as const;
 
 /*
@@ -76,6 +90,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE.url}/papers/${paperKey(paper.year, paper.band)}`,
       changeFrequency: 'yearly',
       priority: 0.4,
+    });
+  }
+
+  for (const route of AMC_ROUTES) {
+    entries.push({
+      url: `${SITE.url}${route.path}`,
+      changeFrequency: 'weekly',
+      priority: route.priority,
+    });
+  }
+
+  for (const type of getAmcTaxonomy().types) {
+    entries.push({
+      url: `${SITE.url}/amc/type/${type.id}`,
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    });
+  }
+
+  for (const problem of getAllAmcProblems()) {
+    entries.push({
+      url: `${SITE.url}/amc/problem/${problem.id}`,
+      changeFrequency: 'monthly',
+      priority: 0.4,
+      lastModified: new Date(problem.createdAt),
     });
   }
 

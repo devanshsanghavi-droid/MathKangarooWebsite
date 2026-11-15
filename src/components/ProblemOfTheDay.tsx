@@ -1,16 +1,16 @@
 'use client';
 
-import Link from '@/components/AppLink';
 import { useSyncExternalStore } from 'react';
 import { DifficultyPill } from '@/components/DifficultyPill';
-import { BandPill } from '@/components/BandPill';
 import { dayNumber, formatDay } from '@/lib/potd';
 import type { Band, Points } from '@/lib/schemas';
+import { ButtonLink, Card } from '@/components/ui';
 
 export interface PotdCandidate {
   id: string;
   points: Points;
   band: Band;
+  /** Plain text, already truncated for a preview. */
   statement: string;
   skillName: string | null;
 }
@@ -18,55 +18,65 @@ export interface PotdCandidate {
 const noop = () => () => {};
 
 /**
- * Problem of the Day, picked in the reader's browser.
+ * Problem of the day, picked in the reader's browser so the page stays fully static.
  *
- * It used to be picked on the server with `revalidate = 3600`. On Cloudflare the page cache is
- * the read-only static-assets cache, so revalidation can never write: the card and its date
- * froze at whatever day the site was last deployed, and every request after the first hour
- * spent CPU on a revalidation that was bound to fail. Picking here keeps the page fully static.
- *
- * The server renders the build day's pick (the server snapshot), so hydration matches; the
- * client snapshot then moves it to today. The pick is the same pure function of the date as
- * before, so everyone still sees the same problem on the same day.
+ * The pick is the same pure function of the date as `problemOfTheDay` in lib/potd.ts (the bank
+ * in id order, indexed by the UTC day number), so everyone sees the same problem on the same day.
+ * The server works that function out for a window of days starting at the build day and sends
+ * only those picks, not the whole bank: with ~1,000 problems the full list of statements would
+ * have been most of the home page's payload. The server renders the build day's pick, so
+ * hydration matches; the client snapshot then moves it to today. If a deploy is older than the
+ * window, the window simply repeats, which still gives one stable problem per day.
  */
 export function ProblemOfTheDay({
-  candidates,
-  buildDay,
+  picks,
+  startDay,
+  headingLevel = 2,
+  className,
 }: {
-  candidates: readonly PotdCandidate[];
-  buildDay: number;
+  /** picks[i] is the problem for day `startDay + i`. */
+  picks: readonly PotdCandidate[];
+  startDay: number;
+  headingLevel?: 2 | 3;
+  className?: string;
 }) {
   const day = useSyncExternalStore(
     noop,
     () => dayNumber(new Date()),
-    () => buildDay,
+    () => startDay,
   );
-  if (candidates.length === 0) return null;
-  const potd = candidates[day % candidates.length];
+  if (picks.length === 0) return null;
+  const offset = (((day - startDay) % picks.length) + picks.length) % picks.length;
+  const potd = picks[offset];
   if (!potd) return null;
+  const Heading = `h${headingLevel}` as 'h2' | 'h3';
 
   return (
-    <section aria-labelledby="potd-heading" className="mt-16">
-      <h2 id="potd-heading" className="m-0 text-lg">
-        Problem of the day
-      </h2>
-      <p className="mt-2 mb-4 text-sm text-ink-3">{formatDay(new Date(day * 86_400_000))}</p>
-      <Link
-        href={`/problem/${potd.id}`}
-        className="block rounded-md border border-rule bg-surface p-5 no-underline hover:border-rule-strong"
-      >
-        <span className="flex flex-wrap items-center gap-2">
-          <span className="mono text-xs text-ink-3">{potd.id}</span>
-          <DifficultyPill points={potd.points} />
-          <BandPill band={potd.band} />
-          {potd.skillName ? <span className="text-sm text-ink-2">{potd.skillName}</span> : null}
+    <Card as="section" aria-labelledby="potd-heading" padding="lg" className={className}>
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <Heading id="potd-heading" className="ui m-0 text-base font-semibold text-ink">
+          Problem of the day
+        </Heading>
+        <p className="ui m-0 text-xs text-ink-3">{formatDay(new Date(day * 86_400_000))}</p>
+      </div>
+      <p className="ui mt-3 mb-0 flex flex-wrap items-center gap-2 text-xs text-ink-2">
+        <span className="mono text-ink-3">{potd.id}</span>
+        <DifficultyPill points={potd.points} />
+        <span className="mono rounded-pill border border-rule px-2 py-0.5 text-2xs">
+          Level {potd.band}
         </span>
-        <span className="statement prose-measure mt-3 block text-ink">{potd.statement}</span>
-      </Link>
-      <p className="mt-3 mb-0 text-xs text-ink-3">
-        A different problem every day, the same one for everyone. The dated archive and the 6pm
-        solution reveal arrive with <code className="mono">/potd</code> in Phase 2.
+        {potd.skillName ? <span>{potd.skillName}</span> : null}
       </p>
-    </section>
+      <p className="statement mt-3 mb-0 text-ink">{potd.statement}</p>
+      <div className="mt-4">
+        <ButtonLink href={`/problem/${potd.id}`} variant="secondary" size="md">
+          Solve it
+          <span className="visually-hidden"> (problem of the day, {potd.id})</span>
+        </ButtonLink>
+      </div>
+      <p className="ui mt-3 mb-0 text-2xs text-ink-3">
+        A different problem every day, the same one for everyone.
+      </p>
+    </Card>
   );
 }

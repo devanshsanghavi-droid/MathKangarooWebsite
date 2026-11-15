@@ -3,6 +3,7 @@ import Link from '@/components/AppLink';
 import { SITE } from '@/lib/site';
 import { ContactForm } from './ContactForm';
 import { isMailConfigured } from './actions';
+import { Card, PageContainer } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -16,20 +17,21 @@ export default async function ContactPage() {
   const mailConfigured = await isMailConfigured();
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-10">
-      <h1 className="m-0 text-2xl">Contact</h1>
+    <PageContainer width="reading">
+      <p className="ui m-0 mb-2 text-xs font-semibold text-ink-2">About</p>
+      <h1 className="m-0 text-2xl sm:text-3xl">Contact</h1>
       <p className="prose-measure mt-3 mb-0 text-ink-2">
         Good reasons to write: you want to use this with your own students, you think a problem is
         wrong, you disagree with where a skill sits in the Atlas, or you want to know how the
         taxonomy was built.
       </p>
 
-      <div className="mt-8">
+      <Card padding="lg" className="mt-6">
         <ContactForm mailConfigured={mailConfigured} />
-      </div>
+      </Card>
 
-      <section aria-labelledby="other-ways" className="mt-10 border-t border-rule pt-6">
-        <h2 id="other-ways" className="m-0 text-lg">
+      <Card as="section" aria-labelledby="other-ways" padding="lg" className="mt-6">
+        <h2 id="other-ways" className="ui m-0 text-lg font-semibold">
           Other ways, all of which work
         </h2>
         <ul className="mt-3 grid list-none gap-2 p-0 text-sm text-ink-2">
@@ -49,7 +51,7 @@ export default async function ContactPage() {
             prefilled issue with the id and file path already in it.
           </li>
         </ul>
-      </section>
-    </div>
+      </Card>
+    </PageContainer>
   );
 }

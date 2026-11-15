@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import Link from '@/components/AppLink';
+import { Button, ButtonLink, Card, PageContainer } from '@/components/ui';
 
 /**
  * The root error boundary. It shows the digest rather than the message: the digest is what
@@ -21,26 +21,26 @@ export default function GlobalError({
   }, [error]);
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-16">
-      <p className="mono m-0 text-xs text-ink-3">Error</p>
-      <h1 className="mt-2 text-2xl">Something went wrong on our side</h1>
-      <p className="prose-measure mt-4 text-ink-2">
-        Nothing you did caused this and nothing was lost. Try again, and if it keeps happening,
-        please report it so it gets fixed.
-      </p>
-      {error.digest ? (
-        <p className="mono mt-4 text-xs text-ink-3">Reference: {error.digest}</p>
-      ) : null}
-      <div className="mt-6 flex flex-wrap items-center gap-4">
-        <button
-          type="button"
-          onClick={reset}
-          className="cursor-pointer rounded-sm border border-rule-strong bg-surface px-4 py-2 text-sm text-ink"
-        >
-          Try again
-        </button>
-        <Link href="/">Go home</Link>
-      </div>
-    </div>
+    <PageContainer width="reading" className="sm:py-16">
+      <Card padding="lg">
+        <p className="mono m-0 text-xs text-ink-2">Error</p>
+        <h1 className="mt-2 mb-0 text-2xl sm:text-3xl">Something went wrong on our side</h1>
+        <p className="prose-measure mt-4 mb-0 text-ink-2">
+          Nothing you did caused this and nothing was lost. Try again, and if it keeps happening,
+          please report it so it gets fixed.
+        </p>
+        {error.digest ? (
+          <p className="mono mt-4 mb-0 text-xs text-ink-2">Reference: {error.digest}</p>
+        ) : null}
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <Button variant="primary" onClick={reset}>
+            Try again
+          </Button>
+          <ButtonLink href="/" variant="secondary">
+            Go to Practice
+          </ButtonLink>
+        </div>
+      </Card>
+    </PageContainer>
   );
 }

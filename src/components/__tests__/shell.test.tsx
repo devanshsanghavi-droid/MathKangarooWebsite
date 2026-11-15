@@ -8,7 +8,16 @@ import { NavLinks } from '../NavLinks';
 import { MobileTabBar } from '../MobileTabBar';
 import { SkipLink } from '../SkipLink';
 import { ThemeToggle, THEME_STORAGE_KEY, THEME_INIT_SCRIPT } from '../ThemeToggle';
-import { DISCLAIMER, PRIMARY_NAV, isActivePath } from '@/lib/site';
+import { AmcDisclaimer } from '../AmcDisclaimer';
+import { Header } from '../Header';
+import {
+  AMC_DISCLAIMER,
+  DISCLAIMER,
+  MOBILE_NAV,
+  PRIMARY_NAV,
+  isActivePath,
+  isNavItemActive,
+} from '@/lib/site';
 
 const pathname = vi.hoisted(() => ({ current: '/' }));
 vi.mock('next/navigation', () => ({ usePathname: () => pathname.current }));
@@ -57,26 +66,101 @@ describe('Footer', () => {
 });
 
 describe('NavLinks', () => {
-  it('marks the current section with aria-current, not colour alone', () => {
+  it('marks the current section with aria-current and a heavier weight, not colour alone', () => {
     pathname.current = '/atlas';
     render(<NavLinks items={PRIMARY_NAV} />);
-    const atlas = screen.getByRole('link', { name: 'Atlas' });
+    const atlas = screen.getByRole('link', { name: 'Skill Atlas' });
     expect(atlas).toHaveAttribute('aria-current', 'page');
-    expect(screen.getByRole('link', { name: 'Papers' })).not.toHaveAttribute('aria-current');
-    expect(atlas.className).toContain('underline');
+    expect(screen.getByRole('link', { name: 'Past papers' })).not.toHaveAttribute('aria-current');
+    expect(atlas.className).toContain('font-semibold');
   });
 
   it('treats a nested route as inside its section', () => {
     pathname.current = '/atlas/CNT';
     render(<NavLinks items={PRIMARY_NAV} />);
-    expect(screen.getByRole('link', { name: 'Atlas' })).toHaveAttribute('aria-current', 'page');
+    expect(screen.getByRole('link', { name: 'Skill Atlas' })).toHaveAttribute(
+      'aria-current',
+      'page',
+    );
   });
 
-  it('renders every primary destination', () => {
+  it('renders the five v3 destinations in order (docs/06 §2)', () => {
     render(<NavLinks items={PRIMARY_NAV} />);
-    for (const item of PRIMARY_NAV) {
-      expect(screen.getByRole('link', { name: item.label })).toHaveAttribute('href', item.href);
-    }
+    const links = screen.getAllByRole('link');
+    expect(links.map((link) => link.getAttribute('href'))).toEqual([
+      '/',
+      '/problems',
+      '/atlas',
+      '/papers',
+      '/amc',
+    ]);
+    expect(screen.getByRole('link', { name: 'Practice' })).toHaveAttribute('href', '/');
+    expect(screen.getByRole('link', { name: 'Question bank' })).toHaveAttribute(
+      'href',
+      '/problems',
+    );
+  });
+
+  it('carries a visible Beta pill on AMC, and says so to a screen reader', () => {
+    render(<NavLinks items={PRIMARY_NAV} />);
+    const amc = screen.getByRole('link', { name: 'AMC (Beta)' });
+    expect(amc).toHaveAttribute('href', '/amc');
+    expect(amc).toHaveTextContent('Beta');
+  });
+
+  it('highlights Practice on the practice sessions and the bank on a single problem', () => {
+    pathname.current = '/practice/diagnostic';
+    const { unmount } = render(<NavLinks items={PRIMARY_NAV} />);
+    expect(screen.getByRole('link', { name: 'Practice' })).toHaveAttribute('aria-current', 'page');
+    unmount();
+    pathname.current = '/problem/KA-0001';
+    render(<NavLinks items={PRIMARY_NAV} />);
+    expect(screen.getByRole('link', { name: 'Question bank' })).toHaveAttribute(
+      'aria-current',
+      'page',
+    );
+    expect(screen.getByRole('link', { name: 'Practice' })).not.toHaveAttribute('aria-current');
+  });
+});
+
+describe('Header', () => {
+  it('is a sticky surface bar with the wordmark, the primary nav and the theme toggle', () => {
+    render(<Header />);
+    const banner = screen.getByRole('banner');
+    expect(banner.className).toContain('sticky');
+    expect(banner.className).toContain('bg-surface');
+    expect(screen.getByRole('link', { name: /Kangaroo Atlas home/ })).toHaveAttribute('href', '/');
+    expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
+    expect(screen.getByRole('radiogroup', { name: /colour theme/i })).toBeInTheDocument();
+  });
+
+  it('takes its height from the header-height token the skill rail sticks beneath', () => {
+    const { container } = render(<Header />);
+    expect(container.querySelector('.h-\\[var\\(--header-height\\)\\]')).not.toBeNull();
+  });
+});
+
+describe('isNavItemActive', () => {
+  const [practice, bank, atlas] = PRIMARY_NAV;
+  it.each([
+    ['/', practice, true],
+    ['/practice/mock', practice, true],
+    ['/problems', practice, false],
+    ['/problem/KA-0002', bank, true],
+    ['/skill/CNT-12', atlas, true],
+    ['/skills', atlas, false],
+  ])('isNavItemActive(%s, %o)', (path, item, expected) => {
+    expect(item).toBeDefined();
+    if (item) expect(isNavItemActive(path, item)).toBe(expected);
+  });
+});
+
+describe('AmcDisclaimer', () => {
+  it('states the MAA trademark notice verbatim', () => {
+    render(<AmcDisclaimer />);
+    expect(screen.getByRole('note')).toHaveTextContent(AMC_DISCLAIMER);
+    expect(AMC_DISCLAIMER).toContain('Mathematical Association of America');
+    expect(AMC_DISCLAIMER).toContain('Not affiliated with or endorsed by the MAA.');
   });
 });
 
@@ -99,10 +183,21 @@ describe('MobileTabBar', () => {
     expect(screen.getByRole('navigation', { name: 'Sections' })).toBeInTheDocument();
   });
 
+  it('shows the same destinations as the top bar', () => {
+    render(<MobileTabBar />);
+    expect(MOBILE_NAV).toEqual(PRIMARY_NAV);
+    expect(screen.getAllByRole('link').map((link) => link.getAttribute('href'))).toEqual(
+      PRIMARY_NAV.map((item) => item.href),
+    );
+  });
+
   it('marks the active tab', () => {
     pathname.current = '/problems';
     render(<MobileTabBar />);
-    expect(screen.getByRole('link', { name: 'Problems' })).toHaveAttribute('aria-current', 'page');
+    expect(screen.getByRole('link', { name: 'Question bank' })).toHaveAttribute(
+      'aria-current',
+      'page',
+    );
   });
 });
 

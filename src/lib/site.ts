@@ -33,37 +33,48 @@ export const SITE = {
 export const DISCLAIMER =
   'Independent project. Not affiliated with or endorsed by Math Kangaroo in USA, NFP.';
 
+/**
+ * The MAA notice docs/06-V3-REDESIGN.md §2 requires on every page under /amc, rendered by
+ * <AmcDisclaimer> from src/app/amc/layout.tsx in addition to the footer's DISCLAIMER.
+ */
+export const AMC_DISCLAIMER =
+  'AMC 10 and AMC 12 are trademarks of the Mathematical Association of America. ' +
+  'Independent project. Not affiliated with or endorsed by the MAA.';
+
 export interface NavItem {
   href: string;
   label: string;
-  /** Short label for the mobile tab bar. */
+  /** Short label for the mobile tab bar and for the top bar between `sm` and `lg`. */
   short?: string;
+  /** Shows a "Beta" pill beside the label. */
+  beta?: boolean;
+  /**
+   * Other route prefixes that count as inside this section for highlighting, e.g. Practice
+   * (`/`) also owns `/practice/*`, and the Question bank owns `/problem/*`.
+   */
+  also?: readonly string[];
 }
 
 /**
- * docs/00-SPEC.md §0.2 lists Atlas · Problems · Practice · Papers · Impact. The diagnostic is
- * the first Practice surface to exist, and it works signed out. Impact is P3 and stays absent
- * rather than being a link to a 404. Add each route here in the milestone that builds it.
+ * docs/06-V3-REDESIGN.md §2: the v3 practice-app nav. The top bar and the mobile tab bar show
+ * the same five destinations. The diagnostic and mock test are reached from the Practice home
+ * (and the footer); About moved to the footer.
  */
 export const PRIMARY_NAV: NavItem[] = [
-  { href: '/atlas', label: 'Atlas' },
-  { href: '/problems', label: 'Problems' },
-  { href: '/practice/diagnostic', label: 'Diagnostic' },
-  { href: '/practice/mock', label: 'Mock' },
-  { href: '/papers', label: 'Papers' },
-  { href: '/about', label: 'About' },
+  { href: '/', label: 'Practice', short: 'Practice', also: ['/practice'] },
+  { href: '/problems', label: 'Question bank', short: 'Bank', also: ['/problem'] },
+  { href: '/atlas', label: 'Skill Atlas', short: 'Atlas', also: ['/skill'] },
+  { href: '/papers', label: 'Past papers', short: 'Papers' },
+  { href: '/amc', label: 'AMC', short: 'AMC', beta: true },
 ];
 
-/** The mobile bottom bar. Home replaces the wordmark, which is not tappable on small screens. */
-export const MOBILE_NAV: NavItem[] = [
-  { href: '/', label: 'Home', short: 'Home' },
-  { href: '/atlas', label: 'Atlas', short: 'Atlas' },
-  { href: '/problems', label: 'Problems', short: 'Problems' },
-  { href: '/papers', label: 'Papers', short: 'Papers' },
-];
+/** The mobile bottom bar: the same destinations as the top bar (docs/06 §2). */
+export const MOBILE_NAV: NavItem[] = PRIMARY_NAV;
 
 export const FOOTER_LINKS: NavItem[] = [
   { href: '/about', label: 'About' },
+  { href: '/practice/diagnostic', label: 'Diagnostic' },
+  { href: '/practice/mock', label: 'Mock test' },
   // Reachable, but not in the primary nav: an account only saves progress, and putting
   // "Sign in" beside the practice links would imply the practice needs one. It does not.
   { href: '/login', label: 'Sign in' },
@@ -77,19 +88,13 @@ export const FOOTER_LINKS: NavItem[] = [
 /**
  * Where the skill rail (docs/05 §7.1) appears.
  *
- * The rail is the Atlas in miniature, so it belongs on every surface where a student is
- * working through the material. It does not belong on the marketing, legal or utility pages,
- * where 91 skill links would be noise beside a privacy policy - and it is deliberately absent
- * from /print, whose whole output is a sheet of paper.
+ * The rail is the Atlas in miniature. v3 (docs/06-V3-REDESIGN.md) narrows it to the Atlas and
+ * the skill pages: the question bank has its own 300px filter column, practice sessions are a
+ * full-width test layout, and /papers and /amc are app pages at 1200px, where 91 skill links
+ * beside the content would crowd out the thing the student came for. It stays off the
+ * marketing, legal and utility pages, and off /print, whose whole output is a sheet of paper.
  */
-export const RAIL_ROUTES: readonly string[] = [
-  '/atlas',
-  '/skill',
-  '/problem',
-  '/problems',
-  '/practice',
-  '/papers',
-];
+export const RAIL_ROUTES: readonly string[] = ['/atlas', '/skill'];
 
 export function hasRail(pathname: string): boolean {
   return RAIL_ROUTES.some((route) => pathname === route || pathname.startsWith(`${route}/`));
@@ -99,4 +104,10 @@ export function hasRail(pathname: string): boolean {
 export function isActivePath(pathname: string, href: string): boolean {
   if (href === '/') return pathname === '/';
   return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+/** Is `pathname` inside this nav item's section, counting its `also` prefixes? */
+export function isNavItemActive(pathname: string, item: NavItem): boolean {
+  if (isActivePath(pathname, item.href)) return true;
+  return (item.also ?? []).some((prefix) => isActivePath(pathname, prefix));
 }

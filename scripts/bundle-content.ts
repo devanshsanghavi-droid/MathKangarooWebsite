@@ -1,5 +1,7 @@
 import { readdirSync, readFileSync, writeFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { computeContentHealth } from '../src/lib/analytics/content-health-core.ts';
+import type { Problem, Skill } from '../src/lib/schemas.ts';
 
 /**
  * `pnpm bundle:content` - freeze content/ into a module the JavaScript bundler can see.
@@ -31,6 +33,9 @@ import { join, relative } from 'node:path';
 const ROOT = process.cwd();
 const CONTENT = join(ROOT, 'content');
 const OUTPUT = join(ROOT, 'src', 'lib', 'content.bundle.json');
+// The admin panel's content summary. /admin renders per request, so it reads this small
+// precomputed file instead of the whole bundle (docs/06 §3).
+const HEALTH_OUTPUT = join(ROOT, 'src', 'lib', 'analytics', 'content-health.json');
 
 function listJson(dir: string, out: string[] = []): string[] {
   let entries;
@@ -62,6 +67,12 @@ const bundle = {
 // Stable key order and two-space indent, so the committed diff is reviewable and the
 // --check comparison is a plain string equality rather than a deep object walk.
 const serialised = JSON.stringify(bundle, null, 2) + '\n';
+const healthSerialised =
+  JSON.stringify(
+    computeContentHealth(bundle.skills as Skill[], bundle.problems as Problem[]),
+    null,
+    2,
+  ) + '\n';
 
 if (process.argv.includes('--check')) {
   let current = '';
@@ -80,6 +91,19 @@ if (process.argv.includes('--check')) {
     );
     process.exit(1);
   }
+  let currentHealth = '';
+  try {
+    currentHealth = readFileSync(HEALTH_OUTPUT, 'utf8');
+  } catch {
+    currentHealth = '';
+  }
+  if (currentHealth !== healthSerialised) {
+    console.error(
+      `${relative(ROOT, HEALTH_OUTPUT)} is missing or out of date with content/.\n` +
+        'Run: pnpm bundle:content',
+    );
+    process.exit(1);
+  }
   console.log(
     `content bundle in sync - ${bundle.skills.length} skills, ${bundle.problems.length} problems, ` +
       `${bundle.papers.length} paper indexes`,
@@ -88,6 +112,7 @@ if (process.argv.includes('--check')) {
 }
 
 writeFileSync(OUTPUT, serialised);
+writeFileSync(HEALTH_OUTPUT, healthSerialised);
 const bytes = statSync(OUTPUT).size;
 console.log(
   `wrote ${relative(ROOT, OUTPUT)} - ${bundle.skills.length} skills, ` +

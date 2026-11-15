@@ -1,8 +1,7 @@
 import Link from '@/components/AppLink';
 import type { Skill } from '@/lib/schemas';
-import { STRAND_META, TIER_META, TIER_ORDER } from '@/lib/content';
+import { STRAND_META, TIER_META, TIER_ORDER } from '@/lib/taxonomy-meta';
 import { STRANDS } from '@/lib/schemas';
-import { atlasHref, type AtlasQuery } from '@/lib/atlas-params';
 import { EmptyState } from '@/components/EmptyState';
 import { SkillMasteryDot } from '@/components/mastery/SkillMasteryDot';
 
@@ -21,11 +20,11 @@ import { SkillMasteryDot } from '@/components/mastery/SkillMasteryDot';
 export function AtlasList({
   skills,
   problemCounts,
-  query,
+  focus,
 }: {
-  skills: readonly Skill[];
+  skills: ReadonlyArray<Pick<Skill, 'id' | 'name' | 'strand' | 'tier'>>;
   problemCounts: ReadonlyMap<string, number>;
-  query: AtlasQuery;
+  focus: string | null;
 }) {
   const present = STRANDS.map((strand) => ({
     strand,
@@ -33,18 +32,14 @@ export function AtlasList({
   })).filter((group) => group.skills.length > 0);
 
   if (present.length === 0) {
-    return (
-      <EmptyState action={<Link href={atlasHref({ view: 'list' })}>Clear the filters</Link>}>
-        No skill matches these filters.
-      </EmptyState>
-    );
+    return <EmptyState>No skill matches these filters.</EmptyState>;
   }
 
   return (
-    <ul className="m-0 grid list-none gap-6 p-0">
+    <ul className="m-0 grid list-none gap-4 p-0">
       {present.map(({ strand, skills: strandSkills }) => (
-        <li key={strand}>
-          <h2 className="m-0 flex flex-wrap items-baseline gap-2 text-base">
+        <li key={strand} className="rounded-card border border-rule bg-surface p-4 shadow-xs">
+          <h2 className="ui m-0 flex flex-wrap items-baseline gap-2 text-base font-semibold">
             <Link href={`/atlas/${strand}`} className="no-underline hover:underline">
               {STRAND_META[strand].name}
             </Link>
@@ -68,14 +63,14 @@ export function AtlasList({
                   <ul className="m-0 mt-1.5 grid list-none gap-1 p-0">
                     {tierSkills.map((skill) => {
                       const count = problemCounts.get(skill.id) ?? 0;
-                      const focused = query.focus === skill.id;
+                      const focused = focus === skill.id;
                       return (
                         <li key={skill.id}>
                           <Link
                             href={`/skill/${skill.id}`}
                             aria-current={focused ? 'true' : undefined}
                             className={[
-                              'flex flex-wrap items-baseline gap-x-2.5 gap-y-0.5 rounded-sm px-2 py-1.5 no-underline transition-colors',
+                              'flex min-h-9 flex-wrap items-center gap-x-2.5 gap-y-0.5 rounded-control px-2 py-1.5 no-underline transition-colors',
                               focused ? 'bg-accent-100' : 'hover:bg-surface-2',
                             ].join(' ')}
                           >

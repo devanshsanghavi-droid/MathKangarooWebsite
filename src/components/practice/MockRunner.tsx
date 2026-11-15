@@ -1,7 +1,6 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import Link from '@/components/AppLink';
 import type { Band, ChoiceKey } from '@/lib/schemas';
 import type { AssessmentProblem } from '@/lib/assessment';
 import { BANDS } from '@/lib/schemas';
@@ -21,6 +20,7 @@ import {
 } from '@/lib/mock';
 import { ProblemCardView } from '@/components/ProblemCardView';
 import { MockReportView } from './MockReport';
+import { Button, ButtonLink, buttonClasses, Card, CardHeader } from '@/components/ui';
 
 /**
  * A full mock exam, in the browser, with no account.
@@ -167,19 +167,12 @@ export function MockRunner({
       <div>
         <MockReportView report={report} skillNames={skillNames} problemsById={problemsById} />
         <div className="mt-8 flex flex-wrap gap-3 border-t border-rule pt-6">
-          <button
-            type="button"
-            onClick={discard}
-            className="cursor-pointer rounded-sm border border-rule-strong bg-surface px-4 py-2 text-sm text-ink"
-          >
+          <Button variant="primary" onClick={discard}>
             Take another
-          </button>
-          <Link
-            href="/practice/diagnostic"
-            className="rounded-sm border border-rule px-4 py-2 text-sm text-ink-2 no-underline"
-          >
+          </Button>
+          <ButtonLink href="/practice/diagnostic" variant="secondary">
             Take the diagnostic instead
-          </Link>
+          </ButtonLink>
         </div>
       </div>
     );
@@ -192,29 +185,31 @@ export function MockRunner({
     const answer = id ? state.answers[id] : undefined;
     const left = remainingMs(state, now);
     const blanks = countBlanks(state);
+    const isLast = state.current === state.problemIds.length - 1;
 
     return (
-      <div>
-        <div className="sticky top-16 z-20 -mx-4 mb-5 border-b border-rule bg-ground/95 px-4 py-3 backdrop-blur-sm">
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+      <div className="grid gap-4">
+        {/* The test bar: the clock, where you are, and the way out. */}
+        <div className="ui sticky top-[var(--header-height)] z-20 -mx-4 border-b border-rule bg-surface px-4 py-3 sm:mx-0 sm:rounded-card sm:border sm:shadow-xs">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <p
-              className="mono m-0 text-lg font-semibold text-ink tabular-nums"
+              className="mono m-0 text-xl font-semibold text-ink tabular-nums"
               role="timer"
               aria-label={`${formatClock(left)} remaining`}
             >
               {formatClock(left)}
             </p>
-            <p className="m-0 text-xs text-ink-3">
-              Question {state.current + 1} of {state.problemIds.length} · {blanks} blank ·{' '}
-              {countFlagged(state)} flagged
+            <p className="m-0 text-sm text-ink-2">
+              <span className="font-semibold text-ink">
+                Question {state.current + 1} of {state.problemIds.length}
+              </span>
+              <span className="ml-3 text-xs">
+                {blanks} blank, {countFlagged(state)} flagged
+              </span>
             </p>
-            <button
-              type="button"
-              onClick={finish}
-              className="ml-auto cursor-pointer rounded-sm border border-rule-strong bg-surface px-3 py-1.5 text-sm text-ink"
-            >
+            <Button variant="secondary" size="sm" onClick={finish} className="ml-auto">
               Finish now
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -224,10 +219,7 @@ export function MockRunner({
             carried by role="alert", a 2px neutral border and the glyph, which also survives
             greyscale.
           */
-          <div
-            role="alert"
-            className="mb-5 rounded-sm border-2 border-rule-strong bg-surface-3 p-3"
-          >
+          <div role="alert" className="rounded-card border-2 border-rule-strong bg-surface-3 p-4">
             <p className="m-0 text-sm font-medium text-ink">
               <span aria-hidden="true" className="mr-2">
                 ⏱
@@ -238,13 +230,14 @@ export function MockRunner({
               A wrong answer costs nothing here. A blank scores zero for certain; a guess scores
               zero or more. Fill every one of them before the end.
             </p>
-            <button
-              type="button"
+            <Button
+              variant="ghost"
+              size="sm"
               onClick={() => setDismissedNudge(true)}
-              className="mt-2 cursor-pointer text-xs underline"
+              className="mt-2"
             >
               Understood
-            </button>
+            </Button>
           </div>
         ) : null}
 
@@ -257,11 +250,12 @@ export function MockRunner({
               mode="assessment"
               onAnswer={choose}
             />
-            <div className="mt-3 flex flex-wrap items-center gap-3">
+            {/* The bottom bar: answer state, mark for review, back and next. */}
+            <div className="ui flex flex-wrap items-center gap-3 rounded-card border border-rule bg-surface p-3 shadow-xs">
               <p className="m-0 text-sm text-ink-2">
                 {answer?.chosenKey ? (
                   <>
-                    Answered <span className="mono font-semibold">{answer.chosenKey}</span>
+                    Answered <span className="mono font-semibold text-ink">{answer.chosenKey}</span>
                   </>
                 ) : (
                   'Not answered'
@@ -271,43 +265,41 @@ export function MockRunner({
                 type="button"
                 onClick={toggleFlag}
                 aria-pressed={answer?.flagged ?? false}
-                className={[
-                  'cursor-pointer rounded-sm border px-3 py-1.5 text-sm',
-                  answer?.flagged
-                    ? 'border-2 border-accent-600 bg-accent-100 font-medium text-ink'
-                    : 'border border-rule-strong bg-surface text-ink-2',
-                ].join(' ')}
+                className={buttonClasses({
+                  variant: 'secondary',
+                  size: 'sm',
+                  className: answer?.flagged ? 'border-2 border-accent-600 bg-accent-100' : '',
+                })}
               >
-                <span aria-hidden="true" className="mr-1.5">
-                  {answer?.flagged ? '⚑' : '⚐'}
-                </span>
+                <span aria-hidden="true">{answer?.flagged ? '⚑' : '⚐'}</span>
                 {answer?.flagged ? 'Flagged for review' : 'Flag for review'}
               </button>
               <div className="ml-auto flex gap-2">
-                <button
-                  type="button"
+                <Button
+                  variant="secondary"
                   onClick={() => goTo(Math.max(0, state.current - 1))}
                   disabled={state.current === 0}
-                  className="cursor-pointer rounded-sm border border-rule px-3 py-1.5 text-sm text-ink-2 disabled:opacity-40"
                 >
                   Previous
-                </button>
-                <button
-                  type="button"
+                </Button>
+                <Button
+                  variant="primary"
                   onClick={() => goTo(Math.min(state.problemIds.length - 1, state.current + 1))}
-                  disabled={state.current === state.problemIds.length - 1}
-                  className="cursor-pointer rounded-sm border border-rule-strong bg-surface px-3 py-1.5 text-sm text-ink disabled:opacity-40"
+                  disabled={isLast}
                 >
                   Next
-                </button>
+                </Button>
               </div>
             </div>
           </>
         ) : null}
 
-        <nav aria-label="Question navigator" className="mt-8 border-t border-rule pt-5">
-          <h2 className="m-0 text-sm font-semibold text-ink">Navigator</h2>
-          <ul className="mt-3 flex flex-wrap list-none gap-1.5 p-0">
+        <nav
+          aria-label="Question navigator"
+          className="rounded-card border border-rule bg-surface p-4 shadow-xs"
+        >
+          <h2 className="ui m-0 text-sm font-semibold text-ink">Navigator</h2>
+          <ul className="mt-3 mb-0 grid list-none grid-cols-[repeat(auto-fill,minmax(2.75rem,1fr))] gap-1.5 p-0">
             {state.problemIds.map((questionId, index) => {
               const entry = state.answers[questionId];
               const answered = entry?.chosenKey !== null && entry?.chosenKey !== undefined;
@@ -328,12 +320,12 @@ export function MockRunner({
                       decision this component gets to make.
                     */
                     className={[
-                      'mono h-8 w-8 cursor-pointer rounded-xs text-xs',
-                      index === state.current ? 'ring-2 ring-focus' : '',
+                      'mono relative h-11 w-full cursor-pointer rounded-control text-xs tabular-nums',
+                      index === state.current ? 'ring-2 ring-focus ring-offset-1' : '',
                       entry?.flagged ? 'border-[3px] font-bold' : 'border',
                       answered
                         ? 'border-accent-600 bg-accent-100 text-ink'
-                        : 'border-rule-strong bg-surface text-ink-2',
+                        : 'border-rule-strong bg-surface text-ink-2 hover:bg-surface-2',
                     ].join(' ')}
                   >
                     {index + 1}
@@ -342,7 +334,7 @@ export function MockRunner({
               );
             })}
           </ul>
-          <p className="mt-3 mb-0 flex flex-wrap gap-x-4 text-2xs text-ink-3">
+          <p className="ui mt-3 mb-0 flex flex-wrap gap-x-4 text-2xs text-ink-2">
             <span>Filled: answered</span>
             <span>Thick border: flagged for review</span>
             <span>Empty: blank, and a blank scores zero</span>
@@ -356,37 +348,40 @@ export function MockRunner({
   const buildable = BANDS.filter((band) => startMock(problems, band, 1, new Date()) !== null);
 
   return (
-    <div>
-      <h2 className="m-0 text-lg">Sit a full paper</h2>
-      <p className="prose-measure mt-2 mb-4 text-ink-2">
+    <Card as="section" aria-labelledby="mock-start" padding="lg">
+      <CardHeader titleId="mock-start" title="Sit a full paper" />
+      <p className="prose-measure mt-2 mb-0 text-ink-2">
         {MOCK_MINUTES} minutes, timed. Exactly the shape of the real thing: a third at 3 points, a
-        third at 4, a third at 5, and <strong>nothing deducted for a wrong answer</strong> - so a
+        third at 4, a third at 5, and <strong>nothing deducted for a wrong answer</strong>, so a
         blank is a decision to score zero.
       </p>
-      <ul className="m-0 flex flex-wrap list-none gap-2 p-0">
+      <ul className="m-0 mt-5 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-3">
         {buildable.map((band) => (
           <li key={band}>
             <button
               type="button"
               onClick={() => begin(band)}
-              className="cursor-pointer rounded-sm border border-accent-600 bg-accent-100 px-4 py-2 text-sm font-medium text-ink"
+              className="ui flex w-full cursor-pointer flex-col items-start gap-1 rounded-control border border-rule-strong bg-surface p-4 text-left transition-colors hover:border-accent-600 hover:bg-surface-2 motion-reduce:transition-none"
             >
-              Level {band.replace('-', '–')} · {paperSize(band)} questions · {maxScore(band)} points
+              <span className="text-base font-semibold text-ink">Level {band}</span>
+              <span className="text-xs text-ink-2">
+                {paperSize(band)} questions, {maxScore(band)} points
+              </span>
             </button>
           </li>
         ))}
       </ul>
       {buildable.length < BANDS.length ? (
-        <p className="mt-4 mb-0 text-xs text-ink-3">
+        <p className="mt-4 mb-0 text-xs text-ink-2">
           Only the levels above have enough problems for a full paper yet. A short paper scored out
           of the full total would be worse than none, so the others are not offered until the bank
           can fill them.
         </p>
       ) : null}
-      <p className="mt-4 mb-0 text-xs text-ink-3">
-        No account needed. The run is saved on this device, so a refresh - or closing the laptop -
+      <p className="ui mt-4 mb-0 text-xs text-ink-2">
+        No account needed. The run is saved on this device, so a refresh, or closing the laptop,
         restores your answers and the timer keeps running, exactly as it would in a hall.
       </p>
-    </div>
+    </Card>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { RichText } from './math/RichText';
 
 export const HINT_LABELS = ['A nudge', 'The strategy', 'The full solution'] as const;
 
@@ -33,18 +34,25 @@ export function HintLadder({
   hints,
   onReveal,
   revealedTo,
+  math = false,
+  headingLevel = 3,
 }: {
   problemId: string;
   hints: readonly [string, string, string];
   onReveal?: (detail: HintRevealDetail) => void;
   /** 0-3. When provided, the parent owns how far the ladder is open. */
   revealedTo?: number;
+  /** Render `$...$` as math (AMC, under a <MathProvider>). */
+  math?: boolean;
+  /** Level of the "Hints" heading: 2 when the problem itself is the page's h1. */
+  headingLevel?: 2 | 3;
 }) {
   const [ownRevealed, setOwnRevealed] = useState(0);
   const [enhanced, setEnhanced] = useState(false);
   const announced = useRef(new Set<number>());
   const controlled = revealedTo !== undefined;
   const revealed = controlled ? revealedTo : ownRevealed;
+  const Heading = headingLevel === 2 ? 'h2' : 'h3';
 
   // Only gate the ladder once we know JavaScript is running. Rendering the gated state on the
   // server would hide hints from a reader whose JS never arrives.
@@ -66,9 +74,9 @@ export function HintLadder({
 
   return (
     <section aria-labelledby={`hints-${problemId}`} className="mt-6">
-      <h3 id={`hints-${problemId}`} className="m-0 text-sm font-semibold text-ink">
+      <Heading id={`hints-${problemId}`} className="m-0 text-sm font-semibold text-ink">
         Hints
-      </h3>
+      </Heading>
       <p className="mt-1 mb-3 text-xs text-ink-3">
         Take them one at a time. The first gives nothing away.
       </p>
@@ -118,7 +126,9 @@ export function HintLadder({
                     </span>
                   ) : null}
                 </summary>
-                <p className="prose-measure mt-2 mb-1 text-sm text-ink-2">{hint}</p>
+                <p className="prose-measure mt-2 mb-1 text-sm text-ink-2">
+                  <RichText text={hint} math={math} />
+                </p>
               </details>
             </li>
           );

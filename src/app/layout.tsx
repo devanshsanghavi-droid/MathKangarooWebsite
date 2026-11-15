@@ -9,8 +9,6 @@ import { SkipLink } from '@/components/SkipLink';
 import { THEME_INIT_SCRIPT } from '@/components/ThemeToggle';
 import { ServiceWorkerRegistration } from '@/components/ServiceWorkerRegistration';
 import { TelemetryProvider } from '@/components/telemetry/TelemetryProvider';
-import { SkillRail } from '@/components/shell/SkillRail';
-import { railStrands } from '@/lib/rail';
 
 /*
  * docs/05-DESIGN-DIRECTION.md §5. Three faces: Figtree for headings and UI, Source Sans 3 for
@@ -91,18 +89,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SkipLink />
         <Header />
         {/*
-          docs/05 §7.1. At 900px and up this is two columns: a 260px rail and the content. The
-          rail returns null on routes that do not want it, and the grid definition is
-          conditional on its presence rather than the other way round - `grid-cols-[auto_1fr]`
-          collapses to a single column when the rail renders nothing, so a legal page is not
-          left with a 260px hole.
+          The skill rail is not here: only /atlas and /skill draw it, so their own layouts
+          add it (components/shell/RailLayout.tsx). Keeping it out of the root layout keeps
+          the content index off every request-time path (docs/06 §3).
         */}
-        <div className="flex flex-1 flex-col shell:grid shell:grid-cols-[auto_1fr] shell:items-start">
-          <SkillRail strands={railStrands()} />
-          <main id="main" tabIndex={-1} className="min-w-0 flex-1 focus:outline-none">
-            {children}
-          </main>
-        </div>
+        <main id="main" tabIndex={-1} className="min-w-0 flex-1 focus:outline-none">
+          {children}
+        </main>
         <Footer />
         <MobileTabBar />
         <ServiceWorkerRegistration />

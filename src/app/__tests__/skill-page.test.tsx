@@ -103,8 +103,8 @@ describe('the unit page', () => {
     const crumb = container.querySelector('nav[aria-label="Breadcrumb"]')?.textContent ?? '';
     expect(crumb).toContain('Counting');
     expect(crumb).toContain(id);
-    // The band segment: "5–6" style, from the skill's own bands.
-    expect(crumb).toMatch(/\d+–\d+/);
+    // The band segment: "5-6" style, from the skill's own bands.
+    expect(crumb).toMatch(/\d+-\d+/);
   });
 
   it('shows a difficulty pill built from the neutral ramp, never a feedback colour', async () => {

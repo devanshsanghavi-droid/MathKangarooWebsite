@@ -8,8 +8,10 @@
   "compatibility_date": "2026-09-03",
   "compatibility_flags": ["nodejs_compat"],
 
-  // The 874 prerendered pages and every hashed asset are served straight from the edge; only
-  // the four dynamic routes ever reach the worker.
+  // Every hashed asset, the public/data bank files, and every prerendered page (copied in by
+  // scripts/publish-static-pages.ts) are served straight from the edge without invoking the
+  // worker, so they never count against the free plan's 100,000 requests a day. Only
+  // /login, /admin, /api/events, OG images and unknown URLs reach the worker.
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS",

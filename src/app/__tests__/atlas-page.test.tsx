@@ -1,14 +1,36 @@
-import { describe, it, expect } from 'vitest';
+import { afterEach, describe, it, expect } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
-import AtlasPage from '../atlas/page';
+import userEvent from '@testing-library/user-event';
+import AtlasPage, * as atlasModule from '../atlas/page';
 import StrandPage, { generateStaticParams as strandParams } from '../atlas/[strand]/page';
 import { getAllSkills, getProblemsForSkill, getSkillsByStrand } from '@/lib/content';
 import { STRANDS, type Strand } from '@/lib/schemas';
 import type { RawSearchParams } from '@/lib/atlas-params';
 
-async function renderAtlas(searchParams: RawSearchParams = {}) {
-  return render(await AtlasPage({ searchParams: Promise.resolve(searchParams) }));
+/** Builds a query string from a raw shape, including nonsense, exactly as a visitor could type it. */
+function queryString(raw: RawSearchParams): string {
+  const params = new URLSearchParams();
+  for (const [key, value] of Object.entries(raw)) {
+    for (const entry of Array.isArray(value) ? value : value === undefined ? [] : [value]) {
+      params.append(key, entry);
+    }
+  }
+  return params.toString();
 }
+
+/**
+ * The page is static and filters in the browser, reading the view back from the address bar
+ * after hydration. So a "filtered render" is: put the query in the URL, then render.
+ */
+async function renderAtlas(searchParams: RawSearchParams = {}) {
+  const qs = queryString(searchParams);
+  window.history.replaceState(null, '', qs ? `/atlas?${qs}` : '/atlas');
+  return render(AtlasPage());
+}
+
+afterEach(() => {
+  window.history.replaceState(null, '', '/');
+});
 
 /** Every skill id that appears as a link target in the rendered markup. */
 function skillIdsIn(container: HTMLElement): string[] {
@@ -156,11 +178,9 @@ describe('filters', () => {
 
   it('offers a way back from every filtered state', async () => {
     const { container } = await renderAtlas({ strand: 'CNT', band: '5-6' });
-    const clear = [...container.querySelectorAll('a')].find((a) =>
-      /clear all filters/i.test(a.textContent ?? ''),
-    );
-    expect(clear).toBeDefined();
-    expect(clear?.getAttribute('href')).toBe('/atlas');
+    await userEvent.click(screen.getByRole('button', { name: /clear all filters/i }));
+    expect(window.location.search).toBe('');
+    expect(skillIdsIn(container)).toEqual(allIds);
   });
 
   it('ignores nonsense in the URL rather than erroring', async () => {
@@ -195,16 +215,71 @@ describe('the side panel', () => {
 
   it('keeps the filters when the panel is closed', async () => {
     await renderAtlas({ focus: 'GEO-10', strand: 'GEO', band: '5-6' });
-    const close = screen.getByRole('link', { name: 'Close' });
-    const href = close.getAttribute('href') ?? '';
-    expect(href).toContain('strand=GEO');
-    expect(href).toContain('band=5-6');
-    expect(href).not.toContain('focus=');
+    await userEvent.click(screen.getByRole('button', { name: 'Close' }));
+    const search = window.location.search;
+    expect(search).toContain('strand=GEO');
+    expect(search).toContain('band=5-6');
+    expect(search).not.toContain('focus=');
+    expect(screen.queryByRole('complementary')).toBeNull();
   });
 
   it('ignores a focus on a skill that does not exist', async () => {
     const { container } = await renderAtlas({ focus: 'ZZZ-99' });
     expect(container.textContent).toMatch(/Choose a skill/);
+  });
+});
+
+describe('a static page that filters in the browser - docs/06 §3', () => {
+  it('reads no searchParams on the server and is force-static', () => {
+    expect(atlasModule.dynamic).toBe('force-static');
+    expect('generateMetadata' in atlasModule).toBe(false);
+    expect(atlasModule.metadata.alternates?.canonical).toBe('/atlas');
+  });
+
+  it('has no filter links for a crawler to follow', async () => {
+    const { container } = await renderAtlas({});
+    expect(container.querySelectorAll('a[href*="?"]')).toHaveLength(0);
+    expect(screen.getByRole('button', { name: /^PAT/ })).toHaveAttribute('aria-pressed', 'false');
+    expect(screen.getByRole('radiogroup', { name: 'Level' })).toBeInTheDocument();
+    expect(screen.getByRole('radiogroup', { name: 'Point value' })).toBeInTheDocument();
+  });
+
+  it('filters when a strand is toggled, and mirrors it into the address bar', async () => {
+    const { container } = await renderAtlas({ view: 'list' });
+    await userEvent.click(screen.getByRole('button', { name: /^PAT/ }));
+    expect(screen.getByRole('button', { name: /^PAT/ })).toHaveAttribute('aria-pressed', 'true');
+    expect(window.location.search).toContain('strand=PAT');
+    const ids = skillIdsIn(container);
+    expect(ids.length).toBe(getSkillsByStrand('PAT').length);
+  });
+
+  it('filters by level from the radio group', async () => {
+    const { container } = await renderAtlas({ view: 'list' });
+    await userEvent.click(screen.getByRole('radio', { name: 'Level 1-2' }));
+    expect(window.location.search).toContain('band=1-2');
+    for (const id of skillIdsIn(container)) {
+      expect(getAllSkills().find((s) => s.id === id)?.bands, id).toContain('1-2');
+    }
+  });
+
+  it('switches between graph and list without leaving the page', async () => {
+    const { container } = await renderAtlas({});
+    expect(container.querySelector('svg')).not.toBeNull();
+    await userEvent.click(screen.getByRole('radio', { name: 'List' }));
+    expect(window.location.search).toContain('view=list');
+    expect(skillIdsIn(container)).toEqual(allIds);
+  });
+
+  it('opens a skill in the side panel when its graph node is clicked', async () => {
+    const { container } = await renderAtlas({});
+    const node = container.querySelector('svg a[href="/skill/GEO-10"]');
+    if (!node) throw new Error('GEO-10 is not in the graph');
+    await userEvent.click(node);
+    const panel = screen.getByRole('complementary');
+    expect(within(panel).getByRole('heading', { level: 2 })).toHaveTextContent(
+      'Nets and folding, 2D to 3D',
+    );
+    expect(window.location.search).toContain('focus=GEO-10');
   });
 });
 

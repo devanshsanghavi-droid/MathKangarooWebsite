@@ -24,6 +24,9 @@ import { STRANDS, TIERS, type Skill, type Strand, type Tier } from './schemas';
  * flagged so the graph can draw them more faintly than the within-strand ones.
  */
 
+/** The fields of a skill the layout reads, so a trimmed client-side copy can be laid out too. */
+export type LayoutSkill = Pick<Skill, 'id' | 'name' | 'strand' | 'tier' | 'prerequisites'>;
+
 export interface AtlasNode {
   id: string;
   name: string;
@@ -83,7 +86,7 @@ const TIER_FLOOR: Record<Tier, number> = { foundation: 0, core: 1, gateway: 2 };
  * A prerequisite that has been filtered out of view does not hold its dependant up - otherwise
  * filtering to one strand would push every cross-strand dependant off the bottom of the page.
  */
-export function computeLayers(skills: readonly Skill[]): Map<string, number> {
+export function computeLayers(skills: readonly LayoutSkill[]): Map<string, number> {
   const visible = new Set(skills.map((skill) => skill.id));
   const layer = new Map<string, number>();
   const pending = new Set(skills.map((skill) => skill.id));
@@ -120,7 +123,7 @@ export function computeLayers(skills: readonly Skill[]): Map<string, number> {
 }
 
 export function layoutAtlas(
-  skills: readonly Skill[],
+  skills: readonly LayoutSkill[],
   problemCounts: ReadonlyMap<string, number> = new Map(),
 ): AtlasLayout {
   const { nodeRadius, slotWidth, rowHeight, columnGap, paddingX, paddingY, minColumnWidth } =
@@ -134,7 +137,7 @@ export function layoutAtlas(
   const layerCount = Math.max(...skills.map((skill) => layer.get(skill.id) ?? 0)) + 1;
 
   // Group into (strand, layer) cells, each sorted by id.
-  const cells = new Map<string, Skill[]>();
+  const cells = new Map<string, LayoutSkill[]>();
   const cellKey = (strand: Strand, row: number) => `${strand}:${row}`;
   for (const skill of [...skills].sort((a, b) => a.id.localeCompare(b.id))) {
     const key = cellKey(skill.strand, layer.get(skill.id) ?? 0);

@@ -38,6 +38,7 @@ describe('turning a URL into an enumerated surface', () => {
     ['/practice/diagnostic', 'diagnostic'],
     ['/practice/mock', 'mock'],
     ['/print', 'worksheet'],
+    ['/practice/set', 'practice-set'],
     ['/legal/privacy', 'legal'],
   ])('%s -> %s', (path, surface) => {
     expect(surfaceFor(path)).toBe(surface);

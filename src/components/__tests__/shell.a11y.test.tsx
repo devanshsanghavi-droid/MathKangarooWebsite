@@ -7,6 +7,8 @@ import { MobileTabBar } from '../MobileTabBar';
 import { SkipLink } from '../SkipLink';
 import NotFound from '@/app/not-found';
 import Loading from '@/app/loading';
+import AmcLayout from '@/app/amc/layout';
+import AmcPage from '@/app/amc/page';
 
 vi.mock('next/navigation', () => ({ usePathname: () => '/atlas' }));
 
@@ -51,6 +53,18 @@ describe('the app shell', () => {
         <Loading />
       </Shell>,
     );
+    expect(await auditBothThemes(container)).toEqual([]);
+  });
+
+  it('has no axe violations on the AMC placeholder with its MAA notice', async () => {
+    const { container } = render(
+      <Shell>
+        <AmcLayout>
+          <AmcPage />
+        </AmcLayout>
+      </Shell>,
+    );
+    expect(container.textContent).toContain('Mathematical Association of America');
     expect(await auditBothThemes(container)).toEqual([]);
   });
 

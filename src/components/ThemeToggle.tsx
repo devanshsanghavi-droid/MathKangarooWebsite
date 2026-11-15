@@ -71,7 +71,7 @@ export function ThemeToggle() {
     <div
       role="radiogroup"
       aria-label="Colour theme"
-      className="inline-flex items-center gap-0.5 rounded-sm border border-rule p-0.5"
+      className="inline-flex items-center gap-0.5 rounded-control border border-rule bg-surface-2 p-0.5"
     >
       {OPTIONS.map((option) => {
         const selected = ready && choice === option.value;
@@ -85,8 +85,8 @@ export function ThemeToggle() {
             title={`${option.label} theme`}
             onClick={() => select(option.value)}
             className={[
-              'cursor-pointer rounded-xs px-2 py-1 text-xs leading-none transition-colors',
-              selected ? 'bg-accent-100 text-ink' : 'text-ink-3 hover:text-ink',
+              'inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-[6px] text-xs leading-none transition-colors motion-reduce:transition-none',
+              selected ? 'bg-accent-100 text-accent-700 shadow-xs' : 'text-ink-3 hover:text-ink',
             ].join(' ')}
           >
             <span aria-hidden="true">{option.glyph}</span>

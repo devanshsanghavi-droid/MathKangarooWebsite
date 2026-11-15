@@ -35,7 +35,7 @@ function paper(partial: Partial<PaperIndex> = {}): PaperIndex {
 
 describe('titles and slugs', () => {
   it('writes the level with an en dash, as the papers do', () => {
-    expect(paperTitle({ year: 2019, band: '5-6' })).toBe('2019, level 5–6');
+    expect(paperTitle({ year: 2019, band: '5-6' })).toBe('2019, level 5-6');
   });
 
   it('round-trips a slug', () => {

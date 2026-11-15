@@ -1,4 +1,5 @@
 import type { Choice, ChoiceKey, Problem } from '@/lib/schemas';
+import { RichText } from './math/RichText';
 
 /**
  * The point of the whole project.
@@ -14,9 +15,12 @@ import type { Choice, ChoiceKey, Problem } from '@/lib/schemas';
 export function FeedbackPanel({
   problem,
   selectedKey,
+  math = false,
 }: {
-  problem: Pick<Problem, 'choices' | 'solutions' | 'whyOnTest'>;
+  problem: Pick<Problem, 'choices' | 'solutions'>;
   selectedKey: ChoiceKey | null;
+  /** Render `$...$` as math (AMC, under a <MathProvider>). */
+  math?: boolean;
 }) {
   const selected: Choice | undefined = selectedKey
     ? problem.choices.find((choice) => choice.key === selectedKey)
@@ -43,9 +47,11 @@ export function FeedbackPanel({
         className="mt-4 rounded-sm border border-correct-border bg-correct-100 p-4"
       >
         <p className="m-0 text-sm font-semibold text-ink">
-          Correct - {selected.key} is {selected.text}.
+          Correct - {selected.key} is <RichText text={selected.text} math={math} />.
         </p>
-        <p className="prose-measure mt-3 mb-0 text-sm text-ink-2">{problem.solutions.reliable}</p>
+        <p className="prose-measure mt-3 mb-0 text-sm text-ink-2">
+          <RichText text={problem.solutions.reliable} math={math} />
+        </p>
       </div>
     );
   }
@@ -66,7 +72,7 @@ export function FeedbackPanel({
         Reading your own mistake back is what makes it stick.
       */}
       <blockquote className="reading mt-3 mb-0 border-l-2 border-wrong-border pl-3 text-ink">
-        “{selected.misconception}”
+        “<RichText text={selected.misconception ?? ''} math={math} />”
       </blockquote>
       {/*
         Deliberately does not name the correct choice. Handing over the letter here would make

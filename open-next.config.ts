@@ -5,14 +5,12 @@ import staticAssetsIncrementalCache from '@opennextjs/cloudflare/overrides/incre
  * OpenNext adapter config - how this Next.js app becomes a Cloudflare Worker.
  *
  * The site cannot be a static export, which is worth writing down because it looks like it
- * could be: 874 of its pages are prerendered. Four routes need a server at request time:
+ * could be: since v3 (docs/06 §3) every page route is prerendered and the bank filters run in
+ * the browser over public/data/. What still needs a server at request time:
  *
- *   /problems, /atlas, /print   filter state lives in the URL and is read on the server, so a
- *                               filtered view is shareable, survives the back button and works
- *                               with JavaScript off. Moving that to the client to enable
- *                               `output: 'export'` would trade a real accessibility property
- *                               for a deployment convenience.
+ *   /login, /admin              server actions and a session check.
  *   /api/events                 the telemetry collector is a POST handler.
+ *   middleware                  guards /admin.
  *
  * ---------------------------------------------------------------------------------------
  * WHY THE INCREMENTAL CACHE IS SET, AND WHAT HAPPENS WITHOUT IT

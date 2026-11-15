@@ -1,182 +1,194 @@
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import ProblemsPage from '../problems/page';
-import { getAllProblems, getProblemsForSkill } from '@/lib/content';
-import { PAGE_SIZE, type RawSearchParams } from '@/lib/problem-query';
-import { BANDS, STRANDS } from '@/lib/schemas';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import { render, screen, waitFor, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import ProblemsPage, * as route from '../problems/page';
+import { getAllProblems, getProblem, getProblemsForSkill } from '@/lib/content';
+import { BANK_PAGE_SIZE } from '@/lib/bank-filter';
+import { PRACTICE_SET_MAX, parsePracticeSetQuery } from '@/lib/practice-item';
+import { saveAttempt } from '@/lib/local-progress';
+import { resetProgressCache } from '@/components/mastery/useProgress';
+import { installStaticDataFetch } from '../../../test/static-data';
 
-/**
- * A filter that currently matches no problem. Prefers a band with nothing in it, and falls
- * back to a band-and-strand pair that is empty, so this keeps working as the bank grows.
- */
-function emptyFilter(): Record<string, string> {
-  const problems = getAllProblems();
-  for (const band of BANDS) {
-    if (!problems.some((problem) => problem.band === band)) return { band };
-  }
-  for (const band of BANDS) {
-    for (const strand of STRANDS) {
-      const hit = problems.some(
-        (problem) => problem.band === band && problem.skills.primary.startsWith(strand),
-      );
-      if (!hit) return { band, strand };
-    }
-  }
-  throw new Error('every band and strand now has problems - pick a new empty case');
+const ALL = getAllProblems();
+
+function idsOnPage(container: HTMLElement): string[] {
+  const list = container.querySelector('ol[aria-labelledby="bank-list-heading"]');
+  return [...(list?.querySelectorAll('a[href^="/problem/"]') ?? [])]
+    .map((link) => /^\/problem\/(KA-\d{4})$/.exec(link.getAttribute('href') ?? '')?.[1] ?? '')
+    .filter(Boolean);
 }
 
-async function renderProblems(searchParams: RawSearchParams = {}) {
-  return render(await ProblemsPage({ searchParams: Promise.resolve(searchParams) }));
+async function renderLoaded(path = '/problems') {
+  window.history.replaceState(null, '', path);
+  const utils = render(ProblemsPage());
+  await waitFor(() => expect(utils.container.querySelector('[data-bank-loaded]')).not.toBeNull());
+  return utils;
 }
 
-function problemIdsIn(container: HTMLElement): string[] {
-  const ids = new Set<string>();
-  for (const link of container.querySelectorAll('a[href^="/problem/"]')) {
-    const match = /^\/problem\/(KA-\d{4})/.exec(link.getAttribute('href') ?? '');
-    if (match?.[1]) ids.add(match[1]);
-  }
-  return [...ids].sort();
+function filters() {
+  return screen.getByRole('complementary', { name: 'Filters' });
 }
 
-describe('the browse page', () => {
-  it('shows the first page of every problem', async () => {
-    const { container } = await renderProblems({});
-    expect(problemIdsIn(container)).toHaveLength(Math.min(PAGE_SIZE, getAllProblems().length));
+beforeEach(() => {
+  window.localStorage.clear();
+  resetProgressCache();
+  installStaticDataFetch();
+});
+
+afterEach(() => {
+  vi.unstubAllGlobals();
+  window.history.replaceState(null, '', '/');
+});
+
+describe('the question bank page is static', () => {
+  it('reads no searchParams and is force-static', () => {
+    expect(route.dynamic).toBe('force-static');
+    expect(ProblemsPage.length).toBe(0);
   });
 
-  it('states the result count', async () => {
-    await renderProblems({});
-    expect(screen.getByText(String(getAllProblems().length))).toBeInTheDocument();
-  });
-
-  it('paginates without dropping or repeating a problem', async () => {
-    const seen: string[] = [];
-    const pageCount = Math.ceil(getAllProblems().length / PAGE_SIZE);
-    for (let page = 1; page <= pageCount; page += 1) {
-      const { container, unmount } = await renderProblems({ page: String(page) });
-      seen.push(...problemIdsIn(container));
-      unmount();
-    }
-    expect(seen.sort()).toEqual(
-      getAllProblems()
+  it('server-renders the first page of real problems before any script runs', () => {
+    const fetchMock = installStaticDataFetch();
+    fetchMock.mockImplementation(() => new Promise<Response>(() => {}));
+    const { container } = render(ProblemsPage());
+    expect(idsOnPage(container)).toEqual(
+      ALL.slice(0, BANK_PAGE_SIZE)
         .map((p) => p.id)
         .sort(),
     );
+    expect(screen.getByText(String(ALL.length))).toBeInTheDocument();
   });
 
-  it('filters by band', async () => {
-    const { container } = await renderProblems({ band: '5-6', page: '1' });
-    for (const id of problemIdsIn(container)) {
-      expect(getAllProblems().find((p) => p.id === id)?.band, id).toBe('5-6');
+  it('shows no filter counts until the whole index has arrived', () => {
+    // Before the fetch resolves only the first page is known; counting from it would report a
+    // fraction of the bank as if it were all of it.
+    installStaticDataFetch().mockImplementation(() => new Promise<Response>(() => {}));
+    render(ProblemsPage());
+    expect(within(filters()).queryByText(/ of \d+ solved/)).toBeNull();
+    for (const strand of ['Number & Arithmetic', 'Contest Craft']) {
+      expect(within(filters()).getByRole('button', { name: new RegExp(strand) })).toBeVisible();
     }
   });
 
-  it('filters by point value', async () => {
-    const { container } = await renderProblems({ points: '5' });
-    for (const id of problemIdsIn(container)) {
-      expect(getAllProblems().find((p) => p.id === id)?.points, id).toBe(5);
+  it('has no filter links: every control is a button or a checkbox', async () => {
+    await renderLoaded();
+    expect(within(filters()).queryAllByRole('link')).toHaveLength(0);
+    expect(within(filters()).getAllByRole('checkbox').length).toBeGreaterThan(5);
+  });
+});
+
+// A thousand problems means twenty pages of real rows rendered in jsdom, and every filter click
+// re-renders the list. That is honest work, not a hang, so this block gets more than the default
+// five seconds when the whole suite is competing for the machine.
+describe('filtering in the browser', { timeout: 30_000 }, () => {
+  it('shows the whole bank count and paginates without dropping or repeating a problem', async () => {
+    const user = userEvent.setup();
+    const { container } = await renderLoaded();
+    const pages = Math.ceil(ALL.length / BANK_PAGE_SIZE);
+    expect(screen.getByText(`Page 1 of ${pages}`)).toBeInTheDocument();
+    const seen: string[] = [];
+    for (let page = 1; page <= pages; page += 1) {
+      seen.push(...idsOnPage(container));
+      if (page < pages) await user.click(screen.getByRole('button', { name: 'Next page' }));
     }
+    expect(seen.sort()).toEqual(ALL.map((p) => p.id).sort());
   });
 
-  it('filters by strand', async () => {
-    const { container } = await renderProblems({ strand: 'LOG' });
-    for (const id of problemIdsIn(container)) {
-      expect(
-        getAllProblems()
-          .find((p) => p.id === id)
-          ?.skills.primary.startsWith('LOG'),
-        id,
-      ).toBe(true);
-    }
+  it('filters by level and mirrors it into the URL', async () => {
+    const user = userEvent.setup();
+    const { container } = await renderLoaded();
+    await user.click(screen.getAllByRole('radio', { name: 'Level 5-6' })[0] as HTMLElement);
+    const shown = idsOnPage(container);
+    expect(shown.length).toBeGreaterThan(0);
+    for (const id of shown) expect(getProblem(id)?.band, id).toBe('5-6');
+    expect(window.location.search).toBe('?level=5-6');
   });
 
   it('filters by skill, including problems that tag it as secondary', async () => {
-    const { container } = await renderProblems({ skill: 'CNT-01' });
-    const shown = problemIdsIn(container);
-    const all = getProblemsForSkill('CNT-01').map((p) => p.id);
-    // A popular skill now carries more problems than fit on a page, so the page is a subset
-    // of the skill's problems rather than all of them. Both halves still matter: nothing from
-    // another skill leaks in, and the first page is full.
-    expect(shown.length).toBe(Math.min(all.length, PAGE_SIZE));
+    const user = userEvent.setup();
+    const { container } = await renderLoaded();
+    const panel = filters();
+    await user.click(within(panel).getByRole('button', { name: /Counting/ }));
+    const row = within(panel)
+      .getAllByRole('checkbox')
+      .find((box) => box.closest('label')?.textContent?.includes('Counting by position'));
+    if (!row) throw new Error('no CNT-12 checkbox');
+    await user.click(row);
+    const all = getProblemsForSkill('CNT-12').map((p) => p.id);
+    const shown = idsOnPage(container);
+    expect(shown.length).toBe(Math.min(all.length, BANK_PAGE_SIZE));
     for (const id of shown) expect(all, id).toContain(id);
+    expect(window.location.search).toBe('?skill=CNT-12');
   });
 
-  it('names the filtered skill so a shared link explains itself', async () => {
-    const { container } = await renderProblems({ skill: 'CNT-12' });
-    expect(container.textContent).toContain('Counting by position (sliding window)');
+  it('shows solved / total on each skill row', async () => {
+    const user = userEvent.setup();
+    await renderLoaded();
+    await user.click(within(filters()).getByRole('button', { name: /Counting/ }));
+    const total = getProblemsForSkill('CNT-12').length;
+    const row = within(filters())
+      .getAllByRole('checkbox')
+      .find((box) => box.closest('label')?.textContent?.includes('Counting by position'));
+    expect(row?.closest('label')?.textContent).toContain(`0 of ${total} solved`);
   });
 
-  it('combines filters with AND', async () => {
-    const { container } = await renderProblems({ band: '3-4', points: '5' });
-    for (const id of problemIdsIn(container)) {
-      const problem = getAllProblems().find((p) => p.id === id);
-      expect(problem?.band, id).toBe('3-4');
-      expect(problem?.points, id).toBe(5);
+  it('filters by difficulty', async () => {
+    const user = userEvent.setup();
+    const { container } = await renderLoaded();
+    await user.click(within(filters()).getByRole('checkbox', { name: /5 points/ }));
+    for (const id of idsOnPage(container)) expect(getProblem(id)?.points, id).toBe(5);
+  });
+
+  it('filters by status from the progress saved in this browser', async () => {
+    const solved = ALL[3];
+    if (!solved) throw new Error('bank too small');
+    saveAttempt([solved.skills.primary, ...solved.skills.secondary], {
+      problemId: solved.id,
+      points: solved.points,
+      correct: true,
+      hintsUsed: 0,
+      at: new Date().toISOString(),
+    });
+    resetProgressCache();
+    const user = userEvent.setup();
+    const { container } = await renderLoaded();
+    await user.click(within(filters()).getByRole('checkbox', { name: /^Solved/ }));
+    expect(idsOnPage(container)).toEqual([solved.id]);
+  });
+
+  it('reads a shared selection back out of the URL', async () => {
+    const { container } = await renderLoaded('/problems?level=3-4&points=4');
+    await waitFor(() => expect(idsOnPage(container).length).toBeGreaterThan(0));
+    for (const id of idsOnPage(container)) {
+      expect(getProblem(id)?.band, id).toBe('3-4');
+      expect(getProblem(id)?.points, id).toBe(4);
     }
   });
 
   it('shows a written empty state, with a way out', async () => {
-    /*
-     * The empty filter is DERIVED from the bank rather than hard-coded. It used to be
-     * band 11-12, which stopped being empty the day problems were authored for that level and
-     * took three tests down with it. Asking the content which combination is empty means the
-     * test keeps testing the empty state instead of quietly testing a populated one.
-     */
-    const { container } = await renderProblems(emptyFilter());
-    expect(container.textContent).toMatch(/No problem matches these filters/);
-    const clear = [...container.querySelectorAll('a')].find((a) =>
-      /clear all filters/i.test(a.textContent ?? ''),
-    );
-    expect(clear).toBeDefined();
-  });
-
-  it('is honest that difficulty is not yet measured', async () => {
-    const { container } = await renderProblems({ sort: 'difficulty' });
-    expect(container.textContent).toMatch(/No problem has been attempted 30 times yet/);
-    expect(container.textContent).toMatch(/never from a hand-set field/);
-  });
-
-  it('marks uncalibrated problems as such instead of inventing a difficulty', async () => {
-    const { container } = await renderProblems({});
-    expect(container.textContent).toContain('not yet calibrated');
-  });
-
-  it('survives nonsense in the URL', async () => {
-    const { container } = await renderProblems({ band: 'x', points: '9', page: 'nope' });
-    expect(problemIdsIn(container).length).toBeGreaterThan(0);
-  });
-
-  it('clamps a page past the end rather than showing nothing', async () => {
-    const { container } = await renderProblems({ page: '999' });
-    expect(problemIdsIn(container).length).toBeGreaterThan(0);
-  });
-
-  it('links every result to its skill page as well as its problem page', async () => {
-    const { container } = await renderProblems({ page: '1' });
-    expect(container.querySelectorAll('a[href^="/skill/"]').length).toBeGreaterThan(0);
+    const user = userEvent.setup();
+    const { container } = await renderLoaded('/problems?level=1-2&points=5&figure=1&status=solved');
+    expect(await screen.findByText(/matches these filters/)).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'Clear all filters' }));
+    expect(idsOnPage(container)).toHaveLength(BANK_PAGE_SIZE);
   });
 });
 
-describe('pagination controls', () => {
-  it('marks the current page and links the others', async () => {
-    await renderProblems({ page: '2' });
-    const nav = screen.getByRole('navigation', { name: /pagination/i });
-    expect(nav).toBeInTheDocument();
-    const current = screen.getByRole('link', { current: 'page' });
-    expect(current).toHaveTextContent('2');
+describe('starting practice', () => {
+  it('starts a set of the selection, capped and unsolved first', async () => {
+    await renderLoaded('/problems?level=5-6');
+    const link = await screen.findByRole('link', { name: /Start practice/ });
+    const query = parsePracticeSetQuery(
+      new URL(link.getAttribute('href') ?? '', 'http://x').search,
+    );
+    expect(query.bank).toBe('ka');
+    expect(query.ids.length).toBe(
+      Math.min(PRACTICE_SET_MAX, ALL.filter((p) => p.band === '5-6').length),
+    );
+    for (const id of query.ids) expect(getProblem(id)?.band).toBe('5-6');
   });
 
-  it('carries the filters into every page link', async () => {
-    await renderProblems({ band: '5-6', page: '1' });
-    const nav = screen.queryByRole('navigation', { name: /pagination/i });
-    if (!nav) return; // one page of results is not a pagination failure
-    for (const link of nav.querySelectorAll('a')) {
-      expect(link.getAttribute('href')).toContain('band=5-6');
-    }
-  });
-
-  it('disappears when everything fits on one page', async () => {
-    await renderProblems({ skill: 'CNT-12' });
-    expect(screen.queryByRole('navigation', { name: /pagination/i })).toBeNull();
+  it('offers a random unsolved problem', async () => {
+    await renderLoaded();
+    expect(screen.getByRole('button', { name: 'Random unsolved' })).toBeEnabled();
   });
 });

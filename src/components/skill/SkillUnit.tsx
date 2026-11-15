@@ -9,6 +9,7 @@ import { useProgress } from '@/components/mastery/useProgress';
 import { ladderAttempts, masteryStateFor, skillProblemProgress } from '@/lib/local-progress';
 import { buildLessonRows, type LessonRow } from '@/lib/skill-unit';
 import { LADDER_TARGET } from '@/lib/ladder';
+import { Card, CardHeader } from '@/components/ui';
 
 /**
  * The interactive half of the unit page - docs/05-DESIGN-DIRECTION.md §7.2, items 3 and 4.
@@ -51,33 +52,36 @@ export function SkillUnit({
 
   return (
     <>
-      <section id="unit-progress" aria-labelledby="unit-progress-heading" className="mt-6">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <h2 id="unit-progress-heading" className="m-0 text-sm font-semibold text-ink">
-            Your progress
-          </h2>
-          <MasteryDot state={state} showLabel />
-        </div>
-        <div className="mt-3">
+      <Card as="section" id="unit-progress" aria-labelledby="unit-progress-heading" padding="lg">
+        <CardHeader
+          titleId="unit-progress-heading"
+          title="Your progress"
+          actions={<MasteryDot state={state} showLabel />}
+        />
+        <div className="mt-4">
           <MasteryBar segments={segments} />
         </div>
-        <p className="mt-2 mb-0 text-2xs text-ink-3">
+        <p className="ui mt-3 mb-0 text-2xs text-ink-2">
           Saved in this browser only. No account, nothing sent anywhere.
         </p>
-      </section>
+      </Card>
 
-      <section id="unit-lessons" aria-labelledby="unit-lessons-heading" className="mt-8">
-        <h2 id="unit-lessons-heading" className="m-0 text-lg">
-          Work through it
-        </h2>
-        <ol className="mt-3 grid list-none gap-2 p-0">
+      <Card
+        as="section"
+        id="unit-lessons"
+        aria-labelledby="unit-lessons-heading"
+        padding="lg"
+        className="mt-6"
+      >
+        <CardHeader titleId="unit-lessons-heading" title="Work through it" />
+        <ol className="mt-4 mb-0 grid list-none gap-2 p-0">
           {rows.map((row) => (
             <li key={row.key}>
               <LessonRowView row={row} />
             </li>
           ))}
         </ol>
-      </section>
+      </Card>
     </>
   );
 }
@@ -85,7 +89,7 @@ export function SkillUnit({
 function LessonRowView({ row }: { row: LessonRow }) {
   const progressText =
     row.ladder && row.ladder.total > 0
-      ? `${Math.min(row.ladder.streak, LADDER_TARGET)}/${LADDER_TARGET} in a row · ${row.ladder.solved}/${row.ladder.total} solved`
+      ? `${Math.min(row.ladder.streak, LADDER_TARGET)}/${LADDER_TARGET} in a row, ${row.ladder.solved}/${row.ladder.total} solved`
       : null;
 
   const inner = (
@@ -113,7 +117,7 @@ function LessonRowView({ row }: { row: LessonRow }) {
     return (
       <div
         aria-disabled="true"
-        className="tap-target flex items-center gap-3 rounded-md border border-dashed border-rule bg-surface-2 p-3 opacity-70"
+        className="tap-target flex items-center gap-3 rounded-control border border-dashed border-rule-strong bg-surface-2 p-3"
       >
         {inner}
         <span className="shrink-0 text-2xs text-ink-3">{row.lockReason}</span>
@@ -124,7 +128,7 @@ function LessonRowView({ row }: { row: LessonRow }) {
   return (
     <Link
       href={row.href}
-      className="tap-target flex items-center gap-3 rounded-md border border-rule-strong bg-surface p-3 no-underline transition-colors hover:border-accent-600"
+      className="tap-target flex items-center gap-3 rounded-control border border-rule-strong bg-surface p-3 no-underline transition-colors hover:border-accent-600 hover:bg-surface-2 motion-reduce:transition-none"
     >
       {inner}
     </Link>

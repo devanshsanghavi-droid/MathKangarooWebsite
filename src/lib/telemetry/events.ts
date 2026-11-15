@@ -50,6 +50,7 @@ export const SURFACES = [
   'skill-quiz',
   'problem',
   'problems',
+  'practice-set',
   'papers',
   'paper',
   'diagnostic',

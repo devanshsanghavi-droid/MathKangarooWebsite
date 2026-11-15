@@ -17,14 +17,14 @@ export interface SkillFrequency {
   skillId: string;
   /** How many indexed questions tag this skill. */
   count: number;
-  /** Share of all indexed questions in the set, 0–1. */
+  /** Share of all indexed questions in the set, 0-1. */
   share: number;
   /** Point values this skill has been tagged at, ascending. */
   points: readonly Points[];
 }
 
 export function paperTitle(paper: Pick<PaperIndex, 'year' | 'band'>): string {
-  return `${paper.year}, level ${paper.band.replace('-', '–')}`;
+  return `${paper.year}, level ${paper.band}`;
 }
 
 export function paperSlug(paper: Pick<PaperIndex, 'year' | 'band'>): string {
@@ -99,7 +99,7 @@ export function papersByBand(papers: readonly PaperIndex[]): Map<Band, PaperInde
 }
 
 /**
- * The official paper structure, which is public fact rather than analysis: bands 1–2 and 3–4
+ * The official paper structure, which is public fact rather than analysis: bands 1-2 and 3-4
  * sit 24 questions for 96 points, everything above sits 30 for 120, in exact thirds at 3, 4
  * and 5 points. Used to say whether an index is complete.
  */

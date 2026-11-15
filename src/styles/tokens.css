@@ -72,6 +72,12 @@
 
   /* --- structural ---------------------------------------------------------- */
   --grid: #dbe1e9; /* figure gridlines, atlas background lattice */
+  /*
+   * v3 (docs/06 §1). The empty part of a progress bar or ring. The teal fill clears 3:1
+   * against it in both themes (WCAG 1.4.11), and every bar also prints its numbers in text,
+   * so the fill is never the only carrier.
+   */
+  --track: #dde3ea;
 
   /* --- accent - the only saturated colour in ordinary use ------------------- */
   /* 700 is the text-weight step in BOTH themes: dark teal on light, pale teal on dark. */
@@ -79,6 +85,13 @@
   --accent-600: #0e7c86; /* solid fills, strong borders */
   --accent-500: #17939e; /* hover on a solid fill */
   --accent-100: #ddf0f2; /* accent-tinted background */
+  /*
+   * v3 (docs/06 §1). Text and icons on a SOLID --accent-600 fill: the primary button, a
+   * selected segment. White in light (4.9:1); near-black in dark, where --accent-600 is too
+   * light for white text to clear 4.5:1. Hover moves the fill to --accent-700, which carries
+   * this ink at 7:1 or better in both themes.
+   */
+  --on-accent: #ffffff;
 
   /* --- RESERVED - feedback only. See the rule at the top of this file. ------ */
   --correct-700: #146c43; /* "Correct" text            5.7:1 on --correct-100 */
@@ -159,7 +172,14 @@
    * it was 57px in one place and 53px in reality, which left a 4px seam of page content
    * showing between the header and the rail on every scroll.
    */
-  --header-height: 53px;
+  --header-height: 56px;
+  /* v3 (docs/06 §2): app pages (bank, practice, AMC) are 1200px wide; reading pages keep --measure. */
+  --app-width: 1200px;
+  /*
+   * The mobile bottom tab bar's row (below `sm`). Fixed bottom bars on small screens sit on
+   * top of it; the ladder's action bar already offsets itself by this same 68px.
+   */
+  --tabbar-height: 68px;
 
   /* --- spacing / shape ----------------------------------------------------- */
   --space-1: 0.25rem;
@@ -171,11 +191,17 @@
   --space-7: 3rem;
   --space-8: 4rem;
 
-  /* docs/05 §6: 12px cards and answer choices, 10px buttons, 20px pills. */
+  /* docs/05 §6: 12px cards and answer choices, 10px buttons. */
   --radius-1: 6px;
   --radius-2: 10px;
   --radius-3: 12px;
-  --radius-pill: 20px;
+  /*
+   * v3 (docs/06 §1): 12px for cards and panels, 8px for controls, a full pill for chips. The
+   * pill was 20px in v2, which read as a rounded rectangle on anything taller than a chip.
+   */
+  --radius-card: 12px;
+  --radius-control: 8px;
+  --radius-pill: 999px;
 
   /* docs/05 §6: answer choices are at least this tall, and so is every other tap target. */
   --tap-min: 44px;
@@ -199,11 +225,13 @@
     --rule-strong: #767b83; /* 3.0:1 on --surface-3 (doc's #3C434F was 1.7:1 on --surface) */
 
     --grid: #2b313b;
+    --track: #2f3540;
 
     --accent-700: #7bd7e0; /* 11.0:1 on --ground */
     --accent-600: #12909c;
     --accent-500: #17939e;
     --accent-100: #10333a;
+    --on-accent: #071215;
 
     --correct-700: #6fd39b;
     --correct-600: #1a8a55;
@@ -257,11 +285,13 @@
   --rule-strong: #767b83;
 
   --grid: #2b313b;
+  --track: #2f3540;
 
   --accent-700: #7bd7e0;
   --accent-600: #12909c;
   --accent-500: #17939e;
   --accent-100: #10333a;
+  --on-accent: #071215;
 
   --correct-700: #6fd39b;
   --correct-600: #1a8a55;
@@ -322,11 +352,13 @@
     --rule: #000000;
     --rule-strong: #000000;
     --grid: #000000;
+    --track: #ffffff;
 
     --accent-700: #000000;
     --accent-600: #000000;
     --accent-500: #000000;
     --accent-100: #ffffff;
+    --on-accent: #ffffff;
 
     --correct-700: #000000;
     --correct-600: #000000;

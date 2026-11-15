@@ -146,18 +146,39 @@ export function shuffle<T>(items: readonly T[], seed: number): T[] {
   return out;
 }
 
-export function matchesWorksheet(problem: Problem, query: WorksheetQuery): boolean {
+/**
+ * Anything the selection can run over: a full Problem (tests, build time) or a row of the static
+ * index `public/data/ka-index.json` (the /print page in the browser), which carries the same
+ * facts in a flatter shape.
+ */
+export type WorksheetCandidate = Pick<Problem, 'id' | 'band' | 'points'> &
+  (
+    | { skills: { primary: string; secondary: readonly string[] }; figure: unknown }
+    | { primary: string; secondary: readonly string[]; hasFigure: boolean }
+  );
+
+function skillIdsOf(candidate: WorksheetCandidate): string[] {
+  return 'skills' in candidate
+    ? [candidate.skills.primary, ...candidate.skills.secondary]
+    : [candidate.primary, ...candidate.secondary];
+}
+
+function hasFigureOf(candidate: WorksheetCandidate): boolean {
+  return 'skills' in candidate ? candidate.figure !== null : candidate.hasFigure;
+}
+
+export function matchesWorksheet(problem: WorksheetCandidate, query: WorksheetQuery): boolean {
   if (query.bands.length > 0 && !query.bands.includes(problem.band)) return false;
   if (query.points.length > 0 && !query.points.includes(problem.points)) return false;
+  const tagged = skillIdsOf(problem);
   if (query.strands.length > 0) {
-    const strand = problem.skills.primary.slice(0, 3) as Strand;
+    const strand = (tagged[0] ?? '').slice(0, 3) as Strand;
     if (!query.strands.includes(strand)) return false;
   }
   if (query.skills.length > 0) {
-    const tagged = [problem.skills.primary, ...problem.skills.secondary];
     if (!query.skills.some((skill) => tagged.includes(skill))) return false;
   }
-  if (!query.figures && problem.figure !== null) return false;
+  if (!query.figures && hasFigureOf(problem)) return false;
   return true;
 }
 
@@ -165,10 +186,10 @@ export function matchesWorksheet(problem: Problem, query: WorksheetQuery): boole
  * The problems on the sheet: filtered, shuffled by the seed, cut to the count, then ordered
  * easiest first. A worksheet that opens with a 5-point question teaches a student to give up.
  */
-export function selectProblems(
-  problems: readonly Problem[],
+export function selectProblems<T extends WorksheetCandidate>(
+  problems: readonly T[],
   query: WorksheetQuery,
-): { selected: Problem[]; available: number } {
+): { selected: T[]; available: number } {
   const eligible = [...problems]
     .filter((problem) => matchesWorksheet(problem, query))
     .sort((a, b) => a.id.localeCompare(b.id));
@@ -178,4 +199,9 @@ export function selectProblems(
     .sort((a, b) => a.points - b.points || a.id.localeCompare(b.id));
 
   return { selected, available: eligible.length };
+}
+
+/** Is the query anything other than the default sheet? */
+export function isDefaultWorksheet(query: WorksheetQuery): boolean {
+  return toSearchParams(query).toString() === '';
 }

@@ -3,6 +3,7 @@ import Link from '@/components/AppLink';
 import { getAllProblems, getAllSkills } from '@/lib/content';
 import { DiagnosticRunner } from '@/components/practice/DiagnosticRunner';
 import { toAssessmentProblem, toAssessmentSkill } from '@/lib/assessment';
+import { PageContainer, PageHeader } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'Take the diagnostic',
@@ -29,19 +30,19 @@ export default function DiagnosticPage() {
   const skillNames = Object.fromEntries(allSkills.map((skill) => [skill.id, skill.name]));
 
   return (
-    <div className="content-column px-4 py-8">
-      <header className="max-w-prose">
-        <h1 className="m-0 text-2xl">Take the diagnostic</h1>
-        <p className="mt-3 mb-0 text-ink-2">
-          A score out of 120 tells you nothing you can act on. This gives you a map instead: which
-          skills are solid, which are not, and - because it follows the{' '}
-          <Link href="/atlas">prerequisite graph</Link> - what has to come first.
-        </p>
-      </header>
-
-      <div className="mt-8">
-        <DiagnosticRunner content={{ skills, problems }} skillNames={skillNames} />
-      </div>
-    </div>
+    <PageContainer>
+      <PageHeader
+        eyebrow="Practice"
+        title="Take the diagnostic"
+        description={
+          <>
+            A score out of 120 tells you nothing you can act on. This gives you a map instead: which
+            skills are solid, which are not, and, because it follows the{' '}
+            <Link href="/atlas">prerequisite graph</Link>, what has to come first.
+          </>
+        }
+      />
+      <DiagnosticRunner content={{ skills, problems }} skillNames={skillNames} />
+    </PageContainer>
   );
 }

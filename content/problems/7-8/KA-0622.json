@@ -1,0 +1,68 @@
+{
+  "id": "KA-0622",
+  "band": "7-8",
+  "points": 5,
+  "statement": "In a four-digit number, the third digit equals the sum of the first two digits, and the fourth digit equals the sum of the second and third digits. For example, 1347 is one such number. How many such four-digit numbers are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "13",
+      "correct": false,
+      "misconception": "I assumed the four digits must all be different."
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I assumed no digit could be 0."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": false,
+      "misconception": "I let the first digit be 0, which does not give a four-digit number."
+    },
+    {
+      "key": "E",
+      "text": "45",
+      "correct": false,
+      "misconception": "I only checked that the third digit stays at most 9 and forgot about the fourth digit."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-02",
+    "secondary": [
+      "CNT-04",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Write every digit using only the first two.",
+    "If the first two digits are a and b, the other two are fixed by the rule. Write them in terms of a and b, then count the pairs for which every digit stays at most 9.",
+    "The digits are a, b, a + b and a + 2b, so you need a + 2b at most 9, with a at least 1."
+  ],
+  "solutions": {
+    "reliable": "With first digits a and b, the number reads a, b, a + b, a + 2b. The last digit is the largest, so the only conditions are a + 2b at most 9, a at least 1 and b at least 0. Count by b: b = 0 allows a = 1 to 9 (9 numbers); b = 1 allows a = 1 to 7 (7); b = 2 allows 1 to 5 (5); b = 3 allows 1 to 3 (3); b = 4 allows only a = 1 (1). Total 9 + 7 + 5 + 3 + 1 = 25. The transferable idea: when later digits are forced by earlier ones, count the free choices and apply one condition to the largest forced digit.",
+    "elegant": "Counting by the second digit gives the odd numbers 9, 7, 5, 3, 1, and the first five odd numbers add up to 5 x 5 = 25."
+  },
+  "whyOnTest": "Digit puzzles where some digits are forced: reduce to free choices plus one condition, and watch for leading zeros and zero digits.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

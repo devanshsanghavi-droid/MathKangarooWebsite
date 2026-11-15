@@ -1,0 +1,68 @@
+{
+  "id": "KA-0830",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Some different whole numbers are picked from 1 to 100. How many numbers must be picked to be sure that two of the picked numbers add up to a multiple of 7?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I used one number for each possible remainder on division by 7 and added one, as if two numbers with the same remainder always made a bad pair."
+    },
+    {
+      "key": "B",
+      "text": "44",
+      "correct": false,
+      "misconception": "I thought every remainder from 0 to 6 occurs 14 times from 1 to 100, so my biggest safe set had 1 + 14 + 14 + 14 = 43 numbers."
+    },
+    {
+      "key": "C",
+      "text": "46",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "45",
+      "correct": false,
+      "misconception": "I left out the multiples of 7 completely, forgetting that one multiple of 7 can be chosen safely."
+    },
+    {
+      "key": "E",
+      "text": "51",
+      "correct": false,
+      "misconception": "I thought choosing more than half of the numbers would force a pair, so I took 50 + 1."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-17",
+    "secondary": [
+      "CNT-18",
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "Sort the numbers by remainder on division by 7. Which remainders pair up?",
+    "Two numbers have a sum that is a multiple of 7 when their remainders are 1 and 6, 2 and 5, 3 and 4, or both 0. Build the biggest set that avoids every such pair, then add one.",
+    "From 1 to 100 the remainders 1 and 2 occur 15 times each, and every other remainder 14 times. A safe set can use only one of the remainders in each pair, and at most one multiple of 7."
+  ],
+  "solutions": {
+    "reliable": "Group 1 to 100 by remainder on division by 7. Since 100 = 7 x 14 + 2, the remainders 1 and 2 occur 15 times each, and the remainders 0, 3, 4, 5 and 6 occur 14 times each. Two numbers add up to a multiple of 7 exactly when their remainders are 1 and 6, 2 and 5, 3 and 4, or 0 and 0. So a safe set can contain numbers from only one remainder in each of the pairs {1, 6}, {2, 5} and {3, 4}, and at most one multiple of 7. The best choice is all 15 numbers with remainder 1, all 15 with remainder 2, all 14 with remainder 3, and one multiple of 7: 45 numbers, and no two of them add up to a multiple of 7. So 45 numbers are not enough. But any 46 numbers must break one of these limits, because a safe set can never have more than 15 + 15 + 14 + 1 = 45 numbers. The answer is 46. The transferable idea: for a 'be certain' question, sort into boxes by remainder, build the largest set that avoids the pattern, then add one.",
+    "elegant": null
+  },
+  "whyOnTest": "Certainty questions need both halves: the largest safe set and a reason one more always fails. Remainders sort the numbers into the right boxes, and the uneven box sizes are the 5-point detail.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0920",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Some different positive whole numbers add up to 2026. What is the largest possible number of numbers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "45",
+      "correct": false,
+      "misconception": "I treated 1 + 2 + ... + n as if it were n squared, and 45 squared is 2025, just under 2026."
+    },
+    {
+      "key": "B",
+      "text": "62",
+      "correct": false,
+      "misconception": "I started the list at 2 instead of 1, and 2 + 3 + ... + 63 = 2015 left no room for another number."
+    },
+    {
+      "key": "C",
+      "text": "63",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "64",
+      "correct": false,
+      "misconception": "I solved n(n + 1)/2 = 2026, got about 63.2 and rounded up, without checking that 64 different numbers add up to at least 2080."
+    },
+    {
+      "key": "E",
+      "text": "2026",
+      "correct": false,
+      "misconception": "I forgot that the numbers must be different and used 2026 ones."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "LOG-11",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "To use as many numbers as possible, keep them as small as possible.",
+    "Suppose there were 64 or more different numbers. What is the smallest their sum could be? Compare it with 2026 to reach a contradiction, then check that the largest count left really can be reached.",
+    "1 + 2 + ... + 64 = 2080, but 1 + 2 + ... + 63 = 2016."
+  ],
+  "solutions": {
+    "reliable": "Suppose 64 or more different positive whole numbers add up to 2026. Any 64 of them are at least as large as 1, 2, ..., 64, so the sum is at least 1 + 2 + ... + 64 = 64 x 65 / 2 = 2080, which is more than 2026. That is a contradiction, so there are at most 63 numbers. And 63 is possible: 1 + 2 + ... + 63 = 2016, so take 1, 2, ..., 62 and 73 instead of 63. This raises the sum by exactly 10, to 2026, and keeps all the numbers different. The answer is 63. The transferable idea: to show a count is too big, assume it and find the smallest possible total; if even that is too large, the assumption is impossible.",
+    "elegant": "n different positive whole numbers add up to at least n(n + 1)/2, and 63 x 64 / 2 = 2016 is at most 2026, while 64 x 65 / 2 = 2080 is more. The leftover 10 can always be added to the largest number, so 63 is the answer."
+  },
+  "whyOnTest": "Assuming 64 numbers and finding their smallest possible sum gives a contradiction in one line, and an example shows that 63 is really reached.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

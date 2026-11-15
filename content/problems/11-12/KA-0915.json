@@ -1,0 +1,68 @@
+{
+  "id": "KA-0915",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A glass is shaped like a cone with its point at the bottom, and it is full of juice. You drink until the surface of the juice is at half the height of the glass. What fraction of the juice have you drunk?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "one eighth",
+      "correct": false,
+      "misconception": "I found the fraction of juice still in the glass and gave that instead of the fraction drunk."
+    },
+    {
+      "key": "B",
+      "text": "one quarter",
+      "correct": false,
+      "misconception": "I scaled the volume by the square of one half, as if it were an area, and gave the part left in the glass."
+    },
+    {
+      "key": "C",
+      "text": "one half",
+      "correct": false,
+      "misconception": "I assumed that halving the height of the juice halves its volume."
+    },
+    {
+      "key": "D",
+      "text": "three quarters",
+      "correct": false,
+      "misconception": "I scaled the volume by the square of one half, as for an area, and subtracted that from the whole."
+    },
+    {
+      "key": "E",
+      "text": "seven eighths",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-16",
+    "secondary": [
+      "CFT-01",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "The juice that is left forms a smaller cone.",
+    "Similar solids: when every length scales by the same factor, volume scales by the cube of that factor. Find the fraction left first, then the fraction drunk.",
+    "The juice left is a cone with half the height and half the radius of the full glass."
+  ],
+  "solutions": {
+    "reliable": "The juice left forms a cone similar to the full one, with every length halved. Volume scales as the cube of length, so it holds (1/2)^3 = 1/8 of the juice. You have drunk 1 - 1/8 = 7/8. The transferable idea: lengths scale by k, areas by k squared and volumes by k cubed, and read whether the question asks for the part left or the part removed.",
+    "elegant": "With the cone formula, volume = (1/3) x base area x height: the small cone has one quarter of the base area and half the height, so one eighth of the volume, and seven eighths is gone."
+  },
+  "whyOnTest": "Volume scales with the cube of length, and a glass with its point down hides most of its volume near the top.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

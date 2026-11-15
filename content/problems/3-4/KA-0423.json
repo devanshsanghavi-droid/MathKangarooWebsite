@@ -1,0 +1,67 @@
+{
+  "id": "KA-0423",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Mo built a 2 by 2 by 2 cube from small cubes. How many more small cubes does he need to turn it into a 3 by 3 by 3 cube?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I subtracted the side lengths, 3 - 2, instead of counting cubes."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I added one 3 by 3 layer on top and thought that would be enough."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I added a 2 by 2 slab to three faces, 3 x 4, and missed the cubes along the edges and in the corner where the slabs meet."
+    },
+    {
+      "key": "D",
+      "text": "19",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I counted every cube in the big cube and forgot the 8 that Mo already has."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-13",
+    "secondary": [
+      "CNT-14"
+    ]
+  },
+  "hints": [
+    "How many small cubes are in the finished cube?",
+    "Building with unit cubes: count the cubes in the big cube, then take away the ones Mo already has. That avoids counting the new cubes one by one.",
+    "A 3 by 3 by 3 cube has 3 x 3 x 3 = 27 small cubes, and Mo already has 2 x 2 x 2."
+  ],
+  "solutions": {
+    "reliable": "The finished cube has 3 layers of 3 x 3 = 9 cubes, so 27 small cubes. Mo's cube has 2 layers of 2 x 2 = 4, so 8 cubes. He needs 27 - 8 = 19 more. The transferable idea: to count what must be added, count the finished shape and subtract what is already there.",
+    "elegant": "Put Mo's cube in a corner of the big cube. The new cubes form three 2 by 2 slabs on three faces (12 cubes), three rows of 2 along the edges between the slabs (6 cubes) and 1 corner cube: 12 + 6 + 1 = 19, which agrees with the subtraction."
+  },
+  "whyOnTest": "Counting a 3D shell directly is easy to get wrong, so the problem rewards counting the whole and subtracting instead.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

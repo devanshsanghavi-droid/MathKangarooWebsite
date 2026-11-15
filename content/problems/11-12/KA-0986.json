@@ -1,0 +1,68 @@
+{
+  "id": "KA-0986",
+  "band": "11-12",
+  "points": 4,
+  "statement": "In the multiplication AB x AB = CAB, each letter stands for a digit. AB is a two-digit number and CAB is a three-digit number. What is A + B + C?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I let A be 0 and used 05 x 05 = 025, even though AB must be a two-digit number."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I found AB = 25 and the product 625, then gave only the digit C instead of A + B + C."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I found AB = 25 but gave only A + B, forgetting to add C."
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": false,
+      "misconception": "I chose 76, whose square 5776 also ends in 76, took C as 5 and ignored that the square has four digits."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "NUM-07",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "The square of AB must end in the same two digits as AB.",
+    "AB squared has only three digits, which limits how big AB can be. Its square also ends in AB, so first find which last digits B survive being squared.",
+    "B x B must end in the digit B, so B is 0, 1, 5 or 6, and AB is at most 31."
+  ],
+  "solutions": {
+    "reliable": "Since AB x AB is at most 999, AB is at most 31. The last digit of B x B must be B, so B is 0, 1, 5 or 6. Checking AB from 10 to 31 with those endings: 10, 11, 15, 16, 20, 21, 25, 26, 30 and 31 have squares 100, 121, 225, 256, 400, 441, 625, 676, 900 and 961. Only 625 ends in the number being squared, so A = 2, B = 5, C = 6 and A + B + C = 13. The transferable idea: in a digit puzzle, use a size bound and the last digit first, which leaves only a few cases.",
+    "elegant": "AB squared ending in AB means AB x (AB - 1) is a multiple of 100. Two neighbouring numbers share no factor, so one of them is a multiple of 25 and the other a multiple of 4. Below 32 the only option is 25 and 24, so AB = 25 and the product is 625."
+  },
+  "whyOnTest": "Bounding the size of AB and using the last digit cuts the search to a few checks, a standard move in digit puzzles.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

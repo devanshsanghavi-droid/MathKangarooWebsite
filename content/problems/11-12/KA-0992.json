@@ -1,0 +1,68 @@
+{
+  "id": "KA-0992",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Nine different positive whole numbers add up to 60. What is the largest possible value of their median, the middle number when they are listed in order?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought the median could not be bigger than the mean, 60/9, and rounded down."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I let the four numbers below the median all be 1, forgetting they must be different."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I let the four numbers above the median all equal the median, forgetting they must be bigger and different."
+    },
+    {
+      "key": "E",
+      "text": "11",
+      "correct": false,
+      "misconception": "I forgot that all nine numbers must be different and made the others as small as possible anyway."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "NUM-15",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "To push the median up, make the other numbers as small as the rules allow.",
+    "Extremal thinking: the four numbers below the median should be as small as possible, and so should the four above it, while still being bigger than the median and all different. This gives an inequality for the median.",
+    "With median m, the sum is at least 1 + 2 + 3 + 4 + m + (m + 1) + (m + 2) + (m + 3) + (m + 4)."
+  ],
+  "solutions": {
+    "reliable": "List the numbers in order with median m. The four below it are at least 1, 2, 3 and 4, and the four above are at least m + 1, m + 2, m + 3 and m + 4. So 60 is at least 10 + 5m + 10, which gives 5m at most 40 and m at most 8. For m = 8, the numbers 1, 2, 3, 4, 8, 9, 10, 11, 12 are different and add to 60. The answer is 8. The transferable idea: to make one value as large as possible, make everything else as small as the conditions allow, then show the bound is reached.",
+    "elegant": null
+  },
+  "whyOnTest": "The bound uses every condition at once, and each distractor drops exactly one of them: difference below, difference above, or the link to the mean.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0543",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Sam tosses a coin three times and writes down H or T each time, in order, for example HTT. How many of the possible lists have more heads than tails?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I counted only HHH, forgetting that two heads and one tail is also more heads."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I ignored the order, so HHT, HTH and THH counted as one list, plus HHH."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only the lists with exactly two heads and forgot HHH."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted all the possible lists, not just those with more heads."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-01",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "List all the possibilities first.",
+    "A tree diagram splits into H and T at each toss, giving every possible list exactly once. Then pick out the lists where heads outnumber tails.",
+    "There are 8 lists. More heads means 3 heads, or 2 heads and 1 tail in any order."
+  ],
+  "solutions": {
+    "reliable": "A tree with two branches at each of three tosses gives 2 x 2 x 2 = 8 lists: HHH, HHT, HTH, HTT, THH, THT, TTH, TTT. More heads than tails means at least 2 heads: HHH, HHT, HTH, THH. That is 4 lists. The transferable idea: a tree diagram lists every outcome once, so you can sort them without missing any.",
+    "elegant": "Swap every H for T and every T for H. This pairs each list with more heads with one with more tails, and with three tosses there are no ties, so exactly half of the 8 lists, 4, have more heads."
+  },
+  "whyOnTest": "Tree diagrams make sure every ordered outcome is listed once, which is exactly what the order trap tests.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

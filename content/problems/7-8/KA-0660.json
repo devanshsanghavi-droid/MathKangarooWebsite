@@ -1,0 +1,68 @@
+{
+  "id": "KA-0660",
+  "band": "7-8",
+  "points": 4,
+  "statement": "In a jar of marbles, two fifths of the marbles are red. Then 12 red marbles are taken out and nothing else changes. Now one quarter of the marbles in the jar are red. How many marbles were in the jar at the start?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "48",
+      "correct": false,
+      "misconception": "I solved correctly but gave the number of marbles left in the jar after the 12 were taken out."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I solved correctly but gave the number of red marbles at the start instead of all the marbles."
+    },
+    {
+      "key": "C",
+      "text": "60",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": false,
+      "misconception": "I got as far as three fifths of the starting number being 36 and gave 36 without finishing."
+    },
+    {
+      "key": "E",
+      "text": "80",
+      "correct": false,
+      "misconception": "I took the quarter as a quarter of the starting number, not of the marbles left after 12 were taken out."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-09",
+    "secondary": [
+      "MOD-01",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Which marbles are not touched at all?",
+    "The marbles that are not red never change. Write what fraction of the jar they are before and after, and compare the two totals.",
+    "The other marbles are three fifths of the start and three quarters of what is left."
+  ],
+  "solutions": {
+    "reliable": "Let the jar start with T marbles, so 2T/5 are red. After 12 red ones go, there are T - 12 marbles and 2T/5 - 12 of them are red, which must be a quarter: 2T/5 - 12 = (T - 12)/4. Multiplying by 20 gives 8T - 240 = 5T - 60, so 3T = 180 and T = 60. Check: 24 of 60 are red; after removing 12, 12 of the 48 left are red, which is one quarter. The transferable idea: a fraction is always a fraction of something, so write down which total each fraction refers to.",
+    "elegant": "The non-red marbles do not change. They are three fifths of the start and three quarters of the end, so the start and end totals are in the ratio 5 to 4. The 12 marbles removed are therefore one fifth of the start, which is 60."
+  },
+  "whyOnTest": "Fractions of a changing total are a standard trap, because students take every fraction of the starting amount.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

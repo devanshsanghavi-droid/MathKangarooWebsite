@@ -1,0 +1,67 @@
+{
+  "id": "KA-0715",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A rhombus has one angle of 60 degrees. Its shorter diagonal is 7 cm long. What is the perimeter of the rhombus?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "21 cm",
+      "correct": false,
+      "misconception": "I found the perimeter of one of the two triangles that the diagonal makes, not of the rhombus."
+    },
+    {
+      "key": "B",
+      "text": "14√2 cm",
+      "correct": false,
+      "misconception": "I treated the rhombus as a square, so I took each side to be the diagonal divided by √2."
+    },
+    {
+      "key": "C",
+      "text": "28 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "35 cm",
+      "correct": false,
+      "misconception": "I added the diagonal to the four sides, although it is not part of the outside edge."
+    },
+    {
+      "key": "E",
+      "text": "42 cm",
+      "correct": false,
+      "misconception": "I added the perimeters of both triangles, so the diagonal was counted twice."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-06",
+    "secondary": [
+      "GEO-05"
+    ]
+  },
+  "hints": [
+    "The shorter diagonal cuts the rhombus into two triangles. What kind of triangles are they?",
+    "Use the properties of a rhombus: all four sides are equal. Each triangle has two sides of the rhombus and a 60 degree angle between them, so work out its other two angles.",
+    "Each triangle is isosceles with a 60 degree angle between its equal sides, so its other angles are also 60 degrees, and it is equilateral."
+  ],
+  "solutions": {
+    "reliable": "All four sides of a rhombus are equal. The shorter diagonal joins the two ends of the sides that meet at the 60 degree angle, so it cuts off a triangle with two equal sides and 60 degrees between them. Its other two angles are equal and add up to 120 degrees, so each is 60 degrees and the triangle is equilateral. So each side of the rhombus equals the diagonal, 7 cm, and the perimeter is 4 x 7 = 28 cm. The transferable idea: an isosceles triangle with a 60 degree angle is always equilateral.",
+    "elegant": "A rhombus with a 60 degree angle is two equilateral triangles glued along the shorter diagonal, so every side is 7 cm and the perimeter is 28 cm."
+  },
+  "whyOnTest": "Knowing the properties of a rhombus, and spotting the equilateral triangles inside it, turns one diagonal into the side length.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

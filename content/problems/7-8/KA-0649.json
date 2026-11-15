@@ -1,0 +1,67 @@
+{
+  "id": "KA-0649",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Ten people sit evenly spaced around a round table. Each person shakes hands once with every other person except the two people sitting directly next to them. How many handshakes take place?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "70",
+      "correct": false,
+      "misconception": "I counted 7 handshakes for each of the 10 people and forgot that every handshake involves two people, so each was counted twice."
+    },
+    {
+      "key": "B",
+      "text": "45",
+      "correct": false,
+      "misconception": "I counted every pair of the 10 people and forgot to leave out the pairs of neighbours."
+    },
+    {
+      "key": "C",
+      "text": "40",
+      "correct": false,
+      "misconception": "I left out only one neighbour per person, giving 8 handshakes each, and then halved 10 x 8."
+    },
+    {
+      "key": "D",
+      "text": "25",
+      "correct": false,
+      "misconception": "I took all 45 pairs and subtracted 20 neighbour pairs, counting each neighbouring pair once from each side."
+    },
+    {
+      "key": "E",
+      "text": "35",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-08"
+    ]
+  },
+  "hints": [
+    "Count from one person's point of view first.",
+    "Overcount, then correct: count the handshakes each person makes and multiply by the number of people, then fix the fact that each handshake was seen from both ends.",
+    "Each person shakes 10 - 1 - 2 = 7 hands, so 10 x 7 = 70 counts every handshake twice."
+  ],
+  "solutions": {
+    "reliable": "Each person skips themselves and their two neighbours, so shakes 7 hands. Ten people times 7 is 70, but each handshake has been counted once by each of the two people in it, so there are 70 / 2 = 35. The transferable idea: count from each person, then divide by the number of times each object was counted.",
+    "elegant": "There are 45 pairs of people in total, and exactly 10 of them are neighbours around the table, one pair per gap. 45 - 10 = 35."
+  },
+  "whyOnTest": "Handshake problems test whether you notice that counting from each person counts every handshake twice.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

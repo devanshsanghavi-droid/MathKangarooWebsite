@@ -1,0 +1,68 @@
+{
+  "id": "KA-0487",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Ana, Bo and Cy each always lie or always tell the truth. Ana: \"Exactly one of us lies.\" Bo: \"Exactly two of us lie.\" Cy: \"All three of us lie.\" How many lie?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I believed all three of them without checking whether their sentences can all be true together."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "1",
+      "correct": false,
+      "misconception": "I believed Ana, without noticing that Bo and Cy would then both be liars, which makes two."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I believed Cy, but if Cy told the truth, Cy would not be a liar."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be decided",
+      "correct": false,
+      "misconception": "I thought there was not enough information to tell."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-09",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Can Cy be telling the truth?",
+    "The three sentences give different numbers, so at most one of them can be true. Test each child as the only truth-teller and check whether the number of liars then matches what that child said.",
+    "Cy cannot be truthful, because then Cy would be a liar. If Ana is the only truthful one, there are two liars, not one."
+  ],
+  "solutions": {
+    "reliable": "The sentences give different numbers, so at most one is true. Cy cannot be telling the truth, since a truthful Cy would be one of three liars. If all three lied, there would be 3 liars and Cy would be right, which is impossible. If Ana alone told the truth, there would be 2 liars, not 1. If Bo alone tells the truth, there are 2 liars, Ana and Cy, which matches Bo. So there are 2 liars. The transferable idea: assume one speaker is truthful and check whether the whole picture agrees with itself.",
+    "elegant": null
+  },
+  "whyOnTest": "Truth-teller puzzles reward testing each possibility for consistency rather than trusting any one sentence.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0415",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Pia shares 37 sweets equally among some children, giving each child as many as possible. 2 sweets are left over. Which of these could be the number of children?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I thought the 2 sweets left over told me the number of children."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I took away 1 sweet instead of 2, and 36 shares equally among 3."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": false,
+      "misconception": "I added the 2 leftover sweets instead of taking them away, and 39 shares equally among 13."
+    },
+    {
+      "key": "E",
+      "text": "37",
+      "correct": false,
+      "misconception": "I gave every sweet to a different child, but then no sweets would be left over."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "NUM-05",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "How many sweets were actually shared out?",
+    "Remainders: take the leftover sweets away first. The number of children must then divide the rest exactly, and must be more than the 2 left over.",
+    "35 sweets were shared equally. Which choice divides 35 exactly?"
+  ],
+  "solutions": {
+    "reliable": "If 2 sweets are left over, then 37 - 2 = 35 sweets were shared equally, so the number of children divides 35 exactly. 35 = 5 x 7, so there could be 5, 7 or 35 children. Among the choices only 5 works: each of 5 children gets 7 sweets, and the 2 left over are too few to give everyone another. The transferable idea: a remainder problem becomes a division problem once you take the remainder away.",
+    "elegant": "Test each choice by sharing 37: 2 children leave 1 over, 3 leave 1 over, 5 leave 2 over, 13 leave 11 over, and 37 leave none. Only 5 matches."
+  },
+  "whyOnTest": "Taking away the remainder turns a sharing problem into a divisibility check, the central move in every remainder question.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

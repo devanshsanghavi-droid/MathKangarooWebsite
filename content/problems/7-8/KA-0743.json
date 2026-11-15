@@ -1,0 +1,68 @@
+{
+  "id": "KA-0743",
+  "band": "7-8",
+  "points": 5,
+  "statement": "With 20 minutes left, Lina reaches the last eight questions: each is worth 5 points, has 5 choices and costs nothing if wrong. They would take her 3, 5, 6, 8, 9, 11, 14 and 15 minutes. She solves as many as she can in time, all correctly, and guesses the rest. What is her expected score on these eight?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": false,
+      "misconception": "I counted only the questions she solves and left the other five blank instead of guessing."
+    },
+    {
+      "key": "C",
+      "text": "16",
+      "correct": false,
+      "misconception": "I gave each guess one fifth of a point instead of one fifth of 5 points."
+    },
+    {
+      "key": "D",
+      "text": "40",
+      "correct": false,
+      "misconception": "I counted every one of the eight questions as worth 5 points, whether solved or guessed."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I thought she also had time for the 8-minute question after the 3, 5 and 6 minute ones."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-12",
+    "secondary": [
+      "CFT-08",
+      "CFT-09"
+    ]
+  },
+  "hints": [
+    "To solve as many as possible, which questions should she pick?",
+    "Pick the quickest questions first until the time runs out, and check that no other choice fits more into 20 minutes. Then add the average value of the guesses on the rest.",
+    "The three quickest take 3 + 5 + 6 = 14 minutes, and any four take at least 22. Each guess is right one time in five."
+  ],
+  "solutions": {
+    "reliable": "To fit the most questions into 20 minutes she should take the quickest ones: 3 + 5 + 6 = 14 minutes. Any four questions take at least 3 + 5 + 6 + 8 = 22 minutes, so she can solve at most 3, worth 15 points. She guesses the other 5, and each guess earns 5 points one time in five, which is 1 point on average, so 5 more points. Her expected score is 15 + 5 = 20. The transferable idea: in the 5-point block, read everything first, take the quickest wins, and never leave the rest blank.",
+    "elegant": null
+  },
+  "whyOnTest": "The 5-point block is won by choosing which questions to solve and guessing the rest, so this checks both the choosing and the guessing.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

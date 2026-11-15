@@ -1,0 +1,68 @@
+{
+  "id": "KA-0777",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Three coins with radii 1 cm, 2 cm and 3 cm lie flat on a table, each touching the other two. What is the area, in square centimetres, of the triangle whose corners are the centres of the three coins?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "7.5",
+      "correct": false,
+      "misconception": "I multiplied the shortest and longest sides, 3 and 5, and halved, as if they were the two shorter sides of a right triangle."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I multiplied the two longest sides, 4 and 5, and halved, as if they met at a right angle."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found the perimeter of the triangle, 3 + 4 + 5, instead of its area."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I used the diameters to join the centres, so I got sides of 6, 8 and 10 cm and an area of 24."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-07",
+    "secondary": [
+      "GEO-06",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "When two circles touch, how far apart are their centres?",
+    "The distance between the centres of two touching circles is the sum of their radii. Find all three sides, then look closely at the triangle they make.",
+    "The sides are 1 + 2 = 3, 2 + 3 = 5 and 1 + 3 = 4. Have you seen a triangle with these sides before?"
+  ],
+  "solutions": {
+    "reliable": "For touching coins, the centres are a sum of radii apart: 1 + 2 = 3, 1 + 3 = 4 and 2 + 3 = 5. Since 3² + 4² = 9 + 16 = 25 = 5², the triangle has a right angle between the sides 3 and 4. Its area is 3 x 4 / 2 = 6 square centimetres. The transferable idea: touching circles turn into a triangle of radius sums, and a familiar right triangle often hides in it.",
+    "elegant": "Heron's formula gives the same answer without spotting the right angle: half the perimeter is 6, and the area is the square root of 6 x 3 x 2 x 1 = 36, which is 6."
+  },
+  "whyOnTest": "Touching circles become a triangle with radius-sum sides, and this checks that step plus spotting the right angle before taking a product of sides.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

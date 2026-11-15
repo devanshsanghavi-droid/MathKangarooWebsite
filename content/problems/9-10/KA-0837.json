@@ -1,0 +1,68 @@
+{
+  "id": "KA-0837",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Twelve whole numbers, not all 0, are written around a circle. Each number equals the larger of its two neighbours minus the smaller one (so it is 0 when the two neighbours are equal). The largest of the twelve numbers is 5. What is the sum of all twelve numbers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "It cannot be determined",
+      "correct": false,
+      "misconception": "I thought the other numbers could be chosen freely as long as each one matched its neighbours, so the sum would not be fixed."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I found that the circle repeats in blocks of three but took the block to be 5, 0, 0, with only one 5 in each block."
+    },
+    {
+      "key": "C",
+      "text": "30",
+      "correct": false,
+      "misconception": "I thought the numbers alternate 5, 0, 5, 0, without checking that a 5 between two 0s breaks the rule."
+    },
+    {
+      "key": "D",
+      "text": "60",
+      "correct": false,
+      "misconception": "I assumed every number has to equal the largest one, so all twelve are 5, without checking that 5 minus 5 is 0, not 5."
+    },
+    {
+      "key": "E",
+      "text": "40",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "CNT-04",
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "Look at where the largest number, 5, sits.",
+    "A 5 is the difference of its two neighbours, and both neighbours are between 0 and 5. That pins down the neighbours exactly. Then move on to the next number round the circle and repeat.",
+    "The neighbours of a 5 must be a 5 and a 0. Following the rule from there, the circle repeats the block 5, 5, 0."
+  ],
+  "solutions": {
+    "reliable": "Take a position holding the largest number, 5. It equals the difference of its two neighbours, and each neighbour is between 0 and 5, so the difference can be 5 only if one neighbour is 5 and the other is 0. Now look at the neighbouring 5: one of its neighbours is the first 5, so its other neighbour x must satisfy 5 minus x (or x minus 5) equals 5, which forces x = 0. Next, that 0 has neighbours 5 and y with difference 0, so y = 5. Continuing in both directions, the numbers repeat the block 5, 5, 0 all the way round. Since 12 is a multiple of 3, the circle closes up correctly with four blocks, so there are eight 5s and four 0s, and the sum is 8 × 5 = 40. Check: each 5 sits between a 5 and a 0 (difference 5) and each 0 sits between two 5s (difference 0). The transferable idea: start from the extreme value, because it has the fewest ways to satisfy the rule, and let it force its neighbours.",
+    "elegant": "Every block of three neighbours must be two 5s and a 0, because the largest number forces the pattern 5, 5, 0 and the pattern then repeats. Twelve numbers make four such blocks, each with sum 10, so the total is 4 × 10 = 40."
+  },
+  "whyOnTest": "The extremal principle in action: the largest number has only one way to be a difference of two smaller numbers, and that single fact fixes the whole circle.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0728",
+  "band": "7-8",
+  "points": 4,
+  "statement": "How many points whose coordinates are both whole numbers lie strictly inside the triangle with corners (0, 0), (6, 0) and (0, 6), not on any of its sides?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "15",
+      "correct": false,
+      "misconception": "I included the points on the slanted side, where x + y = 6, as if they were inside."
+    },
+    {
+      "key": "B",
+      "text": "21",
+      "correct": false,
+      "misconception": "I included the points on the two sides along the axes, where x or y is 0."
+    },
+    {
+      "key": "C",
+      "text": "28",
+      "correct": false,
+      "misconception": "I counted every whole-number point in the triangle, including all the points on its three sides."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": false,
+      "misconception": "I worked out the area of the triangle, 18, and took it as the number of points."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-02",
+    "secondary": [
+      "CNT-01",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Write down the conditions that a point strictly inside must satisfy.",
+    "A point inside has x at least 1, y at least 1, and lies below the slanted side x + y = 6. Count column by column, one value of x at a time.",
+    "Strictly inside means x and y are at least 1 and x + y is at most 5. For x = 1 there are 4 values of y."
+  ],
+  "solutions": {
+    "reliable": "A whole-number point (x, y) is strictly inside when x is at least 1, y is at least 1 and x + y is less than 6, so at most 5. For x = 1, y can be 1 to 4 (4 points); for x = 2, 3 points; x = 3, 2 points; x = 4, 1 point; x = 5, none. Total 4 + 3 + 2 + 1 = 10. The transferable idea: turn a region into inequalities and count one column at a time, deciding carefully whether boundary points are in.",
+    "elegant": "Pick's theorem gives the same count: the area 18 equals the number of interior points plus half the 18 boundary points minus 1, so the interior count is 18 - 9 + 1 = 10."
+  },
+  "whyOnTest": "Lattice-point counts test reading strictly inside precisely, and each wrong choice includes a different part of the boundary.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

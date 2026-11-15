@@ -1,0 +1,68 @@
+{
+  "id": "KA-0358",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Ben has lots of 5-cent coins and 2-cent coins. How many different mixes of these coins make exactly 20 cents? A mix can use just one kind of coin.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I found four 5-cent coins and ten 2-cent coins, but missed the way that uses both kinds."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I also counted one 5-cent coin, without checking that the 15 cents left cannot be made from 2-cent coins."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I counted 0, 1, 2, 3 or 4 five-cent coins without checking whether the rest could be made from 2-cent coins."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I gave the number of 2-cent coins in the mix that uses only 2-cent coins."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-06",
+    "secondary": [
+      "CNT-01",
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "Try each number of 5-cent coins in turn.",
+    "List the mixes by how many 5-cent coins they use: 0, 1, 2, 3 or 4. For each one, check whether the cents left over can be made exactly from 2-cent coins.",
+    "2-cent coins can only make even amounts. With 1 or 3 five-cent coins the amount left over is odd."
+  ],
+  "solutions": {
+    "reliable": "Go through the 5-cent coins. 0 fives: 20 cents left, ten 2-cent coins. 1 five: 15 left, odd, impossible. 2 fives: 10 left, five 2-cent coins. 3 fives: 5 left, odd, impossible. 4 fives: 0 left. So there are 3 mixes. The idea to keep: list the cases in order and check each one, because some cases are impossible.",
+    "elegant": "2-cent coins always make an even amount, so the 5-cent coins must also make an even amount: 0, 10 or 20 cents. That is 3 mixes."
+  },
+  "whyOnTest": "Making an amount with two coin types rewards a careful list, and the odd leftover is the hidden check that rules cases out.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

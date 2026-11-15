@@ -1,0 +1,68 @@
+{
+  "id": "KA-0763",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A grasshopper starts at 0 on a number line. Each jump is either 1 or 3 units, to the left or to the right. Where could it be after exactly 15 jumps?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I paired each jump to the right with a matching jump to the left, forgetting that 15 jumps cannot all be paired."
+    },
+    {
+      "key": "B",
+      "text": "30",
+      "correct": false,
+      "misconception": "I took an average jump of 2 units and multiplied by 15."
+    },
+    {
+      "key": "C",
+      "text": "33",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "44",
+      "correct": false,
+      "misconception": "I replaced one jump of 3 with a jump of 1 and thought that lowers the maximum of 45 by 1 instead of by 2."
+    },
+    {
+      "key": "E",
+      "text": "47",
+      "correct": false,
+      "misconception": "I checked only that the position must be odd and forgot that 15 jumps reach at most 45."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "LOG-05",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Is each jump odd or even?",
+    "Every jump changes the position by an odd amount, so each jump flips whether the position is odd or even. After an odd number of jumps, the parity is fixed. Then also check how far it can get.",
+    "After 15 jumps the position is odd, and it is at most 15 x 3 = 45 away from 0."
+  ],
+  "solutions": {
+    "reliable": "Each jump moves the grasshopper an odd distance, so each jump switches the position between even and odd. Starting at 0, which is even, after 15 jumps the position is odd. That rules out 0, 30 and 44. The furthest it can get is 15 x 3 = 45, which rules out 47. And 33 is reachable: 11 jumps of 3 to the right, then 1 right, 1 left, 1 right, 1 left. The transferable idea: when every move changes a quantity by an odd amount, the parity after a fixed number of moves is decided in advance.",
+    "elegant": null
+  },
+  "whyOnTest": "A parity question with a size check attached: parity removes three choices and bounding removes the fourth.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

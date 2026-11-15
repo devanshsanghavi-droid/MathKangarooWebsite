@@ -1,0 +1,68 @@
+{
+  "id": "KA-0968",
+  "band": "11-12",
+  "points": 3,
+  "statement": "What is the last digit of 2^1 + 2^2 + 2^3 + ... + 2^2026?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I noticed that each block of four powers ends in 2 + 4 + 8 + 6 = 20, so I assumed the whole sum ends in 0 and ignored the leftover terms."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I split the sum into blocks of four but counted only one leftover term, 2^2025, which ends in 2."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted three leftover terms after the blocks of four and added 2 + 4 + 8 = 14."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I used the formula 2^2027 - 2 but forgot to subtract the 2, so I gave the last digit of 2^2027."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-07",
+    "secondary": [
+      "PAT-03",
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "The last digits of the powers of 2 repeat in a short cycle.",
+    "The last digits go 2, 4, 8, 6, 2, 4, 8, 6, ... Group the terms in blocks of four and see what is left over after the last full block.",
+    "Each block of four adds a last digit of 0. Since 2026 = 4 x 506 + 2, two terms are left over, ending in 2 and 4."
+  ],
+  "solutions": {
+    "reliable": "The last digits of 2^1, 2^2, 2^3 and 2^4 are 2, 4, 8 and 6, and the cycle repeats every four powers. Each full block contributes 2 + 4 + 8 + 6 = 20, which ends in 0. Since 2026 = 4 x 506 + 2, there are 506 full blocks and two leftover terms, 2^2025 and 2^2026, ending in 2 and 4. So the sum ends in 0 + 2 + 4 = 6. The transferable idea: for the last digit of a long sum, group the terms by the cycle and handle the leftover terms carefully.",
+    "elegant": "The sum equals 2^2027 - 2. Since 2027 = 4 x 506 + 3, the number 2^2027 ends in 8, so the sum ends in 8 - 2 = 6."
+  },
+  "whyOnTest": "Last-digit cycles make a 2026-term sum quick, and the distractors are the classic slips with the leftover terms.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

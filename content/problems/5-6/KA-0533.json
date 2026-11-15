@@ -1,0 +1,68 @@
+{
+  "id": "KA-0533",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Seven whole numbers, each bigger than zero, add up to 50. Which of these must be true?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Two of the numbers are equal.",
+      "correct": false,
+      "misconception": "I thought seven numbers with such a small total had to include a repeat."
+    },
+    {
+      "key": "B",
+      "text": "At least one of the numbers is even.",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "At least one of the numbers is odd.",
+      "correct": false,
+      "misconception": "I thought an even total could not be made from even numbers alone."
+    },
+    {
+      "key": "D",
+      "text": "One of the numbers is bigger than 8.",
+      "correct": false,
+      "misconception": "I knew some number had to be at least 8 and read that as bigger than 8."
+    },
+    {
+      "key": "E",
+      "text": "All of the numbers are different.",
+      "correct": false,
+      "misconception": "I assumed the numbers were all different because the question did not mention repeats."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "NUM-03",
+      "LOG-05"
+    ]
+  },
+  "hints": [
+    "For each choice, try to build seven numbers that break it.",
+    "A statement must be true only if no example can break it. Look for counterexamples, and for the one choice where trying to break it leads to something impossible, think about odd and even.",
+    "Suppose all seven numbers were odd. Adding seven odd numbers gives an odd total, but 50 is even."
+  ],
+  "solutions": {
+    "reliable": "Hunt for counterexamples. 1, 2, 3, 4, 5, 6, 29 adds to 50 with no two equal, so the first choice fails. 2, 2, 2, 2, 2, 20, 20 adds to 50 with no odd number, so the third choice fails, and its repeats knock out the last choice. 8, 8, 8, 8, 8, 8, 2 adds to 50 with nothing bigger than 8, so the fourth choice fails. For the second choice, suppose no number is even, so all seven are odd. Odd numbers pair up into even sums, and seven odd numbers make three pairs with one left over, so their total is odd. But 50 is even, which is impossible. So at least one number must be even. The transferable idea: to show something must happen, imagine it does not and find the clash.",
+    "elegant": "Only one choice survives the counterexamples above, so it must be the answer, and the odd-even clash shows why: an odd count of odd numbers always has an odd total."
+  },
+  "whyOnTest": "Must-be-true questions test two moves: knock out choices with a counterexample, and prove the survivor by imagining it false.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

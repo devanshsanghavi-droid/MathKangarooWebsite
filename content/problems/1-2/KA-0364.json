@@ -1,0 +1,68 @@
+{
+  "id": "KA-0364",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Cat has 4 marbles. Ben has 2 more marbles than Cat. Ann has 5 more marbles than Ben. How many marbles does Ann have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I found how many marbles Ben has and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": false,
+      "misconception": "I added the 2 and the 5 and forgot to start from Cat's 4."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I added 5 to Cat's 4 and skipped the step through Ben."
+    },
+    {
+      "key": "D",
+      "text": "11",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I added up the marbles of all three children."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-02",
+    "secondary": [
+      "LOG-04",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Start with the child whose number you know.",
+    "Draw three bars. Cat's is known. Ben's bar is Cat's bar plus a piece, and Ann's bar is Ben's bar plus a bigger piece. Go one child at a time.",
+    "Ben has 4 + 2 = 6 marbles. Ann has 5 more than Ben, so add 5 to 6."
+  ],
+  "solutions": {
+    "reliable": "Cat has 4. Ben has 2 more than Cat, so 6. Ann has 5 more than Ben, so 6 + 5 = 11. The idea to keep: when each person is compared with the next, follow the chain one step at a time from the person you know.",
+    "elegant": "Ann has 5 more than Ben, who has 2 more than Cat, so Ann has 2 + 5 = 7 more than Cat: 4 + 7 = 11. The idea to keep: differences along a chain add up."
+  },
+  "whyOnTest": "Comparison chains reward working one step at a time, and skipping the middle person is the trap.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

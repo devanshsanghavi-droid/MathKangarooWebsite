@@ -1,0 +1,68 @@
+{
+  "id": "KA-0836",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Six boxes all have different masses. A balance compares two boxes at a time and shows which one is heavier. What is the smallest number of weighings that is always enough to identify both the heaviest box and the lightest box?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I thought one pass of 5 weighings, keeping the heavier box each time, would also tell me the lightest."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I found the heaviest box with 5 weighings and then the lightest of the other five with 4 more."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I used 5 weighings for the heaviest and then started again with all six boxes for the lightest, 5 more."
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": false,
+      "misconception": "I weighed every possible pair of boxes, and there are 15 pairs."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-10",
+    "secondary": [
+      "CNT-18",
+      "CFT-07"
+    ]
+  },
+  "hints": [
+    "Start by weighing the boxes in pairs.",
+    "A box that loses can never be the heaviest, and a box that wins can never be the lightest. Weighing in pairs first splits the boxes into possible heaviests and possible lightests, so later weighings search one group.",
+    "Three weighings in pairs give three winners and three losers. The heaviest box is among the winners and the lightest among the losers, and each group of three needs two weighings."
+  ],
+  "solutions": {
+    "reliable": "Weigh the boxes in three pairs (3 weighings). The heaviest box must be one of the three winners: two weighings find the heaviest of them. The lightest must be one of the three losers: two more weighings find the lightest of them. That is 3 + 2 + 2 = 7 weighings. Fewer cannot always work: to be sure, five boxes must each have lost at least once (to rule them out as heaviest) and five must each have won at least once (to rule them out as lightest), which is 10 facts. Weighing two boxes that have never been weighed gives 2 new facts, but only three such weighings are possible with six boxes, giving 6 facts; any other weighing can turn out to give only 1 new fact, so the remaining 4 facts need 4 more weighings, 7 in all. The transferable idea: make each weighing do double duty, and count how much any single weighing can tell you.",
+    "elegant": "Think of the pairing round as sorting the boxes into two teams: winners and losers. The champion of the winners is the heaviest and the last of the losers is the lightest, so the work is 3 + 2 + 2 instead of 5 + 4."
+  },
+  "whyOnTest": "Balance questions test planning so each weighing gives as much information as possible; finding the heaviest and lightest separately wastes weighings.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

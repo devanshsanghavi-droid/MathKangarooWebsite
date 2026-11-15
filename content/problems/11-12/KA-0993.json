@@ -1,0 +1,71 @@
+{
+  "id": "KA-0993",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Seven points are equally spaced around a circle. Each point is joined to the two points that are three places away from it around the circle, making the sharp seven-pointed star shown. What is the sum of the seven angles at the tips of the star?",
+  "figure": {
+    "component": "HeptagramSharp",
+    "alt": "Seven points equally spaced on a dashed circle. Each point is joined by straight lines to the two points three places away around the circle, forming a seven-pointed star with very narrow tips at the seven points."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "180°",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "360°",
+      "correct": false,
+      "misconception": "I thought that walking round the star turns through one full turn, so the tip angles must add to 360°."
+    },
+    {
+      "key": "C",
+      "text": "540°",
+      "correct": false,
+      "misconception": "I worked with the blunter star made by joining points two places apart, whose tips add to 540°."
+    },
+    {
+      "key": "D",
+      "text": "900°",
+      "correct": false,
+      "misconception": "I used the angle sum of a seven-sided polygon instead of the angles at the star's tips."
+    },
+    {
+      "key": "E",
+      "text": "1260°",
+      "correct": false,
+      "misconception": "I treated each tip as the corner of its own triangle and added 180° for each of the seven tips."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "GEO-07",
+      "GEO-08"
+    ]
+  },
+  "hints": [
+    "Each tip is an angle whose corner lies on the circle.",
+    "An angle with its corner on a circle is half of the arc it cuts off on the far side. Work out which arc each tip angle stands on, in terms of the seven equal arcs between the points.",
+    "The seven points split the circle into seven equal arcs. Each tip angle stands on just one of those arcs."
+  ],
+  "solutions": {
+    "reliable": "The seven points divide the circle into seven equal arcs of 360°/7. The tip at any point is joined to the two points three places away on either side, and those two points are neighbours, so the tip angle stands on a single small arc. An angle with its corner on the circle is half of its arc, so each tip is 180°/7, and the seven tips add up to 180°. The transferable idea: angles with their corner on a circle are measured by the arcs they cut off.",
+    "elegant": "The seven tips stand on the seven different small arcs, which together make the whole circle of 360°. Each tip is half of its arc, so all the tips together make half of 360°, which is 180°."
+  },
+  "whyOnTest": "Seeing the tips as angles standing on arcs makes a star with no obvious triangles easy, while polygon angle-sum habits lead to the distractors.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

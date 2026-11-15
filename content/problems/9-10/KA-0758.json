@@ -1,0 +1,67 @@
+{
+  "id": "KA-0758",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Consider the statement: \"Every number in the list that is greater than 10 is even.\" For which list is the statement false?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2, 4, 12",
+      "correct": false,
+      "misconception": "I read the statement backwards, as also saying every even number is greater than 10, and 2 and 4 break that."
+    },
+    {
+      "key": "B",
+      "text": "3, 5, 7",
+      "correct": false,
+      "misconception": "I thought a list with no numbers above 10 makes the statement false, because nothing in it supports the claim."
+    },
+    {
+      "key": "C",
+      "text": "12, 14, 9",
+      "correct": false,
+      "misconception": "I saw the odd number 9 and forgot the statement only talks about numbers greater than 10."
+    },
+    {
+      "key": "D",
+      "text": "11, 4, 6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "20, 30, 1",
+      "correct": false,
+      "misconception": "I thought \"every\" meant every number in the list must be greater than 10, and 1 is not."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-01",
+    "secondary": [
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Which numbers does the statement say anything about?",
+    "The statement only makes a promise about numbers greater than 10. It is false exactly when the list contains a number greater than 10 that is not even. Numbers 10 or smaller cannot break it.",
+    "Look in each list for a number above 10 that is odd."
+  ],
+  "solutions": {
+    "reliable": "The statement promises that any number above 10 is even. It is broken only by a number above 10 that is odd. The lists contain 12, 14, 20, 30 and 11 above 10, and only 11 is odd, so the list 11, 4, 6 makes it false. The list 3, 5, 7 has nothing above 10, so the promise is never tested and the statement is true. The transferable idea: an if-then statement can only be broken by a case where the if-part holds and the then-part fails.",
+    "elegant": null
+  },
+  "whyOnTest": "Kangaroo logic questions turn on what a statement does and does not claim, including statements that are true because nothing tests them.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

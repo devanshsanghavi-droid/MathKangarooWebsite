@@ -1,0 +1,68 @@
+{
+  "id": "KA-0957",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A large cube is built from 27 small cubes, 3 along each edge. A worm eats every small cube exactly once, each time moving on to a small cube that shares a face with the one it has just eaten. How many of the 27 small cubes could be the first one it eats?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought the worm must start at a corner, so I counted only the 8 corner cubes."
+    },
+    {
+      "key": "B",
+      "text": "13",
+      "correct": false,
+      "misconception": "I coloured the cubes in two alternating colours and counted the colour with 13 cubes, not the colour with 14 that the path must start on."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "26",
+      "correct": false,
+      "misconception": "I thought only the hidden centre cube was a bad place to start, and that every other cube would work."
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I thought any cube could be the start, since the worm can turn in any direction it likes."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-07",
+    "secondary": [
+      "LOG-05",
+      "GEO-13"
+    ]
+  },
+  "hints": [
+    "Colour the small cubes in two colours, like a three-dimensional chessboard.",
+    "Cubes sharing a face always get different colours, so the worm's route alternates colours. Count each colour, and ask which colour a route through all 27 cubes must begin on.",
+    "The colour of the corners has 14 cubes, the 8 corners and the 6 face centres, and the other colour has 13. A route of 27 cubes alternating colours uses 14 of one and 13 of the other, starting and ending on the colour with 14."
+  ],
+  "solutions": {
+    "reliable": "Colour each small cube black or white so that cubes sharing a face have different colours, with the corners black. The black cubes are the 8 corners and the 6 face centres, 14 in all; the white cubes are the 12 edge middles and the centre, 13 in all. The worm's 27 cubes alternate in colour, so the 1st, 3rd, ..., 27th cubes share one colour (14 cubes) and the other 13 cubes have the other colour. So the first cube must be black. Every black cube does work. From a corner, snake through the bottom 3 by 3 layer, step up, snake through the middle layer, step up and snake through the top layer. From a face centre, spiral out from the centre of that face's layer to a corner, then step up and snake through the other two layers in the same way. So the answer is 14. The transferable idea: in a route that alternates two colours through an odd number of cells, the start and the end must be on the colour that has one more cell.",
+    "elegant": null
+  },
+  "whyOnTest": "A two-colouring shows a route through an odd number of cells must start on the majority colour, and the distractors count the wrong colour or skip the colouring.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

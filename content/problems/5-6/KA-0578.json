@@ -1,0 +1,68 @@
+{
+  "id": "KA-0578",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A school buys 7 boxes of pens. Each box holds 12 packs, and each pack holds 5 pens. The pens are shared equally among 6 classes. How many pens does each class get?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "14",
+      "correct": false,
+      "misconception": "I shared the 84 packs among the classes and forgot that each pack holds 5 pens."
+    },
+    {
+      "key": "B",
+      "text": "60",
+      "correct": false,
+      "misconception": "I worked out the pens in one box, 12 times 5, and stopped there."
+    },
+    {
+      "key": "C",
+      "text": "70",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "84",
+      "correct": false,
+      "misconception": "I found the number of packs, 7 times 12, and never turned packs into pens."
+    },
+    {
+      "key": "E",
+      "text": "420",
+      "correct": false,
+      "misconception": "I found the total number of pens but forgot to share them among the 6 classes."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-10",
+    "secondary": [
+      "CFT-01",
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "Find the total number of pens first.",
+    "Work in order: boxes to packs, packs to pens, then share the pens. Writing each step's unit next to its number stops you from sharing packs instead of pens.",
+    "7 boxes of 12 packs is 84 packs. 84 packs of 5 pens is 420 pens. Now share 420 among 6 classes."
+  ],
+  "solutions": {
+    "reliable": "7 boxes times 12 packs is 84 packs. 84 packs times 5 pens is 420 pens. 420 shared among 6 classes is 70 pens each. The transferable idea: in a multi-step problem, label the unit at every step so you always know whether you are holding boxes, packs or pens.",
+    "elegant": "Share before you multiply: 12 packs divided by 6 classes is 2 packs per class from each box, so each class gets 7 times 2 times 5 = 70 pens."
+  },
+  "whyOnTest": "Multi-step word problems test whether you finish every step, and each choice here is a place where a student stopped too soon.",
+  "estSeconds": 65,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

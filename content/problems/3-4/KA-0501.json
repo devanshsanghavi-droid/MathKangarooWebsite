@@ -1,0 +1,68 @@
+{
+  "id": "KA-0501",
+  "band": "3-4",
+  "points": 4,
+  "statement": "A long paper strip is folded in half, then in half again, then in half a third time. It is then unfolded. How many fold lines can be seen?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted one fold line for each fold."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted only the fold lines made by the last fold."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought every fold makes two new fold lines."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the pieces of paper between the fold lines, not the fold lines."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "GEO-15",
+      "PAT-05"
+    ]
+  },
+  "hints": [
+    "Try it with just one fold, then two.",
+    "Work out small cases first and look for a pattern. Each fold goes through every layer, so think about how the number of sections changes, then turn sections into lines between them.",
+    "One fold gives 2 sections and 1 line. Two folds give 4 sections and 3 lines."
+  ],
+  "solutions": {
+    "reliable": "Each fold doubles the number of sections: 2, then 4, then 8. The fold lines are the boundaries between neighbouring sections, and 8 sections in a row have 7 boundaries. So there are 7 fold lines. The transferable idea: try one and two folds first, then count gaps between pieces, which is one less than the pieces.",
+    "elegant": "Each fold adds as many new lines as there were layers: 1, then 2, then 4, making 1 + 2 + 4 = 7. The transferable idea: count what each step adds."
+  },
+  "whyOnTest": "Trying small cases reveals the doubling pattern, and pieces versus lines is the classic off-by-one.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

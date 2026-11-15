@@ -1,0 +1,68 @@
+{
+  "id": "KA-0517",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Ada, Bo, Cy and Di each either always tell the truth or always lie. Ada says: \"Bo is a liar.\" Bo says: \"Cy is a liar.\" Cy says: \"Di is a liar.\" Di says: \"Ada and Bo are both liars.\" Who tells the truth?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Bo and Di",
+      "correct": false,
+      "misconception": "I assumed Ada lies and followed the chain to Di, but never checked whether Di's own statement then holds."
+    },
+    {
+      "key": "B",
+      "text": "Ada, Cy and Di",
+      "correct": false,
+      "misconception": "I decided Di was telling the truth because Bo really is a liar, forgetting that both needs Ada to be a liar too."
+    },
+    {
+      "key": "C",
+      "text": "All four of them lie",
+      "correct": false,
+      "misconception": "I thought that in a chain of people calling each other liars, they must all be lying."
+    },
+    {
+      "key": "D",
+      "text": "It could be Ada and Cy, or it could be Bo and Di",
+      "correct": false,
+      "misconception": "I saw that the chain alternates whichever way it starts and did not test either case against Di's statement."
+    },
+    {
+      "key": "E",
+      "text": "Ada and Cy",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-09",
+      "LOG-01"
+    ]
+  },
+  "hints": [
+    "Suppose Ada lies, and follow the chain.",
+    "Each statement about one person passes truth or lies along the chain. Try both possibilities for Ada, and keep only the one where Di's statement agrees with what Di is.",
+    "If Ada lies, then Bo tells the truth, Cy lies and Di tells the truth. Check Di's claim in that case."
+  ],
+  "solutions": {
+    "reliable": "Suppose Ada lies. Then Bo is not a liar, so Bo tells the truth, so Cy lies, so Di tells the truth. But then Di's statement \"Ada and Bo are both liars\" must be true, and Bo is not a liar. That is impossible, so Ada tells the truth. Then Bo lies, Cy tells the truth and Di lies. Check Di: \"Ada and Bo are both liars\" is false because Ada tells the truth, which fits Di being a liar. The truth-tellers are Ada and Cy. The transferable idea: in liar puzzles, try one case, follow every statement, and throw out the case that contradicts itself.",
+    "elegant": null
+  },
+  "whyOnTest": "Truth-teller puzzles test whether you follow a chain of consequences all the way and check the last statement rather than stopping early.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

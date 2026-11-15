@@ -1,0 +1,68 @@
+{
+  "id": "KA-0428",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Red buses leave every 8 minutes and blue buses every 12 minutes. Both leave together at 8:00. How many times from 8:00 to 10:00, counting both, do they leave together?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I thought they only meet again after 8 x 12 = 96 minutes, so I counted just 8:00 and 9:36."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I found that they leave together every 24 minutes but forgot to count 8:00 itself."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I found that they leave together every 24 minutes, worked out 120 / 24 = 5, and then added one for each end."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I divided the 120 minutes by 12 and counted the blue buses, without checking whether a red bus left too."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-05",
+    "secondary": [
+      "CNT-01",
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "Find the first time after 8:00 that both buses leave together.",
+    "Common multiples: buses leave together a whole number of minutes after 8:00 that is a multiple of both 8 and 12. Find the smallest one, then count its multiples up to 120 minutes.",
+    "The smallest common multiple of 8 and 12 is 24. List 0, 24, 48, and so on, up to 120."
+  ],
+  "solutions": {
+    "reliable": "Red buses leave 0, 8, 16, 24, ... minutes after 8:00, and blue buses 0, 12, 24, ... The first common time after 0 is 24 minutes, the lowest common multiple of 8 and 12 (not 8 x 12 = 96). So buses leave together at 0, 24, 48, 72, 96 and 120 minutes after 8:00, that is 8:00, 8:24, 8:48, 9:12, 9:36 and 10:00: 6 times. The transferable idea: events that repeat every a and every b minutes line up every lowest common multiple of a and b, and counting both ends adds one.",
+    "elegant": "From 8:00 to 10:00 is 120 minutes, which is exactly 5 gaps of 24 minutes. Five gaps with a meeting at both ends means 5 + 1 = 6 meetings."
+  },
+  "whyOnTest": "Repeating timetables are lowest common multiples in disguise, and counting both endpoints is the trap at the end.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0490",
+  "band": "3-4",
+  "points": 5,
+  "statement": "On a table, a 5 by 5 layer of cubes has a 3 by 3 layer centred on it and 1 cube on top. How many cubes are hidden from above and from every side?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought every cube in the bottom layer shows at a side or on top, and only counted the cube under the top one."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I found the hidden cubes in the bottom layer but forgot the one under the top cube."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": false,
+      "misconception": "I thought the whole 3 by 3 middle layer was hidden, as well as the middle of the bottom layer."
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": false,
+      "misconception": "I counted the cubes that can be seen instead of the ones that are hidden."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-14",
+    "secondary": [
+      "GEO-13",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Look at each layer separately.",
+    "A cube is hidden only if another cube covers its top and other cubes surround all four of its sides. Check which cubes in each layer are on the edge and which are covered from above.",
+    "In the bottom layer, the 3 by 3 middle is covered by the middle layer. In the middle layer, only the centre cube is covered."
+  ],
+  "solutions": {
+    "reliable": "Bottom layer: the outer ring of 16 cubes shows at the sides, and the inner 3 by 3 block of 9 cubes is covered by the middle layer and surrounded, so 9 are hidden. Middle layer: its 8 outer cubes show at the sides and on top, but its centre cube is under the top cube and surrounded, so 1 is hidden. The top cube is visible. Hidden cubes: 9 + 1 = 10. The transferable idea: count hidden cubes layer by layer, asking whether each one is covered on top and on every side.",
+    "elegant": "The cubes you cannot see form a smaller pyramid inside: a 3 by 3 layer with 1 cube on top, 9 + 1 = 10. The transferable idea: the hidden part of a stepped shape is often a smaller copy of it."
+  },
+  "whyOnTest": "Counting hidden cubes means picturing the inside of a solid, layer by layer, which pictures alone never show.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

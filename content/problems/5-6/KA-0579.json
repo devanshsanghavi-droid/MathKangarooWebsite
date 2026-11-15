@@ -1,0 +1,68 @@
+{
+  "id": "KA-0579",
+  "band": "5-6",
+  "points": 3,
+  "statement": "In the number 47 385, the digits 7 and 5 swap places. By how much does the number decrease?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I subtracted the two digits, 7 minus 5, and forgot that they stand in different places."
+    },
+    {
+      "key": "B",
+      "text": "198",
+      "correct": false,
+      "misconception": "I treated the 7 as a hundreds digit, so the swap lost 200 and gained 2, giving 198."
+    },
+    {
+      "key": "C",
+      "text": "1998",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "2000",
+      "correct": false,
+      "misconception": "I only looked at the thousands place falling from 7000 to 5000 and forgot the units place rose."
+    },
+    {
+      "key": "E",
+      "text": "2002",
+      "correct": false,
+      "misconception": "I added the 2 gained in the units place to the 2000 lost, instead of taking it away."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-01",
+    "secondary": [
+      "NUM-02",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Write the new number down before you subtract.",
+    "Each digit is worth its value times its place. Find how much the thousands place loses and how much the units place gains, then combine the two changes.",
+    "The new number is 45 387. The thousands place loses 2000 but the units place gains 2."
+  ],
+  "solutions": {
+    "reliable": "After the swap the number is 45 387. 47 385 - 45 387 = 1998. The transferable idea: a digit's worth depends on its place, so a swap changes two places at once and both changes must be counted.",
+    "elegant": "The 7 in the thousands place becomes 5, a loss of 2000. The 5 in the units place becomes 7, a gain of 2. Overall the number drops by 2000 - 2 = 1998."
+  },
+  "whyOnTest": "Place value is tested by asking what a digit is worth where it stands, not what the digit is.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

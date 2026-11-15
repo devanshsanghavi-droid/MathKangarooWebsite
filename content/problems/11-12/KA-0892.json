@@ -1,0 +1,68 @@
+{
+  "id": "KA-0892",
+  "band": "11-12",
+  "points": 5,
+  "statement": "The numbers 1, 2, 3, ..., 10 are written on a board. A move is to erase two numbers and write either their sum or the larger minus the smaller (which is 0 if they are equal). After nine moves one number remains. How many different values could it have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought the last number is fixed, as it would be if only sums were allowed, so only one value is possible."
+    },
+    {
+      "key": "B",
+      "text": "27",
+      "correct": false,
+      "misconception": "I found that the possible values are the odd numbers from 1 to 55 but counted them as (55 - 1)/2 = 27, forgetting to add one."
+    },
+    {
+      "key": "C",
+      "text": "55",
+      "correct": false,
+      "misconception": "I thought every value from 1 to 55 is possible, missing that the parity of the total never changes."
+    },
+    {
+      "key": "D",
+      "text": "56",
+      "correct": false,
+      "misconception": "I thought every value from 0 to 55 is possible, ignoring parity altogether."
+    },
+    {
+      "key": "E",
+      "text": "28",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "LOG-05",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "What happens to the parity of the total on the board after one move?",
+    "Replacing a and b by a + b or by their difference keeps the total of all numbers on the board odd or even as before. That limits the last number; then check which allowed values can really be reached.",
+    "The starting total is 55, which is odd, and no move ever increases the total."
+  ],
+  "solutions": {
+    "reliable": "The sum a + b and the difference of a and b always have the same parity, so each move keeps the parity of the total. The total starts at 55, which is odd, so the last number is odd; it is also at most 55, since no move increases the total. That leaves the 28 odd numbers 1, 3, ..., 55. All of them occur: for an odd v below 55, pick some of the numbers adding up to s = (55 - v)/2 (every total from 1 to 27 can be made from different numbers between 1 and 10), add them into a single number s, add the rest into 55 - s, and finish with (55 - s) - s = v. Using sums alone gives 55. So exactly 28 values are possible. The transferable idea: an invariant shows what is impossible and a construction shows everything else is possible; an exact count needs both.",
+    "elegant": null
+  },
+  "whyOnTest": "The parity invariant halves the possibilities, and the 5-point step is showing that every surviving odd value can actually be reached.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

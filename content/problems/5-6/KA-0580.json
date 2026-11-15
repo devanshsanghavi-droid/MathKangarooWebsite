@@ -1,0 +1,68 @@
+{
+  "id": "KA-0580",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A four-digit number has four different digits, and its digits add up to 10. What is the largest such number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9100",
+      "correct": false,
+      "misconception": "I put 9 first and made the rest add to 1, without checking that two zeros repeat a digit."
+    },
+    {
+      "key": "B",
+      "text": "8110",
+      "correct": false,
+      "misconception": "I put 8 first and split the remaining 2 as 1 and 1, so the digit 1 appears twice."
+    },
+    {
+      "key": "C",
+      "text": "7300",
+      "correct": false,
+      "misconception": "I found that 7 must come first but then made the next digit as big as possible, which forced two zeros."
+    },
+    {
+      "key": "D",
+      "text": "7210",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "4321",
+      "correct": false,
+      "misconception": "I used the four smallest different digits that add to 10 and put them largest first, without trying a bigger first digit."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-02",
+    "secondary": [
+      "CNT-04",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Make the first digit as big as you can.",
+    "To make a number largest, fix the digits from the left. For each choice of first digit, ask whether three different digits that are left can still make up the rest of the sum.",
+    "The three smallest different digits, 0, 1 and 2, add to 3. So the first digit can be at most 10 - 3 = 7."
+  ],
+  "solutions": {
+    "reliable": "Try first digits from 9 downward. With 9 first, the other three different digits must add to 1, but three different digits add to at least 0 + 1 + 2 = 3. The same problem stops 8, which leaves only 2. With 7 first, the rest must add to 3, which forces 0, 1 and 2, and the largest order is 7210. The transferable idea: build the largest number greedily from the left, but check at each step that the remaining digits can still meet every condition.",
+    "elegant": "The three digits after the first add to at least 0 + 1 + 2 = 3, so the first digit is at most 7, and then the rest must be exactly 2, 1, 0 in that order."
+  },
+  "whyOnTest": "Digit puzzles test whether you check every condition, here 'different digits', while greedily making a number as large as possible.",
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

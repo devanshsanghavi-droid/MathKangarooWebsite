@@ -1,0 +1,68 @@
+{
+  "id": "KA-0972",
+  "band": "11-12",
+  "points": 5,
+  "statement": "In trapezium ABCD, side AB is parallel to side CD, AB = 4 cm and CD = 12 cm. The diagonals AC and BD meet at P. Triangle ABP has area 3 cm^2. What is the area of the trapezium, in cm^2?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "30",
+      "correct": false,
+      "misconception": "I scaled areas by the side ratio 3 instead of its square, making triangle CDP 9, and with side triangles of 9 each got 3 + 9 + 9 + 9."
+    },
+    {
+      "key": "B",
+      "text": "36",
+      "correct": false,
+      "misconception": "I thought the two side triangles have the same area as the small triangle ABP, giving 3 + 27 + 3 + 3."
+    },
+    {
+      "key": "C",
+      "text": "39",
+      "correct": false,
+      "misconception": "I found triangles ABP, CDP and BCP but forgot the fourth triangle, DAP, giving 3 + 27 + 9."
+    },
+    {
+      "key": "D",
+      "text": "48",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "60",
+      "correct": false,
+      "misconception": "I took each side triangle to be the average of 3 and 27, which is 15, giving 3 + 27 + 15 + 15."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-16",
+    "secondary": [
+      "GEO-04",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Triangles ABP and CDP are similar. What is the scale factor?",
+    "The scale factor is 3, so P divides each diagonal in the ratio 1 : 3. Use this for the area of CDP, and also for the triangles BCP and DAP, which share a height with ABP.",
+    "Triangle CDP has area 9 x 3 = 27. Triangle BCP has base PC, three times PA, and the same apex B as triangle ABP, so its area is 9; so is the area of DAP."
+  ],
+  "solutions": {
+    "reliable": "Since AB is parallel to CD, triangles ABP and CDP are similar with ratio AB : CD = 1 : 3. So CDP has area 3^2 x 3 = 27 cm^2, and PC = 3 x PA. Triangles ABP and CBP have bases PA and PC on the same line AC and the same apex B, so CBP has 3 times the area of ABP, which is 9 cm^2. In the same way DAP has area 9 cm^2. The total is 3 + 27 + 9 + 9 = 48 cm^2. Check: the height of ABP from P to AB is h with (1/2) x 4 x h = 3, so h = 1.5; the trapezium's height is 4h = 6, and its area is (4 + 12)/2 x 6 = 48. The transferable idea: lengths scale by k and areas by k^2, and triangles with the same apex have areas in the ratio of their bases.",
+    "elegant": "The two side triangles always have equal areas, and each is the geometric mean of the other two: √(3 x 27) = 9. So the total is 3 + 27 + 9 + 9 = 48."
+  },
+  "whyOnTest": "Similar triangles in a trapezium test both the k^2 rule for areas and the shared-height rule, and each distractor breaks one of them.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

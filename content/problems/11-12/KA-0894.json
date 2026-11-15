@@ -1,0 +1,68 @@
+{
+  "id": "KA-0894",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Which of these numbers cannot be written as the sum of two or more consecutive positive whole numbers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2025",
+      "correct": false,
+      "misconception": "I thought a perfect square such as 45 squared could not be split into a run of consecutive whole numbers."
+    },
+    {
+      "key": "B",
+      "text": "2026",
+      "correct": false,
+      "misconception": "I thought an even number could never be such a sum, because two consecutive numbers always add up to an odd number, and I did not try longer runs."
+    },
+    {
+      "key": "C",
+      "text": "2027",
+      "correct": false,
+      "misconception": "I thought a prime number could not be split into consecutive numbers, since it has no factors to work with."
+    },
+    {
+      "key": "D",
+      "text": "2048",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "2187",
+      "correct": false,
+      "misconception": "I knew that powers of 2 behave specially and assumed every power, including 3 to the power 7, behaves the same way."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "LOG-05",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Write a run of k consecutive numbers starting at a, and add it up.",
+    "The run a, a + 1, ..., a + k - 1 adds up to k(2a + k - 1)/2. Its two factors differ by an odd number, so one is odd. Which choice has no odd factor above 1?",
+    "Suppose 2048 were such a sum. Then k(2a + k - 1) = 4096, and both factors are at least 2."
+  ],
+  "solutions": {
+    "reliable": "Suppose 2048 = a + (a + 1) + ... + (a + k - 1) with k at least 2 and a at least 1. Adding up, k(2a + k - 1) = 4096. The factors k and 2a + k - 1 differ by 2a - 1, which is odd, so one of them is odd; and both are at least 2. But 4096 is 2 to the power 12 and has no odd factor bigger than 1, a contradiction. So 2048 cannot be written this way. The other four can: 2025 = 1012 + 1013, 2027 = 1013 + 1014, 2187 = 1093 + 1094 and 2026 = 505 + 506 + 507 + 508. The transferable idea: assume the thing can be done, write it as algebra, and follow it until something impossible appears.",
+    "elegant": "Every odd number 2m + 1 is m + (m + 1), which knocks out 2025, 2027 and 2187 at once. Between 2026 and 2048, the power of 2 is the one with no odd factor to build a run from."
+  },
+  "whyOnTest": "Showing the other four sums takes a line each, but ruling out 2048 needs a proof by contradiction: assume a run exists and it forces an odd factor that 4096 does not have.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

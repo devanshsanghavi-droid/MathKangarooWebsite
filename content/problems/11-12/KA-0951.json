@@ -1,0 +1,68 @@
+{
+  "id": "KA-0951",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Different whole numbers are chosen from 1 to 30. What is the least number that must be chosen to be certain that two of the chosen numbers add up to a multiple of 7?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I put the remainders into four boxes, {0}, {1, 6}, {2, 5} and {3, 4}, and took one more than the number of boxes."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I took one more than the seven possible remainders, as if two numbers with the same remainder always worked."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": false,
+      "misconception": "I assumed every remainder appears exactly 4 times, so I found a safe set of 1 + 4 + 4 + 4 = 13 and added one."
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": false,
+      "misconception": "I found the largest safe set, 15 numbers, and reported its size instead of one more."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-17",
+    "secondary": [
+      "NUM-06",
+      "CNT-18"
+    ]
+  },
+  "hints": [
+    "Sort the numbers by their remainder on division by 7.",
+    "Two numbers add to a multiple of 7 when their remainders are 0 and 0, 1 and 6, 2 and 5, or 3 and 4. Build the largest set avoiding these, then add one. The remainder classes differ in size.",
+    "Remainders 1 and 2 each have 5 numbers from 1 to 30; every other remainder has 4. A safe set takes at most one multiple of 7 and the larger class from each pair."
+  ],
+  "solutions": {
+    "reliable": "From 1 to 30, the remainders 1 and 2 on division by 7 each occur 5 times (1, 8, 15, 22, 29 and 2, 9, 16, 23, 30) and the other five remainders occur 4 times each. Two chosen numbers add to a multiple of 7 exactly when their remainders are 0 and 0, 1 and 6, 2 and 5, or 3 and 4. A safe set can hold at most one multiple of 7, and from each pair of classes only one class: the best is all of class 1 (5 numbers), all of class 2 (5) and all of class 3 or class 4 (4). That is 1 + 5 + 5 + 4 = 15 numbers, for example 7, 1, 8, 15, 22, 29, 2, 9, 16, 23, 30, 3, 10, 17, 24. So 15 numbers can avoid it and 16 cannot. The transferable idea: in a pigeonhole problem, build the largest set that avoids the event; the answer is one more than its size.",
+    "elegant": null
+  },
+  "whyOnTest": "Pigeonhole questions with sums test building the right boxes and the largest safe set, and here also counting classes of unequal size rather than assuming they are equal.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

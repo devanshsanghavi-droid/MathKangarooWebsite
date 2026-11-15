@@ -1,0 +1,68 @@
+{
+  "id": "KA-0553",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Five people each fill a 3 by 3 grid with the numbers 1 to 9, using each number once. Each person then reports the three row totals of their grid. Exactly one report must contain a mistake. Which one?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6, 15, 24",
+      "correct": false,
+      "misconception": "I thought 24 was too big for a single row, not noticing that 7 + 8 + 9 is exactly 24."
+    },
+    {
+      "key": "B",
+      "text": "14, 14, 17",
+      "correct": false,
+      "misconception": "I thought two rows could never have the same total because all nine numbers are different."
+    },
+    {
+      "key": "C",
+      "text": "9, 18, 18",
+      "correct": false,
+      "misconception": "I thought two rows of 18 would use up all the big numbers, so I never tried 3, 7, 8 and 4, 5, 9."
+    },
+    {
+      "key": "D",
+      "text": "10, 17, 18",
+      "correct": false,
+      "misconception": "I thought a row of only 10 left too little room for rows of 17 and 18, so I never tried 1, 4, 5 then 2, 7, 8 and 3, 6, 9."
+    },
+    {
+      "key": "E",
+      "text": "13, 16, 17",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "NUM-08",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Every number from 1 to 9 is in exactly one row.",
+    "Instead of building grids, find something every correct report must share. Adding the three row totals adds every number in the grid exactly once, so all correct reports have the same grand total.",
+    "1 + 2 + ... + 9 = 45, so the three row totals must add to 45. Add each report and look for the one that does not."
+  ],
+  "solutions": {
+    "reliable": "The three rows together contain every number from 1 to 9 exactly once, so the three row totals must add up to 1 + 2 + ... + 9 = 45. Check each report: 6 + 15 + 24 = 45, 14 + 14 + 17 = 45, 9 + 18 + 18 = 45, 10 + 17 + 18 = 45, but 13 + 16 + 17 = 46. A report that adds to 46 is impossible, so 13, 16, 17 must contain a mistake. (The others really can happen, for example rows 1, 2, 3 and 4, 5, 6 and 7, 8, 9 give 6, 15, 24.) The transferable idea: to prove something is impossible, find a quantity that is forced, then show the claim contradicts it.",
+    "elegant": "Pair 1 with 9, 2 with 8, 3 with 7, 4 with 6, and 5 is left: four tens and a five make 45, so any report whose totals do not add to 45 contradicts itself."
+  },
+  "whyOnTest": "Proving a claim impossible usually means finding one forced fact, like a fixed total, that the claim breaks.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

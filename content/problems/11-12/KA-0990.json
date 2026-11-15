@@ -1,0 +1,68 @@
+{
+  "id": "KA-0990",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Ana claims: 'If a and b are both odd whole numbers, then a² + b² is never a perfect square.' Which of these is correct?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Ana is right, because a² + b² is always 2 more than a multiple of 4, and no perfect square is.",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "Ana is wrong, because 3² + 4² = 5².",
+      "correct": false,
+      "misconception": "I used the 3, 4, 5 triangle without noticing that 4 is even."
+    },
+    {
+      "key": "C",
+      "text": "Ana is right, because a² + b² is always even, and no perfect square is even.",
+      "correct": false,
+      "misconception": "I forgot that even numbers such as 4, 16 and 36 are perfect squares."
+    },
+    {
+      "key": "D",
+      "text": "Ana is right, but only for small numbers; larger odd numbers might break the rule.",
+      "correct": false,
+      "misconception": "I thought checking examples was the only way to know, so I assumed big numbers might still break the rule."
+    },
+    {
+      "key": "E",
+      "text": "Ana is wrong, because 7² + 24² = 25².",
+      "correct": false,
+      "misconception": "I remembered the 7, 24, 25 triangle and did not check that 24 is even."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "NUM-06",
+      "LOG-01"
+    ]
+  },
+  "hints": [
+    "What remainder does an odd square leave when divided by 4?",
+    "Suppose a² + b² were a perfect square and look for a contradiction. Remainders on division by 4 are the right tool, because every square leaves remainder 0 or 1.",
+    "An odd number can be written 2k + 1, and its square is 4k² + 4k + 1."
+  ],
+  "solutions": {
+    "reliable": "An odd number is 2k + 1 for some whole number k, and (2k + 1)² = 4(k² + k) + 1, so every odd square leaves remainder 1 on division by 4. Then a² + b² leaves remainder 2. An even square (2m)² = 4m² leaves remainder 0 and an odd square leaves 1, so no perfect square leaves remainder 2. Ana is right. The transferable idea: to show a number is never a square, find a remainder that squares cannot have.",
+    "elegant": null
+  },
+  "whyOnTest": "Remainders on division by 4 prove a claim about infinitely many numbers, and the famous right-angled triangles tempt anyone who skips the word odd.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

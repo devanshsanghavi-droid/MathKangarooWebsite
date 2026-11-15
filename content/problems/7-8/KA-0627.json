@@ -1,0 +1,68 @@
+{
+  "id": "KA-0627",
+  "band": "7-8",
+  "points": 5,
+  "statement": "The streets of a town form a square grid. Sam walks from one corner to the opposite corner, going 4 blocks east and 4 blocks north in some order, always moving east or north. The crossing exactly in the middle (2 blocks east and 2 north of the start) is closed. How many routes can Sam take?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "34",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "36",
+      "correct": false,
+      "misconception": "I counted the routes that go through the closed crossing instead of the ones that avoid it."
+    },
+    {
+      "key": "C",
+      "text": "70",
+      "correct": false,
+      "misconception": "I counted every route and forgot to take out the ones through the closed crossing."
+    },
+    {
+      "key": "D",
+      "text": "35",
+      "correct": false,
+      "misconception": "I assumed exactly half of all routes pass through the middle."
+    },
+    {
+      "key": "E",
+      "text": "58",
+      "correct": false,
+      "misconception": "I removed 6 + 6 routes for the closed crossing instead of 6 x 6."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-07",
+    "secondary": [
+      "CNT-09",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Count all routes, then the bad ones.",
+    "Complementary counting: a route is a string of 4 Es and 4 Ns. Count all such strings, then count the routes through the middle crossing by splitting each into a first half and a second half.",
+    "All routes: choose which 4 of the 8 steps go east, 70 ways. Routes through the middle: 6 ways to get there, then 6 ways on."
+  ],
+  "solutions": {
+    "reliable": "A route is an ordering of 4 east steps and 4 north steps, so there are 70 routes in total (choose positions for the 4 east steps among 8). A route through the middle crossing reaches it in 6 ways (2 east and 2 north in some order) and continues in 6 ways, giving 6 x 6 = 36. So 70 - 36 = 34 routes avoid it. The transferable idea: when a restriction blocks a point, count everything and subtract the routes forced through that point.",
+    "elegant": "Label each crossing with the number of routes to it, adding the numbers from the left and from below, and write 0 at the closed crossing. The corner ends at 34, with no subtraction needed."
+  },
+  "whyOnTest": "Grid paths with a blocked point test both path counting and the decision to count the complement, and 36 punishes stopping halfway.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

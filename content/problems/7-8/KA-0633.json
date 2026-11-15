@@ -1,0 +1,68 @@
+{
+  "id": "KA-0633",
+  "band": "7-8",
+  "points": 4,
+  "statement": "An isosceles triangle has a perimeter of 20 cm. One of its sides is 4 cm long. How long is each of its two equal sides?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4 cm",
+      "correct": false,
+      "misconception": "I made the 4 cm side one of the equal pair and did not check that 4, 4 and 12 cannot form a triangle."
+    },
+    {
+      "key": "B",
+      "text": "12 cm",
+      "correct": false,
+      "misconception": "I made 4 cm one of the equal sides and then gave the length of the third side."
+    },
+    {
+      "key": "C",
+      "text": "8 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "16 cm",
+      "correct": false,
+      "misconception": "I subtracted the 4 cm side from the perimeter and stopped."
+    },
+    {
+      "key": "E",
+      "text": "10 cm",
+      "correct": false,
+      "misconception": "I halved the 20 cm perimeter, as if the triangle had only the two equal sides."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-06",
+    "secondary": [
+      "CFT-11",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "There are two cases. Does each one really make a triangle?",
+    "Properties of triangles: the 4 cm side is either one of the equal pair or the odd side. Find the lengths in each case, then check that any two sides add to more than the third.",
+    "If the equal sides were 4 cm, the third side would be 12 cm, but 4 + 4 is less than 12."
+  ],
+  "solutions": {
+    "reliable": "Case 1: the two equal sides are 4 cm. Then the third side is 20 - 8 = 12 cm, but 4 + 4 = 8 is less than 12, so the two short sides cannot meet: no triangle. Case 2: 4 cm is the base. The other two sides share 16 cm equally, so each is 8 cm, and 4, 8, 8 is a real triangle. The answer is 8 cm. The transferable idea: when a figure allows two cases, test each against the triangle inequality before accepting it.",
+    "elegant": null
+  },
+  "whyOnTest": "Kangaroo likes problems with two apparent cases where one quietly fails, and this one probes the triangle inequality.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0959",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Each equation below has exactly one real solution x. For how many of the five equations is that solution a fraction p/q, where p and q are whole numbers? 4^x = 8, 8^x = 4, 2^x = 3, 9^x = 27, 6^x = 24.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I looked only for whole-number solutions, and none of the five equations has one, so I counted none."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I solved 4^x = 8 and 8^x = 4 by writing everything as powers of 2, but did not notice that 9 and 27 are both powers of 3."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I saw that 6^x = 24 needs x a little less than 2 and guessed x = 7/4 without checking, but 6^(7/4) is only about 23, not 24."
+    },
+    {
+      "key": "E",
+      "text": "5",
+      "correct": false,
+      "misconception": "I thought every equation like these must have a fraction as its solution, because any real number can be written as one."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "LOG-05",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Write both sides of each equation as powers of the same prime where you can.",
+    "4^x = 8 becomes 2^(2x) = 2^3, and 9^x = 27 works the same way with 3. For 2^x = 3, suppose x = p/q and raise both sides to the power q. What goes wrong?",
+    "If 2^(p/q) = 3 then 2^p = 3^q, but the left side is even and the right side is odd. For 6^x = 24, x = p/q gives 2^p x 3^p = 2^(3q) x 3^q, so p = 3q and p = q at once."
+  ],
+  "solutions": {
+    "reliable": "Three equations can be solved directly. 4^x = 8 is 2^(2x) = 2^3, so x = 3/2. 8^x = 4 is 2^(3x) = 2^2, so x = 2/3. 9^x = 27 is 3^(2x) = 3^3, so x = 3/2. For 2^x = 3, the solution is between 1 and 2, so it is positive. Suppose it were a fraction p/q with p and q positive whole numbers. Raising 2^(p/q) = 3 to the power q gives 2^p = 3^q, but 2^p is even and 3^q is odd, a contradiction. For 6^x = 24, the solution is again positive, and x = p/q would give 6^p = 24^q, that is 2^p x 3^p = 2^(3q) x 3^q. Each prime must appear to the same power on both sides, so p = 3q and p = q, which forces q = 0, another contradiction. So exactly 3 of the solutions are fractions. The transferable idea: to show a number is not a fraction, assume it is p/q, clear the fraction, and find a clash such as even equals odd.",
+    "elegant": "An equation a^x = b with whole numbers a and b has a fraction solution exactly when a and b are powers of one common number, because a^p = b^q forces the same primes, in the same proportions, on both sides. 4 and 8, 8 and 4, 9 and 27 pass this test, while 2 and 3, and 6 and 24, fail it: 3 answers."
+  },
+  "whyOnTest": "Proving that a number is not a fraction is the classic proof by contradiction: assume x = p/q, clear the denominator and reach a clash, here even against odd or two different powers of the same prime.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

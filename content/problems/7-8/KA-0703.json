@@ -1,0 +1,71 @@
+{
+  "id": "KA-0703",
+  "band": "7-8",
+  "points": 4,
+  "statement": "The bar chart shows how many people visited a small museum on each day from Monday to Friday. On Saturday the number of visitors was 50% more than the mean number of visitors per weekday. How many people visited on Saturday?",
+  "figure": {
+    "component": "MuseumVisitorsChart",
+    "alt": "A bar chart of museum visitors per day, on an axis labelled every 10 with gridlines every 5: Monday 40, Tuesday 25, Wednesday 35, Thursday 30, Friday 50."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "36",
+      "correct": false,
+      "misconception": "I found the mean for the five weekdays and forgot to add the extra 50 percent."
+    },
+    {
+      "key": "B",
+      "text": "54",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "75",
+      "correct": false,
+      "misconception": "I added 50 percent to Friday, the busiest day, instead of to the mean."
+    },
+    {
+      "key": "D",
+      "text": "90",
+      "correct": false,
+      "misconception": "I took 50 percent of the five-day total of 180 instead of working from the mean."
+    },
+    {
+      "key": "E",
+      "text": "270",
+      "correct": false,
+      "misconception": "I added 50 percent to the five-day total of 180 instead of to the mean."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-09",
+    "secondary": [
+      "NUM-15",
+      "NUM-10"
+    ]
+  },
+  "hints": [
+    "Read all five bars carefully, including the two that end between labels.",
+    "First find the mean: total the five readings and share the total equally among the days. Then '50% more' means the mean plus half of the mean again.",
+    "The five bars total 180, so the mean is 36. Half of 36 is 18."
+  ],
+  "solutions": {
+    "reliable": "From the chart: 40 + 25 + 35 + 30 + 50 = 180 visitors, so the mean is 180 / 5 = 36 per weekday. Fifty percent more is 36 + 18 = 54. The transferable idea: read every value before calculating, and apply a percentage to exactly the quantity the sentence names.",
+    "elegant": null
+  },
+  "whyOnTest": "Reading a chart and then applying a percentage to the right base (the mean, not the total or the tallest bar) is a two-step data skill.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

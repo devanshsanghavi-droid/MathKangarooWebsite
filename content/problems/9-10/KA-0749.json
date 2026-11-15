@@ -1,0 +1,67 @@
+{
+  "id": "KA-0749",
+  "band": "9-10",
+  "points": 3,
+  "statement": "How many four-digit numbers have every digit odd and are divisible by 5?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "15",
+      "correct": false,
+      "misconception": "I added the five choices for each of the three free digits instead of multiplying them."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I assumed all four digits had to be different, leaving 4, 3 and 2 choices before the final 5."
+    },
+    {
+      "key": "C",
+      "text": "60",
+      "correct": false,
+      "misconception": "I assumed the first three digits had to be different from each other, giving 5 x 4 x 3."
+    },
+    {
+      "key": "D",
+      "text": "64",
+      "correct": false,
+      "misconception": "I thought the digit 5 could not be used again once it was the last digit, so I used 4 choices for each of the others."
+    },
+    {
+      "key": "E",
+      "text": "125",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-03",
+    "secondary": [
+      "NUM-04"
+    ]
+  },
+  "hints": [
+    "Which digit must come last?",
+    "Divisible by 5 means the last digit is 0 or 5, and only one of those is odd. Then the other places are independent choices, so multiply the number of options for each.",
+    "The last digit is 5. Each of the other three digits can be 1, 3, 5, 7 or 9."
+  ],
+  "solutions": {
+    "reliable": "A number divisible by 5 ends in 0 or 5, and the digit must be odd, so it ends in 5. Each of the first three digits can be any of the 5 odd digits, and repeats are allowed, so there are 5 x 5 x 5 = 125 such numbers. The transferable idea: settle the forced position first, then multiply the independent choices that remain.",
+    "elegant": null
+  },
+  "whyOnTest": "A direct use of the multiplication principle once the forced digit is spotted; the distractors come from adding, or from adding rules the question never gave.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

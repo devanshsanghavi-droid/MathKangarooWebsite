@@ -1,0 +1,68 @@
+{
+  "id": "KA-0965",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A frog climbs a staircase of 10 steps. Each jump takes it up either 1 step or 2 steps, and it never makes two 2-step jumps one straight after the other. In how many different ways can it get from the bottom to the top step?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I worked out 1, 2, 3 and 4 ways for staircases of 1, 2, 3 and 4 steps and assumed the pattern goes on as n ways for n steps."
+    },
+    {
+      "key": "B",
+      "text": "28",
+      "correct": false,
+      "misconception": "I found the right rule and built the list 1, 2, 3, 4, 6, 9, 13, 19, 28, but stopped after nine terms, which is the count for 9 steps."
+    },
+    {
+      "key": "C",
+      "text": "31",
+      "correct": false,
+      "misconception": "I sorted the routes by the number of 2-step jumps and counted 1 + 9 + 21 for none, one and two of them, but forgot that three 2-step jumps can also be kept apart."
+    },
+    {
+      "key": "D",
+      "text": "41",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "89",
+      "correct": false,
+      "misconception": "I ignored the rule about two 2-step jumps in a row and counted every route made of 1-step and 2-step jumps."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "PAT-05",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Count the ways for 1 to 6 steps first. The early pattern does not last.",
+    "Look at the last jump. If it is a 1-step jump, what is left is any good route up n - 1 steps. If it is a 2-step jump, the jump before must be a 1-step jump, or none.",
+    "So the number of ways w(n) satisfies w(n) = w(n - 1) + w(n - 3), with w(1) = 1, w(2) = 2 and w(3) = 3."
+  ],
+  "solutions": {
+    "reliable": "Let w(n) be the number of good routes up n steps. Small cases give w(1) = 1, w(2) = 2 (1+1 and 2) and w(3) = 3 (1+1+1, 1+2, 2+1). For n of at least 4, split by the last jump. If it is a 1-step jump, the rest is any good route up n - 1 steps: w(n - 1) ways. If it is a 2-step jump, the jump before it is a 1-step jump, so the route ends with 1 then 2, and what comes before is any good route up n - 3 steps: w(n - 3) ways. So w(n) = w(n - 1) + w(n - 3), which gives 1, 2, 3, 4, 6, 9, 13, 19, 28, 41. The answer is 41. Notice that the first four terms, 1, 2, 3, 4, look like the counting numbers, but the fifth is 6, not 5. The transferable idea: small cases suggest a pattern, but only the structure behind them, here a rule for the last jump, tells you how it continues.",
+    "elegant": "Count by the number k of 2-step jumps. Then there are 10 - 2k one-step jumps, and the 2-step jumps must go into different gaps among them, of which there are 11 - 2k. That gives 1 + 9 + 21 + 10 = 41 for k = 0, 1, 2, 3, since C(9, 1) = 9, C(7, 2) = 21 and C(5, 3) = 10, while k = 4 or 5 is impossible."
+  },
+  "whyOnTest": "Small cases are the way in, but 1, 2, 3, 4 suggests a false pattern, so the test is finding the rule behind the cases and checking it with a second count.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

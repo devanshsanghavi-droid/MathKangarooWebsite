@@ -1,0 +1,68 @@
+{
+  "id": "KA-0997",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A convex hexagon is drawn so that no three of its diagonals meet at the same point inside it. All of its diagonals are drawn. Into how many regions do they divide the hexagon?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought each diagonal adds just one region, giving 1 + 9, and ignored the crossings."
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I added one region for each crossing point but forgot the regions added by the diagonals themselves."
+    },
+    {
+      "key": "C",
+      "text": "22",
+      "correct": false,
+      "misconception": "I found 1, 4 and 11 regions for a triangle, a quadrilateral and a pentagon, saw gaps of 3 and 7, and guessed the next gap was 11."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I drew a regular hexagon, where the three long diagonals all meet at the centre, and counted its regions, which is one fewer."
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "CNT-16",
+      "CNT-06"
+    ]
+  },
+  "hints": [
+    "Try the quadrilateral and the pentagon first.",
+    "Small cases show what each new diagonal adds: one region for the diagonal itself, plus one more for every diagonal it crosses. So count the diagonals and the crossing points.",
+    "A hexagon has 9 diagonals. Every choice of 4 of the 6 corners gives exactly one crossing point, so there are 15 crossings."
+  ],
+  "solutions": {
+    "reliable": "Start with 1 region. Drawing a diagonal adds 1 region, plus 1 more for every earlier diagonal it crosses, so the number of regions is 1 + (number of diagonals) + (number of crossings). A hexagon has 6 x 3 / 2 = 9 diagonals. Each crossing comes from exactly one choice of 4 corners, whose two diagonals cross once, and there are 15 ways to choose 4 of the 6 corners. So there are 1 + 9 + 15 = 25 regions. The rule checks against small cases: a quadrilateral gives 1 + 2 + 1 = 4 and a pentagon 1 + 5 + 5 = 11. The transferable idea: use small cases to find what each new line contributes, then count those contributions directly.",
+    "elegant": null
+  },
+  "whyOnTest": "Small cases reveal the rule of 1 plus diagonals plus crossings, and guessing from a short list of numbers instead of from the reason gives 22.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

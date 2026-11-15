@@ -1,0 +1,67 @@
+{
+  "id": "KA-0643",
+  "band": "7-8",
+  "points": 3,
+  "statement": "When the whole number N is divided by 9 the remainder is 4. When the whole number M is divided by 9 the remainder is 7. What is the remainder when N x M is divided by 9?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "11",
+      "correct": false,
+      "misconception": "I added the remainders and did not reduce the answer."
+    },
+    {
+      "key": "B",
+      "text": "28",
+      "correct": false,
+      "misconception": "I multiplied the remainders but forgot to divide 28 by 9."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I added the remainders instead of multiplying them."
+    },
+    {
+      "key": "D",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "3",
+      "correct": false,
+      "misconception": "I subtracted the smaller remainder from the larger."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Try N = 4 and M = 7.",
+    "Remainders: the remainder of a product depends only on the remainders of the factors. Multiply the remainders, then take the remainder of that result.",
+    "4 x 7 = 28, and 28 = 3 x 9 + 1."
+  ],
+  "solutions": {
+    "reliable": "Write N = 9a + 4 and M = 9b + 7. Every part of the product N x M is a multiple of 9 except 4 x 7 = 28, and 28 leaves remainder 1 when divided by 9. So N x M leaves remainder 1. The transferable idea: multiply remainders, then reduce, because the multiples of the divisor drop out.",
+    "elegant": "Test real numbers: N = 13 and M = 16 give 208 = 23 x 9 + 1. Remainder 1 again."
+  },
+  "whyOnTest": "Remainders of products are the heart of modular reasoning, and the trap is forgetting to reduce the product of the remainders.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

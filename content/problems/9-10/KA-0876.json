@@ -1,0 +1,68 @@
+{
+  "id": "KA-0876",
+  "band": "9-10",
+  "points": 3,
+  "statement": "What is the value of 2025 times 2025 minus 2024 times 2026?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed 2024 times 2026 is the same as 2025 times 2025 because the two factors balance out around 2025."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I thought (n - 1)(n + 1) equals n squared minus 2, taking 1 off for each factor."
+    },
+    {
+      "key": "D",
+      "text": "-1",
+      "correct": false,
+      "misconception": "I thought (n - 1)(n + 1) equals n squared plus 1, so I got the sign of the difference backwards."
+    },
+    {
+      "key": "E",
+      "text": "4049",
+      "correct": false,
+      "misconception": "I mixed this up with 2025 squared minus 2024 squared, which is 2025 + 2024."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "NUM-12",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Do not multiply out the big numbers.",
+    "Write 2024 and 2026 as 2025 minus 1 and 2025 plus 1. There is a standard product for (n - 1)(n + 1) that makes the subtraction collapse.",
+    "With n = 2025, (n - 1)(n + 1) = n squared - 1, so the expression is n squared - (n squared - 1)."
+  ],
+  "solutions": {
+    "reliable": "Let n = 2025. Then 2024 times 2026 = (n - 1)(n + 1) = n squared - 1, so the expression is n squared - (n squared - 1) = 1. A small check: 3 times 3 - 2 times 4 = 9 - 8 = 1. The transferable idea: big numbers that sit symmetrically around a centre usually call for the difference of squares, not long multiplication.",
+    "elegant": "Try the same pattern with small numbers: 5 times 5 - 4 times 6 = 1 and 10 times 10 - 9 times 11 = 1. The pattern is always 1. The transferable idea: test a tiny version of an expression to spot the trick before grinding."
+  },
+  "whyOnTest": "Kangaroo loves expressions that look like heavy arithmetic but collapse with one identity: spotting that is the skill.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

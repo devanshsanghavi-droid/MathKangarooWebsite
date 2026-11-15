@@ -1,0 +1,68 @@
+{
+  "id": "KA-0735",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Matchsticks are used to build a large triangle divided into small triangles. A triangle of side 1 uses 3 matches, a triangle of side 2 (made of 4 small triangles) uses 9 matches, and a triangle of side 3 (made of 9 small triangles) uses 18 matches. How many matches does a triangle of side 10 use?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "30",
+      "correct": false,
+      "misconception": "I counted only the matches around the outside of the triangle, 3 x 10."
+    },
+    {
+      "key": "B",
+      "text": "165",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "57",
+      "correct": false,
+      "misconception": "I assumed the count goes up by 6 each time, as it does from side 1 to side 2."
+    },
+    {
+      "key": "D",
+      "text": "150",
+      "correct": false,
+      "misconception": "I used 3 x 10 x 10 / 2 instead of 3 x 10 x 11 / 2."
+    },
+    {
+      "key": "E",
+      "text": "198",
+      "correct": false,
+      "misconception": "I added 1 + 2 + ... + 11 instead of 1 + 2 + ... + 10, then multiplied by 3."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-04",
+    "secondary": [
+      "PAT-02",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Sort the matches by the direction they point.",
+    "Every match lies in one of three directions. Count the matches lying flat, row by row, and use symmetry for the other two directions. Check your rule against sides 1, 2 and 3.",
+    "In a triangle of side n, the flat matches come in rows of 1, 2, ..., n. The same is true in each of the other two directions."
+  ],
+  "solutions": {
+    "reliable": "Each match points in one of three directions. In a triangle of side n, the horizontal matches form rows of 1, 2, 3, ..., n, so there are 1 + 2 + ... + n of them, and by symmetry the same number point in each of the other two directions. So the total is 3 x (1 + 2 + ... + n). Check: n = 3 gives 3 x 6 = 18. For n = 10 the total is 3 x 55 = 165. The transferable idea: count a growing figure by sorting its pieces into types, then check the formula on the small cases you were given.",
+    "elegant": "The counts go 3, 9, 18, ..., increasing by 6, 9, 12, ..., so the side-10 count is 3 + 6 + 9 + ... + 30 = 3 x (1 + 2 + ... + 10) = 165."
+  },
+  "whyOnTest": "Growth patterns test finding a rule that fits every given stage, and the traps are extending the first jump or slipping by one row.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

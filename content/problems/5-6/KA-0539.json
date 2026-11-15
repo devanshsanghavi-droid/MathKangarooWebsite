@@ -1,0 +1,67 @@
+{
+  "id": "KA-0539",
+  "band": "5-6",
+  "points": 3,
+  "statement": "The four-digit number 6_72 is divisible by both 4 and 9. Which digit goes in the gap?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I used the test for 3 instead of the test for 9 and picked the smallest digit that passed."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I left the 7 out when adding the digits, so I made 6 + 2 + 1 = 9."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought a number divisible by 4 must have the digit 4 in it."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I left the 6 out when adding the digits, so I made 7 + 2 + 9 = 18."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "NUM-02"
+    ]
+  },
+  "hints": [
+    "Each divisibility test looks at a different part of the number.",
+    "The test for 4 looks only at the last two digits; the test for 9 looks at the sum of all the digits. Check the test for 4, then make the digit sum a multiple of 9.",
+    "72 is a multiple of 4 whatever the missing digit is. The other digits add to 6 + 7 + 2 = 15, and the next multiple of 9 is 18."
+  ],
+  "solutions": {
+    "reliable": "Divisible by 4: the last two digits, 72, make a multiple of 4 (72 = 4 x 18), so every digit in the gap passes. Divisible by 9: the digit sum must be a multiple of 9. 6 + 7 + 2 = 15, so 15 plus the missing digit must be 18 (reaching 27 would need 12, which is not a digit). So the digit is 3, and indeed 6372 = 9 x 708 = 4 x 1593. The transferable idea: when a number must pass two tests, apply each test to the part of the number it looks at.",
+    "elegant": null
+  },
+  "whyOnTest": "Missing-digit questions test the divisibility rules directly, and the rule for 3 is the tempting wrong tool.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

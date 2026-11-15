@@ -1,0 +1,67 @@
+{
+  "id": "KA-0607",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Five teams of three students meet at a tournament. Each student shakes hands exactly once with every student from the other teams, but not with their own teammates. How many handshakes take place?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I treated each team as a single person and counted handshakes between teams."
+    },
+    {
+      "key": "B",
+      "text": "75",
+      "correct": false,
+      "misconception": "I took the 105 handshakes among all 15 students and removed 6 per team, counting each teammate pair twice."
+    },
+    {
+      "key": "C",
+      "text": "90",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "105",
+      "correct": false,
+      "misconception": "I counted handshakes among all 15 students and forgot that teammates do not shake hands."
+    },
+    {
+      "key": "E",
+      "text": "180",
+      "correct": false,
+      "misconception": "I counted 15 students times 12 handshakes each and forgot that every handshake involves two people."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-08",
+    "secondary": [
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "How many hands does one student shake?",
+    "Each student shakes hands with everyone outside their own team. Count per student, multiply by the number of students, then remember that each handshake was counted from both sides.",
+    "Each of the 15 students shakes 12 hands, giving 15 x 12 = 180, with every handshake counted twice."
+  ],
+  "solutions": {
+    "reliable": "Each student shakes hands with the 12 students in the other four teams. Counting from every student gives 15 x 12 = 180, but each handshake is counted by both people in it, so there are 180 / 2 = 90 handshakes. The transferable idea: counting from each person counts every pair twice, so halve.",
+    "elegant": "All 15 students together would make 15 x 14 / 2 = 105 handshakes. Each team removes its 3 teammate pairs, so 105 - 5 x 3 = 90."
+  },
+  "whyOnTest": "Handshake counts test the count-then-halve idea; excluding teammates checks that you know exactly which pairs you are removing.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

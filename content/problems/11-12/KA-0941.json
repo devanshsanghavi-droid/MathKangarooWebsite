@@ -1,0 +1,68 @@
+{
+  "id": "KA-0941",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Four points A, B, C and D lie on a straight line, not necessarily in that order. AB = 9, BC = 5 and CD = 7. What is the sum of all the different possible values of AD?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "21",
+      "correct": false,
+      "misconception": "I assumed the points lie in the order A, B, C, D, so AD = 9 + 5 + 7, and took that as the only value."
+    },
+    {
+      "key": "B",
+      "text": "28",
+      "correct": false,
+      "misconception": "I only put C beyond B, away from A, and missed the case where C lies between A and B."
+    },
+    {
+      "key": "C",
+      "text": "39",
+      "correct": false,
+      "misconception": "I missed the case where D ends up on the other side of A, which gives AD = 3."
+    },
+    {
+      "key": "D",
+      "text": "42",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "84",
+      "correct": false,
+      "misconception": "I counted the mirror-image placements, with B on the other side of A, as giving new values of AD."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "CNT-04",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Draw a number line and put A at 0.",
+    "Place B, then C, then D, keeping both possible sides at each step. A mirror image gives the same distances, so you may fix B on one side of A.",
+    "With A at 0 and B at 9, C is at 14 or 4. From C = 14, D is at 21 or 7; from C = 4, D is at 11 or -3."
+  ],
+  "solutions": {
+    "reliable": "Put A at 0 and B at 9; placing B at -9 only mirrors everything and gives the same distances. Then C is at 9 + 5 = 14 or 9 - 5 = 4. From C = 14, D is at 21 or 7. From C = 4, D is at 11 or -3. So AD can be 21, 7, 11 or 3, four different values, and their sum is 21 + 7 + 11 + 3 = 42. The transferable idea: when the order is not given, draw the line and branch on both sides at every step, then collect the results.",
+    "elegant": "The two choices of side for C give AC = 14 or 4, and each then gives AD = AC + 7 or |AC - 7|. The values are 21, 7, 11 and 3, and the pairs add to 2 x 14 and 2 x 7: 28 + 14 = 42."
+  },
+  "whyOnTest": "Draw the diagram: when the order of points is not given, the question tests whether you sketch every case rather than assume alphabetical order.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

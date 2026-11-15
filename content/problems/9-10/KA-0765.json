@@ -1,0 +1,67 @@
+{
+  "id": "KA-0765",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Digits are written in a long string that counts up from 1 to 5, back down, up again, and so on, never writing the 1 or the 5 twice in a row: 1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5, 4, ... What is the 2053rd digit?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I took the repeating block as 1, 2, 3, 4, 5, 4, 3, 2, 1, nine digits, so I counted the 1 at each join twice."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I took the repeating block as seven digits, 1, 2, 3, 4, 5, 4, 3, and left out the final 2."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I took the repeating block as 1, 2, 3, 4, 5 and ignored the way back down."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found the remainder 5 but counted positions in the block from 0, so I landed on the sixth digit."
+    },
+    {
+      "key": "E",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "Find the shortest block that repeats exactly.",
+    "Write the string until it starts over and count the length of the block. The digit at any position depends only on the remainder when the position is divided by that length.",
+    "The block is 1, 2, 3, 4, 5, 4, 3, 2, which has 8 digits. Divide 2053 by 8."
+  ],
+  "solutions": {
+    "reliable": "The string repeats the block 1, 2, 3, 4, 5, 4, 3, 2 of length 8, because after the final 2 the next digit is 1 and the block starts again. Since 2053 = 8 x 256 + 5, the 2053rd digit is the 5th digit of the block, which is 5. The transferable idea: identify the exact repeating block, check where one block ends and the next begins, then use the remainder.",
+    "elegant": null
+  },
+  "whyOnTest": "Cycle questions hinge on getting the block length exactly right, and every distractor here is a block that is one digit off or folded wrongly.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

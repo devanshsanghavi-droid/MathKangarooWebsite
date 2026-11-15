@@ -1,0 +1,68 @@
+{
+  "id": "KA-0595",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A digital clock shows times from 1:00 to 12:59, such as 7:05 or 11:40. It never shows 0 or 13 as the hour. Going once through all of these times, for how many of them do the digits shown add up to 4?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I only used minute digits from 1 to 9 and forgot that a minute digit can be 0, as in 1:03."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I only looked at the hours 1 to 9 and forgot that 10, 11 and 12 have small digit sums too."
+    },
+    {
+      "key": "C",
+      "text": "18",
+      "correct": false,
+      "misconception": "I forgot 4:00, where the minutes are 00 and add nothing to the sum."
+    },
+    {
+      "key": "D",
+      "text": "19",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "38",
+      "correct": false,
+      "misconception": "I counted every time twice, once in the morning and once in the afternoon, but the question goes through the times only once."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-04",
+    "secondary": [
+      "CNT-01",
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "Sort the times by the hour.",
+    "Only hours whose digits add to 4 or less can work, and 10, 11 and 12 count. For each such hour, count the minutes whose two digits make up the rest of the sum, allowing 0 as a digit.",
+    "The hours that can work are 1, 2, 3, 4, 10, 11 and 12. For hour 1, the minute digits must add to 3: 03, 12, 21 and 30, which is 4 ways."
+  ],
+  "solutions": {
+    "reliable": "The hour's digits must add to at most 4, so the hour is 1, 2, 3, 4, 10, 11 or 12, with digit sums 1, 2, 3, 4, 1, 2 and 3. The minute digits must make up the rest. A sum of 3 can be made in 4 ways (03, 12, 21, 30), a sum of 2 in 3 ways (02, 11, 20), a sum of 1 in 2 ways (01, 10) and a sum of 0 in 1 way (00). So the hours give 4 + 3 + 2 + 1 for hours 1 to 4 and 4 + 3 + 2 for hours 10 to 12, a total of 10 + 9 = 19. The transferable idea: in casework, split by the most restricted part first, here the hour, so every case is a short, complete list.",
+    "elegant": "Hours 10, 11 and 12 have the same digit sums as hours 1, 2 and 3, so they repeat those cases: (4 + 3 + 2 + 1) + (4 + 3 + 2) = 19."
+  },
+  "whyOnTest": "Casework is tested by whether every case is listed, including easy-to-miss ones like the two-digit hours and minutes with a 0.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

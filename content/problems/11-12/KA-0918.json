@@ -1,0 +1,68 @@
+{
+  "id": "KA-0918",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Three piles hold 5, 7 and 9 stones. A move takes one stone from each of two piles and puts both stones onto the third pile. After some moves, which of these could the three piles hold?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0, 0 and 21",
+      "correct": false,
+      "misconception": "I assumed I could keep moving stones onto one pile until the other two were empty."
+    },
+    {
+      "key": "B",
+      "text": "4, 4 and 13",
+      "correct": false,
+      "misconception": "I took one stone from the 5-pile and three from the 7-pile and moved all four onto the 9-pile, forgetting that every move takes exactly one stone from each of two piles."
+    },
+    {
+      "key": "C",
+      "text": "5, 8 and 8",
+      "correct": false,
+      "misconception": "I used parity: the number of odd piles always stays odd, and 5, 8, 8 has one odd pile, so I thought it was reachable."
+    },
+    {
+      "key": "D",
+      "text": "1, 8 and 12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "7, 7 and 7",
+      "correct": false,
+      "misconception": "I thought the moves can even things out, so three equal piles must be reachable."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "NUM-06",
+      "LOG-05"
+    ]
+  },
+  "hints": [
+    "Look at the remainders of the piles on division by 3.",
+    "Find an invariant: a move changes two piles by minus 1 and one pile by plus 2. Ask how each remainder on division by 3 changes, and what stays the same about the three remainders together.",
+    "Adding 2 and subtracting 1 have the same effect on a remainder on division by 3, so all three remainders shift together."
+  ],
+  "solutions": {
+    "reliable": "On division by 3 the piles 5, 7 and 9 leave remainders 2, 1 and 0, all different. A move subtracts 1 from two piles and adds 2 to the third, and adding 2 changes a remainder on division by 3 exactly as subtracting 1 does. So every move lowers all three remainders by 1 together, and they stay all different. Checking the choices: 0, 0, 21 gives 0, 0, 0; 4, 4, 13 gives 1, 1, 1; 5, 8, 8 gives 2, 2, 2; 7, 7, 7 gives 1, 1, 1. Only 1, 8, 12 gives 1, 2, 0, all different, and it is reachable: moving from the first and third piles onto the second three times gives 4, 9, 8, then 3, 11, 7, then 2, 13, 6, and moving from the first two piles onto the third gives 1, 12, 8. The transferable idea: when the moves look free, find a quantity they cannot change.",
+    "elegant": "Each move changes the difference between any two piles by 0 or by 3, so the differences never change their remainders on division by 3. They start at 2, 2 and 4, none a multiple of 3, so no two piles can ever be equal; only 1, 8, 12 has no two piles differing by a multiple of 3."
+  },
+  "whyOnTest": "The obvious invariants, the total and the parity, do not decide it; the test is to search for the right number to divide by.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

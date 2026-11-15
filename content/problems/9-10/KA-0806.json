@@ -1,0 +1,68 @@
+{
+  "id": "KA-0806",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Lena thinks of a positive number. She doubles it, subtracts 7, and squares the result. She gets 121. What number did she think of?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I took the square root to get 11, then subtracted 7 instead of adding it back, and halved to get 2."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "12.5",
+      "correct": false,
+      "misconception": "I took the square root and halved it before adding the 7 back, undoing the steps in the wrong order."
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": false,
+      "misconception": "I took the square root and added 7, but then doubled instead of halving."
+    },
+    {
+      "key": "E",
+      "text": "64",
+      "correct": false,
+      "misconception": "I never undid the squaring and worked with 121 directly: 121 + 7 is 128, and half of that is 64."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-04",
+    "secondary": [
+      "CFT-11",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "You could test each answer choice through her steps.",
+    "Either undo the steps in reverse order with the reverse operations, or back-solve: push each choice through double, subtract 7, square, and see which one lands on 121.",
+    "Undo the last step first: the number before squaring was 11. Then undo the subtraction, then the doubling."
+  ],
+  "solutions": {
+    "reliable": "Work backwards. Before squaring, the number was 11 (it could also be -11, but that leads to a negative starting number). Before subtracting 7 it was 18. Before doubling it was 9. Check: 2 times 9 = 18, 18 - 7 = 11, 11 squared = 121. The transferable idea: undo a chain of steps from the last one back, using the opposite of each step.",
+    "elegant": "Back-solving: try 9 from the choices. 9 doubled is 18, minus 7 is 11, squared is 121. With five choices, testing them is often faster than solving."
+  },
+  "whyOnTest": "Working-backwards questions punish undoing steps in the wrong order, and the choices are ready to be tested if algebra stalls.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

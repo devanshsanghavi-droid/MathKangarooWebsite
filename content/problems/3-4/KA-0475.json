@@ -1,0 +1,70 @@
+{
+  "id": "KA-0475",
+  "band": "3-4",
+  "points": 5,
+  "statement": "The big square is made of 36 equal small squares. What is the area of the shaded square, measured in small squares?",
+  "figure": {
+    "component": "TiltedSquareGrid",
+    "alt": "A 6 by 6 grid of small squares. A tilted shaded square has one corner on each side of the big square, each 2 small squares along from a corner of the big square. This leaves four white corner triangles, each with a short side of 2 and a long side of 4 along the edges of the big square."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I took away four whole 2 by 4 rectangles instead of four triangles that are each half of one."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted only the small squares that lie completely inside the shaded square."
+    },
+    {
+      "key": "C",
+      "text": "16",
+      "correct": false,
+      "misconception": "I found the total area of the four white corner triangles instead of the shaded square."
+    },
+    {
+      "key": "D",
+      "text": "28",
+      "correct": false,
+      "misconception": "I treated each corner triangle as half of a 2 by 2 square, which made the triangles too small."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-04",
+    "secondary": [
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "Look at the white parts instead of the shaded part.",
+    "The shaded area is the big square minus the four white corner triangles. Each white triangle is half of a rectangle you can see on the grid.",
+    "Each white triangle is half of a 2 by 4 rectangle, so it covers 4 small squares."
+  ],
+  "solutions": {
+    "reliable": "The big square covers 36 small squares. Each white corner triangle is half of a 2 by 4 rectangle, so it covers 8 divided by 2 = 4. The four triangles cover 16. The shaded square covers 36 - 16 = 20 small squares. The transferable idea: when a shape is awkward, find the easy area around it and subtract.",
+    "elegant": null
+  },
+  "whyOnTest": "A tilted shape cannot be counted square by square, so it tests whether you think to subtract the pieces around it.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

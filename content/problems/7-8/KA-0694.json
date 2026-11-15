@@ -1,0 +1,68 @@
+{
+  "id": "KA-0694",
+  "band": "7-8",
+  "points": 4,
+  "statement": "In a sequence, every term from the third onwards is the mean of the two terms just before it. The first term is 0 and the fifth term is 15. What is the second term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I added the two terms before each term instead of taking their mean, so the terms were 0, x, x, 2x and 3x."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I set the fourth term equal to 15 instead of the fifth, so I solved 3/4 of x = 15."
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": false,
+      "misconception": "I set the third term equal to 15 instead of the fifth, so I solved half of x = 15."
+    },
+    {
+      "key": "E",
+      "text": "120",
+      "correct": false,
+      "misconception": "I thought each new term was half of the term just before it, so I made the fifth term x / 8 and solved x / 8 = 15."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "MOD-01",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Call the second term x and write out the terms one by one.",
+    "Each term is half the sum of the two before it. Keep the first term as 0 and the second as x, write the next three terms as fractions of x, and set the fifth equal to 15.",
+    "The terms are 0, x, x / 2, 3x / 4 and 5x / 8."
+  ],
+  "solutions": {
+    "reliable": "With second term x, the third term is (0 + x) / 2 = x / 2, the fourth is (x + x / 2) / 2 = 3x / 4, and the fifth is (x / 2 + 3x / 4) / 2 = 5x / 8. So 5x / 8 = 15, giving x = 15 x 8 / 5 = 24. Check: 0, 24, 12, 18, 15. The transferable idea: when a rule builds each term from earlier ones, carry an unknown through the rule and solve one equation at the end.",
+    "elegant": "Back-solve from the choices. Starting 0, 24 the sequence runs 0, 24, 12, 18, 15, which reaches 15 at the fifth term."
+  },
+  "whyOnTest": "Recursive sequences test applying the exact rule step by step, and an unknown term can be carried along until one equation remains.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

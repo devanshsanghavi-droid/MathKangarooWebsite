@@ -1,0 +1,68 @@
+{
+  "id": "KA-0798",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Two different squares of an 8 by 8 chessboard are chosen so that they share a side. How many such pairs of squares are there? (The order of the two squares does not matter.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "112",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "56",
+      "correct": false,
+      "misconception": "I counted only pairs that sit side by side in a row, 7 in each of the 8 rows, and forgot pairs where one square is above the other."
+    },
+    {
+      "key": "C",
+      "text": "128",
+      "correct": false,
+      "misconception": "I gave every square 4 neighbours and halved, but squares on the edge of the board have only 2 or 3 neighbours."
+    },
+    {
+      "key": "D",
+      "text": "224",
+      "correct": false,
+      "misconception": "I added up the neighbours of every square but did not halve, so every pair was counted twice."
+    },
+    {
+      "key": "E",
+      "text": "256",
+      "correct": false,
+      "misconception": "I gave all 64 squares 4 neighbours and did not halve."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-04",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "How many neighbours does a corner square have? An edge square? A middle square?",
+    "Count, for every square, how many squares share a side with it, and add these up. Then ask how many times each pair has been counted.",
+    "There are 4 corner squares with 2 neighbours, 24 other edge squares with 3, and 36 inner squares with 4. Each pair is counted once from each of its two squares."
+  ],
+  "solutions": {
+    "reliable": "Count neighbours square by square. The 4 corner squares have 2 neighbours each (8), the 24 other edge squares have 3 each (72), and the 36 inner squares have 4 each (144): 224 in total. Each pair has been counted twice, once from each of its squares, so there are 224 / 2 = 112 pairs. The transferable idea: when every object is counted the same number of times, count freely and then divide by that number.",
+    "elegant": "Count by direction instead. Pairs side by side in a row: 7 in each of 8 rows, which is 56. Pairs one above the other: 7 in each of 8 columns, which is 56. Total 112, which checks the overcount."
+  },
+  "whyOnTest": "Overcount-then-correct questions test whether you can see how many times each object was counted, and the choices hold every way to get that factor wrong.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

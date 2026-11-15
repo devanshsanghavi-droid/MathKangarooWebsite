@@ -1,0 +1,68 @@
+{
+  "id": "KA-0914",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A bag holds 4 yellow, 6 blue and 10 white marbles. Without looking, what is the smallest number of marbles you must take out to be certain of having at least two marbles of each colour?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the luckiest case, two of each colour, instead of the worst case."
+    },
+    {
+      "key": "B",
+      "text": "13",
+      "correct": false,
+      "misconception": "I imagined all 10 white marbles plus one yellow and one blue and then added one more, without making the bad luck as bad as it can be."
+    },
+    {
+      "key": "C",
+      "text": "17",
+      "correct": false,
+      "misconception": "I built the worst case of all the white, all the blue and one yellow but forgot the one extra marble that forces the second yellow."
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": false,
+      "misconception": "I thought I had to take out every marble to be certain."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "CNT-17",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Imagine the most unlucky order the marbles could come out in.",
+    "Worst-case counting: keep drawing marbles that do not help for as long as possible. Use up the largest colours first while holding back the scarcest one, then add one.",
+    "You could draw all 10 white, all 6 blue and just 1 yellow before a second yellow appears."
+  ],
+  "solutions": {
+    "reliable": "The worst case delays the colour that is hardest to collect twice, which is yellow. You could take all 10 white, all 6 blue and only 1 yellow, 17 marbles, and still lack a second yellow. The 18th marble must be yellow, since only yellow is left, and then you have at least two of every colour. So 18 are needed, and 18 always suffice. The transferable idea: for a guarantee, play against yourself, use up everything that does not help, then add one.",
+    "elegant": "To still be missing a second marble of some colour, at least 3 marbles of that colour must stay in the bag. Leaving 3 yellow behind is the cheapest way, so at most 20 - 3 = 17 marbles can be drawn without success, and 18 is certain."
+  },
+  "whyOnTest": "A guarantee is about the worst case, and the worst case here holds back the scarcest colour, which careless counting misses.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

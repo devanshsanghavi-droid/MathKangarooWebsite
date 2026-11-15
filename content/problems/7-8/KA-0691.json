@@ -1,0 +1,68 @@
+{
+  "id": "KA-0691",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A rectangle is divided by grid lines into 3 rows of 5 equal small squares. How many squares of any size have all four sides on these lines?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "15",
+      "correct": false,
+      "misconception": "I counted only the 15 small squares."
+    },
+    {
+      "key": "B",
+      "text": "18",
+      "correct": false,
+      "misconception": "I counted only squares of each size that do not overlap, so I found 2 two-by-two squares and 1 three-by-three square instead of 8 and 3."
+    },
+    {
+      "key": "C",
+      "text": "23",
+      "correct": false,
+      "misconception": "I counted the small squares and the 2 by 2 squares but forgot the 3 by 3 squares."
+    },
+    {
+      "key": "D",
+      "text": "90",
+      "correct": false,
+      "misconception": "I counted every rectangle on the grid, not only the squares."
+    },
+    {
+      "key": "E",
+      "text": "26",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-13",
+    "secondary": [
+      "CNT-04",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Sort the squares by size.",
+    "A square of a given size can slide to many positions, and they may overlap. For each size, count how many places its top-left corner can sit across and how many down, then multiply.",
+    "1 by 1: 3 x 5 positions. 2 by 2: 2 x 4 positions. 3 by 3: 1 x 3 positions."
+  ],
+  "solutions": {
+    "reliable": "Sort by size. A 1 by 1 square fits in 3 x 5 = 15 places. A 2 by 2 square can start in 2 rows and 4 columns, so 2 x 4 = 8 places. A 3 by 3 square fills all 3 rows and can start in 3 columns, so 3 places. No larger square fits. Total 15 + 8 + 3 = 26. The transferable idea: count hidden squares size by size, and let each size slide to every position, overlaps included.",
+    "elegant": null
+  },
+  "whyOnTest": "Hidden-shape counts test organised counting, size by size, and the traps miss a size or forget that squares can overlap.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

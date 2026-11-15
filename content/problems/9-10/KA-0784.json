@@ -1,0 +1,68 @@
+{
+  "id": "KA-0784",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Seven different whole numbers are written down, and all 21 sums of two of them are worked out. What is the largest possible number of those 21 sums that are odd?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I used one odd number and six even ones, which gives only 1 x 6 odd sums."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I assumed that at most about half of the 21 sums can be odd, and rounded down."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I imagined four odd and four even numbers, giving 4 x 4 odd sums, but there are only seven numbers."
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I thought making all seven numbers odd would make every sum odd, but odd plus odd is even."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "CNT-06",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "When is the sum of two whole numbers odd?",
+    "A sum is odd exactly when one number is odd and the other is even. If k of the seven numbers are odd, count the odd-even pairs in terms of k, then choose k to make that count biggest.",
+    "With k odd numbers and 7 - k even ones, there are k x (7 - k) odd sums. Try k from 0 to 7."
+  ],
+  "solutions": {
+    "reliable": "A sum of two whole numbers is odd exactly when one is odd and the other is even. If k of the numbers are odd, the odd sums come from pairing each odd number with each even one: k x (7 - k) of them. For k = 0 to 7 this gives 0, 6, 10, 12, 12, 10, 6, 0. The largest is 12, for example with 1, 3, 5, 2, 4, 6, 8. The transferable idea: reduce a parity question to how many odd and even numbers there are, then count pairs.",
+    "elegant": "Two whole numbers with a fixed sum of 7 have the largest product when they are as close as possible, so split the seven numbers 3 and 4: 3 x 4 = 12."
+  },
+  "whyOnTest": "Parity questions reward sorting numbers into odd and even before anything else, and here the count of mixed pairs is the whole problem.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

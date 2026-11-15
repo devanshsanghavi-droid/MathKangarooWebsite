@@ -1,0 +1,68 @@
+{
+  "id": "KA-0720",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Two different whole numbers, both greater than 8, have greatest common divisor 8 and least common multiple 480. How many such pairs of numbers are there? (A pair counts once, whichever order its numbers are written in.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I forgot to rule out the pair 8 and 480, even though 8 is not greater than 8."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I listed every way to write 60 as a product of two numbers without checking that the two parts share no common factor, and I kept the pair 8 and 480."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": false,
+      "misconception": "I listed every factor pair of 60 without checking that the two parts share no common factor, then removed the pair 8 and 480."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted every pair twice, once in each order, and I also kept the pair 8 and 480."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-05",
+    "secondary": [
+      "CNT-01",
+      "NUM-04"
+    ]
+  },
+  "hints": [
+    "Write both numbers as 8 times something.",
+    "With the numbers written as 8m and 8n, m and n share no common factor and the least common multiple is 8 x m x n. Split m x n into two parts with no common factor.",
+    "From 8 x m x n = 480 you get m x n = 60. The splits of 60 into two parts with no common factor are 1 x 60, 3 x 20, 4 x 15 and 5 x 12."
+  ],
+  "solutions": {
+    "reliable": "Both numbers are multiples of 8, so write them as 8m and 8n. Their greatest common divisor is exactly 8 only if m and n share no common factor, and then their least common multiple is 8mn. So 8mn = 480 and mn = 60. The factor pairs of 60 are 1 x 60, 2 x 30, 3 x 20, 4 x 15, 5 x 12 and 6 x 10; the pairs 2 x 30 and 6 x 10 share a factor, so they fail. That leaves m, n = 1 and 60, 3 and 20, 4 and 15, 5 and 12, giving 8 and 480, 24 and 160, 32 and 120, 40 and 96. Both numbers must be greater than 8, so 8 and 480 is out, leaving 3 pairs. The transferable idea: take the greatest common divisor out first, and what remains must be coprime parts of the quotient.",
+    "elegant": "Since the GCD times the LCM equals the product of the two numbers, the product is 8 x 480. After dividing each number by 8, the two quotients have product 60 and no common factor. Each of the prime powers 4, 3 and 5 must go wholly to one side, which gives 4 unordered splits; dropping the split 1 and 60 (the pair 8 and 480) leaves 3."
+  },
+  "whyOnTest": "GCD and LCM questions are really about splitting prime factors between two numbers, and the traps are forgetting the coprime condition or the stated restriction.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

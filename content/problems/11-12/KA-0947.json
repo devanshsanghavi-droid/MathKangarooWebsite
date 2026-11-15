@@ -1,0 +1,68 @@
+{
+  "id": "KA-0947",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A jug holds 6 litres of a drink that is 30% juice. How many litres of water must be added to make the drink 20% juice?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0.6",
+      "correct": false,
+      "misconception": "I thought dropping 10 percentage points meant adding 10% of the 6 litres as water."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I worked out 6 x 20/30 = 4 litres and added the difference, 6 - 4."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I worked out 6 x 20/30 = 4 and added that many litres of water."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I found the new total volume of 9 litres and reported it as the water added."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-08",
+    "secondary": [
+      "NUM-10",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "The amount of juice does not change when water is added.",
+    "Find how much juice is in the jug. That fixed amount must be 20% of the new total, which gives the new total; the water added is the difference.",
+    "There are 0.3 x 6 = 1.8 litres of juice, and 1.8 litres must be 20% of the new total."
+  ],
+  "solutions": {
+    "reliable": "Juice: 30% of 6 = 1.8 litres. After adding water, 1.8 litres is 20% of the total, so the total is 1.8 / 0.2 = 9 litres. The water added is 9 - 6 = 3 litres. The transferable idea: in a dilution, track the ingredient that stays fixed and rebuild the total around it.",
+    "elegant": "The juice share falls from 30% to 20%, a factor of 2/3, so the volume must grow by a factor of 3/2, from 6 to 9 litres."
+  },
+  "whyOnTest": "Mixture questions test tracking the one quantity that stays fixed; the distractors come from treating percentages as amounts.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

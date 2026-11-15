@@ -1,0 +1,67 @@
+{
+  "id": "KA-0826",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A robot starts at 0 on a number line. It takes steps of length 1 in a repeating pattern: forward, forward, forward, back, forward, forward, forward, back, and so on. Where is the robot after 2026 steps?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1012",
+      "correct": false,
+      "misconception": "I found 506 complete groups of 4 steps, each moving the robot 2 forward, and forgot the 2 leftover steps."
+    },
+    {
+      "key": "B",
+      "text": "1013",
+      "correct": false,
+      "misconception": "I thought the robot gains 1 place for every 2 steps it takes, so I worked out 2026 / 2."
+    },
+    {
+      "key": "C",
+      "text": "1015",
+      "correct": false,
+      "misconception": "I added a whole run of 3 forward steps for the leftover, though only 2 steps were left."
+    },
+    {
+      "key": "D",
+      "text": "1014",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "1520",
+      "correct": false,
+      "misconception": "I counted the 3 forward steps in each group but forgot to take off the step back."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "How far does the robot get in one complete group of 4 steps?",
+    "Split the 2026 steps into complete groups of 4 plus a few leftover steps. Each complete group moves the robot the same amount, and the leftover steps are the first steps of a new group.",
+    "2026 = 4 x 506 + 2, each group moves the robot 2 forward, and the 2 leftover steps are both forward."
+  ],
+  "solutions": {
+    "reliable": "One group of 4 steps is 3 forward and 1 back, so it moves the robot 2 forward. Since 2026 = 4 x 506 + 2, the 2026 steps are 506 complete groups followed by 2 more steps. The complete groups take the robot to 506 x 2 = 1012, and the 2 leftover steps are the first two steps of a group, both forward, so the robot ends at 1014. The transferable idea: for a repeating pattern, find the effect of one full cycle, then handle the remainder step by step.",
+    "elegant": null
+  },
+  "whyOnTest": "Repeating cycles are tested through the remainder, and the traps are ignoring the leftover steps, padding them out to a full run, or forgetting the backward step.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

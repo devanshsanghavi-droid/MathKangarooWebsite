@@ -1,0 +1,68 @@
+{
+  "id": "KA-0613",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A regular hexagon has an area of 54 square centimetres. Joining every second corner of the hexagon makes an equilateral triangle. What is the area of this triangle, in square centimetres?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "27",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I found the area of one of the six triangles around the centre and stopped."
+    },
+    {
+      "key": "C",
+      "text": "18",
+      "correct": false,
+      "misconception": "I thought the triangle covered only two of the six triangles around the centre."
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": false,
+      "misconception": "I thought the triangle covered four of the six triangles around the centre."
+    },
+    {
+      "key": "E",
+      "text": "40.5",
+      "correct": false,
+      "misconception": "I thought each corner piece cut off was half of a centre triangle, so I took 3 x 4.5 from 54."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-03",
+    "secondary": [
+      "GEO-06",
+      "GEO-04"
+    ]
+  },
+  "hints": [
+    "Join the centre of the hexagon to its six corners.",
+    "Compare each corner piece cut off outside the triangle with a piece inside it. Joining the centre to the triangle's corners splits the triangle into three pieces; look for a reflection matching them.",
+    "Folding each cut-off corner across the triangle's side lands it exactly on one of the three pieces inside."
+  ],
+  "solutions": {
+    "reliable": "Call the hexagon ABCDEF with centre O, and the triangle ACE. ABCO has four equal sides (each equals the side of the hexagon), so it is a rhombus, and its diagonal AC cuts it into two equal halves: triangle ABC outside the big triangle and triangle AOC inside it. The same happens at the other two corners. So the hexagon is six equal pieces, three inside the triangle and three outside, and the triangle has area 54 / 2 = 27 square centimetres. The transferable idea: show two regions are equal by matching pieces, and the area follows without any lengths.",
+    "elegant": "The six centre triangles each have area 9. The hexagon is three rhombi like ABCO, each of area 18, and each side of the big triangle is a diagonal cutting one rhombus in half. So the triangle has area 3 x 9 = 27."
+  },
+  "whyOnTest": "Area by dissection: matching each cut-off piece with an equal piece inside shows the triangle is exactly half, with no lengths needed.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

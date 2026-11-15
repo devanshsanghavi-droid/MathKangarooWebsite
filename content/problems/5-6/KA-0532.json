@@ -1,0 +1,68 @@
+{
+  "id": "KA-0532",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Each of Pia, Quin and Rae is either a knight, who always tells the truth, or a knave, who always lies. Pia says: \"Quin and I are the same type.\" Quin says: \"Rae is a knave.\" Rae says: \"Exactly one of us three is a knight.\" Who are the knights?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Pia and Quin",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "Quin only",
+      "correct": false,
+      "misconception": "I worked out that Quin must be a knight and then called the other two knaves without checking Rae's statement."
+    },
+    {
+      "key": "C",
+      "text": "Rae only",
+      "correct": false,
+      "misconception": "I trusted Rae and made her the one knight, without checking Pia's statement, which would then be true."
+    },
+    {
+      "key": "D",
+      "text": "Pia, Quin and Rae",
+      "correct": false,
+      "misconception": "I believed every statement and did not notice that Quin calls Rae a knave."
+    },
+    {
+      "key": "E",
+      "text": "none of them",
+      "correct": false,
+      "misconception": "I decided they were all knaves and missed that Pia's sentence would then be true."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-01",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Look at Pia's statement. What does it tell you about Quin, whichever type Pia is?",
+    "If Pia is a knight, Quin is the same type as her. If Pia is a knave, her statement is false, so Quin is the opposite type to her. Work out Quin in both cases, then use what Quin says.",
+    "Quin is a knight either way, so Rae is a knave and Rae's statement is false. Now test whether Pia could be a knave."
+  ],
+  "solutions": {
+    "reliable": "Start with Pia. If Pia is a knight, her statement is true, so Quin is a knight too. If Pia is a knave, her statement is false, so Quin is the opposite type to a knave, which is a knight. Either way Quin is a knight. Quin tells the truth, so Rae is a knave, and Rae's statement \"exactly one of us three is a knight\" must be false. If Pia were a knave, Quin would be the only knight and Rae's statement would be true, which cannot happen. So Pia is a knight. Check: Pia and Quin are the same type, as Pia says; Rae is a knave, as Quin says; and there are two knights, so Rae lies. The transferable idea: when a statement links the speaker to someone else, try both types for the speaker, and if both cases agree you have a fact to build on.",
+    "elegant": "Whoever says \"X and I are the same type\" shows that X is a knight: a knight says it truthfully about a knight, and a knave says it falsely about a knight. So Quin is a knight and Rae is a knave. Rae's claim of exactly one knight is false, so there are two knights: Pia and Quin."
+  },
+  "whyOnTest": "Truth-teller and liar puzzles test case checking: try each type for a speaker, follow it through every statement, and keep only what survives.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

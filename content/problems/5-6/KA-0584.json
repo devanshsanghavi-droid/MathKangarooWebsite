@@ -1,0 +1,68 @@
+{
+  "id": "KA-0584",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Roughly how many hours old is a child on their 11th birthday?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "about 170",
+      "correct": false,
+      "misconception": "I found 11 times 365 days and then divided by 24 instead of multiplying."
+    },
+    {
+      "key": "B",
+      "text": "about 4 000",
+      "correct": false,
+      "misconception": "I counted the days, 11 times 365, and never turned days into hours."
+    },
+    {
+      "key": "C",
+      "text": "about 10 000",
+      "correct": false,
+      "misconception": "I found the hours in one year, about 8760, and forgot to multiply by 11."
+    },
+    {
+      "key": "D",
+      "text": "about 100 000",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "about 6 000 000",
+      "correct": false,
+      "misconception": "I multiplied by 60 as well, which gives minutes, not hours."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-12",
+    "secondary": [
+      "MOD-07",
+      "CFT-06"
+    ]
+  },
+  "hints": [
+    "Round the numbers before you multiply.",
+    "Chain the units: years to days, days to hours. Rounding each number to something friendly keeps the arithmetic quick, and only the size of the answer matters here.",
+    "11 years is about 4000 days, and each day has 24 hours, which is about 25."
+  ],
+  "solutions": {
+    "reliable": "11 years is 11 times 365, about 4000 days. Each day has 24 hours, so the total is about 4000 times 24, which is close to 100 000 (the exact value is 96 360). The transferable idea: estimate by rounding to friendly numbers and tracking units, then pick the choice with the right number of digits.",
+    "elegant": "A year is about 8760 hours, close to 9000, and 11 years is a little under 100 000 hours."
+  },
+  "whyOnTest": "Estimation questions check you multiply through every unit change; each wrong choice stops at the wrong unit.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

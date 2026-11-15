@@ -1,0 +1,68 @@
+{
+  "id": "KA-0541",
+  "band": "5-6",
+  "points": 4,
+  "statement": "The numbers 1, 2, 3, ... are written in rows. Row 1 has one number, row 2 has two numbers, row 3 has three numbers, and so on. So row 1 is 1, row 2 is 2, 3, row 3 is 4, 5, 6 and row 4 is 7, 8, 9, 10. What is the first number in row 12?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "56",
+      "correct": false,
+      "misconception": "I found the first number of row 11 instead of row 12."
+    },
+    {
+      "key": "B",
+      "text": "66",
+      "correct": false,
+      "misconception": "I found the last number of row 11 and forgot to move on to the next number."
+    },
+    {
+      "key": "C",
+      "text": "67",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "78",
+      "correct": false,
+      "misconception": "I found the last number of row 12 instead of the first."
+    },
+    {
+      "key": "E",
+      "text": "133",
+      "correct": false,
+      "misconception": "I worked out 11 x 12 = 132 for the numbers in rows 1 to 11, forgetting to halve it, then added 1."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-06",
+    "secondary": [
+      "PAT-04",
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "How many numbers are written before row 12 starts?",
+    "Rows 1 to 11 hold 1 + 2 + 3 + ... + 11 numbers altogether. Row 12 starts with the very next number.",
+    "To add 1 + 2 + ... + 11, pair 1 with 11, 2 with 10, and so on: each pair makes 12."
+  ],
+  "solutions": {
+    "reliable": "The last number in each row equals how many numbers have been written so far. Rows 1 to 11 hold 1 + 2 + ... + 11 numbers. Pairing 1 with 11, 2 with 10, 3 with 9, 4 with 8 and 5 with 7 makes five pairs of 12, with 6 left over: 60 + 6 = 66. So row 11 ends with 66, and row 12 starts with 67. Check against the rows shown: row 4 should start after 1 + 2 + 3 = 6 numbers, at 7, and it does. The transferable idea: in a table that grows row by row, the last number of a row is the running total of the row lengths.",
+    "elegant": "Look at the ends of the rows: 1, 3, 6, 10, ... The gaps between them are 2, 3, 4, ..., so keep adding: 15, 21, 28, 36, 45, 55, 66. That is the end of row 11, so row 12 starts at 67."
+  },
+  "whyOnTest": "Table and grid patterns test finding a rule for where a row starts or ends, instead of writing out the whole table.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

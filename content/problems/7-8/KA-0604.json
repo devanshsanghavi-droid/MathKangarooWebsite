@@ -1,0 +1,68 @@
+{
+  "id": "KA-0604",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A bench has 6 seats in a row. Some children sit on it, one child per seat, and no two children sit in seats next to each other. The bench may also be empty. Only which seats are taken matters, not who sits in them. How many different patterns of taken seats are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "17",
+      "correct": false,
+      "misconception": "I counted the patterns with 0, 1 and 2 children but forgot that 3 children can also fit, such as in seats 1, 3 and 5."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted every case with at least one child but left out the empty bench."
+    },
+    {
+      "key": "C",
+      "text": "26",
+      "correct": false,
+      "misconception": "I counted all 15 pairs of seats for two children, including the 5 pairs of seats that are next to each other."
+    },
+    {
+      "key": "D",
+      "text": "21",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "64",
+      "correct": false,
+      "misconception": "I let each seat be taken or empty freely, 2 to the power 6, and ignored the rule about neighbouring seats."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-04",
+    "secondary": [
+      "CNT-01",
+      "CNT-06"
+    ]
+  },
+  "hints": [
+    "Split into cases by how many children sit on the bench.",
+    "Count the patterns with 0 children, then 1, then 2, and so on, until no more children can fit. In each case, list the seat numbers in increasing order so that no pattern is missed or repeated.",
+    "0 children: 1 pattern. 1 child: 6 patterns. For 2 children, the 15 pairs of seats include 5 pairs that are next to each other."
+  ],
+  "solutions": {
+    "reliable": "Split by the number of children. 0 children: 1 pattern (the empty bench). 1 child: 6 patterns. 2 children: there are 6 x 5 / 2 = 15 pairs of seats, and 5 of them are neighbours (1-2, 2-3, 3-4, 4-5, 5-6), leaving 10. 3 children: 1-3-5, 1-3-6, 1-4-6 and 2-4-6, so 4 patterns. 4 or more children cannot fit, because 4 children with gaps between them need at least 7 seats. Total 1 + 6 + 10 + 4 = 21. The transferable idea: split a count into cases that do not overlap and together cover everything, and check the smallest and largest cases are included.",
+    "elegant": "Count benches of each length. Look at the last seat: if it is empty, the rest is any good pattern on one seat fewer; if it is taken, the seat before it is empty and the rest is any good pattern on two seats fewer. Starting from 2 patterns for 1 seat and 3 for 2 seats, the counts go 2, 3, 5, 8, 13, 21, each the sum of the two before."
+  },
+  "whyOnTest": "Casework by the number of children turns one awkward count into four small ones; the empty bench and the largest case are the ones students forget.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

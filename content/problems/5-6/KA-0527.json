@@ -1,0 +1,68 @@
+{
+  "id": "KA-0527",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A table has rows numbered 1, 2, 3, and so on. Row 1 lists 1. Row 2 lists 2, 4. Row 3 lists 3, 6, 9. In general, row n lists the first n multiples of n. How many of the first 40 rows contain the number 36?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I paired up the factors of 36 as 1 and 36, 2 and 18, 3 and 12, 4 and 9, and counted one row for each pair, but forgot 6 times 6, which pairs 6 with itself."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I left out only row 1, assuming every other row whose number is a factor of 36 reaches 36."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted every factor of 36, forgetting that row n stops at n times n."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted both numbers of each of the 5 factor pairs of 36 as rows, so 6 was counted twice and short rows were included."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-06",
+    "secondary": [
+      "NUM-05",
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "Which rows could contain 36 at all?",
+    "36 can only appear in a row whose number divides 36. But each row stops at its own number times itself, so check that 36 is not past the end of the row.",
+    "Row n reaches 36 only if n times n is at least 36, so n must be at least 6. Which factors of 36 are 6 or more?"
+  ],
+  "solutions": {
+    "reliable": "36 is in row n exactly when n divides 36 and 36 is not past the last entry, n times n. So n must divide 36 and be at least 6. The factors of 36 are 1, 2, 3, 4, 6, 9, 12, 18, 36, and those that are 6 or more are 6, 9, 12, 18 and 36. All are within the first 40 rows, so 5 rows. Check one that fails: row 4 is 4, 8, 12, 16 and stops long before 36. The transferable idea: in a table, find the rule for what a row contains and the rule for where it stops, and apply both.",
+    "elegant": "Each factor pair of 36 puts 36 in exactly one row, the row of the larger factor: 36 x 1 is in row 36, 18 x 2 in row 18, 12 x 3 in row 12, 9 x 4 in row 9 and 6 x 6 in row 6. Five pairs give five rows."
+  },
+  "whyOnTest": "Table questions often hide two rules, what a row contains and where it stops, and missing either one lands on a listed choice.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

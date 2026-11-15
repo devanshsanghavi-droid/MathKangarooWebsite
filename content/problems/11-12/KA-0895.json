@@ -1,0 +1,68 @@
+{
+  "id": "KA-0895",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Some squares of a 5 by 5 board are shaded so that every 2 by 2 block of four squares contains at least one shaded square. What is the smallest possible number of shaded squares?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I shaded the centre square because it lies in the most blocks, and then thought I needed one more square for each corner."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I shaded every other square in every other row, starting from a corner; it works, but it uses more squares than necessary."
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": false,
+      "misconception": "I shaded a chessboard pattern, which works but is far from the fewest."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I shaded one square for each of the 16 blocks, not noticing that one shaded square can serve up to four blocks."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "CNT-18",
+      "GEO-02"
+    ]
+  },
+  "hints": [
+    "Look for some blocks that share no squares at all.",
+    "Blocks that do not overlap each need their own shaded square, which gives a lower bound. Then try to meet that bound with a placement where every shaded square serves as many blocks as possible.",
+    "The four 2 by 2 blocks in the corners of the board do not overlap. Try shading squares in the second and fourth rows."
+  ],
+  "solutions": {
+    "reliable": "The four 2 by 2 blocks in the corners of the board do not overlap, so they need four different shaded squares: at least 4. Four is enough: shade the squares that are in row 2 or row 4 and also in column 2 or column 4. Any 2 by 2 block covers two neighbouring rows and two neighbouring columns, so it includes row 2 or row 4 and column 2 or column 4, and therefore a shaded square. The answer is 4. The transferable idea: find disjoint pieces that each need their own resource to get a lower bound, then build an example that meets it.",
+    "elegant": null
+  },
+  "whyOnTest": "A minimum needs two halves: non-overlapping blocks prove you cannot do better than 4, and a clever placement proves that 4 is enough.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

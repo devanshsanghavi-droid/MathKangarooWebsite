@@ -1,0 +1,68 @@
+{
+  "id": "KA-0931",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Two solid metal statues have exactly the same shape, and the larger one is 1.5 times as tall as the smaller one. The smaller statue has a mass of 16 kg and needs 0.4 litres of paint to cover its surface. How much mass does the larger statue have, and how much paint does it need for the same coat?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "54 kg and 0.9 litres",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "54 kg and 1.35 litres",
+      "correct": false,
+      "misconception": "I multiplied both the mass and the paint by 1.5 cubed, but paint covers a surface, so it scales by 1.5 squared."
+    },
+    {
+      "key": "C",
+      "text": "36 kg and 0.9 litres",
+      "correct": false,
+      "misconception": "I multiplied both the mass and the paint by 1.5 squared, but mass depends on volume, so it scales by 1.5 cubed."
+    },
+    {
+      "key": "D",
+      "text": "36 kg and 1.35 litres",
+      "correct": false,
+      "misconception": "I mixed up the two rules, using 1.5 squared for the mass and 1.5 cubed for the paint."
+    },
+    {
+      "key": "E",
+      "text": "24 kg and 0.6 litres",
+      "correct": false,
+      "misconception": "I multiplied both amounts by 1.5, as if everything grew in step with the height."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-16",
+    "secondary": [
+      "CFT-01",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Ask which quantity depends on surface area and which on volume.",
+    "For similar solids with length factor k, areas are multiplied by k^2 and volumes by k^3. Paint covers the surface; mass comes from the volume of metal.",
+    "Here k = 1.5, so k^2 = 2.25 and k^3 = 3.375. Multiply each amount by the right one."
+  ],
+  "solutions": {
+    "reliable": "Every length of the larger statue is 1.5 times the matching length of the smaller one. Surface areas are multiplied by 1.5^2 = 2.25, so the paint needed is 0.4 x 2.25 = 0.9 litres. Volumes are multiplied by 1.5^3 = 3.375, and the statues are the same metal, so the mass is 16 x 3.375 = 54 kg. The transferable idea: before scaling, decide whether the quantity is a length, an area or a volume, then use k, k^2 or k^3.",
+    "elegant": "Write 1.5 as 3/2. Paint: 0.4 x 9/4 = 0.9. Mass: 16 x 27/8 = 2 x 27 = 54. Only choice A has both numbers right."
+  },
+  "whyOnTest": "Scaling and similar figures questions test whether you match each quantity to its dimension: surface amounts scale by the square of the length factor and mass by the cube.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

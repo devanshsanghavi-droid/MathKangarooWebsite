@@ -1,0 +1,68 @@
+{
+  "id": "KA-0903",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Three consecutive odd numbers add up to 75. What is the product of the smallest and the largest of the three?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "621",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "624",
+      "correct": false,
+      "misconception": "I used three consecutive whole numbers, 24, 25 and 26, instead of consecutive odd numbers, and multiplied 24 by 26."
+    },
+    {
+      "key": "C",
+      "text": "625",
+      "correct": false,
+      "misconception": "I assumed the smallest times the largest equals the middle number squared, so I worked out 25 x 25."
+    },
+    {
+      "key": "D",
+      "text": "675",
+      "correct": false,
+      "misconception": "I multiplied the middle number by the largest, 25 x 27, instead of the smallest by the largest."
+    },
+    {
+      "key": "E",
+      "text": "725",
+      "correct": false,
+      "misconception": "I divided 75 by 3, took 25 as the smallest of the three numbers, and multiplied it by the largest, 29."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-01",
+    "secondary": [
+      "MOD-01",
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "The middle number is the average of the three.",
+    "Equally spaced numbers have their middle at the average, so share the total equally first. Then step down and up to the neighbours, and re-read which two numbers the question multiplies.",
+    "The numbers are 23, 25 and 27, and the question wants 23 x 27, which is 25 x 25 minus 2 x 2."
+  ],
+  "solutions": {
+    "reliable": "Three consecutive odd numbers are equally spaced by 2, so the middle one is the average: 75 / 3 = 25. The numbers are 23, 25 and 27. The product of the smallest and the largest is 23 x 27 = 621. The transferable idea: find the middle of an equally spaced set first, then re-read the question to see exactly which numbers it asks about.",
+    "elegant": "Write the product as (25 - 2)(25 + 2) = 25 x 25 - 2 x 2 = 625 - 4 = 621, a difference of squares that avoids long multiplication."
+  },
+  "whyOnTest": "The arithmetic is easy, so the test is reading: odd not whole, smallest and largest not middle, and each slip lands on a choice.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0518",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Six different whole numbers, each bigger than 0, add up to 22. Which of these statements must be true?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "The largest of the numbers is 7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "One of the numbers is 6",
+      "correct": false,
+      "misconception": "I started from 1, 2, 3, 4, 5, 6 and assumed the 6 had to stay in the list."
+    },
+    {
+      "key": "C",
+      "text": "Exactly three of the numbers are even",
+      "correct": false,
+      "misconception": "I counted the even numbers in 1 to 6 without noticing that the 6 has to change."
+    },
+    {
+      "key": "D",
+      "text": "Several different lists of six numbers are possible",
+      "correct": false,
+      "misconception": "I thought there must be many ways to share out 22, and did not test what happens if a small number is missing."
+    },
+    {
+      "key": "E",
+      "text": "No such list of six numbers exists",
+      "correct": false,
+      "misconception": "I saw that 1 to 6 already adds up to 21 and thought there was no room to change anything."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "CNT-18",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "What is the smallest total six different whole numbers can have?",
+    "The six smallest different whole numbers already add up to almost 22. Suppose one of the numbers 1 to 5 is missing, and show that the total is then too big.",
+    "1 + 2 + 3 + 4 + 5 + 6 = 21, so there is only 1 to spare. Where can that 1 go?"
+  ],
+  "solutions": {
+    "reliable": "The six smallest different whole numbers bigger than 0 are 1 to 6, which add up to 21. Suppose one of 1, 2, 3, 4, 5 were missing from the list. Then the best we can do is the other five of 1 to 6 together with 7, and the total is at least 28 - 5 = 23, which is too much. So 1, 2, 3, 4 and 5 are all in the list, and the sixth number is 22 - 15 = 7. The list must be 1, 2, 3, 4, 5, 7, so the largest number is 7. The transferable idea: assume the opposite, show it forces the total over the limit, and the assumption is ruled out.",
+    "elegant": "There is only 1 to spare above the smallest possible total of 21, so exactly one number of 1 to 6 goes up by 1. Raising any number except the 6 would make two numbers equal, so the 6 becomes a 7."
+  },
+  "whyOnTest": "Pushing numbers to their smallest possible values and showing nothing else fits is the heart of many 5-point arguments by contradiction.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

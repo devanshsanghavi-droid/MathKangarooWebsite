@@ -1,0 +1,68 @@
+{
+  "id": "KA-0878",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A quiz has 30 questions. Each correct answer scores 4 points and each wrong answer loses 2 points. Tom answered every question and finished with 24 points. How many questions did he answer wrongly?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I divided the score of 24 by 6, the swing between a right and a wrong answer, instead of dividing the 96 points Tom is short of a perfect 120."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I thought a wrong answer loses 4 points, the same as a right answer gains, so I divided the 96 missing points by 8."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": false,
+      "misconception": "I found the number of correct answers, 14, and gave that instead of the number of wrong ones."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I forgot the 2-point penalty and divided the 96 missing points by 4, as if a wrong answer only failed to score."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-01",
+    "secondary": [
+      "MOD-01",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Read the last sentence again: which count does the question want?",
+    "Let w be the number of wrong answers, so 30 - w were right. Write Tom's score in terms of w and solve. Or start from a perfect score and ask how much each wrong answer costs.",
+    "A perfect score would be 120, so Tom is 96 points short. Each wrong answer, in place of a right one, costs 4 + 2 = 6 points."
+  ],
+  "solutions": {
+    "reliable": "Let w be the number of wrong answers. Then 30 - w were right, so 4(30 - w) - 2w = 24, that is 120 - 6w = 24, and w = 16. Check: 14 right answers give 56 points and 16 wrong answers lose 32, leaving 24. The question asks for the wrong answers, so the answer is 16, not 14. The transferable idea: when the working produces two related numbers, re-read the question before choosing between them.",
+    "elegant": "A perfect paper scores 120. Swapping one right answer for a wrong one costs the 4 points not earned plus the 2 points lost, 6 in all. Tom is 120 - 24 = 96 points short, so he gave 96/6 = 16 wrong answers."
+  },
+  "whyOnTest": "Finding what is actually being asked: the working produces both the number right and the number wrong, and the most tempting distractor is the one the question did not ask for.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

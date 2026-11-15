@@ -1,0 +1,68 @@
+{
+  "id": "KA-0823",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Two positive whole numbers have greatest common divisor 6 and least common multiple 360. How many such pairs of numbers are there, if the order of the two numbers does not matter?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I found the obvious pair 6 and 360 and assumed it was the only one."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted every way to split 60 into two factors, even pairs like 2 and 30 that share a factor."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted ordered pairs, so 24 and 90 was counted again as 90 and 24."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted every factor of 60 as the first number of a pair, which counts each order separately and includes pairs that share a factor."
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-05",
+    "secondary": [
+      "CNT-16",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Write both numbers as 6 times something.",
+    "If the numbers are 6a and 6b, then a and b can share no common factor, and their least common multiple is 6ab. Turn the condition into a fact about splitting one number into two parts with no common factor.",
+    "6ab = 360 gives ab = 60, where a and b share no factor."
+  ],
+  "solutions": {
+    "reliable": "Write the numbers as 6a and 6b, where a and b have no common factor, since otherwise the greatest common divisor would be bigger than 6. Their least common multiple is then 6ab, so 6ab = 360 and ab = 60. Because 60 = 4 x 3 x 5 and a and b may not share a prime, each of the prime powers 4, 3 and 5 goes wholly to a or wholly to b. The unordered splits are 1 and 60, 4 and 15, 3 and 20, and 5 and 12, giving the pairs 6 and 360, 24 and 90, 18 and 120, and 30 and 72. That is 4 pairs. The transferable idea: divide out the greatest common divisor, and the problem becomes splitting a number into parts with no common factor.",
+    "elegant": "Count with prime powers: 60 has three distinct prime powers, 4, 3 and 5, and each goes to one of the two numbers, giving 2 x 2 x 2 = 8 ordered splits. Each unordered pair appears twice, so there are 8 / 2 = 4 pairs."
+  },
+  "whyOnTest": "Gcd and lcm questions test the factor-out-the-gcd idea, and the distractors catch forgetting that the remaining parts share no factor and counting each pair twice.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

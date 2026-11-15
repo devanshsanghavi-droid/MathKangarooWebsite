@@ -1,0 +1,68 @@
+{
+  "id": "KA-0522",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A three-digit number has three different digits, and its tens digit is the sum of its hundreds digit and its units digit. What is the largest such number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "132",
+      "correct": false,
+      "misconception": "I found the smallest such number instead of the largest."
+    },
+    {
+      "key": "B",
+      "text": "819",
+      "correct": false,
+      "misconception": "I made the units digit the sum of the other two digits instead of the tens digit."
+    },
+    {
+      "key": "C",
+      "text": "891",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "981",
+      "correct": false,
+      "misconception": "I made the hundreds digit the sum of the other two digits instead of the tens digit."
+    },
+    {
+      "key": "E",
+      "text": "990",
+      "correct": false,
+      "misconception": "I forgot that the three digits must all be different, and 9 + 0 = 9 repeats the 9."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-02",
+    "secondary": [
+      "CNT-18",
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "Make the hundreds digit as big as you can, then check.",
+    "Go greedy on the hundreds digit, but remember the tens digit is a sum, so it can be at most 9. Test each choice of hundreds digit against the rule that all digits differ.",
+    "With hundreds digit 9, the units digit must be 0 and the tens digit is then 9 again. Try hundreds digit 8."
+  ],
+  "solutions": {
+    "reliable": "The tens digit equals hundreds plus units, and it is at most 9. Hundreds digit 9 forces units digit 0 and tens digit 9, which repeats the 9, so it fails. Hundreds digit 8: units 0 gives tens 8, a repeat, while units 1 gives tens 9, and 891 has three different digits. No number starting with 8 can have a tens digit bigger than 9, so 891 is the largest. The transferable idea: to find the largest, fix the leading digit as high as the rules allow, then the next digit, checking every rule as you go.",
+    "elegant": null
+  },
+  "whyOnTest": "Digit puzzles reward a greedy search from the left, but only if every condition is checked, including that the digits differ.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

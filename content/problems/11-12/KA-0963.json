@@ -1,0 +1,68 @@
+{
+  "id": "KA-0963",
+  "band": "11-12",
+  "points": 3,
+  "statement": "The numbers 1 to 9 are placed in a 3 by 3 grid, one in each square. A number is called a peak if it is larger than every number in a square sharing an edge with it. What is the smallest possible number of peaks?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought a clever arrangement could have no peak at all, forgetting that 9 is larger than everything next to it."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I thought 9 and 8 are always both peaks, but 8 is not a peak when it sits next to 9."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I thought the three largest numbers, 9, 8 and 7, are always peaks because only each other can beat them."
+    },
+    {
+      "key": "E",
+      "text": "5",
+      "correct": false,
+      "misconception": "I found the largest possible number of peaks, with big numbers in the corners and the centre, instead of the smallest."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "CFT-01",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Which number is certain to be a peak, wherever it goes?",
+    "Think about the largest number in the grid: nothing beside it can beat it. Then try to arrange the others so that each of them has a bigger neighbour.",
+    "9 is always a peak, so the answer is at least 1. Try a snake: 1, 2, 3 along the top row, 6, 5, 4 in the middle row, 7, 8, 9 along the bottom row."
+  ],
+  "solutions": {
+    "reliable": "The number 9 is larger than all its neighbours wherever it is placed, so there is always at least one peak. One peak is possible: put 1, 2, 3 in the top row, 6, 5, 4 in the middle row and 7, 8, 9 in the bottom row. Each number from 1 to 8 then shares an edge with the number one larger than it, so none of them is a peak, and only 9 is. The smallest possible number of peaks is 1. The transferable idea: the largest element of a finite set always has an extreme property, which gives a lower bound for free.",
+    "elegant": null
+  },
+  "whyOnTest": "The largest number must be a peak, which is the extremal principle, and a snake arrangement shows that one peak is enough.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

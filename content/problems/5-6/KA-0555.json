@@ -1,0 +1,71 @@
+{
+  "id": "KA-0555",
+  "band": "5-6",
+  "points": 4,
+  "statement": "The chart shows how many books were borrowed from a class library on each school day of one week. On how many days were more books borrowed than the average number per day for that week?",
+  "figure": {
+    "component": "LibraryBarChart",
+    "alt": "A bar chart of books borrowed on five school days, with the vertical axis marked 0 to 14 in steps of 2. Monday 6, Tuesday 10, Wednesday 4, Thursday 12, Friday 8."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought the average had to be the busiest day's 12 books, so no day could beat it."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I divided the week's total of 40 by 4 instead of by the 5 days, so I compared with 10."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted Friday, which is exactly equal to the average, as more than the average."
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": false,
+      "misconception": "I compared each day with Wednesday, the quietest day, instead of with the average."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-09",
+    "secondary": [
+      "NUM-15",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "First find the average, then compare each bar with it.",
+    "Read each bar against the axis, add the five values and divide by the number of days. Then count only the bars that are strictly taller than the average.",
+    "The bars show 6, 10, 4, 12 and 8, a total of 40, so the average is 40 ÷ 5 = 8. Now check which days beat 8, remembering that equal is not more."
+  ],
+  "solutions": {
+    "reliable": "Read the bars: Monday 6, Tuesday 10, Wednesday 4, Thursday 12, Friday 8. The total is 40 books over 5 days, so the average is 40 ÷ 5 = 8 books per day. More than 8 were borrowed on Tuesday (10) and Thursday (12). Friday's 8 is equal to the average, not more. So the answer is 2 days. The transferable idea: read every value before calculating, divide by the number of items actually shown, and re-read whether the question says \"more than\" or \"at least\".",
+    "elegant": "Compare each bar with 8 and balance the differences: Monday -2, Tuesday +2, Wednesday -4, Thursday +4, Friday 0. They cancel to zero, which confirms 8 is the average, and only two differences are positive."
+  },
+  "whyOnTest": "Chart questions test careful reading of every bar and of the exact comparison asked, here strictly more than the average.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0616",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A coach says: 'Everyone who made the team came to every practice.' If the coach is right, which of the following must be true?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Ana came to every practice, so she made the team.",
+      "correct": false,
+      "misconception": "I reversed the statement, as if coming to every practice guaranteed a place on the team."
+    },
+    {
+      "key": "B",
+      "text": "Ben missed a practice, so he did not make the team.",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "Cleo did not make the team, so she missed a practice.",
+      "correct": false,
+      "misconception": "I assumed not making the team means a missed practice, but Cleo may have come every time and still not been picked."
+    },
+    {
+      "key": "D",
+      "text": "Everyone who came to every practice made the team.",
+      "correct": false,
+      "misconception": "I turned 'everyone who made the team came' into 'everyone who came made the team'."
+    },
+    {
+      "key": "E",
+      "text": "At least one person made the team.",
+      "correct": false,
+      "misconception": "I assumed the statement says someone made the team, but it would still be true if nobody did."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-01",
+    "secondary": [
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Which kind of person would make the coach wrong?",
+    "A statement of the form 'everyone who is P is Q' is broken only by someone who is P but not Q. For each choice, ask whether it could fail while the coach is still right.",
+    "If Ben missed a practice and made the team anyway, the coach would be wrong."
+  ],
+  "solutions": {
+    "reliable": "The coach's claim says there is nobody who made the team but missed a practice. Ben missed a practice, so if he had made the team the claim would be false; hence he did not make the team, and B must be true. A and D reverse the claim. C fails because Cleo could have come to every practice and still not been picked. E fails because the claim is also true if nobody made the team. The transferable idea: 'every P is Q' also means 'not Q means not P', but it does not mean 'Q means P'.",
+    "elegant": null
+  },
+  "whyOnTest": "Reading 'everyone who ...' precisely: the contrapositive must hold, while the reversed statement and its opposite are the common traps.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

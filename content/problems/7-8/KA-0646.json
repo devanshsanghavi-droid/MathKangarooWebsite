@@ -1,0 +1,68 @@
+{
+  "id": "KA-0646",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A round badge is divided into 5 equal sectors, like slices of a pie. Each sector is painted red or blue. The badge can be turned, but not flipped over. Two badges count as the same if one can be turned to look exactly like the other. How many different badges are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "32",
+      "correct": false,
+      "misconception": "I counted every colouring of the 5 sectors and forgot that turned badges are the same."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I only counted how many sectors are red, from 0 to 5, and not where they are."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I divided 32 by 5 and rounded up."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought two red sectors could be arranged in 3 different ways, and the same for two blue sectors."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-04",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Sort the badges by how many sectors are red.",
+    "Counting up to symmetry: for each number of red sectors, list the arrangements that cannot be turned into each other. Turning around a circle means only the gaps between red sectors matter.",
+    "With 2 red sectors they are either next to each other or separated by one sector on the short side. Separated by two is the same as by one."
+  ],
+  "solutions": {
+    "reliable": "Count by the number of red sectors. 0 red: 1 badge. 1 red: 1 badge. 2 red: the two reds are either side by side or have one blue between them on the shorter way round, so 2 badges. 3 red: same as 2 blue, so 2 badges. 4 red: 1 badge. 5 red: 1 badge. Total 1 + 1 + 2 + 2 + 1 + 1 = 8. The transferable idea: when turns make things equal, sort by a feature turning cannot change, then count shapes within each group.",
+    "elegant": "Of the 32 colourings, 2 are all one colour and do not change when turned. The other 30 come in groups of 5 turns, giving 6 badges. Adding the 2 single-colour badges gives 8."
+  },
+  "whyOnTest": "Counting up to rotation separates careful listers from those who divide blindly, and 7 and 32 catch both kinds of shortcut.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

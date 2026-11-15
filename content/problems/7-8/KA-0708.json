@@ -1,0 +1,68 @@
+{
+  "id": "KA-0708",
+  "band": "7-8",
+  "points": 4,
+  "statement": "When 2026 is divided by a certain whole number d, the remainder is 6. How many different values could d have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted every divisor of 2020 and forgot that the divisor must be bigger than the remainder 6."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I left out d = 2020, because I did not think a divisor that large could leave a remainder."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the pairs of numbers that multiply to give 2020 instead of the divisors themselves."
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": false,
+      "misconception": "I listed the divisors of 2026 instead of the divisors of 2026 - 6."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "NUM-05",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "If 2026 leaves remainder 6 when divided by d, what does d divide exactly?",
+    "Remainders: d must divide 2026 - 6 exactly, and a remainder is always smaller than the number you divide by. List the divisors of that number and keep only the allowed ones.",
+    "2020 = 2 x 2 x 5 x 101. Its divisors are 1, 2, 4, 5, 10, 20, 101, 202, 404, 505, 1010 and 2020. Which of them are bigger than 6?"
+  ],
+  "solutions": {
+    "reliable": "Remainder 6 means 2026 = q x d + 6 for some whole number q, so d divides 2020 exactly. Also a remainder must be smaller than the divisor, so d is bigger than 6. Since 2020 = 2 x 2 x 5 x 101, its divisors are 1, 2, 4, 5, 10, 20, 101, 202, 404, 505, 1010 and 2020. Throwing out 1, 2, 4 and 5 leaves 8 values. Check one: 2026 = 2 x 1010 + 6. The transferable idea: a remainder condition becomes a divisibility condition, plus the rule that the remainder is smaller than the divisor.",
+    "elegant": null
+  },
+  "whyOnTest": "Remainder questions often turn into divisor questions, and the trap is forgetting that a remainder must be smaller than the divisor.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0804",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Several different positive whole numbers add up to 100, and no two of them differ by exactly 1. What is the largest possible number of numbers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I stopped while the total was still below 100, at 1 + 3 + ... + 17 = 81, and did not see that adding 19 makes exactly 100."
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": false,
+      "misconception": "I ignored the rule that no two numbers may differ by 1, and 1 + 2 + ... + 13 = 91 leaves room to spare."
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": false,
+      "misconception": "I ignored the rule that no two numbers may differ by 1 and gave 14 because 1 + 2 + ... + 14 is the first total past 100."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought numbers 2 apart also count as next to each other, so I spaced them 3 apart: 1, 4, 7, ..., 22 adds to 92 and one more is too many."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "CFT-05",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "To fit in as many numbers as possible, keep each one as small as possible.",
+    "Extremal reasoning: list the numbers from smallest to largest. If no two differ by 1, how small can the first, second, third, ... number be? That gives the smallest possible total for a given count.",
+    "The k smallest numbers that work are 1, 3, 5, ..., and the first k odd numbers add to k times k."
+  ],
+  "solutions": {
+    "reliable": "Write the numbers in increasing order. Each is at least 2 more than the one before, so the first is at least 1, the second at least 3, the third at least 5, and the k-th at least 2k - 1. With k numbers the total is therefore at least 1 + 3 + ... + (2k - 1) = k × k. The total is 100, so k × k is at most 100 and k is at most 10. And 10 is possible: 1 + 3 + 5 + ... + 19 = 100, with no two differing by 1. The transferable idea: to find the most items that fit, push every item as low as allowed to get a bound, then show an example that reaches it.",
+    "elegant": null
+  },
+  "whyOnTest": "Extremal questions need two halves, a bound and an example that meets it, and each wrong choice drops one half or one rule.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

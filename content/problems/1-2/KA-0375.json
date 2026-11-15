@@ -1,0 +1,68 @@
+{
+  "id": "KA-0375",
+  "band": "1-2",
+  "points": 4,
+  "statement": "A square garden has sides of 5 m. Fence posts stand all the way round it: one at every corner and one every 1 m along each side. How many posts are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "16",
+      "correct": false,
+      "misconception": "I counted only the posts between the corners and left out the corner posts."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "21",
+      "correct": false,
+      "misconception": "I added one extra post to finish, as you would on a straight fence."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted 6 posts on each side, so every corner post was counted twice."
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": false,
+      "misconception": "I counted the 1 m squares that fill the garden instead of the posts round it."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": [
+      "CFT-02",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "How far is it all the way round?",
+    "Walk once round the garden. Every 1 m you reach a new post, and when you get back to the start you are at the first post again, so it is not a new one.",
+    "The distance round is 5 + 5 + 5 + 5 = 20 m, and there is one post for each metre you walk."
+  ],
+  "solutions": {
+    "reliable": "The distance all the way round is 4 x 5 = 20 m. Walking round, there is a post at every metre mark, and the last metre brings you back to the first post. So there are 20 posts. The idea to keep: on a closed loop, the number of posts equals the number of gaps.",
+    "elegant": "Each side has its 5 posts if you count the corner where it starts but not the corner where it ends. 4 sides give 4 x 5 = 20 posts, with every corner counted exactly once. The idea to keep: give each shared corner to just one side."
+  },
+  "whyOnTest": "It joins perimeter with the fence-post idea, and the closed loop is what makes the usual plus-one wrong.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0472",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Ana writes a three-digit number. Its digits are all different and add up to 12, and its hundreds digit is the sum of the other two. What is the largest number she could have written?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "930",
+      "correct": false,
+      "misconception": "I ignored the rule about the hundreds digit and made the largest number with different digits that add up to 12."
+    },
+    {
+      "key": "B",
+      "text": "660",
+      "correct": false,
+      "misconception": "I used 6 and 0 for the last two digits, forgetting that all three digits must be different."
+    },
+    {
+      "key": "C",
+      "text": "642",
+      "correct": false,
+      "misconception": "I stopped at the first pair I found for the last two digits, 4 and 2, without looking for a bigger tens digit."
+    },
+    {
+      "key": "D",
+      "text": "651",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "615",
+      "correct": false,
+      "misconception": "I found the digits 6, 1 and 5 but put the 5 last, which does not make the largest number."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-02",
+    "secondary": [
+      "CNT-04",
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "How does the hundreds digit compare with the total of all three digits?",
+    "The hundreds digit and the other two digits together make 12, and those two parts are equal. Find the hundreds digit first, then try pairs for the last two digits, biggest tens digit first.",
+    "The hundreds digit is half of 12, which is 6, so the tens and ones digits add up to 6."
+  ],
+  "solutions": {
+    "reliable": "The hundreds digit is the same as the tens and ones digits added together, so the 12 splits into two equal halves: the hundreds digit is 6, and the other two digits add up to 6. The pairs that add up to 6 are 6 and 0, 5 and 1, 4 and 2, and 3 and 3. The pair 6 and 0 repeats the 6, and 3 and 3 repeats the 3, so neither is allowed. For the largest number, put the biggest allowed tens digit, 5, next: 651. Check: 6 + 5 + 1 = 12 and 5 + 1 = 6. The transferable idea: use the strongest clue first to fix one digit, then list what is left.",
+    "elegant": null
+  },
+  "whyOnTest": "Digit-constraint puzzles: spotting that the hundreds digit must be half the digit total is the key idea, and each broken rule is offered as a trap.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

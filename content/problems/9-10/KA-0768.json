@@ -1,0 +1,68 @@
+{
+  "id": "KA-0768",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A contest question has five choices, is worth 4 points, and a wrong answer costs nothing. Kai will guess on his last 12 questions. On 4 he can rule out three wrong choices, on 3 he can rule out two, and on the other 5 nothing. On average, how many points do these 12 guesses earn him?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought a random guess earns nothing on average, so I counted no points from any of the twelve."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found how many of the twelve he gets right on average, 4, and gave that instead of the points."
+    },
+    {
+      "key": "C",
+      "text": "9.6",
+      "correct": false,
+      "misconception": "I used a one-in-five chance for every guess, ignoring the choices he had ruled out."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I left out the five questions where he can rule out nothing, thinking a blind guess is not worth anything."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-09",
+    "secondary": [
+      "CFT-05",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "How many choices are left on each kind of question?",
+    "With no penalty, every guess has an average value: the chance it is right times the points it is worth. Find the average number of correct guesses in each group, add them, then turn that into points.",
+    "Two choices are left on 4 questions, three on 3 questions and five on 5 questions. On average that is 4 x 1/2 + 3 x 1/3 + 5 x 1/5 correct guesses."
+  ],
+  "solutions": {
+    "reliable": "On the 4 questions with two choices left, each guess is right with probability 1/2, so on average 2 are right. On the 3 questions with three choices left, each is right with probability 1/3, so on average 1 is right. On the 5 blind guesses, each is right with probability 1/5, so on average 1 is right. That is 2 + 1 + 1 = 4 correct answers on average, worth 4 x 4 = 16 points. The transferable idea: with no penalty, every guess has positive value, even a blind one, and each eliminated choice raises it.",
+    "elegant": "In each group, the expected number of correct guesses is the number of questions divided by the number of choices left: 4/2 + 3/3 + 5/5 = 2 + 1 + 1 = 4, so 16 points. Even the five blind guesses add 4 points on average."
+  },
+  "whyOnTest": "No-penalty scoring means every question gets an answer, and this checks whether a student can turn eliminations, and blind guesses, into an expected score.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

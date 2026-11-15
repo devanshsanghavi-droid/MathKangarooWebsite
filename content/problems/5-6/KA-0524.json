@@ -1,0 +1,68 @@
+{
+  "id": "KA-0524",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Beads are threaded in the repeating pattern red, blue, green, blue, blue, red, blue, green, blue, blue, and so on. How many of the first 83 beads are blue?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "34",
+      "correct": false,
+      "misconception": "I counted the beads that are not blue instead of the blue ones."
+    },
+    {
+      "key": "B",
+      "text": "48",
+      "correct": false,
+      "misconception": "I counted 16 full rounds of 5 beads with 3 blue each and forgot the 3 beads left over."
+    },
+    {
+      "key": "C",
+      "text": "49",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "50",
+      "correct": false,
+      "misconception": "I took the 3 leftover beads from the end of the pattern, green, blue, blue, instead of from the start."
+    },
+    {
+      "key": "E",
+      "text": "51",
+      "correct": false,
+      "misconception": "I rounded 83 divided by 5 up to 17 full rounds, as if the last round were complete."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "NUM-06",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "How many beads are in one round of the pattern?",
+    "Split the 83 beads into complete rounds of the pattern plus a few left over. Count the blues in the complete rounds, then look at the leftover beads, which start a new round.",
+    "83 = 16 x 5 + 3. The 3 leftover beads are red, blue, green."
+  ],
+  "solutions": {
+    "reliable": "One round is 5 beads, 3 of them blue. 83 = 16 x 5 + 3, so there are 16 full rounds with 16 x 3 = 48 blue beads, then 3 more beads that start a new round: red, blue, green, with 1 blue. Total 48 + 1 = 49. The transferable idea: for a repeating pattern, divide by the length of one round and read the remainder from the start of the pattern.",
+    "elegant": null
+  },
+  "whyOnTest": "Repeating patterns test dividing with a remainder and then reading the leftover from the correct end of the cycle.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

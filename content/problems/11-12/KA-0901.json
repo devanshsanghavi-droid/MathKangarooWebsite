@@ -1,0 +1,68 @@
+{
+  "id": "KA-0901",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Each vertex of a regular pentagon is painted black, white or grey. Two paintings count as the same if one can be turned in its plane to match the other. How many different paintings are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "51",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "39",
+      "correct": false,
+      "misconception": "I also treated mirror images as the same, but only turning is allowed, not flipping."
+    },
+    {
+      "key": "C",
+      "text": "48",
+      "correct": false,
+      "misconception": "I set aside the 3 one-colour paintings and divided the other 240 by 5, but forgot to add the 3 back."
+    },
+    {
+      "key": "D",
+      "text": "49",
+      "correct": false,
+      "misconception": "I divided all 243 paintings by 5 and rounded up, not noticing that the one-colour paintings do not come in groups of 5."
+    },
+    {
+      "key": "E",
+      "text": "243",
+      "correct": false,
+      "misconception": "I counted 3 to the power 5 paintings and ignored that turning makes some of them the same."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-16",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "How many paintings look the same as a typical one?",
+    "Turning a painting either leaves it unchanged or, because 5 is prime, produces 5 different versions of it. Separate the paintings that look the same after every turn from all the others.",
+    "Only the 3 one-colour paintings are unchanged by a turn; the other 240 fall into groups of 5."
+  ],
+  "solutions": {
+    "reliable": "Before turning is allowed there are 3 to the power 5 = 243 paintings. A painting that matches itself after a turn of one, two, three or four steps must be all one colour, because 5 is prime: there are 3 of these. Every other painting has 5 different turned versions, so the other 240 paintings form 240/5 = 48 groups. In total there are 48 + 3 = 51 different paintings. The transferable idea: when counting up to symmetry, separate the symmetric objects, which form groups of one, from the rest, which come in full groups.",
+    "elegant": "Average the number of paintings left unchanged by each of the 5 turns: (243 + 3 + 3 + 3 + 3)/5 = 255/5 = 51."
+  },
+  "whyOnTest": "Dividing by the number of turns only works for paintings with no symmetry; spotting the exceptions is what turns 243/5 into a whole number, 51.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

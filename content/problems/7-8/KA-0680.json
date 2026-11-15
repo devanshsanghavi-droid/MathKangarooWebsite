@@ -1,0 +1,67 @@
+{
+  "id": "KA-0680",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Five friends, Pia, Quin, Rosa, Sam and Tom, all have different heights. Pia is taller than Quin but shorter than Rosa. Sam is shorter than Quin. Tom is taller than Pia, but he is not the tallest of the five. Who is the second tallest?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Pia",
+      "correct": false,
+      "misconception": "I put Pia straight below Rosa because the first clue names them together, and forgot that Tom must also fit in above Pia."
+    },
+    {
+      "key": "B",
+      "text": "Quin",
+      "correct": false,
+      "misconception": "I counted second from the shortest end instead of second from the tallest."
+    },
+    {
+      "key": "C",
+      "text": "Rosa",
+      "correct": false,
+      "misconception": "I ignored the clue that Tom is not the tallest, put Tom first and so had Rosa second."
+    },
+    {
+      "key": "D",
+      "text": "Tom",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "It cannot be decided from the clues.",
+      "correct": false,
+      "misconception": "I saw that no clue compares Tom with Rosa directly, so I thought either could be taller, and missed that 'not the tallest' settles it."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-04",
+    "secondary": [
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "Who can possibly be the tallest?",
+    "Turn each clue into a chain of 'taller than' links. Then rule people out of the top place one by one: anyone with someone taller than them cannot be the tallest.",
+    "Pia, Quin and Sam each have someone taller than them, and Tom is not the tallest, so Rosa is the tallest."
+  ],
+  "solutions": {
+    "reliable": "The clues give Rosa above Pia, Pia above Quin and Quin above Sam. Pia, Quin and Sam each have someone taller, and Tom is not the tallest, so Rosa is the tallest. Tom is taller than Pia, so Tom is above Pia but below Rosa. The full order, tallest first, is Rosa, Tom, Pia, Quin, Sam, so Tom is second tallest. The transferable idea: in ordering puzzles, settle an extreme place first by ruling out everyone who cannot be there.",
+    "elegant": null
+  },
+  "whyOnTest": "Ordering questions reward finding the one forced position first, usually an end of the line, then letting the rest fall into place.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

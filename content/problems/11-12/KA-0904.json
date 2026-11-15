@@ -1,0 +1,68 @@
+{
+  "id": "KA-0904",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Rectangle ABCD has AB = 10 and BC = 6. Point P can be anywhere on side AB. What is the area of triangle PCD?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "15",
+      "correct": false,
+      "misconception": "I placed P at the middle of AB, used half of AB, 5, as the base with height 6, and halved."
+    },
+    {
+      "key": "B",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "32",
+      "correct": false,
+      "misconception": "I worked out the perimeter of the rectangle, 2 x (10 + 6), instead of an area."
+    },
+    {
+      "key": "D",
+      "text": "60",
+      "correct": false,
+      "misconception": "I multiplied the base CD by the height 6 and forgot to halve for a triangle."
+    },
+    {
+      "key": "E",
+      "text": "It depends on where P is",
+      "correct": false,
+      "misconception": "I assumed moving P along AB changes the area, without noticing that its height above CD never changes."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "GEO-04",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Sketch it and choose side CD as the base.",
+    "With CD as the base, the height is the distance from P to the line CD. Ask whether that distance changes as P slides along AB, which is parallel to CD.",
+    "The base CD is 10 and the height is always BC = 6, so the area is half of 10 x 6."
+  ],
+  "solutions": {
+    "reliable": "Draw the rectangle with AB on top and CD at the bottom. Take CD, of length 10, as the base of triangle PCD. Since P lies on AB, which is parallel to CD, its distance from CD is always 6. So the area is (1/2) x 10 x 6 = 30, wherever P is. The transferable idea: draw the diagram and choose the base whose height you know, especially when a point is allowed to move.",
+    "elegant": "Slide P to corner A: triangle ACD is exactly half the rectangle, 60 / 2 = 30. Since the height of P above CD never changes, every position gives the same answer."
+  },
+  "whyOnTest": "Drawing the figure shows the height is fixed, which turns an apparently underdetermined question into a one-line area calculation.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

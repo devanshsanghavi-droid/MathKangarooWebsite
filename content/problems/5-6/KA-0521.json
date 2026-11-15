@@ -1,0 +1,68 @@
+{
+  "id": "KA-0521",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Each box in the four-digit number 5□3□ is filled with a digit (the two digits may be the same). The number must be divisible by both 4 and 9. How many different numbers can be made?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I found one number that works and stopped without looking for others."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I tested divisibility by 4 by checking that the last digit is 0, 4 or 8, instead of checking the last two digits."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I thought divisible by 4 just means even, so I let the last digit be 0, 2, 4, 6 or 8."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I used the rule for 3, a digit sum that is a multiple of 3, instead of the rule for 9."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "NUM-02",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Use the last two digits for 4 and the digit sum for 9.",
+    "Divisibility by 4 depends only on the number made by the last two digits, which narrows down the last box. Then the digit sum must be a multiple of 9, which fixes the other box.",
+    "The last two digits must make 32 or 36. Then 5 + box + 3 + 2, or 5 + box + 3 + 6, must be 18."
+  ],
+  "solutions": {
+    "reliable": "For 4: the last two digits make a number from 30 to 39 that is divisible by 4, so they are 32 or 36. For 9: the digit sum must be a multiple of 9. With last digit 2, the sum is 10 plus the missing digit, which must be 18, so the digit is 8: 5832. With last digit 6, the sum is 14 plus the missing digit, which must be 18, so the digit is 4: 5436. That is exactly 2 numbers. The transferable idea: apply the most restrictive rule first, then let the next rule fix what is left.",
+    "elegant": null
+  },
+  "whyOnTest": "Combining two divisibility rules, and using each one correctly, is a staple of Kangaroo number questions.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

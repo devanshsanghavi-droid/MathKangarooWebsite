@@ -1,0 +1,67 @@
+{
+  "id": "KA-0626",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A cafe offers 7 different toppings for its pancakes. A plate comes with exactly 2 different toppings. How many different plates are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "42",
+      "correct": false,
+      "misconception": "I counted choosing a first topping and then a second, so each pair got counted twice."
+    },
+    {
+      "key": "B",
+      "text": "14",
+      "correct": false,
+      "misconception": "I multiplied the 7 toppings by the 2 toppings on each plate."
+    },
+    {
+      "key": "C",
+      "text": "28",
+      "correct": false,
+      "misconception": "I also counted plates with the same topping twice, even though the toppings must be different."
+    },
+    {
+      "key": "D",
+      "text": "49",
+      "correct": false,
+      "misconception": "I chose each of the two toppings from all 7, ignoring both order and repeats."
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-08"
+    ]
+  },
+  "hints": [
+    "Does the order of the two toppings matter?",
+    "This is a selection, not an arrangement. Count ordered choices first, then divide by the number of orders each pair appears in.",
+    "There are 7 x 6 = 42 ordered choices, and each plate appears twice in that list."
+  ],
+  "solutions": {
+    "reliable": "Choose a first topping in 7 ways and a different second topping in 6 ways: 42 ordered choices. Each plate, such as honey with banana, was counted twice (honey then banana, banana then honey), so there are 42 / 2 = 21 plates. The transferable idea: when order does not matter, count with order and divide by how many orders each choice has.",
+    "elegant": "Each plate is a pair, just like a handshake between two of 7 people: 6 + 5 + 4 + 3 + 2 + 1 = 21."
+  },
+  "whyOnTest": "Kangaroo checks whether you can tell a selection from an arrangement, and 42 is waiting for anyone who forgets to divide.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

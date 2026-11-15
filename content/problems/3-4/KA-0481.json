@@ -1,0 +1,68 @@
+{
+  "id": "KA-0481",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A bug sits on a point of a huge square grid. Each step takes it along a grid line to a neighbouring point. For how many points is its shortest walk exactly 3 steps?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I only counted the points 3 steps away in a straight line, up, down, left and right."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the straight-line points and the walks of 2 steps one way and 1 step the other, but forgot 1 step one way and 2 steps the other."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I found the 4 points in one corner region, including the ones on the lines, and multiplied by 4, so I counted the straight-line points twice."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted every point on the edge of the 7 by 7 square around the bug, but the corners of that square are 6 steps away."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-02",
+    "secondary": [
+      "CNT-04",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Sort points by how many steps go sideways and how many go up or down.",
+    "A shortest walk mixes sideways steps and up-or-down steps that add up to 3. Do casework on how many are sideways, and in each case count the directions it could go.",
+    "3 sideways and 0 up or down gives 2 points; 2 and 1 gives 4 points; 1 and 2 gives 4 points; 0 and 3 gives 2 points."
+  ],
+  "solutions": {
+    "reliable": "Split the 3 steps into sideways and up-or-down. 3 sideways, 0 up-or-down: left or right, 2 points. 2 sideways, 1 up-or-down: 2 x 2 = 4 points. 1 sideways, 2 up-or-down: 4 points. 0 sideways, 3 up-or-down: 2 points. Total 2 + 4 + 4 + 2 = 12. The transferable idea: on a grid, split a walk into its across part and its up part and do casework on the split.",
+    "elegant": "The points form a diamond around the bug. Each of its four sides runs from one tip to the next and holds 4 points, and the 4 tips are each shared by two sides, so 4 x 4 - 4 = 12. The transferable idea: when you count around a closed shape, subtract the corners you counted twice."
+  },
+  "whyOnTest": "Grid distance is not straight-line distance, and counting the diamond of points needs careful casework without double-counting.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

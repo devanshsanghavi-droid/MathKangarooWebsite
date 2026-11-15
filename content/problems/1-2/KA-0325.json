@@ -1,0 +1,70 @@
+{
+  "id": "KA-0325",
+  "band": "1-2",
+  "points": 4,
+  "statement": "The shape is made of 6 squares. Each square has sides of 1 cm. How far is it all the way round the outside of the shape?",
+  "figure": {
+    "component": "StaircaseSquares",
+    "alt": "A staircase shape made of 6 equal squares on a flat bottom edge. From left to right the columns are 1, 2 and 3 squares tall, so the top edge steps up twice and the right side is 3 squares tall."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the squares instead of the edges around the outside."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I forgot the two short edges where the staircase steps up."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": false,
+      "misconception": "I counted every short line in the picture, including the ones inside the shape."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted 4 sides for every square, as if none of them touched."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Put your finger on a corner and trace round the outside.",
+    "The distance round is made of only the outside edges. Lines inside the shape, where two squares touch, are not part of it. Count the outside edges one by one as you trace.",
+    "The bottom has 3 edges and the tall right side has 3. Now count the edges on the left, the tops of the steps and the two little step-ups."
+  ],
+  "solutions": {
+    "reliable": "Trace round the outside: 3 cm along the bottom, 3 cm up the right side, then 1 cm across the top, 1 cm down, 1 cm across, 1 cm down, 1 cm across, and 1 cm down the left side to the start. That is 3 + 3 + 1 + 1 + 1 + 1 + 1 + 1 = 12 cm. The idea to keep: trace the outside edge once and count every small piece, including the step-ups.",
+    "elegant": "Push the two step-ups out to the right and the step tops up to the top. The outline becomes a square 3 cm by 3 cm, which is 3 + 3 + 3 + 3 = 12 cm round. The idea to keep: a staircase outline is as long as the rectangle around it."
+  },
+  "whyOnTest": "Perimeter of a stepped shape tests counting only outside edges, without missing the step-ups.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

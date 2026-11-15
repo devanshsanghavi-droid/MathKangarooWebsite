@@ -1,0 +1,68 @@
+{
+  "id": "KA-0560",
+  "band": "5-6",
+  "points": 5,
+  "statement": "The decimal for one seventh is 0.142857142857..., where the block 142857 repeats forever. What is the sum of the first 50 digits after the decimal point?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "216",
+      "correct": false,
+      "misconception": "I added eight full blocks and forgot the two extra digits after them."
+    },
+    {
+      "key": "B",
+      "text": "221",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "223",
+      "correct": false,
+      "misconception": "I added eight full blocks and then three extra digits, 1, 4 and 2, instead of two."
+    },
+    {
+      "key": "D",
+      "text": "225",
+      "correct": false,
+      "misconception": "I multiplied the block sum 27 by 50 ÷ 6, as if the digits were spread out evenly."
+    },
+    {
+      "key": "E",
+      "text": "243",
+      "correct": false,
+      "misconception": "I rounded 50 ÷ 6 up to 9 and added nine full blocks, which is 54 digits."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "NUM-06",
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "How many full blocks of six digits fit into 50 digits?",
+    "The digits repeat in blocks of 6, so split the 50 digits into full blocks plus a few left over. Each full block has the same digit sum; the leftover digits are the first few of the block.",
+    "50 = 8 × 6 + 2, so there are 8 full blocks and 2 extra digits. One block adds to 1 + 4 + 2 + 8 + 5 + 7 = 27."
+  ],
+  "solutions": {
+    "reliable": "The block 142857 has 6 digits adding to 1 + 4 + 2 + 8 + 5 + 7 = 27. Since 50 = 8 × 6 + 2, the first 50 digits are 8 full blocks followed by the first 2 digits of the next block, which are 1 and 4. The sum is 8 × 27 + 1 + 4 = 216 + 5 = 221. The transferable idea: for a repeating pattern, divide by the cycle length; the quotient counts full cycles and the remainder tells you exactly where you stop.",
+    "elegant": null
+  },
+  "whyOnTest": "Repeating patterns test whether you use the remainder correctly instead of rounding the number of cycles.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

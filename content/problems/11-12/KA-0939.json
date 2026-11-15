@@ -1,0 +1,67 @@
+{
+  "id": "KA-0939",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Which of these is closest to 1 / (√101 - 10)?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0.05",
+      "correct": false,
+      "misconception": "I estimated √101 - 10 correctly but forgot to take the reciprocal."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought √101 is about 10.1, so the denominator is about 0.1."
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "100",
+      "correct": false,
+      "misconception": "I thought √101 is about 10.01 because 101 is 1% more than 100."
+    },
+    {
+      "key": "E",
+      "text": "200",
+      "correct": false,
+      "misconception": "I thought √101 is about 10.005, so the denominator is about 0.005."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-06",
+    "secondary": [
+      "NUM-12"
+    ]
+  },
+  "hints": [
+    "How much bigger than 10 is √101, roughly?",
+    "If √101 = 10 + e for a small e, squaring gives 100 + 20e plus a tiny term. Solve for e, or rationalise the denominator instead.",
+    "100 + 20e is about 101, so e is about 1/20. Alternatively, multiply top and bottom by √101 + 10."
+  ],
+  "solutions": {
+    "reliable": "Multiply top and bottom by √101 + 10: the denominator becomes 101 - 100 = 1, so the value is exactly √101 + 10, a little over 20. The transferable idea: a reciprocal of a tiny difference is very sensitive to estimation errors, so rationalise or square carefully before choosing.",
+    "elegant": "Squaring 10 + e gives about 100 + 20e, so √101 is about 10 + 1/20, and the reciprocal of 1/20 is 20."
+  },
+  "whyOnTest": "Estimation questions test whether you know how fast a square root grows; a rough guess of √101 gives one of the far-off choices.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

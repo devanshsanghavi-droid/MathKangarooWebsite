@@ -1,0 +1,68 @@
+{
+  "id": "KA-0631",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A tower of unit cubes stands on a table: a 5 by 5 bottom layer, a 3 by 3 middle layer centred on it, and one cube centred on top. A cube is hidden if none of its faces can be seen. Faces on the table or against another cube cannot be seen. How many cubes are hidden?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I found the hidden cubes in the bottom layer but forgot the centre of the middle layer, covered by the top cube."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I counted the cubes that can be seen instead of the hidden ones."
+    },
+    {
+      "key": "D",
+      "text": "1",
+      "correct": false,
+      "misconception": "I only counted the cube directly under the top cube."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": false,
+      "misconception": "I took the inside of an n by n layer to be (n - 1) by (n - 1), giving 16 + 4 + 0."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-14",
+    "secondary": [
+      "GEO-13",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Go layer by layer. Which cubes have their top face covered?",
+    "A cube is hidden only if it is not on the outside edge of its layer and the layer above covers its top. Work through each layer separately and count the cubes that pass both tests.",
+    "In the bottom layer, the inner 3 by 3 cubes are not on the edge, and the middle layer covers all their tops."
+  ],
+  "solutions": {
+    "reliable": "Bottom layer: the 16 cubes around the edge show a side face. The inner 3 by 3 block of 9 cubes has no side showing, and the middle layer sits exactly on top of them, so all 9 are hidden. Middle layer: the 8 edge cubes show a side, and the centre cube is covered by the top cube, so 1 is hidden. The top cube is visible. Total 9 + 1 = 10. The transferable idea: count hidden cubes one layer at a time, checking sides and tops separately.",
+    "elegant": "There are 25 + 9 + 1 = 35 cubes. The visible ones are the 16 edge cubes of the bottom layer, the 8 edge cubes of the middle layer and the top cube, 25 in all, so 35 - 25 = 10 are hidden."
+  },
+  "whyOnTest": "Counting cubes you cannot see is a Kangaroo favourite, and it rewards a layer-by-layer check over guessing from the outside.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

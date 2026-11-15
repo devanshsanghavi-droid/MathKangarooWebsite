@@ -1,0 +1,67 @@
+{
+  "id": "KA-0684",
+  "band": "7-8",
+  "points": 3,
+  "statement": "In the number 5,384,926, the value of the digit 8 is how many times the value of the digit 2?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I compared the digits 8 and 2 themselves and ignored the places they stand in."
+    },
+    {
+      "key": "B",
+      "text": "400",
+      "correct": false,
+      "misconception": "I counted the 8 as only two places to the left of the 2, so I used 100 instead of 1000 for the places."
+    },
+    {
+      "key": "C",
+      "text": "1000",
+      "correct": false,
+      "misconception": "I compared the places correctly but forgot that 8 is itself 4 times 2."
+    },
+    {
+      "key": "D",
+      "text": "4000",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "40000",
+      "correct": false,
+      "misconception": "I counted the 8 as four places to the left of the 2, one place too many, so I used 10000 for the places."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-01",
+    "secondary": [
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "Write down what each of the two digits is actually worth.",
+    "A digit's value depends on its place. Find the place of the 8 and the place of the 2 by counting from the right, write both values in full, then divide.",
+    "The 8 is in the ten-thousands place and the 2 is in the tens place."
+  ],
+  "solutions": {
+    "reliable": "Counting from the right, 5,384,926 has 6 ones, 2 tens, 9 hundreds, 4 thousands and 8 ten-thousands. So the 8 is worth 80,000 and the 2 is worth 20. Then 80,000 / 20 = 4000. The transferable idea: each step one place to the left multiplies a digit's value by 10, so compare both the digits and the number of places between them.",
+    "elegant": "The 8 stands three places to the left of the 2, which multiplies by 10 x 10 x 10 = 1000, and the digit 8 is 4 times the digit 2, so the answer is 4 x 1000 = 4000."
+  },
+  "whyOnTest": "Place-value questions check that a digit's value depends on its position, and the traps miscount the places or compare only the digits.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

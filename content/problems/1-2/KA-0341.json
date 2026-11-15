@@ -1,0 +1,67 @@
+{
+  "id": "KA-0341",
+  "band": "1-2",
+  "points": 3,
+  "statement": "A floor is covered by square tiles laid in 3 rows, with 5 tiles in each row. How many tiles cover the floor?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "7",
+      "correct": false,
+      "misconception": "I counted the tiles along one long side and one short side, counting the corner tile once."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I added 3 and 5 instead of counting 3 rows of 5 tiles."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted only two rows of 5 tiles."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted only the tiles around the edge of the floor and missed the ones in the middle."
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": [
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Draw the 3 rows and count the tiles.",
+    "The floor is made of equal rows. Count how many tiles are in one row, then count that many again for every row.",
+    "Each row has 5 tiles and there are 3 rows. Count 5, then 10, then one more 5."
+  ],
+  "solutions": {
+    "reliable": "There are 3 rows and each row has 5 tiles. Counting row by row gives 5, 10, 15, so 15 tiles cover the floor. The idea to keep: the area of a rectangle is the number of squares inside it, so count equal rows rather than the edges.",
+    "elegant": null
+  },
+  "whyOnTest": "Counting squares in rows is the root of area, and adding the two side lengths is the mistake that shows up first.",
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

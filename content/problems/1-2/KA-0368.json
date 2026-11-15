@@ -1,0 +1,68 @@
+{
+  "id": "KA-0368",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Every dart on a board scores 1, 3, 5 or 7 points. Lea throws three darts and all of them hit the board. Which total could she score?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I used 3 + 3 = 6 and forgot that Lea throws a third dart."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I used 2 + 3 + 3 = 8 without checking which scores are on the board."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I used 5 + 5 = 10, which is only two darts."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I used 4 + 4 + 4 = 12 without checking which scores are on the board."
+    },
+    {
+      "key": "E",
+      "text": "13",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "CFT-04",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Are the scores on the board odd or even?",
+    "Every score on the board is odd. Think about what happens to odd and even when you add two odd numbers, and then add one more odd number.",
+    "Odd + odd is even, and even + odd is odd. So three odd scores always add to an odd total. Which choice is odd, and can you make it?"
+  ],
+  "solutions": {
+    "reliable": "Every score is odd. Two odd numbers add to an even number, and adding a third odd number makes the total odd again. So three darts always give an odd total. Only 13 is odd, and 7 + 5 + 1 = 13 shows it can really happen. The idea to keep: add odd numbers in pairs, since each pair is even, and one left over makes the total odd.",
+    "elegant": "Each odd score is an even number plus 1. Three darts give three of those extra 1s, which is 3, and 3 is odd, so the total is odd. Then check 13 = 7 + 5 + 1. The idea to keep: count the leftover 1s to decide odd or even."
+  },
+  "whyOnTest": "Parity lets a student rule out four choices without trying a single sum, and still check that the last one really works.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

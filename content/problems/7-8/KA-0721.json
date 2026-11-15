@@ -1,0 +1,68 @@
+{
+  "id": "KA-0721",
+  "band": "7-8",
+  "points": 3,
+  "statement": "What is (1 + 3 + 5 + ... + 49) - (2 + 4 + 6 + ... + 48)? The first bracket holds every odd number from 1 to 49, and the second holds every even number from 2 to 48.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": false,
+      "misconception": "I paired each even number with the odd number just above it, got 24 differences of 1, and forgot the 1 left over at the start."
+    },
+    {
+      "key": "B",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed both brackets had the same number of terms that would cancel out, leaving 0."
+    },
+    {
+      "key": "D",
+      "text": "-25",
+      "correct": false,
+      "misconception": "I subtracted the odd total from the even total, reversing the order of the two brackets."
+    },
+    {
+      "key": "E",
+      "text": "49",
+      "correct": false,
+      "misconception": "I cancelled each even number against the odd number just below it as if they were equal, which left only 49."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-08",
+    "secondary": [
+      "PAT-02",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Count how many terms are in each bracket.",
+    "Do not add each bracket on its own. Pair every even number with a nearby odd number so that each pair has the same small difference, then see what is left over.",
+    "Pair 3 with 2, 5 with 4, and so on up to 49 with 48. Each pair gives 1, and the 1 at the very start has no partner."
+  ],
+  "solutions": {
+    "reliable": "There are 25 odd numbers from 1 to 49 and 24 even numbers from 2 to 48. Group them as 1 + (3 - 2) + (5 - 4) + ... + (49 - 48). There are 24 brackets, each worth 1, giving 24, and the unpaired 1 at the start makes the total 25. The transferable idea: regroup a long sum into pairs that each give the same simple value, and watch for the term with no partner.",
+    "elegant": "The odd numbers from 1 to 49 add to 25 x 25 = 625 and the even numbers from 2 to 48 add to 2 x (1 + 2 + ... + 24) = 600, so the difference is 25."
+  },
+  "whyOnTest": "Kangaroo arithmetic is rarely about long sums: pairing terms turns the work into counting, and the leftover term is the usual trap.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

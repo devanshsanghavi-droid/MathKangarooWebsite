@@ -1,0 +1,68 @@
+{
+  "id": "KA-0813",
+  "band": "9-10",
+  "points": 4,
+  "statement": "In triangle ABC, AB = AC. Point D lies on side BC so that AD = BD, and angle DAC is 39 degrees. What is the size of angle ABC?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "39 degrees",
+      "correct": false,
+      "misconception": "I assumed D was the midpoint of BC, so AD = DC as well and angle C would equal angle DAC, 39 degrees."
+    },
+    {
+      "key": "B",
+      "text": "47 degrees",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "51 degrees",
+      "correct": false,
+      "misconception": "I assumed AD cut angle A exactly in half, so angle BAD was also 39 degrees and angle A was 78 degrees."
+    },
+    {
+      "key": "D",
+      "text": "86 degrees",
+      "correct": false,
+      "misconception": "I found angle BAC = 47 + 39 = 86 degrees and gave that instead of angle ABC."
+    },
+    {
+      "key": "E",
+      "text": "94 degrees",
+      "correct": false,
+      "misconception": "I worked out angle ADC, which is twice angle B, and gave that as the answer."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "GEO-06",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Two isosceles triangles are hiding here. Which angles are equal in each?",
+    "Call angle ABC x. Use each pair of equal sides to name more angles in terms of x, then write the angle sum of triangle ABC as one equation in x.",
+    "Angle C is x because AB = AC, and angle BAD is x because AD = BD, so angle BAC is x + 39 degrees."
+  ],
+  "solutions": {
+    "reliable": "Let angle ABC = x. Since AB = AC, angle ACB = x. Since AD = BD, triangle ABD is isosceles, so angle BAD = x. Then angle BAC = x + 39, and the angle sum of triangle ABC gives x + x + (x + 39) = 180, so 3x = 141 and x = 47 degrees. Check in triangle ADC: angle ADC is an exterior angle of triangle ABD, so it equals 2x = 94 degrees, and 39 + 47 + 94 = 180. The transferable idea: name one unknown angle, push it through every isosceles triangle, and finish with an angle sum.",
+    "elegant": "Use triangle ADC on its own. Its angle at D is an exterior angle of the isosceles triangle ABD, so it equals x + x = 2x, and its angle at C is x. Then 39 + x + 2x = 180 gives x = 47 straight away."
+  },
+  "whyOnTest": "Angle chasing through linked isosceles triangles is a 4-point regular, and the traps are assuming a midpoint or a bisector that the problem never gave.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

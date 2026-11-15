@@ -1,0 +1,68 @@
+{
+  "id": "KA-0855",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Five quiz scores are whole numbers from 0 to 100, and their mean is 92. What is the lowest that the smallest score could be?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought any score could be 0, forgetting the mean of 92 has to be reached."
+    },
+    {
+      "key": "B",
+      "text": "68",
+      "correct": false,
+      "misconception": "I worked as if there were four scores in total: three of 100 and one more, with mean 92."
+    },
+    {
+      "key": "C",
+      "text": "60",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "84",
+      "correct": false,
+      "misconception": "I thought the lowest score could sit as far below 92 as 100 is above it, giving 92 - 8."
+    },
+    {
+      "key": "E",
+      "text": "92",
+      "correct": false,
+      "misconception": "I thought no score could be below the mean."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-05",
+    "secondary": [
+      "NUM-15",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "To make one score small, make the others as big as possible.",
+    "Turn the mean into a total. The smallest score is lowest when the other four take the largest values allowed, so bound it by subtracting their greatest possible total.",
+    "The five scores total 5 × 92 = 460, and the other four can total at most 400."
+  ],
+  "solutions": {
+    "reliable": "The five scores total 5 × 92 = 460. The other four scores are each at most 100, so together at most 400, and the smallest score is at least 460 - 400 = 60. The scores 60, 100, 100, 100, 100 show 60 is possible. The transferable idea: to push one value to an extreme, push all the others to the opposite extreme, then check the bound is reached.",
+    "elegant": "Each of the four top scores can be at most 8 above the mean, so together they are at most 32 above it. The scores balance around the mean, so the smallest is at most 32 below it: 92 - 32 = 60."
+  },
+  "whyOnTest": "Bounding settles extreme-value questions quickly: push the other values to their limits, and the traps forget the count or the limit.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

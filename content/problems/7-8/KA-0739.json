@@ -1,0 +1,68 @@
+{
+  "id": "KA-0739",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Which of these is equal to 47 x 53 x 61?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "149,460",
+      "correct": false,
+      "misconception": "I multiplied 2491 by 60 and forgot to add the last 2491 needed to make 61 lots."
+    },
+    {
+      "key": "B",
+      "text": "17,437",
+      "correct": false,
+      "misconception": "I multiplied 2491 by 6 instead of 60 and then added 2491, losing a place value."
+    },
+    {
+      "key": "C",
+      "text": "153,049",
+      "correct": false,
+      "misconception": "I worked out 47 x 53 as 2500 + 9 = 2509 instead of 2500 - 9, then multiplied by 61."
+    },
+    {
+      "key": "D",
+      "text": "151,951",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "152,500",
+      "correct": false,
+      "misconception": "I rounded 47 x 53 to 50 x 50 = 2500 and multiplied that by 61."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-05",
+    "secondary": [
+      "NUM-07",
+      "CFT-06"
+    ]
+  },
+  "hints": [
+    "You may not need to multiply at all: look at the last digits.",
+    "Eliminate choices with cheap checks: a product of odd numbers is odd, its last digit comes only from the last digits of the factors, and its size is close to 50 x 50 x 60.",
+    "The last digit is the last digit of 7 x 3 x 1, which is 1. Only one choice ends in 1."
+  ],
+  "solutions": {
+    "reliable": "Multiply carefully: 47 x 53 = 2491 (it is 50 x 50 - 3 x 3), and 2491 x 61 = 2491 x 60 + 2491 = 149,460 + 2491 = 151,951. The transferable idea: before grinding through a long calculation, check whether a quick test like the last digit already picks out the answer.",
+    "elegant": "The last digit of the product is the last digit of 7 x 3 x 1 = 21, which is 1. Of the choices, only 151,951 ends in 1, so no long multiplication is needed. Its size also fits the estimate 50 x 50 x 60 = 150,000."
+  },
+  "whyOnTest": "Kangaroo rewards checking choices against cheap facts like parity, last digit and size before doing long arithmetic.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

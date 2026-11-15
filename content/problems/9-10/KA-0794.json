@@ -1,0 +1,68 @@
+{
+  "id": "KA-0794",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A rectangle measures 8 cm by 6 cm. The midpoints of its four sides are joined in order to form a rhombus. What is the area of the rhombus?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24 square cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "12 square cm",
+      "correct": false,
+      "misconception": "I thought the rhombus was a quarter of the rectangle."
+    },
+    {
+      "key": "C",
+      "text": "20 square cm",
+      "correct": false,
+      "misconception": "I worked out each side of the rhombus is 5 cm and then gave the perimeter, 4 times 5."
+    },
+    {
+      "key": "D",
+      "text": "25 square cm",
+      "correct": false,
+      "misconception": "I found the rhombus side is 5 cm and squared it, treating the rhombus as if it were a square."
+    },
+    {
+      "key": "E",
+      "text": "48 square cm",
+      "correct": false,
+      "misconception": "I multiplied the two diagonals, 8 and 6, and forgot to halve the product."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-03",
+    "secondary": [
+      "GEO-04",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Look at the four corner triangles that are cut off.",
+    "Area by dissection: the rhombus and the four corner triangles together make the rectangle. Compare one corner triangle with the quarter of the rectangle it sits in.",
+    "Each corner triangle has legs 4 and 3, so its area is 6, and there are four of them."
+  ],
+  "solutions": {
+    "reliable": "Each cut-off corner is a right triangle with legs 4 cm and 3 cm, area 6 square cm. Four of them make 24, so the rhombus is 48 minus 24, which is 24 square cm. The transferable idea: when a shape is awkward, find its area as the whole minus simple pieces.",
+    "elegant": "Each quarter of the rectangle is split by a side of the rhombus into two equal triangles, one inside and one outside. So the rhombus is exactly half the rectangle, 24 square cm."
+  },
+  "whyOnTest": "Midpoint shapes are a dissection classic: one cut shows the rhombus is half the rectangle, and the distractors catch side-squared and perimeter slips.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

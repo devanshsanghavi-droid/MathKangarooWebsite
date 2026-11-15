@@ -1,0 +1,68 @@
+{
+  "id": "KA-0781",
+  "band": "9-10",
+  "points": 5,
+  "statement": "A beetle walks on a 5 by 5 board of squares. Each step takes it to a square sharing a side with its current one. It never visits a square twice, except that its last step brings it back to its starting square. At most how many different squares can it visit?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I thought a closed walk could use only as many squares as the smaller colour has, 12, forgetting that it uses that many squares of each colour."
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I walked once around the outer ring of 16 squares and did not look for a longer loop through the middle."
+    },
+    {
+      "key": "C",
+      "text": "21",
+      "correct": false,
+      "misconception": "I thought a loop could never pass through a corner square, because a corner has only two neighbours, so I left out all four corners."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": false,
+      "misconception": "I assumed the beetle could visit every square and come back, without checking whether a loop through all 25 is possible."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-07",
+    "secondary": [
+      "LOG-05",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Colour the board like a chessboard.",
+    "Every step changes colour, so a closed walk alternates colours and uses the same number of squares of each colour. Compare that with how many squares of each colour the board has.",
+    "The board has 13 squares of the corner colour and 12 of the other. A closed walk uses equal numbers of each, so it cannot use more than 12 of either."
+  ],
+  "solutions": {
+    "reliable": "Colour the board like a chessboard: 13 squares share the colour of the corners and 12 have the other colour. Each step moves to the other colour, and the walk returns to its start, so it uses equally many squares of each colour. That allows at most 12 + 12 = 24 squares. A loop through 24 squares does exist: leave out the bottom-left corner, go along the bottom row, up the right-hand column and back along the top row, then wind down through the 12 middle and left-hand squares to finish next to the start. So the answer is 24. The transferable idea: a two-colouring turns a hard 'is it possible' into a quick count.",
+    "elegant": "No search is needed for the upper bound: an odd total of 25 squares can never be split equally between two colours, and the extra square of the larger colour must be left out."
+  },
+  "whyOnTest": "Colouring arguments prove a target is impossible without trying every route, and this checks that the bound is matched by an actual loop.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

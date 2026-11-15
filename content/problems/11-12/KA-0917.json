@@ -1,0 +1,68 @@
+{
+  "id": "KA-0917",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A frog starts at 0 on a number line and makes exactly 25 jumps. Each jump is 1, 3 or 5 units long, to the left or to the right. Which of these could be where the frog ends?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought the jumps could cancel out in pairs to bring the frog home, forgetting that 25 jumps cannot all be paired."
+    },
+    {
+      "key": "B",
+      "text": "50",
+      "correct": false,
+      "misconception": "I reached 50 with ten jumps of 5 and assumed the other fifteen jumps could cancel each other out."
+    },
+    {
+      "key": "C",
+      "text": "76",
+      "correct": false,
+      "misconception": "I reached 76 with sixteen jumps, fifteen of 5 and one of 1, and assumed the other nine could cancel each other out."
+    },
+    {
+      "key": "D",
+      "text": "77",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "127",
+      "correct": false,
+      "misconception": "I checked that 127 is odd but forgot that 25 jumps of at most 5 units reach only 125."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-05",
+    "secondary": [
+      "CFT-05",
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "Every jump has odd length. What does that do to the parity of the position?",
+    "Track whether the position is odd or even: each odd jump switches it. After a fixed number of jumps the parity is decided, and the distance the frog can reach is also limited.",
+    "After 25 jumps the position is odd, and it is at most 125 away from 0."
+  ],
+  "solutions": {
+    "reliable": "Each jump changes the position by an odd number, so it switches the position between even and odd. After 25 jumps, an odd number, the position is odd, which rules out 0, 50 and 76. The frog can be at most 25 x 5 = 125 from 0, which rules out 127. And 77 is reachable: 16 jumps of 5 to the right reach 80, 3 jumps of 1 to the left reach 77, and the remaining 6 jumps of 1 go right and left in pairs, for 16 + 3 + 6 = 25 jumps. The transferable idea: when every move changes a quantity by an odd amount, the parity after n moves is fixed by n alone.",
+    "elegant": "A sum of 25 odd numbers, with any signs, is odd, so the end point is odd; together with the limit of 125, only 77 survives."
+  },
+  "whyOnTest": "Parity is information that cannot be lost: an odd number of odd steps always ends at an odd position, whatever their sizes and directions.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

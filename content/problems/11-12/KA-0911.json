@@ -1,0 +1,68 @@
+{
+  "id": "KA-0911",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A rectangle has perimeter 20 and a diagonal of length 8. What is its area?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "18",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "25",
+      "correct": false,
+      "misconception": "I assumed the rectangle was a square with side 5, without checking that its diagonal would then be about 7.1, not 8."
+    },
+    {
+      "key": "C",
+      "text": "32",
+      "correct": false,
+      "misconception": "I assumed the rectangle was a square with diagonal 8, so I took half of 8 x 8 and ignored the perimeter."
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": false,
+      "misconception": "I found that twice the area is 100 - 64 = 36 and forgot to halve it."
+    },
+    {
+      "key": "E",
+      "text": "168",
+      "correct": false,
+      "misconception": "I took the length plus the width to be 20, forgetting that the perimeter counts each side twice, and got (400 - 64) / 2."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-11",
+    "secondary": [
+      "CFT-05",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "You need the product of the sides, not the sides themselves.",
+    "Write the perimeter fact as a sum of the length and the width, and the diagonal fact as a sum of squares by Pythagoras. Squaring the sum produces the product you want. Then check the answer a second way.",
+    "(l + w) squared = l squared + w squared + 2lw, with l + w = 10 and l squared + w squared = 64."
+  ],
+  "solutions": {
+    "reliable": "Let the sides be l and w. The perimeter gives l + w = 10 and Pythagoras gives l^2 + w^2 = 64. Squaring the first, l^2 + 2lw + w^2 = 100, so 2lw = 100 - 64 = 36 and the area is lw = 18. Second-method check: l and w are the solutions of t^2 - 10t + 18 = 0, namely 5 + √7 and 5 - √7. Both are positive, they add to 10, and their squares add to 2 x (25 + 7) = 64. The transferable idea: find a combination like the product directly from sums, then sanity-check that real side lengths exist.",
+    "elegant": "Since l^2 + w^2 = (l + w)^2 - 2lw, a longer diagonal with the same perimeter means a smaller area. A square with perimeter 20 has area 25 and diagonal about 7.07, so a diagonal of 8 forces an area below 25, and only 18 is offered."
+  },
+  "whyOnTest": "Assuming a square gives a tidy wrong answer; checking it against the diagonal, or checking that the sides exist, is the second method that catches it.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0771",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Ten minutes remain. Lena has four untouched 5-point questions, each with five choices, and wrong answers cost nothing. She can solve one for certain in 4 minutes, or spend 1 minute on one to rule out two wrong choices. She guesses on every question she has not solved. What is the largest expected score she can get from these four?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6 2/3",
+      "correct": false,
+      "misconception": "I spent one minute ruling out choices on each of the four and solved none, so each was worth 5/3 points."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I solved two questions and left the other two blank, forgetting that a guess costs nothing."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I solved two and guessed blindly on the other two, without using the 2 spare minutes to rule out choices."
+    },
+    {
+      "key": "D",
+      "text": "13 1/3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": false,
+      "misconception": "I thought ruling out two of the five choices left a fifty-fifty guess, so each of those was worth 2.5 points."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-12",
+    "secondary": [
+      "CFT-08",
+      "CFT-09"
+    ]
+  },
+  "hints": [
+    "Put a value on each question: solved, narrowed, or a blind guess.",
+    "A solved question, a guess among three and a guess among five each have an expected value. Try every way of splitting the ten minutes between solving and narrowing, and compare totals.",
+    "Solved is worth 5, a guess among three is worth 5/3, a blind guess is worth 1. Two solves take 8 minutes. Decide what the last 2 minutes should buy."
+  ],
+  "solutions": {
+    "reliable": "A solved question is worth 5, a question narrowed to three choices is worth 5 x 1/3 = 5/3 on average, and a blind guess among five is worth 1. Three solves would need 12 minutes, so she can solve at most two. With two solves (8 minutes) she narrows the other two (2 minutes): 10 + 5/3 + 5/3 = 13 1/3. With one solve she can narrow the other three: 5 + 5 = 10. With no solves, narrowing all four gives 20/3. The best is 13 1/3. The transferable idea: in the 5-point block, plan the minutes, and remember that a narrowed guess is worth more than a blind one.",
+    "elegant": "Compare what a minute buys. Solving turns a 1-point guess into 5 points: 4 extra points for 4 minutes. Narrowing turns 1 point into 5/3: only 2/3 of a point for a minute. So solve as many as fit, then spend what is left narrowing."
+  },
+  "whyOnTest": "The last block is won by planning the time, and this checks whether a student weighs solving against narrowing using expected points.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

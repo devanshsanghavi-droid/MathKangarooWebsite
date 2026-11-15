@@ -1,0 +1,68 @@
+{
+  "id": "KA-0507",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Tia has 4 shirts (red, blue, white, yellow) and 3 pairs of shorts (black, grey, navy). An outfit is one shirt with one pair of shorts. She never wears red with grey, and never wears yellow with navy. How many different outfits can she wear?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I added 4 shirts and 3 shorts to get 7, then took away the 2 outfits she will not wear."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I crossed out every outfit with the red shirt or the yellow shirt, instead of just the two banned pairs."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I added the 4 shirts and the 3 shorts instead of drawing a branch for each pair of shorts under every shirt."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought each rule removes 2 outfits, one for the shirt and one for the shorts, so I took 4 away from 12."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-03",
+      "CNT-11"
+    ]
+  },
+  "hints": [
+    "Draw a branch for each shirt, then branches for the shorts.",
+    "A tree with one level for the shirt and one level for the shorts shows every outfit as a path. Count all the paths, then cross out exactly the paths the rules forbid.",
+    "Each shirt has 3 branches, so there are 4 x 3 = 12 paths. Each rule crosses out one path."
+  ],
+  "solutions": {
+    "reliable": "Draw 4 shirt branches, each splitting into 3 shorts branches: 12 paths. The rule about red and grey removes exactly one path, and the rule about yellow and navy removes exactly one more. 12 - 2 = 10 outfits. The transferable idea: in a tree, a rule that bans one combination removes one path, not a whole branch.",
+    "elegant": "Count shirt by shirt: red goes with 2 shorts, yellow with 2, and blue and white with 3 each, so 2 + 2 + 3 + 3 = 10."
+  },
+  "whyOnTest": "Crossing out a whole branch instead of one path, or adding instead of multiplying, are the classic tree-counting slips.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

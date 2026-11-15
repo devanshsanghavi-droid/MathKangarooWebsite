@@ -1,0 +1,67 @@
+{
+  "id": "KA-0658",
+  "band": "7-8",
+  "points": 3,
+  "statement": "When the whole number N is divided by 7, the remainder is 4. What is the remainder when N x N is divided by 7?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I doubled the remainder instead of squaring it, and 8 leaves remainder 1."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought the remainder stays the same when the number is multiplied by itself."
+    },
+    {
+      "key": "C",
+      "text": "16",
+      "correct": false,
+      "misconception": "I squared the remainder but forgot to divide 16 by 7 again."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I found that 16 is 2 more than 14, then gave 7 - 2, the distance up to the next multiple of 7."
+    },
+    {
+      "key": "E",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Try a real number that leaves remainder 4, such as 11.",
+    "Write N as a multiple of 7 plus 4. Squaring it, every part containing the multiple of 7 stays a multiple of 7, so only 4 x 4 matters, and that must be reduced again.",
+    "4 x 4 is 16, which is not yet a remainder on division by 7."
+  ],
+  "solutions": {
+    "reliable": "Write N = 7k + 4. Then N x N = 49k x k + 56k + 16. The first two parts are multiples of 7, and 16 = 14 + 2, so N x N leaves remainder 2. Check with N = 11: 11 x 11 = 121 = 119 + 2, and 119 = 7 x 17. The transferable idea: remainders multiply, but the product must be reduced again before it is a remainder.",
+    "elegant": null
+  },
+  "whyOnTest": "Remainder arithmetic is a core 7-8 idea, and the classic slip is forgetting to reduce after multiplying.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

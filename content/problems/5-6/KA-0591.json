@@ -1,0 +1,68 @@
+{
+  "id": "KA-0591",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Five standard dice, whose opposite faces add up to 7, stand in a row on a table, each touching the next. Wherever two dice touch, the touching faces show the same number. The outer face of the left end die shows 3. What is the total of all the faces that touch another die?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "21",
+      "correct": false,
+      "misconception": "I added the two touching faces of each of the three middle dice, 7 each, and forgot that the end dice touch a neighbour too."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I thought every touching face shows 3, like the left end, so I did 8 faces times 3."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I added the left end die's touching face, 4, but forgot that the die at the right end touches a neighbour too."
+    },
+    {
+      "key": "D",
+      "text": "27",
+      "correct": false,
+      "misconception": "I used the 3 on the outer face of the left die instead of the 4 on its touching face."
+    },
+    {
+      "key": "E",
+      "text": "28",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-11",
+    "secondary": [
+      "CFT-07",
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "Which faces of a middle die touch its neighbours?",
+    "A middle die touches its two neighbours with a pair of opposite faces, which add to 7. Each end die touches with only one face, so find those by following the row from the left end.",
+    "The three middle dice give 3 times 7 = 21. The left die's touching face is opposite its 3, so it shows 4."
+  ],
+  "solutions": {
+    "reliable": "Each of the three middle dice touches its neighbours with two opposite faces, worth 7 per die, so they give 21. The left die's touching face is opposite the 3, so it shows 4. Following the row: die 2 has 4 on its left and 3 on its right, die 3 has 3 and 4, and die 4 has 4 and 3, so die 5 touches with 3. The total is 21 + 4 + 3 = 28. The transferable idea: on a die, a pair of opposite faces always adds to 7, so whenever both faces of a pair are counted, their total is fixed without knowing the numbers.",
+    "elegant": "Along the row the touching numbers alternate 4, 4, 3, 3, 4, 4, 3, 3. That is four 4s and four 3s, so the total is 4 times 7 = 28. With five dice the answer would be 28 whatever the left end showed."
+  },
+  "whyOnTest": "Dice problems reward spotting that opposite faces add to 7, which turns tracking every face into a quick fixed total.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

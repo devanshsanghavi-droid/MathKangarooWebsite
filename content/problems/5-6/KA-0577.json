@@ -1,0 +1,71 @@
+{
+  "id": "KA-0577",
+  "band": "5-6",
+  "points": 4,
+  "statement": "The chart shows the number of rainy days in five months. In which month did the number of rainy days change the most compared with the month before?",
+  "figure": {
+    "component": "RainyDaysChart",
+    "alt": "A bar chart of rainy days per month, with the scale marked every 2 days and gridlines every day: March 4, April 10, May 12, June 5, July 7."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "March",
+      "correct": false,
+      "misconception": "I picked the month with the fewest rainy days instead of looking at changes between months."
+    },
+    {
+      "key": "B",
+      "text": "April",
+      "correct": false,
+      "misconception": "I only looked at increases, so I found the jump of 6 into April and ignored the bigger drop."
+    },
+    {
+      "key": "C",
+      "text": "May",
+      "correct": false,
+      "misconception": "I picked the tallest bar, which shows the most rain, not the biggest change."
+    },
+    {
+      "key": "D",
+      "text": "June",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "It cannot be told from the chart",
+      "correct": false,
+      "misconception": "I thought a bar chart only shows amounts, so I did not see that the changes can be worked out by subtracting."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-09",
+    "secondary": [
+      "CFT-01",
+      "NUM-13"
+    ]
+  },
+  "hints": [
+    "A change can go up or down.",
+    "Read each bar's height carefully from the scale, then subtract each month from the next one. A drop counts as a change just as much as a rise, so compare the sizes of the differences.",
+    "The heights are 4, 10, 12, 5 and 7. The changes are 6 up, 2 up, 7 down and 2 up."
+  ],
+  "solutions": {
+    "reliable": "Reading the bars gives March 4, April 10, May 12, June 5 and July 7. The changes from one month to the next are 6 (into April), 2 (into May), 7 (into June) and 2 (into July). The biggest change is the drop of 7 from May to June, so the answer is June. The transferable idea: a question about change is about the gaps between bars, not the bars themselves, and a fall is as big a change as a rise.",
+    "elegant": "Look for the biggest step between neighbouring bar tops: the cliff from the tallest bar, May, down to June stands out at once."
+  },
+  "whyOnTest": "Charts test whether you read what is asked: the biggest change is a gap between bars, and the tallest bar is the trap.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

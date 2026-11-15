@@ -1,0 +1,67 @@
+{
+  "id": "KA-0640",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Eleven lamps are all switched off. In one move you must flip the switches of exactly 3 different lamps: each of those 3 lamps that is off goes on, and each that is on goes off. What is the smallest number of moves needed to have all 11 lamps on at the same time?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I divided 11 by 3 and rounded down, so some lamps were never switched on."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I rounded 11 divided by 3 up to 4 and missed that every move changes the number of lamps that are on by an odd amount, so after 4 moves it is even."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I saw that 4 moves fail, then thought the number of moves had to be even, so I jumped to 6."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be done",
+      "correct": false,
+      "misconception": "I thought each lamp could be switched only once, and 11 is not a multiple of 3."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "In one move, by how much can the number of lamps that are on change?",
+    "Invariants and parity: each move flips 3 lamps, so the number that are on changes by 3 or by 1. Track whether that number is odd or even after each move, then check the smallest leftover count can be reached.",
+    "After every move the parity of the number of lamps on switches, so to reach 11 (odd) you need an odd number of moves. Three moves flip only 9 switches, which is too few."
+  ],
+  "solutions": {
+    "reliable": "Each move flips 3 lamps, so the number of lamps that are on changes by 3 or by 1, an odd amount. Starting from 0, it is odd after 1 move, even after 2, odd after 3, and so on, so reaching 11 needs an odd number of moves. Three moves flip only 9 switches, fewer than 11 lamps, so 3 is not enough, and 4 is even, so the answer is at least 5. Five moves do work: label the lamps 1 to 11 and flip 1, 2, 3; then 1, 2, 4; then 1, 2, 5; then 6, 7, 8; then 9, 10, 11. Lamps 1 and 2 are flipped three times and end on, and every other lamp is flipped once. The transferable idea: a parity argument rules out the tempting answer, and an explicit example shows the next answer works.",
+    "elegant": "Try a small case first: with 5 lamps, rounding 5 / 3 up suggests 2 moves, but 2 moves always leave an even number of lamps on. Three moves work: flip 1, 2, 3, then 1, 2, 4, then 1, 2, 5. The same pattern, parity first and then two lamps flipped three times, gives 5 moves for 11 lamps."
+  },
+  "whyOnTest": "Parity is the simplest invariant, and here it is the only thing that rules out the tempting 4, while an explicit example confirms 5.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

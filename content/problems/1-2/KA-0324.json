@@ -1,0 +1,67 @@
+{
+  "id": "KA-0324",
+  "band": "1-2",
+  "points": 4,
+  "statement": "A lunch is soup or salad, then fish or rice, then cake or fruit. Lucy picks one from each pair. How many different lunches can she pick?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted one choice for each of the three parts of the lunch."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I stopped my tree after the first two parts and forgot the cake or fruit."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I added 2 + 2 + 2 instead of letting every choice branch out again."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I tried to list them all without a tree and missed one lunch, salad with rice and fruit."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Draw a tree that starts with soup or salad.",
+    "A tree diagram has a branch for each first choice, then from every one of those a branch for each second choice, and again for the third. Count the ends of the last branches.",
+    "Soup or salad gives 2 branches. Each splits into fish or rice, giving 4. Each of those splits into cake or fruit."
+  ],
+  "solutions": {
+    "reliable": "Starting with soup: soup-fish-cake, soup-fish-fruit, soup-rice-cake, soup-rice-fruit. That is 4 lunches. Salad gives the same 4 with salad instead of soup. In all 4 + 4 = 8 lunches. The idea to keep: a tree keeps a list complete, because every branch splits the same way.",
+    "elegant": "Each part doubles the number of lunches: 2 after the first part, 4 after the second, 8 after the third. The idea to keep: every new two-way choice doubles the count."
+  },
+  "whyOnTest": "A three-step choice is where adding instead of branching goes wrong, and a tree shows why.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

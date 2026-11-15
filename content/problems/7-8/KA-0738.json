@@ -1,0 +1,68 @@
+{
+  "id": "KA-0738",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A sheet of paper is cut into 3 pieces. Then one of the pieces is cut into 3 pieces, then one of the pieces is cut into 3, and so on: each cut turns one piece into 3. After 20 cuts in total, how many pieces are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "41",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "60",
+      "correct": false,
+      "misconception": "I thought each cut makes 3 pieces, so 20 cuts make 3 x 20."
+    },
+    {
+      "key": "C",
+      "text": "61",
+      "correct": false,
+      "misconception": "I added 3 pieces for every cut to the 1 sheet I started with."
+    },
+    {
+      "key": "D",
+      "text": "40",
+      "correct": false,
+      "misconception": "I saw that each cut adds 2 pieces but forgot to count the sheet I started with."
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I thought each cut adds one more piece, as when a piece is cut in two."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "PAT-02",
+      "PAT-05"
+    ]
+  },
+  "hints": [
+    "Count the pieces after 1, 2 and 3 cuts.",
+    "Try small cases first: work out the number of pieces after the first few cuts and look at how much each cut changes the count. Then extend that pattern to 20 cuts.",
+    "After 1 cut there are 3 pieces, after 2 cuts 5, after 3 cuts 7. Each cut removes one piece and adds three."
+  ],
+  "solutions": {
+    "reliable": "Small cases: 0 cuts give 1 piece, 1 cut gives 3, 2 cuts give 5, 3 cuts give 7. Each cut takes away one piece and puts back three, a gain of 2. After 20 cuts there are 1 + 2 x 20 = 41 pieces. The transferable idea: when a process repeats many times, run it two or three times by hand and find how much each step changes the count.",
+    "elegant": "The number of pieces is always odd and grows by 2 each cut, so after n cuts it is 2n + 1, and 2 x 20 + 1 = 41."
+  },
+  "whyOnTest": "Large repeated processes are a signal to try small cases first; the traps are counting pieces made instead of pieces gained, or forgetting the start.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

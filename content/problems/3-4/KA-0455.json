@@ -1,0 +1,67 @@
+{
+  "id": "KA-0455",
+  "band": "3-4",
+  "points": 3,
+  "statement": "On a hundred square, 1 to 10 fill the top row, 11 to 20 the next, and so on. Ana starts on 23, moves 3 squares down, then 2 squares left. Where does she land?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": false,
+      "misconception": "I added 1 for each square down, as if moving down worked like moving right."
+    },
+    {
+      "key": "B",
+      "text": "40",
+      "correct": false,
+      "misconception": "I mixed up the moves and went 2 squares down and 3 squares left."
+    },
+    {
+      "key": "C",
+      "text": "41",
+      "correct": false,
+      "misconception": "I counted the starting row as one of the three, so I only went 2 rows down."
+    },
+    {
+      "key": "D",
+      "text": "51",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "55",
+      "correct": false,
+      "misconception": "I moved 2 squares right instead of left."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-06",
+    "secondary": [
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "What happens to a number when you move one square down?",
+    "In a grid with rows of 10, moving down one square adds 10 and moving left one square takes away 1. Apply each move in turn, starting from 23.",
+    "Three squares down from 23 is 23 + 30 = 53. Now move 2 squares left."
+  ],
+  "solutions": {
+    "reliable": "Each row has 10 numbers, so one square down adds 10 and one square left takes away 1. Three squares down from 23 is 23 + 30 = 53, and two squares left is 53 - 2 = 51. Check: 51 is in the same column as 21, two columns to the left of 23. The transferable idea: in a grid with rows of n, moving down adds n and moving left takes away 1.",
+    "elegant": null
+  },
+  "whyOnTest": "Number grids test the link between row length and the size of a vertical step, and each distractor misreads one move.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

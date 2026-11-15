@@ -1,0 +1,68 @@
+{
+  "id": "KA-0736",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A machine takes two numbers and gives back one, always by the same rule. It turns 2 and 3 into 13, it turns 1 and 4 into 17, and it turns 3 and 1 into 10. What does it turn 5 and 2 into?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "49",
+      "correct": false,
+      "misconception": "I guessed the rule involved squaring but squared the sum 5 + 2 instead of adding the two separate squares."
+    },
+    {
+      "key": "B",
+      "text": "21",
+      "correct": false,
+      "misconception": "I subtracted the square of the second number from the square of the first instead of adding them."
+    },
+    {
+      "key": "C",
+      "text": "17",
+      "correct": false,
+      "misconception": "I found a rule that fits only the first example, multiply the numbers and add 7, and used it to get 5 x 2 + 7."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I fitted only the first example with 2 times the first number plus 3 times the second, which gives 10 + 6."
+    },
+    {
+      "key": "E",
+      "text": "29",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "CFT-11",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Check any rule you guess against all three examples.",
+    "A rule is only right if it fits every example, not just the first. Try combining the squares of the two numbers, then test your idea on all three pairs before using it.",
+    "2 x 2 + 3 x 3 = 13, 1 x 1 + 4 x 4 = 17 and 3 x 3 + 1 x 1 = 10. Each output is the sum of the two squares."
+  ],
+  "solutions": {
+    "reliable": "Test the idea of adding squares: 4 + 9 = 13, 1 + 16 = 17 and 9 + 1 = 10, so the rule fits all three examples. For 5 and 2 the machine gives 25 + 4 = 29. Other rules that fit the first example, such as multiplying and adding 7, fail on the second (1 x 4 + 7 = 11, not 17). The transferable idea: a guessed rule is only a rule once it fits every example you are given.",
+    "elegant": null
+  },
+  "whyOnTest": "Rule-finding questions punish fitting only the first example; the test is checking a guess against every case before using it.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

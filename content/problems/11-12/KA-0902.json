@@ -1,0 +1,68 @@
+{
+  "id": "KA-0902",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Different whole numbers are picked from 1 to 20. What is the smallest number of picks that guarantees two of the picked numbers multiply to a perfect square?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "13",
+      "correct": false,
+      "misconception": "I found the 13 groups correctly but forgot that 13 picks can still be one from each group, so one more pick is needed."
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": false,
+      "misconception": "I left 1 out of the group with 4, 9 and 16 because I do not think of 1 as a perfect square, so I counted 14 groups."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "17",
+      "correct": false,
+      "misconception": "I put each of the squares 1, 4, 9 and 16 in its own group, missing that any two of them multiply to a square, so I had 16 groups."
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": false,
+      "misconception": "I thought a product is a perfect square only when both numbers are squares, so the worst case is all 16 non-squares and then two squares."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-17",
+    "secondary": [
+      "NUM-05",
+      "CNT-18"
+    ]
+  },
+  "hints": [
+    "When does a product of two numbers become a perfect square?",
+    "Strip each number of its largest square factor. Two numbers multiply to a square exactly when what is left is the same for both. Group the numbers 1 to 20 this way and use the pigeonhole principle.",
+    "For example 2, 8 and 18 all leave 2; 3 and 12 leave 3; and 1, 4, 9 and 16 all leave 1."
+  ],
+  "solutions": {
+    "reliable": "Write each number as a perfect square times a part with no square factor. Two numbers multiply to a square exactly when those parts are equal. For 1 to 20 the groups are {1, 4, 9, 16}, {2, 8, 18}, {3, 12}, {5, 20} and the single numbers 6, 7, 10, 11, 13, 14, 15, 17 and 19: 13 groups. Picking one number from each group gives 13 numbers with no square product, so 13 picks are not enough. With 14 picks, two must lie in the same group, and their product is a square. The answer is 14. The transferable idea: build the pigeonholes from the exact condition you need, show that one pick per hole can fail, and then add one.",
+    "elegant": null
+  },
+  "whyOnTest": "The pigeonholes are not given; finding the right grouping, by the part left after removing square factors, is the idea that earns the 5 points.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

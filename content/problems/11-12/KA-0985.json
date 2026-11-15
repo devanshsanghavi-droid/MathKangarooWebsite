@@ -1,0 +1,68 @@
+{
+  "id": "KA-0985",
+  "band": "11-12",
+  "points": 4,
+  "statement": "For how many whole numbers n from 1 to 100 does 2^n + 3^n end in the digit 5?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought that since neither 2^n nor 3^n is a multiple of 5, their sum could not be one either."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought the last digits repeat every 10 values of n, with only n = 1 working in each block of ten."
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": false,
+      "misconception": "I thought the exponent itself had to be a multiple of 5 for the sum to end in 5."
+    },
+    {
+      "key": "D",
+      "text": "25",
+      "correct": false,
+      "misconception": "I found that n = 1 works but missed n = 3, so I counted only n = 1, 5, 9, ..., 97."
+    },
+    {
+      "key": "E",
+      "text": "50",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-07",
+    "secondary": [
+      "NUM-06",
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "Write the last digits of 2^n and 3^n for n from 1 to 4.",
+    "Last digits of powers repeat in cycles. Both cycles here have length 4, so the last digit of the sum repeats every 4 values of n. Work out one full cycle, then count.",
+    "The last digits of 2^n run 2, 4, 8, 6 and those of 3^n run 3, 9, 7, 1."
+  ],
+  "solutions": {
+    "reliable": "The last digits of 2^n cycle 2, 4, 8, 6 and those of 3^n cycle 3, 9, 7, 1. Adding them: n = 1 gives 5, n = 2 gives 13, n = 3 gives 15 and n = 4 gives 7, so the sum ends in 5 exactly when n is odd. There are 50 odd numbers from 1 to 100. The transferable idea: last digits of powers repeat, so one full cycle answers the question for every n.",
+    "elegant": "For odd n, a^n + b^n is divisible by a + b, so 2^n + 3^n is a multiple of 5, and it is odd, so it ends in 5. For even n = 2m, 2^n + 3^n = 4^m + 9^m, and 4^m and 9^m always leave the same remainder on division by 5, either 1 or 4, so the sum leaves 2 or 3, never 0."
+  },
+  "whyOnTest": "Last-digit cycles turn a question about 100 huge numbers into a four-case check, and the distractors come from spotting only part of the pattern.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

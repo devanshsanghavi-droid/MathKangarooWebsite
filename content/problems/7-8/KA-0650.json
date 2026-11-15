@@ -1,0 +1,68 @@
+{
+  "id": "KA-0650",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A bag holds 30 tiles numbered 1 to 30. Without looking, you take out tiles one at a time. What is the smallest number of tiles you must take to be certain that two of the tiles you hold add up to a multiple of 3?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought two tiles with the same remainder on division by 3 always add up to a multiple of 3, so I used 3 remainder boxes plus 1."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": false,
+      "misconception": "I forgot that one multiple of 3 can join a safe handful, so I thought 10 tiles was the most that could avoid a good pair."
+    },
+    {
+      "key": "D",
+      "text": "21",
+      "correct": false,
+      "misconception": "I thought the pair had to include a multiple of 3, so I planned to take all 20 other tiles and then one more to be sure of holding one."
+    },
+    {
+      "key": "E",
+      "text": "2",
+      "correct": false,
+      "misconception": "I imagined the luckiest draw, where the very first two tiles already work."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "CNT-17",
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "Sort the tiles by their remainder when divided by 3.",
+    "Imagine the unluckiest possible handful. Work out which remainders can live together without two of them summing to a multiple of 3, make that handful as large as possible, then add one.",
+    "Remainders 1 and 2 cannot both appear, and at most one tile with remainder 0 is allowed. So take all ten of one class plus one multiple of 3."
+  ],
+  "solutions": {
+    "reliable": "There are ten tiles with each remainder 0, 1 and 2. Two tiles add to a multiple of 3 exactly when their remainders are 0 and 0, or 1 and 2. A safe handful can therefore hold at most one multiple of 3, and cannot mix remainder 1 with remainder 2. The biggest safe handful is all ten tiles of remainder 1 (or of remainder 2) plus one multiple of 3: 11 tiles. The next tile must complete a pair, so 12 tiles guarantee it. The transferable idea: for a guarantee, build the worst possible collection, then add one.",
+    "elegant": null
+  },
+  "whyOnTest": "Worst-case questions reward building the largest bad collection, and the trap here is assuming equal remainders are what matter.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

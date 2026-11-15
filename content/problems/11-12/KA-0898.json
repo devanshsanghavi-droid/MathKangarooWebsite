@@ -1,0 +1,68 @@
+{
+  "id": "KA-0898",
+  "band": "11-12",
+  "points": 4,
+  "statement": "What is the tens digit of 3 to the power 2026?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I used the cycle of last digits of powers of 3, which has length 4, for the last two digits too; 2026 leaves remainder 2, so I took 3 squared = 09."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found that the last two digits repeat every 20 powers, but miscounted my place in the cycle by one and used 3 to the power 5 = 243."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I multiplied 3 by 2026 to get 6078 instead of raising 3 to the power 2026."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I found that the last two digits are 29 but gave the units digit instead of the tens digit."
+    },
+    {
+      "key": "E",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-07",
+    "secondary": [
+      "NUM-06",
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "Track only the last two digits of each power of 3.",
+    "Multiply by 3 again and again, keeping just the last two digits. Look for a power ending in 01; from there the pattern repeats, and the remainder of 2026 tells you where you land.",
+    "3 to the power 10 ends in 49, so 3 to the power 20 ends in 01."
+  ],
+  "solutions": {
+    "reliable": "The last two digits of the powers of 3 are 03, 09, 27, 81, 43, 29, 87, 61, 83, 49, 47, 41, 23, 69, 07, 21, 63, 89, 67, 01. So 3 to the power 20 ends in 01 and the pattern repeats every 20 powers. Since 2026 = 20 x 101 + 6, 3 to the power 2026 ends like 3 to the power 6 = 729, in 29. The tens digit is 2. The transferable idea: the last two digits of powers cycle just like the last digit does, but the cycle can be longer, so find where it truly restarts.",
+    "elegant": "3 to the power 10 = 59049 ends in 49, and 49 x 49 = 2401 ends in 01, so 3 to the power 20 ends in 01 without listing every step."
+  },
+  "whyOnTest": "The last digit of powers of 3 cycles every 4, but the last two digits cycle every 20; using the short cycle for the long job is the trap.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

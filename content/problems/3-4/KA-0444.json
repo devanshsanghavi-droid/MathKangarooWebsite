@@ -1,0 +1,67 @@
+{
+  "id": "KA-0444",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Five children hold a table tennis contest. Every two children play each other exactly twice. How many games are played in total?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I only counted the games of one child: 4 opponents, twice each."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted each pair of children once and forgot that every pair plays twice."
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "40",
+      "correct": false,
+      "misconception": "I counted 4 opponents twice for each of the 5 children, but that counts every game from both sides."
+    },
+    {
+      "key": "E",
+      "text": "50",
+      "correct": false,
+      "misconception": "I multiplied 5 by 5 and doubled, as if each child also played themselves."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-08",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "How many different pairs of children are there?",
+    "Count the pairs so that each pair is counted once: the first child pairs with every other child, the next with the ones not yet paired, and so on. Then use the fact that each pair plays twice.",
+    "The pairs number 4 + 3 + 2 + 1 = 10, and each pair plays 2 games."
+  ],
+  "solutions": {
+    "reliable": "List the pairs without repeats: the first child with 4 others, the second with 3 new ones, then 2, then 1. That is 4 + 3 + 2 + 1 = 10 pairs. Each pair plays twice, so there are 10 x 2 = 20 games. The transferable idea: count pairs once each, then multiply by what each pair does.",
+    "elegant": "Each child plays 4 opponents twice, which is 8 games. 5 x 8 = 40 counts every game once for each of its two players, so there are 40 / 2 = 20 games."
+  },
+  "whyOnTest": "Pairs counting tests whether each pair is counted once, and two games per pair catches anyone who stops at the pairs.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

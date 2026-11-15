@@ -1,0 +1,68 @@
+{
+  "id": "KA-0573",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A rectangular card measures 10 cm by 7 cm. A square of side 3 cm is cut out of one of its corners. What is the perimeter of the shape that is left?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "34 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "40 cm",
+      "correct": false,
+      "misconception": "I added the two new edges from the cut without taking away the two pieces of edge that were removed."
+    },
+    {
+      "key": "C",
+      "text": "46 cm",
+      "correct": false,
+      "misconception": "I added all four sides of the cut-out square to the rectangle's perimeter."
+    },
+    {
+      "key": "D",
+      "text": "61 cm",
+      "correct": false,
+      "misconception": "I worked out the area that is left, 70 - 9, instead of the perimeter."
+    },
+    {
+      "key": "E",
+      "text": "70 cm",
+      "correct": false,
+      "misconception": "I worked out the area of the whole card instead of the perimeter."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": [
+      "GEO-04",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "Look closely at what happens to the edge at the cut corner.",
+    "Cutting a corner square removes two short pieces of the card's edge but adds two new edges of the same lengths. Compare what is lost with what is gained.",
+    "The card's perimeter is 2 × (10 + 7) = 34 cm. The cut removes 3 + 3 cm of edge and adds 3 + 3 cm of new edge."
+  ],
+  "solutions": {
+    "reliable": "The card has perimeter 10 + 7 + 10 + 7 = 34 cm. Cutting a 3 cm square from a corner removes 3 cm from each of two sides, but creates two new edges of 3 cm each, facing inward. The loss and the gain are equal, so the perimeter is still 34 cm. Check by walking around: 10 - 3, then 3, then 3, then 7 - 3, then 10, then 7: 7 + 3 + 3 + 4 + 10 + 7 = 34. The transferable idea: pushing a corner inward keeps every horizontal and vertical length, so the perimeter of a rectilinear shape can stay the same while its area shrinks.",
+    "elegant": "Push the two new edges outward back onto the corner: they exactly fill the gap, so the shape has the same perimeter as the full card."
+  },
+  "whyOnTest": "Perimeter and area are easily confused; cutting a corner changes the area but not the perimeter.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

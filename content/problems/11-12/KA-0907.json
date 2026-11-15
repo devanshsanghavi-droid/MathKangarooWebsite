@@ -1,0 +1,68 @@
+{
+  "id": "KA-0907",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Which of these is closest to (4/3) to the power 10?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4.3",
+      "correct": false,
+      "misconception": "I treated the growth as adding a third ten times, 1 + 10 x 1/3, instead of multiplying by 4/3 ten times."
+    },
+    {
+      "key": "B",
+      "text": "13",
+      "correct": false,
+      "misconception": "I multiplied 4/3 by 10 instead of raising it to the power 10."
+    },
+    {
+      "key": "C",
+      "text": "18",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "32",
+      "correct": false,
+      "misconception": "I rounded (4/3) squared, which is 16/9, up to 2 and then worked out 2 to the power 5."
+    },
+    {
+      "key": "E",
+      "text": "58",
+      "correct": false,
+      "misconception": "I rounded 4/3 up to 1.5 and worked out 1.5 to the power 10, which is about 57.7."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-06",
+    "secondary": [
+      "CFT-05",
+      "NUM-12"
+    ]
+  },
+  "hints": [
+    "Square repeatedly instead of multiplying ten times.",
+    "Repeated squaring reaches the 8th power in three steps; keep one decimal place of accuracy, then multiply by the square once more. Avoid rounding a base that will be raised to a high power.",
+    "(4/3) squared is about 1.78, to the power 4 about 3.16, and to the power 8 about 10."
+  ],
+  "solutions": {
+    "reliable": "(4/3)^2 = 16/9, about 1.78. Squaring, (4/3)^4 is about 3.16. Squaring again, (4/3)^8 is about 10.0. Then (4/3)^10 = (4/3)^8 x (4/3)^2, about 10 x 1.78 = 17.8, which is closest to 18. The transferable idea: estimate a large power by repeated squaring, and never round the base before raising it to a high power, because small errors grow fast.",
+    "elegant": "(4/3)^10 = 4^10 / 3^10 = 2^20 / 3^10. Since 2^20 is about 1,050,000 and 3^10 = 59,049 is about 59,000, the ratio is about 17.8."
+  },
+  "whyOnTest": "Small rounding in a base becomes a large error after ten multiplications, so this checks estimation that keeps its own error under control.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0786",
+  "band": "9-10",
+  "points": 3,
+  "statement": "In a chess club, the ratio of boys to girls is 4 : 5. Then 6 more boys join and nobody leaves, and the ratio becomes 6 : 5. How many members does the club have now?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "11",
+      "correct": false,
+      "misconception": "I added the parts of the new ratio, 6 + 5, and gave that as the number of members."
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": false,
+      "misconception": "I found the number of girls, 15, and stopped there."
+    },
+    {
+      "key": "C",
+      "text": "18",
+      "correct": false,
+      "misconception": "I gave the number of boys after the new boys joined, not the whole club."
+    },
+    {
+      "key": "D",
+      "text": "27",
+      "correct": false,
+      "misconception": "I found the size of the club before the 6 boys joined."
+    },
+    {
+      "key": "E",
+      "text": "33",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-11",
+    "secondary": [
+      "MOD-01",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "Which group does not change?",
+    "The girls stay the same, and they are 5 parts in both ratios, so a part is the same size before and after. Use the change in the boys' parts to find that size.",
+    "The boys go from 4 parts to 6 parts, so 2 parts are the 6 new boys."
+  ],
+  "solutions": {
+    "reliable": "The number of girls does not change, and it is 5 parts in both ratios, so the parts are the same size before and after. The boys grow from 4 parts to 6 parts, so 2 parts = 6 boys and each part is 3. Now there are 6 + 5 = 11 parts, so 11 x 3 = 33 members. The transferable idea: when only one quantity changes, write both ratios with the unchanged quantity as the same number of parts.",
+    "elegant": "With algebra: before, there are 4k boys and 5k girls. Then (4k + 6) : 5k = 6 : 5 gives 20k + 30 = 30k, so k = 3, and the club now has 4k + 6 + 5k = 33 members."
+  },
+  "whyOnTest": "Ratio questions where one part stays fixed reward spotting the unchanged quantity, and the wrong choices are the right numbers for the wrong question.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

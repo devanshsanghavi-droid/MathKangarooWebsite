@@ -1,0 +1,68 @@
+{
+  "id": "KA-0870",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Ten different positive whole numbers add up to 75. What is the largest value the biggest of them can have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "66",
+      "correct": false,
+      "misconception": "I made the other nine numbers all equal to 1, forgetting the numbers must be different."
+    },
+    {
+      "key": "C",
+      "text": "39",
+      "correct": false,
+      "misconception": "I let the nine smaller numbers be 0 to 8, but 0 is not a positive number."
+    },
+    {
+      "key": "D",
+      "text": "20",
+      "correct": false,
+      "misconception": "I subtracted 1 + 2 + ... + 10 from 75, which wrongly includes a tenth small number."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found the smallest the biggest number can be, not the largest."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "CFT-05",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "To make one number big, make the rest small.",
+    "The biggest number is largest when the other nine take up as little of the total as possible. Find the smallest possible sum of nine different positive whole numbers.",
+    "The nine smallest different positive whole numbers are 1 to 9, which add to 45."
+  ],
+  "solutions": {
+    "reliable": "The other nine numbers are different positive whole numbers, so their sum is at least 1 + 2 + ... + 9 = 45. Then the biggest is at most 75 - 45 = 30, and 1, 2, ..., 9, 30 shows that 30 is reached. The transferable idea: to push one quantity to an extreme, push everything else to the opposite extreme, then check the extreme case is allowed.",
+    "elegant": null
+  },
+  "whyOnTest": "Extremal questions reward pushing every other quantity to its limit, and the trap is breaking one of the stated conditions while doing it.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

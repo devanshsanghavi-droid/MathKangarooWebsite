@@ -1,0 +1,68 @@
+{
+  "id": "KA-0770",
+  "band": "9-10",
+  "points": 4,
+  "statement": "What is the sum of all real numbers x for which √(x + 7) = x - 5?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I tested 2, saw it fail, and assumed 9 would fail too, so I decided there were no solutions."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I compared √(x + 7) with 5 - x instead of x - 5 when checking the roots, so 2 seemed to work (3 = 3) and 9 seemed to fail."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "11",
+      "correct": false,
+      "misconception": "I squared both sides, solved x² - 11x + 18 = 0 and added both roots without checking them in the original equation."
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": false,
+      "misconception": "I gave the product of the two roots of the squared equation instead of adding the genuine solutions."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-11",
+    "secondary": [
+      "CFT-05",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Squaring both sides can add answers that were never there.",
+    "Square to get a quadratic and solve it, then sanity-check every root by putting it back into the original equation. Remember that a square root is never negative.",
+    "Squaring gives x + 7 = x² - 10x + 25, so x² - 11x + 18 = 0 and x = 2 or x = 9. Now test each one in √(x + 7) = x - 5."
+  ],
+  "solutions": {
+    "reliable": "Squaring both sides gives x + 7 = x² - 10x + 25, so x² - 11x + 18 = 0, which factors as (x - 2)(x - 9) = 0. Check both in the original: for x = 9, √16 = 4 and 9 - 5 = 4, which works. For x = 2, √9 = 3 but 2 - 5 = -3, which fails. So 9 is the only solution and the sum is 9. The transferable idea: when a step such as squaring can create new solutions, check every answer in the original problem.",
+    "elegant": "Before solving, notice that the right side equals a square root, so x - 5 cannot be negative and x is at least 5. Of the two roots only 9 passes that bound."
+  },
+  "whyOnTest": "Squaring is a one-way step, and the choices are built so that skipping the check by substitution lands on a wrong option.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

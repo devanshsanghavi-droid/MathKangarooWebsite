@@ -1,0 +1,67 @@
+{
+  "id": "KA-0335",
+  "band": "1-2",
+  "points": 5,
+  "statement": "On a number line, A is at 6 and B is at 22. C is halfway between A and B. D is halfway between C and B. Where is D?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found how far D is from C instead of where D is on the line."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I went halfway from A toward C instead of halfway from C toward B."
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": false,
+      "misconception": "I took half of 22 and forgot that A starts at 6, not at 0."
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": false,
+      "misconception": "I found C and stopped before going on to D."
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-13",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Find C first. Then use C to find D.",
+    "Halfway between two points is the same distance from each. Draw the line, mark A and B, and find the gap between them. Half that gap from A gives C. Do the same thing again between C and B.",
+    "From 6 to 22 is a gap of 16, so C is 8 past 6, at 14. From 14 to 22 is a gap of 8, so D is half of that past 14."
+  ],
+  "solutions": {
+    "reliable": "The gap from A at 6 to B at 22 is 16. Half of 16 is 8, so C is at 6 + 8 = 14. The gap from C at 14 to B at 22 is 8. Half of 8 is 4, so D is at 14 + 4 = 18. The idea to keep: halfway means half the gap, added on from the smaller point.",
+    "elegant": "C cuts the line A to B in half, and D cuts the right half in half again. So D is a quarter of the gap away from B: a quarter of 16 is 4, and 22 take away 4 is 18. The idea to keep: halving twice gives quarters."
+  },
+  "whyOnTest": "Halfway on a number line tests adding half the gap to the start, not just halving the end number.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0698",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A card has seven sentences on it, numbered 1 to 7. Sentence number k says: 'At most k of the sentences on this card are true.' How many of the seven sentences are true?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "7",
+      "correct": false,
+      "misconception": "I noticed that sentence 7 must be true and assumed that all seven sentences are therefore true."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I worked out that sentences 1, 2 and 3 are false and gave the number of false sentences instead of true ones."
+    },
+    {
+      "key": "D",
+      "text": "1",
+      "correct": false,
+      "misconception": "I decided only sentence 7, the weakest claim, is true, without checking that this would make sentence 1 true as well."
+    },
+    {
+      "key": "E",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought sentences that talk about themselves can never be true, so I said none of them are."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "LOG-01"
+    ]
+  },
+  "hints": [
+    "Suppose exactly T sentences are true. Which sentences does that make true?",
+    "Assume a value and look for a contradiction. If exactly T sentences are true, work out which numbered sentences that makes true, count them, and see whether the count comes back to T.",
+    "If exactly T are true, sentence k is true exactly when k is T or more. That is sentences T to 7, which is 8 - T sentences. Set 8 - T equal to T."
+  ],
+  "solutions": {
+    "reliable": "Suppose exactly T sentences are true. Sentence k is true exactly when T is at most k, so the true sentences are numbers T, T + 1, ..., 7, and there are 8 - T of them. For the card to be consistent, 8 - T = T, so T = 4: sentences 4 to 7 are true and sentences 1 to 3 are false. Every other value contradicts itself; for example, if all 7 were true, sentence 1 would be claiming that at most one sentence is true. The transferable idea: assume a value, follow its consequences, and keep only the value that does not contradict itself.",
+    "elegant": "Sentence 7 is certainly true, and if sentence k is true so is every later one. So the true sentences form a block ending at 7, and the block must start at its own length. A block from T to 7 has 8 - T members, and only the block 4, 5, 6, 7 starts at its length."
+  },
+  "whyOnTest": "Self-referring sentences are settled by assuming a count and hunting for a contradiction, which is the core move of informal proof.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

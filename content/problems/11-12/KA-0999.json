@@ -1,0 +1,68 @@
+{
+  "id": "KA-0999",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Counters are placed on some squares of a 7 by 7 board so that no two counters are on squares that touch, not even at a corner. What is the largest number of counters that can be placed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I split the board into 2 by 2 blocks, put one counter in each of the 9 full blocks and ignored the strips left over at the edges."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I used rows 1, 3, 5 and 7 but put only 3 counters in each, starting from the second square."
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": false,
+      "misconception": "I divided the 49 squares by 4, since each counter seems to need a 2 by 2 space, and rounded up."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": false,
+      "misconception": "I put a counter on every square of one colour of a chessboard pattern, forgetting that diagonal neighbours touch at a corner."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-17",
+    "secondary": [
+      "LOG-11",
+      "GEO-02"
+    ]
+  },
+  "hints": [
+    "Try putting counters on every other square of every other row.",
+    "For the upper bound, cut the board into pieces in which every two squares touch, so each piece holds at most one counter. Then find an arrangement with a counter in every piece.",
+    "Group the rows as 2, 2, 2 and 1, and the columns the same way. That cuts the board into 16 pieces."
+  ],
+  "solutions": {
+    "reliable": "Put counters in rows 1, 3, 5, 7 and columns 1, 3, 5, 7: that is 4 x 4 = 16 counters, and no two touch. For the bound, group the rows as (1, 2), (3, 4), (5, 6), (7) and the columns the same way. This cuts the board into 16 pieces, each a 2 by 2, 2 by 1, 1 by 2 or 1 by 1 block, and any two squares in one piece touch, so each piece holds at most one counter. So there are at most 16 counters, and 16 is reached. The transferable idea: a pigeonhole bound uses boxes in which two items cannot both fit, and a matching example proves the bound is best.",
+    "elegant": null
+  },
+  "whyOnTest": "A largest number needs both an example and a proof that nothing beats it, and a pigeonhole cut into 16 pieces supplies the proof.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

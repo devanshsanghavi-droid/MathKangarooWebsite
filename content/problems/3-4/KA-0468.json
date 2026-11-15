@@ -1,0 +1,67 @@
+{
+  "id": "KA-0468",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Today is Wednesday. What day of the week will it be 100 days from today?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Monday",
+      "correct": false,
+      "misconception": "I worked out 2 extra days but counted them backwards from Wednesday."
+    },
+    {
+      "key": "B",
+      "text": "Wednesday",
+      "correct": false,
+      "misconception": "I thought 100 is a round number, so it must be a whole number of weeks and the day would not change."
+    },
+    {
+      "key": "C",
+      "text": "Thursday",
+      "correct": false,
+      "misconception": "I counted today as the first of the 100 days, so I ended one day short."
+    },
+    {
+      "key": "D",
+      "text": "Friday",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "Saturday",
+      "correct": false,
+      "misconception": "I threw away the 14 whole weeks but then started counting the 2 extra days from Thursday instead of from Wednesday."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "What day is it exactly 7 days from today?",
+    "The days of the week repeat every 7 days, so whole weeks can be thrown away. Only the days left over after the whole weeks move you on.",
+    "100 days is 14 whole weeks, which is 98 days, and 2 days more."
+  ],
+  "solutions": {
+    "reliable": "14 weeks is 14 x 7 = 98 days, so 98 days from today is again a Wednesday. Two more days: Thursday, then Friday. The answer is Friday. The transferable idea: in any repeating cycle, only the remainder after the whole cycles matters.",
+    "elegant": null
+  },
+  "whyOnTest": "Remainders and modular cycles: a day-of-the-week question is the remainder after dividing by 7, and the off-by-one counting slip is offered.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

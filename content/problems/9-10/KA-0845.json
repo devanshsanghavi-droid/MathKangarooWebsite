@@ -1,0 +1,67 @@
+{
+  "id": "KA-0845",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A staircase is made of unit squares outlined with matchsticks of length 1. The bottom row has 10 squares, the row above it has 9, and so on, up to a top row of 1 square, with all rows lined up on the left. How many matchsticks are used?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "130",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "65",
+      "correct": false,
+      "misconception": "I counted only the horizontal matchsticks."
+    },
+    {
+      "key": "C",
+      "text": "108",
+      "correct": false,
+      "misconception": "I worked out the staircase with 9 rows instead of 10."
+    },
+    {
+      "key": "D",
+      "text": "154",
+      "correct": false,
+      "misconception": "I worked out the staircase with 11 rows, counting the rows from 0 to 10."
+    },
+    {
+      "key": "E",
+      "text": "220",
+      "correct": false,
+      "misconception": "I gave each of the 55 squares its own four matchsticks, counting every shared side twice."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-04",
+    "secondary": [
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Count the horizontal and the vertical matchsticks separately.",
+    "Go up the staircase one horizontal line at a time: the bottom edge, each line between two rows, and the top. The staircase is symmetric about its diagonal, so the vertical matchsticks match the horizontal ones.",
+    "The bottom edge and the line above the bottom row each have 10 matchsticks; the lines above have 9, 8 and so on down to 1."
+  ],
+  "solutions": {
+    "reliable": "Horizontal matchsticks: the bottom edge has 10, and the lines above rows 1 to 10 have 10, 9, 8, ..., 1, which add to 55. That is 65 horizontal matchsticks. The staircase is symmetric about its diagonal, so there are also 65 vertical ones, 130 in all. Check on small staircases: 1 row uses 4, 2 rows use 10, 3 rows use 18, matching the formula n(n + 3). The transferable idea: count shared pieces line by line, not shape by shape, and test the count on small cases.",
+    "elegant": "The 55 squares have 220 sides in total. The outline of the staircase is 40 matchsticks long (the stepped edge is as long as the two straight sides together), and every other matchstick is shared by two squares. So 220 = 40 + 2 × (inside matchsticks), giving 90 inside, and 40 + 90 = 130."
+  },
+  "whyOnTest": "Growth-pattern questions test counting shared pieces only once; four matchsticks per square double-counts, and small cases check any formula.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

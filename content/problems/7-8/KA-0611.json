@@ -1,0 +1,68 @@
+{
+  "id": "KA-0611",
+  "band": "7-8",
+  "points": 5,
+  "statement": "There are 6 locked doors and 6 keys. Each key opens exactly one door, but the keys are mixed up. Putting one key into one door to see whether it opens counts as one try. However unlucky you are, what is the smallest number of tries that is always enough to find out which key opens each door?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I allowed one try per door, as if the first key I picked would always be right."
+    },
+    {
+      "key": "B",
+      "text": "21",
+      "correct": false,
+      "misconception": "I tried every remaining key in each door, 6 + 5 + 4 + 3 + 2 + 1, even the last key, which must be the right one."
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": false,
+      "misconception": "I tried all 6 keys in each of the 6 doors."
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": false,
+      "misconception": "I allowed 5 tries for every door, forgetting that each door solved leaves fewer keys for the next one."
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "LOG-11",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Deal with one door at a time, and imagine the worst luck.",
+    "For the first door, how many keys might fail before you know the answer? If all but one key have failed, do you still need to try the last one? Then think about the next door, with one key fewer.",
+    "For the first door, 5 failed tries already tell you the 6th key is the right one. The next door then needs at most 4 tries."
+  ],
+  "solutions": {
+    "reliable": "Take the doors one at a time. For the first door, in the worst case the first 5 keys fail, and then you know the 6th key opens it without trying, so 5 tries are enough. That leaves 5 keys for the second door, which needs at most 4 tries, then at most 3, 2 and 1 for the next doors, and the last key must fit the last door with no try at all. So 5 + 4 + 3 + 2 + 1 = 15 tries are always enough. Fewer are not always enough: a failed try only rules out one key for one door, and with bad luck each try fails until only one possibility is left, so the unlucky person really does need all 15. The transferable idea: for a guarantee, follow the worst possible luck, and notice when the last option no longer needs testing.",
+    "elegant": null
+  },
+  "whyOnTest": "Worst-case counting: you must follow the unluckiest order of events and also see that the last remaining key never needs testing.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

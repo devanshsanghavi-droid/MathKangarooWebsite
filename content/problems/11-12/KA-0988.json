@@ -1,0 +1,68 @@
+{
+  "id": "KA-0988",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A drawer holds 3 pairs of black gloves and 2 pairs of white gloves, all mixed up. Each pair is one left glove and one right glove. In the dark, how many gloves must you take out to be certain of having a left glove and a right glove of the same colour?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I treated the gloves like socks: three gloves give two of one colour, but those two could both be left gloves."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I found the largest handful with no matching left and right, which is 5, and gave that instead of one more."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I thought the worst case was drawing all 6 black gloves with no match and then needing one more, forgetting that 6 black gloves must include both hands."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought I might have to take every glove in the drawer to be sure."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "CNT-17",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Imagine the unluckiest possible handful.",
+    "Worst-case counting: build the largest handful that still has no left and right glove of the same colour. The answer is one more than the size of that handful.",
+    "For each colour you can take every glove of one hand only, for example all 3 black left gloves and both white left gloves."
+  ],
+  "solutions": {
+    "reliable": "A handful with no wearable pair can hold, for each colour, gloves of only one hand. So it has at most 3 black gloves and 2 white gloves, 5 in all, for example the five left gloves. Whatever such a handful of 5 is, a sixth glove is the missing hand of its colour, so 6 gloves always contain a matching left and right. The transferable idea: the answer to a question about being certain is one more than the largest bad case.",
+    "elegant": null
+  },
+  "whyOnTest": "The left and right condition changes the familiar sock answer, so the question tests building the true worst case rather than reusing a formula.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

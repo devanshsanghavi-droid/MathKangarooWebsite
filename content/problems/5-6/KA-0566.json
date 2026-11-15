@@ -1,0 +1,68 @@
+{
+  "id": "KA-0566",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Two players play a match. Every game has a winner, and the first player to win 2 games wins the match. How many different orders of game winners can a match have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted only who wins the match, not the different ways the games can go."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I listed the ways one player can win the match and forgot the other player."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I listed only the ways two games can turn out and forgot that a match can need a third game."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I listed all the results of three games, even when the match was already over after two."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-01",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Draw a tree: the first game, then the second.",
+    "Make a tree diagram. Each game branches two ways, but a branch stops as soon as someone has 2 wins. Count the ends of the branches.",
+    "After two games: AA and BB end the match. AB and BA each need a third game, which can go either way."
+  ],
+  "solutions": {
+    "reliable": "Call the players A and B and draw a tree. If one player wins both of the first two games the match ends: AA or BB. If the first two games are split, AB or BA, a third game decides it, giving ABA, ABB, BAA and BAB. That is 2 + 4 = 6 orders. The transferable idea: in a tree diagram, stop a branch the moment the outcome is decided, otherwise you count games that are never played.",
+    "elegant": null
+  },
+  "whyOnTest": "Tree diagrams test whether you stop branches that are already finished instead of counting every possible sequence.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

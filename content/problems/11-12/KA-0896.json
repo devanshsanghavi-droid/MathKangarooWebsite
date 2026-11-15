@@ -1,0 +1,68 @@
+{
+  "id": "KA-0896",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Three printers each work at a steady rate. Printers A and B together finish a job in 6 hours, B and C together in 10 hours, and A and C together in 7 hours 30 minutes. How long would all three together take to finish the same job?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2 hours 30 minutes",
+      "correct": false,
+      "misconception": "I added the three pair rates to get 2/5 of the job per hour but forgot that this counts every printer twice."
+    },
+    {
+      "key": "B",
+      "text": "5 hours",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "6 hours",
+      "correct": false,
+      "misconception": "I took the time of the fastest pair, thinking the third printer would add very little."
+    },
+    {
+      "key": "D",
+      "text": "7 hours 50 minutes",
+      "correct": false,
+      "misconception": "I averaged the three times, 6, 10 and 7.5 hours, as if times could be averaged like rates."
+    },
+    {
+      "key": "E",
+      "text": "11 hours 45 minutes",
+      "correct": false,
+      "misconception": "I added the three times and halved, 23.5/2, applying the counted-twice idea to times instead of rates."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-04",
+    "secondary": [
+      "MOD-01",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Work with jobs per hour, not hours per job.",
+    "Write each pair's rate as a fraction of the job per hour. Adding all three pair rates counts each printer exactly twice, so halve the total to get the three-printer rate, then turn it back into a time.",
+    "The pair rates are 1/6, 1/10 and 2/15 of the job per hour."
+  ],
+  "solutions": {
+    "reliable": "In jobs per hour, a + b = 1/6, b + c = 1/10 and a + c = 1/7.5 = 2/15. Adding these, 2(a + b + c) = 5/30 + 3/30 + 4/30 = 12/30 = 2/5, so a + b + c = 1/5 and all three together take 5 hours. Check: the single rates are a = 1/10, b = 1/15 and c = 1/30, and 1/10 + 1/15 = 1/6 as required. The transferable idea: rates add but times do not; convert to rates, combine, and convert back.",
+    "elegant": "Imagine 30 hours of work. A and B would finish 5 jobs, B and C 3 jobs, and A and C 4 jobs: 12 jobs in all, which is the work of two copies of all three printers. So the three together finish 6 jobs in 30 hours, one job every 5 hours."
+  },
+  "whyOnTest": "Combined-work problems test whether you add rates rather than times, and each distractor is a way of adding or averaging the times instead.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

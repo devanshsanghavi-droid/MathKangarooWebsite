@@ -1,0 +1,67 @@
+{
+  "id": "KA-0716",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Two regular pentagons and one more regular polygon fit together around a single point, with no gaps and no overlaps. How many sides does the third polygon have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I assumed the third polygon is another pentagon without checking that three pentagons leave a gap."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I used 120 degrees for the pentagon's angle, which is really the hexagon's, so the gap came out as 120 degrees."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I divided 360 by the exterior angle of 36 degrees and then added 2, mixing in the angle-sum formula."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I remembered that octagons fill gaps in tilings and chose the octagon without working out the gap."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-14",
+    "secondary": [
+      "GEO-05"
+    ]
+  },
+  "hints": [
+    "The angles meeting at the point must add up to 360 degrees.",
+    "Fitting tiles around a point: find the interior angle of a regular pentagon, work out the angle left for the third polygon, then find which regular polygon has that interior angle, going through its exterior angle.",
+    "A regular pentagon's angles are 108 degrees, so 360 - 108 - 108 = 144 degrees is left. An interior angle of 144 degrees means an exterior angle of 36 degrees."
+  ],
+  "solutions": {
+    "reliable": "The angles of a pentagon add up to 3 x 180 = 540 degrees, so each angle of a regular pentagon is 108 degrees. Two of them use 216 degrees, leaving 360 - 216 = 144 degrees. A regular polygon with interior angle 144 degrees has exterior angle 180 - 144 = 36 degrees, and the exterior angles of a polygon add up to 360, so it has 360 / 36 = 10 sides. The transferable idea: angles meeting at a point add up to 360, and the exterior angle is the quickest route from an angle to a number of sides.",
+    "elegant": null
+  },
+  "whyOnTest": "Tiling questions are angle sums at a point, and turning an interior angle into a number of sides via the exterior angle is the step tested.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

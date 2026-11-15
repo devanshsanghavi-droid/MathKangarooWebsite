@@ -1,0 +1,68 @@
+{
+  "id": "KA-0766",
+  "band": "9-10",
+  "points": 5,
+  "statement": "A pattern of dots grows in diamond-shaped rings. Stage 1 is a single dot, and each new stage adds a diamond-shaped ring around the previous one, so the stages have 1, 5, 13, 25, ... dots. Which is the first stage with more than 1000 dots?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "22",
+      "correct": false,
+      "misconception": "I wrote the number of dots as 2n(n + 1) + 1, shifting the stage numbers by one."
+    },
+    {
+      "key": "B",
+      "text": "23",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "32",
+      "correct": false,
+      "misconception": "I assumed the counts behave like square numbers and found the first square above 1000."
+    },
+    {
+      "key": "D",
+      "text": "252",
+      "correct": false,
+      "misconception": "I found when a single new ring has more than 1000 dots, instead of the whole stage."
+    },
+    {
+      "key": "E",
+      "text": "1013",
+      "correct": false,
+      "misconception": "I found the right stage but reported its number of dots rather than the stage number."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-04",
+    "secondary": [
+      "PAT-02",
+      "CFT-06"
+    ]
+  },
+  "hints": [
+    "Look at the differences between stages.",
+    "The amount added each time grows by the same step, so the totals follow a quadratic rule. Find that rule, then estimate which stage first passes 1000 and check the stages either side.",
+    "The differences are 4, 8, 12, ..., so stage n has 1 + 4(1 + 2 + ... + (n - 1)) = 2n(n - 1) + 1 dots."
+  ],
+  "solutions": {
+    "reliable": "The ring added at stage n has 4(n - 1) dots, so stage n has 1 + 4(1 + 2 + ... + (n - 1)) = 1 + 2n(n - 1) dots. Check: stage 4 gives 1 + 24 = 25. We need 2n(n - 1) + 1 > 1000. Stage 22 has 1 + 2 x 22 x 21 = 925 dots and stage 23 has 1 + 2 x 23 x 22 = 1013. So stage 23 is the first. The transferable idea: when the differences grow steadily, the totals are quadratic, and an estimate plus two checks finds the threshold.",
+    "elegant": "Stage n is two squares fitted together, n x n and (n - 1) x (n - 1), so it has n squared + (n - 1) squared dots, about 2n squared. So n is near the square root of 500, which is about 22.4. Checking 22 and 23 settles it."
+  },
+  "whyOnTest": "Figurate patterns at this level need a general rule, and the threshold question tests both the rule and careful checking either side.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

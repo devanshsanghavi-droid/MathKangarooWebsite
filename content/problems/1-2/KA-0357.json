@@ -1,0 +1,67 @@
+{
+  "id": "KA-0357",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Beads on a string go: 1 black, 1 white, 2 black, 1 white, 3 black, 1 white, and so on. How many beads are there up to and including the 5th white bead?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I counted only the white beads."
+    },
+    {
+      "key": "B",
+      "text": "14",
+      "correct": false,
+      "misconception": "I stopped at the 4th white bead instead of the 5th."
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": false,
+      "misconception": "I counted only the black beads, 1 + 2 + 3 + 4 + 5, and left out the white ones."
+    },
+    {
+      "key": "D",
+      "text": "19",
+      "correct": false,
+      "misconception": "I stopped just before the 5th white bead, so I left that bead out."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-04"
+    ]
+  },
+  "hints": [
+    "Each white bead ends a group. What is in each group?",
+    "Split the string into groups that each end with a white bead. The black beads in each group go up by one. Count the beads in each group, then add up the first five groups.",
+    "The groups have 1 + 1, 2 + 1, 3 + 1, 4 + 1 and 5 + 1 beads. That is 2, 3, 4, 5 and 6 beads."
+  ],
+  "solutions": {
+    "reliable": "Each white bead ends a group: group 1 has 1 black and 1 white, group 2 has 2 black and 1 white, and so on. The first five groups have 2, 3, 4, 5 and 6 beads, and 2 + 3 + 4 + 5 + 6 = 20. The idea to keep: split a growing pattern into repeating groups, then count the groups you need.",
+    "elegant": "Count the two colours separately: black beads 1 + 2 + 3 + 4 + 5 = 15 and white beads 5, so 15 + 5 = 20."
+  },
+  "whyOnTest": "Growing patterns hide a group that repeats, and stopping one group early or leaving out the last bead are the common slips.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0463",
+  "band": "3-4",
+  "points": 3,
+  "statement": "The houses on one side of a street are numbered 3, 7, 11 and so on, going up by 4 each time: the 1st house is number 3. Which house is number 31?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "The 6th",
+      "correct": false,
+      "misconception": "I counted only the houses between number 3 and number 31 and left out both of those houses."
+    },
+    {
+      "key": "B",
+      "text": "The 7th",
+      "correct": false,
+      "misconception": "I counted the 7 jumps of 4 from number 3 to number 31, but the 1st house comes before any jump."
+    },
+    {
+      "key": "C",
+      "text": "The 8th",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "The 9th",
+      "correct": false,
+      "misconception": "I worked out 31 divided by 4, which is about 8, and then added 1 for the first house."
+    },
+    {
+      "key": "E",
+      "text": "The 28th",
+      "correct": false,
+      "misconception": "I took 3 away from 31 and gave the difference between the house numbers instead of the house's place."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-02",
+    "secondary": [
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Write the house numbers out in order and count them.",
+    "This is a sequence with a start number and equal jumps. Count how many jumps of 4 take you from 3 to 31, then remember the 1st house needs no jump.",
+    "From 3 to 31 is 28, which is 7 jumps of 4."
+  ],
+  "solutions": {
+    "reliable": "List them: 3, 7, 11, 15, 19, 23, 27, 31. Number 31 is the 8th in the list, so it is the 8th house. The transferable idea: when the list is short, writing every term out and counting is the safest method.",
+    "elegant": "From 3 to 31 is 31 - 3 = 28, and 28 divided by 4 = 7 jumps. The 1st house needs no jump, so 7 jumps lead to the 8th house. The transferable idea: the position of a term is one more than the number of jumps from the first term."
+  },
+  "whyOnTest": "In an arithmetic sequence, counting the jumps and adding 1 for the first term finds a term's position, and both off-by-one slips are offered.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

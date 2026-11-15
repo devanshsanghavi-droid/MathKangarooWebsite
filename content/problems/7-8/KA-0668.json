@@ -1,0 +1,68 @@
+{
+  "id": "KA-0668",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Five different positive whole numbers have an average of 9. What is the largest possible value of the second-largest of them?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20",
+      "correct": false,
+      "misconception": "I found the best set, 1, 2, 3, 19 and 20, but gave the largest number instead of the second-largest."
+    },
+    {
+      "key": "B",
+      "text": "35",
+      "correct": false,
+      "misconception": "I made the largest number as big as possible, 45 - 1 - 2 - 3 - 4 = 35, instead of the second-largest."
+    },
+    {
+      "key": "C",
+      "text": "21",
+      "correct": false,
+      "misconception": "I forgot that the numbers must be different, used 1, 1 and 1, and split the remaining 42 equally into 21 and 21."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I gave the average instead of the largest possible value of the second-largest number."
+    },
+    {
+      "key": "E",
+      "text": "19",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "CFT-05",
+      "NUM-15"
+    ]
+  },
+  "hints": [
+    "The five numbers add up to 5 x 9.",
+    "Use the extremal principle: make the three smallest numbers as small as the rules allow, then share what is left between the two largest so the smaller of them is as big as possible.",
+    "The three smallest are 1, 2 and 3, leaving 39 for the two largest, which must be different."
+  ],
+  "solutions": {
+    "reliable": "An average of 9 for five numbers means they add up to 45. To make the second-largest big, the three smallest should be as small as possible: different positive whole numbers, so at least 1 + 2 + 3 = 6. That leaves 39 for the two largest. The largest must be bigger than the second-largest, so the second-largest is less than half of 39, at most 19. The set 1, 2, 3, 19, 20 shows that 19 works. The transferable idea: push everything you are not maximising to its limit, then check that the extreme case really exists.",
+    "elegant": null
+  },
+  "whyOnTest": "Extremal questions reward pushing everything else to its limit, and the distractors come from ignoring a word like different or answering for the wrong number.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

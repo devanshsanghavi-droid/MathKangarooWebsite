@@ -1,0 +1,67 @@
+{
+  "id": "KA-0408",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Six friends meet in the park. Each pair of friends does exactly one high five together. How many high fives are there altogether?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted one high five for each friend, as if each person only did one."
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "21",
+      "correct": false,
+      "misconception": "I added 6 + 5 + 4 + 3 + 2 + 1 instead of starting from 5, as if a friend could high-five themselves."
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": false,
+      "misconception": "I worked out 6 friends times 5 high fives each and forgot that every high five was counted twice, once for each friend."
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": false,
+      "misconception": "I multiplied 6 by 6, which counts each friend high-fiving themselves and counts every pair twice."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-08",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Line the friends up and let each one high-five only the friends after them.",
+    "This is a handshake count: each high five belongs to one pair. Count the new pairs friend by friend, never going back to someone already counted.",
+    "The first friend high-fives 5 others, the second has 4 new friends left, then 3, then 2, then 1."
+  ],
+  "solutions": {
+    "reliable": "Go through the friends in order. The first high-fives the other 5. The second has already done the first, so has 4 new ones. The third has 3 new ones, the fourth 2, the fifth 1, and the sixth has none left. Total: 5 + 4 + 3 + 2 + 1 = 15. The transferable idea: count each pair once by only ever pairing a person with the people after them.",
+    "elegant": "Each of the 6 friends does 5 high fives, which is 6 x 5 = 30, but every high five has two people in it and so was counted twice. There are 30 / 2 = 15."
+  },
+  "whyOnTest": "Counting pairs without counting any twice is the core idea behind every handshake and round-robin problem.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

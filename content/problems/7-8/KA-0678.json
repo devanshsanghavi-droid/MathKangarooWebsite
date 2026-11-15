@@ -1,0 +1,67 @@
+{
+  "id": "KA-0678",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A sign on a shelf says: 'Every box on this shelf contains a red pen.' The sign turns out to be false. Which of these statements must be true?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "At least one box on the shelf contains no red pen.",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "No box on the shelf contains a red pen.",
+      "correct": false,
+      "misconception": "I thought the opposite of 'every box has one' is 'no box has one', but the sign is already false if a single box is missing a red pen."
+    },
+    {
+      "key": "C",
+      "text": "Exactly one box on the shelf contains no red pen.",
+      "correct": false,
+      "misconception": "I pictured the smallest way the sign could fail and assumed it was the only way, but several boxes could be missing a red pen."
+    },
+    {
+      "key": "D",
+      "text": "Every box on the shelf contains a pen of another colour.",
+      "correct": false,
+      "misconception": "I read 'no red pen' as 'a pen of a different colour', but a box could hold no pen at all."
+    },
+    {
+      "key": "E",
+      "text": "At least one box on the shelf contains a red pen.",
+      "correct": false,
+      "misconception": "I assumed that if not every box has a red pen then some box still does, but the sign is also false when no box has one."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-01",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "What is the least that has to happen for the sign to be false?",
+    "A claim about every box fails as soon as one single box breaks it. For each option, ask whether it holds in every situation where the sign is false, or only in some of them.",
+    "The sign is false whenever one or more boxes have no red pen, and nothing else is known."
+  ],
+  "solutions": {
+    "reliable": "'Every box contains a red pen' is false exactly when at least one box contains no red pen, so the first statement must be true. 'No box', 'exactly one box' and 'at least one box has a red pen' each describe only some of the ways the sign can fail: perhaps one box lacks a red pen, perhaps all of them do. 'A pen of another colour' adds something never said, since a box could be empty. The transferable idea: the opposite of 'every one does' is 'at least one does not', not 'none does'.",
+    "elegant": null
+  },
+  "whyOnTest": "Logic questions often hinge on denying 'every' correctly, and the trap is swinging all the way to 'none'.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

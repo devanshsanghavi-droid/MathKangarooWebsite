@@ -1,0 +1,68 @@
+{
+  "id": "KA-0354",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Half of the children on a bus are boys. Half of the boys wear caps. 3 boys wear caps. How many children are on the bus?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I answered with the 3 boys who wear caps instead of all the children on the bus."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I doubled once to find the boys and then stopped."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I added the 3 boys with caps to the 6 boys."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I doubled three times instead of two times."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-09",
+    "secondary": [
+      "LOG-08",
+      "MOD-02"
+    ]
+  },
+  "hints": [
+    "Start from the 3 boys with caps and work backwards.",
+    "Work backwards one step at a time. The boys with caps are half of the boys, so find the boys first. Then the boys are half of the children, so find all the children.",
+    "If 3 is half of the boys, there are 6 boys. Now 6 is half of the children on the bus."
+  ],
+  "solutions": {
+    "reliable": "The 3 boys with caps are half of the boys, so there are 3 + 3 = 6 boys. The 6 boys are half of the children, so there are 6 + 6 = 12 children on the bus. The idea to keep: when a half is given, double to get back to the whole, one step at a time.",
+    "elegant": "The boys with caps are half of a half, which is a quarter of the children. If a quarter is 3, the whole bus has 4 x 3 = 12 children."
+  },
+  "whyOnTest": "Undoing two halves in a row checks that a child can work backwards from a part to the whole without stopping early.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

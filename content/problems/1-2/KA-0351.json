@@ -1,0 +1,67 @@
+{
+  "id": "KA-0351",
+  "band": "1-2",
+  "points": 4,
+  "statement": "On one side of a street the houses are numbered 1, 3, 5, 7 and so on. What is the number of the 8th house?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I gave 8 itself, which is the house's place in the row, not its number."
+    },
+    {
+      "key": "B",
+      "text": "13",
+      "correct": false,
+      "misconception": "I counted one house too few and found the number of the 7th house."
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I doubled 8, but that gives an even number, and this side has only odd numbers."
+    },
+    {
+      "key": "E",
+      "text": "17",
+      "correct": false,
+      "misconception": "I counted one house too many and found the number of the 9th house."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "Count the odd numbers on your fingers.",
+    "The house numbers are the odd numbers in order. Count along them one house at a time, keeping track of which house you are on, until you reach the 8th.",
+    "The first seven houses are 1, 3, 5, 7, 9, 11, 13. The next odd number is the 8th house."
+  ],
+  "solutions": {
+    "reliable": "List the odd numbers and count houses: 1 (1st), 3 (2nd), 5 (3rd), 7 (4th), 9 (5th), 11 (6th), 13 (7th), 15 (8th). The 8th house is number 15. The idea to keep: the odd numbers go up in 2s, and keeping count of the places stops you landing one too far or one too short.",
+    "elegant": "The 8th even number is 16, and each odd number is one less than the even number in the same place, so the 8th odd number is 15."
+  },
+  "whyOnTest": "Odd numbers in order are a short counting chain, and keeping place and value apart is what the question checks.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

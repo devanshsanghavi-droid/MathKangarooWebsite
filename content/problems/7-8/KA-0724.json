@@ -1,0 +1,68 @@
+{
+  "id": "KA-0724",
+  "band": "7-8",
+  "points": 5,
+  "statement": "How many four-digit numbers have at least two digits that are the same? For example, 1231 and 5559 count, but 1234 does not.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4464",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "4536",
+      "correct": false,
+      "misconception": "I counted the four-digit numbers whose digits are all different and gave that count instead of the rest."
+    },
+    {
+      "key": "C",
+      "text": "3960",
+      "correct": false,
+      "misconception": "I counted the numbers with all digits different as 10 x 9 x 8 x 7 = 5040, letting the first digit be 0, and subtracted that from 9000."
+    },
+    {
+      "key": "D",
+      "text": "5976",
+      "correct": false,
+      "misconception": "I counted the numbers with all digits different as 9 x 8 x 7 x 6, forgetting that 0 can be used after the first digit."
+    },
+    {
+      "key": "E",
+      "text": "5464",
+      "correct": false,
+      "misconception": "I subtracted 4536 from 10,000, thinking there are 10,000 four-digit numbers instead of 9000."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-09",
+    "secondary": [
+      "CNT-03",
+      "CNT-11"
+    ]
+  },
+  "hints": [
+    "It is easier to count the numbers that do not count.",
+    "Complementary counting: find how many four-digit numbers have all four digits different, and subtract from the total number of four-digit numbers. Watch out for the digit 0 in the first place.",
+    "There are 9000 four-digit numbers. With all digits different, the first digit has 9 choices (not 0), then 9, 8 and 7 choices for the others."
+  ],
+  "solutions": {
+    "reliable": "Four-digit numbers run from 1000 to 9999, so there are 9000 of them. Count those with all four digits different: the first digit can be 1 to 9 (9 choices), the second any of the 9 digits not yet used (0 is now allowed), the third 8 choices and the fourth 7. That gives 9 x 9 x 8 x 7 = 4536. The rest have at least one repeated digit: 9000 - 4536 = 4464. The transferable idea: when \"at least one\" invites many cases, count the opposite and subtract.",
+    "elegant": null
+  },
+  "whyOnTest": "At least one questions invite messy casework; the test is seeing that the complement is a single clean product, then handling the zero correctly.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

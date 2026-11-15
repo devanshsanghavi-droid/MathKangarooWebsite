@@ -1,0 +1,68 @@
+{
+  "id": "KA-0630",
+  "band": "7-8",
+  "points": 5,
+  "statement": "From the top corner of a triangle, 3 straight lines are drawn to the bottom side, dividing that side into 4 parts. Then one straight line is drawn across the triangle, parallel to the bottom side, crossing all of these lines. How many triangles of any size can be found in the figure?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I only counted the triangles whose base lies on the bottom side."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted only the triangles one slice wide: the 4 small ones above the parallel line and the 4 tall thin ones that reach the bottom side."
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I also counted the 4 pieces between the parallel line and the bottom, but they are four-sided, not triangles."
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted only the 4 small triangles at the top."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-13",
+    "secondary": [
+      "CNT-01",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Every triangle in the figure has the same top corner.",
+    "Counting shapes in a figure: describe each triangle by its two sides through the top corner and the line its base lies on. Count the choices of each, then multiply.",
+    "There are 5 lines through the top corner, so 10 ways to choose two of them. The base can be on either of 2 horizontal lines."
+  ],
+  "solutions": {
+    "reliable": "Two horizontal lines are parallel, so no triangle can use both; every triangle has two sides along lines through the top corner and a base on one horizontal line. There are 5 lines through the top corner (the two sides of the big triangle and the 3 drawn lines), so 5 x 4 / 2 = 10 pairs. Each pair, with the bottom side, makes a triangle, and with the parallel line makes another. That gives 10 x 2 = 20. The transferable idea: describe a shape by the lines that form it, then count choices of lines.",
+    "elegant": "For one horizontal line, the triangles are 4 of width one, 3 of width two, 2 of width three and 1 of width four: 10. The parallel line gives a second, smaller copy of the same picture: 20."
+  },
+  "whyOnTest": "Hidden-figure counting rewards a system over staring, and naming each triangle by its lines is the system that never misses one.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

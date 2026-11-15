@@ -1,0 +1,68 @@
+{
+  "id": "KA-0863",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A drawer holds black, white, grey and blue socks, at least 10 of each, mixed up. In the dark, what is the fewest socks you must take to be sure of three pairs? A pair is two socks of one colour, no sock is in two pairs, and pairs may share a colour.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I found the largest number of socks that can still give only two pairs and forgot to add one more."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I took 5 socks to be sure of the first pair and then thought each extra sock would complete a new pair, giving 5 + 1 + 1."
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": false,
+      "misconception": "I thought every pair needs 5 more socks, as the first pair does, so I used 3 times 5."
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I thought all three pairs had to be the same colour, so I made sure of six socks of one colour."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-17",
+    "secondary": [
+      "CNT-18",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Think about the unluckiest draw: as many socks as possible but only two pairs.",
+    "Each colour with an odd number of socks has one sock left over without a partner. Make the worst case by giving every colour a leftover single while keeping the number of pairs at two.",
+    "Two pairs use 4 socks, and each of the 4 colours can add one unmatched sock, so 8 socks can still hold only two pairs."
+  ],
+  "solutions": {
+    "reliable": "Among the socks taken, each colour gives as many pairs as half its count, rounded down, so every colour can hold at most one unpaired sock. With only two pairs you have at most 2 times 2 = 4 paired socks plus 1 unpaired sock of each of the 4 colours: 8 socks, for example 5 black, 1 white, 1 grey, 1 blue. So 8 socks are not enough. With 9 socks at most 4 are unpaired, so at least 5 are paired, and paired socks come in twos, so at least 6 are paired: that is at least 3 pairs. The answer is 9. The transferable idea: to find how many guarantee something, build the largest collection that avoids it, then add one.",
+    "elegant": "The number of unpaired socks is at most 4, one per colour, and it is odd or even exactly as the total is, because the paired socks come in twos. With 9 socks it is odd, so at most 3, which leaves at least 6 paired socks, that is 3 pairs. The transferable idea: a parity check can sharpen a pigeonhole bound by one."
+  },
+  "whyOnTest": "Pigeonhole guarantee questions are about the unluckiest case, and with pairs the leftover single of each colour is exactly what careless counts miss.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

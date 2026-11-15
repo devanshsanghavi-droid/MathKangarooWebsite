@@ -1,0 +1,68 @@
+{
+  "id": "KA-0877",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A train leaves at 10:40 and arrives at 13:15. A second train leaves 25 minutes after the first and its journey takes 20 minutes less. At what time does the second train arrive?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12:55",
+      "correct": false,
+      "misconception": "I took 20 minutes off the arrival time and forgot that the second train also leaves later."
+    },
+    {
+      "key": "B",
+      "text": "13:40",
+      "correct": false,
+      "misconception": "I added the 25-minute later start and forgot that the second journey is shorter."
+    },
+    {
+      "key": "C",
+      "text": "2 h 15 min",
+      "correct": false,
+      "misconception": "I worked out how long the second journey takes, not when the train arrives."
+    },
+    {
+      "key": "D",
+      "text": "13:10",
+      "correct": false,
+      "misconception": "I moved the times the wrong way, taking off the 25 minutes and adding the 20."
+    },
+    {
+      "key": "E",
+      "text": "13:20",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-01",
+    "secondary": [
+      "MOD-03",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "The question asks for a time of day, not a duration.",
+    "Track the two changes separately: a later start pushes the arrival later, and a shorter journey pulls it earlier. Combine them, then check that your answer is the kind of quantity being asked for.",
+    "Leaving 25 minutes later and travelling 20 minutes less means arriving 25 - 20 = 5 minutes later than the first train."
+  ],
+  "solutions": {
+    "reliable": "The first journey lasts from 10:40 to 13:15, which is 2 h 35 min. The second train leaves at 11:05 and takes 2 h 15 min, so it arrives at 13:20. The transferable idea: before bubbling, check that your answer is the quantity asked for, a time of day here and not a length of time.",
+    "elegant": "Leaving 25 minutes later pushes the arrival 25 minutes later, and a 20-minute shorter trip brings it back 20 minutes, a net 5 minutes later than 13:15: 13:20. The transferable idea: track changes, not totals."
+  },
+  "whyOnTest": "Many points are lost by answering a nearby question: here the journey length is on offer next to the arrival time the question wants.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

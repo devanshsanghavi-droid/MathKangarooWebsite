@@ -1,0 +1,67 @@
+{
+  "id": "KA-0641",
+  "band": "7-8",
+  "points": 3,
+  "statement": "In a game, Lina thinks of a number. She adds 4, multiplies the result by 3, subtracts 6 and then halves what she has. She ends with 12. What number did she think of?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "21",
+      "correct": false,
+      "misconception": "I applied her steps forward to 12 instead of undoing them."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I forgot to undo the halving, so I started undoing from 12 instead of 24."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": false,
+      "misconception": "I undid the last step wrongly by adding 4 instead of subtracting it."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I undid all the steps except the first one, adding 4."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-08",
+    "secondary": [
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Start at 12 and go back.",
+    "Working backwards: undo the steps in reverse order, using the opposite operation each time. Doubling undoes halving, adding undoes subtracting, and so on.",
+    "Double 12 to get 24, add 6 to get 30, then divide by 3."
+  ],
+  "solutions": {
+    "reliable": "Undo each step from the last: double 12 to get 24, add 6 to get 30, divide by 3 to get 10, subtract 4 to get 6. Check forward: 6 + 4 = 10, 10 x 3 = 30, 30 - 6 = 24, 24 / 2 = 12. The transferable idea: to reverse a chain of operations, undo them in reverse order with inverse operations, then check forward.",
+    "elegant": null
+  },
+  "whyOnTest": "Working backwards through a chain of operations is a basic Kangaroo move, and order and inverse slips each give a listed answer.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

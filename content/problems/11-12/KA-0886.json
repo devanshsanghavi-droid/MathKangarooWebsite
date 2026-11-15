@@ -1,0 +1,68 @@
+{
+  "id": "KA-0886",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A fair coin is tossed four times. What is the probability of getting at least two heads?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3/8",
+      "correct": false,
+      "misconception": "I worked out the probability of exactly two heads and forgot about three and four heads."
+    },
+    {
+      "key": "B",
+      "text": "1/2",
+      "correct": false,
+      "misconception": "I thought heads and tails are equally likely, so at least two heads must happen half of the time."
+    },
+    {
+      "key": "C",
+      "text": "3/5",
+      "correct": false,
+      "misconception": "I listed the five possible numbers of heads, 0 to 4, and treated them as equally likely, so three out of five count."
+    },
+    {
+      "key": "D",
+      "text": "15/16",
+      "correct": false,
+      "misconception": "I found the probability of at least one head instead of at least two heads."
+    },
+    {
+      "key": "E",
+      "text": "11/16",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-11",
+    "secondary": [
+      "CNT-09",
+      "CNT-06"
+    ]
+  },
+  "hints": [
+    "There are 16 equally likely sequences. Which ones fail?",
+    "Count the sequences directly by their number of heads, then check by counting the complement: the sequences with fewer than two heads. Two methods agreeing is your safety net.",
+    "Sequences with no heads: 1. Sequences with exactly one head: 4."
+  ],
+  "solutions": {
+    "reliable": "Of the 16 equally likely sequences, 6 have exactly two heads, 4 have three and 1 has four, so 11 have at least two heads and the probability is 11/16. Check with the complement: 1 sequence has no heads and 4 have exactly one, so 16 - 5 = 11 again. The transferable idea: a second method, here the complement, catches the slips that the first method invites.",
+    "elegant": "The complement is the quicker route: 1 - (1 + 4)/16 = 11/16."
+  },
+  "whyOnTest": "Probability questions punish one-method answers; a complement check catches the exactly-two, at-least-one and equally-likely-counts traps.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

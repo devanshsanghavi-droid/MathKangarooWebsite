@@ -1,0 +1,68 @@
+{
+  "id": "KA-0385",
+  "band": "1-2",
+  "points": 5,
+  "statement": "The picture shows steps 1, 2 and 3 of a pattern of block staircases. How many blocks are in step 5?",
+  "figure": {
+    "component": "BlockStairStages",
+    "alt": "Three staircases made of equal square blocks, labelled step 1, step 2 and step 3. Step 1 is a single block. Step 2 has columns of 1 and 2 blocks, 3 blocks in all. Step 3 has columns of 1, 2 and 3 blocks, 6 blocks in all."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I found the blocks in step 4 and stopped one step too early."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I saw that step 3 added 3 blocks and kept adding 3 each time."
+    },
+    {
+      "key": "C",
+      "text": "21",
+      "correct": false,
+      "misconception": "I went one step too far and found the blocks in step 6."
+    },
+    {
+      "key": "D",
+      "text": "25",
+      "correct": false,
+      "misconception": "I thought step 5 would be a full square of 5 rows of 5 blocks."
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": []
+  },
+  "hints": [
+    "Count the blocks in each step. What is added each time?",
+    "Each new step puts a new column on the right that is one block taller than the column before. Keep adding columns until you reach step 5.",
+    "Steps 1, 2 and 3 have 1, 3 and 6 blocks. Step 4 adds a column of 4 blocks."
+  ],
+  "solutions": {
+    "reliable": "Step 1 has 1 block, step 2 has 1 + 2 = 3 and step 3 has 1 + 2 + 3 = 6. Each step adds a column one taller than the last, so step 4 has 6 + 4 = 10 and step 5 has 10 + 5 = 15. The idea to keep: look at what each step adds, because the amount added can grow too.",
+    "elegant": "Step 5 is 1 + 2 + 3 + 4 + 5. Pair the ends: 1 + 4 = 5 and 2 + 3 = 5, plus the 5 itself, which makes 5 + 5 + 5 = 15."
+  },
+  "whyOnTest": "Growing patterns check whether you see what each step adds, and here the amount added grows by one every time.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0706",
+  "band": "7-8",
+  "points": 4,
+  "statement": "How many two-digit numbers are equal to 7 times the sum of their own digits?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I found one example by trial and assumed it was the only one."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I reached 'tens digit = 2 x units digit' and let the units digit run from 1 to 9, without checking the tens digit stays a single digit."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I also counted 0, written as 00, alongside the four real two-digit answers."
+    },
+    {
+      "key": "E",
+      "text": "3",
+      "correct": false,
+      "misconception": "I tested only the multiples of 7 below 70, so I never reached the fourth answer."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-02",
+    "secondary": [
+      "NUM-01",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Write the number as 10a + b, with digits a and b.",
+    "Turn the condition into an equation in the two digits and simplify it. It becomes a simple link between the tens digit and the units digit; then list every digit pair that fits, remembering both must be single digits.",
+    "10a + b = 7a + 7b simplifies to 3a = 6b, that is, a = 2b. The tens digit a is from 1 to 9."
+  ],
+  "solutions": {
+    "reliable": "With tens digit a and units digit b, 10a + b = 7(a + b), so 3a = 6b and a = 2b. Since a is a single digit from 1 to 9, b can be 1, 2, 3 or 4, giving 21, 42, 63 and 84. Check 84: its digits add to 12 and 7 x 12 = 84. So there are 4 such numbers. The transferable idea: write a digit puzzle in place-value form, and the equation usually shows exactly how the digits are tied together.",
+    "elegant": "Each such number is a multiple of 7, and dividing it by 7 gives its digit sum. Testing the multiples of 7 from 14 to 98 finds 21, 42, 63 and 84 quickly, and the equation a = 2b explains why the list stops there."
+  },
+  "whyOnTest": "Digit puzzles reward writing 10a + b, which turns trial and error into a short list that you can be sure is complete.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

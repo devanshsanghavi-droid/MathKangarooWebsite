@@ -1,0 +1,68 @@
+{
+  "id": "KA-0489",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Counting numbers fill rows, each row one number longer than the row before: 1, then 2 3, then 4 5 6, and so on. What is the first number in row 8?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "29",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": false,
+      "misconception": "I thought each row starts 2 more than the row before, so I counted 1, 3, 5 and onwards."
+    },
+    {
+      "key": "C",
+      "text": "22",
+      "correct": false,
+      "misconception": "I found the first number in row 7, not row 8."
+    },
+    {
+      "key": "D",
+      "text": "28",
+      "correct": false,
+      "misconception": "I added the row lengths 1 to 7 and forgot that row 8 starts one after that."
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": false,
+      "misconception": "I found the last number in row 8 instead of the first."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-06",
+    "secondary": [
+      "PAT-04",
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "Where does row 7 end?",
+    "Each row ends where the numbers used so far run out. Add up how many numbers the earlier rows hold, and the next row starts just after that.",
+    "Rows 1 to 7 hold 1 + 2 + 3 + 4 + 5 + 6 + 7 numbers altogether."
+  ],
+  "solutions": {
+    "reliable": "Rows 1 to 7 hold 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28 numbers, so row 7 ends with 28. Row 8 starts with 29. Check by listing the first numbers: 1, 2, 4, 7, 11, 16, 22, 29, growing by 1, 2, 3, 4, 5, 6, 7. The transferable idea: in a table filled row by row, the start of a row is one more than the total of the rows before it.",
+    "elegant": "The first numbers grow by 1 more each time: 1, 2, 4, 7, 11, 16, 22, 29. The transferable idea: list the differences and the next term falls out."
+  },
+  "whyOnTest": "Locating an entry in a number triangle, where row 7 and the last number of row 8 are both tempting near misses.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

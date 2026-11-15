@@ -1,0 +1,67 @@
+{
+  "id": "KA-0699",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Nine different positive whole numbers add up to 100. What is the smallest possible value of the largest of the nine numbers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I divided 100 by 9 and rounded up, forgetting that the nine numbers must all be different."
+    },
+    {
+      "key": "B",
+      "text": "11",
+      "correct": false,
+      "misconception": "I divided 100 by 9 and rounded down to get a typical size for the numbers."
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": false,
+      "misconception": "I took the nine numbers from 7 to 15 as the tightest set and did not notice that they only add up to 99."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "64",
+      "correct": false,
+      "misconception": "I found how large the biggest number could be, by making the other eight 1 to 8, instead of how small."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "If the largest number is M, how big can the total possibly be?",
+    "Use extremal thinking: nine different numbers, none above M, total at most the nine consecutive numbers ending at M. Find the first M whose ceiling reaches 100, then check it can actually be achieved.",
+    "With largest 15 the total is at most 7 + 8 + ... + 15 = 99, which is too small. With largest 16, try 10 to 16 together with two smaller numbers that add up to 9."
+  ],
+  "solutions": {
+    "reliable": "If the largest number is M, the nine different numbers are at most M, M - 1, ..., M - 8, whose sum is 9M - 36. We need 9M - 36 to be at least 100, so M is at least 136 / 9, which is about 15.1. So 15 is impossible (7 + 8 + ... + 15 = 99) and 16 is the candidate. It works: 1, 8, 10, 11, 12, 13, 14, 15 and 16 add up to 100. The transferable idea: bound the extreme value using the most crowded case, then show that the bound is actually reached.",
+    "elegant": null
+  },
+  "whyOnTest": "Minimising the largest of several different numbers needs a bound and an example, and simple averaging ignores the 'all different' condition.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0745",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Points P, Q, R and S lie on a straight line, not necessarily in that order. PQ = 7, QR = 3, RS = 5 and PS = 9. What is the distance PR?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I subtracted QR from PS, thinking PR is the whole of PS except the stretch from Q to R."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I assumed the points were in alphabetical order along the line, so I added PQ and QR."
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": false,
+      "misconception": "I placed S between P and R, so I added PS and SR."
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": false,
+      "misconception": "I assumed alphabetical order and added all three gaps, finding the full length instead of PR."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Put P at 0 on a number line and place the others.",
+    "Draw a number line with P at zero. Q is forced to sit at distance 7, then try both sides for R, and both sides for S, keeping only the placement that matches the last given length.",
+    "With P at 0 and Q at 7, R is at 10 or 4. From R = 10, S would be at 15 or 5, never 9 away from P. From R = 4, S can be at 9."
+  ],
+  "solutions": {
+    "reliable": "Place P at 0 and Q at 7 (the mirror image gives the same distances). Then R is at 10 or at 4. If R = 10, S is at 15 or 5, and neither is 9 from P. If R = 4, S is at 9 or -1, and S = 9 fits PS = 9. So the order is P, R, Q, S and PR = 4. The transferable idea: when the order of points is not given, a quick number line turns guessing into checking.",
+    "elegant": "PS = 9 is less than PQ + QR + RS = 15, so the points cannot be in alphabetical order. Drawing it shows R doubles back between P and Q."
+  },
+  "whyOnTest": "Distance puzzles on a line are about not assuming the order of the letters, and drawing the line exposes the one arrangement that fits.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

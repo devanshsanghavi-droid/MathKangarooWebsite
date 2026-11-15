@@ -1,0 +1,67 @@
+{
+  "id": "KA-0674",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A wooden block measuring 3 by 4 by 5 is painted on all of its outside faces and then cut into 60 unit cubes. How many of the unit cubes have paint on exactly two of their faces?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the corner cubes, but those have paint on three faces, not two."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "22",
+      "correct": false,
+      "misconception": "I counted the cubes with exactly one painted face, the ones in the middle of each face of the block."
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": false,
+      "misconception": "I removed only one corner cube from each edge instead of the cubes at both ends."
+    },
+    {
+      "key": "E",
+      "text": "48",
+      "correct": false,
+      "misconception": "I counted every cube along the 12 edges, corners included, as 4 x (3 + 4 + 5)."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-13",
+    "secondary": [
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Paint on exactly two faces means the cube sits on an edge of the block.",
+    "Cubes with exactly two painted faces lie along the 12 edges of the block, but not at the corners, where cubes have three painted faces. Count each edge's cubes without its two ends.",
+    "There are four edges each of length 3, 4 and 5, giving 1, 2 and 3 cubes each once the corners are left out."
+  ],
+  "solutions": {
+    "reliable": "The block has 12 edges: four of length 3, four of length 4 and four of length 5. On each edge the two end cubes are corners with three painted faces, so an edge of length L gives L - 2 cubes with exactly two painted faces. That is 4 x (1 + 2 + 3) = 24. The transferable idea: in a painted block, corner cubes have three painted faces, other edge cubes two, other face cubes one, and the hidden core none.",
+    "elegant": null
+  },
+  "whyOnTest": "Painted-cube questions check that you can sort small cubes by where they sit: corner, edge, face or hidden centre.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

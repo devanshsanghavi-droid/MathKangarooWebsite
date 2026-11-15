@@ -1,0 +1,68 @@
+{
+  "id": "KA-0645",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A sequence starts 1, 3, and after that every term is the previous term minus the one before it. So the third term is 3 - 1 = 2. What is the sum of the first 100 terms?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "negative 1",
+      "correct": false,
+      "misconception": "I found the 100th term instead of the sum of the first 100 terms."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I added one term too few after the complete blocks of six."
+    },
+    {
+      "key": "D",
+      "text": "0",
+      "correct": false,
+      "misconception": "I saw that every block of six terms adds to 0 and ignored the terms left over after the blocks."
+    },
+    {
+      "key": "E",
+      "text": "2",
+      "correct": false,
+      "misconception": "I added one term too many after the complete blocks of six."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "PAT-03",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Write out the first ten terms.",
+    "Recursive rules often repeat. Generate terms until the starting pair comes back, find the length of the cycle and the sum of one cycle, then deal with the leftover terms.",
+    "The terms go 1, 3, 2, negative 1, negative 3, negative 2, then 1, 3 again. One cycle of 6 adds to 0."
+  ],
+  "solutions": {
+    "reliable": "The terms are 1, 3, 2, negative 1, negative 3, negative 2, 1, 3, ..., repeating every 6 terms because the pair 1, 3 comes back. Each block of 6 adds to 0. Since 100 = 16 x 6 + 4, the first 96 terms add to 0, and the remaining 4 terms are 1, 3, 2, negative 1, which add to 5. The transferable idea: a rule that uses the last two terms repeats as soon as a pair repeats, so find the cycle and handle the remainder.",
+    "elegant": null
+  },
+  "whyOnTest": "Kangaroo regularly asks about the 100th or 2026th step of a rule, which can only be done by finding the cycle and the remainder.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

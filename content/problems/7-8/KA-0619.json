@@ -1,0 +1,68 @@
+{
+  "id": "KA-0619",
+  "band": "7-8",
+  "points": 5,
+  "statement": "The numbers 1, 2, 3, ..., 12 are written on a board. In each step, you erase any two numbers and write down their sum minus 3. You continue until only one number is left. What is that number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "45",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "42",
+      "correct": false,
+      "misconception": "I subtracted 3 once for each of the 12 numbers instead of once for each step."
+    },
+    {
+      "key": "C",
+      "text": "48",
+      "correct": false,
+      "misconception": "I subtracted 3 only ten times, miscounting the number of steps."
+    },
+    {
+      "key": "D",
+      "text": "75",
+      "correct": false,
+      "misconception": "I thought the minus 3 happened only once, at the very end."
+    },
+    {
+      "key": "E",
+      "text": "78",
+      "correct": false,
+      "misconception": "I thought replacing two numbers by their sum keeps the total the same, and forgot the minus 3."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "CFT-03",
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "What happens to the total of all the numbers in one step?",
+    "Instead of following one particular order of steps, track a quantity that changes in the same way at every step, whichever two numbers are chosen. The total on the board is such a quantity.",
+    "Each step lowers the total by exactly 3, and going from 12 numbers to 1 takes 11 steps."
+  ],
+  "solutions": {
+    "reliable": "The total starts at 1 + 2 + ... + 12 = 78. Erasing a and b and writing a + b - 3 lowers the total by exactly 3, whichever numbers are chosen. Each step removes one number from the board, so going from 12 numbers to 1 takes 11 steps, and the final number is 78 - 11 x 3 = 45. The transferable idea: when a process allows many choices, look for a quantity that changes predictably whatever the choices.",
+    "elegant": "Subtract 3 from every number on the board. A step then just adds two of these reduced numbers together, so their total never changes. It starts at 78 - 12 x 3 = 42, so at the end the last number minus 3 is 42, and the last number is 45."
+  },
+  "whyOnTest": "Invariants: with free choices at every step, the answer must come from a quantity the steps change predictably, here the total on the board.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

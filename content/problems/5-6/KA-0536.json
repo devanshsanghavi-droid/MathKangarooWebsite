@@ -1,0 +1,67 @@
+{
+  "id": "KA-0536",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A baker makes 150 rolls. She sells two thirds of them in the morning and half of the remaining rolls in the afternoon. How many rolls are left at the end of the day?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I took half of all 150 rolls in the afternoon instead of half of what was left, so it seemed none were left."
+    },
+    {
+      "key": "B",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "50",
+      "correct": false,
+      "misconception": "I stopped after the morning and forgot the afternoon sales."
+    },
+    {
+      "key": "D",
+      "text": "100",
+      "correct": false,
+      "misconception": "I gave the number of rolls sold in the morning."
+    },
+    {
+      "key": "E",
+      "text": "125",
+      "correct": false,
+      "misconception": "I gave the total number of rolls sold, not the number left."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-10",
+    "secondary": [
+      "NUM-09"
+    ]
+  },
+  "hints": [
+    "Do the morning first, then the afternoon.",
+    "Work in stages. Find what is left after the morning, and only then take half of that. The afternoon fraction is of the leftover rolls, not of all 150.",
+    "Two thirds of 150 is 100, which leaves 50. Half of those 50 are sold in the afternoon."
+  ],
+  "solutions": {
+    "reliable": "Morning: two thirds of 150 is 100 sold, so 150 - 100 = 50 remain. Afternoon: half of the 50 remaining is 25 sold, leaving 50 - 25 = 25. The transferable idea: in multi-step fraction problems each fraction applies to whatever is left at that stage, so update the amount after every step.",
+    "elegant": "After the morning one third is left; after the afternoon half of that third is left, which is one sixth of 150, or 25."
+  },
+  "whyOnTest": "Multi-step word problems test whether you track what each fraction is a fraction of.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

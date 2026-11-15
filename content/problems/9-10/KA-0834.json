@@ -1,0 +1,68 @@
+{
+  "id": "KA-0834",
+  "band": "9-10",
+  "points": 4,
+  "statement": "On an island, knights always tell the truth and knaves always lie. Five islanders speak. A: \"Exactly one of B and C is a knight.\" B: \"D is a knave.\" C: \"A and E are the same type.\" D: \"Exactly two of us five are knights.\" E: \"B is a knave.\" How many of the five are knights?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed all five could be knaves, without checking that E's claim about B would then be true."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I made E the only knight and checked every statement except B's, which that choice would make true."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I made A, C and E the knights and checked every statement except B's, which that choice would make true."
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": false,
+      "misconception": "I made everyone except B a knight and never tested D's claim that only two of the five are knights."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-09",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Look at what E says about B.",
+    "E calls B a knave, so B and E must be of opposite types. Split into two cases, B a knight or B a knave, and follow each case through the other statements until it settles or breaks.",
+    "If B is a knight, then D and E are knaves and exactly one of A and C turns out to be a knight, so there are exactly two knights. Ask whether knave D may then say that."
+  ],
+  "solutions": {
+    "reliable": "Case 1, B is a knight. Then D is a knave and E, who calls B a knave, is a knave too. If A is a knight, B and C differ, so C is a knave; if A is a knave, B and C are alike, so C is a knight. Either way exactly two of the five are knights, which makes D's statement true, but D is a knave. So case 1 is impossible. Case 2, B is a knave. Then D is a knight, and E, who correctly calls B a knave, is a knight. D says exactly two are knights, so D and E are the only ones and A, B and C are knaves. Check: A's claim is false since B and C are both knaves, and C's claim is false since A and E differ. Everything fits, so there are 2 knights. The transferable idea: two speakers who talk about each other's type split the puzzle into two cases, and a counting claim usually breaks the wrong one.",
+    "elegant": "Notice that D's claim decides everything. If D is a knight, B's claim is false, so B is a knave, and E, who calls B a knave, is a knight; D's claim then makes D and E the only knights. If D is a knave, B's claim is true, so B is a knight and E is a knave, and A's and C's claims force exactly one of A and C to be a knight: two knights again, which would make D's claim true. So D must be a knight, and the answer is 2."
+  },
+  "whyOnTest": "Truth-teller and liar puzzles test splitting into cases and checking every statement; three of the trap answers satisfy all but one claim.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

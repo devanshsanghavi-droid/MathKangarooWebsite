@@ -1,0 +1,68 @@
+{
+  "id": "KA-0592",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Cubes are stacked in towers on a 3 by 3 board. From the front, the tallest towers in the three columns look 3, 1 and 2 cubes high. From the right side, the tallest towers in the three rows look 2, 3 and 1 cubes high. What is the largest number of cubes there could be?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "18",
+      "correct": false,
+      "misconception": "I copied the front view into all three rows, which makes every row look 3 high from the side."
+    },
+    {
+      "key": "C",
+      "text": "22",
+      "correct": false,
+      "misconception": "I gave each square the larger of its column's and its row's heights, which makes some views too tall."
+    },
+    {
+      "key": "D",
+      "text": "27",
+      "correct": false,
+      "misconception": "I filled the whole board 3 cubes high and ignored both views."
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": false,
+      "misconception": "I multiplied the totals of the two views, 6 times 6."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-12",
+    "secondary": [
+      "GEO-13",
+      "CNT-18"
+    ]
+  },
+  "hints": [
+    "Each square's tower is limited by two views.",
+    "A tower cannot be taller than the front view allows for its column, or than the side view allows for its row. Make every tower as tall as both limits allow, then add.",
+    "Each square can hold the smaller of its column height and its row height. Fill in the 3 by 3 table of these smaller values."
+  ],
+  "solutions": {
+    "reliable": "A square in a column of height c and a row of height r can hold at most the smaller of c and r. Making every square exactly that tall keeps both views correct. The row of height 2 gives 2, 1, 2 = 5. The row of height 3 gives 3, 1, 2 = 6. The row of height 1 gives 1, 1, 1 = 3. The total is 5 + 6 + 3 = 14. The transferable idea: when two views limit a stack, each tower is capped by the smaller limit, and the largest stack uses every cap.",
+    "elegant": null
+  },
+  "whyOnTest": "Views-of-a-solid questions test whether you combine two views square by square rather than reading each view alone.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0930",
+  "band": "11-12",
+  "points": 3,
+  "statement": "On a map with scale 1 : 50 000, a lake covers 6 cm^2. What is the real area of the lake in km^2?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0.015",
+      "correct": false,
+      "misconception": "I took 50 000 cm to be 0.05 km instead of 0.5 km, then squared that."
+    },
+    {
+      "key": "B",
+      "text": "1.5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I multiplied the map area by the length scale, 1 cm to 0.5 km, without squaring it."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I divided by the area factor 0.25 instead of multiplying by it."
+    },
+    {
+      "key": "E",
+      "text": "150",
+      "correct": false,
+      "misconception": "I took 50 000 cm to be 5 km instead of 0.5 km, then squared that."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-16",
+    "secondary": [
+      "MOD-07",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "Convert one map centimetre to real kilometres first.",
+    "Lengths scale by the map factor, but areas scale by its square. Convert the length to kilometres, then square it to get the area of one map square centimetre.",
+    "50 000 cm = 500 m = 0.5 km, so 1 cm^2 on the map is 0.5 x 0.5 km^2."
+  ],
+  "solutions": {
+    "reliable": "1 cm on the map is 50 000 cm = 500 m = 0.5 km. So 1 cm^2 on the map is a square 0.5 km by 0.5 km, which is 0.25 km^2. The lake is 6 x 0.25 = 1.5 km^2. The transferable idea: lengths scale by k, areas by k squared, so convert the length first and square it after.",
+    "elegant": null
+  },
+  "whyOnTest": "Map scales test the rule that area scales with the square of the length factor, combined with a careful unit conversion.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

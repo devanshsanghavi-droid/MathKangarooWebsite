@@ -1,0 +1,67 @@
+{
+  "id": "KA-0707",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A plus sign or a minus sign is placed in front of each of the numbers 1, 2, 3, ..., 10, and the ten signed numbers are added together. How many different results are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1024",
+      "correct": false,
+      "misconception": "I counted the ways of choosing the ten signs, but many different choices give the same result."
+    },
+    {
+      "key": "B",
+      "text": "111",
+      "correct": false,
+      "misconception": "I counted every whole number from minus 55 to 55, not noticing that the result is always odd."
+    },
+    {
+      "key": "C",
+      "text": "28",
+      "correct": false,
+      "misconception": "I counted only the positive odd results and forgot the negative ones."
+    },
+    {
+      "key": "D",
+      "text": "55",
+      "correct": false,
+      "misconception": "I counted the whole numbers from 1 to 55 as the possible results."
+    },
+    {
+      "key": "E",
+      "text": "56",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "LOG-05"
+    ]
+  },
+  "hints": [
+    "Is the result odd or even, whatever signs you choose?",
+    "Think about parity. Switching a sign from plus to minus changes the total by twice that number, an even amount, so every result shares the all-plus total's parity. Then find the range and check which values in it occur.",
+    "The all-plus total is 55, so every result is odd and lies from minus 55 to 55. Switching numbers whose sum is S gives 55 - 2S, and S can be any whole number from 0 to 55."
+  ],
+  "solutions": {
+    "reliable": "With all plus signs the total is 55. Changing the signs of some numbers whose sum is S lowers the total by 2S, giving 55 - 2S. Every whole number S from 0 to 55 is a sum of different numbers from 1 to 10 (take 10 if it fits, then 9 if it fits, and so on down), so the results are exactly the odd numbers from minus 55 to 55. There are 28 positive ones and 28 negative ones, 56 in all. The transferable idea: flipping a sign changes a sum by an even amount, so the parity is fixed and only the range needs checking.",
+    "elegant": null
+  },
+  "whyOnTest": "Sign-flipping problems hide a parity invariant: half of the whole numbers in the range are impossible, and the other half all occur.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0875",
+  "band": "9-10",
+  "points": 5,
+  "statement": "The diagonals of the quadrilateral ABCD are perpendicular. AB = 5, BC = 6 and CD = 7. What is the length of DA?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "√38",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I guessed the sides keep going up by one, 5, 6, 7 and then 8."
+    },
+    {
+      "key": "C",
+      "text": "2√3",
+      "correct": false,
+      "misconception": "I set AB squared plus BC squared equal to CD squared plus DA squared, pairing neighbouring sides instead of opposite ones."
+    },
+    {
+      "key": "D",
+      "text": "2√15",
+      "correct": false,
+      "misconception": "I set AB squared plus DA squared equal to BC squared plus CD squared, pairing the two sides at A against the two sides at C."
+    },
+    {
+      "key": "E",
+      "text": "√110",
+      "correct": false,
+      "misconception": "I added the squares of all three given sides, as if DA were the long side of a right triangle made from them."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-06",
+    "secondary": [
+      "CFT-07"
+    ]
+  },
+  "hints": [
+    "Call the point where the diagonals cross O.",
+    "The perpendicular diagonals cut the quadrilateral into four right triangles meeting at O. Write each side squared using Pythagoras with the two pieces of diagonal next to it, and look for a combination of sides in which every piece cancels.",
+    "AB squared = OA squared + OB squared, and likewise for the other three sides. Compare AB squared + CD squared with BC squared + DA squared."
+  ],
+  "solutions": {
+    "reliable": "Let the diagonals meet at O. By Pythagoras in the four right triangles at O: AB squared = OA squared + OB squared, BC squared = OB squared + OC squared, CD squared = OC squared + OD squared and DA squared = OD squared + OA squared. So AB squared + CD squared and BC squared + DA squared both equal OA squared + OB squared + OC squared + OD squared. Then 25 + 49 = 36 + DA squared, so DA squared = 38 and DA = √38. Such a quadrilateral exists, for example with OA = 4, OB = 3, OC = √27 and OD = √22. The transferable idea: when a figure splits into right triangles around one point, add the Pythagoras equations so the unknown pieces cancel.",
+    "elegant": null
+  },
+  "whyOnTest": "Properties of quadrilaterals often hide one clean relation, and perpendicular diagonals give the sums of squares of opposite sides being equal, even though the quadrilateral itself is not fixed.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

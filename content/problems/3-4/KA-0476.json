@@ -1,0 +1,68 @@
+{
+  "id": "KA-0476",
+  "band": "3-4",
+  "points": 5,
+  "statement": "At a party, every guest shook hands exactly once with every other guest. There were 15 handshakes in all. How many guests were at the party?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I added 5 + 4 + 3 + 2 + 1 = 15 and gave the biggest number, but that is the handshake count for 6 guests."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I halved the 15 handshakes because each one uses two people, then rounded up."
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": false,
+      "misconception": "I thought there was one guest for each handshake."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": false,
+      "misconception": "I doubled the 15 handshakes because each handshake has two people in it."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-08",
+    "secondary": [
+      "CFT-03",
+      "LOG-08"
+    ]
+  },
+  "hints": [
+    "Count the handshakes for 3 guests, then for 4 guests. What pattern appears?",
+    "Each new guest who arrives shakes hands with everyone already there. Build up the total one guest at a time until it reaches 15.",
+    "With 2 guests there is 1 handshake. A 3rd guest adds 2 more, a 4th adds 3 more, and so on."
+  ],
+  "solutions": {
+    "reliable": "Add guests one at a time: 2 guests make 1 handshake, the 3rd guest adds 2 (total 3), the 4th adds 3 (total 6), the 5th adds 4 (total 10) and the 6th adds 5 (total 15). So there were 6 guests. The transferable idea: build a pair count up one person at a time.",
+    "elegant": "Each of the guests shakes hands with everyone else, and each handshake is counted once by each of its two people. So the number of guests times one fewer than that is 2 x 15 = 30, which is 6 x 5. There were 6 guests. The transferable idea: count from each person, then halve for the double count."
+  },
+  "whyOnTest": "Working backwards from a handshake total tests whether you understand how pairs grow, and the classic off-by-one is offered.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0853",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Different two-digit numbers are chosen. What is the smallest number of them that must be chosen to be certain that three of the chosen numbers have the same digit sum?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "19",
+      "correct": false,
+      "misconception": "I worked out how many are needed for two numbers with the same digit sum, not three."
+    },
+    {
+      "key": "B",
+      "text": "34",
+      "correct": false,
+      "misconception": "I found 34 numbers with no three sharing a digit sum and gave that, forgetting one more is needed to force it."
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": false,
+      "misconception": "I noticed that digit sum 1 has only one two-digit number, 10, but missed that digit sum 18 also has only one, 99."
+    },
+    {
+      "key": "D",
+      "text": "35",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "37",
+      "correct": false,
+      "misconception": "I used 18 boxes with two numbers in each and added one, ignoring that some digit sums have fewer than two numbers."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-17",
+    "secondary": [
+      "CNT-18",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "List the possible digit sums and how many numbers have each.",
+    "Use the digit sums as boxes. To avoid three in a box, take at most two numbers from each box, but some boxes do not even hold two numbers. Count the largest set with no three alike, then add one.",
+    "Digit sums run from 1 to 18. Sum 1 has only 10 and sum 18 has only 99; every other sum has at least two numbers."
+  ],
+  "solutions": {
+    "reliable": "The digit sums of two-digit numbers run from 1 (only 10) to 18 (only 99), and every sum from 2 to 17 has at least two numbers, for example 11 and 20 for sum 2 and 89 and 98 for sum 17. To avoid three with the same sum, take at most two numbers per sum: at most 1 + 16 × 2 + 1 = 34 numbers, and 34 is achievable. So 34 numbers might not be enough, but any 35 force three with the same digit sum. The answer is 35. The transferable idea: in a pigeonhole argument, the worst case fills each box as far as the box allows, and small boxes hold less.",
+    "elegant": null
+  },
+  "whyOnTest": "Pigeonhole questions need the true worst case: some boxes are too small to hold their share, and missing that gives the near-miss answers.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0730",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Ten people sit around a round table. Each is either a knight, who always tells the truth, or a knave, who always lies. Every one of them says: \"The person on my left is a knave, and the person on my right is a knight.\" How many knights are at the table?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I seated knights and knaves alternately, which makes each knight's left neighbour a knave, but I did not check the right neighbour."
+    },
+    {
+      "key": "B",
+      "text": "0",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I saw that a knight forces the person on its right to be a knight, followed this round the table and stopped one person short of coming back to the start."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I took everyone's statement as true, not noticing that each would then be calling a knight a knave."
+    },
+    {
+      "key": "E",
+      "text": "1",
+      "correct": false,
+      "misconception": "I placed a single knight with a knave on its left and assumed everyone else could be a knave, without checking the knight's right neighbour."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-09",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Suppose one person is a knight. Who must sit on their right?",
+    "If anyone is a knight, both halves of their sentence are true. Follow what that forces around the table, person by person, until you come back to where you started. Then check whether all knaves works.",
+    "A knight has a knight on its right, and that knight has a knight on its right, and so on all the way round. But the first knight also needs a knave on its left."
+  ],
+  "solutions": {
+    "reliable": "Suppose someone is a knight. Then the person on their right is a knight. That person is a knight too, so the person on their right is a knight, and so on all the way round the table: everyone is a knight. But then the first knight's left neighbour is a knight, not a knave, so its statement is false, a contradiction. So nobody is a knight. Check that all knaves works: each knave says the person on the right is a knight, which is false, so the whole sentence is false, as a knave's must be. There are 0 knights. The transferable idea: assume one case, follow what it forces step by step, and look for a contradiction.",
+    "elegant": null
+  },
+  "whyOnTest": "Truth-teller puzzles test chasing consequences around a cycle; one knight would force a chain that collides with itself.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

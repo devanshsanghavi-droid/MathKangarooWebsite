@@ -1,0 +1,68 @@
+{
+  "id": "KA-0774",
+  "band": "9-10",
+  "points": 4,
+  "statement": "How many four-digit whole numbers have digits that add up to 4?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I counted the digit patterns 4, 3 + 1, 2 + 2, 2 + 1 + 1 and 1 + 1 + 1 + 1 instead of the numbers each pattern makes."
+    },
+    {
+      "key": "B",
+      "text": "11",
+      "correct": false,
+      "misconception": "I forgot the pattern 2 + 1 + 1, which gives nine numbers such as 2110, 1201 and 1012."
+    },
+    {
+      "key": "C",
+      "text": "17",
+      "correct": false,
+      "misconception": "I forgot the pattern 2 + 2, which gives the three numbers 2200, 2020 and 2002."
+    },
+    {
+      "key": "D",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "35",
+      "correct": false,
+      "misconception": "I counted all strings of four digits that add up to 4 and forgot that a four-digit number cannot start with 0."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-11",
+    "secondary": [
+      "CNT-04",
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "List the ways 4 can be split into at most four digits.",
+    "Count with a restriction: sort the numbers by which digits they use, count the orders of each digit set, and throw out the orders that start with 0.",
+    "The digit sets are {4,0,0,0}, {3,1,0,0}, {2,2,0,0}, {2,1,1,0} and {1,1,1,1}. For each, count the orders whose first digit is not 0."
+  ],
+  "solutions": {
+    "reliable": "Go through the digit sets. {4,0,0,0}: only 4000, so 1. {3,1,0,0}: the first digit is 3 or 1, and the other non-zero digit goes in one of 3 places, so 6. {2,2,0,0}: the first digit is 2 and the other 2 goes in one of 3 places, so 3. {2,1,1,0}: starting with 2, the digits 1, 1, 0 can be ordered in 3 ways; starting with 1, the digits 2, 1, 0 can be ordered in 6 ways, so 9. {1,1,1,1}: just 1111. Total 1 + 6 + 3 + 9 + 1 = 20. The transferable idea: organise by pattern, then apply the restriction inside each pattern.",
+    "elegant": "Lower the first digit by 1. Now four digits, with the first allowed to be 0, add up to 3. Lining up 3 dots and 3 dividers and choosing where the dividers go gives 6 x 5 x 4 / 6 = 20 ways."
+  },
+  "whyOnTest": "A leading-zero rule is the classic counting restriction, and sorting by digit pattern shows whether every case is counted exactly once.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

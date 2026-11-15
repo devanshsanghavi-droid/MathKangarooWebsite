@@ -1,0 +1,67 @@
+{
+  "id": "KA-0467",
+  "band": "3-4",
+  "points": 4,
+  "statement": "From a tree, Pia walks 4 squares east and 3 north and buries a coin. The well is 2 squares east and 5 north of the tree. Which walk takes Tom from well to coin?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2 squares east, then 2 squares south",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "2 squares east, then 2 squares north",
+      "correct": false,
+      "misconception": "I found the right numbers of squares but went north, without noticing that the coin is further south than the well."
+    },
+    {
+      "key": "C",
+      "text": "6 squares east, then 8 squares north",
+      "correct": false,
+      "misconception": "I added the coin's position and the well's position together instead of finding the difference between them."
+    },
+    {
+      "key": "D",
+      "text": "2 squares west, then 2 squares north",
+      "correct": false,
+      "misconception": "I found the walk from the coin to the well, which is the trip the wrong way round."
+    },
+    {
+      "key": "E",
+      "text": "4 squares east, then 3 squares north",
+      "correct": false,
+      "misconception": "I gave Pia's walk from the tree, but Tom starts at the well, not at the tree."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-02",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Deal with east-west and north-south separately.",
+    "Find how far east of the tree the coin and the well are, and how far north. Compare the well with the coin in each direction to see which way Tom must go.",
+    "The coin is 4 east and 3 north of the tree, and the well is 2 east and 5 north. Compare 4 with 2, and 3 with 5."
+  ],
+  "solutions": {
+    "reliable": "East-west: the coin is 4 squares east of the tree and the well only 2, so Tom goes 4 - 2 = 2 squares east. North-south: the coin is 3 squares north of the tree and the well is 5, so the coin is further south and Tom goes 5 - 3 = 2 squares south. The transferable idea: on a grid, compare two places one direction at a time, and the bigger number tells you which way to go.",
+    "elegant": null
+  },
+  "whyOnTest": "Grid coordinates: describing one point from another means comparing across and up-down separately, which is the heart of lattice reasoning.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

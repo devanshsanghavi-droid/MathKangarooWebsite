@@ -1,0 +1,67 @@
+{
+  "id": "KA-0612",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A rectangle measures 10 cm by 6 cm. A 2 cm by 2 cm square is cut away from each of its four corners. What is the perimeter of the shape that is left?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "16 cm",
+      "correct": false,
+      "misconception": "I subtracted 4 cm at each corner for the two 2 cm pieces removed, and forgot the new edges."
+    },
+    {
+      "key": "B",
+      "text": "24 cm",
+      "correct": false,
+      "misconception": "I subtracted 2 cm for each of the four corners."
+    },
+    {
+      "key": "C",
+      "text": "44 cm",
+      "correct": false,
+      "misconception": "I worked out the area left, 60 - 16 = 44, instead of the perimeter."
+    },
+    {
+      "key": "D",
+      "text": "32 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "48 cm",
+      "correct": false,
+      "misconception": "I added the new inner edges but forgot to remove the cut-away parts of the outer edges."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": [
+      "GEO-04"
+    ]
+  },
+  "hints": [
+    "What happens to the boundary at one corner?",
+    "At each corner, two pieces of the old boundary are removed and two new edges appear. Compare their lengths before computing anything.",
+    "Each corner loses two 2 cm pieces of boundary and gains two new 2 cm edges."
+  ],
+  "solutions": {
+    "reliable": "At each corner, 2 cm is removed from each of the two sides, but two new edges of 2 cm each are exposed. The loss and the gain balance, so the perimeter equals that of the rectangle: 2 x (10 + 6) = 32 cm. The transferable idea: cutting a rectangle out of a corner moves edges inward without changing the total perimeter.",
+    "elegant": "Push each notched edge back out to the original rectangle: the horizontal edges still add up to 10 + 10 and the vertical ones to 6 + 6, so 32 cm."
+  },
+  "whyOnTest": "Perimeter versus area: corner cuts reduce the area but not the perimeter, and the wrong choices come from treating the two alike.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

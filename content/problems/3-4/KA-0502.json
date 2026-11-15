@@ -1,0 +1,67 @@
+{
+  "id": "KA-0502",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Eggs are packed in boxes of 5. Today's eggs fill some boxes with 4 eggs left over. Tomorrow there will be exactly twice as many eggs. How many will be left over then?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I worked out how many eggs today's leftovers are short of a full box."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I doubled how many eggs are short of a full box and gave that, not the eggs left over."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought the number left over stays the same when the eggs double."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I doubled the 4 left over and forgot that 5 of them fill another box."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Try it with a real number of eggs, like 9.",
+    "Doubling the eggs doubles the full boxes and doubles the leftovers. The doubled full boxes are still full, so only the doubled leftovers need packing again.",
+    "Twice 4 leftover eggs is 8 eggs, and 5 of those fill one more box."
+  ],
+  "solutions": {
+    "reliable": "Doubling the eggs gives twice as many full boxes, which are still full, plus twice the 4 leftovers, which is 8 eggs. Those 8 fill one more box with 3 to spare. So 3 eggs are left over. Check with 9 eggs: 18 eggs make 3 boxes and 3 over. The transferable idea: to find the remainder of a double, double the remainder and reduce it again.",
+    "elegant": "Try a small case: 4 eggs today means 8 tomorrow, one box and 3 over. Any other number of full boxes today just adds full boxes. The transferable idea: when the answer cannot depend on the unknown, test the easiest case."
+  },
+  "whyOnTest": "Remainders behave predictably under doubling, and the unreduced 8 is the natural trap.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

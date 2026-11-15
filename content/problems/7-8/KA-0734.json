@@ -1,0 +1,68 @@
+{
+  "id": "KA-0734",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A school takes 148 people on a trip. A coach seats 40 people and costs 300 euros to hire; a minibus seats 15 people and costs 130 euros. Everyone must have a seat. What is the lowest possible total cost?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1200 euros",
+      "correct": false,
+      "misconception": "I used coaches only, since they are cheaper per seat, and needed 4 of them."
+    },
+    {
+      "key": "B",
+      "text": "1110 euros",
+      "correct": false,
+      "misconception": "I divided 148 by 40 to get 3.7 coaches and paid 3.7 x 300, as if part of a coach could be hired."
+    },
+    {
+      "key": "C",
+      "text": "1030 euros",
+      "correct": false,
+      "misconception": "I hired 3 coaches and 1 minibus, which seat only 135 people, forgetting the last 13."
+    },
+    {
+      "key": "D",
+      "text": "1160 euros",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "1300 euros",
+      "correct": false,
+      "misconception": "I used minibuses only and needed 10 of them."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-10",
+    "secondary": [
+      "CNT-04",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "Coaches are cheaper per seat, but empty seats still cost money.",
+    "Try each possible number of coaches, from 4 down to 0, and for each one work out how many minibuses are needed to seat the rest. Compare the totals.",
+    "Three coaches seat 120, leaving 28 people, who need 2 minibuses. Compare that with 4 coaches."
+  ],
+  "solutions": {
+    "reliable": "Go through the number of coaches. 4 coaches seat 160: cost 1200. 3 coaches seat 120, and the other 28 people need 2 minibuses: cost 900 + 260 = 1160. 2 coaches seat 80, and the other 68 need 5 minibuses: cost 600 + 650 = 1250. 1 coach and 8 minibuses: 300 + 1040 = 1340. No coaches and 10 minibuses: 1300. The lowest is 1160 euros. The transferable idea: when vehicles come in whole units, list the few combinations and compare, rather than trusting the cheapest rate.",
+    "elegant": null
+  },
+  "whyOnTest": "Multi-step word problems test rounding up to whole vehicles and comparing options, rather than trusting the best price per seat.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

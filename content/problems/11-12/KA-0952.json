@@ -1,0 +1,68 @@
+{
+  "id": "KA-0952",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A tank measures 1.2 m by 50 cm by 40 cm. A tap pours 200 cm^3 of water into it every second. How many minutes does the tap take to fill the empty tank?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I changed 1.2 m into 12 cm instead of 120 cm."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "200",
+      "correct": false,
+      "misconception": "I changed 1.2 m into 1200 cm instead of 120 cm."
+    },
+    {
+      "key": "D",
+      "text": "1200",
+      "correct": false,
+      "misconception": "I found the time in seconds and forgot to change it into minutes."
+    },
+    {
+      "key": "E",
+      "text": "72 000",
+      "correct": false,
+      "misconception": "I found 1200 seconds and then multiplied by 60 instead of dividing."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-10",
+    "secondary": [
+      "MOD-07",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Put all three lengths in the same unit first.",
+    "Work in centimetres, because the tap's rate is in cubic centimetres. Find the volume, divide by the rate, and then check which time unit the question wants.",
+    "The tank is 120 cm by 50 cm by 40 cm. Dividing its volume by 200 gives seconds, not minutes."
+  ],
+  "solutions": {
+    "reliable": "In centimetres the tank is 120 by 50 by 40, so its volume is 240 000 cm^3. At 200 cm^3 per second it takes 240 000 / 200 = 1200 seconds. There are 60 seconds in a minute, so that is 1200 / 60 = 20 minutes. The transferable idea: convert to one unit before multiplying, and re-read which unit the answer needs.",
+    "elegant": "200 cm^3 per second is 12 000 cm^3, or 12 litres, per minute, and the tank holds 240 litres, so it takes 240 / 12 = 20 minutes."
+  },
+  "whyOnTest": "Checking units and re-reading before bubbling: mixed length units and a per-second rate test whether you convert before multiplying and answer in the unit asked for.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

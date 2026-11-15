@@ -1,0 +1,67 @@
+{
+  "id": "KA-0835",
+  "band": "9-10",
+  "points": 5,
+  "statement": "The numbers 1 to 9 are placed around a circle in some order. Whatever the order, there are always three neighbouring numbers whose sum is at least N. What is the largest value of N for which this is true?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I gave the smallest sum three of the numbers can have, 1 + 2 + 3, instead of the sum that is forced to appear."
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": false,
+      "misconception": "I used the average: the nine sums of three neighbours total 3 times 45, which is 135, so one is at least 15, and I stopped without asking whether 15 can be beaten."
+    },
+    {
+      "key": "C",
+      "text": "17",
+      "correct": false,
+      "misconception": "I tried a few orders, never managed to keep every three neighbours at 16 or less, and decided 17 is always forced."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I thought the three largest numbers, 7 + 8 + 9, always end up next to each other somewhere."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "CNT-17"
+    ]
+  },
+  "hints": [
+    "Add up all nine sums of three neighbours.",
+    "Each number lies in exactly three of the nine neighbouring triples, which fixes their total. Then suppose no triple beats the average and see what that forces about the order around the circle.",
+    "The nine triple sums total 135, so if none were above 15 they would all equal 15. Two triples that overlap in two numbers would then force each number to equal the one three places further on."
+  ],
+  "solutions": {
+    "reliable": "Every number lies in three of the nine triples of neighbours, so the nine triple sums total 3 times 45, which is 135, and some triple has sum at least 15. Suppose every triple had sum at most 15. Then all nine would equal exactly 15. Comparing the triple starting at one position with the triple starting at the next, they share two numbers, so the first number of one equals the last number of the other: each number would equal the number three places further round. That repeats numbers, but all nine are different, a contradiction. So some triple always reaches at least 16. The order 1, 5, 8, 2, 6, 7, 3, 4, 9 has triple sums 14, 15, 16, 15, 16, 14, 16, 14, 15, none above 16, so 16 cannot be raised. The answer is 16. The transferable idea: an average gives a first bound, and to improve it by one, assume the bound holds with equality everywhere and find the contradiction.",
+    "elegant": null
+  },
+  "whyOnTest": "Proof by contradiction is a 5-point staple: the average gives 15, and assuming every triple is at most 15 and reaching a contradiction is what earns 16.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

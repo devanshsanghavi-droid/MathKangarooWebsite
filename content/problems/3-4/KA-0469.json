@@ -1,0 +1,67 @@
+{
+  "id": "KA-0469",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Four flags, coloured red, blue, green and yellow, are hung in a row. The red flag must be at one of the two ends. How many different orders are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted only the two places the red flag can go and forgot to arrange the other flags."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I put the red flag at the left end only and forgot it could go at the right end."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": false,
+      "misconception": "I started from all 24 orders and took away only the orders with red in second place, forgetting third place."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I ignored the rule about the red flag and counted every possible order."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-05",
+    "secondary": [
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Put the red flag in place first.",
+    "Place the flag with the rule first, then count the ways to arrange the others in the places left. Do this for each end and add the results.",
+    "With red at the left end, the other three flags can be arranged in 3 x 2 x 1 = 6 ways."
+  ],
+  "solutions": {
+    "reliable": "Red at the left end: the other three flags fill the three places left in 3 x 2 x 1 = 6 ways. Red at the right end: another 6 ways. Total 6 + 6 = 12. The transferable idea: place the object with the rule first, then arrange the rest.",
+    "elegant": "With no rule there are 24 orders, and red is equally likely to be in each of the 4 places, so it is at an end in 2 out of 4 places: half of 24, which is 12. The transferable idea: symmetry can turn a rule into a simple fraction of the total."
+  },
+  "whyOnTest": "Placing the restricted object first is the standard way to count arrangements that come with a rule.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0347",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Kai says all the numbers that come between 18 and 25, but he does not say 18 or 25. How many numbers does he say?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only the odd numbers: 19, 21 and 23."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I took 18 away from 25, and that counts one of the end numbers as well."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted 18 and 25 too, but the question leaves them out."
+    },
+    {
+      "key": "E",
+      "text": "43",
+      "correct": false,
+      "misconception": "I added 18 and 25 together instead of counting the numbers between them."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-13",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Write the numbers out and count them.",
+    "List every number after 18 and before 25 in order, then count the list. Be careful: taking one end away from the other does not give the number in between.",
+    "The list starts at 19 and stops at 24. Count 19, 20, 21, 22, 23, 24."
+  ],
+  "solutions": {
+    "reliable": "The numbers between 18 and 25 are 19, 20, 21, 22, 23 and 24. That is 6 numbers. The idea to keep: 25 - 18 = 7 counts the steps from 18 to 25, and the numbers strictly between are one fewer than that.",
+    "elegant": "From 18 to 25 there are 7 steps. The numbers between are the places where you land on the way, without the last one, so there are 7 - 1 = 6."
+  },
+  "whyOnTest": "Counting the numbers between two ends is a classic off-by-one trap, and taking one end from the other is the usual slip.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

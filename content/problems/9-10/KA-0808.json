@@ -1,0 +1,68 @@
+{
+  "id": "KA-0808",
+  "band": "9-10",
+  "points": 5,
+  "statement": "There are 20 coins that look the same. One is fake and slightly lighter than the others, which all weigh the same. A two-pan balance with no weights is used, but each pan has room for at most 3 coins. What is the smallest number of weighings that is always enough to find the fake coin?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I used the usual split into three nearly equal groups, about 7 coins each, but 7 coins do not fit on a pan."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I only ever weighed one coin against one coin, which clears just 2 coins each time."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I weighed 2 coins against 2 each time, which clears only 4 coins per balanced weighing instead of the 6 that fit."
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": false,
+      "misconception": "I divided 20 by the 3 coins a pan can hold and rounded up, as if each weighing tested a single panful."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-10",
+    "secondary": [
+      "CNT-18",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Each weighing has three results: left pan lighter, right pan lighter, or balance.",
+    "Work out how many suspects 1 weighing can always handle, then 2, then 3. With w weighings left, each pan group holds at most 3 coins, and the coins off the pans must be manageable in w - 1 weighings.",
+    "One weighing can handle at most 3 suspects. Two can handle 3 + 3 + 3 = 9. Three can handle 3 + 3 + 9."
+  ],
+  "solutions": {
+    "reliable": "Count how many suspects can be handled. With 1 weighing, each of the three results must leave at most one suspect, so at most 3 coins. With more weighings, each pan holds at most 3 coins, and the coins left off must be manageable with one weighing fewer. So 2 weighings handle at most 3 + 3 + 3 = 9 coins, 3 weighings at most 3 + 3 + 9 = 15, and 4 weighings at most 3 + 3 + 15 = 21. Since 20 is more than 15, three weighings are not always enough. Four are: weigh 3 against 3; if a pan is lighter, one more weighing (1 against 1) finds the fake among those 3. If they balance, 14 suspects remain; weigh 3 against 3 again, leaving 3 or 8; then 3 against 3 again, leaving 3 or 2; one last weighing finishes. The transferable idea: count what each number of weighings can handle under the real rules, then build a strategy that uses every weighing fully.",
+    "elegant": null
+  },
+  "whyOnTest": "Weighing puzzles test both halves, a strategy and a reason no faster one exists, and here the small pans change the usual answer.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

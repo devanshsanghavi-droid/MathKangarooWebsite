@@ -1,0 +1,68 @@
+{
+  "id": "KA-0943",
+  "band": "11-12",
+  "points": 5,
+  "statement": "In the multiplication AB x C = BBB, different letters stand for different digits and AB is a two-digit number. What is A + B + C?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "11",
+      "correct": false,
+      "misconception": "I found the right digits but added only A and B."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I added the digits of the product 444 instead of A, B and C."
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": false,
+      "misconception": "I found 37 x 3 = 111 and stopped, without checking that the repeated digit must be B."
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": false,
+      "misconception": "I found 74 x 3 = 222 and stopped, without checking that the repeated digit must be B."
+    },
+    {
+      "key": "E",
+      "text": "17",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "NUM-05",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Factorise a number whose three digits are all the same.",
+    "BBB equals B x 111, and 111 has a large prime factor. A one-digit C cannot supply that prime, so the two-digit number AB must contain it, leaving very few candidates to test.",
+    "111 = 3 x 37, so 37 divides AB. That means AB is 37 or 74. Check each against the product BBB."
+  ],
+  "solutions": {
+    "reliable": "BBB = 111 x B = 3 x 37 x B. The prime 37 must divide AB x C, and C is a single digit, so 37 divides AB; thus AB = 37 or 74. If AB = 37, then B = 7 and we need 37 x C = 777, so C = 21, impossible. If AB = 74, then B = 4 and 74 x C = 444 gives C = 6. So A = 7, B = 4, C = 6, and A + B + C = 17. The transferable idea: factorise a repdigit and let a large prime factor pin down the other numbers.",
+    "elegant": null
+  },
+  "whyOnTest": "Cryptarithms reward one structural idea, here factorising 111 so a large prime fixes AB, and punish trial and error that stops too early.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0567",
+  "band": "5-6",
+  "points": 5,
+  "statement": "How many three-digit numbers have digits whose product is 24?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only the groups of three different digits, not the numbers they make."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the groups of digits, such as 1, 3, 8, instead of the numbers made from them."
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": false,
+      "misconception": "I missed one of the groups made of three different digits, so I lost its 6 numbers."
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": false,
+      "misconception": "I forgot the group 2, 2, 6, which uses a repeated digit."
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-04",
+    "secondary": [
+      "CNT-05",
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "First find which groups of three digits multiply to 24.",
+    "Split into cases by the set of digits used. No digit can be 0, and each digit is at most 9. For each set, count how many three-digit numbers it makes, remembering that a repeated digit gives fewer orders.",
+    "The sets are 1, 3, 8 and 1, 4, 6 and 2, 3, 4 and 2, 2, 6. Three different digits can be ordered in 6 ways; a set with a repeat in only 3."
+  ],
+  "solutions": {
+    "reliable": "No digit can be 0, and digits are at most 9. List the sets of three digits with product 24, smallest digit first. With a 1: the other two multiply to 24, giving 3 and 8, or 4 and 6 (2 and 12 is not allowed). With smallest digit 2: the other two multiply to 12 and are at least 2, giving 2 and 6, or 3 and 4. With smallest digit 3: the other two would multiply to 8 and both be at least 3, impossible. So the sets are 1, 3, 8; 1, 4, 6; 2, 3, 4; and 2, 2, 6. Each set of three different digits makes 6 numbers, and 2, 2, 6 makes 3 (226, 262, 622). Total: 6 + 6 + 6 + 3 = 21. The transferable idea: split by a clear case rule, here the smallest digit, so no case is missed, then count each case separately.",
+    "elegant": null
+  },
+  "whyOnTest": "Casework is tested by problems where one quiet case, like a repeated digit, is easy to miss or overcount.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

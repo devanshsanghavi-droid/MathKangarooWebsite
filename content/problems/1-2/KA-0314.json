@@ -1,0 +1,67 @@
+{
+  "id": "KA-0314",
+  "band": "1-2",
+  "points": 3,
+  "statement": "A spinner can land on 1 or on 2. Sam spins it two times and adds the two numbers. How many different totals can he get?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought the two spins had to land on different numbers, so the only total I found was 1 + 2 = 3."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted the numbers on the spinner, 1 and 2, instead of the totals."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the ends of my tree, 1-1, 1-2, 2-1 and 2-2, but 1-2 and 2-1 give the same total."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted every branch of my tree, the 2 first branches and the 4 second ones, instead of the totals at the ends."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Start a tree: what can the first spin be?",
+    "Draw a branch for each way the first spin can land, then from each a branch for each way the second spin can land. Write the total at the end of every branch and look for repeats.",
+    "The ends are 1 + 1, 1 + 2, 2 + 1 and 2 + 2. Work out each total and count the different ones."
+  ],
+  "solutions": {
+    "reliable": "The first spin is 1 or 2, and after each of those the second spin is 1 or 2. The tree has four ends: 1 + 1 = 2, 1 + 2 = 3, 2 + 1 = 3 and 2 + 2 = 4. The total 3 appears twice, so the different totals are 2, 3 and 4, which is 3 totals. The idea to keep: a tree lists every way, and then you check which ends give the same answer.",
+    "elegant": "The smallest total is 1 + 1 = 2 and the biggest is 2 + 2 = 4. The only whole number in between is 3, and 1 + 2 makes it. So the totals are 2, 3 and 4, which is 3 totals. The idea to keep: find the smallest and the biggest answer, then check the ones in between."
+  },
+  "whyOnTest": "Tree diagrams list every way, and here two ends of the tree give the same total, so counting the ends is not the same as counting the totals.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

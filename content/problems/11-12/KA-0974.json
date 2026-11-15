@@ -1,0 +1,68 @@
+{
+  "id": "KA-0974",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A drawer holds 10 red, 8 blue, 6 green and 4 black socks. In the dark, you take socks out one at a time. What is the smallest number you must take to be certain of having two pairs of different colours? A pair means two socks of the same colour.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I found how many socks guarantee one pair, four colours plus one, and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": false,
+      "misconception": "I took the five socks that guarantee one pair and added two more for the second pair."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I took all 10 red socks, then one more sock and then one more to finish, forgetting that the other colours could each give one sock without making a pair."
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": false,
+      "misconception": "I found the worst case, 10 red socks and one of each other colour, and gave its size instead of adding one more sock."
+    },
+    {
+      "key": "E",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "CNT-17",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Imagine the most unlucky order of socks possible.",
+    "In the worst case you collect as many socks as possible while still having pairs in only one colour. Make that bad collection as large as you can, then add one.",
+    "The worst case is all 10 red socks plus one blue, one green and one black: 13 socks with pairs in only one colour."
+  ],
+  "solutions": {
+    "reliable": "To have pairs in at most one colour, you can hold any number of socks of one colour but at most one sock of each of the other three. The largest such collection uses the biggest colour: 10 red plus 1 blue, 1 green and 1 black, which is 13 socks. So 13 socks are not enough. With 14 socks it is impossible to have pairs in only one colour, since that allows at most 13 socks. The answer is 14. The transferable idea: for a guarantee, build the largest collection that still fails, then add one.",
+    "elegant": null
+  },
+  "whyOnTest": "Worst-case counting needs the largest failing collection, and here that uses the biggest colour, which is the step most solvers miss.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

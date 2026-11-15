@@ -1,0 +1,67 @@
+{
+  "id": "KA-0690",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Twelve people meet, and every two of them shake hands once, except that three particular people, who met earlier that day, do not shake hands with one another. How many handshakes take place?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "57",
+      "correct": false,
+      "misconception": "I took away 3 handshakes for each of the three people, 9 in all, though only 3 pairs are missing."
+    },
+    {
+      "key": "B",
+      "text": "60",
+      "correct": false,
+      "misconception": "I counted each of the 3 missing handshakes twice, once for each person, and took away 6."
+    },
+    {
+      "key": "C",
+      "text": "63",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "66",
+      "correct": false,
+      "misconception": "I counted all the handshakes between twelve people and forgot to remove the missing ones."
+    },
+    {
+      "key": "E",
+      "text": "126",
+      "correct": false,
+      "misconception": "I worked out 12 x 11 = 132 without halving, so every handshake was counted twice, then took off the 3 missing ones counted twice as well."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-08",
+    "secondary": [
+      "CNT-09"
+    ]
+  },
+  "hints": [
+    "Count all the possible handshakes, then remove the ones that do not happen.",
+    "Each of the 12 people would shake 11 hands, but that counts every handshake from both ends. Then think about how many pairs the three people form among themselves.",
+    "Everyone together would make 12 x 11 / 2 = 66 handshakes. Three people form 3 pairs."
+  ],
+  "solutions": {
+    "reliable": "If everyone shook hands with everyone, there would be 12 x 11 / 2 = 66 handshakes. The three people form 3 pairs among themselves, so 3 handshakes are missing, and 66 - 3 = 63 take place. The transferable idea: count pairs among n people as n x (n - 1) / 2, and remove a small group's own pairs in the same way.",
+    "elegant": null
+  },
+  "whyOnTest": "Handshake questions test counting each pair once, and the traps forget to halve or remove too many missing pairs.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

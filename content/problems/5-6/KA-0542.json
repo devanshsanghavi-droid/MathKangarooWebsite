@@ -1,0 +1,67 @@
+{
+  "id": "KA-0542",
+  "band": "5-6",
+  "points": 4,
+  "statement": "How many two-digit numbers have a tens digit that is bigger than their units digit? For example, 52 is one of them, but 25 and 33 are not.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted the possible tens digits, 1 to 9, instead of the numbers."
+    },
+    {
+      "key": "B",
+      "text": "36",
+      "correct": false,
+      "misconception": "I forgot that the units digit can be 0, so I missed 10, 20, 30 and the other multiples of 10."
+    },
+    {
+      "key": "C",
+      "text": "45",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "54",
+      "correct": false,
+      "misconception": "I also counted numbers like 33 and 77, where the two digits are equal."
+    },
+    {
+      "key": "E",
+      "text": "81",
+      "correct": false,
+      "misconception": "I counted every two-digit number whose two digits are different, in either order."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-04",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Split the numbers by their tens digit.",
+    "For each tens digit from 1 to 9, count the units digits that are smaller than it. Remember that 0 is a units digit too.",
+    "Tens digit 1 allows only units digit 0, tens digit 2 allows 0 and 1, and so on up to tens digit 9."
+  ],
+  "solutions": {
+    "reliable": "Do casework on the tens digit. With tens digit 1 the units digit must be 0: 1 number. With tens digit 2 it can be 0 or 1: 2 numbers. In general, tens digit d allows the d units digits 0 up to d - 1. Total 1 + 2 + 3 + ... + 9 = 45. The transferable idea: pick one digit to split on, count each case, and add the cases.",
+    "elegant": "Think of all 100 digit pairs from 00 to 99. Ten have equal digits, and the other 90 split evenly into those whose first digit is bigger and those whose second digit is bigger, so 45 have the first digit bigger. None of those 45 starts with 0, so all are real two-digit numbers."
+  },
+  "whyOnTest": "Casework questions test choosing a good thing to split on, then adding the cases without missing any.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0331",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Stones in a row are numbered 0 to 4. A frog on stone 0 hops 1 or 2 stones forward each time. In how many different ways can it reach stone 4?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted only all small hops and all big hops, and forgot ways that mix them."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted 1, 1, 2 as one way, but the frog can do those hops in different orders."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found only two orders for the hops 1, 1 and 2, but there are three."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought the frog always makes 3 hops with 2 choices each, so I doubled three times."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Start with the frog's first hop. What can it be?",
+    "Make a tree. The first branch is a hop of 1 or a hop of 2. From each new stone, branch again, and stop when a branch lands on stone 4. Never hop past 4.",
+    "Group by how many big hops there are. No big hops: one way. One big hop: it can be first, second or third among the hops. Two big hops: one way."
+  ],
+  "solutions": {
+    "reliable": "Sort the ways by how many hops of 2 the frog makes. No hops of 2: 1, 1, 1, 1, which is 1 way. One hop of 2: the other hops are 1 and 1, and the 2 can come first, second or third, giving 2-1-1, 1-2-1 and 1-1-2, which is 3 ways. Two hops of 2: 2-2, which is 1 way. In all 1 + 3 + 1 = 5 ways. The idea to keep: sort a list into groups so you can be sure no way is missing.",
+    "elegant": "To reach stone 4 the last hop starts from stone 3 or stone 2. Stone 1 can be reached 1 way, stone 2 in 2 ways, stone 3 in 1 + 2 = 3 ways, so stone 4 in 2 + 3 = 5 ways. The idea to keep: the ways to reach a stone are the ways to reach the stones you can hop from."
+  },
+  "whyOnTest": "Counting paths with a tree tests seeing that the same hops in a different order make a different way.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

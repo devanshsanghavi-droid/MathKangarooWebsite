@@ -1,0 +1,68 @@
+{
+  "id": "KA-0817",
+  "band": "9-10",
+  "points": 5,
+  "statement": "A square sheet is folded in half to a rectangle, then in half again to a smaller square. Three round holes are punched through all layers: one centred on the corner where both folded edges meet, one centred on the middle of one folded edge, and one well away from every edge. How many holes has the opened sheet?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I treated the hole on the folded edge as a single hole, so I counted 1 + 1 + 4."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the corner hole as two holes, like the edge hole, giving 2 + 2 + 4."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted the corner hole once but treated the edge hole like an inside one, giving 1 + 4 + 4."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I multiplied every hole by the four layers of paper, giving 3 x 4."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-15",
+    "secondary": [
+      "GEO-09",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "A hole punched on a fold is shared by the paper on both sides.",
+    "Unfold one step at a time. A hole that touches a fold joins with its mirror image into one hole when that fold opens. So count how many separate pieces of the opened sheet each punch really cuts.",
+    "The hole away from the edges gives 4 holes, and the corner where the folds meet is the centre of the sheet."
+  ],
+  "solutions": {
+    "reliable": "Work backwards from the folded square, which has 4 layers. The hole away from every edge cuts 4 separate layers, so it becomes 4 holes. The folded edge consists of 2 separate bends of paper, one from each half of the sheet, and at each bend the two layers it joins open into a single hole, so the edge hole becomes 2 holes. The corner where the two folded edges meet is the centre of the original sheet, where all four layers meet, so its four quarter-holes join into 1 hole. In total 4 + 2 + 1 = 7. The transferable idea: a punch makes one hole for each separate place on the opened sheet that it cuts, and pieces that meet along a fold join into one hole.",
+    "elegant": "Think about the opened sheet and its symmetry. The two folds become two mirror lines, and every hole appears together with all of its mirror images. A point on neither line has 4 images, a point on one line has 2, and the centre, on both lines, has only itself. So the three punches give 4 + 2 + 1 = 7 holes."
+  },
+  "whyOnTest": "Fold-and-punch questions reward counting mirror images, and holes on a fold or at the centre break the habit of simply multiplying by the number of layers.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

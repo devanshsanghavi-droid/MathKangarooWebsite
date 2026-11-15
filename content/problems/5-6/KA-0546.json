@@ -1,0 +1,68 @@
+{
+  "id": "KA-0546",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A team of 3 is chosen from 4 girls and 3 boys. The team must include at least one boy. How many different teams are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the teams with no boys, which are the ones that are not allowed."
+    },
+    {
+      "key": "B",
+      "text": "18",
+      "correct": false,
+      "misconception": "I counted only the teams with exactly one boy and forgot teams with two or three boys."
+    },
+    {
+      "key": "C",
+      "text": "31",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "35",
+      "correct": false,
+      "misconception": "I counted every team of 3 and forgot the rule about including a boy."
+    },
+    {
+      "key": "E",
+      "text": "45",
+      "correct": false,
+      "misconception": "I chose one boy first and then any 2 of the other 6, so teams with two or three boys got counted more than once."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-09",
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "Is it easier to count the teams that break the rule?",
+    "Count all teams of 3 from the 7 people, then take away the teams that have no boys. This avoids splitting into cases by the number of boys.",
+    "There are 35 teams of 3 from 7 people. Teams with no boys come from the 4 girls only, and there are 4 of those."
+  ],
+  "solutions": {
+    "reliable": "Split by the number of boys. One boy: 3 choices of boy and 6 pairs of girls, so 18 teams. Two boys: 3 pairs of boys and 4 choices of girl, so 12 teams. Three boys: 1 team. Total 18 + 12 + 1 = 31. The transferable idea: when choosing a group with a condition, split into cases that do not overlap and add them.",
+    "elegant": "Count the opposite. There are 35 teams of 3 from 7 people (7 x 6 x 5 / 6). Teams with no boy come only from the 4 girls, and there are 4 of them (leave one girl out). So 35 - 4 = 31 teams include a boy."
+  },
+  "whyOnTest": "\"At least one\" signals counting the opposite, and choosing one boy first is the classic overcount.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

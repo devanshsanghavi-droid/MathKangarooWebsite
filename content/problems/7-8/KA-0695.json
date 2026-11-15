@@ -1,0 +1,67 @@
+{
+  "id": "KA-0695",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A large circle has centre O and radius 12. Inside it lie two smaller circles, with radii 4 and r. Each small circle touches the large circle from the inside, and the two small circles touch each other from the outside. The lines from O to the centres of the two small circles are perpendicular. What is r?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I put the right angle at the centre of the circle with radius 4 instead of at O."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I found the distance from O to the centre of the circle with radius 4, 12 - 4 = 8, and gave that."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I found the distance between the centres of the two small circles, 4 + 6 = 10, and gave that instead of r."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I took the distance between the centres of the two small circles as r - 4, the difference of the radii, instead of the sum 4 + r."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-07",
+    "secondary": [
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "When one circle touches another from the inside, how far apart are their centres?",
+    "Centres of circles touching from the inside are a difference of radii apart, and from the outside a sum. Write the sides of the triangle of centres in terms of r, then use the right angle at O.",
+    "The sides are 12 - 4 = 8 and 12 - r, meeting at the right angle, and 4 + r opposite it. So 8 x 8 + (12 - r) x (12 - r) = (4 + r) x (4 + r)."
+  ],
+  "solutions": {
+    "reliable": "Call the small centres B (radius 4) and C (radius r). Touching from the inside gives OB = 12 - 4 = 8 and OC = 12 - r, and touching from the outside gives BC = 4 + r. The right angle is at O, so BC is the longest side: 64 + (12 - r)(12 - r) = (4 + r)(4 + r). Expanding, 64 + 144 - 24r = 16 + 8r, so 192 = 32r and r = 6. Check: the sides are 8, 6 and 10, and 64 + 36 = 100. The transferable idea: for touching circles, join the centres; the distances are sums or differences of radii and the problem becomes a triangle problem.",
+    "elegant": "Try the choices. With r = 6 the triangle has sides OB = 8, OC = 6 and BC = 10, which is the 3-4-5 right triangle doubled, with the right angle at O as required."
+  },
+  "whyOnTest": "Touching-circle questions test joining the centres, since each distance is a sum or a difference of radii and the picture becomes a triangle.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

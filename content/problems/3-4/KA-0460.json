@@ -1,0 +1,67 @@
+{
+  "id": "KA-0460",
+  "band": "3-4",
+  "points": 3,
+  "statement": "On a calendar page, the dates of a month are written in rows of 7, one square for each day of the week. Which date is directly above the 26th?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "16",
+      "correct": false,
+      "misconception": "I took away 10, as if the calendar had rows of 10 like a hundred square."
+    },
+    {
+      "key": "B",
+      "text": "18",
+      "correct": false,
+      "misconception": "I took away 8, which moves up one row and also one square to the left."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I moved one square to the left instead of one row up."
+    },
+    {
+      "key": "D",
+      "text": "19",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "33",
+      "correct": false,
+      "misconception": "I moved down a row instead of up, so I added 7."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-06",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "How many dates are in each row of the calendar?",
+    "Each row holds 7 dates, so moving straight up one row always changes the date by the same amount. Work out that jump and which way it goes.",
+    "Going up one row lands on the date that is 7 smaller."
+  ],
+  "solutions": {
+    "reliable": "Each row has 7 dates, so the square directly above any date holds the date that is 7 smaller: 26 - 7 = 19. Check: the date directly below the 19th is 19 + 7 = 26. The transferable idea: in a grid with rows of n, one step up means take away n and one step left means take away 1.",
+    "elegant": null
+  },
+  "whyOnTest": "Patterns in a grid: seeing that one row up means taking away the row length is the core idea, and the hundred-square habit of using 10 is offered as a trap.",
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

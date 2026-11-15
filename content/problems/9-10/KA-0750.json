@@ -1,0 +1,67 @@
+{
+  "id": "KA-0750",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Six runners line up in a row for a photo. Ana insists on standing somewhere to the left of Bo, though not necessarily next to Bo. How many different lineups are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "120",
+      "correct": false,
+      "misconception": "I counted only lineups with Ana directly to the left of Bo, gluing them into one block in a fixed order."
+    },
+    {
+      "key": "B",
+      "text": "240",
+      "correct": false,
+      "misconception": "I counted the lineups where Ana and Bo stand next to each other, in either order."
+    },
+    {
+      "key": "C",
+      "text": "360",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "600",
+      "correct": false,
+      "misconception": "I thought the only bad lineups were the ones with Bo standing directly to the left of Ana, so I subtracted those 120 from all 720 lineups."
+    },
+    {
+      "key": "E",
+      "text": "720",
+      "correct": false,
+      "misconception": "I ignored the condition and counted every order of the six runners."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-05",
+    "secondary": [
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "Pair up each lineup with the one where Ana and Bo swap.",
+    "Count all arrangements of six people, then ask what swapping Ana and Bo does to the condition. Every lineup belongs to a pair in which exactly one of the two satisfies it.",
+    "There are 6 x 5 x 4 x 3 x 2 x 1 = 720 lineups. Swapping Ana and Bo turns a good lineup into a bad one."
+  ],
+  "solutions": {
+    "reliable": "Six runners can line up in 720 ways. Swapping the positions of Ana and Bo matches each lineup with Ana on the left to exactly one with Ana on the right, so the two kinds are equal in number. The answer is 720 / 2 = 360. The transferable idea: when a condition only compares two objects, symmetry splits the total evenly.",
+    "elegant": "Of the 15 pairs of positions Ana and Bo could take, they fill them in a fixed order, so the count is 15 x 4 x 3 x 2 x 1 = 360."
+  },
+  "whyOnTest": "The symmetry argument halves the total in one line, while forcing Ana next to Bo or subtracting cases leads to the offered traps.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

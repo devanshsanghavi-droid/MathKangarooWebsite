@@ -1,0 +1,70 @@
+{
+  "id": "KA-0355",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Some squares of the grid are shaded. What is the smallest number of extra squares that must be shaded so that the dashed line becomes a line of symmetry?",
+  "figure": {
+    "component": "SymmetryGridDashed",
+    "alt": "A 4 by 4 grid with a dashed line down the middle. Columns are numbered 1 to 4 from left to right and rows 1 to 4 from top to bottom. Shaded squares left of the line: row 1 column 1, row 2 column 2, row 3 column 1, row 4 column 2. Shaded squares right of the line: row 2 column 3 and row 4 column 4."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I only made both sides have the same number of shaded squares, 4 on each side."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I copied the left side onto the right but forgot that the lone square on the right needs a partner on the left."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I shaded a mirror partner for all 6 shaded squares, even the pair that already matched."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I shaded every white square, which works but is not the smallest number."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-08",
+    "secondary": [
+      "GEO-09"
+    ]
+  },
+  "hints": [
+    "Fold the picture along the dashed line in your head.",
+    "For a line of symmetry, every shaded square must have a shaded partner the same distance away on the other side of the line. Check each shaded square, on both sides, for its partner.",
+    "One pair in the second row already matches. Look for the partners of the other three squares on the left and of the lone square on the right."
+  ],
+  "solutions": {
+    "reliable": "Check every shaded square for a partner across the line. In row 1, the square at the far left needs one at the far right. In row 2, the two squares next to the line already match. In row 3, the far-left square needs a far-right partner. In row 4, the square just left of the line needs one just right of it, and the far-right square needs a far-left partner. That is 4 extra squares. The idea to keep: a line of symmetry needs a partner for every shaded square on both sides.",
+    "elegant": null
+  },
+  "whyOnTest": "Symmetry questions reward checking both sides of the line, and forgetting the square that needs a partner on the other side is the trap.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

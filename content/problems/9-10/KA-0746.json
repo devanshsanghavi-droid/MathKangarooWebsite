@@ -1,0 +1,68 @@
+{
+  "id": "KA-0746",
+  "band": "9-10",
+  "points": 5,
+  "statement": "A 2 by 8 rectangle is to be covered exactly, with no overlaps, by 1 by 2 dominoes and 2 by 2 squares. Any mix of the two pieces may be used, including only one kind. In how many ways can this be done?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "34",
+      "correct": false,
+      "misconception": "I forgot that the 2 by 2 squares can be used, so I counted only the tilings made of dominoes."
+    },
+    {
+      "key": "B",
+      "text": "81",
+      "correct": false,
+      "misconception": "I cut the rectangle into four 2 by 2 blocks, covered each block in 3 ways and multiplied, missing every tiling with a flat domino that crosses from one block into the next."
+    },
+    {
+      "key": "C",
+      "text": "85",
+      "correct": false,
+      "misconception": "I lined up my small-case counts against the wrong lengths, so I reported the answer for a 2 by 7 rectangle."
+    },
+    {
+      "key": "D",
+      "text": "171",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "341",
+      "correct": false,
+      "misconception": "I ran my sequence one step too far, so I reported the answer for a 2 by 9 rectangle."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "PAT-05",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "First count the coverings of a 2 by 1 and a 2 by 2 rectangle.",
+    "Look at the left edge of a covering: one upright domino, two flat dominoes stacked, or a 2 by 2 square. Each case leaves a shorter rectangle, so each count comes from the two counts before it.",
+    "A 2 by 1 has 1 covering and a 2 by 2 has 3. The count for each new length is the previous count plus twice the one before that."
+  ],
+  "solutions": {
+    "reliable": "Let T(n) be the number of coverings of a 2 by n rectangle. At the left end there is either one upright domino, leaving 2 by (n - 1), or two flat dominoes stacked, leaving 2 by (n - 2), or one 2 by 2 square, also leaving 2 by (n - 2). So T(n) = T(n - 1) + 2T(n - 2), with T(1) = 1 and T(2) = 3. The sequence runs 1, 3, 5, 11, 21, 43, 85, 171, so T(8) = 171. The transferable idea: when the size is too big to draw, small cases reveal a rule, and the first piece you place tells you why the rule holds.",
+    "elegant": "Check the rule on a small case by drawing: a 2 by 3 rectangle has 3 coverings starting with an upright domino and 2 starting with a 2 by 2 block of some kind, so 5 in all, matching 3 + 2 x 1. Then run the rule up to 8."
+  },
+  "whyOnTest": "Trying small cases first is the 5-point move here: the first piece placed gives a rule, and the near-miss choices come from forgetting a piece or misaligning the sequence by one length.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

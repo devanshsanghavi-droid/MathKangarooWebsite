@@ -1,0 +1,67 @@
+{
+  "id": "KA-0757",
+  "band": "9-10",
+  "points": 4,
+  "statement": "In parallelogram ABCD, AB = 10 and AD = 6. The bisector of angle DAB meets side CD at E. What is the length CE?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3.75",
+      "correct": false,
+      "misconception": "I split CD so that DE to EC is 10 to 6, the sides next to angle A, as if this were the angle bisector theorem in a triangle."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": false,
+      "misconception": "I assumed the bisector meets CD at its midpoint."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I found DE and gave that instead of CE."
+    },
+    {
+      "key": "E",
+      "text": "6.25",
+      "correct": false,
+      "misconception": "I split CD so that DE to EC is 6 to 10, the sides next to angle A, as if this were the angle bisector theorem in a triangle."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-06",
+    "secondary": [
+      "GEO-05"
+    ]
+  },
+  "hints": [
+    "Look for equal angles in triangle ADE.",
+    "AB is parallel to DC, so the line AE makes equal alternate angles with both. Combined with the bisector, that makes triangle ADE isosceles, which fixes DE.",
+    "Angle DEA equals angle EAB, which equals angle DAE. So DE = AD = 6."
+  ],
+  "solutions": {
+    "reliable": "Since AB is parallel to DC, angle DEA = angle EAB (alternate angles). The bisector makes angle EAB = angle DAE. So triangle ADE has two equal angles at A and E, and DE = AD = 6. Then CE = CD - DE = 10 - 6 = 4. The transferable idea: a bisector meeting a parallel line always creates an isosceles triangle.",
+    "elegant": null
+  },
+  "whyOnTest": "Parallelogram facts plus a bisector give an isosceles triangle, and the distractors come from midpoint guesses and misusing the triangle bisector theorem.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

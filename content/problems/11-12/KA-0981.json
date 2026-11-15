@@ -1,0 +1,67 @@
+{
+  "id": "KA-0981",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Solve the equation x/(x - 2) = 2/(x - 2) + 3. Which of these is correct?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "There is no solution",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "x = -2",
+      "correct": false,
+      "misconception": "I rearranged x = 3x - 4 as x - 3x = 4, a sign slip, and got x = -2."
+    },
+    {
+      "key": "C",
+      "text": "x = 0",
+      "correct": false,
+      "misconception": "I expanded 3(x - 2) as 3x - 2, which gave x = 3x and so x = 0."
+    },
+    {
+      "key": "D",
+      "text": "x = 2",
+      "correct": false,
+      "misconception": "I solved the equation after clearing the fractions and did not check that x = 2 makes both denominators zero."
+    },
+    {
+      "key": "E",
+      "text": "x = 5",
+      "correct": false,
+      "misconception": "I cancelled the (x - 2) from the two fractions, which left x = 2 + 3."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-11",
+    "secondary": [
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "Whatever you find, put it back into the original equation.",
+    "Multiplying both sides by x - 2 clears the fractions, but that step is only allowed when x - 2 is not zero. So any answer must be checked in the equation as it was first written.",
+    "Clearing the fractions gives x = 2 + 3(x - 2), so x = 3x - 4."
+  ],
+  "solutions": {
+    "reliable": "Multiply both sides by x - 2: x = 2 + 3(x - 2) = 3x - 4, so 2x = 4 and x = 2. But x = 2 makes both denominators zero, so it is not allowed, and the algebra gave no other candidate. The equation has no solution. The transferable idea: multiplying by an expression that can be zero may create a false solution, so always substitute back.",
+    "elegant": "Move the fractions together: x/(x - 2) - 2/(x - 2) = (x - 2)/(x - 2), which equals 1 for every allowed x. Since 1 is never 3, there is no solution."
+  },
+  "whyOnTest": "The algebra produces x = 2 smoothly, and only checking it against the original denominators shows it is not a real solution.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

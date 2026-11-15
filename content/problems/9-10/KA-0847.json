@@ -1,0 +1,67 @@
+{
+  "id": "KA-0847",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Through how many degrees does the hour hand of a clock turn between 9:15 in the morning and 1:45 in the afternoon of the same day?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "67.5",
+      "correct": false,
+      "misconception": "I treated the clock face as showing 24 hours, so I used 15 degrees per hour instead of 30."
+    },
+    {
+      "key": "B",
+      "text": "120",
+      "correct": false,
+      "misconception": "I counted whole hours from 9 to 1 and ignored the extra 30 minutes."
+    },
+    {
+      "key": "C",
+      "text": "135",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "225",
+      "correct": false,
+      "misconception": "I measured from 1:45 forward round to 9:15, the wrong way round the clock."
+    },
+    {
+      "key": "E",
+      "text": "1620",
+      "correct": false,
+      "misconception": "I worked out how far the minute hand turns, 360 degrees each hour, instead of the hour hand."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-18",
+    "secondary": [
+      "MOD-03"
+    ]
+  },
+  "hints": [
+    "First find how much time passes.",
+    "The hour hand goes once round, 360 degrees, in 12 hours, so it turns a fixed number of degrees each hour. Find the elapsed time carefully, including the minutes, and multiply.",
+    "From 9:15 to 1:45 is 4 and a half hours, and the hour hand turns 30 degrees each hour."
+  ],
+  "solutions": {
+    "reliable": "From 9:15 to 1:15 is 4 hours, and on to 1:45 is another half hour, so 4.5 hours pass. The hour hand turns 360 / 12 = 30 degrees per hour, so it turns 4.5 × 30 = 135 degrees. The transferable idea: the hour hand turns 30 degrees per hour, which is half a degree per minute, so any clock turn is elapsed time times that rate.",
+    "elegant": "The hour hand turns half a degree per minute. From 9:15 to 1:45 is 270 minutes, so it turns 135 degrees."
+  },
+  "whyOnTest": "Clock questions test converting time into the hour hand's turn; the traps use the minute hand, a 24-hour face, or only whole hours.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

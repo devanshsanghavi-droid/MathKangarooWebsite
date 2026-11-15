@@ -1,0 +1,68 @@
+{
+  "id": "KA-0984",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Two positive numbers have a product of 24 and a difference of 5. What is their sum?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found the two numbers, 8 and 3, and gave the smaller one instead of their sum."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": false,
+      "misconception": "I added the square of the difference to the product, 25 + 24 = 49, and took the square root."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I found the two numbers and gave the larger one instead of their sum."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I picked the factor pair 4 and 6 of 24 without checking that their difference is 5."
+    },
+    {
+      "key": "E",
+      "text": "11",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-01",
+    "secondary": [
+      "MOD-01",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Read the question again: what exactly is being asked for?",
+    "Either find the two numbers by testing factor pairs of 24, or use the identity that links the square of a sum, the square of a difference and the product.",
+    "The pair 8 and 3 has product 24 and difference 5."
+  ],
+  "solutions": {
+    "reliable": "The factor pairs of 24 are 1 and 24, 2 and 12, 3 and 8, 4 and 6, and only 3 and 8 differ by 5. Since the numbers need not be whole, check that the sum is fixed anyway: (a + b)² = (a - b)² + 4ab = 25 + 96 = 121, so a + b = 11. The transferable idea: once you have found the two numbers, stop and answer the question actually asked, here their sum.",
+    "elegant": "Use (a + b)² = (a - b)² + 4ab = 25 + 96 = 121, so a + b = 11 without finding a or b at all."
+  },
+  "whyOnTest": "Finding 8 and 3 feels like the finish line, but the question asks for their sum, and the choices offer both numbers.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

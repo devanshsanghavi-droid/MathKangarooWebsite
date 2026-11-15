@@ -1,0 +1,68 @@
+{
+  "id": "KA-0587",
+  "band": "5-6",
+  "points": 3,
+  "statement": "The word PUZZLES is written over and over without spaces: PUZZLESPUZZLESPUZ... What is the 100th letter?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "P",
+      "correct": false,
+      "misconception": "I stopped one short and found the 99th letter."
+    },
+    {
+      "key": "B",
+      "text": "Z",
+      "correct": false,
+      "misconception": "I counted one letter past the remainder, so I found the 101st letter."
+    },
+    {
+      "key": "C",
+      "text": "L",
+      "correct": false,
+      "misconception": "I forgot the double Z and counted PUZZLES as 6 letters, which made the remainder 4."
+    },
+    {
+      "key": "D",
+      "text": "S",
+      "correct": false,
+      "misconception": "I thought 100 letters is a whole number of words, so the 100th letter ends a word."
+    },
+    {
+      "key": "E",
+      "text": "U",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "NUM-06",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "How long is one copy of the word?",
+    "The letters repeat in a cycle as long as the word. Find how many full copies fit in 100 letters; the remainder tells you how far into the next copy you are.",
+    "PUZZLES has 7 letters. 7 times 14 = 98, so the 98th letter ends a copy."
+  ],
+  "solutions": {
+    "reliable": "PUZZLES has 7 letters, counting both Zs. 14 full copies use 98 letters, so the 99th letter is P and the 100th is U. In terms of remainders, 100 divided by 7 is 14 remainder 2, and the 2nd letter is U. The transferable idea: in a repeating pattern, the position divided by the cycle length leaves a remainder that names the place in the cycle.",
+    "elegant": null
+  },
+  "whyOnTest": "Repeating cycles test careful counting of the cycle and of the remainder; both slips appear among the choices.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

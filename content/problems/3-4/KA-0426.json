@@ -1,0 +1,67 @@
+{
+  "id": "KA-0426",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Four children do different clubs: chess, judo, swimming, tennis. Ana: not chess or tennis. Ben: not chess, judo or swimming. Cara: not chess or judo. Dev: not swimming or tennis. Which club is Ana’s?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Swimming",
+      "correct": false,
+      "misconception": "I saw that Ana is only ruled out of chess and tennis, picked swimming, and did not check that Cara must do swimming."
+    },
+    {
+      "key": "B",
+      "text": "Chess",
+      "correct": false,
+      "misconception": "I gave Ana the first club on the list without checking her clue, which rules out chess."
+    },
+    {
+      "key": "C",
+      "text": "Tennis",
+      "correct": false,
+      "misconception": "I mixed up Ana's clue with Ben's, but it is Ben who has only tennis left."
+    },
+    {
+      "key": "D",
+      "text": "Judo",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "It cannot be decided",
+      "correct": false,
+      "misconception": "I stopped when Ana still had two choices, judo or swimming, and did not use the other children's clues to decide."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-03",
+    "secondary": [
+      "LOG-01"
+    ]
+  },
+  "hints": [
+    "Start with the child who has only one club left.",
+    "Elimination grid: draw a 4 by 4 table and cross out every \"does not\". Whenever a row has only one space left, fill it and cross out the rest of that column.",
+    "Ben can only do tennis. Then Cara, who does not do chess or judo, must do swimming."
+  ],
+  "solutions": {
+    "reliable": "Make a grid. Ben is ruled out of chess, judo and swimming, so Ben does tennis. Cara does not do chess or judo, and tennis is taken, so Cara does swimming. Ana does not do chess or tennis, and swimming is taken, so Ana does judo. Dev gets chess, which fits his clue. The transferable idea: in an elimination grid, look for a row or column with only one space left, fill it, and let it knock out others.",
+    "elegant": null
+  },
+  "whyOnTest": "Ana's own clue leaves two options, so the problem tests chaining eliminations across other people, the core of grid logic.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

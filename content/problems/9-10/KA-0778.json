@@ -1,0 +1,68 @@
+{
+  "id": "KA-0778",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Points A and B are on the same side of a straight river, 3 km and 5 km from it. The points on the bank nearest to A and to B are 6 km apart. A walker goes from A to the river, then on to B. What is the shortest possible length of the walk, in km?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2√10",
+      "correct": false,
+      "misconception": "I reflected B in the river, but then used the difference of the distances, 5 - 3 = 2, instead of their sum."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I added the two distances to the river, 3 + 5, as if the walk could ignore the 6 km along the bank."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "3 + √61",
+      "correct": false,
+      "misconception": "I walked straight to the river first, then from that point straight to B, which is not the best point on the bank."
+    },
+    {
+      "key": "E",
+      "text": "14",
+      "correct": false,
+      "misconception": "I walked straight to the river, 6 km along the bank, then straight up to B."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-17",
+    "secondary": [
+      "GEO-09",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Draw it, then think about what a mirror would do to B.",
+    "Reflect B in the river. Any route from A to the river to B has the same length as a route from A to the river to the reflected point, and the shortest of those is a straight line.",
+    "The reflection of B is 5 km on the other side of the river, so it is 3 + 5 = 8 km across from A and 6 km along."
+  ],
+  "solutions": {
+    "reliable": "Reflect B in the river to a point B' that is 5 km beyond the bank. For any point P on the bank, PB = PB', so the walk A to P to B has the same length as A to P to B'. That is shortest when A, P and B' lie on a straight line. A and B' are 3 + 5 = 8 km apart across the river and 6 km apart along it, so the distance is the square root of 8² + 6² = 100, which is 10 km. The transferable idea: a path that must touch a line becomes a straight line after reflecting one end in that line.",
+    "elegant": null
+  },
+  "whyOnTest": "Shortest paths that must touch a line are solved by reflection, and the choices include the walker who goes straight to the bank first.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

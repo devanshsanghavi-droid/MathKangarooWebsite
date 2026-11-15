@@ -1,0 +1,67 @@
+{
+  "id": "KA-0424",
+  "band": "3-4",
+  "points": 5,
+  "statement": "An L-tile is a 2 by 2 square with one small square missing. Tiles may be turned. Which rectangle can be covered exactly by L-tiles, with no gaps and no overlaps?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1 by 3",
+      "correct": false,
+      "misconception": "I matched the 3 squares of the rectangle to the 3 squares of one tile, without checking that an L fits in a strip one square wide."
+    },
+    {
+      "key": "B",
+      "text": "1 by 6",
+      "correct": false,
+      "misconception": "I checked that 6 squares make exactly two tiles and did not notice that a strip one square wide has no room for an L."
+    },
+    {
+      "key": "C",
+      "text": "2 by 4",
+      "correct": false,
+      "misconception": "I thought any rectangle two squares tall would work because the tiles are two squares tall, but 8 squares cannot be split into tiles of 3."
+    },
+    {
+      "key": "D",
+      "text": "3 by 3",
+      "correct": false,
+      "misconception": "I checked that 9 squares make exactly three tiles, but each corner of the 3 by 3 needs its own tile, and four corners need more than three tiles."
+    },
+    {
+      "key": "E",
+      "text": "2 by 3",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-14",
+    "secondary": [
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "Count the squares first: the total must be a multiple of 3.",
+    "Tiling: the area is only the first test. After that, look at tight spots, such as narrow strips and corners, where an L-tile may not fit at all.",
+    "A strip one square wide holds no L-tile, 8 is not a multiple of 3, and in the 3 by 3 every corner needs a tile of its own."
+  ],
+  "solutions": {
+    "reliable": "Area first: each tile covers 3 squares, so the area must divide by 3. The 2 by 4 has 8 squares and fails. The 1 by 3 and the 1 by 6 are only one square wide, and an L-tile always needs two rows and two columns, so they fail. The 3 by 3 has area 9, so it would need exactly 3 tiles, but any tile placed inside it can touch at most one of its 4 corners, so 3 tiles cannot cover all 4 corners. The 2 by 3 works: one tile covers the two top-left squares and the bottom-left square, and a second tile, turned halfway round, covers the other three. The transferable idea: the right area is needed but is not enough; check that the shape fits in the tightest spots.",
+    "elegant": null
+  },
+  "whyOnTest": "Tiling questions often pass the area test and still fail, so this probes whether a solver checks the shape and not just the count.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

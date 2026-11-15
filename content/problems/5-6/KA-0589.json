@@ -1,0 +1,68 @@
+{
+  "id": "KA-0589",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Five people sit around a round table. Each is either a knight, who always tells the truth, or a knave, who always lies. Every one of them says: \"Both people next to me are knaves.\" How many knights are at the table?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought everyone could be a knave, without noticing their statements would then all be true."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I placed one knight and checked only the two people beside it, not the knaves on the far side."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I put knights in every other seat, 1, 3 and 5, forgetting that seats 5 and 1 are next to each other."
+    },
+    {
+      "key": "E",
+      "text": "5",
+      "correct": false,
+      "misconception": "I believed every statement, so I made everyone a knight without checking that they would then be lying."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-09",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "What does a knave's statement tell you once you know it is false?",
+    "A knight must have two knaves beside it, so no two knights sit together. A knave's statement is false, so every knave must have at least one knight beside it. Find how many knights satisfy both rules.",
+    "Two knights cannot sit side by side, and with 5 seats that allows at most 2. Check whether 0 or 1 knight can leave every knave next to a knight."
+  ],
+  "solutions": {
+    "reliable": "A knight tells the truth, so both of its neighbours are knaves: no two knights are adjacent, which allows at most 2 knights in 5 seats around a circle. A knave lies, so at least one of its neighbours is a knight. With 0 knights every knave would be telling the truth, which is impossible. With 1 knight, the two people opposite it have only knave neighbours, so they would be telling the truth. With 2 knights in seats 1 and 3, the knaves in seats 2, 4 and 5 each sit next to a knight, and everything works. So there are exactly 2 knights. The transferable idea: turn each type's statement into a rule about its neighbours, then test the possible counts and check every person.",
+    "elegant": null
+  },
+  "whyOnTest": "Knights-and-knaves puzzles test whether you use the liars' statements too, and around a table whether you remember the circle closes.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

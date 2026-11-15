@@ -1,0 +1,68 @@
+{
+  "id": "KA-0362",
+  "band": "1-2",
+  "points": 5,
+  "statement": "A lollipop costs 7 cents. Kim has only 5-cent coins. She buys two lollipops and pays with as few coins as she can. How much change does she get?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1 cent",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "3 cents",
+      "correct": false,
+      "misconception": "I paid for just one lollipop with two 5-cent coins, so I got 10 - 7 = 3."
+    },
+    {
+      "key": "C",
+      "text": "6 cents",
+      "correct": false,
+      "misconception": "I paid with four 5-cent coins, which is 20 cents, and got 20 - 14 = 6."
+    },
+    {
+      "key": "D",
+      "text": "14 cents",
+      "correct": false,
+      "misconception": "I gave the cost of the two lollipops instead of the change."
+    },
+    {
+      "key": "E",
+      "text": "15 cents",
+      "correct": false,
+      "misconception": "I gave how much money Kim handed over instead of how much she got back."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-06",
+    "secondary": [
+      "MOD-10",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "First find what the two lollipops cost together.",
+    "Work in three steps: the total cost, then the smallest amount of 5-cent coins that covers it, then the difference between what she pays and what it costs.",
+    "Two lollipops cost 14 cents. Count in fives: 5, 10, 15. Which is the first amount that is enough, and how much is it over 14?"
+  ],
+  "solutions": {
+    "reliable": "Two lollipops cost 7 + 7 = 14 cents. Kim can only pay in fives: 10 cents is not enough, so she uses three coins and pays 15 cents. Her change is 15 - 14 = 1 cent. The idea to keep: in a change question, find the total cost first, then what is actually handed over, and only then subtract.",
+    "elegant": null
+  },
+  "whyOnTest": "It chains three small steps, and each wrong answer is what you get by stopping early or answering a different step.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

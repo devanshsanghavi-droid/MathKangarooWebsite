@@ -1,0 +1,68 @@
+{
+  "id": "KA-0726",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A rectangle measures 12 cm by 8 cm. A point P is chosen anywhere on its top side, and P is joined to the two bottom corners, making a triangle. What is the total area of the parts of the rectangle outside this triangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "72 square cm",
+      "correct": false,
+      "misconception": "I treated the triangle as a quarter of the rectangle, 24 square cm, and subtracted that from 96."
+    },
+    {
+      "key": "B",
+      "text": "48 square cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "24 square cm",
+      "correct": false,
+      "misconception": "I found the area of only one of the two leftover corner triangles, assuming each is half of what is left."
+    },
+    {
+      "key": "D",
+      "text": "32 square cm",
+      "correct": false,
+      "misconception": "I thought the triangle and the two pieces beside it each take up a third of the rectangle."
+    },
+    {
+      "key": "E",
+      "text": "It depends on where P is",
+      "correct": false,
+      "misconception": "I thought sliding P along the top side changes the area of the triangle."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-04",
+    "secondary": [
+      "GEO-06",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "What are the base and the height of the triangle?",
+    "Area by subtraction: find the area of the rectangle and the area of the triangle, then subtract. Ask whether the triangle area depends on where P sits.",
+    "The triangle has the 12 cm bottom side as its base and the full 8 cm height of the rectangle, wherever P is."
+  ],
+  "solutions": {
+    "reliable": "The rectangle has area 12 x 8 = 96 square cm. The triangle has base 12 cm (the bottom side) and height 8 cm (from the bottom side up to P), so its area is 12 x 8 / 2 = 48 square cm, wherever P is on the top side. The area outside it is 96 - 48 = 48 square cm. The transferable idea: a shaded region is often the whole minus a shape whose area is easy, even when its position is not fixed.",
+    "elegant": "Draw a vertical line from P down to the bottom side. It cuts the rectangle into two smaller rectangles, and the triangle takes exactly half of each. So the triangle is half the rectangle, and so is the outside."
+  },
+  "whyOnTest": "Area by subtraction rewards noticing that a triangle's area depends only on its base and height, so the free point P does not matter.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

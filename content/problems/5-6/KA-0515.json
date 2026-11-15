@@ -1,0 +1,68 @@
+{
+  "id": "KA-0515",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A strip 2 squares tall and 5 squares long is to be covered exactly by five 1 by 2 tiles, with no gaps and no overlaps. Each tile may stand upright or lie flat. In how many different ways can this be done?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "11",
+      "correct": false,
+      "misconception": "I counted 1 way with no flat tiles, 4 ways with one stacked pair of flat tiles, and 6 ways to pick 2 of the 4 places for two stacked pairs, without noticing that neighbouring places overlap."
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": false,
+      "misconception": "I found the pattern 1, 2, 3, 5, 8, 13 for longer and longer strips and took one term too many."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I treated each of the 4 places where a stacked pair of flat tiles could go as simply used or not, 2 x 2 x 2 x 2, without checking overlaps."
+    },
+    {
+      "key": "E",
+      "text": "32",
+      "correct": false,
+      "misconception": "I thought each of the 5 columns could be filled in 2 ways on its own, upright or flat, giving 2 x 2 x 2 x 2 x 2."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-14",
+    "secondary": [
+      "PAT-05",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Try shorter strips first: 2 by 1, 2 by 2, 2 by 3.",
+    "Look at the left end. Either one upright tile covers the first column, or two flat tiles stacked together cover the first two columns. That links each strip to the two shorter strips.",
+    "Strips of length 1, 2 and 3 have 1, 2 and 3 tilings. Each new count is the sum of the two before it."
+  ],
+  "solutions": {
+    "reliable": "Look at the leftmost column not yet covered. Either one upright tile fills it, or a flat tile covers its top square, and then the square below can only be covered by another flat tile directly underneath. So flat tiles always come in stacked pairs covering two neighbouring columns. Count by the number of stacked pairs: none gives 1 tiling; one pair can sit in columns 1-2, 2-3, 3-4 or 4-5, giving 4; two pairs fit without overlapping in columns 1-2 and 3-4, 1-2 and 4-5, or 2-3 and 4-5, giving 3. Total 1 + 4 + 3 = 8. The transferable idea: in a tiling count, decide what covers one end, which breaks the problem into smaller cases.",
+    "elegant": "An upright tile at the left end leaves a 2 by 4 strip, and a stacked pair leaves a 2 by 3 strip. So the count for length 5 is the count for length 4 plus the count for length 3. Starting from 1 and 2 for lengths 1 and 2, the counts go 3, 5, 8."
+  },
+  "whyOnTest": "Small tiling counts grow in a pattern, and seeing that each strip builds on the two shorter ones is a classic 5-point idea.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

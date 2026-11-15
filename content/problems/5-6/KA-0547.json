@@ -1,0 +1,68 @@
+{
+  "id": "KA-0547",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Each of the digits 1, 2, 3, 4, 5 and 6 is used exactly once to write two three-digit numbers. The first number is bigger than the second. What is the smallest possible difference between them?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "47",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "56",
+      "correct": false,
+      "misconception": "I made the bigger number as small as possible, 412, but wrote the smaller one as 356 instead of making it as large as possible."
+    },
+    {
+      "key": "C",
+      "text": "69",
+      "correct": false,
+      "misconception": "I used the two largest digits, 6 and 5, as the hundreds digits, giving 612 - 543."
+    },
+    {
+      "key": "D",
+      "text": "111",
+      "correct": false,
+      "misconception": "I paired each digit with its neighbour, making 642 - 531."
+    },
+    {
+      "key": "E",
+      "text": "333",
+      "correct": false,
+      "misconception": "I split the digits in order, making 456 - 123."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "NUM-01",
+      "CNT-18"
+    ]
+  },
+  "hints": [
+    "The hundreds digits matter most. How close can they be?",
+    "Make the hundreds digits differ by just 1. Then give the bigger number the smallest possible ending and the smaller number the largest possible ending. Try each pair of neighbouring hundreds digits.",
+    "With hundreds digits 4 and 3, the best is 412 - 365. Check the other neighbouring pairs, such as 2 and 1 or 5 and 4, to see that they do worse."
+  ],
+  "solutions": {
+    "reliable": "If the hundreds digits differ by 2 or more, the difference is at least 200 - 99 = 101, so they should differ by 1. For each such pair, the bigger number takes the two smallest leftover digits in increasing order and the smaller number takes the two largest in decreasing order. Hundreds 2 and 1: 234 - 165 = 69. Hundreds 3 and 2: 314 - 265 = 49. Hundreds 4 and 3: 412 - 365 = 47. Hundreds 5 and 4: 512 - 463 = 49. Hundreds 6 and 5: 612 - 543 = 69. The smallest is 47. The transferable idea: in digit-placing puzzles, settle the most valuable place first, then push the remaining digits to the extremes.",
+    "elegant": null
+  },
+  "whyOnTest": "Digit-placing puzzles test place value with a goal: the hundreds decide almost everything, and the endings fine-tune.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

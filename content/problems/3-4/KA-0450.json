@@ -1,0 +1,68 @@
+{
+  "id": "KA-0450",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A three-digit number has three different digits, none of them 0, and its digits add up to 8. What is the difference between the largest and the smallest such number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "297",
+      "correct": false,
+      "misconception": "I only used the digits 1, 3 and 4, so I worked out 431 - 134 and missed the digits 1, 2 and 5."
+    },
+    {
+      "key": "B",
+      "text": "306",
+      "correct": false,
+      "misconception": "I found the smallest number, 125, but for the largest I used 431 and missed 521."
+    },
+    {
+      "key": "C",
+      "text": "387",
+      "correct": false,
+      "misconception": "I found the largest number, 521, but for the smallest I used 134 and missed 125."
+    },
+    {
+      "key": "D",
+      "text": "396",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "495",
+      "correct": false,
+      "misconception": "I let digits repeat, so I worked out 611 - 116, but the digits must be different."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-02",
+    "secondary": [
+      "CNT-01",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Which groups of three different digits, with no 0, add up to 8?",
+    "List the digit groups, starting from the smallest digit 1. For each group, the largest number puts the digits from biggest to smallest, and the smallest number from smallest to biggest. Compare across groups.",
+    "The groups are 1, 2, 5 and 1, 3, 4. The largest numbers they make are 521 and 431, and the smallest are 125 and 134."
+  ],
+  "solutions": {
+    "reliable": "Three different digits from 1 to 9 that add to 8 must include 1, since 2 + 3 + 4 = 9 is already too big. The other two add to 7 and are different and not 1: 2 and 5, or 3 and 4. So the groups are 1, 2, 5 and 1, 3, 4. The largest number is 521 (bigger than 431) and the smallest is 125 (smaller than 134). The difference is 521 - 125 = 396. The transferable idea: list every digit group first, then pick the extremes across all the groups.",
+    "elegant": null
+  },
+  "whyOnTest": "Digit puzzles test complete casework, and each distractor comes from using only one digit group or ignoring a rule.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

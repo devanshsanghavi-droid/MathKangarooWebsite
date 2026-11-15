@@ -1,0 +1,67 @@
+{
+  "id": "KA-0844",
+  "band": "9-10",
+  "points": 4,
+  "statement": "The letters ABCDE are written in a row again and again: ABCDEABCDE... Below them, starting in the same column, the digits 1234567 are written again and again. In the first 200 columns, how many columns have the letter A directly above the digit 1?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I divided 200 by 35 and rounded down, missing that column 1 itself counts."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "17",
+      "correct": false,
+      "misconception": "I thought A and 1 meet again every 5 + 7 = 12 columns instead of every 35."
+    },
+    {
+      "key": "D",
+      "text": "29",
+      "correct": false,
+      "misconception": "I counted the columns that have a 1, without checking whether A is above it."
+    },
+    {
+      "key": "E",
+      "text": "40",
+      "correct": false,
+      "misconception": "I counted the columns that have an A, without checking whether 1 is below it."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "When do the two rows both start over at the same time?",
+    "The letters repeat every 5 columns and the digits every 7. A sits over 1 exactly when both cycles are back at their start together, which happens at a regular interval. Find that interval, then count carefully, including column 1.",
+    "A and 1 line up in column 1 and then every 35 columns, the least common multiple of 5 and 7: columns 1, 36, 71, and so on."
+  ],
+  "solutions": {
+    "reliable": "A is in columns 1, 6, 11, and so on, and 1 is in columns 1, 8, 15, and so on. Both happen exactly when the column number is one more than a multiple of 5 and one more than a multiple of 7, that is, one more than a multiple of 35. Those columns are 1, 36, 71, 106, 141 and 176; the next, 211, is too far. That is 6 columns. The transferable idea: two cycles realign at the least common multiple of their lengths, and counting positions needs care at the first one.",
+    "elegant": "Number the columns from 0 instead of 1. A meets 1 at columns 0, 35, 70, ..., up to 199, which is every multiple of 35 from 0 to 175: 175 / 35 + 1 = 6."
+  },
+  "whyOnTest": "Repeating-cycle questions test working with positions modulo the cycle length; two cycles realign at the least common multiple, and the start column is easy to miss.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

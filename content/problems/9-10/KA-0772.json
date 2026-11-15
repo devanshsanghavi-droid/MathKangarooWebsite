@@ -1,0 +1,68 @@
+{
+  "id": "KA-0772",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A locker code is one letter from A to F followed by three digits. The three digits must all be different, and the first of them cannot be 0. How many different codes are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3024",
+      "correct": false,
+      "misconception": "I gave the first digit 9 choices and took one away for each later digit, 9, 8, 7, forgetting that 0 is allowed again after the first digit."
+    },
+    {
+      "key": "B",
+      "text": "3888",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "4320",
+      "correct": false,
+      "misconception": "I let the first digit be 0 as well, so I used 10, 9 and 8 choices for the three digits."
+    },
+    {
+      "key": "D",
+      "text": "5400",
+      "correct": false,
+      "misconception": "I ignored the rule that the digits must be different, so I used 9, 10 and 10 choices."
+    },
+    {
+      "key": "E",
+      "text": "6000",
+      "correct": false,
+      "misconception": "I ignored both digit rules and used 10 choices for every digit."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-03",
+    "secondary": [
+      "CNT-11",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Fill the four positions one at a time, starting with the most restricted.",
+    "Use the multiplication principle: count the choices for each position given the ones already filled, and watch exactly where each digit rule bites.",
+    "The letter has 6 choices and the first digit has 9. The second digit cannot repeat the first, but it may be 0."
+  ],
+  "solutions": {
+    "reliable": "The letter has 6 choices. The first digit has 9 (anything but 0). The second digit can be any of the 10 digits except the first, so 9 choices, and the third has 8. Total: 6 x 9 x 9 x 8 = 3888. The transferable idea: in a multiplication count, place the most restricted position first and recount the choices at each step.",
+    "elegant": "Count all three-digit strings with different digits, 10 x 9 x 8 = 720, and remove the 9 x 8 = 72 that start with 0, leaving 648. Then 6 x 648 = 3888."
+  },
+  "whyOnTest": "Multiplication-principle counts depend on how each rule changes the choices at each position, and a rule about 0 is the classic trap.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

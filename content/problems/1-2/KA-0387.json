@@ -1,0 +1,67 @@
+{
+  "id": "KA-0387",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Ana, Ben and Cy sit in a row of 3 chairs. Ana does not want to sit next to Ben. In how many different orders can they sit?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought that with only 3 chairs, Ana and Ben always end up next to each other."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I counted Ana, Cy, Ben and Ben, Cy, Ana as the same order, but they are different."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the orders where Ana and Ben do sit next to each other."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted every order of the three children and forgot about the rule."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "CNT-02"
+    ]
+  },
+  "hints": [
+    "List the orders, or think about the middle chair.",
+    "Write all the orders of three children in a fixed way, then cross out every order where Ana and Ben are side by side. Or ask yourself who can sit in the middle chair.",
+    "If Ana or Ben sits in the middle, the two of them are next to each other. So Cy must sit in the middle."
+  ],
+  "solutions": {
+    "reliable": "All the orders are ABC, ACB, BAC, BCA, CAB and CBA. Ana and Ben are side by side in ABC, BAC, CAB and CBA. That leaves ACB and BCA, so there are 2 orders. The idea to keep: list every case in a fixed order, then cross out the ones a rule forbids.",
+    "elegant": "The middle chair touches both ends, so whoever sits there is next to everyone. It must be Cy. Then Ana sits on the left or on the right, which gives 2 orders."
+  },
+  "whyOnTest": "A rule that forbids some orders checks careful listing, and the middle seat is the idea that makes it quick.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

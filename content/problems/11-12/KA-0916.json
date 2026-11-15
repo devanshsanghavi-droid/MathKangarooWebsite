@@ -1,0 +1,68 @@
+{
+  "id": "KA-0916",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A cone has apex V, slant height 4 and base radius 1. Point A is on the edge of the base, and M is the midpoint of the slant line VA. An ant starts at A, crawls once all the way around the curved surface, and stops at M. What is the length of the shortest such route?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I went straight up the slant line from A to M, which does not go around the cone at all."
+    },
+    {
+      "key": "B",
+      "text": "2√3",
+      "correct": false,
+      "misconception": "I unrolled the cone correctly but used Pythagoras the wrong way round, subtracting 2 squared from 4 squared."
+    },
+    {
+      "key": "C",
+      "text": "2√5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I assumed the unrolled surface is a half circle, so the route ran straight through V, 4 + 2."
+    },
+    {
+      "key": "E",
+      "text": "2π + 2",
+      "correct": false,
+      "misconception": "I sent the ant around the edge of the base and then up the slant line to M, which is not the shortest route."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-17",
+    "secondary": [
+      "GEO-10",
+      "GEO-07"
+    ]
+  },
+  "hints": [
+    "Cut the cone along the slant line VA and flatten it.",
+    "The curved surface unrolls into a sector whose radius is the slant height. Find the sector’s angle from its arc length; A and M sit on the sector’s two straight edges, and the shortest route is a straight segment.",
+    "The arc is the base circumference, 2π, out of a full circle of 8π, so the angle is 90 degrees, with A at distance 4 from V on one edge and M at distance 2 from V on the other."
+  ],
+  "solutions": {
+    "reliable": "Cut along VA and flatten: the surface becomes a sector of radius 4 whose arc length equals the base circumference, 2π x 1 = 2π. A full circle of radius 4 has circumference 8π, so the sector is one quarter of it, an angle of 90 degrees. Going once around the cone means crossing from one straight edge of the sector to the other: A is at distance 4 from V on one edge, and the copy of M is at distance 2 from V on the other. The shortest route is the straight segment between them, the hypotenuse of a right triangle with legs 4 and 2, so its length is √(16 + 4) = √20 = 2√5, about 4.5. That beats walking around the base and then up, 2π + 2, about 8.3. The transferable idea: to find a shortest path on a curved surface, unroll it flat and draw a straight line.",
+    "elegant": "The sector angle is 360 degrees times radius over slant height, 360 x 1/4 = 90 degrees, so the route is the hypotenuse of a right triangle with legs VA = 4 and VM = 2, which is √20 = 2√5."
+  },
+  "whyOnTest": "Shortest paths on curved surfaces become straight lines once the surface is unrolled, and the key number is the angle of the sector.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

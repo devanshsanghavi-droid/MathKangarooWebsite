@@ -1,0 +1,68 @@
+{
+  "id": "KA-0379",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Ella makes a flag with 3 stripes, one above another. Each stripe is red or blue. The top and bottom stripes must be the same colour. How many different flags can she make?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I only counted the flags that are all one colour."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I listed red-red-red, red-blue-red and blue-blue-blue and missed blue-red-blue."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the flags that use both colours instead of the flags that follow the rule."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted every flag with 3 stripes and forgot the rule about the top and bottom."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-01",
+      "CNT-11"
+    ]
+  },
+  "hints": [
+    "Start with the top stripe: red or blue?",
+    "Draw a tree. The top stripe has two choices. The middle stripe then has two choices. The bottom stripe has no choice at all, because the rule decides it.",
+    "Top red: the middle is red or blue, and the bottom must be red. Top blue: the same again."
+  ],
+  "solutions": {
+    "reliable": "Draw a tree. If the top is red, the middle can be red or blue and the bottom must be red: red-red-red and red-blue-red. If the top is blue, the same gives blue-blue-blue and blue-red-blue. That is 4 flags. The idea to keep: a rule can take away a branch completely, so only branch where there is a real choice.",
+    "elegant": "Only the top and middle stripes are free choices, 2 each, and the bottom copies the top. So 2 x 2 = 4. The idea to keep: count only the choices that are really free."
+  },
+  "whyOnTest": "A tree diagram with a rule teaches that some steps have no choice at all, which separates careful counters from guessers.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

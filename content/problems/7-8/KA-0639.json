@@ -1,0 +1,67 @@
+{
+  "id": "KA-0639",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Twenty-five people stand in a queue. Ana is 9th from the front and Ben is 6th from the back. How many people are standing between them?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I put Ben in place 25 - 6 = 19, one place too far forward."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I subtracted their positions and added 1, which counts both Ana and Ben."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I removed the 9 and the 6 from 25, then wrongly removed Ana and Ben a second time."
+    },
+    {
+      "key": "E",
+      "text": "11",
+      "correct": false,
+      "misconception": "I subtracted their positions, 20 - 9, which counts Ben but not Ana."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-04",
+    "secondary": [
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Find Ben's place counting from the front.",
+    "Ordering and ranking: turn both positions into places from the front, then count the places strictly between them. Check with a tiny queue so the plus or minus one is right.",
+    "6th from the back of 25 is 20th from the front, since 20, 21, 22, 23, 24, 25 is six places."
+  ],
+  "solutions": {
+    "reliable": "Ben is 6th from the back, so he is in place 25 - 6 + 1 = 20 from the front. The people strictly between places 9 and 20 are in places 10 to 19, which is 10 people. The transferable idea: convert both rankings to the same end, then count the gap carefully with a small example.",
+    "elegant": "The first 9 people include Ana and the last 6 include Ben. Everyone else is between them: 25 - 9 - 6 = 10."
+  },
+  "whyOnTest": "Ranking from both ends is a reliable Kangaroo question, and its only real difficulty is the off-by-one.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

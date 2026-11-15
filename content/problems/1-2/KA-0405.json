@@ -1,0 +1,67 @@
+{
+  "id": "KA-0405",
+  "band": "1-2",
+  "points": 3,
+  "statement": "How many different two-digit numbers can be written using only the digits 5 and 7? A digit may be used twice, as in 55.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I only made 57, writing the digits in the order they were given."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I used each digit only once, so I found only 57 and 75."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted 57 and 75 as the same number, but they are different."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I also counted the one-digit numbers 5 and 7."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "Choose the tens digit first.",
+    "List the numbers in order: pick the tens digit, then the ones digit. Each place can be 5 or 7, and the same digit can be used in both places.",
+    "With 5 in the tens place you get 55 and 57. Now put 7 in the tens place."
+  ],
+  "solutions": {
+    "reliable": "With 5 in the tens place: 55 and 57. With 7 in the tens place: 75 and 77. That makes 4 numbers. The idea to keep: fill one place at a time and list every choice for it, so nothing is missed.",
+    "elegant": "There are 2 choices for the tens digit and 2 for the ones digit, so 2 x 2 = 4 numbers."
+  },
+  "whyOnTest": "Listing numbers from given digits checks a system for counting, and forgetting repeated digits is the common miss.",
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

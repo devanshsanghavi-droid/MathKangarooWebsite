@@ -1,0 +1,68 @@
+{
+  "id": "KA-0944",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A token starts on a corner square of a 6 by 6 board. Each step moves it to a square sharing a side with its current square, and it never visits a square twice, including its starting square. After exactly 7 steps, how many different squares could the token be on?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought that without revisiting squares the token must end exactly 7 steps away from the corner, so I counted only those squares."
+    },
+    {
+      "key": "B",
+      "text": "14",
+      "correct": false,
+      "misconception": "I mixed up the colours and counted the squares within 7 steps that have the same colour as the corner."
+    },
+    {
+      "key": "C",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": false,
+      "misconception": "I counted every square of the other colour from the corner, forgetting that some are too far to reach in 7 steps."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": false,
+      "misconception": "I counted every square within 7 steps of the corner, ignoring that 7 steps always change the colour."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-07",
+    "secondary": [
+      "LOG-05",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Colour the board like a chessboard.",
+    "Each step changes colour, so after 7 steps the token is on the colour opposite the corner, and no more than 7 steps away. Count squares meeting both conditions, then check the no-revisiting rule removes none.",
+    "Measure distance from the corner as (rows across) + (columns across). The allowed squares are at distance 1, 3, 5 or 7; there are 2, 4, 6 and 4 of them."
+  ],
+  "solutions": {
+    "reliable": "Colour the board like a chessboard. Each step changes colour, so after 7 steps the token is on the colour opposite to its corner. Measuring distance from the corner as rows plus columns, that means an odd distance, and since each step changes the distance by 1, the distance is at most 7. On a 6 by 6 board there are 2 squares at distance 1, 4 at distance 3, 6 at distance 5 and 4 at distance 7, which is 16 squares. Each is reachable without revisiting: a square at distance 7 is reached by walking straight towards it, and a closer one by adding a detour that goes out and comes back alongside itself, which adds 2, 4 or 6 steps. For example, to end on a square next to the corner, walk 3 squares along an edge, step sideways, and walk back beside the edge: 7 steps through 8 different squares. So the answer is 16. The transferable idea: a chessboard colouring fixes the colour at the end, and a distance bound trims the list.",
+    "elegant": null
+  },
+  "whyOnTest": "Coloring arguments turn a path question into a parity count; the 5-point twist is combining the colour rule with how far the token can travel.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

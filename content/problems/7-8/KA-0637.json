@@ -1,0 +1,67 @@
+{
+  "id": "KA-0637",
+  "band": "7-8",
+  "points": 4,
+  "statement": "The point (2, 5) is reflected in the line y = x, where the two coordinates are equal. The new point is then rotated a quarter turn anticlockwise about the origin (0, 0). Where does it end up?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "(5, 2)",
+      "correct": false,
+      "misconception": "I did the reflection but forgot the rotation."
+    },
+    {
+      "key": "B",
+      "text": "(2, negative 5)",
+      "correct": false,
+      "misconception": "I rotated a quarter turn clockwise instead of anticlockwise."
+    },
+    {
+      "key": "C",
+      "text": "(negative 5, 2)",
+      "correct": false,
+      "misconception": "I rotated the original point and forgot to reflect it first."
+    },
+    {
+      "key": "D",
+      "text": "(negative 5, negative 2)",
+      "correct": false,
+      "misconception": "I turned the reflected point a half turn instead of a quarter turn."
+    },
+    {
+      "key": "E",
+      "text": "(negative 2, 5)",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-09",
+    "secondary": [
+      "GEO-02"
+    ]
+  },
+  "hints": [
+    "Do one move at a time and sketch the point after each.",
+    "Reflecting in y = x swaps the two coordinates. A quarter turn anticlockwise about the origin sends a point in the top right quarter to the top left quarter. Apply them in the order given.",
+    "After the reflection the point is (5, 2). A quarter turn anticlockwise sends (x, y) to (negative y, x)."
+  ],
+  "solutions": {
+    "reliable": "Reflecting in y = x swaps the coordinates: (2, 5) becomes (5, 2). A quarter turn anticlockwise about the origin sends (x, y) to (negative y, x), so (5, 2) goes to (negative 2, 5). Check by sketching: (5, 2) points right and a little up; a quarter turn anticlockwise points it up and a little left. The transferable idea: break a combined transformation into single moves and track a point through each.",
+    "elegant": "Track any point: (x, y) becomes (y, x) and then (negative x, y). So the two moves together act like a single reflection in the y-axis, and (2, 5) lands on (negative 2, 5)."
+  },
+  "whyOnTest": "Combining a reflection with a rotation tests careful order and direction, and every one-mistake answer is offered.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

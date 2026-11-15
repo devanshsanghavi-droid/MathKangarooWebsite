@@ -1,0 +1,68 @@
+{
+  "id": "KA-0884",
+  "band": "11-12",
+  "points": 3,
+  "statement": "What is the value of 2025 x 2027 - 2024 x 2028?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "-3",
+      "correct": false,
+      "misconception": "I spotted the shortcut but subtracted the two products in the wrong order."
+    },
+    {
+      "key": "B",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought two pairs of numbers with the same sum, 4052, must have the same product."
+    },
+    {
+      "key": "C",
+      "text": "1",
+      "correct": false,
+      "misconception": "I wrote 2025 x 2027 as 2026 squared minus 1 and 2024 x 2028 as 2026 squared minus 2, as if being 2 away from 2026 took off 2."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": false,
+      "misconception": "I wrote 2024 x 2028 correctly as 2026 squared minus 4 but treated 2025 x 2027 as exactly 2026 squared."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "NUM-08",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Do not multiply. Both pairs are centred on the same number.",
+    "Write each factor as 2026 plus or minus something, then use the difference of two squares on each product. The huge parts cancel.",
+    "2025 x 2027 = (2026 - 1)(2026 + 1) and 2024 x 2028 = (2026 - 2)(2026 + 2)."
+  ],
+  "solutions": {
+    "reliable": "With n = 2026, the first product is (n - 1)(n + 1) = n squared - 1 and the second is (n - 2)(n + 2) = n squared - 4. Their difference is (n squared - 1) - (n squared - 4) = 3. The transferable idea: before grinding through big multiplications, look for a centre that turns them into differences of squares.",
+    "elegant": "Try a small version: 4 x 6 - 3 x 7 = 24 - 21 = 3. The answer does not depend on the centre at all, so the large numbers are a bluff."
+  },
+  "whyOnTest": "Grinding out two seven-digit products wastes minutes; spotting the shared centre takes seconds, and that judgement is what is being tested.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

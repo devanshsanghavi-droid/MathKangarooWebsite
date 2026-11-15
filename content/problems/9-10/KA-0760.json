@@ -1,0 +1,68 @@
+{
+  "id": "KA-0760",
+  "band": "9-10",
+  "points": 5,
+  "statement": "The digits 1 to 9 are each used exactly once to write three three-digit numbers, and the three numbers are added. Which of these could be the total?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "711",
+      "correct": false,
+      "misconception": "I checked that 711 is a multiple of 9 but forgot the total can never be smaller than 774."
+    },
+    {
+      "key": "B",
+      "text": "1600",
+      "correct": false,
+      "misconception": "I checked only that the total lies between the smallest and largest possible sums and never looked for a divisibility condition."
+    },
+    {
+      "key": "C",
+      "text": "2001",
+      "correct": false,
+      "misconception": "I checked the size and then tested divisibility by 3 instead of by 9, and 2001 is a multiple of 3."
+    },
+    {
+      "key": "D",
+      "text": "2133",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "2565",
+      "correct": false,
+      "misconception": "I checked that 2565 is a multiple of 9 but forgot the total can never be larger than 2556."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "NUM-04",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Compare each number with the sum of its digits.",
+    "A number and its digit sum leave the same remainder on division by 9. Use that to show most totals would lead to a contradiction, then also check the smallest and largest totals that are possible.",
+    "The three numbers together have digit sum 45, a multiple of 9, so the total must be a multiple of 9. It must also lie between 147 + 258 + 369 and 963 + 852 + 741."
+  ],
+  "solutions": {
+    "reliable": "Each number leaves the same remainder on division by 9 as its digit sum, so the total leaves the same remainder as 1 + 2 + ... + 9 = 45, which is 0. The total must be a multiple of 9: that rules out 1600 and 2001, since supposing either is possible leads to a contradiction. The smallest possible total puts 1, 2, 3 in the hundreds and 7, 8, 9 in the units, giving 774; the largest is 2556. So 711 and 2565 are impossible too. Only 2133 survives, and it really can be made: 312 + 845 + 976 = 2133. The transferable idea: to show something cannot happen, assume it does and find a quantity, here the remainder on division by 9, that refuses to match.",
+    "elegant": "Only the remainder on division by 9 and the range matter: 2133 is the one choice that is a multiple of 9 and lies between 774 and 2556."
+  },
+  "whyOnTest": "Proof by contradiction usually needs an invariant, and the trap choices fail only the size check, which tests whether you check both conditions.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

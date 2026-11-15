@@ -1,0 +1,68 @@
+{
+  "id": "KA-0899",
+  "band": "11-12",
+  "points": 4,
+  "statement": "ABCD is a four-digit number with digits A, B, C and D, where A is not 0 and the digits need not be different. ABC, AB and A are the numbers formed by its first three digits, its first two digits and its first digit. If ABCD + ABC + AB + A = 2026, what is ABCD?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1474",
+      "correct": false,
+      "misconception": "I removed digits from the front instead of from the back, so I solved ABCD + BCD + CD + D = 2026."
+    },
+    {
+      "key": "B",
+      "text": "1825",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "1826",
+      "correct": false,
+      "misconception": "I left out the last term, the single digit A, and solved ABCD + ABC + AB = 2026."
+    },
+    {
+      "key": "D",
+      "text": "1832",
+      "correct": false,
+      "misconception": "I collected the terms but counted B as 110 instead of 111, missing the B in the units place of AB."
+    },
+    {
+      "key": "E",
+      "text": "1841",
+      "correct": false,
+      "misconception": "I left out the term AB and solved ABCD + ABC + A = 2026."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "NUM-01",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Write each of the four numbers using place value, so AB = 10A + B.",
+    "Collect the terms: A appears in all four numbers, B in three, C in two and D in one. Then fix the digits one at a time, starting with A, using the fact that no digit is more than 9.",
+    "The sum is 1111A + 111B + 11C + D = 2026, so A = 1 and 111B + 11C + D = 915."
+  ],
+  "solutions": {
+    "reliable": "By place value the sum is (1000A + 100B + 10C + D) + (100A + 10B + C) + (10A + B) + A = 1111A + 111B + 11C + D. Since 2 x 1111 is more than 2026, A = 1, leaving 111B + 11C + D = 915. Now 11C + D is at most 99 + 9 = 108, so 111B is at least 807, and B = 8 (B = 9 gives 999, too big). That leaves 11C + D = 27, and since D is at most 9, C = 2 and D = 5. So ABCD = 1825. Check: 1825 + 182 + 18 + 1 = 2026. The transferable idea: rewrite a digit puzzle with place value, then fix the most constrained digit first and let each choice force the next.",
+    "elegant": "Estimate first: the total is about 1.111 times ABCD, so ABCD is close to 0.9 x 2026, about 1823. Of the nearby choices, 1825 + 182 + 18 + 1 = 2026 works, while 1826 gives 2027."
+  },
+  "whyOnTest": "This cryptarithm gives way to place value: one equation fixes A, then B, then C and D in turn, and each distractor is a slip in setting that equation up.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0605",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A bookshop sells a bundle of 3 different books chosen from 8 titles. The order of the books in a bundle does not matter. How many different bundles are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "28",
+      "correct": false,
+      "misconception": "I counted the ways to choose 2 books instead of 3."
+    },
+    {
+      "key": "B",
+      "text": "56",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "112",
+      "correct": false,
+      "misconception": "I divided 8 x 7 x 6 by 3 instead of by the 6 orders of three books."
+    },
+    {
+      "key": "D",
+      "text": "336",
+      "correct": false,
+      "misconception": "I counted 8 x 7 x 6 as if the order of the books mattered."
+    },
+    {
+      "key": "E",
+      "text": "512",
+      "correct": false,
+      "misconception": "I allowed a title to repeat and the order to matter, 8 x 8 x 8."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-05"
+    ]
+  },
+  "hints": [
+    "Count ordered choices first, then fix the overcount.",
+    "Picking books one after another counts each bundle several times, once for every order of its three books. Work out how many orders three things have, and divide by that.",
+    "There are 8 x 7 x 6 = 336 ordered choices, and each bundle appears in 3 x 2 x 1 orders."
+  ],
+  "solutions": {
+    "reliable": "In order, there are 8 x 7 x 6 = 336 ways to pick the books. Each bundle of three books is counted once for each of its 3 x 2 x 1 = 6 orders, so there are 336 / 6 = 56 different bundles. The transferable idea: a selection where order does not matter is the ordered count divided by the number of orders of the chosen items.",
+    "elegant": null
+  },
+  "whyOnTest": "Selections are ordered counts with the overcount removed; the classic slip is dividing by the wrong number of orders.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

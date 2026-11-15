@@ -1,0 +1,68 @@
+{
+  "id": "KA-0634",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Three circles have radii 2 cm, 3 cm and 10 cm. Each circle touches the other two from the outside. What is the area of the triangle whose corners are the three centres, in square centimetres?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "60",
+      "correct": false,
+      "misconception": "I found a right triangle with legs 5 and 12 but forgot to halve."
+    },
+    {
+      "key": "B",
+      "text": "120",
+      "correct": false,
+      "misconception": "I used diameters, so my triangle had sides 10, 24 and 26."
+    },
+    {
+      "key": "C",
+      "text": "32.5",
+      "correct": false,
+      "misconception": "I used the sides 5 and 13 as the base and height."
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "78",
+      "correct": false,
+      "misconception": "I used the sides 12 and 13 as the base and height."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-07",
+    "secondary": [
+      "GEO-06",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "When two circles touch, how far apart are their centres?",
+    "For circles touching from outside, the line between centres passes through the point of contact, so its length is the sum of the radii. Find all three side lengths, then look for something special about them.",
+    "The sides are 2 + 3 = 5, 3 + 10 = 13 and 2 + 10 = 12. Is 5, 12, 13 a right triangle?"
+  ],
+  "solutions": {
+    "reliable": "Touching circles have centres a distance apart equal to the sum of their radii, so the sides are 2 + 3 = 5, 2 + 10 = 12 and 3 + 10 = 13. Since 5 x 5 + 12 x 12 = 25 + 144 = 169 = 13 x 13, the triangle has a right angle between the sides 5 and 12. Its area is 5 x 12 / 2 = 30. The transferable idea: touching circles turn into a triangle of radius sums, and Pythagorean triples are worth spotting.",
+    "elegant": "Without spotting the right angle, Heron's formula with half-perimeter 15 gives the square root of 15 x 10 x 3 x 2 = 900, which is 30 again."
+  },
+  "whyOnTest": "This probes the fact that touching circles have centres one radius sum apart, then rewards recognising a right triangle hidden in the numbers.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

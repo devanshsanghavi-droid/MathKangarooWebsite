@@ -1,0 +1,68 @@
+{
+  "id": "KA-0858",
+  "band": "9-10",
+  "points": 4,
+  "statement": "In the subtraction ABC - CBA = 297, the letters stand for three different digits, none of them zero, and ABC and CBA are three-digit numbers. How many different numbers ABC make the subtraction true?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I found the possible pairs of A and C but forgot that the middle digit B can also vary."
+    },
+    {
+      "key": "B",
+      "text": "42",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "48",
+      "correct": false,
+      "misconception": "I let the middle digit B be 0 as well, missing that no digit may be zero."
+    },
+    {
+      "key": "D",
+      "text": "54",
+      "correct": false,
+      "misconception": "I let B be any non-zero digit, forgetting it must differ from A and C."
+    },
+    {
+      "key": "E",
+      "text": "84",
+      "correct": false,
+      "misconception": "I also counted numbers where C is 3 more than A, which make the difference negative."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "CNT-03",
+      "NUM-04"
+    ]
+  },
+  "hints": [
+    "Write ABC and CBA using place value.",
+    "Expand both numbers as 100 times one digit plus 10 times another plus the last. The middle digits cancel, which leaves a condition on A and C only. Then count the choices for B separately.",
+    "ABC - CBA = 99(A - C) = 297, so A - C = 3. List the pairs (A, C), then count the digits still allowed for B."
+  ],
+  "solutions": {
+    "reliable": "ABC - CBA = (100A + 10B + C) - (100C + 10B + A) = 99(A - C). So 99(A - C) = 297 and A - C = 3. With C at least 1 and A at most 9 the pairs are (4,1), (5,2), (6,3), (7,4), (8,5), (9,6): 6 pairs. B must be a non-zero digit different from A and C, so it has 9 - 2 = 7 choices. That gives 6 times 7 = 42 numbers. The transferable idea: in digit puzzles, place value often cancels a letter and splits the count into independent choices.",
+    "elegant": null
+  },
+  "whyOnTest": "Cryptarithms reward writing numbers in place value, after which the counting is a clean product, with traps for each forgotten condition.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

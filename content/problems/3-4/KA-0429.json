@@ -1,0 +1,67 @@
+{
+  "id": "KA-0429",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Zoe writes 1 2 3 4 5 6 7 8 9 10 in a row and puts + or - in each of the 9 gaps. Which of these could her answer be?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought the plus and minus signs could be chosen to cancel out exactly."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I only checked that 10 is less than the biggest possible answer, 55."
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": false,
+      "misconception": "I thought any multiple of 10 must be possible, since the numbers go up to 10."
+    },
+    {
+      "key": "D",
+      "text": "31",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "54",
+      "correct": false,
+      "misconception": "I thought changing one plus sign into a minus would make 55 one smaller, but it takes away twice the number after it."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "Is 1 + 2 + 3 + ... + 10 odd or even?",
+    "Parity: changing a + to a - in front of a number takes away twice that number, which is always even. So every answer is odd, or every answer is even, just like the all-plus total.",
+    "1 + 2 + ... + 10 = 55, which is odd. Only one choice is odd; check that it can really be made."
+  ],
+  "solutions": {
+    "reliable": "With all plus signs the total is 1 + 2 + ... + 10 = 55. Turning a +n into a -n takes away 2n, an even number, so every answer Zoe can get is 55 minus an even number, which is always odd. That rules out 0, 10, 20 and 54. 31 is odd, and it really can be made: 55 - 31 = 24, so put minus signs in front of numbers adding to 12, for example 2 and 10: 1 - 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 - 10 = 31. The transferable idea: when every change you can make is even, the parity of the answer never changes.",
+    "elegant": "Adding or taking away a number changes oddness in the same way: +n and -n are both odd or both even. The numbers 1 to 10 include five odd numbers, an odd count, so the answer is always odd. Only 31 is odd."
+  },
+  "whyOnTest": "It looks like a search through hundreds of sign patterns, but parity settles it in one step, the hallmark of a Kangaroo 5-pointer.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

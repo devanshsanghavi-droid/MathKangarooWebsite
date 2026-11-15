@@ -1,0 +1,67 @@
+{
+  "id": "KA-0831",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Four bags P, Q, R and S all have different masses. They are compared on a two-pan balance three times. P and Q together balance R and S. P and S together are heavier than Q and R. P and R together are lighter than Q and S. Which bag is the heaviest?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "P",
+      "correct": false,
+      "misconception": "I saw P on the heavier pan in the second weighing and decided it must be the heaviest bag."
+    },
+    {
+      "key": "B",
+      "text": "Q",
+      "correct": false,
+      "misconception": "I saw Q on the heavier pan in the third weighing and decided it must be the heaviest bag."
+    },
+    {
+      "key": "C",
+      "text": "R",
+      "correct": false,
+      "misconception": "I worked out the order of the bags correctly but read it the wrong way round, and picked the lightest bag."
+    },
+    {
+      "key": "D",
+      "text": "S",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "It cannot be decided",
+      "correct": false,
+      "misconception": "I found that P and Q cannot be compared, and concluded that the heaviest bag cannot be found either."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-10",
+    "secondary": [
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Write each weighing as an equation or an inequality using the letters for the masses.",
+    "Combine two weighings at a time. Adding or subtracting the balanced weighing to one of the uneven ones cancels two of the bags and compares the other two directly.",
+    "From P + Q = R + S and P + S > Q + R you get P > R and S > Q. Now do the same with the third weighing."
+  ],
+  "solutions": {
+    "reliable": "Use the letters for the masses. The weighings say P + Q = R + S, P + S > Q + R and Q + S > P + R. Adding the first two gives 2P + Q + S > Q + 2R + S, so P > R. Subtracting the first from the second gives S - Q > Q - S, so S > Q. Adding the first and third gives 2Q + P + S > P + 2R + S, so Q > R. Subtracting the first from the third gives S - P > P - S, so S > P. So S is heavier than P and Q, and both of those are heavier than R. S is the heaviest bag and R the lightest. For example, masses P = 2, Q = 3, R = 1 and S = 4 fit all three weighings. The transferable idea: combine balance results like equations, adding and subtracting them to cancel bags and compare the rest.",
+    "elegant": "Think of starting from the balanced pans P + Q and R + S. Swapping Q and S between the pans makes the side holding S heavier, so S is heavier than Q. Swapping P and S also makes the side holding S heavier, so S is heavier than P. And S is heavier than R, since P + Q = R + S with S heavier than both P and Q forces R to be the lightest."
+  },
+  "whyOnTest": "Balance puzzles reward treating each weighing as an equation, and the traps are judging a bag by which pan it sat on rather than by combining the weighings.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

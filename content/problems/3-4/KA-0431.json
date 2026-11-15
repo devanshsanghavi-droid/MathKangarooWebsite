@@ -1,0 +1,67 @@
+{
+  "id": "KA-0431",
+  "band": "3-4",
+  "points": 3,
+  "statement": "On grid paper, (2, 1) means 2 squares across and 1 up from the corner. A rectangle has corners (1, 2), (6, 2), (6, 5) and (1, 5). How many small squares are inside it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I added the width and the height, 5 + 3, instead of multiplying them."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I took 2 away from 6 for the width, mixing up the across number of one corner with the up number of another, so I got 4 by 3."
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted the grid lines, 6 across and 4 up, instead of the gaps between them."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": false,
+      "misconception": "I multiplied the largest numbers, 6 and 5, instead of the lengths of the sides."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-02",
+    "secondary": [
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "How wide is the rectangle, and how tall?",
+    "The width is the difference between the across numbers of two corners on the same side, and the height is the difference between the up numbers. The rectangle holds width x height small squares.",
+    "Across, the corners go from 1 to 6, so the rectangle is 6 - 1 = 5 squares wide. Up, they go from 2 to 5."
+  ],
+  "solutions": {
+    "reliable": "The corners (1, 2) and (6, 2) are on the bottom side, so the rectangle is 6 - 1 = 5 squares wide. The corners (6, 2) and (6, 5) are on the right side, so it is 5 - 2 = 3 squares tall. It holds 3 rows of 5 small squares, which is 3 x 5 = 15. The transferable idea: a length on a grid is the difference of two positions, not a position itself.",
+    "elegant": null
+  },
+  "whyOnTest": "Grid positions test whether you turn two positions into a length by subtracting, rather than using the position numbers as lengths.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

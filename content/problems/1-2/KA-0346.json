@@ -1,0 +1,67 @@
+{
+  "id": "KA-0346",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Apples cost 3 cents each. Pia has 20 cents. What is the largest number of apples she can buy?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": false,
+      "misconception": "I rounded up, but 7 apples cost 21 cents, which is more than Pia has."
+    },
+    {
+      "key": "C",
+      "text": "17",
+      "correct": false,
+      "misconception": "I took 3 away from 20 only once instead of seeing how many 3s fit into 20."
+    },
+    {
+      "key": "D",
+      "text": "23",
+      "correct": false,
+      "misconception": "I added the 3 cents and the 20 cents together."
+    },
+    {
+      "key": "E",
+      "text": "60",
+      "correct": false,
+      "misconception": "I multiplied 3 by 20 instead of seeing how many 3s fit into 20."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-06",
+    "secondary": [
+      "MOD-10"
+    ]
+  },
+  "hints": [
+    "Count up in 3s and stop before you pass 20.",
+    "Each apple adds 3 cents to the cost. Count the cost in steps of 3 until the next step would cost more than Pia has. Money left over cannot buy a whole apple.",
+    "3, 6, 9, 12, 15, 18 cents buys 6 apples. A seventh apple would make the cost 21 cents."
+  ],
+  "solutions": {
+    "reliable": "Count the cost in 3s: 3, 6, 9, 12, 15, 18. Six apples cost 18 cents and leave 2 cents, which is not enough for another apple. Seven apples would cost 21 cents, more than 20. So Pia can buy 6 apples. The idea to keep: when money runs short, the leftover does not buy one more.",
+    "elegant": null
+  },
+  "whyOnTest": "Buying as many as you can afford checks whether a child stops at the right step instead of rounding up.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

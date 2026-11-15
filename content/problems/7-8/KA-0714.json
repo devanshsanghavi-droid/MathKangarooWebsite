@@ -1,0 +1,67 @@
+{
+  "id": "KA-0714",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A square frame has inside edges of length 20 cm. A coin of radius 3 cm rolls all the way around the inside of the frame, always touching it, until it is back where it started. How long is the path traced by the centre of the coin?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "80 cm",
+      "correct": false,
+      "misconception": "I used the side of the frame, as if the centre of the coin ran right along the edge."
+    },
+    {
+      "key": "B",
+      "text": "68 cm",
+      "correct": false,
+      "misconception": "I moved each side of the path in by one radius in total, instead of by one radius at each end."
+    },
+    {
+      "key": "C",
+      "text": "56 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "56 + 6π cm",
+      "correct": false,
+      "misconception": "I added a quarter circle at each corner, which happens when a coin rolls around the outside of a square, not the inside."
+    },
+    {
+      "key": "E",
+      "text": "32 cm",
+      "correct": false,
+      "misconception": "I took a whole diameter off each end of every side instead of a radius."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-07",
+    "secondary": [
+      "GEO-17"
+    ]
+  },
+  "hints": [
+    "How far is the centre of the coin from a side it is touching?",
+    "Touching means the distance from the centre to the side equals the radius. So the centre always stays 3 cm away from the sides; find the shape the centre moves along, and check what happens at a corner.",
+    "The centre moves along a smaller square. Each of its sides is 20 - 3 - 3 cm long, and at a corner the centre simply changes direction."
+  ],
+  "solutions": {
+    "reliable": "While the coin touches a side, its centre is 3 cm from that side. So the centre moves along a square whose sides are 3 cm inside the frame on every side, which makes each side 20 - 3 - 3 = 14 cm long. At a corner the coin touches two sides at once, and the centre just turns through a right angle without any curve. The path is 4 x 14 = 56 cm. The transferable idea: a circle touching a line has its centre exactly one radius from the line, so track the centre instead of the rim.",
+    "elegant": null
+  },
+  "whyOnTest": "Touching circles are handled through their centres, and the trap is borrowing the curved corners that appear only when a coin rolls around the outside.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0929",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Cards numbered 1 to 30 lie face down. You draw cards without looking. What is the least number of cards you must draw to be certain of having at least one multiple of 3 and at least one multiple of 5?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted the luckiest case, where the first two cards are exactly what I need."
+    },
+    {
+      "key": "B",
+      "text": "17",
+      "correct": false,
+      "misconception": "I imagined avoiding both kinds at once, so I took the 16 cards that are multiples of neither and added one."
+    },
+    {
+      "key": "C",
+      "text": "21",
+      "correct": false,
+      "misconception": "I only guarded against missing a multiple of 3, taking the 20 other cards plus one."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I found the 24 cards that are not multiples of 5 but forgot to draw one more card after them."
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "CNT-17",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Think about the unluckiest possible order of draws.",
+    "The worst case avoids one of the two kinds for as long as possible. Work out which kind can be avoided for longer, since that delay decides the answer.",
+    "There are 6 multiples of 5, so 24 cards are not multiples of 5, and those 24 already include multiples of 3."
+  ],
+  "solutions": {
+    "reliable": "Worst case: you keep missing one of the two kinds. You can avoid multiples of 3 for 20 draws, but you can avoid multiples of 5 for 24 draws, since only 6 of the 30 cards are multiples of 5. So 24 draws might give no multiple of 5, though they certainly include multiples of 3 such as 3 and 6. The 25th card must be a multiple of 5, and then both conditions hold. The transferable idea: in a worst-case count, find the requirement that can be dodged the longest; that one sets the answer.",
+    "elegant": null
+  },
+  "whyOnTest": "Guarantee questions with two conditions test whether you find the condition the worst case can dodge longest, rather than adding or merging the cases.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

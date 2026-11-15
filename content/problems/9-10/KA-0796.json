@@ -1,0 +1,68 @@
+{
+  "id": "KA-0796",
+  "band": "9-10",
+  "points": 3,
+  "statement": "What is the smallest positive whole number that has exactly 6 positive divisors?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought 6 has six divisors, but its divisors are only 1, 2, 3 and 6."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "18",
+      "correct": false,
+      "misconception": "I tried numbers of the form a prime times another prime squared, but started with 2 times 3 squared instead of 3 times 2 squared."
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": false,
+      "misconception": "I thought a product of three different primes has six divisors, but 2 times 3 times 5 actually has eight."
+    },
+    {
+      "key": "E",
+      "text": "32",
+      "correct": false,
+      "misconception": "I used a prime to the fifth power, which does have six divisors, but never checked the smaller form."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-05",
+    "secondary": [
+      "CFT-04",
+      "NUM-04"
+    ]
+  },
+  "hints": [
+    "Start with small numbers and list their divisors.",
+    "Divisors come in pairs, so list them in pairs. Or use prime powers: a number with six divisors is either a prime to the fifth power or a prime times another prime squared.",
+    "Six divisors means three divisor pairs. Compare the smallest number of each form: 2 to the fifth, and 2 squared times 3."
+  ],
+  "solutions": {
+    "reliable": "List divisors in pairs. Numbers below 12 have at most four divisors: for example 8 has 1, 2, 4, 8 and 10 has 1, 2, 5, 10. Then 12 has 1 and 12, 2 and 6, 3 and 4: six divisors. So the answer is 12. The transferable idea: listing divisors in pairs is fast and complete, because each divisor up to the square root brings its partner with it.",
+    "elegant": "A number with exactly 6 divisors is p to the fifth or p squared times q. The smallest of the first kind is 32, the smallest of the second is 2 squared times 3, which is 12."
+  },
+  "whyOnTest": "Divisor-count questions reward listing in pairs, and the choices hold the numbers you reach by guessing the form instead of checking.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

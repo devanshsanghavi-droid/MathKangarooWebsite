@@ -1,0 +1,67 @@
+{
+  "id": "KA-0700",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A pen costs 3 euros more than a pencil. Four pencils and two pens cost 18 euros altogether. How much does one pen cost?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5 euros",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "2 euros",
+      "correct": false,
+      "misconception": "I found the price of a pencil and gave that as the answer instead of the price of a pen."
+    },
+    {
+      "key": "C",
+      "text": "3 euros",
+      "correct": false,
+      "misconception": "I shared the 18 euros equally among the six items, ignoring the difference in price."
+    },
+    {
+      "key": "D",
+      "text": "6 euros",
+      "correct": false,
+      "misconception": "I wrote 4p + 2p = 18 without the extra 3 euros, got 3 for the pencil and then added 3."
+    },
+    {
+      "key": "E",
+      "text": "5.50 euros",
+      "correct": false,
+      "misconception": "I wrote 4p + 2p + 3 = 18, adding the extra 3 euros once instead of once for each pen."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-01",
+    "secondary": [
+      "MOD-10"
+    ]
+  },
+  "hints": [
+    "Let the price of a pencil be p. What is the price of a pen?",
+    "Translate the sentence into one equation: write the cost of four pencils and the cost of two pens using the pencil's price, add them, and set the total equal to 18.",
+    "4p + 2(p + 3) = 18 simplifies to 6p + 6 = 18. Solve for p, then remember the question asks about the pen."
+  ],
+  "solutions": {
+    "reliable": "Let a pencil cost p euros, so a pen costs p + 3 euros. Then 4p + 2(p + 3) = 18, so 6p + 6 = 18 and p = 2. A pen costs 2 + 3 = 5 euros. Check: 4 x 2 + 2 x 5 = 18. The transferable idea: name one unknown, write every other quantity in terms of it, and reread the question before answering.",
+    "elegant": "Take away the extra 3 euros on each of the two pens: 18 - 6 = 12 euros would buy six items at the pencil price, so a pencil costs 2 euros and a pen costs 5."
+  },
+  "whyOnTest": "Writing a sentence as an equation is the skill, and the trap is forgetting that 'more than' applies to every pen bought.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

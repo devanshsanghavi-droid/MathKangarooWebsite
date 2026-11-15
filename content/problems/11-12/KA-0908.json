@@ -1,0 +1,68 @@
+{
+  "id": "KA-0908",
+  "band": "11-12",
+  "points": 3,
+  "statement": "What is the value of (2^10 + 2^10 + 2^10 + 2^10) divided by (4^5 + 4^5)?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1/2",
+      "correct": false,
+      "misconception": "I simplified correctly to 2 to the power 12 over 2 to the power 11, but divided the bottom by the top."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "64",
+      "correct": false,
+      "misconception": "I thought 4 to the power 5 equals 2 to the power 5, so I divided 4 x 1024 by 2 x 32."
+    },
+    {
+      "key": "D",
+      "text": "32768",
+      "correct": false,
+      "misconception": "I added the bases when adding the terms, turning the top into 8 to the power 10 and the bottom into 8 to the power 5, and divided to get 8 to the power 5."
+    },
+    {
+      "key": "E",
+      "text": "1048576",
+      "correct": false,
+      "misconception": "I added the exponents when adding equal powers, getting 2 to the power 40 over 4 to the power 10, which is 2 to the power 20."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "CFT-11",
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "Rewrite every term with the same base before doing anything.",
+    "Adding equal terms is the same as multiplying by how many there are, and 4 to a power is 2 to twice that power. Spot that the top and bottom are built from the same block before grinding.",
+    "4^5 = 2^10, so the fraction is four copies of 2^10 over two copies of 2^10."
+  ],
+  "solutions": {
+    "reliable": "4^5 = (2^2)^5 = 2^10. So the top is 4 x 2^10 and the bottom is 2 x 2^10, and the factor 2^10 cancels: 4 / 2 = 2. The transferable idea: rewrite everything in one base, then look for a common factor before computing anything.",
+    "elegant": "Every one of the six terms equals 1024, so the fraction is (4 x 1024) / (2 x 1024) = 4 / 2 = 2."
+  },
+  "whyOnTest": "Grinding out the powers wastes time and invites exponent-law slips; seeing that every term equals 1024 turns it into a one-step question.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

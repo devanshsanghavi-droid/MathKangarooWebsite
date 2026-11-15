@@ -1,0 +1,68 @@
+{
+  "id": "KA-0718",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A cube has 8 corners. A straight segment is drawn between every pair of corners. How many of these segments pass through the inside of the cube, rather than lying along an edge or across a face?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "28",
+      "correct": false,
+      "misconception": "I counted every pair of corners without removing the edges and the face diagonals."
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I removed the 12 edges from the 28 pairs but forgot to remove the face diagonals."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted the diagonals across the faces, two on each of the six faces, instead of the inside ones."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I gave each corner its one inside segment but did not notice that every segment had been counted from both ends."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-09",
+      "CNT-08"
+    ]
+  },
+  "hints": [
+    "From one corner, how many segments go to each kind of other corner?",
+    "Overcount, then correct: count segments corner by corner, sort them into edges, face diagonals and inside segments, and remember each segment has two ends. Or subtract the edges and face diagonals from all the pairs.",
+    "From each corner there are 3 edges, 3 face diagonals and 1 inside segment. Eight corners give 8 ends of inside segments."
+  ],
+  "solutions": {
+    "reliable": "There are 8 x 7 / 2 = 28 pairs of corners. Of these, 12 are edges and 12 are face diagonals (two on each of the six faces). The rest go through the inside: 28 - 12 - 12 = 4. The transferable idea: count everything and subtract what you do not want, or count from each end and halve.",
+    "elegant": "Each corner has exactly one opposite corner, and every inside segment joins a corner to its opposite. Counting from all 8 corners counts each segment twice, so there are 8 / 2 = 4."
+  },
+  "whyOnTest": "Counting from each end and halving, or counting all pairs and subtracting, are the two standard ways to correct an overcount.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

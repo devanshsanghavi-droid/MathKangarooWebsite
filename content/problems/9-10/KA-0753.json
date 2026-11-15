@@ -1,0 +1,67 @@
+{
+  "id": "KA-0753",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Eight students are to be split into four lab pairs. How many different ways are there to make the pairs?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "105",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "420",
+      "correct": false,
+      "misconception": "I divided the 2520 ordered choices by 6 instead of by 24, as if there were only three pairs to reorder."
+    },
+    {
+      "key": "C",
+      "text": "1680",
+      "correct": false,
+      "misconception": "I divided the orders of all eight students by the order of the four pairs, but forgot that the two students within each pair can swap."
+    },
+    {
+      "key": "D",
+      "text": "2520",
+      "correct": false,
+      "misconception": "I chose a pair, then another, then another, and forgot that the order in which I chose the four pairs does not matter."
+    },
+    {
+      "key": "E",
+      "text": "40320",
+      "correct": false,
+      "misconception": "I lined all eight students up and paired neighbours, forgetting that many lineups give the same set of pairs."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-06"
+    ]
+  },
+  "hints": [
+    "Count it the easy wrong way, then fix the overcount.",
+    "Pick pairs one after another, which is easy but counts each split several times. Ask how many different picking orders produce the same set of four pairs, and divide by that.",
+    "Picking pairs in order gives 28 x 15 x 6 x 1 = 2520. The same four pairs can be picked in 4 x 3 x 2 x 1 orders."
+  ],
+  "solutions": {
+    "reliable": "Choose a first pair in 28 ways, a second from the remaining six in 15, a third in 6 and the last in 1: 2520 ordered choices. Each split into pairs is counted once for every order of its four pairs, that is 24 times. So there are 2520 / 24 = 105 splits. The transferable idea: count an easy ordered version, find exactly how many times each real object was counted, and divide.",
+    "elegant": "Student 1 has 7 possible partners, then the lowest-numbered student left has 5, then 3, then 1: 7 x 5 x 3 x 1 = 105."
+  },
+  "whyOnTest": "Overcount-and-divide is the 5-point idea here, and each distractor is a stage where the overcount was only partly corrected.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

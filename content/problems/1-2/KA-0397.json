@@ -1,0 +1,67 @@
+{
+  "id": "KA-0397",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Four square tiles, each with sides of 1 cm, are put together edge to edge to make one shape. What is the smallest possible distance all the way round the shape?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4 cm",
+      "correct": false,
+      "misconception": "I counted the tiles instead of the edges around the outside."
+    },
+    {
+      "key": "B",
+      "text": "10 cm",
+      "correct": false,
+      "misconception": "I put the tiles in a row, but that is not the shape with the shortest way round."
+    },
+    {
+      "key": "C",
+      "text": "8 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "12 cm",
+      "correct": false,
+      "misconception": "I made a big square and took away each shared side once, but a shared side hides two edges."
+    },
+    {
+      "key": "E",
+      "text": "16 cm",
+      "correct": false,
+      "misconception": "I added up all the sides of all four tiles, including the sides that touch."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Try a few shapes and count the outside edges of each.",
+    "Every time two tiles share a side, two edges are hidden from the outside. The shortest way round comes from the shape where the most sides are shared.",
+    "A row of four tiles shares 3 sides. A 2 by 2 square shares 4 sides."
+  ],
+  "solutions": {
+    "reliable": "The four tiles have 16 edges in all. Each shared side hides 2 edges. A row shares 3 sides, so it measures 16 - 6 = 10 cm round. A 2 by 2 square shares 4 sides, so it measures 16 - 8 = 8 cm round, and no shape of four tiles shares more than 4 sides. The smallest is 8 cm. The idea to keep: the more the tiles touch, the shorter the way round, so a square shape is best.",
+    "elegant": "Draw the 2 by 2 square: each side is 2 cm, so the way round is 2 + 2 + 2 + 2 = 8 cm. Every other shape of four tiles, like a row or an L, measures 10 cm."
+  },
+  "whyOnTest": "Same tiles, different shapes, different perimeters: this checks that you compare outside edges, not the number of tiles.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

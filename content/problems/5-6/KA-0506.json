@@ -1,0 +1,68 @@
+{
+  "id": "KA-0506",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Four bus stops lie on a straight street in the order P, Q, R, S. From P to R is 700 m, from Q to S is 900 m, and from P to S is 1200 m. How far is it from Q to R?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "200 m",
+      "correct": false,
+      "misconception": "I subtracted the two shorter distances, 900 minus 700, without drawing where they sit on the street."
+    },
+    {
+      "key": "B",
+      "text": "300 m",
+      "correct": false,
+      "misconception": "I worked out 1200 minus 900, which is the distance from P to Q, not from Q to R."
+    },
+    {
+      "key": "C",
+      "text": "400 m",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "500 m",
+      "correct": false,
+      "misconception": "I worked out 1200 minus 700, which is the distance from R to S, not from Q to R."
+    },
+    {
+      "key": "E",
+      "text": "1600 m",
+      "correct": false,
+      "misconception": "I added 700 and 900 and did not notice that the stretch from Q to R is counted inside both of them."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "NUM-13",
+      "MOD-10"
+    ]
+  },
+  "hints": [
+    "Draw the street as a line and mark the four stops.",
+    "Write each given distance above your line as an arc. Look for a piece of street that is covered twice, or a piece you can find by taking a part away from the whole street.",
+    "P to S is 1200 m and Q to S is 900 m, so P to Q is 300 m. Now use P to R."
+  ],
+  "solutions": {
+    "reliable": "Draw P, Q, R, S on a line. P to S is 1200 m and Q to S is 900 m, so P to Q is 1200 - 900 = 300 m. Then Q to R is P to R minus P to Q: 700 - 300 = 400 m. The transferable idea: a quick sketch with the numbers written on it turns a memory puzzle into reading off a picture.",
+    "elegant": "P to R and Q to S together cover the whole street once and the middle piece Q to R twice, so 700 + 900 = 1200 + QR, which gives QR = 400 m."
+  },
+  "whyOnTest": "Drawing the diagram is the skill here: overlapping distances given in words are hard to hold in your head, and a sketch shows the overlap at once.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

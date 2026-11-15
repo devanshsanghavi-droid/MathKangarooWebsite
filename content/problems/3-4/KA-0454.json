@@ -1,0 +1,67 @@
+{
+  "id": "KA-0454",
+  "band": "3-4",
+  "points": 3,
+  "statement": "A list of numbers starts 4, 10, 16, 22, and each number is 6 more than the one before. What is the 10th number in the list?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "52",
+      "correct": false,
+      "misconception": "I added 6 only eight times, one step too few."
+    },
+    {
+      "key": "B",
+      "text": "54",
+      "correct": false,
+      "misconception": "I multiplied 9 by 6 and forgot to add the starting 4."
+    },
+    {
+      "key": "C",
+      "text": "60",
+      "correct": false,
+      "misconception": "I multiplied 10 by 6 and forgot the list starts at 4."
+    },
+    {
+      "key": "D",
+      "text": "64",
+      "correct": false,
+      "misconception": "I added 6 ten times to the 4, but the 4 is already the first number."
+    },
+    {
+      "key": "E",
+      "text": "58",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-02",
+    "secondary": [
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "How many steps of 6 are there from the 1st number to the 10th?",
+    "Each number is the first number plus some steps of 6. Count how many steps you take to reach the 2nd and the 3rd number, find the rule, and use it for the 10th.",
+    "The 2nd number is 4 plus one 6, the 3rd is 4 plus two 6s, so the 10th is 4 plus nine 6s."
+  ],
+  "solutions": {
+    "reliable": "The 1st number is 4, the 2nd is 4 + 6, the 3rd is 4 + 2 x 6, so the 10th is 4 + 9 x 6 = 4 + 54 = 58. The transferable idea: the nth number in a list that goes up by the same step is the first number plus one fewer than n steps.",
+    "elegant": null
+  },
+  "whyOnTest": "Arithmetic sequences test the one-fewer step count, and the distractors are each slip around it.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

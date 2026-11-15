@@ -1,0 +1,67 @@
+{
+  "id": "KA-0482",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Coins come in 1, 2, 5, 10, 20 and 50 cents. What is the smallest number of coins that make exactly 87 cents?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I only counted the coins worth 10 cents or more and forgot the 7 cents."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I made 87 as 50 + 20 + 10 + 7, forgetting there is no 7-cent coin."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I made the 7 cents from a 5-cent coin and two 1-cent coins instead of a 5 and a 2."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I made the 7 cents from seven 1-cent coins."
+    },
+    {
+      "key": "E",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "MOD-06",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Start with the biggest coin that fits.",
+    "To use as few coins as possible, take the largest coin that does not go over the amount still to pay, and repeat until nothing is left. Check each coin you write really exists.",
+    "50 cents leaves 37, then 20 leaves 17, then 10 leaves 7."
+  ],
+  "solutions": {
+    "reliable": "Take the biggest coin each time: 50 (37 left), 20 (17 left), 10 (7 left), 5 (2 left), 2 (0 left). That is 5 coins. Fewer is impossible. The 10, 20 and 50 cent coins only make whole tens, so the 1, 2 and 5 cent coins must make 7, 17, 27 or more. Making 7 takes at least 2 small coins (5 + 2), and then the other 80 cents takes at least 3 coins, since no two coins add up to 80. Making 17 or more from small coins already takes at least 4 coins, and the rest needs at least 1 more. The transferable idea: for the fewest coins, pay with the largest coin that fits, again and again.",
+    "elegant": null
+  },
+  "whyOnTest": "Making an amount with the fewest coins, where the leftover few cents are where mistakes happen.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

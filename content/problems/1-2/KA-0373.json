@@ -1,0 +1,68 @@
+{
+  "id": "KA-0373",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Two paper strips are each 10 cm long. They are glued together so that they overlap by 3 cm, making one long strip. How long is the long strip?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "7 cm",
+      "correct": false,
+      "misconception": "I took the 3 cm overlap away from one strip and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "14 cm",
+      "correct": false,
+      "misconception": "I took the 3 cm overlap away from both strips, so I got 7 + 7."
+    },
+    {
+      "key": "C",
+      "text": "17 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "20 cm",
+      "correct": false,
+      "misconception": "I put the strips end to end and forgot that they overlap."
+    },
+    {
+      "key": "E",
+      "text": "23 cm",
+      "correct": false,
+      "misconception": "I added the 3 cm overlap on instead of taking it away."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "MOD-02",
+      "NUM-13"
+    ]
+  },
+  "hints": [
+    "Draw the two strips, one a little on top of the other.",
+    "The 3 cm where the strips overlap belongs to both strips, but it is only 3 cm of the long strip. How far does the second strip stick out past the end of the first?",
+    "The first strip gives 10 cm. The second strip sticks out past it by 10 - 3 = 7 cm."
+  ],
+  "solutions": {
+    "reliable": "Draw the first strip, 10 cm long. The second strip starts 3 cm before the end of the first, so only 10 - 3 = 7 cm of it sticks out past the first strip. The long strip is 10 + 7 = 17 cm. The idea to keep: a quick drawing shows that an overlap is counted once, not twice.",
+    "elegant": "End to end the strips would make 10 + 10 = 20 cm. The overlap hides 3 cm of that, so the long strip is 20 - 3 = 17 cm. The idea to keep: count everything, then take away the part that is counted twice."
+  },
+  "whyOnTest": "Drawing the diagram makes the overlap visible, and each wrong choice comes from taking the overlap away the wrong number of times.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

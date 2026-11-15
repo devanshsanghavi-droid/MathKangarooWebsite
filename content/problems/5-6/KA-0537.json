@@ -1,0 +1,67 @@
+{
+  "id": "KA-0537",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Using each of the digits 0, 3, 5 and 8 exactly once, Ivo writes the largest four-digit number and the smallest four-digit number he can. What is their difference?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5472",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "5528",
+      "correct": false,
+      "misconception": "I subtracted column by column, always taking the smaller digit from the larger one, instead of borrowing."
+    },
+    {
+      "key": "C",
+      "text": "5572",
+      "correct": false,
+      "misconception": "I borrowed from the hundreds column but forgot to make its digit one smaller."
+    },
+    {
+      "key": "D",
+      "text": "8172",
+      "correct": false,
+      "misconception": "I put the 0 at the front of the smallest number, making 0358, which is not a four-digit number."
+    },
+    {
+      "key": "E",
+      "text": "11588",
+      "correct": false,
+      "misconception": "I added the two numbers instead of finding their difference."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-01",
+    "secondary": [
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Can a four-digit number start with 0?",
+    "For the largest number, put the digits from biggest to smallest. For the smallest, the smallest digit should go first, but a four-digit number cannot start with 0, so think about where the 0 goes.",
+    "The numbers are 8530 and 3058. Subtract carefully, borrowing where needed."
+  ],
+  "solutions": {
+    "reliable": "Largest: digits in decreasing order, 8530. Smallest: the first digit cannot be 0, so it is the smallest non-zero digit, 3, followed by the others in increasing order: 3058. Difference: 8530 - 3058 = 5472. Check by adding: 3058 + 5472 = 8530. The transferable idea: in place-value questions the leading digit carries the most weight and can never be 0.",
+    "elegant": null
+  },
+  "whyOnTest": "Building the largest and smallest numbers tests place value, and the zero-in-front trap catches students who rush.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

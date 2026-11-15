@@ -1,0 +1,68 @@
+{
+  "id": "KA-0556",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A bakery sells rolls at 3 euros each, in bags of 4 for 10 euros, or in boxes of 10 for 22 euros. Sam needs at least 17 rolls. What is the least amount he can pay?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "37.40 euros",
+      "correct": false,
+      "misconception": "I worked out the box price per roll, 2.20 euros, and multiplied by 17, as if the shop sold any number at that price."
+    },
+    {
+      "key": "B",
+      "text": "41 euros",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "42 euros",
+      "correct": false,
+      "misconception": "I bought a box and two bags to get 18 rolls without checking whether 3 single rolls would be cheaper than the second bag."
+    },
+    {
+      "key": "D",
+      "text": "43 euros",
+      "correct": false,
+      "misconception": "I bought four bags and one single roll and never tried using a box."
+    },
+    {
+      "key": "E",
+      "text": "51 euros",
+      "correct": false,
+      "misconception": "I bought all 17 rolls one at a time at 3 euros each."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-10",
+    "secondary": [
+      "MOD-06",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Start with the cheapest way to buy most of the rolls.",
+    "A box is the cheapest price per roll, then a bag, then single rolls. Take one box and work out the cheapest way to get the remaining rolls, then compare with plans that use no box or two boxes.",
+    "One box gives 10 rolls for 22 euros. For the other 7: a bag and 3 singles cost 10 + 9 = 19 euros, while two bags cost 20 euros and seven singles cost 21 euros."
+  ],
+  "solutions": {
+    "reliable": "Compare the plans in steps. Per roll, a box costs 2.20 euros, a bag 2.50 euros and a single 3 euros, so buy a box first: 10 rolls for 22 euros. Sam still needs 7 rolls. Two bags (8 rolls) cost 20 euros, one bag and 3 singles cost 10 + 9 = 19 euros, and 7 singles cost 21 euros, so the best is 19 euros, a total of 22 + 19 = 41 euros. Other plans are dearer: two boxes cost 44 euros, and without a box the best is four bags and a single for 43 euros. The least he can pay is 41 euros. The transferable idea: in a multi-step money problem, settle the big cheap block first, then compare every option for the leftover rather than assuming the next bulk deal is best.",
+    "elegant": null
+  },
+  "whyOnTest": "Multi-step shopping problems test whether you compare every option for the leftover instead of grabbing the next bulk deal.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

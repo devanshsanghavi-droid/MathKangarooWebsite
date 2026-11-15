@@ -1,0 +1,68 @@
+{
+  "id": "KA-0945",
+  "band": "11-12",
+  "points": 5,
+  "statement": "What is the largest number of different whole numbers that can be chosen from 1 to 20 so that no chosen number is exactly twice another chosen number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I chose 11 to 20 and assumed nothing smaller could be added."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I took the ten odd numbers and then added only 4 and 16, missing 12 and 20."
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": false,
+      "misconception": "I chose 11 to 20 and then added 3, 4 and 5, but missed that 1 can be added too."
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": false,
+      "misconception": "I removed only one number from each chain like 1, 2, 4, 8, 16, but the longest chain needs two removed."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "CNT-18",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Group the numbers into doubling chains like 3, 6, 12.",
+    "Every number is an odd number times a power of 2, so the numbers split into chains where each is double the one before. Choices in different chains never clash, so maximise inside each chain separately.",
+    "The chains are 1-2-4-8-16, 3-6-12, 5-10-20, 7-14, 9-18 and the single numbers 11, 13, 15, 17, 19. In a chain you can take every other number."
+  ],
+  "solutions": {
+    "reliable": "Write each number as an odd number times a power of 2. The chains are 1, 2, 4, 8, 16 (take 1, 4, 16: three), 3, 6, 12 (two), 5, 10, 20 (two), 7, 14 (one), 9, 18 (one), and 11, 13, 15, 17, 19 (one each, five). Numbers in different chains are never double each other, so the maximum is 3 + 2 + 2 + 1 + 1 + 5 = 14. The transferable idea: split the set into independent pieces, find the best in each, and add.",
+    "elegant": "Take 11 to 20, which works, then add every number from 1 to 10 whose double is 10 or less and whose half is not chosen: 1, 3, 4 and 5. That gives 14, and the chains show nothing better exists."
+  },
+  "whyOnTest": "Extremal selection problems test whether you find the structure, here doubling chains, that makes the maximum provable rather than guessed.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

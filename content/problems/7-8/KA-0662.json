@@ -1,0 +1,68 @@
+{
+  "id": "KA-0662",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Four villages A, B, C and D lie along one straight road. B is 5 km from A, C is 3 km from B, D is 7 km from C, and D is 9 km from A. How far is C from A, in km?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I put the villages in the order A, B, C and added 5 + 3, without checking that D can then be 9 km from A."
+    },
+    {
+      "key": "C",
+      "text": "16",
+      "correct": false,
+      "misconception": "I put C 7 km beyond D, so 9 + 7, and did not check whether B could then be 5 km from A and 3 km from C."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found the right order but gave the distance from B to C instead of from A to C."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be decided",
+      "correct": false,
+      "misconception": "I found the two places 7 km from D, at 2 km and at 16 km from A, and did not use the clues about B to rule one of them out."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-04",
+    "secondary": [
+      "CFT-02",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Draw the road as a line and put A at 0.",
+    "Place the villages using the clues one at a time. Fix A and D first, since their distance is given, then find the possible places for C, and test each against the clues about B.",
+    "With A at 0 and D at 9, C is at 2 or at 16. Only one of these is 3 km from a point 5 km from A."
+  ],
+  "solutions": {
+    "reliable": "Put A at 0 on the road and D at 9. C is 7 km from D, so C is at 2 or at 16. B is 5 km from A, so B is at 5 or at negative 5. B must also be 3 km from C: the point 5 is 3 km from 2, while neither 5 nor negative 5 is 3 km from 16. So C is at 2, and the order along the road is A, C, B, D. C is 2 km from A. The transferable idea: place the most definite clues first, list the few possible positions, and test each one against every remaining clue.",
+    "elegant": null
+  },
+  "whyOnTest": "Ordering from clues rewards drawing the line and testing every case, and the wrong choices come from assuming the order the letters are listed in.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

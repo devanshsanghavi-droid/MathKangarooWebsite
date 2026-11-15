@@ -1,0 +1,67 @@
+{
+  "id": "KA-0675",
+  "band": "7-8",
+  "points": 3,
+  "statement": "At one point of a floor, a square and two copies of the same regular polygon fit together exactly, with no gaps and no overlaps. How many sides does that polygon have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found the outside angle of 45 degrees correctly but divided 180 by 45 instead of 360 by 45."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought the three tiles must share the 360 degrees equally, 120 each, and chose the hexagon, whose angles are 120 degrees."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "45",
+      "correct": false,
+      "misconception": "I worked out the outside angle of the polygon, 45 degrees, and gave that instead of its number of sides."
+    },
+    {
+      "key": "E",
+      "text": "135",
+      "correct": false,
+      "misconception": "I found the angle each polygon must fill at the point and gave that angle instead of the number of sides."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-14",
+    "secondary": [
+      "GEO-05"
+    ]
+  },
+  "hints": [
+    "The angles meeting at the point must add up to 360 degrees.",
+    "Take the square's angle away from 360 and share what is left equally between the two matching polygons. Then turn that angle into a number of sides through the outside angle.",
+    "360 - 90 = 270, so each polygon has angles of 270 / 2 = 135 degrees, and outside angles of 180 - 135 = 45 degrees."
+  ],
+  "solutions": {
+    "reliable": "The square fills 90 degrees, leaving 360 - 90 = 270 degrees for the two matching polygons, so each has angles of 135 degrees. The outside angle is then 180 - 135 = 45 degrees, and the outside angles of any polygon add up to 360, so it has 360 / 45 = 8 sides. The transferable idea: to find a regular polygon from its angle, go through the outside angle, which must divide 360 exactly.",
+    "elegant": null
+  },
+  "whyOnTest": "Tiling questions check that the angles around a point total 360 and that a regular polygon is found fastest from its outside angle.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

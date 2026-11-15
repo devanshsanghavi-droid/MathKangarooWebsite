@@ -1,0 +1,68 @@
+{
+  "id": "KA-0653",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A stick 12 cm long is cut into three pieces, each a whole number of centimetres long. The three pieces are then used as the sides of a triangle. How many different triangles can be made this way? Triangles with the same three side lengths count as the same.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted every way to cut the stick into three whole-number pieces and did not check which ones can make a triangle."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I also accepted pieces where the two shorter ones add up exactly to the longest, like 3, 3 and 6, but those lie flat and make no triangle."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted the same three lengths in a different order as a different triangle."
+    },
+    {
+      "key": "E",
+      "text": "2",
+      "correct": false,
+      "misconception": "I forgot that all three pieces can be the same length, 4, 4 and 4."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-06",
+    "secondary": [
+      "CNT-01",
+      "CNT-11"
+    ]
+  },
+  "hints": [
+    "Can any three lengths make a triangle?",
+    "Use the triangle inequality: the two shorter sides together must be longer than the longest side. With a total of 12, that means the longest side must be less than half of 12.",
+    "The longest piece must be shorter than 6 cm, so it is 4 or 5 cm. List the other two pieces for each case."
+  ],
+  "solutions": {
+    "reliable": "For a triangle, the two shorter sides must add up to more than the longest. Since all three add up to 12, the longest side must be less than 6 cm, and it must be at least 4 cm because three pieces of at most 3 cm reach only 9. With longest side 4 the only choice is 4, 4, 4. With longest side 5 the other two add to 7 and neither is more than 5, giving 5, 5, 2 and 5, 4, 3. That makes 3 triangles. The transferable idea: turn the triangle inequality into a bound on the longest side, then list systematically from there.",
+    "elegant": null
+  },
+  "whyOnTest": "This checks that you test the triangle inequality strictly, since pieces whose short sides exactly reach the long side cannot form a triangle.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

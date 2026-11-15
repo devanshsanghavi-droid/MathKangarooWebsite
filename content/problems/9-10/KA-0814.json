@@ -1,0 +1,67 @@
+{
+  "id": "KA-0814",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Two sides of a triangle are 4 cm and 9 cm long. The third side is a whole number of centimetres. How many different lengths are possible for the third side?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I thought the third side had to be the longest side, so I only counted 10, 11 and 12."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I took 13 - 5 = 8, counting the gap between the limits instead of the whole numbers strictly between them."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I included 5 and 13 as well, but those lengths make the triangle collapse flat."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I only checked that the third side was shorter than 4 + 9, so I counted every length from 1 to 12."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-06",
+    "secondary": [
+      "CNT-11"
+    ]
+  },
+  "hints": [
+    "Could the third side be 1 cm long? Could it be 20 cm?",
+    "Each side must be shorter than the other two added together. That gives an upper limit from the sum and a lower limit from the difference, and neither limit itself is allowed.",
+    "The third side must be more than 9 - 4 = 5 and less than 9 + 4 = 13."
+  ],
+  "solutions": {
+    "reliable": "The triangle inequality says the third side c must satisfy 9 - 4 < c < 9 + 4, that is 5 < c < 13. The whole numbers strictly between are 6, 7, 8, 9, 10, 11 and 12, which is 7 lengths. At exactly 5 or 13 the three points would lie on one straight line. The transferable idea: the third side of a triangle lies strictly between the difference and the sum of the other two.",
+    "elegant": "Fix the 9 cm side and let the 4 cm side swing on a hinge at one end. The gap it leaves grows smoothly from 5 cm, folded flat, to 13 cm, opened flat, and every length strictly in between makes a real triangle. So count the whole numbers from 6 to 12."
+  },
+  "whyOnTest": "The triangle inequality is a one-step check, and the choices punish the usual slips: counting the flat cases and checking only one end of the range.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

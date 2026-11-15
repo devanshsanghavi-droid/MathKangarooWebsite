@@ -1,0 +1,68 @@
+{
+  "id": "KA-0958",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A board has 4 rows and 7 columns of squares. One square is removed, and the remaining 27 squares are to be covered exactly by nine 1 by 3 tiles, each lying along a row or down a column. How many of the 28 squares could be the removed one?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I checked that removing a corner works and assumed that only the four corners could be removed."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I used one diagonal colouring with three colours and counted the 10 squares of the colour that appears most, without also using the colouring along the other diagonals."
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": false,
+      "misconception": "I used a chessboard colouring and thought the removed square must be black, but a 1 by 3 tile does not cover one square of each of two colours."
+    },
+    {
+      "key": "E",
+      "text": "28",
+      "correct": false,
+      "misconception": "I only checked that 27 is a multiple of 3, so I thought any square could be removed."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-07",
+    "secondary": [
+      "GEO-14",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Colour along diagonals with three colours, so every tile covers each colour once.",
+    "Give the square in row r, column c the colour (r + c) mod 3. Each tile covers every colour once, so the removed square has the colour with one extra square. Repeat with (r - c) mod 3.",
+    "Numbering rows 1 to 4 and columns 1 to 7, both colourings single out the squares in rows 1 and 4 and columns 1, 4 and 7. Check that each of these really works."
+  ],
+  "solutions": {
+    "reliable": "Colour the square in row r and column c with colour (r + c) mod 3. A 1 by 3 tile, across or down, always covers one square of each colour. The board has 10 squares of one colour (the colour of the top-left corner) and 9 of each of the others, so for the 27 remaining squares to split 9, 9, 9 the removed square must have that colour. The same argument with colour (r - c) mod 3 gives a second condition. With rows numbered 1 to 4 and columns 1 to 7, the squares passing both tests are those in rows 1 and 4 and columns 1, 4 and 7: six squares. Each of them works: if the removed square is in the top row, the rest of that row splits into pieces of length 3, and the 3 by 7 block below is filled by seven upright tiles; the bottom row is the same upside down. So the answer is 6. The transferable idea: colour so that every tile covers each colour equally; the missing square must then come from the colour in surplus, and two different colourings can be combined.",
+    "elegant": null
+  },
+  "whyOnTest": "Tiling questions with 1 by 3 tiles are settled by a three-colouring along diagonals, and using both diagonal directions is what cuts 10 candidates down to 6.",
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

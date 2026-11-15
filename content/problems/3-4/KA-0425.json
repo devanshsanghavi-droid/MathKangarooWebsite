@@ -1,0 +1,67 @@
+{
+  "id": "KA-0425",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Kim has three cards. She says: \"At least two of my cards are blue.\" Kim is right. Which of these must be true?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "At most one of her cards is not blue",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "Exactly two of her cards are blue",
+      "correct": false,
+      "misconception": "I read \"at least two\" as \"exactly two\", but all three cards could be blue."
+    },
+    {
+      "key": "C",
+      "text": "All three of her cards are blue",
+      "correct": false,
+      "misconception": "I thought \"at least\" means the most possible, but exactly two cards could be blue."
+    },
+    {
+      "key": "D",
+      "text": "At least one of her cards is not blue",
+      "correct": false,
+      "misconception": "I thought saying \"at least two\" means she does not have three, but all three cards could be blue."
+    },
+    {
+      "key": "E",
+      "text": "Two of her cards are blue and one is red",
+      "correct": false,
+      "misconception": "I filled in a colour for the third card, but nothing says it is red, or even that it is not blue."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-01",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "List every way Kim could be right.",
+    "Read the statement precisely: \"at least two\" allows two or three. A choice that must be true has to hold in both cases, so test each choice against both.",
+    "Kim could have exactly 2 blue cards or all 3 blue. In each case, how many of her cards are not blue?"
+  ],
+  "solutions": {
+    "reliable": "\"At least two blue\" means 2 blue or 3 blue. With 2 blue, one card is not blue; with 3 blue, none is. Either way, at most one card is not blue, so that must be true. The others can fail: if all three are blue, then \"exactly two\", \"at least one not blue\" and \"one is red\" are false, and if exactly two are blue, then \"all three\" is false. The transferable idea: \"at least\" includes everything above the number, so check every case it allows.",
+    "elegant": null
+  },
+  "whyOnTest": "Small logic words like \"at least\" and \"at most\" are tested precisely, and \"at least two\" is often misread as \"exactly two\".",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0436",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Tiles 2 squares long and 1 square wide are placed on a 5 by 5 board, each covering exactly two squares, with no overlaps. What is the largest number of tiles that fit?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I placed tiles only in a 4 by 4 corner, which holds 8, and thought the rest of the board was wasted."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I fitted two tiles across each row of five and left the last column empty, but tiles also fit down that column."
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": false,
+      "misconception": "I filled each row with two tiles and then fitted only one tile in the empty last column of five squares."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "13",
+      "correct": false,
+      "misconception": "I divided the 25 squares by 2 and rounded up, but a tile cannot hang off the board."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-14",
+    "secondary": [
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "Each tile covers two squares. How many squares does the board have?",
+    "Find a limit first: the tiles always cover an even number of squares, but the board has an odd number. Then try to build a layout that reaches that limit, leaving only one square empty.",
+    "25 squares means at most 12 tiles, with one square uncovered. Two tiles across each row fill four columns; the fifth column of 5 squares still takes 2 tiles standing up."
+  ],
+  "solutions": {
+    "reliable": "Each tile covers 2 squares and the board has 25, so at most 24 squares can be covered, which is 12 tiles, with one square left over. It can be done: put two tiles across each of the five rows, filling the first four columns with 10 tiles, then stand 2 tiles up in the last column, leaving one square empty. So the answer is 12. The transferable idea: find an upper limit by counting, then show a layout that reaches it.",
+    "elegant": null
+  },
+  "whyOnTest": "Tiling questions reward a two-part argument: count to find a limit, then build an example that meets it.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0474",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Mei has fewer than 50 shells. In rows of 2, 3 or 4 there is always 1 shell left over. In rows of 5 there are none left over. How many shells does she have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "13",
+      "correct": false,
+      "misconception": "I found the first number that leaves 1 over for rows of 2, 3 and 4, and forgot to check rows of 5."
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": false,
+      "misconception": "I looked for a number that fits rows of 4 and rows of 5 exactly and forgot the shell left over."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I found a number that 2, 3 and 4 all divide but forgot the 1 shell left over."
+    },
+    {
+      "key": "E",
+      "text": "49",
+      "correct": false,
+      "misconception": "I took the largest number under 50 that leaves 1 over for rows of 2, 3 and 4, without checking rows of 5."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-05",
+    "secondary": [
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "Take away the shell that is left over. What can you say about the rest?",
+    "If 1 is always left over, then one fewer shell would fit rows of 2, 3 and 4 exactly, so it is a common multiple. List those, add 1, and test rows of 5.",
+    "The common multiples of 2, 3 and 4 below 50 are 12, 24, 36 and 48."
+  ],
+  "solutions": {
+    "reliable": "One fewer than the number of shells is a multiple of 2, 3 and 4, which means a multiple of 12: 12, 24, 36 or 48. Adding 1 gives 13, 25, 37 or 49. Only 25 fits rows of 5 exactly. Mei has 25 shells. The transferable idea: always 1 left over means one fewer is a common multiple.",
+    "elegant": null
+  },
+  "whyOnTest": "Recognising a common multiple hidden behind a remainder is the idea this question tests.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

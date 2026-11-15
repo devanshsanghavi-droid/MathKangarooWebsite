@@ -1,0 +1,68 @@
+{
+  "id": "KA-0868",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Eight people sit around a round table. Each is either a knight, who always tells the truth, or a knave, who always lies. Every one of them says: 'Both of my neighbours are knaves.' What is the smallest possible number of knights at the table?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought a table of knaves works because liars can say anything, but then every statement would be true."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought one knight with knaves all round was enough, but a knave far from the knight would be telling the truth."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I placed a knight in every fourth seat, missing that the knave halfway between two knights has two knave neighbours."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": false,
+      "misconception": "I assumed knights and knaves must alternate around the table."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-09",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "What must be true about the neighbours of a knave?",
+    "A knight’s statement is true, so knights are never next to each other. A knave’s statement is false, so every knave sits next to a knight. Find the fewest knights meeting both conditions on 8 seats.",
+    "Each knight can 'cover' itself and its two neighbours, at most 3 seats. Covering 8 seats needs at least 3 knights."
+  ],
+  "solutions": {
+    "reliable": "A knight's neighbours are both knaves, so no two knights sit together. A knave is lying, so at least one neighbour of every knave is a knight. Each knight looks after at most 3 seats (itself and its two neighbours), so 2 knights cover at most 6 of the 8 seats and some knave would have two knave neighbours, making its statement true. With 3 knights in seats 1, 4 and 7 every condition holds: each knight has knave neighbours, and every knave sits beside a knight. So the smallest number is 3. The transferable idea: turn each statement into a condition on the seating, then find the extreme case and prove nothing smaller works.",
+    "elegant": null
+  },
+  "whyOnTest": "Knights and knaves puzzles reward converting statements into conditions; a minimum then needs both an example and a reason nothing smaller works.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

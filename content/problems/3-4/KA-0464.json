@@ -1,0 +1,67 @@
+{
+  "id": "KA-0464",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Kofi, Lena, Ravi and Yusuf each play a different instrument: drum, flute, piano or violin. Lena plays piano. Kofi plays neither flute nor drum. Ravi does not play drum. Who plays the drum?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "It cannot be decided",
+      "correct": false,
+      "misconception": "I used only the two clues that mention the drum, which leaves Lena and Yusuf, so I thought it could not be decided."
+    },
+    {
+      "key": "B",
+      "text": "Kofi",
+      "correct": false,
+      "misconception": "I read the clue about Kofi as saying he plays the flute or the drum, and picked the drum."
+    },
+    {
+      "key": "C",
+      "text": "Lena",
+      "correct": false,
+      "misconception": "I crossed out Kofi and Ravi but forgot that Lena already plays the piano."
+    },
+    {
+      "key": "D",
+      "text": "Ravi",
+      "correct": false,
+      "misconception": "I missed the word 'not' in the clue about Ravi."
+    },
+    {
+      "key": "E",
+      "text": "Yusuf",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-03",
+    "secondary": [
+      "LOG-01"
+    ]
+  },
+  "hints": [
+    "Start with the clue that tells you something for certain.",
+    "Use an elimination grid with a row for each child and a column for each instrument. Each tick crosses out the rest of its row and column.",
+    "Lena has the piano, so Kofi, who plays neither flute nor drum, must play the violin."
+  ],
+  "solutions": {
+    "reliable": "Lena plays piano. Kofi cannot play flute or drum, and the piano is taken, so Kofi plays violin. Ravi does not play drum, and piano and violin are taken, so Ravi plays flute. That leaves the drum for Yusuf. The transferable idea: settle the certain facts first, because each one removes options for everyone else.",
+    "elegant": null
+  },
+  "whyOnTest": "Elimination grids test whether every clue, including the plain fact about Lena, is used to cross out options.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

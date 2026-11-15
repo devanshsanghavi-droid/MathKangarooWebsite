@@ -1,0 +1,68 @@
+{
+  "id": "KA-0801",
+  "band": "9-10",
+  "points": 4,
+  "statement": "ABCDE is a regular pentagon. A square ABFG is drawn on side AB, outside the pentagon, so that G is next to A. What is the size of angle AEG?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "18°",
+      "correct": false,
+      "misconception": "I found angle EAG is 162° and that the other two angles of triangle AEG share 18°, but forgot to split the 18° between them."
+    },
+    {
+      "key": "B",
+      "text": "9°",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "36°",
+      "correct": false,
+      "misconception": "I used the pentagon's 108° angle at A as the top of triangle AEG and ignored the square's angle."
+    },
+    {
+      "key": "D",
+      "text": "81°",
+      "correct": false,
+      "misconception": "I found angle EAG is 162° and halved it, mixing up the top angle with the base angles."
+    },
+    {
+      "key": "E",
+      "text": "162°",
+      "correct": false,
+      "misconception": "I found angle EAG at the corner A and gave that, instead of the angle at E."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "GEO-06",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Draw it, and look at the angles meeting at A.",
+    "The angles around point A add up to 360°. Once you know the angle at A in triangle AEG, look at which sides of that triangle are equal.",
+    "Around A: 108° from the pentagon, 90° from the square, and the rest is angle EAG. Also AE = AB = AG."
+  ],
+  "solutions": {
+    "reliable": "Each angle of a regular pentagon is 108°, and the square's angle at A is 90°. The angles around A add to 360°, so angle EAG is 360° - 108° - 90° = 162°. The pentagon and the square share side AB, so AE = AB = AG and triangle AEG is isosceles. Its two base angles share 180° - 162° = 18°, so each is 9°. The transferable idea: when two regular shapes share a side, equal sides appear, and isosceles triangles turn one angle into all three.",
+    "elegant": null
+  },
+  "whyOnTest": "Angle chasing with two regular shapes tests two facts in a row: angles around a point and the equal sides they share.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

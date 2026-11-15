@@ -1,0 +1,68 @@
+{
+  "id": "KA-0869",
+  "band": "9-10",
+  "points": 5,
+  "statement": "You have a two-pan balance and four weights of 1 g, 3 g, 9 g and 27 g. Any weights may go on either pan, next to the object or opposite it. How many different whole-number masses, starting from 1 g, can be measured exactly in a single weighing?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "15",
+      "correct": false,
+      "misconception": "I put weights only on the pan opposite the object, so I counted only the sums of the weights."
+    },
+    {
+      "key": "B",
+      "text": "81",
+      "correct": false,
+      "misconception": "I counted every way of placing each weight on the left, on the right or off the balance."
+    },
+    {
+      "key": "C",
+      "text": "40",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "80",
+      "correct": false,
+      "misconception": "I counted every placement except all weights off, without noticing each mass is reached by two mirror-image placements."
+    },
+    {
+      "key": "E",
+      "text": "41",
+      "correct": false,
+      "misconception": "I counted zero as one of the masses, as if weighing nothing counted."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-10",
+    "secondary": [
+      "CNT-03",
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "A weight next to the object counts as a negative.",
+    "Each weight can be added, subtracted or left out, so the measured mass is a sum of plus or minus the weights. Find the largest mass possible and ask whether every whole number below it can be reached.",
+    "The largest mass is 1 + 3 + 9 + 27 = 40. Check that small cases such as 2 = 3 - 1 and 5 = 9 - 3 - 1 work."
+  ],
+  "solutions": {
+    "reliable": "A weight opposite the object adds its mass and one beside the object subtracts it, so the object's mass is a sum where each of 1, 3, 9, 27 appears with +, - or not at all. The largest is 40. Every value from 1 to 40 can be made: 1, 3 - 1, 3, 3 + 1, 9 - 3 - 1, and so on, since with 1 and 3 you reach every mass from 1 to 4, adding 9 extends this to every mass up to 13, and adding 27 extends it to 40. So 40 masses. The transferable idea: when each item can be used positively, negatively or not at all, powers of 3 cover every whole number up to their total.",
+    "elegant": "There are 3 to the power 4 = 81 placements. One gives 0, and the other 80 split into mirror pairs giving m and -m, so at most 40 positive masses, and since every value from 1 to 40 is reached, the answer is 40. The transferable idea: count placements, then divide out the symmetry."
+  },
+  "whyOnTest": "Balance puzzles test whether you allow weights on both pans, which turns a doubling count into a powers-of-three count.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

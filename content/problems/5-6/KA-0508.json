@@ -1,0 +1,68 @@
+{
+  "id": "KA-0508",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Sam tosses a coin and writes H for heads or T for tails each time. He stops as soon as he gets two heads in a row, or after his fourth toss, whichever comes first. For example, THH is one possible record. How many different records are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted only the records that end with two heads in a row: HH, THH, TTHH and HTHH."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted only the records with no two heads in a row, the ones where Sam runs out of tosses."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted only the records that are four tosses long and forgot the short ones, HH and THH."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I listed every pattern of four tosses and ignored that Sam stops early after two heads in a row."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-04",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Draw a tree, and end a branch as soon as it shows HH.",
+    "Each toss splits a branch into H and T, but a branch ends early the moment it has two heads in a row. Count the ends of all the branches, short ones included.",
+    "HH ends after 2 tosses and THH after 3. Five branches are still going after 3 tosses."
+  ],
+  "solutions": {
+    "reliable": "Build the tree. After 2 tosses, HH stops: 1 record. After 3 tosses, of the branches still going (HT, TH, TT), only THH stops: 1 record. The branches still going after 3 tosses are HTH, HTT, THT, TTH and TTT, which is 5 branches, and each splits in 2 at the fourth toss: 10 records. Total 1 + 1 + 10 = 12. The transferable idea: in a tree with a stopping rule, count the ends of the branches, wherever they end.",
+    "elegant": "Start from all 16 four-toss patterns. The 4 patterns beginning HH all collapse into the single record HH, and the 2 beginning THH collapse into THH. So 16 - 4 - 2 + 1 + 1 = 12."
+  },
+  "whyOnTest": "A tree whose branches can stop early tests whether you count every ending, not just the longest paths.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

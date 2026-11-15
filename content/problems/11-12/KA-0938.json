@@ -1,0 +1,68 @@
+{
+  "id": "KA-0938",
+  "band": "11-12",
+  "points": 4,
+  "statement": "What is the value of (1 - 1/2^2)(1 - 1/3^2)(1 - 1/4^2) ... (1 - 1/10^2)?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1/10",
+      "correct": false,
+      "misconception": "I wrote each factor as (k - 1)/k only and lost the matching (k + 1)/k part."
+    },
+    {
+      "key": "B",
+      "text": "1/2",
+      "correct": false,
+      "misconception": "I used the value the product approaches when it goes on forever, not its value at 10."
+    },
+    {
+      "key": "C",
+      "text": "101/200",
+      "correct": false,
+      "misconception": "I spotted the pattern (n + 1)/(2n) but put in n = 100, the last denominator, instead of 10."
+    },
+    {
+      "key": "D",
+      "text": "11/20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "5/9",
+      "correct": false,
+      "misconception": "I used the pattern (n + 1)/(2n) with n = 9, the number of factors, instead of the last base 10."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "PAT-07",
+      "NUM-09"
+    ]
+  },
+  "hints": [
+    "Work out the product with two factors, then three.",
+    "Small cases reveal a pattern for the product up to n. Then confirm it by factoring each term as a difference of squares, which makes neighbouring factors cancel.",
+    "1 - 1/k^2 = ((k - 1)/k) x ((k + 1)/k). Up to 2 the product is 3/4, up to 3 it is 2/3 = 4/6, up to 4 it is 5/8."
+  ],
+  "solutions": {
+    "reliable": "Small cases: up to 2, 3/4; up to 3, 3/4 x 8/9 = 2/3 = 4/6; up to 4, 2/3 x 15/16 = 5/8. The pattern is (n + 1)/(2n). To confirm, write 1 - 1/k^2 = ((k - 1)/k)((k + 1)/k). The (k - 1)/k parts multiply to 1/n and the (k + 1)/k parts multiply to (n + 1)/2. For n = 10 the product is 11/20. The transferable idea: compute two or three small cases to see the pattern, then justify it with a telescoping factorisation.",
+    "elegant": "Each factor splits into a part that telescopes down to 1/10 and a part that telescopes up to 11/2, so the product is 11/20."
+  },
+  "whyOnTest": "Long products and sums test whether you try small cases, see the cancelling pattern, and use the right value of n at the end.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

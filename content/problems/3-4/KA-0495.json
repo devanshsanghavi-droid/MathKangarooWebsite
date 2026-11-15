@@ -1,0 +1,67 @@
+{
+  "id": "KA-0495",
+  "band": "3-4",
+  "points": 4,
+  "statement": "How many different 1 by 3 strips of three squares, going across or down, can be found on a 4 by 4 grid?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I counted how many strips fit on the grid at the same time without overlapping."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I only counted the strips that go across."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I thought a strip can start in any of the first 3 squares of a row or column."
+    },
+    {
+      "key": "E",
+      "text": "32",
+      "correct": false,
+      "misconception": "I counted each strip twice, once from each end."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-12",
+    "secondary": [
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "How many places can a strip slide to in one row?",
+    "Strips may overlap, so slide a strip along one row and count its positions. Every row and every column works the same way, so multiply, and remember both directions.",
+    "In a row of 4 squares, a strip of 3 can start in square 1 or square 2."
+  ],
+  "solutions": {
+    "reliable": "In one row of 4 squares, a 1 by 3 strip fits in 4 - 3 + 1 = 2 positions. There are 4 rows, giving 8 strips across, and by the same reasoning 8 strips down. Total 16. The transferable idea: count positions by sliding, not by cutting the grid up.",
+    "elegant": null
+  },
+  "whyOnTest": "Sliding-window counting: overlapping positions count, so cutting the grid into pieces undercounts.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

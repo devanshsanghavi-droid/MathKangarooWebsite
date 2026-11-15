@@ -1,0 +1,68 @@
+{
+  "id": "KA-0419",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A three-digit number has three different digits that add up to 6. How many such numbers are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I only used the digits 1, 2 and 3 and forgot that 0 can be one of the digits."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I found the sets 1, 2, 3 and 0, 1, 5 but missed the set 0, 2, 4."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": false,
+      "misconception": "I arranged every set of digits in 6 ways, forgetting that a number cannot start with 0."
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I allowed digits to repeat, so I also counted numbers like 222, 114 and 600."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-02",
+    "secondary": [
+      "CNT-04",
+      "CNT-05"
+    ]
+  },
+  "hints": [
+    "First find which three different digits can add up to 6.",
+    "Digit puzzle: list the possible sets of digits in order, then count how many numbers each set makes. Watch out for 0, which cannot go first.",
+    "The sets are 1, 2, 3 and 0, 1, 5 and 0, 2, 4. The set without a 0 makes 6 numbers."
+  ],
+  "solutions": {
+    "reliable": "Find three different digits adding to 6, starting from the smallest. With 0: 0 + 1 + 5 and 0 + 2 + 4 (0 + 3 + 3 repeats a digit). Without 0: 1 + 2 + 3. The digits 1, 2, 3 make 3 x 2 x 1 = 6 numbers. A set with a 0 has 2 choices for the first digit (anything but 0), then 2 for the second and 1 for the third: 4 numbers, for example 105, 150, 501 and 510. Total: 6 + 4 + 4 = 14. The transferable idea: split a digit puzzle into sets of digits first, then count the arrangements of each set, keeping 0 out of the front.",
+    "elegant": null
+  },
+  "whyOnTest": "It combines finding digit sets with counting arrangements, and the zero-in-front trap separates careful counters from quick ones.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

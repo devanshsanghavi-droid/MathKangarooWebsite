@@ -1,0 +1,67 @@
+{
+  "id": "KA-0479",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A block 4 cubes long, 3 cubes wide and 2 cubes tall is built from small cubes. The whole outside of the block is painted. How many small cubes have paint on exactly one face?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought no cube can be in the middle of a face because the block is only 2 cubes tall."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted the middle cubes of the top face and forgot the bottom face."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the corner cubes, which have three painted faces."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted the cubes with exactly two painted faces."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-13",
+    "secondary": [
+      "CNT-14"
+    ]
+  },
+  "hints": [
+    "Every small cube is in either the top layer or the bottom layer.",
+    "A cube with exactly one painted face sits in the middle of a face, touching no edge of the block. Check each of the six faces for such cubes.",
+    "On the 4 by 3 top face, the cubes that touch no edge form a 2 by 1 strip."
+  ],
+  "solutions": {
+    "reliable": "Every cube is in the top or bottom layer, so each has its top or bottom face painted. It has only that one face painted if it touches none of the four sides: on a 4 by 3 layer that is the middle 2 by 1 strip, 2 cubes. Top and bottom layers give 2 + 2 = 4. The side faces are only 2 cubes tall, so every cube on them lies on an edge. Check: 8 corner cubes, 12 with two faces and 4 with one face make all 24 cubes. The transferable idea: one painted face means the middle of a face, away from every edge.",
+    "elegant": null
+  },
+  "whyOnTest": "Painted-block questions test whether you can picture which cubes sit on edges, and a block only 2 tall changes the usual picture.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0381",
+  "band": "1-2",
+  "points": 3,
+  "statement": "The word TIGER is written again and again with no gaps: TIGERTIGERTIGER and so on. What is the 18th letter?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "T",
+      "correct": false,
+      "misconception": "I found that letter 15 ends a word and gave the first letter of the next word, which is letter 16."
+    },
+    {
+      "key": "B",
+      "text": "I",
+      "correct": false,
+      "misconception": "I counted one letter too few and gave the 17th letter."
+    },
+    {
+      "key": "C",
+      "text": "G",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "E",
+      "correct": false,
+      "misconception": "I counted one letter too many and gave the 19th letter."
+    },
+    {
+      "key": "E",
+      "text": "R",
+      "correct": false,
+      "misconception": "I found that the third TIGER ends at letter 15 and gave that letter instead of counting on."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-03",
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "Each TIGER uses the same number of letters.",
+    "The pattern repeats every 5 letters. Jump ahead a whole word at a time until you are close to 18, then count the last few letters one by one.",
+    "Three whole words use 15 letters, so letter 15 is an R. Count on 3 more letters from the start of the next TIGER."
+  ],
+  "solutions": {
+    "reliable": "TIGER has 5 letters, so the words end at letters 5, 10 and 15. Letter 16 is T, letter 17 is I and letter 18 is G. The idea to keep: in a repeating pattern, jump by whole repeats, then count only the leftover steps.",
+    "elegant": "Counting in fives, 18 is 3 more than 15, so the 18th letter is the 3rd letter of TIGER, which is G. The idea to keep: the leftover after the last full repeat tells you the position in the pattern."
+  },
+  "whyOnTest": "Finding a far-away place in a repeating pattern rewards jumping by whole repeats instead of counting every letter.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

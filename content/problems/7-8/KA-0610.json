@@ -1,0 +1,68 @@
+{
+  "id": "KA-0610",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Eight students are split into four pairs to work on a project. Only who is paired with whom matters. In how many different ways can the pairs be formed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "70",
+      "correct": false,
+      "misconception": "I counted the ways to choose 4 of the 8 students to be the first person in each pair."
+    },
+    {
+      "key": "B",
+      "text": "420",
+      "correct": false,
+      "misconception": "I divided by 3 x 2 x 1 = 6 instead of by 4 x 3 x 2 x 1 = 24."
+    },
+    {
+      "key": "C",
+      "text": "630",
+      "correct": false,
+      "misconception": "I divided by 4, the number of pairs, instead of by the 24 orders of the four pairs."
+    },
+    {
+      "key": "D",
+      "text": "105",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "2520",
+      "correct": false,
+      "misconception": "I chose a first pair, then a second, third and fourth, and did not allow for the order of the pairs."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-03",
+      "CNT-06"
+    ]
+  },
+  "hints": [
+    "Choosing pairs one at a time gives them an order.",
+    "Count the ways to pick a first pair, then a second, and so on. That count treats the same four pairs in a different order as different, so work out how many orders four pairs have and divide by it.",
+    "Pair by pair gives 28 x 15 x 6 x 1 = 2520, and four pairs can be listed in 24 orders."
+  ],
+  "solutions": {
+    "reliable": "Choose a first pair from 8 students in 8 x 7 / 2 = 28 ways, a second from the remaining 6 in 15 ways, a third from 4 in 6 ways, and the last pair in 1 way: 28 x 15 x 6 = 2520. But the same set of four pairs is produced in 4 x 3 x 2 x 1 = 24 different orders, so there are 2520 / 24 = 105 ways. The transferable idea: when a count builds in an order that does not matter, divide by the number of orders.",
+    "elegant": "Build each pairing in exactly one way: the first student has 7 possible partners, the first student still unpaired then has 5, the next has 3, and the last two are paired. So 7 x 5 x 3 x 1 = 105, with no overcount to correct."
+  },
+  "whyOnTest": "Overcount-and-correct: choosing pairs one by one secretly orders them, and the right divisor is the number of orders of the four pairs.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

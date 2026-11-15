@@ -1,0 +1,68 @@
+{
+  "id": "KA-0776",
+  "band": "9-10",
+  "points": 5,
+  "statement": "What is the smallest number of different whole numbers you must choose from 1 to 25 to be certain that two of the chosen numbers differ by exactly 5?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I treated 'differ by 5' as 'leave the same remainder when divided by 5', so I used five remainder groups plus one."
+    },
+    {
+      "key": "B",
+      "text": "11",
+      "correct": false,
+      "misconception": "I thought a group such as 1, 6, 11, 16, 21 could hold only two numbers with no gap of 5, so only 10 numbers were safe."
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": false,
+      "misconception": "I found the largest safe choice of 15 numbers and gave its size instead of the number that forces a pair."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I paired 1 with 6, 2 with 7 and so on up to 20 with 25, made 20 pairs and added one, but those pairs overlap."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "CNT-17",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "Group together the numbers that are a multiple of 5 apart.",
+    "Think about the worst case. Split the numbers into chains where neighbours differ by 5, find the most you can take from each chain with no two neighbours, and add one to the grand total.",
+    "The chain 1, 6, 11, 16, 21 can safely hold 1, 11 and 21, but any four of its numbers include two neighbours. There are five such chains."
+  ],
+  "solutions": {
+    "reliable": "Split 1 to 25 into five chains by remainder: 1, 6, 11, 16, 21, then 2, 7, 12, 17, 22, and so on. Two numbers differ by exactly 5 only when they are neighbours in a chain. From a chain of five you can take at most three numbers with no two neighbours (first, third and fifth), so at most 15 numbers can be chosen safely, for example 1 to 5, 11 to 15 and 21 to 25. With 16 numbers, some chain holds four of them, and four numbers from a chain of five must include two neighbours. So 16 is the answer. The transferable idea: find the largest set that avoids the event, then one more forces it.",
+    "elegant": "Show 15 is not enough with the explicit safe set 1 to 5, 11 to 15, 21 to 25. Then the pigeonhole principle on the five chains shows 16 always works."
+  },
+  "whyOnTest": "Worst-case questions turn on finding the biggest set that dodges the condition, and the choice of boxes for the pigeonhole step is the whole idea.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

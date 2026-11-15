@@ -1,0 +1,68 @@
+{
+  "id": "KA-0600",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A two-digit number is 4 times the sum of its digits. When 27 is added to it, the result is the number with the same two digits in the opposite order. What is the number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I found the digits 3 and 6 and gave their sum instead of the number."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I checked only the first condition, 12 = 4 x 3, and did not test adding 27."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I checked only the second condition, 25 + 27 = 52, and did not test the digit sum."
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "63",
+      "correct": false,
+      "misconception": "I found the right two digits but put the larger one in the tens place."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-04",
+    "secondary": [
+      "NUM-01",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Test each choice against both conditions.",
+    "With five candidates, checking each one against the conditions is faster than setting up equations. Discard any choice that fails either test; exactly one survives both.",
+    "Of the choices, only 12 and 36 are 4 times their digit sum. Add 27 to each and see which one reverses."
+  ],
+  "solutions": {
+    "reliable": "Check the choices. 9 is not a two-digit number. 12: digit sum 3 and 4 x 3 = 12 works, but 12 + 27 = 39, not 21. 25: 4 x 7 = 28, so it fails. 36: 4 x 9 = 36 works, and 36 + 27 = 63, its reverse. 63: 4 x 9 = 36, not 63, so it fails. The number is 36. The transferable idea: when the choices are candidate solutions, testing them against every condition can beat algebra.",
+    "elegant": "With digits a and b, 10a + b = 4(a + b) gives b = 2a, and adding 27 to reverse the digits means b = a + 3. So a = 3 and b = 6, and the number is 36."
+  },
+  "whyOnTest": "Back-solving rewards checking every condition: two wrong choices pass one test each, so stopping at the first match is the trap.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

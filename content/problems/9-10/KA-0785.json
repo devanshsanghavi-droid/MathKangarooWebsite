@@ -1,0 +1,68 @@
+{
+  "id": "KA-0785",
+  "band": "9-10",
+  "points": 3,
+  "statement": "How many whole numbers from 1 to 100 are divisible by 4 or by 6 (or by both)?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "33",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "37",
+      "correct": false,
+      "misconception": "I took the overlap to be the multiples of 4 x 6 = 24 instead of the multiples of 12."
+    },
+    {
+      "key": "C",
+      "text": "41",
+      "correct": false,
+      "misconception": "I added the 25 multiples of 4 and the 16 multiples of 6 without removing the numbers counted twice."
+    },
+    {
+      "key": "D",
+      "text": "50",
+      "correct": false,
+      "misconception": "I thought a number divisible by 4 or by 6 is just an even number, so I counted all the even numbers."
+    },
+    {
+      "key": "E",
+      "text": "67",
+      "correct": false,
+      "misconception": "I counted the numbers divisible by neither 4 nor 6, instead of the ones divisible by at least one."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-10",
+    "secondary": [
+      "NUM-05",
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "Some numbers are multiples of both. Which ones?",
+    "Use inclusion-exclusion: add the multiples of 4 and the multiples of 6, then subtract the numbers counted twice. Those are the multiples of the least common multiple of 4 and 6.",
+    "There are 25 multiples of 4 and 16 multiples of 6. A number divisible by both is a multiple of 12, not of 24."
+  ],
+  "solutions": {
+    "reliable": "From 1 to 100 there are 25 multiples of 4 and 16 multiples of 6. A number divisible by both is a multiple of the least common multiple, 12, and there are 8 of those (12 up to 96). They were counted twice, so the total is 25 + 16 - 8 = 33. The transferable idea: the overlap of 'multiple of a' and 'multiple of b' is the multiples of the LCM, not of the product.",
+    "elegant": "Count in blocks of 12, since the pattern repeats every 12. In 1 to 12 the numbers 4, 6, 8, 12 qualify, so 4 per block. Eight blocks reach 96 and give 32, and 97 to 100 adds only 100. Total 33."
+  },
+  "whyOnTest": "Inclusion-exclusion with multiples tests whether the overlap is found correctly, and using the product instead of the LCM is the classic slip.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

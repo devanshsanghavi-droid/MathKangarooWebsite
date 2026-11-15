@@ -1,0 +1,67 @@
+{
+  "id": "KA-0713",
+  "band": "7-8",
+  "points": 4,
+  "statement": "The operation ★ follows one rule, which you can work out from these examples: 2 ★ 3 = 8, 4 ★ 1 = 8 and 5 ★ 5 = 30. What is 6 ★ 3?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "18",
+      "correct": false,
+      "misconception": "I multiplied the two numbers without testing that rule on the examples."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found the rule a + b + 3, which fits the first two examples, and did not test it on the third."
+    },
+    {
+      "key": "C",
+      "text": "21",
+      "correct": false,
+      "misconception": "I found the right kind of rule but added the second number instead of the first, using a x b + b."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I added the two numbers without testing that rule on the examples."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "NUM-14"
+    ]
+  },
+  "hints": [
+    "Compare each result with the product of its two numbers.",
+    "A rule must fit every example, not just one or two. Compare each result with a simple combination of its two numbers, look at what is left over each time, and see how the leftover is linked to the numbers.",
+    "The products are 6, 4 and 25. The leftovers are 2, 4 and 5, which are the first numbers."
+  ],
+  "solutions": {
+    "reliable": "The products are 2 x 3 = 6, 4 x 1 = 4 and 5 x 5 = 25. The results are bigger by 2, 4 and 5, which is the first number each time. So a ★ b = a x b + a, and 6 ★ 3 = 18 + 6 = 24. Note that a + b + 3 fits the first two examples but gives 13, not 30, for 5 ★ 5. The transferable idea: test a candidate rule against every example before using it.",
+    "elegant": "Each result is the first number times one more than the second: 2 x 4 = 8, 4 x 2 = 8, 5 x 6 = 30. So 6 ★ 3 = 6 x 4 = 24."
+  },
+  "whyOnTest": "Inferring a rule rewards checking every example; each wrong choice comes from a rule that fits only some of the examples or none of them.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

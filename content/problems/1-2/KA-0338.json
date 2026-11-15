@@ -1,0 +1,67 @@
+{
+  "id": "KA-0338",
+  "band": "1-2",
+  "points": 3,
+  "statement": "A pattern goes 2, 5, 8, 11, ... What number comes next?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I added 1, as if the numbers just count up one at a time."
+    },
+    {
+      "key": "B",
+      "text": "13",
+      "correct": false,
+      "misconception": "I counted on 3 from 11 but said 11 as my first count, so I said 11, 12, 13."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "17",
+      "correct": false,
+      "misconception": "I skipped a number and gave the one after next: 14 and then 17."
+    },
+    {
+      "key": "E",
+      "text": "22",
+      "correct": false,
+      "misconception": "I doubled 11 instead of looking at how much each number grows."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "How far is it from each number to the next?",
+    "Find the jump between neighbours in the pattern. Check that the jump is the same every time, then make that same jump once more from the last number.",
+    "From 2 to 5, from 5 to 8 and from 8 to 11 the jump is 3 each time. Count on 3 from 11."
+  ],
+  "solutions": {
+    "reliable": "Each number is 3 more than the one before: 2, 5, 8, 11. Counting on 3 from 11 gives 12, 13, 14, so the next number is 14. The idea to keep: find the jump between neighbours, check it is always the same, then use it once more.",
+    "elegant": null
+  },
+  "whyOnTest": "Continuing a pattern tests whether a child finds the rule from every step, not just guesses from the last number.",
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

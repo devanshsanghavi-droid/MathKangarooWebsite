@@ -1,0 +1,68 @@
+{
+  "id": "KA-0854",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Nine dots are arranged in a square array of 3 rows of 3, equally spaced. How many triangles have all three of their corners at these dots?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "78",
+      "correct": false,
+      "misconception": "I removed the sets of three dots that lie along a row or a column but forgot the two diagonals."
+    },
+    {
+      "key": "B",
+      "text": "76",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "80",
+      "correct": false,
+      "misconception": "I removed only the four lines through the middle dot: the middle row, the middle column and the two diagonals."
+    },
+    {
+      "key": "D",
+      "text": "84",
+      "correct": false,
+      "misconception": "I counted every way to choose three of the nine dots, forgetting that three dots in a straight line make no triangle."
+    },
+    {
+      "key": "E",
+      "text": "504",
+      "correct": false,
+      "misconception": "I counted 9 × 8 × 7 ordered choices of corners, so each triangle was counted once for every order of its corners."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-13",
+    "secondary": [
+      "CNT-16",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Any three dots make a triangle unless they lie on one straight line.",
+    "Count all the ways to choose three of the nine dots, then subtract the choices where the three dots are in a straight line. Find every straight line that passes through three dots.",
+    "There are 84 ways to choose three dots. Three dots lie in a line along each of the 3 rows, the 3 columns and the 2 diagonals."
+  ],
+  "solutions": {
+    "reliable": "Three dots can be chosen in 9 × 8 × 7 / (3 × 2 × 1) = 84 ways. A choice fails to make a triangle exactly when the three dots are in a straight line. In a 3 by 3 array the only lines through three dots are the 3 rows, the 3 columns and the 2 diagonals, which is 8 lines, each giving one bad choice. So there are 84 - 8 = 76 triangles. The transferable idea: when most choices work, count everything and subtract the few that fail.",
+    "elegant": "Sort by whether the middle dot is used. Without it, any 3 of the 8 outer dots work except the 4 sides of the square: 56 - 4 = 52. With it, any 2 of the 8 outer dots work except the 4 opposite pairs that line up through the middle: 28 - 4 = 24. Total 52 + 24 = 76."
+  },
+  "whyOnTest": "Counting hidden shapes is easiest with a complement: count every choice of corners and remove the degenerate ones, and the traps miss some of the straight lines.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

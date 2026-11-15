@@ -1,0 +1,67 @@
+{
+  "id": "KA-0693",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A pencil case holds 5 red, 7 blue and 9 black pens. Without looking, you take out pens one at a time. What is the smallest number you must take out to be certain of having at least two pens of each colour?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted two pens of each colour, 3 x 2 = 6, which is only enough if you are lucky."
+    },
+    {
+      "key": "B",
+      "text": "14",
+      "correct": false,
+      "misconception": "I built the worst case from the two smallest groups, all the red and blue pens, and then added 2 black pens."
+    },
+    {
+      "key": "C",
+      "text": "16",
+      "correct": false,
+      "misconception": "I took all the black and blue pens as the worst case but forgot that I still need two red pens."
+    },
+    {
+      "key": "D",
+      "text": "17",
+      "correct": false,
+      "misconception": "I took all the black and blue pens as the worst case and then added only one red pen."
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "CNT-17"
+    ]
+  },
+  "hints": [
+    "Imagine the unluckiest order the pens could come out in.",
+    "The worst case delays the colour you are short of for as long as possible. Decide which colour can be held back longest, and count how many pens can come out before you have two of it.",
+    "You could take all 9 black and all 7 blue pens before a single red one."
+  ],
+  "solutions": {
+    "reliable": "The unluckiest draw takes every pen of the two largest colours first: 9 black and 7 blue, 16 pens, and still no red. The next two pens must then both be red, so 18 pens are needed. And 18 is always enough: among 18 pens at most 16 are not red, at most 14 are not blue and at most 12 are not black, so there are at least two of each. The transferable idea: for 'certain to have', build the worst case by emptying the largest groups first, then add what is still needed.",
+    "elegant": null
+  },
+  "whyOnTest": "Worst-case questions test thinking like the unluckiest drawer, and the traps hold back the wrong colour or stop one pen short.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

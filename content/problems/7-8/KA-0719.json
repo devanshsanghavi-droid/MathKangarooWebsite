@@ -1,0 +1,67 @@
+{
+  "id": "KA-0719",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A closed box measures 1 cm by 2 cm by 4 cm. An ant walks on the outside surface of the box from one corner to the corner furthest from it. How long is the shortest possible route?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "7 cm",
+      "correct": false,
+      "misconception": "I walked along the edges, 1 + 2 + 4, instead of cutting across the faces."
+    },
+    {
+      "key": "C",
+      "text": "√21 cm",
+      "correct": false,
+      "misconception": "I used the straight line through the inside of the box, which the ant cannot walk along."
+    },
+    {
+      "key": "D",
+      "text": "√29 cm",
+      "correct": false,
+      "misconception": "I unfolded the two faces so that the 1 cm and 4 cm edges lined up, which is not the shortest unfolding."
+    },
+    {
+      "key": "E",
+      "text": "√37 cm",
+      "correct": false,
+      "misconception": "I unfolded the two faces so that the 2 cm and 4 cm edges lined up, which gives the longest of the three routes."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-17",
+    "secondary": [
+      "GEO-10"
+    ]
+  },
+  "hints": [
+    "Unfold the box so the ant's route becomes a straight line.",
+    "Shortest paths on a surface: unfold the two faces the ant crosses into one flat rectangle, and the shortest route across them is its diagonal. There are three different ways to do this; compare them all.",
+    "The unfolded rectangles are (1 + 2) by 4, (1 + 4) by 2 and (2 + 4) by 1. Use Pythagoras on each one."
+  ],
+  "solutions": {
+    "reliable": "The ant crosses two neighbouring faces; unfolding them flat makes a rectangle whose diagonal is the route. The three choices of the shared edge give rectangles 3 by 4, 5 by 2 and 6 by 1, with diagonals √25 = 5, √29 and √37. The shortest is 5 cm. The transferable idea: unfold a surface to turn a shortest path into a straight line, then compare every unfolding.",
+    "elegant": "Put the two shortest edges side by side: a (1 + 2) by 4 rectangle has diagonal 5, from the 3, 4, 5 right triangle. Joining the two shortest edges always gives the shortest unfolding."
+  },
+  "whyOnTest": "Unfolding a solid turns a path on its surface into a straight segment, and the trap is stopping at the first unfolding you try.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

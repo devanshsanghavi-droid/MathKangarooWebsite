@@ -1,0 +1,68 @@
+{
+  "id": "KA-0525",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A bakery packs muffins in boxes of 6 and sells only full boxes. Muffins left over at the end of a day are given away. On Monday it bakes 100 muffins, and on Tuesday it bakes 10 more than on Monday. How many full boxes does it sell over the two days?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "18",
+      "correct": false,
+      "misconception": "I worked out Tuesday's boxes only and forgot to add Monday's."
+    },
+    {
+      "key": "B",
+      "text": "32",
+      "correct": false,
+      "misconception": "I used 100 muffins for both days and forgot that Tuesday had 10 more."
+    },
+    {
+      "key": "C",
+      "text": "34",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "35",
+      "correct": false,
+      "misconception": "I added both days' muffins first, 210, and divided by 6, but Monday's leftovers are given away and cannot help fill a box on Tuesday."
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": false,
+      "misconception": "I rounded each day's boxes up, to 17 and 19, as if a part-full box could be sold."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-10",
+    "secondary": [
+      "NUM-06",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Work out each day on its own.",
+    "Leftover muffins do not carry over to the next day, so each day is a separate division with a remainder. Count only the full boxes each day, then add.",
+    "100 = 16 x 6 + 4 and 110 = 18 x 6 + 2."
+  ],
+  "solutions": {
+    "reliable": "Monday: 100 muffins fill 16 boxes (96 muffins), with 4 left over and given away. Tuesday: 110 muffins fill 18 boxes (108 muffins), with 2 left over. Total 16 + 18 = 34 boxes. The transferable idea: in a multi-step problem, notice when a remainder is thrown away at each step instead of being saved up.",
+    "elegant": null
+  },
+  "whyOnTest": "Adding first and dividing once looks quicker, but the leftovers here do not combine, so the order of the steps changes the answer.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

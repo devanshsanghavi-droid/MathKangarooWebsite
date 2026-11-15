@@ -1,0 +1,67 @@
+{
+  "id": "KA-0530",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Floor tiles are equilateral triangles, squares and regular hexagons, all with the same side length. Which set of tiles can fit together around a single point, with no gaps and no overlaps?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "one hexagon, two squares and one triangle",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "three squares and one triangle",
+      "correct": false,
+      "misconception": "I gave the triangle a corner of 90 degrees, the same as a square, so the corners seemed to add to 360."
+    },
+    {
+      "key": "C",
+      "text": "two hexagons and one square",
+      "correct": false,
+      "misconception": "I took a hexagon's corner to be 135 degrees, so 135 + 135 + 90 seemed to make 360."
+    },
+    {
+      "key": "D",
+      "text": "one hexagon and three squares",
+      "correct": false,
+      "misconception": "I treated the hexagon's corner as a right angle, so four right angles seemed to fill the point."
+    },
+    {
+      "key": "E",
+      "text": "four triangles and two squares",
+      "correct": false,
+      "misconception": "I took a triangle's corner to be 45 degrees, half a right angle, so four of them and two squares seemed to make 360."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-14",
+    "secondary": [
+      "GEO-05"
+    ]
+  },
+  "hints": [
+    "What must the corners meeting at one point add up to?",
+    "The corners around a point must total exactly 360 degrees. Find the corner angle of each kind of tile, then add up each set and see which one makes exactly 360.",
+    "A triangle's corner is 60 degrees, a square's is 90 and a hexagon's is 120. Add each set: only one reaches exactly 360."
+  ],
+  "solutions": {
+    "reliable": "The angles meeting at a point make a full turn, 360 degrees. The corners are: triangle 60, square 90, hexagon 120 (a regular hexagon splits into 6 equilateral triangles, and each of its corners is made of two 60-degree angles). Now add: three squares and a triangle make 330; two hexagons and a square make 330; a hexagon and three squares make 390; four triangles and two squares make 420; a hexagon, two squares and a triangle make 120 + 180 + 60 = 360. The transferable idea: tiles fit around a point exactly when their corner angles add to 360.",
+    "elegant": "Measure every corner in triangle corners: a triangle is worth 1, a square 1 and a half, a hexagon 2, and a full turn 6. A hexagon (2), two squares (3) and a triangle (1) make exactly 6; every other set misses."
+  },
+  "whyOnTest": "Tiling questions come down to one fact, that angles around a point make 360 degrees, plus knowing the corner of each regular shape.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

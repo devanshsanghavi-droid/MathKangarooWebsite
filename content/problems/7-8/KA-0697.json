@@ -1,0 +1,67 @@
+{
+  "id": "KA-0697",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Lena had some stickers. She gave half of them to her brother, then gave 4 to a friend, and then bought 10 more. She now has 30 stickers. How many stickers did she have at the start?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "54",
+      "correct": false,
+      "misconception": "I undid the steps but in the original order: I doubled first, then added 4, then took away 10."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I undid the purchase and the gift to the friend but forgot to undo the halving."
+    },
+    {
+      "key": "C",
+      "text": "21",
+      "correct": false,
+      "misconception": "I applied her steps forwards to the 30 instead of undoing them."
+    },
+    {
+      "key": "D",
+      "text": "32",
+      "correct": false,
+      "misconception": "I undid the gift to the friend by taking away 4 instead of adding the 4 back."
+    },
+    {
+      "key": "E",
+      "text": "48",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-08",
+    "secondary": [
+      "MOD-10"
+    ]
+  },
+  "hints": [
+    "Start from the 30 and walk through the story in reverse.",
+    "Work backwards: undo the last step first, and undo each step with its opposite operation. Buying becomes giving back, giving away becomes getting back, and halving becomes doubling.",
+    "Before buying 10 she had 20. Before giving 4 away she had 24. Those 24 are the half she kept."
+  ],
+  "solutions": {
+    "reliable": "Undo the steps from last to first. Before buying 10 she had 30 - 10 = 20. Before giving 4 away she had 20 + 4 = 24. Those 24 were the half she kept, so she started with 2 x 24 = 48. Check forwards: 48, then 24, then 20, then 30. The transferable idea: to work backwards, reverse both the order of the steps and each operation.",
+    "elegant": null
+  },
+  "whyOnTest": "Working backwards needs the steps reversed in order and in operation, and each half-reversed attempt gives one of the other choices.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

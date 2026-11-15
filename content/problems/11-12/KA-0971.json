@@ -1,0 +1,68 @@
+{
+  "id": "KA-0971",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A jug holds 10 litres of a drink that is 50% juice. Some of the drink is poured out and replaced by the same amount of water. Then the same amount is poured out again and again replaced by water. The drink is now 32% juice. How many litres were poured out each time?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "3.6",
+      "correct": false,
+      "misconception": "I treated the two pourings as one, so I solved 1 - x/10 = 0.64."
+    },
+    {
+      "key": "C",
+      "text": "6.4",
+      "correct": false,
+      "misconception": "I set the fraction poured out equal to 32/50 = 0.64, so I poured out 6.4 litres."
+    },
+    {
+      "key": "D",
+      "text": "6.8",
+      "correct": false,
+      "misconception": "I halved the fraction kept, 0.64, because there were two pourings, so I solved 1 - x/10 = 0.32."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I found that each pouring keeps 0.8 of the juice and gave 0.8 x 10 = 8 litres, which is the amount kept, not the amount poured out."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-08",
+    "secondary": [
+      "CFT-11",
+      "NUM-10"
+    ]
+  },
+  "hints": [
+    "What fraction of the juice survives one pouring?",
+    "If x litres are poured out, the fraction of the juice that stays is 1 - x/10, and the same fraction stays the second time. So the juice percentage is multiplied by the same factor twice.",
+    "50% x (1 - x/10)^2 = 32%, so (1 - x/10)^2 = 0.64."
+  ],
+  "solutions": {
+    "reliable": "Pouring out x litres of the well-mixed drink removes the fraction x/10 of the juice and leaves the fraction 1 - x/10; adding water does not change the amount of juice. After two rounds the juice is 5 x (1 - x/10)^2 litres in 10 litres, so 50% x (1 - x/10)^2 = 32%. Then (1 - x/10)^2 = 0.64, so 1 - x/10 = 0.8 and x = 2. Check: after the first round 4 litres of juice remain, which is 40%; after the second, 3.2 litres remain, which is 32%. The transferable idea: repeated replacement multiplies the concentration by the same factor each time, so the factor appears squared.",
+    "elegant": null
+  },
+  "whyOnTest": "Repeated dilution is multiplicative, so the key step is a square root; the distractors treat the process as a single step or misread what was asked.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

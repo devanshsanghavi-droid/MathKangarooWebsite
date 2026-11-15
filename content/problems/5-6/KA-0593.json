@@ -1,0 +1,68 @@
+{
+  "id": "KA-0593",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A rectangle 6 units by 8 units is covered exactly, with no gaps and no overlaps, by rectangular tiles that are 2 units by 3 units. How many tiles are used?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I laid every tile with its 3 side along the 8 side, fitted only two per row, and ignored the strip left over."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "16",
+      "correct": false,
+      "misconception": "I divided the 48 unit squares by 3 only, as if each tile covered 3 squares."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I divided the 48 unit squares by 2 only, as if each tile covered 2 squares."
+    },
+    {
+      "key": "E",
+      "text": "48",
+      "correct": false,
+      "misconception": "I counted the unit squares in the rectangle instead of the tiles."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-14",
+    "secondary": [
+      "GEO-01",
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "How many unit squares does one tile cover?",
+    "When tiles cover a shape exactly, the shape's area equals the number of tiles times the area of one tile. Find both areas and divide.",
+    "The rectangle covers 6 times 8 = 48 unit squares, and one tile covers 2 times 3 = 6."
+  ],
+  "solutions": {
+    "reliable": "The rectangle has area 6 times 8 = 48 and each tile has area 2 times 3 = 6, so 48 divided by 6 = 8 tiles. A real layout exists: put the 3 sides along the 6 side (two tiles across) and the 2 sides along the 8 side (four tiles down), giving 2 times 4 = 8. The transferable idea: in an exact tiling, area divides evenly, and the tile count is the big area divided by the small one.",
+    "elegant": "Two tiles fit across the 6 side and four fit along the 8 side, so 2 times 4 = 8 without working out any area."
+  },
+  "whyOnTest": "Tiling questions check that you compare areas, not lengths, and that a layout actually exists.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

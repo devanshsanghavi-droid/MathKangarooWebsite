@@ -1,0 +1,68 @@
+{
+  "id": "KA-0998",
+  "band": "11-12",
+  "points": 5,
+  "statement": "In how many ways can 3 numbers be chosen from 1, 2, 3, ..., 10 so that no two of the chosen numbers are consecutive?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "48",
+      "correct": false,
+      "misconception": "I subtracted every choice containing a consecutive pair, 9 pairs times 8 third numbers, from 120, not noticing that runs like 4, 5, 6 were subtracted twice."
+    },
+    {
+      "key": "B",
+      "text": "56",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "84",
+      "correct": false,
+      "misconception": "I squeezed out only one gap instead of two, and counted choices of 3 from 9 numbers."
+    },
+    {
+      "key": "D",
+      "text": "112",
+      "correct": false,
+      "misconception": "I removed only the choices of three numbers in a row, such as 4, 5, 6."
+    },
+    {
+      "key": "E",
+      "text": "120",
+      "correct": false,
+      "misconception": "I counted all choices of 3 numbers and ignored the condition."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-16",
+      "CNT-11"
+    ]
+  },
+  "hints": [
+    "Picture the gaps that must sit between the chosen numbers.",
+    "Close up the forced gaps: taking away 0, 1 and 2 from the chosen numbers in increasing order turns every allowed choice into an ordinary choice from a smaller set, and the step can be undone.",
+    "If a < b < c have gaps between them, then a, b - 1 and c - 2 are three different numbers from 1 to 8."
+  ],
+  "solutions": {
+    "reliable": "Count all choices and subtract the bad ones. There are 10 x 9 x 8 / 6 = 120 choices in all. A choice is bad if it contains a consecutive pair. There are 9 consecutive pairs, each with 8 possible third numbers, giving 72, but the 8 runs of three in a row, such as 4, 5, 6, contain two pairs and were counted twice. So there are 72 - 8 = 64 bad choices and 120 - 64 = 56 good ones. The transferable idea: when subtracting bad cases, check whether any of them was removed twice.",
+    "elegant": "Write a choice as a < b < c with gaps of at least 2 and send it to a, b - 1, c - 2. This gives any three different numbers from 1 to 8, and each such triple comes back to exactly one valid choice, so the count is 8 x 7 x 6 / 6 = 56."
+  },
+  "whyOnTest": "The direct subtraction hides an overlap trap and the gap-closing trick avoids it, so the problem rewards either care or insight.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

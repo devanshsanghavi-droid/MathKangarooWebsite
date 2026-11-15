@@ -1,0 +1,68 @@
+{
+  "id": "KA-0740",
+  "band": "7-8",
+  "points": 4,
+  "statement": "What is 999 x 1001 - 998 x 1002?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought the two products were equal because both pairs of numbers add up to 2000."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "-3",
+      "correct": false,
+      "misconception": "I saw that the products are 1000 x 1000 - 1 and 1000 x 1000 - 4, but subtracted the wrong way round."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I saw that the products are 1000 x 1000 - 1 and 1000 x 1000 - 4, but added the 1 and the 4 instead of subtracting."
+    },
+    {
+      "key": "E",
+      "text": "2",
+      "correct": false,
+      "misconception": "I took the answer to be the change in how far apart the numbers are, from 2 apart to 4 apart."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "NUM-08",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Both pairs of numbers sit evenly around 1000.",
+    "The numbers are suspiciously close to 1000, which is a signal to look for a trick before grinding. Write each factor as 1000 plus or minus a small number and multiply out.",
+    "999 x 1001 = (1000 - 1)(1000 + 1) = 1,000,000 - 1, and 998 x 1002 = 1,000,000 - 4."
+  ],
+  "solutions": {
+    "reliable": "Grinding works: 999 x 1001 = 999,999 and 998 x 1002 = 999,996, and the difference is 3. The quicker way is to see that both pairs are centred on 1000. Then 999 x 1001 = 1000 x 1000 - 1 x 1 = 999,999 and 998 x 1002 = 1000 x 1000 - 2 x 2 = 999,996, so the difference is 4 - 1 = 3. The transferable idea: when the numbers are suspiciously close to a round number, spend ten seconds looking for the trick before you start long multiplication.",
+    "elegant": "For two numbers placed symmetrically around 1000, the product is 1000 x 1000 minus the square of their distance from 1000. The distances are 1 and 2, so the answer is 2 x 2 - 1 x 1 = 3."
+  },
+  "whyOnTest": "Some questions are built to be ground out slowly or seen at once; the test is spotting the structure that makes the big numbers cancel.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

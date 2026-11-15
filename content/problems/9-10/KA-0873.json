@@ -1,0 +1,68 @@
+{
+  "id": "KA-0873",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Three friends choose seats in a row of 7 empty chairs so that no two of them sit next to each other. In how many different ways can they do this, if it matters who sits where?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted which three chairs are used but forgot the three friends can swap among those chairs."
+    },
+    {
+      "key": "B",
+      "text": "210",
+      "correct": false,
+      "misconception": "I counted all seatings of three people in 7 chairs and ignored the rule about sitting next to each other."
+    },
+    {
+      "key": "C",
+      "text": "60",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "35",
+      "correct": false,
+      "misconception": "I counted sets of three chairs without the rule and without arranging the friends."
+    },
+    {
+      "key": "E",
+      "text": "180",
+      "correct": false,
+      "misconception": "I only removed the seatings where all three sit together, not those where just two are side by side."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-11",
+    "secondary": [
+      "CNT-05",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "First decide which chairs are used, then who sits where.",
+    "Choose the set of chairs first, keeping gaps between them, and only afterwards place the three friends. A neat way to count gapped chairs is to remove the compulsory empty chairs between friends.",
+    "Between the friends there must be at least one empty chair in each of the two gaps. Take those 2 chairs away and choose any 3 of the remaining 5."
+  ],
+  "solutions": {
+    "reliable": "Listing the chair sets with gaps, written as chair numbers: 135, 136, 137, 146, 147, 157, 246, 247, 257, 357 gives 10 sets. In each set the three friends can be arranged in 3 times 2 times 1 = 6 ways, so there are 60 seatings. The transferable idea: in restricted counting, choose the positions under the rule first and arrange the people afterwards.",
+    "elegant": "Remove one empty chair from each of the two gaps that must exist; any choice of 3 of the remaining 5 chairs then corresponds to exactly one gapped choice in the original row, so there are 10 chair sets and 10 times 6 = 60 seatings. The transferable idea: squeeze out the forced gaps to turn a restricted count into an unrestricted one."
+  },
+  "whyOnTest": "Counting with a 'not next to each other' rule tests whether you separate choosing places from arranging people and handle every forbidden case.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

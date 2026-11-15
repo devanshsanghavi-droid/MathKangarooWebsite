@@ -1,0 +1,68 @@
+{
+  "id": "KA-0856",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A square frame is built from identical square tiles, one tile wide all the way round, with an empty square hole in the middle. The frame uses exactly 120 tiles. How many tiles long is each outer side of the frame?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "29",
+      "correct": false,
+      "misconception": "I found the side of the empty hole in the middle instead of the outer side of the frame."
+    },
+    {
+      "key": "B",
+      "text": "30",
+      "correct": false,
+      "misconception": "I divided 120 by 4 sides and forgot that each corner tile belongs to two sides at once."
+    },
+    {
+      "key": "C",
+      "text": "31",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "32",
+      "correct": false,
+      "misconception": "I counted each side without its corner tiles, set 4 of those equal to 120, and forgot to add the four corners back."
+    },
+    {
+      "key": "E",
+      "text": "11",
+      "correct": false,
+      "misconception": "I treated the 120 tiles as a filled square and took the nearest whole square root."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-04",
+    "secondary": [
+      "MOD-01",
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "Count the corner tiles carefully.",
+    "Write the number of tiles in a frame of outer side n as a formula. Four sides of n tiles each count every corner twice, so correct for that overcount before setting the formula equal to 120.",
+    "Four sides of n tiles give 4n, but the 4 corners were counted twice, so the frame has 4n - 4 tiles. Solve 4n - 4 = 120."
+  ],
+  "solutions": {
+    "reliable": "A frame with outer side n has four sides of n tiles, which counts each of the 4 corner tiles twice, so it uses 4n - 4 tiles. Then 4n - 4 = 120 gives 4n = 124 and n = 31. Check: a 31 by 31 square has 961 tiles and the 29 by 29 hole has 841, and 961 - 841 = 120. The transferable idea: when sides of a shape share corners, count the sides and then subtract what was counted twice.",
+    "elegant": "The frame is a 31 by 31 square minus a 29 by 29 hole, and the difference of two squares 31 squared minus 29 squared is (31 - 29)(31 + 29) = 2 times 60 = 120. The transferable idea: a hollow square is a difference of two squares."
+  },
+  "whyOnTest": "Growth patterns built from tiles test whether you can turn a picture into a formula and handle shared corners without counting them twice.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

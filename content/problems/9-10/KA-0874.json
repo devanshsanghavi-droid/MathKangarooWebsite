@@ -1,0 +1,68 @@
+{
+  "id": "KA-0874",
+  "band": "9-10",
+  "points": 5,
+  "statement": "The eight corners of a regular octagon are marked. How many triangles with all three corners at marked points have a right angle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted third corners on only one side of each of the 4 longest diagonals."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I only counted the right triangles whose two shorter sides are equal."
+    },
+    {
+      "key": "C",
+      "text": "56",
+      "correct": false,
+      "misconception": "I counted every triangle with corners at the marked points without checking for a right angle."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "48",
+      "correct": false,
+      "misconception": "I counted each right triangle twice, once from each end of its longest side."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-13",
+    "secondary": [
+      "GEO-07",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "All eight corners lie on one circle.",
+    "A triangle drawn inside a circle with its corners on the circle has a right angle exactly when one of its sides is a diameter. Count the diameters that join two corners, then count the possible third corners for each.",
+    "The octagon has 4 diameters joining opposite corners, and each one can be completed with any of the other 6 corners."
+  ],
+  "solutions": {
+    "reliable": "The corners of a regular octagon lie on a circle. A triangle with its corners on a circle has a right angle exactly when one side is a diameter, and the right angle is then at the third corner. The diameters joining two corners are the 4 lines through opposite corners. Each can be completed by any of the remaining 6 corners, and a right triangle has only one longest side, so no triangle is counted twice. That gives 4 times 6 = 24. The transferable idea: when shapes are hidden among points on a circle, a right angle means a diameter.",
+    "elegant": null
+  },
+  "whyOnTest": "Counting hidden shapes is about finding the feature that pins each one down, here the diameter that every right triangle in a circle must use.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

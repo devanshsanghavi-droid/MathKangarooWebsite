@@ -1,0 +1,68 @@
+{
+  "id": "KA-0961",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A train 160 m long travels at 72 km/h and crosses a bridge 440 m long. How many seconds pass from the moment the front of the train reaches the bridge until the back of the train leaves it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I only used the length of the train, 160 m, as the distance travelled."
+    },
+    {
+      "key": "B",
+      "text": "14",
+      "correct": false,
+      "misconception": "I subtracted the train's length from the bridge, 440 - 160 = 280 m, as if the train only had to be wholly on the bridge."
+    },
+    {
+      "key": "C",
+      "text": "22",
+      "correct": false,
+      "misconception": "I used only the bridge's 440 m and forgot that the train must also travel its own length to clear it."
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "500",
+      "correct": false,
+      "misconception": "I changed 72 km/h into metres per second by dividing by 60 only, getting 1.2 m/s instead of 20 m/s."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-10",
+    "secondary": [
+      "MOD-03",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Follow the back of the train: how far does it travel?",
+    "Put the speed into metres per second first. The front must cross the whole bridge, and then the rest of the train must follow it off.",
+    "72 km/h is 72 000 m in 3600 s, which is 20 m/s, and the distance is 160 + 440 = 600 m."
+  ],
+  "solutions": {
+    "reliable": "72 km/h = 72 000 m / 3600 s = 20 m/s. From the front reaching the bridge to the back leaving it, the back of the train travels the length of the bridge plus the length of the train, 440 + 160 = 600 m. The time is 600 / 20 = 30 seconds. The transferable idea: convert to matching units before dividing, and track one fixed point on a moving object to see the real distance.",
+    "elegant": null
+  },
+  "whyOnTest": "Unit conversion and reading exactly which moment ends the crossing decide this, and each distractor is a slip in one of the two.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

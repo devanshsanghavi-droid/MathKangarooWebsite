@@ -1,0 +1,67 @@
+{
+  "id": "KA-0393",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Ella rolls a red die and a blue die. Each die shows a number from 1 to 6. In how many different ways can the two numbers add up to 9?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted 3 and 6 and then 4 and 5, and forgot that the red and blue dice can swap their numbers."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought every number on the red die has a partner on the blue die, so I counted 6 ways."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I also counted 1 and 8, 2 and 7, 7 and 2, and 8 and 1, but a die only goes up to 6."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I thought there must be 9 ways because the total is 9."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "CNT-02"
+    ]
+  },
+  "hints": [
+    "Start with the red die showing 1. Can the blue die show what you need?",
+    "Go through the red die’s numbers in order and find what the blue die must show each time. Cross out any case needing more than 6. Red 3 with blue 6 differs from red 6 with blue 3.",
+    "Red 1 needs blue 8 and red 2 needs blue 7, which a die cannot show. Red 3 needs blue 6, which works. Keep going up to red 6."
+  ],
+  "solutions": {
+    "reliable": "Red 1 would need blue 8 and red 2 would need blue 7, but a die only goes up to 6, so those do not work. Red 3 and blue 6, red 4 and blue 5, red 5 and blue 4, red 6 and blue 3 all work. That makes 4 ways. The idea to keep: fix one thing at a time and list in order, then check every case against the rules, here that a die shows only 1 to 6.",
+    "elegant": "The biggest a die can show is 6, so each die must show at least 9 - 6 = 3. The red die can be 3, 4, 5 or 6, and each choice fixes the blue die, so there are 4 ways."
+  },
+  "whyOnTest": "Listing ways to make a total checks systematic listing: go in order, treat the two dice as different, and drop the cases a die cannot show.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

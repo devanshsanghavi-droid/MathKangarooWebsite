@@ -1,0 +1,68 @@
+{
+  "id": "KA-0890",
+  "band": "11-12",
+  "points": 4,
+  "statement": "An open tube, a cylinder with no top or bottom, is 5 cm tall and has a circumference of 12 cm. An ant on the outside walks from a point on the bottom rim to the point on the top rim exactly halfway around the tube. How long is the shortest such walk, in cm?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "the square root of 61",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "5 + 12/pi",
+      "correct": false,
+      "misconception": "I walked up the side and then straight across the top, as if the tube had a lid, but there is no top to walk across."
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": false,
+      "misconception": "I walked straight up 5 cm and then 6 cm around the rim, instead of going diagonally."
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": false,
+      "misconception": "I unrolled the tube but used the full circumference, 12, instead of the halfway distance of 6."
+    },
+    {
+      "key": "E",
+      "text": "the square root of (25 + 36 pi squared)",
+      "correct": false,
+      "misconception": "I treated 12 cm as the diameter, so I thought half the circumference was 6 pi."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-17",
+    "secondary": [
+      "CFT-02",
+      "GEO-10"
+    ]
+  },
+  "hints": [
+    "Cut the tube along a straight line and flatten it.",
+    "Unrolling turns the curved surface into a rectangle without changing distances along it. The shortest walk on the surface becomes a straight segment on the rectangle; find its horizontal and vertical parts.",
+    "On the flattened rectangle the two points are 6 cm apart horizontally and 5 cm apart vertically."
+  ],
+  "solutions": {
+    "reliable": "Slit the tube along a vertical line away from the path and unroll it into a 12 cm by 5 cm rectangle. The start and end points are half the circumference, 6 cm, apart horizontally and 5 cm apart vertically. The shortest walk is the straight segment between them, of length the square root of (6 squared + 5 squared) = the square root of 61, about 7.8 cm. The transferable idea: to find a shortest path on a surface that can be flattened, flatten it and draw a straight line.",
+    "elegant": "Going round the other way is the same length by symmetry, so either unrolling gives the answer, and no walk can beat a straight line on the flat sheet."
+  },
+  "whyOnTest": "Unrolling a cylinder turns a curved shortest path into a hypotenuse, and every distractor is a path you get by not unrolling, or by unrolling carelessly.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

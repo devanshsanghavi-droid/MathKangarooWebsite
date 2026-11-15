@@ -1,0 +1,68 @@
+{
+  "id": "KA-0928",
+  "band": "11-12",
+  "points": 4,
+  "statement": "How many whole numbers from 1 to 1000 are neither perfect squares nor perfect cubes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "38",
+      "correct": false,
+      "misconception": "I counted the numbers that are squares or cubes, which is the opposite of what was asked."
+    },
+    {
+      "key": "B",
+      "text": "959",
+      "correct": false,
+      "misconception": "I subtracted the 31 squares and the 10 cubes but forgot that numbers which are both had been removed twice."
+    },
+    {
+      "key": "C",
+      "text": "960",
+      "correct": false,
+      "misconception": "I thought 1 was the only number that is both a square and a cube, so I added back just one."
+    },
+    {
+      "key": "D",
+      "text": "962",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "965",
+      "correct": false,
+      "misconception": "I added back the numbers that are both a square and a cube twice instead of once."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-10",
+    "secondary": [
+      "CNT-09",
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "Count the squares, the cubes, and the numbers that are both.",
+    "Use inclusion and exclusion on the two sets: a number that is both a square and a cube is counted in each list, so it must be added back once before taking the complement.",
+    "There are 31 squares (up to 31 x 31 = 961) and 10 cubes. Numbers that are both are sixth powers: 1, 64 and 729."
+  ],
+  "solutions": {
+    "reliable": "Squares from 1 to 1000: 1^2 up to 31^2 = 961, so 31 of them. Cubes: 1^3 up to 10^3 = 1000, so 10. A number that is both a square and a cube is a sixth power: 1, 64, 729, so 3. Squares or cubes: 31 + 10 - 3 = 38. Neither: 1000 - 38 = 962. The transferable idea: count the union with inclusion and exclusion first, then take the complement.",
+    "elegant": "Being both a square and a cube means being a sixth power, which turns the overlap into a quick list of three numbers."
+  },
+  "whyOnTest": "Inclusion and exclusion with a complement tests whether you notice the overlap, here the sixth powers, and add it back exactly once.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

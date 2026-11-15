@@ -1,0 +1,68 @@
+{
+  "id": "KA-0956",
+  "band": "11-12",
+  "points": 5,
+  "statement": "The numbers 1, 2, 3, ..., 24 are written on a board. A move erases two of the numbers, a and b, and writes the single number √(a^2 + b^2) in their place. After 23 moves only one number is left. What is it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": false,
+      "misconception": "I treated √(a^2 + b^2) as if it were just the larger of a and b, so I expected the largest number, 24, to survive."
+    },
+    {
+      "key": "B",
+      "text": "70",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "300",
+      "correct": false,
+      "misconception": "I assumed the sum of the numbers stays the same, so I added up the numbers 1 to 24 and got 300."
+    },
+    {
+      "key": "D",
+      "text": "4900",
+      "correct": false,
+      "misconception": "I found the quantity that stays fixed, the sum of the squares, but forgot to take its square root at the end."
+    },
+    {
+      "key": "E",
+      "text": "It depends on the order of the moves",
+      "correct": false,
+      "misconception": "I tried two different orders on a few numbers, got messy square roots, and decided the result must change with the order."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "CFT-03",
+      "CFT-07"
+    ]
+  },
+  "hints": [
+    "Look for something that a move does not change.",
+    "A move replaces a and b by a number whose square is a^2 + b^2. Compare the sum of the squares of all the numbers on the board before and after a move.",
+    "The sum of the squares never changes, so the last number squared equals 1^2 + 2^2 + ... + 24^2 = 24 x 25 x 49 / 6."
+  ],
+  "solutions": {
+    "reliable": "Before a move the two numbers contribute a^2 + b^2 to the sum of the squares of all the numbers on the board, and afterwards the new number contributes (√(a^2 + b^2))^2 = a^2 + b^2. So the sum of the squares never changes. At the start it is 1^2 + 2^2 + ... + 24^2 = 24 x 25 x 49 / 6 = 4900. At the end the single number x satisfies x^2 = 4900, so x = 70. The transferable idea: when a move combines numbers, look for a quantity, often a sum of some function of the numbers, that the move leaves unchanged.",
+    "elegant": "Try a small case: 3 and 4 become 5, and 9 + 16 = 25. That shows the sum of the squares is what survives, whatever the order, so only the starting sum of squares matters."
+  },
+  "whyOnTest": "The invariant here is the sum of the squares, and the problem tests whether a solver looks for what stays fixed instead of simulating 23 moves.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

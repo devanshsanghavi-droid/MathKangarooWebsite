@@ -1,0 +1,67 @@
+{
+  "id": "KA-0494",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Mia counts backwards from 100 in sixes: 100, 94, 88, and so on. What is the first number she says that is less than 50?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "44",
+      "correct": false,
+      "misconception": "I subtracted 6 from 50 instead of counting down from 100."
+    },
+    {
+      "key": "B",
+      "text": "46",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "48",
+      "correct": false,
+      "misconception": "I took 9 sixes away from 100 but used 6 x 9 = 52."
+    },
+    {
+      "key": "D",
+      "text": "49",
+      "correct": false,
+      "misconception": "I assumed she would land on the number just below 50."
+    },
+    {
+      "key": "E",
+      "text": "52",
+      "correct": false,
+      "misconception": "I gave the last number she says before going below 50."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-02",
+    "secondary": [
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "Keep counting back by 6 and write each number down.",
+    "Each step takes away the same amount, so you can either keep listing or work out how many sixes fit between 100 and 50. Make sure the number you give is below 50, not just close to it.",
+    "The list goes 100, 94, 88, 82, 76, 70, 64, 58, 52, and then one more step."
+  ],
+  "solutions": {
+    "reliable": "Listing: 100, 94, 88, 82, 76, 70, 64, 58, 52, 46. The first number below 50 is 46. Check: 100 - 9 x 6 = 100 - 54 = 46. The transferable idea: in a sequence with a constant step, the number after k steps is the start minus k steps.",
+    "elegant": "From 100 down to 50 is 50, and 8 x 6 = 48, so 8 steps reach 52, just above 50. One more step gives 46. The transferable idea: divide the distance by the step to jump close to the target."
+  },
+  "whyOnTest": "Counting in equal steps and stopping at the right term, with the last term above the line as the trap.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

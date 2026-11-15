@@ -1,0 +1,71 @@
+{
+  "id": "KA-0353",
+  "band": "1-2",
+  "points": 5,
+  "statement": "The map shows paths between Home, the Park and School. Ana walks from Home to School and never visits a place twice. How many different ways can she go?",
+  "figure": {
+    "component": "PathsHomeParkSchool",
+    "alt": "A map with three places: Home, the Park and School. Three different paths join Home to the Park, two different paths join the Park to School, and one more path goes straight from Home to School without passing the Park."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted only the paths from the Park to School."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only the paths from Home to the Park."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted only the 4 paths that leave Home, as if each path to the Park led on to School in just one way."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I paired each path to the Park with each path to School but forgot the path that goes straight to School."
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-03",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Does Ana go through the Park or not?",
+    "Split the ways into two kinds: through the Park, and straight to School. For the Park ways, use a tree: every path to the Park can be followed by every path from the Park to School.",
+    "Through the Park there are 3 first paths, and each one can be followed by 2 second paths. Then add the straight path."
+  ],
+  "solutions": {
+    "reliable": "Through the Park: each of the 3 paths to the Park can be followed by either of the 2 paths to School, which gives 3 x 2 = 6 ways. Straight to School: 1 more way. In all, 6 + 1 = 7 ways. The idea to keep: split into cases, use a tree for the steps in each case, and add the cases at the end.",
+    "elegant": null
+  },
+  "whyOnTest": "Combining a tree for two-step routes with a separate case checks that a child multiplies within a route and adds between cases.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

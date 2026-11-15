@@ -1,0 +1,68 @@
+{
+  "id": "KA-0942",
+  "band": "11-12",
+  "points": 3,
+  "statement": "What is the last digit of 3^2026 + 7^2026?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I added the last digits of 3 and 7 to get 10 without raising them to the power."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I multiplied the two last digits, 9 x 9 = 81, instead of adding them."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I treated 2026 as a multiple of 4, so both powers ended in 1."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I found the last digit of 3^2026 only and forgot to add 7^2026."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-07",
+    "secondary": [
+      "NUM-06",
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "Last digits of powers repeat in short cycles.",
+    "Find the cycle of last digits for powers of 3 and for powers of 7, locate the exponent by its remainder on division by the cycle length, and add the two last digits.",
+    "Powers of 3 end 3, 9, 7, 1; powers of 7 end 7, 9, 3, 1. Both cycles have length 4, and 2026 = 4 x 506 + 2."
+  ],
+  "solutions": {
+    "reliable": "Powers of 3 end in 3, 9, 7, 1, repeating every 4. Powers of 7 end in 7, 9, 3, 1, also every 4. Since 2026 leaves remainder 2 on division by 4, both powers end in the second entry, 9. Then 9 + 9 = 18 ends in 8. The transferable idea: reduce the exponent modulo the cycle length, find each last digit, and only then combine.",
+    "elegant": "3^2026 + 7^2026 = 9^1013 + 49^1013, and both 9^1013 and 49^1013 end in 9 because odd powers of a number ending in 9 end in 9."
+  },
+  "whyOnTest": "Last-digit cycles are a 3-point staple; the question checks that you combine the digits only after finding each one.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

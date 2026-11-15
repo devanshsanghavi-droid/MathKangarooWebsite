@@ -1,0 +1,68 @@
+{
+  "id": "KA-0922",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Walking up a moving escalator takes 20 seconds. Standing still on the same moving escalator takes 30 seconds. How many seconds would walking up take if the escalator were switched off?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I subtracted the times, 30 - 20, as if times could be subtracted like speeds."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I added the two rates as if walking and riding were two separate helpers, 1/20 + 1/30 = 1/12."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I averaged the two times, 20 and 30, as if the answer sat halfway between them."
+    },
+    {
+      "key": "D",
+      "text": "50",
+      "correct": false,
+      "misconception": "I added the two times, 20 + 30, as if walking and riding happened one after the other."
+    },
+    {
+      "key": "E",
+      "text": "60",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "MOD-03",
+    "secondary": [
+      "MOD-04",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Think in escalators per second, not seconds.",
+    "Speeds add: walking on the moving escalator, your speed is your own speed plus the escalator's speed. Write each as a fraction of the escalator per second, subtract, then turn the result back into a time.",
+    "Your own speed is 1/20 - 1/30 of the escalator per second."
+  ],
+  "solutions": {
+    "reliable": "Measure distance in escalator lengths. Walking on the moving escalator covers 1/20 of it per second, and the escalator alone covers 1/30 per second. Your own walking speed is the difference: 1/20 - 1/30 = 3/60 - 2/60 = 1/60 per second. So walking alone takes 60 seconds. The transferable idea: speeds and rates add and subtract, times do not.",
+    "elegant": "In 60 seconds, walking on the moving escalator would cover 3 escalator lengths and the escalator alone covers 2, so your own walking covers 1 length in 60 seconds."
+  },
+  "whyOnTest": "Combining motions means combining speeds, and subtracting or averaging times gives tempting wrong choices.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

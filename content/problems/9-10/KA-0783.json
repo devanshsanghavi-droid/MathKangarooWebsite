@@ -1,0 +1,68 @@
+{
+  "id": "KA-0783",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A token moves along grid lines, one unit right or one unit up at a time, from the point (0, 0) to the point (5, 3). It must pass through (2, 2) and must not pass through (4, 2). How many different routes are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted the routes to (2, 2) and from (2, 2) separately, 6 and 4, and added them instead of multiplying."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted all routes through (2, 2), 6 x 4, and forgot that the point (4, 2) is not allowed."
+    },
+    {
+      "key": "D",
+      "text": "26",
+      "correct": false,
+      "misconception": "I counted the routes that avoid (4, 2) but forgot that they must pass through (2, 2)."
+    },
+    {
+      "key": "E",
+      "text": "56",
+      "correct": false,
+      "misconception": "I counted every route from (0, 0) to (5, 3), ignoring both conditions."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-07",
+    "secondary": [
+      "CNT-03",
+      "CNT-09"
+    ]
+  },
+  "hints": [
+    "Split each route at the point it must visit.",
+    "Count routes in two stages, to (2, 2) and then on to (5, 3), and multiply. In the second stage, count the routes through the banned point and subtract them.",
+    "There are 6 routes from (0, 0) to (2, 2) and 4 from (2, 2) to (5, 3). Of those 4, the ones through (4, 2) go right, right, then on to (5, 3) in 2 ways."
+  ],
+  "solutions": {
+    "reliable": "From (0, 0) to (2, 2) a route is 2 rights and 2 ups in some order: 6 routes. From (2, 2) to (5, 3) it is 3 rights and 1 up: 4 routes. Of those 4, the routes through (4, 2) must start right, right, and then have 2 ways to finish, so 2 are banned and 2 remain. Total 6 x 2 = 12. The transferable idea: a required point splits the count into a product, and a banned point is removed by subtracting the routes through it.",
+    "elegant": "List the 4 second-stage routes by where the single up step goes: up first, after one right, after two rights, or last. The last two pass through (4, 2), leaving 2, and 6 x 2 = 12."
+  },
+  "whyOnTest": "Grid-route counts with a must-visit point and a banned point test the product rule and complementary counting together.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

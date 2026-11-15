@@ -1,0 +1,68 @@
+{
+  "id": "KA-0606",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A robot starts at the point (0, 0) and must reach the point (4, 2). Each move takes it 1 unit to the right or 1 unit up. The point (1, 1) is blocked, and the robot must not visit it. How many different routes can it take?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted all the routes as 4 x 2 = 8 and subtracted the 2 routes to (1, 1)."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the routes that pass through (1, 1) instead of the ones that avoid it."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I added the 2 routes to (1, 1) and the 4 routes from it instead of multiplying, then took 6 from 15."
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": false,
+      "misconception": "I counted all the routes and forgot about the blocked point."
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-07",
+    "secondary": [
+      "CNT-09",
+      "GEO-02"
+    ]
+  },
+  "hints": [
+    "Count the routes that use the blocked point, then subtract.",
+    "Find the number of routes with no block. Count those passing through the blocked point by splitting each one into a part before it and a part after it. Subtract.",
+    "There are 15 routes in all. Through (1, 1): 2 ways to reach it, then 4 ways to finish."
+  ],
+  "solutions": {
+    "reliable": "Every route has 6 moves, 4 right and 2 up, and choosing which 2 moves go up gives 6 x 5 / 2 = 15 routes. A route through (1, 1) first reaches it (2 ways: right then up, or up then right) and then goes from (1, 1) to (4, 2) with 3 moves right and 1 up (4 ways). That is 2 x 4 = 8 routes, so 15 - 8 = 7 avoid it. The transferable idea: count routes through a point by multiplying the routes before it by the routes after it.",
+    "elegant": "Label each point with the number of ways to reach it: add the label to its left and the label below it, and put 0 at (1, 1). The bottom row is all 1s, the middle row reads 1, 0, 1, 2, 3, and the top row reads 1, 1, 2, 4, 7."
+  },
+  "whyOnTest": "Grid route counts test the multiply-before-and-after idea; a blocked point is the twist that rewards complementary counting.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

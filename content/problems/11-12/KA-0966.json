@@ -1,0 +1,68 @@
+{
+  "id": "KA-0966",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Given that 2^10 = 1024, how many digits does the number 2^100 have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "30",
+      "correct": false,
+      "misconception": "I used 2^10 as about 10^3 to get 2^100 as about 10^30, and thought 10^30 has 30 digits, but it has 31."
+    },
+    {
+      "key": "B",
+      "text": "31",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "34",
+      "correct": false,
+      "misconception": "I used the rougher estimate 2^3 as about 10, which makes 2^100 about 10^33.3 and suggests 34 digits, but 2^3 is only 8."
+    },
+    {
+      "key": "D",
+      "text": "50",
+      "correct": false,
+      "misconception": "I thought each doubling adds half a digit, so 100 doublings make 50 digits."
+    },
+    {
+      "key": "E",
+      "text": "100",
+      "correct": false,
+      "misconception": "I thought each doubling adds one digit, so 100 doublings make 100 digits."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-06",
+    "secondary": [
+      "CFT-10",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Write 2^100 as a power of 1024.",
+    "2^100 = 1024^10 = 1.024^10 x 10^30. Decide roughly how big 1.024^10 is, and remember how many digits a power of 10 has.",
+    "1.024^10 is about 1.27: more than 1 and far less than 10. So 2^100 is between 10^30 and 10^31."
+  ],
+  "solutions": {
+    "reliable": "2^100 = (2^10)^10 = 1024^10 = 1.024^10 x 10^30. The factor 1.024^10 is about 1.27, roughly 1 + 10 x 0.024 plus a little, so it is more than 1 and certainly less than 10. Hence 2^100 lies between 10^30 and 10^31. Every number from 10^30 up to just below 10^31 has 31 digits, so 2^100 has 31 digits. The transferable idea: estimate a huge power as a power of ten times a factor you can bound, and remember that 10^k has k + 1 digits.",
+    "elegant": "Since log 2 is about 0.301, 2^100 is about 10^30.1, and the number of digits is the whole-number part of 30.1 plus one: 31."
+  },
+  "whyOnTest": "Counting the digits of a huge power is an estimation task, and the classic slips are the off-by-one in the digits of 10^k and an estimate that is too rough.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

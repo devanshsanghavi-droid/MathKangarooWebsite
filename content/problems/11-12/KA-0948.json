@@ -1,0 +1,68 @@
+{
+  "id": "KA-0948",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Six beads, three black and three white, are threaded on a circular ring. Two rings count as the same if one can be turned around its centre, without flipping it over, to look like the other. How many different rings are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I only thought of the alternating ring and the ring with the colours in two blocks."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I treated mirror-image rings as the same, though the ring may not be flipped."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted the ordered lists of gaps between the black beads without allowing for turning the ring."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted every way to choose which three of six positions are black, ignoring turning altogether."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-16",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Describe each ring by the numbers of white beads between black ones.",
+    "Going around the ring, the gaps of white beads between consecutive black beads add to 3. Turning the ring rotates the list of gaps, so count gap lists up to rotation, not up to reordering.",
+    "The possible gap lists, up to rotation, are (3, 0, 0), (1, 1, 1), (2, 1, 0) and (2, 0, 1). Check whether the last two are rotations of each other."
+  ],
+  "solutions": {
+    "reliable": "Going around, the numbers of white beads between consecutive black beads form a list of three gaps adding to 3. Turning the ring rotates the list. Up to rotation the lists are (3, 0, 0), (1, 1, 1), (2, 1, 0) and (2, 0, 1). The last two are mirror images but not rotations of each other, so they are different rings. That gives 4. The transferable idea: encode a circular arrangement by its gaps, then count lists up to exactly the symmetries allowed.",
+    "elegant": "Of the 20 ways to choose black positions, the alternating pattern is unchanged by a turn of two places, so it accounts for only 2 of the 20; the other 18 fall into groups of 6. That gives 1 + 18/6 = 4."
+  },
+  "whyOnTest": "Counting up to symmetry tests reading exactly which moves are allowed; whether flips count is the difference between 3 and 4.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0822",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Six people are in a room. Each is either a truth-teller, who always tells the truth, or a liar, who always lies. Every one of them says: \"More than half of the other five people in this room are liars.\" How many liars are in the room?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed that six people all saying the same thing must all be telling the truth."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought more than half of all six people had to be liars, so I took the smallest such number, 4."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I assumed, as in other liar puzzles, that exactly one person could be telling the truth."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I assumed that six people all saying the same thing must all be lying."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-09",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Each speaker talks about the other five. Nobody counts themselves.",
+    "Suppose there are L liars. A truth-teller sees L liars among the others, but a liar sees only L - 1. Write what each type's statement forces, then check the cases where everyone is the same type.",
+    "A truth-teller needs L to be at least 3, and a liar needs L - 1 to be at most 2."
+  ],
+  "solutions": {
+    "reliable": "Let L be the number of liars. A truth-teller's claim is true, so the L liars among the other five number at least 3, which means L is at least 3. A liar's claim is false, so the L - 1 liars among the other five number at most 2, which means L is at most 3. If both types are present, both conditions hold, so L = 3. Check the extremes: with no liars at all, each truth-teller would be claiming at least 3 liars among the others when there are none, a contradiction. With six liars, each sees 5 liars among the others, so their claim would be true, also a contradiction. So there are 3 liars: each truth-teller sees 3 liars among the others, and each liar sees only 2. The transferable idea: when everyone makes the same statement, the speaker's own type changes what they see, so write a separate condition for each type.",
+    "elegant": null
+  },
+  "whyOnTest": "Identical statements from both types force you to account for each speaker leaving themselves out, a 5-point idea that trips anyone who reasons by symmetry.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

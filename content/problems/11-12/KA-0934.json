@@ -1,0 +1,68 @@
+{
+  "id": "KA-0934",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Eleven coins lie on a table, all heads up. In one move you must turn over exactly three of the coins. What is the least number of moves needed to make all eleven coins show tails?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I divided 11 by 3 and rounded down."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I divided 11 by 3 and rounded up, without checking whether four moves can actually finish."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "11",
+      "correct": false,
+      "misconception": "I counted one move for every coin that has to end up showing tails."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be done",
+      "correct": false,
+      "misconception": "I thought an odd number of heads could never be cleared three at a time because 11 is not a multiple of 3."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-05",
+    "secondary": [
+      "CFT-05",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Watch whether the number of heads is odd or even after each move.",
+    "Turning three coins changes the number of heads by an odd amount, so its parity flips every move. Combine that parity rule with the most heads a single move can remove.",
+    "Each move removes at most 3 heads, so at least 4 moves are needed, and the number of moves must be odd to go from 11 heads to 0."
+  ],
+  "solutions": {
+    "reliable": "If a move turns over k heads and 3 - k tails, the number of heads changes by 3 - 2k, which is odd. So after an even number of moves the head count is odd, and 0 heads needs an odd number of moves. Each move removes at most 3 heads, so at least 4 moves are needed; the least odd number at least 4 is 5. Five moves work: three moves of three heads leave 2 heads; turn one head and two tails to get 3 heads; turn those 3. The transferable idea: combine a parity invariant with a simple bound, then build an example to show the bound is reached.",
+    "elegant": null
+  },
+  "whyOnTest": "Parity of a count that changes by an odd amount each move is a classic 5-point tool, and it overturns the obvious division estimate.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

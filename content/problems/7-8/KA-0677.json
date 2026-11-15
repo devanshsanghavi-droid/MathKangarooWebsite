@@ -1,0 +1,68 @@
+{
+  "id": "KA-0677",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A post is a cylinder 7 dm tall, and the distance around it is 12 dm. A string starts at a point on the bottom edge, winds exactly twice around the post, and ends at the point on the top edge directly above its start. What is the shortest possible length of the string, in dm?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "19",
+      "correct": false,
+      "misconception": "I took the string once around the bottom, 12 dm, and then straight up 7 dm, as if it wound only once."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted only the two trips around the post, 2 x 12, and forgot that the string also has to climb 7 dm."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "31",
+      "correct": false,
+      "misconception": "I took the string twice around the bottom and then straight up, 24 + 7, instead of along a slant."
+    },
+    {
+      "key": "E",
+      "text": "50",
+      "correct": false,
+      "misconception": "I unrolled the two turns into a 24 by 7 rectangle and got 25, then doubled it again for the two turns."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-17",
+    "secondary": [
+      "GEO-10",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Imagine cutting the post open and laying its surface flat.",
+    "Unrolling the curved surface gives a flat rectangle. Going twice around becomes a horizontal distance of two times around the post, and the shortest string becomes a straight line across that rectangle.",
+    "The flattened string is the diagonal of a rectangle 24 dm wide and 7 dm tall."
+  ],
+  "solutions": {
+    "reliable": "Cut the post along the vertical line through the start and unroll it twice, side by side. The surface becomes a rectangle 2 x 12 = 24 dm wide and 7 dm tall, and the shortest string is its diagonal. By Pythagoras, 24 x 24 + 7 x 7 = 576 + 49 = 625, so the string is 25 dm long. The transferable idea: a shortest path on a curved or folded surface becomes a straight line once the surface is flattened.",
+    "elegant": null
+  },
+  "whyOnTest": "Shortest-path questions test whether you flatten the surface so the route becomes a straight line and Pythagoras applies.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

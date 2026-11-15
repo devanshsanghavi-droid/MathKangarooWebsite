@@ -1,0 +1,68 @@
+{
+  "id": "KA-0950",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Two runners start together from the same point on a 400 m circular track and run in the same direction at 6 m/s and 4 m/s. How many times does the faster runner pass the slower one in the first 11 minutes, not counting the start?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I divided the 1320 m gained by 400 m and rounded 3.3 up to 4."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the slower runner's completed laps instead of the times they are passed."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted the faster runner's completed laps instead of the passes."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I added the speeds, as if the runners were going in opposite directions."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-03",
+    "secondary": [
+      "CFT-10",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Think about how far the faster runner gains on the slower one.",
+    "Each pass happens when the faster runner has gained exactly one more full lap on the slower runner. Find the total gain over the time, in metres, and count the whole laps in it.",
+    "The gain is 2 m every second, and 11 minutes is 660 seconds."
+  ],
+  "solutions": {
+    "reliable": "The faster runner gains 6 - 4 = 2 m each second. In 11 minutes = 660 s the gain is 1320 m. A pass happens each time the gain reaches another full 400 m, at 400, 800 and 1200 m. The gain of 1320 m has not reached 1600 m, so there are 3 passes. The transferable idea: on a circular track, count passes by the relative distance in whole laps, after converting minutes to seconds.",
+    "elegant": "Check with laps: the faster runner completes 9.9 laps and the slower 6.6, and the difference of 3.3 laps means 3 completed passes."
+  },
+  "whyOnTest": "Circular-track problems test relative speed and careful unit conversion, with each distractor counting the wrong kind of lap.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

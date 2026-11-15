@@ -1,0 +1,68 @@
+{
+  "id": "KA-0962",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A regular tetrahedron ABCD has every edge 6 cm long. M is the midpoint of edge AB and N is the midpoint of the opposite edge CD. An ant walks on the surface of the tetrahedron from M to N. What is the length of the shortest possible walk?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3√2 cm",
+      "correct": false,
+      "misconception": "I measured the straight line from M to N through the inside of the tetrahedron, which the ant cannot use."
+    },
+    {
+      "key": "B",
+      "text": "3√3 cm",
+      "correct": false,
+      "misconception": "I measured from M across face ABC to the corner C, and forgot that the ant still has to go along CD to reach N."
+    },
+    {
+      "key": "C",
+      "text": "6 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "3 + 3√3 cm",
+      "correct": false,
+      "misconception": "I walked from M across face ABC to the corner C and then along edge CD to N, which bends at C instead of going straight."
+    },
+    {
+      "key": "E",
+      "text": "12 cm",
+      "correct": false,
+      "misconception": "I kept the ant on the edges, going from M to A, then along AD to D and then along DC to N, which is 3 + 6 + 3."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-17",
+    "secondary": [
+      "GEO-10",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "M and N lie on different pairs of faces, so the ant crosses an edge.",
+    "Choose two faces that share an edge, for example ABC and ACD, which share AC. Unfold them flat: they form a rhombus made of two equilateral triangles, and the shortest walk is a straight segment in it.",
+    "In the rhombus, M and N are the midpoints of two opposite sides, AB and CD. Put A at (0, 0) and C at (6, 0): then M = (1.5, -1.5√3) and N = (4.5, 1.5√3)."
+  ],
+  "solutions": {
+    "reliable": "M is on faces ABC and ABD, and N is on faces ACD and BCD, so the walk must cross one of the edges AC, AD, BC or BD. By symmetry all four choices give the same length, so take the walk across AC. Unfold faces ABC and ACD into the plane along AC: they form a rhombus of two equilateral triangles with side 6. Put A = (0, 0) and C = (6, 0); then B = (3, -3√3) and D = (3, 3√3), so M = (1.5, -1.5√3) and N = (4.5, 1.5√3). The straight segment MN crosses AC at its midpoint (3, 0), so it stays inside the two faces, and its length is √(3^2 + (3√3)^2) = √(9 + 27) = 6 cm. This beats the routes through a corner, such as 3√3 + 3, about 8.2 cm. The transferable idea: for a shortest walk on a solid, unfold the faces the walk passes through into one flat piece and join the two points with a straight line.",
+    "elegant": "In the unfolded rhombus ABCD, MN joins the midpoints of the opposite sides AB and CD, so it is parallel to the other two sides and as long as them: 6 cm."
+  },
+  "whyOnTest": "Shortest walks on the surface of a solid become straight lines once the right faces are unfolded into a flat net, and each distractor either leaves the surface or bends at a corner.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0399",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Owen has an orange, a blue and a purple T-shirt, and black, white and grey shorts. He never wears orange with black. How many outfits of one T-shirt and shorts can he make?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I took the orange T-shirt and the black shorts away completely, leaving 2 T-shirts and 2 shorts."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I added the 3 T-shirts and the 3 shorts instead of making pairs."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I took away the orange-with-black outfit twice, once for the T-shirt and once for the shorts."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted every outfit and forgot about the rule."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Draw a tree: one branch for each T-shirt.",
+    "From each T-shirt, draw a branch for each pair of shorts. Count all the ends, then cross out any outfit the rule does not allow.",
+    "Each T-shirt goes with 3 shorts, so there are 3 x 3 outfits before the rule. The rule removes just one of them."
+  ],
+  "solutions": {
+    "reliable": "Each of the 3 T-shirts can go with each of the 3 shorts, which gives 9 outfits. The rule removes only orange with black, which is one outfit. That leaves 9 - 1 = 8. The idea to keep: count all the pairs first with a tree, then take away exactly the ones the rule forbids.",
+    "elegant": "Count by T-shirt: orange goes with 2 shorts, blue with 3 and purple with 3, so 2 + 3 + 3 = 8."
+  },
+  "whyOnTest": "Tree diagrams make every pair visible, and a rule that removes one pair checks you do not remove too much.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

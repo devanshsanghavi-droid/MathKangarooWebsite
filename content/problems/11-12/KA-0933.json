@@ -1,0 +1,68 @@
+{
+  "id": "KA-0933",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A string is wound evenly around a cylinder exactly three times, from a point on the bottom rim to the point directly above it on the top rim. The cylinder has circumference 4 cm and height 9 cm. How long is the string?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5 cm",
+      "correct": false,
+      "misconception": "I found the length of one turn of the string and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "√97 cm",
+      "correct": false,
+      "misconception": "I unrolled a single turn but let it climb the full 9 cm height."
+    },
+    {
+      "key": "C",
+      "text": "15 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "21 cm",
+      "correct": false,
+      "misconception": "I added the distance around three times to the height, as if the string went around and then straight up."
+    },
+    {
+      "key": "E",
+      "text": "3√97 cm",
+      "correct": false,
+      "misconception": "I let each of the three turns climb the full 9 cm height."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-17",
+    "secondary": [
+      "GEO-10",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Cut the cylinder along a vertical line and unroll it.",
+    "Unrolled, the curved surface is a rectangle and each turn of an even winding becomes a straight segment. Placing the three unrolled copies side by side turns the whole string into one straight line.",
+    "Three turns side by side make a rectangle 12 cm wide and 9 cm high; the string is its diagonal."
+  ],
+  "solutions": {
+    "reliable": "Unroll the curved surface into a rectangle 4 cm wide and 9 cm tall. An even winding climbs 3 cm per turn, so each turn is the diagonal of a 4 by 3 rectangle, which is 5 cm, and three turns give 15 cm. The transferable idea: unrolling a cylinder turns a helix into straight segments that the Pythagorean theorem can measure.",
+    "elegant": "Lay the three unrolled strips end to end: the string is the diagonal of a 12 by 9 rectangle, which is 15."
+  },
+  "whyOnTest": "Windings around a cylinder test unrolling a curved surface into a flat rectangle, where a spiral becomes a straight line.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

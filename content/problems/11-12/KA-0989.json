@@ -1,0 +1,68 @@
+{
+  "id": "KA-0989",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A dog is tied by a 6 m rope to one corner of a square shed with sides of 4 m. The dog stays outside the shed, and the rope cannot pass through the shed. What is the area of the ground the dog can reach?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9π m²",
+      "correct": false,
+      "misconception": "I thought the shed blocks three quarters of the circle, leaving only a quarter circle of radius 6."
+    },
+    {
+      "key": "B",
+      "text": "18π m²",
+      "correct": false,
+      "misconception": "I thought the shed blocks half of the circle, leaving a semicircle of radius 6."
+    },
+    {
+      "key": "C",
+      "text": "27π m²",
+      "correct": false,
+      "misconception": "I took three quarters of the circle of radius 6 but forgot that the rope can bend round the corners of the shed."
+    },
+    {
+      "key": "D",
+      "text": "28π m²",
+      "correct": false,
+      "misconception": "I let the rope bend round the corner on one side of the shed but forgot the other side."
+    },
+    {
+      "key": "E",
+      "text": "29π m²",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "GEO-07",
+      "GEO-04"
+    ]
+  },
+  "hints": [
+    "Draw the shed and sweep the rope all the way round it.",
+    "Away from the shed the dog sweeps most of a circle. When the rope lies along a side, it wraps round the next corner, and the rope left over sweeps a smaller quarter circle. Add the pieces.",
+    "Three quarters of a circle of radius 6, plus a quarter circle of radius 2 beyond each of the two neighbouring corners."
+  ],
+  "solutions": {
+    "reliable": "The shed blocks one quarter of the directions from its corner, so the dog sweeps three quarters of a circle of radius 6, with area 3/4 x 36π = 27π. When the rope lies along a side of the shed, 6 - 4 = 2 m is left, and swinging round the next corner it sweeps a quarter circle of radius 2, with area π. This happens at both neighbouring corners, adding 2π, and the two small pieces lie on different sides of the shed, so they do not overlap. The total is 27π + 2π = 29π m². The transferable idea: draw the diagram and follow the rope, because each corner it wraps round starts a new, smaller arc.",
+    "elegant": null
+  },
+  "whyOnTest": "Drawing the shed and the rope reveals the small quarter circles round the corners, which every distractor misses or miscounts.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

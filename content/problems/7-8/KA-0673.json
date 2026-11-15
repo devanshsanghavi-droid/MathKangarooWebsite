@@ -1,0 +1,68 @@
+{
+  "id": "KA-0673",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A solid is made of stacks of identical cubes on a 3-by-3 square base. From the front, the three columns, left to right, look 2, 3 and 1 cubes tall. From the right side, the three rows, front to back, look 3, 1 and 2 cubes tall. What is the greatest number of cubes the solid can contain?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I found the smallest number of cubes that gives these two views, not the greatest."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I added the 6 cubes I can see from the front to the 6 cubes I can see from the side."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "22",
+      "correct": false,
+      "misconception": "I made each stack as tall as the larger of its two view heights instead of the smaller one."
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I made every one of the nine stacks 3 cubes tall, the tallest height in either view."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-12",
+    "secondary": [
+      "GEO-13",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Each stack is limited by two views at once.",
+    "Each stack is capped by the front-view height of its column and the side-view height of its row. For the most cubes, build every stack to the smaller of its two caps, then check both views.",
+    "Front row (limit 3): heights 2, 3, 1. Middle row (limit 1): 1, 1, 1. Back row (limit 2): 2, 2, 1."
+  ],
+  "solutions": {
+    "reliable": "Give each stack its column (front view) and its row (side view). Its height can be at most the smaller of the two view values. Front row, limit 3: heights 2, 3, 1, total 6. Middle row, limit 1: 1, 1, 1, total 3. Back row, limit 2: 2, 2, 1, total 5. Every column and every row still reaches its stated height, so both views are right, and the greatest total is 6 + 3 + 5 = 14. The transferable idea: two views only cap each stack at the smaller of its two readings, and filling every stack up to its cap gives the maximum.",
+    "elegant": null
+  },
+  "whyOnTest": "Views questions test whether you see that each view only caps a stack, so the most and the fewest cubes are different questions.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0692",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A coaster is an equilateral triangle. Each of its three corners is painted one of 4 colours, and colours may be repeated. The coaster can be turned but not flipped over, and two coasters count as the same if one can be turned to look exactly like the other. How many different coasters can be made?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "16",
+      "correct": false,
+      "misconception": "I counted the coasters with all corners the same and with two corners the same, but forgot the ones with three different colours."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted each set of three different colours once, but those three colours can go round the triangle in two different ways."
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": false,
+      "misconception": "I thought two corners of one colour and one of another could be arranged in two different ways, but turning makes them all the same."
+    },
+    {
+      "key": "E",
+      "text": "64",
+      "correct": false,
+      "misconception": "I counted all 4 x 4 x 4 colourings without treating turned coasters as the same."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-04",
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "Sort the coasters by how many different colours they use.",
+    "Turning cannot change which colours a coaster uses, so count one, two and three colours separately. In each group, ask how many arrangements are really different once turning is allowed.",
+    "With three different colours A, B and C, going round the corners you can meet them as A, B, C or as A, C, B."
+  ],
+  "solutions": {
+    "reliable": "One colour: 4 coasters. Two colours, with two corners of one colour and one corner of the other: choose the doubled colour (4 ways) and the single colour (3 ways), and turning makes every placement the same, so 12 coasters. Three different colours: choose which colour is left out (4 ways), and the three colours can go round clockwise in 2 different orders, which no turn can swap, so 8 coasters. Total 4 + 12 + 8 = 24. The transferable idea: when turned copies count as the same, sort by a feature that turning cannot change and count inside each group.",
+    "elegant": "There are 4 x 4 x 4 = 64 colourings. A coaster with all corners one colour looks the same after every turn and appears once among them; every other coaster appears 3 times, once per turn. So there are 4 + (64 - 4) / 3 = 4 + 20 = 24 coasters."
+  },
+  "whyOnTest": "Symmetry counting tests that you neither count turned copies separately nor divide blindly by the number of turns.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

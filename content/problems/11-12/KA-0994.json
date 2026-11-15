@@ -1,0 +1,68 @@
+{
+  "id": "KA-0994",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Six teams play a tournament in which every team plays every other team once. A win earns 3 points, a draw earns 1 point for each team, and a loss earns 0. At the end, one team has strictly fewer points than every other team. What is the largest number of points that team can have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I assumed the points always total 30, as if every game were drawn, and solved 6x + 5 at most 30."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I imagined every game being drawn, so every team has 5, and took that as the most the bottom team could have."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I divided the largest possible total, 45, by 6 and rounded 7.5 down, forgetting the other teams need more."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I divided the largest possible total, 45, by 6 and rounded 7.5 up."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "CNT-08",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "What is the largest possible total of all the teams' points?",
+    "If the bottom team has x points, each other team has at least x + 1. Compare that smallest possible total with the largest total a tournament can produce, then build a results table that reaches the bound.",
+    "There are 15 games, and each one gives out at most 3 points, so the total is at most 45."
+  ],
+  "solutions": {
+    "reliable": "There are 15 games, and each gives out 3 points if won or 2 if drawn, so the total is at most 45. If the bottom team has x points and the other five at least x + 1 each, the total is at least 6x + 5, so 6x + 5 is at most 45 and x is at most 6. Six is possible. Call the teams A to F. A beats B and C and loses to D, E and F, so A has 6. B beats C and D, draws with E and loses to F, so B has 7. C beats D and E and draws with F, so C has 7. D beats A, E and F, so D has 9. E beats A and F and draws with B, so E has 7. F beats A and B and draws with C, so F has 7. A is strictly last with 6. The transferable idea: bound the answer using a total, then build an example to show the bound is reached.",
+    "elegant": null
+  },
+  "whyOnTest": "It needs both halves of an extremal argument, a bound from the total and an example that meets it, and each distractor skips one half.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

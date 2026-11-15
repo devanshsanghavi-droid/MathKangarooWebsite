@@ -1,0 +1,67 @@
+{
+  "id": "KA-0820",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Consider the sentence: \"If a number is a multiple of 6, then it is a multiple of 3.\" Which sentence below means exactly the same thing?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "If a number is not a multiple of 3, then it is not a multiple of 6.",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "If a number is a multiple of 3, then it is a multiple of 6.",
+      "correct": false,
+      "misconception": "I thought swapping the two halves of an if-then sentence keeps its meaning."
+    },
+    {
+      "key": "C",
+      "text": "If a number is not a multiple of 6, then it is not a multiple of 3.",
+      "correct": false,
+      "misconception": "I put a 'not' into both halves of the sentence but forgot to swap the halves round."
+    },
+    {
+      "key": "D",
+      "text": "A number is a multiple of 6 exactly when it is a multiple of 3.",
+      "correct": false,
+      "misconception": "I read 'if' as 'exactly when', as though the rule had to work in both directions."
+    },
+    {
+      "key": "E",
+      "text": "Some multiples of 3 are not multiples of 6.",
+      "correct": false,
+      "misconception": "I picked a sentence that is true without checking that it says the same thing as the original."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-01",
+    "secondary": [
+      "NUM-04"
+    ]
+  },
+  "hints": [
+    "Test each sentence with a number such as 9.",
+    "Two sentences mean the same when they rule out exactly the same situations. The original rules out only a multiple of 6 that is not a multiple of 3. Find the sentence that forbids exactly that.",
+    "Swapping the two halves and putting 'not' into both is the only safe rewording."
+  ],
+  "solutions": {
+    "reliable": "The original sentence rules out exactly one situation: a number that is a multiple of 6 but not a multiple of 3. The sentence 'if a number is not a multiple of 3, then it is not a multiple of 6' rules out the very same situation, so it means the same. The reversed sentence would force 9 to be a multiple of 6, a different and false claim, and the sentence with 'not' in both halves would also forbid 9. The 'exactly when' sentence is a two-way claim, and the 'some multiples' sentence is true but says something else. The transferable idea: 'if P then Q' always means the same as 'if not Q then not P', and never the same as 'if Q then P'.",
+    "elegant": "Draw a circle for the multiples of 6 inside a bigger circle for the multiples of 3. The original sentence says exactly that the small circle sits inside the big one. The correct choice says anything outside the big circle is also outside the small one, which is the same picture."
+  },
+  "whyOnTest": "Reading an if-then statement precisely, and telling the contrapositive from the converse, underpins every logic and proof question on the paper.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

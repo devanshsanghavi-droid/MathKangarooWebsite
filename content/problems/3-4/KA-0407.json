@@ -1,0 +1,67 @@
+{
+  "id": "KA-0407",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Ana, Bo, Cy and Dan sit in a row on a bench with four seats. Bo and Cy want to sit next to each other. In how many different orders can the four children sit?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I only counted the 3 places on the bench where Bo and Cy can sit side by side."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted 2 ways round for Bo and Cy and 2 ways for Ana and Dan, but forgot to count the places where the pair can sit."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I glued Bo and Cy together and arranged three things, but forgot that Bo and Cy can swap places."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I let Bo sit in any of the 4 seats with Cy on either side, 4 x 2, but Bo in an end seat has only one neighbour, and I forgot that Ana and Dan can swap seats."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-05",
+    "secondary": [
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Glue Bo and Cy together and treat them as one.",
+    "Arrangements with a \"must be together\" rule: count the orders of the block and the other children, then count the orders inside the block, and multiply.",
+    "The Bo-and-Cy block, Ana and Dan are three things, which can be ordered in 3 x 2 x 1 = 6 ways. Now the block itself can be Bo then Cy, or Cy then Bo."
+  ],
+  "solutions": {
+    "reliable": "Think of Bo and Cy as one block. Then there are three things to arrange in a row: the block, Ana and Dan. Three things can be ordered in 3 x 2 x 1 = 6 ways. In each of these, the block can sit as Bo then Cy, or as Cy then Bo, so the total is 6 x 2 = 12. The transferable idea: for \"must be next to each other\", glue the group into one block, arrange the blocks, then arrange inside the block.",
+    "elegant": "Count places for the pair instead: seats 1 and 2, seats 2 and 3, or seats 3 and 4, so 3 places. The pair can sit 2 ways round, and Ana and Dan fill the other two seats in 2 ways: 3 x 2 x 2 = 12."
+  },
+  "whyOnTest": "Gluing a pair into one block is the key arrangement idea, and forgetting that the block can flip is the most common slip.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

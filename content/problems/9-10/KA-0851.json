@@ -1,0 +1,68 @@
+{
+  "id": "KA-0851",
+  "band": "9-10",
+  "points": 4,
+  "statement": "How many even three-digit numbers have three different digits, one of which is 5?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "40",
+      "correct": false,
+      "misconception": "I only put the 5 in the hundreds place and forgot it could also be the tens digit."
+    },
+    {
+      "key": "B",
+      "text": "75",
+      "correct": false,
+      "misconception": "I treated a last digit of 0 like 2, 4, 6 and 8, so I always ruled out 0 for the first digit even when 0 was already used at the end."
+    },
+    {
+      "key": "C",
+      "text": "76",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "80",
+      "correct": false,
+      "misconception": "I forgot that the first digit cannot be 0 when the 5 is the tens digit."
+    },
+    {
+      "key": "E",
+      "text": "100",
+      "correct": false,
+      "misconception": "I took half of the 200 three-digit numbers with different digits that contain a 5, as if exactly half of them were even."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-11",
+    "secondary": [
+      "CNT-04",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "The 5 cannot be the last digit. Where can it go?",
+    "Split into cases by the last digit and by where the 5 sits. A last digit of 0 behaves differently from 2, 4, 6 and 8: once 0 is at the end, it cannot be a bad first digit.",
+    "Last digit 0: 8 numbers with 5 first and 8 with 5 in the middle. Last digit 2, 4, 6 or 8: 8 numbers with 5 first, but only 7 with 5 in the middle, since the first digit cannot be 0."
+  ],
+  "solutions": {
+    "reliable": "The number is even, so its last digit is 0, 2, 4, 6 or 8, and the 5 is in the hundreds or tens place. Case 1, last digit 0. With 5 first, the middle digit is any of the 8 digits other than 5 and 0: 8 numbers. With 5 in the middle, the first digit is any of the 8 digits other than 0 and 5: 8 numbers. That is 16. Case 2, last digit 2, 4, 6 or 8. With 5 first, the middle digit is any of the 8 digits other than 5 and the last digit: 8 numbers. With 5 in the middle, the first digit cannot be 0, 5 or the last digit: 7 numbers. That is 15 for each of the 4 last digits, 60 in all. Total 16 + 60 = 76. The transferable idea: when one value (here 0) is restricted in some places, split into cases by whether that value has already been used.",
+    "elegant": "Count all even three-digit numbers with different digits, then remove those without a 5. Even with different digits: last digit 0 gives 9 × 8 = 72, and each of the other 4 even last digits gives 8 × 8 = 64, so 72 + 256 = 328. Without a 5: last digit 0 gives 8 × 7 = 56, and each other even last digit gives 7 × 7 = 49, so 56 + 196 = 252. The answer is 328 - 252 = 76."
+  },
+  "whyOnTest": "Counting with restrictions tests handling each rule exactly once; the zero that cannot lead and the 5 that can sit in two places are where the traps come from.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

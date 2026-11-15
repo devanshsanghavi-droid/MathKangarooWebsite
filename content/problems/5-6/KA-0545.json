@@ -1,0 +1,67 @@
+{
+  "id": "KA-0545",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A rectangle measures 8 cm by 5 cm. A 2 cm by 2 cm square is cut out of the middle of one of the 8 cm sides, leaving a notch that does not touch any corner. What is the perimeter of the shape that is left?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24 cm",
+      "correct": false,
+      "misconception": "I took away the 2 cm of edge where the square was removed and forgot the new edges inside the notch."
+    },
+    {
+      "key": "B",
+      "text": "26 cm",
+      "correct": false,
+      "misconception": "I thought cutting a piece out never changes the perimeter, which is only true for a corner cut."
+    },
+    {
+      "key": "C",
+      "text": "28 cm",
+      "correct": false,
+      "misconception": "I took off the 2 cm gap and added the two sides of the notch but forgot its bottom edge."
+    },
+    {
+      "key": "D",
+      "text": "30 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "36 cm",
+      "correct": false,
+      "misconception": "I worked out the area, 40 - 4, instead of the perimeter."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": [
+      "GEO-04"
+    ]
+  },
+  "hints": [
+    "Walk around the new edge. What happens at the notch?",
+    "Removing the square takes away a 2 cm piece of the long side but adds the three sides of the notch. Compare what is lost with what is gained.",
+    "The rectangle's perimeter is 26 cm. The notch loses 2 cm of edge and gains 2 + 2 + 2 = 6 cm."
+  ],
+  "solutions": {
+    "reliable": "The rectangle's perimeter is 2 x (8 + 5) = 26 cm. Cutting the notch removes 2 cm from the long side but adds three new edges of 2 cm each: the two sides of the notch and its bottom. So the perimeter is 26 - 2 + 6 = 30 cm. The transferable idea: when a piece is cut away, count edges lost and edges gained; a corner cut breaks even, but a notch in the middle of a side adds its two sides.",
+    "elegant": "Slide the bottom of the notch back out to the edge in your mind: that edge plus the rest of the outline makes the original 26 cm, and the only extra length is the two 2 cm sides of the notch, so 26 + 4 = 30 cm."
+  },
+  "whyOnTest": "Perimeter questions test edge-by-edge thinking, and the belief that removing a piece shrinks the perimeter is the trap.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0509",
+  "band": "5-6",
+  "points": 5,
+  "statement": "How many different triangles have whole-number side lengths and a perimeter of 14? Triangles with the same three side lengths count as the same triangle.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought a triangle had to have three different side lengths, so I only kept 3, 5, 6."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I let the two shorter sides add up to exactly the longest side, like 2, 5, 7, which lies flat."
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": false,
+      "misconception": "I counted the same triangle again each time its sides were listed in a different order."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I listed every way to split 14 into three whole numbers and never checked whether they make a triangle."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-04",
+    "secondary": [
+      "GEO-06",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "List sides from shortest to longest, and try longest sides one at a time.",
+    "Casework on the longest side keeps the list complete. The two shorter sides must add up to more than the longest, so the longest side is less than half the perimeter.",
+    "The longest side is less than 7 and at least 5. Try longest side 6, then longest side 5."
+  ],
+  "solutions": {
+    "reliable": "List the sides from shortest to longest. For a triangle the two shorter sides must add up to more than the longest, so the longest side is less than half of 14, which means at most 6. It is also at least 5, because three sides each 4 or less add up to at most 12. Longest side 6: the other two add to 8 and are at most 6: 2 and 6, 3 and 5, 4 and 4. Longest side 5: the other two add to 9 and are at most 5: only 4 and 5. That gives 2-6-6, 3-5-6, 4-4-6 and 4-5-5: 4 triangles. The transferable idea: split into cases by the largest part, and check the triangle rule once, on the longest side.",
+    "elegant": null
+  },
+  "whyOnTest": "Casework on the longest side, plus the rule that two sides must beat the third, is the standard way to count triangles without gaps or repeats.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

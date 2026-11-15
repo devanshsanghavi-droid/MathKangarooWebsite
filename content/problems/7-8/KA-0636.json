@@ -1,0 +1,68 @@
+{
+  "id": "KA-0636",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A regular hexagon has an area of 48 square centimetres. The midpoints of its six sides are joined in order to make a smaller hexagon inside it. What is the area of the smaller hexagon, in square centimetres?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": false,
+      "misconception": "I thought each corner piece, whose sides are half as long as those of the triangle made by three neighbouring corners, had half of that triangle's area instead of a quarter."
+    },
+    {
+      "key": "B",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "40",
+      "correct": false,
+      "misconception": "I thought the six corner pieces together were as big as one of the six central triangles."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found the total area of the six corner pieces instead of the hexagon left in the middle."
+    },
+    {
+      "key": "E",
+      "text": "46",
+      "correct": false,
+      "misconception": "I worked out the area of one corner piece, 2, but took it away only once instead of six times."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-03",
+    "secondary": [
+      "GEO-04",
+      "GEO-08"
+    ]
+  },
+  "hints": [
+    "Split the big hexagon into six equal triangles from its centre. How big is each?",
+    "Area by dissection: the small hexagon is the big one with six corner pieces cut off. Compare one corner piece with the triangle formed by three neighbouring corners of the big hexagon.",
+    "Call three neighbouring corners A, B and C, and the centre O. The rhombus OABC is two central triangles, 16, and its diagonal AC halves it, so triangle ABC is 8. The corner piece at B joins the midpoints of AB and BC."
+  ],
+  "solutions": {
+    "reliable": "Lines from the centre O to the six corners cut the hexagon into six equal triangles of area 8. Take three neighbouring corners A, B, C. The rhombus OABC is two of those triangles, area 16, and the diagonal AC cuts it into two equal halves, so triangle ABC has area 8. The corner piece cut off at B is the triangle joining B to the midpoints of BA and BC. It is triangle ABC shrunk to half the size in every direction, so it has a quarter of the area: 2. Six corner pieces total 12, leaving 48 - 12 = 36. The transferable idea: break the shape into pieces you can compare, and remember that halving every length quarters the area.",
+    "elegant": "Each corner piece is a quarter of a triangle ABC, and triangle ABC is a sixth of the hexagon, so each piece is 1/24 of it. Six pieces are 6/24 = 1/4, and the small hexagon is 3/4 of 48, which is 36."
+  },
+  "whyOnTest": "Area by dissection asks you to compare a piece with one you already know, and the hexagon's six central triangles are the natural units to count in.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

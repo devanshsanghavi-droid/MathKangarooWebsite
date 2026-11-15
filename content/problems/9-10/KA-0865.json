@@ -1,0 +1,68 @@
+{
+  "id": "KA-0865",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A circle of radius 5 fits exactly inside a large square, touching all four sides. A small square is drawn inside the circle with all four of its corners on the circle. What is the area of the region inside the large square but outside the small square?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "50",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "75",
+      "correct": false,
+      "misconception": "I took the small square's side to be the radius, 5, so its area was 25."
+    },
+    {
+      "key": "C",
+      "text": "100 - 25π",
+      "correct": false,
+      "misconception": "I found the area between the large square and the circle, not between the two squares."
+    },
+    {
+      "key": "D",
+      "text": "25π - 50",
+      "correct": false,
+      "misconception": "I found the area between the circle and the small square only."
+    },
+    {
+      "key": "E",
+      "text": "12.5",
+      "correct": false,
+      "misconception": "I used the radius 5 as if it were the diameter, so I got a large square of area 25 and a small square of area 12.5."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-04",
+    "secondary": [
+      "GEO-07",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Both squares are fixed by the circle. How?",
+    "The large square's side equals the circle's diameter. The small square's diagonal is also a diameter. Find both areas and subtract.",
+    "The large square has side 10, area 100. The small square has diagonal 10, so its area is half of 10 times 10."
+  ],
+  "solutions": {
+    "reliable": "The large square has side equal to the diameter, 10, so area 100. The small square has diagonal 10; a square with diagonal d has area d squared / 2, so its area is 50. The region between them has area 100 - 50 = 50. The transferable idea: a shaded region is often a big shape minus a small one, each measured from a shared length.",
+    "elegant": "Rotate the small square by 45 degrees: its corners then sit at the midpoints of the large square's sides, and joining the midpoints of a square's sides cuts off four corner triangles that together make exactly half of it. So the region is half of 100. The transferable idea: a midpoint square has half the area."
+  },
+  "whyOnTest": "Area by subtraction is a core geometry move, and the answer choices include every region you might find by mistake.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

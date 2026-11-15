@@ -1,0 +1,67 @@
+{
+  "id": "KA-0480",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Which of these numbers of sweets can be shared equally among 9 children, with none left over?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "196",
+      "correct": false,
+      "misconception": "I remembered 9 x 22 as 196, but 9 x 22 is really 198."
+    },
+    {
+      "key": "B",
+      "text": "426",
+      "correct": false,
+      "misconception": "I added the digits to get 12, which divides by 3, and mixed up the test for 3 with the test for 9."
+    },
+    {
+      "key": "C",
+      "text": "513",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "519",
+      "correct": false,
+      "misconception": "I thought any number ending in 9 can be split into 9 equal groups."
+    },
+    {
+      "key": "E",
+      "text": "905",
+      "correct": false,
+      "misconception": "I thought a number starting with 9 hundreds can always be split into nines."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Add up the digits of each number.",
+    "A number divides exactly by 9 when its digits add up to a multiple of 9. Use that test on each choice instead of dividing.",
+    "The digit sums are 16, 12, 9, 15 and 14. Only one of these is a multiple of 9."
+  ],
+  "solutions": {
+    "reliable": "Use the digit-sum test for 9: 1 + 9 + 6 = 16, 4 + 2 + 6 = 12, 5 + 1 + 3 = 9, 5 + 1 + 9 = 15, 9 + 0 + 5 = 14. Only 513 has a digit sum that is a multiple of 9, and indeed 513 = 9 x 57. The transferable idea: the last digit tests for 2, 5 and 10, but for 3 and 9 you must add the digits.",
+    "elegant": null
+  },
+  "whyOnTest": "Knowing which divisibility test to use, and that the last digit says nothing about 9.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

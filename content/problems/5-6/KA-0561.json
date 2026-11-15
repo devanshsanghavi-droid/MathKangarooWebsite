@@ -1,0 +1,68 @@
+{
+  "id": "KA-0561",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Numbers are written in rows. Row 1 is 1. Row 2 is 2, 3. Row 3 is 4, 5, 6. Each new row has one more number than the row before, and the counting continues. What is the first number in row 10?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought each row starts with its own row number, because row 2 starts with 2."
+    },
+    {
+      "key": "B",
+      "text": "37",
+      "correct": false,
+      "misconception": "I found the first number of row 9 instead of row 10."
+    },
+    {
+      "key": "C",
+      "text": "45",
+      "correct": false,
+      "misconception": "I found how many numbers come before row 10 and gave that, forgetting to add 1."
+    },
+    {
+      "key": "D",
+      "text": "46",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "55",
+      "correct": false,
+      "misconception": "I found the last number in row 10 instead of the first."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-06",
+    "secondary": [
+      "PAT-04",
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "Look at the last number in each row.",
+    "The last number in a row equals how many numbers have been written so far, which is 1 + 2 + 3 + ... up to that row. The first number of the next row is one more.",
+    "Rows 1 to 9 hold 1 + 2 + ... + 9 = 45 numbers, so row 9 ends with 45."
+  ],
+  "solutions": {
+    "reliable": "Row n has n numbers, so rows 1 to 9 together hold 1 + 2 + ... + 9 = 45 numbers. That means row 9 ends with 45, and row 10 starts with the next number, 46. Check with the start: row 3 starts at 1 + 2 + 1 = 4, as shown. The transferable idea: in a table that fills row by row, the last entry of a row counts everything written so far, so add up the row lengths.",
+    "elegant": "Pair the row lengths: 1 + 9, 2 + 8, 3 + 7, 4 + 6 are four tens, plus 5 makes 45, so row 10 begins at 46."
+  },
+  "whyOnTest": "Table patterns test whether you can find a position by counting everything that comes before it.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

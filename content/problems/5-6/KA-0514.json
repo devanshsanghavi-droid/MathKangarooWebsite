@@ -1,0 +1,68 @@
+{
+  "id": "KA-0514",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Seen from directly above, a building made of unit cubes looks like a full 3 by 3 square. Seen from the front, it looks 3 cubes tall on the left, 2 cubes tall in the middle and 1 cube tall on the right. What is the largest number of cubes the building can contain?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted only the cubes I can see in the front view, 3 + 2 + 1, and forgot the stacks behind them."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I used only the view from above and put one cube on each of the 9 squares."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found the smallest possible number of cubes instead of the largest."
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I filled a whole 3 by 3 by 3 block, which would look 3 cubes tall all the way across from the front."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-12",
+    "secondary": [
+      "GEO-13",
+      "CNT-18"
+    ]
+  },
+  "hints": [
+    "Behind each part of the front view are three stacks.",
+    "The front view only shows the tallest stack in each strip of three squares running away from you. To make the most cubes, make every stack as tall as its strip allows.",
+    "The three stacks in the left strip can each be 3 tall, the middle strip 2 tall, the right strip 1 tall."
+  ],
+  "solutions": {
+    "reliable": "From the front, the height you see on the left is the tallest stack among the three squares of the left strip running away from you, and the same for the middle and right strips. The view from above says every one of the 9 squares has at least one cube. For the most cubes, make all three stacks in the left strip 3 tall, all three in the middle strip 2 tall, and all three in the right strip 1 tall: 9 + 6 + 3 = 18. This still looks like a full 3 by 3 square from above and shows heights 3, 2, 1 from the front. The transferable idea: a view only fixes the tallest stack behind each point, so the largest count fills every hidden stack up to that height.",
+    "elegant": null
+  },
+  "whyOnTest": "Two views never pin down a solid exactly, so the test asks for the largest or smallest count to see whether you know what a view hides.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

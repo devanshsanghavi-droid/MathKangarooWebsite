@@ -1,0 +1,65 @@
+{
+  "id": "KA-0320",
+  "band": "1-2",
+  "points": 3,
+  "statement": "A contest question has 5 answer choices, A to E. Mia is sure that A, B and D are wrong. How many choices could still be right?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I gave the number of choices she crossed out instead of the ones left."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I crossed out only one choice instead of all three that she knows are wrong."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I forgot to cross out the wrong choices at all."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I added the 5 choices and the 3 wrong ones instead of taking them away."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-09",
+    "secondary": []
+  },
+  "hints": [
+    "Write the five letters, then cross some out.",
+    "Each choice she is sure about can be crossed off. What is left are the only answers that could be right, so a guess between them is much better than a blank.",
+    "Write A, B, C, D, E and cross out A, B and D. Count the letters that are not crossed out."
+  ],
+  "solutions": {
+    "reliable": "Write A, B, C, D, E and cross out A, B and D. Only C and E are left, so 2 choices could still be right. A wrong answer costs nothing, so Mia should guess one of them. The idea to keep: cross out what you know is wrong, then always guess from what is left.",
+    "elegant": null
+  },
+  "whyOnTest": "Crossing out wrong choices makes a guess much better, and with no penalty a blank can never score.",
+  "estSeconds": 30,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

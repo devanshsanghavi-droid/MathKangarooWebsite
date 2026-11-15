@@ -1,0 +1,68 @@
+{
+  "id": "KA-0767",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Fifteen minutes remain. Rosa has five questions left and knows how long each would take: 3 points in 4 min, 4 points in 3 min, 4 points in 5 min, 5 points in 7 min and 5 points in 8 min. What is the most points she can score from questions she fully solves in time?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I did the two 5-point questions first because they are worth the most, and that used up all 15 minutes."
+    },
+    {
+      "key": "B",
+      "text": "11",
+      "correct": false,
+      "misconception": "I always took the question with the most points per minute next, which left 3 minutes unused and only 11 points."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I started with the quicker 5-point question and then filled the time with the quickest of the rest."
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I added up the points for all five questions without checking that they need 27 minutes."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-08",
+    "secondary": [
+      "CNT-04",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "First work out how many of the questions can possibly fit.",
+    "This is time triage: you are choosing a set of questions, not an order. Bound how many can fit, then test the biggest point totals from the top down until one fits in 15 minutes.",
+    "The four quickest questions need 3 + 4 + 5 + 7 = 19 minutes, so at most three fit. 14 points would need both 5-pointers and a 4-pointer. Check how long that takes, then check 13."
+  ],
+  "solutions": {
+    "reliable": "The four quickest questions take 3 + 4 + 5 + 7 = 19 minutes, so she can finish at most three. The best three-question total would be 5 + 5 + 4 = 14, but that needs at least 7 + 8 + 3 = 18 minutes. Next is 13 = 5 + 4 + 4, and the 7-minute 5-pointer with both 4-pointers takes 7 + 3 + 5 = 15 minutes exactly. So 13 is the most. The transferable idea: when time is short, pick the best set that fits, and do not trust a rule like most points first or quickest first.",
+    "elegant": "Bound first, then search from the top: three questions at most, 14 is too slow, 13 fits exactly. Only two totals ever need checking."
+  },
+  "whyOnTest": "Late in a paper the choice is which questions, not which first, and greedy rules like most points first or quickest first leave points behind.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0729",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A clock with hands but no numbers hangs opposite a mirror. In the mirror, the clock seems to show 2:40. What time does the clock really show?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9:20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "2:40",
+      "correct": false,
+      "misconception": "I read the time straight from the mirror image without reversing it."
+    },
+    {
+      "key": "C",
+      "text": "9:40",
+      "correct": false,
+      "misconception": "I reversed the hour hand but kept the minute hand where it looked, at 40 minutes."
+    },
+    {
+      "key": "D",
+      "text": "8:40",
+      "correct": false,
+      "misconception": "I thought a mirror turns the clock half way round, so I added 6 hours."
+    },
+    {
+      "key": "E",
+      "text": "10:20",
+      "correct": false,
+      "misconception": "I worked out 12 - 2 = 10 for the hours and 60 - 40 = 20 for the minutes separately, forgetting to borrow an hour."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-18",
+    "secondary": [
+      "GEO-09",
+      "GEO-08"
+    ]
+  },
+  "hints": [
+    "Where does the minute hand really point?",
+    "A mirror swaps left and right, so each hand is reflected in the line through 12 and 6. Reflect the minute hand first, then work out where the hour hand must be at that minute.",
+    "The minute hand really points at the 4, so it is 20 minutes past. The real time and the mirror time always add up to 12 hours."
+  ],
+  "solutions": {
+    "reliable": "A mirror reflects each hand in the vertical line through 12 and 6. In the mirror the minute hand points at the 8 (40 minutes), so really it points at the 4: 20 minutes past. In the mirror the hour hand is two thirds of the way from 2 to 3, so really it is two thirds of the way from 10 back to 9, which is a third of the way from 9 to 10, as it should be at 20 past 9. The real time is 9:20. Check: 9:20 + 2:40 = 12:00. The transferable idea: a mirror image of a clock shows the time that adds to the real time to make 12 hours.",
+    "elegant": "The real time and the mirror time add to 12:00, so the real time is 12:00 - 2:40 = 11:60 - 2:40 = 9:20."
+  },
+  "whyOnTest": "Mirror clocks test reflecting both hands, and the classic slip is subtracting hours and minutes separately without borrowing.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

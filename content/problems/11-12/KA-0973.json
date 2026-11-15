@@ -1,0 +1,68 @@
+{
+  "id": "KA-0973",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A machine turns 6 into 12, 7 into 8, 8 into 15, 9 into 13 and 10 into 18. Following the same rule, what does it turn 12 into?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I worked out that the machine is about divisors, but I counted the divisors of 12 instead of adding them."
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I added the divisors of 12 but left out 12 itself, getting 1 + 2 + 3 + 4 + 6 = 16."
+    },
+    {
+      "key": "C",
+      "text": "21",
+      "correct": false,
+      "misconception": "I noticed that 8 goes to 15 and 10 goes to 18, and continued the even inputs by adding 3, so 12 goes to 21."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I saw that 6 goes to 12 and assumed the machine doubles, without checking the other examples."
+    },
+    {
+      "key": "E",
+      "text": "28",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "NUM-05",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Look at 7 becoming 8. What could turn a prime into one more than itself?",
+    "Primes stand out: 7 becomes 7 + 1. Try listing the divisors of each input and doing something with them.",
+    "The machine adds up all the divisors of the input, including 1 and the number itself: 9 gives 1 + 3 + 9 = 13."
+  ],
+  "solutions": {
+    "reliable": "Test the idea suggested by 7 becoming 8, the sum of all divisors. For 6: 1 + 2 + 3 + 6 = 12. For 7: 1 + 7 = 8. For 8: 1 + 2 + 4 + 8 = 15. For 9: 1 + 3 + 9 = 13. For 10: 1 + 2 + 5 + 10 = 18. All five fit. The divisors of 12 are 1, 2, 3, 4, 6 and 12, with sum 28. The transferable idea: when a rule must be inferred, start from the most unusual example, here a prime, and then check the guess against every example, not just one.",
+    "elegant": null
+  },
+  "whyOnTest": "Inferring a rule means checking a guess against every example, and each distractor fits only one or two of the examples.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0843",
+  "band": "9-10",
+  "points": 5,
+  "statement": "In the multiplication AB × AB = CAB, AB is a two-digit number and CAB is a three-digit number. Different letters stand for different digits. What is the two-digit number AB?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "15",
+      "correct": false,
+      "misconception": "I guessed the number must end in 5 and took the smallest such number, 15, without checking that 15 × 15 = 225 does not end in 15."
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I matched only the last digit: 16 × 16 = 256 ends in 6, but I did not check that the square ends in 16."
+    },
+    {
+      "key": "C",
+      "text": "76",
+      "correct": false,
+      "misconception": "I found that 76 × 76 ends in 76 but missed that its square, 5776, has four digits, not three."
+    },
+    {
+      "key": "D",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "625",
+      "correct": false,
+      "misconception": "I gave the square CAB instead of the number AB."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "NUM-07",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "The square of AB must end in the two digits AB themselves.",
+    "The square has only three digits, which limits how big AB can be. The last digit of B × B must be B, which leaves very few choices for B. Combine both limits and test what remains.",
+    "AB is at most 31, since 32 × 32 = 1024. The digit B must be 0, 1, 5 or 6, so test 10, 11, 15, 16, 20, 21, 25, 26, 30 and 31."
+  ],
+  "solutions": {
+    "reliable": "Since CAB has three digits, AB is at most 31 (32 × 32 = 1024). The last digit of B × B must be B, so B is 0, 1, 5 or 6. The candidates and their squares are 10: 100, 11: 121, 15: 225, 16: 256, 20: 400, 21: 441, 25: 625, 26: 676, 30: 900, 31: 961. Only 625 ends in the original number, and it gives A = 2, B = 5, C = 6, all different. So AB = 25. The transferable idea: a last-digit filter and a size bound together shrink a digit puzzle to a short list.",
+    "elegant": "AB × AB ends in AB exactly when AB × (AB - 1) is a multiple of 100. Two consecutive numbers share no factor, so one of them is a multiple of 25 and the other a multiple of 4. The only options are 25 (with 24) and 76 (with 75), and 76 squared has four digits."
+  },
+  "whyOnTest": "Cryptarithm questions reward combining a last-digit filter with a size bound; the trap answers 16 and 76 each pass only one of the two checks.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

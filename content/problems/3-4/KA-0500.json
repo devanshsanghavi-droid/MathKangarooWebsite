@@ -1,0 +1,67 @@
+{
+  "id": "KA-0500",
+  "band": "3-4",
+  "points": 3,
+  "statement": "An ice cream shop sells 3 flavours, in a cone or a cup, with or without sprinkles. How many different ice creams can be ordered?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I multiplied the 2 choices of cone or cup by the 2 choices of sprinkles and forgot the flavours."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I added the 3 flavours and the 2 holders and forgot about sprinkles."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I multiplied the flavours by cone or cup and forgot about sprinkles."
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": false,
+      "misconception": "I added the choices, 3 + 2 + 2, instead of multiplying them."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-03",
+    "secondary": [
+      "CNT-02"
+    ]
+  },
+  "hints": [
+    "Draw a small tree for one flavour.",
+    "Every flavour can go with every holder, and each of those can go with or without sprinkles. Choices made one after another multiply.",
+    "One flavour gives 2 x 2 = 4 different ice creams."
+  ],
+  "solutions": {
+    "reliable": "Each of the 3 flavours can go in a cone or a cup, giving 3 x 2 = 6 combinations. Each of those can have sprinkles or not, giving 6 x 2 = 12 ice creams. The transferable idea: independent choices multiply.",
+    "elegant": null
+  },
+  "whyOnTest": "The multiplication principle with three independent choices, where adding instead of multiplying is the classic slip.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

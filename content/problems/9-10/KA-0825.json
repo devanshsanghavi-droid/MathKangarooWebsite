@@ -1,0 +1,68 @@
+{
+  "id": "KA-0825",
+  "band": "9-10",
+  "points": 5,
+  "statement": "In the addition AB + CD = 100, each letter stands for a digit, different letters stand for different digits, and AB and CD are two-digit numbers, with tens digits A and C and units digits B and D. How many possible values of AB are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "18",
+      "correct": false,
+      "misconception": "I treated AB = 13 with CD = 87 and AB = 87 with CD = 13 as the same answer, so I only counted half of the values."
+    },
+    {
+      "key": "B",
+      "text": "48",
+      "correct": false,
+      "misconception": "I crossed off only one clashing pair of digits for A and C for each choice of B and D, so I always kept 6 ways, though most choices leave only 4."
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "64",
+      "correct": false,
+      "misconception": "I made A different from C and B different from D, but never checked the tens digits against the units digits."
+    },
+    {
+      "key": "E",
+      "text": "72",
+      "correct": false,
+      "misconception": "I ignored the rule that different letters stand for different digits and multiplied the 9 ways to make B + D = 10 by the 8 ways to make A + C = 9."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "CNT-04",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Add the units column first. What must B + D be?",
+    "The units digits must add to 10, carrying 1, so the tens digits must add to 9. List the ways to make each sum with different digits, then remove choices where a tens digit repeats a units digit.",
+    "B + D = 10 can be 1 and 9, 2 and 8, 3 and 7 or 4 and 6, in either order. For each, count the pairs with A + C = 9 that avoid those two digits."
+  ],
+  "solutions": {
+    "reliable": "The units column gives B + D = 0 or 10. If B + D = 0, then B = D = 0, which is not allowed, so B + D = 10 and 1 is carried. Then A + C + 1 = 10, so A + C = 9, with A and C both at least 1. Since B and D must differ, they are 1 and 9, 2 and 8, 3 and 7, or 4 and 6, in either order. The ordered pairs with A + C = 9 are (1, 8), (2, 7), (3, 6), (4, 5) and their reverses, 8 in all. If B and D are 1 and 9, the pairs using 1 or 9 are (1, 8) and (8, 1), leaving 6. If B and D are 2 and 8, the pairs (2, 7), (7, 2), (1, 8) and (8, 1) clash, leaving 4. Likewise 3 and 7 leave 4, and 4 and 6 leave 4. Each choice of B and D can be in either order, so the total is 2 x (6 + 4 + 4 + 4) = 36. Each of these gives a different AB. The transferable idea: in a column addition, settle the carries first, then let the different-digits rule do careful casework.",
+    "elegant": null
+  },
+  "whyOnTest": "Cryptarithms reward working column by column and tracking the carry, and the 5-point trap is checking the different-digits rule only within a column.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

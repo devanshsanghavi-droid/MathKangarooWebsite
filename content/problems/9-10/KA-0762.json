@@ -1,0 +1,68 @@
+{
+  "id": "KA-0762",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A tap fills an empty tank in 6 hours, and a drain empties a full tank in 10 hours. The tap is turned on with the drain closed, and after 2 hours the drain is opened too. How many hours after the tap was turned on is the tank full?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3.75",
+      "correct": false,
+      "misconception": "I added the tap's rate and the drain's rate and ignored the first two hours, as if both helped from the start."
+    },
+    {
+      "key": "B",
+      "text": "4.5",
+      "correct": false,
+      "misconception": "I handled the first two hours correctly but then added the drain's rate to the tap's instead of subtracting it."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I ignored the drain altogether, so the tank fills in the tap's usual 6 hours."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I found the time after the drain was opened and forgot to add the first 2 hours."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "MOD-04",
+    "secondary": [
+      "MOD-03",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Work in fractions of a tank per hour.",
+    "Find how much of the tank the tap fills alone in the first stretch. After that, the tap and drain work against each other, so their rates combine by subtraction. Divide what is left by the combined rate.",
+    "In 2 hours the tap fills a third of the tank. Together the rate is 1/6 - 1/10 = 1/15 of a tank per hour."
+  ],
+  "solutions": {
+    "reliable": "The tap fills 1/6 of the tank per hour, so after 2 hours the tank is 1/3 full. With the drain open, the net rate is 1/6 - 1/10 = 1/15 of a tank per hour. The remaining 2/3 of the tank takes (2/3) / (1/15) = 10 hours. The total time is 2 + 10 = 12 hours. The transferable idea: convert each worker to jobs per hour, combine the rates with the right signs, and keep track of which stretch of time the question asks about.",
+    "elegant": null
+  },
+  "whyOnTest": "Work-rate problems test thinking in rates rather than times, and a delayed start checks whether you add back the first stage.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

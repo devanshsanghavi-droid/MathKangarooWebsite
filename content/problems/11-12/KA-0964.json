@@ -1,0 +1,68 @@
+{
+  "id": "KA-0964",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Which of these numbers is the largest?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2^600",
+      "correct": false,
+      "misconception": "I picked the number with the largest exponent, without allowing for its small base."
+    },
+    {
+      "key": "B",
+      "text": "3^400",
+      "correct": false,
+      "misconception": "I saw that 2^600 = (2√2)^400 is smaller than 3^400, then assumed 5^300 and 11^200 must be smaller still because their exponents are smaller."
+    },
+    {
+      "key": "C",
+      "text": "5^300",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "11^200",
+      "correct": false,
+      "misconception": "I picked the number with the largest base, without allowing for its smaller exponent."
+    },
+    {
+      "key": "E",
+      "text": "They are all equal",
+      "correct": false,
+      "misconception": "I noticed that 2^600 = 4^300 = 8^200 and assumed every choice was the same number written in a different way."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "CFT-06",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Write every number as something to the power 100.",
+    "2^600 = (2^6)^100, and the others can be rewritten in the same way. Once the exponents match, only the bases need comparing.",
+    "The four numbers are 64^100, 81^100, 125^100 and 121^100."
+  ],
+  "solutions": {
+    "reliable": "Rewrite each number with exponent 100: 2^600 = (2^6)^100 = 64^100, 3^400 = (3^4)^100 = 81^100, 5^300 = (5^3)^100 = 125^100 and 11^200 = (11^2)^100 = 121^100. With equal exponents the largest base wins, so 5^300 is the largest, just ahead of 11^200, and the numbers are clearly not all equal. The transferable idea: to compare powers, rewrite them with a common exponent or a common base instead of trying to estimate their size.",
+    "elegant": null
+  },
+  "whyOnTest": "Comparing huge powers is instant after spotting a common exponent and hopeless by grinding, and the near tie between 125 and 121 punishes guessing.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

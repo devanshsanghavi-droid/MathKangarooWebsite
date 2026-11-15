@@ -1,0 +1,68 @@
+{
+  "id": "KA-0510",
+  "band": "5-6",
+  "points": 4,
+  "statement": "How many three-digit numbers have digits that multiply to 12? For example, 341 is one of them.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found the three sets of digits, 1-2-6, 1-3-4 and 2-2-3, and forgot that each set can be arranged in several orders."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I missed the digits 1, 3, 4, so I only counted 6 orders of 1, 2, 6 and 3 orders of 2, 2, 3."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I missed the set 2, 2, 3 because I only looked for three different digits."
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": false,
+      "misconception": "I counted 6 orders for 2, 2, 3 as well, not noticing that swapping the two 2s gives the same number."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-04",
+    "secondary": [
+      "CNT-05",
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "First find which sets of digits work, then count orders.",
+    "Split into cases by the set of three digits. Three different digits can be ordered in several ways, but a set with a repeated digit has fewer different orders.",
+    "The sets are 1, 2, 6 and 1, 3, 4 and 2, 2, 3. Count the orders of each separately."
+  ],
+  "solutions": {
+    "reliable": "No digit can be 0, and every digit must divide 12. The sets of three digits with product 12 are 1, 2, 6 and 1, 3, 4 and 2, 2, 3 (1, 1, 12 fails because 12 is not a digit). Three different digits give 3 x 2 x 1 = 6 orders each, so 12 numbers from the first two sets. The set 2, 2, 3 gives only 3 orders: 223, 232, 322. Total 6 + 6 + 3 = 15. The transferable idea: in casework, count each case by its own rule, and watch for repeated items, which reduce the number of orders.",
+    "elegant": null
+  },
+  "whyOnTest": "Casework by digit set, then counting orders, rewards a careful list and punishes mishandling a repeated digit in either direction.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

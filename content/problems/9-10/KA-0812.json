@@ -1,0 +1,67 @@
+{
+  "id": "KA-0812",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Each interior angle of a regular polygon is five times as large as each of its exterior angles. How many sides does the polygon have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I found the exterior angle of 30 degrees but divided 180 by it instead of 360."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I took the exterior angle to be 180 divided by 5, which is 36 degrees, and then divided 360 by 36."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": false,
+      "misconception": "I found 360 divided by 30 is 12 and then added 2, mixing it up with the n - 2 in the angle sum formula."
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": false,
+      "misconception": "I stopped once I had the exterior angle and gave its size, 30, as the number of sides."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "An interior angle and its exterior angle sit together on a straight line.",
+    "Split the straight angle at each vertex into six equal shares: one for the exterior angle and five for the interior one. Then use the fact that the exterior angles of any polygon add up to a full turn.",
+    "The exterior angle is 180 / 6 = 30 degrees, and all the exterior angles together make 360 degrees."
+  ],
+  "solutions": {
+    "reliable": "At each vertex the interior and exterior angles add up to 180 degrees. If the exterior angle is x, then x + 5x = 180, so x = 30 degrees. The exterior angles of a convex polygon always add up to 360 degrees, so there are 360 / 30 = 12 of them, and the polygon has 12 sides. Check: a regular 12-gon has angle sum 10 x 180 = 1800 degrees, so each interior angle is 150 degrees, which is five times 30. The transferable idea: for regular polygons, work with the exterior angle, because the exterior angles always total 360 degrees.",
+    "elegant": null
+  },
+  "whyOnTest": "Regular polygon questions test whether you reach for the exterior angle, whose total is always 360 degrees, instead of grinding the interior angle formula.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

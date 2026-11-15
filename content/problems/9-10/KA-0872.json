@@ -1,0 +1,68 @@
+{
+  "id": "KA-0872",
+  "band": "9-10",
+  "points": 3,
+  "statement": "I think of a number. I double it, add 6, then halve the result. The answer is 5 less than three times my number. What number did I think of?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I halved only the 6, writing 2x + 3, instead of halving the whole of 2x + 6."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": false,
+      "misconception": "I forgot to halve at all, and set 2x + 6 equal to 3x - 5."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I found the final answer of the steps, not the number I started with."
+    },
+    {
+      "key": "E",
+      "text": "1/2",
+      "correct": false,
+      "misconception": "I read '5 less than three times my number' as 5 - 3x."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-01",
+    "secondary": [
+      "CFT-01",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Call the number x and follow the steps exactly.",
+    "Turn each instruction into algebra in order, using brackets so that 'halve the result' acts on everything so far. Then write the second sentence as an expression and set the two equal.",
+    "The steps give (2x + 6) / 2 = x + 3, and '5 less than three times my number' is 3x - 5."
+  ],
+  "solutions": {
+    "reliable": "Doubling and adding 6 gives 2x + 6, and halving that gives x + 3. Setting x + 3 = 3x - 5 gives 2x = 8, so x = 4. Check: 4 doubled is 8, plus 6 is 14, halved is 7, and three times 4 minus 5 is also 7. The transferable idea: translate a sentence step by step, with brackets around 'the result' so each operation acts on everything before it.",
+    "elegant": null
+  },
+  "whyOnTest": "Turning a chain of instructions into an equation is a basic skill, and the wrong choices come from the small translation slips everyone makes.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

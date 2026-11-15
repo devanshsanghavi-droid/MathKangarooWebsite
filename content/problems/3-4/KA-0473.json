@@ -1,0 +1,68 @@
+{
+  "id": "KA-0473",
+  "band": "3-4",
+  "points": 5,
+  "statement": "On a scale, 1 key and 2 coins weigh 14 g, while 2 keys and 1 coin weigh 16 g. All keys weigh the same, and so do all coins. What does one key weigh?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4 g",
+      "correct": false,
+      "misconception": "I found the weight of one coin instead of one key."
+    },
+    {
+      "key": "B",
+      "text": "5 g",
+      "correct": false,
+      "misconception": "I found that a key and a coin weigh 10 g together and split it equally between them."
+    },
+    {
+      "key": "C",
+      "text": "6 g",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "8 g",
+      "correct": false,
+      "misconception": "I halved 16 g, as if the two keys made up all of that weight."
+    },
+    {
+      "key": "E",
+      "text": "10 g",
+      "correct": false,
+      "misconception": "I found the weight of one key and one coin together and stopped there."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-10",
+    "secondary": [
+      "MOD-01",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Try putting everything from both weighings on the scale together.",
+    "Combining both weighings gives equal numbers of keys and coins. That tells you what one key and one coin weigh together, which you can compare with one of the weighings.",
+    "Together, 3 keys and 3 coins weigh 30 g, so 1 key and 1 coin weigh 10 g."
+  ],
+  "solutions": {
+    "reliable": "Compare the two weighings. The second has one more key and one fewer coin, and it is 2 g heavier, so a key is 2 g heavier than a coin. In the first weighing, a key and 2 coins make 14 g: that is 3 coins and 2 g more, so 3 coins weigh 12 g and a coin is 4 g. A key is 4 + 2 = 6 g. Check: 6 + 4 + 4 = 14 and 6 + 6 + 4 = 16. The transferable idea: compare two balances to see what one swap is worth.",
+    "elegant": "Put both weighings together: 3 keys and 3 coins weigh 30 g, so 1 key and 1 coin weigh 10 g. The second weighing is that pair plus one more key: 10 g + key = 16 g, so a key is 6 g. The transferable idea: combining balances can make a simpler group appear."
+  },
+  "whyOnTest": "Two balance facts with mixed objects need an idea, combining or comparing them, not just a single swap.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

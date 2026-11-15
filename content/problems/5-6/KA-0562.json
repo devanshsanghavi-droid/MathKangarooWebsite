@@ -1,0 +1,68 @@
+{
+  "id": "KA-0562",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Matchstick hexagons are laid in a row, each new hexagon sharing one side with the one before it. One hexagon uses 6 matchsticks and a row of two uses 11. How many hexagons are in a row that uses exactly 61 matchsticks?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I divided 61 by 6, as if no sides were shared, and rounded down."
+    },
+    {
+      "key": "B",
+      "text": "11",
+      "correct": false,
+      "misconception": "I took away the first hexagon's 6 sticks, divided 55 by 5 and forgot to count the first hexagon."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": false,
+      "misconception": "I divided 61 by 5, got 12.2, and rounded up because of the leftover stick."
+    },
+    {
+      "key": "E",
+      "text": "306",
+      "correct": false,
+      "misconception": "I treated 61 as the number of hexagons and worked out how many sticks that row would need."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-02",
+      "LOG-08"
+    ]
+  },
+  "hints": [
+    "How many new sticks does each extra hexagon need?",
+    "Each new hexagon shares one side, so it adds fewer than 6 sticks. Find how many sticks each extra hexagon adds, then work backwards from 61.",
+    "Each new hexagon adds 5 sticks, so n hexagons use 6 + 5(n - 1) = 5n + 1 sticks."
+  ],
+  "solutions": {
+    "reliable": "The first hexagon uses 6 sticks and each new one adds 5, because one of its sides is already there. So n hexagons use 6 + 5(n - 1) = 5n + 1 sticks. Set 5n + 1 = 61: then 5n = 60 and n = 12. Check: 12 hexagons use 6 + 11 × 5 = 61. The transferable idea: in a growing pattern, find the starting amount and the amount each step adds, then work backwards from the total.",
+    "elegant": "Think of one starting stick, then each hexagon adds a group of 5 sticks. 61 = 1 + 5 × 12, so there are 12 groups."
+  },
+  "whyOnTest": "Visual patterns test whether you spot the shared parts that make each step add less than a whole new shape.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

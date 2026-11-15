@@ -1,0 +1,68 @@
+{
+  "id": "KA-0861",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A rectangular floor measuring 84 cm by 120 cm is to be covered exactly by equal square tiles, without cutting any. The tiles are to be as large as possible. How many tiles are needed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found the side length of each tile, 12 cm, instead of the number of tiles."
+    },
+    {
+      "key": "B",
+      "text": "280",
+      "correct": false,
+      "misconception": "I used a common factor, 6 cm, as the tile side instead of the greatest common factor."
+    },
+    {
+      "key": "C",
+      "text": "70",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": false,
+      "misconception": "I counted only the tiles touching the edge of the floor."
+    },
+    {
+      "key": "E",
+      "text": "17",
+      "correct": false,
+      "misconception": "I added the number of tiles along the two sides instead of multiplying them."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-05",
+    "secondary": [
+      "GEO-03",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "The tile side must divide both 84 and 120.",
+    "A square tile fits exactly only if its side divides both lengths. The largest such side is the greatest common factor. Then count tiles along each side and multiply.",
+    "The greatest common factor of 84 and 120 is 12, giving 7 tiles along one side and 10 along the other."
+  ],
+  "solutions": {
+    "reliable": "The tile side must be a common factor of 84 and 120, and the largest is their greatest common factor. 84 = 2 times 2 times 3 times 7 and 120 = 2 times 2 times 2 times 3 times 5 share 2 times 2 times 3 = 12. So there are 84/12 = 7 tiles one way and 120/12 = 10 the other, 70 tiles in total. Check: 70 times 144 = 10 080 = 84 times 120. The transferable idea: the largest square that tiles a rectangle exactly has side equal to the greatest common factor of the sides.",
+    "elegant": null
+  },
+  "whyOnTest": "Greatest common factor questions often hide in tiling stories, and the answer choices include the factor itself, which is not what is asked.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

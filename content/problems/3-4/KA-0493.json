@@ -1,0 +1,68 @@
+{
+  "id": "KA-0493",
+  "band": "3-4",
+  "points": 5,
+  "statement": "How many three-digit numbers between 300 and 600 have three different digits that are all odd?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I added the choices for each place, 2 + 4 + 3, instead of multiplying them."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I only counted the numbers in the 300s and forgot the 500s."
+    },
+    {
+      "key": "C",
+      "text": "40",
+      "correct": false,
+      "misconception": "I made the last two digits different from each other but forgot they must also differ from the first digit."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "50",
+      "correct": false,
+      "misconception": "I let digits repeat, so I counted 2 x 5 x 5."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-02",
+    "secondary": [
+      "CNT-03",
+      "CNT-11"
+    ]
+  },
+  "hints": [
+    "Which digits can go first?",
+    "Fill the places one at a time, starting with the most restricted one, the hundreds. For each later place, count how many odd digits are still unused, then multiply.",
+    "The first digit must be 3 or 5. Then 4 odd digits are left for the tens place."
+  ],
+  "solutions": {
+    "reliable": "The hundreds digit is odd and between 3 and 5, so it is 3 or 5: 2 choices. The tens digit is one of the other 4 odd digits, and the ones digit is one of the 3 odd digits still unused. That makes 2 x 4 x 3 = 24 numbers. The transferable idea: fill the most restricted place first, then multiply the choices left for each place.",
+    "elegant": null
+  },
+  "whyOnTest": "Digit puzzles reward filling the most restricted place first, and adding instead of multiplying is the classic slip.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

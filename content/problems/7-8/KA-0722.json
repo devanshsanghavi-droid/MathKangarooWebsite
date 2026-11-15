@@ -1,0 +1,68 @@
+{
+  "id": "KA-0722",
+  "band": "7-8",
+  "points": 5,
+  "statement": "In the addition KAN + KAN = ROOK, each letter stands for a digit, different letters stand for different digits, and no number starts with 0. What number is KAN?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "889",
+      "correct": false,
+      "misconception": "I forgot that different letters must stand for different digits, and let A and K both be 8."
+    },
+    {
+      "key": "B",
+      "text": "613",
+      "correct": false,
+      "misconception": "I found 613 + 613 = 1226, which has the right pattern, but I let A be 1 even though R is already 1."
+    },
+    {
+      "key": "C",
+      "text": "834",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "1668",
+      "correct": false,
+      "misconception": "I solved the puzzle correctly but gave the answer ROOK instead of KAN."
+    },
+    {
+      "key": "E",
+      "text": "668",
+      "correct": false,
+      "misconception": "I found 668 + 668 = 1336, which has the right pattern, but I let A be 6 even though K is already 6."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "NUM-03",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "What is the largest possible value of KAN + KAN?",
+    "Fix R first. In the units column K is the last digit of N + N, so K is even. Test the few values of K, carrying carefully, and check that every letter gets its own digit.",
+    "R = 1 and K is even and at least 5, so K is 6 or 8. Try K = 8: then N is 4 or 9, and the hundreds column needs O to be 6 or 7."
+  ],
+  "solutions": {
+    "reliable": "Two three-digit numbers add to less than 2000, so R = 1. ROOK is at least 1000, so K is at least 5, and K is the last digit of N + N, so K is even: K = 6 or K = 8. In the hundreds column K + K plus any carry equals 10 + O. If K = 6, then O is 2 or 3 and N is 3 or 8; checking the tens column, every option is either impossible or forces A to repeat a digit already used (A = 1 or A = 6), so K = 6 fails. If K = 8, then O is 6 or 7 and N is 4 or 9. With N = 4 there is no carry from the units, so A + A = O with no carry into the hundreds, giving O = 6 and A = 3. With N = 9 the tens column forces A = 8, which repeats K. So KAN = 834, and indeed 834 + 834 = 1668. The transferable idea: in a letter sum, settle the leading digit and the units column first, then test the few cases left.",
+    "elegant": null
+  },
+  "whyOnTest": "Cryptarithms reward working column by column with carries, and the classic slip is accepting a solution that reuses a digit.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

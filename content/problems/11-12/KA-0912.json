@@ -1,0 +1,68 @@
+{
+  "id": "KA-0912",
+  "band": "11-12",
+  "points": 3,
+  "statement": "In a group of 40 students, twice as many sing in the choir as play in the band. Six students do both and 10 do neither. How many sing in the choir but do not play in the band?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found how many play in the band and gave that number."
+    },
+    {
+      "key": "B",
+      "text": "18",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": false,
+      "misconception": "I ignored the six who do both, so I split 30 in the ratio 2 : 1 and got 20 in the choir."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I found the whole choir, including the six who also play in the band."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": false,
+      "misconception": "I found how many students do at least one of the two activities."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-10",
+    "secondary": [
+      "MOD-01",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "First find how many students do at least one activity.",
+    "Inclusion-exclusion: choir plus band minus both equals the number doing at least one. Write the choir as twice the band, solve, and then remove the overlap from the choir.",
+    "30 students do at least one, so 2b + b - 6 = 30, where b is the size of the band."
+  ],
+  "solutions": {
+    "reliable": "40 - 10 = 30 students do at least one activity. If b play in the band, then 2b sing in the choir, and inclusion-exclusion gives 2b + b - 6 = 30, so b = 12 and the choir has 24 members. Of those, 6 also play in the band, so 24 - 6 = 18 sing only. The transferable idea: in two-set problems, add the sets, subtract the overlap once, and read carefully whether the question wants a whole set or only part of it.",
+    "elegant": "In a Venn diagram the overlap is 6, band only is b - 6 and choir only is 2b - 6. These three regions hold 30 students: 3b - 6 = 30, so b = 12 and choir only is 18."
+  },
+  "whyOnTest": "Adding two overlapping groups counts the overlap twice, and choir only is not the same as choir; both slips are among the choices.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

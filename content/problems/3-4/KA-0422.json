@@ -1,0 +1,67 @@
+{
+  "id": "KA-0422",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Lina folds a sheet of paper in half three times in a row, then punches one hole through all the layers, away from the edges. How many holes are there when she unfolds it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted one hole for each fold."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the layers as 1, 2 and 4, one number for each fold, but 1 layer is the flat sheet before any folding."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought three folds make 2 x 3 = 6 layers, but each fold doubles the layers, so they go 2, 4, 8."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "14",
+      "correct": false,
+      "misconception": "I added the layers after each fold, 2 + 4 + 8, as if every fold left its own holes."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "GEO-09"
+    ]
+  },
+  "hints": [
+    "Draw the paper after each fold and count the layers.",
+    "Draw the diagram: the punch goes through every layer, so the number of holes equals the number of layers. Sketch how one fold in half changes the number of layers.",
+    "One fold makes 2 layers. The next fold lays those 2 layers on top of 2 more."
+  ],
+  "solutions": {
+    "reliable": "Count the layers. Flat, the sheet is 1 layer. Each fold in half doubles the layers: 2 after the first fold, 4 after the second and 8 after the third. The punch makes one hole in every layer, so the unfolded sheet has 8 holes. Check by unfolding in your head: opening the last fold turns 1 hole into 2, the next turns 2 into 4, and the first turns 4 into 8. The transferable idea: draw each stage instead of guessing, and look for what doubles.",
+    "elegant": "Work backwards from the folded paper: every unfolding doubles the holes, because each hole has a mirror image across the fold. Three unfoldings turn 1 hole into 2, then 4, then 8."
+  },
+  "whyOnTest": "Sketching each fold turns a hard-to-picture question into counting layers, so drawing the diagram is what stops the add-instead-of-double slip.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

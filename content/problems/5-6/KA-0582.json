@@ -1,0 +1,68 @@
+{
+  "id": "KA-0582",
+  "band": "5-6",
+  "points": 4,
+  "statement": "What is the value of 50 - 49 + 48 - 47 + ... + 4 - 3 + 2 - 1?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": false,
+      "misconception": "I paired the numbers from 50 - 49 down to 4 - 3 and forgot the last pair, 2 - 1."
+    },
+    {
+      "key": "B",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "49",
+      "correct": false,
+      "misconception": "I thought each of the 49 gaps between neighbouring numbers gave a difference of 1."
+    },
+    {
+      "key": "D",
+      "text": "50",
+      "correct": false,
+      "misconception": "I thought each of the 50 numbers gave a difference of 1, so I counted numbers instead of pairs."
+    },
+    {
+      "key": "E",
+      "text": "1275",
+      "correct": false,
+      "misconception": "I added all the numbers from 1 to 50 and ignored the minus signs."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-08",
+    "secondary": [
+      "PAT-02",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Look at the first two numbers together.",
+    "Group the terms in pairs, each a number minus the one just below it. Every pair has the same value, so the answer is that value times the number of pairs.",
+    "Each pair such as 50 - 49 or 2 - 1 equals 1. The 50 numbers make 25 pairs."
+  ],
+  "solutions": {
+    "reliable": "Group as (50 - 49) + (48 - 47) + ... + (2 - 1). Each bracket equals 1. There are 50 numbers, so there are 25 brackets, and the total is 25. The transferable idea: when signs alternate, pair neighbouring terms so each pair has the same simple value, then count the pairs carefully.",
+    "elegant": "Add the two kinds of number separately: the even numbers 2 to 50 add to 650 and the odd numbers 1 to 49 add to 625, so the value is 650 - 625 = 25."
+  },
+  "whyOnTest": "Long alternating sums are designed for regrouping, and the traps are counting numbers instead of pairs.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

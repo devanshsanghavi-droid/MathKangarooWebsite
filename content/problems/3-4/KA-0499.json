@@ -1,0 +1,71 @@
+{
+  "id": "KA-0499",
+  "band": "3-4",
+  "points": 5,
+  "statement": "The pattern grows like this, adding a square to the end of each arm at every stage. Which stage uses exactly 61 squares?",
+  "figure": {
+    "component": "PlusStages",
+    "alt": "Three stages of a growing plus shape. Stage 1 is a middle square with one square on each of its four sides, 5 squares. Stage 2 has arms 2 squares long, 9 squares. Stage 3 has arms 3 squares long, 13 squares."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I thought each stage has 5 squares more than the stage before, starting from 5, and divided 61 by 5."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": false,
+      "misconception": "I took away the 5 squares of stage 1 and divided the rest by 4, forgetting to count stage 1 itself."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I divided 61 by 4, got 15 and a bit, and rounded up."
+    },
+    {
+      "key": "E",
+      "text": "60",
+      "correct": false,
+      "misconception": "I worked out the number of squares in the arms, not the stage number."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-02",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Look at the middle square and the four arms separately.",
+    "Find what stays the same from stage to stage and what grows. Write the number of squares for any stage using its arms, then work backwards from 61.",
+    "Every stage has 1 middle square, and in stage n each of the 4 arms has n squares."
+  ],
+  "solutions": {
+    "reliable": "Stage n has 1 middle square and 4 arms of n squares, so 4n + 1 squares: 5, 9, 13 for stages 1, 2, 3, matching the picture. For 61 squares, 4n = 60, so n = 15. Check: 4 x 15 + 1 = 61. The transferable idea: split a growing shape into the part that stays the same and the parts that grow.",
+    "elegant": "Each stage adds 4 squares to stage 1's 5. From 5 to 61 is 56 more, which is 14 more stages after stage 1, so stage 15. The transferable idea: count the steps, then add the starting stage back."
+  },
+  "whyOnTest": "Seeing the structure of a visual pattern, then running its rule backwards from a total.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

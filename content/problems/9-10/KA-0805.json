@@ -1,0 +1,68 @@
+{
+  "id": "KA-0805",
+  "band": "9-10",
+  "points": 4,
+  "statement": "How many minutes after 7:00 is the angle between the hour hand and the minute hand of a clock exactly 144° for the first time?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "11",
+      "correct": false,
+      "misconception": "I kept the hour hand fixed on the 7, forgetting that it moves forward half a degree every minute."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I put the minute hand 144° from the 12, instead of 144° from the hour hand."
+    },
+    {
+      "key": "C",
+      "text": "1",
+      "correct": false,
+      "misconception": "I started from the 150° angle at 7:00 and took off 6° for each minute, not noticing that the minute hand first moves away from the hour hand."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": false,
+      "misconception": "I measured 144° from the 12 going anticlockwise, which put the minute hand at the 216° mark, 36 minutes."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-18",
+    "secondary": [
+      "MOD-03",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Measure each hand’s angle clockwise from the top. Where is each m minutes after 7:00?",
+    "The minute hand moves 6° per minute and the hour hand 0.5° per minute, starting at 210°. Write the gap between them in terms of m and set it equal to 144°, then check that no earlier time works.",
+    "The gap is 210 + 0.5m - 6m = 210 - 5.5m. Just after 7:00 the smaller angle is 150° and growing, so 144° must come once the gap has shrunk to 144."
+  ],
+  "solutions": {
+    "reliable": "After m minutes the minute hand is at 6m degrees and the hour hand at 210 + 0.5m degrees, measured clockwise from the 12. The clockwise gap from the minute hand to the hour hand is 210 - 5.5m. At 7:00 this gap is 210°, so the smaller angle is 150°; for the first few minutes the smaller angle grows towards 180°, so it cannot be 144° then. After that the angle is the gap itself, and 210 - 5.5m = 144 gives 5.5m = 66, so m = 12. Check at 7:12: the minute hand is at 72° and the hour hand at 216°, which are 144° apart. The transferable idea: measure both hands from the 12, remember the hour hand creeps forward, and work with the gap closing at 5.5° per minute.",
+    "elegant": "The minute hand gains 5.5° per minute on the hour hand. At 7:00 it is 210° behind it, measured clockwise, so it must gain 210 - 144 = 66°, which takes 66 / 5.5 = 12 minutes."
+  },
+  "whyOnTest": "Clock questions test the fact everyone forgets, that the hour hand moves too, and that the hands close on each other at 5.5° per minute.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

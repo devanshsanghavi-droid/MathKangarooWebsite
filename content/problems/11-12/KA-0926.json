@@ -1,0 +1,68 @@
+{
+  "id": "KA-0926",
+  "band": "11-12",
+  "points": 4,
+  "statement": "ABC is a three-digit number with digits A, B and C, which need not be different. Subtracting the sum of its digits from ABC gives 657, that is, ABC - (A + B + C) = 657. How many numbers ABC have this property?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought a number minus its digit sum must be a multiple of 99, like a number minus its reverse, and 657 is not."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I found 670, assumed the answer was unique, and did not notice that C cancels out."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I assumed the three digits had to be different, so I excluded C = 6 and C = 7."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I thought C could not be 0, so I left out 670."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "NUM-01",
+      "NUM-04"
+    ]
+  },
+  "hints": [
+    "Write ABC as 100A + 10B + C and simplify.",
+    "Expand the number by place value and subtract the digit sum. One letter cancels completely, and the rest becomes a short equation that the remaining digits must satisfy.",
+    "ABC - (A + B + C) = 99A + 9B, so 11A + B = 73."
+  ],
+  "solutions": {
+    "reliable": "ABC = 100A + 10B + C, so ABC - (A + B + C) = 99A + 9B. Setting 99A + 9B = 657 and dividing by 9 gives 11A + B = 73. Since B is a digit from 0 to 9, A = 6 and B = 7. The digit C cancelled, so it can be any of 0 to 9, giving the 10 numbers 670 to 679. The transferable idea: write a digit puzzle in place-value form and see which letters survive; a letter that cancels is free.",
+    "elegant": "The units digit adds C to the number and C to the digit sum, so it contributes nothing to the difference. Once 670 works, all ten numbers 670 to 679 work."
+  },
+  "whyOnTest": "Place-value form makes one letter cancel, and the trap is assuming that a digit puzzle must have a unique answer.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

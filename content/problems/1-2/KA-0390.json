@@ -1,0 +1,67 @@
+{
+  "id": "KA-0390",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Max uses each of the digits 1, 2, 3 and 4 exactly once to make two two-digit numbers. Then he adds the two numbers. What is the biggest total he can get?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I added the four digits instead of making two-digit numbers."
+    },
+    {
+      "key": "B",
+      "text": "37",
+      "correct": false,
+      "misconception": "I made the smallest total instead of the biggest."
+    },
+    {
+      "key": "C",
+      "text": "64",
+      "correct": false,
+      "misconception": "I made the biggest number, 43, first and then had only 2 and 1 left, so I added 43 and 21."
+    },
+    {
+      "key": "D",
+      "text": "73",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "77",
+      "correct": false,
+      "misconception": "I made 43 and 34, but that uses the 4 and the 3 twice and leaves out 1 and 2."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-01",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Which digits matter most in a two-digit number?",
+    "A tens digit is worth ten times as much as a ones digit. Put the two biggest digits in the tens places and the two smallest digits in the ones places.",
+    "Use 4 and 3 as the tens digits, which gives 40 + 30 = 70. The 2 and the 1 go in the ones places."
+  ],
+  "solutions": {
+    "reliable": "The tens digits count ten times over, so they should be 4 and 3, giving 70. The ones digits are then 2 and 1, adding 3 more. For example 42 + 31 = 73, and 41 + 32 = 73 too. No choice of tens digits beats 4 and 3, so 73 is the biggest. The idea to keep: put the biggest digits in the places worth the most.",
+    "elegant": "The total is the two tens digits counted as tens plus the two ones digits. Making the tens digits 4 and 3 gives 70 + 3 = 73, whichever way the ones digits are placed."
+  },
+  "whyOnTest": "Making the biggest total checks that you know a tens digit is worth more, and grabbing the biggest single number first is the trap.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

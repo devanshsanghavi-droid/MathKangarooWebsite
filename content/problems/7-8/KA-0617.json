@@ -1,0 +1,67 @@
+{
+  "id": "KA-0617",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Ana, Ben, Cara and Dev each play a different one of four instruments: piano, violin, drums and flute. Ana plays neither piano nor drums. Ben plays neither violin nor piano. Cara plays neither violin nor drums. Dev plays neither violin nor flute. Cara is the pianist's cousin. Who plays the flute?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Ana",
+      "correct": false,
+      "misconception": "I gave Ana the flute because her clue left violin or flute, without seeing that nobody else can play the violin."
+    },
+    {
+      "key": "B",
+      "text": "Ben",
+      "correct": false,
+      "misconception": "I did not use the cousin clue, and took the set-up where Cara plays piano and Ben plays flute."
+    },
+    {
+      "key": "C",
+      "text": "Cara",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "Dev",
+      "correct": false,
+      "misconception": "I lost track of Dev's own clue, which rules out the flute, and gave him the last instrument I had not placed."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be determined",
+      "correct": false,
+      "misconception": "I missed that the cousin clue means Cara is not the pianist, so I thought two set-ups were possible."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-03",
+    "secondary": [
+      "LOG-01"
+    ]
+  },
+  "hints": [
+    "Which instrument can only one person play?",
+    "In an elimination grid, look for a row or column with a single possible entry, fill it in, and cross it out everywhere else. Repeat, and make sure every clue gets used, including the last one.",
+    "Only Ana can play the violin. The cousin clue tells you Cara is not the pianist."
+  ],
+  "solutions": {
+    "reliable": "The violin is ruled out for Ben, Cara and Dev, so Ana plays the violin. Cara cannot be her own cousin, so she is not the pianist; with violin and drums also ruled out, Cara plays the flute. Then Ben, who cannot play piano, plays drums, and Dev plays piano. Every clue checks. The flute player is Cara. The transferable idea: in a logic grid, hunt for a row or column with only one possibility left, and make sure every clue is used.",
+    "elegant": null
+  },
+  "whyOnTest": "Elimination grids reward finding the forced cell first; leaving out one clue leaves two possible set-ups, which is the trap here.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0620",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Doubling a number and then adding 7 gives the same result as tripling the number and then subtracting 5. What is the number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I wrote 2n + 7 = 3n + 5, treating the subtraction as an addition."
+    },
+    {
+      "key": "B",
+      "text": "2.4",
+      "correct": false,
+      "misconception": "I added 7 and 5 and then divided by 2 + 3 = 5, combining the two sides instead of comparing them."
+    },
+    {
+      "key": "C",
+      "text": "31",
+      "correct": false,
+      "misconception": "I found the number correctly but then gave the result 2 x 12 + 7 instead."
+    },
+    {
+      "key": "D",
+      "text": "-12",
+      "correct": false,
+      "misconception": "I reached -n = -12 and then dropped only one of the two minus signs."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "MOD-01",
+    "secondary": [
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Call the number n and write down both sides.",
+    "Translate each half of the sentence into an expression with n, set the two equal, then collect the n terms on one side and the plain numbers on the other.",
+    "2n + 7 = 3n - 5. Subtracting 2n from both sides leaves 7 = n - 5."
+  ],
+  "solutions": {
+    "reliable": "Let the number be n. Then 2n + 7 = 3n - 5. Subtract 2n from both sides: 7 = n - 5, so n = 12. Check: 2 x 12 + 7 = 31 and 3 x 12 - 5 = 31. The transferable idea: translate each phrase into symbols, then check the answer against the original words.",
+    "elegant": "Going from double to triple adds one more copy of the number, and that extra copy has to make up the change from adding 7 to subtracting 5, which is 7 + 5 = 12. So the number is 12."
+  },
+  "whyOnTest": "Translating words into an equation, where the classic slip is a sign on the subtraction and checking catches it.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

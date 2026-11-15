@@ -1,0 +1,68 @@
+{
+  "id": "KA-0563",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Three ordinary dice, on which opposite faces always add up to 7, are stacked in a tower on a table. The top face of the tower shows 5. What is the total of all the faces that touch another die or the table?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "7",
+      "correct": false,
+      "misconception": "I counted only the two hidden faces of the middle die."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted the bottom face of the top die and the middle die, but forgot the bottom die."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": false,
+      "misconception": "I counted the hidden pairs on the two lower dice but forgot the bottom face of the top die."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "19",
+      "correct": false,
+      "misconception": "I used 5 for the bottom face of the top die, copying its top face instead of taking the opposite face."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-11",
+    "secondary": [
+      "CFT-02",
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "List the touching faces die by die.",
+    "Opposite faces add to 7. The top die has one touching face, opposite the 5. The middle and bottom dice each have their top and bottom faces touching something, and those two faces are opposite each other.",
+    "The top die's bottom face is 7 - 5 = 2. The middle die's top and bottom add to 7, and so do the bottom die's."
+  ],
+  "solutions": {
+    "reliable": "Go die by die. The top die touches the middle die with its bottom face, which is opposite the 5, so it shows 7 - 5 = 2. The middle die touches with both its top and bottom faces, a pair of opposite faces adding to 7. The bottom die touches the middle die with its top and the table with its bottom, another opposite pair adding to 7. Total: 2 + 7 + 7 = 16. The transferable idea: on a die, opposite faces add to 7, so any hidden top-and-bottom pair is worth 7 without knowing which numbers they are.",
+    "elegant": "Each die has a top and bottom face adding to 7, so the six top and bottom faces of the tower total 3 × 7 = 21. Of those six faces only the very top one, the 5, touches nothing, so the touching faces total 21 - 5 = 16."
+  },
+  "whyOnTest": "Dice questions test the opposite-faces rule, which lets you total hidden faces without knowing each one.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

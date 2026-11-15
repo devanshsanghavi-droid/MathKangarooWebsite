@@ -1,0 +1,68 @@
+{
+  "id": "KA-0864",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A contest gives 4 points for each correct answer and takes nothing off for a wrong one. Every question has five choices, exactly one of them correct. With no time left, a student guesses completely at random on 10 questions. On average, how many points will these guesses earn?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought random guesses cancel out to nothing, as they would if wrong answers lost points."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought a random guess has a 1 in 4 chance of being right, forgetting there are five choices."
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": false,
+      "misconception": "I thought each guess is either right or wrong, so has a 1 in 2 chance."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "2",
+      "correct": false,
+      "misconception": "I found the average number of correct guesses, not the points they are worth."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-09",
+    "secondary": [
+      "CFT-08",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "What is the chance that one random guess is right?",
+    "Each guess is right with probability one in five. Find how many of the ten guesses are right on average, then turn that into points. Nothing is lost for wrong answers, so blank answers simply throw points away.",
+    "On average 10 / 5 = 2 of the guesses are correct, and each correct answer is worth 4 points."
+  ],
+  "solutions": {
+    "reliable": "Each guess is correct with probability 1/5, so on average 10 times 1/5 = 2 of the ten guesses are correct. Each is worth 4 points, so the guesses earn 2 times 4 = 8 points on average, and wrong guesses cost nothing. A blank earns 0 for certain. The transferable idea: when wrong answers cost nothing, a guess is always worth more than a blank.",
+    "elegant": "Each single guess is worth 4 times 1/5 = 0.8 points on average, so ten guesses are worth 8 points. The transferable idea: the average value of a guess is the points times the chance of being right."
+  },
+  "whyOnTest": "Knowing the scoring rules is part of exam craft: with no penalty for wrong answers, leaving a question blank gives away expected points.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

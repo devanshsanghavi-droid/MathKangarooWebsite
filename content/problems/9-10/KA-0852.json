@@ -1,0 +1,68 @@
+{
+  "id": "KA-0852",
+  "band": "9-10",
+  "points": 5,
+  "statement": "How many different six-letter strings can be made from the letters A, A, B, B, C, C, using each letter once, so that no two equal letters are next to each other?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I subtracted the 30 strings with the A's together, and likewise for B and C, from 90, without adding back the strings counted in more than one group."
+    },
+    {
+      "key": "B",
+      "text": "36",
+      "correct": false,
+      "misconception": "I subtracted the three groups of 30 and added back the strings with two pairs together, but forgot to correct for the strings with all three pairs together."
+    },
+    {
+      "key": "C",
+      "text": "90",
+      "correct": false,
+      "misconception": "I counted every arrangement of the six letters and ignored the rule about neighbours."
+    },
+    {
+      "key": "D",
+      "text": "240",
+      "correct": false,
+      "misconception": "I treated the two A's, the two B's and the two C's as different letters, which counts each string 8 times."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-10",
+      "CNT-11"
+    ]
+  },
+  "hints": [
+    "Count all the strings first, then remove the bad ones.",
+    "A bad string has an equal pair side by side. Count strings with the A's together, and likewise for B and C, but strings with two or three such pairs get counted more than once, so correct the overcount.",
+    "There are 90 strings in all, 30 with the A's together (and the same for B and C), 12 with both the A's and B's together (and the same for each choice of two letters), and 6 with all three pairs together."
+  ],
+  "solutions": {
+    "reliable": "Treating equal letters as identical, there are 720 / (2 × 2 × 2) = 90 strings. Gluing the two A's into one block leaves 5 items with two pairs of equal letters: 120 / 4 = 30 strings, and the same for B and C. Gluing two pairs leaves 4 items with one equal pair: 24 / 2 = 12, for each of the 3 choices of two letters. Gluing all three pairs leaves 3 blocks: 6 strings. The bad strings number 3 × 30 - 3 × 12 + 6 = 60, so the good strings number 90 - 60 = 30. The transferable idea: when subtracting groups that overlap, every string in two groups is removed twice, so add those back, then fix the strings in all three.",
+    "elegant": "Count directly. Without loss of generality the string starts with A (then multiply by 3). Listing the strings starting with A shows 10 of them, for example ABABCC fails but ABACBC, ABCABC and ABCACB work; 3 × 10 = 30."
+  },
+  "whyOnTest": "Overcounting is the core 5-point idea: subtracting each bad pattern removes some strings twice, and correcting that is the whole problem.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0787",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Five whole numbers have a mean of 10 and a median of 12. The number 14 appears more often than any other number in the list. What is the largest possible value of the smallest number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I made the two smallest numbers equal, 5 and 5, forgetting that 5 would then appear as often as 14."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I found the two smallest numbers, 4 and 6, but gave the larger of them instead of the smallest."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I ignored the rule about 14, set the two largest numbers to 12, and split the remaining 14 equally."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I found that the two smallest numbers add up to 10 and gave that total instead of the smallest number."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-15",
+    "secondary": [
+      "LOG-11",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Turn the mean into a total first.",
+    "The five numbers total 50. Write them in order with 12 in the middle, and decide where the 14s can go. Then see how the leftover total can be split while keeping 14 the only most common number.",
+    "Only the two places above the median can hold 14, so both must, leaving 50 - 12 - 14 - 14 = 10 for the two smallest numbers."
+  ],
+  "solutions": {
+    "reliable": "The total is 5 x 10 = 50. In order the list is a, b, 12, d, e. The number 14 must appear at least twice, and it cannot be at or below the median, so d = e = 14. Then a + b = 50 - 12 - 28 = 10. If a = b = 5, then 5 would appear as often as 14, which is not allowed, so a < b and a is at most 4. The list 4, 6, 12, 14, 14 works: mean 10, median 12, and only 14 appears twice. The transferable idea: convert a mean into a total, then let each condition pin down one place in the ordered list.",
+    "elegant": null
+  },
+  "whyOnTest": "Mean, median and mode questions check that a mean becomes a total and that the 'most often' rule rules out ties, which is where the tempting 5 comes from.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

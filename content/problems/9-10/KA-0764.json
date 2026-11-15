@@ -1,0 +1,68 @@
+{
+  "id": "KA-0764",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Three lights flash every 12 seconds, every 18 seconds and every 30 seconds. They all flash together exactly at midnight. How many times do all three flash together after midnight, up to and including 1:00 a.m.?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I multiplied 12, 18 and 30 to find when they next meet, which is longer than an hour."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I took 12 x 30 = 360 seconds as the time between joint flashes, since 18 also divides it, without checking for a smaller common time."
+    },
+    {
+      "key": "C",
+      "text": "19",
+      "correct": false,
+      "misconception": "I did not count the joint flash at exactly 1:00 a.m."
+    },
+    {
+      "key": "D",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I counted the joint flash at midnight as well, although the question asks only for those after it."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-05",
+    "secondary": [
+      "PAT-03",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Find the shortest time until they all flash together again.",
+    "The lights coincide at every common multiple of the three periods, so find the least common multiple. Then count how many of its multiples fit into one hour, paying attention to the endpoints.",
+    "The least common multiple of 12, 18 and 30 is 180 seconds, which is 3 minutes."
+  ],
+  "solutions": {
+    "reliable": "In prime factors, 12 = 2 x 2 x 3, 18 = 2 x 3 x 3 and 30 = 2 x 3 x 5, so the least common multiple is 2 x 2 x 3 x 3 x 5 = 180 seconds, or 3 minutes. The joint flashes come at 3, 6, 9, ..., 60 minutes after midnight, which is 60 / 3 = 20 times. The transferable idea: repeating events line up at the least common multiple, and the endpoints of the time window decide off-by-one answers.",
+    "elegant": null
+  },
+  "whyOnTest": "Least common multiples model repeating events, and the endpoint wording checks whether you read exactly which flashes count.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

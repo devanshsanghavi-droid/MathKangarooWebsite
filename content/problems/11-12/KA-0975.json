@@ -1,0 +1,68 @@
+{
+  "id": "KA-0975",
+  "band": "11-12",
+  "points": 3,
+  "statement": "In a class of 30 students, 18 are in the chess club, 15 are in the choir and 4 are in neither. How many students are in exactly one of the two?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "7",
+      "correct": false,
+      "misconception": "I found the number of students in both, 7, and gave that instead of the number in exactly one."
+    },
+    {
+      "key": "B",
+      "text": "11",
+      "correct": false,
+      "misconception": "I found the students in the chess club only, 18 - 7 = 11, and forgot those in the choir only."
+    },
+    {
+      "key": "C",
+      "text": "19",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "26",
+      "correct": false,
+      "misconception": "I gave the number in at least one of the two, 30 - 4 = 26, which still includes the students in both."
+    },
+    {
+      "key": "E",
+      "text": "33",
+      "correct": false,
+      "misconception": "I added 18 and 15 without noticing that some students were counted twice."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-10",
+    "secondary": [
+      "CFT-01",
+      "MOD-02"
+    ]
+  },
+  "hints": [
+    "First find how many students are in at least one of the two.",
+    "Students in at least one group: the total minus those in neither. Compare this with 18 + 15 to find how many were counted twice, which is the number in both.",
+    "26 students are in at least one group, and 18 + 15 = 33, so 7 are in both."
+  ],
+  "solutions": {
+    "reliable": "30 - 4 = 26 students are in at least one group. Adding 18 + 15 = 33 counts the students in both groups twice, so 33 - 26 = 7 are in both. In exactly one group: 26 - 7 = 19. Check: chess only is 18 - 7 = 11 and choir only is 15 - 7 = 8, and 11 + 8 = 19. The transferable idea: inclusion-exclusion gives the overlap, and exactly one means at least one minus both.",
+    "elegant": "Exactly one = (18 + 15) - 2 x 7 = 19, because the students in both groups appear twice in 33 and must be removed completely."
+  },
+  "whyOnTest": "Two-set counting hinges on the overlap, and this question asks for exactly one, so every intermediate count appears among the choices.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

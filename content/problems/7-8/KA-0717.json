@@ -1,0 +1,67 @@
+{
+  "id": "KA-0717",
+  "band": "7-8",
+  "points": 4,
+  "statement": "At a meeting, every two people shook hands exactly once, except for two people who refused to shake hands with each other. There were 44 handshakes in total. How many people were at the meeting?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "45",
+      "correct": false,
+      "misconception": "I found how many handshakes there would have been if everyone had shaken hands, and gave that number."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted the handshakes as 1 + 2 + ... + n instead of 1 + 2 + ... + (n - 1), so the 45 handshakes gave me 9 people."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "11",
+      "correct": false,
+      "misconception": "I thought the missing handshake stood for one extra person, so I added 1 to the 10 people."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found the 10 people and then added the two who refused, counting them a second time."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-08",
+    "secondary": [
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "How many handshakes would there be if nobody had refused?",
+    "Count pairs: with n people every pair shakes hands once, so the full count is n times (n - 1), halved. Add back the missing handshake, then find the n that fits.",
+    "Without the refusal there would be 45 handshakes, so n x (n - 1) = 90."
+  ],
+  "solutions": {
+    "reliable": "Had everyone shaken hands there would have been 44 + 1 = 45 handshakes. With n people that number is n(n - 1) / 2, so n(n - 1) = 90 = 10 x 9, giving n = 10. The transferable idea: count all the pairs first, then adjust for the exceptions.",
+    "elegant": "Let people arrive one at a time and shake hands with everyone already there: the second shakes 1 hand, the third 2, and so on. 1 + 2 + ... + 9 = 45, so the tenth person completes the 45 pairs."
+  },
+  "whyOnTest": "Pair counting with one exception checks that you can count the full set of pairs and then correct for what is missing.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

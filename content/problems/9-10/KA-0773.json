@@ -1,0 +1,68 @@
+{
+  "id": "KA-0773",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Seven different books are placed in a row on a shelf. The three volumes of a series must stand next to each other, in any order. The dictionary, which is not part of the series, must stand at one end of the row. How many arrangements are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "288",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "576",
+      "correct": false,
+      "misconception": "I counted the 3! orders of the series and then doubled again because the block can face either way, so I counted each arrangement twice."
+    },
+    {
+      "key": "C",
+      "text": "720",
+      "correct": false,
+      "misconception": "I glued the series into one block and arranged everything, 5! x 3!, but forgot that the dictionary must be at an end."
+    },
+    {
+      "key": "D",
+      "text": "1440",
+      "correct": false,
+      "misconception": "I put the dictionary at one of the two ends and arranged the other six books freely, forgetting that the series must stay together."
+    },
+    {
+      "key": "E",
+      "text": "5040",
+      "correct": false,
+      "misconception": "I counted every arrangement of seven books, 7!, ignoring both conditions."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-05",
+    "secondary": [
+      "CNT-03",
+      "CNT-11"
+    ]
+  },
+  "hints": [
+    "Treat the three volumes as one block for now.",
+    "Glue the series into a single unit, place the dictionary first because its rule is strictest, arrange the remaining units, then count the orders inside the block.",
+    "There are 5 units. The dictionary has 2 end places, the other 4 units fill the rest in 4! ways, and the block has 3! orders inside."
+  ],
+  "solutions": {
+    "reliable": "Glue the three volumes into one block, leaving 5 units: the block, the dictionary and three other books. The dictionary goes at one of the 2 ends. The other 4 units fill the remaining 4 places in 4! = 24 ways. The volumes inside the block can be ordered in 3! = 6 ways. Total: 2 x 24 x 6 = 288. The transferable idea: handle a 'together' rule by gluing, and place the most restricted object before the rest.",
+    "elegant": "Of the 5! x 3! = 720 arrangements that keep the series together, the dictionary is equally likely to be any of the 5 units in the row, and 2 of those 5 places are ends. So the answer is 720 x 2/5 = 288."
+  },
+  "whyOnTest": "Arrangement questions with a 'together' rule and a position rule check that both rules are applied, and each forgotten rule appears as a choice.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

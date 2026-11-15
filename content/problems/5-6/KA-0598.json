@@ -1,0 +1,68 @@
+{
+  "id": "KA-0598",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Ann took a third of the sweets in a bag. Then Ben took half of the sweets that were left. Cy took the last 6 sweets, and the bag was empty. How many sweets were in the bag at the start?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found how many sweets were left after Ann took hers, not how many there were at the start."
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I undid Ann's step by adding a third of 12, but Ann took a third of the starting number, not of 12."
+    },
+    {
+      "key": "C",
+      "text": "18",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I undid Ann's step by doubling 12 again, as if she had taken half."
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": false,
+      "misconception": "I thought Ann left a third instead of taking a third, so I tripled 12."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-08",
+    "secondary": [
+      "NUM-09",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Start with Cy and go backwards.",
+    "Undo the last step first. Cy's 6 sweets were what Ben left, and Ben took half. Then think about what fraction of the bag Ann left behind, because that is the amount you know.",
+    "Before Ben, there were 12 sweets. Ann took a third, so those 12 sweets are the two thirds she left."
+  ],
+  "solutions": {
+    "reliable": "Cy took what Ben left, and Ben took half, so before Ben there were 2 times 6 = 12 sweets. Ann took a third of the bag, so these 12 sweets are the other two thirds. One third is 6, and the bag held 3 times 6 = 18. Check: Ann takes 6 of the 18, leaving 12; Ben takes 6, leaving 6 for Cy. The transferable idea: work backwards from the end, and when someone takes a fraction, ask what fraction is left, because that is the amount you know.",
+    "elegant": null
+  },
+  "whyOnTest": "Working backwards is tested with fractions of a changing amount: the number you know is what was left, not what was taken.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

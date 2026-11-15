@@ -1,0 +1,68 @@
+{
+  "id": "KA-0586",
+  "band": "5-6",
+  "points": 5,
+  "statement": "In the addition ABC + ABC + ABC = BBB, each letter stands for a different digit, and ABC and BBB are three-digit numbers. What is A + B + C?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I took ABC as 111, because three 111s make 333, and added 1 + 1 + 1 without checking that B has to be the same digit in both numbers."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found that B is 4 and gave B instead of the sum of all three digits."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I added up the digits of BBB, which is 444, instead of the digits of ABC."
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "14",
+      "correct": false,
+      "misconception": "I tried B = 5 and got 185, but never checked that its middle digit should be B."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "NUM-05",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "BBB is B times 111.",
+    "Three times ABC equals BBB, and BBB is B times 111, which is B times 3 times 37. So ABC must be 37 times B. Test the values of B, remembering the middle digit of ABC has to be B.",
+    "ABC is 37 times B. Try B from 3 to 9 and look for a result whose middle digit is B."
+  ],
+  "solutions": {
+    "reliable": "Since BBB = B times 111 and 111 = 3 times 37, the equation says ABC = 37 times B. For ABC to have three digits, B is at least 3. Testing: 111, 148, 185, 222, 259, 296, 333 for B = 3 to 9. Only 148 has middle digit B = 4 and three different digits. Check: 148 times 3 = 444. So A + B + C = 1 + 4 + 8 = 13. The transferable idea: rewrite a repeated-digit number like BBB as B times 111, and factor 111 to shrink the search.",
+    "elegant": "Column by column: 3 times C must end in B, and 3 times ABC is at most 999, so A is 1, 2 or 3. With A = 1, BBB lies between 300 and 599, so B is 3, 4 or 5, making C equal to 1, 8 or 5. Only 148 works with three different digits. The cases A = 2 and A = 3 fail the same quick test."
+  },
+  "whyOnTest": "Cryptarithms reward one structural insight, here BBB = B times 111, and punish skipping the check that every letter fits.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

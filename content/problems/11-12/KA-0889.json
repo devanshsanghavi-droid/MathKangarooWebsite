@@ -1,0 +1,68 @@
+{
+  "id": "KA-0889",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Two jars have exactly the same shape, but one is a scaled-up copy of the other. The smaller jar is 12 cm tall and holds 400 ml. The larger jar is 18 cm tall. How much does the larger jar hold?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "600 ml",
+      "correct": false,
+      "misconception": "I scaled the volume by the length factor 1.5, as if volume grew like length."
+    },
+    {
+      "key": "B",
+      "text": "900 ml",
+      "correct": false,
+      "misconception": "I scaled by 1.5 squared, the area factor, instead of 1.5 cubed."
+    },
+    {
+      "key": "C",
+      "text": "1200 ml",
+      "correct": false,
+      "misconception": "I multiplied the volume by 3 because volume has three dimensions, instead of cubing the scale factor."
+    },
+    {
+      "key": "D",
+      "text": "1350 ml",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "1800 ml",
+      "correct": false,
+      "misconception": "I multiplied the scale factor 1.5 by 3 instead of raising it to the power 3, so I scaled by 4.5."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-16",
+    "secondary": [
+      "MOD-07",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "Every length grows by the same factor. What does that do to volume?",
+    "Find the length scale factor from the heights. A volume is built from three lengths multiplied together, so it scales by the cube of that factor.",
+    "The scale factor for lengths is 18/12 = 3/2."
+  ],
+  "solutions": {
+    "reliable": "The scale factor for lengths is 18/12 = 3/2. Volumes scale by its cube, (3/2) cubed = 27/8. So the larger jar holds 400 x 27/8 = 1350 ml. The transferable idea: under scaling by k, lengths multiply by k, areas by k squared and volumes by k cubed.",
+    "elegant": "Check the rule on a cube: a cube of side 2 cm scaled to side 3 cm goes from 8 to 27 cubic centimetres, the same factor 27/8."
+  },
+  "whyOnTest": "Similar solids scale volume by the cube of the length factor, and the distractors are the length, area and times-three versions of that rule.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

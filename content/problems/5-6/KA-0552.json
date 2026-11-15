@@ -1,0 +1,68 @@
+{
+  "id": "KA-0552",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Nine children stand side by side in a line. Each is either a truth-teller, who always tells the truth, or a liar, who always lies. Every child says: \"Exactly one of the children next to me is a liar.\" The two children at the ends each have only one child next to them. How many truth-tellers are in the line?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I worked out the line correctly but counted the liars instead of the truth-tellers."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted only the truth-tellers in the middle of the line and left out the two at the ends."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": false,
+      "misconception": "I guessed the line goes truth-teller, liar, truth-teller, liar, and so on, without checking that a truth-teller in the middle would then have two liars next to him."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I thought they must all tell the truth because they all say the same thing, but then nobody would have a liar next to them."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-09",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Is the first child a truth-teller or a liar? What does that force next door?",
+    "A liar’s claim is false, so a liar has no liar or two liars beside him. The end child has one neighbour. Try the first child as a liar, then a truth-teller, walking along the line each time.",
+    "If the first child is a liar, the line is forced to go L, T, T, L, T, T, L, T, T, and then the last child's claim is false although he is a truth-teller. So the first child tells the truth."
+  ],
+  "solutions": {
+    "reliable": "Look at the first child, who has only one neighbour. Case 1: the first child is a liar. His claim is false, so child 2 is a truth-teller. Child 2 has exactly one liar beside him and child 1 is that liar, so child 3 tells the truth. Child 3 already has a truth-teller on one side, so child 4 must be the liar. Child 4 lies, and with child 3 telling the truth, child 5 cannot be a liar. Carrying on the same way gives L, T, T, L, T, T, L, T, T. But then child 9 is a truth-teller whose only neighbour, child 8, is not a liar, which contradicts his claim. So Case 1 is impossible. Case 2: the first child tells the truth, so child 2 is a liar. Walking along in the same way gives T, L, T, T, L, T, T, L, T, and child 9 tells the truth with liar child 8 beside him, so everything fits. Every child's statement checks out, and there are 6 truth-tellers. The transferable idea: when each person's type forces the next person's type, try both choices for the first person and follow the chain until it works or breaks.",
+    "elegant": null
+  },
+  "whyOnTest": "Truth-teller puzzles test whether you turn each statement into a firm rule and follow it person by person, rejecting a starting guess the moment it leads to a contradiction.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

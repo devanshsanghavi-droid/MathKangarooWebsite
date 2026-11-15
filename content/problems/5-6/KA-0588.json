@@ -1,0 +1,68 @@
+{
+  "id": "KA-0588",
+  "band": "5-6",
+  "points": 4,
+  "statement": "The numbers 1, 2, 3, ... fill a grid along diagonals. Diagonal 1 is just 1 (row 1, column 1). Diagonal 2 holds 2 (row 1, column 2) then 3 (row 2, column 1). Each new diagonal is one longer, starts in row 1 and runs down to column 1. Which number is in row 3, column 5?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "25",
+      "correct": false,
+      "misconception": "I stepped down the diagonal three times from row 1 instead of twice, so I landed in row 4."
+    },
+    {
+      "key": "C",
+      "text": "26",
+      "correct": false,
+      "misconception": "I went along the diagonal from the bottom, starting at column 1, instead of starting from row 1."
+    },
+    {
+      "key": "D",
+      "text": "28",
+      "correct": false,
+      "misconception": "I gave the last number on that diagonal, the one in column 1, instead of the one in row 3."
+    },
+    {
+      "key": "E",
+      "text": "31",
+      "correct": false,
+      "misconception": "I thought row 3, column 5 is on diagonal 8, because 3 + 5 = 8, so I started from 29."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-06",
+    "secondary": [
+      "PAT-04",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Sketch the first four diagonals.",
+    "Every square on one diagonal has the same row + column. Work out which diagonal row 3, column 5 lies on, find the number that starts that diagonal in row 1, then step down the diagonal to row 3.",
+    "Row + column is 2 on diagonal 1, 3 on diagonal 2, and so on, so row 3, column 5 is on diagonal 7. Diagonals 1 to 6 use 1 + 2 + ... + 6 = 21 numbers."
+  ],
+  "solutions": {
+    "reliable": "On diagonal 1 the row plus the column is 2, on diagonal 2 it is 3, and so on, so row 3, column 5 (3 + 5 = 8) is on diagonal 7. Diagonals 1 to 6 hold 1 + 2 + 3 + 4 + 5 + 6 = 21 numbers, so diagonal 7 starts with 22 in row 1, column 7. Going down it, 23 is in row 2, column 6 and 24 is in row 3, column 5. The transferable idea: in a grid filled by a rule, find something that stays the same along the path of the filling, here row + column, and use it to locate a square without drawing the whole grid.",
+    "elegant": null
+  },
+  "whyOnTest": "Grid patterns test whether you find the rule that locates a square, here row + column naming the diagonal, instead of drawing the whole grid.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

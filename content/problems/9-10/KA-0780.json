@@ -1,0 +1,68 @@
+{
+  "id": "KA-0780",
+  "band": "9-10",
+  "points": 3,
+  "statement": "The point (2, 5) is reflected in the line y = x. The image is then rotated a quarter turn anticlockwise about the origin (0, 0). Where does the point end up?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "(5, 2)",
+      "correct": false,
+      "misconception": "I only did the reflection and forgot the quarter turn."
+    },
+    {
+      "key": "B",
+      "text": "(2, -5)",
+      "correct": false,
+      "misconception": "I did the quarter turn first and the reflection second, which gives a different point."
+    },
+    {
+      "key": "C",
+      "text": "(-5, 2)",
+      "correct": false,
+      "misconception": "I made the quarter turn by changing the sign of the first coordinate without swapping the two coordinates."
+    },
+    {
+      "key": "D",
+      "text": "(-5, -2)",
+      "correct": false,
+      "misconception": "I turned (5, 2) after the reflection by changing both signs, which is a half turn, not a quarter turn."
+    },
+    {
+      "key": "E",
+      "text": "(-2, 5)",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-09",
+    "secondary": [
+      "CFT-02",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Do the two moves one at a time, in the order given.",
+    "Reflecting in y = x swaps the coordinates. A quarter turn anticlockwise about the origin sends (a, b) to (-b, a). Check the rule on an easy point like (1, 0) if unsure.",
+    "After the reflection the point is at (5, 2). Now apply the quarter turn rule to (5, 2)."
+  ],
+  "solutions": {
+    "reliable": "Reflecting in y = x swaps the coordinates: (2, 5) goes to (5, 2). A quarter turn anticlockwise sends (a, b) to (-b, a), as you can check with (1, 0) going to (0, 1). So (5, 2) goes to (-2, 5). The transferable idea: write each move as a rule on coordinates, apply the rules in order, and test a rule on a simple point first.",
+    "elegant": "The two moves together keep the second coordinate and flip the sign of the first, which is a reflection in the y-axis. That turns (2, 5) into (-2, 5) at once."
+  },
+  "whyOnTest": "Combined transformations test whether each move is done correctly and in order, and the wrong choices come from the usual slips with signs and order.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

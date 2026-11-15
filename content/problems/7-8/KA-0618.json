@@ -1,0 +1,67 @@
+{
+  "id": "KA-0618",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Seven children stand in a single line, one behind another. Lea has exactly 4 children in front of her. Max has exactly 5 children behind him. How many children stand between Lea and Max?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I took '4 children in front of her' to mean Lea is 4th in line."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I subtracted the places, 5 - 2 = 3, which measures the gap instead of counting the children in it."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted Lea and Max as well as the children between them."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I added the 4 children and the 5 children."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-04",
+    "secondary": [
+      "CNT-10"
+    ]
+  },
+  "hints": [
+    "Turn each clue into a place counted from the front.",
+    "Number the places 1 to 7 from the front of the line. Each clue fixes one child's place exactly. Then count the places strictly between the two.",
+    "Lea is in place 5. Max has 5 children behind him out of 7, so he is in place 2."
+  ],
+  "solutions": {
+    "reliable": "With 4 children in front, Lea is 5th. With 5 children behind out of 7, Max is in place 7 - 5 = 2. The places strictly between 2 and 5 are 3 and 4, so 2 children stand between them. The transferable idea: convert every ranking clue into an exact position before comparing.",
+    "elegant": "The 4 children in front of Lea include Max, and the 5 behind Max include Lea, so together the two groups cover all 7 children. Since 4 + 5 = 9, exactly 2 children are counted twice, and those are the children between Max and Lea."
+  },
+  "whyOnTest": "Ranking clues are easiest as exact positions; the off-by-one between 'children in front' and 'place in line' is the trap.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

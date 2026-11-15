@@ -1,0 +1,68 @@
+{
+  "id": "KA-0935",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A robot starts at (0, 0). Each move takes it from (x, y) to (x + 2, y + 1), (x - 1, y + 1) or (x - 1, y - 2), anywhere in the plane. How many of the 36 points with x and y whole numbers from 0 to 5 can it reach, including (0, 0)?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "11",
+      "correct": false,
+      "misconception": "I found the right rule but left out the starting point (0, 0), even though the question says to count it."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "18",
+      "correct": false,
+      "misconception": "I thought the parity of x + y stayed fixed, so I counted the points where x + y is even."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I found that x + y changes only by multiples of 3, then counted the points where x + y is not a multiple of 3."
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": false,
+      "misconception": "I assumed that with three different moves the robot can get anywhere."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "NUM-06",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Watch what each move does to x + y.",
+    "The moves change x + y by +3, 0 and -3, so the remainder of x + y on division by 3 never changes. That rules points out; then check every point not ruled out really can be reached.",
+    "At the start x + y = 0, so x + y must stay a multiple of 3. Doing all three moves once brings the robot back to where it was, which lets it undo moves."
+  ],
+  "solutions": {
+    "reliable": "Each move changes x + y by 3, 0 or -3, so x + y is always a multiple of 3, as it is at (0, 0). In the 6 by 6 square, x + y is a multiple of 3 for exactly a third of the points: for each x there are two values of y, giving 12 points. Every one of them can be reached. The moves (2, 1) and (-1, 1) together give (1, 2). Two (2, 1) moves and one (-1, -2) move give (3, 0), and two (-1, 1) moves and one (2, 1) move give (0, 3). Starting from (0, 0), (2, 1) or (1, 2) and adding steps of (3, 0) and (0, 3) reaches every point of the square with x + y a multiple of 3. So the answer is 12. The transferable idea: an invariant shows which points are impossible, and a few combined moves show the rest are possible.",
+    "elegant": null
+  },
+  "whyOnTest": "Invariants and monovariants questions test finding the quantity a move cannot change, here x + y modulo 3, and then proving every allowed position can actually be reached.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

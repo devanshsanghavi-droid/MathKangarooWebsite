@@ -1,0 +1,68 @@
+{
+  "id": "KA-0937",
+  "band": "11-12",
+  "points": 3,
+  "statement": "What is the value of (3^2026 - 3^2024) / (3^2025 + 3^2024)?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "8/3",
+      "correct": false,
+      "misconception": "I factored the top as 3^2024 x 8 but treated the bottom as just 3^2025, ignoring the 3^2024 there."
+    },
+    {
+      "key": "C",
+      "text": "9/4",
+      "correct": false,
+      "misconception": "I factored out 3^2024 but wrote the top as 3^2024 x 9, forgetting to subtract the 1."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I cancelled the 3^2024 terms as if they were factors, leaving 3^2026 / 3^2025 = 3."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I factored out 3^2024 to get 8 on top, but forgot the bottom becomes 3^2024 x 4, not just 3^2024."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "CFT-03",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Do not try to work out these powers.",
+    "Every term is a power of 3 at least as big as 3^2024. Take that common factor out of the top and out of the bottom, then cancel it.",
+    "3^2026 - 3^2024 = 3^2024 x (9 - 1) and 3^2025 + 3^2024 = 3^2024 x (3 + 1)."
+  ],
+  "solutions": {
+    "reliable": "Take out the smallest power, 3^2024. The top is 3^2024 x (3^2 - 1) = 3^2024 x 8. The bottom is 3^2024 x (3 + 1) = 3^2024 x 4. Cancelling 3^2024 leaves 8 / 4 = 2. The transferable idea: when huge powers are added or subtracted, factor out the smallest one; only small numbers are left.",
+    "elegant": "Test the same pattern with small exponents: (3^4 - 3^2) / (3^3 + 3^2) = (81 - 9) / (27 + 9) = 72 / 36 = 2. The exponents only shift the common factor, so the answer is 2 here too."
+  },
+  "whyOnTest": "Spotting the trick versus grinding: the powers are far too large to compute, and factoring out the common power is the one move that makes the question quick.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

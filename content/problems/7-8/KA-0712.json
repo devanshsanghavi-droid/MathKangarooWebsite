@@ -1,0 +1,67 @@
+{
+  "id": "KA-0712",
+  "band": "7-8",
+  "points": 5,
+  "statement": "In a 10-by-10 multiplication table, the entry in row r and column c is r x c, for every r and c from 1 to 10. What is the sum of all 100 entries?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5050",
+      "correct": false,
+      "misconception": "I added the whole numbers from 1 to 100, as though the table held each of them once."
+    },
+    {
+      "key": "B",
+      "text": "385",
+      "correct": false,
+      "misconception": "I added only the entries on the diagonal, 1 + 4 + 9 + ... + 100."
+    },
+    {
+      "key": "C",
+      "text": "550",
+      "correct": false,
+      "misconception": "I added the entries of the last row, 10 + 20 + ... + 100, and stopped there."
+    },
+    {
+      "key": "D",
+      "text": "2025",
+      "correct": false,
+      "misconception": "I took 1 + 2 + ... + 10 to be 45, leaving out the 10, and squared that."
+    },
+    {
+      "key": "E",
+      "text": "3025",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-06",
+    "secondary": [
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "Add up one row first. How do the other rows compare with it?",
+    "Look for the pattern in the table: each row is a multiple of the first row, so each row sum is the same multiple of the first row's sum. Then add the row sums in the same way.",
+    "Row r adds up to 55 x r, so the total is 55 x (1 + 2 + ... + 10)."
+  ],
+  "solutions": {
+    "reliable": "Row 1 is 1, 2, ..., 10, with sum 55. Row r is r times row 1, so it sums to 55r. Adding all ten rows gives 55 x (1 + 2 + ... + 10) = 55 x 55 = 3025. The transferable idea: in a table built by a rule, sum one row, see how the other rows relate to it, and the grand total factorises.",
+    "elegant": "Multiplying out (1 + 2 + ... + 10) x (1 + 2 + ... + 10) produces every product r x c exactly once, so the sum is 55 x 55 = 3025."
+  },
+  "whyOnTest": "Summing a structured table by noticing that each row scales the first replaces 100 additions with one multiplication.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

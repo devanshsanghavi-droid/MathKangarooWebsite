@@ -1,0 +1,68 @@
+{
+  "id": "KA-0887",
+  "band": "11-12",
+  "points": 4,
+  "statement": "How many of the whole numbers from 1 to 1000 are divisible by neither 6 nor 15?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "199",
+      "correct": false,
+      "misconception": "I counted the numbers divisible by 6 or by 15 correctly but forgot that the question asks for those divisible by neither."
+    },
+    {
+      "key": "B",
+      "text": "768",
+      "correct": false,
+      "misconception": "I removed the 166 multiples of 6 and the 66 multiples of 15 but did not add back the numbers I had removed twice."
+    },
+    {
+      "key": "C",
+      "text": "779",
+      "correct": false,
+      "misconception": "I added back the multiples of 6 x 15 = 90 instead of the multiples of the least common multiple, 30."
+    },
+    {
+      "key": "D",
+      "text": "801",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "834",
+      "correct": false,
+      "misconception": "I removed only the multiples of 6 and forgot about the multiples of 15."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-10",
+    "secondary": [
+      "NUM-05",
+      "CNT-09"
+    ]
+  },
+  "hints": [
+    "Count the numbers you must remove first.",
+    "Use inclusion-exclusion: multiples of 6 plus multiples of 15, minus the numbers that are multiples of both. A number is a multiple of both exactly when it is a multiple of their least common multiple.",
+    "There are 166 multiples of 6 and 66 multiples of 15 up to 1000, and the least common multiple of 6 and 15 is 30."
+  ],
+  "solutions": {
+    "reliable": "Up to 1000 there are 166 multiples of 6 and 66 multiples of 15. The numbers that are multiples of both are the multiples of 30, and there are 33 of them. So 166 + 66 - 33 = 199 numbers are divisible by 6 or 15, and 1000 - 199 = 801 are divisible by neither. The transferable idea: in inclusion-exclusion the overlap is the multiples of the least common multiple, not of the product.",
+    "elegant": "Work in blocks of 30. From 1 to 30 the multiples of 6 or 15 are 6, 12, 15, 18, 24 and 30, so 24 of every 30 numbers survive. The 33 full blocks up to 990 give 33 x 24 = 792, and from 991 to 1000 only 996 is removed, leaving 9 more. Total 801."
+  },
+  "whyOnTest": "Two-set inclusion-exclusion with a non-obvious overlap: numbers divisible by both are set by the least common multiple, 30, not by 6 x 15 = 90.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

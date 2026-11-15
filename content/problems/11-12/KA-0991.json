@@ -1,0 +1,68 @@
+{
+  "id": "KA-0991",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Two cars each drive 240 km. Car P drives the first half of the distance at 40 km/h and the second half at 60 km/h. Car Q drives at 40 km/h for the first half of its travel time and at 60 km/h for the second half. They start together. How many minutes before P does Q arrive?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought both cars average 50 km/h, because 50 is halfway between 40 and 60."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": false,
+      "misconception": "I found the gap as 0.2 hours and read it as 20 minutes."
+    },
+    {
+      "key": "D",
+      "text": "48",
+      "correct": false,
+      "misconception": "I gave car P's average speed, 48 km/h, instead of the difference in time."
+    },
+    {
+      "key": "E",
+      "text": "60",
+      "correct": false,
+      "misconception": "I thought car Q takes 240 / 60 = 4 hours, as if it drove at 60 km/h all the way, so the gap came out as 1 hour."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-03",
+    "secondary": [
+      "MOD-08",
+      "MOD-07"
+    ]
+  },
+  "hints": [
+    "Work out each car's total time separately.",
+    "Equal times at two speeds give the simple average speed, but equal distances do not, because the car spends longer at the slower speed. Compute each car's total time directly.",
+    "Car P takes 120/40 + 120/60 hours. Car Q averages 50 km/h."
+  ],
+  "solutions": {
+    "reliable": "Car P: 120 km at 40 km/h takes 3 hours and 120 km at 60 km/h takes 2 hours, so 5 hours in all. Car Q spends equal times at 40 and 60 km/h, so its average speed is 50 km/h and it takes 240 / 50 = 4.8 hours. The difference is 0.2 hours, which is 0.2 x 60 = 12 minutes. The transferable idea: average speed is total distance over total time, and it equals the simple average of two speeds only when the times are equal.",
+    "elegant": null
+  },
+  "whyOnTest": "Averaging the two speeds works for car Q but not for car P, and the question probes exactly that difference, plus a decimal-hours trap.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

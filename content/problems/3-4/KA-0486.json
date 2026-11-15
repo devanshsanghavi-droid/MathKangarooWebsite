@@ -1,0 +1,68 @@
+{
+  "id": "KA-0486",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Mr Lee sets out 24 chairs in equal rows: at least 2 rows, with at least 2 chairs in each. How many ways are there? (3 rows of 8 and 8 rows of 3 differ.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted 3 rows of 8 and 8 rows of 3 as the same arrangement."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I listed the factor pairs of 24, including 1 and 24, and counted each pair only once."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I allowed one long row of 24 chairs, forgetting the rule of at least 2 rows."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted all eight factors of 24, including 1 row of 24 and 24 rows of 1."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-05",
+    "secondary": [
+      "CNT-01",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "The number of rows must divide 24 exactly.",
+    "List the factors of 24 in order. Each factor could be the number of rows, but check both rules: the number of rows and the number of chairs in a row must each be at least 2.",
+    "The factors of 24 are 1, 2, 3, 4, 6, 8, 12 and 24. Using 1 row or 24 rows breaks a rule."
+  ],
+  "solutions": {
+    "reliable": "The number of rows must be a factor of 24: 1, 2, 3, 4, 6, 8, 12 or 24. One row breaks the 'at least 2 rows' rule, and 24 rows would leave 1 chair a row, which breaks the other rule. That leaves 2, 3, 4, 6, 8 and 12 rows, so 6 arrangements. The transferable idea: list factors in order so none are missed, then apply every condition to the list.",
+    "elegant": null
+  },
+  "whyOnTest": "Listing factors systematically, then filtering by the conditions in the question, which is where most errors happen.",
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

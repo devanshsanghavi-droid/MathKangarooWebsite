@@ -1,0 +1,68 @@
+{
+  "id": "KA-0519",
+  "band": "5-6",
+  "points": 4,
+  "statement": "On a test, a wrong answer costs nothing. Kai has 4 unanswered 5-point questions, each with 5 choices. On every one he can rule out one choice he knows is wrong, and he guesses among the rest. On average, how many points will his guesses earn him?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought a guess is worth the same as a blank, because a guess might be wrong."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I worked out that he expects 1 correct answer, 4 times 1 in 4, and forgot each one is worth 5 points."
+    },
+    {
+      "key": "C",
+      "text": "1.25",
+      "correct": false,
+      "misconception": "I worked out the average for one question, 5 points times 1 in 4, and forgot there are four questions."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I used a 1 in 5 chance on each question, forgetting that he has ruled one choice out."
+    },
+    {
+      "key": "E",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-09",
+    "secondary": [
+      "NUM-09",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "After ruling one out, how many choices are left on each question?",
+    "With no penalty, a guess on average earns its chance of being right times the points it is worth. Add that up over all the questions.",
+    "Each guess has a 1 in 4 chance, and each question is worth 5 points, so each guess is worth 5/4 points on average."
+  ],
+  "solutions": {
+    "reliable": "Each question has 4 choices left, so a guess is right 1 time in 4. On average each guess earns 5 x 1/4 = 1.25 points, and four questions give 4 x 1.25 = 5 points. A blank earns 0. The transferable idea: with no penalty for a wrong answer, every guess is worth more than a blank, and ruling out a choice makes it worth even more.",
+    "elegant": "Four guesses, each with a 1 in 4 chance, give one correct answer on average, and one correct answer is worth 5 points."
+  },
+  "whyOnTest": "Math Kangaroo takes nothing off for a wrong answer, so knowing what a guess is worth turns blanks into real points.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

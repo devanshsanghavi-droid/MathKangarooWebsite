@@ -1,0 +1,68 @@
+{
+  "id": "KA-0788",
+  "band": "9-10",
+  "points": 4,
+  "statement": "What is the last digit of 1¹ + 2² + 3³ + 4⁴ + 5⁵ + 6⁶ + 7⁷ + 8⁸ + 9⁹ + 10¹⁰?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought an odd power of 7 always ends in 7, but 7⁷ ends in 3."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I thought an odd power of 3 always ends in 3, but 3³ = 27 ends in 7."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": false,
+      "misconception": "I assumed each term ends in the same digit as its base, so I added 1 + 2 + ... + 9 + 0 = 45."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I thought every power of 9 ends in 1, but odd powers of 9, such as 9⁹, end in 9."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-07",
+    "secondary": [
+      "PAT-03",
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "Only the last digit of each term matters.",
+    "Find the last digit of each power using the repeating cycle of last digits for its base, then add those ten digits and take the last digit of the total.",
+    "The cycles: 2 goes 2, 4, 8, 6; 3 goes 3, 9, 7, 1; 7 goes 7, 9, 3, 1; 8 goes 8, 4, 2, 6; 4 and 9 alternate between two digits."
+  ],
+  "solutions": {
+    "reliable": "Work out each last digit: 1¹ ends in 1, 2² = 4, 3³ = 27 ends in 7, 4⁴ = 256 ends in 6, 5⁵ ends in 5, 6⁶ ends in 6, 7⁷ ends in 3 (the cycle 7, 9, 3, 1 at position 3), 8⁸ ends in 6 (the cycle 8, 4, 2, 6 at position 4), 9⁹ ends in 9 (odd power), 10¹⁰ ends in 0. The sum of these digits is 1 + 4 + 7 + 6 + 5 + 6 + 3 + 6 + 9 + 0 = 47, so the last digit is 7. The transferable idea: last digits of powers repeat in short cycles, so only the exponent's position in the cycle matters.",
+    "elegant": null
+  },
+  "whyOnTest": "Last-digit questions test the cycles of powers, and each wrong choice comes from one plausible slip in a single cycle.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

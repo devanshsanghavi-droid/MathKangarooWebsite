@@ -1,0 +1,68 @@
+{
+  "id": "KA-0443",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Using each of the digits 0, 1, 2 and 3 exactly once, how many different four-digit numbers can be made? A four-digit number cannot start with 0.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted only the numbers that start with 1 and forgot the ones that start with 2 or 3."
+    },
+    {
+      "key": "B",
+      "text": "18",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "21",
+      "correct": false,
+      "misconception": "I thought only 3 orders start with 0, but after the 0 the other three digits can go in 6 orders."
+    },
+    {
+      "key": "D",
+      "text": "23",
+      "correct": false,
+      "misconception": "I took away only 0123, but every order that starts with 0 is not a four-digit number."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted every order of the four digits, including the ones that start with 0."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-05",
+    "secondary": [
+      "CNT-03",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Which digits are allowed in the first place?",
+    "Fill the four places from left to right. Count the choices for the first digit, remembering it cannot be 0, then the choices left for each later place, and multiply.",
+    "The first digit can be 1, 2 or 3, so there are 3 choices. Once it is chosen, 3 digits are left for the second place, including the 0."
+  ],
+  "solutions": {
+    "reliable": "The first digit can be 1, 2 or 3: 3 choices. The second digit can be any of the 3 digits left, including 0, then 2 choices remain for the third digit and 1 for the last. So there are 3 x 3 x 2 x 1 = 18 numbers. The transferable idea: fill the place with a rule first, then multiply the choices for the other places.",
+    "elegant": "The four digits can be put in order in 4 x 3 x 2 x 1 = 24 ways. Those starting with 0 are the 3 x 2 x 1 = 6 orders of 1, 2 and 3 after it. So 24 - 6 = 18 are four-digit numbers."
+  },
+  "whyOnTest": "Arrangements with one rule test whether you place the restricted digit first, and the distractors forget or undercount the orders the rule removes.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

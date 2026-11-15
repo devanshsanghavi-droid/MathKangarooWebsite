@@ -1,0 +1,67 @@
+{
+  "id": "KA-0439",
+  "band": "3-4",
+  "points": 4,
+  "statement": "The 3rd day of a month is a Monday. The month has 31 days. On what day of the week is the 31st?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Monday",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "Tuesday",
+      "correct": false,
+      "misconception": "I counted both the 3rd and the 31st, making 29 days, so I went one day too far."
+    },
+    {
+      "key": "C",
+      "text": "Wednesday",
+      "correct": false,
+      "misconception": "I treated the 1st of the month as the Monday instead of the 3rd."
+    },
+    {
+      "key": "D",
+      "text": "Thursday",
+      "correct": false,
+      "misconception": "I moved on 31 days from the 3rd instead of 28."
+    },
+    {
+      "key": "E",
+      "text": "Friday",
+      "correct": false,
+      "misconception": "I divided 28 by 7 to get 4 and moved on 4 days instead of 4 whole weeks."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "How many days after the 3rd is the 31st?",
+    "The days of the week repeat every 7 days. Find how many days pass from the 3rd to the 31st, then see how many whole weeks that is and how many days are left over.",
+    "From the 3rd to the 31st is 31 - 3 = 28 days, and 28 days is exactly 4 weeks."
+  ],
+  "solutions": {
+    "reliable": "From the 3rd to the 31st is 31 - 3 = 28 days. Since 28 = 4 x 7, that is exactly 4 whole weeks with nothing left over, so the 31st falls on the same day as the 3rd: Monday. The transferable idea: for days of the week, only the remainder after dividing by 7 matters.",
+    "elegant": "The 10th, 17th, 24th and 31st are each one week after the one before, so all of them are Mondays, like the 3rd."
+  },
+  "whyOnTest": "Calendar questions test remainders on division by 7, and the distractors come from counting days off by one or moving the wrong amount.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

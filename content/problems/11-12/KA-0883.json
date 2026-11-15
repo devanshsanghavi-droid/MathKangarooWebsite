@@ -1,0 +1,68 @@
+{
+  "id": "KA-0883",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Which of these is closest to the square root of 2026 minus the square root of 2025?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0.00025",
+      "correct": false,
+      "misconception": "I used the rule that a small change in x changes its square root by the change divided by twice the root, but divided by 2 x 2025 instead of 2 x 45."
+    },
+    {
+      "key": "B",
+      "text": "0.0005",
+      "correct": false,
+      "misconception": "I thought the gap between the two square roots is about 1 divided by the number itself, that is 1/2025."
+    },
+    {
+      "key": "C",
+      "text": "0.011",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "0.022",
+      "correct": false,
+      "misconception": "I rewrote the difference as 1 divided by the sum of the two roots but used only one root, getting 1/45."
+    },
+    {
+      "key": "E",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought the square root of 2026 minus the square root of 2025 equals the square root of 2026 - 2025, which is 1."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-06",
+    "secondary": [
+      "CFT-05",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "The square root of 2025 is exactly 45. How much bigger is the next root?",
+    "Multiply and divide the difference by the sum of the two square roots. The top becomes a difference of squares, which is tiny and exact; the bottom is easy to estimate.",
+    "The difference equals 1 divided by (the square root of 2026 + 45), and the bottom is just over 90."
+  ],
+  "solutions": {
+    "reliable": "Multiply the difference by (the square root of 2026 + the square root of 2025) over itself. The top becomes 2026 - 2025 = 1, so the difference equals 1 divided by (the square root of 2026 + 45), which is 1 divided by a number just over 90. Since 1/90 is about 0.0111, the closest choice is 0.011. The transferable idea: turn a difference of nearly equal roots into a quotient you can estimate; the choices here are spread by factors of 2 or more, so an honest estimate separates them easily.",
+    "elegant": "Near 2025 the square root grows at a rate of 1 divided by (2 x 45) = 1/90 per unit, so a step of 1 in x raises the root by about 1/90."
+  },
+  "whyOnTest": "Exact work is impossible by hand, but one rewrite makes the size obvious, and the choices are spaced so an honest estimate picks one cleanly.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

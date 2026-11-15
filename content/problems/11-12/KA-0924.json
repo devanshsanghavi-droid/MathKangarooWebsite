@@ -1,0 +1,68 @@
+{
+  "id": "KA-0924",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A shop mixes tea costing 10 euros per kilogram with tea costing 25 euros per kilogram to make 20 kilograms of a blend worth 16 euros per kilogram. How many kilograms of the cheaper tea are used?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I took the gap between the blend price and the cheap price, 16 - 10 = 6, as the number of kilograms of cheap tea."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I matched each tea to the wrong price gap, giving the cheap tea the smaller share, so I found the amount of the dearer tea."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I took the gap between the dear price and the blend price, 25 - 16 = 9, as the kilograms of cheap tea, without scaling the 9 : 6 ratio up to 20 kilograms."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I assumed equal amounts of each tea, which would really give a price halfway between, 17.50 euros."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "MOD-08",
+    "secondary": [
+      "NUM-11",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "The blend price is closer to the cheaper tea's price.",
+    "A weighted average sits closer to the larger weight. Compare the distances from the blend price to each tea's price; the amounts are in the reverse ratio of those distances. Then scale that ratio to 20 kilograms.",
+    "The distances are 6 and 9, so cheap to dear is 9 : 6 = 3 : 2."
+  ],
+  "solutions": {
+    "reliable": "Let x kg be cheap tea, so 20 - x kg is dear tea. The total value is 10x + 25(20 - x) = 16 x 20 = 320. So 500 - 15x = 320, 15x = 180 and x = 12. Check: 12 x 10 + 8 x 25 = 120 + 200 = 320. The transferable idea: a mixture's value is the weighted sum of its parts, so set up one equation for the total value.",
+    "elegant": "The blend price 16 is 6 above the cheap price and 9 below the dear price, so the amounts are in the ratio 9 : 6 = 3 : 2, cheap to dear. Three fifths of 20 kg is 12 kg."
+  },
+  "whyOnTest": "A weighted average leans towards the larger weight, and the classic slips use the price gaps the wrong way round or forget to scale them.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

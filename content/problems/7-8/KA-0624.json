@@ -1,0 +1,67 @@
+{
+  "id": "KA-0624",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A ticket machine takes only 5-cent, 10-cent and 20-cent coins. In how many different ways can you put in exactly 50 cents, if only the number of each coin matters and not the order?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I only counted the ways that use no 20-cent coin at all."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": false,
+      "misconception": "I listed the ways but missed the one that uses only 5-cent coins."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted the ways with no 20-cent coin and with one, but forgot the ways with two."
+    },
+    {
+      "key": "E",
+      "text": "2",
+      "correct": false,
+      "misconception": "I thought every way had to use at least one coin of each kind."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Sort the ways by how many 20-cent coins they use.",
+    "Systematic listing: fix the biggest coin first, then the next biggest, and let the 5-cent coins fill whatever is left. Each case becomes a short, complete list you can check.",
+    "With no 20s, use 0 to 5 tens. With one 20, 30 cents remain: 0 to 3 tens. With two 20s, 10 cents remain: 0 or 1 ten."
+  ],
+  "solutions": {
+    "reliable": "Fix the number of 20-cent coins. None: the 10-cent coins can number 0, 1, 2, 3, 4 or 5, with 5-cent coins making up the rest, so 6 ways. One: 30 cents remain, and 0 to 3 tens gives 4 ways. Two: 10 cents remain, and 0 or 1 ten gives 2 ways. Total 6 + 4 + 2 = 12. The transferable idea: list by the largest item first, so each case is short and nothing is missed or repeated.",
+    "elegant": "Once the 20s and 10s are chosen, the 5-cent coins are forced, so you are really counting how many tens fit in 50, 30 and 10 cents: 6 + 4 + 2."
+  },
+  "whyOnTest": "Listing a small set of combinations without gaps or repeats is the core skill, and the trap is a missing case at one end of a list.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0559",
+  "band": "5-6",
+  "points": 4,
+  "statement": "In the four-digit number 25★4, the star stands for a single digit. The number is divisible by 12. Which digit is the star?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I checked only divisibility by 3 and took the first digit that worked."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I checked only divisibility by 4 and took the smallest digit that is not zero."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I checked only divisibility by 3 and took the largest digit that worked."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I checked only divisibility by 4 and took the largest digit that worked."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "CFT-04",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "12 can be split into two numbers whose tests you know.",
+    "A number is divisible by 12 exactly when it is divisible by both 3 and 4. Use the digit-sum test for 3 and the last-two-digits test for 4, and find the digit that passes both.",
+    "For 3: 2 + 5 + ★ + 4 must be a multiple of 3, so ★ is 1, 4 or 7. For 4: the last two digits ★4 must be a multiple of 4, so ★ is even."
+  ],
+  "solutions": {
+    "reliable": "Divisible by 12 means divisible by 3 and by 4 (3 and 4 share no factor, and 3 × 4 = 12). For 3, the digit sum 2 + 5 + ★ + 4 = 11 + ★ must be a multiple of 3, so ★ is 1, 4 or 7. For 4, the number formed by the last two digits, ★4, must be a multiple of 4: 04, 24, 44, 64 and 84 work, so ★ must be even. The only digit in both lists is 4, giving 2544 = 12 × 212. The transferable idea: test divisibility by a composite number by splitting it into factors that share nothing, then apply each quick test.",
+    "elegant": null
+  },
+  "whyOnTest": "Divisibility by 12 needs both the 3-test and the 4-test, and each test alone leaves several tempting digits.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

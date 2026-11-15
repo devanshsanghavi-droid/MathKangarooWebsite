@@ -1,0 +1,67 @@
+{
+  "id": "KA-0652",
+  "band": "7-8",
+  "points": 4,
+  "statement": "The midpoints of the sides of a square of side 10 cm are joined to make a second square. The midpoints of the sides of the second square are joined to make a third square. What is the area of the third square, in square centimetres?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "50",
+      "correct": false,
+      "misconception": "I stopped after making the second square and gave its area."
+    },
+    {
+      "key": "C",
+      "text": "12.5",
+      "correct": false,
+      "misconception": "I halved the area three times, once for each square including the first."
+    },
+    {
+      "key": "D",
+      "text": "6.25",
+      "correct": false,
+      "misconception": "I thought each new square has half the side of the one before, so I squared 2.5."
+    },
+    {
+      "key": "E",
+      "text": "56.25",
+      "correct": false,
+      "misconception": "I thought the four corner triangles cut off at each step make up only a quarter of the square, so I multiplied by three quarters twice."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-03",
+    "secondary": [
+      "GEO-04"
+    ]
+  },
+  "hints": [
+    "Look at the four triangles cut off from the corners.",
+    "Area by dissection: fold the four corner triangles inwards across the sides of the inner square and see how much of the inner square they cover. That tells you the fraction kept at each step.",
+    "The four corner triangles fold in to cover the inner square exactly, so each new square has half the area of the one before."
+  ],
+  "solutions": {
+    "reliable": "Folding each corner triangle inwards along a side of the inner square lands it exactly on a quarter of the inner square, so the inner square has the same area as the four corner triangles together. Each step therefore keeps half the area. The first square has area 100, the second 50, and the third 25 square centimetres. The transferable idea: a dissection that matches pieces one to one gives a ratio of areas without any lengths.",
+    "elegant": "Joining midpoints twice gives a square turned back upright whose side is exactly half of 10, so its area is 5 x 5 = 25."
+  },
+  "whyOnTest": "Midpoint squares appear often because the halving can be seen by folding, and the distractors catch halving the side instead of the area.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

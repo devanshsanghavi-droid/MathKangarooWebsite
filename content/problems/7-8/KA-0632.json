@@ -1,0 +1,68 @@
+{
+  "id": "KA-0632",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A cyclist rides 6 km up a hill at 12 km per hour, then comes straight back down the same road at 24 km per hour. What is her average speed for the whole trip, in km per hour?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "18",
+      "correct": false,
+      "misconception": "I averaged the two speeds, 12 and 24."
+    },
+    {
+      "key": "B",
+      "text": "36",
+      "correct": false,
+      "misconception": "I added the two speeds together."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I divided only the one-way distance, 6 km, by the total time of 45 minutes."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I divided the whole 12 km by the uphill time of half an hour only."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-11",
+    "secondary": [
+      "MOD-03",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "Average speed is total distance over total time.",
+    "The quick average of 12 and 24 is tempting. Check it a second way by working out the actual times for each half and using total distance divided by total time.",
+    "Uphill takes 6 / 12 = 0.5 hours and downhill takes 6 / 24 = 0.25 hours. The trip is 12 km."
+  ],
+  "solutions": {
+    "reliable": "Going up takes 6 / 12 = 0.5 hours, coming down takes 6 / 24 = 0.25 hours, so the whole trip is 12 km in 0.75 hours. Average speed is 12 / 0.75 = 16 km per hour. The transferable idea: when a fast answer comes from averaging rates, check it with total distance over total time, because she spends longer at the slower speed.",
+    "elegant": "She spends twice as long going up as coming down, so the average is weighted 2 to 1 toward 12: (2 x 12 + 1 x 24) / 3 = 16. That second method confirms the first."
+  },
+  "whyOnTest": "Averaging two speeds is a classic trap, and a second check with real times exposes 18 before you commit to it.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

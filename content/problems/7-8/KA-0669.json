@@ -1,0 +1,68 @@
+{
+  "id": "KA-0669",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Eleven cups stand upside down on a table. In one move you must turn over exactly three cups, any three you choose. What is the smallest number of moves needed to get all eleven cups the right way up?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I divided 11 by 3 and rounded up, without checking that 4 moves make 12 turns, an even number, while eleven cups that each need an odd number of turns need an odd total."
+    },
+    {
+      "key": "B",
+      "text": "11",
+      "correct": false,
+      "misconception": "I thought each cup needs its own move."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I divided 11 by 3 and rounded down, but 3 moves turn over only 9 cups."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be done",
+      "correct": false,
+      "misconception": "I thought that since 11 is not a multiple of 3 the cups can never all end up the right way, forgetting that a cup can be turned more than once."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "LOG-05",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "How many times must each single cup be turned over?",
+    "Look at something that changes in a fixed way: each cup must be turned an odd number of times, so think about whether the total number of turns is odd or even, and compare with 3 turns per move.",
+    "Eleven odd numbers add up to an odd total, so the number of moves must be odd and at least 4."
+  ],
+  "solutions": {
+    "reliable": "Each cup starts upside down, so it must be turned over an odd number of times. Eleven odd numbers add up to an odd number, so the total number of turns is odd. Each move makes 3 turns, so after m moves there have been 3m turns, and 3m is odd only when m is odd. Also 3m must be at least 11, so m is at least 4. The smallest odd number that is at least 4 is 5. Five moves do work: turn cups 1, 2, 3, then 4, 5, 6, then 7, 8, 9, then 10, 1, 2, and finally 11, 1, 2. The transferable idea: when a process allows many choices, track a quantity whose parity changes in a fixed way, then show the bound can be reached.",
+    "elegant": "Count the cups that are upside down. Each move changes that count by 1 or 3, an odd amount, so its parity switches every move. It starts at 11, which is odd, and must reach 0, which is even, so the number of moves is odd. Four is too few to reach every cup, so the answer is 5."
+  },
+  "whyOnTest": "Parity invariants show that tempting answers like 4 are impossible, and the test is whether you prove the bound and also show it can be reached.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

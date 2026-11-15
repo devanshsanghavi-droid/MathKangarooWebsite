@@ -1,0 +1,68 @@
+{
+  "id": "KA-0648",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A bracelet has 7 equally spaced beads on a loop: 3 are black and 4 are white. Two bracelets count as the same if one can be turned or flipped over to look exactly like the other. How many different bracelets are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "35",
+      "correct": false,
+      "misconception": "I counted every way to choose which 3 of the 7 places are black, treating turned and flipped bracelets as different."
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": false,
+      "misconception": "I counted every way to share the 4 white beads among the 3 gaps between black beads, keeping the gaps in a fixed order, so I counted turned copies again."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I allowed turning the bracelet but forgot it can also be flipped, so I counted a pattern and its mirror image separately."
+    },
+    {
+      "key": "E",
+      "text": "3",
+      "correct": false,
+      "misconception": "I sorted the bracelets into all three blacks together, exactly two together, or none together, and missed that exactly two together can happen in two different ways."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-01",
+      "GEO-08"
+    ]
+  },
+  "hints": [
+    "Look at the white beads sitting between the black ones.",
+    "Do not count positions; count shapes. The 3 black beads split the 4 white beads into 3 gaps. Turning or flipping only moves the gaps around, so list the possible gap sizes.",
+    "The gap sizes can be 4, 0, 0 or 3, 1, 0 or 2, 2, 0 or 2, 1, 1. Check that each set of gap sizes gives just one bracelet."
+  ],
+  "solutions": {
+    "reliable": "The 3 black beads cut the loop into 3 gaps, and the 4 white beads are shared among those gaps. Turning the bracelet just moves the gaps round the circle, and flipping reverses their order. With only 3 gaps, any order of three gap sizes can be turned or flipped into any other, so a bracelet is fixed by its set of gap sizes alone. The possible sets are 4, 0, 0 and 3, 1, 0 and 2, 2, 0 and 2, 1, 1, so there are 4 bracelets. The transferable idea: when arrangements count as equal up to turning and flipping, describe each one by a feature that turning and flipping cannot change, rather than by positions.",
+    "elegant": "Without flips there are 5 patterns, because the gaps 3, 1, 0 and 3, 0, 1 go round the circle in opposite directions and cannot be turned into each other. A flip joins exactly that pair, leaving 4."
+  },
+  "whyOnTest": "Counting up to symmetry punishes counting positions, and the wrong choices come from forgetting turns, forgetting flips, or merging two different shapes.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

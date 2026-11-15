@@ -1,0 +1,68 @@
+{
+  "id": "KA-0782",
+  "band": "9-10",
+  "points": 3,
+  "statement": "All red blocks weigh the same, and so do all blue blocks and all green blocks. Two red blocks and one blue block balance one green block. One blue block and one green block balance four red blocks. How many red blocks balance two green blocks and one blue block?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found that one green block balances 3 red blocks and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I treated the blue block as weighing nothing and used only the first balance, so a green block was 2 red and two greens were 4."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": false,
+      "misconception": "I swapped the numbers in the question and weighed one green block with two blue blocks, 3 + 2."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I found that a green block balances 3 red blocks, then counted the two green blocks and forgot the blue one."
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-10",
+    "secondary": [
+      "MOD-01",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Use the first balance to replace the green block in the second.",
+    "Write each balance as an equation in red, blue and green weights. Substitute one into the other to find each block in terms of red blocks, then weigh what the question asks for.",
+    "From the first balance, green = 2 red + blue. Put that into the second: blue + 2 red + blue = 4 red."
+  ],
+  "solutions": {
+    "reliable": "Write r, b and g for the weights. The balances say 2r + b = g and b + g = 4r. Substituting g gives b + 2r + b = 4r, so 2b = 2r and b = r. Then g = 2r + r = 3r. Two green blocks and one blue block weigh 3r + 3r + r = 7r, so 7 red blocks balance them. The transferable idea: turn each balance into an equation and substitute to express everything in one unit.",
+    "elegant": "Group cleverly: 2g + b = g + (g + b) = (2r + b) + 4r = 6r + b. Since a blue block weighs one red block (from b + g = 4r with g = 2r + b), that is 7 red blocks."
+  },
+  "whyOnTest": "Balance puzzles check that each picture becomes an equation and that the question's exact combination is weighed, not just one block.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

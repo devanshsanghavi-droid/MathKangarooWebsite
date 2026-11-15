@@ -1,0 +1,67 @@
+{
+  "id": "KA-0635",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Four squares with sides 1 cm, 2 cm, 3 cm and 4 cm stand in a row from smallest to largest, with their bottom edges on the same line and each square touching the next one along a side. What is the perimeter of the staircase shape they make?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "28 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "40 cm",
+      "correct": false,
+      "misconception": "I added the perimeters of the four squares and forgot that the edges where two squares touch are inside the shape."
+    },
+    {
+      "key": "C",
+      "text": "34 cm",
+      "correct": false,
+      "misconception": "I took away each touching edge once, but each one was counted in two squares' perimeters, so it had to come off twice."
+    },
+    {
+      "key": "D",
+      "text": "30 cm",
+      "correct": false,
+      "misconception": "I found the area of the shape, 1 + 4 + 9 + 16, instead of its perimeter."
+    },
+    {
+      "key": "E",
+      "text": "20 cm",
+      "correct": false,
+      "misconception": "I added the bottom and the steps along the top, 10 + 10, but forgot the vertical edges."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": [
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "Walk around the outline and sort the edges into horizontal and vertical.",
+    "Perimeter of rectilinear shapes: the step tops together are as long as the bottom edge. The upward edges, the left side and the rises, together are as tall as the tallest square, which is the right side’s height.",
+    "The bottom is 1 + 2 + 3 + 4 = 10 cm, so the step tops also total 10 cm. The left side and the rises add to 1 + 1 + 1 + 1 = 4 cm, the same as the 4 cm right side."
+  ],
+  "solutions": {
+    "reliable": "Add the four square perimeters: 4 + 8 + 12 + 16 = 40 cm. Where two squares touch, the shared part is as long as the smaller square's side: 1 cm, 2 cm and 3 cm. Each shared part was counted in both squares, and none of it is on the outline, so subtract 2 x (1 + 2 + 3) = 12 cm. The perimeter is 40 - 12 = 28 cm. The transferable idea: when shapes are joined, every touching edge leaves the perimeter twice, once from each shape.",
+    "elegant": "Push the steps out to the bounding rectangle, 10 cm wide and 4 cm tall. The top steps still add to 10 cm across and the rises still add to 4 cm up, so the perimeter equals that rectangle's: 2 x (10 + 4) = 28 cm."
+  },
+  "whyOnTest": "Perimeter of rectilinear shapes rewards matching horizontal and vertical edges, and the trap is counting the edges where shapes touch.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0840",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Whole numbers a, b and c are such that a + b is odd and b + c is odd. Which of these must be odd?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "a + c",
+      "correct": false,
+      "misconception": "I thought that because a + b and b + c are both odd, a + c must be odd as well."
+    },
+    {
+      "key": "B",
+      "text": "b",
+      "correct": false,
+      "misconception": "I assumed b had to be the odd number in each sum, forgetting that a and c could be the odd ones with b even."
+    },
+    {
+      "key": "C",
+      "text": "a × c",
+      "correct": false,
+      "misconception": "I tested a = 1, b = 2, c = 3, got a × c = 3, and assumed one example proved it always works."
+    },
+    {
+      "key": "D",
+      "text": "a + b + c",
+      "correct": false,
+      "misconception": "I tested a = 2, b = 1, c = 4, got a + b + c = 7, and took that single example as proof."
+    },
+    {
+      "key": "E",
+      "text": "a + c + 1",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "LOG-01"
+    ]
+  },
+  "hints": [
+    "Compare whether a is odd or even with whether c is.",
+    "An odd sum needs one odd number and one even number. So a and b have different parity, and so do b and c. Decide what that says about a and c together.",
+    "Both a and c differ in parity from b, so a and c have the same parity, which makes a + c even."
+  ],
+  "solutions": {
+    "reliable": "An odd sum needs one odd and one even number, so a and b have different parity, and b and c have different parity. Then a and c have the same parity, so a + c is even and a + c + 1 is always odd. The others can fail: a = 1, b = 2, c = 3 makes b and a + b + c even, and a = 2, b = 1, c = 4 makes a × c and a + c even. The transferable idea: track odd and even rather than values; a 'must' needs a reason, and one counterexample rules it out.",
+    "elegant": "(a + b) + (b + c) = a + c + 2b is odd plus odd, which is even. Taking away the even number 2b leaves a + c even, so a + c + 1 is odd."
+  },
+  "whyOnTest": "Parity questions reward tracking odd and even instead of values, and a single counterexample rules out each choice that is only sometimes odd.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

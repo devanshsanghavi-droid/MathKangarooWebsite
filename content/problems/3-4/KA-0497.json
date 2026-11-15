@@ -1,0 +1,67 @@
+{
+  "id": "KA-0497",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Ana, Bo and Cal sit on a bench with 4 seats, so one seat stays empty. In how many different ways can they sit?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I only counted which seat stays empty and forgot the children can swap places."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I only counted the orders of the three children and forgot the empty seat can move."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I thought the empty seat had to be at one of the two ends."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "64",
+      "correct": false,
+      "misconception": "I gave each child 4 choices of seat, letting two children share a seat."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-05",
+    "secondary": [
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Let the children choose seats one at a time.",
+    "Ana picks a seat first, then Bo picks from the seats left, then Cal. Multiply the numbers of choices, remembering that a seat cannot be used twice.",
+    "Ana has 4 seats to choose from, then Bo has 3 and Cal has 2."
+  ],
+  "solutions": {
+    "reliable": "Ana can take any of the 4 seats, Bo any of the 3 left and Cal any of the 2 left, so 4 x 3 x 2 = 24 ways. The transferable idea: when people choose places one after another, the number of choices drops by one each time.",
+    "elegant": "Choose the empty seat (4 ways), then arrange the three children in the other three seats (3 x 2 x 1 = 6 ways): 4 x 6 = 24. The transferable idea: treat the empty seat as a fourth, invisible person."
+  },
+  "whyOnTest": "Arrangements with more places than people, where both the empty seat and the order of the children must be counted.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

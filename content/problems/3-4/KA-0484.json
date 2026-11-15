@@ -1,0 +1,68 @@
+{
+  "id": "KA-0484",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Stamps are worth 1, 2 and 5 cents. In how many different ways can you make exactly 10 cents? (The order of the stamps does not matter.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I left out the 1-cent stamps and only used 2-cent and 5-cent ones."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I only counted the ways that use at least one 5-cent stamp."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I forgot about the 5-cent stamps."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I forgot the way that uses two 5-cent stamps."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-04",
+    "secondary": [
+      "CNT-01",
+      "MOD-06"
+    ]
+  },
+  "hints": [
+    "Sort the ways by how many 5-cent stamps they use.",
+    "Do casework on the biggest stamp: no 5-cent stamps, one, or two. In each case the rest is made from 1s and 2s, so count how many 2-cent stamps can be used.",
+    "With no 5s, use 0 to 5 two-cent stamps. With one 5, use 0 to 2 two-cent stamps. With two 5s, nothing else."
+  ],
+  "solutions": {
+    "reliable": "Case 0 fives: the 10 cents is made of 2s and 1s, with 0, 1, 2, 3, 4 or 5 twos, so 6 ways. Case 1 five: 5 cents of 2s and 1s, with 0, 1 or 2 twos, so 3 ways. Case 2 fives: 1 way. Total 6 + 3 + 1 = 10. The transferable idea: in a making-amounts count, fix the biggest piece first and count the rest case by case.",
+    "elegant": null
+  },
+  "whyOnTest": "Counting ways to make an amount needs casework organised by the largest coin, or ways get missed.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

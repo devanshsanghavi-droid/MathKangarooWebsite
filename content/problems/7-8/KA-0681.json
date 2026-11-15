@@ -1,0 +1,68 @@
+{
+  "id": "KA-0681",
+  "band": "7-8",
+  "points": 5,
+  "statement": "The nine numbers 1, 1/2, 1/3, 1/4, ..., 1/9 are written on a board. In one move you erase any two numbers a and b and write the single number a + b + ab in their place. After eight moves only one number is left. What is it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I found that the product of all the (1 + number) values is 10, then subtracted 1 for every one of the nine numbers instead of once."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I cancelled the product of the (1 + number) values down to 9 instead of 10, then subtracted 1."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I multiplied all the (1 + number) values correctly but forgot to subtract 1 at the end."
+    },
+    {
+      "key": "E",
+      "text": "11",
+      "correct": false,
+      "misconception": "I found the product of all the (1 + number) values was 10 and then added 1 instead of subtracting it."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "NUM-09",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Try adding 1 to the new number a + b + ab.",
+    "Since a + b + ab + 1 = (a + 1)(b + 1), adding 1 to every number turns each move into multiplying two of them. The product of all the (number + 1) values never changes.",
+    "That product is (1 + 1)(1 + 1/2)(1 + 1/3)...(1 + 1/9) = 2/1 x 3/2 x 4/3 x ... x 10/9."
+  ],
+  "solutions": {
+    "reliable": "Because a + b + ab + 1 = (a + 1)(b + 1), the product of (x + 1) over all the numbers x on the board is the same after every move. At the start it is 2/1 x 3/2 x 4/3 x ... x 10/9, and everything cancels except 10/1 = 10. At the end there is one number N with N + 1 = 10, so N = 9. The transferable idea: when a repeated operation looks messy, look for a quantity it never changes, then compare the start with the end.",
+    "elegant": "Combine in order. 1 and 1/2 give 1 + 1/2 + 1/2 = 2. Then 2 and 1/3 give 2 + 1/3 + 2/3 = 3. Each time, n and 1/(n + 1) give n + 1, so the last number is 9. The invariant shows that any other order gives 9 too."
+  },
+  "whyOnTest": "Invariant questions describe a process too long to simulate and test whether you can find the quantity that never changes.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

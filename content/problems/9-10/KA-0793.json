@@ -1,0 +1,68 @@
+{
+  "id": "KA-0793",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Cards numbered 1 to 30 are in a bag. Cards are taken out without looking and kept. What is the smallest number of cards that must be taken out to be certain that two of the numbers taken have a product that is a multiple of 6?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "11",
+      "correct": false,
+      "misconception": "I kept only the numbers that are neither even nor multiples of 3, which gave a safe set of 10, and added one."
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I built my safe set from the odd multiples of 3 instead of the even numbers that are not multiples of 3, so it had only 15 numbers."
+    },
+    {
+      "key": "C",
+      "text": "21",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "20",
+      "correct": false,
+      "misconception": "I found the largest set of 20 numbers with no such pair and gave that, instead of one more."
+    },
+    {
+      "key": "E",
+      "text": "26",
+      "correct": false,
+      "misconception": "I forgot that a multiple of 6 times any number is a multiple of 6, so I let all five multiples of 6 into my safe set of 25."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-17",
+    "secondary": [
+      "NUM-04",
+      "CNT-18"
+    ]
+  },
+  "hints": [
+    "Sort 1 to 30 by divisibility: by 2, by 3, by both, or neither.",
+    "Find the largest collection of numbers in which no two have a product divisible by 6, then add one. A product is a multiple of 6 when, between them, the two numbers supply a factor 2 and a factor 3.",
+    "A multiple of 6 clashes with everything. An even number that is not a multiple of 3 clashes with an odd multiple of 3. Count each group: 5 multiples of 6, 10 other even numbers, 5 odd multiples of 3, 10 of neither kind."
+  ],
+  "solutions": {
+    "reliable": "Split 1 to 30 into four groups: multiples of 6 (5 numbers), even numbers that are not multiples of 3 (10 numbers), odd multiples of 3 (5 numbers) and numbers divisible by neither 2 nor 3 (10 numbers). A multiple of 6 times any number is a multiple of 6, so a safe collection with more than one number contains no multiple of 6. An even number times an odd multiple of 3 is a multiple of 6, so a safe collection cannot use both of those groups. The biggest safe collection is the 10 numbers of neither kind plus the 10 even non-multiples of 3, which is 20 numbers, and it really is safe because none of its products has a factor 3. So 20 cards can avoid it and 21 cannot. The transferable idea: the answer to a 'must be certain' question is the largest safe collection plus one, so find exactly which groups clash.",
+    "elegant": null
+  },
+  "whyOnTest": "Pigeonhole questions test the full argument: build the biggest set that avoids the event, then add one, and each step has its own trap among the choices.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

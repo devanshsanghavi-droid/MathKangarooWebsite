@@ -1,0 +1,68 @@
+{
+  "id": "KA-0893",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A beetle sits on each of the 25 squares of a 5 by 5 board. At a signal, every beetle moves at the same moment to a square that touches its own square only at a corner. Several beetles may land on the same square. What is the smallest possible number of empty squares after the move?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed the beetles could always pair up and swap places, so no square needs to be empty."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I used a chessboard colouring, as for moves to side-sharing squares, and compared the 13 dark squares with the 12 light ones, not noticing that a corner step never changes the colour."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I found 5 empty squares by colouring the rows and 5 more by colouring the columns, and added them, not seeing that they can be the same 5 squares."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": false,
+      "misconception": "I worked out that at most 20 squares can be occupied and gave that number instead of the number of empty squares."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-07",
+    "secondary": [
+      "LOG-05",
+      "CNT-17"
+    ]
+  },
+  "hints": [
+    "Colour the rows in stripes: odd rows one colour, even rows another.",
+    "A move to a corner-touching square always changes the row by one, so every beetle swaps stripe colour. Compare how many beetles can land in the odd rows with how many squares they have, then build a matching move.",
+    "Rows 1, 3 and 5 have 15 squares, but only the 10 beetles from rows 2 and 4 can land there."
+  ],
+  "solutions": {
+    "reliable": "Number the rows 1 to 5. A corner-touching move changes the row by exactly one, so the 15 squares in rows 1, 3 and 5 can only receive the 10 beetles that start in rows 2 and 4. At least 15 - 10 = 5 squares stay empty. Five is possible. Write (r, c) for the square in row r and column c, and let these pairs of corner neighbours swap places: (1, 1) and (2, 2), (1, 3) and (2, 4), (3, 1) and (4, 2), (3, 3) and (4, 4), (1, 2) and (2, 1), (1, 4) and (2, 3), (3, 2) and (4, 1), (3, 4) and (2, 5), (5, 2) and (4, 3), (5, 4) and (4, 5). That keeps 20 squares filled. The 5 beetles left, on (1, 5), (3, 5), (5, 1), (5, 3) and (5, 5), each move to any corner neighbour, so exactly 5 squares are empty. The transferable idea: choose a colouring that every move changes in a fixed way, count the colours to get a bound, then build an example that meets it.",
+    "elegant": null
+  },
+  "whyOnTest": "A colouring argument where the obvious chessboard colouring is useless for corner moves; choosing striped rows is the key idea, and the construction shows the bound is exact.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

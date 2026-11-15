@@ -1,0 +1,67 @@
+{
+  "id": "KA-0977",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A machine turns 3 into 10, 5 into 26, 7 into 50 and 10 into 101. Using the same rule, which number does the machine turn into 82?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "27",
+      "correct": false,
+      "misconception": "I fitted the rule 'multiply by 3 and add 1' to the first example only, then undid it: (82 - 1) / 3."
+    },
+    {
+      "key": "C",
+      "text": "39",
+      "correct": false,
+      "misconception": "I fitted the rule 'double and add 4' to the first example only, then undid it: (82 - 4) / 2."
+    },
+    {
+      "key": "D",
+      "text": "41",
+      "correct": false,
+      "misconception": "I treated squaring as if it were doubling, so to work backwards I simply halved 82."
+    },
+    {
+      "key": "E",
+      "text": "81",
+      "correct": false,
+      "misconception": "I undid the 'add 1' step but forgot to undo the squaring."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "LOG-08"
+    ]
+  },
+  "hints": [
+    "Compare each output with the square of its input.",
+    "Find a rule that fits all four examples, not just the first one. Then run the machine backwards, undoing its steps in reverse order.",
+    "Each output is one more than the square of the input, for example 10 = 3 x 3 + 1."
+  ],
+  "solutions": {
+    "reliable": "Checking all four examples: 3 x 3 + 1 = 10, 5 x 5 + 1 = 26, 7 x 7 + 1 = 50 and 10 x 10 + 1 = 101, so the rule is 'square, then add 1'. For the output to be 82, the square must be 81, so the input is 9. The transferable idea: test a rule against every example, then reverse it by undoing the last step first.",
+    "elegant": null
+  },
+  "whyOnTest": "Simple rules fit the first example alone, so the question checks that a rule fits every example and that you can run it backwards.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0659",
+  "band": "7-8",
+  "points": 5,
+  "statement": "How many three-digit numbers have a middle digit larger than both their first digit and their last digit? For example, 362 counts but 326 does not.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "204",
+      "correct": false,
+      "misconception": "I did not allow the last digit to be 0, so I used the same choices for the last digit as for the first."
+    },
+    {
+      "key": "B",
+      "text": "240",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "285",
+      "correct": false,
+      "misconception": "I let the first digit be 0, which does not give a three-digit number."
+    },
+    {
+      "key": "D",
+      "text": "120",
+      "correct": false,
+      "misconception": "I found 240 and then halved it, thinking each number had been counted twice."
+    },
+    {
+      "key": "E",
+      "text": "330",
+      "correct": false,
+      "misconception": "I allowed the first and last digits to equal the middle digit instead of being smaller."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-02",
+    "secondary": [
+      "CNT-04",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Fix the middle digit first.",
+    "Use casework on the middle digit. For each possible middle digit, count the choices for the first digit and the last digit separately, remembering the first digit cannot be 0 but the last can.",
+    "With middle digit m, the first digit has m - 1 choices and the last digit has m choices. Add m(m - 1) for m = 2 to 9."
+  ],
+  "solutions": {
+    "reliable": "Let the middle digit be m. The first digit must be from 1 to m - 1, giving m - 1 choices, and the last digit from 0 to m - 1, giving m choices. Adding m(m - 1) for m = 2, 3, ..., 9 gives 2 + 6 + 12 + 20 + 30 + 42 + 56 + 72 = 240. The transferable idea: in digit problems, fix the digit with the most constraints first, then count the others for each case.",
+    "elegant": null
+  },
+  "whyOnTest": "Digit-constraint counting rewards fixing the most constrained digit, and the traps are the first-digit zero rule and strict versus non-strict inequality.",
+  "estSeconds": 220,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

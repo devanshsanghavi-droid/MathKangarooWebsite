@@ -1,0 +1,68 @@
+{
+  "id": "KA-0995",
+  "band": "11-12",
+  "points": 5,
+  "statement": "In a coordinate plane, a bee flies in straight lines from P(2, 3) to a point on the y-axis, then to a point on the x-axis, and then to Q(5, 1). What is the shortest possible total length of its flight?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "√13",
+      "correct": false,
+      "misconception": "I measured straight from P to Q, forgetting that the bee must visit both axes."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I reflected Q in the x-axis but forgot that the bee must touch the y-axis too."
+    },
+    {
+      "key": "C",
+      "text": "√53",
+      "correct": false,
+      "misconception": "I reflected P in the y-axis but forgot that the bee must touch the x-axis too."
+    },
+    {
+      "key": "D",
+      "text": "√65",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "√13 + √26",
+      "correct": false,
+      "misconception": "I thought the best plan was to touch both axes at once by flying through the origin."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-17",
+    "secondary": [
+      "GEO-09",
+      "GEO-02"
+    ]
+  },
+  "hints": [
+    "Reflections can turn a bent path into a straight one.",
+    "Reflect P in the y-axis and Q in the x-axis. Each leg that touches an axis then matches a leg to a reflected point, and the shortest route between two points is a straight segment.",
+    "The reflected points are (-2, 3) and (5, -1)."
+  ],
+  "solutions": {
+    "reliable": "Reflect P in the y-axis to P'(-2, 3) and Q in the x-axis to Q'(5, -1). The leg from P to a point on the y-axis has the same length as the leg from P' to that point, and the leg from a point on the x-axis to Q has the same length as the leg to Q'. So every flight is at least as long as the straight segment P'Q', which is √(7² + 4²) = √65. That segment crosses the y-axis at (0, 13/7) and then the x-axis at (13/4, 0), so the bee can fly exactly this route, and the shortest flight is √65. The transferable idea: each forced touch of a line is handled by a reflection, which straightens a broken path.",
+    "elegant": "Reflecting P in the y-axis and then in the x-axis sends it to (-2, -3), and the distance from there to Q(5, 1) is √(49 + 16) = √65."
+  },
+  "whyOnTest": "Two reflections straighten the path, and each distractor comes from reflecting only once or from a natural but wrong guess about where to touch.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

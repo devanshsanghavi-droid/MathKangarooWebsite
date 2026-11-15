@@ -1,0 +1,68 @@
+{
+  "id": "KA-0802",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A row of numbers repeats the block 3, 1, 4, 1, 5 over and over: 3, 1, 4, 1, 5, 3, 1, 4, 1, 5, 3, 1, and so on. What is the sum of the first 98 numbers in the row?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "266",
+      "correct": false,
+      "misconception": "I counted the 19 complete blocks of 5 numbers, each adding to 14, and forgot the 3 numbers left over."
+    },
+    {
+      "key": "B",
+      "text": "294",
+      "correct": false,
+      "misconception": "I estimated every number as 3, halfway between the smallest 1 and the largest 5, and multiplied by 98."
+    },
+    {
+      "key": "C",
+      "text": "276",
+      "correct": false,
+      "misconception": "I took the 3 leftover numbers from the end of a block, 4, 1 and 5, instead of from the start, 3, 1 and 4."
+    },
+    {
+      "key": "D",
+      "text": "280",
+      "correct": false,
+      "misconception": "I rounded 98 divided by 5 up to 20 full blocks, adding more numbers than there are."
+    },
+    {
+      "key": "E",
+      "text": "274",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "NUM-06",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "How many numbers are in one block, and what do they add up to?",
+    "Count how many full blocks fit in the first 98 numbers, and handle the numbers left over separately: they are the first few numbers of a new block.",
+    "Each block has 5 numbers adding to 14. 98 is 19 blocks and 3 more numbers."
+  ],
+  "solutions": {
+    "reliable": "One block has 5 numbers and adds to 3 + 1 + 4 + 1 + 5 = 14. 98 = 19 × 5 + 3, so the first 98 numbers are 19 full blocks and then the first 3 numbers of the next block, 3, 1 and 4. The sum is 19 × 14 + 8 = 266 + 8 = 274. The transferable idea: for a repeating pattern, divide by the block length, then add the leftover as the start of a new block.",
+    "elegant": "Twenty blocks would be 100 numbers adding to 280. The first 98 leave out the last two numbers of the 20th block, 1 and 5, so the sum is 280 - 6 = 274."
+  },
+  "whyOnTest": "Repeating-pattern sums test the block length and the leftover, the two places where a fast solver usually slips.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

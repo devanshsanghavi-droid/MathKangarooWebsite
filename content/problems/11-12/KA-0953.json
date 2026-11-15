@@ -1,0 +1,68 @@
+{
+  "id": "KA-0953",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Six integers are written on a board. Whichever five of them you choose, the sum of those five is odd. How many of the six integers are odd?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I worked out that all six have the same parity, then chose even, without checking that five even numbers add to an even sum."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought a single odd number is enough to make a sum odd, so only one of the six needs to be odd."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I knew each group of five must contain an odd count of odd numbers and picked 3, the middle odd count, without testing every group."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I made five numbers odd and one even, forgetting that a group of five including the even number then has only four odd numbers."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-05",
+    "secondary": [
+      "LOG-09",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Compare two different groups of five. What changes between them?",
+    "Two groups of five that leave out different numbers differ by swapping one number for another. Both sums are odd, so what does that say about the two swapped numbers? Then use the total.",
+    "Leaving out a gives S - a and leaving out b gives S - b, both odd, so a and b have the same parity. So all six share a parity, and five numbers of that parity must add to an odd number."
+  ],
+  "solutions": {
+    "reliable": "Let S be the total of all six. Leaving out the number a gives S - a, which is odd for every choice of a. So every number a has the parity of S - 1, which means all six integers have the same parity. If they were all even, any five would add to an even number, which is not allowed. So all six are odd, and indeed five odd numbers always add to an odd number. The transferable idea: when every subset of a fixed size behaves the same way, compare two subsets that differ in one element.",
+    "elegant": "Swap one number in a group of five for the number left out: the sum stays odd, so the two swapped numbers have the same parity. Any two of the six can be swapped like this, so all six match, and they must be odd."
+  },
+  "whyOnTest": "Parity questions about every group are solved by comparing two groups that differ by one swap, and each distractor fixes a count without checking every group.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0628",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Six couples meet at a party. Each person shakes hands once with every other person except their own partner. How many handshakes are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "66",
+      "correct": false,
+      "misconception": "I counted handshakes between all 12 people and forgot that partners do not shake hands."
+    },
+    {
+      "key": "B",
+      "text": "54",
+      "correct": false,
+      "misconception": "I took away one handshake for each of the 12 people instead of one for each of the 6 couples."
+    },
+    {
+      "key": "C",
+      "text": "120",
+      "correct": false,
+      "misconception": "I said each person shakes 10 hands and multiplied by 12, without halving."
+    },
+    {
+      "key": "D",
+      "text": "60",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "132",
+      "correct": false,
+      "misconception": "I multiplied 12 by 11 and forgot both to halve and to remove the partners."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-08",
+    "secondary": [
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "How many hands does one person shake?",
+    "Handshakes and pairs: count from each person's point of view, then remember that every handshake has two people in it, so that total counts each handshake twice.",
+    "Each of the 12 people shakes 10 hands, which gives 120, but each handshake was counted by both people."
+  ],
+  "solutions": {
+    "reliable": "Each of the 12 people shakes hands with everyone except themselves and their partner, so 10 people. That gives 12 x 10 = 120, but each handshake is counted once by each of the two people, so there are 60 handshakes. The transferable idea: count from each person, then divide by 2 because every pair was counted from both ends.",
+    "elegant": "If everyone shook hands, there would be 12 x 11 / 2 = 66 handshakes. Exactly 6 are missing, one per couple, so 66 - 6 = 60."
+  },
+  "whyOnTest": "Counting pairs with a restriction checks whether you halve correctly and remove the right number of missing pairs.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

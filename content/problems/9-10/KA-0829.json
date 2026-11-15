@@ -1,0 +1,68 @@
+{
+  "id": "KA-0829",
+  "band": "9-10",
+  "points": 5,
+  "statement": "How many different arrangements of the six letters of the word LEVELS have the two letters L not next to each other?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "120",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "60",
+      "correct": false,
+      "misconception": "I worked out the arrangements where the two Ls are next to each other and gave that."
+    },
+    {
+      "key": "C",
+      "text": "180",
+      "correct": false,
+      "misconception": "I counted all the different arrangements of the letters and forgot that the Ls must be apart."
+    },
+    {
+      "key": "D",
+      "text": "240",
+      "correct": false,
+      "misconception": "I forgot that the two Es are identical, so every arrangement was counted twice."
+    },
+    {
+      "key": "E",
+      "text": "600",
+      "correct": false,
+      "misconception": "I treated all six letters as different, then took away only the 120 arrangements with LL glued together as one block."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-09",
+      "CNT-05"
+    ]
+  },
+  "hints": [
+    "Count the arrangements you do not want, or place the Ls last.",
+    "Overcount, then correct: count as if all letters differ, divide out the repeated letters, then remove the cases with the Ls together by gluing them into one block. Or place the other letters first, then the Ls.",
+    "There are 6! / (2! x 2!) = 180 arrangements in all, and gluing LL gives 5! / 2! = 60 with the Ls together."
+  ],
+  "solutions": {
+    "reliable": "LEVELS has two Ls, two Es, a V and an S. If all six letters were different there would be 6! = 720 arrangements, but swapping the two Ls or the two Es gives the same word, so there are 720 / (2 x 2) = 180 different arrangements. With the Ls together, glue them into one block LL: then there are 5 items including two identical Es, giving 5! / 2 = 60 arrangements. So 180 - 60 = 120 arrangements have the Ls apart. The transferable idea: count freely, divide out identical copies, then subtract the cases that break the rule.",
+    "elegant": "Arrange E, E, V and S first, in 4! / 2 = 12 ways. They leave 5 gaps, between the letters and at both ends, and the two Ls must go into 2 different gaps, which can be chosen in 10 ways. That gives 12 x 10 = 120 directly."
+  },
+  "whyOnTest": "Arrangements with repeated letters need an overcount and a correction, and the restriction adds a complementary count, so this checks two 5-point ideas at once.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

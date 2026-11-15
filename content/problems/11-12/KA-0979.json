@@ -1,0 +1,68 @@
+{
+  "id": "KA-0979",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A sequence starts with 1. Each later term is the previous term plus the sum of the digits of the previous term. So it begins 1, 2, 4, 8, ... What is the 10th term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "42",
+      "correct": false,
+      "misconception": "I added only the last digit of each term instead of the sum of all its digits."
+    },
+    {
+      "key": "B",
+      "text": "49",
+      "correct": false,
+      "misconception": "I lost count of the terms and gave the ninth term."
+    },
+    {
+      "key": "C",
+      "text": "62",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "70",
+      "correct": false,
+      "misconception": "I treated 2 as the first term, so the term I called the 10th was really the 11th."
+    },
+    {
+      "key": "E",
+      "text": "512",
+      "correct": false,
+      "misconception": "I assumed the doubling at the start carries on, giving 2 to the power 9."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "NUM-01",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Write the terms out carefully, numbering them as you go.",
+    "A recursive rule like this has no shortcut, so the reliable method is to apply it one step at a time. The doubling at the start stops once the terms have two digits, so do not extend that pattern.",
+    "After 8 come 8 + 8 = 16, then 16 + 7 = 23, then 23 + 5 = 28."
+  ],
+  "solutions": {
+    "reliable": "Apply the rule: 1, 2, 4, 8, then 8 + 8 = 16, 16 + 7 = 23, 23 + 5 = 28, 28 + 10 = 38, 38 + 11 = 49 and 49 + 13 = 62. Counting, 62 is the 10th term. The transferable idea: early terms can suggest a false pattern, so with a recursive rule keep applying the rule itself and number the terms as you write them.",
+    "elegant": null
+  },
+  "whyOnTest": "The opening 1, 2, 4, 8 invites a doubling guess, and the question checks whether you follow the rule rather than the first pattern you see.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

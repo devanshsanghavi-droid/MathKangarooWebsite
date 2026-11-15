@@ -1,0 +1,68 @@
+{
+  "id": "KA-1000",
+  "band": "11-12",
+  "points": 5,
+  "statement": "How many 5-digit strings can be made from the digits 1, 2 and 3 so that each of the three digits appears at least once? For example, 13213 counts, but 11222 does not.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "60",
+      "correct": false,
+      "misconception": "I only counted the strings where one digit appears three times and the other two once each."
+    },
+    {
+      "key": "B",
+      "text": "90",
+      "correct": false,
+      "misconception": "I only counted the strings where two digits appear twice and the third once."
+    },
+    {
+      "key": "C",
+      "text": "147",
+      "correct": false,
+      "misconception": "I subtracted the strings missing a digit but forgot to add back the three strings like 11111 that were subtracted twice."
+    },
+    {
+      "key": "D",
+      "text": "150",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "243",
+      "correct": false,
+      "misconception": "I counted every string of 1s, 2s and 3s and ignored the condition."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-09",
+      "CNT-10"
+    ]
+  },
+  "hints": [
+    "Count the strings that miss at least one digit.",
+    "Use complementary counting with an overlap: subtract the strings missing a 1, missing a 2 and missing a 3, then fix the strings that were subtracted more than once.",
+    "There are 243 strings in all, and 32 strings avoid any one given digit."
+  ],
+  "solutions": {
+    "reliable": "There are 3 x 3 x 3 x 3 x 3 = 243 strings in all. Strings with no 1 use only 2 and 3, so there are 2 x 2 x 2 x 2 x 2 = 32 of them, and the same for no 2 and for no 3, giving 96. But a string such as 22222 misses two digits and was subtracted twice, so add back the 3 strings that use a single digit: 243 - 96 + 3 = 150. The transferable idea: overcount, then correct every case that was counted the wrong number of times.",
+    "elegant": "Count by pattern. One digit three times and the other two once each: 3 choices of the repeated digit times 20 arrangements gives 60. Two digits twice and one once: 3 choices of the single digit times 30 arrangements gives 90. The total is 60 + 90 = 150."
+  },
+  "whyOnTest": "Inclusion and exclusion with three sets needs the add-back step, and counting by pattern gives a second route to check the answer.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

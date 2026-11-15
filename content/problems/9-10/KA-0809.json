@@ -1,0 +1,68 @@
+{
+  "id": "KA-0809",
+  "band": "9-10",
+  "points": 5,
+  "statement": "An operation ◇ follows one rule, which you can work out from these examples: 1 ◇ 3 = 4, 2 ◇ 5 = 9, 2 ◇ 1 = 5 and 4 ◇ 2 = 18. What is 5 ◇ 7?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I guessed the rule a + b from the first example and did not check it on the others."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I found the rule 3 times a plus b minus 2, which fits the first three examples, but I never checked it on 4 ◇ 2."
+    },
+    {
+      "key": "C",
+      "text": "54",
+      "correct": false,
+      "misconception": "I found the right kind of rule but squared the second number instead of the first, working out 7 squared plus 5."
+    },
+    {
+      "key": "D",
+      "text": "32",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": false,
+      "misconception": "I guessed the rule a times b plus 1 from the first example and did not check it on the others."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "CFT-11",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Compare the two examples starting with 2. What changes when only the second number does?",
+    "Inferring a rule: compare examples that share a number to see how each number affects the result, propose a rule, then test it on every example before using it.",
+    "From 2 ◇ 5 = 9 and 2 ◇ 1 = 5, the result goes up by exactly as much as b does. Subtract b from each result: you get 1, 4, 4 and 16."
+  ],
+  "solutions": {
+    "reliable": "Compare 2 ◇ 5 = 9 and 2 ◇ 1 = 5: with the first number fixed, raising b by 4 raises the result by 4, so b is simply added. Subtracting b from each result gives 1, 4, 4 and 16 for a = 1, 2, 2 and 4, which are the squares of a. So a ◇ b = a × a + b. Check: 1 + 3 = 4, 4 + 5 = 9, 4 + 1 = 5 and 16 + 2 = 18. Then 5 ◇ 7 = 25 + 7 = 32. The transferable idea: a rule is only found once it fits every example, so test each guess on all of them.",
+    "elegant": null
+  },
+  "whyOnTest": "Rule-finding questions test discipline: every distractor is a rule that fits some of the examples, and only checking all of them separates them.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

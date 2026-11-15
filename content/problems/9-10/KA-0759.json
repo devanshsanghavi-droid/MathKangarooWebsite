@@ -1,0 +1,68 @@
+{
+  "id": "KA-0759",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Seven people sit around a round table. Each one either always tells the truth or always lies. Each of them says: \"At least one of my two neighbours is a liar.\" How many of the seven tell the truth?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I took the opposite of \"at least one of my neighbours is a liar\" to be \"both of my neighbours are liars\", and with that wrong rule a table of seven liars seemed to work."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I worked out that there are 3 liars and gave that number instead of the number of truth-tellers."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I spaced 2 liars apart around the table and did not check that every truth-teller actually sits next to a liar."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be determined",
+      "correct": false,
+      "misconception": "I found that the liars can sit in different seats and thought their number could change too."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "CFT-05",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "What must be true of a liar's two neighbours?",
+    "A liar's claim is false, so neither neighbour of a liar is a liar. A truth-teller's claim is true, so every truth-teller sits next to at least one liar. Find how many liars fit both rules.",
+    "No two liars sit together, so there are at most 3 liars among seven seats. Each liar together with its two neighbours fills only 3 seats, so 2 liars cannot reach all seven."
+  ],
+  "solutions": {
+    "reliable": "A liar's claim is false, so both neighbours of a liar tell the truth: no two liars sit side by side, and at a table of seven that allows at most 3 liars. A truth-teller's claim is true, so every truth-teller sits next to a liar. Each liar can sit next to only two people, so with 0, 1 or 2 liars, at most 0, 3 or 6 seats are a liar or beside one, and some truth-teller would have no liar beside them. So there are exactly 3 liars. This really works: liars in seats 1, 3 and 5 each have truth-tellers on both sides, and the truth-tellers in seats 2, 4, 6 and 7 each sit next to a liar. So 7 - 3 = 4 people tell the truth. The transferable idea: turn each type of speaker into a rule about neighbours, then squeeze the count from both sides.",
+    "elegant": null
+  },
+  "whyOnTest": "Truth-tellers and liars puzzles at this level need the false statement negated correctly, \"at least one\" becomes \"none\", and then a check on every speaker, liars included.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0819",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Between noon and midnight, counting noon but not midnight, how many times do the hour hand and the minute hand of a clock point in exactly opposite directions?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought it only happens at 6:00, because at every other hour the hands are not opposite on the hour."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I used 66 minutes as the gap between one opposite position and the next, divided 720 by 66 and rounded down."
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I assumed it happens exactly once in every hour, from the 12 o'clock hour to the 11 o'clock hour."
+    },
+    {
+      "key": "E",
+      "text": "22",
+      "correct": false,
+      "misconception": "I counted every time the two hands form a straight line, so I also included the times they lie on top of each other."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-18",
+    "secondary": [
+      "MOD-03"
+    ]
+  },
+  "hints": [
+    "Think of the minute hand as a faster runner lapping a slower one.",
+    "Track how far the minute hand is ahead of the hour hand. Each time that lead grows by one full turn, the hands pass through the opposite position exactly once. Count the laps gained in 12 hours.",
+    "In 12 hours the minute hand makes 12 turns and the hour hand makes 1, so the minute hand gains 11 laps."
+  ],
+  "solutions": {
+    "reliable": "In 12 hours the minute hand turns 12 times and the hour hand once, so the minute hand gains exactly 11 full laps. Its lead over the hour hand starts at 0 at noon and grows steadily to 11 full turns at midnight. The hands are opposite whenever the lead is a whole number of turns plus a half: half a turn, one and a half turns, and so on up to ten and a half turns. That is 11 times, all before midnight. The transferable idea: for two clock hands, count the laps gained, just as you would for runners on a circular track.",
+    "elegant": "List them by hour: the hands are opposite once in each of the hours starting at 12, 1, 2, 3 and 4, then at exactly 6:00, then once in each of the hours starting at 7, 8, 9, 10 and 11. The hour from 5 to 6 has none, because its opposite moment is pushed to 6:00 itself. That gives 5 + 1 + 5 = 11."
+  },
+  "whyOnTest": "Treating clock hands as runners on a track turns a fiddly listing job into one subtraction, and the empty 5 o'clock hour catches anyone who assumes once per hour.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

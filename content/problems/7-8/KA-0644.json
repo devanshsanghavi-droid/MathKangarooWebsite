@@ -1,0 +1,68 @@
+{
+  "id": "KA-0644",
+  "band": "7-8",
+  "points": 5,
+  "statement": "In the three-digit number 495, the middle digit 9 is the sum of the other two digits, 4 + 5. How many three-digit numbers have this property?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "36",
+      "correct": false,
+      "misconception": "I forgot that the last digit is allowed to be 0, as in 110."
+    },
+    {
+      "key": "B",
+      "text": "45",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "90",
+      "correct": false,
+      "misconception": "I chose the first and last digits freely and did not check that their sum stays a single digit."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I only counted the numbers whose middle digit is 9."
+    },
+    {
+      "key": "E",
+      "text": "55",
+      "correct": false,
+      "misconception": "I let the first digit be 0 as well, which does not give a three-digit number."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-02",
+    "secondary": [
+      "CNT-04",
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "Choose the first and last digits; the middle one is then forced.",
+    "Digit constraints: the middle digit is decided by the other two, but it must be a single digit. Do casework on the first digit and count the last digits that keep the sum at most 9.",
+    "If the first digit is 1, the last digit can be 0 to 8, which is 9 numbers. If it is 2, the last digit can be 0 to 7."
+  ],
+  "solutions": {
+    "reliable": "Let the digits be a, b, c with b = a + c. The first digit a is 1 to 9, and c can be any digit from 0 up to 9 - a so that b is a single digit. That gives 9, 8, 7, ..., 1 numbers for a = 1, 2, ..., 9, which adds to 45. The transferable idea: when one digit is determined by the others, count the free choices and keep the forced digit in range.",
+    "elegant": "Count by the middle digit instead: if b = k, then a can be 1 to k and c = k - a, so there are k numbers. Adding k from 1 to 9 gives 45 again."
+  },
+  "whyOnTest": "Digit puzzles test translating a condition into limits on each digit, then counting without dropping zeros or letting a leading zero in.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

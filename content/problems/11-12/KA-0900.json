@@ -1,0 +1,68 @@
+{
+  "id": "KA-0900",
+  "band": "11-12",
+  "points": 5,
+  "statement": "In how many ways can three identical rooks be placed on different squares of an 8 by 8 chessboard so that no two of them are in the same row or in the same column?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3136",
+      "correct": false,
+      "misconception": "I chose the 3 rows and the 3 columns, 56 x 56, but forgot that the chosen rows can be matched to the chosen columns in 6 different ways."
+    },
+    {
+      "key": "B",
+      "text": "18816",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "37632",
+      "correct": false,
+      "misconception": "I placed the rooks in order, 64 x 49 x 36, and divided by 3 for the three rooks instead of by 3 x 2 x 1 = 6, the number of orders."
+    },
+    {
+      "key": "D",
+      "text": "41664",
+      "correct": false,
+      "misconception": "I counted every way to choose 3 of the 64 squares, ignoring the rule about rows and columns."
+    },
+    {
+      "key": "E",
+      "text": "112896",
+      "correct": false,
+      "misconception": "I placed the rooks one at a time, 64 x 49 x 36, but forgot that the rooks are identical, so each arrangement was counted 6 times."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-03",
+      "CNT-06"
+    ]
+  },
+  "hints": [
+    "First pretend the rooks are different colours and place them one at a time.",
+    "With labelled rooks, count the squares available to the first, second and third rook in turn. Then ask how many times each placement of identical rooks has been counted, and divide by that.",
+    "Labelled rooks give 64 x 49 x 36 placements. Each set of three squares is counted once for every order of the three rooks, that is 3 x 2 x 1 = 6 times."
+  ],
+  "solutions": {
+    "reliable": "Place labelled rooks one at a time. The first has 64 squares. The second must avoid the first rook's row and column, which together hold 15 squares, leaving 49. The third must avoid two rows and two columns, leaving a 6 by 6 block of 36 squares. That gives 64 x 49 x 36 = 112896 labelled placements. Each placement of three identical rooks has been counted once for each of the 3 x 2 x 1 = 6 ways to label them, so the answer is 112896 / 6 = 18816. The transferable idea: count with a convenient overcount, work out exactly how many times each object was counted, and divide.",
+    "elegant": "Choose the 3 rows in 56 ways and the 3 columns in 56 ways, then match the rows to the columns in 3 x 2 x 1 = 6 ways: 56 x 56 x 6 = 18816. The two methods agree."
+  },
+  "whyOnTest": "Overcount, then correct: placing the rooks in order is easy but counts each arrangement 6 times, and dividing by exactly the right factor is the whole skill.",
+  "estSeconds": 190,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0453",
+  "band": "3-4",
+  "points": 4,
+  "statement": "On a number line, A is at 18 and B is at 66. C is halfway between A and B, and D is halfway between A and C. What number is at D?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found half of the distance from A to C, but forgot to start counting from 18."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I found the distance from A to C and gave that instead of the position of D."
+    },
+    {
+      "key": "C",
+      "text": "42",
+      "correct": false,
+      "misconception": "I found where C is and stopped."
+    },
+    {
+      "key": "D",
+      "text": "54",
+      "correct": false,
+      "misconception": "I went halfway between C and B instead of between A and C."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-13",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Find C first. How far is it from A to B?",
+    "Halfway between two numbers is found by halving the distance between them and adding that to the smaller number. Do this once for C, then again for D, using A and C.",
+    "A to B is 48, so C is 18 + 24 = 42. Now A to C is 24, and half of that is 12."
+  ],
+  "solutions": {
+    "reliable": "From 18 to 66 is 48, so C is 18 + 24 = 42. From 18 to 42 is 24, so D is 18 + 12 = 30. The transferable idea: a midpoint is the starting number plus half the distance, and a distance is not a position.",
+    "elegant": "D is a quarter of the way from A to B. A quarter of 48 is 12, and 18 + 12 = 30."
+  },
+  "whyOnTest": "Midpoints on a number line test the difference between a distance and a position, which is where the distractors come from.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

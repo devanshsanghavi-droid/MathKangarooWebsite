@@ -1,0 +1,68 @@
+{
+  "id": "KA-0969",
+  "band": "11-12",
+  "points": 4,
+  "statement": "In the sum AB + BC + CA = ABC, each letter stands for a digit. AB, BC and CA are two-digit numbers, so AB has tens digit A and units digit B, and ABC is a three-digit number. What is the number ABC?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "18",
+      "correct": false,
+      "misconception": "I found that the digit sum A + B + C is 18 and gave that instead of the number ABC."
+    },
+    {
+      "key": "B",
+      "text": "189",
+      "correct": false,
+      "misconception": "I reached B + 10C = 89 but then read it as B = 8 and C = 9, the digits of 89 in order."
+    },
+    {
+      "key": "C",
+      "text": "198",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "891",
+      "correct": false,
+      "misconception": "I found the digits 1, 9 and 8 correctly but wrote them down in the reverse order."
+    },
+    {
+      "key": "E",
+      "text": "No such number exists",
+      "correct": false,
+      "misconception": "I tried A = 2 and A = 3, found that B + 10C would have to be over 100, and stopped without trying A = 1."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "NUM-01",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Write each two-digit number in terms of its digits.",
+    "Expand both sides: the left side is 11 times A + B + C. Collect the terms into one equation linking A, B and C, then use the fact that B and C are single digits.",
+    "11A + 11B + 11C = 100A + 10B + C simplifies to B + 10C = 89A, and the left side is at most 99."
+  ],
+  "solutions": {
+    "reliable": "AB + BC + CA = (10A + B) + (10B + C) + (10C + A) = 11(A + B + C), and ABC = 100A + 10B + C. Setting them equal gives B + 10C = 89A. The left side is at most 9 + 90 = 99, so A = 1 and B + 10C = 89, which forces C = 8 and B = 9. Check: 19 + 98 + 81 = 198. So ABC = 198. The transferable idea: in a letter sum, expand by place value, simplify, and then use the fact that digits lie between 0 and 9 to pin them down.",
+    "elegant": "The left side is 11 times the digit sum, so ABC must be a multiple of 11 that equals 11 times its own digit sum. 198 = 11 x 18 with 1 + 9 + 8 = 18 fits at once, and the equation B + 10C = 89A shows it is the only one."
+  },
+  "whyOnTest": "Place-value expansion turns a letter puzzle into one equation and digit bounds finish it; the distractors come from misreading digits or stopping early.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

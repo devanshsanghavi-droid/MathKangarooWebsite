@@ -1,0 +1,68 @@
+{
+  "id": "KA-0799",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Six people are each either a truth-teller, who always tells the truth, or a liar, who always lies. For each k from 1 to 6, the k-th person says: 'At least k of us six are liars.' How many liars are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed everyone was telling the truth and did not check that the sixth claim, 'at least 6 liars', then fails."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I read 'at least' as 'exactly', so only one claim could be true and the other five people were lying."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I assumed everyone making these claims was lying, without noticing that this would make the first claim true."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be decided",
+      "correct": false,
+      "misconception": "I only checked that the liars' claims were false and found several numbers that passed that half of the test."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-01",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "If there are exactly L liars, which of the six claims are true?",
+    "Suppose there are L liars. Work out exactly which claims are then true. The people who made true claims are the truth-tellers, so count them and compare with 6 minus L.",
+    "With L liars the true claims are the first L of them, so L people tell the truth. That must equal 6 minus L."
+  ],
+  "solutions": {
+    "reliable": "Suppose there are L liars. The claim 'at least k liars' is true exactly when k is at most L, so the first L claims are true and the rest are false. The truth-tellers are the people with true claims, so there are L truth-tellers and 6 minus L liars. Then L = 6 - L, so L = 3. Check: with 3 liars, the first three claims are true and the last three are false, which fits. The transferable idea: in liar puzzles, suppose a number, work out which statements become true, and demand that it agrees with itself.",
+    "elegant": null
+  },
+  "whyOnTest": "Liar puzzles test self-consistency: you pick a possibility and check it from both sides, which is exactly what the shortcut answers skip.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

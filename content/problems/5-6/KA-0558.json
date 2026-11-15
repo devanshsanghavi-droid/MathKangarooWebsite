@@ -1,0 +1,68 @@
+{
+  "id": "KA-0558",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A two-digit number is equal to 4 times the sum of its digits. When its two digits are swapped, the new number is 27 more than the original number. What is the original number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I used only the rule about the sum of the digits and took the first number that worked."
+    },
+    {
+      "key": "B",
+      "text": "14",
+      "correct": false,
+      "misconception": "I used only the rule about swapping the digits and took the first number that worked, since 41 - 14 = 27."
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "48",
+      "correct": false,
+      "misconception": "I used only the rule about the sum of the digits and took the largest number that worked."
+    },
+    {
+      "key": "E",
+      "text": "63",
+      "correct": false,
+      "misconception": "I found the right number but gave the number with its digits swapped instead of the original."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-02",
+    "secondary": [
+      "NUM-01",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Use one rule at a time to make a short list.",
+    "Write the number as 10a + b, with tens digit a and units digit b. The sum rule links a and b, leaving only a few candidates. Then work out how much swapping the digits changes each one.",
+    "The sum rule says 10a + b = 4a + 4b, so b = 2a: the candidates are 12, 24, 36 and 48. Swapping the digits of a number makes it bigger by 9 times the difference of its digits."
+  ],
+  "solutions": {
+    "reliable": "Call the digits a (tens) and b (units), so the number is 10a + b. The sum rule says 10a + b = 4(a + b), so 6a = 3b and b = 2a. That leaves 12, 24, 36 and 48. Now test the swap rule: 21 - 12 = 9, 42 - 24 = 18, 63 - 36 = 27, 84 - 48 = 36. Only 36 gives 27. Check: 4 × (3 + 6) = 36, and swapping gives 63, which is 27 more. The transferable idea: when a number must satisfy two conditions, use the easier one to make a short list, then test the list against the other.",
+    "elegant": "Swapping the digits changes 10a + b into 10b + a, a change of 9(b - a). So the digits differ by 3, and the candidates are 14, 25, 36, 47, 58 and 69. Only 36 equals 4 times its digit sum."
+  },
+  "whyOnTest": "Digit-constraint puzzles with two rules test whether you write the number by place value and check every condition, not just the first one that gives a match.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

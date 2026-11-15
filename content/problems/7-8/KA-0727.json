@@ -1,0 +1,68 @@
+{
+  "id": "KA-0727",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A transparent 3 by 3 by 3 box has 27 cube-shaped cells. Some cells are filled with solid cubes, which may float with empty cells below them. Seen straight from the front, from the top and from the right side, each view shows all 9 of its squares dark. What is the smallest number of cubes needed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "27",
+      "correct": false,
+      "misconception": "I filled every cell, not seeing that cubes hidden behind other cubes add nothing to any view."
+    },
+    {
+      "key": "B",
+      "text": "19",
+      "correct": false,
+      "misconception": "I made the front, top and right-hand faces of the box solid, which uses every cell except the 8 that touch none of those faces."
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": false,
+      "misconception": "I filled the bottom layer and then built columns of cubes on one diagonal, believing that was the fewest."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I put 3 cubes along a long diagonal of the box, thinking each one darkens a whole row of every view."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-12",
+    "secondary": [
+      "CNT-18",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "How many squares of the front view can one cube darken?",
+    "First find a lower bound: each cube darkens exactly one square of the front view. Then try to reach that bound by placing cubes so that no two line up in any of the three directions.",
+    "At least 9 cubes are needed. Try putting 3 cubes in each horizontal layer, with no two in the same row or column, shifting the pattern from layer to layer."
+  ],
+  "solutions": {
+    "reliable": "Lower bound: the front view has 9 squares, and each cube darkens exactly one of them, so at least 9 cubes are needed. Construction: label cells by (column, depth, layer) and place cubes at (1,1,1), (2,2,1), (3,3,1) in the bottom layer, (1,2,2), (2,3,2), (3,1,2) in the middle layer and (1,3,3), (2,1,3), (3,2,3) in the top layer. In each layer the three cubes use every column and every depth once, so the front and side views are full in every layer; across the three layers every column and depth pair appears once, so the top view is full. So 9 cubes suffice and the answer is 9. The transferable idea: prove a lower bound by counting what each piece can do, then build an example that meets it.",
+    "elegant": "Each cube darkens one square in each of the three views, and there are 9 squares per view, so 9 is the least possible if no two cubes ever hide each other. Arranging the cubes like a Latin square in every layer achieves exactly that."
+  },
+  "whyOnTest": "Views questions at the 5-point level ask for an extreme value, which needs both a bound and an example that reaches it.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

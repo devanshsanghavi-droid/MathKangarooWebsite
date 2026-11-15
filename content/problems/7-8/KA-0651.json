@@ -1,0 +1,67 @@
+{
+  "id": "KA-0651",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A rectangle measures 8 cm by 5 cm. A 2 cm by 2 cm square is cut out from the middle of one of the long sides, leaving a notch. What is the perimeter, in cm, of the shape that remains?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "26",
+      "correct": false,
+      "misconception": "I thought cutting out a square never changes the perimeter, which is only true when the square comes from a corner."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I subtracted the 2 cm gap in the long side and forgot the three new edges of the notch."
+    },
+    {
+      "key": "C",
+      "text": "34",
+      "correct": false,
+      "misconception": "I added all four sides of the small square, 8 cm, instead of the three new edges minus the gap."
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": false,
+      "misconception": "I worked out the area of the shape, 40 - 4, instead of its perimeter."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Trace the edge of the new shape with your finger.",
+    "Start from the rectangle's perimeter. Ask what the cut removes from the outline and what it adds: the notch removes part of one side but creates new edges inside the shape.",
+    "The rectangle has perimeter 26. The cut removes 2 cm of the long side and adds three edges of 2 cm."
+  ],
+  "solutions": {
+    "reliable": "The rectangle's perimeter is 2 x (8 + 5) = 26 cm. Cutting the notch removes 2 cm of the long side but adds the notch's two side walls and its floor, 3 x 2 = 6 cm. The new perimeter is 26 - 2 + 6 = 30 cm. The transferable idea: when a shape is cut, track what leaves the outline and what joins it, instead of assuming the perimeter shrinks with the area.",
+    "elegant": "Push the notch's floor back out to the long side and it exactly fills the gap, so only the two 2 cm walls are extra: 26 + 4 = 30."
+  },
+  "whyOnTest": "Perimeter and area move in opposite directions here, and the corner-cut fact students remember gives the wrong answer for a notch.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

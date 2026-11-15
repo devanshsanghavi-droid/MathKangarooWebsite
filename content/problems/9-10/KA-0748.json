@@ -1,0 +1,67 @@
+{
+  "id": "KA-0748",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Seven different whole numbers are chosen from 1 to 9. Which of these could be their sum?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "35",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "44",
+      "correct": false,
+      "misconception": "I left out only the number 1, so I really chose eight numbers, not seven."
+    },
+    {
+      "key": "C",
+      "text": "45",
+      "correct": false,
+      "misconception": "I added all of 1 to 9, forgetting that only seven of the numbers are chosen."
+    },
+    {
+      "key": "D",
+      "text": "49",
+      "correct": false,
+      "misconception": "I forgot the numbers must be different, so seven 7s adding to 49 looked possible."
+    },
+    {
+      "key": "E",
+      "text": "63",
+      "correct": false,
+      "misconception": "I bounded the sum by seven 9s, which is 63, and picked the largest choice that does not go over that bound."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-05",
+    "secondary": [
+      "CNT-18"
+    ]
+  },
+  "hints": [
+    "What is the smallest possible sum, and the largest?",
+    "Choosing seven numbers is the same as leaving out two. Bound the sum by leaving out the two largest, then the two smallest, and reject every choice outside that range.",
+    "All nine numbers add to 45. Leaving out two numbers removes at least 1 + 2 = 3 and at most 8 + 9 = 17."
+  ],
+  "solutions": {
+    "reliable": "Choosing seven numbers means leaving out two. The numbers 1 to 9 add to 45, and the two left out add to between 1 + 2 = 3 and 8 + 9 = 17. So the sum is between 28 and 42. Only 35 lies in that range, and it happens when 1 and 9 are left out. The transferable idea: bound the answer first, and a whole column of choices often disappears without any search.",
+    "elegant": "Think of the two numbers left out: their sum is 45 minus the answer. For 35 that is 10, which is 1 + 9, so 35 works at once."
+  },
+  "whyOnTest": "Bounding with the smallest and largest cases eliminates four choices in seconds, which is exactly what this skill is for.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

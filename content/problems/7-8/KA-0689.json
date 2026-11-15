@@ -1,0 +1,68 @@
+{
+  "id": "KA-0689",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Moving only right or up along the lines of a square grid, you travel from the point (0, 0) to the point (4, 3). The one-unit stretch of line from (2, 1) up to (2, 2) is closed, though both of those points can still be visited. How many different routes are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted the routes that use the closed stretch instead of the ones that avoid it."
+    },
+    {
+      "key": "B",
+      "text": "17",
+      "correct": false,
+      "misconception": "I treated the whole point (2, 1) as closed, so I also removed routes that pass through it and then go right."
+    },
+    {
+      "key": "C",
+      "text": "26",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "29",
+      "correct": false,
+      "misconception": "I added the 3 routes up to the closed stretch and the 3 routes after it, 3 + 3 = 6, instead of multiplying them."
+    },
+    {
+      "key": "E",
+      "text": "35",
+      "correct": false,
+      "misconception": "I counted every route from (0, 0) to (4, 3) and forgot to remove the ones that use the closed stretch."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-07",
+    "secondary": [
+      "CNT-09",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Count all the routes first, then remove the bad ones.",
+    "Each route has 4 steps right and 3 up, fixed by choosing which steps go up. A route using the closed stretch reaches (2, 1), steps up to (2, 2), then carries on: multiply the counts before and after.",
+    "There are 35 routes in all. There are 3 routes from (0, 0) to (2, 1), and 3 routes from (2, 2) to (4, 3)."
+  ],
+  "solutions": {
+    "reliable": "A route is 7 steps, and choosing which 3 of them go up fixes it, so there are 35 routes in all. A route using the closed stretch goes from (0, 0) to (2, 1), which takes 3 steps with 1 up, so 3 ways; then up to (2, 2); then to (4, 3), which takes 3 steps with 1 up, so 3 ways. That is 3 x 3 = 9 bad routes, leaving 35 - 9 = 26. The transferable idea: count routes through a forbidden step by multiplying the ways before and after it, then subtract from the total.",
+    "elegant": "Write at each grid point the number of routes reaching it, which is the number from the left plus the number from below, but do not add from below at (2, 2). Filling in row by row, the point (4, 3) gets 26."
+  },
+  "whyOnTest": "Grid route questions test multiplying the counts before and after a step, and a closed street rewards counting the complement.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

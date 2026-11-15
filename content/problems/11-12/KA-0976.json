@@ -1,0 +1,68 @@
+{
+  "id": "KA-0976",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A rectangle has perimeter 30 cm, and the length of each of its sides is a whole number of centimetres. How many different values can its area take?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I also counted a 0 by 15 rectangle, with area 0, which is not a real rectangle."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": false,
+      "misconception": "I counted a 3 by 12 rectangle and a 12 by 3 rectangle separately, so I counted each area twice."
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": false,
+      "misconception": "I counted every whole number from 1 to 15 as a possible side length."
+    },
+    {
+      "key": "E",
+      "text": "56",
+      "correct": false,
+      "misconception": "I found the largest possible area, 7 x 8 = 56, instead of the number of different areas."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-01",
+    "secondary": [
+      "CNT-01",
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "What do the length and the width add up to?",
+    "Length plus width is 15. List the pairs of whole-number sides with the shorter side first, and check whether any two pairs give the same area.",
+    "The pairs are 1 and 14, 2 and 13, and so on up to 7 and 8, with areas 14, 26, 36, 44, 50, 54 and 56."
+  ],
+  "solutions": {
+    "reliable": "Half the perimeter is 15, so length + width = 15. With the shorter side first, the possibilities are 1 x 14, 2 x 13, 3 x 12, 4 x 11, 5 x 10, 6 x 9 and 7 x 8, with areas 14, 26, 36, 44, 50, 54 and 56. These are all different, so the area can take 7 different values. The transferable idea: read whether the question asks for a count of shapes, a count of values or a single value, and list without repeats.",
+    "elegant": "The area a(15 - a) grows steadily as the shorter side a goes from 1 to 7, so the 7 choices of the shorter side give 7 different areas."
+  },
+  "whyOnTest": "The question asks for a count of different areas, so solvers who count ordered pairs or report the biggest area answer a different question.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

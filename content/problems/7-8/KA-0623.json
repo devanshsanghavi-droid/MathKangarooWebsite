@@ -1,0 +1,68 @@
+{
+  "id": "KA-0623",
+  "band": "7-8",
+  "points": 5,
+  "statement": "What is the remainder when 1! + 2! + 3! + ... + 100! is divided by 9? (Here n! means 1 x 2 x 3 x ... x n, so for example 4! = 24.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought every factorial from 2! onwards is a multiple of 9, so only 1! counted."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I thought every factorial from 3! onwards is a multiple of 9, since each one contains a factor 3."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought every factorial from 5! onwards is a multiple of 9 because 5! = 120 ends in 0."
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": false,
+      "misconception": "I treated n! as 1 + 2 + ... + n instead of 1 x 2 x ... x n."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "NUM-04",
+      "CFT-07"
+    ]
+  },
+  "hints": [
+    "From which point is every term a multiple of 9?",
+    "A factorial is a multiple of 9 once it contains two factors of 3. Every term from that point on adds nothing to the remainder, so only a few small terms need adding up.",
+    "6! contains both 3 and 6, so 6! and every later term are multiples of 9. Add 1! to 5!."
+  ],
+  "solutions": {
+    "reliable": "6! = 720 = 80 x 9, and every later factorial is a multiple of 6!, so all the terms from 6! onwards are multiples of 9. The remaining terms add to 1 + 2 + 6 + 24 + 120 = 153 = 17 x 9. So the whole sum is a multiple of 9 and the remainder is 0. The transferable idea: in a long sum, find where the terms stop mattering for the remainder, then handle the few that are left.",
+    "elegant": "Work with remainders on division by 9 from the start: 1!, 2!, 3!, 4!, 5! leave 1, 2, 6, 6, 3, and every later term leaves 0. Since 1 + 2 + 6 + 6 + 3 = 18 is a multiple of 9, the remainder is 0."
+  },
+  "whyOnTest": "Remainders of huge sums: most terms vanish, and the trap is deciding too early where they start to vanish.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

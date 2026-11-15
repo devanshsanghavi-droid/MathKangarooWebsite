@@ -1,0 +1,67 @@
+{
+  "id": "KA-0827",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A pattern of dots grows in hexagonal rings. Stage 1 is a single dot, and each new stage adds a hexagonal ring of dots around the stage before, giving 1, 7, 19 and 37 dots in stages 1 to 4. How many dots are in stage 10?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "54",
+      "correct": false,
+      "misconception": "I worked out only the ring added at stage 10, 6 x 9 = 54 dots."
+    },
+    {
+      "key": "B",
+      "text": "271",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "217",
+      "correct": false,
+      "misconception": "I added rings only up to 6 x 8 = 48, which gives stage 9 rather than stage 10."
+    },
+    {
+      "key": "D",
+      "text": "270",
+      "correct": false,
+      "misconception": "I added the rings 6 + 12 + ... + 54 correctly but forgot the single dot in the centre."
+    },
+    {
+      "key": "E",
+      "text": "331",
+      "correct": false,
+      "misconception": "I thought stage n adds 6n dots, so I added rings all the way up to 6 x 10."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-04",
+    "secondary": [
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "Look at how many dots each new ring adds: 6, then 12, then 18.",
+    "The rings grow by the same amount each time, so each stage total is 1 plus the sum of an arithmetic sequence. Work out how many rings stage 10 has and how big the last one is, then add.",
+    "Stage 10 has 9 rings around the centre: 6, 12, 18, and so on up to 54."
+  ],
+  "solutions": {
+    "reliable": "The rings add 7 - 1 = 6, then 19 - 7 = 12, then 37 - 19 = 18 dots, so the ring added at stage n has 6(n - 1) dots. Stage 10 is the centre dot plus 9 rings: 1 + 6 x (1 + 2 + ... + 9) = 1 + 6 x 45 = 271. The transferable idea: a growth pattern is its first term plus the sum of its increments, so find the rule for the increments first.",
+    "elegant": "Using the formula 3n(n - 1) + 1 for stage n gives 3 x 10 x 9 + 1 = 271. Check it on stage 4: 3 x 4 x 3 + 1 = 37, as given."
+  },
+  "whyOnTest": "Figurate number questions test whether you model the growth step by step instead of guessing, and the distractors are the classic off-by-one ring counts.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

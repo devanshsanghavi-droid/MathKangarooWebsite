@@ -1,0 +1,67 @@
+{
+  "id": "KA-0696",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A 5-by-5 board of squares is to be covered by twelve dominoes, each covering two squares that share a side, so that exactly one square is left uncovered. How many of the 25 squares could be the one left uncovered?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "25",
+      "correct": false,
+      "misconception": "I assumed that any square could be the one left over, since 24 squares remain whichever one is removed."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I coloured the board like a chessboard but counted the colour with fewer squares instead of the colour with more."
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought only a corner square could be left out, because corners are the hardest squares to cover."
+    },
+    {
+      "key": "E",
+      "text": "1",
+      "correct": false,
+      "misconception": "I assumed only the centre square works, because the board is symmetric about it."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-07",
+    "secondary": [
+      "LOG-05"
+    ]
+  },
+  "hints": [
+    "Colour the board like a chessboard, with the corners dark.",
+    "This is a colouring argument: every domino covers one square of each colour. Count how many squares of each colour the dominoes must cover, and decide which colour the uncovered square has to be.",
+    "With dark corners there are 13 dark squares and 12 light ones. Twelve dominoes cover 12 of each, so the uncovered square must be dark. Check that every dark square really can be the gap."
+  ],
+  "solutions": {
+    "reliable": "Colour the board in a chessboard pattern with dark corners: 13 dark squares and 12 light ones. Every domino covers one dark and one light square, so twelve dominoes cover exactly 12 of each, and the uncovered square must be dark. That rules out all 12 light squares. Every dark square does work. Number rows and columns 1 to 5. If the gap is in an odd row and an odd column, the rows above and below it come in even numbers (cover them with upright dominoes), and in its own row an even number of squares lies on each side (cover them with flat dominoes). If the gap is in an even row and an even column, make it the centre of a 3-by-3 block, cover that block's ring of 8 squares with four dominoes, and the rest splits into strips of even width. So 13 squares are possible. The transferable idea: a colouring turns 'can this be covered?' into a count that every piece must respect.",
+    "elegant": "One count does all the elimination: 13 dark squares against 12 light ones. Testing squares one at a time without the colouring would take far longer."
+  },
+  "whyOnTest": "Colouring arguments turn a covering question into a count, and the trap answers come from forgetting which colour is in the majority.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

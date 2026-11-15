@@ -1,0 +1,68 @@
+{
+  "id": "KA-0751",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Seven chairs stand evenly around a round table. Three different people sit down so that no two of them are in neighbouring chairs. In how many ways can this happen?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "7",
+      "correct": false,
+      "misconception": "I counted which sets of chairs are used but forgot that the three different people can be arranged in those chairs."
+    },
+    {
+      "key": "B",
+      "text": "21",
+      "correct": false,
+      "misconception": "I treated a seating and its mirror image as the same, so I halved the right count."
+    },
+    {
+      "key": "C",
+      "text": "42",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "60",
+      "correct": false,
+      "misconception": "I used the count for seven chairs in a straight row, forgetting that the first and last chairs are neighbours at a round table."
+    },
+    {
+      "key": "E",
+      "text": "210",
+      "correct": false,
+      "misconception": "I ignored the rule about neighbours and counted every way to seat three people in seven chairs."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-11",
+    "secondary": [
+      "CNT-06",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "First choose the three chairs, then seat the people.",
+    "At a round table chair 1 and chair 7 are neighbours too. Count the sets of three chairs with no two adjacent, perhaps by fixing whether one particular chair is used, then multiply by the orders of the people.",
+    "If chair 1 is used, chairs 2 and 7 are out, and you need two non-neighbouring chairs from 3, 4, 5, 6. If chair 1 is empty, you need three non-neighbouring chairs from 2 to 7 in a row."
+  ],
+  "solutions": {
+    "reliable": "Count the sets of three chairs first. If chair 1 is used, the other two come from chairs 3 to 6 with no two adjacent: {3,5}, {3,6}, {4,6}, so 3 sets. If chair 1 is empty, choose three non-adjacent chairs from the row 2 to 7: {2,4,6}, {2,4,7}, {2,5,7}, {3,5,7}, so 4 sets. That is 7 sets of chairs, and the three people can sit in each set in 3 x 2 x 1 = 6 ways, giving 42. The transferable idea: count where the restricted objects go first, and treat a circle's wrap-around as its own case.",
+    "elegant": "Each valid set of chairs leaves four empty chairs, with the three gaps between people of sizes 1, 1 and 2 in some order. Choosing which chair starts the size-2 gap clockwise fixes the set, so there are 7 sets and 7 x 6 = 42 seatings."
+  },
+  "whyOnTest": "Restriction counts reward placing the awkward objects first, and the round table adds the wrap-around neighbour that the row formula misses.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

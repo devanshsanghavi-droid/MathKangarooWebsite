@@ -1,0 +1,67 @@
+{
+  "id": "KA-0452",
+  "band": "3-4",
+  "points": 4,
+  "statement": "A red light flashes every 3 seconds and a blue light flashes every 5 seconds. They flash together right now. How many more times will they flash together in the next 50 seconds?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the flash together happening right now as one of the times."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I added 3 and 5 and thought they flash together every 8 seconds."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I divided 50 by 5, which counts only the flashes of the blue light."
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": false,
+      "misconception": "I found that they flash together every 15 seconds and gave that instead of how many times."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-05",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "When is the first time after now that both lights flash?",
+    "Both lights flash at a time that is a multiple of 3 and also a multiple of 5. Find the smallest such time, then count its multiples up to 50, leaving out the flash happening now.",
+    "The first common time is 15 seconds. After that come 30 and 45; the next, 60, is too late."
+  ],
+  "solutions": {
+    "reliable": "The red light flashes at 3, 6, 9, 12, 15, ... seconds and the blue light at 5, 10, 15, ... seconds, so they first meet again after 15 seconds. They then meet at 30 and 45 seconds, and 60 is past 50. That is 3 more times. The transferable idea: events that repeat every a and every b seconds coincide at the common multiples of a and b.",
+    "elegant": "3 and 5 share no factor, so they coincide every 3 x 5 = 15 seconds, and 50 contains three full 15s."
+  },
+  "whyOnTest": "Common multiples tested in a story, with traps for the starting flash and for reporting the gap instead of the count.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

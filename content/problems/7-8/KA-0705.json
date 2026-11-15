@@ -1,0 +1,68 @@
+{
+  "id": "KA-0705",
+  "band": "7-8",
+  "points": 5,
+  "statement": "When the digits of a certain three-digit number are written in reverse order, the result is 594 more than the original number. How many three-digit numbers have this property?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found the three possible pairs of first and last digits and forgot that the middle digit can be anything."
+    },
+    {
+      "key": "C",
+      "text": "40",
+      "correct": false,
+      "misconception": "I allowed the first digit to be 0, which also let 0 and 6 be the outer digits."
+    },
+    {
+      "key": "D",
+      "text": "27",
+      "correct": false,
+      "misconception": "I let the middle digit run from 1 to 9 and forgot that it can also be 0."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I found one pair of outer digits that works and counted only its ten middle digits."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-01",
+    "secondary": [
+      "NUM-02",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Write the number as 100a + 10b + c. What happens to b on reversing?",
+    "Use place value: reversing swaps the hundreds digit and the units digit and leaves the tens digit where it is, so the difference depends only on the outer digits. Find which outer digits work, then count the middle digits.",
+    "The difference is 99(c - a) = 594, so c - a = 6. The first digit a cannot be 0."
+  ],
+  "solutions": {
+    "reliable": "With digits a, b, c the number is 100a + 10b + c and its reverse is 100c + 10b + a. The difference is 99c - 99a = 99(c - a), and 594 = 99 x 6, so c = a + 6. The first digit a is at least 1 and c is at most 9, so the outer digits are 1 and 7, 2 and 8, or 3 and 9. The middle digit is free, with 10 choices. That gives 3 x 10 = 30 numbers. Check one: 147 reversed is 741, and 741 - 147 = 594. The transferable idea: write a number by place value, and the digits that do not move cancel out.",
+    "elegant": null
+  },
+  "whyOnTest": "Writing the digits by place value shows the middle digit cancels, so the question collapses to one equation and a careful count.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

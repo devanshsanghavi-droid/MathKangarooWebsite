@@ -1,0 +1,68 @@
+{
+  "id": "KA-0811",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A school is taking a trip by bus. If 40 students ride in each bus, 10 students have no seat. If 45 students ride in each bus, one bus carries only 25 students and the others are full. How many students are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "250",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I found the number of buses and stopped there."
+    },
+    {
+      "key": "C",
+      "text": "240",
+      "correct": false,
+      "misconception": "I found 6 buses and multiplied by 40, forgetting the 10 students without seats."
+    },
+    {
+      "key": "D",
+      "text": "270",
+      "correct": false,
+      "misconception": "I found 6 buses and filled every one with 45 students."
+    },
+    {
+      "key": "E",
+      "text": "290",
+      "correct": false,
+      "misconception": "I read 'only 25 students' as '25 empty seats', which led to 7 buses."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-01",
+    "secondary": [
+      "CFT-04",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Let b be the number of buses, and write the total in two ways.",
+    "Translate each sentence into an expression for the number of students in terms of the number of buses. Both describe the same students, so set them equal.",
+    "The first sentence gives 40b + 10. The second gives 45 times (b - 1) + 25."
+  ],
+  "solutions": {
+    "reliable": "With b buses, the first arrangement gives 40b + 10 students. The second gives 45(b - 1) + 25 = 45b - 20. Setting them equal: 40b + 10 = 45b - 20, so 5b = 30 and b = 6. The number of students is 40 times 6 + 10 = 250. Check: 45 times 5 + 25 = 250. The transferable idea: when one quantity is described twice, write both descriptions with one unknown and set them equal.",
+    "elegant": "Moving from 40 to 45 per bus adds 5 seats per bus. In the first arrangement 10 students are left over; in the second there are 20 empty seats. So the extra 5 seats per bus absorb 30 students, giving 6 buses."
+  },
+  "whyOnTest": "Translation questions test turning two sentences into one equation, then answering for the students rather than the buses.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

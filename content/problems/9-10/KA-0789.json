@@ -1,0 +1,71 @@
+{
+  "id": "KA-0789",
+  "band": "9-10",
+  "points": 5,
+  "statement": "The pattern continues: Figure n has n rows of unit squares, with 1 square in the top row and each row below 2 squares longer, sticking out by one square at each end. Which is the first figure whose number of squares is more than twice its perimeter?",
+  "figure": {
+    "component": "PyramidRowStages",
+    "alt": "Figures 1, 2 and 3 of the pattern. Figure 1 is a single square. Figure 2 has 1 square centred on a row of 3. Figure 3 has rows of 1, 3 and 5 squares, each row centred on the one below, so the figures hold 1, 4 and 9 squares."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I took the perimeter to be 4n, as if it grew like a square's, and solved n² > 8n."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": false,
+      "misconception": "I took the perimeter to be 6n, forgetting to subtract 2, and solved n² > 12n."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I used the perimeter of a square whose side is the bottom row, 4(2n - 1), and solved n² > 8(2n - 1)."
+    },
+    {
+      "key": "E",
+      "text": "23",
+      "correct": false,
+      "misconception": "I counted the squares as 1 + 2 + ... + n, as in a plain staircase, instead of 1 + 3 + 5 + ..., which is n²."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-04",
+    "secondary": [
+      "PAT-02",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Find a formula for the squares and one for the perimeter.",
+    "Count the squares using the sum of odd numbers. For the perimeter, check the first few figures and look for a reason: the steps of the outline can be pushed out to a rectangle. Then compare.",
+    "Figure n has n² squares. Its outline has the same length as the n by (2n - 1) rectangle around it, so the perimeter is 6n - 2."
+  ],
+  "solutions": {
+    "reliable": "The rows hold 1, 3, 5, ..., 2n - 1 squares, which add up to n². For the perimeter, the horizontal edges add up to twice the bottom row, 2(2n - 1), and each row adds one unit of vertical edge at each end, 2n in all, so the perimeter is 6n - 2. This matches figures 1, 2 and 3, with perimeters 4, 10 and 16. We need n² > 2(6n - 2) = 12n - 4. For n = 11, 121 is less than 128, and for n = 12, 144 is more than 140. So figure 12 is the first. The transferable idea: find each formula with a reason, check it on the figures you can see, then compare.",
+    "elegant": "A staircase outline is as long as the rectangle around it, because each step can be pushed out to the rectangle's sides without changing its length. The rectangle is n by 2n - 1, so the perimeter is 6n - 2 straight away."
+  },
+  "whyOnTest": "Growth patterns at this level ask for two formulas and a comparison, and the trap is guessing the perimeter from the look of the shape.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0511",
+  "band": "5-6",
+  "points": 4,
+  "statement": "On a die, opposite faces add up to 7. A die sits on a table with 1 on top, 2 on the face towards you and 3 on the right. It is tipped over once to the right, then once away from you. Which number is now on top?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought tipping one way and then another way would undo each other, so 1 came back to the top."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I did the first tip correctly, which puts 4 on top, and forgot the second tip."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I thought tipping away from me brings the back face up to the top, when it is the front face that comes up."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought two tips turn the die upside down, so the bottom face 6 ends up on top."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-11",
+    "secondary": [
+      "GEO-09",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Track just two faces: the top and the one facing you.",
+    "When a die tips to the right, the face on its left rises to the top. When it tips away from you, the face towards you rises. Use the rule about opposite faces to name the hidden ones.",
+    "The left face is 7 - 3 = 4, so after the first tip 4 is on top and 2 still faces you."
+  ],
+  "solutions": {
+    "reliable": "At the start: top 1, front 2, right 3, so left 4, back 5, bottom 6. Tipping to the right rolls the top over onto the right and lifts the left face up, so 4 is on top. The front face stays at 2, because the die rolled sideways. Tipping away from you rolls the top over to the back and lifts the front face up, so 2 is now on top. The transferable idea: for a rolling die, ask which face rises, and it is always the face on the side opposite the direction of the roll.",
+    "elegant": "The second tip lifts whatever faces you, and a sideways tip never changes the face towards you. So the answer is simply the original front face, 2."
+  },
+  "whyOnTest": "Rolling a die tests whether you can track faces through turns, using the opposite-faces rule for the ones you cannot see.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0465",
+  "band": "3-4",
+  "points": 4,
+  "statement": "I am a two-digit number. My tens digit is 3 more than my ones digit, and my two digits add up to 11. What number am I?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "7",
+      "correct": false,
+      "misconception": "I found the tens digit and gave it as the whole answer."
+    },
+    {
+      "key": "B",
+      "text": "38",
+      "correct": false,
+      "misconception": "I read the clue as 'the tens digit is 3' and chose 8 to make 11."
+    },
+    {
+      "key": "C",
+      "text": "47",
+      "correct": false,
+      "misconception": "I found the digits 7 and 4 but put the bigger one in the ones place."
+    },
+    {
+      "key": "D",
+      "text": "65",
+      "correct": false,
+      "misconception": "I split 11 as evenly as I could and ignored the clue about 3 more."
+    },
+    {
+      "key": "E",
+      "text": "74",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-02",
+    "secondary": [
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "Which pairs of digits add up to 11?",
+    "List the digit pairs that make 11, then test each pair against the other clue. Keep track of which digit goes in the tens place.",
+    "The pairs are 2 and 9, 3 and 8, 4 and 7, 5 and 6. Only one pair differs by 3."
+  ],
+  "solutions": {
+    "reliable": "Digit pairs adding to 11: 2 and 9, 3 and 8, 4 and 7, 5 and 6. Only 4 and 7 differ by 3. The tens digit is the bigger one, so the number is 74. The transferable idea: list everything that fits one clue, then test the list against the other clue.",
+    "elegant": "Take the difference of 3 away from the total first: 11 - 3 = 8. Share 8 equally: 4 and 4. The ones digit is 4 and the tens digit is 4 + 3 = 7, so the number is 74. The transferable idea: remove the difference, share equally, then add the difference back."
+  },
+  "whyOnTest": "Digit puzzles test whether you can satisfy two conditions at once and keep each digit in the right place.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

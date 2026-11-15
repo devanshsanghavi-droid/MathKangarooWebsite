@@ -1,0 +1,67 @@
+{
+  "id": "KA-0483",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Seven children in a circle are numbered 1 to 7. Child 1 passes a ball to child 2, who passes it to child 3, and so on around. Who has the ball after 30 passes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Child 1",
+      "correct": false,
+      "misconception": "I knew 28 passes bring the ball back to child 1 and forgot the other 2 passes."
+    },
+    {
+      "key": "B",
+      "text": "Child 3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "Child 2",
+      "correct": false,
+      "misconception": "I took the remainder of 30 divided by 7 as the child's number, but the ball started at child 1, not child 0."
+    },
+    {
+      "key": "D",
+      "text": "Child 5",
+      "correct": false,
+      "misconception": "I divided 30 by 7 and moved the ball on by the answer, 4, instead of by the remainder."
+    },
+    {
+      "key": "E",
+      "text": "Child 7",
+      "correct": false,
+      "misconception": "I thought it takes 8 passes to get round the circle and back to child 1."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "How many passes bring the ball back to child 1?",
+    "Every full trip round the circle brings the ball back to where it started. Take away as many full trips as you can, then count on the passes that are left.",
+    "7 passes take the ball once round, so after 28 passes it is back with child 1."
+  ],
+  "solutions": {
+    "reliable": "Seven passes take the ball once round the circle and back to child 1. After 4 x 7 = 28 passes child 1 has it again. The last 2 passes take it to child 2 and then child 3. The transferable idea: in a repeating cycle, strip off the full cycles and count only the remainder, starting from the right place.",
+    "elegant": null
+  },
+  "whyOnTest": "Positions in a repeating cycle, where the starting point decides whether the remainder is off by one.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

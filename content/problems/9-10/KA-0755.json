@@ -1,0 +1,68 @@
+{
+  "id": "KA-0755",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A circle is drawn inside a square of area 36, touching all four sides. A smaller square is drawn inside the circle with all four of its corners on the circle. What is the area of the region inside the circle but outside the smaller square?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6π - 18",
+      "correct": false,
+      "misconception": "I used two times π times the radius, the circumference formula, as the area of the circle."
+    },
+    {
+      "key": "B",
+      "text": "36 - 9π",
+      "correct": false,
+      "misconception": "I found the four corner regions between the big square and the circle instead of the region asked for."
+    },
+    {
+      "key": "C",
+      "text": "9π - 18",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "9π - 9",
+      "correct": false,
+      "misconception": "I took the side of the smaller square to be the radius, 3, so I subtracted an area of 9."
+    },
+    {
+      "key": "E",
+      "text": "36π - 18",
+      "correct": false,
+      "misconception": "I used the side of the big square, 6, as the radius instead of half of it."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-04",
+    "secondary": [
+      "GEO-07",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Find the circle's radius, then the small square's diagonal.",
+    "The region is the circle minus the small square, so find each area separately. The circle's diameter is the side of the big square, and the small square's diagonal is a diameter of the circle.",
+    "The big square has side 6, so the radius is 3. The small square's diagonal is 6, so its area is half of 6 times 6."
+  ],
+  "solutions": {
+    "reliable": "The big square has side 6, so the circle has radius 3 and area 9π. The small square's diagonal is a diameter, 6, and a square's area is half its diagonal squared: 36 / 2 = 18. The region is 9π - 18. The transferable idea: for a shaded region, find the whole and the removed part separately and subtract, choosing the length that each shape is really built on.",
+    "elegant": "The small square is exactly half the big one: rotate it 45 degrees and its corners touch the midpoints of the big square's sides. So its area is 18 at a glance."
+  },
+  "whyOnTest": "Area by subtraction is tested with nested shapes, where the trap is choosing the wrong length, or the wrong leftover region, to subtract.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

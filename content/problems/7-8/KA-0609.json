@@ -1,0 +1,68 @@
+{
+  "id": "KA-0609",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Six seats are equally spaced around a round table that can be turned. Three identical blue cups and three identical white cups are placed, one cup on each seat. Two placements count as the same if turning the table makes one look exactly like the other. How many different placements are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I found only the placement with all the blue cups together and the one where the colours alternate."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I treated a placement and its mirror image as the same, but the table can only be turned, not flipped over."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted the ways to share the three white cups among the three gaps between blue cups, but turning makes some of these the same."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted every choice of three seats for the blue cups, as if the table could not be turned."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-01",
+      "GEO-08"
+    ]
+  },
+  "hints": [
+    "Look at the gaps of white cups between the blue cups.",
+    "Going round the table, the three blue cups split the white cups into three gaps. Turning the table only rotates the list of gap sizes, so list the gap patterns and merge the ones that are rotations of each other.",
+    "The gap sizes add to 3. Patterns: 0, 0, 3 and 1, 1, 1, plus 0, 1, 2 and 0, 2, 1, which are not rotations of each other."
+  ],
+  "solutions": {
+    "reliable": "Going clockwise, read the number of white cups in each gap between consecutive blue cups. These are three whole numbers adding to 3, listed up to rotation: (0, 0, 3), all blue cups together; (1, 1, 1), alternating colours; (0, 1, 2); and (0, 2, 1). The last two are mirror images, and turning cannot change one into the other, because rotating (0, 1, 2) gives only (1, 2, 0) and (2, 0, 1). So there are 4 placements. The transferable idea: describe each arrangement by something that turning cannot change, then count those descriptions.",
+    "elegant": "Of the 20 ways to choose seats for the blue cups, the alternating placement can be turned into only 2 different positions, while every other placement can be turned into 6. So 20 = 2 + 6 x 3, giving 1 + 3 = 4 placements."
+  },
+  "whyOnTest": "Counting up to rotation tests whether you can tell a real difference from a turned copy, and whether you wrongly merge mirror images.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

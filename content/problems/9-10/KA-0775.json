@@ -1,0 +1,68 @@
+{
+  "id": "KA-0775",
+  "band": "9-10",
+  "points": 5,
+  "statement": "A solid has 6 square faces and 8 regular hexagonal faces. Every edge is shared by exactly two faces, and exactly three faces meet at every corner. How many corners does the solid have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "14",
+      "correct": false,
+      "misconception": "I counted the faces, 6 + 8, and gave that as the number of corners."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": false,
+      "misconception": "I divided the 72 face corners by 2, the way edges are shared, but each corner of the solid is shared by three faces."
+    },
+    {
+      "key": "D",
+      "text": "48",
+      "correct": false,
+      "misconception": "I used Euler's formula the wrong way round, as corners = edges + faces - 2, with 36 edges and 14 faces."
+    },
+    {
+      "key": "E",
+      "text": "72",
+      "correct": false,
+      "misconception": "I added up the corners of all the faces, 24 + 48, without noticing that each corner of the solid is counted three times."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "GEO-10",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Count the corners of the faces first, as if the faces were separate.",
+    "Overcount, then correct: total every face's corners, then ask how many times each corner of the solid was counted in that total, and divide.",
+    "The faces have 6 x 4 + 8 x 6 = 72 corners between them, and every corner of the solid belongs to three faces."
+  ],
+  "solutions": {
+    "reliable": "Pull the faces apart: the squares have 6 x 4 = 24 corners and the hexagons have 8 x 6 = 48, so 72 face corners in all. Each corner of the solid is where exactly three faces meet, so it appears three times in that total. The solid has 72 / 3 = 24 corners. The transferable idea: count something shared through the pieces that touch it, then divide by how many pieces share it.",
+    "elegant": "Check with a second count. The same 72 face corners give 72 / 2 = 36 edges, since each edge is shared by two faces. Euler's formula, corners - edges + faces = 2, gives 24 - 36 + 14 = 2, which confirms 24."
+  },
+  "whyOnTest": "Counting a shared object through everything that touches it, then dividing, is a reusable overcount-and-correct idea that also works on graphs and handshakes.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

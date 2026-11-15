@@ -1,0 +1,67 @@
+{
+  "id": "KA-0711",
+  "band": "7-8",
+  "points": 4,
+  "statement": "The first term of a sequence is 3. Every later term is equal to the sum of all the terms before it. What is the 10th term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1536",
+      "correct": false,
+      "misconception": "I assumed every term is double the one before it, starting from the first, so I did not notice that the second term is also 3."
+    },
+    {
+      "key": "B",
+      "text": "384",
+      "correct": false,
+      "misconception": "I worked out the terms correctly but stopped at the 9th term."
+    },
+    {
+      "key": "C",
+      "text": "768",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": false,
+      "misconception": "I added 3 each time, as though each new term grew by the first term only."
+    },
+    {
+      "key": "E",
+      "text": "3072",
+      "correct": false,
+      "misconception": "I doubled 3 ten times, once for every term, instead of following the rule."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Write out the first five terms carefully. What is the second term?",
+    "A recursive rule: compare each new term with the one just before it. The sum of everything before term n + 1 is term n plus the sum of everything before term n, which is term n again.",
+    "The terms go 3, 3, 6, 12, 24, ... From the second term on, each term is double the one before."
+  ],
+  "solutions": {
+    "reliable": "The second term is the sum of the terms before it, which is just 3. The third is 3 + 3 = 6, the fourth is 3 + 3 + 6 = 12, and the fifth is 24. From the third term on, each term equals the previous term plus everything before the previous term, which is the previous term again, so each term doubles. The terms are 3, 3, 6, 12, 24, 48, 96, 192, 384, 768, so the 10th term is 768. The transferable idea: write out the first few terms of a recursive rule by hand before trusting a pattern.",
+    "elegant": "From the second term on the terms double, and the second term is 3. The 10th term is 8 doublings after the second: 3 x 2 x 2 x 2 x 2 x 2 x 2 x 2 x 2 = 3 x 256 = 768."
+  },
+  "whyOnTest": "Recursive rules reward writing out the first few terms, and the trap here is assuming the doubling starts from the very first term.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0792",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Three of the nine corners of a regular nine-sided polygon are chosen. In how many ways can this be done so that the three corners form an isosceles triangle? (Equilateral triangles count as isosceles.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "27",
+      "correct": false,
+      "misconception": "I found 36 by counting one triangle per top corner and equal-sides pair, then removed the equilateral triangles completely instead of keeping one copy of each."
+    },
+    {
+      "key": "B",
+      "text": "33",
+      "correct": false,
+      "misconception": "I noticed the equilateral triangles were overcounted but subtracted each of the 3 only once, when each was counted three times."
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": false,
+      "misconception": "I counted 4 isosceles triangles for each of the 9 top corners and never noticed that equilateral triangles were counted three times."
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "84",
+      "correct": false,
+      "misconception": "I counted every possible choice of three corners, forgetting that the triangle has to be isosceles."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-04",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Pick the corner where the two equal sides meet first.",
+    "Fix the top corner of the isosceles triangle and count the pairs of corners placed symmetrically around it. Then ask whether any triangle has been counted from more than one top corner.",
+    "Each corner has 4 symmetric pairs, giving 36, but an equilateral triangle has three corners that could each be called the top."
+  ],
+  "solutions": {
+    "reliable": "For a fixed top corner, the other two corners must sit symmetrically on either side of it, 1, 2, 3 or 4 steps away: 4 triangles. Over all 9 corners that is 36. A triangle that is isosceles but not equilateral has only one top corner, so it was counted once. An equilateral triangle (corners 3 steps apart) was counted three times, once from each corner. There are 3 equilateral triangles, so subtract 2 for each: 36 minus 6 is 30. The transferable idea: count with a convenient anchor, then find exactly which objects had more than one anchor and correct for the extra copies.",
+    "elegant": null
+  },
+  "whyOnTest": "Overcount-then-correct is a 5-point idea: the quick product is easy, the exam asks whether you can see which shapes it counted more than once.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

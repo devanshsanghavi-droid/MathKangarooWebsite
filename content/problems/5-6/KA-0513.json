@@ -1,0 +1,68 @@
+{
+  "id": "KA-0513",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A net is made of 2 triangles and 3 rectangles. It folds up into a closed solid with no gaps or overlaps. How many edges does the solid have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted the sides around the outside of the flat net, but two outside sides join up to make one edge."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted the 3 sides of each triangle and then 2 long sides of each rectangle, so each long edge shared by two rectangles was counted twice."
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": false,
+      "misconception": "I counted all 18 sides of the pieces and took away only the 4 fold lines, as if the other sides did not pair up."
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": false,
+      "misconception": "I counted every side of every piece, but each edge of the solid is where two sides meet."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-10",
+    "secondary": [
+      "CNT-16",
+      "GEO-13"
+    ]
+  },
+  "hints": [
+    "Count the sides of all five pieces together.",
+    "When the net folds up, every edge of the solid is made by two sides of the pieces meeting. Count all the sides first, then allow for that pairing.",
+    "The pieces have 3 + 3 + 4 + 4 + 4 = 18 sides altogether. Each edge uses two of them."
+  ],
+  "solutions": {
+    "reliable": "The solid is a triangular prism: two triangle ends joined by three rectangles. The two triangles give 3 + 3 = 6 edges, and three long edges run between their corners, giving 9 edges in all. The transferable idea: every edge of a closed solid is shared by exactly two faces, which lets you count edges from the flat pieces.",
+    "elegant": "The pieces have 2 x 3 + 3 x 4 = 18 sides. Every edge of the closed solid is shared by exactly two faces, so there are 18 / 2 = 9 edges, without needing to picture the solid at all."
+  },
+  "whyOnTest": "Nets test whether you can see flat pieces becoming a solid, and halving the total number of sides is a reliable way to count edges.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

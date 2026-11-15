@@ -1,0 +1,68 @@
+{
+  "id": "KA-0670",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A very large floor is tiled with regular hexagons and equilateral triangles, all with the same side length. Every side of every hexagon is shared with a triangle, and every side of every triangle is shared with a hexagon. Ignoring the edges of the floor, how many triangles are there for each hexagon?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I saw that two triangles and two hexagons meet at every corner, so I thought there must be equally many of each shape."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the 6 triangles around each hexagon but forgot that each triangle also touches 3 hexagons, so every triangle was counted 3 times."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted the 3 hexagons around each triangle and gave that as the number of triangles for each hexagon."
+    },
+    {
+      "key": "E",
+      "text": "1/2",
+      "correct": false,
+      "misconception": "I counted the sides correctly but turned the ratio upside down, giving hexagons for each triangle."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-14",
+    "secondary": [
+      "CNT-16",
+      "GEO-05"
+    ]
+  },
+  "hints": [
+    "Count the sides where a hexagon meets a triangle.",
+    "Overcount, then correct: count the shared sides once from the hexagons and once from the triangles. Both counts describe the same sides, so set them equal.",
+    "Each hexagon has 6 shared sides and each triangle has 3, and every shared side belongs to exactly one of each."
+  ],
+  "solutions": {
+    "reliable": "Every side on the floor is shared by one hexagon and one triangle. Counting these sides from the hexagons gives 6 for each hexagon, and counting them from the triangles gives 3 for each triangle. Both counts describe the same sides, so 6 x (number of hexagons) = 3 x (number of triangles), and there are 2 triangles for each hexagon. The transferable idea: count the same things from two sides and set the counts equal.",
+    "elegant": "Count corners instead. Each hexagon has 6 corners and each corner is shared by 2 hexagons, so there are 3 corners for each hexagon. Each triangle has 3 corners, each shared by 2 triangles, so there are 1.5 corners for each triangle. Hence triangles are twice as many as hexagons."
+  },
+  "whyOnTest": "Tiling questions often hide a double count, and the tempting wrong answers count each shared tile more than once or read the ratio backwards.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

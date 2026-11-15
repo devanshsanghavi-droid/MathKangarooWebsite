@@ -1,0 +1,68 @@
+{
+  "id": "KA-0565",
+  "band": "5-6",
+  "points": 4,
+  "statement": "At one point of a floor tiling, two regular hexagons and some equilateral triangles meet, fitting around the point exactly with no gaps and no overlaps. How many triangles meet at that point?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought each corner of an equilateral triangle was 120 degrees."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I took each corner of a hexagon to be 90 degrees, like a square."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I used 60 degrees for a hexagon's corner, which is the turning angle outside it, not the angle inside."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I filled the whole 360 degrees with triangles and forgot the two hexagons."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-14",
+    "secondary": [
+      "GEO-05",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "The angles around a point add to 360 degrees.",
+    "Find the angle at a corner of a regular hexagon and of an equilateral triangle. The corners meeting at the point must add up to exactly 360 degrees.",
+    "A hexagon corner is 120 degrees, so two hexagons take 240 degrees. That leaves 120 degrees for triangles, whose corners are 60 degrees each."
+  ],
+  "solutions": {
+    "reliable": "Angles around a point add to 360 degrees. A regular hexagon splits into 6 equilateral triangles meeting at its centre, so each corner is 2 × 60 = 120 degrees. Two hexagons take 240 degrees, leaving 360 - 240 = 120 degrees. Each equilateral triangle corner is 60 degrees, so 120 ÷ 60 = 2 triangles fit. The transferable idea: in any tiling, the corners meeting at a point must total exactly 360 degrees.",
+    "elegant": "A hexagon is made of 6 triangles, and its corner holds 2 triangle corners. So two hexagons fill the space of 4 triangle corners, and the 6 triangle corners that fit around a point leave room for 2 real triangles."
+  },
+  "whyOnTest": "Tiling questions test the rule that corners meeting at a point add to 360 degrees, plus knowing polygon corner angles.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

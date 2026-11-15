@@ -1,0 +1,68 @@
+{
+  "id": "KA-0927",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A sequence begins 1, 2, 6, 15, 31, 56, ... and continues by the same rule. What is its 10th term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "92",
+      "correct": false,
+      "misconception": "I found the next term, the 7th, instead of the 10th."
+    },
+    {
+      "key": "B",
+      "text": "205",
+      "correct": false,
+      "misconception": "I added only eight differences, stopping one term short at the 9th term."
+    },
+    {
+      "key": "C",
+      "text": "285",
+      "correct": false,
+      "misconception": "I added the squares from 1 to 81 but forgot to add the starting term 1."
+    },
+    {
+      "key": "D",
+      "text": "286",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "386",
+      "correct": false,
+      "misconception": "I added the squares all the way up to 10 squared, one difference too many."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "PAT-04",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Look at the gaps between consecutive terms.",
+    "The differences form a familiar sequence. Once you know which, the 10th term is the first term plus the first nine differences, so count the differences carefully.",
+    "The differences are 1, 4, 9, 16, 25, the square numbers."
+  ],
+  "solutions": {
+    "reliable": "The differences are 1, 4, 9, 16, 25: the squares. Continuing, the terms are 56 + 36 = 92, 92 + 49 = 141, 141 + 64 = 205 and 205 + 81 = 286. So the 10th term is 286. Check by formula: the nth term is 1 plus the sum of the first n - 1 squares, and 1 + (1 + 4 + ... + 81) = 1 + 285 = 286. The transferable idea: when a sequence is not obvious, take differences; and from term 1 to term n there are only n - 1 steps.",
+    "elegant": "Using 1 + 4 + ... + n^2 = n(n + 1)(2n + 1)/6 with n = 9 gives 9 x 10 x 19 / 6 = 285, and adding the first term gives 286."
+  },
+  "whyOnTest": "The rule hides in the differences, and the off-by-one between the number of terms and the number of steps decides the answer.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

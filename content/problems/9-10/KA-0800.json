@@ -1,0 +1,68 @@
+{
+  "id": "KA-0800",
+  "band": "9-10",
+  "points": 3,
+  "statement": "One printer prints a set of exam papers in 20 minutes. A second printer prints the same set in 30 minutes. How many minutes do the two printers take to print one set together, sharing the work?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I halved the faster printer's time, as if adding the second printer doubled the speed."
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": false,
+      "misconception": "I halved the slower printer's time, as if the two printers worked at the same rate."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I took the average of 20 and 30, which gives the time for one printer of average speed, not for two working together."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "50",
+      "correct": false,
+      "misconception": "I added the two times, as if one printer had to finish before the other could start."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-04",
+    "secondary": [
+      "MOD-03",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "How much of the job does each printer do in one minute?",
+    "Combined work: add rates, not times. Turn each time into a fraction of the job per minute, add the fractions, then turn the total rate back into a time.",
+    "In one minute the printers do 1/20 and 1/30 of the set. Find a common denominator."
+  ],
+  "solutions": {
+    "reliable": "In one minute the first printer does 1/20 of the set and the second 1/30. Together that is 3/60 + 2/60 = 5/60 = 1/12 of the set per minute, so the set takes 12 minutes. The transferable idea: rates add, times do not, so convert times to rates before combining.",
+    "elegant": "In 60 minutes the first printer prints 3 sets and the second 2 sets, so together 5 sets in 60 minutes, which is one set every 12 minutes."
+  },
+  "whyOnTest": "Work-rate questions test that rates add while times do not, and every distractor here combines the times directly.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

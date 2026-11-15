@@ -1,0 +1,67 @@
+{
+  "id": "KA-0638",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Ana, Ben, Cleo and Dev each own one different pet: a cat, a dog, a fish and a rabbit. Neither Ben nor Dev owns the dog. Ana owns neither the fish nor the dog. Dev and the cat's owner are cousins. Neither Ben nor Dev owns the rabbit. Who owns the cat?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Ana",
+      "correct": false,
+      "misconception": "I stopped before using the last clue, when Ana could still have had the cat."
+    },
+    {
+      "key": "B",
+      "text": "Cleo",
+      "correct": false,
+      "misconception": "I gave the cat to Cleo because the cat clue does not mention her."
+    },
+    {
+      "key": "C",
+      "text": "Dev",
+      "correct": false,
+      "misconception": "I took the cousins clue to mean Dev owns the cat."
+    },
+    {
+      "key": "D",
+      "text": "Ben",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "It cannot be decided",
+      "correct": false,
+      "misconception": "I missed that the last clue leaves only one arrangement, so I thought two were possible."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-03",
+    "secondary": [
+      "LOG-01"
+    ]
+  },
+  "hints": [
+    "Pin down the dog first.",
+    "Elimination grid: make a table of people against pets, cross out each pair the clues forbid, and whenever a row or column has one space left, fill it and cross out the rest of that column or row.",
+    "The dog cannot be Ben's, Dev's or Ana's, so it is Cleo's. Now Dev is not the dog, cat or rabbit."
+  ],
+  "solutions": {
+    "reliable": "The dog is not Ben's or Dev's, and not Ana's, so Cleo owns the dog. Dev is not the dog's owner, not the cat's owner (Dev is the cousin of that person) and not the rabbit's owner, so Dev owns the fish. That leaves the cat and the rabbit for Ana and Ben, and Ben does not own the rabbit, so Ana owns the rabbit and Ben owns the cat. The transferable idea: fill the grid square that is forced, then let each new fact eliminate more.",
+    "elegant": null
+  },
+  "whyOnTest": "Elimination grids test reading every clue precisely, including a clue that rules someone out without naming the pet directly.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

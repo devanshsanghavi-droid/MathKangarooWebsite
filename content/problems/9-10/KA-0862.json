@@ -1,0 +1,68 @@
+{
+  "id": "KA-0862",
+  "band": "9-10",
+  "points": 4,
+  "statement": "In a club the ratio of girls to boys is 3 to 2. Then 4 girls leave and 4 new boys join, and now there are equally many girls and boys. How many girls are in the club now?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": false,
+      "misconception": "I found how many girls there were at the start instead of now."
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I found the number of boys at the start."
+    },
+    {
+      "key": "C",
+      "text": "40",
+      "correct": false,
+      "misconception": "I gave the total number of members, which does not change."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought the gap between girls and boys closed by 4, not by 4 + 4 = 8, so I took one part to be 4."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-11",
+    "secondary": [
+      "MOD-01",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "How big is the gap between girls and boys at the start?",
+    "With a 3 to 2 ratio, the girls outnumber the boys by one part. Work out how much that gap shrinks when 4 girls leave and 4 boys join, then use it to find the size of one part.",
+    "The gap is one part, and it shrinks by 4 + 4 = 8 to zero, so one part is 8 people."
+  ],
+  "solutions": {
+    "reliable": "Let one part be k: there are 3k girls and 2k boys. After the change 3k - 4 = 2k + 4, so k = 8. That means 24 girls and 16 boys at the start, and now 20 girls and 20 boys. The answer is 20. The transferable idea: in ratio problems write each quantity as a number of equal parts and set up one equation for the size of a part.",
+    "elegant": "The girls lead by one part. Losing 4 girls and gaining 4 boys closes the lead by 8, so one part is 8 and the club has 5 times 8 = 40 members, split 20 and 20 at the end. The transferable idea: track the difference, not the two amounts."
+  },
+  "whyOnTest": "Ratio problems with a before and after test whether you work in equal parts and whether you answer the moment the question asks about.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

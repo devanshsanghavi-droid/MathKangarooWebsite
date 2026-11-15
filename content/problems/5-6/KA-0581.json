@@ -1,0 +1,68 @@
+{
+  "id": "KA-0581",
+  "band": "5-6",
+  "points": 4,
+  "statement": "In the four-digit number 4?52, the ? stands for one missing digit. The number is divisible by 3 but not by 9. How many different digits could replace the ?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought every multiple of 3 is also a multiple of 9, so I decided no digit could work."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I stopped at the first digit that worked, 1, and did not test the others."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found 1, 4 and 7 but forgot to throw out 7, which makes the number divisible by 9 as well."
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": false,
+      "misconception": "I counted the digits that fail the test for 3 instead of the ones that pass it."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "NUM-03",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Add up the digits you can see.",
+    "A number is divisible by 3 when its digit sum is a multiple of 3, and by 9 when its digit sum is a multiple of 9. So you want digit sums that are multiples of 3 but not 9.",
+    "The known digits add to 11. Adding the missing digit, you can reach 12, 15 or 18. One of those is a multiple of 9."
+  ],
+  "solutions": {
+    "reliable": "The known digits give 4 + 5 + 2 = 11. The missing digit d makes the sum 11 + d, from 11 to 20. The multiples of 3 in that range are 12, 15 and 18, so d is 1, 4 or 7. But 18 is a multiple of 9, so d = 7 gives a number divisible by 9 and must be removed. That leaves 1 and 4: 2 digits. The transferable idea: divisibility by 3 and by 9 both live in the digit sum, so a 'but not' condition is checked on the same sum.",
+    "elegant": null
+  },
+  "whyOnTest": "Divisibility rules are tested with a 'but not' twist: every multiple of 9 is a multiple of 3, so one case must be removed.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

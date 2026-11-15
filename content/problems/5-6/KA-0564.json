@@ -1,0 +1,68 @@
+{
+  "id": "KA-0564",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A square sheet of paper is folded in half, then folded in half again, and then folded in half a third time. One hole is punched through all the layers, away from every fold and edge. How many holes are there when the sheet is unfolded?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted one hole for each fold."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I added two holes for each of the three folds."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I counted every hole twice, once on each side of the paper."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I multiplied the 8 layers by the 3 folds."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-15",
+    "secondary": [
+      "PAT-05",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "How many layers does the hole go through?",
+    "Each fold in half doubles the number of layers. A single punch makes one hole in every layer, and each layer becomes a separate part of the unfolded sheet.",
+    "The layers go 1, then 2, then 4, then 8, so the punch goes through 8 layers."
+  ],
+  "solutions": {
+    "reliable": "Each fold in half doubles the number of layers: 1 becomes 2, then 4, then 8. A punch away from every fold and edge makes one hole in each layer, and unfolding spreads those layers back across the sheet, so there are 8 separate holes. The transferable idea: folding doubles the layers each time, so after n folds one punch makes n twos multiplied together, which is 8 holes for three folds.",
+    "elegant": null
+  },
+  "whyOnTest": "Folding and punching problems test whether you track layers doubling rather than adding a fixed amount per fold.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

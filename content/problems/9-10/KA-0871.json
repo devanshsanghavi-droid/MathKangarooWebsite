@@ -1,0 +1,68 @@
+{
+  "id": "KA-0871",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Ana and Ben together can paint a fence in 12 days, Ben and Cai together in 15 days, and Ana and Cai together in 20 days. Each person always works at the same steady speed. How many days would Ana need to paint the fence alone?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I found how long all three would take working together and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "7.5",
+      "correct": false,
+      "misconception": "I forgot to halve the sum of the three pair rates before subtracting Ben and Cai's rate."
+    },
+    {
+      "key": "C",
+      "text": "17",
+      "correct": false,
+      "misconception": "I added and subtracted the times, 12 + 20 - 15, as if times combined like rates."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I assumed Ana alone takes twice as long as Ana and Ben together."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "MOD-04",
+    "secondary": [
+      "MOD-01",
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "Work with fractions of the fence per day, not with days.",
+    "Turn each pair's time into a rate. Adding all three pair rates counts each person's rate twice, which tells you the rate of all three together. Then remove the pair that does not include Ana.",
+    "Per day: Ana + Ben = 1/12, Ben + Cai = 1/15, Ana + Cai = 1/20. These add to 1/5, which is twice the rate of all three."
+  ],
+  "solutions": {
+    "reliable": "As fractions of the fence per day, the three pair rates add to 1/12 + 1/15 + 1/20 = 5/60 + 4/60 + 3/60 = 1/5. That counts everyone twice, so all three together paint 1/10 per day. Ben and Cai paint 1/15 per day, so Ana alone paints 1/10 - 1/15 = 1/30 per day and needs 30 days. The transferable idea: in work problems, rates add and times do not.",
+    "elegant": "Take 60 days as a convenient length: in 60 days the pairs would paint 5, 4 and 3 fences, so all three together paint 6 fences, of which Ben and Cai paint 4, leaving 2 fences in 60 days for Ana. The transferable idea: choose a common time to turn rates into whole numbers."
+  },
+  "whyOnTest": "Combined work questions test whether you convert times into rates, and the symmetric pair data hides a neat 'count everyone twice' step.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

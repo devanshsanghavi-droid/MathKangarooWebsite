@@ -1,0 +1,68 @@
+{
+  "id": "KA-0754",
+  "band": "9-10",
+  "points": 3,
+  "statement": "ABCD is a rectangle with AB = 8 and BC = 6. A point P is chosen anywhere inside it. What is the total area of triangles PAB and PCD?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I placed P at the centre and found the area of only one of the two triangles."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": false,
+      "misconception": "I placed P at the centre and subtracted one triangle from the rectangle instead of adding the two triangles."
+    },
+    {
+      "key": "D",
+      "text": "48",
+      "correct": false,
+      "misconception": "I multiplied base by height for each triangle and forgot to halve."
+    },
+    {
+      "key": "E",
+      "text": "It depends on where P is",
+      "correct": false,
+      "misconception": "I thought the total changes as P moves, so it cannot be found."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-03",
+    "secondary": [
+      "GEO-04",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Both triangles have a base of length 8.",
+    "The two triangles stand on opposite sides of length 8, and their heights are the distances from P to those two sides. Ask what those two heights always add up to.",
+    "The height of PAB plus the height of PCD is always the full height 6 of the rectangle."
+  ],
+  "solutions": {
+    "reliable": "Triangle PAB has base 8 and height h, the distance from P to AB. Triangle PCD has base 8 and height 6 - h. Their areas add to 8h / 2 + 8(6 - h) / 2 = 8 x 6 / 2 = 24, whatever h is. The transferable idea: when an answer is claimed not to depend on a point, move the point somewhere convenient, or show the varying parts cancel.",
+    "elegant": "Draw a line through P parallel to AB. It cuts the rectangle into two smaller rectangles, and each triangle is exactly half of one of them, so together they are half of 48."
+  },
+  "whyOnTest": "Cutting the rectangle through P shows each triangle is half a piece, a dissection idea that also checks whether you believe the answer can be fixed.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

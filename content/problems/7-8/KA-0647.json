@@ -1,0 +1,67 @@
+{
+  "id": "KA-0647",
+  "band": "7-8",
+  "points": 3,
+  "statement": "An ordinary die, whose opposite faces add up to 7, sits on a table with 1 on top, 2 facing you and 3 on the right. It is rolled a quarter turn to the right, tipping over its right bottom edge, then a quarter turn away from you, then another quarter turn to the right. What is now on top?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I tracked the rolls correctly but gave the face on the bottom instead of the top."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I stopped after the first roll."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "2",
+      "correct": false,
+      "misconception": "I thought the two rolls to the right cancel each other out, so I only did the roll away from me."
+    },
+    {
+      "key": "E",
+      "text": "3",
+      "correct": false,
+      "misconception": "I gave the face that ends up facing me instead of the face on top."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-11",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "First write down all six faces: top, bottom, front, back, left and right.",
+    "Opposite faces add to 7, so the start is top 1, bottom 6, front 2, back 5, right 3, left 4. Rolling right sends the left face up; rolling away sends the front face up.",
+    "After the first roll the top is 4 and the left is 6. After the roll away the top is 2, and the left face is still 6."
+  ],
+  "solutions": {
+    "reliable": "Start: top 1, bottom 6, front 2, back 5, right 3, left 4. Rolling to the right moves the top to the right, the right to the bottom, the bottom to the left and the left to the top, so the top becomes 4 and the left becomes 6, while front and back stay. Rolling away moves the front to the top, so the top becomes 2, and the left and right faces do not move: left is still 6. The last roll to the right brings the left face, 6, to the top. The transferable idea: record all six faces and update them roll by roll, using opposite pairs adding to 7.",
+    "elegant": "Only the left face matters for the last roll to the right. The left face is 4 at the start, the first roll puts the bottom, 6, on the left, and the roll away does not touch the left and right faces. So 6 comes to the top."
+  },
+  "whyOnTest": "Rolling a die checks whether you can track all six faces at once, using the rule that opposite faces add to 7.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

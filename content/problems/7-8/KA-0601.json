@@ -1,0 +1,68 @@
+{
+  "id": "KA-0601",
+  "band": "7-8",
+  "points": 4,
+  "statement": "In a class, the 12 boys have a mean height of 150 cm and the 18 girls have a mean height of 140 cm. What is the mean height of the whole class?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "144 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "145 cm",
+      "correct": false,
+      "misconception": "I took the halfway point between 150 and 140, as if there were as many boys as girls."
+    },
+    {
+      "key": "C",
+      "text": "146 cm",
+      "correct": false,
+      "misconception": "I mixed up the groups, giving the 18 the mean of 150 and the 12 the mean of 140."
+    },
+    {
+      "key": "D",
+      "text": "290 cm",
+      "correct": false,
+      "misconception": "I added the two means together instead of combining them."
+    },
+    {
+      "key": "E",
+      "text": "4320 cm",
+      "correct": false,
+      "misconception": "I found the total height of all 30 students and forgot to divide by 30."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-05",
+    "secondary": [
+      "NUM-12",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Before calculating, ask what range the answer must lie in.",
+    "A mean of the whole class must lie between the two group means. Since the groups are not the same size, decide which mean it must be closer to. That rules out most of the choices.",
+    "There are more girls than boys, so the class mean is between 140 and 150 but closer to 140, that is below 145."
+  ],
+  "solutions": {
+    "reliable": "Bound first: the class mean lies between 140 and 150, and because there are more girls, it is closer to 140, so below 145. Only 144 cm is left, and 145 cm, 146 cm, 290 cm and 4320 cm are all ruled out. To confirm, the total height is 12 x 150 + 18 x 140 = 1800 + 2520 = 4320 cm, and 4320 / 30 = 144 cm. The transferable idea: before calculating, decide how large and how small the answer can be, and cross out every choice outside that range.",
+    "elegant": "Measure from 140. The boys are 10 cm above it and make up 12 of the 30 students, so they raise the mean by 10 x 12 / 30 = 4 cm. The class mean is 144 cm."
+  },
+  "whyOnTest": "Bounding eliminates choices before any arithmetic: a combined mean lies between the group means and nearer the larger group, which leaves only one choice.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

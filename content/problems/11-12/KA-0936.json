@@ -1,0 +1,68 @@
+{
+  "id": "KA-0936",
+  "band": "11-12",
+  "points": 3,
+  "statement": "The price of a jacket was raised by 20%. Later the new price was lowered by 20%. The jacket now costs 192 dollars. What was the original price?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "160 dollars",
+      "correct": false,
+      "misconception": "I undid the 20% rise by dividing 192 by 1.2 but forgot to undo the 20% cut."
+    },
+    {
+      "key": "B",
+      "text": "184.32 dollars",
+      "correct": false,
+      "misconception": "I applied the rise and the cut to 192 again instead of undoing them."
+    },
+    {
+      "key": "C",
+      "text": "192 dollars",
+      "correct": false,
+      "misconception": "I assumed a 20% rise and a 20% cut cancel each other out."
+    },
+    {
+      "key": "D",
+      "text": "200 dollars",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "240 dollars",
+      "correct": false,
+      "misconception": "I undid the 20% cut by dividing 192 by 0.8 but forgot to undo the 20% rise."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-11",
+    "secondary": [
+      "NUM-10",
+      "LOG-08"
+    ]
+  },
+  "hints": [
+    "A rise then a cut of the same percentage do not cancel.",
+    "Work backwards: undo the last change first, then the one before it. Then check your answer by running the changes forwards from it.",
+    "192 / 0.8 = 240 undoes the cut; then undo the rise from 240."
+  ],
+  "solutions": {
+    "reliable": "Undo the 20% cut: 192 / 0.8 = 240. Undo the 20% rise: 240 / 1.2 = 200. Check forwards: 200 raised by 20% is 240, and 240 lowered by 20% is 192. The transferable idea: check a backwards calculation by running it forwards, which catches the half-undone choices.",
+    "elegant": "Together the two changes multiply the price by 1.2 x 0.8 = 0.96, so the original is 192 / 0.96 = 200."
+  },
+  "whyOnTest": "Successive percentage changes are a standard trap, and a quick forward check from the chosen answer confirms it in seconds.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

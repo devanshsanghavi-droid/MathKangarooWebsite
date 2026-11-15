@@ -1,0 +1,67 @@
+{
+  "id": "KA-0629",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A chessboard has 8 rows and 8 columns of small squares. How many different 3 by 3 squares, made of 9 small squares, can be found on it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I cut the board into separate 3 by 3 blocks that do not overlap."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I thought a 3 by 3 square can start in 8 - 3 = 5 places across."
+    },
+    {
+      "key": "D",
+      "text": "49",
+      "correct": false,
+      "misconception": "I thought a 3 by 3 square can start in 7 places across, one fewer than 8."
+    },
+    {
+      "key": "E",
+      "text": "64",
+      "correct": false,
+      "misconception": "I counted one square for each small square as its top left corner, even near the edges."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-12",
+    "secondary": [
+      "CNT-13"
+    ]
+  },
+  "hints": [
+    "The squares are allowed to overlap.",
+    "Sliding window: a 3 by 3 square is fixed by where its top left corner sits. Count the possible starting columns and rows separately, then multiply.",
+    "Across, the left column of the square can be column 1, 2, 3, 4, 5 or 6."
+  ],
+  "solutions": {
+    "reliable": "The left edge of a 3 by 3 square can sit at column 1 up to column 6, because columns 6, 7 and 8 are the last three. That is 6 positions across, and likewise 6 positions down, so there are 6 x 6 = 36 squares. The transferable idea: a window of width k slides into n - k + 1 positions along a row of n.",
+    "elegant": "Check with a smaller case: on a 3 by 3 board, n - k + 1 = 1, and there is exactly one 3 by 3 square. That confirms the plus one."
+  },
+  "whyOnTest": "Sliding window counts are everywhere in Kangaroo, and the two traps are cutting into blocks and the off-by-one.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

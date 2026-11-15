@@ -1,0 +1,67 @@
+{
+  "id": "KA-0570",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A train 200 m long travels at 20 m per second. It goes through a tunnel 600 m long. How many seconds pass from the moment the front of the train enters the tunnel until the back of the train leaves it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I worked out how long the train takes to pass a single point, using only its own length of 200 m."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I worked out how long the whole train is completely inside the tunnel, using 600 - 200 = 400 m."
+    },
+    {
+      "key": "C",
+      "text": "30",
+      "correct": false,
+      "misconception": "I used only the length of the tunnel, 600 m, and forgot that the back of the train still has to come out."
+    },
+    {
+      "key": "D",
+      "text": "40",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "50",
+      "correct": false,
+      "misconception": "I added the length of the train twice, once for going in and once for coming out, so I used 1000 m."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "MOD-03"
+    ]
+  },
+  "hints": [
+    "Sketch the train at the start and again at the end.",
+    "Draw the train with its front at the tunnel entrance, then with its back at the exit. The distance the train moves between your two pictures is what the speed has to cover.",
+    "Between the two pictures the front of the train passes through the whole 600 m tunnel and then goes 200 m further."
+  ],
+  "solutions": {
+    "reliable": "Draw two pictures. At the start the front of the train is at the entrance. At the end the back of the train is at the exit, so the front is 200 m beyond it. The front has moved 600 + 200 = 800 m. At 20 m per second that takes 800 divided by 20 = 40 seconds. Check with the back of the train: it starts 200 m before the entrance and ends at the exit, also 800 m. The transferable idea: when something long passes something else, draw where it starts and where it ends and follow one point of it.",
+    "elegant": null
+  },
+  "whyOnTest": "A sketch of the train at the start and at the end shows that it must cover the tunnel plus its own length, which the words alone hide.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

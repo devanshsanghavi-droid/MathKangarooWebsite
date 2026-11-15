@@ -1,0 +1,67 @@
+{
+  "id": "KA-0549",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Mia spent half of her money on a book. Then she spent a third of the money she had left on lunch. She had 10 euros left. How much money did Mia have at the start?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "15 euros",
+      "correct": false,
+      "misconception": "I undid the lunch step but forgot to undo the book step."
+    },
+    {
+      "key": "B",
+      "text": "20 euros",
+      "correct": false,
+      "misconception": "I undid only the book step by doubling 10, and forgot about lunch."
+    },
+    {
+      "key": "C",
+      "text": "30 euros",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "40 euros",
+      "correct": false,
+      "misconception": "I treated both steps as spending half, so I doubled twice."
+    },
+    {
+      "key": "E",
+      "text": "60 euros",
+      "correct": false,
+      "misconception": "I added the fractions she spent, a half and a third, to get five sixths, so I took 10 euros as one sixth of her money."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-08",
+    "secondary": [
+      "NUM-09"
+    ]
+  },
+  "hints": [
+    "Start from the 10 euros at the end and work backwards.",
+    "Undo the steps in reverse order. After lunch she had two thirds of what she had before lunch, and after the book she had half of what she started with.",
+    "10 euros is two thirds of the money she had before lunch, so before lunch she had 15 euros."
+  ],
+  "solutions": {
+    "reliable": "Work backwards. Lunch took a third of what she had, leaving two thirds, and those two thirds are 10 euros. So one third is 5 euros and before lunch she had 15 euros. The book took half of her money, leaving the other half, so 15 euros is half and she started with 30 euros. Check: half of 30 is 15, a third of 15 is 5, and 15 - 5 = 10. The transferable idea: each fraction is a fraction of what was there at that moment, so undo the steps one at a time from the end.",
+    "elegant": "She kept a half, then two thirds of that half, so she kept a third of her money in all. That third is 10 euros, so she started with 30 euros."
+  },
+  "whyOnTest": "Working-backwards questions test undoing the steps in reverse order, and the trap is treating every fraction as a fraction of the starting amount.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

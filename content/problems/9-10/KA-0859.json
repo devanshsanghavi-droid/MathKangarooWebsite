@@ -1,0 +1,67 @@
+{
+  "id": "KA-0859",
+  "band": "9-10",
+  "points": 3,
+  "statement": "The word COCOA is written over and over without spaces: COCOACOCOACOCOA... How many letters O are there among the first 2027 letters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "810",
+      "correct": false,
+      "misconception": "I counted the O's in the full blocks of five letters and ignored the letters left over."
+    },
+    {
+      "key": "B",
+      "text": "812",
+      "correct": false,
+      "misconception": "I rounded 2027 divided by 5 up to 406 full blocks and counted two O's in each."
+    },
+    {
+      "key": "C",
+      "text": "405",
+      "correct": false,
+      "misconception": "I counted only one O in each block of COCOA."
+    },
+    {
+      "key": "D",
+      "text": "811",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "406",
+      "correct": false,
+      "misconception": "I counted one O per block and then one more for the leftover letters."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "How many complete copies of COCOA fit in 2027 letters?",
+    "Split the 2027 letters into complete blocks of five plus a short leftover piece. Count the O's in one block, multiply, then look carefully at which letters the leftover piece contains.",
+    "2027 = 5 times 405 + 2, so there are 405 full blocks and then the two letters C, O."
+  ],
+  "solutions": {
+    "reliable": "2027 = 5 times 405 + 2. Each full block COCOA contains 2 O's, giving 810. The 2 leftover letters are the start of the next block, C and O, which adds 1 more. Total 811. The transferable idea: for a repeating pattern, divide by the cycle length and then read the remainder off the start of the cycle.",
+    "elegant": null
+  },
+  "whyOnTest": "Repeating patterns are a Kangaroo favourite, and the leftover piece after the last full cycle is exactly where careless counts go wrong.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

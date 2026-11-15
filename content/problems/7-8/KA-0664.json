@@ -1,0 +1,68 @@
+{
+  "id": "KA-0664",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A sequence starts with 3. Each term after the first is found by doubling the term before it and then subtracting 1, so the sequence begins 3, 5, 9, 17. What is the 20th term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "524,289",
+      "correct": false,
+      "misconception": "I wrote the nth term as 2 to the power n - 1, plus 1, without checking it against the first term, so I got the 19th term."
+    },
+    {
+      "key": "B",
+      "text": "1,048,577",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "1,048,576",
+      "correct": false,
+      "misconception": "I saw that the terms are close to powers of 2 and dropped the extra 1."
+    },
+    {
+      "key": "D",
+      "text": "2,097,153",
+      "correct": false,
+      "misconception": "I applied the rule 20 times starting from 3, which gives the 21st term."
+    },
+    {
+      "key": "E",
+      "text": "41",
+      "correct": false,
+      "misconception": "I thought the terms go up by 2 each time, as they do from 3 to 5, so I added 19 twos to 3."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "CFT-03",
+      "PAT-04"
+    ]
+  },
+  "hints": [
+    "Subtract 1 from each term and look again.",
+    "Find a simpler sequence hiding inside: subtract 1 from every term, see what the rule does to those new numbers, then write the nth term directly instead of stepping 19 times.",
+    "Each term minus 1 gives 2, 4, 8, 16, so the nth term is 2 to the power n, plus 1."
+  ],
+  "solutions": {
+    "reliable": "Subtract 1 from each term: 3, 5, 9, 17 become 2, 4, 8, 16. If a term is t, the next is 2t - 1, and 2t - 1 - 1 = 2(t - 1), so the numbers one less than the terms double every step. They start at 2, so the nth of them is 2 to the power n, and the nth term is 2 to the power n, plus 1. Check: the 1st term is 2 + 1 = 3. Since 2 to the power 10 is 1,024, 2 to the power 20 is 1,024 x 1,024 = 1,048,576, so the 20th term is 1,048,577. The transferable idea: shift a recursive sequence by a constant to turn it into one you recognise.",
+    "elegant": null
+  },
+  "whyOnTest": "Recursive rules are slow to step through by hand, and spotting the hidden doubling gives any term at once, while off-by-one slips give the neighbouring terms.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

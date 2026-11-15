@@ -1,0 +1,68 @@
+{
+  "id": "KA-0960",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Which of these numbers cannot be written as x^2 - y^2, where x and y are positive integers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2022",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "2024",
+      "correct": false,
+      "misconception": "I only tried 2024 = 1 x 2024 as (x - y)(x + y), saw that the two factors had different parities, and gave up instead of trying 2 x 1012."
+    },
+    {
+      "key": "C",
+      "text": "2025",
+      "correct": false,
+      "misconception": "I thought a perfect square can only be written with y = 0, which is not allowed, and missed 1013^2 - 1012^2."
+    },
+    {
+      "key": "D",
+      "text": "2027",
+      "correct": false,
+      "misconception": "I thought a prime cannot be split as (x - y)(x + y), forgetting the factor pair 1 x 2027."
+    },
+    {
+      "key": "E",
+      "text": "2028",
+      "correct": false,
+      "misconception": "I stretched the rule too far and thought numbers that are 4 times an odd number fail, just like numbers that are 2 times an odd number."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "LOG-05",
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "Factor x^2 - y^2 and think about the parities of the two factors.",
+    "x^2 - y^2 = (x - y)(x + y), and x - y and x + y always have the same parity. So the number must be a product of two odd numbers or of two even numbers.",
+    "Two odd factors give an odd product; two even factors give a multiple of 4. A number that is even but not a multiple of 4 can be neither."
+  ],
+  "solutions": {
+    "reliable": "x^2 - y^2 = (x - y)(x + y), and the two factors differ by 2y, which is even, so they have the same parity. If both are odd the product is odd; if both are even it is a multiple of 4. So a number that is 2 more than a multiple of 4 is impossible, and 2022 = 4 x 505 + 2 is such a number. The others all work: 2024 = 507^2 - 505^2, 2025 = 1013^2 - 1012^2, 2027 = 1014^2 - 1013^2 and 2028 = 508^2 - 506^2. The transferable idea: assuming a representation exists and reaching a parity clash is a proof by contradiction that it does not.",
+    "elegant": "Squares leave remainder 0 or 1 on division by 4, so a difference of two squares leaves remainder 0, 1 or 3, never 2. Only 2022 leaves remainder 2."
+  },
+  "whyOnTest": "Showing a number is not a difference of squares uses factor parity or squares mod 4, and every distractor is a number that someone wrongly rules out.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

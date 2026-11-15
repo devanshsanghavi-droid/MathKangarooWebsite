@@ -1,0 +1,68 @@
+{
+  "id": "KA-0849",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Rectangle ABCD has AB = 10 and BC = 6. Point M lies on side BC with BM = 2, and point N lies on side CD with CN = 4. What is the area of triangle AMN?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "16",
+      "correct": false,
+      "misconception": "I forgot to halve the corner triangle at C, using 4 × 4 = 16 instead of 8."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "30",
+      "correct": false,
+      "misconception": "I assumed the triangle is half of the rectangle, as a triangle on one whole side would be."
+    },
+    {
+      "key": "D",
+      "text": "32",
+      "correct": false,
+      "misconception": "I subtracted the corner triangles at B and D but forgot the small one at C."
+    },
+    {
+      "key": "E",
+      "text": "42",
+      "correct": false,
+      "misconception": "I subtracted the corner triangles at B and C but forgot the one at D."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-04",
+    "secondary": [
+      "CFT-02",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "The triangle's sides cut three right triangles off the rectangle.",
+    "Find the area of the rectangle and subtract the three right-angled triangles at corners B, C and D. Work out the two shorter sides of each one from the given lengths.",
+    "The corner triangles are ABM with legs 10 and 2, MCN with legs 4 and 4, and ADN with legs 6 and 6."
+  ],
+  "solutions": {
+    "reliable": "The rectangle has area 10 × 6 = 60. Triangle AMN is what is left after removing three right triangles. ABM has legs AB = 10 and BM = 2, area 10. MCN has legs MC = 6 - 2 = 4 and CN = 4, area 8. ADN has legs AD = 6 and DN = 10 - 4 = 6, area 18. So the area is 60 - 10 - 8 - 18 = 24. The transferable idea: a slanted triangle inside a rectangle is the rectangle minus right triangles at the corners.",
+    "elegant": "Put A at (0, 0), B at (10, 0), C at (10, 6) and D at (0, 6). Then M is (10, 2) and N is (6, 6), and the area of triangle AMN is half of 10 × 6 - 2 × 6, which is half of 48, so 24."
+  },
+  "whyOnTest": "Area by subtraction is the standard way into a slanted triangle, and each trap answer misses or mishandles one corner piece.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0810",
+  "band": "9-10",
+  "points": 5,
+  "statement": "How many different triangles have whole-number side lengths and a perimeter of 17? (Triangles with the same three side lengths count as the same.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted only triangles with three different side lengths and left out the isosceles ones."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I thought a side of length 1 could not belong to a triangle, so I left out the triangle with sides 1, 8 and 8."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted every way to split 17 into three whole-number lengths and never checked that they make a triangle."
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": false,
+      "misconception": "I counted the same triangle again for every order of its side lengths."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-06",
+    "secondary": [
+      "CNT-04",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Organise by the length of the longest side.",
+    "Use the triangle inequality: the longest side must be less than the sum of the other two, so less than half the perimeter. Fix the longest side and list the other two in order.",
+    "The longest side c satisfies c < 17 - c, so c is at most 8, and it must be at least 6 since it is the largest of three numbers adding to 17."
+  ],
+  "solutions": {
+    "reliable": "Write the sides as a, b, c with a ≤ b ≤ c. The triangle inequality needs a + b > c, that is 17 - c > c, so c is at most 8; and c is at least 17 / 3, so c is 6, 7 or 8. For c = 8, a + b = 9 with b ≤ 8: 1, 8; 2, 7; 3, 6; 4, 5 (4 triangles). For c = 7, a + b = 10 with a ≤ b ≤ 7: 3, 7; 4, 6; 5, 5 (3 triangles). For c = 6, a + b = 11 with b ≤ 6: 5, 6 (1 triangle). Total 8. The transferable idea: fix the largest part first, because the triangle inequality only ever bites on the longest side.",
+    "elegant": null
+  },
+  "whyOnTest": "Triangle counts combine casework with the triangle inequality, and the choices catch every way of losing or doubling cases.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

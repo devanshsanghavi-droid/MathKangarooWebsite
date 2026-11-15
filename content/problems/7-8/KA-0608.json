@@ -1,0 +1,67 @@
+{
+  "id": "KA-0608",
+  "band": "7-8",
+  "points": 3,
+  "statement": "On a 6 by 6 board of squares, a strip is a line of four squares side by side, going either across or down. How many different strips are there on the board?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I divided the 36 squares by 4, as if the strips could not overlap."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I fitted strips without overlapping: one in each row and one in each column."
+    },
+    {
+      "key": "C",
+      "text": "18",
+      "correct": false,
+      "misconception": "I counted the strips going across but forgot the ones going down."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I thought each row holds 6 - 4 = 2 strips, forgetting to add 1 for the first starting position."
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-12",
+    "secondary": [
+      "GEO-02"
+    ]
+  },
+  "hints": [
+    "Where can the leftmost square of a strip going across be?",
+    "Slide a strip along one row and count its starting positions. Every row behaves the same way, and strips going down are the same count turned on its side.",
+    "A strip going across can start in column 1, 2 or 3, so each row holds 3 strips."
+  ],
+  "solutions": {
+    "reliable": "In one row, a strip of 4 squares can start in column 1, 2 or 3: 3 positions. With 6 rows that is 18 strips going across, and in the same way 18 strips going down, so 36 altogether. The transferable idea: a window of length k slides into n - k + 1 positions along a line of length n.",
+    "elegant": null
+  },
+  "whyOnTest": "Sliding-window counting: overlapping positions all count, and the starting-position count n - k + 1 is where off-by-one errors live.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

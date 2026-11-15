@@ -1,0 +1,68 @@
+{
+  "id": "KA-0888",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A drawer holds 2 black, 4 white, 5 grey, 8 brown and 10 blue socks. In the dark, what is the smallest number of socks you must take out to be certain of having 4 socks of the same colour?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "13",
+      "correct": false,
+      "misconception": "I ignored the black socks entirely because there are fewer than 4 of them, and used 3 x 4 + 1 for the other colours."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": false,
+      "misconception": "I built the worst case of 14 socks with no four alike, but forgot to take one more sock."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I allowed 3 socks of every colour in the worst case, 3 x 5 + 1, but there are only 2 black socks."
+    },
+    {
+      "key": "E",
+      "text": "19",
+      "correct": false,
+      "misconception": "I took 3 socks of each of the five colours and then 4 more to make a full set, instead of just one more."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "CNT-17",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Imagine the unluckiest possible draw.",
+    "Build the longest draw in which no colour reaches four, taking as many of each colour as you can without reaching four. One more sock than that forces four of a colour.",
+    "The black socks can add at most 2 to the unlucky draw, not 3."
+  ],
+  "solutions": {
+    "reliable": "The worst case takes both black socks and 3 of each other colour: 2 + 3 + 3 + 3 + 3 = 14 socks with no colour appearing four times. The black socks are now gone, so the next sock is white, grey, brown or blue and makes four of that colour. So 15 socks are needed. The transferable idea: for a guarantee, construct the worst case explicitly, respecting the actual supplies, and then add one.",
+    "elegant": null
+  },
+  "whyOnTest": "The usual pigeonhole count gives 16, but a colour with too few socks caps the worst case, so the real worst case has to be built by hand.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

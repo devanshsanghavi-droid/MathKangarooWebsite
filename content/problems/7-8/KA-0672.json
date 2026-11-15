@@ -1,0 +1,67 @@
+{
+  "id": "KA-0672",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Two standard dice are stacked on a table, one on top of the other. On each die, opposite faces add up to 7. A face is hidden if it touches the table or the other die, and every other face can be seen. What is the largest possible total number of dots on the visible faces?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "28",
+      "correct": false,
+      "misconception": "I treated both dice as hiding a full opposite pair worth 7, but the upper die hides only its bottom face."
+    },
+    {
+      "key": "B",
+      "text": "34",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "35",
+      "correct": false,
+      "misconception": "I took off the 7 hidden on the lower die but forgot that the bottom face of the upper die is hidden too."
+    },
+    {
+      "key": "D",
+      "text": "40",
+      "correct": false,
+      "misconception": "I thought each die hides just one face and put the 1 face down on both dice, taking off only 2."
+    },
+    {
+      "key": "E",
+      "text": "41",
+      "correct": false,
+      "misconception": "I took off only the face touching the table and forgot the two faces where the dice touch each other."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-11",
+    "secondary": [
+      "CNT-09"
+    ]
+  },
+  "hints": [
+    "Work out which faces are hidden, one die at a time.",
+    "The lower die hides its top and its bottom, which are opposite faces, so its hidden total is fixed. Only the hidden face of the upper die can be chosen, so make it as small as possible.",
+    "Each die has 21 dots. The lower die hides exactly 7 dots and the upper die hides at least 1 dot."
+  ],
+  "solutions": {
+    "reliable": "Each die has 1 + 2 + 3 + 4 + 5 + 6 = 21 dots, so 42 in all. The lower die hides its top and bottom faces, which are opposite, so it always hides exactly 7. The upper die hides only its bottom face, which can be the 1. The largest visible total is 42 - 7 - 1 = 34. The transferable idea: a hidden pair of opposite faces always costs exactly 7, so only the unpaired hidden faces can be chosen.",
+    "elegant": "The lower die shows its four side faces, which are two opposite pairs, so 14 dots. The upper die shows everything except its bottom, at most 21 - 1 = 20. Together that is 34."
+  },
+  "whyOnTest": "Dice questions reward knowing that opposite faces sum to 7, which turns a hidden pair into a fixed amount.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

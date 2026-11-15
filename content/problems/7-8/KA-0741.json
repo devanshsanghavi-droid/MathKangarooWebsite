@@ -1,0 +1,68 @@
+{
+  "id": "KA-0741",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Each question on a test has 5 choices, scores 5 points if correct and loses nothing if wrong. Sam has 10 questions left and no time. On 6 he can rule out 3 wrong choices; on the other 4 he can rule out nothing. If he guesses on all 10, how many points should he expect on average?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought a guess is as likely to cost points as to earn them, so on average guessing gains nothing."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I gave every guess a 1 in 5 chance, ignoring the choices Sam can rule out."
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": false,
+      "misconception": "I only counted the 6 questions where he narrowed it down to two choices and left out the other 4."
+    },
+    {
+      "key": "D",
+      "text": "50",
+      "correct": false,
+      "misconception": "I counted every guess as a correct answer."
+    },
+    {
+      "key": "E",
+      "text": "19",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-09",
+    "secondary": [
+      "NUM-09",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "How many choices are left on each kind of question?",
+    "Since a wrong answer costs nothing, each guess is worth its chance of being right times 5 points. Work out that average for each kind of question and add them up.",
+    "With two choices left, a guess is worth half of 5 points, 2.5 on average. With all five choices left, it is worth a fifth of 5 points, 1 on average."
+  ],
+  "solutions": {
+    "reliable": "On the 6 questions with two choices left, each guess is right half the time, worth 5 / 2 = 2.5 points on average, so 6 x 2.5 = 15 points. On the 4 questions with all five choices, each guess is right one time in five, worth 1 point on average, so 4 points. Altogether Sam expects 15 + 4 = 19 points, compared with 0 for leaving them blank. The transferable idea: with no penalty, a guess is never worse than a blank, and ruling out choices makes it worth much more.",
+    "elegant": null
+  },
+  "whyOnTest": "With no penalty for wrong answers, every blank throws away points; this checks that you can value a guess after ruling out choices.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

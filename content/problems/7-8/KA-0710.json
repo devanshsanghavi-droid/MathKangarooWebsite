@@ -1,0 +1,68 @@
+{
+  "id": "KA-0710",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Which of these is closest to the number of seconds in 13 years?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "about 110 thousand",
+      "correct": false,
+      "misconception": "I stopped after converting the years to hours and did not change the hours into seconds."
+    },
+    {
+      "key": "B",
+      "text": "about 7 million",
+      "correct": false,
+      "misconception": "I multiplied by 60 only once after reaching hours, so I found minutes rather than seconds."
+    },
+    {
+      "key": "C",
+      "text": "about 17 million",
+      "correct": false,
+      "misconception": "I used 3600 seconds for a whole day, forgetting to multiply by the 24 hours in it."
+    },
+    {
+      "key": "D",
+      "text": "about 410 million",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "about 25 billion",
+      "correct": false,
+      "misconception": "I multiplied by 60 one time too many, going past seconds."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-06",
+    "secondary": [
+      "NUM-12",
+      "MOD-07"
+    ]
+  },
+  "hints": [
+    "Round as you go: about 365 days a year, 24 hours a day.",
+    "Estimate to the nearest choice: chain the conversions from years to days to hours to minutes to seconds, rounding each step. The choices are far enough apart that rough numbers decide it, as long as no step is skipped.",
+    "A day has 24 x 3600 = 86 400 seconds, roughly 90 000. A year of about 365 days is roughly 30 million seconds."
+  ],
+  "solutions": {
+    "reliable": "A day has 24 x 60 x 60 = 86 400 seconds. A year has about 365 days, so about 31.5 million seconds. Thirteen years is about 13 x 31.5 million, roughly 410 million. The transferable idea: when the choices differ by large factors, round boldly and spend your care on counting the conversion steps.",
+    "elegant": "A year is very close to 31.5 million seconds, a number worth remembering. Thirteen years is then a little over 400 million."
+  },
+  "whyOnTest": "When the choices are many times apart, estimating beats exact work, and each wrong choice drops or repeats one conversion.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

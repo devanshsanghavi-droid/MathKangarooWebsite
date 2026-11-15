@@ -1,0 +1,68 @@
+{
+  "id": "KA-0795",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A square has side 4. Two quarter circles of radius 4 are drawn inside it, one centred at each of two opposite corners, so that each quarter circle joins the two corners next to its centre. What is the area of the region that lies inside both quarter circles?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4π - 8",
+      "correct": false,
+      "misconception": "I found one of the two equal pieces of the region, a quarter circle minus a triangle, and forgot the region is made of two of them."
+    },
+    {
+      "key": "B",
+      "text": "16 - 4π",
+      "correct": false,
+      "misconception": "I found the part of the square outside one quarter circle instead of the part inside both."
+    },
+    {
+      "key": "C",
+      "text": "32 - 8π",
+      "correct": false,
+      "misconception": "I found the two corner pieces that lie outside both quarter circles instead of the overlap."
+    },
+    {
+      "key": "D",
+      "text": "8π - 16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "8π",
+      "correct": false,
+      "misconception": "I added the two quarter circles but did not take away the square, so the overlap was never isolated."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-04",
+    "secondary": [
+      "GEO-07",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Draw it. Both quarter circles pass through the other two corners of the square.",
+    "Area by subtraction: the two quarter circles together cover the whole square, and the overlap is covered twice. Compare the total of the two quarter-circle areas with the area of the square.",
+    "Each quarter circle has area 4π. Together they cover the square of area 16 once, plus the overlap a second time."
+  ],
+  "solutions": {
+    "reliable": "Each quarter circle has radius 4, so its area is a quarter of 16π, which is 4π. Every point of the square lies in at least one of the two quarter circles, and the points in the overlap lie in both. So 4π + 4π counts the square once and the overlap twice: 8π = 16 + overlap, and the overlap is 8π - 16. The transferable idea: when two shapes cover a region with an overlap, add the shapes and take away the region to leave the overlap.",
+    "elegant": "The diagonal joining the two corners that are not centres splits the overlap into two equal pieces. Each piece is a quarter circle minus a right triangle with legs 4 and 4, so 4π - 8. Two pieces give 8π - 16."
+  },
+  "whyOnTest": "Shaded-region questions test choosing the right whole and the right pieces to subtract, and each wrong choice subtracts the wrong thing.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

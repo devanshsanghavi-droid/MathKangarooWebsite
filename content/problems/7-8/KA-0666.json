@@ -1,0 +1,68 @@
+{
+  "id": "KA-0666",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Five years ago, Tom was 3 times as old as his sister. In five years' time, he will be twice as old as she will be then. How old is Tom now?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20",
+      "correct": false,
+      "misconception": "I added 5 years to Tom's age in the future clue but forgot to add them to his sister's age."
+    },
+    {
+      "key": "B",
+      "text": "30",
+      "correct": false,
+      "misconception": "I solved correctly but gave Tom's age five years ago."
+    },
+    {
+      "key": "C",
+      "text": "40",
+      "correct": false,
+      "misconception": "I solved correctly but gave Tom's age in five years' time."
+    },
+    {
+      "key": "D",
+      "text": "35",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": false,
+      "misconception": "I solved correctly but gave his sister's age instead of Tom's."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-05",
+    "secondary": [
+      "MOD-01",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Both people's ages change by the same number of years.",
+    "Translate into equations: call the ages now t and s, write each clue using t - 5 and s - 5 for the past and t + 5 and s + 5 for the future, then solve together.",
+    "t - 5 = 3(s - 5) and t + 5 = 2(s + 5). Write t from each and set them equal."
+  ],
+  "solutions": {
+    "reliable": "Let Tom be t and his sister s now. Five years ago: t - 5 = 3(s - 5), so t = 3s - 10. In five years: t + 5 = 2(s + 5), so t = 2s + 5. Then 3s - 10 = 2s + 5, so s = 15 and t = 35. Check: five years ago they were 30 and 10, and 30 is 3 times 10; in five years they will be 40 and 20, and 40 is twice 20. The transferable idea: shift every person's age by the same number of years, then reread the question to see whose age, and when.",
+    "elegant": "Back-solve from the choices: if Tom is 35, five years ago he was 30, so his sister was 10 and is now 15. In five years they will be 40 and 20, which works."
+  },
+  "whyOnTest": "Age problems test setting up equations at different times, and most wrong choices answer for the wrong person or the wrong year.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

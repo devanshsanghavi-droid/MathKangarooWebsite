@@ -1,0 +1,70 @@
+{
+  "id": "KA-0434",
+  "band": "3-4",
+  "points": 4,
+  "statement": "The plan shows a building made of cubes, seen from above. Each number tells how many cubes are stacked on that square. How many squares can be seen in the view from the front?",
+  "figure": {
+    "component": "CubePlanFront",
+    "alt": "A plan of a 3 by 3 square seen from above, with the back edge at the top and an arrow at the bottom showing the front. The numbers of cubes on each square, left to right, are: back row 1, 4, 1; middle row 1, 1, 1; front row 2, 1, 3."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I only counted the tallest stack, 4, as if it hid everything else."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I added only the front row, 2 + 1 + 3, but taller stacks behind it also show."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I took the tallest stack in each row, which gives the view from the side, not from the front."
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": false,
+      "misconception": "I added all the numbers, which counts every cube instead of only the squares seen from the front."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-12",
+    "secondary": [
+      "GEO-13"
+    ]
+  },
+  "hints": [
+    "From the front, stacks in the same column hide behind one another.",
+    "Looking from the front, each column of the plan becomes one column of the view. A column shows as tall as its tallest stack, so find the tallest number in each column and add them.",
+    "The left column has stacks 1, 1 and 2, so it shows 2 squares tall. The middle column has 4, 1 and 1. The right column has 1, 1 and 3."
+  ],
+  "solutions": {
+    "reliable": "From the front, the three stacks in each column line up one behind another, and you see only the tallest. The left column shows 2 squares, the middle column 4, the right column 3. The front view has 2 + 4 + 3 = 9 squares. The transferable idea: a view of a stacked plan keeps the tallest stack along each line of sight.",
+    "elegant": null
+  },
+  "whyOnTest": "Turning a plan with heights into a view tests whether you know which stacks hide behind which.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0987",
+  "band": "11-12",
+  "points": 4,
+  "statement": "How many whole numbers from 1 to 100 contain the digit 7, or are divisible by 7, or both?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "27",
+      "correct": false,
+      "misconception": "I subtracted the numbers in both groups twice instead of once."
+    },
+    {
+      "key": "B",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "31",
+      "correct": false,
+      "misconception": "I counted 20 numbers containing a 7, counting 77 twice, before subtracting the overlap."
+    },
+    {
+      "key": "D",
+      "text": "32",
+      "correct": false,
+      "misconception": "I treated 77 as the only number in both groups, forgetting 7 and 70."
+    },
+    {
+      "key": "E",
+      "text": "33",
+      "correct": false,
+      "misconception": "I added the two counts and did not subtract the numbers that are in both groups."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-10",
+    "secondary": [
+      "NUM-04",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Count each group separately, then look for numbers in both.",
+    "This is inclusion and exclusion with two sets: add the two counts, then subtract the numbers counted twice. Careful counting of each group, and of the overlap, is the whole problem.",
+    "There are 19 numbers containing a 7, 14 multiples of 7, and the overlap is 7, 70 and 77."
+  ],
+  "solutions": {
+    "reliable": "Numbers containing a 7: ten end in 7 (7, 17, ..., 97) and ten lie from 70 to 79, with 77 in both lists, so there are 19. Multiples of 7 up to 100: 14. Numbers in both groups: 7, 70 and 77, so 3. The total is 19 + 14 - 3 = 30. The transferable idea: add the two groups, subtract the overlap exactly once, and list the overlap rather than guess it.",
+    "elegant": null
+  },
+  "whyOnTest": "There are two overlaps to handle, 77 inside the digit count and three numbers shared by the groups, and each slip gives a listed distractor.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

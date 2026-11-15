@@ -1,0 +1,67 @@
+{
+  "id": "KA-0841",
+  "band": "9-10",
+  "points": 4,
+  "statement": "For how many positive whole numbers n is the least common multiple of n and 24 equal to 360?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I thought n had to be even like 24 and 360, so I left out n = 45."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I made sure n had a factor 3 and a factor 5 but missed that it needs the factor 9, so I counted every multiple of 15 that divides 360."
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": false,
+      "misconception": "I divided 360 by 24 and gave the quotient instead of counting the possible values of n."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted every divisor of 360, without checking that the least common multiple with 24 is really 360."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-05",
+    "secondary": [
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Write 24 and 360 as products of prime numbers.",
+    "24 = 2 × 2 × 2 × 3 and 360 = 24 × 3 × 5. Which prime factors of 360 does 24 lack? n must supply those itself, and may or may not have the rest.",
+    "n must be a multiple of 9 × 5 = 45 and must divide 360. List those numbers and check each one."
+  ],
+  "solutions": {
+    "reliable": "Since 360 is a common multiple of n and 24, n divides 360. Now 24 = 2 × 2 × 2 × 3 and 360 = 2 × 2 × 2 × 3 × 3 × 5. The least common multiple takes the larger power of each prime from n and 24, so to reach 3 × 3 and 5, n must contain 9 and 5, that is, n is a multiple of 45. The power of 2 in n can be anything up to 8, because 24 already supplies 8. So n is 45, 90, 180 or 360. Check: the least common multiple of 45 and 24 is 360, and the same holds for 90, 180 and 360. There are 4 values. The transferable idea: a least common multiple takes the larger power of each prime, so the other number must supply exactly the primes that are missing.",
+    "elegant": "By listing: the divisors of 360 that are multiples of 45 are 45, 90, 180 and 360, and each one has least common multiple 360 with 24 because 24 supplies the factor 8 and the number supplies 9 and 5. That gives 4."
+  },
+  "whyOnTest": "Least common multiple questions test thinking in prime factors: the other number must supply the missing primes, and forgetting the power of 3 or the odd value 45 gives the near-miss answers.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

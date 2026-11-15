@@ -1,0 +1,68 @@
+{
+  "id": "KA-0832",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Nine positive whole numbers, not necessarily different, have median 7, and the largest of them is 10. What is the smallest possible sum of the nine numbers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "42",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I made every number except the median and the largest equal to 1, forgetting that the numbers after the median must be at least 7."
+    },
+    {
+      "key": "C",
+      "text": "38",
+      "correct": false,
+      "misconception": "I used 0 for the four smallest numbers, forgetting that the numbers must be positive."
+    },
+    {
+      "key": "D",
+      "text": "51",
+      "correct": false,
+      "misconception": "I thought all four numbers after the median had to be 10, the largest value."
+    },
+    {
+      "key": "E",
+      "text": "63",
+      "correct": false,
+      "misconception": "I treated the median 7 as the mean, so I worked out 9 x 7."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "CFT-05",
+      "CNT-18"
+    ]
+  },
+  "hints": [
+    "List the numbers in order. Which position is the median, and what does it force?",
+    "The fifth number is 7. The four before it can be as small as the rules allow, the three after it cannot go below 7, and the last is 10. Make each number as small as allowed.",
+    "The smallest choice is 1, 1, 1, 1, 7, 7, 7, 7, 10."
+  ],
+  "solutions": {
+    "reliable": "Write the nine numbers in increasing order. The median is the fifth number, so it is 7. The first four are positive, so each is at least 1. The sixth, seventh and eighth numbers come after the median, so each is at least 7. The ninth is the largest, 10. So the sum is at least 4 x 1 + 7 + 3 x 7 + 10 = 4 + 7 + 21 + 10 = 42, and the list 1, 1, 1, 1, 7, 7, 7, 7, 10 reaches it: its median is 7 and its largest number is 10. The answer is 42. The transferable idea: to make a total as small as possible, push every number down to the lowest value its position allows, then check that the extreme list really exists.",
+    "elegant": null
+  },
+  "whyOnTest": "Extremal questions with a median test whether you know which positions the median pins down, and the traps are ignoring the floor of 7 after the median or the floor of 1 before it.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

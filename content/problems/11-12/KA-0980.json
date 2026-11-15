@@ -1,0 +1,67 @@
+{
+  "id": "KA-0980",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A closed path is drawn along the lines of squared paper. It never crosses or touches itself, and it turns through a right angle at every corner. Which of these could be the number of corners of the path?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I pictured a right-angled triangle, forgetting that its sloping side cannot run along the grid lines."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I imagined a rectangle with one corner cut away by a small step, and counted the step as only one extra corner."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": false,
+      "misconception": "I thought a plus-sign shape has 13 corners, counting its centre as well as the 12 real corners."
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": false,
+      "misconception": "I thought any number of corners from 4 upwards could be made with enough zigzags."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-05",
+    "secondary": [
+      "GEO-02"
+    ]
+  },
+  "hints": [
+    "Look at the direction of each side as you go round.",
+    "At every right-angle turn the path switches between horizontal and vertical. Think about what that switching forces on the total number of sides, and so of corners, once the path returns to its start.",
+    "Going round, the sides run horizontal, vertical, horizontal, vertical, ... and the last side must join up with the first."
+  ],
+  "solutions": {
+    "reliable": "Every corner is a right-angle turn, so the sides alternate horizontal, vertical, horizontal, vertical. The path is closed, so its last side meets its first, and the sides pair up into horizontal-vertical pairs. So the number of sides is even, and the number of corners equals the number of sides. This rules out 3, 5, 13 and 15. Ten corners are possible: take a rectangle and cut a small square notch out of three of its corners, since each notch turns one corner into three. The transferable idea: when something alternates between two states and returns to where it began, the number of steps is even.",
+    "elegant": null
+  },
+  "whyOnTest": "A parity argument settles it in one line, while trying to draw a shape for each option wastes time and invites miscounting.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

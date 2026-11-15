@@ -1,0 +1,68 @@
+{
+  "id": "KA-0590",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A staircase is built from unit squares. Stage n has n squares in its bottom row, n - 1 in the row above, and so on up to 1 square at the top, with every row lined up on the left. Stage 1 is a single square. What is the perimeter of stage 10?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted only the horizontal edges, the bottom and the tops of the steps, and missed the vertical ones."
+    },
+    {
+      "key": "B",
+      "text": "40",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "55",
+      "correct": false,
+      "misconception": "I counted the squares in stage 10 instead of the edges around the outside."
+    },
+    {
+      "key": "D",
+      "text": "112",
+      "correct": false,
+      "misconception": "I thought every new square adds 2 to the perimeter, but squares tucked into a step touch two others and add nothing."
+    },
+    {
+      "key": "E",
+      "text": "220",
+      "correct": false,
+      "misconception": "I added the perimeters of all 55 squares, counting the shared inside edges as well."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-04",
+    "secondary": [
+      "GEO-01",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Work out the perimeters of stages 1, 2 and 3.",
+    "Try small cases and look for a pattern, or slide the steps' edges out to the edges of a rectangle around the staircase. The horizontal step edges together make the top, and the vertical ones make the right side.",
+    "Stages 1, 2 and 3 have perimeters 4, 8 and 12. Sliding the step edges outward turns the staircase's outline into a 10 by 10 square's outline."
+  ],
+  "solutions": {
+    "reliable": "The left side and the bottom are each 10 long. The tops of the steps are horizontal edges that together cover a length of 10, and the risers on the right are vertical edges that together cover a height of 10. So the perimeter is 10 + 10 + 10 + 10 = 40. The small cases 4, 8, 12 for stages 1, 2, 3 agree with the rule 4 times n. The transferable idea: the perimeter of a staircase shape equals the perimeter of the rectangle around it, because the steps can be pushed out to the rectangle's edges.",
+    "elegant": "Push every step edge outward: the treads slide up to the top side and the risers slide right to the right side, so the outline has the same length as a 10 by 10 square, which is 40."
+  },
+  "whyOnTest": "Growth patterns at 5 points need an idea, here that a staircase's perimeter equals its bounding square's, rather than counting squares.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

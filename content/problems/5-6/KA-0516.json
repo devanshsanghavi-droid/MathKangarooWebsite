@@ -1,0 +1,68 @@
+{
+  "id": "KA-0516",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A long strip of paper is folded in half, and then folded in half again, so it is 4 layers thick. Two straight cuts are made across the folded strip, neither of them on a fold. How many pieces of paper are there now?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I ignored the folding and counted two cuts across a single strip, which gives 3 pieces."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I worked out what one cut does to the folded strip and forgot about the second cut."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the places where the unfolded strip is cut, but there is one more piece than there are cuts."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought each cut makes 5 pieces, so two cuts make 5 + 5, but the two cuts share pieces between them."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-15",
+    "secondary": [
+      "CFT-03",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Unfold it in your head: where along the strip is it cut?",
+    "Each cut goes through every layer, so it cuts the unfolded strip in several places. A strip cut in some number of places falls into one more piece than that number.",
+    "Each cut goes through 4 layers, so the unfolded strip is cut in 4 places per cut."
+  ],
+  "solutions": {
+    "reliable": "The folded strip has 4 layers, and a straight cut across it goes through each layer once, making 4 cuts in the unfolded strip. Two cuts make 8 cut points, all at different places along the strip because neither cut is on a fold. A strip cut at 8 points falls into 8 + 1 = 9 pieces. The transferable idea: when folded paper is cut, unfold the cuts, count the cut points along the strip, and add one.",
+    "elegant": "Check the rule on a smaller case you can test with real paper: one fold and one cut gives 2 cut points and 3 pieces. The same rule, pieces equal cut points plus one, gives 8 + 1 = 9 here."
+  },
+  "whyOnTest": "Folding multiplies every cut, and the unfold-then-count method avoids both forgetting layers and the off-by-one at the end.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-0846",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A calculator has a secret key. Pressing it once changes 3 into 7, 7 into 15, and 15 into 31. The screen shows 1, and the key is pressed again and again. After how many presses does the screen first show a number greater than 1000?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I started counting the presses from 3, the first example, instead of from 1."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I solved 2 to the power n greater than 1000 and gave n = 10, without matching the exponent to the number of presses."
+    },
+    {
+      "key": "C",
+      "text": "250",
+      "correct": false,
+      "misconception": "I used only the first example, 3 into 7, and decided the key adds 4 each time."
+    },
+    {
+      "key": "D",
+      "text": "1023",
+      "correct": false,
+      "misconception": "I gave the first number greater than 1000 instead of the number of presses."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "PAT-05"
+    ]
+  },
+  "hints": [
+    "Check one rule against all three examples, not just the first.",
+    "Find one rule that sends 3 to 7, 7 to 15 and 15 to 31. Then apply it from 1 and look for a pattern in the numbers that appear, so you can jump ahead instead of pressing many times.",
+    "The key doubles the number and adds 1. From 1 the screen shows 3, 7, 15, 31, ..., each one less than a power of 2."
+  ],
+  "solutions": {
+    "reliable": "Adding 4, 8 and 16 in turn are different steps, but doubling and adding 1 fits all three examples. From 1 the screen shows 3, 7, 15, 31, 63, 127, 255, 511, 1023 after presses 1 to 9. After 8 presses it shows 511 and after 9 it shows 1023, so the answer is 9. The transferable idea: a rule inferred from examples must fit every example, and once found, look for a closed form so you can jump ahead.",
+    "elegant": "Add 1 to everything: the key turns x + 1 into 2(x + 1), so the screen plus 1 doubles each time. Starting from 1 + 1 = 2, after n presses the screen plus 1 is 2 to the power n + 1. The first time this exceeds 1001 is 1024, which is 2 to the power 10, so n = 9."
+  },
+  "whyOnTest": "Inferring a rule tests checking a guess against every example; then the pattern, one less than a power of 2, lets you count presses without grinding.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

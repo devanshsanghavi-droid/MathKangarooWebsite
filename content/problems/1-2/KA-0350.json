@@ -1,0 +1,67 @@
+{
+  "id": "KA-0350",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Mia makes a row of triangles from sticks. 1 triangle uses 3 sticks, 2 triangles use 5 sticks and 3 triangles use 7 sticks. How many sticks do 5 triangles use?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I stopped one step early and found the sticks for only 4 triangles."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted 2 sticks for each of the 5 triangles and forgot the first triangle needs 3."
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": false,
+      "misconception": "I went one step too far and found the sticks for 6 triangles."
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": false,
+      "misconception": "I used 3 sticks for every triangle, forgetting that triangles next to each other share a stick."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "How many sticks does each new triangle add?",
+    "Look at how the number of sticks grows from one picture to the next. The growth is the same each time, so keep adding it until you reach 5 triangles.",
+    "Each new triangle adds 2 sticks: 3, 5, 7. Keep adding 2 for the 4th and the 5th triangle."
+  ],
+  "solutions": {
+    "reliable": "Each new triangle shares one stick with the triangle before it, so it adds 2 sticks. 1 triangle: 3, 2: 5, 3: 7, 4: 9, 5: 11. Five triangles use 11 sticks. The idea to keep: find how much the pattern grows each step and keep counting steps carefully.",
+    "elegant": "The first triangle needs 3 sticks and each of the other 4 triangles adds 2, so 3 + 4 x 2 = 11."
+  },
+  "whyOnTest": "Growing patterns ask a child to find what each new step adds, and counting the steps exactly is where answers go wrong.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

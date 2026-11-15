@@ -1,0 +1,68 @@
+{
+  "id": "KA-0919",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A museum has 25 rooms arranged in a 5 by 5 grid, and rooms that share a wall are joined by a door. A visitor wants to walk through every room exactly once, going from room to room through doors. In how many of the 25 rooms could such a walk begin?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought such a walk must start in a corner room."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I coloured the rooms like a chessboard but chose the colour that has only 12 rooms."
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I thought the walk had to start in one of the 16 rooms around the outside edge."
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": false,
+      "misconception": "I assumed the walk could start in any room."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-07",
+    "secondary": [
+      "LOG-05",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Colour the rooms like a chessboard.",
+    "A colouring argument: each step through a door changes colour, so a walk through all 25 rooms alternates colours. Count the rooms of each colour and work out which colour the walk must start on.",
+    "The corners' colour has 13 rooms and the other colour has 12, and a 25-room walk visits one colour 13 times."
+  ],
+  "solutions": {
+    "reliable": "Colour the grid like a chessboard with the corners dark: 13 dark rooms and 12 light. Every door joins a dark room to a light one, so a walk through all 25 rooms alternates colours. Its 1st, 3rd, ..., 25th rooms, 13 of them, share one colour, and its 2nd, 4th, ..., 24th rooms, 12 of them, share the other. Only dark has 13 rooms, so the walk must start and end on dark, and at most 13 rooms can be a start. Each of them really works. From a corner, snake along the rows. From the centre, spiral outwards. From the middle of an edge, walk to a corner, come back along the second row, loop through the last two rooms of the first two rows, then snake along the remaining three rows. A room diagonally next to a corner has a similar hand-built route. So the answer is 13. The transferable idea: when every move alternates between two types of square, colour the board and compare the counts of each colour.",
+    "elegant": null
+  },
+  "whyOnTest": "A chessboard colouring turns a search through thousands of routes into a count of 13 against 12.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

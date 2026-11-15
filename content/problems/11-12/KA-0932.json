@@ -1,0 +1,68 @@
+{
+  "id": "KA-0932",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A closed box measures 12 cm by 3 cm by 2 cm. An ant walks on the outside of the box from one corner to the corner farthest from it. How long is the shortest such walk?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "√157 cm",
+      "correct": false,
+      "misconception": "I measured the straight line through the inside of the box, but the ant must stay on the surface."
+    },
+    {
+      "key": "B",
+      "text": "13 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "√205 cm",
+      "correct": false,
+      "misconception": "I unfolded two faces so that the 12 cm and 2 cm edges lay in one line, which is not the best unfolding."
+    },
+    {
+      "key": "D",
+      "text": "√229 cm",
+      "correct": false,
+      "misconception": "I unfolded two faces so that the 12 cm and 3 cm edges lay in one line, which is not the best unfolding."
+    },
+    {
+      "key": "E",
+      "text": "17 cm",
+      "correct": false,
+      "misconception": "I made the ant walk along three edges of the box."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-17",
+    "secondary": [
+      "GEO-10",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Unfold the two faces the ant crosses into one flat rectangle.",
+    "A shortest path over two faces becomes a straight line once those faces are unfolded flat. There are three essentially different unfoldings; compare all of them and keep the smallest diagonal.",
+    "The unfoldings give rectangles 12 by 5, 14 by 3 and 15 by 2. Find each diagonal."
+  ],
+  "solutions": {
+    "reliable": "The ant crosses two adjacent faces. Unfolded, they form a rectangle, and the shortest path is its diagonal. Pairing the edges in three ways gives rectangles 12 by (3 + 2), (12 + 2) by 3 and (12 + 3) by 2, with diagonals √169 = 13, √205 and √229. The smallest is 13 cm. The straight line through the box, √157, is shorter but not allowed. The transferable idea: unfold the surface, then compare every unfolding, because the best one joins the two shorter edges.",
+    "elegant": "Always put the two shortest edges side by side: the diagonal of a 12 by 5 rectangle is 13."
+  },
+  "whyOnTest": "Surface paths test unfolding a solid into the plane and checking every unfolding, with the through-the-box length as the classic trap.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

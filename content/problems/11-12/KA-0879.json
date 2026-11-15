@@ -1,0 +1,68 @@
+{
+  "id": "KA-0879",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A ladder 6.5 m long leans against a vertical wall, with its foot on level ground 1.6 m from the wall. The foot slides 1.7 m further away from the wall while the top stays against the wall. How far down the wall does the top slide?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0.7 m",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "1.7 m",
+      "correct": false,
+      "misconception": "I assumed the top slides down exactly as far as the foot slides out, without drawing the two triangles."
+    },
+    {
+      "key": "C",
+      "text": "3 m",
+      "correct": false,
+      "misconception": "I subtracted the new distance of the foot from the wall, 3.3 m, from the old height, 6.3 m, mixing up which side of the triangle is which."
+    },
+    {
+      "key": "D",
+      "text": "5.6 m",
+      "correct": false,
+      "misconception": "I found the new height of the top, 5.6 m, and gave that instead of how far the top moved."
+    },
+    {
+      "key": "E",
+      "text": "6.3 m",
+      "correct": false,
+      "misconception": "I found the original height of the top, 6.3 m, and stopped there."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "GEO-06",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Draw the ladder twice: before the slide and after it.",
+    "Each position makes a right triangle with the ladder as the longest side. Find the height of the top in each picture with Pythagoras, then compare the two heights.",
+    "Work in decimetres to avoid decimals. Before the slide the height is the square root of (65 squared - 16 squared); after it the foot is 33 dm from the wall."
+  ],
+  "solutions": {
+    "reliable": "Work in decimetres: the ladder is 65 dm and the foot starts 16 dm from the wall. Before the slide the top is at the square root of (4225 - 256) = the square root of 3969 = 63 dm. After it the foot is 16 + 17 = 33 dm out, so the top is at the square root of (4225 - 1089) = the square root of 3136 = 56 dm. The top slides 63 - 56 = 7 dm, that is 0.7 m. The transferable idea: a quick sketch of each state turns a wordy motion problem into two familiar right triangles.",
+    "elegant": "Both triangles come from Pythagorean triples with longest side 65: 16, 63, 65 and 33, 56, 65. The top falls 0.7 m while the foot moves 1.7 m, so the two ends clearly do not move by the same amount."
+  },
+  "whyOnTest": "Drawing both positions shows the top and the foot move by different amounts, which is the trap behind the most common wrong answer.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

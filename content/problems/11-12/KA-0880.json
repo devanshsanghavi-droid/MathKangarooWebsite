@@ -1,0 +1,68 @@
+{
+  "id": "KA-0880",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A strip of squares 2 rows high and 10 columns long is to be covered exactly by 1 by 2 dominoes, each lying either horizontally or vertically. In how many different ways can this be done?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted the all-vertical tiling plus the 9 places for one pair of stacked horizontal dominoes, and missed tilings with two or more such pairs."
+    },
+    {
+      "key": "B",
+      "text": "32",
+      "correct": false,
+      "misconception": "I split the strip into five 2 by 2 squares and tiled each in 2 ways, missing tilings where a horizontal pair straddles two of my squares."
+    },
+    {
+      "key": "C",
+      "text": "55",
+      "correct": false,
+      "misconception": "I found the pattern 1, 2, 3, 5, 8, ... but stopped one place early, giving the answer for a strip 9 columns long."
+    },
+    {
+      "key": "D",
+      "text": "144",
+      "correct": false,
+      "misconception": "I found the pattern 1, 2, 3, 5, 8, ... but went one place too far, giving the answer for a strip 11 columns long."
+    },
+    {
+      "key": "E",
+      "text": "89",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "PAT-05",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Count the tilings for strips 1, 2, 3 and 4 columns long first.",
+    "Look at the leftmost column: it is covered either by one vertical domino or by two stacked horizontal dominoes. Each choice leaves a shorter strip, which gives a rule linking each count to the two before it.",
+    "The counts for lengths 1, 2, 3 and 4 are 1, 2, 3 and 5. Each new count is the sum of the previous two."
+  ],
+  "solutions": {
+    "reliable": "Let t(n) be the number of tilings of a 2 by n strip, so t(1) = 1 and t(2) = 2. The left end is either one vertical domino, leaving a 2 by (n - 1) strip, or two stacked horizontal dominoes, leaving a 2 by (n - 2) strip, so t(n) = t(n - 1) + t(n - 2). The counts run 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, so t(10) = 89. The transferable idea: when a count is too big to list, work out the smallest cases, see how each is built from the ones before, and let that rule do the work.",
+    "elegant": "Casework on the number k of stacked horizontal pairs: the strip is then a row of k pairs and 10 - 2k vertical dominoes in some order, which gives (10 choose 0) + (9 choose 1) + (8 choose 2) + (7 choose 3) + (6 choose 4) + (5 choose 5) = 1 + 9 + 28 + 35 + 15 + 1 = 89."
+  },
+  "whyOnTest": "Listing 89 tilings is hopeless, but four small cases reveal the rule, which is exactly the habit of trying small cases first.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

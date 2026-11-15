@@ -1,0 +1,68 @@
+{
+  "id": "KA-0654",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A large circle has radius 6 cm. Inside it, two circles of radius 3 cm touch each other at the centre of the large circle, and each touches the large circle. A small circle is drawn inside the large circle so that it touches the large circle and both 3 cm circles. What is its radius, in cm?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I made the small circle fill the whole gap from the centre of the large circle up to its edge, a diameter of 6, without checking that it would then overlap the 3 cm circles."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found the radius correctly and then doubled it, giving the diameter."
+    },
+    {
+      "key": "C",
+      "text": "1.5",
+      "correct": false,
+      "misconception": "I set the height of the small circle's centre equal to 3 plus its radius, forgetting that the line between the two centres is slanted, so it needs Pythagoras."
+    },
+    {
+      "key": "D",
+      "text": "3.5",
+      "correct": false,
+      "misconception": "I used 6 cm, the large radius, as the sideways distance between the small circle's centre and a 3 cm circle's centre, instead of 3 cm."
+    },
+    {
+      "key": "E",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-07",
+    "secondary": [
+      "CFT-02",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Join the centres of circles that touch.",
+    "When two circles touch, the distance between their centres is the sum of the radii, or the difference if one is inside the other. Call the small radius r and look for a right-angled triangle.",
+    "The small centre is 6 - r above the large centre, 3 cm sideways from a 3 cm circle's centre, and 3 + r away from it."
+  ],
+  "solutions": {
+    "reliable": "Call the small radius r. Its centre lies straight above the centre O of the large circle, because the picture is symmetric. It touches the large circle from inside, so its centre is 6 - r from O. It touches a 3 cm circle from outside, whose centre is 3 cm to the side of O, so the distance between those two centres is 3 + r. These form a right-angled triangle with legs 3 and 6 - r and slanted side 3 + r, so 9 + (6 - r) x (6 - r) = (3 + r) x (3 + r). Expanding, 45 - 12r = 9 + 6r, so 18r = 36 and r = 2 cm. The transferable idea: touching circles turn into distances between centres, and a right angle from symmetry gives the equation.",
+    "elegant": null
+  },
+  "whyOnTest": "Touching circles are solved by joining centres, and the distractors come from guessing the size from the picture or treating a slanted distance as straight.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

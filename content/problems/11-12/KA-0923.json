@@ -1,0 +1,68 @@
+{
+  "id": "KA-0923",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Two pumps working together can empty a flooded basement in 6 hours. The larger pump alone would take 10 hours. Both pumps run for 2 hours, then the larger one breaks down. How many more hours does the smaller pump need to finish the job?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20/3",
+      "correct": false,
+      "misconception": "I worked out that one third of the job was done, but then finished the remaining two thirds at the larger pump's rate."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I gave the total time from the start, 2 + 10, instead of the extra hours."
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": false,
+      "misconception": "I found the smaller pump's time for the whole job, 15 hours, and subtracted the 2 hours already worked."
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": false,
+      "misconception": "I found the smaller pump's time for the whole job and forgot that part of the basement was already emptied."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-04",
+    "secondary": [
+      "NUM-09",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Work out what fraction of the job each pump does per hour.",
+    "Find the smaller pump's rate by subtracting the larger pump's rate from the combined rate. Then find how much is done after 2 hours together, and divide what remains by the rate still working.",
+    "The smaller pump does 1/6 - 1/10 = 1/15 of the job per hour, and 2/6 of the job is done after 2 hours."
+  ],
+  "solutions": {
+    "reliable": "Together the pumps do 1/6 of the job per hour and the larger alone does 1/10, so the smaller does 1/6 - 1/10 = 5/30 - 3/30 = 1/15 per hour. After 2 hours together, 2/6 = 1/3 of the job is done and 2/3 remains. At 1/15 per hour this takes (2/3) / (1/15) = 10 hours. The transferable idea: rates add and subtract, so find each worker's rate, then divide the remaining work by the rate still working.",
+    "elegant": "Call the job 30 units: together the pumps clear 5 units per hour, the larger 3 and the smaller 2. Two hours together clear 10 units, and the smaller pump clears the remaining 20 at 2 per hour in 10 hours."
+  },
+  "whyOnTest": "Two stages of work at different rates, and a question about extra time; each slip in a rate or in what is asked gives a choice.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

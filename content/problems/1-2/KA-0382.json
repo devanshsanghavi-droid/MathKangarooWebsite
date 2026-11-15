@@ -1,0 +1,68 @@
+{
+  "id": "KA-0382",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Tile squares grow: 1 tile, then 2 rows of 2, then 3 rows of 3, and so on. How many tiles are added to go from the 4th square to the 5th?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I added just one new row of 5 tiles."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I added a new row of 5 and a new column of 5, and counted the corner tile twice."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I gave how many tiles are in the 4th square."
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": false,
+      "misconception": "I gave how many tiles are in the 5th square instead of how many are added."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-04",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Draw the 4th square, then make it one bigger.",
+    "To grow a square by one, you add a new row along the bottom and a new column down the side. Be careful with the tile in the corner where they meet.",
+    "The 4th square has 4 rows of 4. Add a column of 4 down the side and a row of 5 along the bottom."
+  ],
+  "solutions": {
+    "reliable": "The 4th square is 4 rows of 4 tiles, which is 16 tiles. The 5th square is 5 rows of 5 tiles, which is 25 tiles. So 25 - 16 = 9 tiles are added. Check by drawing: a column of 4 down the side and a row of 5 along the bottom is 4 + 5 = 9. The idea to keep: growing a square adds an L shape, so count its corner once.",
+    "elegant": "The new tiles form an L: one arm of 4 and one arm of 5, so 4 + 5 = 9. The idea to keep: each step adds the old side plus the new side."
+  },
+  "whyOnTest": "Growing square patterns need the picture, not just the numbers, and the corner tile counted twice is the classic slip.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

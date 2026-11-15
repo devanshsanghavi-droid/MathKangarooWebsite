@@ -1,0 +1,67 @@
+{
+  "id": "KA-0756",
+  "band": "9-10",
+  "points": 3,
+  "statement": "ABCDEFGH is a regular octagon. What is the size of angle ACB?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "22.5°",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "30°",
+      "correct": false,
+      "misconception": "I used the 120 degree angle of a regular hexagon at B, so the two base angles came to 30 degrees each."
+    },
+    {
+      "key": "C",
+      "text": "45°",
+      "correct": false,
+      "misconception": "I used the octagon's exterior angle, 45 degrees, as the answer."
+    },
+    {
+      "key": "D",
+      "text": "67.5°",
+      "correct": false,
+      "misconception": "I put the exterior angle, 45 degrees, at B and shared the remaining 135 degrees equally between the other two angles."
+    },
+    {
+      "key": "E",
+      "text": "135°",
+      "correct": false,
+      "misconception": "I gave the interior angle of the octagon at B, which is the angle the question did not ask for."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Triangle ABC has two equal sides.",
+    "First find each interior angle of a regular octagon from its exterior angles. Triangle ABC is isosceles because AB and BC are sides of the octagon, so the other two angles are equal.",
+    "Each exterior angle is 360 / 8 = 45 degrees, so the angle at B is 135 degrees."
+  ],
+  "solutions": {
+    "reliable": "The exterior angles of a regular octagon are 360 / 8 = 45 degrees, so each interior angle is 135 degrees. In triangle ABC, AB = BC, so the angles at A and C are equal and share 180 - 135 = 45 degrees: each is 22.5 degrees. The transferable idea: regular polygons hand you isosceles triangles for free, and the angle sum does the rest.",
+    "elegant": "Angle ACB is an inscribed angle standing on side AB, which subtends 45 degrees at the centre, so it is half of 45."
+  },
+  "whyOnTest": "A short angle chase in a regular polygon, checking that you find the interior angle correctly and then use the isosceles triangle.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

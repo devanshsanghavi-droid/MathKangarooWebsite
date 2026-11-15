@@ -1,0 +1,68 @@
+{
+  "id": "KA-0496",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A clock with hands but no numbers hangs opposite a mirror. In the mirror, the clock seems to show exactly 4 o'clock. What time is it really?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2 o'clock",
+      "correct": false,
+      "misconception": "I flipped the clock top to bottom instead of left to right."
+    },
+    {
+      "key": "B",
+      "text": "4 o'clock",
+      "correct": false,
+      "misconception": "I thought a mirror shows the time without changing it."
+    },
+    {
+      "key": "C",
+      "text": "9 o'clock",
+      "correct": false,
+      "misconception": "I counted back 4 from 12 but counted the 12 itself as the first step."
+    },
+    {
+      "key": "D",
+      "text": "10 o'clock",
+      "correct": false,
+      "misconception": "I turned the clock upside down, which moves each hand to the opposite side."
+    },
+    {
+      "key": "E",
+      "text": "8 o'clock",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-09",
+    "secondary": [
+      "GEO-18",
+      "GEO-08"
+    ]
+  },
+  "hints": [
+    "A mirror swaps left and right, but keeps the 12 at the top.",
+    "Picture the hour hand being reflected in the line from 12 to 6. A hand that is some hours past 12 on one side ends up the same number of hours before 12 on the other.",
+    "In the mirror the hour hand is 4 hours clockwise from 12. On the real clock it is 4 hours anticlockwise from 12."
+  ],
+  "solutions": {
+    "reliable": "The mirror swaps left and right, so the line from 12 to 6 stays put and everything else flips across it. The minute hand stays on 12. An hour hand 4 hours clockwise from 12 in the mirror is really 4 hours anticlockwise from 12, which is 8. So it is really 8 o'clock. The transferable idea: a left-right reflection sends hour h to 12 - h.",
+    "elegant": "Mirror time and real time always add up to 12 hours on the hour: 4 + 8 = 12. Check with an easy case: at 6 o'clock the hand points straight down and looks the same in a mirror, and 6 + 6 = 12. The transferable idea: test a rule on a case you can see."
+  },
+  "whyOnTest": "Reflections on a clock face: knowing which line stays fixed in a mirror and what that does to the hour hand.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

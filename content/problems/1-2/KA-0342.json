@@ -1,0 +1,67 @@
+{
+  "id": "KA-0342",
+  "band": "1-2",
+  "points": 3,
+  "statement": "Jo tosses a coin two times. Each toss lands heads or tails. How many different results are possible, in order, such as heads then tails?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted the two sides of the coin and forgot there are two tosses."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted heads then tails and tails then heads as the same result."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted every branch in my tree: 2 for the first toss and 4 for the second."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I doubled three times, as if the coin had been tossed three times."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Draw a tree: first toss, then second toss.",
+    "Use a tree diagram. The first toss splits into two branches, and each of those splits again for the second toss. The results are the ends of the branches.",
+    "If the first toss is heads, the second can be heads or tails. The same happens if the first toss is tails. Count the ends."
+  ],
+  "solutions": {
+    "reliable": "The results are heads then heads, heads then tails, tails then heads and tails then tails. That is 4 results. The idea to keep: a tree diagram shows every result once, and you count the ends of the last branches, not every branch.",
+    "elegant": "Each toss has 2 outcomes and every first toss can go with every second toss, so there are 2 x 2 = 4 results."
+  },
+  "whyOnTest": "Tree diagrams turn a two-step choice into a picture, and counting the branch ends rather than every branch is the habit tested.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

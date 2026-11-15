@@ -1,0 +1,67 @@
+{
+  "id": "KA-0349",
+  "band": "1-2",
+  "points": 4,
+  "statement": "How many two-digit numbers have digits that add up to 5?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I found 14 and 23 and stopped, forgetting that turning the digits round makes new numbers."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted the pairs of digits, 1 and 4, 2 and 3, 5 and 0, instead of the numbers they make."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I forgot 50 because I did not think of using 0 as a digit."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I also counted 05, but that is not a two-digit number."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "Try each tens digit in turn, starting with 1.",
+    "List in order of the tens digit: 1, 2, 3, and so on. For each tens digit there is at most one ones digit that makes the total 5. Remember a two-digit number cannot start with 0.",
+    "Tens digit 1 needs a 4, tens digit 2 needs a 3. Keep going up to tens digit 5, which needs a 0."
+  ],
+  "solutions": {
+    "reliable": "Go through the tens digit in order. 1 needs 4: 14. 2 needs 3: 23. 3 needs 2: 32. 4 needs 1: 41. 5 needs 0: 50. A tens digit bigger than 5 is too big, and 0 cannot be a tens digit. So there are 5 numbers. The idea to keep: list in a fixed order so no number is missed or counted twice.",
+    "elegant": null
+  },
+  "whyOnTest": "Listing with a system catches the easy-to-miss cases like 50, and the question rewards order over guessing.",
+  "estSeconds": 65,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

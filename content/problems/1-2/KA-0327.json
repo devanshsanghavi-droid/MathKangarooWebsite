@@ -1,0 +1,65 @@
+{
+  "id": "KA-0327",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Tom threads 14 beads in a row. The colours repeat: red, red, blue, red, red, blue, and so on. How many of the 14 beads are red?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the blue beads instead of the red ones."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": false,
+      "misconception": "I thought half of the beads are red, but each group of three has 2 red beads and only 1 blue."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the 4 full groups of three and forgot the 2 beads at the end, which are both red."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "14",
+      "correct": false,
+      "misconception": "I counted all the beads, the blue ones as well."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": []
+  },
+  "hints": [
+    "Which part of the pattern repeats?",
+    "The part red, red, blue repeats. Write the 14 beads as R and B in groups of three, and watch out for any beads left over at the end.",
+    "Four groups of three use 12 beads, and each group has 2 red beads. Then 2 more beads are left. What colours are they?"
+  ],
+  "solutions": {
+    "reliable": "The pattern repeats in groups of three: red, red, blue. Four groups use 12 beads, and with 2 red beads in each group they have 8 red beads. The 13th and 14th beads start a new group, so they are red and red. That makes 8 + 2 = 10 red beads. The idea to keep: find the part that repeats, then check the beads left over at the end.",
+    "elegant": "Only every third bead is blue: the 3rd, 6th, 9th and 12th. That is 4 blue beads, so 14 take away 4 leaves 10 red beads. The idea to keep: sometimes it is quicker to count what is not asked about and take it away."
+  },
+  "whyOnTest": "Continuing a repeating pattern tests finding the part that repeats and not forgetting the leftover beads at the end.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

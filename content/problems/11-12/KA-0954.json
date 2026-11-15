@@ -1,0 +1,68 @@
+{
+  "id": "KA-0954",
+  "band": "11-12",
+  "points": 3,
+  "statement": "The letters a, b and c stand for any three integers. Which of these expressions is always even, whatever the three integers are?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "(a + b)(b + c)(c + a)",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "a + b + c",
+      "correct": false,
+      "misconception": "I tested 1, 2 and 3, got the even total 6, and did not try three odd numbers such as 1, 1 and 1."
+    },
+    {
+      "key": "C",
+      "text": "abc",
+      "correct": false,
+      "misconception": "I believed that among any three integers at least one must be even, which fails for 1, 3 and 5."
+    },
+    {
+      "key": "D",
+      "text": "ab + bc + ca",
+      "correct": false,
+      "misconception": "I thought that because each letter appears in two of the products, the sum is doubled up and must be even, but 1, 1, 1 gives 3."
+    },
+    {
+      "key": "E",
+      "text": "a^2 + b^2 + c^2",
+      "correct": false,
+      "misconception": "I thought squaring makes a number even, as with 2^2 and 4^2, and never tried an odd square such as 1^2 = 1."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-05",
+    "secondary": [
+      "CNT-17",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Only whether each number is odd or even matters here.",
+    "Try three odd numbers to rule out choices quickly. For any survivor, ask what must happen when three integers are sorted into odd and even.",
+    "Among three integers, two must have the same parity, and the sum of two numbers of the same parity is even. Which expression has such a sum as a factor?"
+  ],
+  "solutions": {
+    "reliable": "Try a = b = c = 1: then a + b + c = 3, abc = 1, ab + bc + ca = 3 and a^2 + b^2 + c^2 = 3, all odd, so those four are ruled out. For (a + b)(b + c)(c + a): among three integers two have the same parity, so one of the three brackets is a sum of two numbers of equal parity, which is even. One even factor makes the whole product even. The transferable idea: among any three integers two share a parity, so the sum of some pair is always even.",
+    "elegant": "One counterexample, 1, 1, 1, removes four choices at once, so the answer is the only expression left; the pigeonhole argument just confirms it."
+  },
+  "whyOnTest": "Testing parity with a single all-odd case is the fastest elimination, and the correct choice rests on two of three integers always sharing a parity.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

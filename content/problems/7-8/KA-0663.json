@@ -1,0 +1,67 @@
+{
+  "id": "KA-0663",
+  "band": "7-8",
+  "points": 4,
+  "statement": "At each of three shops, Lina spends half of the money she has and then 2 euros more. After the third shop she has 1 euro left. How many euros did she have before the first shop?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "16",
+      "correct": false,
+      "misconception": "I worked backwards through only two of the three shops."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I worked backwards through only the last shop."
+    },
+    {
+      "key": "C",
+      "text": "22",
+      "correct": false,
+      "misconception": "I undid each shop by doubling first and then adding 2, which undoes the steps in the wrong order."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I ignored the extra 2 euros and just doubled three times."
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-08",
+    "secondary": [
+      "MOD-06"
+    ]
+  },
+  "hints": [
+    "Start from the 1 euro at the end.",
+    "Work backwards. At each shop she halved her money and then subtracted 2, so undo the last operation first: add 2, then double. Repeat for each shop in reverse order.",
+    "Before the third shop she had (1 + 2) x 2 = 6 euros. Repeat this step twice more."
+  ],
+  "solutions": {
+    "reliable": "Undo each shop by adding 2 and then doubling. Before the third shop: (1 + 2) x 2 = 6. Before the second: (6 + 2) x 2 = 16. Before the first: (16 + 2) x 2 = 36. Check forwards: 36 becomes 18 - 2 = 16, then 8 - 2 = 6, then 3 - 2 = 1. The transferable idea: to work backwards, reverse both the operations and their order.",
+    "elegant": null
+  },
+  "whyOnTest": "Working backwards is the fastest route when the end state is known, and the trap is undoing the operations in the wrong order.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-0614",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A triangle has two sides of length 5 cm and 12 cm. The third side is a whole number of centimetres. How many different lengths are possible for the third side?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I assumed the 12 cm side had to be the longest side."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I allowed the third side to be 7 cm, but then 5 + 7 just equals 12 and the triangle is flat."
+    },
+    {
+      "key": "D",
+      "text": "11",
+      "correct": false,
+      "misconception": "I allowed both 7 cm and 17 cm, where the triangle collapses into a straight line."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I only checked that the third side is shorter than 5 + 12 = 17."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-06",
+    "secondary": [
+      "CNT-01",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "How short and how long can the third side be?",
+    "In any triangle, each side is shorter than the other two put together. Use this twice: once with the third side as the longest, and once with the 12 cm side as the longest.",
+    "The third side must be more than 12 - 5 = 7 and less than 12 + 5 = 17."
+  ],
+  "solutions": {
+    "reliable": "The third side x must satisfy x < 5 + 12 = 17, and also 12 < 5 + x, that is x > 7. The whole numbers from 8 to 16 work, which is 9 lengths. The transferable idea: the third side of a triangle lies strictly between the difference and the sum of the other two sides.",
+    "elegant": null
+  },
+  "whyOnTest": "The triangle inequality, with the boundary cases as traps: a third side equal to the sum or the difference gives a flat triangle, not a real one.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

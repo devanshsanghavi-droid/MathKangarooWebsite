@@ -1,0 +1,68 @@
+{
+  "id": "KA-0860",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Each of the numbers 1, 2, 3, 4, 5, 6, 7, 8, 9 is given either a plus sign or a minus sign, and the nine signed numbers are added. Which of these totals is possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "13",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed the signs can always be chosen to cancel completely, as they can for 1 to 8."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I only checked that 2 is small enough to reach, not whether it has the right odd or even type."
+    },
+    {
+      "key": "D",
+      "text": "44",
+      "correct": false,
+      "misconception": "I thought switching the sign of 1 changes the total by 1, taking 45 down to 44."
+    },
+    {
+      "key": "E",
+      "text": "47",
+      "correct": false,
+      "misconception": "I knew the total had to be odd but forgot it can never be bigger than 1 + 2 + ... + 9 = 45."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "LOG-05",
+      "LOG-06"
+    ]
+  },
+  "hints": [
+    "Start with every sign plus. What is the total?",
+    "Compare the all-plus total with what happens when one sign is switched. Ask how the total changes and whether that change can ever alter whether the total is odd or even. Also find the largest total possible.",
+    "All plus gives 45. Switching the sign of a number k lowers the total by 2k, an even number, so every total is odd and at most 45."
+  ],
+  "solutions": {
+    "reliable": "With all signs plus the total is 45. Switching the sign of a number k changes the total by 2k, which is even, so every possible total is odd, and none exceeds 45. That rules out 0, 2 and 44 (even) and 47 (too big). 13 is reachable: 45 - 13 = 32 = 2 times 16, so switch numbers adding to 16, for example 7 and 9: 1 + 2 + 3 + 4 + 5 + 6 - 7 + 8 - 9 = 13. The transferable idea: when a move always changes a total by an even amount, the parity of the total never changes.",
+    "elegant": null
+  },
+  "whyOnTest": "Parity of a sum is the cheapest invariant there is, and it eliminates most answer choices without any trial and error.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

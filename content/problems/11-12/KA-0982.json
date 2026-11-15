@@ -1,0 +1,68 @@
+{
+  "id": "KA-0982",
+  "band": "11-12",
+  "points": 3,
+  "statement": "The mean score of a class on a test was 70. The five highest scorers had a mean of 90. The mean of the rest of the class was 66. How many students are in the class?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I divided the 24-point gap between the top five and the rest by the 4-point gap between the rest and the class mean."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I took the 20-point gap between the top five's mean and the class mean as the number of students."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I found how many students were left after the top five were removed and gave that."
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "120",
+      "correct": false,
+      "misconception": "I reached 4n = 120 and forgot to divide by 4."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-08",
+    "secondary": [
+      "NUM-15",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Compare each group's mean with the class mean of 70.",
+    "A whole-class mean balances its parts: the total amount by which the top five sit above 70 must equal the total amount by which the others sit below 70.",
+    "The top five are each 20 above the mean, 100 in all. Each of the others is 4 below it."
+  ],
+  "solutions": {
+    "reliable": "Let n be the number of students. Writing the total score two ways gives 70n = 5 x 90 + 66(n - 5), so 70n = 450 + 66n - 330, which gives 4n = 120 and n = 30. The transferable idea: a whole-group mean is a weighted mean of the group means, so write the total in two ways and compare.",
+    "elegant": "Balance about the mean: the top five are 20 points above 70 each, a surplus of 100. Each other student is 4 points below, so there are 100 / 4 = 25 of them, and the class has 25 + 5 = 30 students."
+  },
+  "whyOnTest": "The balancing view makes this quick, and the trap is giving the 25 students of the second group instead of the whole class.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

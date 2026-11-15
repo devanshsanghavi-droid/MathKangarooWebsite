@@ -1,0 +1,67 @@
+{
+  "id": "KA-0702",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A rectangular water tank measures 2 m long, 1 m wide and 50 cm deep. It is filled using a jug that holds 2.5 litres. How many jugfuls of water are needed to fill the tank? (1 litre = 1000 cubic centimetres.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "40",
+      "correct": false,
+      "misconception": "I changed 50 cm into 0.05 m instead of 0.5 m, so the tank came out ten times too small."
+    },
+    {
+      "key": "B",
+      "text": "400",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I changed cubic metres into cubic centimetres by multiplying by 100 x 100, as for square units, instead of 100 x 100 x 100."
+    },
+    {
+      "key": "D",
+      "text": "2500",
+      "correct": false,
+      "misconception": "I multiplied the 1000 litres by 2.5 instead of dividing by the size of the jug."
+    },
+    {
+      "key": "E",
+      "text": "40 000",
+      "correct": false,
+      "misconception": "I used 50 for the depth without changing the centimetres into metres."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-07",
+    "secondary": [
+      "MOD-10"
+    ]
+  },
+  "hints": [
+    "Put every length in centimetres before you multiply anything.",
+    "Unit conversion: convert the lengths first and find the volume in cubic centimetres, then change it into litres using the conversion given, and only then divide by the jug.",
+    "In centimetres the tank is 200 by 100 by 50, which is 1 000 000 cubic centimetres."
+  ],
+  "solutions": {
+    "reliable": "In centimetres the tank is 200 by 100 by 50, so its volume is 200 x 100 x 50 = 1 000 000 cubic centimetres. That is 1 000 000 / 1000 = 1000 litres. Each jug holds 2.5 litres, so 1000 / 2.5 = 400 jugfuls are needed. The transferable idea: convert lengths before multiplying them, because one cubic metre is 100 x 100 x 100 cubic centimetres.",
+    "elegant": "One cubic metre is exactly 1000 litres. The tank is 2 x 1 x 0.5 = 1 cubic metre, so it holds 1000 litres, which is 400 jugs of 2.5 litres."
+  },
+  "whyOnTest": "Volume units cube the conversion factor, and each wrong choice comes from converting a length, an area or a volume by the wrong factor.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

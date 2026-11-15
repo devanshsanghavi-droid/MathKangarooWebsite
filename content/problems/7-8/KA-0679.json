@@ -1,0 +1,67 @@
+{
+  "id": "KA-0679",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Fern, Gus, Hana and Ivo each do a different one of these sports: chess, judo, rowing and tennis. Hana plays chess. Gus walks to training with the rower and the judo player. Fern does not play tennis. Ivo does not row. Who does judo, and who rows?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Judo: Ivo, rowing: Fern",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "Judo: Gus, rowing: Fern",
+      "correct": false,
+      "misconception": "I used Gus's clue to rule out only rowing for him, not judo, so I gave Gus the judo and Ivo the tennis."
+    },
+    {
+      "key": "C",
+      "text": "Judo: Fern, rowing: Gus",
+      "correct": false,
+      "misconception": "I read 'Gus walks to training with the rower' as saying Gus is the rower, and then Fern was left with judo."
+    },
+    {
+      "key": "D",
+      "text": "Judo: Fern, rowing: Ivo",
+      "correct": false,
+      "misconception": "I read the clue 'Ivo does not row' the wrong way round, as 'Ivo rows', which left judo for Fern."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be decided from the clues.",
+      "correct": false,
+      "misconception": "I stopped when each clue ruled out only some sports and decided there was not enough information, without combining the clues."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-03",
+    "secondary": [
+      "LOG-01"
+    ]
+  },
+  "hints": [
+    "Find the person who has only one sport left.",
+    "Draw a grid of people against sports and cross out every pairing a clue forbids. Someone who walks with the rower and the judo player is neither of them. When a person has one sport left, it is theirs.",
+    "Hana plays chess, and Gus does neither rowing nor judo, so Gus plays tennis."
+  ],
+  "solutions": {
+    "reliable": "Hana plays chess. Gus walks with the rower and the judo player, so he is neither of them, and chess is taken, so Gus plays tennis. That leaves judo and rowing for Fern and Ivo. Ivo does not row, so Ivo does judo and Fern rows. The clue that Fern does not play tennis agrees. The transferable idea: in an elimination grid, look for a row or column with only one option left, fill it in, and repeat.",
+    "elegant": null
+  },
+  "whyOnTest": "Elimination grids test combining clues: each clue alone settles little, but crossing them off together forces every answer.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

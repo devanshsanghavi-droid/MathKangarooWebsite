@@ -1,0 +1,68 @@
+{
+  "id": "KA-0970",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A sequence starts with a(1) = 1 and a(2) = 2. After that, each term is found from the two before it by the rule a(n + 2) = (a(n + 1) + 1) / a(n). So a(3) = (2 + 1) / 1 = 3. What is the sum of the first 2026 terms?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I found that the sequence repeats and worked out the 2026th term, 1, instead of the sum of the first 2026 terms."
+    },
+    {
+      "key": "B",
+      "text": "3645",
+      "correct": false,
+      "misconception": "I found that every five terms add up to 9 and that 2026 = 5 x 405 + 1, but I forgot the one leftover term."
+    },
+    {
+      "key": "C",
+      "text": "3646",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "3654",
+      "correct": false,
+      "misconception": "I divided 2026 by 5 and rounded up to 406 full cycles, so 406 x 9 counted four terms that are not in the sum."
+    },
+    {
+      "key": "E",
+      "text": "4052",
+      "correct": false,
+      "misconception": "I noticed the terms 1, 2, 3, 2, 1 are centred on 2 and took the average term to be 2, but the average of one cycle is 9/5."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "PAT-03",
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "Work out the next few terms carefully. They stay whole numbers.",
+    "The terms go 1, 2, 3, 2, 1, 1, 2, ... Each term depends only on the two before it, so the sequence repeats once two consecutive terms repeat. Find the cycle length and the sum of one cycle.",
+    "The cycle is 1, 2, 3, 2, 1, of length 5 and sum 9. Since 2026 = 5 x 405 + 1, there is one term left over after the full cycles."
+  ],
+  "solutions": {
+    "reliable": "Compute: a(3) = (2 + 1)/1 = 3, a(4) = (3 + 1)/2 = 2, a(5) = (2 + 1)/3 = 1, a(6) = (1 + 1)/2 = 1 and a(7) = (1 + 1)/1 = 2. So a(6) and a(7) equal a(1) and a(2), and since each term depends only on the two before it, the sequence repeats with period 5: 1, 2, 3, 2, 1, 1, 2, 3, 2, 1, ... One cycle sums to 1 + 2 + 3 + 2 + 1 = 9. As 2026 = 5 x 405 + 1, the first 2026 terms are 405 full cycles plus one more term, a(2026) = a(1) = 1. The sum is 405 x 9 + 1 = 3646. The transferable idea: a rule that uses only the last two terms starts repeating as soon as a pair of consecutive terms comes back, so find the period and handle the remainder.",
+    "elegant": null
+  },
+  "whyOnTest": "A two-term rule that repeats is a recursive-pattern question in disguise: find the period, then handle the terms left over after the full cycles, which is where every distractor slips.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

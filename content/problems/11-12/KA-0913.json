@@ -1,0 +1,68 @@
+{
+  "id": "KA-0913",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Different whole numbers are chosen from 1 to 40. What is the smallest number of them that must be chosen to be certain that two of the chosen numbers differ by exactly 6?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "7",
+      "correct": false,
+      "misconception": "I sorted the numbers by their remainder on division by 6 and used 6 groups plus one, which only forces a difference that is a multiple of 6."
+    },
+    {
+      "key": "B",
+      "text": "21",
+      "correct": false,
+      "misconception": "I assumed all 40 numbers split into 20 pairs that differ by 6 and added one, but 37, 38, 39 and 40 have no partner left."
+    },
+    {
+      "key": "C",
+      "text": "22",
+      "correct": false,
+      "misconception": "I found that 22 numbers can avoid a difference of 6, but forgot to add one more to force it."
+    },
+    {
+      "key": "D",
+      "text": "23",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "35",
+      "correct": false,
+      "misconception": "I counted the 34 pairs of numbers from 1 to 40 that differ by 6 and added one, but those pairs overlap, so they are not separate boxes."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-17",
+    "secondary": [
+      "CNT-18",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "Group the numbers into chains going up in steps of 6, like 1, 7, 13.",
+    "In each chain, work out how many numbers you can take with no two of them next to each other in the chain. Then build pigeonhole boxes that do not overlap, and check an example that is one short.",
+    "Four chains have 7 numbers and allow 4 each, and two chains have 6 numbers and allow 3 each."
+  ],
+  "solutions": {
+    "reliable": "Split 1 to 40 into boxes. Pair each of 1 to 6 with the number 6 more, which is 7 to 12; pair 13 to 18 with 19 to 24 in the same way, and 25 to 30 with 31 to 36. That gives 18 pairs differing by 6, and 37, 38, 39 and 40 are left over as 4 single boxes, 22 boxes in all. If 23 numbers are chosen, two land in the same box, which must be a pair, so they differ by 6. Twenty-two numbers are not enough: 1 to 6, 13 to 18, 25 to 30 and 37 to 40 are 22 numbers, and no two of them differ by exactly 6, because numbers in the same block differ by at most 5 and numbers in different blocks differ by at least 7. So the answer is 23. The transferable idea: a pigeonhole answer needs both halves, boxes that force the property and an example one short that avoids it.",
+    "elegant": "Each chain n, n + 6, n + 12, ... can supply at most every other number without a difference of 6. The chains starting at 1, 2, 3 and 4 have 7 numbers and allow 4 each, and the chains starting at 5 and 6 have 6 numbers and allow 3 each. So at most 4 x 4 + 2 x 3 = 22 numbers avoid a difference of 6, and 23 force one."
+  },
+  "whyOnTest": "Pigeonhole needs boxes that do not overlap, and the numbers left without a partner become boxes of their own, which careless pairing misses.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

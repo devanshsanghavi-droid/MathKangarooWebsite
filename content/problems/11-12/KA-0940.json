@@ -1,0 +1,68 @@
+{
+  "id": "KA-0940",
+  "band": "11-12",
+  "points": 3,
+  "statement": "The equation x^2 - 5x - 14 = 0 has two solutions, r and s. What is r^2 + s^2?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "-3",
+      "correct": false,
+      "misconception": "I used (r + s)^2 - 2rs but took rs to be +14 instead of -14."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": false,
+      "misconception": "I found the larger solution, 7, and stopped there."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I squared the sum r + s = 5 and took that as the answer."
+    },
+    {
+      "key": "D",
+      "text": "49",
+      "correct": false,
+      "misconception": "I squared only the larger solution and forgot the other one."
+    },
+    {
+      "key": "E",
+      "text": "53",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-01",
+    "secondary": [
+      "MOD-01",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Re-read the question: it wants neither solution on its own.",
+    "Either find both solutions and square each, or use the sum and product of the solutions with an identity that turns them into a sum of squares. Doing both checks the result.",
+    "The equation factors as (x - 7)(x + 2) = 0. Alternatively r + s = 5 and rs = -14."
+  ],
+  "solutions": {
+    "reliable": "Factor: x^2 - 5x - 14 = (x - 7)(x + 2), so the solutions are 7 and -2. Then r^2 + s^2 = 49 + 4 = 53. Check: r + s = 5 and rs = -14, so (r + s)^2 - 2rs = 25 + 28 = 53. The transferable idea: before answering, re-read what is being asked; finding the roots is only a step here.",
+    "elegant": "r^2 + s^2 = (r + s)^2 - 2rs = 25 - 2(-14) = 53, without finding the roots."
+  },
+  "whyOnTest": "Many choices are intermediate results; this tests whether you answer the exact quantity asked for rather than a step on the way.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

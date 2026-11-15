@@ -1,0 +1,68 @@
+{
+  "id": "KA-0682",
+  "band": "7-8",
+  "points": 5,
+  "statement": "What is the remainder when 3 to the power 51, the product of 51 threes, is divided by 7?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I divided the power 51 by 7 and gave that remainder, 2, instead of working with 3 to the power 51."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found that 51 is 3 more than a multiple of 6 and gave the position 3 instead of the remainder at that position."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted one step too far along the cycle 3, 2, 6, 4, 5, 1 and landed on 4."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": false,
+      "misconception": "I worked out the last digit of 3 to the power 51, which is 7, instead of the remainder on dividing by 7."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "PAT-03",
+      "NUM-07"
+    ]
+  },
+  "hints": [
+    "Find the remainders of 3, 9, 27, ... when they are divided by 7.",
+    "Each remainder comes from the one before by multiplying by 3 and taking the remainder again, so the remainders must repeat in a cycle. Find the length of the cycle and where the 51st power falls in it.",
+    "The remainders go 3, 2, 6, 4, 5, 1 and then repeat, a cycle of length 6."
+  ],
+  "solutions": {
+    "reliable": "Multiply by 3 and take the remainder on division by 7 each time: 3, then 9 gives 2, then 6, then 18 gives 4, then 12 gives 5, then 15 gives 1. After that the cycle 3, 2, 6, 4, 5, 1 repeats every 6 powers. Since 51 = 6 x 8 + 3, the 51st power has the same remainder as the 3rd power, which is 6. The transferable idea: remainders of powers always cycle, so find the cycle and reduce the power by its length.",
+    "elegant": "3 to the power 3 is 27, which is one less than 28, a multiple of 7. So each block of three 3s leaves remainder 6, which behaves like -1. The 51 threes make 17 such blocks, and 17 copies of -1 multiply to -1, so the remainder is 7 - 1 = 6."
+  },
+  "whyOnTest": "Remainders of big powers test spotting a repeating cycle, and the traps give the cycle position or mix it up with the last digit.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

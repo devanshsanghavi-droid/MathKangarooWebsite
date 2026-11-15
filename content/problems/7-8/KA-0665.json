@@ -1,0 +1,67 @@
+{
+  "id": "KA-0665",
+  "band": "7-8",
+  "points": 4,
+  "statement": "The whole numbers 1, 2, 3, ... are written in rows. Row 1 holds 1 number, row 2 holds the next 2 numbers, row 3 holds the next 3 numbers, and so on. What is the first number in row 20?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "190",
+      "correct": false,
+      "misconception": "I added up the lengths of rows 1 to 19 but forgot to add 1, so I gave the last number of row 19."
+    },
+    {
+      "key": "B",
+      "text": "210",
+      "correct": false,
+      "misconception": "I added up the lengths of rows 1 to 20, which gives the last number of row 20."
+    },
+    {
+      "key": "C",
+      "text": "191",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "211",
+      "correct": false,
+      "misconception": "I added up the lengths of rows 1 to 20 and then added 1, which is the start of row 21."
+    },
+    {
+      "key": "E",
+      "text": "381",
+      "correct": false,
+      "misconception": "I added the row lengths 1 to 19 as 19 x 20 without halving, and then added 1."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-06",
+    "secondary": [
+      "PAT-04"
+    ]
+  },
+  "hints": [
+    "What is the last number in each row?",
+    "The last number in a row equals how many numbers have been written so far. Use the formula for the sum of the first few whole numbers, then step to the next number.",
+    "Rows 1 to 19 hold 1 + 2 + ... + 19 = 19 x 20 / 2 numbers."
+  ],
+  "solutions": {
+    "reliable": "The last number in row n is 1 + 2 + ... + n, because that is how many numbers have been written. Rows 1 to 19 hold 19 x 20 / 2 = 190 numbers, so row 19 ends with 190 and row 20 starts with 191. Check on a small case: row 3 should start just after 1 + 2 = 3, at 4, which matches 1 / 2 3 / 4 5 6. The transferable idea: in a triangular table, the ends of the rows are the triangular numbers.",
+    "elegant": null
+  },
+  "whyOnTest": "Triangular arrangements are common, and every wrong choice is an off-by-one between the end of one row and the start of the next.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

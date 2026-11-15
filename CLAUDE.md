@@ -39,8 +39,10 @@ These are hard rules. If a task appears to require breaking one, stop and say so
   build on a violation. See `docs/05-DESIGN-DIRECTION.md` §2.
 - **Accessibility is not a phase.** WCAG 2.1 AA contrast, full keyboard operation, visible
   focus, `prefers-reduced-motion` respected. A component that fails this is not done.
-- **No scope creep.** Forums, leaderboards, AMC content, video courses, AI tutors: all
-  out of scope. If it isn't in `docs/00-SPEC.md`, it doesn't get built.
+- **No scope creep.** Forums, leaderboards, video courses, AI tutors: all out of scope. If it
+  isn't in `docs/00-SPEC.md` or `docs/06-V3-REDESIGN.md`, it doesn't get built. The one
+  exception, approved by the owner on 2026-11-14, is the AMC 10/12 beta under `/amc`
+  (`docs/06-V3-REDESIGN.md` §5). Its problems are original, never official AMC problems.
 
 ## Stack
 
@@ -106,6 +108,8 @@ docs/                              the specs below - read before building
 - `docs/04-CLAUDE-CODE-PROMPTS.md` - session kickoff prompts.
 - `docs/05-DESIGN-DIRECTION.md` - the v2 palette, type and unit structure. Supersedes §0.1 of
   `00-SPEC.md` and the structure of `/skill/[id]` described there.
+- `docs/06-V3-REDESIGN.md` - the v3 practice-app layout, static-route rule, and the AMC
+  beta. Supersedes page layouts in `00-SPEC.md` and shape/layout in `05`. Palette rule stands.
 
 ## Conventions
 

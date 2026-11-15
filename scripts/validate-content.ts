@@ -8,7 +8,15 @@
  */
 
 import { join } from 'node:path';
-import { validateContent, type Finding } from './lib/content-rules.ts';
+import { validateContent } from './lib/content-rules.ts';
+import { validateAmcContent } from './lib/amc-rules.ts';
+
+/** A finding from either rule set. Rule ids are namespaced, so they never collide. */
+interface Finding {
+  rule: string;
+  file: string;
+  message: string;
+}
 
 const root = process.cwd();
 
@@ -18,8 +26,14 @@ const contentDir = process.env.CONTENT_DIR ?? join(root, 'content');
 const figuresDir = process.env.FIGURES_DIR ?? join(root, 'src', 'components', 'figures');
 
 const result = validateContent({ contentDir, figuresDir });
+// The AMC beta (content/amc/) is validated by its own rule set; see scripts/lib/amc-rules.ts.
+const amc = validateAmcContent({ contentDir, figuresDir });
 
-const { findings, counts } = result;
+const { counts } = result;
+const findings: Finding[] = [...result.findings, ...amc.findings];
+const summary =
+  `${counts.skills} skills, ${counts.problems} problems, ${counts.papers} paper indexes, ` +
+  `${amc.counts.problems} AMC problems, ${amc.counts.formulas} AMC formulas`;
 
 function groupByRule(items: Finding[]): Map<string, Finding[]> {
   const map = new Map<string, Finding[]>();
@@ -32,15 +46,13 @@ function groupByRule(items: Finding[]): Map<string, Finding[]> {
 }
 
 if (findings.length === 0) {
-  console.log(
-    `content ok - ${counts.skills} skills, ${counts.problems} problems, ${counts.papers} paper indexes`,
-  );
+  console.log(`content ok - ${summary}`);
   process.exit(0);
 }
 
 console.error(
   `content validation failed - ${findings.length} problem${findings.length === 1 ? '' : 's'} ` +
-    `across ${counts.skills} skills, ${counts.problems} problems, ${counts.papers} paper indexes\n`,
+    `across ${summary}\n`,
 );
 
 for (const [rule, items] of [...groupByRule(findings)].sort(([a], [b]) => a.localeCompare(b))) {

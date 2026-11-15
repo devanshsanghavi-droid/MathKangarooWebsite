@@ -1,6 +1,7 @@
 import { POINT_VALUES, type Points } from './schemas';
 import type { MasteryState } from './mastery';
-import { attemptsFor, problemProgress, type ProgressFile } from './local-progress';
+import { amcAttemptsFor, attemptsFor, problemProgress, type ProgressFile } from './local-progress';
+import { amcPointsOf } from './amc-tier';
 
 /**
  * Whole-bank progress, for the dashboard above the problem list.
@@ -172,4 +173,61 @@ export type StatusBucket = 'todo' | 'attempted' | 'solved';
 export function bucketOf(state: MasteryState): StatusBucket {
   if (state === 'mastered' || state === 'shaky') return 'solved';
   return state === 'seen' ? 'attempted' : 'todo';
+}
+
+/* -------------------------------------------------------------------------- */
+/* AMC beta                                                                    */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Status of one AMC problem. AMC attempts are bucketed under the AM id (see
+ * local-progress.ts), so there is exactly one list to read and nothing to deduplicate.
+ */
+export function amcStatusOf(file: ProgressFile, problemId: string): MasteryState {
+  return problemProgress(amcAttemptsFor(file, problemId));
+}
+
+export interface AmcGroupProgress {
+  total: number;
+  solved: number;
+  attempted: number;
+  /** 0-1. Solved over total. */
+  share: number;
+}
+
+export interface AmcBankProgress extends AmcGroupProgress {
+  untouched: number;
+  /** Keyed by the progress points of the tier: 3 Early, 4 Middle, 5 Late. */
+  byTier: TierProgress[];
+}
+
+function groupProgress(statuses: readonly MasteryState[]): AmcGroupProgress {
+  const solved = statuses.filter((s) => bucketOf(s) === 'solved').length;
+  const attempted = statuses.filter((s) => bucketOf(s) === 'attempted').length;
+  return {
+    total: statuses.length,
+    solved,
+    attempted,
+    share: statuses.length === 0 ? 0 : solved / statuses.length,
+  };
+}
+
+/**
+ * Solved / attempted over any list of AMC problems: the whole bank, one area, one topic or
+ * one problem type. Pass the subset you want a bar for.
+ */
+export function amcBankProgress(
+  file: ProgressFile,
+  problems: ReadonlyArray<{ id: string; slot: number }>,
+): AmcBankProgress {
+  const rows = problems.map((p) => ({
+    points: amcPointsOf(p.slot),
+    status: amcStatusOf(file, p.id),
+  }));
+  const all = groupProgress(rows.map((r) => r.status));
+  const byTier = POINT_VALUES.map((points) => {
+    const group = groupProgress(rows.filter((r) => r.points === points).map((r) => r.status));
+    return { points, ...group };
+  });
+  return { ...all, untouched: all.total - all.solved - all.attempted, byTier };
 }

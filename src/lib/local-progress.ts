@@ -6,6 +6,7 @@ import {
 } from './mastery';
 import { resolveMasteryState } from './mastery-display';
 import type { Points } from './schemas';
+import { amcPointsOf, isAmcProblemId } from './amc-tier';
 
 /**
  * Progress for a student who has not signed in - which, per CLAUDE.md, is every student who
@@ -120,6 +121,61 @@ export function saveAttempt(skillIds: readonly string[], attempt: AttemptRecord)
   const next = recordAttempt(skillIds, attempt);
   writeProgress(next);
   return next;
+}
+
+/* -------------------------------------------------------------------------- */
+/* AMC beta attempts                                                           */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * AMC attempts live in the SAME `ka-progress` file, in the same AttemptRecord shape, but each
+ * one is bucketed under the AM problem id itself rather than under skill ids.
+ *
+ * Why not bucket by topic, the way Kangaroo buckets by skill? AMC topic ids share their shape
+ * with Kangaroo skill ids (GEO-01 is both a Kangaroo skill and an AMC topic), so topic buckets
+ * would silently mix the two banks' mastery. AM ids cannot collide with anything, keep the
+ * store flat, and make per-problem status a single lookup. Topic, area and type progress are
+ * derived on the page by grouping problems, which the page has to load anyway.
+ *
+ * `points` is 3 / 4 / 5 from the slot tier (Early / Middle / Late, see amc-tier.ts), so every
+ * existing reader of the file (streaks, active days, parseProgress) keeps working unchanged.
+ * Kangaroo readers that look up skill ids never see these buckets.
+ */
+export function amcProgressKey(problemId: string): string {
+  if (!isAmcProblemId(problemId)) throw new RangeError(`not an AMC problem id: ${problemId}`);
+  return problemId;
+}
+
+export interface AmcAttemptInput {
+  correct: boolean;
+  hintsUsed: number;
+  /** ISO timestamp. */
+  at: string;
+}
+
+export function recordAmcAttempt(
+  problemId: string,
+  slot: number,
+  input: AmcAttemptInput,
+  file: ProgressFile = readProgress(),
+): ProgressFile {
+  const attempt: AttemptRecord = { problemId, points: amcPointsOf(slot), ...input };
+  return recordAttempt([amcProgressKey(problemId)], attempt, file);
+}
+
+export function saveAmcAttempt(
+  problemId: string,
+  slot: number,
+  input: AmcAttemptInput,
+): ProgressFile {
+  const next = recordAmcAttempt(problemId, slot, input);
+  writeProgress(next);
+  return next;
+}
+
+/** Every attempt at one AMC problem, oldest first. */
+export function amcAttemptsFor(file: ProgressFile, problemId: string): readonly AttemptRecord[] {
+  return file.attempts[problemId] ?? [];
 }
 
 export function attemptsFor(file: ProgressFile, skillId: string): readonly AttemptRecord[] {

@@ -1,0 +1,69 @@
+{
+  "id": "AM-0220",
+  "contest": "AMC12",
+  "slot": 17,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-POWER-POINT",
+    "T-COORD"
+  ],
+  "statement": "Circle $\\omega_1$ has center $O_1$ and radius $7$; circle $\\omega_2$ has center $O_2$ and radius $5$; and $O_1O_2 = 16$. Point $P$ lies on segment $\\overline{O_1O_2}$, and the tangent segments from $P$ to $\\omega_1$ and to $\\omega_2$ have equal length. What is $PO_1$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{29}{4}$",
+      "correct": false,
+      "misconception": "I matched each radius to the wrong center, writing PO_1^2 - 25 = PO_2^2 - 49, which actually finds the distance from P to O_2."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I assumed the point with equal tangent lengths is the midpoint of O_1 O_2, which would only be true if the two radii were equal."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{35}{4}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I made the distances from P to the two circles equal, PO_1 - 7 = PO_2 - 5, but the tangent length is sqrt(PO^2 - r^2), not PO - r."
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{28}{3}$",
+      "correct": false,
+      "misconception": "I divided O_1 O_2 in the ratio of the radii, 7 : 5, which gives the center of similitude where the internal common tangents cross, not the point of equal tangents."
+    }
+  ],
+  "hints": [
+    "A tangent segment, a radius and the line to the center make a right triangle.",
+    "The squared tangent length from $P$ to a circle is $PO^2 - r^2$, the power of $P$. Set the two powers equal and solve one linear equation.",
+    "With $PO_1 = d$: $d^2 - 49 = (16 - d)^2 - 25$. The $d^2$ terms cancel."
+  ],
+  "solutions": {
+    "reliable": "The tangent from $P$ to a circle with center $O$ and radius $r$ has squared length $PO^2 - r^2$. Let $PO_1 = d$, so $PO_2 = 16 - d$. Then $d^2 - 49 = (16 - d)^2 - 25 = 256 - 32d + d^2 - 25$, so $32d = 280$ and $d = \\tfrac{35}{4}$. Check: $\\left(\\tfrac{35}{4}\\right)^2 - 49 = \\tfrac{441}{16}$ and $\\left(\\tfrac{29}{4}\\right)^2 - 25 = \\tfrac{441}{16}$, so both tangents have length $\\tfrac{21}{4}$. The idea: points with equal tangent lengths to two circles lie on their radical axis, a line perpendicular to the line of centers.",
+    "elegant": "The radical axis is where $PO_1^2 - PO_2^2 = r_1^2 - r_2^2 = 24$. Since $PO_1 + PO_2 = 16$, we get $PO_1 - PO_2 = \\tfrac{24}{16} = \\tfrac32$, so $PO_1 = \\tfrac12\\left(16 + \\tfrac32\\right) = \\tfrac{35}{4}$."
+  },
+  "formulas": [
+    "F-GEO-01"
+  ],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

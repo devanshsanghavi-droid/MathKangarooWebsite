@@ -1,0 +1,19 @@
+{
+  "id": "F-CP-10",
+  "area": "CP",
+  "name": "Expected waiting time",
+  "formula": "P(\\text{success}) = p \\text{ each trial} \\implies E[\\text{trials until first success}] = \\frac{1}{p}",
+  "whenToUse": "Repeat an independent trial until something happens and the question asks how many tries to expect.",
+  "example": "Rolling until a $5$ or $6$ appears takes $\\frac{1}{1/3} = 3$ rolls on average. To collect both faces of a coin, wait $1$ flip for the first and then $2$ more on average: $3$ flips.",
+  "pitfall": "The count includes the successful trial. If the question counts only the failures before it, the answer is $\\frac{1}{p} - 1$.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-RECURSION",
+    "T-LINEARITY"
+  ],
+  "derivation": "Let $E$ be the expectation. One trial is used, and with probability $1 - p$ you are back where you started, so $E = 1 + (1 - p)E$, giving $E = \\frac{1}{p}$."
+}

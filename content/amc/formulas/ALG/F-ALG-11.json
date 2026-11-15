@@ -1,0 +1,17 @@
+{
+  "id": "F-ALG-11",
+  "area": "ALG",
+  "name": "Change of base and the log chain",
+  "formula": "\\log_a b = \\frac{\\log_c b}{\\log_c a}, \\qquad \\log_a b \\cdot \\log_b c = \\log_a c, \\qquad \\log_a b = \\frac{1}{\\log_b a} \\quad (\\text{bases positive and } \\ne 1,\\ \\text{arguments positive})",
+  "whenToUse": "Logs with different bases appear together, especially a product of logs where each base matches the previous argument.",
+  "example": "$\\log_2 3 \\cdot \\log_3 4 \\cdot \\log_4 5 \\cdots \\log_{15} 16$ collapses to $\\log_2 16 = 4$. Also $\\log_8 32 = \\frac{\\log_2 32}{\\log_2 8} = \\frac{5}{3}$.",
+  "pitfall": "The new base goes in BOTH the top and the bottom, and the original base ends up on the bottom. Writing $\\frac{\\log_c a}{\\log_c b}$ gives the reciprocal.",
+  "priority": "must-know",
+  "contests": [
+    "AMC12"
+  ],
+  "types": [
+    "T-TELESCOPE"
+  ],
+  "derivation": "If $a^p = b$ then taking $\\log_c$ of both sides gives $p \\log_c a = \\log_c b$, so $p = \\frac{\\log_c b}{\\log_c a}$."
+}

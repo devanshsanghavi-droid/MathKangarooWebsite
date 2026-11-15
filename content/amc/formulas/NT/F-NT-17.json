@@ -1,0 +1,18 @@
+{
+  "id": "F-NT-17",
+  "area": "NT",
+  "name": "Wilson's theorem",
+  "formula": "p > 1 \\text{ is prime} \\iff (p - 1)! \\equiv -1 \\pmod p",
+  "whenToUse": "A factorial appears modulo a prime, especially one just below the prime.",
+  "example": "$16! \\equiv -1 \\equiv 16 \\pmod{17}$. Then $16! = 16 \\cdot 15!$ with $16 \\equiv -1$, so $15! \\equiv 1 \\pmod{17}$.",
+  "pitfall": "It is about $(p - 1)!$, not $p!$ (which is $0$ modulo $p$). For composite $n > 4$, $(n - 1)! \\equiv 0 \\pmod n$.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-MODULAR"
+  ],
+  "derivation": "Each number from $2$ to $p - 2$ pairs with a different inverse in that range, so those pairs multiply to $1$. What is left is $1 \\cdot (p - 1) \\equiv -1$."
+}

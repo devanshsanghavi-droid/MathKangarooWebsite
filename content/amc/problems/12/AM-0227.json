@@ -1,0 +1,70 @@
+{
+  "id": "AM-0227",
+  "contest": "AMC12",
+  "slot": 23,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-CASEWORK",
+    "T-COORD"
+  ],
+  "statement": "How many spheres are tangent to all four of the planes $x = 0$, $y = 0$, $z = 0$ and $2x + 3y + 6z = 6$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I only looked for centers in the first octant, at (r, r, r), and found the two spheres there, r = 1/3 and r = 3/2, but a sphere can sit in any octant with center (plus or minus r, plus or minus r, plus or minus r)."
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I counted the inscribed sphere of the tetrahedron and the four exscribed spheres, one beyond each face, and missed the spheres that sit in the wedges beyond two faces at once."
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found one sphere in each octant that has any, six octants in all, and missed that the first octant holds two spheres, one on each side of the slanted plane."
+    },
+    {
+      "key": "D",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I quoted the rule that the four planes of a tetrahedron have eight tangent spheres, one per sign pattern, but eight is only the maximum: here 3 + 3/2 = 1 + 7/2 for the face areas, and that pairing gives no sphere."
+    }
+  ],
+  "hints": [
+    "Where can the center of a sphere tangent to all three coordinate planes be?",
+    "The center is $(\\pm r, \\pm r, \\pm r)$ for one of eight sign choices. For each choice, set the distance from the center to the slanted plane equal to $r$. The absolute value can split a choice into two cases, or rule it out entirely.",
+    "With signs $\\varepsilon_x, \\varepsilon_y, \\varepsilon_z$, the condition is $|kr - 6| = 7r$ where $k = 2\\varepsilon_x + 3\\varepsilon_y + 6\\varepsilon_z$. Count the positive solutions $r$ for $k = 11, 7, 5, 1, -1, -5, -7, -11$."
+  ],
+  "solutions": {
+    "reliable": "A sphere of radius $r$ tangent to $x = 0$, $y = 0$ and $z = 0$ has center $(\\varepsilon_x r, \\varepsilon_y r, \\varepsilon_z r)$ with each $\\varepsilon = \\pm 1$. Its distance to $2x + 3y + 6z = 6$ is $\\dfrac{|kr - 6|}{\\sqrt{4 + 9 + 36}} = \\dfrac{|kr - 6|}{7}$ with $k = 2\\varepsilon_x + 3\\varepsilon_y + 6\\varepsilon_z$, so tangency means $|kr - 6| = 7r$, that is $kr - 6 = 7r$ or $6 - kr = 7r$. Go through the eight values of $k$. For $k = 11$ (all signs positive): $r = \\tfrac32$ or $r = \\tfrac13$, two spheres. For $k = 7, 5, 1, -1, -5$ the first case gives $r = \\tfrac{6}{k - 7} \\le 0$ or no solution, and the second gives $r = \\tfrac{6}{k + 7}$, which is $\\tfrac37, \\tfrac12, \\tfrac34, 1, 3$: one sphere each. For $k = -7$ and $k = -11$, $|kr - 6| = |k|r + 6 > 7r$ for every $r > 0$, so there are none. The total is $2 + 5 = 7$. The idea: in a tangency count, every sign choice and every branch of an absolute value is a case, and each must be checked rather than assumed.",
+    "elegant": "The planes bound the tetrahedron with vertices $(0,0,0)$, $(3,0,0)$, $(0,2,0)$, $(0,0,1)$, of volume $V = 1$ and face areas $3$, $\\tfrac32$, $1$, $\\tfrac72$. A sphere tangent to all four face planes has radius $\\dfrac{3V}{\\pm A_1 \\pm A_2 \\pm A_3 \\pm A_4}$ for a sign pattern making the denominator positive. All plus signs give the insphere, and one minus sign gives four exspheres, since each face is smaller than the other three together. With two minus signs there are three pairings, and a pairing gives one sphere unless its two sums are equal. Here $3 + \\tfrac72 \\ne \\tfrac32 + 1$ and $3 + 1 \\ne \\tfrac32 + \\tfrac72$, but $3 + \\tfrac32 = 1 + \\tfrac72$, so only two of the three work. The total is $1 + 4 + 2 = 7$."
+  },
+  "formulas": [
+    "F-GEO-18",
+    "F-GEO-16"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

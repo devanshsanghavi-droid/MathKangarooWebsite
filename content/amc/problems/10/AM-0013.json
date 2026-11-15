@@ -1,0 +1,69 @@
+{
+  "id": "AM-0013",
+  "contest": "AMC10",
+  "slot": 9,
+  "area": "ALG",
+  "topic": "ALG-03",
+  "types": [
+    "T-VIETA",
+    "T-CASEWORK"
+  ],
+  "statement": "For how many integers $k$ does the equation $x^2 + kx + 100 = 0$ have two different integer solutions?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I only used positive factor pairs of 100, which gave four values of k, and forgot that two negative roots also multiply to 100."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I counted the 9 positive divisors of 100 and matched one value of k to each divisor."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I included the repeated roots 10, 10 and -10, -10, which give k = -20 and k = 20, but those roots are not different."
+    },
+    {
+      "key": "E",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I counted ordered pairs of roots, so (1, 100) and (100, 1) were counted separately even though they give the same k."
+    }
+  ],
+  "hints": [
+    "The roots multiply to $100$.",
+    "By Vieta, the two roots are integers with product $100$, and $k$ is minus their sum. Count unordered pairs of distinct integers with product $100$, including negative pairs.",
+    "The positive pairs are $\\{1,100\\}, \\{2,50\\}, \\{4,25\\}, \\{5,20\\}$ ($\\{10,10\\}$ is not allowed). Their sums $101, 52, 29, 25$ give $k = -101, -52, -29, -25$; the negative pairs give the opposites."
+  ],
+  "solutions": {
+    "reliable": "If the roots are integers $r \\ne s$, then by Vieta $rs = 100$ and $k = -(r + s)$. Both roots have the same sign. Positive pairs with $r < s$: $(1, 100), (2, 50), (4, 25), (5, 20)$, with sums $101, 52, 29, 25$. The pair $(10, 10)$ is excluded because the roots must differ. Negating both roots gives sums $-101, -52, -29, -25$. These $8$ sums are all different, so there are $8$ values of $k$. The transferable idea: integer roots of a monic quadratic come from factor pairs of the constant term, and you must remember the negative pairs.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-02"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

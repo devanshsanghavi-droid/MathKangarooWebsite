@@ -1,0 +1,70 @@
+{
+  "id": "AM-0061",
+  "contest": "AMC10",
+  "slot": 14,
+  "area": "GEO",
+  "topic": "GEO-06",
+  "types": [
+    "T-COORD",
+    "T-CASEWORK"
+  ],
+  "statement": "The lines $y = 2x$, $y = \\tfrac12 x$ and $x + y = 12$ bound a triangle. How many points with both coordinates integers lie strictly inside this triangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I used area minus boundary points, $24 - 12$, subtracting the whole boundary count instead of half of it and dropping the $+1$ in Pick's theorem."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I wrote Pick's theorem as $I = A - B + 1 = 24 - 12 + 1$, subtracting all the boundary points instead of half of them."
+    },
+    {
+      "key": "C",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I remembered Pick's theorem with the wrong sign at the end, $I = A - \\tfrac{B}{2} - 1 = 24 - 6 - 1$."
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I computed $A - \\tfrac{B}{2} = 24 - 6$ and forgot the $+1$ in Pick's theorem."
+    },
+    {
+      "key": "E",
+      "text": "$19$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Find the three vertices first; they are all lattice points.",
+    "Pick's theorem links area $A$, interior points $I$ and boundary points $B$ of a lattice polygon: $A = I + \\tfrac{B}{2} - 1$. Count boundary points with gcds.",
+    "The vertices are $(0,0)$, $(4,8)$ and $(8,4)$, so $A = 24$. Each side has $\\gcd(4,8) = 4$ lattice steps, so $B = 12$. Solve for $I$."
+  ],
+  "solutions": {
+    "reliable": "The lines meet at $(0,0)$, at $(4,8)$ (where $y = 2x$ meets $x + y = 12$) and at $(8,4)$. By the shoelace formula the area is $\\tfrac12 |4 \\cdot 4 - 8 \\cdot 8| = 24$. A segment from $(0,0)$ to $(4,8)$ passes through $\\gcd(4,8) + 1 = 5$ lattice points, and the same holds for the other two sides (differences $(4,-4)$ and $(8,4)$, gcds $4$ and $4$), so the boundary has $4 + 4 + 4 = 12$ lattice points. Pick's theorem $A = I + \\tfrac{B}{2} - 1$ gives $24 = I + 6 - 1$, so $I = 19$. Transferable idea: for lattice polygons, area and boundary count determine the interior count.",
+    "elegant": "Count directly by columns. For $x = 1, \\dots, 7$ the interior points satisfy $\\tfrac{x}{2} < y < \\min(2x,\\ 12 - x)$, which allows $1, 2, 4, 5, 4, 2, 1$ values of $y$. The total is $19$."
+  },
+  "formulas": [
+    "F-GEO-10",
+    "F-GEO-09"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

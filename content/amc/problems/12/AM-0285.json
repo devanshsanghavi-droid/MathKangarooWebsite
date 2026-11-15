@@ -1,0 +1,69 @@
+{
+  "id": "AM-0285",
+  "contest": "AMC12",
+  "slot": 12,
+  "area": "CP",
+  "topic": "CP-08",
+  "types": [
+    "T-BIJECTION",
+    "T-EVALUATE"
+  ],
+  "statement": "A subset $S$ of $\\{1, 2, 3, 4, 5, 6\\}$ is chosen at random, with all $64$ subsets, including the empty set, equally likely. Let $P$ be the product of the elements of $S$, where the empty set has $P = 1$. What is the expected value of $P$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{343}{8}$",
+      "correct": false,
+      "misconception": "I pictured a typical subset as having 3 elements, each worth the average value 7/2, and cubed 7/2, but the expected value of a product is not found by plugging in averages."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{315}{4}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$80$",
+      "correct": false,
+      "misconception": "I found the total 5040 of all the products correctly but divided by 63, the number of nonempty subsets, even though the empty set is one of the 64 equally likely subsets."
+    },
+    {
+      "key": "D",
+      "text": "$360$",
+      "correct": false,
+      "misconception": "I took the product of all six numbers, 720, and halved it because each number is in S with probability 1/2, but a missing number changes the product much more than that."
+    },
+    {
+      "key": "E",
+      "text": "$5040$",
+      "correct": false,
+      "misconception": "I added up the products of all 64 subsets, which is (1 + 1)(1 + 2)...(1 + 6), but forgot to divide by 64 to turn the total into an average."
+    }
+  ],
+  "hints": [
+    "Write $P$ as a product of six factors, one for each number from $1$ to $6$.",
+    "The factor for $k$ is $k$ when $k \\in S$ and $1$ when $k \\notin S$. The six in-or-out choices are independent, so the expected value of the product is the product of the expected values of the factors.",
+    "The factor for $k$ is $1$ or $k$, each with probability $\\frac{1}{2}$, so its expected value is $\\frac{1+k}{2}$. Multiply these for $k = 1, 2, \\ldots, 6$."
+  ],
+  "solutions": {
+    "reliable": "For each $k$ from $1$ to $6$, let $X_k = k$ if $k \\in S$ and $X_k = 1$ otherwise. Then $P = X_1 X_2 X_3 X_4 X_5 X_6$, which also gives $P = 1$ for the empty set. Choosing a subset uniformly at random is the same as putting each number in or out independently with probability $\\frac{1}{2}$, so the $X_k$ are independent and the expected value of their product is the product of their expected values. Since $E[X_k] = \\frac{1 + k}{2}$, we get $E[P] = \\frac{2}{2}\\cdot\\frac{3}{2}\\cdot\\frac{4}{2}\\cdot\\frac{5}{2}\\cdot\\frac{6}{2}\\cdot\\frac{7}{2} = \\frac{7!}{2^6} = \\frac{5040}{64} = \\frac{315}{4}$. Check by adding up: when $(1 + 1)(1 + 2)(1 + 3)(1 + 4)(1 + 5)(1 + 6)$ is expanded, choosing either the $1$ or the $k$ from each bracket gives exactly one term for each subset, equal to that subset's product. So the $64$ products add up to $7! = 5040$, and their average is $\\frac{5040}{64} = \\frac{315}{4}$, which a direct computer count confirms. The idea: a product over a random subset splits into independent factors, one per element.",
+    "elegant": "Expanding $(1 + 1)(1 + 2)\\cdots(1 + 6)$ produces one term per subset, equal to its product, so the products total $7! = 5040$ and the average over $64$ subsets is $\\frac{315}{4}$."
+  },
+  "formulas": [
+    "F-CP-18"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

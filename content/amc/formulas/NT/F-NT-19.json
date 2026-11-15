@@ -1,0 +1,17 @@
+{
+  "id": "F-NT-19",
+  "area": "NT",
+  "name": "Testing primality up to the square root",
+  "formula": "n > 1 \\text{ is prime} \\iff \\text{no prime } p \\le \\sqrt{n} \\text{ divides } n",
+  "whenToUse": "Checking whether a three or four digit number is prime, or factoring it by hand.",
+  "example": "Is $221$ prime? $\\sqrt{221} < 15$, so test $2, 3, 5, 7, 11, 13$. It fails at $13$: $221 = 13 \\cdot 17$, so it is composite.",
+  "pitfall": "Stop at $\\sqrt{n}$, but do test every prime up to it. Numbers like $91 = 7 \\cdot 13$ and $143 = 11 \\cdot 13$ look prime and are not.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-PRIME-FACTOR"
+  ]
+}

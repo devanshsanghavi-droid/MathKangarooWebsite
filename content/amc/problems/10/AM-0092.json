@@ -1,0 +1,70 @@
+{
+  "id": "AM-0092",
+  "contest": "BOTH",
+  "slot": 12,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-CASEWORK"
+  ],
+  "statement": "For how many integers $N$ with $1 < N < 100$ is the product of all the positive divisors of $N$ equal to $N^6$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I thought the product of the divisors of N is N raised to one less than the number of divisors, so I needed 7 divisors, and only 64 = 2^6 has that below 100."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found the right condition, 12 divisors, but only used the shape p^2 x q x r, which gives 60, 84 and 90, and missed 72 = 2^3 x 3^2 and 96 = 2^5 x 3."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I used the shapes p^2 x q x r and p^3 x q^2 but forgot p^5 x q, so I missed 96 = 2^5 x 3."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I thought the product of the divisors is N raised to the number of divisors, so I counted the 16 numbers below 100 with exactly 6 divisors."
+    }
+  ],
+  "hints": [
+    "Pair each divisor $d$ of $N$ with $N / d$. What does each pair multiply to?",
+    "If $N$ has $t$ divisors, their product is $N^{t/2}$. So you need $t = 12$.",
+    "$12$ can be written as $12$, $6 \\cdot 2$, $4 \\cdot 3$ or $3 \\cdot 2 \\cdot 2$, so $N$ has the form $p^{11}$, $p^5 q$, $p^3 q^2$ or $p^2 q r$. List those below $100$."
+  ],
+  "solutions": {
+    "reliable": "Pair each divisor $d$ with $N / d$; each pair multiplies to $N$. If $N$ has $t$ divisors, the product of all of them is $N^{t/2}$ (this also holds for squares, where $\\sqrt{N}$ pairs with itself). For $N > 1$, $N^{t/2} = N^6$ means $t = 12$. Using $(a_1 + 1)(a_2 + 1)\\cdots = 12$, the possible shapes are $p^{11}$, $p^5 q$, $p^3 q^2$ and $p^2 q r$ for distinct primes. Below $100$: $p^{11} \\ge 2048$ gives nothing; $p^5 q$ gives $2^5 \\cdot 3 = 96$ (next is $2^5 \\cdot 5 = 160$); $p^3 q^2$ gives $2^3 \\cdot 3^2 = 72$ (next is $3^3 \\cdot 2^2 = 108$); $p^2 q r$ gives $2^2 \\cdot 3 \\cdot 5 = 60$, $2^2 \\cdot 3 \\cdot 7 = 84$ and $3^2 \\cdot 2 \\cdot 5 = 90$ (next is $2^2 \\cdot 3 \\cdot 11 = 132$). That is $60, 72, 84, 90, 96$: $5$ numbers.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-16",
+    "F-NT-01"
+  ],
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

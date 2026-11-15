@@ -1,0 +1,69 @@
+{
+  "id": "AM-0244",
+  "contest": "AMC12",
+  "slot": 10,
+  "area": "NT",
+  "topic": "NT-01",
+  "types": [
+    "T-CHOICES",
+    "T-MODULAR"
+  ],
+  "statement": "A polynomial $P(x)$ has integer coefficients and $P(2) = 7$. Which of the following could be the value of $P(9)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$21$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I thought P(9) - P(2) had to be divisible by 9 times 2 = 18, and 25 - 7 = 18."
+    },
+    {
+      "key": "C",
+      "text": "$34$",
+      "correct": false,
+      "misconception": "I thought P(9) - P(2) only had to be divisible by the larger input 9, and 34 - 7 = 27."
+    },
+    {
+      "key": "D",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I thought P(9) - P(2) had to be divisible by 9 + 2 = 11, and 40 - 7 = 33."
+    },
+    {
+      "key": "E",
+      "text": "$44$",
+      "correct": false,
+      "misconception": "I mixed up the input 2 with the output 7 and checked whether P(9) - 2 is a multiple of 7, and 44 - 2 = 42."
+    }
+  ],
+  "hints": [
+    "Compare $P(9)$ with $P(2)$ term by term.",
+    "For each power, $9^k - 2^k$ is divisible by $9 - 2$. So $9 - 2$ divides $P(9) - P(2)$.",
+    "$P(9) - 7$ must be a multiple of $7$. Test each choice, then build a polynomial for the one that passes."
+  ],
+  "solutions": {
+    "reliable": "Write $P(x) = \\sum c_k x^k$ with integer $c_k$. Then $P(9) - P(2) = \\sum c_k (9^k - 2^k)$, and each $9^k - 2^k$ is divisible by $9 - 2 = 7$. So $P(9) \\equiv P(2) = 7 \\equiv 0 \\pmod 7$, meaning $P(9)$ must be a multiple of $7$. Among the choices only $21$ is. It is achieved by $P(x) = 2x + 3$: $P(2) = 7$ and $P(9) = 21$.",
+    "elegant": "Since $9 \\equiv 2 \\pmod 7$, any polynomial with integer coefficients gives $P(9) \\equiv P(2) \\pmod 7$. The others, $25, 34, 40, 44$, leave remainders $4, 6, 5, 2$, so only $21$ works."
+  },
+  "formulas": [
+    "F-NT-12"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "AM-0998",
+  "contest": "AMC12",
+  "slot": 16,
+  "area": "ALG",
+  "topic": "ALG-10",
+  "types": ["T-EVALUATE", "T-VIETA"],
+  "statement": "Let $r$, $s$ and $t$ be the three roots, real or complex, of $x^3 - 2x^2 + 3x - 4 = 0$. What is the value of $(r^2+1)(s^2+1)(t^2+1)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I evaluated the polynomial at i and took the absolute value of -2 + 2i, forgetting that the product needs P(i) times P(-i), which is the square of that absolute value."
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I expanded the product into its symmetric sums but dropped the constant 1 that comes from multiplying the three 1s, so I got -2 - 7 + 16."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I took r^2 + s^2 + t^2 to be (r + s + t)^2 = 4 and forgot to subtract twice the sum of the pairwise products, so I got 1 + 4 - 7 + 16."
+    },
+    {
+      "key": "E",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I took the sum of the products of squared pairs to be (rs + st + tr)^2 = 9 and forgot to subtract 2(r + s + t)(rst), so I got 1 - 2 + 9 + 16."
+    }
+  ],
+  "hints": [
+    "Each factor $r^2 + 1$ factors over the complex numbers.",
+    "Write $r^2 + 1 = (r - i)(r + i)$. A product of $(r - c)$ over all three roots is the polynomial evaluated at $c$, up to a sign.",
+    "With $P(x) = (x-r)(x-s)(x-t)$, the product is $P(i)\\,P(-i)$. Compute $P(i) = -2 + 2i$."
+  ],
+  "solutions": {
+    "reliable": "Let $P(x) = x^3 - 2x^2 + 3x - 4 = (x-r)(x-s)(x-t)$. Since $r^2 + 1 = (r-i)(r+i)$, the product equals $\\prod (r - i) \\cdot \\prod (r + i)$. Now $P(i) = (i-r)(i-s)(i-t) = -\\prod (r-i)$ and $P(-i) = -\\prod (r+i)$, so the two signs cancel and the product is $P(i)P(-i)$. Compute $P(i) = -i - 2(-1) + 3i - 4 = -2 + 2i$, and $P(-i) = -2 - 2i$ because the coefficients are real. Then $(-2+2i)(-2-2i) = 4 + 4 = 8$. Check by Vieta: with $e_1 = 2$, $e_2 = 3$, $e_3 = 4$, the product is $1 + (e_1^2 - 2e_2) + (e_2^2 - 2e_1e_3) + e_3^2 = 1 - 2 - 7 + 16 = 8$.",
+    "elegant": "For real coefficients $P(-i) = \\overline{P(i)}$, so the product is $|P(i)|^2 = |-2+2i|^2 = 8$."
+  },
+  "formulas": ["F-ALG-01"],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

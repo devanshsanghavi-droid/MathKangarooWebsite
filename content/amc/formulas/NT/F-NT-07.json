@@ -1,0 +1,18 @@
+{
+  "id": "F-NT-07",
+  "area": "NT",
+  "name": "Divisibility rules",
+  "formula": "3, 9: \\text{ digit sum} \\qquad 11: \\text{ alternating digit sum} \\qquad 4, 8: \\text{ last } 2, 3 \\text{ digits} \\qquad 6 = 2 \\cdot 3, \\ 12 = 3 \\cdot 4",
+  "whenToUse": "Testing divisibility of a large number quickly, or finding a missing digit that makes a number divisible by something.",
+  "example": "For $7392$: the alternating sum $2 - 9 + 3 - 7 = -11$ is a multiple of $11$, so $11 \\mid 7392$. The digit sum $21$ is a multiple of $3$ but not $9$, and $92$ is a multiple of $4$, so $12 \\mid 7392$ too.",
+  "pitfall": "For a composite divisor, split it into COPRIME factors: test $12$ as $3$ and $4$, never as $2$ and $6$. Divisibility by $4$ and $8$ uses the last digits, not the digit sum.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-MODULAR"
+  ],
+  "derivation": "Since $10 \\equiv 1 \\pmod 9$, every power of $10$ is $1$ modulo $9$ (and $3$), so a number is congruent to its digit sum. Since $10 \\equiv -1 \\pmod{11}$, the powers alternate between $1$ and $-1$."
+}

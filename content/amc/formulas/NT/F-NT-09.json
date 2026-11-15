@@ -1,0 +1,17 @@
+{
+  "id": "F-NT-09",
+  "area": "NT",
+  "name": "Chinese remainder theorem",
+  "formula": "m_1, \\ldots, m_k \\text{ pairwise coprime} \\implies x \\equiv a_i \\pmod{m_i} \\text{ has one solution modulo } m_1 m_2 \\cdots m_k",
+  "whenToUse": "A number leaves given remainders on division by several coprime numbers. Also to split a hard modulus like $100$ into $4$ and $25$.",
+  "example": "Find $n$ with $n \\equiv 2 \\pmod 3$, $n \\equiv 3 \\pmod 5$, $n \\equiv 2 \\pmod 7$. The first and last say $n \\equiv 2 \\pmod{21}$: try $2, 23, 44, \\ldots$; $23 \\equiv 3 \\pmod 5$. So $n \\equiv 23 \\pmod{105}$.",
+  "pitfall": "The moduli must be pairwise coprime for a single solution. With moduli $4$ and $6$, conditions can clash or leave a solution only modulo $12$, not $24$.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-MODULAR"
+  ]
+}

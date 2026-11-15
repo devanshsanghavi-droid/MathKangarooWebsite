@@ -1,0 +1,71 @@
+{
+  "id": "AM-0228",
+  "contest": "AMC12",
+  "slot": 25,
+  "area": "GEO",
+  "topic": "GEO-09",
+  "types": [
+    "T-ROOTS-UNITY",
+    "T-VIETA",
+    "T-SMALL-CASES"
+  ],
+  "statement": "A regular $13$-gon is inscribed in a circle of radius $1$. Let $d_1, d_2, \\ldots, d_{12}$ be the distances from one vertex to each of the other twelve vertices. What is $\\dfrac{1}{d_1^2} + \\dfrac{1}{d_2^2} + \\cdots + \\dfrac{1}{d_{12}^2}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{143}{12}$",
+      "correct": false,
+      "misconception": "I used the general answer (n^2 - 1)/12 but plugged in n = 12, the number of distances, instead of n = 13, the number of vertices."
+    },
+    {
+      "key": "B",
+      "text": "$14$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$26$",
+      "correct": false,
+      "misconception": "I computed the sum of the squared distances, which is 2n = 26, instead of the sum of their reciprocals."
+    },
+    {
+      "key": "D",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I wrote the squared chord length as 1 - cos(theta) instead of 2 - 2cos(theta), which halves every d_k^2 and doubles the sum."
+    },
+    {
+      "key": "E",
+      "text": "$56$",
+      "correct": false,
+      "misconception": "I wrote each distance as sin(k pi/13) instead of 2 sin(k pi/13), so I summed csc^2 and got (13^2 - 1)/3 = 56 without dividing by 4."
+    }
+  ],
+  "hints": [
+    "Try the same question for a square first.",
+    "Put the vertices at the $13$th roots of unity $\\omega^k$ and the chosen vertex at $1$. Then $d_k = |1 - \\omega^k|$, and the numbers $w_k = \\tfrac{1}{1 - \\omega^k}$ are the roots of a polynomial you can write down.",
+    "$w_k$ satisfies $(w - 1)^{13} = w^{13}$, a degree-$12$ equation, and $\\operatorname{Re} w_k = \\tfrac12$. Then $|w_k|^2 = \\tfrac12 - \\operatorname{Re}(w_k^2)$, so you need $\\sum w_k$ and $\\sum w_k^2$ from Vieta."
+  ],
+  "solutions": {
+    "reliable": "Place the vertices at $\\omega^k$ with $\\omega = e^{2\\pi i/13}$, the chosen vertex at $1$, so $d_k = |1 - \\omega^k|$ for $k = 1, \\ldots, 12$. Let $w_k = \\tfrac{1}{1 - \\omega^k}$. From $1 - \\tfrac{1}{w} = \\omega^k$ we get $\\left(\\tfrac{w - 1}{w}\\right)^{13} = 1$, so the $w_k$ are the twelve roots of $w^{13} - (w - 1)^{13} = 13w^{12} - 78w^{11} + 286w^{10} - \\cdots = 0$. By Vieta, $\\sum w_k = \\tfrac{78}{13} = 6$ and $\\sum_{j<k} w_jw_k = \\tfrac{286}{13} = 22$, so $\\sum w_k^2 = 36 - 44 = -8$. Each $w_k = \\tfrac12 + \\tfrac{i}{2}\\cot\\tfrac{k\\pi}{13}$ has real part $\\tfrac12$, so writing $w_k = \\tfrac12 + it$ gives $|w_k|^2 = \\tfrac14 + t^2$ and $\\operatorname{Re}(w_k^2) = \\tfrac14 - t^2$, hence $|w_k|^2 = \\tfrac12 - \\operatorname{Re}(w_k^2)$. Summing, $\\sum \\tfrac{1}{d_k^2} = \\sum |w_k|^2 = 6 - (-8) = 14$. Sanity check with a square ($n = 4$): the distances are $\\sqrt2, 2, \\sqrt2$ and $\\tfrac12 + \\tfrac14 + \\tfrac12 = \\tfrac54 = \\tfrac{4^2 - 1}{12}$, and the same method gives $\\tfrac{n^2 - 1}{12}$ in general, which is $\\tfrac{168}{12} = 14$ for $n = 13$. The idea: reciprocals of $1 - \\omega^k$ are roots of a polynomial, so symmetric sums of them come from Vieta.",
+    "elegant": "Since $d_k = 2\\sin\\tfrac{k\\pi}{13}$, the sum is $\\tfrac14\\sum_{k=1}^{12}\\csc^2\\tfrac{k\\pi}{13}$. The classical identity $\\sum_{k=1}^{n-1}\\csc^2\\tfrac{k\\pi}{n} = \\tfrac{n^2 - 1}{3}$ gives $\\tfrac14\\cdot 56 = 14$."
+  },
+  "formulas": [
+    "F-ALG-12",
+    "F-ALG-01"
+  ],
+  "estSeconds": 300,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

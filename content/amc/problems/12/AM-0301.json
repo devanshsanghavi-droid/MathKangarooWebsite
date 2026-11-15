@@ -1,0 +1,70 @@
+{
+  "id": "AM-0301",
+  "contest": "AMC12",
+  "slot": 23,
+  "area": "CP",
+  "topic": "CP-02",
+  "types": [
+    "T-CASEWORK",
+    "T-PIE"
+  ],
+  "statement": "How many permutations $\\sigma$ of $\\{1, 2, \\ldots, 8\\}$ satisfy both $\\sigma(i) \\ne i$ and $\\sigma(\\sigma(i)) \\ne i$ for every $i$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7413$",
+      "correct": false,
+      "misconception": "I started from the 14833 derangements and subtracted 28 times 265 for a chosen swap, but never added back the permutations with two or more swaps."
+    },
+    {
+      "key": "B",
+      "text": "$8988$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$10248$",
+      "correct": false,
+      "misconception": "I counted the splits into two 4-cycles as C(8, 4) times 3! times 3! without halving, so each split was counted twice."
+    },
+    {
+      "key": "D",
+      "text": "$14364$",
+      "correct": false,
+      "misconception": "I counted each 3-cycle as 3! arrangements instead of 2!, so the 5 + 3 case became 56 times 6 times 24."
+    },
+    {
+      "key": "E",
+      "text": "$14833$",
+      "correct": false,
+      "misconception": "I only used the condition sigma(i) is not i and counted the derangements of 8 elements."
+    }
+  ],
+  "hints": [
+    "Think about the cycle structure of $\\sigma$.",
+    "The two conditions say that $\\sigma$ has no cycle of length 1 and no cycle of length 2. List the ways to split 8 into cycle lengths that are all at least 3.",
+    "The splits are $8$, $5 + 3$ and $4 + 4$. A single cycle through $m$ chosen elements can be formed in $(m-1)!$ ways."
+  ],
+  "solutions": {
+    "reliable": "$\\sigma(i) = i$ means $i$ is in a 1-cycle, and $\\sigma(\\sigma(i)) = i$ with $\\sigma(i) \\ne i$ means $i$ is in a 2-cycle. So we count permutations whose cycles all have length at least 3. The cycle types are: one 8-cycle, $7! = 5040$; a 5-cycle and a 3-cycle, $\\binom{8}{3} \\cdot 2! \\cdot 4! = 56 \\cdot 48 = 2688$; two 4-cycles, $\\frac12\\binom{8}{4} \\cdot 3! \\cdot 3! = 35 \\cdot 36 = 1260$ (halved because the two 4-cycles are interchangeable). Total $5040 + 2688 + 1260 = 8988$. Check by inclusion-exclusion over swaps, using the derangement numbers $D_8 = 14833$, $D_6 = 265$, $D_4 = 9$, $D_2 = 1$, $D_0 = 1$: $14833 - 28 \\cdot 265 + 70 \\cdot 3 \\cdot 9 - 28 \\cdot 15 \\cdot 1 + 105 = 8988$. Transferable idea: conditions on $\\sigma$, $\\sigma^2$, ... are conditions on cycle lengths.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-14",
+    "F-CP-12"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

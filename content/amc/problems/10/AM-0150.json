@@ -1,0 +1,69 @@
+{
+  "id": "AM-0150",
+  "contest": "BOTH",
+  "slot": 22,
+  "area": "CP",
+  "topic": "CP-06",
+  "types": [
+    "T-BIJECTION",
+    "T-CASEWORK"
+  ],
+  "statement": "A fair coin is flipped $10$ times, and the results are written in order as a string of H's and T's. What is the probability that the string contains the pattern HT (an H immediately followed by a T) exactly $3$ times?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{21}{256}$",
+      "correct": false,
+      "misconception": "I picked 3 of the 9 places where an HT could start, C(9, 3) = 84, and assumed that fixed the rest of the string."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{63}{512}$",
+      "correct": false,
+      "misconception": "I only counted strings that start with H and end with T, which have exactly 5 switches, and got C(9, 5) = 126 out of 1024."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{21}{128}$",
+      "correct": false,
+      "misconception": "I assumed that 3 HT's always means exactly 6 switches between letters, so I counted 2 x C(9, 6) = 168 strings."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{165}{512}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{193}{512}$",
+      "correct": false,
+      "misconception": "I counted the strings with at least 3 HT's, including those with 4 and 5, instead of exactly 3."
+    }
+  ],
+  "hints": [
+    "Look at the places where the string switches between H and T.",
+    "A string is fixed by its first letter and the set of places where it switches. Switches alternate between HT and TH, so the number of HT's depends on the number of switches and on the first and last letters. Do casework, or pad the string to remove the cases.",
+    "Put an extra T in front and an extra H at the end. No new HT appears, the padded string has $12$ letters and $11$ gaps, and exactly $3$ HT's means exactly $7$ switches."
+  ],
+  "solutions": {
+    "reliable": "A string is determined by its first letter and the set of the $9$ gaps where it switches letters; switches alternate HT, TH, HT, ... or TH, HT, .... Do casework on the first and last letters. Starting H and ending T needs switches HT, TH, HT, TH, HT: $5$ switches, $\\binom{9}{5} = 126$ strings. Starting H and ending H: $6$ switches, $\\binom{9}{6} = 84$. Starting T and ending T: $6$ switches, $84$. Starting T and ending H: $7$ switches, $\\binom{9}{7} = 36$. Total $126 + 84 + 84 + 36 = 330$, so the probability is $\\frac{330}{1024} = \\frac{165}{512}$. The transferable idea: a string of two letters is the same as its first letter plus its switch positions, which turns pattern counts into binomial coefficients.",
+    "elegant": "Pad the string with a T on the left and an H on the right. The padding creates no new HT, and the $12$-letter string starts with T and ends with H, so its runs go T, H, T, H, ..., H. With exactly $3$ HT's it has $8$ runs, that is $7$ switches, which can be any $7$ of the $11$ gaps. So there are $\\binom{11}{7} = 330$ strings and the probability is $\\frac{165}{512}$."
+  },
+  "formulas": [
+    "F-CP-03"
+  ],
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "F-NT-21",
+  "area": "NT",
+  "name": "Linear Diophantine equations and the Frobenius number",
+  "formula": "ax + by = c \\text{ has integer solutions} \\iff \\gcd(a, b) \\mid c; \\qquad a, b > 0,\\ \\gcd(a, b) = 1 \\implies \\text{largest } N \\ne ax + by\\ (x, y \\ge 0) \\text{ is } ab - a - b",
+  "whenToUse": "Coins or packages of two sizes, integer solutions of a linear equation, or the largest total that cannot be made from two amounts.",
+  "example": "$6x + 15y = 40$ has no integer solutions, since $3 \\nmid 40$. With stamps worth $5$ and $8$, the largest total that cannot be made is $40 - 5 - 8 = 27$, and $\\frac{(5-1)(8-1)}{2} = 14$ totals cannot be made at all.",
+  "pitfall": "The Frobenius formula needs nonnegative amounts and coprime sizes. Once one solution $(x, y)$ is found, the others are $\\left(x + \\frac{b}{g}t,\\ y - \\frac{a}{g}t\\right)$ with $g = \\gcd(a, b)$.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-BOUNDING"
+  ]
+}

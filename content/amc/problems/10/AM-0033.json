@@ -1,0 +1,69 @@
+{
+  "id": "AM-0033",
+  "contest": "AMC10",
+  "slot": 20,
+  "area": "ALG",
+  "topic": "ALG-09",
+  "types": [
+    "T-BOUNDING",
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Real numbers $x$, $y$ and $z$ satisfy $x + y + z = 10$ and $xy + yz + zx = 25$. What is the largest possible value of $xy$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I found $xy = (z - 5)^2$ and took the vertex $z = 5$, but the vertex of this upward parabola gives the smallest value of $xy$, not the largest."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{25}{9}$",
+      "correct": false,
+      "misconception": "I assumed $xy$ is largest when $z$ is as large as possible, $z = \\frac{20}{3}$, but $(z - 5)^2$ is larger at the other end of the range."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{100}{9}$",
+      "correct": false,
+      "misconception": "I assumed the extreme happens when all three numbers are equal, $x = y = z = \\frac{10}{3}$, but then $xy + yz + zx = \\frac{100}{3}$, not $25$."
+    },
+    {
+      "key": "D",
+      "text": "$25$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$75 + 50\\sqrt2$",
+      "correct": false,
+      "misconception": "I wrote the condition for $x$ and $y$ to be real as $(x + y)^2 \\ge 2xy$, which allowed $z$ down to $-5\\sqrt2$ and made $(z - 5)^2$ too big."
+    }
+  ],
+  "hints": [
+    "Fix $z$ and write $x + y$ and $xy$ in terms of $z$.",
+    "With $z$ fixed, $x + y = 10 - z$ and $xy = 25 - z(10 - z) = (z - 5)^2$. But $x$ and $y$ must be real, which limits $z$.",
+    "$x$ and $y$ are real exactly when $(10 - z)^2 \\ge 4(z - 5)^2$, which gives $0 \\le z \\le \\frac{20}{3}$. Find the largest value of $(z - 5)^2$ on that interval."
+  ],
+  "solutions": {
+    "reliable": "Fix $z$. Then $x + y = 10 - z$ and $xy = 25 - z(x + y) = 25 - 10z + z^2 = (z - 5)^2$. So $x$ and $y$ are the roots of $t^2 - (10 - z)t + (z - 5)^2 = 0$, which are real exactly when $(10 - z)^2 \\ge 4(z - 5)^2$. Expanding, $100 - 20z + z^2 \\ge 4z^2 - 40z + 100$, so $3z^2 - 20z \\le 0$, that is $0 \\le z \\le \\frac{20}{3}$. On this interval $(z - 5)^2$ is largest at the endpoint farther from $5$, which is $z = 0$, giving $xy = 25$. Check: $z = 0$ forces $x + y = 10$ and $xy = 25$, so $x = y = 5$, and indeed $5 \\cdot 5 + 0 + 0 = 25$. Transferable idea: when a quantity depends on one variable, first find the full range that variable can take by demanding the others be real.",
+    "elegant": "Since $xy = (z - 5)^2$, the question is really how far from $5$ the number $z$ can be. The reality condition puts $z$ in $\\left[0, \\frac{20}{3}\\right]$, and the point of that interval farthest from $5$ is $z = 0$, at distance $5$, so the largest value is $5^2 = 25$. Transferable idea: rewrite the target in terms of a single variable, then find the full range that variable can take."
+  },
+  "formulas": [
+    "F-ALG-16"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F-ALG-07",
+  "area": "ALG",
+  "name": "Simon's Favorite Factoring Trick",
+  "formula": "xy + ax + by = c \\iff (x + b)(y + a) = c + ab",
+  "whenToUse": "An equation in two integer unknowns has an $xy$ term plus linear terms. Adding the right constant to both sides turns it into a product equal to a number you can factor.",
+  "example": "Solve $xy + 3x + 2y = 18$ in positive integers. Add $6$: $(x + 2)(y + 3) = 24$ with $x + 2 \\ge 3$ and $y + 3 \\ge 4$. The pairs $3 \\cdot 8$, $4 \\cdot 6$, $6 \\cdot 4$ give $(x, y) = (1, 5), (2, 3), (4, 1)$: three solutions.",
+  "pitfall": "The constant you add is the product of the two coefficients, and the coefficient of $x$ goes with $y$. If $xy$ has a coefficient, multiply through by it before factoring.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-SFFT"
+  ],
+  "derivation": "Expanding $(x + b)(y + a)$ gives $xy + ax + by + ab$, which is the left side plus $ab$."
+}

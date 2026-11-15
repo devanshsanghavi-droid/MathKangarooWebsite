@@ -1,0 +1,70 @@
+{
+  "id": "AM-0234",
+  "contest": "AMC12",
+  "slot": 5,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": [
+    "T-PIE",
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "How many positive divisors of $N = 2^4 \\cdot 3^5 \\cdot 5^2$ are perfect squares or perfect cubes (or both)?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I counted the square divisors correctly but forgot to include the cube divisors at all."
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I did not count 1 as a perfect square or a perfect cube, so I got 17 squares and 3 cubes."
+    },
+    {
+      "key": "C",
+      "text": "$21$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I added the 18 squares and the 4 cubes but forgot to subtract the divisor that is both, which is 1."
+    },
+    {
+      "key": "E",
+      "text": "$23$",
+      "correct": false,
+      "misconception": "I thought inclusion-exclusion adds the overlap, so I computed 18 + 4 + 1 instead of 18 + 4 - 1."
+    }
+  ],
+  "hints": [
+    "A divisor $2^a 3^b 5^c$ is a square exactly when $a$, $b$, $c$ are all even.",
+    "Count squares and cubes separately, then subtract the divisors that are both, which are sixth powers.",
+    "Squares: $3 \\cdot 3 \\cdot 2 = 18$. Cubes: $2 \\cdot 2 \\cdot 1 = 4$. Sixth powers: only $1$."
+  ],
+  "solutions": {
+    "reliable": "Divisors have the form $2^a 3^b 5^c$ with $0 \\le a \\le 4$, $0 \\le b \\le 5$, $0 \\le c \\le 2$. A square needs $a \\in \\{0,2,4\\}$, $b \\in \\{0,2,4\\}$, $c \\in \\{0,2\\}$: $3 \\cdot 3 \\cdot 2 = 18$ divisors. A cube needs $a \\in \\{0,3\\}$, $b \\in \\{0,3\\}$, $c = 0$: $2 \\cdot 2 \\cdot 1 = 4$ divisors. Both means a sixth power, which needs every exponent to be $0$ or at least $6$, so only $1$. By inclusion-exclusion the count is $18 + 4 - 1 = 21$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-01",
+    "F-CP-01"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

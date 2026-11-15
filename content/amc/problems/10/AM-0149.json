@@ -1,0 +1,70 @@
+{
+  "id": "AM-0149",
+  "contest": "AMC10",
+  "slot": 21,
+  "area": "CP",
+  "topic": "CP-04",
+  "types": [
+    "T-PIE",
+    "T-COMPLEMENT"
+  ],
+  "statement": "Each of the $9$ cells of a $3 \\times 3$ grid is coloured black or white, independently and with equal probability. What is the probability that no $2 \\times 2$ square of four cells in the grid is entirely black?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{3}{4}$",
+      "correct": false,
+      "misconception": "I subtracted 4 x 2^5 = 128 grids, one batch for each 2 x 2 square, without correcting for grids that have two or more black squares."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{50625}{65536}$",
+      "correct": false,
+      "misconception": "I treated the four 2 x 2 squares as independent, each all black with probability 1/16, and computed (15/16)^4, but the squares share cells."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{13}{16}$",
+      "correct": false,
+      "misconception": "I did inclusion-exclusion through the triples of squares but forgot the last term, the single grid where all four 2 x 2 squares are black."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{417}{512}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{53}{64}$",
+      "correct": false,
+      "misconception": "I subtracted the single squares and added back the pairs, but stopped there and never handled the triples or the quadruple."
+    }
+  ],
+  "hints": [
+    "There are four $2 \\times 2$ squares, and they overlap.",
+    "Count grids with at least one all-black 2 x 2 square by inclusion-exclusion over the four squares. The size of each intersection depends on how many cells the chosen squares cover together.",
+    "One square: $2^5$ grids each. Two side-by-side squares cover $6$ cells, two diagonal squares cover $7$. Any three squares cover $8$ cells, and all four cover $9$."
+  ],
+  "solutions": {
+    "reliable": "Count the grids with at least one all-black $2 \\times 2$ square. One square: its $4$ cells are black and $5$ cells are free, $32$ grids, times $4$ squares is $128$. Pairs: the $4$ side-by-side pairs cover $6$ cells, $2^3 = 8$ grids each, and the $2$ diagonal pairs cover $7$ cells, $4$ grids each, for $32 + 8 = 40$. Triples: any $3$ squares cover all but one corner, $2$ grids each, $4 \\cdot 2 = 8$. All four: $1$ grid. So $128 - 40 + 8 - 1 = 95$ grids are bad, $512 - 95 = 417$ are good, and the probability is $\\frac{417}{512}$. The transferable idea: in inclusion-exclusion over overlapping regions, the size of each term is $2$ to the number of cells left free by the union.",
+    "elegant": "Split on the centre cell, which lies in all four squares. If it is white, every grid works: $256$. If it is black, the other $8$ cells form a ring of corners and edges, and each square is all black only when a corner and its two neighbouring edges are black. Choose the edges first. A corner is forced to be white exactly when both its neighbouring edges are black, and free otherwise. Over the $16$ edge colourings this gives $16 + 4 \\cdot 16 + (4 \\cdot 8 + 2 \\cdot 16) + 4 \\cdot 4 + 1 = 161$ grids, sorted by $0$ to $4$ black edges. Total $256 + 161 = 417$."
+  },
+  "formulas": [
+    "F-CP-01",
+    "F-CP-06"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

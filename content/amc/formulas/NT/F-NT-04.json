@@ -1,0 +1,14 @@
+{
+  "id": "F-NT-04",
+  "area": "NT",
+  "name": "Euclidean algorithm",
+  "formula": "\\gcd(a, b) = \\gcd(b,\\ a \\bmod b) = \\gcd(a - kb,\\ b) \\quad (b \\ne 0)",
+  "whenToUse": "Find the gcd of two large numbers without factoring them, or the gcd of two expressions in a variable $n$.",
+  "example": "$\\gcd(391, 299) = \\gcd(299, 92) = \\gcd(92, 23) = 23$, since $299 = 3 \\cdot 92 + 23$ and $92 = 4 \\cdot 23$. For expressions, $\\gcd(n^2 + 1, n + 1) = \\gcd(2, n + 1)$, because $n^2 + 1 = (n - 1)(n + 1) + 2$.",
+  "pitfall": "Subtract multiples of the SMALLER number from the larger, and stop at the last nonzero remainder. For expressions the answer can depend on $n$, as in the example.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ]
+}

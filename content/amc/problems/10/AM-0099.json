@@ -1,0 +1,70 @@
+{
+  "id": "AM-0099",
+  "contest": "AMC10",
+  "slot": 14,
+  "area": "NT",
+  "topic": "NT-06",
+  "types": [
+    "T-MODULAR",
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "When the number $2026$ is written in base $b$, for some integer $b \\ge 2$, its last digit is $6$. How many values of $b$ are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I threw out the divisors 1 and 2 because base 2 has no digit 6, but kept 4 and 5, which have no digit 6 either."
+    },
+    {
+      "key": "C",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I counted every divisor of 2020 except 1, forgetting that the base must be larger than the digit 6."
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I counted all 12 divisors of $2020 = 2^2 \\cdot 5 \\cdot 101$ without requiring the base to be larger than 6."
+    },
+    {
+      "key": "E",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I treated the last digit as a remainder of 1 instead of 6 and counted the 14 divisors of 2025 that are larger than 1."
+    }
+  ],
+  "hints": [
+    "The last digit of a number in base $b$ is its remainder when divided by $b$.",
+    "A remainder of 6 means $b$ divides $2026 - 6$, and a remainder is always smaller than the divisor.",
+    "$2020 = 2^2 \\cdot 5 \\cdot 101$ has $3 \\cdot 2 \\cdot 2 = 12$ divisors. Keep only those greater than 6."
+  ],
+  "solutions": {
+    "reliable": "The last digit of $2026$ in base $b$ is the remainder of $2026$ on division by $b$. That remainder is $6$ exactly when $b$ divides $2026 - 6 = 2020$ and $b > 6$. Since $2020 = 2^2 \\cdot 5 \\cdot 101$, its divisors are $1, 2, 4, 5, 10, 20, 101, 202, 404, 505, 1010, 2020$. The ones larger than 6 are $10, 20, 101, 202, 404, 505, 1010, 2020$, so there are $8$ bases. Check one: in base $10$ the last digit of $2026$ is indeed $6$. Transferable idea: the last digit in base $b$ is a remainder, so a last-digit condition becomes a divisibility condition plus the rule that a digit is less than the base.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-11",
+    "F-NT-01"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

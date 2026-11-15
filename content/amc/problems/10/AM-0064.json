@@ -1,0 +1,67 @@
+{
+  "id": "AM-0064",
+  "contest": "AMC10",
+  "slot": 16,
+  "area": "GEO",
+  "topic": "GEO-10",
+  "types": [
+    "T-SYMMETRY",
+    "T-AUXILIARY"
+  ],
+  "statement": "A path starts at $A = (2,3)$, goes in a straight line to a point on the $y$-axis, then in a straight line to a point on the $x$-axis, then in a straight line to $B = (6,1)$. What is the smallest possible length of such a path?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2\\sqrt5$",
+      "correct": false,
+      "misconception": "I measured the straight segment from $A$ to $B$, $\\sqrt{16 + 4}$, which never touches either axis."
+    },
+    {
+      "key": "B",
+      "text": "$4\\sqrt2$",
+      "correct": false,
+      "misconception": "I reflected only $B$ across the $x$-axis, getting the shortest path that touches the $x$-axis alone, and skipped the visit to the $y$-axis."
+    },
+    {
+      "key": "C",
+      "text": "$2\\sqrt{17}$",
+      "correct": false,
+      "misconception": "I reflected only $A$ across the $y$-axis, getting the shortest path that touches the $y$-axis alone, and skipped the visit to the $x$-axis."
+    },
+    {
+      "key": "D",
+      "text": "$4\\sqrt5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\sqrt{13} + \\sqrt{37}$",
+      "correct": false,
+      "misconception": "I sent the path through the origin, since it lies on both axes, but the bent path through two different points is shorter."
+    }
+  ],
+  "hints": [
+    "A straight line is the shortest path. How can you make a bent path straight?",
+    "Reflect so that each bounce becomes a straight continuation: reflect $A$ across the $y$-axis and $B$ across the $x$-axis.",
+    "$A' = (-2,3)$ and $B' = (6,-1)$. The path length equals a broken line from $A'$ to $B'$, which is at least $A'B'$. Check the straight line hits the axes in the right order."
+  ],
+  "solutions": {
+    "reliable": "Let the path touch the $y$-axis at $Q$ and the $x$-axis at $R$. Reflecting $A$ across the $y$-axis gives $A' = (-2,3)$ with $AQ = A'Q$; reflecting $B$ across the $x$-axis gives $B' = (6,-1)$ with $RB = RB'$. So the length is $A'Q + QR + RB' \\ge A'B' = \\sqrt{8^2 + 4^2} = 4\\sqrt5$. Equality is reachable: the line $A'B'$, $y = 3 - \\tfrac12(x + 2)$, meets the $y$-axis at $(0,2)$ and then the $x$-axis at $(4,0)$, in the required order. The minimum is $4\\sqrt5$. Transferable idea: a path that must touch a line becomes straight after reflecting across that line.",
+    "elegant": "Unfold both bounces at once. Reflecting $A$ across the $y$-axis and then across the $x$-axis is a half turn about the origin, sending $A$ to $A'' = (-2,-3)$, and the path straightens into a broken line from $A''$ to $B$. So the minimum is $A''B = |(6,1) - (-2,-3)| = |(8,4)| = 4\\sqrt5$."
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

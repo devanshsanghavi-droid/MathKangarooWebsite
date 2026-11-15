@@ -1,0 +1,71 @@
+{
+  "id": "AM-0296",
+  "contest": "AMC12",
+  "slot": 19,
+  "area": "CP",
+  "topic": "CP-03",
+  "types": [
+    "T-ROOTS-UNITY",
+    "T-EVALUATE"
+  ],
+  "statement": "What is the value of $\\displaystyle\\sum_{k=0}^{20} \\binom{20}{k} \\cos\\frac{2k\\pi}{3}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-\\frac{1}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I thought the cosines cancel in blocks of three, since cos 0 + cos(2pi/3) + cos(4pi/3) = 0, ignoring that the binomial coefficients in each block differ."
+    },
+    {
+      "key": "C",
+      "text": "$2^{-20}$",
+      "correct": false,
+      "misconception": "I treated cos(2k pi/3) as if it were (cos(2pi/3))^k and used the binomial theorem to get (1 - 1/2)^20."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I found the real part of e^(20 pi i/3) but reduced 20pi/3 by 7pi to get -pi/3, forgetting that shifting by an odd multiple of pi flips the sign of cosine."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{2^{20} - 1}{3}$",
+      "correct": false,
+      "misconception": "I kept only the terms where k is a multiple of 3, where the cosine is 1, and dropped all the other terms."
+    }
+  ],
+  "hints": [
+    "A cosine is the real part of a complex exponential.",
+    "With $\\omega = e^{2\\pi i/3}$, the sum is the real part of $\\sum \\binom{20}{k}\\omega^k$. Use the binomial theorem.",
+    "The sum is $\\operatorname{Re}\\,(1 + \\omega)^{20}$, and $1 + \\omega = \\frac12 + \\frac{\\sqrt3}{2}i = e^{i\\pi/3}$ has modulus $1$."
+  ],
+  "solutions": {
+    "reliable": "Let $\\omega = e^{2\\pi i/3}$, so $\\cos\\frac{2k\\pi}{3} = \\operatorname{Re}\\,\\omega^k$ and the sum is $\\operatorname{Re}\\sum_k \\binom{20}{k}\\omega^k = \\operatorname{Re}\\,(1+\\omega)^{20}$. Since $1 + \\omega = 1 - \\frac12 + \\frac{\\sqrt3}{2}i = e^{i\\pi/3}$, we get $(1+\\omega)^{20} = e^{20\\pi i/3}$, and $\\frac{20\\pi}{3} = 6\\pi + \\frac{2\\pi}{3}$, so the real part is $\\cos\\frac{2\\pi}{3} = -\\frac12$. Check with residues: let $A_0$ be the sum of $\\binom{20}{k}$ over $k$ divisible by 3. The cosine is $1$ for those $k$ and $-\\frac12$ otherwise, so the sum is $A_0 - \\frac12(2^{20} - A_0)$. The roots-of-unity filter gives $A_0 = \\frac{2^{20} + 2\\cos(20\\pi/3)}{3} = \\frac{2^{20} - 1}{3}$, and then the sum is $\\frac{3A_0 - 2^{20}}{2} = -\\frac12$. Transferable idea: a binomial sum weighted by cosines is the real part of a binomial expansion at a complex number.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-09",
+    "F-ALG-12",
+    "F-ALG-13"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

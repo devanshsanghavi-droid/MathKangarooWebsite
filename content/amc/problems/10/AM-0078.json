@@ -1,0 +1,66 @@
+{
+  "id": "AM-0078",
+  "contest": "BOTH",
+  "slot": 3,
+  "area": "NT",
+  "topic": "NT-10",
+  "types": [
+    "T-CYCLE"
+  ],
+  "statement": "What is the sum of the first $50$ digits after the decimal point in the decimal expansion of $\\dfrac{3}{7}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$216$",
+      "correct": false,
+      "misconception": "I counted 8 full blocks of 428571, each with digit sum 27, and dropped the 2 digits left over: 8 x 27 = 216."
+    },
+    {
+      "key": "B",
+      "text": "$222$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$225$",
+      "correct": false,
+      "misconception": "I treated 50/6 as 8 and one third blocks and multiplied 27 by 25/3 to get 225, but the two leftover digits 4 and 2 do not add up to one third of a block's sum."
+    },
+    {
+      "key": "D",
+      "text": "$230$",
+      "correct": false,
+      "misconception": "I thought 50 = 6 x 8 + 3, so I added 8 full blocks plus three more digits 4, 2 and 8: 216 + 14 = 230."
+    },
+    {
+      "key": "E",
+      "text": "$243$",
+      "correct": false,
+      "misconception": "I rounded 50/6 up to 9 full blocks and got 9 x 27 = 243, counting four digits past the 50th."
+    }
+  ],
+  "hints": [
+    "Write $\\dfrac{3}{7}$ as a decimal by long division until it starts to repeat.",
+    "$\\dfrac{3}{7} = 0.\\overline{428571}$ repeats every $6$ digits. How many complete blocks fit in $50$ digits, and what is left over?",
+    "$50 = 6 \\cdot 8 + 2$: eight blocks, each with digit sum $4+2+8+5+7+1 = 27$, followed by the digits $4$ and $2$."
+  ],
+  "solutions": {
+    "reliable": "Long division gives $\\dfrac{3}{7} = 0.428571428571\\ldots$, with repeating block $428571$ of length $6$ and digit sum $4+2+8+5+7+1 = 27$. Since $50 = 6 \\cdot 8 + 2$, the first $50$ digits are $8$ complete blocks followed by the first two digits of a ninth block, which are $4$ and $2$. The sum is $8 \\cdot 27 + 4 + 2 = 222$.",
+    "elegant": "Nine full blocks would be $54$ digits with sum $9 \\cdot 27 = 243$. The first $50$ digits leave out the last four digits of the ninth block, $8 + 5 + 7 + 1 = 21$, so the sum is $243 - 21 = 222$."
+  },
+  "formulas": [],
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

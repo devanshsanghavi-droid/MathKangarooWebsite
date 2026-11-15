@@ -1,0 +1,70 @@
+{
+  "id": "AM-0259",
+  "contest": "AMC12",
+  "slot": 20,
+  "area": "NT",
+  "topic": "NT-09",
+  "types": [
+    "T-PARITY",
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "Let $\\sigma(n)$ denote the sum of all positive divisors of $n$. For how many integers $n$ with $1 \\le n \\le 2026$ is $\\sigma(n)$ odd?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I thought the power of 2 in n had to be even like every other prime, so I only counted the perfect squares."
+    },
+    {
+      "key": "B",
+      "text": "$76$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$90$",
+      "correct": false,
+      "misconception": "I counted the 45 squares and then assumed each of them has its double in range, but 2k^2 is at most 2026 only for k up to 31."
+    },
+    {
+      "key": "D",
+      "text": "$98$",
+      "correct": false,
+      "misconception": "I counted squares, twice squares and four times squares as three separate families, but four times a square is already a square."
+    },
+    {
+      "key": "E",
+      "text": "$1013$",
+      "correct": false,
+      "misconception": "I thought sigma(n) is odd exactly when n is odd, but for example sigma(3) = 4 is even and sigma(2) = 3 is odd."
+    }
+  ],
+  "hints": [
+    "$\\sigma$ is multiplicative, so look at $\\sigma(p^e)$ for one prime power at a time.",
+    "$\\sigma(p^e) = 1 + p + \\cdots + p^e$. For $p = 2$ it is always odd. For an odd prime it is a sum of $e + 1$ odd numbers. When is that odd?",
+    "$\\sigma(n)$ is odd exactly when every odd prime appears to an even power, so $n = 2^a m^2$ with $m$ odd. Those are the squares and the twice-squares."
+  ],
+  "solutions": {
+    "reliable": "Since $\\sigma$ is multiplicative, $\\sigma(n)$ is odd exactly when $\\sigma(p^e)$ is odd for every prime power $p^e$ exactly dividing $n$. For $p = 2$, $\\sigma(2^a) = 2^{a+1} - 1$ is always odd. For odd $p$, $\\sigma(p^e)$ is a sum of $e + 1$ odd terms, which is odd exactly when $e$ is even. So $\\sigma(n)$ is odd exactly when $n = 2^a m^2$ with $m$ odd. If $a$ is even this is a perfect square; if $a$ is odd it is twice a perfect square; and every square or twice a square has this form. Squares up to $2026$: $1^2, \\ldots, 45^2$, so $45$. Twice squares: $2k^2 \\le 2026$ means $k \\le 31$, so $31$. No number is both, so the answer is $45 + 31 = 76$. The transferable idea: parity of a multiplicative function is decided prime by prime.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-02",
+    "F-NT-18"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

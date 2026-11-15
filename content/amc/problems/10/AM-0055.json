@@ -1,0 +1,68 @@
+{
+  "id": "AM-0055",
+  "contest": "BOTH",
+  "slot": 10,
+  "area": "GEO",
+  "topic": "GEO-10",
+  "types": [
+    "T-SYMMETRY",
+    "T-COORD",
+    "T-AUXILIARY"
+  ],
+  "statement": "Square $ABCD$ has side length $12$. Point $E$ lies on side $BC$ with $BE = 5$. The square is folded along a straight crease so that corner $A$ lands exactly on $E$. What is the length of the part of the crease that lies inside the square?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{13}{2}$",
+      "correct": false,
+      "misconception": "I found AE = 13 and thought the crease was half of it, as if the crease ran from the midpoint of AE to a side."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{169}{24}$",
+      "correct": false,
+      "misconception": "I found where the crease meets side AB, at distance 169/24 from A, and reported that distance instead of the crease length."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I assumed the crease is parallel to a side of the square, so it would be as long as a side."
+    },
+    {
+      "key": "D",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$12\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I assumed the crease runs corner to corner along a diagonal, but a diagonal fold sends A to C, not to E."
+    }
+  ],
+  "hints": [
+    "Every point on the crease is the same distance from $A$ as from $E$.",
+    "A fold is a reflection, so the crease is the perpendicular bisector of $AE$. Find where that line meets two opposite sides of the square, or compare it with the segment $AE$ by a rotation.",
+    "With $A = (0,0)$ and $E = (12, 5)$, the crease is $12x + 5y = \\frac{169}{2}$. It meets $y = 0$ at $x = \\frac{169}{24}$ and $y = 12$ at $x = \\frac{49}{24}$."
+  ],
+  "solutions": {
+    "reliable": "Put $A = (0,0)$, $B = (12,0)$, $C = (12,12)$, $D = (0,12)$, so $E = (12, 5)$. Folding $A$ onto $E$ is a reflection, so the crease is the perpendicular bisector of $AE$: it passes through $(6, \\frac{5}{2})$ and is perpendicular to the direction $(12, 5)$, so its equation is $12x + 5y = 72 + \\frac{25}{2} = \\frac{169}{2}$. At $y = 0$, $x = \\frac{169}{24}$; at $y = 12$, $x = \\frac{49}{24}$. Both lie between $0$ and $12$, so the crease runs from side $AB$ to side $CD$. Its length is $\\sqrt{5^2 + 12^2} = 13$, since the endpoints differ by $5$ horizontally and $12$ vertically. The transferable idea: a fold is a reflection, so the crease is the perpendicular bisector of a point and its image.",
+    "elegant": "In a square, any segment joining two opposite sides that is perpendicular to another segment joining the other two opposite sides has the same length as it: a $90^\\circ$ rotation about the center carries one direction to the other. The crease joins side $AB$ to side $CD$ and is perpendicular to $AE$, which joins side $AD$ (at its endpoint $A$) to the opposite side $BC$, so the crease has length $AE = \\sqrt{12^2 + 5^2} = 13$."
+  },
+  "formulas": [],
+  "estSeconds": 165,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

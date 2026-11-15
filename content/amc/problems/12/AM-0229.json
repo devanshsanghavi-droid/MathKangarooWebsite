@@ -1,0 +1,68 @@
+{
+  "id": "AM-0229",
+  "contest": "AMC12",
+  "slot": 1,
+  "area": "NT",
+  "topic": "NT-10",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "What is the value of $\\dfrac{1}{0.\\overline{3}} + \\dfrac{1}{0.\\overline{6}}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I added the two decimals first to get 0.999... = 1 and took a single reciprocal, but the reciprocal of a sum is not the sum of the reciprocals."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{9}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{14}{3}$",
+      "correct": false,
+      "misconception": "I handled 0.333... correctly as 1/3, but I read 0.666... as 0.6 = 3/5, so I got 3 + 5/3 = 14/3."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I ignored the repeating bars and used 0.3 and 0.6, so I got 10/3 + 10/6 = 5."
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{99}{2}$",
+      "correct": false,
+      "misconception": "I wrote each repeating decimal over 99 as if it had a two-digit repeating block, using 3/99 and 6/99, so I got 33 + 33/2 = 99/2."
+    }
+  ],
+  "hints": [
+    "Write each repeating decimal as a fraction before doing anything else.",
+    "If $x = 0.\\overline{3}$ then $10x - x = 3$. Do the same for $0.\\overline{6}$.",
+    "$0.\\overline{3} = \\frac{1}{3}$ and $0.\\overline{6} = \\frac{2}{3}$, so the sum is $3 + \\frac{3}{2}$."
+  ],
+  "solutions": {
+    "reliable": "Let $x = 0.\\overline{3}$. Then $10x = 3.\\overline{3}$, so $9x = 3$ and $x = \\frac{1}{3}$. Likewise $y = 0.\\overline{6}$ gives $9y = 6$, so $y = \\frac{2}{3}$. The reciprocals are $3$ and $\\frac{3}{2}$, and their sum is $\\frac{9}{2}$.",
+    "elegant": "Since $0.\\overline{6} = 2 \\cdot 0.\\overline{3}$, the second reciprocal is half the first: $3 + \\frac{3}{2} = \\frac{9}{2}$."
+  },
+  "formulas": [
+    "F-NT-14"
+  ],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

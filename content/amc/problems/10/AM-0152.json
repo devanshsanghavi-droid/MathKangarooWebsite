@@ -1,0 +1,70 @@
+{
+  "id": "AM-0152",
+  "contest": "AMC10",
+  "slot": 25,
+  "area": "CP",
+  "topic": "CP-08",
+  "types": [
+    "T-LINEARITY",
+    "T-BIJECTION"
+  ],
+  "statement": "Ten points are marked on a circle, placed so that no three of the $45$ chords joining them pass through a common point inside the circle. Each of the $45$ chords is drawn independently with probability $\\frac12$. What is the expected number of regions into which the drawn chords divide the inside of the circle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{47}{2}$",
+      "correct": false,
+      "misconception": "I thought every drawn chord adds exactly one region, so I got 1 + 45/2, forgetting that a chord adds one more region for each chord it crosses."
+    },
+    {
+      "key": "B",
+      "text": "$75$",
+      "correct": false,
+      "misconception": "I added the expected number of chords, 45/2, and the expected number of crossings, 105/2, but forgot the one region the circle has before any chord is drawn."
+    },
+    {
+      "key": "C",
+      "text": "$76$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$128$",
+      "correct": false,
+      "misconception": "I found the number of regions when all 45 chords are drawn, 1 + 45 + 210 = 256, and halved it, but a crossing needs both of its chords, which happens with probability 1/4."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{257}{2}$",
+      "correct": false,
+      "misconception": "I gave each crossing probability 1/2, as if it needed only one of its two chords, so I got 1 + 45/2 + 105."
+    }
+  ],
+  "hints": [
+    "Draw the chords one at a time and watch how many new regions each one creates.",
+    "A new chord that crosses $k$ chords already drawn is cut into $k + 1$ pieces, and each piece splits a region in two. So the number of regions is $1$ plus the number of chords plus the number of crossing points. Now use linearity of expectation on the chords and on the crossings.",
+    "Every $4$ of the $10$ points give exactly one possible crossing, where the two diagonals of their quadrilateral meet. That crossing appears when both diagonals are drawn, with probability $\\frac14$."
+  ],
+  "solutions": {
+    "reliable": "Add the drawn chords one at a time. Since no three chords meet at an interior point, a chord that crosses $k$ chords already drawn is cut into $k + 1$ pieces, and each piece splits one region into two, so it adds $k + 1$ regions. Starting from $1$ region, the final count is $R = 1 + c + x$, where $c$ is the number of drawn chords and $x$ the number of crossing points. Each chord is drawn with probability $\\frac12$, so $E[c] = \\frac{45}{2}$. Each crossing point comes from exactly one set of $4$ of the points (two chords cross inside exactly when their four endpoints alternate around the circle, which makes them the two diagonals of the quadrilateral), and each of the $\\binom{10}{4} = 210$ sets gives one crossing that is present when both diagonals are drawn, with probability $\\frac14$. So $E[x] = \\frac{210}{4} = \\frac{105}{2}$. By linearity, $E[R] = 1 + \\frac{45}{2} + \\frac{105}{2} = 76$. The transferable idea: write a messy count as a sum of simple pieces, here chords and crossings, and add their expected values.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-09",
+    "F-CP-03"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

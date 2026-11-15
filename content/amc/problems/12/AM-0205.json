@@ -1,0 +1,70 @@
+{
+  "id": "AM-0205",
+  "contest": "AMC12",
+  "slot": 9,
+  "area": "GEO",
+  "topic": "GEO-06",
+  "types": [
+    "T-AUXILIARY",
+    "T-VIETA"
+  ],
+  "statement": "The line $y = 2x - k$ meets the circle $x^2 + y^2 - 6x - 8y = 0$ at two points $A$ and $B$ with $AB = 8$. What is the product of all possible values of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-221$",
+      "correct": false,
+      "misconception": "I divided by 5 in the point-to-line distance instead of by the square root of 5, which gave |2 - k| = 15."
+    },
+    {
+      "key": "B",
+      "text": "$-121$",
+      "correct": false,
+      "misconception": "I set the distance from the center to the line equal to the radius 5, which is the condition for a tangent line, not for a chord of length 8."
+    },
+    {
+      "key": "C",
+      "text": "$-76$",
+      "correct": false,
+      "misconception": "I set the distance from the center to the line equal to the half-chord 4 instead of finding it from the radius and the half-chord."
+    },
+    {
+      "key": "D",
+      "text": "$-41$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found the two values of k correctly and added them instead of multiplying them."
+    }
+  ],
+  "hints": [
+    "Complete the square to find the center and radius.",
+    "The perpendicular from the center to the chord bisects it. So the half-chord $4$, the radius and the distance from the center to the line form a right triangle. Then write the line as $2x - y - k = 0$ and use the point-to-line distance.",
+    "The center is $(3, 4)$ and the radius is $5$, so the distance from the center to the line is $\\sqrt{25 - 16} = 3$. That gives $\\frac{|2 - k|}{\\sqrt{5}} = 3$, so $(2 - k)^2 = 45$."
+  ],
+  "solutions": {
+    "reliable": "Completing the square, $(x - 3)^2 + (y - 4)^2 = 25$: center $(3, 4)$, radius $5$. The perpendicular from the center bisects the chord, so the distance $d$ from the center to the line satisfies $d^2 + 4^2 = 5^2$, giving $d = 3$. The distance from $(3, 4)$ to $2x - y - k = 0$ is $\\frac{|6 - 4 - k|}{\\sqrt{5}} = \\frac{|2 - k|}{\\sqrt{5}}$, so $|2 - k| = 3\\sqrt{5}$ and $k = 2 \\pm 3\\sqrt{5}$. The product is $(2 + 3\\sqrt{5})(2 - 3\\sqrt{5}) = 4 - 45 = -41$. Transferable idea: a chord length is a distance condition, through the right triangle made by the radius and the half-chord.",
+    "elegant": "Once the distance condition reads $(2 - k)^2 = 45$, expand it: $k^2 - 4k - 41 = 0$. Both roots are real and are the two possible values of $k$, so by Vieta their product is $-41$ without solving. Transferable idea: when a question asks for a sum or product of the possible values, write the equation they satisfy and read it off the coefficients."
+  },
+  "formulas": [
+    "F-GEO-18",
+    "F-ALG-02"
+  ],
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

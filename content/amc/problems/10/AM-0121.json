@@ -1,0 +1,69 @@
+{
+  "id": "AM-0121",
+  "contest": "BOTH",
+  "slot": 5,
+  "area": "CP",
+  "topic": "CP-07",
+  "types": [
+    "T-GEOPROB",
+    "T-COORD"
+  ],
+  "statement": "A point $(x, y)$ is chosen uniformly at random inside the rectangle with vertices $(0,0)$, $(6,0)$, $(6,4)$ and $(0,4)$. What is the probability that $x > 2y$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{3}{8}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{1}{2}$",
+      "correct": false,
+      "misconception": "I assumed the line x = 2y is a diagonal of the rectangle, so it would cut the rectangle in half."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{5}{8}$",
+      "correct": false,
+      "misconception": "I found the area of the region where x < 2y, the part above the line, instead of the part below it."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{3}{4}$",
+      "correct": false,
+      "misconception": "I used 6 x 3 = 18 for the triangle under the line and forgot the factor of one half in the triangle area."
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{5}{6}$",
+      "correct": false,
+      "misconception": "I drew the line y = 2x instead of x = 2y and took the region below it, which has area 20."
+    }
+  ],
+  "hints": [
+    "Draw the line $x = 2y$ inside the rectangle.",
+    "The condition holds below the line. Find where the line leaves the rectangle, compute the area of the region below it, and divide by the area of the rectangle.",
+    "The line $y = x/2$ goes from $(0,0)$ to $(6,3)$. The region below it is a triangle with legs $6$ and $3$."
+  ],
+  "solutions": {
+    "reliable": "The condition $x > 2y$ means $y < x/2$, the region below the line $y = x/2$. That line passes through $(0,0)$ and reaches the right side $x = 6$ at $y = 3$, which is still below the top side $y = 4$. So the favourable region is the triangle with vertices $(0,0)$, $(6,0)$ and $(6,3)$, of area $\\tfrac12 \\cdot 6 \\cdot 3 = 9$. The rectangle has area $24$, so the probability is $9/24 = 3/8$. Transferable idea: a uniform point turns probability into a ratio of areas.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-11"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

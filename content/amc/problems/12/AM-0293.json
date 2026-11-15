@@ -1,0 +1,69 @@
+{
+  "id": "AM-0293",
+  "contest": "AMC12",
+  "slot": 17,
+  "area": "CP",
+  "topic": "CP-07",
+  "types": [
+    "T-RECURSION"
+  ],
+  "statement": "Ana, Ben and Cal take turns flipping a biased coin in the order Ana, Ben, Cal, Ana, Ben, Cal, and so on. The coin lands heads with probability $\\frac13$. The first person to flip heads wins, and the game stops. Given that Cal wins, what is the expected total number of flips in the game?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{27}{19}$",
+      "correct": false,
+      "misconception": "I found the expected number of full rounds, given that Cal wins, and forgot that each round is three flips."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{81}{19}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{19}{4}$",
+      "correct": false,
+      "misconception": "I took the reciprocal of the probability that Cal wins, which is 4/19."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I took the unconditional expected number of flips, 3, and added 2 because Cal flips third in each round."
+    },
+    {
+      "key": "E",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I thought each round ends the game with probability 1/3 because only Cal's flip matters, so I got 3 rounds of 3 flips."
+    }
+  ],
+  "hints": [
+    "If Cal wins, the game lasts $3$, $6$, $9$, ... flips.",
+    "Write the probability that Cal wins on flip $3k$, then condition on Cal winning by dividing by the total. The conditional distribution of the number of rounds turns out to be geometric.",
+    "Cal wins on flip $3k$ with probability $\\left(\\frac23\\right)^{3k-1}\\cdot\\frac13$, which is proportional to $r^k$ with $r = \\left(\\frac23\\right)^3 = \\frac{8}{27}$. Given that Cal wins, $P(k) = (1-r)r^{k-1}$, so $E[k] = \\frac{1}{1-r}$."
+  ],
+  "solutions": {
+    "reliable": "Cal wins on flip $3k$ with probability $\\frac{4}{27}\\left(\\frac{8}{27}\\right)^{k-1}$ (two tails then Cal's heads in round $k$, after $k-1$ rounds of three tails). Summing, $P(\\text{Cal wins}) = \\frac{4/27}{1 - 8/27} = \\frac{4}{19}$. Given that Cal wins, the round number $k$ has $P(k) = \\frac{19}{27}\\left(\\frac{8}{27}\\right)^{k-1}$, a geometric distribution with mean $\\frac{27}{19}$. Each round is 3 flips, so the expected number of flips is $3 \\cdot \\frac{27}{19} = \\frac{81}{19}$. Transferable idea: conditioning on who wins reshapes a geometric distribution but keeps it geometric.",
+    "elegant": "Condition on the first round. Given that Cal wins, either he wins in round 1 (3 flips) or all three flips are tails and the game restarts, with Cal still the eventual winner. The chance of a restart, given that Cal wins, is $\\frac{(8/27)\\cdot(4/19)}{4/19} = \\frac{8}{27}$. So $E = 3 + \\frac{8}{27}E$, which gives $E = \\frac{81}{19}$."
+  },
+  "formulas": [
+    "F-CP-13",
+    "F-ALG-04"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

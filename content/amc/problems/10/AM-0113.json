@@ -1,0 +1,70 @@
+{
+  "id": "AM-0113",
+  "contest": "BOTH",
+  "slot": 24,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-BOUNDING",
+    "T-CASEWORK"
+  ],
+  "statement": "Let $d(m)$ denote the number of positive divisors of $m$. How many positive integers $n < 10000$ satisfy $d(n^2) = 3\\,d(n)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I assumed the prime with exponent 4 must be the larger of the two primes, which left only $3^4 2^2$, $5^4 2^2$, $5^4 3^2$ and $7^4 2^2$."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I only considered $n = 2^4 q^2$, assuming the prime raised to the fourth power had to be 2."
+    },
+    {
+      "key": "C",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I assumed the prime with exponent 4 must be the smaller of the two primes, which drops cases such as $3^4 \\cdot 2^2$."
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I stopped after trying $p = 2$ and $p = 3$ for the fourth-power prime, assuming $5^4 q^2$ would already exceed 10000."
+    },
+    {
+      "key": "E",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Write $n = p_1^{e_1} \\cdots p_k^{e_k}$ and express both $d(n)$ and $d(n^2)$ in terms of the exponents.",
+    "The condition is $\\prod (2e_i + 1) = 3 \\prod (e_i + 1)$. Each ratio $\\frac{2e + 1}{e + 1}$ lies between $\\frac32$ and $2$, which limits how many primes $n$ can have.",
+    "One prime gives no solution, and three or more give a product of ratios at least $\\frac{27}{8} > 3$. With two primes, $(a - 1)(b - 1) = 3$, so $n = p^4 q^2$. Count those below 10000."
+  ],
+  "solutions": {
+    "reliable": "Let $n = \\prod_{i=1}^k p_i^{e_i}$; then $d(n) = \\prod (e_i + 1)$ and $d(n^2) = \\prod (2e_i + 1)$, so we need $\\prod \\frac{2e_i + 1}{e_i + 1} = 3$. For $n = 1$ the two sides are 1 and 3. Each ratio is at least $\\frac32$ and less than 2. With $k = 1$, $2e + 1 = 3e + 3$ has no positive solution. With $k \\ge 3$ the product is at least $\\left(\\frac32\\right)^3 = \\frac{27}{8} > 3$. With $k = 2$ and exponents $a, b$: $(2a + 1)(2b + 1) = 3(a + 1)(b + 1)$ expands to $ab - a - b = 2$, so $(a - 1)(b - 1) = 3$ and $\\{a, b\\} = \\{2, 4\\}$. So $n = p^4 q^2$ with distinct primes $p, q$. Counting $n < 10000$: $p = 2$ needs $q^2 < 625$, so $q \\in \\{3, 5, 7, 11, 13, 17, 19, 23\\}$, 8 values; $p = 3$ needs $q^2 < 10000/81$, so $q \\in \\{2, 5, 7, 11\\}$, 4 values; $p = 5$ needs $q^2 < 16$, so $q \\in \\{2, 3\\}$, 2 values; $p = 7$ needs $q^2 < 10000/2401$, so $q = 2$, 1 value; $p \\ge 11$ gives $p^4 > 10000$. Total $8 + 4 + 2 + 1 = 15$. Check the smallest, $144 = 2^4 3^2$: $d(144) = 15$ and $d(144^2) = d(2^8 3^4) = 45$. Transferable idea: a multiplicative condition on divisor counts becomes a product of per-prime ratios, and bounding those ratios limits the number of primes.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-01"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

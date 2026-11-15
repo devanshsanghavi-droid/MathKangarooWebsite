@@ -1,0 +1,13 @@
+{
+  "id": "F-GEO-01",
+  "area": "GEO",
+  "name": "Power of a point",
+  "formula": "PA \\cdot PB = PC \\cdot PD \\qquad\\text{and, for a tangent } PT,\\quad PT^2 = PA \\cdot PB",
+  "whenToUse": "Two lines through the same point $P$ each meet a circle twice, or one line is tangent, and a length along one of the lines is unknown.",
+  "example": "Chords $AB$ and $CD$ cross at $P$ inside a circle with $PA = 4$, $PB = 9$ and $PC = 6$. Then $6 \\cdot PD = 4 \\cdot 9 = 36$, so $PD = 6$.",
+  "pitfall": "Every length is measured FROM $P$. For a secant from an outside point use the whole distance $P$ to the far intersection, not the length of the chord inside the circle.",
+  "priority": "must-know",
+  "contests": ["AMC10", "AMC12"],
+  "types": ["T-POWER-POINT"],
+  "derivation": "Triangles $PAC$ and $PDB$ are similar because inscribed angles on the same arc are equal, so $PA/PD = PC/PB$, which rearranges to $PA \\cdot PB = PC \\cdot PD$."
+}

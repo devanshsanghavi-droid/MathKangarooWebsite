@@ -1,0 +1,69 @@
+{
+  "id": "AM-0063",
+  "contest": "AMC10",
+  "slot": 15,
+  "area": "GEO",
+  "topic": "GEO-08",
+  "types": [
+    "T-AUXILIARY",
+    "T-SIMILAR"
+  ],
+  "statement": "Triangle $ABC$ has $AB = 6$, $AC = 9$ and $BC = 10$. The bisector of $\\angle BAC$ meets $\\overline{BC}$ at $D$. What is $AD$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found $BD = 4$ from the angle bisector theorem and stopped there, giving a piece of $\\overline{BC}$ instead of the bisector."
+    },
+    {
+      "key": "B",
+      "text": "$2\\sqrt6$",
+      "correct": false,
+      "misconception": "I used $AD^2 = BD \\cdot DC = 4 \\cdot 6$, mixing up the bisector length formula $AD^2 = AB \\cdot AC - BD \\cdot DC$ with a power of a point product."
+    },
+    {
+      "key": "C",
+      "text": "$\\sqrt{30}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\sqrt{39}$",
+      "correct": false,
+      "misconception": "I put $BD$ and $DC$ on the wrong sides in Stewart's theorem, writing $9^2 \\cdot 6 + 6^2 \\cdot 4 = 10(AD^2 + 24)$, which gives $AD^2 = 39$."
+    },
+    {
+      "key": "E",
+      "text": "$3\\sqrt6$",
+      "correct": false,
+      "misconception": "I used $AD^2 = AB \\cdot AC = 54$ and forgot to subtract $BD \\cdot DC$."
+    }
+  ],
+  "hints": [
+    "Start with how the bisector splits $\\overline{BC}$.",
+    "The angle bisector theorem gives $BD : DC = AB : AC$. Then Stewart's theorem, or the bisector length formula $AD^2 = AB \\cdot AC - BD \\cdot DC$, gives $AD$.",
+    "$BD = 4$ and $DC = 6$. Stewart: $AC^2 \\cdot BD + AB^2 \\cdot DC = BC(AD^2 + BD \\cdot DC)$, that is, $81 \\cdot 4 + 36 \\cdot 6 = 10(AD^2 + 24)$."
+  ],
+  "solutions": {
+    "reliable": "By the angle bisector theorem, $BD : DC = 6 : 9 = 2 : 3$, so $BD = 4$ and $DC = 6$. Stewart's theorem for cevian $\\overline{AD}$ reads $AC^2 \\cdot BD + AB^2 \\cdot DC = BC \\,(AD^2 + BD \\cdot DC)$: $81 \\cdot 4 + 36 \\cdot 6 = 10(AD^2 + 24)$, so $540 = 10 AD^2 + 240$ and $AD^2 = 30$. Thus $AD = \\sqrt{30}$. Transferable idea: any cevian length comes from Stewart's theorem once you know where its foot is.",
+    "elegant": "For an angle bisector Stewart's theorem simplifies to $AD^2 = AB \\cdot AC - BD \\cdot DC = 54 - 24 = 30$. Check with coordinates: $B = (0,0)$, $C = (10,0)$, $A = (2.75, \\sqrt{36 - 7.5625})$, $D = (4,0)$ gives $AD^2 = 1.5625 + 28.4375 = 30$."
+  },
+  "formulas": [
+    "F-GEO-07"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

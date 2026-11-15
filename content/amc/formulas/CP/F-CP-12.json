@@ -1,0 +1,18 @@
+{
+  "id": "F-CP-12",
+  "area": "CP",
+  "name": "Derangements",
+  "formula": "D_n = n! \\sum_{k=0}^{n} \\frac{(-1)^k}{k!}, \\qquad D_n = (n-1)(D_{n-1} + D_{n-2})\\ (n \\ge 3): \\ D_1, \\ldots, D_6 = 0, 1, 2, 9, 44, 265",
+  "whenToUse": "Nobody gets their own item back: hats, letters in envelopes, a gift swap with no one drawing their own name.",
+  "example": "$5$ letters are placed in $5$ addressed envelopes at random. All are wrong in $D_5 = 44$ of the $120$ ways, so the probability is $\\frac{44}{120} = \\frac{11}{30}$.",
+  "pitfall": "Exactly $k$ items in the right place is $\\binom{n}{k} D_{n-k}$, not $D_{n-k}$ alone. Memorise the small values rather than rebuilding them in the exam.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-PIE",
+    "T-RECURSION"
+  ]
+}

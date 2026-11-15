@@ -1,0 +1,71 @@
+{
+  "id": "AM-0286",
+  "contest": "AMC12",
+  "slot": 13,
+  "area": "CP",
+  "topic": "CP-04",
+  "types": [
+    "T-PIE",
+    "T-COMPLEMENT"
+  ],
+  "statement": "How many distinct arrangements of the eight letters of the word $\\text{BALLOONS}$ have no two identical letters next to each other?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5760$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$6480$",
+      "correct": false,
+      "misconception": "I added back the 720 arrangements that have both an LL block and an OO block twice, once for each pair, so I computed 10080 - 5040 + 1440."
+    },
+    {
+      "key": "C",
+      "text": "$7560$",
+      "correct": false,
+      "misconception": "I removed the 2520 arrangements with the two L's together but forgot to remove the ones with the two O's together."
+    },
+    {
+      "key": "D",
+      "text": "$8280$",
+      "correct": false,
+      "misconception": "I removed only the 2520 arrangements with the L's together, forgot the O's, and still added back the 720 with both blocks, so I got 10080 - 2520 + 720."
+    },
+    {
+      "key": "E",
+      "text": "$10080$",
+      "correct": false,
+      "misconception": "I counted all arrangements of the letters, 8!/(2!2!), and never removed the ones with the L's or the O's side by side."
+    }
+  ],
+  "hints": [
+    "Count the arrangements you do not want, and take them away.",
+    "Let one set be the arrangements with the two L's adjacent and another the arrangements with the two O's adjacent. Glue an adjacent pair into one block and use inclusion-exclusion on the two sets.",
+    "All arrangements: $\\frac{8!}{2!\\,2!} = 10080$. Gluing LL leaves 7 items with two O's: $\\frac{7!}{2!} = 2520$, and the same for OO. Gluing both leaves 6 distinct items: $6! = 720$."
+  ],
+  "solutions": {
+    "reliable": "There are $\\frac{8!}{2!\\,2!} = 10080$ arrangements in all. Let $A$ be those with the two L's adjacent. Gluing them into one block leaves 7 items (B, A, LL, O, O, N, S) with the O's repeated, so $|A| = \\frac{7!}{2!} = 2520$. Likewise $|B| = 2520$ for the O's. With both blocks glued there are 6 distinct items, so $|A \\cap B| = 6! = 720$. By inclusion-exclusion, $|A \\cup B| = 2520 + 2520 - 720 = 4320$, and the answer is $10080 - 4320 = 5760$. Transferable idea: for 'no two identical letters adjacent', glue each pair, count, and correct the overlap.",
+    "elegant": "Place the L's last. Arrange B, A, O, O, N, S: $\\frac{6!}{2!} = 360$ ways, of which $5! = 120$ have the O's together and $240$ do not. If the O's are apart, put the two L's into 2 of the 7 gaps: $240 \\cdot \\binom{7}{2} = 5040$. If the O's are together, one L must go between them and the other into one of the remaining 6 gaps: $120 \\cdot 6 = 720$. Total $5040 + 720 = 5760$."
+  },
+  "formulas": [
+    "F-CP-01",
+    "F-CP-04",
+    "F-CP-06"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

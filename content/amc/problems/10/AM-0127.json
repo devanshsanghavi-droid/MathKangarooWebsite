@@ -1,0 +1,68 @@
+{
+  "id": "AM-0127",
+  "contest": "BOTH",
+  "slot": 8,
+  "area": "CP",
+  "topic": "CP-08",
+  "types": [
+    "T-LINEARITY"
+  ],
+  "statement": "Ten students sit in a row, and each one rolls a fair six-sided die. What is the expected number of pairs of neighbours who rolled the same number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{1}{6}$",
+      "correct": false,
+      "misconception": "I found the probability that one pair of neighbours match, 1/6, and stopped before adding over all the pairs."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{1}{4}$",
+      "correct": false,
+      "misconception": "I used 1/36 as the chance that neighbours match, which is the chance that both roll one particular number, so I got 9/36."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{3}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{5}{3}$",
+      "correct": false,
+      "misconception": "I counted 10 pairs of neighbours, as if the row closed up into a circle, instead of 9."
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{15}{2}$",
+      "correct": false,
+      "misconception": "I added over all C(10, 2) = 45 pairs of students instead of only the 9 pairs who sit next to each other."
+    }
+  ],
+  "hints": [
+    "Give each pair of neighbours its own indicator.",
+    "Linearity of expectation says the expected total is the sum of the expected values of the indicators, even though the pairs overlap. Find how many neighbour pairs there are and the chance one pair matches.",
+    "There are $9$ neighbour pairs, and each matches with probability $\\tfrac{1}{6}$."
+  ],
+  "solutions": {
+    "reliable": "Ten students in a row form $9$ pairs of neighbours. For each pair, let $X_i = 1$ if the two dice match and $0$ otherwise. Whatever the first die shows, the second matches it with probability $\\tfrac16$, so $E[X_i] = \\tfrac16$. The number of matching pairs is $X_1 + \\cdots + X_9$, and by linearity of expectation its expected value is $9 \\cdot \\tfrac16 = \\tfrac32$. The pairs share students, so the $X_i$ are not independent, but linearity does not need independence. Transferable idea: to find an expected count, sum the probabilities of the individual events.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-09"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

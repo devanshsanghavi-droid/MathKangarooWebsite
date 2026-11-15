@@ -1,0 +1,70 @@
+{
+  "id": "AM-0070",
+  "contest": "AMC10",
+  "slot": 19,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-GEOPROB",
+    "T-SYMMETRY"
+  ],
+  "statement": "A point $P$ is chosen uniformly at random inside a regular hexagon with side length $2$. What is the probability that $P$ is closer to the center of the hexagon than to every one of its six vertices?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac14$",
+      "correct": false,
+      "misconception": "I took the region to be the hexagon whose vertices are the midpoints of the segments from the center to the vertices; that hexagon has side $1$, but the true boundaries are perpendicular bisectors, which form a larger hexagon."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{\\pi\\sqrt3}{18}$",
+      "correct": false,
+      "misconception": "I assumed the region is the disk of radius $1$ around the center, but the six boundary lines form a hexagon that reaches farther than $1$ between them."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac23$",
+      "correct": false,
+      "misconception": "I found the region correctly but reported the probability of the complement, that $P$ is closer to some vertex than to the center."
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac34$",
+      "correct": false,
+      "misconception": "I used the hexagon formed by joining the midpoints of the hexagon's sides, which is a different hexagon from the one cut out by the perpendicular bisectors."
+    }
+  ],
+  "hints": [
+    "Points equally far from the center $O$ and a vertex $V$ form a line.",
+    "Each condition is a half-plane bounded by the perpendicular bisector of $\\overline{OV}$, a line at distance $1$ from $O$. The six lines cut out a regular hexagon; find its area.",
+    "The region is a regular hexagon with apothem $1$, so its side is $\\tfrac{2}{\\sqrt3}$. Compare its area with that of the big hexagon, whose apothem is $\\sqrt3$."
+  ],
+  "solutions": {
+    "reliable": "Let $O$ be the center. $P$ is closer to $O$ than to vertex $V$ exactly when $P$ is on $O$'s side of the perpendicular bisector of $\\overline{OV}$, which is perpendicular to $\\overline{OV}$ at distance $1$ from $O$. The six such lines bound a regular hexagon with apothem $1$. The big hexagon has apothem $\\sqrt3$. Similar figures have area ratio equal to the square of the ratio of corresponding lengths, so the probability is $(1/\\sqrt3)^2 = \\tfrac13$. The small hexagon fits inside the big one, since its vertices are $\\tfrac{2}{\\sqrt3} < \\sqrt3$ from $O$. Transferable idea: closer to $X$ than to $Y$ is a half-plane, and areas of similar figures scale by the square.",
+    "elegant": "Direct areas: the region has side $\\tfrac{2}{\\sqrt3}$, area $\\tfrac{3\\sqrt3}{2} \\cdot \\tfrac43 = 2\\sqrt3$, and the big hexagon has area $\\tfrac{3\\sqrt3}{2} \\cdot 4 = 6\\sqrt3$. The ratio is $\\tfrac13$."
+  },
+  "formulas": [
+    "F-GEO-20",
+    "F-GEO-11"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

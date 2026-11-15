@@ -1,0 +1,17 @@
+{
+  "id": "F-CP-03",
+  "area": "CP",
+  "name": "Combinations",
+  "formula": "\\binom{n}{k} = \\frac{n!}{k!\\,(n-k)!} = \\binom{n}{n-k} \\quad (0 \\le k \\le n)",
+  "whenToUse": "Choose $k$ items from $n$ where order does NOT matter: committees, hands of cards, subsets, positions of identical objects.",
+  "example": "A $3$-person committee from $8$ people: $\\binom{8}{3} = 56$. If two particular people refuse to serve together, subtract the $\\binom{6}{1} = 6$ committees containing both: $50$.",
+  "pitfall": "Do not multiply choices step by step when order does not matter, or you count each group $k!$ times. Use $\\binom{n}{k} = \\binom{n}{n-k}$ to keep the arithmetic small.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-COMPLEMENT"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "AM-0114",
+  "contest": "BOTH",
+  "slot": 25,
+  "area": "NT",
+  "topic": "NT-09",
+  "types": [
+    "T-BIJECTION",
+    "T-PARITY",
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "For how many positive integers $N \\le 100$ can $N$ be written as a sum of two or more consecutive positive integers in exactly three different ways?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I forgot that the odd divisor 1 corresponds to the one-term sum $N$ itself, so I looked for numbers whose odd part has exactly 3 divisors."
+    },
+    {
+      "key": "B",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I only counted odd $N$, assuming an even number could not be split into consecutive integers in three ways."
+    },
+    {
+      "key": "C",
+      "text": "$23$",
+      "correct": false,
+      "misconception": "I only allowed the odd part to be a product of two distinct odd primes and forgot it can be a prime cube, so I missed 27 and 54."
+    },
+    {
+      "key": "D",
+      "text": "$25$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I thought the number of ways was one less than the total number of divisors of $N$, so I counted every $N \\le 100$ with exactly 4 divisors."
+    }
+  ],
+  "hints": [
+    "Write a sum of $k$ consecutive integers starting at $a$ in closed form.",
+    "The sum is $N = \\frac{k(2a + k - 1)}{2}$, so $2N = k(2a + k - 1)$ with two factors of opposite parity. Relate the ways to write $N$ to the odd divisors of $N$.",
+    "Each odd divisor of $N$ gives exactly one representation, and the divisor 1 gives the one-term sum $N$. So you need $N = 2^j m$ with $m$ odd and $d(m) = 4$, that is, $m = p^3$ or $m = pq$."
+  ],
+  "solutions": {
+    "reliable": "A run of $k \\ge 1$ consecutive positive integers starting at $a \\ge 1$ sums to $N = \\frac{k(2a + k - 1)}{2}$, so $2N = k \\cdot L$ with $L = 2a + k - 1$. The factors $k$ and $L$ have opposite parity (their difference $2a - 1$ is odd) and $L > k$. Conversely, given an odd divisor $f$ of $N$, the two numbers $f$ and $2N/f$ have opposite parity; calling the smaller $k$ and the larger $L$ gives $a = \\frac{L - k + 1}{2} \\ge 1$. This is a bijection between odd divisors of $N$ and representations, and $f = 1$ gives $k = 1$, the one-term sum. So the number of ways with two or more terms is (number of odd divisors) $- 1$, and we need the odd part $m$ of $N$ to have exactly 4 divisors: $m = p^3$ or $m = pq$ with distinct odd primes. Odd $m \\le 100$: $27$; $3q$ for $q = 5, 7, 11, 13, 17, 19, 23, 29, 31$ (9 values); $35, 55, 65, 85, 95$; $77, 91$. That is 17 odd $N$. Doubling ($m \\le 50$): $30, 42, 54, 66, 70, 78$, 6 more. Times 4 ($m \\le 25$): $60, 84$, 2 more. Times 8 needs $m \\le 12$, impossible. Total $17 + 6 + 2 = 25$. Check: $15 = 7 + 8 = 4 + 5 + 6 = 1 + 2 + 3 + 4 + 5$. Transferable idea: sums of consecutive integers correspond to factorizations of $2N$ into factors of opposite parity, which are counted by the odd divisors of $N$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-01"
+  ],
+  "estSeconds": 300,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

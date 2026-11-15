@@ -1,0 +1,69 @@
+{
+  "id": "AM-0006",
+  "contest": "AMC10",
+  "slot": 4,
+  "area": "ALG",
+  "topic": "ALG-03",
+  "types": [
+    "T-VIETA"
+  ],
+  "statement": "The two roots of $x^2 - 7x + k = 0$ are real numbers that differ by $3$. What is $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-10$",
+      "correct": false,
+      "misconception": "I took the product of the roots to be -k instead of k, so 49 + 4k = 9 and k = -10."
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{23}{2}$",
+      "correct": false,
+      "misconception": "I set 49 - 4k equal to the difference 3 instead of its square 9, so k = 46/4 = 23/2."
+    },
+    {
+      "key": "D",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I used (r - s)^2 = (r + s)^2 - 2rs, the formula for r^2 + s^2, so 49 - 2k = 9 and k = 20."
+    },
+    {
+      "key": "E",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I wrote the squared difference as 49 - k, dropping the 4, so 49 - k = 9 and k = 40."
+    }
+  ],
+  "hints": [
+    "You know the sum of the roots without solving anything.",
+    "By Vieta, the roots add to $7$ and multiply to $k$. Combine the sum with the given difference.",
+    "If the roots add to $7$ and differ by $3$, they are $5$ and $2$. Then $k$ is their product."
+  ],
+  "solutions": {
+    "reliable": "Let the roots be $r$ and $s$. By Vieta's formulas, $r + s = 7$ and $rs = k$. With $r - s = 3$, adding gives $2r = 10$, so $r = 5$ and $s = 2$. Then $k = rs = 10$. Check: $x^2 - 7x + 10 = (x - 2)(x - 5)$. The transferable idea: sum and difference pin down two numbers; Vieta hands you the sum for free.",
+    "elegant": "Use $(r - s)^2 = (r + s)^2 - 4rs$: $9 = 49 - 4k$, so $k = 10$. This identity is also why the discriminant $b^2 - 4c$ of $x^2 + bx + c$ equals the square of the difference of the roots."
+  },
+  "formulas": [
+    "F-ALG-02",
+    "F-ALG-16"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

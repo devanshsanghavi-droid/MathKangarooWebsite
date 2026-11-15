@@ -1,0 +1,69 @@
+{
+  "id": "AM-0156",
+  "contest": "AMC12",
+  "slot": 3,
+  "area": "ALG",
+  "topic": "ALG-06",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "A positive real number $x$ satisfies $\\log_2 x + \\log_4 x + \\log_{16} x = 7$. What is $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I thought a bigger base makes the log bigger, so I wrote $\\log_4 x = 2\\log_2 x$ and $\\log_{16} x = 4\\log_2 x$, giving $7\\log_2 x = 7$ and $x = 2$."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I correctly found $\\log_2 x = 4$ and then reported $4$ as the value of $x$ instead of $2^4$."
+    },
+    {
+      "key": "C",
+      "text": "$2^{7/3}$",
+      "correct": false,
+      "misconception": "I treated all three logarithms as base $2$, so $3\\log_2 x = 7$ and $x = 2^{7/3}$."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$128$",
+      "correct": false,
+      "misconception": "I thought logs of the same $x$ with bases $2$, $4$ and $16$ merge into a single $\\log_2 x$, so $\\log_2 x = 7$ and $x = 128$."
+    }
+  ],
+  "hints": [
+    "All three bases are powers of $2$.",
+    "Use change of base to write every term as a multiple of $\\log_2 x$. Then the equation is linear in one unknown.",
+    "Since $4 = 2^2$ and $16 = 2^4$, $\\log_4 x = \\frac{1}{2}\\log_2 x$ and $\\log_{16} x = \\frac{1}{4}\\log_2 x$."
+  ],
+  "solutions": {
+    "reliable": "Let $L = \\log_2 x$. Because $\\log_{2^k} x = \\frac{\\log_2 x}{k}$, the equation becomes $L + \\frac{L}{2} + \\frac{L}{4} = 7$, so $\\frac{7L}{4} = 7$ and $L = 4$. Hence $x = 2^4 = 16$. Check: $\\log_2 16 + \\log_4 16 + \\log_{16} 16 = 4 + 2 + 1 = 7$. Transferable idea: when bases are powers of a common base, rewrite every log in that one base and the problem becomes linear.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-11",
+    "F-ALG-10"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

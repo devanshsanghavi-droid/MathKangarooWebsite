@@ -1,0 +1,70 @@
+{
+  "id": "AM-0125",
+  "contest": "BOTH",
+  "slot": 7,
+  "area": "CP",
+  "topic": "CP-09",
+  "types": [
+    "T-RECURSION",
+    "T-SMALL-CASES",
+    "T-CASEWORK"
+  ],
+  "statement": "A frog sits on lily pad $0$ in a row of pads numbered $0$ to $10$. Each hop takes it either $1$ pad or $3$ pads forward. In how many different ways can the frog land exactly on pad $10$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I counted how many 3-pad hops the frog could make, 0, 1, 2 or 3, and ignored the order of the hops."
+    },
+    {
+      "key": "B",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I set up the right recursion but stopped one pad early and gave the number of ways to reach pad 9."
+    },
+    {
+      "key": "C",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I did casework on the number of 3-pad hops and left out the route made only of 1-pad hops."
+    },
+    {
+      "key": "D",
+      "text": "$28$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$89$",
+      "correct": false,
+      "misconception": "I used the Fibonacci numbers from the hop 1 or hop 2 version, which is a different recursion."
+    }
+  ],
+  "hints": [
+    "The last hop lands on pad 10 from pad 9 or from pad 7.",
+    "Let $w(n)$ be the number of ways to reach pad $n$. The final hop is 1 or 3 pads, so $w(n)$ is a sum of two earlier values. Start from small pads and build up.",
+    "$w(0) = w(1) = w(2) = 1$ and $w(n) = w(n-1) + w(n-3)$. Compute up to $w(10)$."
+  ],
+  "solutions": {
+    "reliable": "Let $w(n)$ be the number of ways to land on pad $n$. The final hop onto pad $n$ comes from pad $n - 1$ or pad $n - 3$, so $w(n) = w(n-1) + w(n-3)$, with $w(0) = 1$ and $w(1) = w(2) = 1$. Then $w(3) = 2$, $w(4) = 3$, $w(5) = 4$, $w(6) = 6$, $w(7) = 9$, $w(8) = 13$, $w(9) = 19$, $w(10) = 19 + 9 = 28$. Transferable idea: condition on the last step to get a recursion, then build a table from small cases.",
+    "elegant": "Count by the number $k$ of $3$-pad hops. Then there are $10 - 3k$ one-pad hops, $10 - 2k$ hops in all, and the order is a choice of which hops are the long ones: $\\binom{10 - 2k}{k}$. Summing $k = 0, 1, 2, 3$ gives $1 + 8 + 15 + 4 = 28$."
+  },
+  "formulas": [
+    "F-CP-19"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

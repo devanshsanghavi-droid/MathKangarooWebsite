@@ -1,0 +1,70 @@
+{
+  "id": "AM-0059",
+  "contest": "AMC10",
+  "slot": 13,
+  "area": "GEO",
+  "topic": "GEO-03",
+  "types": [
+    "T-SFFT",
+    "T-PRIME-FACTOR",
+    "T-CASEWORK"
+  ],
+  "statement": "How many noncongruent right triangles have three integer side lengths, one of which is $24$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I listed only the primitive triples containing $24$, namely $7, 24, 25$ and $24, 143, 145$, and forgot that multiples of smaller triples such as $10, 24, 26$ also count."
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I also counted the factor pair $12 \\cdot 12$, which gives the other leg $b = 0$ and no triangle at all."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I counted every factor pair of $576$ with the smaller factor below $24$ and did not check that the two factors $c - b$ and $c + b$ must have the same parity."
+    },
+    {
+      "key": "E",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I counted ordered factor pairs, so each triangle was counted once as $(c-b, c+b)$ and again with the factors swapped, which makes $b$ negative."
+    }
+  ],
+  "hints": [
+    "Could $24$ be the hypotenuse? Then deal with it as a leg.",
+    "If $24$ is a leg with other leg $b$ and hypotenuse $c$, then $c^2 - b^2 = 576$ factors as a product of two integers. Think about which factor pairs are allowed.",
+    "$c - b$ and $c + b$ must both be even, so write them as $2m$ and $2n$ with $mn = 144$ and $m < n$. Count those pairs."
+  ],
+  "solutions": {
+    "reliable": "First, $24$ cannot be the hypotenuse: $a^2 + b^2 = 576$ with positive integers has no solution (checking $a = 1$ to $16$, none of $576 - a^2$ is a square). So $24$ is a leg. With other leg $b$ and hypotenuse $c$, $(c - b)(c + b) = 576$. The two factors have the same parity and their product is even, so both are even: $c - b = 2m$, $c + b = 2n$, $mn = 144$, $m < n$ (equality gives $b = 0$). The divisors of $144$ below $12$ are $1, 2, 3, 4, 6, 8, 9$, giving $b = n - m = 143, 70, 45, 32, 18, 10, 7$. That is $7$ triangles. Transferable idea: a difference of squares equal to a fixed number turns a geometry count into a factor-pair count, with a parity check.",
+    "elegant": "The triangles are $7{:}24{:}25$, $10{:}24{:}26$, $18{:}24{:}30$, $24{:}32{:}40$, $24{:}45{:}51$, $24{:}70{:}74$ and $24{:}143{:}145$. The count $7$ is half of the $15 - 1 = 14$ divisors of $144$ other than $12$."
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

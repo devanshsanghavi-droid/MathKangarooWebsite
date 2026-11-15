@@ -1,0 +1,14 @@
+{
+  "id": "F-NT-11",
+  "area": "NT",
+  "name": "Place value in other bases",
+  "formula": "(d_k d_{k-1} \\ldots d_1 d_0)_b = d_k b^k + d_{k-1} b^{k-1} + \\cdots + d_1 b + d_0, \\qquad 0 \\le d_i < b",
+  "whenToUse": "A number is written in a base other than ten, or a problem asks which base makes a statement true.",
+  "example": "$2134_5 = 2 \\cdot 125 + 1 \\cdot 25 + 3 \\cdot 5 + 4 = 294$. To write $100$ in base $3$: $100 = 81 + 2 \\cdot 9 + 1$, so $100 = 10201_3$.",
+  "pitfall": "Every digit must be less than the base, which often limits which bases are possible. The rightmost digit is the units place, $b^0$.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ]
+}

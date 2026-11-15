@@ -1,0 +1,71 @@
+{
+  "id": "AM-0224",
+  "contest": "AMC12",
+  "slot": 21,
+  "area": "GEO",
+  "topic": "GEO-09",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "In triangle $ABC$, $\\angle BAC = 2\\angle ABC$, $BC = 6$ and $CA = 4$. What is the area of triangle $ABC$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{15\\sqrt{7}}{8}$",
+      "correct": false,
+      "misconception": "I found AB = 5 but then wrote sin 2B = sin B cos B, dropping the factor 2, so sin A came out as 3 sqrt(7)/16."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{5\\sqrt{7}}{2}$",
+      "correct": false,
+      "misconception": "I found AB = 5 and sin B = sqrt(7)/4, then used (1/2)(AB)(AC) sin B, but angle B is not the angle between sides AB and AC."
+    },
+    {
+      "key": "C",
+      "text": "$3\\sqrt{7}$",
+      "correct": false,
+      "misconception": "I took the root AB = 4 of the quadratic without checking it. That triangle is isosceles with angle C equal to angle B, which forces angle A = 90 degrees and contradicts 6^2 not being 4^2 + 4^2."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{15\\sqrt{7}}{4}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$5\\sqrt{7}$",
+      "correct": false,
+      "misconception": "I found AB = 5 but used sin 2B = 2 sin B, forgetting the cos B factor, so sin A came out as sqrt(7)/2."
+    }
+  ],
+  "hints": [
+    "The law of sines turns the angle condition into a value of $\\cos B$.",
+    "Write $\\dfrac{6}{\\sin 2B} = \\dfrac{4}{\\sin B}$ and expand $\\sin 2B$. Then the law of cosines gives a quadratic for $AB$. Check both roots against the angle condition.",
+    "$\\cos B = \\tfrac34$. Then $16 = c^2 + 36 - 9c$ gives $c = 4$ or $c = 5$. With $c = 4$, the triangle would be isosceles with $\\angle C = \\angle B$."
+  ],
+  "solutions": {
+    "reliable": "Let $\\angle B = \\beta$, so $\\angle A = 2\\beta$. The law of sines gives $\\dfrac{6}{\\sin 2\\beta} = \\dfrac{4}{\\sin\\beta}$, so $\\dfrac{6}{2\\sin\\beta\\cos\\beta} = \\dfrac{4}{\\sin\\beta}$ and $\\cos\\beta = \\tfrac34$. With $c = AB$, the law of cosines on side $CA$ gives $16 = c^2 + 36 - 2\\cdot 6c\\cdot\\tfrac34$, so $c^2 - 9c + 20 = 0$ and $c = 4$ or $c = 5$. If $c = 4$ then $AB = AC$, so $\\angle C = \\angle B = \\beta$ and $4\\beta = 180^\\circ$, giving $\\angle A = 90^\\circ$; but $6^2 \\ne 4^2 + 4^2$, so $c = 4$ is extraneous. (It came from $\\cos B = \\tfrac34$ alone, which is also true in the isosceles $4$-$4$-$6$ triangle where $\\angle A \\ne 2\\angle B$.) So the sides are $4, 5, 6$, and Heron's formula with $s = \\tfrac{15}{2}$ gives area $\\sqrt{\\tfrac{15}{2}\\cdot\\tfrac32\\cdot\\tfrac52\\cdot\\tfrac72} = \\tfrac{15\\sqrt7}{4}$. Check: $\\sin B = \\tfrac{\\sqrt7}{4}$ and $\\tfrac12\\cdot 6\\cdot 5\\cdot\\tfrac{\\sqrt7}{4} = \\tfrac{15\\sqrt7}{4}$. The idea: a condition you used only partly can admit a false root, so test each root against the full condition.",
+    "elegant": "Extend $CA$ past $A$ to $D$ with $AD = AB = c$. Then $\\angle ADB = \\tfrac12\\angle BAC = \\angle ABC$, so triangles $CBD$ and $CAB$ are similar and $CB^2 = CA\\cdot CD$: $36 = 4(4 + c)$, giving $c = 5$ with no extraneous root. Then Heron gives $\\tfrac{15\\sqrt7}{4}$."
+  },
+  "formulas": [
+    "F-GEO-14",
+    "F-GEO-15",
+    "F-GEO-04",
+    "F-GEO-05"
+  ],
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

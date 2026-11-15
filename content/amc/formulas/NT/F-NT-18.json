@@ -1,0 +1,19 @@
+{
+  "id": "F-NT-18",
+  "area": "NT",
+  "name": "Odd number of divisors means a square",
+  "formula": "d(n) \\text{ is odd} \\iff n \\text{ is a perfect square}",
+  "whenToUse": "Toggling problems (lockers, lights, switches) or any question about numbers with an odd number of divisors.",
+  "example": "$100$ lockers start closed and locker $k$ is toggled once for each divisor of $k$. The open ones at the end are those toggled an odd number of times, the perfect squares $1, 4, \\ldots, 100$: ten lockers.",
+  "pitfall": "Numbers with exactly $3$ divisors are a stricter set: squares of primes, like $4$, $9$, $25$.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-PARITY",
+    "T-BIJECTION"
+  ],
+  "derivation": "Divisors pair up as $d$ and $\\frac{n}{d}$. The only divisor that can pair with itself is $\\sqrt{n}$, so the count is odd exactly when $\\sqrt{n}$ is an integer."
+}

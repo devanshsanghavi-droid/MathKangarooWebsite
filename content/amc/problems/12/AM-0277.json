@@ -1,0 +1,68 @@
+{
+  "id": "AM-0277",
+  "contest": "AMC12",
+  "slot": 7,
+  "area": "CP",
+  "topic": "CP-07",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A drawer holds three coins: a fair coin, a coin with heads on both sides, and a bent coin that lands heads with probability $\\frac{3}{4}$. One coin is chosen at random and flipped twice, and it lands heads both times. What is the probability that it is the two-headed coin?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{1}{3}$",
+      "correct": false,
+      "misconception": "I ignored the two heads and gave the prior chance of picking the two-headed coin, one out of three."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{4}{9}$",
+      "correct": false,
+      "misconception": "I used only one flip, comparing 1 with 1/2 + 1 + 3/4, instead of the chance of two heads in a row for each coin."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I squared 1/2 for the fair coin but forgot to square 3/4 for the bent coin, so I compared 1 with 1/4 + 1 + 3/4."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{16}{29}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{29}{48}$",
+      "correct": false,
+      "misconception": "I computed the probability of getting two heads at all, instead of the probability of the two-headed coin given two heads."
+    }
+  ],
+  "hints": [
+    "Ask how likely two heads is for each coin separately.",
+    "Each coin is equally likely to be chosen, so compare the chances of two heads: the answer is the two-headed coin's share of the total chance of two heads.",
+    "Two heads has probability $\\frac{1}{4}$, $1$ and $\\frac{9}{16}$ for the three coins. Write them over $16$: $4$, $16$ and $9$."
+  ],
+  "solutions": {
+    "reliable": "Each coin is chosen with probability $\\frac{1}{3}$. The chance of two heads is $\\frac{1}{4}$ for the fair coin, $1$ for the two-headed coin and $\\left(\\frac{3}{4}\\right)^2 = \\frac{9}{16}$ for the bent coin. By the definition of conditional probability, $P(\\text{two-headed} \\mid HH) = \\dfrac{\\frac{1}{3} \\cdot 1}{\\frac{1}{3}\\left(\\frac{1}{4} + 1 + \\frac{9}{16}\\right)} = \\dfrac{1}{\\frac{29}{16}} = \\frac{16}{29}$. Check with a population: imagine $48$ trials, $16$ per coin. Two heads occurs in $4$ fair-coin trials, $16$ two-headed trials and $9$ bent-coin trials, $29$ in all, of which $16$ used the two-headed coin. The idea: given an observation, compare how often each cause produces it.",
+    "elegant": "With equal priors the posterior is proportional to the likelihoods $4 : 16 : 9$ (in sixteenths), so the two-headed coin has share $\\frac{16}{29}$."
+  },
+  "formulas": [
+    "F-CP-13"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

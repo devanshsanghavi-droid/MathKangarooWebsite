@@ -1,0 +1,68 @@
+{
+  "id": "AM-0090",
+  "contest": "BOTH",
+  "slot": 9,
+  "area": "NT",
+  "topic": "NT-08",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "The product $2 \\cdot 4 \\cdot 6 \\cdot 8 \\cdots 100$ of the first $50$ positive even integers is written out in full. How many zeros does it end with?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I counted the factors that end in 0, namely 10, 20, ..., 100, and gave each one a single zero, missing the extra 5 in 50 and in 100."
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I counted the ten multiples of 10 and added one more for 50 = 2 x 5^2, but forgot that 100 = 2^2 x 5^2 also has two factors of 5."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I counted all 20 multiples of 5 from 1 to 100, but the odd ones such as 5, 15 and 25 are not factors of this product."
+    },
+    {
+      "key": "E",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I counted the zeros at the end of 100!, which is 20 + 4 = 24, but the product uses only the even numbers up to 100."
+    }
+  ],
+  "hints": [
+    "Each zero at the end needs one factor of $2$ and one factor of $5$. Which prime is scarcer here?",
+    "Pull a $2$ out of every factor: $2 \\cdot 4 \\cdots 100 = 2^{50} \\cdot (1 \\cdot 2 \\cdots 50) = 2^{50} \\cdot 50!$.",
+    "Factors of $2$ are plentiful, so count the factors of $5$ in $50!$: $\\lfloor 50/5 \\rfloor + \\lfloor 50/25 \\rfloor$."
+  ],
+  "solutions": {
+    "reliable": "Each trailing zero comes from a factor $10 = 2 \\cdot 5$, so the number of zeros is the smaller of the exponents of $2$ and $5$ in the product. Writing each factor as $2j$ gives $2 \\cdot 4 \\cdots 100 = 2^{50} \\cdot 50!$. The exponent of $5$ in $50!$ is $\\lfloor 50/5 \\rfloor + \\lfloor 50/25 \\rfloor = 10 + 2 = 12$, and $2^{50}$ adds no $5$s. The exponent of $2$ is at least $50$, which is larger. So the product ends in $12$ zeros.",
+    "elegant": "The only factors containing a $5$ are the multiples of $10$: $10, 20, \\ldots, 100$. Each gives one $5$, and $50 = 2 \\cdot 5^2$ and $100 = 2^2 \\cdot 5^2$ give one extra each, for $10 + 2 = 12$ fives. There are far more $2$s, so there are $12$ zeros."
+  },
+  "formulas": [
+    "F-NT-08"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

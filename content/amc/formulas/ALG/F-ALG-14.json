@@ -1,0 +1,17 @@
+{
+  "id": "F-ALG-14",
+  "area": "ALG",
+  "name": "Telescoping with partial fractions",
+  "formula": "\\frac{1}{k(k+1)} = \\frac{1}{k} - \\frac{1}{k+1}, \\qquad \\frac{1}{k(k+d)} = \\frac{1}{d}\\left(\\frac{1}{k} - \\frac{1}{k+d}\\right)",
+  "whenToUse": "A long sum of fractions whose denominators are products of two terms a fixed distance apart. Split each fraction so neighbouring terms cancel.",
+  "example": "$\\sum_{k=1}^{24} \\frac{1}{k(k+1)} = \\left(1 - \\frac{1}{2}\\right) + \\left(\\frac{1}{2} - \\frac{1}{3}\\right) + \\cdots + \\left(\\frac{1}{24} - \\frac{1}{25}\\right) = 1 - \\frac{1}{25} = \\frac{24}{25}$.",
+  "pitfall": "When the gap $d$ is more than $1$, remember the factor $\\frac{1}{d}$, and note that more than one term survives at each end: list the leftover terms explicitly.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-TELESCOPE"
+  ]
+}

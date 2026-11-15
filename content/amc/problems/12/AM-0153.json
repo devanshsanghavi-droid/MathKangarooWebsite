@@ -1,0 +1,66 @@
+{
+  "id": "AM-0153",
+  "contest": "AMC12",
+  "slot": 1,
+  "area": "ALG",
+  "topic": "ALG-05",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "What is the value of $\\dfrac{2^{2026} + 2^{2024}}{2^{2025} - 2^{2023}}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{5}{3}$",
+      "correct": false,
+      "misconception": "I factored $2^{2024}$ out of the top and $2^{2023}$ out of the bottom to get $\\frac{5}{3}$, and forgot that $2^{2024}$ is still twice $2^{2023}$."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I factored the denominator as $2^{2023}(2^2 + 1)$, losing the minus sign, so I got $\\frac{10 \\cdot 2^{2023}}{5 \\cdot 2^{2023}} = 2$."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{10}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I divided term by term, $\\frac{2^{2026}}{2^{2025}} + \\frac{2^{2024}}{2^{2023}} = 2 + 2$, as if a fraction could be split along its denominator."
+    },
+    {
+      "key": "E",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I factored $2^{2023}$ out of the denominator but wrote what was left as $2^1 - 1 = 1$ instead of $2^2 - 1 = 3$."
+    }
+  ],
+  "hints": [
+    "Every power here is a multiple of the smallest one, $2^{2023}$.",
+    "Let $u = 2^{2023}$ and rewrite each power as a small number times $u$. The huge exponents should disappear before any arithmetic happens.",
+    "The top is $8u + 2u = 10u$ and the bottom is $4u - u = 3u$. Now cancel $u$."
+  ],
+  "solutions": {
+    "reliable": "Write every power in terms of $u = 2^{2023}$: $2^{2026} = 8u$, $2^{2024} = 2u$, $2^{2025} = 4u$. The fraction is $\\frac{8u + 2u}{4u - u} = \\frac{10u}{3u} = \\frac{10}{3}$. Transferable idea: when exponents are huge but close together, factor out the smallest power and the problem becomes arithmetic with small numbers.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

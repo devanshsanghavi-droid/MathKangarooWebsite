@@ -1,0 +1,70 @@
+{
+  "id": "AM-0023",
+  "contest": "AMC10",
+  "slot": 14,
+  "area": "ALG",
+  "topic": "ALG-03",
+  "types": [
+    "T-VIETA",
+    "T-SYMMETRY"
+  ],
+  "statement": "Let $r$ and $s$ be the roots of $x^2 - 5x + 2 = 0$. What is $\\dfrac{r^2}{s} + \\dfrac{s^2}{r}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{21}{2}$",
+      "correct": false,
+      "misconception": "I combined the fractions as $\\frac{r^2 + s^2}{rs}$ instead of $\\frac{r^3 + s^3}{rs}$, using $r^2 + s^2 = 25 - 4 = 21$."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{25}{2}$",
+      "correct": false,
+      "misconception": "I combined the fractions as $\\frac{(r + s)^2}{rs} = \\frac{25}{2}$, as if the numerator were just the square of the sum."
+    },
+    {
+      "key": "C",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I found $r^3 + s^3 = 95$ correctly but divided by $r + s = 5$ instead of $rs = 2$."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{95}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{125}{2}$",
+      "correct": false,
+      "misconception": "I used $r^3 + s^3 = (r + s)^3 = 125$, forgetting to subtract the $3rs(r + s)$ cross term."
+    }
+  ],
+  "hints": [
+    "Put the two fractions over a common denominator.",
+    "The expression equals $\\frac{r^3 + s^3}{rs}$. Write $r^3 + s^3$ in terms of $r + s$ and $rs$, which Vieta gives you.",
+    "With $r + s = 5$ and $rs = 2$: $r^3 + s^3 = (r + s)^3 - 3rs(r + s) = 125 - 30 = 95$. Divide by $rs = 2$."
+  ],
+  "solutions": {
+    "reliable": "Over a common denominator, $\\frac{r^2}{s} + \\frac{s^2}{r} = \\frac{r^3 + s^3}{rs}$. By Vieta, $r + s = 5$ and $rs = 2$. Then $r^3 + s^3 = (r + s)^3 - 3rs(r + s) = 125 - 30 = 95$, so the expression is $\\frac{95}{2}$. Check with $r^3 + s^3 = (r + s)(r^2 - rs + s^2) = 5(21 - 2) = 95$. Transferable idea: any symmetric expression in the roots can be rebuilt from their sum and product.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-02",
+    "F-ALG-06"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "AM-0165",
+  "contest": "AMC12",
+  "slot": 8,
+  "area": "ALG",
+  "topic": "ALG-08",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-TELESCOPE"
+  ],
+  "statement": "A function $f$ satisfies $f(x + y) = f(x) + f(y) + 2xy - 1$ for all real numbers $x$ and $y$, and $f(1) = 4$. What is $f(10)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I treated $f$ as if $f(x + y) = f(x) + f(y)$, ignoring the extra $2xy - 1$, so $f(10) = 10 f(1) = 40$."
+    },
+    {
+      "key": "B",
+      "text": "$121$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$124$",
+      "correct": false,
+      "misconception": "I added the increments $2k + 3$ for $k = 0$ to $9$ instead of $k = 1$ to $9$, so I counted one extra step of $3$."
+    },
+    {
+      "key": "D",
+      "text": "$130$",
+      "correct": false,
+      "misconception": "I dropped the $-1$ when I set $y = 1$, so I used $f(x + 1) = f(x) + 2x + 4$ and added $9$ too much."
+    },
+    {
+      "key": "E",
+      "text": "$144$",
+      "correct": false,
+      "misconception": "I counted ten steps from $f(1)$ to $f(10)$, adding $2k + 3$ for $k = 1$ to $10$, but there are only nine."
+    }
+  ],
+  "hints": [
+    "Set $y = 1$. What does the equation say about $f(x + 1) - f(x)$?",
+    "With $y = 1$ you get a rule for each step from $f(x)$ to $f(x + 1)$. Starting from $f(1)$, add the steps one at a time, and count how many steps reach $f(10)$.",
+    "$f(x + 1) = f(x) + 2x + 3$, so $f(10) = f(1) + \\sum_{k=1}^{9} (2k + 3)$."
+  ],
+  "solutions": {
+    "reliable": "Put $y = 1$: $f(x + 1) = f(x) + f(1) + 2x - 1 = f(x) + 2x + 3$. Going from $f(1)$ to $f(10)$ takes nine steps, $k = 1, 2, \\ldots, 9$, so $f(10) = 4 + \\sum_{k=1}^{9} (2k + 3) = 4 + 2 \\cdot 45 + 27 = 121$. Check with small cases: $f(2) = 9$, $f(3) = 16$, $f(4) = 25$, which suggests $f(n) = (n + 1)^2$, and indeed $f(10) = 121$. Transferable idea: in a two-variable functional equation, fixing one variable at a known value turns it into a step rule you can add up.",
+    "elegant": "Guess a quadratic: $f(x) = (x + 1)^2$ gives $f(x) + f(y) + 2xy - 1 = x^2 + 2x + 1 + y^2 + 2y + 1 + 2xy - 1 = (x + y + 1)^2 = f(x + y)$, and $f(1) = 4$. The step rule from $y = 1$ shows $f(10)$ is forced by $f(1)$ alone, so $f(10) = 11^2 = 121$."
+  },
+  "formulas": [
+    "F-ALG-03"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

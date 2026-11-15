@@ -1,0 +1,67 @@
+{
+  "id": "AM-0254",
+  "contest": "AMC12",
+  "slot": 18,
+  "area": "NT",
+  "topic": "NT-02",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-CASEWORK"
+  ],
+  "statement": "For how many integers $n$ with $2 \\le n \\le 1000$ is it true that $p^2$ divides $n$ for every prime $p$ that divides $n$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I thought every exponent in n had to be even, so I only counted the perfect squares from 4 to 961, missing numbers like 8 = 2^3."
+    },
+    {
+      "key": "B",
+      "text": "$37$",
+      "correct": false,
+      "misconception": "I counted the perfect squares and the perfect cubes, but mixed numbers such as 72 = 2^3 x 3^2 are neither and still work."
+    },
+    {
+      "key": "C",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I wrote n = a^2 b^3 but only let b be 1 or a prime, so I missed b = 6 and b = 10, which give 216, 864 and 1000."
+    },
+    {
+      "key": "D",
+      "text": "$53$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$58$",
+      "correct": false,
+      "misconception": "I wrote n = a^2 b^3 but let b be any positive integer, so numbers like 64 = 8^2 = 4^3 were counted more than once."
+    }
+  ],
+  "hints": [
+    "Look at the exponent of each prime in $n$. What does the condition say about it?",
+    "Every exponent is at least $2$, and any integer at least $2$ is either even or $3$ more than an even number. So $n = a^2 b^3$, where $b$ is the product of the primes that appear to an odd power.",
+    "In $n = a^2 b^3$ the number $b$ is squarefree, which makes the form unique. For each squarefree $b$ with $b^3 \\le 1000$, that is $b \\in \\{1, 2, 3, 5, 6, 7, 10\\}$, count the $a$ with $a^2 b^3 \\le 1000$, and remember $n \\ge 2$."
+  ],
+  "solutions": {
+    "reliable": "The condition says every prime exponent of $n$ is at least $2$. An exponent $e \\ge 2$ is even, or odd and at least $3$; put the primes with odd exponent into $b$ (exponent $1$ in $b$, so $3$ in $b^3$) and the rest of each exponent, which is even, into $a^2$. This writes $n = a^2 b^3$ with $b$ squarefree, and the form is unique because $b$ is fixed by which exponents are odd. Conversely every such product has all exponents at least $2$. Now $b^3 \\le 1000$ with $b$ squarefree gives $b \\in \\{1, 2, 3, 5, 6, 7, 10\\}$, and the number of $a \\ge 1$ with $a^2 \\le 1000/b^3$ is $31, 11, 6, 2, 2, 1, 1$ respectively, a total of $54$. Removing $n = 1$ (from $a = b = 1$) leaves $53$. The transferable idea: an exponent condition becomes a unique normal form once you decide what to do with odd exponents.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

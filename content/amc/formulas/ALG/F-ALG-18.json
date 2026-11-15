@@ -1,0 +1,18 @@
+{
+  "id": "F-ALG-18",
+  "area": "ALG",
+  "name": "Rationalising with conjugates",
+  "formula": "\\frac{1}{\\sqrt{a} + \\sqrt{b}} = \\frac{\\sqrt{a} - \\sqrt{b}}{a - b} \\quad (a, b \\ge 0,\\ a \\ne b)",
+  "whenToUse": "A denominator contains a sum or difference of square roots, or a sum of such fractions looks like it could telescope.",
+  "example": "Since $\\frac{1}{\\sqrt{k} + \\sqrt{k+1}} = \\sqrt{k+1} - \\sqrt{k}$, the sum $\\sum_{k=1}^{99} \\frac{1}{\\sqrt{k} + \\sqrt{k+1}} = \\sqrt{100} - \\sqrt{1} = 9$.",
+  "pitfall": "Multiply top AND bottom by the conjugate. The denominator becomes $a - b$, which may be negative, so watch the sign.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-TELESCOPE"
+  ],
+  "derivation": "Multiply numerator and denominator by $\\sqrt{a} - \\sqrt{b}$ and use the difference of squares $(\\sqrt{a} + \\sqrt{b})(\\sqrt{a} - \\sqrt{b}) = a - b$."
+}

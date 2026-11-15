@@ -1,0 +1,68 @@
+{
+  "id": "AM-0192",
+  "contest": "AMC12",
+  "slot": 2,
+  "area": "GEO",
+  "topic": "GEO-03",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "A rectangle has perimeter $62$ and its diagonals have length $25$. What is the area of the rectangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$84$",
+      "correct": false,
+      "misconception": "I found the area of the right triangle cut off by one diagonal, which is only half of the rectangle."
+    },
+    {
+      "key": "B",
+      "text": "$168$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{961}{4}$",
+      "correct": false,
+      "misconception": "I assumed the rectangle was a square with perimeter 62, so I squared a side of 15.5 and never used the diagonal."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{625}{2}$",
+      "correct": false,
+      "misconception": "I assumed the rectangle was a square with diagonal 25, so I used d squared over 2 and never used the perimeter."
+    },
+    {
+      "key": "E",
+      "text": "$336$",
+      "correct": false,
+      "misconception": "I found 2lw = 961 - 625 = 336 from the squared sum and forgot to divide by 2 to get lw."
+    }
+  ],
+  "hints": [
+    "You do not need the two side lengths separately.",
+    "Call the sides $l$ and $w$. The perimeter gives $l + w$ and the diagonal gives $l^2 + w^2$. The area $lw$ hides inside $(l+w)^2$.",
+    "$l + w = 31$ and $l^2 + w^2 = 625$. Then $(l + w)^2 = l^2 + 2lw + w^2$, so $961 = 625 + 2lw$ and $2lw = 336$."
+  ],
+  "solutions": {
+    "reliable": "Let the sides be $l$ and $w$. The perimeter gives $l + w = 31$, and the Pythagorean theorem on half the rectangle gives $l^2 + w^2 = 25^2 = 625$. Squaring the first equation, $961 = l^2 + w^2 + 2lw = 625 + 2lw$, so $2lw = 336$ and the area is $lw = 168$. Check: the sides are $24$ and $7$, since $24 + 7 = 31$ and $24^2 + 7^2 = 625$, and $24 \\cdot 7 = 168$. Transferable idea: a sum and a sum of squares together give a product.",
+    "elegant": "The diagonal $25$ and the half-perimeter $31$ point to the triple $7, 24, 25$: indeed $7 + 24 = 31$. The area is $7 \\cdot 24 = 168$. Transferable idea: try the Pythagorean triples you know before doing algebra."
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

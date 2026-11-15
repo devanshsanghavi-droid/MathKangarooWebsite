@@ -1,0 +1,70 @@
+{
+  "id": "AM-0252",
+  "contest": "AMC12",
+  "slot": 16,
+  "area": "NT",
+  "topic": "NT-09",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-PARITY",
+    "T-CASEWORK"
+  ],
+  "statement": "For how many integers $n$ with $2 \\le n \\le 100$ is $n^n$ a perfect sixth power?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$20$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$26$",
+      "correct": false,
+      "misconception": "I allowed every multiple of 6, every perfect square and every perfect cube, but for example 4^4 = 2^8 is a square and not a sixth power."
+    },
+    {
+      "key": "C",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I only checked when n^n is a perfect cube, forgetting that a sixth power must also be a perfect square."
+    },
+    {
+      "key": "D",
+      "text": "$54$",
+      "correct": false,
+      "misconception": "I only checked when n^n is a perfect square, forgetting that a sixth power must also be a perfect cube."
+    },
+    {
+      "key": "E",
+      "text": "$69$",
+      "correct": false,
+      "misconception": "I counted the n for which n^n is a perfect square or a perfect cube, when it has to be both."
+    }
+  ],
+  "hints": [
+    "If $p^e$ exactly divides $n$, then $p^{ne}$ exactly divides $n^n$.",
+    "$n^n$ is a sixth power exactly when $6 \\mid ne$ for every prime power $p^e$ exactly dividing $n$. Split into cases by whether $2$ and $3$ divide $n$.",
+    "If $6 \\mid n$, it always works. If $n$ is even but $3 \\nmid n$, every $e$ must be a multiple of $3$, so $n$ is a cube. If $n$ is odd and $3 \\mid n$, $n$ must be a square. If $\\gcd(n, 6) = 1$, $n$ must be a sixth power."
+  ],
+  "solutions": {
+    "reliable": "If $n = \\prod p^{e_p}$ then $n^n = \\prod p^{n e_p}$, which is a sixth power exactly when $6 \\mid n e_p$ for every $p$. Case 1, $6 \\mid n$: always true; there are $16$ multiples of $6$ from $6$ to $96$. Case 2, $n$ even and $3 \\nmid n$: we need $3 \\mid e_p$ for all $p$, so $n$ is a cube; the even cubes in range are $8$ and $64$. Case 3, $n$ odd and $3 \\mid n$: we need $2 \\mid e_p$, so $n$ is a square; the odd squares divisible by $3$ are $9$ and $81$. Case 4, $\\gcd(n,6) = 1$: $n$ must be a sixth power, and the only one is $1$, which is out of range. The total is $16 + 2 + 2 = 20$. The transferable idea: a perfect power question is a divisibility question about every exponent.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-20"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,72 @@
+{
+  "id": "AM-0257",
+  "contest": "AMC12",
+  "slot": 19,
+  "area": "NT",
+  "topic": "NT-04",
+  "types": [
+    "T-PIE",
+    "T-COMPLEMENT",
+    "T-SMALL-CASES"
+  ],
+  "statement": "The Fibonacci numbers are defined by $F_1 = F_2 = 1$ and $F_{n+2} = F_{n+1} + F_n$ for $n \\ge 1$. For how many integers $n$ with $1 \\le n \\le 100$ is $\\gcd(F_n, F_{60}) = 1$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$40$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$41$",
+      "correct": false,
+      "misconception": "I removed the multiples of 3, 4 and 5 and added back the pairwise overlaps, but forgot to remove the multiple of 60 again at the end."
+    },
+    {
+      "key": "C",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I did not exclude the multiples of 5, forgetting that a gcd of 5 gives F_5 = 5, which is not 1."
+    },
+    {
+      "key": "D",
+      "text": "$53$",
+      "correct": false,
+      "misconception": "I did not exclude the multiples of 4, forgetting that a gcd of 4 gives F_4 = 3, which is not 1."
+    },
+    {
+      "key": "E",
+      "text": "$67$",
+      "correct": false,
+      "misconception": "I only excluded the multiples of 3, the n for which F_n is even, as if a common factor had to be 2."
+    }
+  ],
+  "hints": [
+    "Fibonacci numbers satisfy a strong gcd identity. Try a few small cases.",
+    "$\\gcd(F_m, F_n) = F_{\\gcd(m,n)}$. So you need $F_d = 1$ where $d = \\gcd(n, 60)$. Which $d$ give $F_d = 1$?",
+    "$F_d = 1$ only for $d = 1, 2$. So $n$ must avoid the factors $3$, $4$ and $5$ of $60$. Count $n \\le 100$ divisible by none of $3, 4, 5$ with inclusion-exclusion."
+  ],
+  "solutions": {
+    "reliable": "Use $\\gcd(F_m, F_n) = F_{\\gcd(m, n)}$. With $d = \\gcd(n, 60)$ we need $F_d = 1$, and since $F_1 = F_2 = 1$ while $F_d \\ge 2$ for $d \\ge 3$, we need $d \\in \\{1, 2\\}$. That means $3 \\nmid n$, $5 \\nmid n$ and $4 \\nmid n$. By inclusion-exclusion the count of $n \\le 100$ divisible by at least one of $3, 4, 5$ is $33 + 25 + 20 - 8 - 6 - 5 + 1 = 60$ (using $12$, $15$, $20$ and $60$ for the overlaps), so the answer is $100 - 60 = 40$. The transferable idea: a gcd identity turns a question about huge numbers into one about their indices.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-01",
+    "F-NT-04",
+    "F-NT-20"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

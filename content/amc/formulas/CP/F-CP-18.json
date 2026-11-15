@@ -1,0 +1,18 @@
+{
+  "id": "F-CP-18",
+  "area": "CP",
+  "name": "Counting subsets",
+  "formula": "\\sum_{k=0}^{n} \\binom{n}{k} = 2^n, \\qquad \\#\\{\\text{even-size subsets}\\} = \\#\\{\\text{odd-size subsets}\\} = 2^{n-1}\\ (n \\ge 1)",
+  "whenToUse": "Count all subsets, subsets with at least a few elements, or subsets of a given parity of size.",
+  "example": "Subsets of $\\{1, 2, \\ldots, 10\\}$ with at least two elements: $2^{10} - \\binom{10}{0} - \\binom{10}{1} = 1024 - 1 - 10 = 1013$.",
+  "pitfall": "$2^n$ includes the empty set and the full set. Subtract whichever the problem excludes; nonempty subsets number $2^n - 1$.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-COMPLEMENT"
+  ],
+  "derivation": "Each element is either in or out, giving $2^n$ choices. Expanding $(1 - 1)^n = 0$ with the binomial theorem shows the even and odd sizes balance."
+}

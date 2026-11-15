@@ -1,0 +1,67 @@
+{
+  "id": "AM-0187",
+  "contest": "AMC12",
+  "slot": 22,
+  "area": "ALG",
+  "topic": "ALG-11",
+  "types": [
+    "T-CASEWORK",
+    "T-SMALL-CASES"
+  ],
+  "statement": "For how many integers $k$ with $1 \\le k \\le 1000$ does the equation $x\\lfloor x \\rfloor = k$ have exactly one real solution $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$31$",
+      "correct": false,
+      "misconception": "I counted the values of $k$ with two solutions, the perfect squares, instead of those with exactly one."
+    },
+    {
+      "key": "B",
+      "text": "$496$",
+      "correct": false,
+      "misconception": "I only considered positive $x$, which give $k$ exactly when $n^2 \\le k \\le n^2 + n - 1$ for $n = \\lfloor x \\rfloor$."
+    },
+    {
+      "key": "C",
+      "text": "$504$",
+      "correct": false,
+      "misconception": "I only considered negative $x$, which give $k$ exactly when $m^2 - m + 1 \\le k \\le m^2$ for $\\lfloor x \\rfloor = -m$."
+    },
+    {
+      "key": "D",
+      "text": "$938$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$969$",
+      "correct": false,
+      "misconception": "I counted every $k$ with at least one solution, not noticing that a perfect square $k = n^2$ has two solutions, $x = n$ and $x = -n$."
+    }
+  ],
+  "hints": [
+    "Split into $x > 0$ and $x < 0$, and let $n = \\lfloor x \\rfloor$.",
+    "On each interval where $\\lfloor x \\rfloor$ is constant, $x\\lfloor x \\rfloor$ is a line, so it hits each value at most once there. Find the range of values each interval covers, for positive and for negative $x$.",
+    "For $\\lfloor x \\rfloor = n \\ge 1$ the values fill $[n^2, n^2 + n)$. For $\\lfloor x \\rfloor = -m \\le -1$ they fill $(m^2 - m, m^2]$. So $k = n(n+1)$ is never reached and $k = n^2$ is reached twice."
+  ],
+  "solutions": {
+    "reliable": "For $0 \\le x < 1$ the product is $0$, so $k \\ge 1$ needs $x \\ge 1$ or $x < 0$. If $\\lfloor x \\rfloor = n \\ge 1$, then $x \\in [n, n + 1)$ and $nx$ takes each value in $[n^2, n^2 + n)$ once, so the integers $n^2, \\dots, n^2 + n - 1$. If $\\lfloor x \\rfloor = -m \\le -1$, then $x \\in [-m, -m + 1)$ and $-mx$ takes each value in $(m^2 - m, m^2]$ once, so the integers $m^2 - m + 1, \\dots, m^2$. These ranges are disjoint within each sign. Between consecutive squares $n^2$ and $(n+1)^2$: positive $x$ cover $n^2$ to $n^2 + n - 1$, negative $x$ (with $m = n + 1$) cover $n^2 + n + 1$ to $(n + 1)^2$. So $k = n(n + 1)$ has no solution, $k = n^2$ has two, and every other $k$ has exactly one. Up to $1000$: $n(n+1) \\le 1000$ for $n = 1, \\dots, 31$ (as $31 \\cdot 32 = 992$), and $n^2 \\le 1000$ for $n = 1, \\dots, 31$. The answer is $1000 - 31 - 31 = 938$. Transferable idea: with a floor function, fix the integer part, solve on that interval, and track which outputs each interval covers.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

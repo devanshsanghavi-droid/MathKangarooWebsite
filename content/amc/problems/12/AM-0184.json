@@ -1,0 +1,69 @@
+{
+  "id": "AM-0184",
+  "contest": "AMC12",
+  "slot": 19,
+  "area": "ALG",
+  "topic": "ALG-09",
+  "types": [
+    "T-AMGM",
+    "T-BOUNDING"
+  ],
+  "statement": "Positive integers $a$, $b$, $c$ satisfy $a + b + c = 13$. What is the largest possible value of $ab^2c^3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6912$",
+      "correct": false,
+      "misconception": "I rounded each value of the real optimum $a = \\frac{13}{6}$, $b = \\frac{13}{3}$, $c = \\frac{13}{2}$ down, to $2, 4, 6$, without noticing that these add to $12$, not $13$."
+    },
+    {
+      "key": "B",
+      "text": "$10368$",
+      "correct": false,
+      "misconception": "I started from the best triple for the sum $12$, which is $(2, 4, 6)$, and gave the extra unit to $a$, getting $3 \\cdot 16 \\cdot 216$. Giving it to $c$, the variable with the largest exponent, does better."
+    },
+    {
+      "key": "C",
+      "text": "$10800$",
+      "correct": false,
+      "misconception": "I rounded $c = \\frac{13}{2}$ down to $6$ and gave the leftover unit to $b$, getting $(2, 5, 6)$, without comparing it with $(2, 4, 7)$."
+    },
+    {
+      "key": "D",
+      "text": "$10976$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{13^6}{432}$",
+      "correct": false,
+      "misconception": "I applied weighted AM-GM and reported the real maximum, but equality needs $a = \\frac{13}{6}$, which is not an integer, so integers never reach that value."
+    }
+  ],
+  "hints": [
+    "First ignore the word integers. For positive real numbers with this sum, where is the maximum?",
+    "AM-GM on the six numbers $a, \\frac b2, \\frac b2, \\frac c3, \\frac c3, \\frac c3$, which add to $13$, puts the real maximum at $a = \\frac{13}{6}$, $b = \\frac{13}{3}$, $c = \\frac{13}{2}$. The integer maximum is nearby, but rounding alone does not tell you which neighbour wins.",
+    "Compare the integer triples with sum $13$ closest to $(2.17, 4.33, 6.5)$: $(2, 4, 7)$, $(2, 5, 6)$ and $(3, 4, 6)$. To be sure nothing farther away wins, check that moving one unit from any variable to another lowers the product."
+  ],
+  "solutions": {
+    "reliable": "First locate the real maximum: the six numbers $a, \\frac b2, \\frac b2, \\frac c3, \\frac c3, \\frac c3$ add to $13$, so AM-GM puts the real maximum at $a = \\frac{13}{6} \\approx 2.17$, $b = \\frac{13}{3} \\approx 4.33$, $c = \\frac{13}{2} = 6.5$. The nearest integer triples with sum $13$ are $(2, 4, 7)$, with product $2 \\cdot 16 \\cdot 343 = 10976$, then $(2, 5, 6)$, with $2 \\cdot 25 \\cdot 216 = 10800$, and $(3, 4, 6)$, with $3 \\cdot 16 \\cdot 216 = 10368$. To confirm $(2, 4, 7)$, compare it with every triple reached by moving one unit: to $(3, 4, 6)$ the product is multiplied by $\\frac32 \\cdot \\frac{216}{343} = \\frac{324}{343}$, to $(2, 5, 6)$ by $\\frac{25}{16} \\cdot \\frac{216}{343} = \\frac{675}{686}$, to $(3, 3, 7)$ by $\\frac32 \\cdot \\frac{9}{16} = \\frac{27}{32}$, to $(1, 5, 7)$ by $\\frac12 \\cdot \\frac{25}{16} = \\frac{25}{32}$, to $(1, 4, 8)$ by $\\frac12 \\cdot \\frac{512}{343} = \\frac{256}{343}$ and to $(2, 3, 8)$ by $\\frac{9}{16} \\cdot \\frac{512}{343} = \\frac{288}{343}$. All six factors are less than $1$. The gain from one more unit, $\\frac{a+1}{a}$, $\\left(\\frac{b+1}{b}\\right)^2$ or $\\left(\\frac{c+1}{c}\\right)^3$, shrinks as that variable grows, so a triple that no single transfer improves is the best overall. The maximum is $10976$. Transferable idea: for an integer version of an AM-GM optimum, find the real optimum, test its integer neighbours, and confirm with one-unit transfers.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-08"
+  ],
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

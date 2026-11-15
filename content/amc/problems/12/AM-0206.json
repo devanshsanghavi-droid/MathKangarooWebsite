@@ -1,0 +1,69 @@
+{
+  "id": "AM-0206",
+  "contest": "AMC12",
+  "slot": 10,
+  "area": "GEO",
+  "topic": "GEO-09",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-VIETA"
+  ],
+  "statement": "An angle $x$ satisfies $\\sin x + \\cos x = \\frac{7}{5}$ and $\\sin x > \\cos x$. What is $\\tan x - \\cot x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-\\frac{7}{12}$",
+      "correct": false,
+      "misconception": "I took sin x - cos x to be negative, so I got the right size with the wrong sign."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1}{5}$",
+      "correct": false,
+      "misconception": "I found sin x - cos x = 1/5 and reported it, without turning it into tan x - cot x."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{7}{25}$",
+      "correct": false,
+      "misconception": "I found the numerator sin squared x - cos squared x = 7/25 and forgot to divide by sin x cos x."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{5}{12}$",
+      "correct": false,
+      "misconception": "I wrote tan x - cot x as (sin x - cos x) divided by sin x cos x, dropping the factor sin x + cos x from the difference of squares."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{7}{12}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Square the given equation.",
+    "Squaring gives $\\sin x\\cos x$. Write $\\tan x - \\cot x = \\frac{\\sin^2 x - \\cos^2 x}{\\sin x\\cos x}$ and factor the numerator as a difference of squares.",
+    "$1 + 2\\sin x\\cos x = \\frac{49}{25}$, so $\\sin x\\cos x = \\frac{12}{25}$. Then $(\\sin x - \\cos x)^2 = 1 - \\frac{24}{25}$, so $\\sin x - \\cos x = \\frac{1}{5}$."
+  ],
+  "solutions": {
+    "reliable": "Squaring, $1 + 2\\sin x\\cos x = \\frac{49}{25}$, so $\\sin x \\cos x = \\frac{12}{25}$. Then $(\\sin x - \\cos x)^2 = 1 - 2\\cdot\\frac{12}{25} = \\frac{1}{25}$, and since $\\sin x > \\cos x$, $\\sin x - \\cos x = \\frac{1}{5}$. Now $\\tan x - \\cot x = \\frac{\\sin^2 x - \\cos^2 x}{\\sin x\\cos x} = \\frac{(\\sin x - \\cos x)(\\sin x + \\cos x)}{\\sin x\\cos x} = \\frac{\\frac{1}{5}\\cdot\\frac{7}{5}}{\\frac{12}{25}} = \\frac{7}{12}$. Transferable idea: from $\\sin x + \\cos x$, squaring gives the product, and the product gives the difference.",
+    "elegant": "$\\sin x$ and $\\cos x$ have sum $\\frac{7}{5}$ and product $\\frac{12}{25}$, so they are the roots of $t^2 - \\frac{7}{5}t + \\frac{12}{25} = 0$, namely $\\frac{4}{5}$ and $\\frac{3}{5}$. With $\\sin x = \\frac{4}{5}$, $\\tan x - \\cot x = \\frac{4}{3} - \\frac{3}{4} = \\frac{7}{12}$. Transferable idea: a known sum and product pin down two numbers."
+  },
+  "formulas": [
+    "F-ALG-02"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "F-ALG-08",
+  "area": "ALG",
+  "name": "AM-GM inequality",
+  "formula": "\\frac{a_1 + a_2 + \\cdots + a_n}{n} \\ge \\sqrt[n]{a_1 a_2 \\cdots a_n}\\quad (a_i \\ge 0), \\text{ equality iff all } a_i \\text{ are equal}",
+  "whenToUse": "Find the minimum of a sum whose product is fixed, or the maximum of a product whose sum is fixed, for nonnegative quantities.",
+  "example": "For $x > 0$, $x + \\frac{16}{x} \\ge 2\\sqrt{x \\cdot \\frac{16}{x}} = 8$, with equality when $x = \\frac{16}{x}$, that is $x = 4$. So the minimum is $8$.",
+  "pitfall": "It needs nonnegative terms, and the bound is only the answer if equality can actually happen. Check that the equal case satisfies every condition in the problem.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-AMGM",
+    "T-BOUNDING"
+  ],
+  "derivation": "For two terms: $(\\sqrt{a} - \\sqrt{b})^2 \\ge 0$ expands to $a + b \\ge 2\\sqrt{ab}$, with equality only when $a = b$."
+}

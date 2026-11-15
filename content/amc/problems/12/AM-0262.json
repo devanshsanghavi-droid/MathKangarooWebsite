@@ -1,0 +1,71 @@
+{
+  "id": "AM-0262",
+  "contest": "AMC12",
+  "slot": 22,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-PIE",
+    "T-CASEWORK"
+  ],
+  "statement": "How many positive divisors $d$ of $30^4$ have the property that $d$ and $\\dfrac{30^4}{d}$ have the same number of positive divisors?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I found the 5 divisors in which the exponent of 5 is 2 and the other two exponents add to 4, but forgot that the exponent equal to 2 can belong to any of the three primes."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I added 5 divisors for each of the three primes, but 900 = 2^2 x 3^2 x 5^2 is in all three lists and I counted it three times."
+    },
+    {
+      "key": "D",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I assumed the exponents of d only had to add up to 6, half of the 12 in 30^4, but for example 3^3 x 5^3 has 16 divisors while its partner 2^4 x 3 x 5 has 20."
+    },
+    {
+      "key": "E",
+      "text": "$61$",
+      "correct": false,
+      "misconception": "I thought it was enough for one exponent of d to be 2, the middle value, but the other two exponents must then add to 4 as well."
+    }
+  ],
+  "hints": [
+    "Write $d = 2^a 3^b 5^c$ with $0 \\le a, b, c \\le 4$ and turn the condition into an equation in $a$, $b$, $c$.",
+    "With $x = a+1$, $y = b+1$, $z = c+1$ in $\\{1, \\ldots, 5\\}$ the condition is $xyz = (6-x)(6-y)(6-z)$. What does it become when $x = 3$?",
+    "When $x = 3$ the condition is $y + z = 6$. Show that at least one of $x, y, z$ must equal $3$: if none does, compare the powers of $2$ and of $5$ on the two sides. Then count with inclusion-exclusion."
+  ],
+  "solutions": {
+    "reliable": "Write $d = 2^a 3^b 5^c$, so $30^4/d = 2^{4-a} 3^{4-b} 5^{4-c}$. With $x = a + 1$, $y = b + 1$, $z = c + 1$, each in $\\{1, \\ldots, 5\\}$, the condition is $xyz = (6-x)(6-y)(6-z)$. First, some coordinate equals $3$. If not, each is in $\\{1, 2, 4, 5\\}$; let $n_1, n_2, n_4, n_5$ count how many coordinates take each value. On the left the exponent of $5$ is $n_5$ and on the right it is $n_1$ (since $6 - 1 = 5$), so $n_5 = n_1$. The exponent of $2$ is $n_2 + 2n_4$ on the left and $2n_2 + n_4$ on the right (since $6 - 2 = 4$ and $6 - 4 = 2$), so $n_4 = n_2$. Then $3 = n_1 + n_2 + n_4 + n_5 = 2(n_1 + n_2)$ is even, a contradiction. Next, if $x = 3$ the condition reads $yz = (6-y)(6-z)$, which simplifies to $6(y + z) = 36$, so $y + z = 6$: that gives $5$ solutions. The same holds with $y = 3$ or $z = 3$. If two coordinates equal $3$, the third is $3$ as well, so every pairwise overlap and the triple overlap is the single solution $(3,3,3)$, that is $d = 900$. By inclusion-exclusion the count is $3 \\cdot 5 - 3 \\cdot 1 + 1 = 13$. The transferable idea: the number of divisors is a product over primes, so compare the two sides prime by prime.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-01",
+    "F-CP-01"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

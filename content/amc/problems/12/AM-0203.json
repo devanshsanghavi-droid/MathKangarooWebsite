@@ -1,0 +1,69 @@
+{
+  "id": "AM-0203",
+  "contest": "AMC12",
+  "slot": 8,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-AUXILIARY",
+    "T-SIMILAR"
+  ],
+  "statement": "A right circular cone has base radius $6$ and slant height $10$. A sphere inside the cone is tangent to the base and to the curved surface all the way around. What is the radius of the sphere?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{15}{4}$",
+      "correct": false,
+      "misconception": "I used the slant height 10 as the height of the cone when I computed the area of the cross-section."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I assumed the sphere reaches halfway up the cone, so I took half the height 8 as its radius."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I took the radius to be half the slant height, as if the sphere touched the side at its middle."
+    },
+    {
+      "key": "E",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I used r = 2K/s for the inradius of the cross-section instead of r = K/s, so my answer is twice too big."
+    }
+  ],
+  "hints": [
+    "Slice the cone through its axis.",
+    "The slice is an isosceles triangle, and the sphere becomes its inscribed circle. The inradius of a triangle is its area divided by its semiperimeter.",
+    "The height is $\\sqrt{10^2 - 6^2} = 8$. The triangle has sides $10, 10, 12$, area $\\frac{1}{2}\\cdot 12 \\cdot 8 = 48$ and semiperimeter $16$."
+  ],
+  "solutions": {
+    "reliable": "The height of the cone is $\\sqrt{10^2 - 6^2} = 8$. The plane through the axis cuts the cone in a triangle with sides $10$, $10$, $12$ and cuts the sphere in a great circle, which is the incircle of that triangle. The triangle has area $\\frac{1}{2}\\cdot 12 \\cdot 8 = 48$ and semiperimeter $\\frac{10 + 10 + 12}{2} = 16$, so $r = \\frac{K}{s} = \\frac{48}{16} = 3$. Check with similar triangles: the center is at height $r$ on the axis, $8 - r$ below the apex, and its distance to the slant side is $(8 - r)\\cdot\\frac{6}{10}$; setting this equal to $r$ gives $48 - 6r = 10r$, so $r = 3$. Transferable idea: reduce a symmetric 3D problem to its cross-section.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-06"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

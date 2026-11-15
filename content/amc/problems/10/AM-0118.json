@@ -1,0 +1,70 @@
+{
+  "id": "AM-0118",
+  "contest": "BOTH",
+  "slot": 3,
+  "area": "CP",
+  "topic": "CP-03",
+  "types": [
+    "T-COMPLEMENT",
+    "T-CASEWORK"
+  ],
+  "statement": "At a meeting there are $6$ students and $4$ teachers. Every two people shake hands exactly once, except that no two teachers shake hands with each other. How many handshakes take place?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I counted only the 6 x 4 = 24 handshakes between a student and a teacher and forgot the students shake hands with each other."
+    },
+    {
+      "key": "B",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I subtracted 4 x 3 = 12 teacher pairs from 45, counting each pair of teachers twice."
+    },
+    {
+      "key": "C",
+      "text": "$39$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I counted every pair of the 10 people, C(10, 2) = 45, and forgot that teachers do not shake hands with each other."
+    },
+    {
+      "key": "E",
+      "text": "$54$",
+      "correct": false,
+      "misconception": "I counted student handshakes as 6 x 5 = 30 without halving, then added the 24 student-teacher handshakes."
+    }
+  ],
+  "hints": [
+    "A handshake is an unordered pair of people.",
+    "Count all pairs of people, then subtract the pairs that are not allowed. Or split the handshakes into student-student and student-teacher.",
+    "All pairs: $\\binom{10}{2} = 45$. Teacher pairs: $\\binom{4}{2} = 6$. Subtract."
+  ],
+  "solutions": {
+    "reliable": "Each handshake is an unordered pair of people. There are $\\binom{10}{2} = 45$ pairs among the $10$ people, and $\\binom{4}{2} = 6$ of them are pairs of teachers, which do not happen. So there are $45 - 6 = 39$ handshakes. Check by cases: student with student, $\\binom{6}{2} = 15$; student with teacher, $6 \\cdot 4 = 24$; total $15 + 24 = 39$. Transferable idea: an unordered pair is a choose-2, never a product of two people counts.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-03",
+    "F-CP-06"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

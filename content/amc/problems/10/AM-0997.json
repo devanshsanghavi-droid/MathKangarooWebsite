@@ -1,0 +1,62 @@
+{
+  "id": "AM-0997",
+  "contest": "BOTH",
+  "slot": 9,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": ["T-PRIME-FACTOR", "T-BIJECTION"],
+  "statement": "How many positive integers are both a multiple of $12$ and a divisor of $720$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I reduced the question to divisors of 60 = 2^2 x 3 x 5 but multiplied the exponents 2 x 1 x 1 instead of the exponents plus one."
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I found the 12 divisors of 60 but threw out 1 and 60, as if 12 and 720 themselves did not count as multiples of 12 that divide 720."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I counted every divisor of 720 = 2^4 x 3^2 x 5 with (4+1)(2+1)(1+1) = 30 and forgot the multiple-of-12 condition."
+    },
+    {
+      "key": "E",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I divided 720 by 12 and took the quotient 60 as the count, when 60 is the largest allowed value of n divided by 12, not the number of choices."
+    }
+  ],
+  "hints": [
+    "Any such number can be written as $12k$ for a positive integer $k$.",
+    "$12k$ divides $720$ exactly when $k$ divides $720 / 12 = 60$. Count the divisors of $60$.",
+    "$60 = 2^2 \\cdot 3 \\cdot 5$, so it has $(2+1)(1+1)(1+1)$ divisors."
+  ],
+  "solutions": {
+    "reliable": "Write the number as $n = 12k$ with $k$ a positive integer. Then $n$ divides $720$ exactly when $720 / (12k) = 60/k$ is an integer, that is, when $k$ divides $60$. So the numbers we want are in one-to-one correspondence with the divisors of $60$. Since $60 = 2^2 \\cdot 3 \\cdot 5$, it has $(2+1)(1+1)(1+1) = 12$ divisors. Check the ends: $k = 1$ gives $n = 12$ and $k = 60$ gives $n = 720$, and both qualify, so the answer is $12$.",
+    "elegant": "With $720 = 2^4 \\cdot 3^2 \\cdot 5$ and $12 = 2^2 \\cdot 3$, a valid $n$ has exponent of $2$ in $\\{2,3,4\\}$, of $3$ in $\\{1,2\\}$ and of $5$ in $\\{0,1\\}$: $3 \\cdot 2 \\cdot 2 = 12$."
+  },
+  "formulas": ["F-NT-01"],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

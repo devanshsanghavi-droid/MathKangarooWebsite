@@ -1,0 +1,69 @@
+{
+  "id": "AM-0088",
+  "contest": "BOTH",
+  "slot": 9,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-MODULAR",
+    "T-CYCLE"
+  ],
+  "statement": "The integer $N$ is written in base $10$ as a string of $2027$ ones, $N = 111\\ldots1$. What is the remainder when $N$ is divided by $37$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I knew 111 = 3 x 37 and assumed every number made only of ones is a multiple of 37, but that needs the number of ones to be a multiple of 3."
+    },
+    {
+      "key": "B",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I split N into blocks of 111 but miscounted 2027 as one more than a multiple of 3, so I expected a single 1 left over. In fact 2027 = 3 x 675 + 2."
+    },
+    {
+      "key": "C",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I found that 2 ones are left over after removing the blocks of 111 and reported the number of leftover ones, 2, instead of the number 11 that they form."
+    },
+    {
+      "key": "D",
+      "text": "$11$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$29$",
+      "correct": false,
+      "misconception": "I used a digit-sum shortcut like the rule for 9, found the digit sum 2027, and took its remainder 29 when divided by 37, but that shortcut does not work for 37."
+    }
+  ],
+  "hints": [
+    "What is $111$ divided by $37$?",
+    "$111 = 3 \\cdot 37$. Group the ones of $N$ into blocks of three; each block contributes a multiple of $111$.",
+    "$2027 = 3 \\cdot 675 + 2$, so $N = M \\cdot 100 + 11$, where $M$ is made of $2025$ ones."
+  ],
+  "solutions": {
+    "reliable": "Since $2027 = 3 \\cdot 675 + 2$, write $N = M \\cdot 100 + 11$, where $M$ is the number made of $2025$ ones. Then $M = 111 \\cdot (10^{2022} + 10^{2019} + \\cdots + 10^3 + 1)$ is a multiple of $111 = 3 \\cdot 37$. So $N \\equiv 11 \\pmod{37}$, and the remainder is $11$.",
+    "elegant": "$10^3 = 1000 = 27 \\cdot 37 + 1$, so $10^3 \\equiv 1 \\pmod{37}$ and the place values $1, 10, 100, 1000, \\ldots$ cycle through $1, 10, 26$ modulo $37$. Each full group of three ones adds $1 + 10 + 26 = 37 \\equiv 0$. With $2027 = 3 \\cdot 675 + 2$, only two places are left over, contributing $1 + 10 = 11$."
+  },
+  "formulas": [
+    "F-NT-12"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

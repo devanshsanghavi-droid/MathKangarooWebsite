@@ -1,0 +1,19 @@
+{
+  "id": "F-CP-05",
+  "area": "CP",
+  "name": "Stars and bars",
+  "formula": "x_1 + \\cdots + x_k = n,\\ x_i \\ge 0: \\ \\binom{n + k - 1}{k - 1} \\qquad x_i \\ge 1: \\ \\binom{n - 1}{k - 1}",
+  "whenToUse": "Distribute identical objects into distinct boxes, count nonnegative integer solutions to a sum, or choose with repetition allowed.",
+  "example": "$x + y + z = 10$ has $\\binom{12}{2} = 66$ nonnegative solutions and $\\binom{9}{2} = 36$ positive ones. Buying $10$ donuts from $3$ flavours is the same as the first count.",
+  "pitfall": "It only works for IDENTICAL objects in DISTINCT boxes. For a lower bound like $x \\ge 2$, substitute $x' = x - 2$ first; upper bounds need inclusion-exclusion.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-STARS-BARS",
+    "T-BIJECTION"
+  ],
+  "derivation": "Line up $n$ stars and $k - 1$ bars. Each arrangement splits the stars into $k$ groups, one per variable, and choosing the bar positions among $n + k - 1$ spots gives the count."
+}

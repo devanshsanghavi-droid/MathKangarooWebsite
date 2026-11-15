@@ -1,0 +1,70 @@
+{
+  "id": "AM-0181",
+  "contest": "AMC12",
+  "slot": 17,
+  "area": "ALG",
+  "topic": "ALG-06",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-SYMMETRY"
+  ],
+  "statement": "Positive real numbers $x$, $y$, $z$, none equal to $1$, satisfy $\\log_x(yz) = 2$ and $\\log_y(zx) = 3$. What is $\\log_z(xy)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{7}{5}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{12}{5}$",
+      "correct": false,
+      "misconception": "I used the identity $\\frac{1}{1+p} + \\frac{1}{1+q} + \\frac{1}{1+r} = 1$ to get $\\frac{1}{1+r} = \\frac{5}{12}$, then flipped it to $\\frac{12}{5}$ without subtracting $1$."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{7}{2}$",
+      "correct": false,
+      "misconception": "I wrote $a, b, c$ for the logarithms of $x, y, z$ but solved $4b = 3a$ as $b = \\frac{4a}{3}$ instead of $b = \\frac{3a}{4}$, which led to $c = \\frac{2a}{3}$ and a ratio of $\\frac72$."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I assumed the third logarithm is the sum of the other two, $2 + 3$."
+    },
+    {
+      "key": "E",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I used the false identity $\\frac1p + \\frac1q + \\frac1r = 1$ for the three logarithms, so $\\frac1r = 1 - \\frac12 - \\frac13 = \\frac16$."
+    }
+  ],
+  "hints": [
+    "Take logarithms in one common base.",
+    "Let $a = \\ln x$, $b = \\ln y$, $c = \\ln z$. Each condition becomes a linear equation in $a, b, c$, and the target is a ratio of them.",
+    "The conditions are $b + c = 2a$ and $c + a = 3b$; you want $\\frac{a + b}{c}$. Subtracting gives $4b = 3a$, and then $c = 2a - b$."
+  ],
+  "solutions": {
+    "reliable": "Let $a = \\ln x$, $b = \\ln y$, $c = \\ln z$, all nonzero. Then $\\log_x(yz) = \\frac{b + c}{a} = 2$ and $\\log_y(zx) = \\frac{c + a}{b} = 3$, so $b + c = 2a$ and $c + a = 3b$. Subtracting, $b - a = 2a - 3b$, so $b = \\frac34 a$, and $c = 2a - b = \\frac54 a$. Then $\\log_z(xy) = \\frac{a + b}{c} = \\frac{7a/4}{5a/4} = \\frac75$. Example: $x = e^4$, $y = e^3$, $z = e^5$ works. Transferable idea: change every logarithm to one base and the problem becomes linear in the logs of the variables.",
+    "elegant": "Note that $\\frac{1}{1 + \\log_x(yz)} = \\frac{a}{a + b + c}$, and similarly for the others, so the three values $\\frac{1}{1+p}$ always add to $1$. Here $\\frac13 + \\frac14 + \\frac{1}{1 + r} = 1$, so $1 + r = \\frac{12}{5}$ and $r = \\frac75$."
+  },
+  "formulas": [
+    "F-ALG-10",
+    "F-ALG-11"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

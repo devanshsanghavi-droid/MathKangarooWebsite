@@ -1,0 +1,67 @@
+{
+  "id": "AM-0035",
+  "contest": "BOTH",
+  "slot": 22,
+  "area": "ALG",
+  "topic": "ALG-11",
+  "types": [
+    "T-CASEWORK",
+    "T-BOUNDING"
+  ],
+  "statement": "What is the sum of the squares of all real numbers $x$ that satisfy $x^2 - 12\\lfloor x \\rfloor + 20 = 0$? (Here $\\lfloor x \\rfloor$ is the greatest integer less than or equal to $x$.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$164$",
+      "correct": false,
+      "misconception": "I used strict inequalities on both ends, $n < x < n + 1$, which threw out the integer solutions $x = 2$ and $x = 10$."
+    },
+    {
+      "key": "B",
+      "text": "$168$",
+      "correct": false,
+      "misconception": "I solved $n^2 \\le 12n - 20$ as $2 \\le n < 10$, dropping the endpoint $n = 10$, so I missed the solution $x = 10$."
+    },
+    {
+      "key": "C",
+      "text": "$264$",
+      "correct": false,
+      "misconception": "I solved $n^2 \\le 12n - 20$ as $2 < n \\le 10$, dropping the endpoint $n = 2$, so I missed the solution $x = 2$."
+    },
+    {
+      "key": "D",
+      "text": "$268$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$348$",
+      "correct": false,
+      "misconception": "I solved $12n - 20 \\le (n + 1)^2$ with a non-strict inequality, so I wrongly kept $n = 3$ and $n = 7$, where $x = 4$ and $x = 8$ have the wrong floor."
+    }
+  ],
+  "hints": [
+    "Name the integer $n = \\lfloor x \\rfloor$.",
+    "Then $x^2 = 12n - 20$, so $x = \\pm\\sqrt{12n - 20}$. Now demand that this $x$ really has floor $n$: $n \\le x < n + 1$.",
+    "Negative $x$ is impossible because $12n - 20 \\ge 0$ forces $n \\ge 2$. For $x = \\sqrt{12n - 20}$: $n^2 \\le 12n - 20$ gives $2 \\le n \\le 10$, and $12n - 20 < (n + 1)^2$ gives $n < 3$ or $n > 7$."
+  ],
+  "solutions": {
+    "reliable": "Let $n = \\lfloor x \\rfloor$. Then $x^2 = 12n - 20$, so $12n - 20 \\ge 0$ and $n \\ge 2$, which makes $x \\ge 2$ positive; thus $x = \\sqrt{12n - 20}$. We need $n \\le \\sqrt{12n - 20} < n + 1$. The left part is $n^2 - 12n + 20 \\le 0$, that is $(n - 2)(n - 10) \\le 0$, so $2 \\le n \\le 10$. The right part is $12n - 20 < n^2 + 2n + 1$, that is $(n - 3)(n - 7) > 0$, so $n < 3$ or $n > 7$. Hence $n \\in \\{2, 8, 9, 10\\}$, giving $x = 2, \\sqrt{76}, \\sqrt{88}, 10$. Check $n = 8$: $\\sqrt{76} \\approx 8.72$ has floor $8$; and $n = 7$ fails because $\\sqrt{64} = 8$ has floor $8$, not $7$. The sum of squares is $\\sum (12n - 20) = 4 + 76 + 88 + 100 = 268$. Transferable idea: with a floor, name the integer part, solve, then insist the answer actually has that integer part.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 270,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

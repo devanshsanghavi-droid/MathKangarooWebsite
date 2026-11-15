@@ -1,0 +1,70 @@
+{
+  "id": "AM-0148",
+  "contest": "AMC10",
+  "slot": 20,
+  "area": "CP",
+  "topic": "CP-03",
+  "types": [
+    "T-SYMMETRY",
+    "T-LINEARITY"
+  ],
+  "statement": "Four different numbers are chosen at random from $\\{1, 2, 3, \\ldots, 10\\}$, with every set of four equally likely. What is the expected value of the smallest number chosen?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I pictured the four numbers splitting 1 to 10 into five equal gaps of 10/5 = 2, using 10 instead of 11 for the total length."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{11}{5}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{11}{4}$",
+      "correct": false,
+      "misconception": "I split 11 into 4 equal parts, one for each chosen number, instead of 5 parts for the gaps around the four numbers."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{11}{2}$",
+      "correct": false,
+      "misconception": "I used the average of all ten numbers, as if the smallest of the four were a typical number."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{44}{5}$",
+      "correct": false,
+      "misconception": "I computed the expected largest number, 4 x 11/5, instead of the expected smallest."
+    }
+  ],
+  "hints": [
+    "The smallest number is at least $m$ exactly when what happens?",
+    "Write the expected value as a sum of the probabilities that the smallest number is at least 1, at least 2, and so on. Each of those is a ratio of binomial coefficients, and their sum telescopes by the hockey stick identity.",
+    "The smallest is at least $m$ when all four come from $\\{m, \\ldots, 10\\}$: probability $\\binom{11-m}{4} / \\binom{10}{4}$. Add these for $m = 1$ to $7$; the numerators add up to $\\binom{11}{5}$."
+  ],
+  "solutions": {
+    "reliable": "Let $S$ be the smallest number. For a positive integer variable, $E[S] = \\sum_{m \\ge 1} P(S \\ge m)$, because $S$ counts how many of the statements '$S \\ge 1$', '$S \\ge 2$', ... are true. Now $S \\ge m$ exactly when all four numbers come from the $11 - m$ numbers $m, \\ldots, 10$, so $P(S \\ge m) = \\binom{11-m}{4} / \\binom{10}{4}$. Adding for $m = 1, \\ldots, 7$ gives numerators $\\binom{10}{4} + \\binom{9}{4} + \\cdots + \\binom{4}{4} = \\binom{11}{5} = 462$ by the hockey stick identity. So $E[S] = \\frac{462}{210} = \\frac{11}{5}$. The transferable idea: a tail sum turns the expected minimum into a sum of easy probabilities.",
+    "elegant": "The $6$ numbers not chosen fall into $5$ gaps: below the smallest, between consecutive chosen numbers, and above the largest. By symmetry each gap holds the same expected number of unchosen numbers, $\\frac{6}{5}$. The smallest chosen number is $1$ plus the number of unchosen numbers below it, so its expected value is $1 + \\frac65 = \\frac{11}{5}$."
+  },
+  "formulas": [
+    "F-CP-08",
+    "F-CP-03"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

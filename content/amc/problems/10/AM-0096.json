@@ -1,0 +1,68 @@
+{
+  "id": "AM-0096",
+  "contest": "AMC10",
+  "slot": 13,
+  "area": "NT",
+  "topic": "NT-08",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "What is the largest integer $k$ such that $12^k$ divides $30!$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I gave each multiple of 3 up to 30 only one factor of 3, got 10, and took that as the limit, missing the extra 3s in 9, 18 and 27."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I found the 14 factors of 3 in $30!$ and treated 3 as the scarce prime, forgetting that each 12 uses two factors of 2."
+    },
+    {
+      "key": "D",
+      "text": "$26$",
+      "correct": false,
+      "misconception": "I found the 26 factors of 2 in $30!$ and stopped there, as if a single 2 were enough for each copy of 12."
+    },
+    {
+      "key": "E",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I added the 26 factors of 2 and the 14 factors of 3, as if every prime factor made its own copy of 12."
+    }
+  ],
+  "hints": [
+    "Write $12 = 2^2 \\cdot 3$. Which prime runs out first?",
+    "Count the 2s and the 3s in $30!$ with Legendre's formula. Each copy of $12$ uses two 2s and one 3.",
+    "There are $15 + 7 + 3 + 1 = 26$ factors of 2, enough for $13$ copies of $2^2$, and $10 + 3 + 1 = 14$ factors of 3. The smaller of $13$ and $14$ wins."
+  ],
+  "solutions": {
+    "reliable": "Since $12 = 2^2 \\cdot 3$, we need the exponents of 2 and 3 in $30!$. By Legendre's formula the exponent of 2 is $\\lfloor 30/2 \\rfloor + \\lfloor 30/4 \\rfloor + \\lfloor 30/8 \\rfloor + \\lfloor 30/16 \\rfloor = 15 + 7 + 3 + 1 = 26$, and the exponent of 3 is $\\lfloor 30/3 \\rfloor + \\lfloor 30/9 \\rfloor + \\lfloor 30/27 \\rfloor = 10 + 3 + 1 = 14$. Each factor of $12$ needs two 2s and one 3, so the 2s allow $\\lfloor 26/2 \\rfloor = 13$ copies and the 3s allow $14$. The answer is the smaller number, $13$. Transferable idea: for a composite base, count each prime, divide by its exponent in the base, and take the minimum.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-08"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

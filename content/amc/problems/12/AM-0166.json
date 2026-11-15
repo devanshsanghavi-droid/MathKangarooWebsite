@@ -1,0 +1,70 @@
+{
+  "id": "AM-0166",
+  "contest": "AMC12",
+  "slot": 8,
+  "area": "ALG",
+  "topic": "ALG-05",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-BOUNDING"
+  ],
+  "statement": "For a positive integer $n$, the infinite nested radical $\\sqrt{n + \\sqrt{n + \\sqrt{n + \\cdots}}}$ is a positive real number. What is the sum of all positive integers $n \\le 100$ for which this number is an integer?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I found the nine values of $n$ and reported how many there are instead of their sum."
+    },
+    {
+      "key": "B",
+      "text": "$54$",
+      "correct": false,
+      "misconception": "I added the integer values the radical takes, $2 + 3 + \\cdots + 10 = 54$, instead of the values of $n$ that produce them."
+    },
+    {
+      "key": "C",
+      "text": "$330$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$385$",
+      "correct": false,
+      "misconception": "I assumed the radical is an integer exactly when $\\sqrt{n}$ is, so I added the perfect squares $1 + 4 + \\cdots + 100 = 385$."
+    },
+    {
+      "key": "E",
+      "text": "$440$",
+      "correct": false,
+      "misconception": "I found $n = m(m - 1)$ but let $m$ run up to $11$, including $n = 110$ without checking it against $n \\le 100$."
+    }
+  ],
+  "hints": [
+    "The radical contains a copy of itself. Give the whole thing a name.",
+    "If the value is $m$, then the part under the outer root is $n + m$. Square to get an equation linking $n$ and $m$, then ask which integers $m$ give $n \\le 100$.",
+    "$m = \\sqrt{n + m}$ gives $n = m^2 - m = m(m - 1)$. List these for $m = 2, 3, \\ldots$ while they stay at most $100$."
+  ],
+  "solutions": {
+    "reliable": "Let $m$ be the value of the radical. The expression under the outer root is $n$ plus the radical itself, so $m = \\sqrt{n + m}$, that is, $m^2 - m - n = 0$, and $m$ is its positive root $\\frac{1 + \\sqrt{1 + 4n}}{2}$. If $m$ is an integer then $n = m(m - 1)$, and conversely each $m \\ge 2$ gives the positive integer $n = m(m - 1)$ with radical value $m$. We need $m(m - 1) \\le 100$, so $m = 2, 3, \\ldots, 10$ (since $10 \\cdot 9 = 90$ and $11 \\cdot 10 = 110$). The sum is $\\sum_{m=2}^{10} (m^2 - m) = (385 - 1) - (55 - 1) = 330$. Transferable idea: a self-similar expression satisfies an equation in itself; name it and solve.",
+    "elegant": "From $m = \\frac{1 + \\sqrt{1 + 4n}}{2}$, the radical is an integer exactly when $1 + 4n$ is an odd perfect square, $(2m - 1)^2$. The values $n = 2, 6, 12, 20, 30, 42, 56, 72, 90$ are twice the triangular numbers $1, 3, 6, \\ldots, 45$, whose sum is $165$, so the answer is $2 \\cdot 165 = 330$."
+  },
+  "formulas": [
+    "F-ALG-15",
+    "F-ALG-16"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "AM-0219",
+  "contest": "AMC12",
+  "slot": 18,
+  "area": "GEO",
+  "topic": "GEO-11",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Let $F_1$ and $F_2$ be the foci of the ellipse $\\dfrac{x^2}{49} + \\dfrac{y^2}{24} = 1$. A point $P$ on the ellipse satisfies $\\angle F_1PF_2 = 60^\\circ$. What is the area of triangle $F_1PF_2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8\\sqrt{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I treated the angle at P as a right angle, so PF_1^2 + PF_2^2 = 100 together with PF_1 + PF_2 = 14 gave PF_1 times PF_2 = 48 and an area of 24."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{57\\sqrt{3}}{4}$",
+      "correct": false,
+      "misconception": "I took the distance between the foci to be c = 5 instead of 2c = 10, so the law of cosines read 25 = 196 - 3 PF_1 PF_2, giving PF_1 times PF_2 = 57."
+    },
+    {
+      "key": "D",
+      "text": "$16\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I found PF_1 times PF_2 = 32 correctly but computed the area as PF_1 times PF_2 times sin 60 degrees, without the one half."
+    },
+    {
+      "key": "E",
+      "text": "$24\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I wrote the law of cosines with a plus sign, PF_1^2 + PF_2^2 + PF_1 times PF_2 = 100, which gave 196 - PF_1 PF_2 = 100 and PF_1 times PF_2 = 96."
+    }
+  ],
+  "hints": [
+    "You never need $PF_1$ and $PF_2$ separately, only their product.",
+    "The sum $PF_1 + PF_2$ is fixed by the ellipse, and the law of cosines in the triangle involves the sum of squares and the product. Combine them.",
+    "$PF_1 + PF_2 = 2\\cdot 7 = 14$ and $F_1F_2 = 2\\sqrt{49 - 24} = 10$. So $100 = (PF_1 + PF_2)^2 - 3\\,PF_1\\cdot PF_2$."
+  ],
+  "solutions": {
+    "reliable": "Here $a = 7$, $b = 2\\sqrt6$ and $c = \\sqrt{49 - 24} = 5$, so $F_1F_2 = 10$ and $PF_1 + PF_2 = 2a = 14$. Write $u = PF_1$, $v = PF_2$. The law of cosines gives $100 = u^2 + v^2 - 2uv\\cos 60^\\circ = (u + v)^2 - 3uv = 196 - 3uv$, so $uv = 32$. The area is $\\tfrac12 uv\\sin 60^\\circ = \\tfrac12\\cdot 32\\cdot\\tfrac{\\sqrt3}{2} = 8\\sqrt3$. Check: the area is also $\\tfrac12\\cdot 10\\cdot|y_P|$, so $|y_P| = \\tfrac{8\\sqrt3}{5} \\approx 2.771$, and a numerical search along the ellipse finds the $60^\\circ$ point at $y \\approx 2.771$. Such a point exists because the angle at the end of the minor axis is about $91^\\circ$, more than $60^\\circ$. The idea: sum and product of two lengths can stand in for the lengths themselves.",
+    "elegant": "For any point on this ellipse with $\\angle F_1PF_2 = \\theta$, the same computation gives $uv = \\dfrac{2b^2}{1 + \\cos\\theta}$ and area $b^2\\tan\\tfrac{\\theta}{2}$. With $b^2 = 24$ and $\\tan 30^\\circ = \\tfrac{1}{\\sqrt3}$, the area is $\\tfrac{24}{\\sqrt3} = 8\\sqrt3$."
+  },
+  "formulas": [
+    "F-GEO-21",
+    "F-GEO-14",
+    "F-GEO-05"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

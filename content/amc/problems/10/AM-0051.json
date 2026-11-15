@@ -1,0 +1,68 @@
+{
+  "id": "AM-0051",
+  "contest": "BOTH",
+  "slot": 8,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-POWER-POINT"
+  ],
+  "statement": "From a point $P$ outside a circle, a tangent segment $PT$ of length $12$ is drawn to the circle. A line through $P$ meets the circle at $A$ and $B$, with $A$ between $P$ and $B$, and $AB = 18$. What is $PA$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I thought the tangent length was the average of PA and PB, so PA + (PA + 18) = 24 gave PA = 3."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I set PT^2 equal to PA times the chord AB, so 144 = 18 PA and PA = 8, but the product uses the whole distance PB."
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I assumed PA equals the tangent length 12, mixing this up with the fact that two tangents from a point are equal."
+    },
+    {
+      "key": "E",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I solved the equation correctly but reported PB = PA + 18 = 24 instead of PA."
+    }
+  ],
+  "hints": [
+    "A tangent and a secant from the same outside point are linked by a single equation.",
+    "Power of a point: the square of the tangent length equals the product of the distances from $P$ to the two intersection points. Every length is measured from $P$.",
+    "With $PA = x$, $PB = x + 18$ and $x(x + 18) = 12^2 = 144$. Solve the quadratic and keep the positive root."
+  ],
+  "solutions": {
+    "reliable": "By power of a point, $PT^2 = PA \\cdot PB$. Let $PA = x$, so $PB = x + 18$ and $x(x + 18) = 144$, that is, $x^2 + 18x - 144 = 0$. This factors as $(x - 6)(x + 24) = 0$, so $x = 6$. Check: $6 \\cdot 24 = 144 = 12^2$. The transferable idea: for a tangent and a secant from one point, the tangent squared equals the product of the near and far distances along the secant.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-01"
+  ],
+  "estSeconds": 135,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

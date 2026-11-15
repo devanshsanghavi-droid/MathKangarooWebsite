@@ -1,0 +1,15 @@
+{
+  "id": "F-ALG-16",
+  "area": "ALG",
+  "name": "Quadratic formula and discriminant",
+  "formula": "x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}, \\qquad \\Delta = b^2 - 4ac \\quad (a \\ne 0)",
+  "whenToUse": "Solve a quadratic that does not factor nicely, or decide how many real roots it has: two if $\\Delta > 0$, one double root if $\\Delta = 0$, none if $\\Delta < 0$.",
+  "example": "$x^2 + kx + 9$ has a double root when $k^2 - 36 = 0$, so $k = \\pm 6$. And $x^2 - 4x + c$ has two distinct real roots exactly when $16 - 4c > 0$, that is $c < 4$.",
+  "pitfall": "The whole numerator, $-b$ included, is divided by $2a$. For integer roots you also need $\\Delta$ to be a perfect square.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "derivation": "Divide by $a$ and complete the square: $\\left(x + \\frac{b}{2a}\\right)^2 = \\frac{b^2 - 4ac}{4a^2}$. Take square roots of both sides."
+}

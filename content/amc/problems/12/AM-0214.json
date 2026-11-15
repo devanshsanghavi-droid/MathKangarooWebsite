@@ -1,0 +1,69 @@
+{
+  "id": "AM-0214",
+  "contest": "AMC12",
+  "slot": 16,
+  "area": "GEO",
+  "topic": "GEO-09",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-CASEWORK"
+  ],
+  "statement": "How many real numbers $x$ with $0 \\le x \\le 3\\pi$ satisfy $\\log_4(\\sin x) + \\log_4(\\cos x) = -1$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I found the two valid solutions in the first period, between 0 and 2 pi, and stopped there instead of continuing up to 3 pi."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found 2 valid solutions per period of length 2 pi and scaled by the one and a half periods in the interval, getting 3, without checking where the solutions actually fall."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I reduced the equation to sin 2x = 1/2 and counted every solution with 2x between 0 and 6 pi, without checking that sin x and cos x must both be positive for the logarithms to exist."
+    },
+    {
+      "key": "E",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I squared sin x cos x = 1/4 into a quartic in sin x and counted every solution of that, which brings in sign combinations the original equation does not allow."
+    }
+  ],
+  "hints": [
+    "Combine the logarithms first, then remember what they need to exist.",
+    "The sum of logs is the log of the product, which turns the equation into a double-angle equation. Separately, both $\\sin x$ and $\\cos x$ must be positive.",
+    "You get $\\sin x\\cos x = \\tfrac14$, so $\\sin 2x = \\tfrac12$. Keep only the solutions with $x$ in the first quadrant, mod $2\\pi$."
+  ],
+  "solutions": {
+    "reliable": "For the logs to exist we need $\\sin x > 0$ and $\\cos x > 0$, so $x$ lies in $(0, \\tfrac{\\pi}{2})$ or in $(2\\pi, \\tfrac{5\\pi}{2})$ within $[0, 3\\pi]$. On those sets the equation is $\\log_4(\\sin x\\cos x) = -1$, so $\\sin x\\cos x = \\tfrac14$ and $\\sin 2x = \\tfrac12$. For $x \\in (0, \\tfrac{\\pi}{2})$, $2x \\in (0, \\pi)$ gives $2x = \\tfrac{\\pi}{6}$ or $\\tfrac{5\\pi}{6}$: two solutions, $x = \\tfrac{\\pi}{12}$ and $\\tfrac{5\\pi}{12}$. Adding $2\\pi$ gives two more in $(2\\pi, \\tfrac{5\\pi}{2})$. The solutions of $\\sin 2x = \\tfrac12$ near $x = \\tfrac{13\\pi}{12}$ and $\\tfrac{17\\pi}{12}$ lie in the third quadrant, where both factors are negative, so they fail. The total is $4$. The idea: impose the domain of every logarithm before you count.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-10"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

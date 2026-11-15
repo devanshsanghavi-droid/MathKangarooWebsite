@@ -1,0 +1,70 @@
+{
+  "id": "AM-0072",
+  "contest": "AMC10",
+  "slot": 21,
+  "area": "GEO",
+  "topic": "GEO-08",
+  "types": [
+    "T-COORD",
+    "T-AUXILIARY"
+  ],
+  "statement": "Triangle $ABC$ has side lengths $AB = 7$, $CA = 15$ and $BC = 20$. What is the distance between the center of its inscribed circle and the center of its circumscribed circle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{5\\sqrt{17}}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{21}{2}$",
+      "correct": false,
+      "misconception": "I subtracted the radii, $R - r = \\tfrac{25}{2} - 2$, as if the two centers and a point of tangency were lined up."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{5\\sqrt{21}}{2}$",
+      "correct": false,
+      "misconception": "I misremembered Euler's formula as $OI^2 = R^2 - Rr$ instead of $R^2 - 2Rr$."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{\\sqrt{609}}{2}$",
+      "correct": false,
+      "misconception": "I used $OI^2 = R^2 - r^2$, as if the incenter were the foot of a tangent from the circumcenter."
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{29}{2}$",
+      "correct": false,
+      "misconception": "I added the radii, $R + r = \\tfrac{25}{2} + 2$, picturing the two circles as externally tangent."
+    }
+  ],
+  "hints": [
+    "Find the area first; Heron's formula gives a whole number.",
+    "With the area you get $r = K/s$ and $R = abc/(4K)$. Then place the triangle in coordinates, or use Euler's relation $OI^2 = R(R - 2r)$.",
+    "$s = 21$, $K = \\sqrt{21 \\cdot 14 \\cdot 6 \\cdot 1} = 42$, so $r = 2$ and $R = \\tfrac{7 \\cdot 15 \\cdot 20}{168} = \\tfrac{25}{2}$."
+  ],
+  "solutions": {
+    "reliable": "Coordinates: $B = (0,0)$, $C = (20,0)$, and $A = (x,y)$ with $x^2 + y^2 = 49$ and $(x - 20)^2 + y^2 = 225$, so $x = 5.6$ and $y = 4.2$. The incenter is the weighted average $\\tfrac{20A + 15B + 7C}{42} = (6, 2)$ (and indeed $r = K/s = 42/21 = 2$). The circumcenter is on $x = 10$ at distance $R = \\tfrac{abc}{4K} = \\tfrac{2100}{168} = 12.5$ from $B$, so $y = \\pm 7.5$; the angle at $A$ is obtuse ($7^2 + 15^2 < 20^2$), so the circumcenter is below $\\overline{BC}$: $O = (10, -7.5)$. Then $OI^2 = 4^2 + 9.5^2 = 106.25 = \\tfrac{425}{4}$ and $OI = \\tfrac{5\\sqrt{17}}{2}$. Transferable idea: with a whole-number Heron area, coordinates for both centers are quick.",
+    "elegant": "Euler's formula $OI^2 = R(R - 2r) = \\tfrac{25}{2} \\cdot \\tfrac{17}{2} = \\tfrac{425}{4}$ gives $OI = \\tfrac{5\\sqrt{17}}{2}$ in one line."
+  },
+  "formulas": [
+    "F-GEO-04",
+    "F-GEO-06"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

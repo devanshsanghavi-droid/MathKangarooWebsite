@@ -1,0 +1,69 @@
+{
+  "id": "AM-0213",
+  "contest": "AMC12",
+  "slot": 15,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-VIETA"
+  ],
+  "statement": "The polynomial $x^3 - 10x^2 + 31x - 29$ has three positive real roots. They are the length, width and height of a rectangular box. What is the length of the longest segment that fits inside the box?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\sqrt{31}$",
+      "correct": false,
+      "misconception": "I took the sum of the squares of the roots to be the coefficient 31 itself, the sum of the pairwise products, without converting it."
+    },
+    {
+      "key": "B",
+      "text": "$\\sqrt{38}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\sqrt{62}$",
+      "correct": false,
+      "misconception": "I took the sum of the squares of the dimensions to be twice the sum of pairwise products, 2 times 31, which is the surface area, not the squared diagonal."
+    },
+    {
+      "key": "D",
+      "text": "$\\sqrt{69}$",
+      "correct": false,
+      "misconception": "I used (a + b + c)^2 minus the sum of pairwise products, 100 - 31, forgetting that the square of a sum contains each pairwise product twice."
+    },
+    {
+      "key": "E",
+      "text": "$9\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I added twice the sum of pairwise products instead of subtracting it, getting 100 + 62 = 162 for the sum of squares."
+    }
+  ],
+  "hints": [
+    "The longest segment in a box is its space diagonal.",
+    "The space diagonal is $\\sqrt{a^2 + b^2 + c^2}$. You do not need the roots themselves, only symmetric sums of them, which Vieta's formulas give.",
+    "With $a + b + c = 10$ and $ab + bc + ca = 31$, use $a^2 + b^2 + c^2 = (a+b+c)^2 - 2(ab+bc+ca)$."
+  ],
+  "solutions": {
+    "reliable": "Let the dimensions be $a$, $b$, $c$. The longest segment inside the box is the space diagonal, of length $\\sqrt{a^2 + b^2 + c^2}$. By Vieta's formulas, $a + b + c = 10$ and $ab + bc + ca = 31$. Then $a^2 + b^2 + c^2 = 10^2 - 2\\cdot 31 = 38$, so the diagonal is $\\sqrt{38}$. Numerically the roots are about $1.753$, $3.445$ and $4.802$, and their squares add to about $38.0$. The idea: a symmetric expression in the roots can be read off the coefficients without solving.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-01",
+    "F-GEO-16"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

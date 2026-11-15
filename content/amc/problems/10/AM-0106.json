@@ -1,0 +1,69 @@
+{
+  "id": "AM-0106",
+  "contest": "AMC10",
+  "slot": 18,
+  "area": "NT",
+  "topic": "NT-04",
+  "types": [
+    "T-PIE",
+    "T-MODULAR"
+  ],
+  "statement": "For how many integers $n$ with $1 \\le n \\le 100$ is $\\gcd(n^2 + 1,\\, n + 3) > 1$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I thought the gcd had to equal 10 itself, so I counted only the $n$ for which $n + 3$ is a multiple of 10."
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I only counted the $n$ with $n + 3$ a multiple of 5 and forgot that a common factor of 2 also makes the gcd larger than 1."
+    },
+    {
+      "key": "C",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I counted the $n$ for which the gcd equals 1, the complement of what was asked."
+    },
+    {
+      "key": "D",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I only counted the odd $n$, where $n + 3$ is even, and forgot the $n$ with $n + 3$ a multiple of 5."
+    },
+    {
+      "key": "E",
+      "text": "$60$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Use the Euclidean algorithm: subtract a multiple of $n + 3$ from $n^2 + 1$.",
+    "Reduce $n^2 + 1$ modulo $n + 3$. The gcd must divide a fixed number, so ask which prime factors of that number divide $n + 3$.",
+    "$n^2 + 1 - (n - 3)(n + 3) = 10$, so the gcd equals $\\gcd(10, n + 3)$. It exceeds 1 when $n + 3$ is even or a multiple of 5. Use inclusion-exclusion."
+  ],
+  "solutions": {
+    "reliable": "Since $(n - 3)(n + 3) = n^2 - 9$, we have $n^2 + 1 = (n - 3)(n + 3) + 10$, so by the Euclidean algorithm $\\gcd(n^2 + 1, n + 3) = \\gcd(10, n + 3)$. This exceeds 1 exactly when $2 \\mid n + 3$ or $5 \\mid n + 3$, that is, when $n$ is odd or $n \\equiv 2 \\pmod 5$. From 1 to 100 there are 50 odd $n$, 20 values $n \\equiv 2 \\pmod 5$ (namely $2, 7, \\ldots, 97$), and 10 values in both (those $n \\equiv 7 \\pmod{10}$). By inclusion-exclusion the count is $50 + 20 - 10 = 60$. Check $n = 2$: $\\gcd(5, 5) = 5$. Transferable idea: the gcd of two polynomial expressions in $n$ reduces, by the Euclidean algorithm, to the gcd of a constant with a linear expression.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-04"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

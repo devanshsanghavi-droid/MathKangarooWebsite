@@ -1,0 +1,69 @@
+{
+  "id": "AM-0107",
+  "contest": "BOTH",
+  "slot": 19,
+  "area": "NT",
+  "topic": "NT-02",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-SFFT"
+  ],
+  "statement": "Three different prime numbers have a product equal to $11$ times their sum. What is the sum of all possible values of their product?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$47$",
+      "correct": false,
+      "misconception": "I found both triples but added their sums, $26 + 21$, instead of their products."
+    },
+    {
+      "key": "B",
+      "text": "$231$",
+      "correct": false,
+      "misconception": "I assumed none of the primes could be 2, since an even prime seemed to break the equation, and found only the triple 3, 7, 11."
+    },
+    {
+      "key": "C",
+      "text": "$286$",
+      "correct": false,
+      "misconception": "I stopped after finding the triple 2, 11, 13 and did not look for a second triple."
+    },
+    {
+      "key": "D",
+      "text": "$517$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$737$",
+      "correct": false,
+      "misconception": "I accepted all three factor pairs of 12, including $3 \\cdot 4$, which gives the non-prime 4, and added $286 + 231 + 220$."
+    }
+  ],
+  "hints": [
+    "The product is a multiple of 11. What does that say about one of the primes?",
+    "One of the primes must be 11. Call the other two $q < r$, write the equation, and use clever factoring.",
+    "$11qr = 11(11 + q + r)$ gives $qr - q - r = 11$, so $(q - 1)(r - 1) = 12$. Try each factor pair and keep only primes."
+  ],
+  "solutions": {
+    "reliable": "Call the primes $p, q, r$. Since $11 \\mid pqr$, one of them, say $p$, is 11. Dividing $11qr = 11(11 + q + r)$ by 11 gives $qr = 11 + q + r$, so $qr - q - r + 1 = 12$, that is, $(q - 1)(r - 1) = 12$ with $q < r$. The factor pairs of 12 are $1 \\cdot 12$, $2 \\cdot 6$, $3 \\cdot 4$, giving $(q, r) = (2, 13)$, $(3, 7)$, $(4, 5)$. The last fails since 4 is not prime; the other two consist of primes different from 11. Check: $2 \\cdot 11 \\cdot 13 = 286 = 11 \\cdot 26$ and $3 \\cdot 7 \\cdot 11 = 231 = 11 \\cdot 21$. The sum of the possible products is $286 + 231 = 517$. Transferable idea: a prime dividing a product of primes must be one of them, and once it is fixed, the rest often falls to clever factoring.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-07"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

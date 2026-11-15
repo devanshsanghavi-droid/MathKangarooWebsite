@@ -1,0 +1,69 @@
+{
+  "id": "AM-0281",
+  "contest": "AMC12",
+  "slot": 10,
+  "area": "CP",
+  "topic": "CP-11",
+  "types": [
+    "T-PIGEONHOLE",
+    "T-EXTREME"
+  ],
+  "statement": "What is the least positive integer $n$ such that every set of $n$ distinct integers chosen from $\\{1, 2, 3, \\ldots, 30\\}$ contains two numbers that differ by exactly $4$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I used pigeonhole on the 4 remainders modulo 4, but two numbers with the same remainder need not differ by exactly 4, only by a multiple of 4."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I split 1 to 30 into eight blocks of four consecutive numbers, but two numbers in the same block differ by at most 3, never by 4."
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I split the numbers into four chains by remainder mod 4 and took half of each chain rounded down, 4 + 4 + 3 + 3 = 14, then added 1, but a chain of 7 allows 4."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I found the largest set with no two numbers differing by 4, which has 16 elements, and gave that instead of one more than it."
+    },
+    {
+      "key": "E",
+      "text": "$17$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Which numbers can conflict with each other? Group them.",
+    "Only numbers with the same remainder modulo $4$ can differ by $4$. Each remainder class is a chain $r, r+4, r+8, \\ldots$ in which neighbours conflict. Find the largest safe set, then add $1$.",
+    "The chains have lengths $8, 8, 7, 7$. From a chain of length $L$ you can take at most $\\lceil L/2 \\rceil$ numbers, and this is reached by taking every other one."
+  ],
+  "solutions": {
+    "reliable": "Split $\\{1, \\ldots, 30\\}$ into four chains by remainder modulo $4$: $1, 5, \\ldots, 29$ and $2, 6, \\ldots, 30$ have $8$ terms each; $3, 7, \\ldots, 27$ and $4, 8, \\ldots, 28$ have $7$ terms each. Two numbers differ by exactly $4$ only when they are neighbours in the same chain. In a chain of length $L$ a set with no two neighbours has at most $\\lceil L/2 \\rceil$ elements (pair up consecutive terms; each pair holds at most one chosen number, plus one leftover if $L$ is odd), and taking the 1st, 3rd, 5th, ... terms achieves it. So the largest safe set has $4 + 4 + 4 + 4 = 16$ elements, for example $\\{1, 2, 3, 4, 9, 10, 11, 12, 17, 18, 19, 20, 25, 26, 27, 28\\}$. Hence $16$ numbers are not enough, while any $17$ must put two neighbours of some chain together. The least $n$ is $17$. A computer search over safe sets confirms the maximum of $16$. The idea: the least number that forces a pattern is one more than the largest set that avoids it.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-20"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

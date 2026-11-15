@@ -1,0 +1,69 @@
+{
+  "id": "AM-0204",
+  "contest": "AMC12",
+  "slot": 8,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-POWER-POINT",
+    "T-COORD"
+  ],
+  "statement": "Chords $\\overline{AB}$ and $\\overline{CD}$ of a circle are perpendicular and meet at $P$. If $AP = 2$, $PB = 6$, $CP = 3$ and $PD = 4$, what is the radius of the circle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{7}{2}$",
+      "correct": false,
+      "misconception": "I assumed the chord CD, of length 7, is a diameter and took half of it."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{\\sqrt{65}}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{\\sqrt{130}}{2}$",
+      "correct": false,
+      "misconception": "I used 2r squared = 4 + 36 + 9 + 16, when the correct relation has 4r squared on the left."
+    },
+    {
+      "key": "D",
+      "text": "$\\sqrt{65}$",
+      "correct": false,
+      "misconception": "I used r squared = 4 + 36 + 9 + 16, so what I found is the diameter, not the radius."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{65}{4}$",
+      "correct": false,
+      "misconception": "I found r squared = 65/4 and forgot to take the square root."
+    }
+  ],
+  "hints": [
+    "Put $P$ at the origin with the chords along the axes.",
+    "The center lies on the perpendicular bisector of each chord. Find the midpoints of AB and CD and read off the center.",
+    "With $A = (-2, 0)$, $B = (6, 0)$, $C = (0, 3)$, $D = (0, -4)$, the center is $(2, -\\frac{1}{2})$. Now measure its distance to $A$."
+  ],
+  "solutions": {
+    "reliable": "Note first that $AP \\cdot PB = 12 = CP \\cdot PD$, as power of a point requires, so the data are consistent. Place $P$ at the origin, $A = (-2, 0)$, $B = (6, 0)$, $C = (0, 3)$, $D = (0, -4)$. The perpendicular bisector of $AB$ is $x = 2$ and that of $CD$ is $y = -\\frac{1}{2}$, so the center is $O = (2, -\\frac{1}{2})$. Then $r^2 = OA^2 = 4^2 + \\left(\\frac{1}{2}\\right)^2 = \\frac{65}{4}$ and $r = \\frac{\\sqrt{65}}{2}$. Transferable idea: the center is where perpendicular bisectors of chords meet.",
+    "elegant": "For perpendicular chords meeting at $P$, $AP^2 + PB^2 + CP^2 + PD^2 = 4r^2$: here $4 + 36 + 9 + 16 = 65$, so $r = \\frac{\\sqrt{65}}{2}$. (Reason: the inscribed angles show arcs $AC$ and $BD$ add to a semicircle, so $AC^2 + BD^2 = (2r)^2$.) Transferable idea: perpendicular chords split the circle into arcs that pair up into semicircles."
+  },
+  "formulas": [
+    "F-GEO-01"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

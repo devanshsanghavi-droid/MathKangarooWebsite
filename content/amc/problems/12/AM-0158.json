@@ -1,0 +1,68 @@
+{
+  "id": "AM-0158",
+  "contest": "AMC12",
+  "slot": 4,
+  "area": "ALG",
+  "topic": "ALG-03",
+  "types": [
+    "T-VIETA"
+  ],
+  "statement": "The roots of $x^2 - 7x + 3 = 0$ are $r$ and $s$. What is $\\dfrac{1}{r^2} + \\dfrac{1}{s^2}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{7}{3}$",
+      "correct": false,
+      "misconception": "I computed $\\frac{1}{r} + \\frac{1}{s} = \\frac{r + s}{rs} = \\frac{7}{3}$ and stopped before squaring anything."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{43}{9}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{49}{9}$",
+      "correct": false,
+      "misconception": "I took $r^2 + s^2$ to be $(r + s)^2 = 49$, forgetting to subtract $2rs$, and divided by $(rs)^2 = 9$."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{55}{9}$",
+      "correct": false,
+      "misconception": "I wrote $r^2 + s^2 = (r + s)^2 + 2rs = 55$ with the wrong sign, then divided by $9$."
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{43}{3}$",
+      "correct": false,
+      "misconception": "I found $r^2 + s^2 = 43$ correctly but divided by $rs = 3$ instead of $(rs)^2 = 9$."
+    }
+  ],
+  "hints": [
+    "You do not need the roots themselves, only their sum and product.",
+    "Combine the two fractions over a common denominator. Both the new numerator and denominator are symmetric in $r$ and $s$, so Vieta's formulas finish it.",
+    "$\\frac{1}{r^2} + \\frac{1}{s^2} = \\frac{r^2 + s^2}{(rs)^2}$, with $r + s = 7$ and $rs = 3$, and $r^2 + s^2 = (r+s)^2 - 2rs$."
+  ],
+  "solutions": {
+    "reliable": "By Vieta, $r + s = 7$ and $rs = 3$. Then $r^2 + s^2 = (r + s)^2 - 2rs = 49 - 6 = 43$, and $\\frac{1}{r^2} + \\frac{1}{s^2} = \\frac{r^2 + s^2}{(rs)^2} = \\frac{43}{9}$. Transferable idea: any symmetric expression in the roots can be rebuilt from the sum and product, so never solve for ugly roots.",
+    "elegant": "The numbers $\\frac{1}{r}$ and $\\frac{1}{s}$ are the roots of the reversed polynomial $3x^2 - 7x + 1 = 0$, so their sum is $\\frac{7}{3}$ and their product is $\\frac{1}{3}$. The sum of their squares is $\\frac{49}{9} - \\frac{2}{3} = \\frac{43}{9}$."
+  },
+  "formulas": [
+    "F-ALG-02"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,71 @@
+{
+  "id": "AM-0217",
+  "contest": "AMC12",
+  "slot": 19,
+  "area": "GEO",
+  "topic": "GEO-08",
+  "types": [
+    "T-COORD",
+    "T-AUXILIARY"
+  ],
+  "statement": "Triangle $ABC$ has $AB = 17$, $BC = 21$ and $CA = 10$. Let $H$ be the foot of the altitude from $A$ to $BC$, and let $I$ be the center of the inscribed circle. What is the distance $IH$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{7}{2}$",
+      "correct": false,
+      "misconception": "I assumed the incircle touches BC exactly at the foot of the altitude, so IH would just be the inradius 7/2."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{\\sqrt{53}}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{\\sqrt{130}}{2}$",
+      "correct": false,
+      "misconception": "I assumed the incircle touches BC at its midpoint, 10.5 from B, so the horizontal gap to H was 4.5 and IH = sqrt(4.5^2 + 3.5^2)."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{\\sqrt{305}}{2}$",
+      "correct": false,
+      "misconception": "I took the tangent length from B to be s - AB = 7 instead of s - CA = 14, so the touch point was 8 away from H."
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{25}{2}$",
+      "correct": false,
+      "misconception": "I took the tangent length from B to be s - BC = 3 instead of s - CA = 14, so the touch point was 12 away from H and IH = sqrt(144 + 12.25)."
+    }
+  ],
+  "hints": [
+    "Put $BC$ on the $x$-axis and find where $H$ and the incircle's touch point land.",
+    "Heron's formula gives the area, hence the altitude and the inradius. Tangent lengths from $B$ give the touch point $D$ on $BC$; then $I$ sits directly above $D$.",
+    "The area is $84$, so the altitude is $8$ and $BH = 15$. With $s = 24$, $BD = s - CA = 14$ and $r = \\tfrac{84}{24} = \\tfrac72$. So $DH = 1$."
+  ],
+  "solutions": {
+    "reliable": "The semiperimeter is $s = 24$, and Heron's formula gives area $\\sqrt{24\\cdot 3\\cdot 14\\cdot 7} = 84$. The altitude from $A$ is $\\tfrac{2\\cdot 84}{21} = 8$, so $BH = \\sqrt{17^2 - 8^2} = 15$. The incircle touches $BC$ at $D$ with $BD = s - CA = 14$, and $r = \\tfrac{84}{24} = \\tfrac72$. The incenter is directly above $D$ at height $\\tfrac72$, so with $DH = 15 - 14 = 1$ we get $IH = \\sqrt{1^2 + \\left(\\tfrac72\\right)^2} = \\sqrt{\\tfrac{53}{4}} = \\tfrac{\\sqrt{53}}{2}$. Check with coordinates $B = (0,0)$, $C = (21,0)$, $A = (15,8)$: the incenter is $\\tfrac{21A + 10B + 17C}{48} = (14, \\tfrac72)$ and $H = (15, 0)$. The idea: the incenter sits straight above the touch point, whose position comes from a tangent length: $s$ minus the side opposite that vertex.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-04",
+    "F-GEO-06",
+    "F-GEO-17"
+  ],
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

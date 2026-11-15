@@ -1,0 +1,69 @@
+{
+  "id": "AM-0292",
+  "contest": "AMC12",
+  "slot": 17,
+  "area": "CP",
+  "topic": "CP-08",
+  "types": [
+    "T-LINEARITY",
+    "T-SYMMETRY"
+  ],
+  "statement": "A permutation $\\sigma$ of $\\{1, 2, \\ldots, 9\\}$ is chosen uniformly at random. What is the expected number of elements $i$ for which $\\sigma(\\sigma(i)) = i$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I only counted the fixed points, where sigma(i) = i, and forgot that i can also come back in two steps through a swap."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{3}{2}$",
+      "correct": false,
+      "misconception": "I added the expected number of fixed points, 1, to the expected number of swaps, 1/2, but each swap contains two elements."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{17}{9}$",
+      "correct": false,
+      "misconception": "I treated sigma(j) as independent of sigma(i), so I used (1/9)(1/9) for each of the 8 values j other than i, giving 1/9 + 8/81 per element."
+    },
+    {
+      "key": "D",
+      "text": "$2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I added the fixed-point chance 1/9 to a sum of P(sigma(i) = j and sigma(j) = i) over all nine j, so the case j = i was counted twice."
+    }
+  ],
+  "hints": [
+    "Write the count as a sum of indicators, one for each element.",
+    "By linearity, the answer is $9$ times the probability that one fixed element, say $1$, satisfies $\\sigma(\\sigma(1)) = 1$. Split by whether $\\sigma(1) = 1$.",
+    "$P(\\sigma(1) = 1) = \\frac19$. For each $j \\ne 1$, $P(\\sigma(1) = j \\text{ and } \\sigma(j) = 1) = \\frac19 \\cdot \\frac18$, and there are 8 such $j$."
+  ],
+  "solutions": {
+    "reliable": "Let $X_i$ be 1 when $\\sigma(\\sigma(i)) = i$. This happens when $\\sigma(i) = i$, with probability $\\frac19$, or when $\\sigma(i) = j \\ne i$ and $\\sigma(j) = i$, with probability $\\frac19 \\cdot \\frac18$ for each of the 8 choices of $j$. So $P(X_i = 1) = \\frac19 + \\frac{8}{72} = \\frac29$, and by linearity the expected count is $9 \\cdot \\frac29 = 2$. The same computation gives $2$ for any $n \\ge 2$. Transferable idea: linearity turns a messy count into one probability about a single element.",
+    "elegant": "For a random permutation of $n$ elements, the element $i$ lies in a cycle of length $k$ with probability exactly $\\frac1n$ for every $k$ from $1$ to $n$. Here $\\sigma(\\sigma(i)) = i$ means $i$ is in a cycle of length 1 or 2, so the probability is $\\frac29$ and the expectation is $9 \\cdot \\frac29 = 2$."
+  },
+  "formulas": [
+    "F-CP-09"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

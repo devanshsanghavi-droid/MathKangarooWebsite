@@ -1,0 +1,67 @@
+{
+  "id": "AM-0146",
+  "contest": "AMC10",
+  "slot": 19,
+  "area": "CP",
+  "topic": "CP-11",
+  "types": [
+    "T-BACKWARDS",
+    "T-SMALL-CASES"
+  ],
+  "statement": "Two players take turns removing coins from a single pile. On each turn a player must remove a positive perfect square number of coins ($1$, $4$, $9$, $16$, and so on), never more than the pile holds. The player who removes the last coin wins. For how many starting pile sizes $n$ with $1 \\le n \\le 40$ can the second player guarantee a win?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I found the losing sizes up to 22, saw that 25 breaks the pattern, and assumed no larger size could be losing, so I missed 34 and 39."
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I noticed that 25 is a win for the first player, who can take all 25 coins, but I kept the remainder 0 or 2 pattern for every size after 25."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I saw that the losing sizes up to 22 leave remainder 0 or 2 when divided by 5 and assumed the pattern goes on forever, but the move of 25 coins breaks it."
+    },
+    {
+      "key": "E",
+      "text": "$29$",
+      "correct": false,
+      "misconception": "I counted the pile sizes where the first player can force a win, instead of the second player."
+    }
+  ],
+  "hints": [
+    "Work out who wins for piles of $1, 2, 3, \\ldots$ coins, one size at a time.",
+    "A size is losing for the player about to move if every move leads to a winning size, and winning if some move leads to a losing size. The early losing sizes look periodic, but a new move appears at every perfect square, so check the pattern instead of trusting it.",
+    "The losing sizes up to $22$ are $2, 5, 7, 10, 12, 15, 17, 20, 22$. Then $25$ is winning, since the player to move takes everything, so the table has to be continued size by size up to $40$."
+  ],
+  "solutions": {
+    "reliable": "Call a size losing if the player about to move loses with best play; $0$ is losing. While only the moves $1, 4, 9, 16$ exist, the losing sizes are those leaving remainder $0$ or $2$ when divided by $5$: these moves change the remainder by $1$ or $4$, so from remainder $0$ they reach $4$ or $1$ and from remainder $2$ they reach $1$ or $3$, while from remainders $1, 3, 4$ the moves $1, 1, 4$ reach remainder $0$ or $2$. That gives the losing sizes $2, 5, 7, 10, 12, 15, 17, 20, 22$. At $25$ the move of $25$ coins appears and $25$ is winning, so the pattern must be checked from there. Sizes $23$ to $40$ other than $34$ and $39$ each have a move to a losing size: $23 \\to 22$, $24 \\to 20$, $25 \\to 0$, $26 \\to 22$, $27 \\to 2$, $28 \\to 12$, $29 \\to 20$, $30 \\to 5$, $31 \\to 22$, $32 \\to 7$, $33 \\to 17$, $35 \\to 34$, $36 \\to 0$, $37 \\to 12$, $38 \\to 34$, $40 \\to 39$. From $34$ the moves reach only $33, 30, 25, 18, 9$, and from $39$ only $38, 35, 30, 23, 14, 3$, all winning, so $34$ and $39$ are losing. The second player wins exactly at the $9 + 2 = 11$ losing sizes. The transferable idea: in a take-away game, work backwards one size at a time, and treat a pattern in small cases as a guess until you have shown that every move keeps it.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

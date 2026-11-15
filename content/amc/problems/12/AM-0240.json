@@ -1,0 +1,69 @@
+{
+  "id": "AM-0240",
+  "contest": "AMC12",
+  "slot": 8,
+  "area": "NT",
+  "topic": "NT-09",
+  "types": [
+    "T-PARITY",
+    "T-SFFT"
+  ],
+  "statement": "For how many positive integers $n$ is $n^2 + 96$ a perfect square?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I thought m - n and m + n both had to be multiples of 4, so I kept only 4 times 24 and 8 times 12."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I counted every factor pair of 96 with the smaller factor first, but m - n and m + n must have the same parity, which rules out 1 times 96 and 3 times 32."
+    },
+    {
+      "key": "D",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I counted each even factor pair twice, once in each order, but m - n must be the smaller factor when n is positive."
+    },
+    {
+      "key": "E",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I counted all 12 divisors of 96 as if each one gave its own value of n."
+    }
+  ],
+  "hints": [
+    "Write $n^2 + 96 = m^2$ and move the squares together.",
+    "$(m - n)(m + n) = 96$. The two factors add to $2m$, so they have the same parity.",
+    "Both factors must be even: $96 = 2 \\cdot 48 = 4 \\cdot 24 = 6 \\cdot 16 = 8 \\cdot 12$."
+  ],
+  "solutions": {
+    "reliable": "Set $n^2 + 96 = m^2$ with $m > n > 0$. Then $(m-n)(m+n) = 96$ with $m - n < m + n$. The factors have the same parity since their sum is $2m$, and they cannot both be odd because $96$ is even, so both are even. The even pairs are $(2,48), (4,24), (6,16), (8,12)$, giving $n = \\frac{48-2}{2} = 23$, $10$, $5$, $2$. Check: $2^2 + 96 = 100$, $5^2 + 96 = 121$, $10^2 + 96 = 196$, $23^2 + 96 = 625$. That is $4$ values.",
+    "elegant": "Write $m - n = 2u$, $m + n = 2v$; then $uv = 24$ with $u < v$, and $24$ has $8$ divisors, so $4$ such pairs, each giving $n = v - u > 0$."
+  },
+  "formulas": [
+    "F-ALG-05"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

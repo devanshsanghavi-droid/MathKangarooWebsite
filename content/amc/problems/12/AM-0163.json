@@ -1,0 +1,69 @@
+{
+  "id": "AM-0163",
+  "contest": "AMC12",
+  "slot": 7,
+  "area": "ALG",
+  "topic": "ALG-06",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Real numbers $x$ and $y$ with $1 < x < y$ satisfy $\\log_x y + \\log_y x = \\dfrac{5}{2}$ and $xy = 64$. What is $x + y$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found $x = 4$ and $y = 16$ correctly but computed $y - x$ instead of $x + y$."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I found $x = 4$ and $y = 16$ and reported only $y$, the number the question is not asking for."
+    },
+    {
+      "key": "C",
+      "text": "$12\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I read $\\log_x y = 2$ as $y = 2x$, so $2x^2 = 64$, $x = 4\\sqrt{2}$ and $y = 8\\sqrt{2}$."
+    },
+    {
+      "key": "D",
+      "text": "$20$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I found $y = x^2$ but then wrote $xy$ as $x^2$ instead of $x^3$, so $x = 8$, $y = 64$ and $x + y = 72$."
+    }
+  ],
+  "hints": [
+    "The two logarithms are reciprocals of each other.",
+    "Let $t = \\log_x y$, so $\\log_y x = \\frac{1}{t}$. Solve $t + \\frac{1}{t} = \\frac{5}{2}$, use $x < y$ to choose $t$, and turn it into a relation between $y$ and $x$.",
+    "$t = 2$ or $t = \\frac{1}{2}$; since $y > x > 1$, $t = 2$, so $y = x^2$ and $xy = x^3 = 64$."
+  ],
+  "solutions": {
+    "reliable": "Let $t = \\log_x y$. Since $\\log_y x = \\frac{1}{t}$, we need $t + \\frac{1}{t} = \\frac{5}{2}$, that is $2t^2 - 5t + 2 = 0$, so $t = 2$ or $t = \\frac{1}{2}$. Because $1 < x < y$, $\\log_x y > 1$, so $t = 2$ and $y = x^2$. Then $xy = x^3 = 64$ gives $x = 4$ and $y = 16$. Check: $\\log_4 16 + \\log_{16} 4 = 2 + \\frac{1}{2}$. So $x + y = 20$. Transferable idea: a sum of a quantity and its reciprocal is a quadratic in disguise; substitute one letter for the pair.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-11",
+    "F-ALG-16"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

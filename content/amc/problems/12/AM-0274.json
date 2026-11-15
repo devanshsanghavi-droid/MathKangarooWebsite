@@ -1,0 +1,69 @@
+{
+  "id": "AM-0274",
+  "contest": "AMC12",
+  "slot": 6,
+  "area": "CP",
+  "topic": "CP-02",
+  "types": [
+    "T-SYMMETRY",
+    "T-COMPLEMENT"
+  ],
+  "statement": "Six people, labelled $A$, $B$, $C$, $D$, $E$ and $F$, sit at a round table with six equally spaced seats. $A$ and $B$ must sit directly across from each other, and $C$ and $D$ must not sit in adjacent seats. Seatings that differ only by a rotation of the table are considered the same. How many different seatings are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I removed only 4 seatings with C and D side by side, forgetting that C and D can sit in either order in each adjacent pair of seats."
+    },
+    {
+      "key": "C",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I fixed A and B correctly but forgot the rule about C and D, so I counted all 4! ways to fill the other seats."
+    },
+    {
+      "key": "D",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I multiplied by 2 because A and B could swap seats, not noticing that swapping them is just a rotation of the table by half a turn."
+    },
+    {
+      "key": "E",
+      "text": "$96$",
+      "correct": false,
+      "misconception": "I did not treat rotations as the same, so every seating was counted once for each of the 6 rotations."
+    }
+  ],
+  "hints": [
+    "Rotations are the same, so you may fix one person's seat.",
+    "Seat $A$ at the top. Then $B$'s seat is forced. Count the ways to fill the four remaining seats, then subtract those where $C$ and $D$ end up next to each other.",
+    "With $A$ and $B$ placed, the four free seats form two adjacent pairs. $C$ and $D$ are adjacent in $2 \\cdot 2 \\cdot 2 = 8$ of the $24$ fillings."
+  ],
+  "solutions": {
+    "reliable": "Because rotations are identified, place $A$ in seat $0$; then $B$ must be in seat $3$. The remaining seats $1, 2, 4, 5$ hold $C, D, E, F$ in $4! = 24$ ways. Two of these free seats are adjacent only as the pairs $\\{1, 2\\}$ and $\\{4, 5\\}$; seats $5$ and $1$ are both next to $A$, not to each other. Seatings with $C$ and $D$ adjacent: choose the pair ($2$ ways), order $C$ and $D$ in it ($2$ ways), and seat $E$ and $F$ in the other two seats ($2$ ways), for $8$. So the answer is $24 - 8 = 16$. Direct check: put $C$ in any of the $4$ free seats; $D$ must take one of the $2$ seats in the other pair, and $E$, $F$ fill the rest in $2$ ways, giving $4 \\cdot 2 \\cdot 2 = 16$. The idea: use the symmetry to pin down one person, then count the rest in a line.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-14"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

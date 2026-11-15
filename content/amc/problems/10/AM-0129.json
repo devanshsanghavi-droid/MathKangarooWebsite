@@ -1,0 +1,70 @@
+{
+  "id": "AM-0129",
+  "contest": "BOTH",
+  "slot": 9,
+  "area": "CP",
+  "topic": "CP-07",
+  "types": [
+    "T-COMPLEMENT",
+    "T-CASEWORK"
+  ],
+  "statement": "Two fair six-sided dice are rolled. Given that the product of the two numbers is even, what is the probability that their sum is $7$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{1}{8}$",
+      "correct": false,
+      "misconception": "I multiplied P(sum 7) = 1/6 by P(product even) = 3/4 instead of dividing by P(product even)."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{1}{6}$",
+      "correct": false,
+      "misconception": "I ignored the given information and gave the ordinary probability that the sum is 7."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{2}{9}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{1}{3}$",
+      "correct": false,
+      "misconception": "I assumed half of the 36 outcomes, 18, have an even product, and divided the 6 outcomes with sum 7 by 18."
+    },
+    {
+      "key": "E",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I swapped the condition and found the probability that the product is even given that the sum is 7."
+    }
+  ],
+  "hints": [
+    "Shrink the sample space to the outcomes with an even product.",
+    "Count the outcomes with an even product using the complement (both dice odd). Then count how many of those also have sum 7, and divide.",
+    "Even product: $36 - 9 = 27$ outcomes. Every sum-$7$ outcome has one odd and one even die, so all $6$ of them have an even product."
+  ],
+  "solutions": {
+    "reliable": "Of the $36$ equally likely outcomes, the product is odd only when both dice are odd: $3 \\cdot 3 = 9$ outcomes. So $27$ outcomes have an even product, and they form the new sample space. A sum of $7$ is odd, so one die is odd and the other is even, which makes the product even. Hence all $6$ outcomes with sum $7$, namely $(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)$, lie inside the $27$. The probability is $6/27 = 2/9$. Transferable idea: a conditional probability is a count inside the smaller sample space.",
+    "elegant": "$P(\\text{sum } 7 \\mid \\text{even product}) = \\dfrac{P(\\text{sum } 7 \\text{ and even product})}{P(\\text{even product})} = \\dfrac{1/6}{3/4} = \\dfrac{2}{9}$, because a sum of $7$ already forces an even product."
+  },
+  "formulas": [
+    "F-CP-13",
+    "F-CP-06"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

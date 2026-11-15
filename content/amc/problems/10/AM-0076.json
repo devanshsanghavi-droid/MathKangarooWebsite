@@ -1,0 +1,71 @@
+{
+  "id": "AM-0076",
+  "contest": "AMC10",
+  "slot": 25,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-GEOPROB",
+    "T-SYMMETRY",
+    "T-AUXILIARY"
+  ],
+  "statement": "A point $P$ is chosen uniformly at random inside an equilateral triangle $ABC$ with side length $2$. What is the probability that all three of the angles $\\angle APB$, $\\angle BPC$ and $\\angle CPA$ are obtuse?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac14$",
+      "correct": false,
+      "misconception": "I guessed the region was the triangle formed by the midpoints of the sides, but the true region is bounded by circular arcs that bulge outward past that triangle."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{\\pi\\sqrt3 - 3}{6}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{\\pi\\sqrt3}{6} - \\dfrac14$",
+      "correct": false,
+      "misconception": "I found the region by adding three $60^\\circ$ sectors of radius $1$ but subtracted the overlap triangle of area $\\tfrac{\\sqrt3}{4}$ only once instead of twice."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{\\pi\\sqrt3}{6}$",
+      "correct": false,
+      "misconception": "I added three $60^\\circ$ sectors of radius $1$ to get $\\tfrac{\\pi}{2}$ and did not subtract the triangle that the three sectors all cover."
+    },
+    {
+      "key": "E",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I found where at least one of the three angles is obtuse, which is every point, since the angles add to $360^\\circ$; the question needs all three."
+    }
+  ],
+  "hints": [
+    "When is $\\angle APB$ obtuse? Think of the circle with diameter $\\overline{AB}$.",
+    "$\\angle APB > 90^\\circ$ exactly when $P$ is inside the circle with diameter $\\overline{AB}$. So the region is the common part of three disks of radius $1$ centered at the midpoints of the sides.",
+    "The midpoints form an equilateral triangle of side $1$, and each disk passes through the other two midpoints. The common part is a Reuleaux triangle of width $1$: three $60^\\circ$ sectors minus twice the small triangle."
+  ],
+  "solutions": {
+    "reliable": "By Thales, $\\angle APB$ is obtuse exactly when $P$ lies inside the circle with diameter $\\overline{AB}$, which has radius $1$ and center the midpoint $M_{AB}$. So we need $P$ in all three such disks. The midpoints form an equilateral triangle of side $1$, and each disk is centered at one midpoint and passes through the other two, so the common part is the Reuleaux triangle on that small triangle (it stays inside $ABC$: the circle on diameter $\\overline{AB}$ meets sides $\\overline{BC}$ and $\\overline{CA}$ only at $B$, $A$ and the two midpoints, so its arc between those midpoints does not leave the triangle). Its area is three $60^\\circ$ sectors of radius $1$ minus two copies of the small triangle: $3 \\cdot \\tfrac{\\pi}{6} - 2 \\cdot \\tfrac{\\sqrt3}{4} = \\tfrac{\\pi - \\sqrt3}{2}$. Triangle $ABC$ has area $\\sqrt3$, so the probability is $\\tfrac{\\pi - \\sqrt3}{2\\sqrt3} = \\tfrac{\\pi\\sqrt3 - 3}{6}$. Transferable idea: an obtuse angle subtending a fixed segment means a point inside the circle on that segment as diameter.",
+    "elegant": "Build the Reuleaux area another way: the small triangle ($\\tfrac{\\sqrt3}{4}$) plus three circular segments, each a $60^\\circ$ sector minus the triangle, $\\tfrac{\\pi}{6} - \\tfrac{\\sqrt3}{4}$. Total $\\tfrac{\\sqrt3}{4} + \\tfrac{\\pi}{2} - \\tfrac{3\\sqrt3}{4} = \\tfrac{\\pi - \\sqrt3}{2}$, matching. The probability is about $0.41$."
+  },
+  "formulas": [
+    "F-GEO-12",
+    "F-GEO-20"
+  ],
+  "estSeconds": 330,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

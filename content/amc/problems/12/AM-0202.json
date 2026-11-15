@@ -1,0 +1,69 @@
+{
+  "id": "AM-0202",
+  "contest": "AMC12",
+  "slot": 7,
+  "area": "GEO",
+  "topic": "GEO-09",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "In $\\triangle ABC$, $\\angle A = 45^\\circ$, $\\angle B = 60^\\circ$ and $BC = 6$. What is $AB$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I dropped the altitude from C and found the piece AH = 3 root 3 next to A, but forgot to add the piece BH = 3 next to B."
+    },
+    {
+      "key": "B",
+      "text": "$3\\sqrt{6}$",
+      "correct": false,
+      "misconception": "I used the law of sines with the angle at B, which gives AC, the side opposite B, instead of AB."
+    },
+    {
+      "key": "C",
+      "text": "$3 + 3\\sqrt{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$6\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I found BC divided by sin A, which is the diameter 2R of the circumcircle, and stopped before multiplying by sin C."
+    },
+    {
+      "key": "E",
+      "text": "$6 + 3\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I treated sin 75 degrees as sin 45 degrees plus sin 30 degrees, but sine does not split over a sum of angles."
+    }
+  ],
+  "hints": [
+    "Find the third angle. The side you want is opposite it.",
+    "$\\angle C = 75^\\circ$, so the law of sines gives $AB = \\frac{BC \\sin C}{\\sin A}$. Either expand $\\sin 75^\\circ = \\sin(45^\\circ + 30^\\circ)$, or drop the altitude from $C$ to $\\overline{AB}$ and use the special right triangles on each side.",
+    "The altitude $CH$ splits $\\triangle ABC$ into a $30$-$60$-$90$ triangle $BHC$ with hypotenuse $6$ and a $45$-$45$-$90$ triangle $AHC$. So $BH = 3$ and $CH = 3\\sqrt{3} = AH$."
+  ],
+  "solutions": {
+    "reliable": "The third angle is $\\angle C = 180^\\circ - 45^\\circ - 60^\\circ = 75^\\circ$, and $\\sin 75^\\circ = \\sin 45^\\circ\\cos 30^\\circ + \\cos 45^\\circ\\sin 30^\\circ = \\frac{\\sqrt{6} + \\sqrt{2}}{4}$. By the law of sines, $AB = \\frac{BC \\sin C}{\\sin A} = \\frac{6 \\cdot \\frac{\\sqrt{6}+\\sqrt{2}}{4}}{\\frac{\\sqrt{2}}{2}} = \\frac{3(\\sqrt{6} + \\sqrt{2})}{\\sqrt{2}} = 3\\sqrt{3} + 3$. Transferable idea: two angles and a side fix the triangle, and the law of sines reads off any other side.",
+    "elegant": "Drop the altitude $CH$ to $\\overline{AB}$. Both base angles are acute, so $H$ lies between $A$ and $B$. In the $30$-$60$-$90$ triangle $BHC$ with hypotenuse $BC = 6$, $BH = 3$ and $CH = 3\\sqrt{3}$. In the $45$-$45$-$90$ triangle $AHC$, $AH = CH = 3\\sqrt{3}$. So $AB = AH + HB = 3\\sqrt{3} + 3$. Transferable idea: an altitude splits a triangle with $45^\\circ$ and $60^\\circ$ angles into two special right triangles."
+  },
+  "formulas": [
+    "F-GEO-15",
+    "F-GEO-03"
+  ],
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

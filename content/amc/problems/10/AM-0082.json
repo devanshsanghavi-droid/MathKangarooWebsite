@@ -1,0 +1,69 @@
+{
+  "id": "AM-0082",
+  "contest": "BOTH",
+  "slot": 4,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-MODULAR",
+    "T-CYCLE"
+  ],
+  "statement": "What is the units digit of $7^{2026} + 3^{2026}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I noticed that 7 + 3 = 10 and assumed equal powers of 7 and 3 always have units digits adding to 10, which only happens for odd exponents."
+    },
+    {
+      "key": "B",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I found that both powers end in 9 but multiplied the units digits, 9 x 9 = 81, instead of adding them."
+    },
+    {
+      "key": "C",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I thought 2026 is a multiple of 4, so both powers end in 1 and the sum ends in 2. In fact 2026 leaves remainder 2 when divided by 4."
+    },
+    {
+      "key": "D",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I found that each power ends in 9 and reported 9, forgetting to add the two units digits together."
+    }
+  ],
+  "hints": [
+    "The units digits of the powers of $7$ repeat in a cycle. So do those of $3$.",
+    "Powers of $7$ end in $7, 9, 3, 1, \\ldots$ and powers of $3$ end in $3, 9, 7, 1, \\ldots$: both cycles have length $4$. Find the remainder of $2026$ divided by $4$.",
+    "$2026 = 4 \\cdot 506 + 2$, so both powers are in position $2$ of their cycles and end in $9$. Add the two units digits."
+  ],
+  "solutions": {
+    "reliable": "The units digits of $7^n$ cycle $7, 9, 3, 1$ and those of $3^n$ cycle $3, 9, 7, 1$, each with period $4$. Since $2026 = 4 \\cdot 506 + 2$, $7^{2026}$ has the same units digit as $7^2 = 49$, and $3^{2026}$ the same as $3^2 = 9$. So the sum ends in the units digit of $9 + 9 = 18$, which is $8$.",
+    "elegant": "Since $7 \\equiv -3 \\pmod{10}$ and $2026$ is even, $7^{2026} \\equiv 3^{2026} \\pmod{10}$. So the sum is $\\equiv 2 \\cdot 3^{2026} = 2 \\cdot 9^{1013} \\equiv 2 \\cdot (-1)^{1013} = -2 \\equiv 8 \\pmod{10}$."
+  },
+  "formulas": [
+    "F-NT-10"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

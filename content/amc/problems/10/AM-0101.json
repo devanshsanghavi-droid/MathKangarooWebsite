@@ -1,0 +1,69 @@
+{
+  "id": "AM-0101",
+  "contest": "AMC10",
+  "slot": 15,
+  "area": "NT",
+  "topic": "NT-04",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-COMPLEMENT"
+  ],
+  "statement": "How many ordered pairs of positive integers $(a, b)$ satisfy $\\operatorname{lcm}(a, b) = 200$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I counted, for each prime, the pairs where exactly one of $a, b$ has the full exponent, $2 \\cdot 3 = 6$ and $2 \\cdot 2 = 4$, and forgot the pair where both do."
+    },
+    {
+      "key": "B",
+      "text": "$35$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I added, for each prime, the pairs with $a$ at the full exponent to those with $b$ at it, $2 \\cdot 4 = 8$ and $2 \\cdot 3 = 6$, counting the both-full pair twice."
+    },
+    {
+      "key": "D",
+      "text": "$70$",
+      "correct": false,
+      "misconception": "I found the 35 pairs and then doubled them to account for order, though the pairs were already ordered."
+    },
+    {
+      "key": "E",
+      "text": "$144$",
+      "correct": false,
+      "misconception": "I counted every ordered pair of divisors of 200, $12 \\cdot 12$, without requiring the larger exponent of each prime to be the full one."
+    }
+  ],
+  "hints": [
+    "Work one prime at a time: $200 = 2^3 \\cdot 5^2$.",
+    "The lcm takes the larger exponent of each prime. Count pairs of exponents whose maximum is exactly the exponent in 200, then multiply across the primes.",
+    "For $2^3$: pairs $(x, y)$ from $\\{0, 1, 2, 3\\}$ with maximum $3$ number $4^2 - 3^2 = 7$. For $5^2$: pairs from $\\{0, 1, 2\\}$ with maximum $2$ number $3^2 - 2^2 = 5$."
+  ],
+  "solutions": {
+    "reliable": "Write $a = 2^{x} 5^{u}$ and $b = 2^{y} 5^{v}$; no other primes can appear. The condition $\\operatorname{lcm}(a, b) = 2^3 \\cdot 5^2$ means $\\max(x, y) = 3$ and $\\max(u, v) = 2$. Pairs $(x, y)$ with entries in $\\{0, 1, 2, 3\\}$ number $16$, and those with both entries at most $2$ number $9$, so $16 - 9 = 7$ have maximum exactly 3. Similarly $9 - 4 = 5$ pairs $(u, v)$ have maximum exactly 2. The exponent choices are independent, so there are $7 \\cdot 5 = 35$ ordered pairs. Transferable idea: lcm and gcd conditions split prime by prime into conditions on the maximum or minimum of exponents.",
+    "elegant": "For a prime power $p^e$, the number of ordered pairs with lcm $p^e$ is $(e+1)^2 - e^2 = 2e + 1$. So for $n = \\prod p_i^{e_i}$ the count is $\\prod (2e_i + 1)$, which is the number of divisors of $n^2$. Here $200^2 = 2^6 \\cdot 5^4$ has $7 \\cdot 5 = 35$ divisors."
+  },
+  "formulas": [
+    "F-NT-01"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

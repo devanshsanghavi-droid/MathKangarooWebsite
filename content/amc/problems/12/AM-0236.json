@@ -1,0 +1,68 @@
+{
+  "id": "AM-0236",
+  "contest": "AMC12",
+  "slot": 6,
+  "area": "NT",
+  "topic": "NT-08",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "When $30!$ is written in base $12$, how many zeros does it end with?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I counted the trailing zeros of 30! in base ten, using factors of 5, instead of counting factors of 12."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I counted only the factors of 3 in 30!, but each 12 also needs two factors of 2, and there are only enough 2s for 13."
+    },
+    {
+      "key": "D",
+      "text": "$26$",
+      "correct": false,
+      "misconception": "I counted only the factors of 2 in 30! and forgot that each factor of 12 uses two of them and also a 3."
+    },
+    {
+      "key": "E",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I thought every factor of 2 and every factor of 3 made its own zero, so I added 26 + 14."
+    }
+  ],
+  "hints": [
+    "In base $12$, each trailing zero is one factor of $12$.",
+    "Find the largest $k$ with $12^k = 2^{2k} 3^k$ dividing $30!$. Count the $2$s and $3$s in $30!$.",
+    "$30!$ contains $2^{26}$ and $3^{14}$. Each $12$ needs two $2$s and one $3$."
+  ],
+  "solutions": {
+    "reliable": "The number of trailing zeros in base $12$ is the largest $k$ with $12^k \\mid 30!$. By Legendre's formula the exponent of $2$ in $30!$ is $15 + 7 + 3 + 1 = 26$ and the exponent of $3$ is $10 + 3 + 1 = 14$. Since $12^k = 2^{2k} \\cdot 3^k$, we need $2k \\le 26$ and $k \\le 14$, so $k = 13$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-08"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

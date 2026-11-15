@@ -1,0 +1,68 @@
+{
+  "id": "AM-0119",
+  "contest": "BOTH",
+  "slot": 4,
+  "area": "CP",
+  "topic": "CP-02",
+  "types": [
+    "T-SYMMETRY"
+  ],
+  "statement": "Seven people, including Ana and Ben, sit at a round table with seven equally spaced seats. Ana and Ben must sit next to each other. Two seatings count as the same if one is a rotation of the other. How many different seatings are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I glued Ana and Ben into one block and used (6 - 1)! = 120, forgetting that Ben can be on either side of Ana."
+    },
+    {
+      "key": "B",
+      "text": "$240$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$480$",
+      "correct": false,
+      "misconception": "I subtracted the 240 seatings with Ana and Ben together from 720, which counts the seatings where they are apart."
+    },
+    {
+      "key": "D",
+      "text": "$720$",
+      "correct": false,
+      "misconception": "I used (7 - 1)! = 720 for a round table and ignored the rule that Ana and Ben sit next to each other."
+    },
+    {
+      "key": "E",
+      "text": "$1440$",
+      "correct": false,
+      "misconception": "I glued Ana and Ben into a block and ordered the 6 units as if in a row, 6! x 2 = 1440, forgetting that rotations are the same seating."
+    }
+  ],
+  "hints": [
+    "Rotations do not matter, so you may fix where Ana sits.",
+    "Once Ana's seat is fixed, rotations are used up. Ben must take one of the two seats beside her, and the others fill the remaining seats in any order.",
+    "Fix Ana. Ben has $2$ choices of seat. The other $5$ people fill $5$ seats in $5!$ ways."
+  ],
+  "solutions": {
+    "reliable": "Because rotations count as the same, rotate any seating so that Ana is in one particular seat; after that, different arrangements really are different. Ben must sit in one of the $2$ seats next to Ana. The remaining $5$ people fill the remaining $5$ seats in $5! = 120$ ways. So there are $2 \\cdot 120 = 240$ seatings. Transferable idea: in a circular count, pin one person to remove the rotations, then count as if in a row.",
+    "elegant": "Glue Ana and Ben into one block. The block and the other $5$ people are $6$ units around a circle, in $(6 - 1)! = 120$ ways up to rotation, and the block has $2$ internal orders: $2 \\cdot 120 = 240$."
+  },
+  "formulas": [
+    "F-CP-14"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

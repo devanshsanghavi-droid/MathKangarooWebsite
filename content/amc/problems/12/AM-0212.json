@@ -1,0 +1,67 @@
+{
+  "id": "AM-0212",
+  "contest": "AMC12",
+  "slot": 14,
+  "area": "GEO",
+  "topic": "GEO-10",
+  "types": [
+    "T-CYCLE",
+    "T-SYMMETRY"
+  ],
+  "statement": "Let $R$ be the counterclockwise rotation by $100^\\circ$ about the origin and let $S$ be the reflection across the $x$-axis. Define $T(Q) = S(R(Q))$: rotate, then reflect. Start with $P_0 = (\\cos 30^\\circ, \\sin 30^\\circ)$ and let $P_k = T(P_{k-1})$ for $k \\ge 1$. Then $P_{2027} = (\\cos\\theta, \\sin\\theta)$ for exactly one $\\theta$ with $0 \\le \\theta < 360$, measured in degrees. What is $\\theta$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I added up all the rotations, 2027 times 100 degrees, which is 20 degrees mod 360, and added that to 30 degrees, ignoring the reflections entirely."
+    },
+    {
+      "key": "B",
+      "text": "$70$",
+      "correct": false,
+      "misconception": "I applied the maps in the wrong order, reflecting first and then rotating, so one step sent 30 degrees to -30 degrees and then to 70 degrees."
+    },
+    {
+      "key": "C",
+      "text": "$130$",
+      "correct": false,
+      "misconception": "I saw that T undoes itself on the second step, so P_2027 = T(P_0), but then I only applied the rotation and forgot the reflection."
+    },
+    {
+      "key": "D",
+      "text": "$230$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$310$",
+      "correct": false,
+      "misconception": "I combined all the rotations into a single 20 degree turn to reach 50 degrees, then applied one reflection because 2027 is odd, getting -50 degrees."
+    }
+  ],
+  "hints": [
+    "Track what one step does to the angle of a point on the unit circle.",
+    "Rotation adds $100^\\circ$ to the angle and reflection negates it. Work out what two steps in a row do to an angle $\\alpha$.",
+    "One step sends $\\alpha$ to $-(\\alpha + 100)$. Apply it twice: $-(-(\\alpha+100) + 100) = \\alpha$. So $T$ has period $2$."
+  ],
+  "solutions": {
+    "reliable": "For a point at angle $\\alpha$ on the unit circle, $R$ sends it to angle $\\alpha + 100$ and $S$ negates the angle, so $T$ sends $\\alpha$ to $-\\alpha - 100$. Applying $T$ twice gives $-(-\\alpha - 100) - 100 = \\alpha$, so $T \\circ T$ is the identity. Since $2027$ is odd, $P_{2027} = T(P_0)$, which has angle $-30 - 100 = -130 \\equiv 230$. So $\\theta = 230$. Check: $P_1$ is at $230^\\circ$, $P_2$ is at $-(230 + 100) = -330 \\equiv 30^\\circ$, back to the start. The idea: a rotation followed by a reflection is itself a reflection, so it has period 2.",
+    "elegant": "A rotation followed by a reflection reverses orientation and fixes the origin, so $T$ is a reflection across some line through the origin. Every reflection is its own inverse, so odd powers of $T$ equal $T$, and $T(P_0)$ sits at $-(30 + 100) = -130$, that is $230^\\circ$."
+  },
+  "formulas": [],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

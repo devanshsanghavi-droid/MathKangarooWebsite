@@ -1,0 +1,69 @@
+{
+  "id": "AM-0052",
+  "contest": "BOTH",
+  "slot": 9,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-SYMMETRY",
+    "T-AUXILIARY"
+  ],
+  "statement": "A cube has edge length $4$. A sphere has the same center as the cube and is tangent to all twelve edges of the cube. What is the volume of the sphere?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{32\\pi}{3}$",
+      "correct": false,
+      "misconception": "I used radius 2, half the edge, but that is the sphere tangent to the six faces, not to the edges."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{64\\sqrt{2}\\,\\pi}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$32\\pi$",
+      "correct": false,
+      "misconception": "I found the radius 2 sqrt 2 correctly but computed the surface area 4 pi r^2 = 32 pi instead of the volume."
+    },
+    {
+      "key": "D",
+      "text": "$32\\sqrt{3}\\,\\pi$",
+      "correct": false,
+      "misconception": "I used radius 2 sqrt 3, half the space diagonal, but that is the sphere through the eight vertices, not the one tangent to the edges."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{512\\sqrt{2}\\,\\pi}{3}$",
+      "correct": false,
+      "misconception": "I found that the distance between two opposite parallel edges is 4 sqrt 2 and used it as the radius, but it is the diameter."
+    }
+  ],
+  "hints": [
+    "The radius is the distance from the center of the cube to an edge. Where on an edge is the center closest?",
+    "By symmetry the sphere touches each edge at its midpoint. Look at one face: the center of the cube projects to the center of that face, and the radius is the hypotenuse of a right triangle with one leg half the edge.",
+    "Put the cube's center at the origin with vertices at $(\\pm 2, \\pm 2, \\pm 2)$. The midpoint of one edge is $(2, 2, 0)$, so $r = \\sqrt{2^2 + 2^2}$."
+  ],
+  "solutions": {
+    "reliable": "Place the cube with center at the origin and vertices $(\\pm 2, \\pm 2, \\pm 2)$. The edge from $(2, 2, -2)$ to $(2, 2, 2)$ has points $(2, 2, z)$, whose distance from the origin is $\\sqrt{8 + z^2}$, smallest at the midpoint $z = 0$. So the sphere touches each edge at its midpoint, and its radius is $\\sqrt{2^2 + 2^2} = 2\\sqrt{2}$, half a face diagonal. Its volume is $\\frac{4}{3}\\pi (2\\sqrt{2})^3 = \\frac{4}{3}\\pi \\cdot 16\\sqrt{2} = \\frac{64\\sqrt{2}\\,\\pi}{3}$. The transferable idea: a cube has three natural spheres, touching the faces, the edges and the vertices, with radii $\\frac{s}{2}$, $\\frac{s\\sqrt2}{2}$ and $\\frac{s\\sqrt3}{2}$, and a coordinate model tells you which one you need.",
+    "elegant": "Two opposite parallel edges, such as the ones through $(2, 2, 0)$ and $(-2, -2, 0)$, are a face diagonal $4\\sqrt{2}$ apart, and the sphere touches both, so that distance is a diameter. With $r = 2\\sqrt{2}$, the volume is $\\frac{4}{3}\\pi r^3 = \\frac{64\\sqrt{2}\\,\\pi}{3}$."
+  },
+  "formulas": [
+    "F-GEO-16"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

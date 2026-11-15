@@ -1,0 +1,66 @@
+{
+  "id": "AM-0040",
+  "contest": "AMC10",
+  "slot": 2,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-COMPLEMENT"
+  ],
+  "statement": "A rectangular garden measures $12$ meters by $20$ meters. A path of uniform width $2$ meters runs all the way around the outside of the garden. What is the area of the path, in square meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$68$",
+      "correct": false,
+      "misconception": "I added the width 2 only once to each dimension, so I used a 14 by 22 outer rectangle: 308 - 240 = 68."
+    },
+    {
+      "key": "B",
+      "text": "$80$",
+      "correct": false,
+      "misconception": "I found the outer rectangle is 16 by 24 and then computed its perimeter, 2(16) + 2(24) = 80, instead of an area."
+    },
+    {
+      "key": "C",
+      "text": "$112$",
+      "correct": false,
+      "misconception": "I multiplied the garden's perimeter 64 by the width 2 to get 128, then subtracted the four 2 by 2 corners, thinking they had been counted twice."
+    },
+    {
+      "key": "D",
+      "text": "$128$",
+      "correct": false,
+      "misconception": "I multiplied the garden's perimeter 64 by the width 2 and forgot the four 2 by 2 corner squares."
+    },
+    {
+      "key": "E",
+      "text": "$144$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Find the area of everything, garden plus path, first.",
+    "The path is what is left when you remove the garden from the larger outer rectangle. Remember the path adds its width on both ends of each side.",
+    "The outer rectangle is $(12+4)$ by $(20+4)$, that is $16$ by $24$. Subtract the garden's $12 \\cdot 20$."
+  ],
+  "solutions": {
+    "reliable": "The path adds $2$ meters on each end of each dimension, so the outer rectangle is $16$ by $24$, with area $384$. The garden itself has area $12 \\cdot 20 = 240$. The path is the difference: $384 - 240 = 144$. Check by pieces: two strips $20 \\times 2$, two strips $12 \\times 2$ and four corner squares $2 \\times 2$ give $80 + 48 + 16 = 144$. The transferable idea: the area of a border is the outer area minus the inner area.",
+    "elegant": "A border of width $w$ has area $w$ times the perimeter measured along its centerline. The centerline is a $14$ by $22$ rectangle with perimeter $72$, and $72 \\cdot 2 = 144$."
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

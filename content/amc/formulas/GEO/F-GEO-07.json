@@ -1,0 +1,19 @@
+{
+  "id": "F-GEO-07",
+  "area": "GEO",
+  "name": "Angle bisector theorem",
+  "formula": "AD \\text{ bisects } \\angle A,\\ D \\text{ on } BC \\implies \\frac{BD}{DC} = \\frac{AB}{AC}",
+  "whenToUse": "A segment from a vertex splits the angle there into two equal parts and you need where it lands on the opposite side.",
+  "example": "In a triangle with $AB = 6$, $AC = 10$ and $BC = 12$, the bisector from $A$ meets $BC$ at $D$ with $\\frac{BD}{DC} = \\frac{6}{10}$, so $BD = 12 \\cdot \\frac{6}{16} = 4.5$ and $DC = 7.5$.",
+  "pitfall": "Each piece of the opposite side pairs with the ADJACENT side: $BD$ goes with $AB$, not with $AC$.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-SIMILAR",
+    "T-AREA-RATIO"
+  ],
+  "derivation": "Triangles $ABD$ and $ACD$ have the same height from $A$, so their areas are in the ratio $BD : DC$. Using $\\frac{1}{2}ab\\sin$ with the equal angles, the same areas are in the ratio $AB : AC$."
+}

@@ -1,0 +1,70 @@
+{
+  "id": "AM-0282",
+  "contest": "AMC12",
+  "slot": 9,
+  "area": "CP",
+  "topic": "CP-06",
+  "types": [
+    "T-ROOTS-UNITY",
+    "T-SYMMETRY",
+    "T-CASEWORK"
+  ],
+  "statement": "Two different $12$th roots of unity $a$ and $b$ are chosen at random, with every ordered pair of different roots equally likely. What is the probability that $a + b$ is a real number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{5}{66}$",
+      "correct": false,
+      "misconception": "I only counted pairs where b is the complex conjugate of a, and forgot that b = -a also makes the sum real (it is 0)."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1}{11}$",
+      "correct": false,
+      "misconception": "I only counted the pairs with a + b = 0 and forgot the pairs where b is the conjugate of a."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{5}{33}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{11}{72}$",
+      "correct": false,
+      "misconception": "I allowed a and b to be the same root, so I used 144 ordered pairs and also counted 1 + 1 and (-1) + (-1)."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{2}{11}$",
+      "correct": false,
+      "misconception": "I gave every a two partners, its conjugate and its negative, not noticing that for 1, -1, i and -i one of these is a itself or the two coincide."
+    }
+  ],
+  "hints": [
+    "When is a sum of two complex numbers real? Look at imaginary parts.",
+    "$a + b$ is real exactly when $\\operatorname{Im} b = -\\operatorname{Im} a$. Among the $12$th roots of unity, which roots have a given imaginary part? Be careful with $\\pm 1$ and $\\pm i$.",
+    "$\\operatorname{Im} b = -\\operatorname{Im} a$ means $b = \\bar a$ or $b = -a$. These are two different roots other than $a$ unless $a \\in \\{1, -1, i, -i\\}$."
+  ],
+  "solutions": {
+    "reliable": "Write $a = \\cos\\theta + i\\sin\\theta$. The roots of unity with imaginary part $-\\sin\\theta$ are $\\bar a = \\cos\\theta - i\\sin\\theta$ and $-a = -\\cos\\theta - i\\sin\\theta$. If $a = \\pm 1$, then $\\bar a = a$ is not allowed, so only $b = -a$ works: $1$ partner each. If $a = \\pm i$, then $\\bar a = -a$, so there is $1$ partner each. For the other $8$ roots, $\\bar a$ and $-a$ are distinct and different from $a$: $2$ partners each. Favourable ordered pairs: $4 \\cdot 1 + 8 \\cdot 2 = 20$ out of $12 \\cdot 11 = 132$, so the probability is $\\frac{20}{132} = \\frac{5}{33}$. Check by unordered pairs: $6$ pairs $\\{a, -a\\}$ and $5$ pairs $\\{a, \\bar a\\}$ with $a$ not real, minus $1$ pair $\\{i, -i\\}$ counted in both, gives $10$ of the $66$ unordered pairs, again $\\frac{5}{33}$. The idea: use the symmetry of the roots about the real axis and the origin, and watch the special points that are fixed by those symmetries.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-12"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

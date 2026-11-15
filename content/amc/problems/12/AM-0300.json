@@ -1,0 +1,69 @@
+{
+  "id": "AM-0300",
+  "contest": "AMC12",
+  "slot": 22,
+  "area": "CP",
+  "topic": "CP-09",
+  "types": [
+    "T-RECURSION",
+    "T-SYMMETRY"
+  ],
+  "statement": "A bug starts at one vertex of a regular icosahedron, a solid with $12$ vertices, $20$ triangular faces and $5$ edges meeting at every vertex. Each minute, the bug crawls along an edge to one of the $5$ adjacent vertices, chosen uniformly at random. What is the expected number of minutes until the bug first reaches the vertex directly opposite its starting vertex?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I ignored the moves that keep the bug inside the same ring of five vertices, so I only counted moves between rings."
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I assumed each move lands on a random one of the other 11 vertices, so each minute has a 1/11 chance of hitting the target."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I used the fact that the average time to return to a vertex is 12 and assumed the same holds for reaching the opposite vertex."
+    },
+    {
+      "key": "D",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I solved the system correctly but reported the expected time starting from a neighbour of the start instead of from the start itself."
+    },
+    {
+      "key": "E",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Group the vertices by their distance from the starting vertex.",
+    "There are four layers: the start, a ring of its 5 neighbours, a second ring of 5, and the opposite vertex. Work out how many neighbours a ring vertex has in each layer, then write one expected-value equation per layer.",
+    "A vertex in the first ring has 1 neighbour at the start, 2 in its own ring and 2 in the second ring. A vertex in the second ring has 2 in the first ring, 2 in its own ring and 1 at the target. Solve $E_0 = 1 + E_1$, $E_1 = 1 + \\frac15E_0 + \\frac25E_1 + \\frac25E_2$, $E_2 = 1 + \\frac25E_1 + \\frac25E_2$."
+  ],
+  "solutions": {
+    "reliable": "By symmetry the expected remaining time depends only on the layer, so let $E_0$, $E_1$, $E_2$ be the expected times from the start, the first ring and the second ring. Each first-ring vertex is adjacent to the start, to 2 vertices of its own ring and to 2 of the second ring; each second-ring vertex is adjacent to 2 first-ring vertices, 2 of its own ring and the target. So $E_0 = 1 + E_1$, $E_1 = 1 + \\frac15E_0 + \\frac25E_1 + \\frac25E_2$ and $E_2 = 1 + \\frac25E_1 + \\frac25E_2$. The last gives $3E_2 = 5 + 2E_1$. Substituting $E_0 = 1 + E_1$ into the middle one gives $5E_1 = 6 + 3E_1 + 2E_2$, so $E_1 = 3 + E_2$. Then $3E_2 = 5 + 6 + 2E_2$, so $E_2 = 11$, $E_1 = 14$ and $E_0 = 15$. Transferable idea: symmetry collapses a random walk on many vertices to a few states, one per distance.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-10"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

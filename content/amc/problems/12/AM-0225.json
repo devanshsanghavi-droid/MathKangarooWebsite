@@ -1,0 +1,72 @@
+{
+  "id": "AM-0225",
+  "contest": "AMC12",
+  "slot": 22,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-ANGLE-CHASE",
+    "T-AUXILIARY"
+  ],
+  "statement": "Triangle $ABC$ has $AB = 5$, $AC = 8$ and $\\angle BAC = 60^\\circ$. The bisector of $\\angle BAC$ meets the circumcircle of $ABC$ again at $M$. What is $AM$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I computed AI = 2r, the distance from A to the incenter, which also lies on the bisector, and stopped there instead of continuing to the circle."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{7\\sqrt{3}}{3}$",
+      "correct": false,
+      "misconception": "I correctly found MB = MC = 7/sqrt(3), which equals the circumradius here, and then assumed AM was equal to MB as well, as if A sat on the circle centered at M through B and C."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{40\\sqrt{3}}{13}$",
+      "correct": false,
+      "misconception": "I computed the length of the angle bisector from A to side BC, which ends at D on BC, not at the second intersection with the circumcircle."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{13\\sqrt{3}}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{14\\sqrt{3}}{3}$",
+      "correct": false,
+      "misconception": "I assumed AM is a diameter of the circumcircle because it passes through the middle of the figure, so I gave 2R."
+    }
+  ],
+  "hints": [
+    "$M$ is the midpoint of arc $BC$, so $MB = MC$.",
+    "Find $BC$ and the circumradius, then $MB$. With all four sides of cyclic quadrilateral $ABMC$ and diagonal $BC$ known, Ptolemy's theorem gives the other diagonal $AM$.",
+    "$BC = 7$, and $MB = MC = 2R\\sin 30^\\circ = R = \\tfrac{7}{\\sqrt3}$. Ptolemy: $AM\\cdot BC = AB\\cdot MC + AC\\cdot MB$."
+  ],
+  "solutions": {
+    "reliable": "By the law of cosines, $BC^2 = 25 + 64 - 40 = 49$, so $BC = 7$, and $R = \\dfrac{7}{2\\sin 60^\\circ} = \\dfrac{7}{\\sqrt3}$. The bisector meets the circle at the midpoint $M$ of arc $BC$ not containing $A$, and chord $MB$ subtends the inscribed angle $\\angle BAM = 30^\\circ$, so $MB = MC = 2R\\sin 30^\\circ = \\dfrac{7}{\\sqrt3}$. In cyclic quadrilateral $ABMC$, Ptolemy's theorem gives $AM\\cdot BC = AB\\cdot MC + AC\\cdot MB$, that is $7\\,AM = (5 + 8)\\cdot\\dfrac{7}{\\sqrt3}$, so $AM = \\dfrac{13}{\\sqrt3} = \\dfrac{13\\sqrt3}{3}$. Check with power of a point at $D$, the foot of the bisector: $BD = \\tfrac{35}{13}$, $DC = \\tfrac{56}{13}$, $AD = \\tfrac{2\\cdot 5\\cdot 8\\cos 30^\\circ}{13} = \\tfrac{40\\sqrt3}{13}$, so $DM = \\tfrac{BD\\cdot DC}{AD} = \\tfrac{49\\sqrt3}{39}$ and $AD + DM = \\tfrac{120\\sqrt3 + 49\\sqrt3}{39} = \\tfrac{13\\sqrt3}{3}$. The idea: an angle bisector extended to the circumcircle lands at an arc midpoint, which makes two equal chords.",
+    "elegant": "Drop perpendiculars from $M$ to lines $AB$ and $AC$, with feet $K$ and $L$. Since $M$ is on the bisector, $MK = ML$; since $MB = MC$, right triangles $MKB$ and $MLC$ are congruent, so $BK = CL$. Here $K$ lies beyond $B$ and $L$ lies between $A$ and $C$, so $AK + AL = (AB + BK) + (AC - CL) = 13$. As $AK = AL$, each is $\\tfrac{13}{2}$, and $AM = \\dfrac{AK}{\\cos 30^\\circ} = \\dfrac{13/2}{\\sqrt3/2} = \\dfrac{13\\sqrt3}{3}$."
+  },
+  "formulas": [
+    "F-GEO-14",
+    "F-GEO-15",
+    "F-GEO-08",
+    "F-GEO-12"
+  ],
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

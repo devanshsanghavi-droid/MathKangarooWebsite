@@ -1,0 +1,18 @@
+{
+  "id": "F-NT-08",
+  "area": "NT",
+  "name": "Legendre's formula",
+  "formula": "p \\text{ prime}: \\quad v_p(n!) = \\left\\lfloor \\frac{n}{p} \\right\\rfloor + \\left\\lfloor \\frac{n}{p^2} \\right\\rfloor + \\left\\lfloor \\frac{n}{p^3} \\right\\rfloor + \\cdots",
+  "whenToUse": "Find the power of a prime dividing a factorial, the number of trailing zeros of $n!$, or whether $n!$ is divisible by some number.",
+  "example": "$200!$ ends in $40 + 8 + 1 = 49$ zeros, since $\\left\\lfloor \\frac{200}{5} \\right\\rfloor = 40$, $\\left\\lfloor \\frac{200}{25} \\right\\rfloor = 8$, $\\left\\lfloor \\frac{200}{125} \\right\\rfloor = 1$. The power of $3$ in $50!$ is $16 + 5 + 1 = 22$.",
+  "pitfall": "Do not stop at the first term: multiples of $p^2$ contribute an extra factor of $p$ each. Trailing zeros come from the prime $5$, since there are always more $2$s.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "derivation": "Each multiple of $p$ up to $n$ contributes one factor of $p$, each multiple of $p^2$ one more, and so on. The $k$th term counts the multiples of $p^k$."
+}

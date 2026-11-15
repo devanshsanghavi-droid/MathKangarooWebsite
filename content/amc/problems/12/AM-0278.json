@@ -1,0 +1,69 @@
+{
+  "id": "AM-0278",
+  "contest": "AMC12",
+  "slot": 9,
+  "area": "CP",
+  "topic": "CP-08",
+  "types": [
+    "T-LINEARITY",
+    "T-SYMMETRY"
+  ],
+  "statement": "The numbers $1, 2, \\ldots, 10$ are placed in a row in random order, with all orders equally likely. An entry is called a peak if it is larger than each of its neighbours; the two entries at the ends have only one neighbour each. What is the expected number of peaks?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{8}{3}$",
+      "correct": false,
+      "misconception": "I counted only the eight middle positions, each a peak with probability 1/3, and forgot that the two end entries can be peaks too."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I said a middle entry beats each neighbour with probability 1/2, so it is a peak with probability 1/4, but the two comparisons are not independent."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{10}{3}$",
+      "correct": false,
+      "misconception": "I gave every position probability 1/3, including the two ends, which only need to beat a single neighbour."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{11}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I gave every position probability 1/2, treating each middle entry as if it had only one neighbour to beat."
+    }
+  ],
+  "hints": [
+    "The number of peaks is a sum of yes-or-no indicators, one per position.",
+    "By linearity of expectation, add up the probability that each position is a peak. An end position compares two entries; a middle position compares three. By symmetry, each of those entries is equally likely to be the largest.",
+    "An end entry is a peak with probability $\\frac{1}{2}$, and a middle entry with probability $\\frac{1}{3}$."
+  ],
+  "solutions": {
+    "reliable": "Let $X_i$ be $1$ if position $i$ is a peak and $0$ otherwise. The expected number of peaks is $\\sum E[X_i]$. For an end position, the entry and its single neighbour are equally likely to be in either order, so the probability is $\\frac{1}{2}$. For a middle position, any of the three entries in that window is equally likely to be the largest, so the probability is $\\frac{1}{3}$. The expectation is $2 \\cdot \\frac{1}{2} + 8 \\cdot \\frac{1}{3} = 1 + \\frac{8}{3} = \\frac{11}{3}$. Check: the same reasoning gives $1 + \\frac{n-2}{3}$ for $n$ numbers; for $n = 3$ this is $\\frac{4}{3}$, and listing the $6$ orders of $1, 2, 3$ gives peak counts $1, 1, 1, 1, 2, 2$ (orders $123$, $321$, $132$, $231$ have one peak; $213$, $312$ have two), total $8$, average $\\frac{8}{6} = \\frac{4}{3}$. The idea: linearity of expectation works even when the indicators depend on each other.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-09"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

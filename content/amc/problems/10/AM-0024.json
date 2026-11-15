@@ -1,0 +1,66 @@
+{
+  "id": "AM-0024",
+  "contest": "AMC10",
+  "slot": 15,
+  "area": "ALG",
+  "topic": "ALG-02",
+  "types": [
+    "T-BACKWARDS"
+  ],
+  "statement": "A $40$-liter tank is full of a solution that is $36\\%$ acid. Some number of liters is drained and replaced with pure acid. Then the same number of liters of the new mixture is drained and again replaced with pure acid. The tank is now $64\\%$ acid. How many liters were drained each time?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{28}{5}$",
+      "correct": false,
+      "misconception": "I thought each replacement raises the acid percentage by the fraction replaced, so I solved $0.36 + 2 \\cdot \\frac{x}{40} = 0.64$."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{35}{4}$",
+      "correct": false,
+      "misconception": "I assumed both drains removed water at the original rate of $64\\%$, solving $0.36 + 2 \\cdot \\frac{x}{40} \\cdot 0.64 = 0.64$, but the second drain removes less water."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{40}{3}$",
+      "correct": false,
+      "misconception": "I tracked the acid instead of the water and wrote $0.36\\left(1 + \\frac{x}{40}\\right)^2 = 0.64$, as if the acid were multiplied by the same factor each time."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{35}{2}$",
+      "correct": false,
+      "misconception": "I solved as if a single drain and replace did the whole job, $0.64\\left(1 - \\frac{x}{40}\\right) = 0.36$, forgetting there were two."
+    }
+  ],
+  "hints": [
+    "Follow the water, not the acid.",
+    "Only water is ever lost without being replaced. Each drain of $x$ liters keeps the fraction $1 - \\frac{x}{40}$ of the water present.",
+    "The water fraction goes from $0.64$ to $0.64\\left(1 - \\frac{x}{40}\\right)^2 = 0.36$, so $1 - \\frac{x}{40} = \\frac{3}{4}$."
+  ],
+  "solutions": {
+    "reliable": "Track the water. At the start the tank holds $0.64 \\cdot 40$ liters of water. Draining $x$ liters of a well-mixed solution removes the fraction $\\frac{x}{40}$ of the water, and refilling with pure acid adds none back. After two rounds the water fraction is $0.64\\left(1 - \\frac{x}{40}\\right)^2$, and this must equal $1 - 0.64 = 0.36$. So $\\left(1 - \\frac{x}{40}\\right)^2 = \\frac{36}{64} = \\frac{9}{16}$, giving $1 - \\frac{x}{40} = \\frac{3}{4}$ and $x = 10$. Check: after the first round water is $25.6 \\cdot \\frac34 = 19.2$ liters, after the second $14.4$ liters, which is $36\\%$ of $40$. Transferable idea: in repeated replacement, the substance that is never added back shrinks by a constant factor each round.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

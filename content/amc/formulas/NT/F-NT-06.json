@@ -1,0 +1,18 @@
+{
+  "id": "F-NT-06",
+  "area": "NT",
+  "name": "Euler's theorem and the totient",
+  "formula": "\\gcd(a, n) = 1 \\implies a^{\\varphi(n)} \\equiv 1 \\pmod n, \\qquad \\varphi(n) = n \\prod_{\\text{prime } p \\mid n} \\left(1 - \\frac{1}{p}\\right)",
+  "whenToUse": "Remainders of huge powers modulo a composite number, such as the last two digits of a power. Also counting the integers up to $n$ that share no factor with $n$.",
+  "example": "Last two digits of $3^{2023}$: $\\varphi(100) = 40$ and $2023 = 40 \\cdot 50 + 23$, so we need $3^{23}$. Since $3^{10} = 59049 \\equiv 49$ and $3^{20} \\equiv 49^2 = 2401 \\equiv 1$, the answer is $3^{23} \\equiv 27$.",
+  "pitfall": "The base must be coprime to $n$. And $\\varphi(n)$ is a period, not always the smallest one: here $3^{20} \\equiv 1$ already, so a shorter cycle may exist.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-MODULAR",
+    "T-CYCLE"
+  ]
+}

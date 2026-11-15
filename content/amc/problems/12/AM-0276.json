@@ -1,0 +1,70 @@
+{
+  "id": "AM-0276",
+  "contest": "AMC12",
+  "slot": 7,
+  "area": "CP",
+  "topic": "CP-04",
+  "types": [
+    "T-PIE",
+    "T-COMPLEMENT"
+  ],
+  "statement": "How many permutations $(p_1, p_2, p_3, p_4, p_5, p_6)$ of $(1, 2, 3, 4, 5, 6)$ satisfy $p_1 \\ne 1$, $p_2 \\ne 2$ and $p_3 \\ne 3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$265$",
+      "correct": false,
+      "misconception": "I counted permutations where no number at all is in its own position, a full derangement of six, but positions 4, 5 and 6 have no restriction."
+    },
+    {
+      "key": "B",
+      "text": "$426$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$432$",
+      "correct": false,
+      "misconception": "I subtracted the singles and added back the pairs but forgot to subtract the 6 permutations that fix all three of 1, 2 and 3."
+    },
+    {
+      "key": "D",
+      "text": "$438$",
+      "correct": false,
+      "misconception": "I added the 6 permutations that fix all three numbers at the last step instead of subtracting them."
+    },
+    {
+      "key": "E",
+      "text": "$714$",
+      "correct": false,
+      "misconception": "I read the conditions as saying not all three of 1, 2, 3 are fixed, so I only subtracted the 3! = 6 permutations fixing all of them."
+    }
+  ],
+  "hints": [
+    "Count the permutations that break a rule, then subtract.",
+    "Let $E_i$ be the set of permutations with $p_i = i$ for $i = 1, 2, 3$. Use inclusion-exclusion on $|E_1 \\cup E_2 \\cup E_3|$.",
+    "Each single set has $5! = 120$ permutations, each pair $4! = 24$, and the triple $3! = 6$. So $|E_1 \\cup E_2 \\cup E_3| = 360 - 72 + 6 = 294$."
+  ],
+  "solutions": {
+    "reliable": "There are $720$ permutations in all. Let $E_i$ be those with $p_i = i$. Fixing one value leaves $5! = 120$ permutations, fixing two leaves $24$, and fixing three leaves $6$. By inclusion-exclusion, $|E_1 \\cup E_2 \\cup E_3| = 3 \\cdot 120 - 3 \\cdot 24 + 6 = 294$. The permutations obeying all three rules number $720 - 294 = 426$. Check by brute force (a short program over all $720$ permutations) or by a second count: choose $p_1, p_2, p_3$ so that none is fixed and fill the last three positions in $3! = 6$ ways; the number of valid triples $(p_1, p_2, p_3)$ of distinct values from $1$ to $6$ with $p_i \\ne i$ is $71$, and $71 \\cdot 6 = 426$. The idea: a rule of the form none of these happen is a job for complementary counting with inclusion-exclusion.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-01",
+    "F-CP-06"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

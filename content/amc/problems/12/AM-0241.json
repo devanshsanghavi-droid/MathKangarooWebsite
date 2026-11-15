@@ -1,0 +1,70 @@
+{
+  "id": "AM-0241",
+  "contest": "AMC12",
+  "slot": 8,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-SUBSTITUTION"
+  ],
+  "statement": "For how many integers $n$ with $2 \\le n \\le 1000$ is $\\log_n 4096$ an integer?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I wrote 4096 = 4^6 and only looked at powers of 4, so I found 4, 16 and 64 but missed 2 and 8."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I only used the divisors of 12 strictly between 1 and 12, so I found 4, 8, 16 and 64 but left out n = 2, which gives 2^12."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I took n = 2^d for every divisor d of 12 but forgot the bound n at most 1000, which excludes 4096 itself."
+    },
+    {
+      "key": "E",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I counted every power of 2 from 2 up to 512, but 32, 128, 256 and 512 do not give integer logarithms because their exponents do not divide 12."
+    }
+  ],
+  "hints": [
+    "$\\log_n 4096 = k$ means $n^k = 4096$.",
+    "$4096 = 2^{12}$. If $n^k = 2^{12}$ then $n$ is a power of $2$, say $n = 2^d$ with $dk = 12$.",
+    "So $d$ is a divisor of $12$: $n \\in \\{2, 4, 8, 16, 64, 4096\\}$. Apply the bound $n \\le 1000$."
+  ],
+  "solutions": {
+    "reliable": "If $\\log_n 4096 = k$ is an integer then $n^k = 4096 = 2^{12}$, and $k \\ge 1$ since $n \\ge 2$. By unique factorization $n$ has no prime other than $2$, so $n = 2^d$ with $dk = 12$, meaning $d$ divides $12$. The divisors $1, 2, 3, 4, 6, 12$ give $n = 2, 4, 8, 16, 64, 4096$, and all but $4096$ satisfy $n \\le 1000$. So there are $5$ values.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-10",
+    "F-NT-01"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

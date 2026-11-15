@@ -1,0 +1,67 @@
+{
+  "id": "AM-0030",
+  "contest": "AMC10",
+  "slot": 18,
+  "area": "ALG",
+  "topic": "ALG-04",
+  "types": [
+    "T-SMALL-CASES",
+    "T-EVALUATE"
+  ],
+  "statement": "A polynomial $P(x)$ of degree at most $3$ satisfies $P(1) = 1$, $P(2) = 3$, $P(3) = 9$ and $P(4) = 27$. What is $P(5)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$47$",
+      "correct": false,
+      "misconception": "I built the difference table correctly but used the next second difference, $20$, as the next first difference, getting $27 + 20$."
+    },
+    {
+      "key": "B",
+      "text": "$53$",
+      "correct": false,
+      "misconception": "I found the constant third difference $8$ but added it straight to the last first difference, $18 + 8 = 26$, and then $27 + 26$."
+    },
+    {
+      "key": "C",
+      "text": "$57$",
+      "correct": false,
+      "misconception": "I assumed the second differences stay at $12$, as they would for a quadratic, so the next first difference was $30$."
+    },
+    {
+      "key": "D",
+      "text": "$65$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$81$",
+      "correct": false,
+      "misconception": "I continued the pattern of powers of $3$, but a cubic polynomial cannot keep up with an exponential."
+    }
+  ],
+  "hints": [
+    "The values look like powers of $3$, but $P$ is a polynomial.",
+    "For a polynomial of degree at most $3$, the third differences of equally spaced values are constant. Build the difference table and extend it by one column.",
+    "First differences $2, 6, 18$; second differences $4, 12$; third difference $8$. Extend: second $20$, first $38$, so $P(5) = 27 + 38$."
+  ],
+  "solutions": {
+    "reliable": "Make a difference table for $P(1), \\ldots, P(4) = 1, 3, 9, 27$. First differences: $2, 6, 18$. Second differences: $4, 12$. Third difference: $8$. Because $P$ has degree at most $3$, the third difference stays $8$. So the next second difference is $12 + 8 = 20$, the next first difference is $18 + 20 = 38$, and $P(5) = 27 + 38 = 65$. Check by interpolation: $P(x) = \\frac{4x^3 - 18x^2 + 32x - 15}{3}$ gives $P(5) = \\frac{500 - 450 + 160 - 15}{3} = 65$. Transferable idea: a degree-$d$ polynomial has constant $d$-th differences, so its table extends by addition alone.",
+    "elegant": "Since $P$ has degree at most $3$, the fourth difference of $P(1), \\ldots, P(5)$ is zero: $P(5) - 4P(4) + 6P(3) - 4P(2) + P(1) = 0$. So $P(5) = 4 \\cdot 27 - 6 \\cdot 9 + 4 \\cdot 3 - 1 = 65$. Transferable idea: binomial-coefficient alternating sums kill low-degree polynomials."
+  },
+  "formulas": [],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

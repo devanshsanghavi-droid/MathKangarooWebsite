@@ -1,0 +1,18 @@
+{
+  "id": "F-ALG-02",
+  "area": "ALG",
+  "name": "Vieta's formulas for a quadratic",
+  "formula": "ax^2 + bx + c = 0\\ (a \\ne 0) \\implies r + s = -\\frac{b}{a}, \\qquad rs = \\frac{c}{a}",
+  "whenToUse": "A question asks for the sum, product, sum of squares or sum of reciprocals of the two roots of a quadratic without needing the roots themselves.",
+  "example": "For $x^2 - 7x + 3 = 0$ the roots have $r + s = 7$ and $rs = 3$. So $r^2 + s^2 = (r+s)^2 - 2rs = 49 - 6 = 43$ and $\\frac{1}{r} + \\frac{1}{s} = \\frac{r+s}{rs} = \\frac{7}{3}$.",
+  "pitfall": "Divide by the leading coefficient first. For $2x^2 - 8x + 3$ the sum of the roots is $4$, not $8$, and the product is $\\frac{3}{2}$.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-VIETA"
+  ],
+  "derivation": "If the roots are $r$ and $s$ then $ax^2 + bx + c = a(x-r)(x-s) = a x^2 - a(r+s)x + a rs$. Matching coefficients gives $-a(r+s) = b$ and $a rs = c$."
+}

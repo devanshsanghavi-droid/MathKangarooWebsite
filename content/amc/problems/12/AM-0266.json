@@ -1,0 +1,71 @@
+{
+  "id": "AM-0266",
+  "contest": "AMC12",
+  "slot": 25,
+  "area": "NT",
+  "topic": "NT-06",
+  "types": [
+    "T-CASEWORK",
+    "T-STARS-BARS",
+    "T-SYMMETRY"
+  ],
+  "statement": "Let $S(n)$ denote the sum of the decimal digits of $n$. For how many integers $n$ with $1 \\le n \\le 9999$ is $S(2n) = S(n)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$621$",
+      "correct": false,
+      "misconception": "I placed the two big digits in 4 ways in the case with exactly two digits of at least 5, instead of choosing 2 of the 4 positions in 6 ways."
+    },
+    {
+      "key": "B",
+      "text": "$686$",
+      "correct": false,
+      "misconception": "I forgot, in the case with exactly one digit of at least 5, to choose which of the 4 positions holds it, so I got 35 instead of 140."
+    },
+    {
+      "key": "C",
+      "text": "$790$",
+      "correct": false,
+      "misconception": "I left out n = 9999, where all four digits are at least 5 and S(n) = 36 = 9 x 4."
+    },
+    {
+      "key": "D",
+      "text": "$791$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$1111$",
+      "correct": false,
+      "misconception": "I knew S(2n) = S(n) forces n to be a multiple of 9 and assumed every multiple of 9 works."
+    }
+  ],
+  "hints": [
+    "When you double $n$ digit by digit, which digits produce a carry?",
+    "A digit $d$ carries exactly when $d \\ge 5$, and each carry lowers the digit sum by $9$. So $S(2n) = 2S(n) - 9c$, where $c$ is the number of digits of $n$ that are at least $5$. The condition becomes $S(n) = 9c$.",
+    "Write $n$ as four digits. Replace each big digit $d \\ge 5$ by $d - 5$; then all four entries lie in $[0, 4]$ and the condition says they sum to $4c$. Count for $c = 1, 2, 3, 4$ and choose the positions of the big digits."
+  ],
+  "solutions": {
+    "reliable": "Doubling digit $d$ gives $2d$, and a carry from the right adds at most $1$, so the new digit is $2d$ or $2d + 1$ minus $10$ if there is a carry. A carry leaves position $d$ exactly when $d \\ge 5$, regardless of the incoming carry since $2 \\cdot 4 + 1 < 10$. Each carry replaces $10$ in one place by $1$ in the next, lowering the digit sum by $9$, so $S(2n) = 2S(n) - 9c$ where $c$ is the number of digits of $n$ that are at least $5$. Hence $S(2n) = S(n)$ exactly when $S(n) = 9c$. Write $n$ with four digits, allowing leading zeros. Choose which $c$ positions hold big digits, $\\binom{4}{c}$ ways, and lower each big digit by $5$: now all four entries lie in $\\{0, \\ldots, 4\\}$ and sum to $9c - 5c = 4c$. Let $N(s)$ be the number of 4-tuples from $\\{0, \\ldots, 4\\}$ with sum $s$: $N(4) = \\binom{7}{3} = 35$, $N(8) = 85$, $N(12) = N(4) = 35$ by the symmetry $x \\mapsto 4 - x$, and $N(16) = 1$. For $c = 0$ the only option is $n = 0$, which is excluded. The total is $4 \\cdot 35 + 6 \\cdot 85 + 4 \\cdot 35 + 1 \\cdot 1 = 140 + 510 + 140 + 1 = 791$. The transferable idea: digit sums change by multiples of $9$, one for every carry.",
+    "elegant": "For $N(8)$, use inclusion-exclusion on the cap of $4$: $\\binom{11}{3} - 4\\binom{6}{3} = 165 - 80 = 85$. The whole count is the sum of $\\binom{4}{c} N(4c)$, which is $4 \\cdot 35 + 6 \\cdot 85 + 4 \\cdot 35 + 1 = 791$."
+  },
+  "formulas": [
+    "F-CP-05",
+    "F-NT-07"
+  ],
+  "estSeconds": 300,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

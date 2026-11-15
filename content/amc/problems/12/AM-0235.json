@@ -1,0 +1,69 @@
+{
+  "id": "AM-0235",
+  "contest": "AMC12",
+  "slot": 5,
+  "area": "NT",
+  "topic": "NT-04",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-BIJECTION"
+  ],
+  "statement": "How many ordered pairs $(a, b)$ of positive integers satisfy $\\gcd(a, b) = 12$ and $\\operatorname{lcm}(a, b) = 5040$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I wrote a = 12x and b = 12y with xy = 420 and counted all 24 divisors of 420 as choices of x, forgetting that x and y must share no common factor."
+    },
+    {
+      "key": "C",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I treated the 2^2 in 420 = 2^2 times 3 times 5 times 7 as two separate primes, so I counted 2^5 ways to split five primes."
+    },
+    {
+      "key": "D",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I counted every divisor of the lcm 5040 as a possible value of a, without using the gcd condition."
+    },
+    {
+      "key": "E",
+      "text": "$112$",
+      "correct": false,
+      "misconception": "I used only the fact that ab = 12 times 5040 = 60480 and counted all ordered factor pairs of 60480, ignoring the gcd and lcm themselves."
+    }
+  ],
+  "hints": [
+    "Pull the gcd out of both numbers.",
+    "Write $a = 12x$, $b = 12y$ with $\\gcd(x, y) = 1$. Then $\\operatorname{lcm}(a,b) = 12xy$.",
+    "$xy = 420 = 2^2 \\cdot 3 \\cdot 5 \\cdot 7$ and $x$, $y$ are coprime, so each prime power goes entirely to $x$ or entirely to $y$."
+  ],
+  "solutions": {
+    "reliable": "Since $12$ divides both, write $a = 12x$, $b = 12y$. Then $\\gcd(a,b) = 12$ exactly when $\\gcd(x,y) = 1$, and in that case $\\operatorname{lcm}(a,b) = 12xy$. So we need coprime $x$, $y$ with $xy = 420 = 2^2 \\cdot 3 \\cdot 5 \\cdot 7$. Because $x$ and $y$ share no prime, each of the four prime powers $2^2, 3, 5, 7$ goes wholly to $x$ or wholly to $y$: $2^4 = 16$ ordered pairs.",
+    "elegant": "Compare exponents prime by prime: $12 = 2^2 \\cdot 3$ and $5040 = 2^4 \\cdot 3^2 \\cdot 5 \\cdot 7$. For each of the four primes the exponents in $a$ and $b$ must be the min and the max, in one order or the other, and they differ for every prime, giving $2^4 = 16$."
+  },
+  "formulas": [
+    "F-NT-03"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

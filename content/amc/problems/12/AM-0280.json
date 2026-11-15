@@ -1,0 +1,69 @@
+{
+  "id": "AM-0280",
+  "contest": "AMC12",
+  "slot": 7,
+  "area": "CP",
+  "topic": "CP-09",
+  "types": [
+    "T-RECURSION",
+    "T-CASEWORK"
+  ],
+  "statement": "A staircase has $10$ steps. Robin climbs from the bottom to the top, taking either $1$ step or $2$ steps with each stride, and never takes two $2$-step strides in a row. In how many different ways can Robin climb the staircase?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I read the rule backwards and counted climbs that never have two 1-step strides in a row."
+    },
+    {
+      "key": "B",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I placed the 2-step strides only in the gaps between 1-step strides, forgetting that a 2-step stride can come first or last."
+    },
+    {
+      "key": "C",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I used the right recursion but said there is only one way to climb 2 steps, forgetting the single 2-step stride, so every value shifted down."
+    },
+    {
+      "key": "D",
+      "text": "$41$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$89$",
+      "correct": false,
+      "misconception": "I ignored the rule about consecutive 2-step strides and counted every climb using 1s and 2s, which gives a Fibonacci number."
+    }
+  ],
+  "hints": [
+    "Look at Robin's last stride, or the last two.",
+    "Let $a_n$ be the number of valid climbs of $n$ steps. A climb ends with a $1$-step stride, or with a $2$-step stride that must be preceded by a $1$-step stride (or nothing). Turn that into a recursion.",
+    "$a_n = a_{n-1} + a_{n-3}$, with $a_0 = 1$, $a_1 = 1$, $a_2 = 2$. Build the table up to $n = 10$."
+  ],
+  "solutions": {
+    "reliable": "Let $a_n$ count valid climbs of $n$ steps. If the last stride is $1$ step, the rest is any valid climb of $n - 1$ steps. If the last stride is $2$ steps, the stride before it (if any) must be $1$ step, so the climb ends in $1, 2$ and the rest is any valid climb of $n - 3$ steps; when $n = 2$ the single stride $2$ is the whole climb, which matches $a_0 = 1$. So $a_n = a_{n-1} + a_{n-3}$ with $a_0 = 1$, $a_1 = 1$, $a_2 = 2$. Then $a_3 = 3$, $a_4 = 4$, $a_5 = 6$, $a_6 = 9$, $a_7 = 13$, $a_8 = 19$, $a_9 = 28$, $a_{10} = 41$. Check by counting $2$-step strides: with $k$ of them there are $10 - 2k$ one-step strides, which leave $11 - 2k$ gaps (ends included), and the $2$-steps need different gaps, so the count is $\\sum_k \\binom{11 - 2k}{k} = 1 + 9 + 21 + 10 = 41$. The idea: let the last move split the count into smaller copies of the same problem.",
+    "elegant": "Choose the gaps directly: $k$ two-step strides sit in distinct gaps among $10 - 2k$ one-step strides, giving $\\binom{11-2k}{k}$, and $1 + 9 + 21 + 10 = 41$."
+  },
+  "formulas": [
+    "F-CP-19"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

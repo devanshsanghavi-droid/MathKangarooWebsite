@@ -1,0 +1,68 @@
+{
+  "id": "AM-0041",
+  "contest": "AMC10",
+  "slot": 3,
+  "area": "GEO",
+  "topic": "GEO-03",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "The two legs of a right triangle differ in length by $7$, and its hypotenuse has length $17$. What is the area of the triangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I treated the hypotenuse 17 as the sum of the legs, so the legs were 12 and 5 and the area was 30."
+    },
+    {
+      "key": "B",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I found the legs 8 and 15 correctly and then reported the perimeter 8 + 15 + 17 = 40."
+    },
+    {
+      "key": "C",
+      "text": "$60$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I found ab = (289 - 49) / 2 = 120 and forgot that the area is half of ab."
+    },
+    {
+      "key": "E",
+      "text": "$240$",
+      "correct": false,
+      "misconception": "I subtracted 49 from 289 and stopped, forgetting both the 2 in (a - b)^2 = a^2 + b^2 - 2ab and the one half in the area formula."
+    }
+  ],
+  "hints": [
+    "You do not need the legs themselves, only their product.",
+    "Expand the square of the difference of the legs and compare it with the Pythagorean theorem. The product of the legs is exactly twice the area.",
+    "With legs $a > b$: $(a-b)^2 = a^2 + b^2 - 2ab$, so $49 = 289 - 2ab$. Solve for $ab$, then halve it."
+  ],
+  "solutions": {
+    "reliable": "Let the legs be $b$ and $b + 7$. Then $b^2 + (b+7)^2 = 289$, so $2b^2 + 14b + 49 = 289$, which gives $b^2 + 7b - 120 = 0 = (b - 8)(b + 15)$. So $b = 8$, the legs are $8$ and $15$, and the area is $\\frac{1}{2} \\cdot 8 \\cdot 15 = 60$. The transferable idea: in a right triangle, the area is tied to the legs through $2ab = c^2 - (a-b)^2$.",
+    "elegant": "With legs $a$ and $b$, $(a-b)^2 = a^2 + b^2 - 2ab = c^2 - 4K$, where $K$ is the area. So $49 = 289 - 4K$ and $K = 60$, with no need to find the legs."
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

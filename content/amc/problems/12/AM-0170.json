@@ -1,0 +1,70 @@
+{
+  "id": "AM-0170",
+  "contest": "AMC12",
+  "slot": 11,
+  "area": "ALG",
+  "topic": "ALG-10",
+  "types": [
+    "T-ROOTS-UNITY",
+    "T-EVALUATE"
+  ],
+  "statement": "Let $\\omega = \\cos\\dfrac{2\\pi}{7} + i\\sin\\dfrac{2\\pi}{7}$. What is the value of $\\displaystyle\\prod_{k=1}^{6} \\left(\\omega^k + 2\\right)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-21$",
+      "correct": false,
+      "misconception": "I thought the six roots $\\omega, \\ldots, \\omega^6$ are the roots of $\\frac{x^6 - 1}{x - 1}$, so I evaluated $\\frac{(-2)^6 - 1}{-2 - 1}$."
+    },
+    {
+      "key": "B",
+      "text": "$42$",
+      "correct": false,
+      "misconception": "I set up $1 + x + x^2 + \\cdots + x^6$ at $x = -2$ correctly but dropped the leading $1$, adding only $-2 + 4 - 8 + 16 - 32 + 64$."
+    },
+    {
+      "key": "C",
+      "text": "$43$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$127$",
+      "correct": false,
+      "misconception": "I wrote the product as $\\prod (2 - \\omega^k)$, mixing up the sign inside, and evaluated $1 + x + \\cdots + x^6$ at $x = 2$."
+    },
+    {
+      "key": "E",
+      "text": "$129$",
+      "correct": false,
+      "misconception": "I included the $k = 0$ factor $\\omega^0 + 2 = 3$, multiplying over all seven roots of $x^7 = 1$ to get $2^7 + 1$."
+    }
+  ],
+  "hints": [
+    "The numbers $\\omega^k$ are roots of a familiar polynomial.",
+    "The six numbers $\\omega, \\ldots, \\omega^6$ are exactly the roots of $1 + x + \\cdots + x^6$. A product of (root minus something) is that polynomial evaluated at the something, so rewrite $\\omega^k + 2$ as minus $(-2 - \\omega^k)$.",
+    "$\\prod_{k=1}^6 (x - \\omega^k) = 1 + x + \\cdots + x^6$, so the product is $(-1)^6 \\prod (-2 - \\omega^k)$, which is that polynomial at $x = -2$."
+  ],
+  "solutions": {
+    "reliable": "The seventh roots of unity other than $1$ are $\\omega, \\omega^2, \\ldots, \\omega^6$, the roots of $\\frac{x^7 - 1}{x - 1} = 1 + x + \\cdots + x^6$. So $\\prod_{k=1}^{6}(x - \\omega^k) = 1 + x + \\cdots + x^6$. Since $\\omega^k + 2 = -(-2 - \\omega^k)$ and there are six factors, the signs cancel and the product is the polynomial at $x = -2$: $1 - 2 + 4 - 8 + 16 - 32 + 64 = 43$. Transferable idea: a product over all roots of a polynomial of (constant minus root) is just the polynomial evaluated at that constant.",
+    "elegant": "Over all seven roots, $\\prod_{k=0}^{6}(x + \\omega^k) = x^7 + 1$ (replace $x$ by $-x$ in $x^7 - 1$ and fix the sign). At $x = 2$ this is $129$, and the $k = 0$ factor is $3$, so the requested product is $\\frac{129}{3} = 43$."
+  },
+  "formulas": [
+    "F-ALG-12",
+    "F-ALG-04"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

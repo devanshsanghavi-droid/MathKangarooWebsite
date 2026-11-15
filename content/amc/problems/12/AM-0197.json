@@ -1,0 +1,69 @@
+{
+  "id": "AM-0197",
+  "contest": "AMC12",
+  "slot": 5,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-VIETA",
+    "T-SUBSTITUTION"
+  ],
+  "statement": "A rectangular box has a space diagonal of length $13$ and a total surface area of $120$. What is the sum of the lengths of all $12$ edges of the box?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I found a + b + c = 17 and stopped, forgetting that the box has four edges of each length."
+    },
+    {
+      "key": "B",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I subtracted the surface area instead of adding it, getting (a + b + c) squared = 169 - 120 = 49, and then multiplied 7 by 4."
+    },
+    {
+      "key": "C",
+      "text": "$51$",
+      "correct": false,
+      "misconception": "I found a + b + c = 17 and multiplied by 3, thinking each of the three dimensions appears on three edges."
+    },
+    {
+      "key": "D",
+      "text": "$68$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$4\\sqrt{409}$",
+      "correct": false,
+      "misconception": "I took the surface area to be ab + bc + ca = 120, forgetting the factor 2, so I got (a + b + c) squared = 169 + 240."
+    }
+  ],
+  "hints": [
+    "You only need $a + b + c$, not each dimension.",
+    "Call the dimensions $a, b, c$. The diagonal gives $a^2 + b^2 + c^2$ and the surface area gives $2(ab + bc + ca)$. Their sum is a perfect square.",
+    "$a^2 + b^2 + c^2 = 169$ and $2(ab + bc + ca) = 120$, so $(a + b + c)^2 = 169 + 120 = 289$ and $a + b + c = 17$. A box has four edges of each dimension."
+  ],
+  "solutions": {
+    "reliable": "Let the dimensions be $a, b, c$. The space diagonal gives $a^2 + b^2 + c^2 = 13^2 = 169$, and the surface area gives $2(ab + bc + ca) = 120$. Adding, $(a + b + c)^2 = 169 + 120 = 289$, so $a + b + c = 17$. A box has four edges parallel to each dimension, so the twelve edges total $4 \\cdot 17 = 68$. (Such a box exists: for example $a = b \\approx 2.19$ and $c \\approx 12.62$.) Transferable idea: the squared sum is the sum of squares plus twice the pairwise products.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-16"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

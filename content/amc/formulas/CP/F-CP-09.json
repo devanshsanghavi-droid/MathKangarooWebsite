@@ -1,0 +1,17 @@
+{
+  "id": "F-CP-09",
+  "area": "CP",
+  "name": "Linearity of expectation",
+  "formula": "E[X_1 + X_2 + \\cdots + X_n] = E[X_1] + E[X_2] + \\cdots + E[X_n]",
+  "whenToUse": "The expected number of times something happens. Write the count as a sum of indicator variables, one for each place it could happen, and add their probabilities.",
+  "example": "In $10$ fair coin flips, the expected number of places where a head is immediately followed by a tail is $9 \\cdot \\frac{1}{4} = \\frac{9}{4}$, one indicator for each of the $9$ adjacent pairs.",
+  "pitfall": "This works even when the events are NOT independent, which is why it is so powerful. Do not try to find the full distribution when only the expectation is asked.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-LINEARITY"
+  ]
+}

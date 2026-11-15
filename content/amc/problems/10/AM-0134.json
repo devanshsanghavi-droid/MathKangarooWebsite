@@ -1,0 +1,69 @@
+{
+  "id": "AM-0134",
+  "contest": "AMC10",
+  "slot": 13,
+  "area": "CP",
+  "topic": "CP-01",
+  "types": [
+    "T-COMPLEMENT",
+    "T-CASEWORK"
+  ],
+  "statement": "A security code is a string of $5$ letters, each of which is A, B or C. No two neighbouring letters in the code may be equal, and the first and last letters must also be different. How many such codes are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I counted the codes with no equal neighbours whose first and last letters are the same, which is the group I was supposed to throw away."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I gave the last letter exactly one choice every time, as if it always had to dodge two different letters, so I got 3 x 2 x 2 x 2 x 1 = 24."
+    },
+    {
+      "key": "C",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$42$",
+      "correct": false,
+      "misconception": "I thought the only codes with matching ends were the 6 that alternate two letters, like ABABA, and subtracted just those from 48."
+    },
+    {
+      "key": "E",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I counted the codes with no equal neighbours, 3 x 2 x 2 x 2 x 2 = 48, and forgot the rule that the first and last letters must differ."
+    }
+  ],
+  "hints": [
+    "First ignore the rule about the first and last letters.",
+    "Count codes with no equal neighbours, then subtract the ones whose ends match. A code with matching ends is really a shorter code of the same kind, so the same subtraction works one size down.",
+    "There are $3 \\cdot 2^4 = 48$ codes with no equal neighbours. If the ends match, dropping the last letter leaves a $4$-letter code that obeys both rules, so count those: $3 \\cdot 2^3 = 24$ minus the $6$ three-letter codes using A, B, C once each."
+  ],
+  "solutions": {
+    "reliable": "Let $c_n$ be the number of valid codes of length $n$ (no equal neighbours, first and last different). There are $3 \\cdot 2^{n-1}$ strings with no equal neighbours. Among them, the ones whose first and last letters match are exactly the valid codes of length $n-1$ with the first letter copied onto the end: the copied letter differs from letter $n-1$ precisely because the shorter code is valid. So $c_n = 3 \\cdot 2^{n-1} - c_{n-1}$. Since $c_3 = 3! = 6$, we get $c_4 = 24 - 6 = 18$ and $c_5 = 48 - 18 = 30$. The transferable idea: when an end condition spoils a simple product, count without it and subtract the bad cases, which often form a smaller copy of the same problem.",
+    "elegant": "Fix the first letter as A and multiply by $3$ at the end. The second letter has $2$ choices. If the third letter is A again, the fourth has $2$ choices and the fifth must avoid both the fourth and A, so $1$: that gives $2$. If the third letter is not A, it is forced (it avoids A and the second letter); then a fourth letter of A leaves $2$ choices for the fifth, and the other fourth letter leaves $1$: that gives $3$. So each second letter gives $2 + 3 = 5$, and the total is $3 \\cdot 2 \\cdot 5 = 30$."
+  },
+  "formulas": [
+    "F-CP-06"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "AM-0302",
+  "contest": "AMC12",
+  "slot": 23,
+  "area": "CP",
+  "topic": "CP-01",
+  "types": [
+    "T-BIJECTION",
+    "T-ROOTS-UNITY"
+  ],
+  "statement": "How many subsets of $\\{1, 2, 3, \\ldots, 14\\}$, including the empty set, have an even number of elements and a sum of elements divisible by $7$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1170$",
+      "correct": false,
+      "misconception": "I assumed the 2^13 even-size subsets spread evenly over the 7 possible remainders and rounded 8192/7 down."
+    },
+    {
+      "key": "B",
+      "text": "$1171$",
+      "correct": false,
+      "misconception": "I found the right count but then left out the empty set, even though it has 0 elements and a sum of 0."
+    },
+    {
+      "key": "C",
+      "text": "$1172$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$2340$",
+      "correct": false,
+      "misconception": "I forgot the even-size condition and assumed the 2^14 subset sums spread evenly over the 7 remainders, rounding 16384/7 down."
+    },
+    {
+      "key": "E",
+      "text": "$2344$",
+      "correct": false,
+      "misconception": "I correctly counted all subsets whose sum is divisible by 7 but forgot the condition that the size must be even."
+    }
+  ],
+  "hints": [
+    "Is there a single move that changes the size of a subset by one but keeps its sum the same modulo 7?",
+    "Toggling the number $7$ in or out changes the size by 1 and the sum by 7. So exactly half of the subsets with sum divisible by 7 have even size. Count those subsets with a roots-of-unity filter.",
+    "With $\\omega = e^{2\\pi i/7}$, the number of subsets with sum divisible by 7 is $\\frac17\\sum_{j=0}^{6}\\prod_{k=1}^{14}(1 + \\omega^{jk})$. For $j \\ne 0$, each residue appears twice among $jk$, and $\\prod_{r=0}^{6}(1 + \\omega^r) = 2$."
+  ],
+  "solutions": {
+    "reliable": "First count all subsets with sum divisible by 7. With $\\omega = e^{2\\pi i/7}$, that count is $\\frac17\\sum_{j=0}^{6} f(\\omega^j)$ where $f(x) = \\prod_{k=1}^{14}(1 + x^k)$. Here $f(1) = 2^{14} = 16384$. For $j \\ne 0$, as $k$ runs from 1 to 14 the exponent $jk$ hits every residue mod 7 exactly twice, so $f(\\omega^j) = \\left(\\prod_{r=0}^{6}(1+\\omega^r)\\right)^2$. Setting $x = -1$ in $x^7 - 1 = \\prod(x - \\omega^r)$ gives $-2 = -\\prod(1 + \\omega^r)$, so the product is $2$ and $f(\\omega^j) = 4$. The count is $\\frac{16384 + 6 \\cdot 4}{7} = 2344$. Now pair each subset with the subset obtained by toggling 7: the sum changes by 7 and the size by 1, so this pairs even-size with odd-size subsets inside the sum-divisible-by-7 family. Exactly half are even: $\\frac{2344}{2} = 1172$. Transferable idea: an involution that flips parity and preserves the other condition halves the count.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-12",
+    "F-CP-18"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

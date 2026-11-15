@@ -1,0 +1,67 @@
+{
+  "id": "AM-0256",
+  "contest": "AMC12",
+  "slot": 19,
+  "area": "NT",
+  "topic": "NT-04",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-CASEWORK"
+  ],
+  "statement": "How many ordered triples $(a, b, c)$ of positive integers satisfy $\\operatorname{lcm}(a, b) = \\operatorname{lcm}(b, c) = \\operatorname{lcm}(c, a) = 360$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I found the counts 10, 7 and 4 for the primes 2, 3 and 5 correctly but added them instead of multiplying."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I let exactly one exponent drop below the maximum with e + 1 choices, but forgot to choose which of the three numbers it is, so I got 4 x 3 x 2."
+    },
+    {
+      "key": "C",
+      "text": "$162$",
+      "correct": false,
+      "misconception": "I counted the triples where exactly two exponents equal the maximum, 3e for each prime, but forgot the triple where all three equal it, so I got 9 x 6 x 3."
+    },
+    {
+      "key": "D",
+      "text": "$280$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$648$",
+      "correct": false,
+      "misconception": "I let each of the three positions be the one that may drop, with e + 1 choices, which counts the all-maximal triple three times: 12 x 9 x 6."
+    }
+  ],
+  "hints": [
+    "Work one prime at a time: $360 = 2^3 \\cdot 3^2 \\cdot 5$.",
+    "For a prime with exponent $e$ in $360$, let the exponents in $a$, $b$, $c$ be $x$, $y$, $z$ in $[0, e]$. Every pair must have maximum $e$. How many of $x, y, z$ can be less than $e$?",
+    "At most one of the three can be below $e$. So there is $1$ triple with all equal to $e$, plus $3 \\cdot e$ with exactly one smaller: $3e + 1$ in all. Multiply over the primes."
+  ],
+  "solutions": {
+    "reliable": "Factor $360 = 2^3 \\cdot 3^2 \\cdot 5^1$; the conditions split prime by prime. For a prime with exponent $e$, the exponents $x, y, z \\in \\{0, \\ldots, e\\}$ must satisfy $\\max(x,y) = \\max(y,z) = \\max(z,x) = e$. If two of them were below $e$, that pair would fail, so at most one is below $e$. That gives $1$ triple with all three equal to $e$ and $3e$ triples with exactly one smaller (choose which one, then its value from $0$ to $e - 1$), for $3e + 1$ in total. For $e = 3, 2, 1$ this is $10, 7, 4$, and the answer is $10 \\cdot 7 \\cdot 4 = 280$. The transferable idea: gcd and lcm conditions factor into independent conditions on prime exponents.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

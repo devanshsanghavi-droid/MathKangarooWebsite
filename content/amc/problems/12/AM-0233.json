@@ -1,0 +1,68 @@
+{
+  "id": "AM-0233",
+  "contest": "AMC12",
+  "slot": 4,
+  "area": "NT",
+  "topic": "NT-06",
+  "types": [
+    "T-BOUNDING"
+  ],
+  "statement": "For how many integers $b \\ge 2$ does the base-ten number $2026$ have exactly three digits when it is written in base $b$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I mixed up digits with exponents and counted the bases where b^3 is at most 2026 and b^4 is larger, but that is the condition for four digits."
+    },
+    {
+      "key": "B",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I found the right range 13 through 45 but counted it as 45 - 13 = 32, forgetting to add one for the endpoints."
+    },
+    {
+      "key": "C",
+      "text": "$33$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$34$",
+      "correct": false,
+      "misconception": "I took the cube root of 2026, about 12.65, and rounded it down to 12, but 12^3 = 1728 is at most 2026, so base 12 gives four digits."
+    },
+    {
+      "key": "E",
+      "text": "$44$",
+      "correct": false,
+      "misconception": "I only required b^2 to be at most 2026 and forgot that 2026 must also be less than b^3, so I counted every base from 2 to 45."
+    }
+  ],
+  "hints": [
+    "A base-$b$ number has exactly three digits when it is at least $b^2$ but less than $b^3$.",
+    "Solve $b^2 \\le 2026 < b^3$ for the integer $b$.",
+    "$45^2 = 2025 \\le 2026$ but $46^2 > 2026$, and $12^3 = 1728 \\le 2026 < 13^3 = 2197$."
+  ],
+  "solutions": {
+    "reliable": "In base $b$ the three-digit numbers are exactly those $N$ with $b^2 \\le N < b^3$. The condition $b^2 \\le 2026$ means $b \\le 45$, since $45^2 = 2025$ and $46^2 = 2116$. The condition $2026 < b^3$ means $b \\ge 13$, since $12^3 = 1728$ and $13^3 = 2197$. So $b$ runs from $13$ to $45$, which is $45 - 13 + 1 = 33$ bases.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-11"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

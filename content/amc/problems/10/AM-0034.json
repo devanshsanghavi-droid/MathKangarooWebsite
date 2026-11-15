@@ -1,0 +1,71 @@
+{
+  "id": "AM-0034",
+  "contest": "BOTH",
+  "slot": 21,
+  "area": "ALG",
+  "topic": "ALG-03",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-SYMMETRY",
+    "T-VIETA"
+  ],
+  "statement": "Real numbers $x$ and $y$ satisfy $x + y + xy = 13$ and $x^2 + y^2 = 22$. What is the largest possible value of $xy$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I used $xy \\le \\left(\\frac{x + y}{2}\\right)^2 = \\frac{36}{4}$ and took that bound as the value, but it is reached only when $x = y$, which these equations do not allow."
+    },
+    {
+      "key": "C",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I used $2xy \\le x^2 + y^2 = 22$ and took the bound $11$ as the answer, but it needs $x = y = \\sqrt{11}$, which fails the first equation."
+    },
+    {
+      "key": "D",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I solved $s^2 + 2s - 48 = 0$ and took the larger product from $s = -8$, $p = 21$, without checking that $t^2 + 8t + 21 = 0$ has no real roots."
+    },
+    {
+      "key": "E",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I found both candidate products, $7$ and $21$, and added them, without checking which ones come from real $x$ and $y$."
+    }
+  ],
+  "hints": [
+    "Both equations are symmetric in $x$ and $y$.",
+    "Let $s = x + y$ and $p = xy$. The equations become $s + p = 13$ and $s^2 - 2p = 22$. Solve for $s$, then check each case really gives real $x$ and $y$.",
+    "Substituting $p = 13 - s$ gives $s^2 + 2s - 48 = 0$, so $s = 6$ or $s = -8$. Real $x$ and $y$ need $s^2 \\ge 4p$."
+  ],
+  "solutions": {
+    "reliable": "Let $s = x + y$ and $p = xy$. Then $s + p = 13$ and $x^2 + y^2 = s^2 - 2p = 22$. Substituting $p = 13 - s$ gives $s^2 + 2s - 26 = 22$, so $s^2 + 2s - 48 = (s - 6)(s + 8) = 0$. Case 1: $s = 6$, $p = 7$. Real $x, y$ need $s^2 \\ge 4p$: $36 \\ge 28$, fine, with $x, y = 3 \\pm \\sqrt2$. Case 2: $s = -8$, $p = 21$. Then $s^2 = 64 < 84 = 4p$, so $x$ and $y$ would be roots of $t^2 + 8t + 21 = 0$, which has no real roots. Only case 1 survives, so $xy = 7$ is the only possible value, and hence the largest. Check: $(3 + \\sqrt2) + (3 - \\sqrt2) + 7 = 13$ and $(3 + \\sqrt2)^2 + (3 - \\sqrt2)^2 = 22$. Transferable idea: symmetric systems shrink to sum and product, but every case must be checked for real solutions.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-02",
+    "F-ALG-16"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "AM-0305",
+  "contest": "BOTH",
+  "slot": 17,
+  "area": "CP",
+  "topic": "CP-11",
+  "types": [
+    "T-INVARIANT",
+    "T-PARITY"
+  ],
+  "statement": "Nine lamps stand in a circle, all switched off. A move chooses three lamps that are next to each other around the circle and switches each of the three (on becomes off, off becomes on). How many of the $2^9 = 512$ on/off patterns of the nine lamps can be reached by some sequence of moves?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I counted only the patterns one move can make, 9 of them, plus the starting pattern, and forgot that moves combine."
+    },
+    {
+      "key": "B",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I required each group of every third lamp to have an even number of lamps on, 4 ways per group, and missed the patterns where all three groups are odd."
+    },
+    {
+      "key": "C",
+      "text": "$128$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$256$",
+      "correct": false,
+      "misconception": "I found that two of the groups of every third lamp must keep the same parity, but missed the matching condition on the third group, so I halved 512 only once."
+    },
+    {
+      "key": "E",
+      "text": "$512$",
+      "correct": false,
+      "misconception": "I assumed that with enough moves every pattern of lamps can be reached."
+    }
+  ],
+  "hints": [
+    "Number the lamps $1$ to $9$ and colour them by their position modulo $3$.",
+    "Every move switches exactly one lamp of each colour. What does that do to the parity of the number of lamps on in each colour?",
+    "The three colour counts always have the same parity. Count the patterns where all three are even or all three are odd, then check they can all be reached."
+  ],
+  "solutions": {
+    "reliable": "Colour lamp $k$ by $k \\bmod 3$; each colour has $3$ lamps, and any three neighbouring lamps contain exactly one of each colour. So every move changes the number of lit lamps of each colour by an odd amount, and the three counts always have the same parity, as they do at the start (all $0$). A group of $3$ lamps has $4$ patterns with an even number lit and $4$ with an odd number, so at most $4^3 + 4^3 = 128$ patterns are reachable. All of them are: the moves at positions $1$ and $2$ together switch exactly lamps $1$ and $4$, two lamps of the same colour, and in the same way any two lamps of one colour can be switched together. That fixes everything up to one lamp per colour, and a single move then supplies one lamp of each colour when all three parities are odd. Transferable idea: an invariant gives an upper bound on what is reachable, and a small set of combined moves shows the bound is met.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

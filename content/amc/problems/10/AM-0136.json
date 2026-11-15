@@ -1,0 +1,70 @@
+{
+  "id": "AM-0136",
+  "contest": "AMC10",
+  "slot": 14,
+  "area": "CP",
+  "topic": "CP-02",
+  "types": [
+    "T-SYMMETRY",
+    "T-CASEWORK"
+  ],
+  "statement": "Five adults and three children sit around a round table with $8$ seats. No two children may sit in neighbouring seats. Two seatings are considered the same if one is a rotation of the other. How many different seatings are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$240$",
+      "correct": false,
+      "misconception": "I chose which 3 of the 5 gaps between adults get a child, but forgot that the three children can be arranged among those gaps in 3! ways."
+    },
+    {
+      "key": "B",
+      "text": "$576$",
+      "correct": false,
+      "misconception": "I thought five adults leave only 4 gaps for the children, as they would in a row, so I got 4! x 4 x 3 x 2 = 576."
+    },
+    {
+      "key": "C",
+      "text": "$720$",
+      "correct": false,
+      "misconception": "I also treated mirror-image seatings as the same and divided by 2, but the problem only treats rotations as the same."
+    },
+    {
+      "key": "D",
+      "text": "$1440$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$7200$",
+      "correct": false,
+      "misconception": "I seated the adults in 5! ways without fixing anything to remove rotations, so every seating was counted 8 times over."
+    }
+  ],
+  "hints": [
+    "Seat the adults first and look at the spaces between them.",
+    "Arranging people around a table up to rotation is a circular arrangement. Once the adults are seated, the children must go into different gaps between adults, and the children are distinguishable.",
+    "The adults can sit in $(5-1)! = 24$ circular orders. Around a circle, five adults leave $5$ gaps, not $4$. Each child takes a different gap, and the order matters, so there are $5 \\cdot 4 \\cdot 3$ ways to place them."
+  ],
+  "solutions": {
+    "reliable": "Seat the adults first. Up to rotation, five people around a table can be arranged in $(5-1)! = 24$ ways. This also uses up the rotational symmetry, so from now on every seat is distinguishable. Between consecutive adults around the circle there are $5$ gaps, and two children are neighbours exactly when they share a gap. So the three children go into three different gaps, in order: $5 \\cdot 4 \\cdot 3 = 60$ ways. The total is $24 \\cdot 60 = 1440$. The transferable idea: for 'no two of these together', seat the others first and drop the restricted people into distinct gaps; around a circle, $n$ people make $n$ gaps.",
+    "elegant": "Count with numbered seats, then divide by the $8$ rotations. To choose $3$ of the $8$ seats with no two neighbouring: if seat $1$ is empty, pick $3$ non-neighbouring seats from the row $2, \\ldots, 8$ in $\\binom{5}{3} = 10$ ways; if seat $1$ is used, seats $2$ and $8$ are empty and we pick $2$ non-neighbouring seats from $3, \\ldots, 7$ in $\\binom{4}{2} = 6$ ways. That is $16$ seat sets. Then there are $3!$ ways to seat the children and $5!$ ways to seat the adults, giving $16 \\cdot 6 \\cdot 120 = 11520$ labelled seatings and $11520 / 8 = 1440$ up to rotation."
+  },
+  "formulas": [
+    "F-CP-14",
+    "F-CP-02"
+  ],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "AM-0247",
+  "contest": "AMC12",
+  "slot": 12,
+  "area": "NT",
+  "topic": "NT-04",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-MODULAR"
+  ],
+  "statement": "How many positive divisors does $\\gcd\\left(2^{84} - 1,\\ 2^{60} - 1\\right)$ have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found the gcd 4095 = 3^2 times 5 times 7 times 13 but counted its distinct prime factors instead of its divisors."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I thought the gcd was 2^12 itself, forgetting the minus 1, and counted the 13 divisors of 2^12."
+    },
+    {
+      "key": "C",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I factored 4095 as if it were squarefree, missing that 9 divides it, so I counted 2^4 divisors."
+    },
+    {
+      "key": "D",
+      "text": "$24$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$96$",
+      "correct": false,
+      "misconception": "I did only one step of the Euclidean algorithm on the exponents, 84 - 60 = 24, and counted the 96 divisors of 2^24 - 1."
+    }
+  ],
+  "hints": [
+    "Run the Euclidean algorithm, but on the exponents.",
+    "$\\gcd(2^a - 1, 2^b - 1) = 2^{\\gcd(a,b)} - 1$. Here $\\gcd(84, 60) = 12$.",
+    "$2^{12} - 1 = 4095 = 3^2 \\cdot 5 \\cdot 7 \\cdot 13$. Use the divisor-count formula."
+  ],
+  "solutions": {
+    "reliable": "For $a > b$, $2^a - 1 = 2^{a-b}(2^b - 1) + (2^{a-b} - 1)$, so $\\gcd(2^a - 1, 2^b - 1) = \\gcd(2^{a-b} - 1, 2^b - 1)$. Repeating this mirrors the Euclidean algorithm on the exponents: $(84, 60) \\to (24, 60) \\to (24, 36) \\to (24, 12) \\to (12, 12)$. So the gcd is $2^{12} - 1 = 4095$. Factor: $4095 = (2^6 - 1)(2^6 + 1) = 63 \\cdot 65 = 3^2 \\cdot 7 \\cdot 5 \\cdot 13$. The number of divisors is $(2+1)(1+1)(1+1)(1+1) = 24$.",
+    "elegant": "Let $d$ be the gcd. Since $12$ divides $84$ and $60$, $2^{12} - 1$ divides both numbers, so $2^{12} - 1 \\mid d$. Conversely $2^{84} \\equiv 2^{60} \\equiv 1 \\pmod d$, and $12 = 3 \\cdot 60 - 2 \\cdot 84$, so from $2^{180} \\equiv 1$ and $2^{168} \\equiv 1$ we get $2^{12} \\equiv 1 \\pmod d$, meaning $d \\mid 2^{12} - 1$. Hence $d = 2^{12} - 1 = 3^2 \\cdot 5 \\cdot 7 \\cdot 13$, with $3 \\cdot 2 \\cdot 2 \\cdot 2 = 24$ divisors."
+  },
+  "formulas": [
+    "F-NT-04",
+    "F-NT-01"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

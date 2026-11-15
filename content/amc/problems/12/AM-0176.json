@@ -1,0 +1,67 @@
+{
+  "id": "AM-0176",
+  "contest": "AMC12",
+  "slot": 15,
+  "area": "ALG",
+  "topic": "ALG-10",
+  "types": [
+    "T-CASEWORK",
+    "T-COORD"
+  ],
+  "statement": "How many complex numbers $z$ satisfy $|z - 1| = 1$ and also have the property that $z + \\dfrac{1}{z}$ is a real number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I assumed $z + \\frac{1}{z}$ can be real only when $z$ itself is real, so I found only $z = 2$ on the circle."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I only used the unit circle $|z| = 1$, where $z + \\frac1z = 2\\,\\mathrm{Re}(z)$, and found its two meeting points with the circle, missing the real solution $z = 2$."
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I also counted $z = 0$, where the circle crosses the real axis, but $\\frac{1}{z}$ is undefined there."
+    },
+    {
+      "key": "E",
+      "text": "$\\text{infinitely many}$",
+      "correct": false,
+      "misconception": "I thought every point of the circle $|z - 1| = 1$ makes $z + \\frac1z$ real, the way every point of the unit circle does."
+    }
+  ],
+  "hints": [
+    "Write $z = x + yi$ and find the imaginary part of $z + \\frac1z$.",
+    "The imaginary part of $z + \\frac1z$ factors as $y$ times something. That splits the problem into two cases, each a simple curve to intersect with the circle.",
+    "$\\mathrm{Im}\\left(z + \\frac1z\\right) = y - \\dfrac{y}{x^2 + y^2} = y\\left(1 - \\dfrac{1}{|z|^2}\\right)$. So either $z$ is real or $|z| = 1$. Intersect each with $|z - 1| = 1$, remembering $z \\neq 0$."
+  ],
+  "solutions": {
+    "reliable": "Write $z = x + yi \\neq 0$. Since $\\frac1z = \\frac{x - yi}{x^2 + y^2}$, the imaginary part of $z + \\frac1z$ is $y\\left(1 - \\frac{1}{x^2 + y^2}\\right)$, which is zero exactly when $y = 0$ or $x^2 + y^2 = 1$. Case 1, $z$ real: $|z - 1| = 1$ gives $z = 0$ or $z = 2$, and $z = 0$ is not allowed, so only $z = 2$. Case 2, $|z| = 1$: subtracting $x^2 + y^2 = 1$ from $(x - 1)^2 + y^2 = 1$ gives $x = \\tfrac12$, so $z = \\tfrac12 \\pm \\tfrac{\\sqrt3}{2}i$. These are not real, so the cases do not overlap. In total there are $3$ such numbers. Transferable idea: $z + \\frac1z$ is real exactly when $z$ is real or $|z| = 1$; turn a complex condition into two curves.",
+    "elegant": "$z + \\frac1z$ is real exactly when it equals its conjugate $\\bar z + \\frac{1}{\\bar z}$, which rearranges to $(z - \\bar z)\\left(1 - \\frac{1}{|z|^2}\\right) = 0$. So $z$ is real or on the unit circle, and the circle $|z - 1| = 1$ meets these in $z = 2$ (excluding $0$) and two non-real points."
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

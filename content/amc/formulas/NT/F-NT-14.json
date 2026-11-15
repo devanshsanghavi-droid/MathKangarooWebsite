@@ -1,0 +1,15 @@
+{
+  "id": "F-NT-14",
+  "area": "NT",
+  "name": "Repeating decimals as fractions",
+  "formula": "0.\\overline{d_1 d_2 \\ldots d_k} = \\frac{d_1 d_2 \\ldots d_k}{\\underbrace{99\\ldots9}_{k}}",
+  "whenToUse": "Convert a repeating decimal to a fraction, or find the length of the repeating block of $\\frac{1}{n}$.",
+  "example": "$0.\\overline{36} = \\frac{36}{99} = \\frac{4}{11}$. With a delay, $0.1\\overline{6}$: multiply by $10$ to get $1.\\overline{6} = \\frac{15}{9}$, so the number is $\\frac{15}{90} = \\frac{1}{6}$.",
+  "pitfall": "Use as many nines as there are digits in the repeating block, and handle non-repeating digits after the decimal point separately before applying the rule.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "derivation": "If $x = 0.\\overline{36}$ then $100x = 36.\\overline{36}$, and subtracting gives $99x = 36$."
+}

@@ -1,0 +1,66 @@
+{
+  "id": "AM-0012",
+  "contest": "AMC10",
+  "slot": 7,
+  "area": "ALG",
+  "topic": "ALG-01",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Working together, Alex and Blake can paint a fence in $6$ hours. One day Alex paints alone for $4$ hours, then Blake joins, and together they finish the fence in $3$ more hours. Each always works at the same constant rate. How many hours would it take Blake to paint the fence alone?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I found Alex's rate 1/8 and subtracted it from 1/6 by subtracting the denominators, getting 1/2 of a fence per hour, so 2 hours."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I found how long Alex takes alone, 8 hours, and reported that instead of Blake's time."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I assumed Alex and Blake work equally fast, so each alone takes twice as long as the pair, 12 hours."
+    },
+    {
+      "key": "D",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I found that Alex takes 8 hours alone and added the 6 hours they take together to get 14."
+    },
+    {
+      "key": "E",
+      "text": "$24$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Think in fractions of the fence per hour.",
+    "Together they paint $\\frac{1}{6}$ of the fence per hour. Figure out how much the 3 shared hours finished, and what is left for Alex's solo 4 hours.",
+    "The 3 shared hours paint $\\frac{3}{6} = \\frac{1}{2}$ the fence, so Alex alone painted $\\frac{1}{2}$ in 4 hours: Alex's rate is $\\frac{1}{8}$ per hour."
+  ],
+  "solutions": {
+    "reliable": "Together they paint $\\frac{1}{6}$ of the fence per hour, so the last $3$ hours paint $\\frac{1}{2}$ of it. Alex's $4$ solo hours painted the other $\\frac{1}{2}$, so Alex's rate is $\\frac{1}{8}$ per hour. Blake's rate is $\\frac{1}{6} - \\frac{1}{8} = \\frac{4 - 3}{24} = \\frac{1}{24}$ per hour, so Blake alone takes $24$ hours. Check: $4 \\cdot \\frac{1}{8} + 3\\left(\\frac{1}{8} + \\frac{1}{24}\\right) = \\frac{1}{2} + \\frac{1}{2} = 1$. The transferable idea: rates add; times do not.",
+    "elegant": "Alex worked $7$ hours in total and Blake worked $3$. Compare with the pair working $6$ hours each: Alex's extra hour did the same work as Blake's $3$ missing hours. So Blake is $3$ times slower than Alex, and the pair's speed is $1 + \\frac{1}{3} = \\frac{4}{3}$ of Alex's. Alex alone takes $6 \\cdot \\frac{4}{3} = 8$ hours, so Blake takes $3 \\cdot 8 = 24$."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

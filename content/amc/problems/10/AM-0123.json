@@ -1,0 +1,69 @@
+{
+  "id": "AM-0123",
+  "contest": "BOTH",
+  "slot": 6,
+  "area": "CP",
+  "topic": "CP-02",
+  "types": [
+    "T-COMPLEMENT"
+  ],
+  "statement": "Five different books, two of which are dictionaries, are placed in a row on a shelf. In how many of the arrangements are the two dictionaries not next to each other?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I glued the two dictionaries into one block, counted 4! = 24 arrangements and reported that number."
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I treated the two dictionaries as identical books, which halves the correct count of 72."
+    },
+    {
+      "key": "C",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I counted the arrangements where the dictionaries are next to each other, 4! x 2 = 48, instead of the ones where they are apart."
+    },
+    {
+      "key": "D",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I assumed by symmetry that the dictionaries are apart in exactly half of the 120 arrangements."
+    },
+    {
+      "key": "E",
+      "text": "$72$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Counting arrangements where the dictionaries touch is easier.",
+    "Count all arrangements, then subtract the bad ones. For the bad ones, glue the dictionaries together into one block, and remember the block has two internal orders.",
+    "All: $5! = 120$. Together: $4! \\cdot 2 = 48$. Apart: $120 - 48$."
+  ],
+  "solutions": {
+    "reliable": "There are $5! = 120$ arrangements in all. For the arrangements with the dictionaries side by side, treat the pair as one block: the block and the other $3$ books can be ordered in $4! = 24$ ways, and the two dictionaries can be in either order inside the block, giving $48$. So $120 - 48 = 72$ arrangements keep them apart. Transferable idea: to keep two items apart, subtract the arrangements where they are glued together as one block.",
+    "elegant": "Place the $3$ other books first in $3! = 6$ ways. They create $4$ gaps (both ends and the two middles). Put the dictionaries into two different gaps, in order: $4 \\cdot 3 = 12$ ways. Total $6 \\cdot 12 = 72$."
+  },
+  "formulas": [
+    "F-CP-02",
+    "F-CP-06"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

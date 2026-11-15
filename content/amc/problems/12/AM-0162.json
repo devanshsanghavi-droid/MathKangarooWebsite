@@ -1,0 +1,70 @@
+{
+  "id": "AM-0162",
+  "contest": "AMC12",
+  "slot": 6,
+  "area": "ALG",
+  "topic": "ALG-04",
+  "types": [
+    "T-VIETA",
+    "T-SYMMETRY"
+  ],
+  "statement": "The three roots of $x^3 - 6x^2 + kx + 10 = 0$ are real and form an arithmetic progression. What is $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-11$",
+      "correct": false,
+      "misconception": "I took the middle root to be $\\frac{-6}{3} = -2$, forgetting that the sum of the roots is the negative of the $x^2$ coefficient, and solved $P(-2) = 0$."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I assumed the roots were the consecutive integers $1, 2, 3$ and added their pairwise products, never checking the constant term."
+    },
+    {
+      "key": "D",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I found the middle root $2$ but substituted into the polynomial with $-10$ instead of $+10$, getting $8 - 24 + 2k - 10 = 0$."
+    },
+    {
+      "key": "E",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I found the roots $-1, 2, 5$ but added the pairwise products without their signs, $2 + 5 + 10 = 17$."
+    }
+  ],
+  "hints": [
+    "Name the roots symmetrically around the middle one.",
+    "Write the roots as $m - d$, $m$, $m + d$. Their sum depends only on $m$, and Vieta's formulas give that sum. Then $m$ itself is a root.",
+    "The sum is $3m = 6$, so $m = 2$ is a root. Substitute $x = 2$ into the polynomial and solve for $k$."
+  ],
+  "solutions": {
+    "reliable": "Let the roots be $m - d$, $m$, $m + d$. By Vieta their sum is $3m = 6$, so $m = 2$, and $2$ is a root: $8 - 24 + 2k + 10 = 0$, so $k = 3$. Check: $x^3 - 6x^2 + 3x + 10 = (x + 1)(x - 2)(x - 5)$, and $-1, 2, 5$ is an arithmetic progression with difference $3$. Transferable idea: center symmetric unknowns, here $m - d, m, m + d$, so the sum condition isolates one of them.",
+    "elegant": "With the roots $2 - d$, $2$, $2 + d$, the product is $2(4 - d^2) = -10$, so $d^2 = 9$. Then $k$ is the sum of pairwise products: $k = 2(2 - d) + 2(2 + d) + (4 - d^2) = 8 + 4 - 9 = 3$."
+  },
+  "formulas": [
+    "F-ALG-01",
+    "F-ALG-19"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

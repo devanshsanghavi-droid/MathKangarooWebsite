@@ -1,0 +1,69 @@
+{
+  "id": "AM-0056",
+  "contest": "BOTH",
+  "slot": 11,
+  "area": "GEO",
+  "topic": "GEO-08",
+  "types": [
+    "T-COORD",
+    "T-AUXILIARY"
+  ],
+  "statement": "Triangle $ABC$ has $AB = 13$, $AC = 20$ and $BC = 21$. Let $H$ be the orthocenter of the triangle, the point where its three altitudes meet. What is $AH$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{16}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{20}{3}$",
+      "correct": false,
+      "misconception": "I located H = (5, 20/3) correctly but gave its distance to side BC instead of its distance to A."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{33}{4}$",
+      "correct": false,
+      "misconception": "I negated the slope -3/4 of AC for the altitude from B instead of taking its negative reciprocal, so I used y = (3/4)x, got H = (5, 15/4) and AH = 12 - 15/4."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{65}{6}$",
+      "correct": false,
+      "misconception": "I mixed up the orthocenter with the circumcenter and gave the circumradius R = abc / (4K) = 5460 / 504."
+    },
+    {
+      "key": "E",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I assumed the orthocenter is the foot of the altitude from A, so I gave the whole altitude, but that happens only when the triangle has a right angle at B or C."
+    }
+  ],
+  "hints": [
+    "Put side $BC$ on the $x$-axis and find the coordinates of $A$.",
+    "With $B = (0,0)$ and $C = (21, 0)$, the conditions $AB = 13$ and $AC = 20$ fix $A$. The altitude from $A$ is then a vertical line, so you only need one more altitude to find $H$.",
+    "$A = (5, 12)$, so the altitude from $A$ is $x = 5$. The altitude from $B$ is perpendicular to $AC$, whose slope is $-\\frac{3}{4}$, so it is $y = \\frac{4}{3}x$."
+  ],
+  "solutions": {
+    "reliable": "Place $B = (0,0)$ and $C = (21,0)$, and let $A = (x, y)$ with $y > 0$. Then $x^2 + y^2 = 169$ and $(x-21)^2 + y^2 = 400$. Subtracting gives $-42x + 441 = 231$, so $x = 5$ and $y = 12$. The altitude from $A$ is the line $x = 5$. Side $AC$ runs from $(5,12)$ to $(21,0)$ with slope $-\\frac{12}{16} = -\\frac{3}{4}$, so the altitude from $B$ has slope $\\frac{4}{3}$ and equation $y = \\frac{4}{3}x$. At $x = 5$ this gives $H = \\left(5, \\frac{20}{3}\\right)$, and $AH = 12 - \\frac{20}{3} = \\frac{16}{3}$. Check with the third altitude: $AB$ has slope $\\frac{12}{5}$, so the altitude from $C$ is $y = -\\frac{5}{12}(x - 21)$, which at $x = 5$ gives $\\frac{80}{12} = \\frac{20}{3}$. The transferable idea: put one side on an axis so that one altitude is vertical, and then a single slope calculation locates the orthocenter.",
+    "elegant": "Let $D = (5, 0)$ be the foot of the altitude from $A$. Triangles $BDH$ and $ADC$ are similar, since $\\angle DBH$ and $\\angle DAC$ are both $90^\\circ - \\angle C$. So $\\frac{HD}{BD} = \\frac{DC}{AD}$, giving $HD = \\frac{5 \\cdot 16}{12} = \\frac{20}{3}$ and $AH = 12 - \\frac{20}{3} = \\frac{16}{3}$."
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

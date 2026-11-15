@@ -1,0 +1,12 @@
+{
+  "id": "F-CP-01",
+  "area": "CP",
+  "name": "Inclusion-exclusion for two and three sets",
+  "formula": "|A \\cup B| = |A| + |B| - |A \\cap B| \\qquad |A \\cup B \\cup C| = \\textstyle\\sum |A| - \\sum |A \\cap B| + |A \\cap B \\cap C|",
+  "whenToUse": "Counting objects that satisfy at least one of several overlapping conditions, such as being divisible by $3$ or $5$.",
+  "example": "Among $1$ to $100$ there are $33$ multiples of $3$, $20$ of $5$ and $6$ of $15$, so $33 + 20 - 6 = 47$ are multiples of $3$ or $5$.",
+  "pitfall": "For divisibility, the overlap of multiples of $a$ and of $b$ is the multiples of $\\operatorname{lcm}(a,b)$, which is not $ab$ unless $a$ and $b$ share no factor.",
+  "priority": "must-know",
+  "contests": ["AMC10", "AMC12"],
+  "types": ["T-PIE", "T-COMPLEMENT"]
+}

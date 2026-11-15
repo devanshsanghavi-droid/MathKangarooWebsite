@@ -1,0 +1,70 @@
+{
+  "id": "AM-0091",
+  "contest": "BOTH",
+  "slot": 11,
+  "area": "NT",
+  "topic": "NT-07",
+  "types": [
+    "T-SFFT",
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "How many ordered pairs of positive integers $(x, y)$ satisfy $2xy - x - y = 157$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I counted unordered pairs of divisors of 315, but (x, y) is ordered, so a pair such as (2, 53) and (53, 2) counts twice."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I treated 315 as a product of three different primes to the first power and got 2 x 2 x 2 = 8 divisors, but 315 = 3^2 x 5 x 7 has 3 x 2 x 2 = 12."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I thought a factor of 1 was not allowed, so I threw out 1 x 315 and 315 x 1, but they give the valid pairs (1, 158) and (158, 1)."
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I also counted the pairs where 2x - 1 and 2y - 1 are both negative divisors of 315, but those make x or y less than 1."
+    }
+  ],
+  "hints": [
+    "The left side almost factors, but the $xy$ term has a coefficient of $2$. Try multiplying the whole equation by $2$ first.",
+    "$4xy - 2x - 2y = 314$, and adding $1$ gives $(2x - 1)(2y - 1) = 315$.",
+    "Since $x, y \\ge 1$, both factors are positive. Each positive divisor $d$ of $315 = 3^2 \\cdot 5 \\cdot 7$ gives exactly one pair, with $2x - 1 = d$."
+  ],
+  "solutions": {
+    "reliable": "Multiply by $2$: $4xy - 2x - 2y = 314$. Adding $1$ to both sides gives $4xy - 2x - 2y + 1 = 315$, that is, $(2x - 1)(2y - 1) = 315$. For positive integers $x$ and $y$ both factors are positive odd integers. Since $315$ is odd, every divisor $d$ of $315$ is odd, so $2x - 1 = d$ and $2y - 1 = 315/d$ always give positive integers $x = \\frac{d + 1}{2}$ and $y = \\frac{315/d + 1}{2}$. So the ordered pairs match the positive divisors of $315 = 3^2 \\cdot 5 \\cdot 7$, and there are $(2 + 1)(1 + 1)(1 + 1) = 12$ of them. For example, $d = 3$ gives $(2, 53)$, and $2 \\cdot 2 \\cdot 53 - 2 - 53 = 157$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-07",
+    "F-NT-01"
+  ],
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

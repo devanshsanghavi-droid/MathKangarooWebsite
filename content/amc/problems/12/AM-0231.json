@@ -1,0 +1,69 @@
+{
+  "id": "AM-0231",
+  "contest": "AMC12",
+  "slot": 3,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-CYCLE",
+    "T-MODULAR"
+  ],
+  "statement": "What is the units digit of $2^{2026} \\cdot 3^{2027}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I found the units digits 4 and 7 correctly but added them instead of multiplying, and 4 + 7 = 11 ends in 1."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I swapped the exponents, using 2^2027 (ending in 8) and 3^2026 (ending in 9), and 8 times 9 = 72 ends in 2."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found the units digit of 2^2026 and stopped, forgetting to multiply by the units digit of 3^2027."
+    },
+    {
+      "key": "D",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I used the remainder 2026 mod 4 = 2 for both powers, so I got 4 times 9 = 36, but the exponent 2027 leaves remainder 3."
+    },
+    {
+      "key": "E",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Units digits of powers repeat in a short cycle.",
+    "The units digits of powers of $2$ cycle $2, 4, 8, 6$ and those of $3$ cycle $3, 9, 7, 1$. Reduce each exponent modulo $4$.",
+    "$2026 \\equiv 2$ and $2027 \\equiv 3 \\pmod 4$, so the units digits are $4$ and $7$."
+  ],
+  "solutions": {
+    "reliable": "Powers of $2$ end in $2, 4, 8, 6$ with period $4$; since $2026 = 4 \\cdot 506 + 2$, $2^{2026}$ ends in $4$. Powers of $3$ end in $3, 9, 7, 1$; since $2027 = 4 \\cdot 506 + 3$, $3^{2027}$ ends in $7$. The product ends in the units digit of $4 \\cdot 7 = 28$, which is $8$.",
+    "elegant": "Pair the factors: $2^{2026} \\cdot 3^{2027} = 6^{2026} \\cdot 3$. Every power of $6$ ends in $6$, and $6 \\cdot 3 = 18$ ends in $8$."
+  },
+  "formulas": [
+    "F-NT-10"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "AM-0141",
+  "contest": "AMC10",
+  "slot": 16,
+  "area": "CP",
+  "topic": "CP-08",
+  "types": [
+    "T-LINEARITY",
+    "T-SYMMETRY"
+  ],
+  "statement": "A fair coin is flipped $10$ times and the results are written in a row. A block is a run of consecutive heads that cannot be extended in either direction. For example, HHTHTTHHHT has three blocks. What is the expected number of blocks?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{9}{4}$",
+      "correct": false,
+      "misconception": "I said a block starts wherever a tail is followed by a head, 9 places each with probability 1/4, and forgot that a block can also start at the very first flip."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{5}{2}$",
+      "correct": false,
+      "misconception": "I gave all 10 positions the same chance 1/4 of starting a block, but the first flip only needs to be heads, which has probability 1/2."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{11}{4}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I counted every head as its own block, so I really found the expected number of heads, 10 x 1/2 = 5."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{11}{2}$",
+      "correct": false,
+      "misconception": "I counted the runs of both heads and tails, 1 + 9/2, instead of only the runs of heads."
+    }
+  ],
+  "hints": [
+    "Every block has exactly one first flip.",
+    "Count blocks by counting where blocks start. Each position either starts a block or does not, so the expected count is a sum of probabilities by linearity of expectation, even though the events are not independent.",
+    "Flip $1$ starts a block when it is heads: probability $\\frac12$. Flip $k$ for $k \\ge 2$ starts a block when flip $k-1$ is tails and flip $k$ is heads: probability $\\frac14$."
+  ],
+  "solutions": {
+    "reliable": "Let $X_k = 1$ if a block starts at flip $k$, and $0$ otherwise. The number of blocks is $X_1 + X_2 + \\cdots + X_{10}$. A block starts at flip $1$ exactly when it is heads, so $E[X_1] = \\frac12$. For $k \\ge 2$ a block starts at flip $k$ exactly when flip $k-1$ is tails and flip $k$ is heads, so $E[X_k] = \\frac14$. By linearity, the expected number of blocks is $\\frac12 + 9 \\cdot \\frac14 = \\frac{11}{4}$. The transferable idea: to find the expected number of objects, count a unique marker of each object (here its first flip) and add the probabilities.",
+    "elegant": "The number of runs of either face is $1$ plus the number of places where neighbouring flips differ, which has expected value $1 + 9 \\cdot \\frac12 = \\frac{11}{2}$. Swapping heads and tails is a symmetry of the fair coin, so runs of heads and runs of tails have the same expected count, and each is half of $\\frac{11}{2}$, namely $\\frac{11}{4}$."
+  },
+  "formulas": [
+    "F-CP-09"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

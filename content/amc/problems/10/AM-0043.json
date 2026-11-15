@@ -1,0 +1,67 @@
+{
+  "id": "AM-0043",
+  "contest": "AMC10",
+  "slot": 5,
+  "area": "GEO",
+  "topic": "GEO-06",
+  "types": [
+    "T-COORD",
+    "T-SYMMETRY"
+  ],
+  "statement": "Let $A = (2, 1)$ and $B = (6, 9)$. Point $C$ lies on the $x$-axis and is the same distance from $A$ as from $B$. What is the $x$-coordinate of $C$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-6$",
+      "correct": false,
+      "misconception": "I used the reciprocal slope 1/2 for the perpendicular bisector without changing the sign, so 0 - 5 = (1/2)(x - 4) gave x = -6."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{3}{2}$",
+      "correct": false,
+      "misconception": "I used the slope of AB itself, 2, for the bisector instead of a perpendicular slope, so 0 - 5 = 2(x - 4) gave x = 3/2."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I took the x-coordinate of the midpoint of AB, as if the point equidistant from A and B had to sit directly below the midpoint."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{13}{2}$",
+      "correct": false,
+      "misconception": "I negated the slope of AB to get -2 but did not take the reciprocal, so 0 - 5 = -2(x - 4) gave x = 13/2."
+    },
+    {
+      "key": "E",
+      "text": "$14$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Write $C = (x, 0)$ and translate the condition into distances.",
+    "Points equidistant from $A$ and $B$ form the perpendicular bisector of $AB$. Either set the two squared distances equal, or find that line and see where it meets the $x$-axis.",
+    "Set $(x-2)^2 + 1^2 = (x-6)^2 + 9^2$. The $x^2$ terms cancel, leaving a linear equation in $x$."
+  ],
+  "solutions": {
+    "reliable": "Let $C = (x, 0)$. Then $CA^2 = (x-2)^2 + 1$ and $CB^2 = (x-6)^2 + 81$. Setting them equal: $x^2 - 4x + 5 = x^2 - 12x + 117$, so $8x = 112$ and $x = 14$. Check: $CA^2 = 144 + 1 = 145$ and $CB^2 = 64 + 81 = 145$. The transferable idea: equal distances become a linear equation once you square them, because the squared terms cancel.",
+    "elegant": "The perpendicular bisector of $AB$ passes through the midpoint $(4, 5)$ with slope $-\\frac{1}{2}$, the negative reciprocal of $\\frac{8}{4} = 2$. Dropping $5$ units to the $x$-axis moves $2 \\cdot 5 = 10$ units right, to $x = 14$."
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

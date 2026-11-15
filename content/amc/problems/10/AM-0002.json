@@ -1,0 +1,68 @@
+{
+  "id": "AM-0002",
+  "contest": "AMC10",
+  "slot": 2,
+  "area": "ALG",
+  "topic": "ALG-01",
+  "types": [
+    "T-CHOICES"
+  ],
+  "statement": "Rosa walks from her home to the library at $4$ kilometers per hour. She bikes home along the same route at $12$ kilometers per hour. The whole round trip takes $2$ hours of travel. How many kilometers is it from her home to the library?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I assumed each leg took 1 hour and used the walking speed, so I said 4 kilometers."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I averaged the speeds to get 8 km per hour, so the round trip was 16 km and I halved it to 8."
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found the distance of the whole round trip, 12 km, and reported that instead of one way."
+    },
+    {
+      "key": "E",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I averaged the speeds to get 8 km per hour and multiplied by 2 hours, then gave 16 as the one-way distance."
+    }
+  ],
+  "hints": [
+    "The two legs have the same distance but take different amounts of time.",
+    "Let the one-way distance be $d$. Time is distance divided by speed, so write the time for each leg and add them.",
+    "Walking takes $d/4$ hours and biking takes $d/12$ hours, so $\\frac{d}{4} + \\frac{d}{12} = 2$."
+  ],
+  "solutions": {
+    "reliable": "Let $d$ be the one-way distance in kilometers. Walking takes $\\frac{d}{4}$ hours and biking takes $\\frac{d}{12}$ hours. So $\\frac{d}{4} + \\frac{d}{12} = 2$, that is $\\frac{3d + d}{12} = 2$, so $\\frac{d}{3} = 2$ and $d = 6$. Check: $6/4 = 1.5$ hours walking and $6/12 = 0.5$ hours biking, total $2$. The transferable idea: when distances are equal, add the times, not the speeds.",
+    "elegant": "Test the choices. With $d = 6$: $1.5 + 0.5 = 2$ hours, which works. Notice the average speed for the trip is $12 / 2 = 6$ km per hour, not the average of $4$ and $12$: Rosa spends three times as long at the slow speed."
+  },
+  "formulas": [
+    "F-ALG-20"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

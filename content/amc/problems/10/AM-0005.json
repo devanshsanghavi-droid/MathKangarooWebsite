@@ -1,0 +1,66 @@
+{
+  "id": "AM-0005",
+  "contest": "AMC10",
+  "slot": 4,
+  "area": "ALG",
+  "topic": "ALG-11",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "How many integers $x$ satisfy $|x - 3| + |x + 5| \\le 10$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I replaced the inequality with an equation and found only the two endpoints, x = -6 and x = 4."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I counted only the integers from -5 to 3, where the sum equals 8, and missed the integers just outside that stretch."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I found the interval from -6 to 4 and took its length, 10, instead of counting the integers in it."
+    },
+    {
+      "key": "D",
+      "text": "$11$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I required |x - 3| <= 10 and |x + 5| <= 10 separately, which allows x from -7 to 5, and counted those 13 integers."
+    }
+  ],
+  "hints": [
+    "$|x - a|$ is the distance from $x$ to $a$ on the number line.",
+    "The expression is the sum of the distances from $x$ to $3$ and to $-5$. Split into cases by where $x$ sits relative to $-5$ and $3$.",
+    "Between $-5$ and $3$ the sum is always $8$. To the right of $3$ it is $2x + 2$, and to the left of $-5$ it is $-2x - 2$. Solve each piece against $10$."
+  ],
+  "solutions": {
+    "reliable": "Split at $x = -5$ and $x = 3$. For $-5 \\le x \\le 3$: $(3 - x) + (x + 5) = 8 \\le 10$, always true. For $x > 3$: $(x - 3) + (x + 5) = 2x + 2 \\le 10$ gives $x \\le 4$. For $x < -5$: $(3 - x) - (x + 5) = -2x - 2 \\le 10$ gives $x \\ge -6$. So the solution set is $-6 \\le x \\le 4$, which contains $4 - (-6) + 1 = 11$ integers. The transferable idea: split absolute values at the points where their insides change sign, and count integers in $[a, b]$ as $b - a + 1$.",
+    "elegant": "The sum of distances from $x$ to $-5$ and $3$ is $8$ anywhere between them and grows by $2$ for every unit you step outside. So you may step at most $1$ unit beyond each end: $-6 \\le x \\le 4$, giving $11$ integers."
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

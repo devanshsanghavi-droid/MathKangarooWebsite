@@ -1,0 +1,70 @@
+{
+  "id": "AM-0216",
+  "contest": "AMC12",
+  "slot": 18,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-SIMILAR",
+    "T-AUXILIARY"
+  ],
+  "statement": "A right circular cone has base radius $4$ and height $12$. A cube sits inside the cone with its bottom face on the base of the cone, and the four top vertices of the cube lie on the lateral surface of the cone. What is the edge length of the cube?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{12(3\\sqrt{2}-1)}{17}$",
+      "correct": false,
+      "misconception": "I set the full diagonal of the top face, s sqrt(2), equal to the radius of the cone at height s, instead of half the diagonal."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I set the edge s itself equal to the radius of the cone at height s, (12 - s)/3, as if a top vertex sat at distance s from the axis."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{24\\sqrt{2}-12}{7}$",
+      "correct": false,
+      "misconception": "I wrote the radius at height s as (12 - s)/4, dividing the remaining height by the base radius 4 instead of scaling by 4/12."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{36\\sqrt{2}-24}{7}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{24}{5}$",
+      "correct": false,
+      "misconception": "I used the cross-section through the middle of two opposite faces, setting half the edge s/2 equal to the radius, but that section shows edge midpoints, not the vertices that touch the cone."
+    }
+  ],
+  "hints": [
+    "Slice the solid with a plane that contains the cone's axis and a top vertex.",
+    "That plane passes through a diagonal of the cube's top face, so the touching vertex is half a face diagonal from the axis. The cone's radius shrinks linearly with height.",
+    "At height $s$ the cone's radius is $\\tfrac{4}{12}(12 - s) = \\tfrac{12 - s}{3}$. Set this equal to $\\tfrac{s}{\\sqrt2}$."
+  ],
+  "solutions": {
+    "reliable": "Let the edge be $s$. The top face is a square at height $s$ centred on the axis, so each top vertex is at distance $\\tfrac{s\\sqrt2}{2} = \\tfrac{s}{\\sqrt2}$ from the axis. By similar triangles in the axial cross-section, the cone's radius at height $h$ is $\\tfrac{4}{12}(12 - h)$, which at $h = s$ is $\\tfrac{12 - s}{3}$. Setting $\\tfrac{s}{\\sqrt2} = \\tfrac{12 - s}{3}$ gives $3s = \\sqrt2(12 - s)$, so $s(3 + \\sqrt2) = 12\\sqrt2$ and $s = \\dfrac{12\\sqrt2}{3 + \\sqrt2} = \\dfrac{12\\sqrt2(3 - \\sqrt2)}{7} = \\dfrac{36\\sqrt2 - 24}{7} \\approx 3.84$. Check: half the diagonal is about $2.718$ and $(12 - 3.845)/3 \\approx 2.718$. The idea: choose the cross-section that actually contains the points of contact.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-11",
+    "F-GEO-16"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

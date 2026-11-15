@@ -1,0 +1,69 @@
+{
+  "id": "AM-0258",
+  "contest": "AMC12",
+  "slot": 20,
+  "area": "NT",
+  "topic": "NT-01",
+  "types": [
+    "T-MODULAR",
+    "T-CASEWORK"
+  ],
+  "statement": "A polynomial $P(x)$ with integer coefficients satisfies $P(3) = 7$ and $P(11) = 31$. Let $S$ be the set of all integers $k$ for which it is possible that $P(k) = 2026$. What is the sum of the elements of $S$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I only used P(3) = 7, so I allowed every k with k - 3 dividing 2019; those 8 values pair off and add to 8 x 3."
+    },
+    {
+      "key": "B",
+      "text": "$352$",
+      "correct": false,
+      "misconception": "I only used P(11) = 31, so I allowed every k with k - 11 dividing 1995; those 32 values pair off and add to 32 x 11."
+    },
+    {
+      "key": "C",
+      "text": "$686$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$2708$",
+      "correct": false,
+      "misconception": "I only used P(3) = 7 and only the positive divisors of 2019, which gives k = 4, 6, 676 and 2022."
+    },
+    {
+      "key": "E",
+      "text": "$4016$",
+      "correct": false,
+      "misconception": "I only used P(11) = 31 and only the positive divisors of 1995, adding 11 to each of its 16 divisors."
+    }
+  ],
+  "hints": [
+    "For a polynomial with integer coefficients, $a - b$ always divides $P(a) - P(b)$.",
+    "Both $k - 3 \\mid 2019$ and $k - 11 \\mid 1995$ must hold. List the $8$ candidates from the first condition and test the second. Then check each survivor really occurs.",
+    "Every such $P$ has the form $3x - 2 + (x-3)(x-11)Q(x)$ with $Q$ having integer coefficients. The candidates $k - 3 = 1, 3, 673$ pass the divisibility test; build a $Q$ for each."
+  ],
+  "solutions": {
+    "reliable": "Since $a - b \\mid P(a) - P(b)$, we need $k - 3 \\mid 2026 - 7 = 2019 = 3 \\cdot 673$ and $k - 11 \\mid 2026 - 31 = 1995 = 3 \\cdot 5 \\cdot 7 \\cdot 19$. Put $d = k - 3 \\in \\{\\pm 1, \\pm 3, \\pm 673, \\pm 2019\\}$; then $k - 11 = d - 8$ takes the values $-7, -5, 665, 2011, -9, -11, -681, -2027$. Only $-7$, $-5$ and $665 = 5 \\cdot 7 \\cdot 19$ divide $1995$ ($2011$ and $2027$ are prime and $681 = 3 \\cdot 227$). So $k \\in \\{4, 6, 676\\}$. Each occurs: write $P(x) = 3x - 2 + (x-3)(x-11)Q(x)$, which matches both given values. For $k = 676$ take $Q = 0$; for $k = 4$ take $Q = -288$, since $(1)(-7)(-288) = 2016 = 2026 - 10$; for $k = 6$ take $Q = -134$, since $(3)(-5)(-134) = 2010 = 2026 - 16$. The sum is $4 + 6 + 676 = 686$. The transferable idea: integer polynomials respect divisibility of differences, and each necessary condition must be checked for sufficiency.",
+    "elegant": "Every valid $P$ is $3x - 2 + (x-3)(x-11)Q(x)$ with integer $Q$, so $P(k) = 2026$ means $(k-3)(k-11)\\,Q(k) = 2028 - 3k = -3(k - 676)$. Either $k = 676$, or the nonzero number $3(k - 676)$ is a multiple of $(k-3)(k-11)$, so $|(k-3)(k-11)| \\le 3|k - 676|$. That confines $k$ to a short range, and checking the divisors there leaves $k = 4$ and $k = 6$. Sum: $686$."
+  },
+  "formulas": [
+    "F-ALG-19"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

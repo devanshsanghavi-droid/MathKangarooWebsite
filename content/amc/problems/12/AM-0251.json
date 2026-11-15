@@ -1,0 +1,69 @@
+{
+  "id": "AM-0251",
+  "contest": "AMC12",
+  "slot": 15,
+  "area": "NT",
+  "topic": "NT-06",
+  "types": [
+    "T-BOUNDING",
+    "T-CASEWORK"
+  ],
+  "statement": "How many positive integers have the same number of digits when written in base $3$ as when written in base $4$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I stopped after the three-digit case and never checked that 64 through 80 have four digits in both bases."
+    },
+    {
+      "key": "B",
+      "text": "$31$",
+      "correct": false,
+      "misconception": "I took 3^k - 4^(k-1) for each length k and then subtracted 1 more, thinking that removed an endpoint, so I got 1 + 4 + 10 + 16."
+    },
+    {
+      "key": "C",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I started with the two-digit numbers and forgot that 1 and 2 have one digit in both bases."
+    },
+    {
+      "key": "D",
+      "text": "$35$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$39$",
+      "correct": false,
+      "misconception": "I counted the integers from 4^(k-1) to 3^k inclusive, but 3^k itself already needs k + 1 digits in base 3."
+    }
+  ],
+  "hints": [
+    "A positive integer $n$ has exactly $k$ digits in base $b$ when $b^{k-1} \\le n < b^k$.",
+    "Having $k$ digits in both bases means $n$ lies in both ranges. Since $3^{k-1} < 4^{k-1}$ and $3^k < 4^k$, the overlap is $4^{k-1} \\le n < 3^k$. When is it nonempty?",
+    "The overlap holds $3^k - 4^{k-1}$ integers when that is positive. Compute it for $k = 1, 2, 3, 4$ and check that it is negative from $k = 5$ on."
+  ],
+  "solutions": {
+    "reliable": "In base $b$, $n$ has $k$ digits exactly when $b^{k-1} \\le n < b^k$. For both bases to give $k$ digits we need $4^{k-1} \\le n < 3^k$, an interval holding $3^k - 4^{k-1}$ integers when this is positive. For $k = 1, 2, 3, 4$ the counts are $3 - 1 = 2$, $9 - 4 = 5$, $27 - 16 = 11$ and $81 - 64 = 17$. For $k = 5$, $243 < 256$, and since $4^{k-1}/3^k = \\tfrac14 (4/3)^k$ increases with $k$, the interval stays empty for every $k \\ge 5$. The total is $2 + 5 + 11 + 17 = 35$. The transferable idea: digit counts in base $b$ are statements about powers of $b$, and the faster-growing power eventually wins.",
+    "elegant": "The number of base-$b$ digits of $n$ is $\\lfloor \\log_b n \\rfloor + 1$. Since $\\log_4 n < \\log_3 n$ and the gap $\\log_3 n - \\log_4 n$ grows like $0.2\\log_3 n$, the two floors can agree only while $\\log_3 n < 5$, that is $n < 243$. Checking the four ranges below that gives $2 + 5 + 11 + 17 = 35$."
+  },
+  "formulas": [
+    "F-NT-11"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

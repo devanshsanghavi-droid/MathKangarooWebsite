@@ -1,0 +1,68 @@
+{
+  "id": "AM-0103",
+  "contest": "AMC10",
+  "slot": 16,
+  "area": "NT",
+  "topic": "NT-08",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "What is the largest integer $k$ for which $2^k$ divides the product $33 \\cdot 34 \\cdot 35 \\cdots 64$ of all the integers from $33$ to $64$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I counted the 16 even numbers from 33 to 64 and gave each of them just one factor of 2."
+    },
+    {
+      "key": "B",
+      "text": "$31$",
+      "correct": false,
+      "misconception": "I added the multiples of 2, 4, 8, 16 and 32 in the range, $16 + 8 + 4 + 2 + 1 = 31$, and missed that 64 is also a multiple of 64."
+    },
+    {
+      "key": "C",
+      "text": "$32$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$63$",
+      "correct": false,
+      "misconception": "I found the exponent of 2 in $64!$, which is 63, and forgot that the product leaves out the numbers 1 to 32."
+    },
+    {
+      "key": "E",
+      "text": "$94$",
+      "correct": false,
+      "misconception": "I computed the exponents of 2 in $64!$ and in $32!$ and added them, $63 + 31$, instead of subtracting."
+    }
+  ],
+  "hints": [
+    "The product equals $\\dfrac{64!}{32!}$.",
+    "Find the exponent of 2 in $64!$ and in $32!$ with Legendre's formula, then subtract.",
+    "$64!$ has $32 + 16 + 8 + 4 + 2 + 1 = 63$ factors of 2, and $32!$ has $16 + 8 + 4 + 2 + 1 = 31$."
+  ],
+  "solutions": {
+    "reliable": "The product is $\\dfrac{64!}{32!}$. By Legendre's formula, the exponent of 2 in $64!$ is $32 + 16 + 8 + 4 + 2 + 1 = 63$, and in $32!$ it is $16 + 8 + 4 + 2 + 1 = 31$. So the exponent of 2 in the product is $63 - 31 = 32$. As a check, count directly in the range: there are 16 multiples of 2, 8 of 4, 4 of 8, 2 of 16, 1 of 32 and 1 of 64 (the number 64 itself), and $16 + 8 + 4 + 2 + 1 + 1 = 32$. Transferable idea: a product of consecutive integers is a quotient of factorials, so prime exponents subtract.",
+    "elegant": "Since $(2n)! = (2 \\cdot 4 \\cdots 2n)(1 \\cdot 3 \\cdots (2n-1)) = 2^n \\, n! \\, (1 \\cdot 3 \\cdots (2n - 1))$, we get $\\dfrac{64!}{32!} = 2^{32} \\cdot (1 \\cdot 3 \\cdot 5 \\cdots 63)$. The odd product has no factor of 2, so $k = 32$. In general $\\dfrac{(2n)!}{n!}$ is divisible by exactly $2^n$."
+  },
+  "formulas": [
+    "F-NT-08"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

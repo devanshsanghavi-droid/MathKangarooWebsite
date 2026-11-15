@@ -1,0 +1,68 @@
+{
+  "id": "AM-0273",
+  "contest": "AMC12",
+  "slot": 5,
+  "area": "CP",
+  "topic": "CP-10",
+  "types": [
+    "T-BIJECTION"
+  ],
+  "statement": "A $2 \\times 3 \\times 4$ rectangular block is built from $24$ unit cubes. How many rectangular boxes, each made of one or more whole unit cubes and with faces parallel to the faces of the block, are contained in the block?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I added the number of choices in each direction, 3 + 6 + 10, instead of multiplying them."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I counted only the single unit cubes and forgot the larger boxes made of several cubes."
+    },
+    {
+      "key": "C",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I counted only the boxes that are cubes: 24 unit cubes and 6 cubes of edge 2."
+    },
+    {
+      "key": "D",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I chose one grid plane in each direction, 3 times 4 times 5, but a box needs two planes in each direction to bound it."
+    },
+    {
+      "key": "E",
+      "text": "$180$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "A box is fixed once you know where it starts and stops in each direction.",
+    "In each direction, a box is bounded by two of the grid planes that cut the block. Count the planes in each direction, choose two of them, and multiply.",
+    "The block has $3$, $4$ and $5$ grid planes in its three directions, so the count is $\\binom{3}{2}\\binom{4}{2}\\binom{5}{2}$."
+  ],
+  "solutions": {
+    "reliable": "Slice the block along the grid. In the direction of length $2$ there are $3$ parallel grid planes (at $0$, $1$ and $2$), in the direction of length $3$ there are $4$, and in the direction of length $4$ there are $5$. A box is determined by choosing its two bounding planes in each direction, and every such choice gives a box. So the count is $\\binom{3}{2}\\binom{4}{2}\\binom{5}{2} = 3 \\cdot 6 \\cdot 10 = 180$. Check by counting positions: a box of dimensions $a \\times b \\times c$ fits in $(3-a)(4-b)(5-c)$ positions, and summing over $a \\le 2$, $b \\le 3$, $c \\le 4$ gives $(2+1)(3+2+1)(4+3+2+1) = 3 \\cdot 6 \\cdot 10 = 180$. The idea: match each box to a pair of boundaries in each direction.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-03"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

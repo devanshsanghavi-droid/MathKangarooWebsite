@@ -1,0 +1,66 @@
+{
+  "id": "AM-0115",
+  "contest": "BOTH",
+  "slot": 1,
+  "area": "CP",
+  "topic": "CP-01",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "How many positive integers less than $1000$ have every digit odd?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I added 5 + 5 + 5, one count for each digit place, instead of multiplying the choices for the places."
+    },
+    {
+      "key": "B",
+      "text": "$125$",
+      "correct": false,
+      "misconception": "I counted only the three-digit numbers, 5 x 5 x 5, and forgot the one-digit and two-digit numbers."
+    },
+    {
+      "key": "C",
+      "text": "$150$",
+      "correct": false,
+      "misconception": "I counted the two-digit and three-digit numbers, 25 + 125, but left out the five one-digit numbers."
+    },
+    {
+      "key": "D",
+      "text": "$155$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$216$",
+      "correct": false,
+      "misconception": "I padded every number to three digits with leading zeros and let each place be 0 or odd, 6 x 6 x 6, which also counts numbers like 103 and 000."
+    }
+  ],
+  "hints": [
+    "Split the numbers by how many digits they have.",
+    "Within one length, each digit place is chosen on its own from the odd digits, so multiply. Then add the counts for the different lengths.",
+    "One digit: $5$. Two digits: $5 \\cdot 5 = 25$. Three digits: $5 \\cdot 5 \\cdot 5 = 125$."
+  ],
+  "solutions": {
+    "reliable": "The odd digits are $1, 3, 5, 7, 9$, five of them. Split by length. A one-digit number with an odd digit: $5$ choices. A two-digit number: each of the two places has $5$ choices, so $25$ (there is no leading-zero problem because $0$ is even). A three-digit number: $5^3 = 125$. These cases do not overlap, so the total is $5 + 25 + 125 = 155$. Transferable idea: add across separate cases, multiply within a case.",
+    "elegant": "Write $5 + 25 + 125$ as $5 + 5^2 + 5^3 = 5 \\cdot 31 = 155$, a geometric sum."
+  },
+  "formulas": [],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

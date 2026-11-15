@@ -1,0 +1,67 @@
+{
+  "id": "AM-0207",
+  "contest": "AMC12",
+  "slot": 11,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-SYMMETRY",
+    "T-AUXILIARY"
+  ],
+  "statement": "A pyramid has a square base, and all eight of its edges have length $2$. A sphere passes through all five vertices of the pyramid. What is the radius of the sphere?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{2\\sqrt{3}}{3}$",
+      "correct": false,
+      "misconception": "I found the circumradius of one equilateral triangular face, which is a circle on the sphere but not a great circle."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{\\sqrt{6}}{2}$",
+      "correct": false,
+      "misconception": "I used the circumradius formula for a regular tetrahedron with edge 2, but this solid has a square base."
+    },
+    {
+      "key": "C",
+      "text": "$\\sqrt{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{5\\sqrt{3}}{6}$",
+      "correct": false,
+      "misconception": "I used the slant height of a face, root 3, as the height of the pyramid, which put the center slightly above the base."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{3}{2}$",
+      "correct": false,
+      "misconception": "I took the height of the pyramid to be the edge length 2, which put the center halfway up at height 1/2."
+    }
+  ],
+  "hints": [
+    "By symmetry, where must the center of the sphere be?",
+    "The center lies on the axis through the apex and the center of the base. Find the pyramid's height, then set the distance to a base vertex equal to the distance to the apex.",
+    "Half the base diagonal is $\\sqrt{2}$, so the height is $\\sqrt{4 - 2} = \\sqrt{2}$. A center at height $t$ needs $2 + t^2 = (\\sqrt{2} - t)^2$."
+  ],
+  "solutions": {
+    "reliable": "Put the base center at the origin with base vertices $(\\pm 1, \\pm 1, 0)$. The base diagonal is $2\\sqrt{2}$, so a base vertex is $\\sqrt{2}$ from the center, and the apex is at height $\\sqrt{2^2 - 2} = \\sqrt{2}$. By symmetry the sphere's center is $(0, 0, t)$. Equal distances to a base vertex and to the apex give $2 + t^2 = (\\sqrt{2} - t)^2 = 2 - 2\\sqrt{2}t + t^2$, so $t = 0$. The center is the center of the base and the radius is $\\sqrt{2}$. Transferable idea: symmetry puts the center on the axis, and one equation finishes it.",
+    "elegant": "The apex and two opposite base vertices form a triangle with sides $2, 2, 2\\sqrt{2}$, which is a right isosceles triangle. Its circumcircle has the hypotenuse, the base diagonal, as a diameter, so every vertex is $\\sqrt{2}$ from the base center. Transferable idea: look for a right angle in a diagonal cross-section."
+  },
+  "formulas": [],
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

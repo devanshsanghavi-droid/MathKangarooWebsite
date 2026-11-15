@@ -1,0 +1,13 @@
+{
+  "id": "F-NT-01",
+  "area": "NT",
+  "name": "Number of divisors",
+  "formula": "n = p_1^{a_1} p_2^{a_2} \\cdots p_k^{a_k} \\implies d(n) = (a_1+1)(a_2+1)\\cdots(a_k+1)",
+  "whenToUse": "Any time you need to count the divisors of a number, or the divisors that satisfy an extra condition such as being even or a perfect square.",
+  "example": "$360 = 2^3 \\cdot 3^2 \\cdot 5$, so it has $(3+1)(2+1)(1+1) = 24$ positive divisors.",
+  "pitfall": "Add one to each exponent before multiplying: the exponent of a prime in a divisor can be any value from $0$ up to $a_i$, which is $a_i + 1$ choices, not $a_i$.",
+  "priority": "must-know",
+  "contests": ["AMC10", "AMC12"],
+  "types": ["T-PRIME-FACTOR"],
+  "derivation": "A divisor is built by choosing, independently for each prime $p_i$, an exponent from $\\{0, 1, \\dots, a_i\\}$. The multiplication principle gives the product."
+}

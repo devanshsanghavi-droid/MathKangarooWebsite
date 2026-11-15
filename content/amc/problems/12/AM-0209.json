@@ -1,0 +1,67 @@
+{
+  "id": "AM-0209",
+  "contest": "AMC12",
+  "slot": 12,
+  "area": "GEO",
+  "topic": "GEO-02",
+  "types": [
+    "T-MASS-POINTS",
+    "T-AREA-RATIO"
+  ],
+  "statement": "In $\\triangle ABC$, point $D$ lies on $\\overline{BC}$ with $BD : DC = 3 : 2$, and point $E$ lies on $\\overline{CA}$ with $CE : EA = 1 : 2$. Segments $\\overline{AD}$ and $\\overline{BE}$ meet at $P$. What is the ratio of the area of $\\triangle ABP$ to the area of $\\triangle ABC$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{6}{13}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{3}{5}$",
+      "correct": false,
+      "misconception": "I found the area of triangle ABD as a fraction of ABC and forgot that P cuts AD short of D."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{2}{3}$",
+      "correct": false,
+      "misconception": "I found the area of triangle ABE as a fraction of ABC and forgot that P cuts BE short of E."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{9}{13}$",
+      "correct": false,
+      "misconception": "I found BP : BE = 9 : 13 correctly, but used it as a fraction of the whole triangle instead of a fraction of triangle ABE."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{10}{13}$",
+      "correct": false,
+      "misconception": "I found AP : AD = 10 : 13 correctly, but used it as a fraction of the whole triangle instead of a fraction of triangle ABD."
+    }
+  ],
+  "hints": [
+    "Find how far along $\\overline{AD}$ the point $P$ sits.",
+    "Mass points: choose masses at $B$ and $C$ that balance at $D$, then a mass at $A$ that balances with $C$ at $E$. The ratio $AP : PD$ follows, and then $[ABP] = \\frac{AP}{AD}[ABD]$.",
+    "Masses $B = 2$, $C = 3$ balance at $D$ (mass $5$); $A = \\frac{3}{2}$ balances with $C$ at $E$. So $AP : PD = 5 : \\frac{3}{2} = 10 : 3$, and $[ABD] = \\frac{3}{5}[ABC]$."
+  ],
+  "solutions": {
+    "reliable": "Assign masses so that $D$ and $E$ are balance points. For $BD : DC = 3 : 2$, put mass $2$ at $B$ and $3$ at $C$, so $D$ has mass $5$. For $CE : EA = 1 : 2$ the masses at $C$ and $A$ are in ratio $2 : 1$, so $A$ gets $\\frac{3}{2}$. On $\\overline{AD}$, $AP : PD = 5 : \\frac{3}{2} = 10 : 3$. Triangles $ABP$ and $ABD$ share vertex $B$ and have their bases $AP$ and $AD$ on the same line, so $[ABP] = \\frac{10}{13}[ABD]$. Triangles $ABD$ and $ABC$ share vertex $A$ with bases on $BC$, so $[ABD] = \\frac{3}{5}[ABC]$. Hence $[ABP] = \\frac{10}{13}\\cdot\\frac{3}{5}[ABC] = \\frac{6}{13}[ABC]$. Check with coordinates: $B = (0, 0)$, $C = (5, 0)$, $A = (0, 4)$ give $D = (3, 0)$, $E = (\\frac{10}{3}, \\frac{4}{3})$ and $P = (\\frac{30}{13}, \\frac{12}{13})$, so $[ABP] = \\frac{1}{2}\\cdot 4 \\cdot \\frac{30}{13} = \\frac{60}{13}$ out of $[ABC] = 10$. Transferable idea: chain area ratios through triangles that share a vertex.",
+    "elegant": "Using the other cevian instead: the masses give $BP : PE = \\frac{9}{2} : 2 = 9 : 4$, and $[ABE] = \\frac{EA}{CA}[ABC] = \\frac{2}{3}[ABC]$, so $[ABP] = \\frac{9}{13}\\cdot\\frac{2}{3} = \\frac{6}{13}$. The two routes agree. Transferable idea: mass points give both cevian ratios at once, so you can check yourself."
+  },
+  "formulas": [],
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

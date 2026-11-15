@@ -1,0 +1,18 @@
+{
+  "id": "F-NT-03",
+  "area": "NT",
+  "name": "GCD times LCM",
+  "formula": "\\gcd(a, b) \\cdot \\operatorname{lcm}(a, b) = ab \\quad (a, b \\text{ positive integers})",
+  "whenToUse": "You know two of the three quantities $\\gcd$, $\\operatorname{lcm}$ and one of the numbers, and need the other number, or you want an lcm from a gcd.",
+  "example": "Two numbers have $\\gcd 6$ and $\\operatorname{lcm} 180$, and one of them is $36$. The other is $\\frac{6 \\cdot 180}{36} = 30$. Check: $\\gcd(36, 30) = 6$ and $\\operatorname{lcm}(36, 30) = 180$.",
+  "pitfall": "This holds for TWO numbers only. For three numbers $\\gcd(a,b,c) \\cdot \\operatorname{lcm}(a,b,c)$ is generally not $abc$.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "derivation": "For each prime, the gcd takes the smaller exponent and the lcm the larger. The smaller plus the larger is the sum of the two exponents, which is the exponent in $ab$."
+}

@@ -1,0 +1,70 @@
+{
+  "id": "AM-0027",
+  "contest": "AMC10",
+  "slot": 16,
+  "area": "ALG",
+  "topic": "ALG-03",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-VIETA"
+  ],
+  "statement": "The parabola $y = x^2 + bx + c$ passes through the point $(3, 6)$ and is tangent to the line $y = 2x - 1$. What is the sum of all possible values of $c$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-8$",
+      "correct": false,
+      "misconception": "I found the quadratic $b^2 + 8b + 12 = 0$ and reported the sum of the values of $b$ instead of the values of $c$."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found only the solution $b = -2$, which gives $c = 3$, and missed the second tangent parabola."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found the quadratic $b^2 + 8b + 12 = 0$ and reported the product of its roots instead of turning the $b$ values into $c$ values."
+    },
+    {
+      "key": "D",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I found only the solution $b = -6$, which gives $c = 15$, and missed the second tangent parabola."
+    },
+    {
+      "key": "E",
+      "text": "$18$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Tangent means the parabola and the line meet at exactly one point.",
+    "Use the point to write $c$ in terms of $b$. Then set $x^2 + bx + c = 2x - 1$ and require the discriminant to be zero.",
+    "From $(3, 6)$: $c = -3 - 3b$. The discriminant condition $(b - 2)^2 = 4(c + 1)$ becomes $b^2 + 8b + 12 = 0$, so $b = -2$ or $b = -6$."
+  ],
+  "solutions": {
+    "reliable": "Since $(3, 6)$ is on the parabola, $9 + 3b + c = 6$, so $c = -3 - 3b$. Tangency to $y = 2x - 1$ means $x^2 + (b - 2)x + (c + 1) = 0$ has a double root, so $(b - 2)^2 = 4(c + 1) = 4(-2 - 3b)$. Expanding, $b^2 - 4b + 4 = -8 - 12b$, so $b^2 + 8b + 12 = 0$ and $b = -2$ or $b = -6$. These give $c = 3$ and $c = 15$. Check: $x^2 - 2x + 3 - (2x - 1) = (x - 2)^2$ and $x^2 - 6x + 15 - (2x - 1) = (x - 4)^2$. The sum is $18$. Transferable idea: tangency of a line and a parabola is a discriminant equal to zero.",
+    "elegant": "Vieta on $b^2 + 8b + 12 = 0$ gives a sum of $b$ values of $-8$, and since $c = -3 - 3b$ for each, the sum of the two $c$ values is $2(-3) - 3(-8) = 18$, with no need to find the roots. Transferable idea: a sum over all solutions can come straight from Vieta."
+  },
+  "formulas": [
+    "F-ALG-16",
+    "F-ALG-02"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

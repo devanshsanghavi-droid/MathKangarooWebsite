@@ -1,0 +1,68 @@
+{
+  "id": "AM-0147",
+  "contest": "AMC10",
+  "slot": 20,
+  "area": "CP",
+  "topic": "CP-07",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "Three boxes each hold $4$ marbles. Box A has $3$ red and $1$ blue, box B has $2$ red and $2$ blue, and box C has $1$ red and $3$ blue. A box is chosen at random, and two marbles are drawn from it without replacement; both are red. A third marble is then drawn from the same box. What is the probability that it is red?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{1}{12}$",
+      "correct": false,
+      "misconception": "I found the probability that all three marbles drawn are red, 1/3 x 1/4, and never divided by the probability that the first two are red."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{3}{8}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I decided the box had to be A, the one with the most red marbles, and gave its chance of red once two reds are gone, but box B can also give two reds."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{11}{16}$",
+      "correct": false,
+      "misconception": "I found that the box is A with probability 3/4 and B with probability 1/4, but then used each box's original red fraction for the third draw, forgetting that two red marbles were already removed."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{3}{4}$",
+      "correct": false,
+      "misconception": "I found the probability that the box is A, given the two red draws, and gave that as the answer."
+    }
+  ],
+  "hints": [
+    "Two red draws make some boxes more likely than others, and one box impossible.",
+    "This is conditional probability. Find how likely each box is given the two reds, then average each box's chance of a third red, remembering that two red marbles have already been taken out.",
+    "Two reds have probability $\\frac34 \\cdot \\frac23 = \\frac12$ from box A, $\\frac24 \\cdot \\frac13 = \\frac16$ from box B and $0$ from box C. After them, box A holds $1$ red and $1$ blue, and box B holds $2$ blue."
+  ],
+  "solutions": {
+    "reliable": "Each box is chosen with probability $\\frac13$. Two reds without replacement have probability $\\frac34 \\cdot \\frac23 = \\frac12$ from box A, $\\frac24 \\cdot \\frac13 = \\frac16$ from box B and $0$ from box C. Given two reds, box A has probability $\\frac{1/2}{1/2 + 1/6} = \\frac34$ and box B has probability $\\frac14$. After the two reds, box A holds $1$ red and $1$ blue, so its next marble is red with probability $\\frac12$, while box B has no red left. The answer is $\\frac34 \\cdot \\frac12 + \\frac14 \\cdot 0 = \\frac38$. The transferable idea: evidence changes which case you are in, so update the case probabilities, and the contents of each case, before predicting the next event.",
+    "elegant": "The answer is $P(\\text{three reds}) / P(\\text{two reds})$. Three reds can only come from box A: $\\frac13 \\cdot \\frac34 \\cdot \\frac23 \\cdot \\frac12 = \\frac{1}{12}$. Two reds: $\\frac13 \\left(\\frac12 + \\frac16\\right) = \\frac29$. The ratio is $\\frac{1}{12} \\cdot \\frac92 = \\frac38$."
+  },
+  "formulas": [
+    "F-CP-13"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

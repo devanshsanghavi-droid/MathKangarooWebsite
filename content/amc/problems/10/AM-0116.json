@@ -1,0 +1,69 @@
+{
+  "id": "AM-0116",
+  "contest": "BOTH",
+  "slot": 2,
+  "area": "CP",
+  "topic": "CP-10",
+  "types": [
+    "T-BIJECTION"
+  ],
+  "statement": "A robot starts at the point $(0,0)$. Each move takes it one unit to the right or one unit up. How many different routes take the robot to the point $(4,2)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I counted the moves, 4 right plus 2 up, and took the 6 moves as the number of routes."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I multiplied the 4 right moves by the 2 up moves instead of counting orders of the moves."
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I computed 6!/4! = 30, dividing out the order of the right moves but not the order of the 2 identical up moves."
+    },
+    {
+      "key": "E",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I let each of the 6 moves be right or up freely, 2^6 = 64, without requiring exactly 4 rights and 2 ups."
+    }
+  ],
+  "hints": [
+    "Every route uses the same number of moves. How many, and of which kinds?",
+    "A route is a word made of R and U with a fixed number of each letter. Count the words by choosing where the U letters go.",
+    "Every route has $6$ moves: $4$ R and $2$ U. Choose which $2$ of the $6$ moves are U: $\\binom{6}{2}$."
+  ],
+  "solutions": {
+    "reliable": "Any route to $(4,2)$ uses exactly $4$ right moves and $2$ up moves, $6$ moves in all, and different orders of those moves give different routes. So routes correspond one to one with strings of $4$ R's and $2$ U's. Choosing the positions of the two U's among the six moves fixes the string, so there are $\\binom{6}{2} = 15$ routes. Transferable idea: a lattice path is a word, so count the words.",
+    "elegant": "Count by the column where each up move happens. Let $a \\le b$ be the $x$-coordinates at which the two up moves happen, with $0 \\le a \\le b \\le 4$. The number of such pairs is $\\binom{5}{2} + 5 = 15$."
+  },
+  "formulas": [
+    "F-CP-15",
+    "F-CP-03"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

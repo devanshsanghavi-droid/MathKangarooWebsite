@@ -1,0 +1,66 @@
+{
+  "id": "AM-0021",
+  "contest": "AMC10",
+  "slot": 13,
+  "area": "ALG",
+  "topic": "ALG-01",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Two runners start together from the same point on a $400$-meter circular track and run at different constant speeds. When they run in opposite directions, they meet every $40$ seconds. When they run in the same direction, the faster runner gains a full lap on the slower one every $200$ seconds. How many seconds does the faster runner take to run one lap?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{200}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$80$",
+      "correct": false,
+      "misconception": "I used the average of the two speeds, $5$ meters per second, and divided $400$ by it."
+    },
+    {
+      "key": "C",
+      "text": "$100$",
+      "correct": false,
+      "misconception": "I solved the system correctly but answered for the slower runner, whose speed is $4$ meters per second."
+    },
+    {
+      "key": "D",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I averaged the two given times, $\\frac{40 + 200}{2} = 120$, instead of turning them into speeds."
+    },
+    {
+      "key": "E",
+      "text": "$200$",
+      "correct": false,
+      "misconception": "I took the $200$ seconds between laps gained as the time for the faster runner to run one lap."
+    }
+  ],
+  "hints": [
+    "Turn each time into a statement about speeds.",
+    "Running toward each other, together they cover $400$ meters every $40$ seconds. Running the same way, the faster one gains $400$ meters every $200$ seconds. Write one equation for the sum of the speeds and one for the difference.",
+    "With speeds $u > v$ in meters per second: $u + v = 10$ and $u - v = 2$, so $u = 6$. The faster lap takes $400 / 6$ seconds."
+  ],
+  "solutions": {
+    "reliable": "Let the speeds be $u > v$ meters per second. Running in opposite directions, the gap between meetings is one full lap covered by both together, so $40(u + v) = 400$ and $u + v = 10$. Running in the same direction, the faster runner gains one lap every $200$ seconds, so $200(u - v) = 400$ and $u - v = 2$. Adding, $2u = 12$, so $u = 6$ and $v = 4$. The faster runner takes $\\frac{400}{6} = \\frac{200}{3}$ seconds per lap. Check: $v = 4$ gives the slower runner $100$ seconds per lap, and $6 - 4 = 2$ meters per second of gain closes $400$ meters in $200$ seconds. Transferable idea: opposite directions add speeds, same direction subtracts them.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

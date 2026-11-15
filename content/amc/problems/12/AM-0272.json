@@ -1,0 +1,69 @@
+{
+  "id": "AM-0272",
+  "contest": "AMC12",
+  "slot": 5,
+  "area": "CP",
+  "topic": "CP-02",
+  "types": [
+    "T-BIJECTION"
+  ],
+  "statement": "How many distinguishable arrangements of the seven letters of the word $\\text{BANANAS}$ have no two $\\text{A}$'s next to each other?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I counted only 4 gaps around the four other letters, forgetting that a row of four letters has 5 gaps when both ends count, so I got 12 times 4."
+    },
+    {
+      "key": "B",
+      "text": "$120$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$240$",
+      "correct": false,
+      "misconception": "I treated the two N's as different letters, so I arranged B, N, N, S in 24 ways instead of 12."
+    },
+    {
+      "key": "D",
+      "text": "$420$",
+      "correct": false,
+      "misconception": "I counted every arrangement of BANANAS, 7! divided by 3! times 2!, and never applied the rule about the A's."
+    },
+    {
+      "key": "E",
+      "text": "$720$",
+      "correct": false,
+      "misconception": "I placed the A's into the gaps in order, as if the three A's were different, using 5 times 4 times 3 = 60 instead of choosing 3 gaps."
+    }
+  ],
+  "hints": [
+    "Place the letters that are not A first.",
+    "Arrange B, N, N and S, then drop the A's into the spaces between and around them, at most one A per space so no two touch.",
+    "B, N, N, S can be arranged in $\\frac{4!}{2!} = 12$ ways. They leave $5$ spaces, and the A's need $3$ of them: $\\binom{5}{3} = 10$."
+  ],
+  "solutions": {
+    "reliable": "First arrange the four letters B, N, N, S: there are $\\frac{4!}{2!} = 12$ distinguishable orders. Each order leaves $5$ spaces: one before the first letter, three between letters and one after the last. No two A's are adjacent exactly when the three A's go into three different spaces, and since the A's are identical we only choose which spaces: $\\binom{5}{3} = 10$. The total is $12 \\cdot 10 = 120$. Check by complement: there are $\\frac{7!}{3!\\,2!} = 420$ arrangements in all; a brute-force count of those with some adjacent A's gives $300$, and $420 - 300 = 120$. The idea: to keep items apart, place the others first and choose gaps.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-04",
+    "F-CP-03"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

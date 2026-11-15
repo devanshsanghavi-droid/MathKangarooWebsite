@@ -1,0 +1,68 @@
+{
+  "id": "AM-0270",
+  "contest": "AMC12",
+  "slot": 4,
+  "area": "CP",
+  "topic": "CP-06",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A fair six-sided die is rolled twice, giving $a$ on the first roll and $b$ on the second. What is the probability that $\\log_a b$ is defined and is an integer?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{5}{36}$",
+      "correct": false,
+      "misconception": "I only counted the pairs where a equals b, since then the logarithm is 1, and missed b = 1 and the pair a = 2, b = 4."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1}{6}$",
+      "correct": false,
+      "misconception": "I forgot that the logarithm of 1 in any allowed base is 0, which is an integer, so I missed the five pairs with b = 1."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{5}{18}$",
+      "correct": false,
+      "misconception": "I forgot that 4 is a power of 2, so I missed the pair a = 2, b = 4 where the logarithm is 2."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{11}{36}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{1}{3}$",
+      "correct": false,
+      "misconception": "I counted a = 1, b = 1 as giving log base 1 of 1 = 0, but a logarithm with base 1 is not defined."
+    }
+  ],
+  "hints": [
+    "When is a logarithm defined at all? Check the base first.",
+    "The base must be positive and not $1$, so $a \\ne 1$. Then $\\log_a b = k$ means $b = a^k$. Split into $k = 0$ and $k \\ge 1$ and list the pairs.",
+    "For $k = 0$: $b = 1$ with $a \\in \\{2, 3, 4, 5, 6\\}$. For $k \\ge 1$: $b = a$ for each such $a$, plus $b = 4$ when $a = 2$."
+  ],
+  "solutions": {
+    "reliable": "A logarithm needs a base that is positive and not equal to $1$, so $a \\in \\{2, 3, 4, 5, 6\\}$; $b$ is always positive. Now $\\log_a b$ is an integer $k$ exactly when $b = a^k$, and since $1 \\le b \\le 6$ we need $k \\ge 0$. Case $k = 0$: $b = 1$, giving $5$ pairs. Case $k = 1$: $b = a$, giving $5$ pairs. Case $k = 2$: $b = a^2 \\le 6$ forces $a = 2$, $b = 4$, giving $1$ pair. No base from $2$ to $6$ has a cube at most $6$. That is $11$ favourable pairs out of $36$, so the probability is $\\frac{11}{36}$. The idea: settle when an expression is defined before counting when it is nice.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-10"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

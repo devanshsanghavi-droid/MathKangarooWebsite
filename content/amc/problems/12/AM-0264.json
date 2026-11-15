@@ -1,0 +1,70 @@
+{
+  "id": "AM-0264",
+  "contest": "AMC12",
+  "slot": 23,
+  "area": "NT",
+  "topic": "NT-08",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-SMALL-CASES"
+  ],
+  "statement": "How many of the $2027$ binomial coefficients $\\binom{2026}{0}, \\binom{2026}{1}, \\ldots, \\binom{2026}{2026}$ are not divisible by $3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I wrote 2026 = 2210001 in base 3 and added the numbers d + 1 over its digits instead of multiplying them."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I gave each nonzero base-3 digit of 2026 two choices, as in the base-2 rule, but a digit 2 allows three choices: 0, 1 or 2."
+    },
+    {
+      "key": "C",
+      "text": "$36$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$256$",
+      "correct": false,
+      "misconception": "I used the base-2 rule for odd coefficients: 2026 has eight 1s in binary, giving 2^8, but the question is about divisibility by 3."
+    },
+    {
+      "key": "E",
+      "text": "$1991$",
+      "correct": false,
+      "misconception": "I counted the coefficients that are divisible by 3, 2027 - 36, instead of the ones that are not."
+    }
+  ],
+  "hints": [
+    "Write $2026$ in base $3$.",
+    "By Lucas' theorem, $\\binom{n}{k} \\not\\equiv 0 \\pmod 3$ exactly when every base-$3$ digit of $k$ is at most the matching digit of $n$. Equivalently, adding $k$ and $n - k$ in base $3$ has no carries.",
+    "$2026 = 2210001_3$. A digit $d$ of $n$ allows $d + 1$ choices for the matching digit of $k$. Multiply."
+  ],
+  "solutions": {
+    "reliable": "Since $2026 = 2 \\cdot 729 + 2 \\cdot 243 + 1 \\cdot 81 + 1$, its base-$3$ form is $2210001_3$. By Kummer's theorem, the exponent of $3$ in $\\binom{2026}{k}$ is the number of carries when $k$ and $2026 - k$ are added in base $3$. There are no carries exactly when each base-$3$ digit of $k$ is at most the matching digit of $2026$, which is also what Lucas' theorem says. A digit $d$ allows $d + 1$ choices, so the count is $3 \\cdot 3 \\cdot 2 \\cdot 1 \\cdot 1 \\cdot 1 \\cdot 2 = 36$. Check on a small case: row $4 = 11_3$ gives $2 \\cdot 2 = 4$, and indeed $1, 4, 6, 4, 1$ has exactly $4$ entries not divisible by $3$. The transferable idea: divisibility of binomial coefficients by $p$ is read off the base-$p$ digits.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-08",
+    "F-NT-11"
+  ],
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

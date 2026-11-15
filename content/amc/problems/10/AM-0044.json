@@ -1,0 +1,67 @@
+{
+  "id": "AM-0044",
+  "contest": "BOTH",
+  "slot": 5,
+  "area": "GEO",
+  "topic": "GEO-10",
+  "types": [
+    "T-SYMMETRY",
+    "T-COORD"
+  ],
+  "statement": "Let $A = (1, 3)$ and $B = (7, 5)$. Point $P$ can be anywhere on the $x$-axis. What is the smallest possible value of $AP + PB$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2\\sqrt{10}$",
+      "correct": false,
+      "misconception": "I computed the straight distance AB = sqrt(36 + 4) and ignored the requirement that the path touch the x-axis."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I added the heights 3 and 5 of the two points above the axis and ignored the horizontal distance between them."
+    },
+    {
+      "key": "C",
+      "text": "$2\\sqrt{17}$",
+      "correct": false,
+      "misconception": "I reflected A across the y-axis instead of the x-axis, to (-1, 3), and measured from there to B: sqrt(64 + 4)."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$3\\sqrt{2} + \\sqrt{34}$",
+      "correct": false,
+      "misconception": "I assumed the best P is directly below the midpoint of AB, at (4, 0), which gives sqrt(18) + sqrt(34), slightly more than the true minimum."
+    }
+  ],
+  "hints": [
+    "A path that bounces off a line is easier after a reflection.",
+    "Reflect one of the points across the $x$-axis. Any path from $A$ to $P$ to $B$ then has the same length as a path from the reflected point to $B$ through $P$.",
+    "Reflect $A$ to $A' = (1, -3)$. Then $AP + PB = A'P + PB \\ge A'B$, with equality when $P$ is on segment $A'B$."
+  ],
+  "solutions": {
+    "reliable": "Reflect $A$ across the $x$-axis to $A' = (1, -3)$. For every $P$ on the axis, $AP = A'P$, so $AP + PB = A'P + PB$. The shortest way from $A'$ to $B$ is the straight segment, which does cross the $x$-axis because $A'$ is below it and $B$ is above. So the minimum is $A'B = \\sqrt{(7-1)^2 + (5+3)^2} = \\sqrt{36 + 64} = 10$, reached at $P = (\\frac{13}{4}, 0)$. Check: $AP = \\sqrt{(\\frac{9}{4})^2 + 9} = \\frac{15}{4}$ and $PB = \\sqrt{(\\frac{15}{4})^2 + 25} = \\frac{25}{4}$, which add to $10$. The transferable idea: to minimise a broken path that must touch a line, reflect one endpoint across the line and draw a straight segment.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

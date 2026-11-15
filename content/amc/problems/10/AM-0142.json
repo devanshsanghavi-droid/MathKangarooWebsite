@@ -1,0 +1,66 @@
+{
+  "id": "AM-0142",
+  "contest": "AMC10",
+  "slot": 17,
+  "area": "CP",
+  "topic": "CP-01",
+  "types": [
+    "T-PARITY"
+  ],
+  "statement": "In how many ways can the numbers $1, 2, 3, 4, 5, 6, 7$ be arranged in a row so that the sum of every three consecutive numbers in the row is even?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found the one parity pattern and arranged the three even numbers in 3! ways, but forgot to arrange the four odd numbers."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I arranged the four odd numbers in 4! ways but forgot that the three even numbers can also be arranged among their places."
+    },
+    {
+      "key": "C",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I divided by 2 because I thought a row and its reverse count as the same arrangement."
+    },
+    {
+      "key": "D",
+      "text": "$144$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$288$",
+      "correct": false,
+      "misconception": "I counted the parity pattern even, odd, odd, even, odd, odd, even twice, once forwards and once backwards, but it reads the same both ways."
+    }
+  ],
+  "hints": [
+    "Only whether each number is odd or even matters at first.",
+    "Compare two overlapping windows of three consecutive numbers. Their sums share two terms, which forces a repeating parity pattern. Then match that pattern against how many odd and even numbers you actually have.",
+    "From two overlapping windows, positions $i$ and $i+3$ always have the same parity. So positions $\\{1, 4, 7\\}$, $\\{2, 5\\}$ and $\\{3, 6\\}$ each share a parity. There are four odd numbers to place."
+  ],
+  "solutions": {
+    "reliable": "Write $p_i$ for the parity of the number in position $i$. The windows $(i, i+1, i+2)$ and $(i+1, i+2, i+3)$ both have even sums, so their difference, $p_{i+3} - p_i$, is even: positions $i$ and $i+3$ have the same parity. Hence positions $1, 4, 7$ share a parity, as do $2, 5$ and $3, 6$. The four odd numbers must exactly fill some of these classes, of sizes $3$, $2$ and $2$. The only way to make $4$ is $2 + 2$, so positions $2, 3, 5, 6$ are odd and $1, 4, 7$ are even. This works: every window contains one position from each class, so it holds exactly two odd numbers and has an even sum. Place the odd numbers in $4!$ ways and the even numbers in $3!$ ways: $24 \\cdot 6 = 144$. The transferable idea: a condition on every window of length $k$ usually forces a pattern that repeats with period $k$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

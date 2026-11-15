@@ -1,0 +1,18 @@
+{
+  "id": "F-NT-10",
+  "area": "NT",
+  "name": "Cycles of last digits",
+  "formula": "\\text{units digit of } a^n \\text{ repeats with period } 1, 2 \\text{ or } 4: \\quad 2\\!:\\ 2,4,8,6 \\quad 3\\!:\\ 3,9,7,1 \\quad 7\\!:\\ 7,9,3,1 \\quad 8\\!:\\ 8,4,2,6",
+  "whenToUse": "The units digit (or the remainder mod a small number) of a big power. List a few powers, find the period, reduce the exponent.",
+  "example": "The units digit of $7^{2026}$: powers of $7$ end in $7, 9, 3, 1$ and repeat every $4$. Since $2026 \\equiv 2 \\pmod 4$, the units digit is the second in the cycle, $9$.",
+  "pitfall": "An exponent that is a multiple of $4$ gives the LAST entry of the cycle, not the first. Only the units digit of the base matters.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-CYCLE",
+    "T-SMALL-CASES"
+  ]
+}

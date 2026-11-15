@@ -1,0 +1,71 @@
+{
+  "id": "AM-0177",
+  "contest": "AMC12",
+  "slot": 15,
+  "area": "ALG",
+  "topic": "ALG-04",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-SYMMETRY",
+    "T-VIETA"
+  ],
+  "statement": "What is the sum of the real roots of $x^4 - 5x^3 + 6x^2 - 5x + 1 = 0$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I took the branch $x + \\frac1x = 1$ and used its root sum $1$, without noticing that $x^2 - x + 1 = 0$ has no real roots."
+    },
+    {
+      "key": "B",
+      "text": "$2\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I found the real roots $2 + \\sqrt3$ and $2 - \\sqrt3$ but subtracted them instead of adding."
+    },
+    {
+      "key": "C",
+      "text": "$2 + \\sqrt{3}$",
+      "correct": false,
+      "misconception": "I reported only the larger real root, $2 + \\sqrt3$, instead of the sum of both real roots."
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I used Vieta on the whole quartic, which gives the sum of all four roots, including the two that are not real."
+    }
+  ],
+  "hints": [
+    "The coefficients read the same forwards and backwards.",
+    "Divide by $x^2$ and group $x^2 + \\frac{1}{x^2}$ and $x + \\frac1x$. Setting $y = x + \\frac1x$ turns the quartic into a quadratic in $y$.",
+    "With $x^2 + \\frac{1}{x^2} = y^2 - 2$ the equation becomes $y^2 - 5y + 4 = 0$, so $y = 1$ or $y = 4$. Check which of $x + \\frac1x = 1$ and $x + \\frac1x = 4$ has real solutions."
+  ],
+  "solutions": {
+    "reliable": "$x = 0$ is not a root, so divide by $x^2$: $\\left(x^2 + \\frac1{x^2}\\right) - 5\\left(x + \\frac1x\\right) + 6 = 0$. With $y = x + \\frac1x$, $x^2 + \\frac1{x^2} = y^2 - 2$, so $y^2 - 5y + 4 = 0$ and $y = 1$ or $y = 4$. For $y = 1$: $x^2 - x + 1 = 0$ has discriminant $-3$, so no real roots. For $y = 4$: $x^2 - 4x + 1 = 0$ has real roots $2 \\pm \\sqrt3$, with sum $4$. Transferable idea: a palindromic polynomial of even degree reduces to half the degree with $y = x + \\frac1x$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-02",
+    "F-ALG-16"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

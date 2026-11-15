@@ -1,0 +1,15 @@
+{
+  "id": "F-ALG-04",
+  "area": "ALG",
+  "name": "Sum of a geometric series",
+  "formula": "a + ar + \\cdots + ar^{n-1} = a\\,\\frac{r^n - 1}{r - 1}\\ \\ (r \\ne 1), \\qquad a + ar + ar^2 + \\cdots = \\frac{a}{1 - r}\\ \\ (|r| < 1)",
+  "whenToUse": "Each term is a fixed multiple of the one before: repeated doubling, a bouncing ball, a repeating decimal, or a game that can go on forever.",
+  "example": "$3 + 6 + 12 + \\cdots + 384$ has ratio $2$ and $384 = 3 \\cdot 2^7$, so there are $8$ terms and the sum is $3(2^8 - 1) = 765$. The endless series $12 + 4 + \\frac{4}{3} + \\cdots$ has $r = \\frac{1}{3}$ and sums to $\\frac{12}{1 - 1/3} = 18$.",
+  "pitfall": "The infinite formula only works when $|r| < 1$. Also count terms carefully: $a$ to $ar^{n-1}$ is $n$ terms, so the exponent in the numerator is $n$.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "derivation": "Call the finite sum $S$. Then $rS - S$ cancels every term except $ar^n - a$, so $S(r - 1) = a(r^n - 1)$. Letting $n$ grow with $|r| < 1$ sends $r^n$ to $0$."
+}

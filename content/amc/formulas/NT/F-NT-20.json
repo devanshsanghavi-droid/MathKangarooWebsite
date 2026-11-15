@@ -1,0 +1,18 @@
+{
+  "id": "F-NT-20",
+  "area": "NT",
+  "name": "Counting multiples in a range",
+  "formula": "\\#\\{\\, a \\le n \\le b : k \\mid n \\,\\} = \\left\\lfloor \\frac{b}{k} \\right\\rfloor - \\left\\lfloor \\frac{a - 1}{k} \\right\\rfloor",
+  "whenToUse": "How many integers in a range are divisible by a number, the building block of most inclusion-exclusion and complementary counting.",
+  "example": "Multiples of $7$ from $100$ to $300$: $\\left\\lfloor \\frac{300}{7} \\right\\rfloor - \\left\\lfloor \\frac{99}{7} \\right\\rfloor = 42 - 14 = 28$. They run from $7 \\cdot 15 = 105$ to $7 \\cdot 42 = 294$.",
+  "pitfall": "Subtract the count up to $a - 1$, not up to $a$, or you lose $a$ itself when $a$ is a multiple.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-PIE",
+    "T-COMPLEMENT"
+  ]
+}

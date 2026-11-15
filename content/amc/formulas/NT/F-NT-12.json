@@ -1,0 +1,17 @@
+{
+  "id": "F-NT-12",
+  "area": "NT",
+  "name": "Arithmetic with congruences",
+  "formula": "a \\equiv b \\pmod m \\implies a + c \\equiv b + c, \\quad ac \\equiv bc, \\quad a^k \\equiv b^k \\pmod m",
+  "whenToUse": "Find a remainder by replacing each number by something smaller or negative with the same remainder before adding, multiplying or raising to a power.",
+  "example": "$99^{99} \\bmod 100$: since $99 \\equiv -1$, $99^{99} \\equiv (-1)^{99} = -1 \\equiv 99$. And $17^{23} \\equiv 1^{23} = 1 \\pmod 4$ because $17 \\equiv 1 \\pmod 4$.",
+  "pitfall": "You may not divide both sides of a congruence freely: $2a \\equiv 2b \\pmod{6}$ only gives $a \\equiv b \\pmod{3}$. Divide only by numbers coprime to the modulus.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-MODULAR"
+  ]
+}

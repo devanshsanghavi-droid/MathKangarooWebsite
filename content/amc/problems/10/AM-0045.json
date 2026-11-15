@@ -1,0 +1,68 @@
+{
+  "id": "AM-0045",
+  "contest": "AMC10",
+  "slot": 6,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-COMPLEMENT"
+  ],
+  "statement": "A solid cube has edge length $6$. A cylindrical hole of radius $1$ is drilled straight through the cube, from the center of one face to the center of the opposite face. What is the total surface area of the solid that remains, including the inside of the hole?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$216 - 2\\pi$",
+      "correct": false,
+      "misconception": "I removed the two circular openings from the faces but forgot that the inside wall of the tunnel is new surface."
+    },
+    {
+      "key": "B",
+      "text": "$216 + 4\\pi$",
+      "correct": false,
+      "misconception": "I removed the two circles but used pi r h = 6 pi for the tunnel wall instead of 2 pi r h, giving 216 - 2 pi + 6 pi."
+    },
+    {
+      "key": "C",
+      "text": "$216 + 10\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$216 + 12\\pi$",
+      "correct": false,
+      "misconception": "I added the tunnel wall 2 pi (1)(6) = 12 pi but forgot to remove the two circles cut out of the faces."
+    },
+    {
+      "key": "E",
+      "text": "$216 + 14\\pi$",
+      "correct": false,
+      "misconception": "I added the tunnel wall 12 pi and then added the two circles as well, as if the hole had end caps instead of openings."
+    }
+  ],
+  "hints": [
+    "Drilling takes some surface away and also creates some new surface.",
+    "Start from the cube's surface area. Account separately for what disappears from the two faces and for the curved wall of the tunnel.",
+    "The two faces each lose a circle of area $\\pi$. The tunnel wall is a cylinder's side: $2\\pi r h$ with $r = 1$ and $h = 6$."
+  ],
+  "solutions": {
+    "reliable": "The cube's surface area is $6 \\cdot 6^2 = 216$. Drilling removes a disk of area $\\pi \\cdot 1^2 = \\pi$ from each of two faces, so subtract $2\\pi$. It creates the curved wall of the tunnel, a cylinder side of area $2\\pi \\cdot 1 \\cdot 6 = 12\\pi$. The total is $216 - 2\\pi + 12\\pi = 216 + 10\\pi$. The transferable idea: for surface area after cutting, list what was removed and what was exposed, and track both.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-16"
+  ],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

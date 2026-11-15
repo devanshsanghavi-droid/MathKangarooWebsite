@@ -1,0 +1,70 @@
+{
+  "id": "AM-0253",
+  "contest": "AMC12",
+  "slot": 17,
+  "area": "NT",
+  "topic": "NT-10",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-CASEWORK"
+  ],
+  "statement": "For how many integers $n$ with $1 \\le n \\le 100$ does the decimal expansion of $\\dfrac{1}{n}$ have exactly two digits after the decimal point before its repeating block begins? For example, $\\dfrac{1}{44} = 0.02\\overline{27}$ counts. Terminating decimals do not count.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I only looked at the power of 2 in n, so I missed n = 75, where the factor 25 delays the repeating block by two digits."
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I thought the delay was the number of 2s plus the number of 5s in n, so I wrongly counted 30, 70 and 90 and missed 60."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I included 4, 20, 25, 50 and 100, but their decimals terminate and have no repeating block at all."
+    },
+    {
+      "key": "E",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I counted every n whose repeating block starts at least two digits after the point, including ones like 1/24 that start later."
+    }
+  ],
+  "hints": [
+    "Write $n = 2^a 5^b m$ with $m$ coprime to $10$. Multiplying by a power of $10$ removes the $2$s and $5$s.",
+    "The block starts right after $\\max(a, b)$ digits, and the decimal terminates exactly when $m = 1$. So you need $\\max(a,b) = 2$ and $m > 1$.",
+    "The possible $2^a 5^b$ are $4, 20, 100, 25, 50$. List $n = 4m$, $20m$, $25m$ up to $100$ with $m > 1$ coprime to $10$."
+  ],
+  "solutions": {
+    "reliable": "Write $n = 2^a 5^b m$ with $\\gcd(m, 10) = 1$. With $t = \\max(a, b)$, the number $10^t / n$ has denominator $m$, so $1/n$ is a $t$-digit terminating part followed by the purely repeating expansion of a fraction with denominator $m$; for smaller $t$ the denominator still contains a $2$ or $5$, so the block cannot start sooner. The decimal terminates exactly when $m = 1$. We need $t = 2$ and $m > 1$, so $2^a 5^b \\in \\{4, 20, 100, 25, 50\\}$. From $4m \\le 100$: $m \\in \\{3, 7, 9, 11, 13, 17, 19, 21, 23\\}$, which is $9$ values. From $20m \\le 100$: $m = 3$, giving $60$. From $25m \\le 100$: $m = 3$, giving $75$. Nothing comes from $50$ or $100$. The total is $9 + 1 + 1 = 11$. The transferable idea: the $2$s and $5$s set the delay, the rest of the denominator sets the repetition.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-15",
+    "F-NT-14"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

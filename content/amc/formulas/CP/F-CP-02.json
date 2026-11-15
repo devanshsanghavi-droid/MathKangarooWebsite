@@ -1,0 +1,14 @@
+{
+  "id": "F-CP-02",
+  "area": "CP",
+  "name": "Permutations",
+  "formula": "P(n, k) = n(n-1)\\cdots(n-k+1) = \\frac{n!}{(n-k)!} \\quad (0 \\le k \\le n)",
+  "whenToUse": "Choose $k$ items from $n$ where ORDER matters: rankings, officer roles, arranging people in a row.",
+  "example": "A president, vice president and secretary can be chosen from $10$ people in $10 \\cdot 9 \\cdot 8 = 720$ ways. All $6$ books on a shelf can be arranged in $6! = 720$ ways too.",
+  "pitfall": "If the roles are identical (a committee instead of officers), order does not matter and you must divide by $k!$, giving a combination.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ]
+}

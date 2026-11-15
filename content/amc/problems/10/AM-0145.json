@@ -1,0 +1,70 @@
+{
+  "id": "AM-0145",
+  "contest": "AMC10",
+  "slot": 18,
+  "area": "CP",
+  "topic": "CP-05",
+  "types": [
+    "T-SYMMETRY",
+    "T-STARS-BARS",
+    "T-COMPLEMENT"
+  ],
+  "statement": "How many ordered triples $(a, b, c)$ of positive integers satisfy $a + b + c = 20$ and $a < b < c$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I subtracted only the 9 solutions with a = b from the 171 total and then divided by 6, but the solutions with b = c or a = c also repeat a value."
+    },
+    {
+      "key": "C",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I counted the triples with a <= b <= c, which lets two of the numbers be equal."
+    },
+    {
+      "key": "D",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I removed the 27 solutions with a repeated value correctly, but then divided the remaining 144 by 3 instead of by 3! = 6."
+    },
+    {
+      "key": "E",
+      "text": "$144$",
+      "correct": false,
+      "misconception": "I removed the solutions with a repeated value but forgot that each set of three different numbers appears in 6 orders and only one of them has a < b < c."
+    }
+  ],
+  "hints": [
+    "Drop the order condition first and count all positive solutions.",
+    "Stars and bars counts every positive solution. Remove those with a repeated value; the rest come in groups of equal size, one per ordering of three different numbers, and exactly one ordering in each group is increasing.",
+    "There are $\\binom{19}{2} = 171$ positive solutions. Solutions with $a = b$ satisfy $2a + c = 20$, so there are $9$ of them, and the same for $b = c$ and for $a = c$; all three equal is impossible."
+  ],
+  "solutions": {
+    "reliable": "By stars and bars, $a + b + c = 20$ has $\\binom{19}{2} = 171$ solutions in positive integers. A solution with $a = b$ has $c = 20 - 2a$ with $1 \\le a \\le 9$: $9$ solutions, and $c = a$ never happens since $20$ is not a multiple of $3$. The same holds for $b = c$ and for $a = c$, and no solution has all three equal, so $27$ solutions repeat a value. The other $171 - 27 = 144$ use three different numbers, and each set of three different numbers appears in $3! = 6$ orders, exactly one of which is increasing. The answer is $\\frac{144}{6} = 24$. The transferable idea: count ordered solutions, remove the ones with ties, and divide by the symmetry.",
+    "elegant": "Count directly by the smallest number. With $a = 1$ we need $b < c$ and $b + c = 19$, so $b = 2, \\ldots, 9$: $8$ ways. Then $a = 2$: $b = 3, \\ldots, 8$, $6$ ways; $a = 3$: $b = 4, \\ldots, 8$, $5$ ways; $a = 4$: $b = 5, 6, 7$, $3$ ways; $a = 5$: $b = 6, 7$, $2$ ways; $a = 6$ gives none. Total $8 + 6 + 5 + 3 + 2 = 24$."
+  },
+  "formulas": [
+    "F-CP-05"
+  ],
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

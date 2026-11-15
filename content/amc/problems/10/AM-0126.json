@@ -1,0 +1,69 @@
+{
+  "id": "AM-0126",
+  "contest": "BOTH",
+  "slot": 7,
+  "area": "CP",
+  "topic": "CP-11",
+  "types": [
+    "T-INVARIANT",
+    "T-SMALL-CASES"
+  ],
+  "statement": "The number $2$ is written on a board. A move replaces the number $n$ on the board with either $n + 3$ or $2n$. Counting the starting $2$, how many of the integers $1, 2, 3, \\ldots, 30$ can appear on the board at some moment?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I only used the + 3 move, which reaches 2, 5, 8, ..., 29, and forgot that doubling reaches other numbers."
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I counted only the numbers produced by a move and left out the starting 2 even though it counts."
+    },
+    {
+      "key": "C",
+      "text": "$19$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I counted every number from 1 to 30 that is not a multiple of 3, but both moves make the number bigger, so 1 can never appear."
+    },
+    {
+      "key": "E",
+      "text": "$29$",
+      "correct": false,
+      "misconception": "I assumed that mixing the two moves can reach every integer from 2 to 30."
+    }
+  ],
+  "hints": [
+    "Look at the remainder of the number when divided by $3$.",
+    "Find what neither move can ever produce, using remainders mod 3. Then check that every other number in range really can be reached, and remember that the moves never make the number smaller.",
+    "Adding $3$ keeps the remainder mod $3$; doubling sends $1 \\to 2$ and $2 \\to 1$. So a multiple of $3$ never appears. $4 = 2 \\cdot 2$ and $2$ start the two chains."
+  ],
+  "solutions": {
+    "reliable": "Neither move can create a multiple of $3$: adding $3$ does not change the remainder mod $3$, and doubling a number with remainder $1$ or $2$ gives remainder $2$ or $1$. Since the start $2$ is not a multiple of $3$, no multiple of $3$ ever appears. Also, both moves increase the number, so $1$ never appears. Every other number up to $30$ does appear: adding $3$ repeatedly to $2$ gives $2, 5, 8, \\ldots, 29$, and doubling once gives $4$, from which adding $3$ gives $4, 7, 10, \\ldots, 28$. That is $10 + 9 = 19$ numbers. Transferable idea: an invariant shows what is impossible, and an explicit construction shows the rest is possible.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-12"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

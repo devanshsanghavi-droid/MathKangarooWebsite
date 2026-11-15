@@ -1,0 +1,69 @@
+{
+  "id": "AM-0196",
+  "contest": "AMC12",
+  "slot": 4,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-AUXILIARY",
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Two parallel chords of a circle have lengths $14$ and $48$. Both lie on the same side of the center, and the distance between them is $17$. What is the diameter of the circle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I found the distance from the center to the shorter chord, 24, and reported it as the answer."
+    },
+    {
+      "key": "B",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I found the radius, 25, and forgot that the question asks for the diameter."
+    },
+    {
+      "key": "C",
+      "text": "$31$",
+      "correct": false,
+      "misconception": "I solved for the sum of the two center-to-chord distances, 31, and reported that instead of using it to find the radius."
+    },
+    {
+      "key": "D",
+      "text": "$50$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$62$",
+      "correct": false,
+      "misconception": "I thought the diameter was twice the sum of the two center-to-chord distances, so I doubled 31."
+    }
+  ],
+  "hints": [
+    "Drop a perpendicular from the center to each chord.",
+    "The perpendicular from the center bisects each chord. Each half-chord, its distance from the center and the radius form a right triangle with the same hypotenuse.",
+    "If the distances are $x$ for the short chord and $y$ for the long one, then $x^2 + 7^2 = y^2 + 24^2$ and $x - y = 17$. Factor $x^2 - y^2 = 527$."
+  ],
+  "solutions": {
+    "reliable": "Let the center be $O$ and let its distances to the chords of length $14$ and $48$ be $x$ and $y$. The shorter chord is farther from the center, and both are on the same side, so $x - y = 17$. Each perpendicular bisects its chord, so $r^2 = x^2 + 7^2 = y^2 + 24^2$. Then $x^2 - y^2 = 576 - 49 = 527$, and $(x - y)(x + y) = 527$ gives $x + y = 31$. So $x = 24$, $y = 7$, $r^2 = 24^2 + 7^2 = 625$, $r = 25$, and the diameter is $50$. Transferable idea: two right triangles sharing a hypotenuse give a difference of squares.",
+    "elegant": "The numbers $7$ and $24$ appear as half-chords, and $7, 24, 25$ is a triple. Trying $r = 25$: the distances are $\\sqrt{625 - 49} = 24$ and $\\sqrt{625 - 576} = 7$, which differ by $17$. So the diameter is $50$. Transferable idea: guess a triple and check it against the remaining condition."
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

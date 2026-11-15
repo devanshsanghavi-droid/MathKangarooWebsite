@@ -1,0 +1,18 @@
+{
+  "id": "F-CP-07",
+  "area": "CP",
+  "name": "Pascal's identity",
+  "formula": "\\binom{n}{k} = \\binom{n-1}{k-1} + \\binom{n-1}{k}",
+  "whenToUse": "Adding neighbouring binomial coefficients, building Pascal's triangle, or setting up a recursion by asking whether a particular item is chosen.",
+  "example": "$\\binom{10}{4} + \\binom{10}{5} = 210 + 252 = 462 = \\binom{11}{5}$.",
+  "pitfall": "The two coefficients you add must have the SAME top number and bottom numbers that differ by one; the result has top number one larger.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-RECURSION"
+  ],
+  "derivation": "Fix one item. A $k$-subset of $n$ items either contains it ($\\binom{n-1}{k-1}$ ways to pick the rest) or does not ($\\binom{n-1}{k}$ ways)."
+}

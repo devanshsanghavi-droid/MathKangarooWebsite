@@ -1,0 +1,70 @@
+{
+  "id": "AM-0243",
+  "contest": "AMC12",
+  "slot": 9,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-ROOTS-UNITY",
+    "T-CYCLE"
+  ],
+  "statement": "Let $\\omega = \\cos 120^\\circ + i \\sin 120^\\circ$, where $i = \\sqrt{-1}$. For how many integers $n$ with $1 \\le n \\le 100$ is $(1 + \\omega)^n = 1$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I assumed 1 + omega has absolute value greater than 1, as 1 + i does, so I decided no power of it could equal 1. In fact 1 + omega has absolute value exactly 1."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I counted the multiples of 6 from 0 to 100, but n = 0 is not in the range."
+    },
+    {
+      "key": "D",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I saw that (1 + omega)^3 is real and counted the multiples of 3, but (1 + omega)^3 = -1, not 1, so only every second multiple of 3 works."
+    },
+    {
+      "key": "E",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I used 1 + omega + omega^2 = 0 but dropped the omega^2, so I simplified 1 + omega to -1 and counted every even n."
+    }
+  ],
+  "hints": [
+    "Simplify $1 + \\omega$ before raising it to any power.",
+    "$\\omega = -\\frac{1}{2} + \\frac{\\sqrt{3}}{2} i$, so $1 + \\omega = \\frac{1}{2} + \\frac{\\sqrt{3}}{2} i = \\cos 60^\\circ + i \\sin 60^\\circ$.",
+    "By De Moivre, $(1 + \\omega)^n = \\cos (60n)^\\circ + i \\sin (60n)^\\circ$, which equals $1$ exactly when $360 \\mid 60n$."
+  ],
+  "solutions": {
+    "reliable": "Since $\\omega = -\\frac{1}{2} + \\frac{\\sqrt{3}}{2} i$, we have $1 + \\omega = \\frac{1}{2} + \\frac{\\sqrt{3}}{2} i = \\cos 60^\\circ + i \\sin 60^\\circ$, a number with absolute value $1$ and argument $60^\\circ$. By De Moivre's theorem $(1 + \\omega)^n = \\cos (60n)^\\circ + i \\sin (60n)^\\circ$, which equals $1$ exactly when $60n$ is a multiple of $360$, that is, when $6 \\mid n$. The multiples of $6$ from $1$ to $100$ are $6, 12, \\dots, 96$, which is $16$ values.",
+    "elegant": "Since $\\omega$ is a cube root of unity other than $1$, $1 + \\omega + \\omega^2 = 0$, so $1 + \\omega = -\\omega^2$ and $(1 + \\omega)^n = (-1)^n \\omega^{2n}$. The power $\\omega^{2n}$ is one of $1, \\omega, \\omega^2$, and only $1$ is real, so we need $3 \\mid n$ and also $n$ even, that is, $6 \\mid n$. That gives $\\lfloor 100/6 \\rfloor = 16$."
+  },
+  "formulas": [
+    "F-ALG-13",
+    "F-ALG-12"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "AM-0098",
+  "contest": "AMC10",
+  "slot": 14,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": [
+    "T-BIJECTION",
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "Let $N = 2^6 \\cdot 3^5 \\cdot 5^2$. For how many positive divisors $d$ of $N$ is $\\dfrac{N}{d}$ a perfect square?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I used $\\lfloor e/2 \\rfloor$ choices for each exponent instead of $\\lfloor e/2 \\rfloor + 1$, getting $3 \\cdot 2 \\cdot 1 = 6$."
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I listed the allowed exponents of 2 in $d$ as 2, 4, 6 and forgot 0, giving $3 \\cdot 3 \\cdot 2 = 18$."
+    },
+    {
+      "key": "C",
+      "text": "$24$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$63$",
+      "correct": false,
+      "misconception": "I used the pairing of divisors $d$ and $N/d$ to assume that exactly half of the 126 divisors work."
+    },
+    {
+      "key": "E",
+      "text": "$126$",
+      "correct": false,
+      "misconception": "I counted all $(6+1)(5+1)(2+1) = 126$ divisors of $N$ without applying the perfect-square condition."
+    }
+  ],
+  "hints": [
+    "Look at the exponent of each prime in $N/d$.",
+    "$N/d$ is a perfect square exactly when every exponent in it is even. Count the allowed exponents of 2, 3 and 5 in $d$ separately, then multiply.",
+    "The exponent of 2 in $d$ must be one of $0, 2, 4, 6$; of 3, one of $1, 3, 5$; of 5, one of $0, 2$. Multiply the three counts."
+  ],
+  "solutions": {
+    "reliable": "Write $d = 2^x 3^y 5^z$ with $0 \\le x \\le 6$, $0 \\le y \\le 5$, $0 \\le z \\le 2$. Then $N/d = 2^{6-x} 3^{5-y} 5^{2-z}$, which is a perfect square exactly when $6 - x$, $5 - y$ and $2 - z$ are all even. So $x \\in \\{0, 2, 4, 6\\}$ (4 choices), $y \\in \\{1, 3, 5\\}$ (3 choices) and $z \\in \\{0, 2\\}$ (2 choices), giving $4 \\cdot 3 \\cdot 2 = 24$ divisors. Transferable idea: a condition on a divisor of a factored number splits into independent conditions on each exponent.",
+    "elegant": "The map $d \\mapsto N/d$ is a bijection on the divisors of $N$, so the answer equals the number of perfect-square divisors of $N$. Those have exponents of 2 in $\\{0, 2, 4, 6\\}$, of 3 in $\\{0, 2, 4\\}$ and of 5 in $\\{0, 2\\}$: again $4 \\cdot 3 \\cdot 2 = 24$."
+  },
+  "formulas": [
+    "F-NT-01"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

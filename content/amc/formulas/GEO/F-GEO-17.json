@@ -1,0 +1,15 @@
+{
+  "id": "F-GEO-17",
+  "area": "GEO",
+  "name": "Equal tangent segments",
+  "formula": "PA = PB \\text{ for tangents from } P, \\qquad \\text{incircle: tangent length from } A = s - a",
+  "whenToUse": "Two tangent lines are drawn to a circle from one point, or a circle is inscribed in a triangle or quadrilateral and side lengths are involved.",
+  "example": "In a triangle with $BC = 14$, $CA = 15$, $AB = 13$, we have $s = 21$, so the incircle touches the sides at distances $21 - 14 = 7$ from $A$, $21 - 15 = 6$ from $B$ and $21 - 13 = 8$ from $C$. Check: $7 + 6 = 13$.",
+  "pitfall": "The tangent length from vertex $A$ is $s$ minus the side OPPOSITE $A$. A quadrilateral with an incircle has equal sums of opposite sides.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "derivation": "The two right triangles formed by $P$, the center and each tangent point share a hypotenuse and have equal legs (radii), so they are congruent."
+}

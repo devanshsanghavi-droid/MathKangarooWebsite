@@ -1,0 +1,71 @@
+{
+  "id": "AM-0185",
+  "contest": "AMC12",
+  "slot": 20,
+  "area": "ALG",
+  "topic": "ALG-06",
+  "types": [
+    "T-VIETA",
+    "T-SUBSTITUTION",
+    "T-EVALUATE"
+  ],
+  "statement": "Positive real numbers $a$, $b$, $c$, none equal to $1$, satisfy $\\log_a b + \\log_b c + \\log_c a = 5$ and $\\log_b a + \\log_c b + \\log_a c = 6$. Let $p = \\log_a b$, $q = \\log_b c$ and $r = \\log_c a$. What is $(p + q)(q + r)(r + p)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-29$",
+      "correct": false,
+      "misconception": "I wrote each pair sum as $p + q = r - 5$ instead of $5 - r$, so I computed $(p - 5)(q - 5)(r - 5)$, which is the negative of the right product."
+    },
+    {
+      "key": "B",
+      "text": "$29$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I used $(p + q)(q + r)(r + p) = (p + q + r)(pq + qr + rp)$ and left out the $-pqr$ term, getting $5 \\cdot 6$."
+    },
+    {
+      "key": "D",
+      "text": "$31$",
+      "correct": false,
+      "misconception": "I used $(p + q)(q + r)(r + p) = (p + q + r)(pq + qr + rp) + pqr$, with a plus where a minus belongs."
+    },
+    {
+      "key": "E",
+      "text": "$87$",
+      "correct": false,
+      "misconception": "I computed $(p + q + r)^3 - (p^3 + q^3 + r^3) = 125 - 38$, but that difference is three times the product, not the product itself."
+    }
+  ],
+  "hints": [
+    "Use the log chain to find $pqr$, and rewrite the second condition in terms of $p$, $q$ and $r$.",
+    "$pqr = \\log_a b \\cdot \\log_b c \\cdot \\log_c a = \\log_a a = 1$, and $\\log_b a + \\log_c b + \\log_a c = \\frac1p + \\frac1q + \\frac1r$. Because $pqr = 1$, that sum equals $pq + qr + rp$.",
+    "So $p + q + r = 5$, $pq + qr + rp = 6$ and $pqr = 1$. Since $p + q = 5 - r$ and so on, the product is $(5 - p)(5 - q)(5 - r)$: evaluate $t^3 - 5t^2 + 6t - 1$ at $t = 5$."
+  ],
+  "solutions": {
+    "reliable": "By the log chain, $pqr = \\log_a b \\cdot \\log_b c \\cdot \\log_c a = \\log_a a = 1$. Since $\\log_b a = \\frac1p$, $\\log_c b = \\frac1q$ and $\\log_a c = \\frac1r$, the second condition says $\\frac{qr + rp + pq}{pqr} = 6$, so $pq + qr + rp = 6$. Hence $p, q, r$ are the roots of $P(t) = t^3 - 5t^2 + 6t - 1$. Because $p + q + r = 5$, each pair sum is $5$ minus the third number, so $(p + q)(q + r)(r + p) = (5 - r)(5 - p)(5 - q) = P(5) = 125 - 125 + 30 - 1 = 29$. Such numbers exist: $P$ takes the values $-1, 1, -1, 7$ at $t = 0, 1, 2, 4$, so it has three positive roots. Take $p$ and $q$ to be two of them, $a = 2$, $b = 2^p$ and $c = b^q$; then $r = \\log_c a = \\frac{1}{pq}$ is the third root. Transferable idea: a cyclic chain of logarithms multiplies to $1$, which turns two sums of logs into the full set of Vieta values for a cubic.",
+    "elegant": "For any three numbers, $(p + q)(q + r)(r + p) = (p + q + r)(pq + qr + rp) - pqr$. With $pqr = 1$ from the log chain and $pq + qr + rp = \\frac1p + \\frac1q + \\frac1r = 6$, the product is $5 \\cdot 6 - 1 = 29$."
+  },
+  "formulas": [
+    "F-ALG-11",
+    "F-ALG-01"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

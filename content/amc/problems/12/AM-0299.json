@@ -1,0 +1,70 @@
+{
+  "id": "AM-0299",
+  "contest": "AMC12",
+  "slot": 21,
+  "area": "CP",
+  "topic": "CP-10",
+  "types": [
+    "T-BIJECTION",
+    "T-COMPLEMENT"
+  ],
+  "statement": "A bag holds $5$ white and $5$ black marbles. They are drawn one at a time, without replacement, until the bag is empty. What is the probability that at some moment during the drawing, the number of black marbles drawn so far exceeds the number of white marbles drawn so far by at least $2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{15}{128}$",
+      "correct": false,
+      "misconception": "I counted the 120 bad orders correctly but divided by 2^10, as if each draw were an independent fair coin flip."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1}{6}$",
+      "correct": false,
+      "misconception": "I took the number of orders in which black gets 2 ahead to be the Catalan number 42, so I got 42 out of 252."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{2}{9}$",
+      "correct": false,
+      "misconception": "I only counted the orders that start with two black marbles, which have probability (5/10)(4/9)."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{10}{21}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{11}{21}$",
+      "correct": false,
+      "misconception": "I computed the probability that black never gets 2 ahead and reported that instead of the probability asked for."
+    }
+  ],
+  "hints": [
+    "Track one number as you draw: black so far minus white so far.",
+    "Each order is a path of $\\pm1$ steps that starts and ends at height $0$ after 10 steps. You want the paths that reach height $2$. Reflect the part of the path after its first visit to height $2$.",
+    "Reflecting after the first visit to height $2$ turns a path that ends at $0$ into one that ends at $4$, and this is a bijection. A 10-step path from $0$ to $4$ has 7 up-steps."
+  ],
+  "solutions": {
+    "reliable": "All $\\binom{10}{5} = 252$ orders are equally likely. Record black as $+1$ and white as $-1$; each order is a path from height $0$ to height $0$ in 10 steps. For a path that reaches height $2$, reflect everything after its first visit to $2$ across the line at height $2$. The result ends at height $4$, and every path ending at $4$ must cross height $2$, so the reflection is a bijection. Paths ending at $4$ have 7 up-steps and 3 down-steps: $\\binom{10}{7} = 120$. The probability is $\\frac{120}{252} = \\frac{10}{21}$. Small check with 2 marbles of each colour: only BBWW reaches height 2, and the formula gives $\\binom{4}{4} = 1$. Transferable idea: the reflection principle counts paths that touch a line by counting paths to a reflected endpoint.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-15",
+    "F-CP-17"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

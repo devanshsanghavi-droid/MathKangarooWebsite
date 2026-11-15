@@ -1,0 +1,70 @@
+{
+  "id": "AM-0110",
+  "contest": "BOTH",
+  "slot": 21,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-MODULAR",
+    "T-CASEWORK"
+  ],
+  "statement": "How many ordered triples $(a, b, c)$, with each of $a, b, c$ in $\\{1, 2, 3, \\ldots, 12\\}$, have $a^2 + b^2 + c^2$ divisible by $12$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I thought each square had to be divisible by 12 on its own, so I only used the multiples of 6."
+    },
+    {
+      "key": "B",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I handled the condition modulo 4 correctly but, modulo 3, only allowed all three numbers to be non-multiples of 3, missing the case where all three are multiples of 3."
+    },
+    {
+      "key": "C",
+      "text": "$72$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$216$",
+      "correct": false,
+      "misconception": "I saw that all three numbers must be even and stopped there, ignoring the condition modulo 3."
+    },
+    {
+      "key": "E",
+      "text": "$576$",
+      "correct": false,
+      "misconception": "I applied the condition modulo 3, all three multiples of 3 or none, but ignored the condition modulo 4."
+    }
+  ],
+  "hints": [
+    "Split divisibility by 12 into divisibility by 4 and by 3.",
+    "Squares are 0 or 1 modulo 4, and 0 or 1 modulo 3. Work out which combinations of three squares add to a multiple of 4, and which to a multiple of 3.",
+    "Modulo 4: all three numbers must be even. Modulo 3: either all three are multiples of 3 or none is. Among the six even numbers, two are multiples of 3."
+  ],
+  "solutions": {
+    "reliable": "A square is $0$ or $1$ modulo 4, so a sum of three squares is $0 \\pmod 4$ only when all three squares are $0 \\pmod 4$, that is, all of $a, b, c$ are even. A square is $0$ or $1$ modulo 3, so the sum is $0 \\pmod 3$ only when the three squares are all $0$ or all $1$, that is, when $a, b, c$ are all multiples of 3 or none of them is. The even numbers in the set are $2, 4, 6, 8, 10, 12$; of these, $6$ and $12$ are multiples of 3 and $2, 4, 8, 10$ are not. So the count is $2^3 + 4^3 = 8 + 64 = 72$. Transferable idea: split a composite modulus into prime-power pieces and use the short list of square residues for each.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-13",
+    "F-NT-12"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

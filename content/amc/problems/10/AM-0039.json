@@ -1,0 +1,68 @@
+{
+  "id": "AM-0039",
+  "contest": "AMC10",
+  "slot": 1,
+  "area": "GEO",
+  "topic": "GEO-01",
+  "types": [
+    "T-ANGLE-CHASE"
+  ],
+  "statement": "Each interior angle of a regular polygon is $120^\\circ$ larger than each of its exterior angles. How many sides does the polygon have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I treated 120 degrees as the exterior angle and divided 360 by 120 to get 3 sides."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I treated 120 degrees as the interior angle itself, so the exterior angle was 60 and 360 / 60 gave 6 sides."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I solved for the exterior angle, 30 degrees, and gave that as the number of sides."
+    },
+    {
+      "key": "E",
+      "text": "$150$",
+      "correct": false,
+      "misconception": "I solved for the interior angle, 150 degrees, and gave that as the number of sides."
+    }
+  ],
+  "hints": [
+    "An interior angle and its exterior angle sit side by side on a straight line.",
+    "You know the sum and the difference of the two angles, so you can find each one. The exterior angles of any convex polygon add up to a full turn.",
+    "Interior $+$ exterior $= 180^\\circ$ and interior $-$ exterior $= 120^\\circ$, so the exterior angle is $30^\\circ$. Now divide $360^\\circ$ by it."
+  ],
+  "solutions": {
+    "reliable": "Let the exterior angle be $e$. The interior angle is $180^\\circ - e$, and the condition says $(180^\\circ - e) - e = 120^\\circ$, so $2e = 60^\\circ$ and $e = 30^\\circ$. The exterior angles of a convex polygon add to $360^\\circ$, and in a regular polygon they are all equal, so the number of sides is $360 / 30 = 12$. Check: a regular $12$-gon has interior angle $150^\\circ$, and $150 - 30 = 120$. The transferable idea: in a regular polygon, work with the exterior angle, since $n = 360^\\circ / e$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-19"
+  ],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

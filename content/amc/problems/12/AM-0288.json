@@ -1,0 +1,70 @@
+{
+  "id": "AM-0288",
+  "contest": "AMC12",
+  "slot": 14,
+  "area": "CP",
+  "topic": "CP-05",
+  "types": [
+    "T-STARS-BARS",
+    "T-PIE"
+  ],
+  "statement": "A baker places $15$ identical muffins into $4$ different boxes. A box may be left empty, but no box can hold more than $6$ muffins. In how many ways can the muffins be placed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$140$",
+      "correct": false,
+      "misconception": "I assumed every box must get at least one muffin, so I only counted placements where each box holds between 1 and 6 muffins."
+    },
+    {
+      "key": "B",
+      "text": "$156$",
+      "correct": false,
+      "misconception": "I subtracted the 4 times 165 = 660 placements with an overfull box but did not add back the placements with two overfull boxes."
+    },
+    {
+      "key": "C",
+      "text": "$180$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$651$",
+      "correct": false,
+      "misconception": "I subtracted the 165 placements with too many muffins in a box only once, instead of once for each of the 4 boxes."
+    },
+    {
+      "key": "E",
+      "text": "$816$",
+      "correct": false,
+      "misconception": "I used stars and bars, C(18, 3) = 816, and ignored the limit of 6 muffins per box."
+    }
+  ],
+  "hints": [
+    "Ignore the limit first, then repair the count.",
+    "Stars and bars counts every placement. A box that breaks the rule has at least 7 muffins: put 7 in it first and count the rest. Inclusion-exclusion handles two boxes that both break the rule.",
+    "All placements: $\\binom{18}{3} = 816$. A named box with at least 7: $\\binom{11}{3} = 165$. Two named boxes with at least 7 each: 1 muffin left, $\\binom{4}{3} = 4$ ways. Three boxes cannot all be overfull."
+  ],
+  "solutions": {
+    "reliable": "Without the limit, stars and bars gives $\\binom{15+3}{3} = 816$ placements. If a particular box has at least 7, put 7 in it and distribute the other 8 freely: $\\binom{11}{3} = 165$, and there are 4 choices of box. If two particular boxes each have at least 7, only 1 muffin remains: $\\binom{4}{3} = 4$ ways, for each of $\\binom{4}{2} = 6$ pairs. Three overfull boxes would need 21 muffins. So the count is $816 - 4 \\cdot 165 + 6 \\cdot 4 = 816 - 660 + 24 = 180$. Transferable idea: an upper limit becomes a lower limit on the bad cases, which stars and bars can count.",
+    "elegant": "Count the empty spaces instead. If box $i$ holds $x_i$ muffins, let $y_i = 6 - x_i$ be its empty spaces. Then $y_1 + y_2 + y_3 + y_4 = 24 - 15 = 9$ with each $y_i \\le 6$. Stars and bars with one correction: $\\binom{12}{3} - 4\\binom{5}{3} = 220 - 40 = 180$ (no two $y_i$ can both be 7 or more)."
+  },
+  "formulas": [
+    "F-CP-05",
+    "F-CP-01"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

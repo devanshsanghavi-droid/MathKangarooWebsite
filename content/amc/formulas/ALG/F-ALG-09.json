@@ -1,0 +1,15 @@
+{
+  "id": "F-ALG-09",
+  "area": "ALG",
+  "name": "Binomial theorem",
+  "formula": "(x + y)^n = \\sum_{k=0}^{n} \\binom{n}{k} x^{k} y^{\\,n-k} \\quad (n \\ge 0 \\text{ an integer})",
+  "whenToUse": "Find one coefficient in a power of a binomial, expand a small power quickly, or recognise a sum of binomial coefficients times powers.",
+  "example": "In $(2x - 1)^5$ the $x^3$ term is $\\binom{5}{3}(2x)^3(-1)^2 = 10 \\cdot 8x^3 = 80x^3$, so the coefficient is $80$.",
+  "pitfall": "Raise the WHOLE term to the power, coefficient and sign included: $(2x)^3 = 8x^3$, not $2x^3$, and a negative term contributes a sign of $(-1)^{\\text{power}}$.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "derivation": "Expanding $n$ factors of $(x + y)$, a term $x^k y^{n-k}$ comes from choosing $x$ in exactly $k$ of the factors, which can be done in $\\binom{n}{k}$ ways."
+}

@@ -1,0 +1,70 @@
+{
+  "id": "AM-0111",
+  "contest": "BOTH",
+  "slot": 21,
+  "area": "NT",
+  "topic": "NT-10",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-COMPLEMENT",
+    "T-CYCLE"
+  ],
+  "statement": "For how many positive integers $n$ is the decimal expansion of $\\dfrac{1}{n}$ purely repeating (the repetition starts right after the decimal point) with a shortest repeating block of exactly $4$ digits?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I treated 1111 as prime, so 9999 seemed to have divisors 1, 3, 9, 1111, 3333, 9999, and I removed 1, 3 and 9 for having period 1."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I removed only the divisors 1, 3 and 9 of 9999, which have period 1, and forgot that 11, 33 and 99 have period 2."
+    },
+    {
+      "key": "D",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I counted every divisor of 9999 except 1, forgetting that periods 1 and 2 also divide 4."
+    },
+    {
+      "key": "E",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I counted all 12 divisors of $9999 = 3^2 \\cdot 11 \\cdot 101$, forgetting that a block of length 1 or 2 also repeats every 4 digits."
+    }
+  ],
+  "hints": [
+    "A purely repeating block of length $k$ means $\\frac1n = \\frac{\\text{block}}{10^k - 1}$.",
+    "$\\frac1n$ repeats purely with a block length dividing 4 exactly when $n$ divides $9999$. Remove the $n$ whose shortest block is shorter than 4.",
+    "$9999 = 3^2 \\cdot 11 \\cdot 101$ has 12 divisors. The shortest block has length 1 or 2 exactly when $n$ divides $99$, which has 6 divisors."
+  ],
+  "solutions": {
+    "reliable": "If $\\frac1n$ repeats purely with a block of $k$ digits $B$, then $\\frac1n = \\frac{B}{10^k - 1}$, so $n$ divides $10^k - 1$; conversely if $n \\mid 10^k - 1$ then $\\frac1n = \\frac{(10^k - 1)/n}{10^k - 1}$ repeats with a block of $k$ digits. The shortest block divides every such $k$, so the shortest block is exactly 4 when $n \\mid 9999$ but $n \\nmid 99$ (block length 1 or 2 means $n \\mid 9$ or $n \\mid 99$, and $9 \\mid 99$). Now $9999 = 3^2 \\cdot 11 \\cdot 101$ has $3 \\cdot 2 \\cdot 2 = 12$ divisors and $99 = 3^2 \\cdot 11$ has 6, all of which divide 9999. The answer is $12 - 6 = 6$: $n = 101, 303, 909, 1111, 3333, 9999$. Check: $\\frac{1}{101} = 0.\\overline{0099}$. Transferable idea: the period of $\\frac1n$ is the least $k$ with $n \\mid 10^k - 1$, so period questions are divisor questions about $10^k - 1$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-14"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "F-GEO-15",
+  "area": "GEO",
+  "name": "Extended law of sines",
+  "formula": "\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2R",
+  "whenToUse": "You know an angle and its opposite side and need another side, or you need the circumradius of a triangle.",
+  "example": "A triangle has $A = 30^\\circ$ and $a = 6$. Then $2R = \\frac{6}{1/2} = 12$, so $R = 6$. If also $B = 45^\\circ$, then $b = 12 \\sin 45^\\circ = 6\\sqrt{2}$.",
+  "pitfall": "Each side pairs with the angle OPPOSITE it. Given two sides and a non-included angle, there may be two different triangles.",
+  "priority": "must-know",
+  "contests": [
+    "AMC12"
+  ],
+  "derivation": "Draw the diameter from $B$ through the center, meeting the circle at $D$. Angle $BDC$ equals $A$ (same arc), and triangle $BCD$ has a right angle at $C$, so $a = 2R \\sin A$. If $A$ is obtuse, $D$ lies on the other arc and $\\angle BDC = 180^\\circ - A$, which has the same sine."
+}

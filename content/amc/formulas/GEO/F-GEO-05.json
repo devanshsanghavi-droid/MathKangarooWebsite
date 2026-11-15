@@ -1,0 +1,18 @@
+{
+  "id": "F-GEO-05",
+  "area": "GEO",
+  "name": "Area from two sides and the included angle",
+  "formula": "K = \\tfrac{1}{2}\\,ab \\sin C",
+  "whenToUse": "Two sides of a triangle and the angle BETWEEN them are known, or you need the ratio of areas of two triangles sharing an angle.",
+  "example": "Sides $8$ and $5$ with a $30^\\circ$ angle between them give $K = \\frac{1}{2} \\cdot 8 \\cdot 5 \\cdot \\frac{1}{2} = 10$. Two triangles sharing angle $A$ have areas in the ratio $\\frac{AB \\cdot AC}{AB' \\cdot AC'}$.",
+  "pitfall": "The angle must be the one between the two sides you use. Also $\\sin 150^\\circ = \\sin 30^\\circ$, so an obtuse included angle still works.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-AREA-RATIO"
+  ],
+  "derivation": "Take $a$ as the base. The height from the opposite vertex is $b \\sin C$, so the area is $\\frac{1}{2} \\cdot a \\cdot b \\sin C$."
+}

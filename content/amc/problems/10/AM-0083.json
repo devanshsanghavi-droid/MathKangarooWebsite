@@ -1,0 +1,70 @@
+{
+  "id": "AM-0083",
+  "contest": "BOTH",
+  "slot": 7,
+  "area": "NT",
+  "topic": "NT-07",
+  "types": [
+    "T-MODULAR",
+    "T-EXTREME"
+  ],
+  "statement": "A post office sells only $7$-cent stamps and $11$-cent stamps. Using any number of each kind (possibly none of one kind), a customer puts exactly $198$ cents of postage on a package. What is the largest number of stamps the customer could have used?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found the three possible combinations, with 26, 22 and 18 stamps, and reported how many combinations there are instead of the largest total."
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I used as many 11-cent stamps as possible, 198 / 11 = 18, but using more of the bigger stamp gives the smallest total, not the largest."
+    },
+    {
+      "key": "C",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I found the combination with eleven stamps of each kind, 7 x 11 + 11 x 11 = 198, and stopped without looking for others."
+    },
+    {
+      "key": "D",
+      "text": "$26$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I divided 198 by 7, rounded down to 28 stamps, and did not check that 28 sevens leave 2 cents that no stamp can make."
+    }
+  ],
+  "hints": [
+    "To use many stamps, use many of the cheap ones. Which numbers of $11$-cent stamps leave an amount divisible by $7$?",
+    "Look at $7a + 11b = 198$ modulo $7$: $198 \\equiv 2$ and $11b \\equiv 4b$, so you need $4b \\equiv 2 \\pmod 7$.",
+    "That gives $b \\equiv 4 \\pmod 7$, so $b \\in \\{4, 11, 18\\}$. The fewest $11$-cent stamps is $b = 4$, which leaves $a = 22$."
+  ],
+  "solutions": {
+    "reliable": "Let $a$ and $b$ be the numbers of $7$-cent and $11$-cent stamps, so $7a + 11b = 198$ with $a, b \\ge 0$. Try $b = 0, 1, 2, \\ldots$ and check whether $198 - 11b$ is divisible by $7$: $198, 187, 176, 165$ are not, but $198 - 44 = 154 = 7 \\cdot 22$ is. Since $\\gcd(7, 11) = 1$, the other solutions come from $b \\to b + 7$, $a \\to a - 11$, giving $(a, b) = (22, 4), (11, 11), (0, 18)$. Each step trades eleven $7$-cent stamps for seven $11$-cent stamps and loses $4$ stamps, so the total $a + b$ is largest at $(22, 4)$: $26$ stamps.",
+    "elegant": "From $7a + 11b = 198$ we get $7(a + b) = 198 - 4b$, so the number of stamps is $\\dfrac{198 - 4b}{7}$, which is largest when $b$ is smallest. Modulo $7$, $4b \\equiv 198 \\equiv 2$, so $b \\equiv 4$. The least choice $b = 4$ gives $(198 - 16)/7 = 26$."
+  },
+  "formulas": [
+    "F-NT-21",
+    "F-NT-12"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

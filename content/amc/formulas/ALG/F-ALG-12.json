@@ -1,0 +1,18 @@
+{
+  "id": "F-ALG-12",
+  "area": "ALG",
+  "name": "Roots of unity",
+  "formula": "\\omega = e^{2\\pi i/n}: \\quad x^n - 1 = \\prod_{k=0}^{n-1} (x - \\omega^k), \\qquad 1 + \\omega + \\omega^2 + \\cdots + \\omega^{n-1} = 0\\ \\ (n \\ge 2)",
+  "whenToUse": "Powers of a complex number land back on $1$, a polynomial has a factor like $x^2 + x + 1$, or you need to filter terms of a sum by their index modulo $n$.",
+  "example": "Let $\\omega$ be a non-real cube root of $1$, so $1 + \\omega + \\omega^2 = 0$ and $\\omega^3 = 1$. Since $100 = 3 \\cdot 33 + 1$ and $50 = 3 \\cdot 16 + 2$, we get $\\omega^{100} + \\omega^{50} + 1 = \\omega + \\omega^2 + 1 = 0$.",
+  "pitfall": "The sum of all $n$ roots is $0$, but only when you include $1$ itself. The non-real cube roots alone add to $-1$.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC12"
+  ],
+  "types": [
+    "T-ROOTS-UNITY",
+    "T-CYCLE"
+  ],
+  "derivation": "The $\\omega^k$ are the $n$ distinct roots of $x^n - 1$, which gives the product. The sum of roots of $x^n - 1$ is minus its $x^{n-1}$ coefficient, which is $0$ for $n \\ge 2$."
+}

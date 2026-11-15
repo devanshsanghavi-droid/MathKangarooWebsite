@@ -1,0 +1,70 @@
+{
+  "id": "AM-0294",
+  "contest": "AMC12",
+  "slot": 18,
+  "area": "CP",
+  "topic": "CP-11",
+  "types": [
+    "T-PIGEONHOLE",
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "What is the smallest positive integer $n$ such that every set of $n$ distinct integers chosen from $\\{1, 2, \\ldots, 50\\}$ must contain two different numbers whose product is a perfect square?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I made one box for each of the 15 primes up to 50 and added 1."
+    },
+    {
+      "key": "B",
+      "text": "$31$",
+      "correct": false,
+      "misconception": "I found the largest set with no square product, which has 31 numbers, and gave its size instead of one more."
+    },
+    {
+      "key": "C",
+      "text": "$32$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I counted the squarefree numbers by removing multiples of 4, 9 and 25 and adding back 36, but forgot that multiples of 49 are not squarefree, so I got 32 boxes."
+    },
+    {
+      "key": "E",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I thought a product is a perfect square only when both numbers are squares, so I allowed all 43 non-squares plus one square in a safe set."
+    }
+  ],
+  "hints": [
+    "Write each number as a perfect square times a leftover part.",
+    "Two numbers multiply to a perfect square exactly when their squarefree parts are equal. The squarefree parts are the pigeonholes, so count how many there are among 1 to 50.",
+    "The possible squarefree parts are exactly the squarefree numbers from 1 to 50. Count them with inclusion-exclusion on the multiples of 4, 9, 25 and 49."
+  ],
+  "solutions": {
+    "reliable": "Write each number as $s k^2$ with $s$ squarefree. If $a = s k^2$ and $b = t m^2$, then $ab$ is a square exactly when $st$ is a square, which for squarefree $s, t$ means $s = t$. So the numbers fall into classes by squarefree part, and two numbers have a square product exactly when they share a class. The classes correspond to the squarefree numbers up to 50: $50 - (12 + 5 + 2 + 1) + 1 = 31$, where we removed multiples of $4, 9, 25, 49$ and added back $36$. The 31 squarefree numbers themselves form a set with no square product, so $n \\ge 32$. Any 32 numbers put two into one of the 31 classes, so $n = 32$. Transferable idea: sort numbers by squarefree part when products must be squares, then use pigeonhole.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-20",
+    "F-CP-01"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

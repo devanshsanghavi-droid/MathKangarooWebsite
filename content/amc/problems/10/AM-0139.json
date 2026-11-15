@@ -1,0 +1,68 @@
+{
+  "id": "AM-0139",
+  "contest": "AMC10",
+  "slot": 15,
+  "area": "CP",
+  "topic": "CP-11",
+  "types": [
+    "T-PIGEONHOLE"
+  ],
+  "statement": "A grid of square cells has $7$ rows and $9$ columns. What is the least positive integer $n$ such that every choice of $n$ different cells of the grid must include two cells that touch, either along a side or at a corner?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I covered only the 12 full 2 by 2 blocks in the first 6 rows and the first 8 columns, forgot the last row and the last column, and answered 12 + 1."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I forgot the seventh row, so I used 3 rows of blocks and 5 columns of blocks, 15 boxes in all, and answered 15 + 1."
+    },
+    {
+      "key": "C",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I forgot the ninth column, so I used 4 rows of blocks and 4 columns of blocks, 16 boxes in all, and answered 16 + 1."
+    },
+    {
+      "key": "D",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I found the 20 cells in the odd rows and odd columns, no two of which touch, and gave that size instead of one more than it."
+    },
+    {
+      "key": "E",
+      "text": "$21$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Any two cells inside the same $2 \\times 2$ block touch.",
+    "This is pigeonhole: cut the grid into as few pieces as possible so that any two cells in the same piece touch. Then show you cannot do better by finding a set of cells, one in each piece, with no two touching.",
+    "Group the rows as $1$-$2$, $3$-$4$, $5$-$6$, $7$ and the columns as $1$-$2$, $3$-$4$, $5$-$6$, $7$-$8$, $9$. That makes $4 \\cdot 5 = 20$ pieces, each at most $2 \\times 2$."
+  ],
+  "solutions": {
+    "reliable": "Group the rows into $\\{1,2\\}, \\{3,4\\}, \\{5,6\\}, \\{7\\}$ and the columns into $\\{1,2\\}, \\{3,4\\}, \\{5,6\\}, \\{7,8\\}, \\{9\\}$. Each row group and column group together cut out a piece of at most $2 \\times 2$ cells, giving $4 \\cdot 5 = 20$ pieces, and any two cells in the same piece touch. So any $21$ cells put two in the same piece, and those two touch. On the other hand, the $20$ cells in rows $1, 3, 5, 7$ and columns $1, 3, 5, 7, 9$ are pairwise at least $2$ apart in their row or their column, so no two of them touch. Hence $20$ cells do not force a touching pair and $21$ do: $n = 21$. The transferable idea: a pigeonhole answer needs two halves, boxes that force the property and an example showing one fewer is not enough.",
+    "elegant": "Give each chosen cell the $2 \\times 2$ square that has it as its top-left cell, after adding one blank row below the grid and one blank column to its right. If two of these squares overlapped, their top-left cells would differ by at most $1$ in row and in column, so they would touch. So for a choice with no two cells touching, the squares do not overlap and all fit inside an $8 \\times 10$ rectangle of area $80$, which allows at most $80 / 4 = 20$ cells. The $20$ cells in odd rows and odd columns show that $20$ is possible, so the answer is $21$."
+  },
+  "formulas": [
+    "F-CP-20"
+  ],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

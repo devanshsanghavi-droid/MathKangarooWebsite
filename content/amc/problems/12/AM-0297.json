@@ -1,0 +1,71 @@
+{
+  "id": "AM-0297",
+  "contest": "AMC12",
+  "slot": 20,
+  "area": "CP",
+  "topic": "CP-05",
+  "types": [
+    "T-STARS-BARS",
+    "T-SYMMETRY",
+    "T-CASEWORK"
+  ],
+  "statement": "In how many ways can $1296$ be written as a product $a \\cdot b \\cdot c$ of positive integers with $a \\le b \\le c$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I only counted the triples with a < b < c and forgot the ones where two of the factors are equal."
+    },
+    {
+      "key": "B",
+      "text": "$39$",
+      "correct": false,
+      "misconception": "I computed (225 + 9)/6, counting the ordered triples with two equal factors once instead of three times."
+    },
+    {
+      "key": "C",
+      "text": "$42$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I found the 33 triples with all factors different and then added 3 times 9 = 27 for the two-equal case, counting each of those triples three times."
+    },
+    {
+      "key": "E",
+      "text": "$225$",
+      "correct": false,
+      "misconception": "I counted ordered triples by distributing the exponents of 2 and of 3 with stars and bars, and never corrected for the order."
+    }
+  ],
+  "hints": [
+    "Factor $1296$ into primes first.",
+    "$1296 = 2^4 \\cdot 3^4$. Count ordered triples with stars and bars on each exponent, then correct for order, treating triples with a repeated factor separately.",
+    "Ordered triples: $\\binom{6}{2}^2 = 225$. Ordered triples with $a = b$: $a^2 c = 1296$ allows $3 \\cdot 3 = 9$ choices of $a$. No triple has $a = b = c$, because $1296$ is not a perfect cube."
+  ],
+  "solutions": {
+    "reliable": "Since $1296 = 2^4 \\cdot 3^4$, an ordered triple is a split of the exponent 4 of 2 into three parts and of the exponent 4 of 3 into three parts: $\\binom{6}{2}^2 = 225$. Triples with $a = b$ need $a = 2^i 3^j$ with $2i \\le 4$, $2j \\le 4$, so $9$ of them, and the same for $b = c$ and $a = c$. None has all three equal, since 1296 is not a cube. So $27$ ordered triples have a repeated factor, coming from $9$ multisets $\\{x, x, y\\}$, and $225 - 27 = 198$ have three different factors, coming from $\\frac{198}{6} = 33$ multisets. The total is $33 + 9 = 42$. Transferable idea: to count unordered products, count ordered ones and correct separately for repeated factors.",
+    "elegant": "Burnside's lemma: average the number of ordered triples fixed by each of the 6 ways to reorder $(a, b, c)$. The identity fixes $225$, each of the 3 swaps fixes $9$, and each of the 2 cyclic shifts fixes $0$. So the count is $\\frac{225 + 3 \\cdot 9 + 2 \\cdot 0}{6} = 42$."
+  },
+  "formulas": [
+    "F-CP-05",
+    "F-NT-01"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

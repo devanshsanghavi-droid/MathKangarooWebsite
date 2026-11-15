@@ -1,0 +1,69 @@
+{
+  "id": "AM-0186",
+  "contest": "AMC12",
+  "slot": 21,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": [
+    "T-RECURSION",
+    "T-SUBSTITUTION"
+  ],
+  "statement": "A sequence is defined by $a_1 = 1$, $a_2 = 3$ and $a_{n+2} = a_{n+1} + 2a_n$ for $n \\ge 1$. What is $\\displaystyle \\sum_{n=1}^{\\infty} \\frac{a_n}{5^n}\\,?$",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{7}{22}$",
+      "correct": false,
+      "misconception": "I wrote the denominator as $1 - x + 2x^2$ instead of $1 - x - 2x^2$, so with $x = \\frac15$ I got $\\frac{7/25}{22/25}$."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{7}{18}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{4}{9}$",
+      "correct": false,
+      "misconception": "I forgot, in $S - xS - 2x^2S$, that the shifted sum $xS$ also contains $a_1 x^2$, so I used the numerator $a_1x + a_2x^2 = \\frac{8}{25}$ and got $\\frac{8}{18}$."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{1}{2}$",
+      "correct": false,
+      "misconception": "I wrote the closed form as $a_n = \\frac{2^{n+1} - (-1)^n}{3}$, with the wrong sign on the alternating part, so the two geometric series gave $\\frac49 + \\frac1{18}$."
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{7}{10}$",
+      "correct": false,
+      "misconception": "I forgot to square $x$ in the $2x^2$ term of the denominator and divided by $1 - \\frac15 - \\frac25 = \\frac25$."
+    }
+  ],
+  "hints": [
+    "Call the sum $S$, write $x = \\frac15$, and compare $S$ with $xS$ and $x^2S$.",
+    "Line up $S$, $xS$ and $2x^2S$ term by term. From the third term on, the recurrence makes the combination $S - xS - 2x^2S$ cancel completely.",
+    "Only the first two terms survive: $S(1 - x - 2x^2) = a_1x + (a_2 - a_1)x^2 = \\frac15 + \\frac{2}{25}$. Divide by $1 - \\frac15 - \\frac{2}{25} = \\frac{18}{25}$."
+  ],
+  "solutions": {
+    "reliable": "Let $x = \\frac15$ and $S = \\sum_{n \\ge 1} a_n x^n$, which converges because $a_n < 3^n$. The coefficient of $x^n$ in $S - xS - 2x^2S$ is $a_n - a_{n-1} - 2a_{n-2} = 0$ for $n \\ge 3$; for $n = 1$ it is $a_1 = 1$ and for $n = 2$ it is $a_2 - a_1 = 2$. So $S(1 - x - 2x^2) = x + 2x^2 = \\frac{7}{25}$, and $1 - x - 2x^2 = \\frac{18}{25}$, giving $S = \\frac{7}{18}$. Transferable idea: for a linear recurrence, multiply the generating sum by the characteristic factor $1 - x - 2x^2$; only the starting terms survive.",
+    "elegant": "The roots of $t^2 = t + 2$ are $2$ and $-1$, and matching $a_1, a_2$ gives $a_n = \\frac{2^{n+1} + (-1)^n}{3}$. Then $S = \\frac23\\sum \\left(\\frac25\\right)^n + \\frac13 \\sum\\left(-\\frac15\\right)^n = \\frac23\\cdot\\frac23 + \\frac13\\cdot\\left(-\\frac16\\right) = \\frac49 - \\frac1{18} = \\frac7{18}$."
+  },
+  "formulas": [
+    "F-ALG-04"
+  ],
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

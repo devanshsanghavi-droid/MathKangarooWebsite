@@ -1,0 +1,69 @@
+{
+  "id": "AM-0049",
+  "contest": "BOTH",
+  "slot": 7,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-ANGLE-CHASE"
+  ],
+  "statement": "Points $A$, $B$, $C$, $D$ lie on a circle in that order. Chords $AC$ and $BD$ meet at $P$. If $\\angle ABD = 35^\\circ$ and $\\angle BDC = 40^\\circ$, what is the degree measure of $\\angle APB$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I used the half-difference rule for two secants from an outside point, (80 - 70)/2 = 5, but P is inside the circle."
+    },
+    {
+      "key": "B",
+      "text": "$37.5$",
+      "correct": false,
+      "misconception": "I averaged the two given angles, (35 + 40)/2, as if angle APB were half the sum of the inscribed angles instead of half the sum of the arcs."
+    },
+    {
+      "key": "C",
+      "text": "$65$",
+      "correct": false,
+      "misconception": "I used the arc BC = 80 degrees as angle BAC in triangle APB instead of half of it, so I got 180 - 35 - 80 = 65."
+    },
+    {
+      "key": "D",
+      "text": "$75$",
+      "correct": false,
+      "misconception": "I found the angle between the chords on the other side, angle APD = (70 + 80)/2 = 75, which is supplementary to angle APB."
+    },
+    {
+      "key": "E",
+      "text": "$105$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Look at triangle $APB$. Which of its angles can you find?",
+    "Inscribed angles that stand on the same arc are equal. Angle $BAC$ stands on the same arc as angle $BDC$. Then use the angle sum in triangle $APB$.",
+    "$\\angle BAP = \\angle BAC = \\angle BDC = 40^\\circ$ and $\\angle ABP = \\angle ABD = 35^\\circ$. The third angle of triangle $APB$ is what is left of $180^\\circ$."
+  ],
+  "solutions": {
+    "reliable": "Angles $BAC$ and $BDC$ are inscribed angles on the same arc $BC$, so $\\angle BAC = 40^\\circ$. Since $P$ lies on $AC$ and on $BD$, triangle $APB$ has $\\angle PAB = 40^\\circ$ and $\\angle PBA = 35^\\circ$, so $\\angle APB = 180^\\circ - 40^\\circ - 35^\\circ = 105^\\circ$. Check with arcs: arc $AD = 70^\\circ$ and arc $BC = 80^\\circ$, so arcs $AB + CD = 210^\\circ$, and the angle between two chords is half the sum of the intercepted arcs, $210/2 = 105$. The transferable idea: in a circle, swap an angle you cannot see for an equal inscribed angle on the same arc.",
+    "elegant": "The angle between two chords is half the sum of the arcs it and its vertical angle cut off. $\\angle APD$ cuts off arcs $AD = 70^\\circ$ and $BC = 80^\\circ$, so $\\angle APD = 75^\\circ$ and $\\angle APB = 180^\\circ - 75^\\circ = 105^\\circ$."
+  },
+  "formulas": [
+    "F-GEO-12",
+    "F-GEO-13"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

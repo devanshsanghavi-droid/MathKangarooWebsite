@@ -1,0 +1,70 @@
+{
+  "id": "AM-0249",
+  "contest": "AMC12",
+  "slot": 14,
+  "area": "NT",
+  "topic": "NT-01",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-PARITY",
+    "T-CASEWORK"
+  ],
+  "statement": "For how many integers $n$ with $1 \\le n \\le 100$ is $n^5 - n$ divisible by $240$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I thought n itself had to be a multiple of 16, forgetting that for odd n the factors n - 1, n + 1 and n^2 + 1 supply the 2s."
+    },
+    {
+      "key": "B",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I showed that every odd n works but assumed no even n could, missing the multiples of 16."
+    },
+    {
+      "key": "C",
+      "text": "$56$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$62$",
+      "correct": false,
+      "misconception": "I thought a multiple of 8 was enough for even n, but n^4 - 1 is then odd, so all four 2s must come from n itself."
+    },
+    {
+      "key": "E",
+      "text": "$100$",
+      "correct": false,
+      "misconception": "I knew n^5 - n is always divisible by 30 and assumed it was always divisible by 240 as well."
+    }
+  ],
+  "hints": [
+    "Factor $240 = 16 \\cdot 3 \\cdot 5$ and handle each prime power separately.",
+    "Fermat's little theorem takes care of $3$ and $5$ for every $n$. For $16$, factor $n^5 - n = n(n-1)(n+1)(n^2+1)$ and split into $n$ odd and $n$ even.",
+    "If $n$ is odd, $(n-1)(n+1)$ is a product of consecutive even numbers (divisible by $8$) and $n^2+1$ is even, so $16$ divides. If $n$ is even, $n^4 - 1$ is odd, so $16$ must divide $n$."
+  ],
+  "solutions": {
+    "reliable": "Write $240 = 2^4 \\cdot 3 \\cdot 5$. By Fermat, $n^3 \\equiv n \\pmod 3$ gives $n^5 = n^3 \\cdot n^2 \\equiv n^3 \\equiv n$, and $n^5 \\equiv n \\pmod 5$ directly, so $3$ and $5$ always divide $n^5 - n$. For the $2$s, factor $n^5 - n = n(n-1)(n+1)(n^2+1)$. If $n$ is odd, $n - 1$ and $n + 1$ are consecutive even numbers, one of them a multiple of $4$, so their product is divisible by $8$; and $n^2 + 1$ is even, so $16 \\mid n^5 - n$. All $50$ odd $n$ work. If $n$ is even, $n^4 - 1$ is odd, so the power of $2$ in $n^5 - n = n(n^4-1)$ is exactly that in $n$; we need $16 \\mid n$, which gives $16, 32, 48, 64, 80, 96$. The total is $50 + 6 = 56$. The transferable idea: split a modulus into prime powers and treat the stubborn one by cases.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-05"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

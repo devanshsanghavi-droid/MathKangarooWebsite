@@ -1,0 +1,69 @@
+{
+  "id": "AM-0095",
+  "contest": "BOTH",
+  "slot": 12,
+  "area": "NT",
+  "topic": "NT-06",
+  "types": [
+    "T-MODULAR",
+    "T-CASEWORK"
+  ],
+  "statement": "How many positive integers $n < 1000$ have the property that the sum of the digits of $n$ and the sum of the digits of $n + 1$ are both multiples of $4$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I assumed adding 1 always raises the digit sum by exactly 1, so two consecutive digit sums could never both be multiples of 4, but a carry breaks that."
+    },
+    {
+      "key": "B",
+      "text": "$22$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I found that n must end in 9 with digit sum a multiple of 4, but I did not require the tens digit to differ from 9, so I also counted 299 and 699, whose successors 300 and 700 fail."
+    },
+    {
+      "key": "D",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I reasoned that n must end in 9 and guessed that one quarter of the 100 such numbers below 1000 have digit sum a multiple of 4."
+    },
+    {
+      "key": "E",
+      "text": "$44$",
+      "correct": false,
+      "misconception": "I counted both n and n + 1 for each of the 22 good pairs, giving 44 numbers instead of 22."
+    }
+  ],
+  "hints": [
+    "Compare the digit sum of $n + 1$ with that of $n$. What happens when $n$ ends in one or more $9$s?",
+    "If $n$ ends in exactly $k$ nines, the digit sum of $n + 1$ is $S(n) + 1 - 9k$. Both are multiples of $4$ only if $1 - 9k \\equiv 0 \\pmod 4$, that is, $k \\equiv 1 \\pmod 4$.",
+    "Below $1000$ that means $n$ ends in exactly one $9$: $n = 100a + 10b + 9$ with $b \\ne 9$ and $a + b + 9 \\equiv 0 \\pmod 4$, so $a + b \\equiv 3 \\pmod 4$. Count pairs with $0 \\le a \\le 9$ and $0 \\le b \\le 8$."
+  ],
+  "solutions": {
+    "reliable": "Let $S(n)$ be the digit sum. If $n$ ends in exactly $k$ nines, adding $1$ turns those nines into zeros and raises the next digit by $1$, so $S(n + 1) = S(n) + 1 - 9k$. For both to be multiples of $4$ we need $1 - 9k \\equiv 0 \\pmod 4$, that is, $k \\equiv 1 \\pmod 4$. For $n < 1000$ we have $k \\le 3$, so $k = 1$: $n$ ends in $9$ and its tens digit is not $9$. Write $n = 100a + 10b + 9$ with $0 \\le a \\le 9$ and $0 \\le b \\le 8$ (leading zeros allowed, so this also covers $9$ and the two-digit numbers). We need $a + b + 9 \\equiv 0 \\pmod 4$, so $a + b \\in \\{3, 7, 11, 15\\}$. Counting pairs: sum $3$ gives $4$ pairs; sum $7$ gives $8$; sum $11$ needs $a$ from $3$ to $9$, giving $7$; sum $15$ needs $a$ from $7$ to $9$, giving $3$. The total is $4 + 8 + 7 + 3 = 22$. For example, $39$ has digit sum $12$ and $40$ has digit sum $4$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-12"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

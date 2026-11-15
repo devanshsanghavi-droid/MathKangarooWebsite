@@ -1,0 +1,70 @@
+{
+  "id": "AM-0218",
+  "contest": "AMC12",
+  "slot": 14,
+  "area": "GEO",
+  "topic": "GEO-01",
+  "types": [
+    "T-ANGLE-CHASE"
+  ],
+  "statement": "Let $A_1A_2A_3\\cdots A_{15}$ be a regular $15$-gon. Diagonals $\\overline{A_1A_7}$ and $\\overline{A_3A_{11}}$ intersect at $P$. What is the degree measure of $\\angle A_1PA_3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I used the rule for an angle formed outside the circle, half the difference of the arcs, (96 - 48)/2, but P is inside the circle where the arcs add."
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I took each side of the 15-gon to cut off 12 degrees of arc, mixing up the inscribed angle on one side with its arc, so I got (24 + 48)/2."
+    },
+    {
+      "key": "C",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I treated the angle at P as an inscribed angle standing on arc A_7 A_11 alone and halved its 96 degrees, ignoring the arc A_1 A_3."
+    },
+    {
+      "key": "D",
+      "text": "$72$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$108$",
+      "correct": false,
+      "misconception": "I computed the other angle at P, angle A_1 P A_11, which is the supplement of the angle that was asked for."
+    }
+  ],
+  "hints": [
+    "Put the $15$-gon on its circumscribed circle.",
+    "Two chords crossing inside a circle make an angle equal to half the sum of the two arcs it and its vertical angle cut off.",
+    "Each side cuts off $24^\\circ$. Arc $A_1A_3$ (not containing $A_7$) is $48^\\circ$ and arc $A_7A_{11}$ (not containing $A_1$) is $96^\\circ$."
+  ],
+  "solutions": {
+    "reliable": "The vertices lie on a circle, and each side subtends an arc of $\\tfrac{360^\\circ}{15} = 24^\\circ$. Going around, the order is $A_1, A_3, A_7, A_{11}$, so the chords $A_1A_7$ and $A_3A_{11}$ do cross inside the circle. Angle $A_1PA_3$ cuts off arc $A_1A_3$, which is $2\\cdot 24^\\circ = 48^\\circ$, and its vertical angle $A_7PA_{11}$ cuts off arc $A_7A_{11}$, which is $4\\cdot 24^\\circ = 96^\\circ$. So $\\angle A_1PA_3 = \\tfrac12(48^\\circ + 96^\\circ) = 72^\\circ$. Check with inscribed angles: in triangle $PA_3A_7$, the exterior angle at $P$ is $\\angle A_1PA_3$, and it equals $\\angle PA_3A_7 + \\angle PA_7A_3$, the inscribed angles on arcs $A_7A_{11}$ and $A_1A_3$, which are $48^\\circ + 24^\\circ = 72^\\circ$. The idea: every angle in a regular polygon is half an arc, and arcs are counted in sides.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-12",
+    "F-GEO-13",
+    "F-GEO-19"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

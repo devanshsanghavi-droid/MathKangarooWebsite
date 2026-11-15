@@ -1,0 +1,68 @@
+{
+  "id": "AM-0054",
+  "contest": "BOTH",
+  "slot": 10,
+  "area": "GEO",
+  "topic": "GEO-08",
+  "types": [
+    "T-COORD"
+  ],
+  "statement": "A right triangle has legs of length $6$ and $8$. What is the distance between its incenter (the center of its inscribed circle) and its centroid (the intersection of its medians)?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{2}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{\\sqrt{13}}{3}$",
+      "correct": false,
+      "misconception": "I placed the centroid one third of the way from the right-angle vertex along the median, at (1, 4/3), instead of two thirds of the way."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{\\sqrt{34}}{3}$",
+      "correct": false,
+      "misconception": "I took the inradius as area divided by the full perimeter, 24/24 = 1, instead of the semiperimeter, so I put the incenter at (1, 1)."
+    },
+    {
+      "key": "D",
+      "text": "$\\sqrt{5}$",
+      "correct": false,
+      "misconception": "I used the midpoint of the hypotenuse, (3, 4), as the centroid, but that point is the circumcenter."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{2\\sqrt{13}}{3}$",
+      "correct": false,
+      "misconception": "I took the inradius as a + b - c = 4 and forgot to halve it, so I put the incenter at (4, 4)."
+    }
+  ],
+  "hints": [
+    "Put the right angle at the origin with the legs on the axes.",
+    "In coordinates, the centroid is the average of the vertices. The incenter of a right triangle sits at $(r, r)$ when the legs are on the axes, where $r$ is the inradius.",
+    "For a right triangle, $r = \\frac{a + b - c}{2} = \\frac{6 + 8 - 10}{2} = 2$. The centroid of $(0,0)$, $(6,0)$, $(0,8)$ is $\\left(2, \\frac{8}{3}\\right)$."
+  ],
+  "solutions": {
+    "reliable": "Place the vertices at $(0,0)$, $(6,0)$ and $(0,8)$; the hypotenuse is $10$. The centroid is the average of the vertices, $\\left(2, \\frac{8}{3}\\right)$. The inradius is area over semiperimeter, $r = \\frac{24}{12} = 2$, and the incircle touches both axes, so the incenter is $(2, 2)$. The two points share the $x$-coordinate $2$, so the distance is $\\frac{8}{3} - 2 = \\frac{2}{3}$. The transferable idea: with the right angle at the origin, the centroid is the vertex average and the incenter is $(r, r)$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-06"
+  ],
+  "estSeconds": 165,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

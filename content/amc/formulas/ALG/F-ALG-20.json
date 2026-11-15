@@ -1,0 +1,15 @@
+{
+  "id": "F-ALG-20",
+  "area": "ALG",
+  "name": "Average speed over equal distances",
+  "formula": "\\bar v = \\frac{\\text{total distance}}{\\text{total time}} = \\frac{2uv}{u + v} \\ \\text{ for two equal legs at speeds } u, v",
+  "whenToUse": "A trip has two parts of the same length at different speeds, such as there and back, and the question asks for the average speed.",
+  "example": "Out at $30$ mph and back at $60$ mph gives $\\frac{2 \\cdot 30 \\cdot 60}{30 + 60} = 40$ mph. Check with a $60$-mile leg: $2 + 1 = 3$ hours for $120$ miles is $40$ mph.",
+  "pitfall": "Average speed is NOT the average of the speeds when the legs cover equal distances; the slow leg takes longer, so the answer is below $\\frac{u + v}{2}$. Equal TIMES would give the plain average.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "derivation": "With each leg of length $d$, the total time is $\\frac{d}{u} + \\frac{d}{v}$, and $\\frac{2d}{d/u + d/v} = \\frac{2uv}{u + v}$, the harmonic mean of $u$ and $v$."
+}

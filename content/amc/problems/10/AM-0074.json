@@ -1,0 +1,70 @@
+{
+  "id": "AM-0074",
+  "contest": "AMC10",
+  "slot": 23,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-COORD",
+    "T-AUXILIARY",
+    "T-SYMMETRY"
+  ],
+  "statement": "A cube has edge length $4$, and $A$ and $G$ are opposite vertices (the endpoints of a space diagonal). A plane perpendicular to $\\overline{AG}$ meets $\\overline{AG}$ at $P$, where $AP : PG = 5 : 7$. What is the area of the cross-section of the cube cut by this plane?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$11\\sqrt3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{47\\sqrt3}{4}$",
+      "correct": false,
+      "misconception": "I set up the big triangle of side $5\\sqrt2$ correctly but cut off corner triangles of side $1$ instead of $\\sqrt2$, forgetting that the corners are also cut diagonally across faces."
+    },
+    {
+      "key": "C",
+      "text": "$12\\sqrt3$",
+      "correct": false,
+      "misconception": "I knew every hexagonal cross-section perpendicular to the diagonal has the same perimeter and assumed they also have the same area, so I used the middle one."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{25\\sqrt3}{2}$",
+      "correct": false,
+      "misconception": "I found the equilateral triangle the plane cuts from the three axis directions but forgot that its corners stick out of the cube and must be removed."
+    },
+    {
+      "key": "E",
+      "text": "$14\\sqrt3$",
+      "correct": false,
+      "misconception": "I found the corner triangles that lie outside the cube but added them to the big triangle instead of subtracting them."
+    }
+  ],
+  "hints": [
+    "Put the cube in coordinates with $A$ at the origin and $G = (4,4,4)$.",
+    "Planes perpendicular to $\\overline{AG}$ are $x + y + z = k$. Find $k$ from the ratio, then see which edges the plane crosses: it is a big triangle with three corners clipped off.",
+    "$k = 5$. In the first octant the plane is an equilateral triangle of side $5\\sqrt2$; the parts with a coordinate above $4$ are three equilateral triangles of side $\\sqrt2$."
+  ],
+  "solutions": {
+    "reliable": "Let $A = (0,0,0)$ and $G = (4,4,4)$. A plane perpendicular to $\\overline{AG}$ has the form $x + y + z = k$ and meets the diagonal at distance $k/\\sqrt3$ from $A$; the diagonal has length $4\\sqrt3$, so $AP : PG = k : (12 - k) = 5 : 7$ gives $k = 5$. In the first octant, $x + y + z = 5$ is an equilateral triangle with vertices $(5,0,0)$, $(0,5,0)$, $(0,0,5)$ and side $5\\sqrt2$. The cube cuts off the three corners where a coordinate exceeds $4$; for example $x \\ge 4$ leaves $y + z \\le 1$, an equilateral triangle of side $\\sqrt2$. The cross-section is a hexagon with area $\\tfrac{\\sqrt3}{4}\\big((5\\sqrt2)^2 - 3(\\sqrt2)^2\\big) = \\tfrac{\\sqrt3}{4}(50 - 6) = 11\\sqrt3$. Transferable idea: slices perpendicular to a cube's diagonal are triangles with clipped corners, easiest in coordinates.",
+    "elegant": "Project the cross-section straight down onto the $xy$-plane. Since $z = 5 - x - y$ must lie in $[0,4]$, the shadow is the part of the square $0 \\le x, y \\le 4$ with $1 \\le x + y \\le 5$, of area $16 - \\tfrac92 - \\tfrac12 = 11$. The plane's normal makes an angle with the $z$-axis whose cosine is $\\tfrac{1}{\\sqrt3}$, so projecting shrinks area by that factor and the true area is $11\\sqrt3$."
+  },
+  "formulas": [
+    "F-GEO-20"
+  ],
+  "estSeconds": 270,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

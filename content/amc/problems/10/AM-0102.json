@@ -1,0 +1,69 @@
+{
+  "id": "AM-0102",
+  "contest": "AMC10",
+  "slot": 17,
+  "area": "NT",
+  "topic": "NT-09",
+  "types": [
+    "T-SFFT",
+    "T-PARITY"
+  ],
+  "statement": "For how many positive integers $n$ is $n^2 + 24n$ a perfect square?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I included the factor pair $12 \\cdot 12$ of 144, which gives $n = 0$, and $0$ is not a positive integer."
+    },
+    {
+      "key": "C",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I used every factor pair $u \\le v$ of 144 except $12 \\cdot 12$, without checking that $u$ and $v$ have the same parity."
+    },
+    {
+      "key": "D",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I used all 8 factor pairs $u \\le v$ of 144, ignoring both the parity condition and the requirement that $n$ be positive."
+    },
+    {
+      "key": "E",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I counted all 15 divisors of 144 as possible values of $n + 12 - k$, without pairing them or checking parity."
+    }
+  ],
+  "hints": [
+    "Complete the square on $n^2 + 24n$.",
+    "Setting $n^2 + 24n = k^2$ gives $(n + 12)^2 - k^2 = 144$. Factor the difference of squares and think about parity.",
+    "Write $(n + 12 - k)(n + 12 + k) = 144$. The two factors have the same parity, so both are even. Use factor pairs $u \\cdot v = 144$ with $u < v$ both even, and $n + 12 = (u + v)/2$."
+  ],
+  "solutions": {
+    "reliable": "Suppose $n^2 + 24n = k^2$ with $k \\ge 0$. Then $(n + 12)^2 - k^2 = 144$, so $(n + 12 - k)(n + 12 + k) = 144$. The two factors differ by $2k$, so they have the same parity, and since their product is even they are both even. With $k > 0$ the factor pairs $u < v$ of $144$ with both even are $(2, 72)$, $(4, 36)$, $(6, 24)$, $(8, 18)$, giving $n + 12 = (u + v)/2 = 37, 20, 15, 13$, so $n = 25, 8, 3, 1$. The pair $(12, 12)$ gives $k = 0$ and $n = 0$, which is not positive. Check: $1 + 24 = 25$, $9 + 72 = 81$, $64 + 192 = 256$, $625 + 600 = 1225 = 35^2$. There are $4$ values. Transferable idea: to make a quadratic a perfect square, complete the square and factor the difference of two squares, using parity to prune the factor pairs.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-05"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

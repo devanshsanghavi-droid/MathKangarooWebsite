@@ -1,0 +1,18 @@
+{
+  "id": "F-CP-17",
+  "area": "CP",
+  "name": "Catalan numbers",
+  "formula": "C_n = \\frac{1}{n+1}\\binom{2n}{n}: \\quad 1, 1, 2, 5, 14, 42, 132",
+  "whenToUse": "Grid paths that never cross a diagonal, balanced strings of brackets, ways to triangulate a polygon, or a queue that must never go negative.",
+  "example": "Paths from $(0,0)$ to $(4,4)$ using right and up steps that never go above the line $y = x$: $C_4 = \\frac{1}{5}\\binom{8}{4} = 14$. There are $C_3 = 5$ balanced strings of three pairs of brackets.",
+  "pitfall": "Check the index: a convex polygon with $n + 2$ sides has $C_n$ triangulations, so a hexagon has $C_4 = 14$, not $C_6$.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-BIJECTION",
+    "T-RECURSION"
+  ]
+}

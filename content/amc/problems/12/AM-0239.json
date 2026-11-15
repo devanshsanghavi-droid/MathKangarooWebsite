@@ -1,0 +1,70 @@
+{
+  "id": "AM-0239",
+  "contest": "AMC12",
+  "slot": 7,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-MODULAR",
+    "T-CYCLE"
+  ],
+  "statement": "What is the remainder when $2^{2026} + 3^{2026}$ is divided by $7$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I reduced the exponent 2026 modulo 7 instead of modulo 6, getting 2^3 + 3^3 = 35, which is divisible by 7."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I used Fermat's little theorem as if 2026 were a multiple of 6, making both powers 1, so I got 1 + 1 = 2."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found 3^2026 leaves remainder 4 but forgot to add the remainder of 2^2026."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I assumed 3^3 leaves remainder 1 modulo 7 just like 2^3 does, so I took 3^2026 to have remainder 3 and got 2 + 3 = 5."
+    },
+    {
+      "key": "E",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Powers modulo $7$ repeat. Find how often each base repeats.",
+    "$2^3 = 8 \\equiv 1 \\pmod 7$, and $3^6 \\equiv 1 \\pmod 7$ by Fermat. Reduce $2026$ modulo $3$ and modulo $6$.",
+    "$2026 \\equiv 1 \\pmod 3$ and $2026 \\equiv 4 \\pmod 6$, so the powers are $\\equiv 2^1$ and $3^4$."
+  ],
+  "solutions": {
+    "reliable": "Modulo $7$, $2^3 = 8 \\equiv 1$, and $2026 = 3 \\cdot 675 + 1$, so $2^{2026} \\equiv 2$. The powers of $3$ are $3, 2, 6, 4, 5, 1$, a cycle of length $6$, and $2026 = 6 \\cdot 337 + 4$, so $3^{2026} \\equiv 3^4 = 81 \\equiv 4$. The sum is $2 + 4 = 6$.",
+    "elegant": "Note $3 \\equiv -4 = -2^2 \\pmod 7$, so $3^{2026} \\equiv 2^{4052}$. With $2^3 \\equiv 1$ and $4052 \\equiv 2 \\pmod 3$, this is $2^2 = 4$, and the answer is $2 + 4 = 6$."
+  },
+  "formulas": [
+    "F-NT-05",
+    "F-NT-12"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

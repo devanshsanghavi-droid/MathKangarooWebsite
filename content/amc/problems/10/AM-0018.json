@@ -1,0 +1,67 @@
+{
+  "id": "AM-0018",
+  "contest": "AMC10",
+  "slot": 8,
+  "area": "ALG",
+  "topic": "ALG-08",
+  "types": [
+    "T-SMALL-CASES",
+    "T-SUBSTITUTION"
+  ],
+  "statement": "A linear function $f(x) = ax + b$, with $a$ and $b$ real numbers, satisfies $f(f(f(x))) = 27x + 52$ for every real number $x$. What is $a + b$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{79}{9}$",
+      "correct": false,
+      "misconception": "I thought only the last step contributes to the constant, so I set 9b = 52, giving b = 52/9 and a + b = 79/9."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found a = 3 and b = 4 correctly and then reported the product ab instead of the sum."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I wrote the constant term of f(f(f(x))) as b(1 + a), stopping one step early, so 4b = 52 and b = 13."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{61}{3}$",
+      "correct": false,
+      "misconception": "I thought the constant term after three steps was just 3b, so b = 52/3 and a + b = 61/3."
+    }
+  ],
+  "hints": [
+    "Compose $f$ with itself once and look at the pattern.",
+    "Compute $f(f(x))$, then $f(f(f(x)))$, keeping track of how $b$ gets multiplied by $a$ at each step. Match coefficients with $27x + 52$.",
+    "$f(f(f(x))) = a^3 x + b(a^2 + a + 1)$. So $a^3 = 27$ and $b(a^2 + a + 1) = 52$."
+  ],
+  "solutions": {
+    "reliable": "$f(f(x)) = a(ax + b) + b = a^2 x + ab + b$, and $f(f(f(x))) = a(a^2 x + ab + b) + b = a^3 x + b(a^2 + a + 1)$. Matching with $27x + 52$: $a^3 = 27$, so $a = 3$ (the only real cube root), and $b(9 + 3 + 1) = 13b = 52$, so $b = 4$. Then $a + b = 7$. Check: $f(x) = 3x + 4$, $f(f(x)) = 9x + 16$, $f(f(f(x))) = 27x + 52$. The transferable idea: each composition multiplies the old constant by $a$ and adds a new $b$.",
+    "elegant": "From $a^3 = 27$, $a = 3$. Since $a \\neq 1$, $f$ has exactly one fixed point, and it is also a fixed point of $f(f(f(x)))$. That function's only fixed point solves $27x + 52 = x$, so it is $x = -2$. Hence $f(-2) = -2$. So $f(x) = 3(x + 2) - 2 = 3x + 4$ and $a + b = 7$."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "AM-0071",
+  "contest": "AMC10",
+  "slot": 20,
+  "area": "GEO",
+  "topic": "GEO-10",
+  "types": [
+    "T-AUXILIARY",
+    "T-SYMMETRY"
+  ],
+  "statement": "Equilateral triangle $ABC$ has side length $7$. Point $D$ lies on the opposite side of line $BC$ from $A$, with $\\angle BDC = 120^\\circ$ and $BD = 3$. What is $AD$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I assumed triangle $ABD$ is isosceles with $AD = AB$, so I gave the side length of the equilateral triangle."
+    },
+    {
+      "key": "B",
+      "text": "$\\sqrt{58}$",
+      "correct": false,
+      "misconception": "I assumed $\\angle ABD = 90^\\circ$ and used the Pythagorean theorem, $AD^2 = 7^2 + 3^2$, without finding the actual angle at $B$."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\sqrt{79}$",
+      "correct": false,
+      "misconception": "I assumed $\\angle ABD = 120^\\circ$ and used $AD^2 = 49 + 9 + 21$, guessing the angle at $B$ instead of computing it."
+    },
+    {
+      "key": "E",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I wrote the law of cosines in triangle $BDC$ with the wrong sign, $49 = 9 + CD^2 - 3\\,CD$, which gave $CD = 8$ and then $AD = 3 + 8$."
+    }
+  ],
+  "hints": [
+    "$\\angle BAC + \\angle BDC = 180^\\circ$. What does that say about $D$?",
+    "$A$, $B$, $D$, $C$ lie on one circle. Find $CD$ with the law of cosines in triangle $BDC$, then use Ptolemy's theorem or a $60^\\circ$ rotation about $B$.",
+    "$49 = 9 + CD^2 + 3\\,CD$ gives $CD = 5$. Ptolemy on $ABDC$: $AD \\cdot 7 = 3 \\cdot 7 + 5 \\cdot 7$."
+  ],
+  "solutions": {
+    "reliable": "In triangle $BDC$, the law of cosines with $\\angle D = 120^\\circ$ gives $BC^2 = BD^2 + CD^2 + BD \\cdot CD$, so $49 = 9 + CD^2 + 3\\,CD$, i.e. $CD^2 + 3\\,CD - 40 = 0$ and $CD = 5$. Since $\\angle BAC + \\angle BDC = 60^\\circ + 120^\\circ = 180^\\circ$ and $A$, $D$ are on opposite sides of $\\overline{BC}$, quadrilateral $ABDC$ is cyclic. Ptolemy's theorem: $AD \\cdot BC = AB \\cdot CD + AC \\cdot BD$, so $7\\,AD = 7 \\cdot 5 + 7 \\cdot 3$ and $AD = 8$. Transferable idea: for a point on the arc $BC$ of an equilateral triangle's circumcircle, $AD = BD + CD$.",
+    "elegant": "Rotate $60^\\circ$ about $B$ so $C$ goes to $A$. Then $D$ goes to a point $D'$ with $BD' = BD = 3$ and $\\angle DBD' = 60^\\circ$, so triangle $BDD'$ is equilateral, and $D'$ lands on segment $AD$ (because $\\angle BDA = \\angle BCA = 60^\\circ$). So $AD = AD' + D'D = CD + BD = 5 + 3 = 8$."
+  },
+  "formulas": [
+    "F-GEO-08",
+    "F-GEO-14"
+  ],
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

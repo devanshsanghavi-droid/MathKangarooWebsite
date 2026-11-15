@@ -1,0 +1,71 @@
+{
+  "id": "AM-0222",
+  "contest": "AMC12",
+  "slot": 17,
+  "area": "GEO",
+  "topic": "GEO-06",
+  "types": [
+    "T-ROOTS-UNITY",
+    "T-SUBSTITUTION"
+  ],
+  "statement": "The six solutions of $z^6 - 12z^5 + 60z^4 - 160z^3 + 240z^2 - 192z = 0$ are the vertices of a convex hexagon in the complex plane. What is the area of the hexagon?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6\\sqrt{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$4\\pi$",
+      "correct": false,
+      "misconception": "I recognised that the roots lie on a circle of radius 2 and gave the area of that circle instead of the hexagon inscribed in it."
+    },
+    {
+      "key": "C",
+      "text": "$8\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I treated 2 as the distance from the center to each side of the hexagon instead of to each vertex, which made the side 4/sqrt(3)."
+    },
+    {
+      "key": "D",
+      "text": "$12\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I split the hexagon into six equilateral triangles of side 2 but used s sqrt(3) for the height of each one instead of s sqrt(3)/2."
+    },
+    {
+      "key": "E",
+      "text": "$24\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I took the radius to be the cube root of 64, which is 4, instead of the sixth root, so I found a hexagon of side 4."
+    }
+  ],
+  "hints": [
+    "The coefficients $1, 12, 60, 160, 240, 192$ should look familiar.",
+    "Compare with the binomial expansion of $(z - 2)^6$. The equation becomes a statement about sixth roots of a single number.",
+    "The equation is $(z - 2)^6 = 64$, so $z - 2 = 2\\omega$ where $\\omega^6 = 1$. The roots form a regular hexagon with circumradius $2$."
+  ],
+  "solutions": {
+    "reliable": "By the binomial theorem, $(z - 2)^6 = z^6 - 12z^5 + 60z^4 - 160z^3 + 240z^2 - 192z + 64$. So the equation says $(z - 2)^6 - 64 = 0$, that is $(z - 2)^6 = 64$. Then $z - 2 = 2\\omega$ for each sixth root of unity $\\omega$, so the six roots are the vertices of a regular hexagon centred at $2$ with circumradius $2$ (one vertex is $z = 0$, matching the factor $z$). A regular hexagon with circumradius $2$ has side $2$ and is six equilateral triangles of side $2$, each of area $\\sqrt3$, so the area is $6\\sqrt3$. The idea: a polynomial that is a shifted binomial power has roots on a regular polygon.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-09",
+    "F-ALG-12",
+    "F-GEO-20"
+  ],
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

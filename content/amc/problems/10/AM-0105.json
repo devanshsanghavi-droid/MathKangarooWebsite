@@ -1,0 +1,70 @@
+{
+  "id": "AM-0105",
+  "contest": "AMC10",
+  "slot": 17,
+  "area": "NT",
+  "topic": "NT-01",
+  "types": [
+    "T-CASEWORK",
+    "T-BOUNDING"
+  ],
+  "statement": "For how many positive integers $n$ is $\\dfrac{n^2 + 2n + 30}{n - 4}$ an integer?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I evaluated the numerator at $n = -4$ instead of $n = 4$, got a remainder of 38, and counted the positive $n$ with $n - 4$ dividing 38."
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I expanded $(n - 4)(n + 6)$ as $n^2 + 2n + 24$, a sign slip on the constant, so I got a remainder of 6 instead of 54 and counted the positive $n$ with $n - 4$ dividing 6."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I counted only the 8 positive divisors of 54, forgetting that $n - 4$ can be negative while $n$ is still positive."
+    },
+    {
+      "key": "D",
+      "text": "$11$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I counted all 16 divisors of 54, positive and negative, without checking that $n$ stays positive."
+    }
+  ],
+  "hints": [
+    "Divide the numerator by $n - 4$ and look at the remainder.",
+    "Polynomial division gives a polynomial quotient plus a constant over $n - 4$. The expression is an integer exactly when $n - 4$ divides that constant.",
+    "$n^2 + 2n + 30 = (n - 4)(n + 6) + 54$. So $n - 4$ must be a divisor of 54, positive or negative, with $n \\ge 1$."
+  ],
+  "solutions": {
+    "reliable": "Polynomial division gives $n^2 + 2n + 30 = (n - 4)(n + 6) + 54$, so the expression equals $n + 6 + \\dfrac{54}{n - 4}$, an integer exactly when $n - 4$ divides $54 = 2 \\cdot 3^3$. The positive divisors $1, 2, 3, 6, 9, 18, 27, 54$ give $n = 5, 6, 7, 10, 13, 22, 31, 58$. Negative divisors need $n = 4 + d \\ge 1$, so $d \\in \\{-1, -2, -3\\}$, giving $n = 3, 2, 1$; the divisor $-6$ would give $n = -2$. That is $8 + 3 = 11$ values. Check $n = 1$: $\\frac{33}{-3} = -11$. Transferable idea: for a rational expression in $n$, divide out the polynomial part; the denominator must then divide the constant remainder, with both signs considered.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-19",
+    "F-NT-01"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

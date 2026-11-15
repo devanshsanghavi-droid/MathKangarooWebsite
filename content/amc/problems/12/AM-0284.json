@@ -1,0 +1,71 @@
+{
+  "id": "AM-0284",
+  "contest": "AMC12",
+  "slot": 11,
+  "area": "CP",
+  "topic": "CP-03",
+  "types": [
+    "T-ROOTS-UNITY",
+    "T-EVALUATE"
+  ],
+  "statement": "How many subsets of $\\{1, 2, 3, \\ldots, 20\\}$, including the empty set, have a number of elements that is a multiple of $4$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$261{,}630$",
+      "correct": false,
+      "misconception": "I added the binomial coefficients for sizes 4, 8, 12 and 16 and forgot the empty set and the whole set, the sizes 0 and 20."
+    },
+    {
+      "key": "B",
+      "text": "$261{,}632$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$262{,}144$",
+      "correct": false,
+      "misconception": "I assumed exactly one quarter of the 2 to the twentieth subsets have a size that is a multiple of 4, but the sizes are not spread evenly."
+    },
+    {
+      "key": "D",
+      "text": "$262{,}656$",
+      "correct": false,
+      "misconception": "I used the roots of unity filter but computed (1 + i) to the twentieth as +1024 instead of -1024."
+    },
+    {
+      "key": "E",
+      "text": "$524{,}288$",
+      "correct": false,
+      "misconception": "I filtered with only 1 and -1, which picks out all subsets of even size, not just those whose size is a multiple of 4."
+    }
+  ],
+  "hints": [
+    "The count is a sum of binomial coefficients $\\binom{20}{k}$ over every fourth $k$.",
+    "Evaluate $(1 + x)^{20}$ at the fourth roots of unity $1, i, -1, -i$ and average. Terms whose exponent is a multiple of $4$ survive; the others cancel.",
+    "The answer is $\\frac{1}{4}\\left[2^{20} + 0^{20} + (1+i)^{20} + (1-i)^{20}\\right]$, and $(1+i)^2 = 2i$, so $(1+i)^{20} = (2i)^{10} = -1024$."
+  ],
+  "solutions": {
+    "reliable": "We want $\\sum_{4 \\mid k} \\binom{20}{k}$. Let $f(x) = (1+x)^{20}$. For a fourth root of unity $\\omega$, the average $\\frac{1}{4}\\sum_{\\omega} \\omega^k$ is $1$ when $4 \\mid k$ and $0$ otherwise, so the sum equals $\\frac{1}{4}\\left[f(1) + f(i) + f(-1) + f(-i)\\right]$. Here $f(1) = 2^{20} = 1{,}048{,}576$ and $f(-1) = 0$. Since $(1+i)^2 = 2i$, $f(i) = (2i)^{10} = 1024\\, i^{10} = -1024$, and likewise $f(-i) = (-2i)^{10} = -1024$. The count is $\\frac{1}{4}(1{,}048{,}576 - 2048) = 261{,}632$. Check directly: $\\binom{20}{0} + \\binom{20}{4} + \\binom{20}{8} + \\binom{20}{12} + \\binom{20}{16} + \\binom{20}{20} = 1 + 4845 + 125{,}970 + 125{,}970 + 4845 + 1 = 261{,}632$. The idea: averaging a generating function over roots of unity keeps only every fourth coefficient.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-12",
+    "F-ALG-09",
+    "F-CP-18"
+  ],
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

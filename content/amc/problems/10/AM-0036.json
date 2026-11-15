@@ -1,0 +1,70 @@
+{
+  "id": "AM-0036",
+  "contest": "BOTH",
+  "slot": 23,
+  "area": "ALG",
+  "topic": "ALG-04",
+  "types": [
+    "T-VIETA",
+    "T-EVALUATE",
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Let $a$, $b$ and $c$ be the three roots of $x^3 - 6x^2 + 9x - 1 = 0$. What is $(a^2 + b^2)(b^2 + c^2)(c^2 + a^2)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1241$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$1243$",
+      "correct": false,
+      "misconception": "I wrote the polynomial with roots $a^2, b^2, c^2$ as $y^3 - 18y^2 + 69y + 1$, adding the last term $(abc)^2$ instead of subtracting it."
+    },
+    {
+      "key": "C",
+      "text": "$1457$",
+      "correct": false,
+      "misconception": "I used $a^2b^2 + b^2c^2 + c^2a^2 = (ab + bc + ca)^2 = 81$, forgetting to subtract $2abc(a + b + c)$."
+    },
+    {
+      "key": "D",
+      "text": "$2809$",
+      "correct": false,
+      "misconception": "I treated $a^2 + b^2$ as $(a + b)^2$, so I squared $(a + b)(b + c)(c + a) = 53$."
+    },
+    {
+      "key": "E",
+      "text": "$3725$",
+      "correct": false,
+      "misconception": "I used $a^2 + b^2 + c^2 = (a + b + c)^2 + 2(ab + bc + ca) = 54$, adding the cross terms instead of subtracting them."
+    }
+  ],
+  "hints": [
+    "Let $S = a^2 + b^2 + c^2$. Then each factor is $S$ minus one square, for example $a^2 + b^2 = S - c^2$.",
+    "The product is $(S - a^2)(S - b^2)(S - c^2)$. Expand it, or think of the polynomial whose roots are $a^2$, $b^2$, $c^2$, and evaluate it at $S$.",
+    "By Vieta, $S = 36 - 18 = 18$, $a^2b^2 + b^2c^2 + c^2a^2 = 81 - 2 \\cdot 1 \\cdot 6 = 69$ and $a^2b^2c^2 = 1$. The product is $S^3 - S \\cdot S^2 + 69S - 1$."
+  ],
+  "solutions": {
+    "reliable": "By Vieta, $a + b + c = 6$, $ab + bc + ca = 9$ and $abc = 1$. Let $S = a^2 + b^2 + c^2 = 36 - 2 \\cdot 9 = 18$, $Q = a^2b^2 + b^2c^2 + c^2a^2 = (ab + bc + ca)^2 - 2abc(a + b + c) = 81 - 12 = 69$, and $R = a^2b^2c^2 = 1$. Since $a^2 + b^2 = S - c^2$ and so on, the product is $(S - a^2)(S - b^2)(S - c^2) = S^3 - S \\cdot S^2 + Q \\cdot S - R$, where the expansion uses the sum $S$, the pair sum $Q$ and the product $R$ of the three squares. This simplifies to $QS - R = 69 \\cdot 18 - 1 = 1241$. Transferable idea: a product of (sum minus one term) is a polynomial evaluated at the sum.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-01"
+  ],
+  "estSeconds": 270,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

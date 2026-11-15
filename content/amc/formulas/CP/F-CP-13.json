@@ -1,0 +1,17 @@
+{
+  "id": "F-CP-13",
+  "area": "CP",
+  "name": "Conditional probability",
+  "formula": "P(A \\mid B) = \\frac{P(A \\cap B)}{P(B)} \\quad (P(B) > 0)",
+  "whenToUse": "The problem says GIVEN THAT or tells you something already happened, which shrinks the set of possible outcomes.",
+  "example": "Two dice are rolled and the sum is $8$. The outcomes are $(2,6), (3,5), (4,4), (5,3), (6,2)$, and three of them have both dice even, so the probability is $\\frac{3}{5}$.",
+  "pitfall": "Divide by the probability of the GIVEN event, not of the whole space. $P(A \\mid B)$ and $P(B \\mid A)$ are usually different.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-CASEWORK"
+  ]
+}

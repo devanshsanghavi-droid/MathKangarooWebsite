@@ -1,0 +1,69 @@
+{
+  "id": "AM-0075",
+  "contest": "AMC10",
+  "slot": 24,
+  "area": "GEO",
+  "topic": "GEO-10",
+  "types": [
+    "T-SYMMETRY",
+    "T-AUXILIARY"
+  ],
+  "statement": "A square with side length $6$ is rotated $30^\\circ$ about its center. What is the area of the region covered by the original square, the rotated square, or both?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$72 - 24\\sqrt3$",
+      "correct": false,
+      "misconception": "I found the area of the overlap of the two squares, the region covered by both, instead of the region covered by at least one."
+    },
+    {
+      "key": "B",
+      "text": "$27 + 6\\sqrt3$",
+      "correct": false,
+      "misconception": "I added only one of the four corner triangles that stick out of the original square, instead of all four."
+    },
+    {
+      "key": "C",
+      "text": "$24\\sqrt3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$144 - 72\\sqrt2$",
+      "correct": false,
+      "misconception": "I assumed the overlap is a regular octagon, as it is for a $45^\\circ$ turn, and subtracted that octagon's area, $72\\sqrt2 - 72$, from $36 + 36$."
+    },
+    {
+      "key": "E",
+      "text": "$48\\sqrt3 - 36$",
+      "correct": false,
+      "misconception": "I counted eight protruding corner triangles, four from each square, and added all of them to one square, which counts each piece of the union twice."
+    }
+  ],
+  "hints": [
+    "The union is the original square plus the parts of the rotated square that stick out.",
+    "Each of the four corners of the rotated square pokes out past one side of the original square as a small right triangle with angles $30^\\circ$ and $60^\\circ$. Find how far the corner pokes out.",
+    "A corner is $3\\sqrt2$ from the center at angle $75^\\circ$, so it sits $3\\sqrt2 \\sin 75^\\circ - 3 = \\tfrac{3(\\sqrt3 - 1)}{2}$ beyond the side. That is the altitude to the hypotenuse of the protruding $30$-$60$-$90$ triangle."
+  ],
+  "solutions": {
+    "reliable": "Put the center at the origin with the original square $|x|, |y| \\le 3$. A corner of the rotated square is at distance $3\\sqrt2$ in direction $45^\\circ + 30^\\circ = 75^\\circ$, at height $3\\sqrt2 \\sin 75^\\circ = \\tfrac{3(\\sqrt3 + 1)}{2}$, so it pokes $h = \\tfrac{3(\\sqrt3 - 1)}{2}$ above the line $y = 3$. The rotated square's sides there make angles $30^\\circ$ and $60^\\circ$ with that line, so the poking piece is a $30$-$60$-$90$ triangle with altitude $h$ to its hypotenuse. Its hypotenuse is $h(\\cot 30^\\circ + \\cot 60^\\circ) = \\tfrac{4h}{\\sqrt3}$, so its area is $\\tfrac{2h^2}{\\sqrt3} = \\tfrac{2}{\\sqrt3} \\cdot \\tfrac{9(4 - 2\\sqrt3)}{4} = 6\\sqrt3 - 9$. By symmetry there are four such pieces and they do not overlap, so the union has area $36 + 4(6\\sqrt3 - 9) = 24\\sqrt3$. Transferable idea: union = one shape plus what the other adds; symmetry makes the added pieces congruent.",
+    "elegant": "Inclusion-exclusion: the overlap is the original square minus its four poking corners, $36 - 4(6\\sqrt3 - 9) = 72 - 24\\sqrt3$, so the union is $36 + 36 - (72 - 24\\sqrt3) = 24\\sqrt3$."
+  },
+  "formulas": [
+    "F-GEO-03"
+  ],
+  "estSeconds": 300,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

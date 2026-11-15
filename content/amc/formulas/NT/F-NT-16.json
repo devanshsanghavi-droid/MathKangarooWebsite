@@ -1,0 +1,18 @@
+{
+  "id": "F-NT-16",
+  "area": "NT",
+  "name": "Product of divisors",
+  "formula": "\\prod_{d \\mid n} d = n^{d(n)/2}",
+  "whenToUse": "A question asks for the product of all divisors of a number, often written as a power.",
+  "example": "$12$ has $d(12) = 6$ divisors, so their product is $12^3 = 1728$. Check: $1 \\cdot 2 \\cdot 3 \\cdot 4 \\cdot 6 \\cdot 12 = 1728$.",
+  "pitfall": "When $n$ is a perfect square, $d(n)$ is odd and the exponent is a half-integer; it still works, since $\\sqrt{n}$ pairs with itself.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "derivation": "Divisors come in pairs $d$ and $\\frac{n}{d}$ with product $n$. There are $\\frac{d(n)}{2}$ such pairs."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "F-ALG-10",
+  "area": "ALG",
+  "name": "Logarithm rules",
+  "formula": "\\log_b (xy) = \\log_b x + \\log_b y, \\quad \\log_b \\frac{x}{y} = \\log_b x - \\log_b y, \\quad \\log_b x^k = k \\log_b x \\quad (b > 0,\\ b \\ne 1,\\ x, y > 0)",
+  "whenToUse": "Simplify a sum or difference of logs with the same base, bring an exponent down, or turn an exponential equation into a linear one.",
+  "example": "$\\log_2 48 - \\log_2 3 = \\log_2 16 = 4$, and $\\log_3 \\sqrt{27} = \\frac{1}{2} \\log_3 27 = \\frac{3}{2}$.",
+  "pitfall": "There is no rule for $\\log(x + y)$, and $\\log_b x \\cdot \\log_b y$ is not $\\log_b(xy)$. Logs are only defined for positive inputs, so check answers against that.",
+  "priority": "must-know",
+  "contests": [
+    "AMC12"
+  ],
+  "derivation": "Logs are exponents: if $x = b^p$ and $y = b^q$ then $xy = b^{p+q}$, $\\frac{x}{y} = b^{p-q}$ and $x^k = b^{kp}$."
+}

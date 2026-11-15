@@ -1,0 +1,69 @@
+{
+  "id": "AM-0077",
+  "contest": "BOTH",
+  "slot": 1,
+  "area": "NT",
+  "topic": "NT-01",
+  "types": [
+    "T-PIE",
+    "T-COMPLEMENT"
+  ],
+  "statement": "How many integers from $1$ to $100$ are divisible by $6$ but not divisible by $4$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I removed the multiples of 24 = 6 x 4 instead of the multiples of 12, the least common multiple, so I got 16 - 4 = 12."
+    },
+    {
+      "key": "C",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I counted all 16 multiples of 6 and forgot to throw out the ones that are also divisible by 4."
+    },
+    {
+      "key": "D",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I swapped the roles of the two numbers and counted multiples of 4 that are not multiples of 6: 25 - 8 = 17."
+    },
+    {
+      "key": "E",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I counted the numbers divisible by 6 or by 4, 16 + 25 - 8 = 33, which answers a different question."
+    }
+  ],
+  "hints": [
+    "Start by counting the multiples of $6$ from $1$ to $100$.",
+    "A multiple of $6$ is also a multiple of $4$ exactly when it is a multiple of $\\operatorname{lcm}(6, 4) = 12$. Those are the ones to remove.",
+    "There are $\\lfloor 100/6 \\rfloor = 16$ multiples of $6$ and $\\lfloor 100/12 \\rfloor = 8$ multiples of $12$. Subtract."
+  ],
+  "solutions": {
+    "reliable": "There are $\\lfloor 100/6 \\rfloor = 16$ multiples of $6$ from $1$ to $100$. A number divisible by both $6$ and $4$ is divisible by their least common multiple $12$, and there are $\\lfloor 100/12 \\rfloor = 8$ multiples of $12$ in range. Every multiple of $12$ is one of the multiples of $6$, so the count we want is $16 - 8 = 8$.",
+    "elegant": "Write a multiple of $6$ as $6k$. Since $6k = 2 \\cdot 3k$, it is divisible by $4$ exactly when $k$ is even. So we want odd $k$ with $6k \\le 100$, that is, $k \\in \\{1, 3, 5, \\dots, 15\\}$: $8$ values."
+  },
+  "formulas": [
+    "F-NT-20"
+  ],
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

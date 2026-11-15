@@ -1,0 +1,69 @@
+{
+  "id": "AM-0093",
+  "contest": "BOTH",
+  "slot": 11,
+  "area": "NT",
+  "topic": "NT-10",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-COMPLEMENT"
+  ],
+  "statement": "For how many integers $n$ with $1 \\le n \\le 1000$ does $\\dfrac{n}{1400}$ have a terminating decimal expansion with exactly $3$ digits after the decimal point?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$57$",
+      "correct": false,
+      "misconception": "I required n/7 to be coprime to 10 so that n/1400 stays over the full denominator 200, but n = 35 gives 1/40 = 0.025, which also has three digits."
+    },
+    {
+      "key": "B",
+      "text": "$71$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$135$",
+      "correct": false,
+      "misconception": "I subtracted the 7 values with at most one digit after the point from the 142 terminating ones, when I should have subtracted those with at most two digits."
+    },
+    {
+      "key": "D",
+      "text": "$142$",
+      "correct": false,
+      "misconception": "I counted every n that makes the decimal terminate, which means at most three digits after the point, not exactly three."
+    },
+    {
+      "key": "E",
+      "text": "$500$",
+      "correct": false,
+      "misconception": "I thought n only had to be odd, forgetting that the factor 7 in 1400 must cancel for the decimal to terminate at all."
+    }
+  ],
+  "hints": [
+    "Factor $1400 = 2^3 \\cdot 5^2 \\cdot 7$. When does $\\dfrac{n}{1400}$ terminate?",
+    "It terminates exactly when $7 \\mid n$. Write $n = 7j$, so the fraction is $\\dfrac{j}{200}$ with $1 \\le j \\le 142$.",
+    "A decimal has at most $d$ digits after the point exactly when $10^d$ times it is an integer. Compare $1000 \\cdot \\dfrac{j}{200} = 5j$ with $100 \\cdot \\dfrac{j}{200} = \\dfrac{j}{2}$."
+  ],
+  "solutions": {
+    "reliable": "Since $1400 = 2^3 \\cdot 5^2 \\cdot 7$, the fraction $n/1400$ in lowest terms has a denominator free of primes other than $2$ and $5$ exactly when the $7$ cancels, that is, when $7 \\mid n$. Write $n = 7j$ with $1 \\le j \\le 142$; the fraction is $j/200$. A terminating decimal has at most $d$ digits after the point exactly when $10^d$ times it is an integer. Here $1000 \\cdot j/200 = 5j$ is always an integer, so every such decimal has at most $3$ digits, and $100 \\cdot j/200 = j/2$ is an integer exactly when $j$ is even. So there are exactly $3$ digits when $j$ is odd. The odd $j$ from $1$ to $142$ number $71$, so the answer is $71$. For example, $n = 7$ gives $0.005$ and $n = 35$ gives $0.025$.",
+    "elegant": "In lowest terms $j/200 = j/(2^3 \\cdot 5^2)$ becomes $a/(2^m 5^k)$, which has $\\max(m, k)$ digits after the point. Since $k \\le 2$, the count is $3$ exactly when $m = 3$, that is, when $j$ is odd. There are $71$ odd $j$ in $1, \\ldots, 142$."
+  },
+  "formulas": [
+    "F-NT-15"
+  ],
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "AM-0032",
+  "contest": "BOTH",
+  "slot": 19,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": [
+    "T-CYCLE",
+    "T-SMALL-CASES",
+    "T-RECURSION"
+  ],
+  "statement": "A sequence is defined by $a_1 = 2$, $a_2 = 6$ and $a_{n+2} = \\dfrac{1 + a_{n+1}}{a_n}$ for $n \\ge 1$. What is $a_1 + a_2 + a_3 + \\cdots + a_{2027}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{20655}{4}$",
+      "correct": false,
+      "misconception": "I found the period $5$ and the cycle sum $\\frac{51}{4}$, multiplied by $405$ cycles, and forgot the two leftover terms $a_{2026}$ and $a_{2027}$."
+    },
+    {
+      "key": "B",
+      "text": "$5165$",
+      "correct": false,
+      "misconception": "I counted $405$ full cycles but took the two leftover terms to be the last two of a cycle, $a_4 + a_5 = \\frac34 + \\frac12$, instead of the first two, $a_1 + a_2$."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{20663}{4}$",
+      "correct": false,
+      "misconception": "I counted $405$ cycles and then added only one leftover term, $a_{2026} = 2$, missing $a_{2027} = 6$."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{20687}{4}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{10353}{2}$",
+      "correct": false,
+      "misconception": "I rounded $2027 \\div 5$ up to $406$ full cycles, adding $406 \\cdot \\frac{51}{4}$ as if the last cycle were complete."
+    }
+  ],
+  "hints": [
+    "Compute the first several terms carefully.",
+    "The terms repeat. Find the length of the cycle and the sum of one cycle, then split $2027$ into full cycles and a remainder.",
+    "The terms run $2, 6, \\frac72, \\frac34, \\frac12, 2, 6, \\ldots$, period $5$, cycle sum $\\frac{51}{4}$. Since $2027 = 5 \\cdot 405 + 2$, add $405 \\cdot \\frac{51}{4}$ and $a_1 + a_2 = 8$."
+  ],
+  "solutions": {
+    "reliable": "Compute: $a_3 = \\frac{1 + 6}{2} = \\frac72$, $a_4 = \\frac{1 + \\frac72}{6} = \\frac34$, $a_5 = \\frac{1 + \\frac34}{\\frac72} = \\frac12$, $a_6 = \\frac{1 + \\frac12}{\\frac34} = 2$, $a_7 = \\frac{1 + 2}{\\frac12} = 6$. Since each term is fixed by the two before it and $(a_6, a_7) = (a_1, a_2)$, the sequence has period $5$. One cycle sums to $2 + 6 + \\frac72 + \\frac34 + \\frac12 = \\frac{51}{4}$. Now $2027 = 5 \\cdot 405 + 2$, so the sum is $405 \\cdot \\frac{51}{4} + a_1 + a_2 = \\frac{20655}{4} + \\frac{32}{4} = \\frac{20687}{4}$. Transferable idea: a recursion whose state returns to its start is periodic, so long sums reduce to full cycles plus a remainder.",
+    "elegant": "Start from any $a_1 = x$ and $a_2 = y$. Then $a_3 = \\frac{1 + y}{x}$, $a_4 = \\frac{1 + x + y}{xy}$, $a_5 = \\frac{1 + x}{y}$, and $a_6 = x$, $a_7 = y$, so this rule has period $5$ for every starting pair. You only need the first five terms. Transferable idea: checking periodicity with letters instead of numbers tells you the cycle length before any arithmetic."
+  },
+  "formulas": [],
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

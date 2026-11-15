@@ -1,0 +1,66 @@
+{
+  "id": "AM-0267",
+  "contest": "AMC12",
+  "slot": 1,
+  "area": "CP",
+  "topic": "CP-01",
+  "types": [
+    "T-SMALL-CASES"
+  ],
+  "statement": "Four friends stand in a line. Going from left to right, each friend writes down one of the numbers $1$, $2$ or $3$, and no friend may write the same number as the friend directly to their left. How many different lists of four numbers are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I gave the first friend 3 choices and the next two friends 2 choices each, and forgot about the fourth friend, so I got 3 times 2 times 2."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I gave every friend 2 choices, including the first friend, who has no one to their left and really has 3 choices."
+    },
+    {
+      "key": "C",
+      "text": "$24$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I counted four restrictions for four friends, giving 3 times 2 to the fourth power, but only three friends have someone to their left."
+    },
+    {
+      "key": "E",
+      "text": "$81$",
+      "correct": false,
+      "misconception": "I ignored the rule and let every friend write any of the 3 numbers, so I got 3 to the fourth power."
+    }
+  ],
+  "hints": [
+    "Count the choices friend by friend, from left to right.",
+    "The first friend is free. Each later friend only has to avoid one number, the one just written, so the count of choices does not depend on what came before.",
+    "The first friend has $3$ choices and each of the other three has $2$, so the total is $3 \\cdot 2 \\cdot 2 \\cdot 2$."
+  ],
+  "solutions": {
+    "reliable": "The first friend may write any of $3$ numbers. The second friend must avoid the first friend's number, leaving $2$ choices, whatever that number was. The same holds for the third and fourth friends. By the multiplication principle the number of lists is $3 \\cdot 2 \\cdot 2 \\cdot 2 = 24$. Check with small cases: two friends give $3 \\cdot 2 = 6$ lists, namely $12, 13, 21, 23, 31, 32$, which matches the pattern $3 \\cdot 2^{n-1}$. The idea: when every step has the same number of options no matter what came before, multiply.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

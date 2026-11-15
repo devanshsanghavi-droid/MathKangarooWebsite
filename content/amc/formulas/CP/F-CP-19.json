@@ -1,0 +1,18 @@
+{
+  "id": "F-CP-19",
+  "area": "CP",
+  "name": "Fibonacci-type recursion",
+  "formula": "a_n = a_{n-1} + a_{n-2}",
+  "whenToUse": "Counting stair climbs with steps of $1$ or $2$, tilings with $1 \\times 1$ and $1 \\times 2$ pieces, or strings with no two adjacent $1$s. Ask what the last move was.",
+  "example": "Ways to climb $8$ stairs taking $1$ or $2$ at a time: start with $a_1 = 1$, $a_2 = 2$, then $3, 5, 8, 13, 21, 34$. So $a_8 = 34$.",
+  "pitfall": "Get the starting values right; they depend on the problem, and a shift by one gives the wrong answer. Write out $a_1$ to $a_4$ by hand to check.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-RECURSION",
+    "T-SMALL-CASES"
+  ]
+}

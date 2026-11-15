@@ -1,0 +1,66 @@
+{
+  "id": "AM-0003",
+  "contest": "AMC10",
+  "slot": 2,
+  "area": "ALG",
+  "topic": "ALG-05",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "What is the value of $\\dfrac{2^{10} + 2^{8}}{2^{9} - 2^{7}}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{5}{6}$",
+      "correct": false,
+      "misconception": "I factored the top as 2^8 times 5 and the bottom as 2^7 times 3, but cancelled the powers upside down and got 5/6."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{5}{3}$",
+      "correct": false,
+      "misconception": "I factored out 2^8 and 2^7 and then treated them as if they cancelled completely, leaving 5/3 without the extra factor of 2."
+    },
+    {
+      "key": "C",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I misread the minus in the denominator as a plus, so I computed 1280 over 640 and got 2."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{10}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I divided term by term, 2^10 / 2^9 = 2 and 2^8 / 2^7 = 2, and added them to get 4."
+    }
+  ],
+  "hints": [
+    "Every term is a power of $2$. Pull out the smallest power from the top and from the bottom.",
+    "Factor the numerator and the denominator separately. You may only cancel common factors, never individual terms of a sum.",
+    "The numerator is $2^8(2^2 + 1) = 2^8 \\cdot 5$ and the denominator is $2^7(2^2 - 1) = 2^7 \\cdot 3$."
+  ],
+  "solutions": {
+    "reliable": "Factor: $2^{10} + 2^{8} = 2^{8}(4 + 1) = 5 \\cdot 2^{8}$ and $2^{9} - 2^{7} = 2^{7}(4 - 1) = 3 \\cdot 2^{7}$. So the fraction is $\\frac{5 \\cdot 2^{8}}{3 \\cdot 2^{7}} = \\frac{5 \\cdot 2}{3} = \\frac{10}{3}$. Check with numbers: $\\frac{1024 + 256}{512 - 128} = \\frac{1280}{384} = \\frac{10}{3}$. The transferable idea: in a fraction of sums, factor first and cancel only whole factors.",
+    "elegant": "Let $u = 2^{7}$. Then the expression is $\\frac{8u + 2u}{4u - u} = \\frac{10u}{3u} = \\frac{10}{3}$."
+  },
+  "formulas": [],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

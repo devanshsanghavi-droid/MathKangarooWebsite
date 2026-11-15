@@ -1,0 +1,66 @@
+{
+  "id": "AM-0194",
+  "contest": "AMC12",
+  "slot": 3,
+  "area": "GEO",
+  "topic": "GEO-06",
+  "types": [
+    "T-COORD"
+  ],
+  "statement": "Let $A = (1, 2)$ and $B = (7, 10)$. The perpendicular bisector of $\\overline{AB}$ and the two coordinate axes bound a triangle. What is the area of that triangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I used the slope 3/4 for the perpendicular line, flipping the fraction but forgetting to change its sign."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{625}{24}$",
+      "correct": false,
+      "misconception": "I took the midpoint to be half the difference of the points, (3, 4), instead of the average, (4, 6)."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{289}{6}$",
+      "correct": false,
+      "misconception": "I made the perpendicular slope -4/3 by changing the sign of 4/3 without taking the reciprocal."
+    },
+    {
+      "key": "D",
+      "text": "$54$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$108$",
+      "correct": false,
+      "misconception": "I multiplied the two intercepts 12 and 9 and forgot the one half in the triangle area formula."
+    }
+  ],
+  "hints": [
+    "A perpendicular bisector needs a point and a slope.",
+    "The line passes through the midpoint of AB, and its slope is the negative reciprocal of the slope of AB. Find where it crosses each axis.",
+    "The midpoint is $(4, 6)$ and the slope of $AB$ is $\\frac{4}{3}$, so the bisector is $y = -\\frac{3}{4}x + 9$. It meets the axes at $(0, 9)$ and $(12, 0)$."
+  ],
+  "solutions": {
+    "reliable": "The midpoint of $\\overline{AB}$ is $\\left(\\frac{1+7}{2}, \\frac{2+10}{2}\\right) = (4, 6)$. The slope of $AB$ is $\\frac{10-2}{7-1} = \\frac{4}{3}$, so the bisector has slope $-\\frac{3}{4}$: $y - 6 = -\\frac{3}{4}(x - 4)$, that is $y = -\\frac{3}{4}x + 9$. Its intercepts are $(0, 9)$ and $(12, 0)$, so the triangle with the origin has area $\\frac{1}{2}\\cdot 12 \\cdot 9 = 54$. Transferable idea: a perpendicular bisector is the midpoint plus the negative reciprocal slope.",
+    "elegant": "The bisector is the set of points equally far from $A$ and $B$: $(x-1)^2 + (y-2)^2 = (x-7)^2 + (y-10)^2$, which simplifies to $12x + 16y = 144$, or $3x + 4y = 36$. The intercepts are $12$ and $9$, and the area is $54$. Transferable idea: the equal-distance equation gives the bisector with no slopes at all."
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

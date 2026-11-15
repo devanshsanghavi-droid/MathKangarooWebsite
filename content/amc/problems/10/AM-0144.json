@@ -1,0 +1,70 @@
+{
+  "id": "AM-0144",
+  "contest": "AMC10",
+  "slot": 18,
+  "area": "CP",
+  "topic": "CP-07",
+  "types": [
+    "T-GEOPROB",
+    "T-COMPLEMENT"
+  ],
+  "statement": "Amir and Bea each arrive at a cafe at a random time between 1:00 and 2:00, independently and uniformly. If Amir arrives first, he waits $10$ minutes for Bea and then leaves. If Bea arrives first, she waits $20$ minutes for Amir and then leaves. What is the probability that they meet?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{11}{36}$",
+      "correct": false,
+      "misconception": "I used a 10-minute wait for both of them, which gives 1 - (50/60)^2 = 11/36."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{31}{72}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{7}{16}$",
+      "correct": false,
+      "misconception": "I averaged the two waits to 15 minutes and used 1 - (45/60)^2 = 7/16."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I added the waits, 10 + 20 = 30 minutes, and divided by the 60-minute hour."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{5}{9}$",
+      "correct": false,
+      "misconception": "I used a 20-minute wait for both of them, which gives 1 - (40/60)^2 = 5/9."
+    }
+  ],
+  "hints": [
+    "Plot Amir's arrival on one axis and Bea's on the other.",
+    "Two independent uniform times make a uniformly random point in a square, so the probability is an area ratio. Write the meeting condition as a band around the diagonal; the waits on the two sides are different.",
+    "With times in minutes after 1:00, they meet when $-20 \\le b - a \\le 10$. The two corners where they miss are right triangles with legs $50$ and $40$."
+  ],
+  "solutions": {
+    "reliable": "Let $a$ and $b$ be the arrival times of Amir and Bea in minutes after 1:00, a uniform point in the $60 \\times 60$ square. If $a \\le b$ they meet when $b - a \\le 10$; if $b < a$ they meet when $a - b \\le 20$. So they miss exactly when $b - a > 10$ or $a - b > 20$. The first region is a right triangle with legs $50$, area $1250$; the second has legs $40$, area $800$. The meeting region has area $3600 - 1250 - 800 = 1550$, so the probability is $\\frac{1550}{3600} = \\frac{31}{72}$. The transferable idea: for two uniform times, draw the square and measure the region; it is often easier to subtract the corner triangles.",
+    "elegant": "Split by who comes first; each case is half the square, area $1800$. Amir first and they meet: the strip $0 \\le b - a \\le 10$ has area $1800 - 1250 = 550$. Bea first and they meet: $0 < a - b \\le 20$ has area $1800 - 800 = 1000$. Together $\\frac{550 + 1000}{3600} = \\frac{31}{72}$."
+  },
+  "formulas": [
+    "F-CP-11",
+    "F-CP-06"
+  ],
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

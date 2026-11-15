@@ -1,0 +1,18 @@
+{
+  "id": "F-NT-13",
+  "area": "NT",
+  "name": "Squares modulo 3, 4 and 8",
+  "formula": "n^2 \\equiv 0, 1 \\pmod 3, \\qquad n^2 \\equiv 0, 1 \\pmod 4, \\qquad n \\text{ odd} \\implies n^2 \\equiv 1 \\pmod 8",
+  "whenToUse": "Show an equation with squares has no integer solutions, or decide whether a number can be a perfect square or a sum of two squares.",
+  "example": "Can $a^2 + b^2 = 2027$ in integers? Squares are $0$ or $1$ modulo $4$, so a sum of two squares is $0$, $1$ or $2$ modulo $4$. But $2027 \\equiv 3 \\pmod 4$, so no.",
+  "pitfall": "This only rules solutions OUT. A number that passes the check, like one that is $1 \\pmod 4$, still need not be a square.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-MODULAR",
+    "T-PARITY"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F-CP-08",
+  "area": "CP",
+  "name": "Hockey stick identity",
+  "formula": "\\sum_{i=r}^{n} \\binom{i}{r} = \\binom{n+1}{r+1}",
+  "whenToUse": "A sum of binomial coefficients with the same bottom number and increasing top number, which often comes out of casework on the largest element chosen.",
+  "example": "$\\binom{3}{3} + \\binom{4}{3} + \\cdots + \\binom{9}{3} = 1 + 4 + 10 + 20 + 35 + 56 + 84 = 210 = \\binom{10}{4}$.",
+  "pitfall": "The sum must start at $\\binom{r}{r}$. If it starts higher, subtract the missing beginning, which is itself a hockey stick sum.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-CASEWORK"
+  ],
+  "derivation": "Choose $r + 1$ numbers from $\\{1, \\ldots, n+1\\}$ and do casework on the largest, $i + 1$. The other $r$ come from $\\{1, \\ldots, i\\}$, in $\\binom{i}{r}$ ways."
+}

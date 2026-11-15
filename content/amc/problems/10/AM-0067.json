@@ -1,0 +1,71 @@
+{
+  "id": "AM-0067",
+  "contest": "AMC10",
+  "slot": 17,
+  "area": "GEO",
+  "topic": "GEO-02",
+  "types": [
+    "T-SIMILAR",
+    "T-AREA-RATIO",
+    "T-COORD"
+  ],
+  "statement": "Square $ABCD$ has side length $12$. Point $E$ lies on $\\overline{BC}$ with $BE = 4$, and $F$ is the midpoint of $\\overline{CD}$. Segment $\\overline{AE}$ meets diagonal $\\overline{BD}$ at $P$, and segment $\\overline{AF}$ meets $\\overline{BD}$ at $Q$. What is the area of triangle $APQ$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I assumed $\\overline{AE}$ and $\\overline{AF}$ cut the diagonal $\\overline{BD}$ into three equal parts, so $P$ and $Q$ were the trisection points."
+    },
+    {
+      "key": "B",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I found triangle $AEF$ has area $60$ and shrank only side $\\overline{AF}$ by $AQ/AF = \\tfrac23$, leaving $\\overline{AE}$ at full length."
+    },
+    {
+      "key": "D",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I found triangle $AEF$ has area $60$ and shrank only side $\\overline{AE}$ by $AP/AE = \\tfrac34$, leaving $\\overline{AF}$ at full length."
+    },
+    {
+      "key": "E",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I found the area of triangle $AEF$, which is the larger triangle containing $APQ$, not triangle $APQ$ itself."
+    }
+  ],
+  "hints": [
+    "Look for similar triangles with the diagonal: $\\overline{AD} \\parallel \\overline{BC}$ and $\\overline{AB} \\parallel \\overline{CD}$.",
+    "Triangles $PBE$ and $PDA$ are similar, and so are $QDF$ and $QBA$. Their side ratios tell you what fraction of $\\overline{AE}$ is $\\overline{AP}$, and of $\\overline{AF}$ is $\\overline{AQ}$.",
+    "$AP : PE = AD : BE = 3 : 1$ and $AQ : QF = AB : DF = 2 : 1$. Then $[APQ] = \\tfrac34 \\cdot \\tfrac23 \\cdot [AEF]$."
+  ],
+  "solutions": {
+    "reliable": "Put $A = (0,0)$, $B = (12,0)$, $C = (12,12)$, $D = (0,12)$, so $E = (12,4)$ and $F = (6,12)$. Diagonal $\\overline{BD}$ is $x + y = 12$. Line $AE$ is $y = x/3$, meeting it at $P = (9,3)$. Line $AF$ is $y = 2x$, meeting it at $Q = (4,8)$. The shoelace formula gives $[APQ] = \\tfrac12 |9 \\cdot 8 - 3 \\cdot 4| = \\tfrac12 \\cdot 60 = 30$. Transferable idea: two lines from one vertex crossing a third line can be handled by coordinates or by similar triangles.",
+    "elegant": "Triangle $AEF$ is the square minus three right triangles: $144 - 24 - 24 - 36 = 60$. From the similar pairs, $AP/AE = \\tfrac34$ and $AQ/AF = \\tfrac23$, and triangles sharing angle $A$ have area proportional to the product of the sides along it, so $[APQ] = \\tfrac34 \\cdot \\tfrac23 \\cdot 60 = 30$."
+  },
+  "formulas": [
+    "F-GEO-11",
+    "F-GEO-09"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

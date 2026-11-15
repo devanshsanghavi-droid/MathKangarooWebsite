@@ -1,0 +1,68 @@
+{
+  "id": "AM-0193",
+  "contest": "AMC12",
+  "slot": 2,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-BACKWARDS"
+  ],
+  "statement": "A square and an equilateral triangle have the same perimeter. The area of the square is $36$. What is the area of the triangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$16\\sqrt{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I treated the triangle as if its area were half the side squared, like a right triangle with two legs of 8."
+    },
+    {
+      "key": "C",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I assumed that two shapes with the same perimeter must also have the same area."
+    },
+    {
+      "key": "D",
+      "text": "$32\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I multiplied the base 8 by the height 4 times the square root of 3 and forgot the one half in the triangle area formula."
+    },
+    {
+      "key": "E",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I squared the triangle's side length of 8, using the square's area formula for the triangle."
+    }
+  ],
+  "hints": [
+    "Find the shared perimeter first.",
+    "Work back from the square's area to its side and perimeter, then split that perimeter into three equal sides. An equilateral triangle with side $s$ has area $\\frac{\\sqrt{3}}{4}s^2$.",
+    "The square has side $6$, so the perimeter is $24$ and the triangle has side $8$. Its area is $\\frac{\\sqrt{3}}{4}\\cdot 64$."
+  ],
+  "solutions": {
+    "reliable": "The square has side $\\sqrt{36} = 6$ and perimeter $24$. The triangle has the same perimeter, so its side is $8$. Its height is $8 \\cdot \\frac{\\sqrt{3}}{2} = 4\\sqrt{3}$, so its area is $\\frac{1}{2}\\cdot 8 \\cdot 4\\sqrt{3} = 16\\sqrt{3}$. Transferable idea: when two figures share a measurement, convert everything to that shared quantity first.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-20"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "AM-0120",
+  "contest": "BOTH",
+  "slot": 4,
+  "area": "CP",
+  "topic": "CP-05",
+  "types": [
+    "T-STARS-BARS"
+  ],
+  "statement": "In how many ways can $8$ identical cookies be shared among $3$ children so that each child gets at least $2$ cookies?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I gave each child 2 cookies and then thought the 2 leftover cookies had to go to the same child, which gives 3 ways."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I gave out the 6 required cookies but then used C(2 + 3, 3) = 10 for the 2 leftover cookies, with one too many in the top."
+    },
+    {
+      "key": "D",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I only made sure each child got at least 1 cookie, which gives C(7, 2) = 21, instead of at least 2."
+    },
+    {
+      "key": "E",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I ignored the at-least-2 rule and used C(8 + 2, 2) = 45, the count when a child may get no cookies."
+    }
+  ],
+  "hints": [
+    "Hand out the required cookies first.",
+    "After each child gets 2, the rest can be shared with no restriction. Sharing identical items among children with zeros allowed is stars and bars.",
+    "After giving $2$ each, $2$ cookies remain for $3$ children: $\\binom{2 + 2}{2}$ ways."
+  ],
+  "solutions": {
+    "reliable": "Give each child $2$ cookies first; that uses $6$, and every valid sharing starts this way. Now share the remaining $2$ identical cookies among $3$ children with no restriction. By stars and bars, that is $\\binom{2 + 3 - 1}{3 - 1} = \\binom{4}{2} = 6$. Listing confirms it: the leftover split is one of $(2,0,0)$ in $3$ orders or $(1,1,0)$ in $3$ orders, $6$ in all. Transferable idea: a lower bound on each box is handled by pre-filling the boxes.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-05"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

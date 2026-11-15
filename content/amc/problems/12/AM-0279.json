@@ -1,0 +1,68 @@
+{
+  "id": "AM-0279",
+  "contest": "AMC12",
+  "slot": 8,
+  "area": "CP",
+  "topic": "CP-11",
+  "types": [
+    "T-BACKWARDS",
+    "T-CYCLE",
+    "T-SMALL-CASES"
+  ],
+  "statement": "Two players take turns removing stones from a single pile. On each turn a player must remove exactly $1$, $2$ or $4$ stones (never more than are left). The player who takes the last stone wins. For how many starting pile sizes $n$ with $1 \\le n \\le 40$ can the second player force a win?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I assumed the losing piles are the multiples of 1 + 2 + 4 = 7, so I counted 7, 14, 21, 28 and 35."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I added the smallest and largest moves, 1 + 4 = 5, and assumed the losing piles are the multiples of 5."
+    },
+    {
+      "key": "C",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I solved the version where taking the last stone loses, whose losing piles are 1, 4, 7, ..., 40, one more than the multiples of 3."
+    },
+    {
+      "key": "E",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I counted the pile sizes where the first player wins instead of the ones where the second player wins."
+    }
+  ],
+  "hints": [
+    "Work out who wins for the smallest piles first.",
+    "A pile is losing for the player to move if every move leads to a winning pile, and winning if some move leads to a losing pile. Label piles $0, 1, 2, \\ldots$ in order and look for a pattern.",
+    "Piles $3$ and $6$ are losing. Each move removes $1$, $2$ or $1$ more than a multiple of $3$ (since $4 = 3 + 1$), so from a multiple of $3$ you can never reach another one."
+  ],
+  "solutions": {
+    "reliable": "Call a pile losing if the player about to move loses with best play. Pile $0$ is losing (the previous player took the last stone). Working up: $1, 2$ are winning (take everything), $3$ is losing (moves reach $2$ or $1$), $4$ is winning (take all $4$), $5$ is winning (take $2$, leaving $3$), $6$ is losing (moves reach $5$, $4$ or $2$), and so on. In general the losing piles are the multiples of $3$. Proof: from a multiple of $3$, removing $1$, $2$ or $4$ stones lowers the pile by $1$, $2$ or $1$ modulo $3$, so it never lands on a multiple of $3$; from a pile that is $1$ or $2$ more than a multiple of $3$, removing $1$ or $2$ stones reaches a multiple of $3$. The second player wins exactly when $n$ is a multiple of $3$: $3, 6, \\ldots, 39$, which is $13$ values. The idea: compute small cases backwards from the end, then prove the pattern with an invariant modulo the period.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

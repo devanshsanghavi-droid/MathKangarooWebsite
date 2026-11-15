@@ -1,0 +1,67 @@
+{
+  "id": "AM-0221",
+  "contest": "AMC12",
+  "slot": 20,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-MASS-POINTS",
+    "T-AREA-RATIO"
+  ],
+  "statement": "In triangle $ABC$, point $D$ is the midpoint of $\\overline{BC}$, point $E$ lies on $\\overline{CA}$ with $CE : EA = 2 : 1$, and point $F$ lies on $\\overline{AB}$ with $AF : FB = 3 : 1$. Segments $\\overline{AD}$, $\\overline{BE}$ and $\\overline{CF}$ bound a small triangle inside $ABC$. What fraction of the area of triangle $ABC$ is the area of the small triangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{1}{210}$",
+      "correct": false,
+      "misconception": "I placed E with CE : EA = 1 : 2, closer to C, reversing the given ratio, and then computed the inner triangle correctly for that wrong point."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{25}{252}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{1}{10}$",
+      "correct": false,
+      "misconception": "I used Routh's formula (xyz - 1)^2 over a product of three factors but paired each ratio with the wrong neighbour in the factors, getting 25/250."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{1}{7}$",
+      "correct": false,
+      "misconception": "I assumed the answer was the familiar one seventh, but that value belongs to the case where all three cevians cut their sides in the same 2 : 1 ratio."
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{227}{252}$",
+      "correct": false,
+      "misconception": "I found the three corner triangles correctly but reported their combined area, the part of ABC outside the small triangle, instead of the small triangle."
+    }
+  ],
+  "hints": [
+    "Find the three corner triangles that touch the sides, then subtract.",
+    "For each pair of cevians, mass points give the ratio in which one cuts the other. That ratio turns into the area of the triangle on one side of $ABC$.",
+    "For $AD$ and $BE$: masses $B = C = 1$ and $A = 2$ give $AX : XD = 1 : 1$, so triangle $ABX$ is $\\tfrac12\\cdot\\tfrac12 = \\tfrac14$ of $ABC$."
+  ],
+  "solutions": {
+    "reliable": "Call the inner triangle $XYZ$ with $X = AD \\cap BE$, $Y = BE \\cap CF$, $Z = CF \\cap AD$. Its area is $[ABC]$ minus triangles $ABX$, $BCY$ and $CAZ$. Triangle $ABX$: masses $B = C = 1$ (since $BD = DC$) and $A = 2$ (since $CE : EA = 2 : 1$ needs $m_A\\cdot EA = m_C\\cdot CE$). So $AX : XD = m_D : m_A = 2 : 2$, and $[ABX] = \\tfrac12[ABD] = \\tfrac14[ABC]$. Triangle $BCY$: on $BE$ and $CF$, masses $A = 1$, $B = 3$, $C = \\tfrac12$ give $BY : YE = m_E : m_B = \\tfrac32 : 3 = 1 : 2$, so $[BCY] = \\tfrac13[BCE] = \\tfrac13\\cdot\\tfrac23 = \\tfrac29$. Triangle $CAZ$: masses $A = 1$, $B = 3$, $C = 3$ give $CZ : ZF = m_F : m_C = 4 : 3$, so $[CAZ] = \\tfrac47[CAF] = \\tfrac47\\cdot\\tfrac34 = \\tfrac37$. The small triangle is $1 - \\tfrac14 - \\tfrac29 - \\tfrac37 = \\tfrac{252 - 63 - 56 - 108}{252} = \\tfrac{25}{252}$. A coordinate computation of the three intersection points confirms $\\tfrac{25}{252}$. The idea: an inner region is often easiest as the whole minus pieces whose areas come from one ratio each.",
+    "elegant": "Routh's theorem with $x = \\tfrac{BD}{DC} = 1$, $y = \\tfrac{CE}{EA} = 2$, $z = \\tfrac{AF}{FB} = 3$ gives $\\dfrac{(xyz - 1)^2}{(xy + x + 1)(yz + y + 1)(zx + z + 1)} = \\dfrac{25}{4\\cdot 9\\cdot 7} = \\dfrac{25}{252}$."
+  },
+  "formulas": [],
+  "estSeconds": 220,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

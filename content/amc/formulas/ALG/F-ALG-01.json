@@ -1,0 +1,13 @@
+{
+  "id": "F-ALG-01",
+  "area": "ALG",
+  "name": "Vieta's formulas for a cubic",
+  "formula": "x^3 + bx^2 + cx + d = 0 \\implies r+s+t = -b,\\quad rs+st+tr = c,\\quad rst = -d",
+  "whenToUse": "Whenever a question asks for a symmetric expression in the roots, such as their sum of squares or reciprocals, and finding the roots themselves would be painful.",
+  "example": "For $x^3 - 6x^2 + 11x - 5 = 0$ the roots satisfy $r+s+t = 6$ and $rs+st+tr = 11$, so $r^2+s^2+t^2 = 6^2 - 2 \\cdot 11 = 14$.",
+  "pitfall": "The signs alternate. With a leading coefficient of 1, the sum of the roots is the NEGATIVE of the $x^2$ coefficient, and the product is the negative of the constant for a cubic.",
+  "priority": "must-know",
+  "contests": ["AMC10", "AMC12"],
+  "types": ["T-VIETA"],
+  "derivation": "Expand $(x-r)(x-s)(x-t) = x^3 - (r+s+t)x^2 + (rs+st+tr)x - rst$ and match coefficients. If the leading coefficient is $a \\ne 1$, divide through by $a$ first."
+}

@@ -1,0 +1,71 @@
+{
+  "id": "AM-0304",
+  "contest": "AMC12",
+  "slot": 24,
+  "area": "CP",
+  "topic": "CP-06",
+  "types": [
+    "T-COMPLEMENT",
+    "T-STARS-BARS",
+    "T-SYMMETRY"
+  ],
+  "statement": "Four distinct vertices of a regular $12$-gon are chosen at random, and they are joined to form a convex quadrilateral. What is the probability that the center of the $12$-gon lies strictly inside the quadrilateral, not on its boundary?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{17}{99}$",
+      "correct": false,
+      "misconception": "I counted the 85 ways to split the 12 edges into four gaps of at most 5 and used that as the number of quadrilaterals, without multiplying by 12 and dividing by 4."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{8}{33}$",
+      "correct": false,
+      "misconception": "I found the 255 quadrilaterals whose arcs are all at most 5 edges, then also threw out every one that uses two opposite vertices of the 12-gon, but when those opposite vertices form a diagonal the center is still strictly inside."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I used the formula 1 - 4/2^3 for four points chosen anywhere on a circle, which ignores the ties that fixed vertices create."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{17}{33}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{25}{33}$",
+      "correct": false,
+      "misconception": "I counted the quadrilaterals with the center on a side, where two neighbouring chosen vertices are opposite, as containing the center."
+    }
+  ],
+  "hints": [
+    "Look at the four arcs between consecutive chosen vertices.",
+    "Measure each arc in edges of the 12-gon, so the four arcs add to 12. The center is strictly inside exactly when every arc is shorter than half the circle. An arc of exactly 6 edges puts the center on a side.",
+    "Count the quadrilaterals that fail: one arc has at least 6 edges. Starting at the vertex where that long arc ends and going around, the other three vertices all lie among the next 6 vertices. At most one arc can be that long."
+  ],
+  "solutions": {
+    "reliable": "There are $\\binom{12}{4} = 495$ quadrilaterals. Let the arcs between consecutive chosen vertices be $g_1, g_2, g_3, g_4$ edges, so $g_i \\ge 1$ and $\\sum g_i = 12$. The center is strictly inside exactly when every $g_i \\le 5$: an arc of 6 makes a side a diameter (center on the boundary) and a longer arc leaves the center outside. Substituting $h_i = g_i - 1$, we need $h_1 + h_2 + h_3 + h_4 = 8$ with $0 \\le h_i \\le 4$: $\\binom{11}{3} - 4\\binom{6}{3} = 165 - 80 = 85$ gap lists. Each pair (starting vertex, gap list) gives one quadrilateral, and each quadrilateral arises from 4 such pairs, one per choice of starting vertex, so there are $\\frac{12 \\cdot 85}{4} = 255$ good quadrilaterals. The probability is $\\frac{255}{495} = \\frac{17}{33}$. Transferable idea: a polygon contains the center exactly when no gap between consecutive vertices reaches half the circle.",
+    "elegant": "Count the failures. If some arc has 6 or more edges, it is the only one, since two such arcs would already use all 12 edges. Let $v$ be the chosen vertex at the far end of that long arc. Then the other three chosen vertices lie among the 6 vertices that follow $v$, giving $\\binom{6}{3} = 20$ choices, and each failing quadrilateral is counted once. So there are $12 \\cdot 20 = 240$ failures, $495 - 240 = 255$ successes, and the probability is $\\frac{17}{33}$."
+  },
+  "formulas": [
+    "F-CP-05",
+    "F-CP-03"
+  ],
+  "estSeconds": 300,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

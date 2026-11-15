@@ -1,0 +1,69 @@
+{
+  "id": "AM-0081",
+  "contest": "BOTH",
+  "slot": 6,
+  "area": "NT",
+  "topic": "NT-04",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-EXTREME"
+  ],
+  "statement": "Two positive integers have greatest common divisor $6$ and least common multiple $180$. What is the smallest possible value of their sum?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I reduced to two coprime numbers with product 30, chose 5 and 6, and reported 5 + 6 = 11 without multiplying back by 6."
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I thought the product of the two numbers equals their lcm, so I solved 6a x 6b = 180 and got 6 and 30, whose lcm is really 30."
+    },
+    {
+      "key": "C",
+      "text": "$66$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$186$",
+      "correct": false,
+      "misconception": "I assumed the two numbers had to be the gcd and the lcm themselves, 6 and 180, and added them."
+    },
+    {
+      "key": "E",
+      "text": "$1080$",
+      "correct": false,
+      "misconception": "I found the product of the numbers, gcd x lcm = 6 x 180 = 1080, and reported that instead of the sum."
+    }
+  ],
+  "hints": [
+    "Write the numbers as $6a$ and $6b$. What must be true about $a$ and $b$?",
+    "$\\gcd(a, b) = 1$, and the lcm is $6ab = 180$, so $ab = 30$ with $a$ and $b$ coprime.",
+    "The pairs with product $30$ are $\\{1, 30\\}, \\{2, 15\\}, \\{3, 10\\}, \\{5, 6\\}$. The sum $6(a + b)$ is smallest when $a$ and $b$ are closest."
+  ],
+  "solutions": {
+    "reliable": "Write the numbers as $6a$ and $6b$ with $\\gcd(a, b) = 1$; otherwise the gcd would be larger than $6$. Then the lcm is $6ab$, so $6ab = 180$ and $ab = 30$. Since $30 = 2 \\cdot 3 \\cdot 5$ has no repeated prime, every factor pair is coprime: $\\{1, 30\\}, \\{2, 15\\}, \\{3, 10\\}, \\{5, 6\\}$, with sums $31, 17, 13, 11$. The smallest is $11$, so the smallest possible sum is $6 \\cdot 11 = 66$, from the numbers $30$ and $36$. Check: $\\gcd(30, 36) = 6$ and $\\operatorname{lcm}(30, 36) = 180$.",
+    "elegant": "The product of the two numbers is $\\gcd \\cdot \\operatorname{lcm} = 1080$. For a fixed product, the sum is smallest when the two numbers are as close as possible to $\\sqrt{1080} \\approx 32.9$. Both are multiples of $6$, and $30 \\cdot 36 = 1080$ with $\\gcd(30, 36) = 6$, so the minimum is $30 + 36 = 66$."
+  },
+  "formulas": [
+    "F-NT-03"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

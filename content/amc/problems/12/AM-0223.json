@@ -1,0 +1,66 @@
+{
+  "id": "AM-0223",
+  "contest": "AMC12",
+  "slot": 15,
+  "area": "GEO",
+  "topic": "GEO-03",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Triangle $ABC$ has a right angle at $C$. The median from $A$ has length $7$ and the median from $B$ has length $\\sqrt{31}$. What is the length of the hypotenuse $\\overline{AB}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2\\sqrt{11}$",
+      "correct": false,
+      "misconception": "I solved for the two legs, BC^2 = 20 and AC^2 = 44, and then reported the longer leg AC instead of the hypotenuse."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{4\\sqrt{30}}{3}$",
+      "correct": false,
+      "misconception": "I wrote each median as leg^2 + (other leg)^2 / 2, halving the square of the leg instead of squaring half the leg, which gave (3/2) times c^2 = 80."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$4\\sqrt{5}$",
+      "correct": false,
+      "misconception": "I assumed the squares of the two medians add up to the square of the hypotenuse, as if the medians were the legs, so I got sqrt(49 + 31)."
+    },
+    {
+      "key": "E",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I found that the squared medians add to 5/4 of c^2 but then multiplied 80 by 5/4 instead of dividing, getting c^2 = 100."
+    }
+  ],
+  "hints": [
+    "Each median from an acute vertex is the hypotenuse of its own right triangle.",
+    "Name the legs $a = BC$ and $b = AC$. Write each median length with the Pythagorean theorem, then add the two equations rather than solving them separately.",
+    "The median from $A$ goes to the midpoint of $BC$: $b^2 + \\tfrac{a^2}{4} = 49$. Likewise $a^2 + \\tfrac{b^2}{4} = 31$. Add them."
+  ],
+  "solutions": {
+    "reliable": "Let $a = BC$ and $b = AC$. The median from $A$ ends at the midpoint of $BC$, which is $\\tfrac{a}{2}$ from $C$, so by the Pythagorean theorem $b^2 + \\tfrac{a^2}{4} = 49$. Similarly the median from $B$ gives $a^2 + \\tfrac{b^2}{4} = 31$. Adding, $\\tfrac54(a^2 + b^2) = 80$, so $c^2 = a^2 + b^2 = 64$ and $c = 8$. Check: solving the system gives $a^2 = 20$ and $b^2 = 44$, both positive, and $44 + 5 = 49$, $20 + 11 = 31$. The idea: when you want a symmetric quantity, add the equations instead of solving for each unknown.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

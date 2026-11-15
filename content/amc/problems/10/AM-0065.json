@@ -1,0 +1,68 @@
+{
+  "id": "AM-0065",
+  "contest": "AMC10",
+  "slot": 16,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-POWER-POINT"
+  ],
+  "statement": "Point $P$ is $10$ units from the center of a circle. A line through $P$ meets the circle at $A$ and $B$, with $A$ between $P$ and $B$, $PA = 5$ and $AB = 7$. What is the radius of the circle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2\\sqrt{10}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$2\\sqrt{15}$",
+      "correct": false,
+      "misconception": "I found the power $PA \\cdot PB = 60$ and set it equal to $r^2$, forgetting that the power of an outside point is $d^2 - r^2$."
+    },
+    {
+      "key": "C",
+      "text": "$\\sqrt{65}$",
+      "correct": false,
+      "misconception": "I used $PA \\cdot AB = 5 \\cdot 7 = 35$ as the power instead of $PA \\cdot PB$, then solved $100 - r^2 = 35$."
+    },
+    {
+      "key": "D",
+      "text": "$5\\sqrt3$",
+      "correct": false,
+      "misconception": "I treated $PA$ as if it were a tangent length and solved $r^2 = 10^2 - 5^2 = 75$."
+    },
+    {
+      "key": "E",
+      "text": "$4\\sqrt{10}$",
+      "correct": false,
+      "misconception": "I wrote the power as $d^2 + r^2$ instead of $d^2 - r^2$, so $r^2 = 100 + 60$."
+    }
+  ],
+  "hints": [
+    "Compute $PA \\cdot PB$.",
+    "The power of an outside point equals $PA \\cdot PB$ along any secant, and it also equals $d^2 - r^2$, where $d$ is the distance to the center.",
+    "$PA \\cdot PB = 5 \\cdot 12 = 60$, and $10^2 - r^2 = 60$."
+  ],
+  "solutions": {
+    "reliable": "Since $A$ lies between $P$ and $B$, $PB = PA + AB = 12$. The power of $P$ is $PA \\cdot PB = 60$. Drawing the tangent $PT$ to the circle gives $PT^2 = PA \\cdot PB = 60$, and since $\\angle OTP = 90^\\circ$, $PT^2 = OP^2 - r^2 = 100 - r^2$. So $r^2 = 40$ and $r = 2\\sqrt{10}$. Check it is possible: the closest and farthest points of the circle from $P$ are $10 - 2\\sqrt{10} \\approx 3.7$ and $10 + 2\\sqrt{10} \\approx 16.3$ away, and $5$ and $12$ lie between them. Transferable idea: power of a point equals $d^2 - r^2$, which connects secant lengths to the radius.",
+    "elegant": "Drop the perpendicular from the center $O$ to the chord at its midpoint $M$. Then $PM = 5 + 3.5 = 8.5$ and $OM^2 = 100 - 72.25 = 27.75$, so $r^2 = OM^2 + 3.5^2 = 27.75 + 12.25 = 40$."
+  },
+  "formulas": [
+    "F-GEO-01"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

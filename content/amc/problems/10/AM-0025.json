@@ -1,0 +1,69 @@
+{
+  "id": "AM-0025",
+  "contest": "AMC10",
+  "slot": 15,
+  "area": "ALG",
+  "topic": "ALG-02",
+  "types": [
+    "T-BACKWARDS",
+    "T-SUBSTITUTION"
+  ],
+  "statement": "A store raises the price of a jacket by $25\\%$. Later it lowers that price by $x\\%$, and later still it raises the resulting price by $x\\%$. The final price is $20\\%$ less than the original price. What is $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I treated both later changes as decreases of $x\\%$ and solved $1.25\\left(1 - \\frac{x}{100}\\right)^2 = 0.8$."
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I reached $1 - \\left(\\frac{x}{100}\\right)^2 = 0.64$ and then reported $100 \\left(\\frac{x}{100}\\right)^2 = 36$ instead of taking the square root."
+    },
+    {
+      "key": "C",
+      "text": "$20\\sqrt5$",
+      "correct": false,
+      "misconception": "I ignored the first $25\\%$ increase and solved $1 - \\left(\\frac{x}{100}\\right)^2 = 0.8$."
+    },
+    {
+      "key": "D",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I added the percents: the price had to fall from $25\\%$ above to $20\\%$ below, a swing of $45$ points, so I set $x = 45$."
+    },
+    {
+      "key": "E",
+      "text": "$60$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Write each change as a multiplier.",
+    "A decrease of $x\\%$ followed by an increase of $x\\%$ multiplies by $\\left(1 - \\frac{x}{100}\\right)\\left(1 + \\frac{x}{100}\\right)$, a difference of squares.",
+    "Solve $1.25\\left(1 - \\frac{x^2}{10000}\\right) = 0.8$: the bracket is $0.64$, so $\\frac{x^2}{10000} = 0.36$."
+  ],
+  "solutions": {
+    "reliable": "The three changes multiply the price by $1.25$, by $1 - \\frac{x}{100}$ and by $1 + \\frac{x}{100}$. The final price is $0.8$ of the original, so $1.25\\left(1 - \\frac{x^2}{10000}\\right) = 0.8$. Then $1 - \\frac{x^2}{10000} = 0.64$, so $\\frac{x^2}{10000} = 0.36$ and $x = 60$. Check with a jacket priced at $100$: it goes to $125$, then $50$, then $80$, which is $20\\%$ below $100$. Transferable idea: percent changes multiply, and a down-then-up by the same percent is always a net loss of $\\left(\\frac{x}{100}\\right)^2$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-05"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

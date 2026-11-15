@@ -1,0 +1,70 @@
+{
+  "id": "AM-0255",
+  "contest": "AMC12",
+  "slot": 18,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-MODULAR",
+    "T-CYCLE"
+  ],
+  "statement": "What is the remainder when $1^{2026} + 2^{2026} + 3^{2026} + \\cdots + 2026^{2026}$ is divided by $11$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I knew each block of 11 consecutive terms sums to 0 mod 11 and assumed the whole sum splits into complete blocks, but 2026 = 11 x 184 + 2."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I used Fermat to make every term 1 and forgot that the multiples of 11 contribute 0, so I just reduced 2026 mod 11."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I made every term not divisible by 11 equal to 1, but Fermat only gives k^10 = 1, and 2026 is not a multiple of 10; the 1842 such terms gave 5."
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I thought only one term was left over after 184 full blocks, namely 2026^2026, which is 2^6 = 64, or 9 mod 11."
+    },
+    {
+      "key": "E",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Reduce the exponent using Fermat's little theorem for the prime $11$.",
+    "For $11 \\nmid k$, $k^{10} \\equiv 1$, so $k^{2026} \\equiv k^6$. Show that $1^6 + 2^6 + \\cdots + 10^6 \\equiv 0 \\pmod{11}$, then split $1, \\ldots, 2026$ into blocks of $11$.",
+    "Since $2026 = 11 \\cdot 184 + 2$, the $184$ complete blocks contribute $0$, leaving $2025^{2026} + 2026^{2026} \\equiv 1^6 + 2^6$."
+  ],
+  "solutions": {
+    "reliable": "For $11 \\nmid k$, Fermat gives $k^{10} \\equiv 1$, and $2026 = 10 \\cdot 202 + 6$, so $k^{2026} \\equiv k^6 \\pmod{11}$; multiples of $11$ contribute $0$. Over a complete residue system, $T = \\sum_{k=1}^{10} k^6$ satisfies $2^6 T \\equiv T$ because multiplying by $2$ permutes the nonzero residues; as $2^6 = 64 \\equiv 9 \\not\\equiv 1$, we get $T \\equiv 0$. Now $2026 = 11 \\cdot 184 + 2$: the $184$ complete blocks contribute $0$, and the last two terms are $2025 \\equiv 1$ and $2026 \\equiv 2$, giving $1 + 2^6 = 65 \\equiv 10 \\pmod{11}$. The transferable idea: power sums over a full residue system vanish unless the exponent is a multiple of $p - 1$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-05",
+    "F-NT-12"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

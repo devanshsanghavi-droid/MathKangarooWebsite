@@ -1,0 +1,67 @@
+{
+  "id": "AM-0155",
+  "contest": "AMC12",
+  "slot": 2,
+  "area": "ALG",
+  "topic": "ALG-01",
+  "types": [
+    "T-CHOICES",
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Four years ago, Ana was three times as old as her brother. Four years from now, she will be twice as old as he will be. How old is Ana now?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I solved the system correctly but reported the brother's age, $12$, instead of Ana's."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I wrote the second condition as $a + 4 = 2b + 4$, doubling the brother's age but not the $4$ years added to it, so $a = 2b$ and $3b - 8 = 2b$ gave $b = 8$ and $a = 16$."
+    },
+    {
+      "key": "C",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I found Ana's age four years ago, $24$, and reported that instead of her age now."
+    },
+    {
+      "key": "D",
+      "text": "$28$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I found Ana's age four years from now, $32$, and reported that instead of her age now."
+    }
+  ],
+  "hints": [
+    "Use one letter for each person's age now, and shift both ages by the same number of years.",
+    "Four years ago both ages were $4$ less, and four years from now both are $4$ more. Each sentence becomes one linear equation in $a$ and $b$.",
+    "The equations are $a - 4 = 3(b - 4)$ and $a + 4 = 2(b + 4)$, that is, $a = 3b - 8$ and $a = 2b + 4$."
+  ],
+  "solutions": {
+    "reliable": "Let Ana be $a$ and her brother $b$ years old now. Four years ago: $a - 4 = 3(b - 4)$, so $a = 3b - 8$. Four years from now: $a + 4 = 2(b + 4)$, so $a = 2b + 4$. Then $3b - 8 = 2b + 4$ gives $b = 12$ and $a = 28$. Check: four years ago the ages were $24$ and $8$, and $24 = 3 \\cdot 8$; four years from now they are $32$ and $16$, and $32 = 2 \\cdot 16$. Transferable idea: in an age problem, time shifts every person's age by the same amount, so shift both ages, never just one.",
+    "elegant": "Test the choices. If Ana is $a$ now, the first sentence fixes her brother at $b = \\frac{a - 4}{3} + 4$. For $a = 28$ that is $b = 12$, and four years on the ages are $32$ and $16$, exactly twice. For $a = 24$ or $a = 32$ the brother's age is not a whole number, and for $a = 16$ he is $8$, so four years on the ages are $20$ and $12$, not in ratio $2$."
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

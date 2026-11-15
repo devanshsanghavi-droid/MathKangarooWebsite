@@ -1,0 +1,69 @@
+{
+  "id": "AM-0238",
+  "contest": "AMC12",
+  "slot": 7,
+  "area": "NT",
+  "topic": "NT-07",
+  "types": [
+    "T-SFFT",
+    "T-CASEWORK"
+  ],
+  "statement": "Ordered pairs $(x, y)$ of positive integers satisfy $xy + 20 = 4x + 6y$. What is the sum of all possible values of $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I found all five pairs correctly but added the values of y instead of x."
+    },
+    {
+      "key": "B",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I only used the positive factor pairs of 4 and missed that x - 6 and y - 4 can both be negative, which gives (4, 2) and (2, 3)."
+    },
+    {
+      "key": "C",
+      "text": "$31$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I used all six signed factor pairs of 4, including x - 6 = -1 and y - 4 = -4, but that makes y = 0, which is not positive."
+    },
+    {
+      "key": "E",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I moved the 20 across without changing its sign, so I got xy - 4x - 6y = 20 and (x - 6)(y - 4) = 44, then added the x values from its positive factor pairs."
+    }
+  ],
+  "hints": [
+    "Collect everything on one side and try to factor.",
+    "$xy - 4x - 6y + 24 = 4$, which factors as $(x - 6)(y - 4) = 4$.",
+    "Check both positive and negative factor pairs of $4$, keeping only those with $x \\ge 1$ and $y \\ge 1$."
+  ],
+  "solutions": {
+    "reliable": "Rearrange to $xy - 4x - 6y = -20$ and add $24$: $(x - 6)(y - 4) = 4$. Positive factor pairs $(1,4), (2,2), (4,1)$ give $(x,y) = (7,8), (8,6), (10,5)$. Negative pairs need $x - 6 \\ge -5$ and $y - 4 \\ge -3$: $(-1,-4)$ gives $y = 0$ (rejected), $(-2,-2)$ gives $(4,2)$, and $(-4,-1)$ gives $(2,3)$. The $x$ values are $7, 8, 10, 4, 2$, with sum $31$. Each pair checks, for example $2 \\cdot 3 + 20 = 26 = 8 + 18$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-07"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

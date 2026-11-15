@@ -1,0 +1,70 @@
+{
+  "id": "AM-0250",
+  "contest": "AMC12",
+  "slot": 15,
+  "area": "NT",
+  "topic": "NT-07",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-CASEWORK"
+  ],
+  "statement": "How many ordered triples $(a, b, c)$ of positive integers satisfy $\\log_2 a + \\log_4 b + \\log_8 c = 6$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I multiplied the logarithms by 6 to clear the fractions but forgot to multiply the right side, so I solved 6x + 3y + 2z = 6."
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I turned log_4 b into 2 log_2 b and log_8 c into 3 log_2 c, inverting the change of base, so I counted solutions of x + 2y + 3z = 6."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I thought a, b and c had to be at least 2, so I only counted solutions in which every exponent is at least 1."
+    },
+    {
+      "key": "D",
+      "text": "$28$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$49$",
+      "correct": false,
+      "misconception": "I counted one triple for each x and y with 6x + 3y at most 36, forgetting that z = (36 - 6x - 3y)/2 must be a whole number."
+    }
+  ],
+  "hints": [
+    "Rewrite every logarithm in base $2$.",
+    "Since $\\log_4 b = \\tfrac12 \\log_2 b$ and $\\log_8 c = \\tfrac13 \\log_2 c$, the equation becomes $a^6 b^3 c^2 = 2^{36}$. What does that force $a$, $b$, $c$ to be?",
+    "Each of $a$, $b$, $c$ is a power of $2$: $a = 2^x$, $b = 2^y$, $c = 2^z$ with $6x + 3y + 2z = 36$ and $x, y, z \\ge 0$. Show $y$ is even and count."
+  ],
+  "solutions": {
+    "reliable": "Using $\\log_4 b = \\tfrac12\\log_2 b$ and $\\log_8 c = \\tfrac13\\log_2 c$ and multiplying by $6$: $6\\log_2 a + 3\\log_2 b + 2\\log_2 c = 36$, so $a^6 b^3 c^2 = 2^{36}$. An odd prime dividing any of $a$, $b$, $c$ would divide the left side, so $a = 2^x$, $b = 2^y$, $c = 2^z$ with nonnegative integers satisfying $6x + 3y + 2z = 36$. Then $3y$ is even, so $y = 2w$, and the equation becomes $3(x + w) + z = 18$. For each value $s = x + w$ from $0$ to $6$ there are $s + 1$ pairs $(x, w)$ and $z = 18 - 3s$ is determined. The count is $1 + 2 + \\cdots + 7 = 28$. The transferable idea: a logarithm equation in integers becomes a linear equation in exponents.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-10",
+    "F-ALG-11"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

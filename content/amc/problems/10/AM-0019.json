@@ -1,0 +1,69 @@
+{
+  "id": "AM-0019",
+  "contest": "AMC10",
+  "slot": 6,
+  "area": "ALG",
+  "topic": "ALG-03",
+  "types": [
+    "T-SFFT",
+    "T-CASEWORK"
+  ],
+  "statement": "How many ordered pairs $(x, y)$ of positive integers satisfy $xy + 6 = 3x + 4y$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I counted unordered positive factor pairs of 6, just {1, 6} and {2, 3}, and stopped."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I factored to (x - 4)(y - 3) = 6 and only used positive factor pairs, missing the pair with both factors negative."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I also accepted x - 4 = -2 and y - 3 = -3, but that makes y = 0, which is not a positive integer."
+    },
+    {
+      "key": "E",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I counted all eight factor pairs of 6, positive and negative, without checking that x and y stay positive."
+    }
+  ],
+  "hints": [
+    "Move everything to one side and try to factor.",
+    "Rewrite as $xy - 3x - 4y = -6$ and add a constant to both sides so the left side factors as $(x - 4)(y - 3)$. Then consider both signs.",
+    "$(x - 4)(y - 3) = 6$. Since $x \\ge 1$ and $y \\ge 1$, we have $x - 4 \\ge -3$ and $y - 3 \\ge -2$. Check positive pairs and negative pairs separately."
+  ],
+  "solutions": {
+    "reliable": "Rearrange: $xy - 3x - 4y = -6$. Adding $12$ to both sides gives $xy - 3x - 4y + 12 = 6$, that is $(x - 4)(y - 3) = 6$. Positive integers give $x - 4 \\ge -3$ and $y - 3 \\ge -2$. Case 1, both factors positive: $(1, 6), (2, 3), (3, 2), (6, 1)$ give $(x, y) = (5, 9), (6, 6), (7, 5), (10, 4)$. Case 2, both factors negative: the factors must be at least $-3$ and $-2$, so their product is at most $3 \\cdot 2 = 6$, which forces $x - 4 = -3$ and $y - 3 = -2$, giving $(x, y) = (1, 1)$. Check: $1 + 6 = 3 + 4$. So there are $5$ ordered pairs. The transferable idea: after Simon's Favorite Factoring Trick, the negative factor pairs need their own case.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-07"
+  ],
+  "estSeconds": 105,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

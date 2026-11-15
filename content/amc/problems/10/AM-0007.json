@@ -1,0 +1,68 @@
+{
+  "id": "AM-0007",
+  "contest": "AMC10",
+  "slot": 5,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": [
+    "T-SYMMETRY"
+  ],
+  "statement": "In an arithmetic sequence, the $3$rd term is $17$ and the $10$th term is $52$. What is the sum of the first $20$ terms?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1090$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$1140$",
+      "correct": false,
+      "misconception": "I wrote the 20th term as the first term plus 20 common differences, 7 + 100 = 107, and got 10 times 114."
+    },
+    {
+      "key": "C",
+      "text": "$1190$",
+      "correct": false,
+      "misconception": "I stepped back from the 3rd term to the 1st by subtracting the difference only once, so I used 12 as the first term."
+    },
+    {
+      "key": "D",
+      "text": "$1290$",
+      "correct": false,
+      "misconception": "I used the 3rd term, 17, as if it were the first term of the sequence."
+    },
+    {
+      "key": "E",
+      "text": "$2180$",
+      "correct": false,
+      "misconception": "I multiplied 20 by the sum of the first and last terms and forgot to divide by 2."
+    }
+  ],
+  "hints": [
+    "Find the common difference first.",
+    "Going from term 3 to term 10 adds the common difference seven times. Then use: sum = number of terms times the average of the first and last terms.",
+    "The difference is $35/7 = 5$, so the first term is $17 - 2 \\cdot 5 = 7$ and the $20$th term is $7 + 19 \\cdot 5 = 102$."
+  ],
+  "solutions": {
+    "reliable": "From the $3$rd to the $10$th term is $7$ steps, so $7d = 52 - 17 = 35$ and $d = 5$. The first term is $a_1 = 17 - 2 \\cdot 5 = 7$, and $a_{20} = 7 + 19 \\cdot 5 = 102$. The sum is $\\frac{20}{2}(7 + 102) = 10 \\cdot 109 = 1090$. The transferable idea: the $n$th term is $a_1 + (n - 1)d$, and an arithmetic sum is the count times the average of the ends.",
+    "elegant": "Pair the terms from the outside in: $a_1 + a_{20} = a_2 + a_{19} = \\cdots = a_{10} + a_{11}$. With $a_{10} = 52$ and $a_{11} = 57$, each of the $10$ pairs sums to $109$, so the total is $1090$. No first term needed."
+  },
+  "formulas": [
+    "F-ALG-03"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

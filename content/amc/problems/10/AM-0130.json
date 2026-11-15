@@ -1,0 +1,69 @@
+{
+  "id": "AM-0130",
+  "contest": "BOTH",
+  "slot": 10,
+  "area": "CP",
+  "topic": "CP-03",
+  "types": [
+    "T-BIJECTION",
+    "T-COMPLEMENT"
+  ],
+  "statement": "A row of $10$ parking spaces is numbered $1$ to $10$. Three cars park so that spaces $1$ and $10$ stay empty and no two cars are in adjacent spaces. How many different sets of occupied spaces are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$20$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I removed only one buffer space in total and chose 3 of the remaining 7 inner spaces, instead of removing one gap between each pair of neighbouring cars."
+    },
+    {
+      "key": "C",
+      "text": "$49$",
+      "correct": false,
+      "misconception": "I subtracted from the C(8, 3) = 56 sets of inner spaces just one set for each of the 7 adjacent pairs, forgetting that the third car can go in several places."
+    },
+    {
+      "key": "D",
+      "text": "$56$",
+      "correct": false,
+      "misconception": "I kept spaces 1 and 10 empty but ignored the no-adjacent rule, choosing any 3 of the 8 inner spaces."
+    },
+    {
+      "key": "E",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I treated the three cars as different and multiplied the 20 sets by 3! = 6, but the question asks for sets of spaces."
+    }
+  ],
+  "hints": [
+    "Only spaces $2$ through $9$ are available.",
+    "Choosing spaces with no two adjacent is easier after you squeeze out a forced empty space between each pair of neighbouring cars. This turns the problem into an ordinary choice.",
+    "Positions $a < b < c$ in $\\{2, \\ldots, 9\\}$ with gaps at least $2$ correspond to $a < b - 1 < c - 2$ in a set of $6$ values. Count $\\binom{6}{3}$."
+  ],
+  "solutions": {
+    "reliable": "The cars use spaces among $2, 3, \\ldots, 9$, which are $8$ spaces. Write the occupied spaces as $a < b < c$ with $b \\ge a + 2$ and $c \\ge b + 2$. The map $(a, b, c) \\mapsto (a, b - 1, c - 2)$ turns these into any $3$ increasing values from $\\{2, 3, \\ldots, 7\\}$, a set of $6$ numbers, and it can be reversed. So the count is $\\binom{6}{3} = 20$. Check by complement: of the $\\binom{8}{3} = 56$ sets of inner spaces, $7 \\cdot 6 = 42$ choices pick an adjacent pair and a third space, but the $6$ runs of three in a row are counted twice, so $42 - 6 = 36$ sets contain an adjacency and $56 - 36 = 20$. Transferable idea: no two adjacent among $n$ slots with $k$ chosen gives $\\binom{n - k + 1}{k}$.",
+    "elegant": "Think of the $5$ empty inner spaces as dividers already in a row. They create $6$ gaps (both ends and the $4$ middles), and the $3$ cars go into $3$ different gaps: $\\binom{6}{3} = 20$."
+  },
+  "formulas": [
+    "F-CP-03"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

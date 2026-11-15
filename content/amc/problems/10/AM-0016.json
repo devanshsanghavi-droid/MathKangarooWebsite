@@ -1,0 +1,69 @@
+{
+  "id": "AM-0016",
+  "contest": "BOTH",
+  "slot": 12,
+  "area": "ALG",
+  "topic": "ALG-04",
+  "types": [
+    "T-VIETA",
+    "T-EVALUATE"
+  ],
+  "statement": "Let $r$, $s$ and $t$ be the three roots of $x^3 - 4x^2 - 5x + 7 = 0$. What is $(r + s)(s + t)(t + r)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-27$",
+      "correct": false,
+      "misconception": "I took the product of the roots to be 7 instead of -7, so I computed 4 times -5 minus 7."
+    },
+    {
+      "key": "B",
+      "text": "$-20$",
+      "correct": false,
+      "misconception": "I multiplied the sum of the roots by the sum of the pairwise products, 4 times -5, and forgot to subtract the product rst."
+    },
+    {
+      "key": "C",
+      "text": "$-13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I used the evaluation trick but put a minus sign in front, thinking (4 - r)(4 - s)(4 - t) equals -P(4)."
+    },
+    {
+      "key": "E",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I took the sum of the roots to be -4 instead of 4, so I computed -4 times -5 minus -7."
+    }
+  ],
+  "hints": [
+    "Each factor is a sum of two roots. What is the sum of all three?",
+    "Since $r + s + t = 4$, the factors are $4 - t$, $4 - r$ and $4 - s$. Compare with $P(x) = (x - r)(x - s)(x - t)$.",
+    "$(r + s)(s + t)(t + r) = (4 - r)(4 - s)(4 - t) = P(4)$ where $P(x) = x^3 - 4x^2 - 5x + 7$."
+  ],
+  "solutions": {
+    "reliable": "By Vieta's formulas, $r + s + t = 4$, $rs + st + tr = -5$ and $rst = -7$. Expanding, $(r + s)(s + t)(t + r) = (r + s + t)(rs + st + tr) - rst$. So the value is $4 \\cdot (-5) - (-7) = -20 + 7 = -13$. The transferable idea: symmetric expressions in the roots can be rebuilt from the coefficients.",
+    "elegant": "Because $r + s + t = 4$, we have $r + s = 4 - t$ and so on. Since $P(x) = x^3 - 4x^2 - 5x + 7 = (x - r)(x - s)(x - t)$, the product is $(4 - r)(4 - s)(4 - t) = P(4) = 64 - 64 - 20 + 7 = -13$."
+  },
+  "formulas": [
+    "F-ALG-01"
+  ],
+  "estSeconds": 105,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

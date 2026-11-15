@@ -1,0 +1,69 @@
+{
+  "id": "AM-0011",
+  "contest": "AMC10",
+  "slot": 8,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": [
+    "T-TELESCOPE"
+  ],
+  "statement": "What is the value of $\\displaystyle\\sum_{k=1}^{30} \\frac{2k + 1}{k^2 (k + 1)^2}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{3}{4}$",
+      "correct": false,
+      "misconception": "I thought everything after the first term cancelled, so the whole sum was just the k = 1 term, 3/4."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{30}{31}$",
+      "correct": false,
+      "misconception": "I split each term as 1/k - 1/(k + 1), dropping the squares, so the sum telescoped to 1 - 1/31."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{899}{900}$",
+      "correct": false,
+      "misconception": "I telescoped correctly but took the last surviving piece to be 1/30^2 instead of 1/31^2."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{960}{961}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I kept the 1 from the first term but forgot that the last term leaves behind a minus 1/31^2."
+    }
+  ],
+  "hints": [
+    "Look at the numerator $2k + 1$. What is $(k + 1)^2 - k^2$?",
+    "Since $2k + 1 = (k + 1)^2 - k^2$, split each term into two fractions, one with denominator $k^2$ and one with denominator $(k + 1)^2$.",
+    "Each term equals $\\frac{1}{k^2} - \\frac{1}{(k + 1)^2}$. Write out the first two terms and the last one and see what survives."
+  ],
+  "solutions": {
+    "reliable": "Because $(k + 1)^2 - k^2 = 2k + 1$, each term is $\\frac{(k + 1)^2 - k^2}{k^2 (k + 1)^2} = \\frac{1}{k^2} - \\frac{1}{(k + 1)^2}$. So the sum is $\\left(1 - \\frac{1}{4}\\right) + \\left(\\frac{1}{4} - \\frac{1}{9}\\right) + \\cdots + \\left(\\frac{1}{30^2} - \\frac{1}{31^2}\\right)$, and every inner fraction cancels, leaving $1 - \\frac{1}{961} = \\frac{960}{961}$. The transferable idea: when a numerator is the difference of the two factors in the denominator, the fraction splits into a difference, and differences telescope.",
+    "elegant": "Compute the first few partial sums: $\\frac{3}{4}$, then $\\frac{3}{4} + \\frac{5}{36} = \\frac{8}{9}$, then $\\frac{8}{9} + \\frac{7}{144} = \\frac{15}{16}$. The pattern $1 - \\frac{1}{(n + 1)^2}$ predicts $1 - \\frac{1}{31^2} = \\frac{960}{961}$ for $n = 30$, and the telescoping split proves the pattern."
+  },
+  "formulas": [
+    "F-ALG-14",
+    "F-ALG-05"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

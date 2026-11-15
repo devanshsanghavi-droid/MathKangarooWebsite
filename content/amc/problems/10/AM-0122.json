@@ -1,0 +1,66 @@
+{
+  "id": "AM-0122",
+  "contest": "BOTH",
+  "slot": 5,
+  "area": "CP",
+  "topic": "CP-11",
+  "types": [
+    "T-BIJECTION"
+  ],
+  "statement": "A school club has $12$ committees. Each committee has exactly $5$ members, and each club member serves on exactly $3$ committees. How many members does the club have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I divided the 12 committees by the 3 committees per member and never used the committee size."
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I multiplied the 12 committees by the 3 committees per member, mixing up which count each number belongs to."
+    },
+    {
+      "key": "D",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I counted the 12 x 5 = 60 committee seats as 60 different people, but each person fills 3 seats."
+    },
+    {
+      "key": "E",
+      "text": "$180$",
+      "correct": false,
+      "misconception": "I multiplied all three numbers 12 x 5 x 3, as if each seat on a committee came with three more people."
+    }
+  ],
+  "hints": [
+    "Count the seats on committees in two different ways.",
+    "Each pair (member, committee the member is on) is counted once from the committee side and once from the member side. Set the two counts equal.",
+    "From committees: $12 \\cdot 5 = 60$ seats. From members: $3$ seats each. So $3m = 60$."
+  ],
+  "solutions": {
+    "reliable": "Count the pairs (person, committee) where the person sits on that committee. Each of the $12$ committees has $5$ members, so there are $12 \\cdot 5 = 60$ such pairs. Each member is in exactly $3$ pairs, so if there are $m$ members then $3m = 60$ and $m = 20$. Transferable idea: double counting, count one set of pairs from both sides and set the counts equal.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

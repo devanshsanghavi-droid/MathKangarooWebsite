@@ -1,0 +1,69 @@
+{
+  "id": "AM-0303",
+  "contest": "AMC12",
+  "slot": 25,
+  "area": "CP",
+  "topic": "CP-08",
+  "types": [
+    "T-RECURSION",
+    "T-CASEWORK"
+  ],
+  "statement": "A fair six-sided die is rolled repeatedly. The rolling stops as soon as the four most recent rolls show four different numbers. For example, the rolls $3, 5, 3, 1, 6$ stop after $5$ rolls. What is the expected total number of rolls?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{18}{5}$",
+      "correct": false,
+      "misconception": "I found the chance 360/1296 = 5/18 that four given rolls are all different and took its reciprocal as the answer."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I set up the right kind of chain but stopped as soon as the three most recent rolls were all different, not four."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{57}{10}$",
+      "correct": false,
+      "misconception": "I computed the expected wait until four different numbers have appeared at all, 1 + 6/5 + 6/4 + 6/3, ignoring that they must be the four most recent rolls."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{33}{5}$",
+      "correct": false,
+      "misconception": "I waited 18/5 blocks for a good block of four, as if blocks were independent trials, and added 3 for the rest of the block."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{38}{5}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Keep track of how many of the most recent rolls are all different.",
+    "Let $L$ be the length of the longest stretch at the end of the rolls in which all numbers are different. A roll that matches none of those $L$ numbers raises $L$ by one. A roll that matches one of them lowers $L$, but not always to $1$.",
+    "If the new roll equals the number $j$ places from the end, the new value of $L$ is exactly $j$. So from $L$ the chain moves to each of $1, 2, \\ldots, L$ with probability $\\frac16$ and to $L + 1$ with probability $\\frac{6 - L}{6}$. Write one equation for each of $L = 1, 2, 3$."
+  ],
+  "solutions": {
+    "reliable": "Let $L$ be the number of most recent rolls that are all different, as long as possible. If the next roll differs from all $L$ of them, $L$ grows by one; if it equals the roll $j$ places from the end ($1 \\le j \\le L$), the new stretch is the last $j - 1$ rolls plus the new one, so $L$ becomes $j$. Rolling stops when $L = 4$. Let $E_L$ be the expected number of further rolls from state $L$. Then $E_1 = 1 + \\frac16E_1 + \\frac56E_2$, $E_2 = 1 + \\frac16(E_1 + E_2) + \\frac46E_3$ and $E_3 = 1 + \\frac16(E_1 + E_2 + E_3)$. The first gives $E_1 = \\frac65 + E_2$. Substituting into the second gives $4E_2 = \\frac{36}{5} + 4E_3$, so $E_2 = \\frac95 + E_3$. The third becomes $5E_3 = 6 + E_1 + E_2 = \\frac{36}{5} + 2E_2 = \\frac{54}{5} + 2E_3$, so $E_3 = \\frac{18}{5}$, $E_2 = \\frac{27}{5}$ and $E_1 = \\frac{33}{5}$. The first roll puts the chain in state $1$, so the expected total is $1 + \\frac{33}{5} = \\frac{38}{5}$. Transferable idea: for a waiting time on a pattern, track how much of the pattern the latest rolls already give you, and note exactly where a failure sends you back to.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-10"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

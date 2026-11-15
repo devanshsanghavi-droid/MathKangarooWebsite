@@ -1,0 +1,69 @@
+{
+  "id": "AM-0182",
+  "contest": "AMC12",
+  "slot": 18,
+  "area": "ALG",
+  "topic": "ALG-10",
+  "types": [
+    "T-ROOTS-UNITY",
+    "T-SYMMETRY"
+  ],
+  "statement": "Let $z$ be a complex number with $z^5 = 1$ and $z \\neq 1$. What is the value of $\\displaystyle \\left(z + \\frac{1}{z}\\right)^2 + \\left(z^2 + \\frac{1}{z^2}\\right)^2?$",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I expanded the squares but dropped the cross terms $2 \\cdot z \\cdot \\frac1z = 2$, leaving only $z^2 + z^{-2} + z^4 + z^{-4}$, which is $-1$."
+    },
+    {
+      "key": "B",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I replaced $u^2 + v^2$ by $(u + v)^2$, where $u = z + \\frac1z$ and $v = z^2 + \\frac{1}{z^2}$ add up to $-1$."
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I expanded to $4 + z^2 + z^{-2} + z^4 + z^{-4}$ but treated those four powers as adding to $0$ instead of $-1$."
+    },
+    {
+      "key": "E",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I substituted $z = 1$, which satisfies $z^5 = 1$ but is excluded, giving $2^2 + 2^2$."
+    }
+  ],
+  "hints": [
+    "Since $z^5 = 1$, every negative power of $z$ is a positive power.",
+    "Expand both squares and rewrite each power using $z^5 = 1$. Then use what the sum of all fifth roots of unity is.",
+    "The expression is $z^2 + 2 + z^{-2} + z^4 + 2 + z^{-4} = 4 + z^2 + z^3 + z^4 + z$, using $z^{-2} = z^3$ and $z^{-4} = z$. Now use $1 + z + z^2 + z^3 + z^4 = 0$."
+  ],
+  "solutions": {
+    "reliable": "Expand: $\\left(z + \\frac1z\\right)^2 = z^2 + 2 + z^{-2}$ and $\\left(z^2 + \\frac{1}{z^2}\\right)^2 = z^4 + 2 + z^{-4}$. Since $z^5 = 1$, $z^{-2} = z^3$ and $z^{-4} = z$, so the total is $4 + (z + z^2 + z^3 + z^4)$. Because $z \\neq 1$ is a root of $z^5 - 1 = (z - 1)(z^4 + z^3 + z^2 + z + 1)$, we have $z + z^2 + z^3 + z^4 = -1$. The value is $3$, whichever of the four roots $z$ is. Transferable idea: for a root of unity, fold every power down using $z^n = 1$ and finish with the fact that all $n$-th roots sum to $0$.",
+    "elegant": "Let $u = z + z^{-1}$ and $v = z^2 + z^{-2}$. Then $u + v = -1$ and $uv = z^3 + z^{-1} + z + z^{-3} = z^3 + z^4 + z + z^2 = -1$, so $u^2 + v^2 = (u + v)^2 - 2uv = 1 + 2 = 3$."
+  },
+  "formulas": [
+    "F-ALG-12"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "F-CP-14",
+  "area": "CP",
+  "name": "Circular arrangements",
+  "formula": "n \\text{ people around a round table: } (n - 1)!, \\qquad \\text{necklace (flips count as same): } \\frac{(n-1)!}{2}\\ (n \\ge 3)",
+  "whenToUse": "Seating around a round table or placing beads on a ring, where rotations of the same arrangement are not counted again.",
+  "example": "$6$ people can sit at a round table in $5! = 120$ ways. If two of them must sit together, glue them into one unit: $(5 - 1)! \\cdot 2 = 48$ ways.",
+  "pitfall": "Only divide by $2$ when reflections are also considered the same, like a bracelet that can be flipped. Seats at a table usually are not.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-SYMMETRY"
+  ]
+}

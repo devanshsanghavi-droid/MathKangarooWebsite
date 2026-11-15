@@ -1,0 +1,15 @@
+{
+  "id": "F-GEO-06",
+  "area": "GEO",
+  "name": "Area with the inradius and circumradius",
+  "formula": "K = rs = \\frac{abc}{4R}",
+  "whenToUse": "A triangle has an inscribed or circumscribed circle and you need its radius, or you know a radius and need the area.",
+  "example": "The $13$-$14$-$15$ triangle has $K = 84$ and $s = 21$, so $r = \\frac{84}{21} = 4$ and $R = \\frac{13 \\cdot 14 \\cdot 15}{4 \\cdot 84} = \\frac{2730}{336} = \\frac{65}{8}$.",
+  "pitfall": "$s$ in $K = rs$ is the SEMI-perimeter. For a right triangle, the circumradius is simply half the hypotenuse, which is quicker.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "derivation": "Join the incenter to the three vertices: the three small triangles have height $r$ and bases $a$, $b$, $c$, so $K = \\frac{1}{2}r(a + b + c) = rs$. The $R$ form follows from $K = \\frac{1}{2}ab\\sin C$ and $c = 2R \\sin C$."
+}

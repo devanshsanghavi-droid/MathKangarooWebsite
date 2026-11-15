@@ -1,0 +1,66 @@
+{
+  "id": "AM-0211",
+  "contest": "AMC12",
+  "slot": 13,
+  "area": "GEO",
+  "topic": "GEO-11",
+  "types": [
+    "T-COORD"
+  ],
+  "statement": "Let $F$ be the focus of the parabola $y^2 = 12x$, and let $O$ be the origin. A point $P$ on the parabola is at distance $9$ from $F$. What is the area of triangle $OFP$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9\\sqrt{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$9\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I took the x-coordinate of P to be 9, as if the distance from the focus were the x-coordinate itself, then found y = 6 sqrt(3) and an area of (1/2)(3)(6 sqrt(3))."
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I matched y^2 = 12x to the form y^2 = 2px with p = 6 and put the focus at (p, 0) = (6, 0) instead of (p/2, 0), so the directrix became x = -6, x + 6 = 9 gave P = (3, 6), and the area came out (1/2)(6)(6)."
+    },
+    {
+      "key": "D",
+      "text": "$18\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I found P = (6, 6 sqrt(2)) and used base OF = 3 with height 6 sqrt(2), but forgot the one half in the triangle area formula."
+    },
+    {
+      "key": "E",
+      "text": "$27\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I used PF = 9 as the base and the height |y| = 6 sqrt(2) as if it were measured to PF, getting (1/2)(9)(6 sqrt(2))."
+    }
+  ],
+  "hints": [
+    "Every point of a parabola is as far from the focus as from the directrix.",
+    "Write $y^2 = 4px$ to locate the focus and directrix. The distance to the directrix is easy to write in terms of $x$, which pins down $P$.",
+    "Here $p = 3$, so $F = (3, 0)$ and the directrix is $x = -3$. Then $PF = x + 3 = 9$ gives $x = 6$ and $y^2 = 72$."
+  ],
+  "solutions": {
+    "reliable": "Since $y^2 = 12x = 4\\cdot 3\\cdot x$, the focus is $F = (3,0)$ and the directrix is $x = -3$. For $P = (x, y)$ on the parabola, $PF$ equals the distance to the directrix, $x + 3$. So $x + 3 = 9$, $x = 6$ and $y^2 = 72$, $|y| = 6\\sqrt2$. Triangle $OFP$ has base $OF = 3$ on the $x$-axis and height $|y| = 6\\sqrt2$, so its area is $\\tfrac12\\cdot 3\\cdot 6\\sqrt2 = 9\\sqrt2$. Check: $PF = \\sqrt{(6-3)^2 + 72} = \\sqrt{81} = 9$. The idea: on a parabola, focal distance becomes a linear expression in one coordinate.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

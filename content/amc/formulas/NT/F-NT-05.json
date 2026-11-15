@@ -1,0 +1,18 @@
+{
+  "id": "F-NT-05",
+  "area": "NT",
+  "name": "Fermat's little theorem",
+  "formula": "p \\text{ prime},\\ p \\nmid a \\implies a^{p-1} \\equiv 1 \\pmod p",
+  "whenToUse": "Find the remainder of a huge power when divided by a prime. Reduce the exponent modulo $p - 1$.",
+  "example": "$3^{100} \\bmod 7$: since $3^6 \\equiv 1$ and $100 = 6 \\cdot 16 + 4$, we get $3^{100} \\equiv 3^4 = 81 \\equiv 4 \\pmod 7$.",
+  "pitfall": "The modulus must be prime and must not divide the base. The exponent reduces modulo $p - 1$, not modulo $p$.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-MODULAR",
+    "T-CYCLE"
+  ]
+}

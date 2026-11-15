@@ -1,0 +1,69 @@
+{
+  "id": "AM-0164",
+  "contest": "AMC12",
+  "slot": 7,
+  "area": "ALG",
+  "topic": "ALG-09",
+  "types": [
+    "T-AMGM",
+    "T-SUBSTITUTION"
+  ],
+  "statement": "What is the minimum value of $\\dfrac{x^2 + 5}{x - 1}$ over all real numbers $x > 1$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2\\sqrt{5}$",
+      "correct": false,
+      "misconception": "I treated the fraction as $x + \\frac{5}{x}$, ignoring the shift in the denominator, and applied AM-GM to get $2\\sqrt{5}$."
+    },
+    {
+      "key": "B",
+      "text": "$2\\sqrt{6}$",
+      "correct": false,
+      "misconception": "I rewrote it correctly as $t + \\frac{6}{t} + 2$ with $t = x - 1$, applied AM-GM to $t + \\frac{6}{t}$, and forgot to add back the $2$."
+    },
+    {
+      "key": "C",
+      "text": "$2 + 2\\sqrt{5}$",
+      "correct": false,
+      "misconception": "I expanded $(t + 1)^2 + 5$ as $t^2 + 2t + 5$, losing the $1$ from squaring, so I minimized $t + \\frac{5}{t} + 2$."
+    },
+    {
+      "key": "D",
+      "text": "$2 + 2\\sqrt{6}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I only tried whole-number values of $x$ and found the smallest value $7$ at $x = 3$, but the true minimum is at an irrational $x$."
+    }
+  ],
+  "hints": [
+    "Make the denominator a single letter.",
+    "Substitute $t = x - 1 > 0$ and divide out. You should get a sum of $t$, a constant over $t$, and a constant. AM-GM handles the first two terms.",
+    "With $x = t + 1$, $\\frac{(t+1)^2 + 5}{t} = t + \\frac{6}{t} + 2$, and $t + \\frac{6}{t} \\ge 2\\sqrt{6}$."
+  ],
+  "solutions": {
+    "reliable": "Let $t = x - 1 > 0$. Then $x^2 + 5 = t^2 + 2t + 6$, so the expression is $t + \\frac{6}{t} + 2$. By AM-GM, $t + \\frac{6}{t} \\ge 2\\sqrt{t \\cdot \\frac{6}{t}} = 2\\sqrt{6}$, with equality at $t = \\sqrt{6}$, which is allowed. So the minimum is $2 + 2\\sqrt{6} \\approx 6.90$, just below the value $7$ at $x = 3$. Transferable idea: shift the variable so the denominator is a single letter, then a sum of a term and its reciprocal multiple is ready for AM-GM.",
+    "elegant": "Setting the expression equal to $m$ gives $x^2 - mx + (m + 5) = 0$, which has a real root exactly when $m^2 - 4m - 20 \\ge 0$. The expression is positive for $x > 1$, so it takes only values $m \\ge 2 + 2\\sqrt{6}$, and $m = 2 + 2\\sqrt{6}$ is reached at the double root $x = 1 + \\sqrt{6}$."
+  },
+  "formulas": [
+    "F-ALG-08"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

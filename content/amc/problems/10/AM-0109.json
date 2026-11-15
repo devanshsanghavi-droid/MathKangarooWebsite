@@ -1,0 +1,70 @@
+{
+  "id": "AM-0109",
+  "contest": "AMC10",
+  "slot": 20,
+  "area": "NT",
+  "topic": "NT-07",
+  "types": [
+    "T-SFFT",
+    "T-BOUNDING"
+  ],
+  "statement": "How many ordered pairs of positive integers $(x, y)$ satisfy $\\dfrac{1}{x} - \\dfrac{1}{y} = \\dfrac{1}{12}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I wrote $y = \\frac{12x}{12 - x}$ and required $12 - x$ to divide 12, which found only $x = 6, 8, 9, 10, 11$ and missed $x = 3$ and $x = 4$."
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I allowed every divisor of 144 up to and including 12 for $12 - x$, but the divisor 12 gives $x = 0$ and $y = 0$."
+    },
+    {
+      "key": "D",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I counted the 7 divisors of 144 below 12 and the 7 above 12 as solutions, but the divisors above 12 make $x$ negative."
+    },
+    {
+      "key": "E",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I solved $\\frac{1}{x} + \\frac{1}{y} = \\frac{1}{12}$ instead, whose ordered solutions match all 15 divisors of 144."
+    }
+  ],
+  "hints": [
+    "Clear the denominators and try to factor.",
+    "Multiply through by $12xy$ and rearrange into a product of two shifted variables equal to a constant. Watch the signs.",
+    "$12y - 12x = xy$ becomes $(x - 12)(y + 12) = -144$. Since $y + 12 > 12$, the number $12 - x$ is a positive divisor of 144 that is less than 12."
+  ],
+  "solutions": {
+    "reliable": "Multiplying by $12xy$ gives $12y - 12x = xy$, so $xy + 12x - 12y = 0$ and $(x - 12)(y + 12) = -144$. Since $y + 12 > 0$, we need $x < 12$. Let $d = 12 - x$, a positive integer; then $y + 12 = 144/d$, and $y > 0$ requires $144/d > 12$, that is, $d < 12$. The divisors of 144 below 12 are $1, 2, 3, 4, 6, 8, 9$, giving $(x, y) = (11, 132), (10, 60), (9, 36), (8, 24), (6, 12), (4, 6), (3, 4)$. That is $7$ pairs. Check $(3, 4)$: $\\frac13 - \\frac14 = \\frac1{12}$. Transferable idea: unit-fraction equations become a product equal to a constant after clearing denominators; then the sign and size of each factor decide which divisors count.",
+    "elegant": "Since $\\frac1x = \\frac1{12} + \\frac1y > \\frac1{12}$, we need $x < 12$. Testing $x = 1, \\ldots, 11$ in $y = \\frac{12x}{12 - x}$ gives integers exactly for $x = 3, 4, 6, 8, 9, 10, 11$: seven pairs."
+  },
+  "formulas": [
+    "F-ALG-07",
+    "F-NT-01"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

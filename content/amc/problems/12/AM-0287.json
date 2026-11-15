@@ -1,0 +1,68 @@
+{
+  "id": "AM-0287",
+  "contest": "AMC12",
+  "slot": 13,
+  "area": "CP",
+  "topic": "CP-03",
+  "types": [
+    "T-BIJECTION"
+  ],
+  "statement": "A club has $10$ juniors and $12$ seniors. A committee is formed by choosing some of the juniors and the same number of seniors, and it must have at least one member. How many different committees are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$184755$",
+      "correct": false,
+      "misconception": "I used the identity that a sum of squares of binomial coefficients is C(2n, n) with n = 10, as if there were also 10 seniors, so I got C(20, 10) - 1."
+    },
+    {
+      "key": "B",
+      "text": "$646645$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$646646$",
+      "correct": false,
+      "misconception": "I found the sum C(22, 12) = 646646 correctly but did not remove the empty committee, which has no members."
+    },
+    {
+      "key": "D",
+      "text": "$705431$",
+      "correct": false,
+      "misconception": "I assumed the sum equals the middle coefficient C(22, 11) = 705432 and then removed the empty committee."
+    },
+    {
+      "key": "E",
+      "text": "$4194303$",
+      "correct": false,
+      "misconception": "I chose the juniors and the seniors independently, 2^10 times 2^12 ways, removed the empty committee, and ignored the condition that the two numbers must match."
+    }
+  ],
+  "hints": [
+    "Adding up $\\binom{10}{k}\\binom{12}{k}$ term by term is slow. Look for one choice that describes a whole committee at once.",
+    "Describe a committee by the juniors who are on it together with the seniors who are not on it.",
+    "With $k$ juniors and $k$ seniors on the committee, that description is a set of $k + (12 - k) = 12$ of the $22$ club members, and every 12-member set comes from exactly one committee. Then remove the empty committee."
+  ],
+  "solutions": {
+    "reliable": "A committee with $k$ juniors and $k$ seniors can be chosen in $\\binom{10}{k}\\binom{12}{k}$ ways, so before removing the empty committee the count is $\\sum_{k=0}^{10}\\binom{10}{k}\\binom{12}{k} = \\sum_{k=0}^{10}\\binom{10}{k}\\binom{12}{12-k}$. The right-hand sum counts the ways to choose $12$ of the $22$ club members, split by how many of them, $k$, are juniors (Vandermonde's identity), so it equals $\\binom{22}{12} = 646646$. The only committee with $k = 0$ is empty, so the answer is $646646 - 1 = 646645$. Transferable idea: a sum of products of binomial coefficients whose lower indices add to a constant collapses to a single binomial coefficient.",
+    "elegant": "Match each committee with the set made of its juniors and the seniors left off it. If the committee has $k$ of each, this set has $k + (12 - k) = 12$ members. Conversely, any 12 of the 22 members, say $k$ juniors and $12 - k$ seniors, give back the committee of those $k$ juniors and the other $k$ seniors. So committees, including the empty one, correspond to 12-member sets: $\\binom{22}{12} = 646646$, and removing the empty committee leaves $646645$."
+  },
+  "formulas": [
+    "F-CP-03"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

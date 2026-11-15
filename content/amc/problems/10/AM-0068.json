@@ -1,0 +1,67 @@
+{
+  "id": "AM-0068",
+  "contest": "AMC10",
+  "slot": 18,
+  "area": "GEO",
+  "topic": "GEO-08",
+  "types": [
+    "T-AUXILIARY",
+    "T-AREA-RATIO"
+  ],
+  "statement": "In triangle $ABC$, $BC = 10$ and $CA = 4\\sqrt{10}$, and the median from $A$ is perpendicular to the median from $B$. What is the area of triangle $ABC$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found the area of triangle $ABG$, where $G$ is the centroid, and stopped; the centroid splits $ABC$ into three triangles of that area, not one."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I found that triangle $ABG$ has area $12$ and doubled it, thinking the medians from $A$ and $B$ split triangle $ABC$ into two halves around $ABG$."
+    },
+    {
+      "key": "C",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I found the full medians, $9$ and $6$, and took $\\tfrac12 \\cdot 9 \\cdot 6$ as if they were the legs of a right triangle; that is the area of the triangle built from the medians, not of $ABC$."
+    },
+    {
+      "key": "D",
+      "text": "$36$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I thought triangle $ABG$ was one of the six small triangles the three medians cut $ABC$ into and multiplied its area $12$ by $6$, but $ABG$ is made of two of those six."
+    }
+  ],
+  "hints": [
+    "Let $G$ be the centroid, $D$ the midpoint of $\\overline{BC}$ and $E$ the midpoint of $\\overline{CA}$. The right angle at $G$ appears in more than one triangle.",
+    "Write $GD = x$ and $GE = y$, so $AG = 2x$ and $BG = 2y$. Triangles $BGD$ and $AGE$ are right triangles whose hypotenuses are half of $BC$ and half of $CA$.",
+    "$4y^2 + x^2 = 25$ and $4x^2 + y^2 = 40$. Solve for $x^2$ and $y^2$, then find the area of triangle $ABG$ and scale it up."
+  ],
+  "solutions": {
+    "reliable": "Let $G$ be the centroid, $D$ the midpoint of $\\overline{BC}$ and $E$ the midpoint of $\\overline{CA}$. The centroid cuts each median $2 : 1$, so write $GD = x$, $AG = 2x$, $GE = y$, $BG = 2y$. Since $\\overline{AD} \\perp \\overline{BE}$, triangle $BGD$ has a right angle at $G$ and hypotenuse $BD = 5$, so $4y^2 + x^2 = 25$; triangle $AGE$ has a right angle at $G$ and hypotenuse $AE = 2\\sqrt{10}$, so $4x^2 + y^2 = 40$. Substituting $x^2 = 25 - 4y^2$ into the second equation gives $100 - 15y^2 = 40$, so $y^2 = 4$ and $x^2 = 9$. Thus $AG = 6$, $BG = 4$ and $[ABG] = \\tfrac12 \\cdot 6 \\cdot 4 = 12$. The centroid splits $ABC$ into three triangles $GAB$, $GBC$, $GCA$ of equal area, so $[ABC] = 3 \\cdot 12 = 36$. Transferable idea: perpendicular medians give right triangles at the centroid, and the $2 : 1$ ratio turns the side lengths into a small linear system.",
+    "elegant": "The three medians cut triangle $ABC$ into six small triangles of equal area, and $BGD$ is one of them. With $GD = 3$ and $BG = 4$ found as above (so the right triangle $BGD$ is a $3$-$4$-$5$ triangle), $[BGD] = 6$ and $[ABC] = 6 \\cdot 6 = 36$. As a check, $AB^2 = AG^2 + BG^2 = 52$, and $BC^2 + CA^2 = 100 + 160 = 260 = 5 \\cdot AB^2$, the known relation for perpendicular medians from $A$ and $B$."
+  },
+  "formulas": [],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

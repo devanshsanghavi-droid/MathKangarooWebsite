@@ -1,0 +1,69 @@
+{
+  "id": "AM-0198",
+  "contest": "AMC12",
+  "slot": 5,
+  "area": "GEO",
+  "topic": "GEO-11",
+  "types": [
+    "T-AUXILIARY",
+    "T-COORD"
+  ],
+  "statement": "The ellipse $\\frac{x^2}{36} + \\frac{y^2}{20} = 1$ has foci $F_1$ and $F_2$. A point $P$ on the ellipse satisfies $PF_1 = 2 \\cdot PF_2$. What is the area of $\\triangle PF_1F_2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I found the sides 8, 8 and 4, but when I dropped the altitude to the side of length 4, I used the whole 4 instead of half of it, so I got a height of 4 root 3."
+    },
+    {
+      "key": "B",
+      "text": "$4\\sqrt{15}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I assumed the angle at P is a right angle and took half the product of the focal distances 8 and 4."
+    },
+    {
+      "key": "D",
+      "text": "$16\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I assumed the triangle is equilateral with side 8, but the side PF2 is only 4."
+    },
+    {
+      "key": "E",
+      "text": "$8\\sqrt{15}$",
+      "correct": false,
+      "misconception": "I found the height 2 root 15 to the base of length 4 correctly, but forgot the one half in the triangle area formula."
+    }
+  ],
+  "hints": [
+    "Recall what is constant for every point on an ellipse, and how far apart the foci are.",
+    "Here $a = 6$ and $b^2 = 20$, so $c = \\sqrt{36 - 20} = 4$. Every point on the ellipse has $PF_1 + PF_2 = 2a$, and the foci are $2c$ apart.",
+    "$PF_1 + PF_2 = 12$ with $PF_1 = 2 \\cdot PF_2$ gives $PF_1 = 8$ and $PF_2 = 4$. The triangle has sides $8$, $4$ and $F_1F_2 = 8$, so it is isosceles."
+  ],
+  "solutions": {
+    "reliable": "Here $a = 6$, $b^2 = 20$ and $c = \\sqrt{36 - 20} = 4$, so $F_1F_2 = 2c = 8$. On the ellipse $PF_1 + PF_2 = 2a = 12$, and $PF_1 = 2 \\cdot PF_2$ gives $PF_2 = 4$ and $PF_1 = 8$. So $\\triangle PF_1F_2$ has sides $8$, $8$ and $4$, with the two sides of length $8$ meeting at $F_1$. The altitude from $F_1$ bisects the side $PF_2$ of length $4$, so its height is $\\sqrt{8^2 - 2^2} = \\sqrt{60} = 2\\sqrt{15}$, and the area is $\\frac{1}{2}\\cdot 4 \\cdot 2\\sqrt{15} = 4\\sqrt{15}$. Transferable idea: on an ellipse the two focal distances add to the major axis.",
+    "elegant": "Put $F_1 = (-4, 0)$ and $F_2 = (4, 0)$. A point $(x, y)$ on this ellipse has $PF_1 = a + \\frac{c}{a}x = 6 + \\frac{2}{3}x$. Setting this equal to $8$ gives $x = 3$, and then $y^2 = 20\\left(1 - \\frac{9}{36}\\right) = 15$. The area is $\\frac{1}{2}\\cdot F_1F_2 \\cdot |y| = \\frac{1}{2}\\cdot 8 \\cdot \\sqrt{15} = 4\\sqrt{15}$. Transferable idea: the focal distances on an ellipse are linear in $x$."
+  },
+  "formulas": [
+    "F-GEO-21"
+  ],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

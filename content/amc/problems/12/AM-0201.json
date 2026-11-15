@@ -1,0 +1,67 @@
+{
+  "id": "AM-0201",
+  "contest": "AMC12",
+  "slot": 7,
+  "area": "GEO",
+  "topic": "GEO-10",
+  "types": [
+    "T-COORD",
+    "T-SYMMETRY"
+  ],
+  "statement": "The point $(5, 0)$ is reflected across the line $y = 2x$, and its image is $(a, b)$. What is $a + b$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-2$",
+      "correct": false,
+      "misconception": "I found the foot of the perpendicular, (1, 2), and then reported the displacement from (5, 0) to that foot, (-4, 2), instead of the image."
+    },
+    {
+      "key": "B",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I reflected across the line y = -x/2, the line perpendicular to y = 2x, instead of across y = 2x itself, and got (3, -4)."
+    },
+    {
+      "key": "C",
+      "text": "$1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I stopped at the foot of the perpendicular, (1, 2), which is only halfway to the reflected point."
+    },
+    {
+      "key": "E",
+      "text": "$3\\sqrt{5}$",
+      "correct": false,
+      "misconception": "I rotated the point about the origin by the angle the line makes with the x-axis instead of by twice that angle."
+    }
+  ],
+  "hints": [
+    "The mirror line is the perpendicular bisector of a point and its image.",
+    "Find the foot of the perpendicular from the point to the line. The image is as far beyond the foot as the point is in front of it.",
+    "Projecting $(5, 0)$ onto the direction $(1, 2)$ gives the foot $F = \\frac{5}{5}(1, 2) = (1, 2)$. The image is $2F - (5, 0)$."
+  ],
+  "solutions": {
+    "reliable": "The line $y = 2x$ has direction $(1, 2)$. The foot of the perpendicular from $P = (5, 0)$ is $F = \\frac{P \\cdot (1,2)}{1^2 + 2^2}(1, 2) = \\frac{5}{5}(1, 2) = (1, 2)$. The image is $P' = 2F - P = (2 - 5, 4 - 0) = (-3, 4)$, so $a + b = 1$. Check: the midpoint of $P$ and $P'$ is $(1, 2)$, on the line, and $P' - P = (-8, 4)$ is perpendicular to $(1, 2)$. Transferable idea: reflect by doubling the step to the foot.",
+    "elegant": "A reflection across a line through the origin at angle $\\varphi$ sends a point on the $x$-axis to the point at angle $2\\varphi$ with the same distance. Here $\\tan\\varphi = 2$, so $\\cos 2\\varphi = \\frac{1 - 4}{5} = -\\frac{3}{5}$ and $\\sin 2\\varphi = \\frac{4}{5}$, giving $(5\\cos 2\\varphi, 5\\sin 2\\varphi) = (-3, 4)$. Transferable idea: a reflection doubles the angle of the mirror."
+  },
+  "formulas": [],
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

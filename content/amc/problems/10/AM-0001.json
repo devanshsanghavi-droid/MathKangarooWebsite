@@ -1,0 +1,66 @@
+{
+  "id": "AM-0001",
+  "contest": "AMC10",
+  "slot": 1,
+  "area": "ALG",
+  "topic": "ALG-02",
+  "types": [
+    "T-BACKWARDS"
+  ],
+  "statement": "A store raises the price of a lamp by $20\\%$. A week later it lowers the new price by $25\\%$. The lamp now costs $90$ dollars. How many dollars did the lamp cost before either change?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$90$",
+      "correct": false,
+      "misconception": "I undid the changes by adding 25% and then taking away 20%, and those two steps cancel, so I landed back on 90 dollars."
+    },
+    {
+      "key": "B",
+      "text": "$94.50$",
+      "correct": false,
+      "misconception": "I combined the changes into a net drop of 5% and added 5% of 90 dollars back on, which gave 94.50 dollars."
+    },
+    {
+      "key": "C",
+      "text": "$100$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$112.50$",
+      "correct": false,
+      "misconception": "I undid the 25% cut by adding 25% of 90 dollars, getting 112.50 dollars, and forgot to undo the 20% raise at all."
+    },
+    {
+      "key": "E",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I undid the 25% cut correctly by dividing 90 by 0.75 to get 120 dollars, but then forgot to undo the 20% raise."
+    }
+  ],
+  "hints": [
+    "Call the original price $p$ and write the final price in terms of $p$.",
+    "A 20% raise multiplies by 1.2 and a 25% cut multiplies by 0.75. Successive percent changes multiply; they do not add.",
+    "The final price is $p \\cdot 1.2 \\cdot 0.75 = 0.9p$. Set $0.9p = 90$ and solve for $p$."
+  ],
+  "solutions": {
+    "reliable": "Let $p$ be the original price. Raising by $20\\%$ multiplies by $1.2$, and lowering by $25\\%$ multiplies by $0.75$. So the final price is $1.2 \\cdot 0.75 \\cdot p = 0.9p$. Then $0.9p = 90$ gives $p = 100$. Check: $100 \\to 120 \\to 120 - 30 = 90$. The transferable idea: successive percent changes multiply, and each one acts on the price at that moment.",
+    "elegant": "Work backwards. Before the $25\\%$ cut the price was $90 / 0.75 = 120$. Before the $20\\%$ raise it was $120 / 1.2 = 100$. Undoing a percent change means dividing by its multiplier, not adding the same percent back."
+  },
+  "formulas": [],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "AM-0180",
+  "contest": "AMC12",
+  "slot": 17,
+  "area": "ALG",
+  "topic": "ALG-03",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-VIETA"
+  ],
+  "statement": "What is the sum of all integers $a$ for which the equation $x^2 - 2ax + a + 6 = 0$ has two distinct real roots, both greater than $1$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found the right interval $3 < a < 7$ but reported how many integers lie in it instead of their sum."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I allowed a zero discriminant, so I included $a = 3$, where the two roots coincide at $x = 3$."
+    },
+    {
+      "key": "D",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I used $f(1) \\ge 0$ instead of $f(1) > 0$, so I included $a = 7$, where one root equals $1$ exactly."
+    },
+    {
+      "key": "E",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I allowed both boundary cases: $a = 3$, where the roots coincide, and $a = 7$, where one root equals $1$."
+    }
+  ],
+  "hints": [
+    "Shift the variable so that the condition greater than $1$ becomes positive.",
+    "Put $x = t + 1$. Both roots exceed $1$ exactly when the quadratic in $t$ has two distinct positive roots: positive discriminant, positive sum and positive product.",
+    "The shifted equation is $t^2 + (2 - 2a)t + (7 - a) = 0$. You need $a^2 - a - 6 > 0$, $2a - 2 > 0$ and $7 - a > 0$."
+  ],
+  "solutions": {
+    "reliable": "Let $x = t + 1$. Then $(t + 1)^2 - 2a(t + 1) + a + 6 = t^2 + (2 - 2a)t + (7 - a)$. Both $x$-roots exceed $1$ exactly when both $t$-roots are distinct and positive. Distinct real: discriminant $(2 - 2a)^2 - 4(7 - a) = 4(a^2 - a - 6) = 4(a - 3)(a + 2) > 0$, so $a > 3$ or $a < -2$. Positive sum: $2a - 2 > 0$, so $a > 1$. Positive product: $7 - a > 0$, so $a < 7$. Together $3 < a < 7$, so $a \\in \\{4, 5, 6\\}$ and the sum is $15$. Check $a = 4$: $x^2 - 8x + 10 = 0$ has roots $4 \\pm \\sqrt6$, both above $1$. Transferable idea: to place both roots past a number $k$, shift by $k$ and ask for two positive roots via the discriminant, sum and product.",
+    "elegant": "Let $f(x) = x^2 - 2ax + a + 6$. Both roots exceed $1$ and are distinct exactly when the discriminant is positive, the vertex $x = a$ is right of $1$, and $f(1) = 7 - a > 0$. This gives the same interval $3 < a < 7$."
+  },
+  "formulas": [
+    "F-ALG-02",
+    "F-ALG-16"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

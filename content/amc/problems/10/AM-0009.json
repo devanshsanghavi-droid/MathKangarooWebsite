@@ -1,0 +1,68 @@
+{
+  "id": "AM-0009",
+  "contest": "AMC10",
+  "slot": 7,
+  "area": "ALG",
+  "topic": "ALG-04",
+  "types": [
+    "T-EVALUATE"
+  ],
+  "statement": "When the polynomial $P(x)$ is divided by $x - 1$, the remainder is $5$. When $P(x)$ is divided by $x + 2$, the remainder is $-4$. What is the remainder when $P(x)$ is divided by $(x - 1)(x + 2)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3x + 2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-3x - 1$",
+      "correct": false,
+      "misconception": "I matched the remainders to the wrong divisors, using P(1) = -4 and P(-2) = 5."
+    },
+    {
+      "key": "C",
+      "text": "$-3x + 2$",
+      "correct": false,
+      "misconception": "I plugged in x = -1 for the divisor x - 1 and x = 2 for the divisor x + 2, the opposite signs of the true roots."
+    },
+    {
+      "key": "D",
+      "text": "$5x - 4$",
+      "correct": false,
+      "misconception": "I used the two given remainders, 5 and -4, directly as the coefficients of the new remainder."
+    },
+    {
+      "key": "E",
+      "text": "$-9x + 14$",
+      "correct": false,
+      "misconception": "I used x = 2 instead of x = -2 as the root of x + 2, so I solved a + b = 5 and 2a + b = -4."
+    }
+  ],
+  "hints": [
+    "Dividing by a quadratic leaves a remainder of degree at most $1$.",
+    "Write $P(x) = (x - 1)(x + 2)Q(x) + ax + b$. The remainder theorem tells you $P(1)$ and $P(-2)$; plug those in to make the quotient vanish.",
+    "$P(1) = a + b = 5$ and $P(-2) = -2a + b = -4$. Subtract to find $a$, then $b$."
+  ],
+  "solutions": {
+    "reliable": "Write $P(x) = (x - 1)(x + 2)Q(x) + ax + b$. By the remainder theorem, $P(1) = 5$ and $P(-2) = -4$. At $x = 1$ and $x = -2$ the first term is $0$, so $a + b = 5$ and $-2a + b = -4$. Subtracting, $3a = 9$, so $a = 3$ and $b = 2$. The remainder is $3x + 2$. Check: $3(1) + 2 = 5$ and $3(-2) + 2 = -4$. The transferable idea: evaluate at the roots of the divisor so the unknown quotient drops out.",
+    "elegant": "The remainder $R(x)$ is the line through $(1, 5)$ and $(-2, -4)$. Its slope is $\\frac{5 - (-4)}{1 - (-2)} = 3$, so $R(x) = 5 + 3(x - 1) = 3x + 2$."
+  },
+  "formulas": [
+    "F-ALG-19"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

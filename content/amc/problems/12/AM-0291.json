@@ -1,0 +1,71 @@
+{
+  "id": "AM-0291",
+  "contest": "AMC12",
+  "slot": 16,
+  "area": "CP",
+  "topic": "CP-10",
+  "types": [
+    "T-PIE",
+    "T-COMPLEMENT"
+  ],
+  "statement": "A path in space starts at $(0,0,0)$ and ends at $(3,3,3)$. Each step increases exactly one of the three coordinates by $1$. How many such paths avoid both of the points $(1,1,1)$ and $(2,2,2)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$816$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$1032$",
+      "correct": false,
+      "misconception": "I added back the 216 paths through both points twice, once for each point, so I computed 1680 - 1080 + 432."
+    },
+    {
+      "key": "C",
+      "text": "$1140$",
+      "correct": false,
+      "misconception": "I removed the 540 paths through (1,1,1) but forgot to remove the paths through (2,2,2)."
+    },
+    {
+      "key": "D",
+      "text": "$1464$",
+      "correct": false,
+      "misconception": "I only removed the 216 paths that pass through both points, not the ones that pass through just one of them."
+    },
+    {
+      "key": "E",
+      "text": "$1506$",
+      "correct": false,
+      "misconception": "I added the counts for the two legs of a path instead of multiplying them, so I removed 6 + 90 paths for each point and added back 6 + 6 + 6."
+    }
+  ],
+  "hints": [
+    "Count every path, then remove the bad ones carefully.",
+    "A path through a point splits into two independent legs, so multiply the leg counts. Use inclusion-exclusion for paths that pass through one or both forbidden points.",
+    "All paths: $\\frac{9!}{3!\\,3!\\,3!} = 1680$. Through $(1,1,1)$: $3! \\cdot \\frac{6!}{2!\\,2!\\,2!} = 6 \\cdot 90 = 540$, and the same for $(2,2,2)$. Through both: $6 \\cdot 6 \\cdot 6 = 216$."
+  ],
+  "solutions": {
+    "reliable": "A path is a word of nine letters with three each of $x$, $y$, $z$, so there are $\\frac{9!}{3!\\,3!\\,3!} = 1680$ paths. Paths through $(1,1,1)$: $3! = 6$ ways to reach it and $\\frac{6!}{2!\\,2!\\,2!} = 90$ ways to finish, so $540$. By symmetry $540$ pass through $(2,2,2)$. Paths through both: $6 \\cdot 6 \\cdot 6 = 216$. By inclusion-exclusion the paths hitting a forbidden point number $540 + 540 - 216 = 864$, so the answer is $1680 - 864 = 816$. Transferable idea: lattice paths through a point multiply, and overlaps between forbidden points are fixed with inclusion-exclusion.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-15",
+    "F-CP-04",
+    "F-CP-01"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "F-GEO-10",
+  "area": "GEO",
+  "name": "Pick's theorem",
+  "formula": "A = I + \\frac{B}{2} - 1 \\quad (\\text{simple polygon with lattice-point vertices})",
+  "whenToUse": "A polygon has all its vertices on lattice points and counting lattice points is easier than computing the area, or the reverse.",
+  "example": "A $4 \\times 3$ rectangle with corners on lattice points has $I = 3 \\cdot 2 = 6$ interior points and $B = 14$ boundary points, so $A = 6 + 7 - 1 = 12$, as expected.",
+  "pitfall": "$B$ counts every lattice point on the edges, not just the vertices. A segment from $(0,0)$ to $(a,b)$ contains $\\gcd(a, b) + 1$ lattice points including both ends.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-COORD"
+  ]
+}

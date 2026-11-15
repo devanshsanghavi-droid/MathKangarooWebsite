@@ -1,0 +1,70 @@
+{
+  "id": "AM-0057",
+  "contest": "BOTH",
+  "slot": 12,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-AUXILIARY",
+    "T-SYMMETRY"
+  ],
+  "statement": "An isosceles trapezoid has parallel sides of lengths $8$ and $18$, and a circle can be drawn inside it tangent to all four of its sides. What is the area of the trapezoid?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$65$",
+      "correct": false,
+      "misconception": "I took the height to be the overhang (18 - 8)/2 = 5 on each side, which is a horizontal length, and multiplied by the average base 13."
+    },
+    {
+      "key": "B",
+      "text": "$13\\sqrt{69}$",
+      "correct": false,
+      "misconception": "I found the legs are 13 but used the full difference 18 - 8 = 10 as the horizontal leg of the right triangle, so the height was sqrt(169 - 100) = sqrt 69."
+    },
+    {
+      "key": "C",
+      "text": "$156$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$169$",
+      "correct": false,
+      "misconception": "I found the legs are 13 and used a leg as the height, but the legs are slanted, so they are longer than the height."
+    },
+    {
+      "key": "E",
+      "text": "$312$",
+      "correct": false,
+      "misconception": "I found the height 12 correctly but multiplied it by the sum of the bases, 26, and forgot to halve."
+    }
+  ],
+  "hints": [
+    "From each corner, the two tangent segments to the circle have equal length.",
+    "Equal tangent segments show that the two legs together are as long as the two bases together. That gives the length of each leg; then drop perpendiculars from the shorter base to find the height.",
+    "Each leg is $\\frac{8 + 18}{2} = 13$. The perpendiculars cut off right triangles with horizontal leg $\\frac{18 - 8}{2} = 5$ and hypotenuse $13$."
+  ],
+  "solutions": {
+    "reliable": "From each vertex, the two tangent segments to the circle are equal. Each side of the trapezoid is the sum of two tangent segments, one from each end, and going around, the two bases use each vertex's tangent length once, as do the two legs. So the legs add up to $8 + 18 = 26$, and in an isosceles trapezoid each leg is $13$. Dropping perpendiculars from the ends of the shorter base cuts off two right triangles with horizontal leg $\\frac{18 - 8}{2} = 5$ and hypotenuse $13$, so the height is $\\sqrt{169 - 25} = 12$. The area is $\\frac{8 + 18}{2} \\cdot 12 = 156$. Check: the circle touches both bases, so its diameter is the height $12$. The transferable idea: in any quadrilateral with an inscribed circle, opposite sides have equal sums, because the sides are made of equal tangent segments.",
+    "elegant": "Split each base in half at its point of tangency. The tangent lengths from the top corners are $4$ and from the bottom corners are $9$, so a leg is $4 + 9 = 13$, and the height satisfies $h^2 = 13^2 - (9 - 4)^2 = (9 + 4)^2 - (9 - 4)^2 = 4 \\cdot 4 \\cdot 9 = 144$. So $h = 12$, which is $2\\sqrt{4 \\cdot 9}$, and the area is $13 \\cdot 12 = 156$."
+  },
+  "formulas": [
+    "F-GEO-17",
+    "F-GEO-02"
+  ],
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

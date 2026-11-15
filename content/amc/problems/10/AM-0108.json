@@ -1,0 +1,70 @@
+{
+  "id": "AM-0108",
+  "contest": "AMC10",
+  "slot": 19,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": [
+    "T-CASEWORK",
+    "T-PRIME-FACTOR",
+    "T-BOUNDING"
+  ],
+  "statement": "How many positive integers $n \\le 200$ have exactly $6$ positive divisors?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I only counted numbers of the form $4q$ with $q$ an odd prime, which is just the case $p = 2$ of $p^2 q$."
+    },
+    {
+      "key": "B",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I stopped trying values of $p$ at 5, assuming $7^2 q$ would exceed 200, and missed $98$ and $147$."
+    },
+    {
+      "key": "C",
+      "text": "$26$",
+      "correct": false,
+      "misconception": "I counted every $p^2 q$ correctly but forgot the other shape, $p^5$, which gives $32$."
+    },
+    {
+      "key": "D",
+      "text": "$27$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I let $q$ equal $p$ in $p^2 q$, adding 8, 27 and 125, which have only 4 divisors each."
+    }
+  ],
+  "hints": [
+    "Which prime factorizations give exactly 6 divisors?",
+    "Since $6 = 6$ or $6 = 3 \\cdot 2$, the number is $p^5$ or $p^2 q$ with $p \\ne q$ primes. Count each shape up to 200.",
+    "Only $2^5 = 32$ works for $p^5$. For $p^2 q$, take $p = 2, 3, 5, 7$ in turn and count primes $q \\ne p$ with $q \\le 200/p^2$."
+  ],
+  "solutions": {
+    "reliable": "If $n = \\prod p_i^{e_i}$ then $d(n) = \\prod (e_i + 1) = 6$, so either $n = p^5$ or $n = p^2 q$ with distinct primes $p, q$. Shape $p^5$: only $2^5 = 32 \\le 200$. Shape $p^2 q$: for $p = 2$ we need $q \\le 50$, $q \\ne 2$, which is $15 - 1 = 14$ primes; for $p = 3$, $q \\le 22$, $q \\ne 3$: $8 - 1 = 7$; for $p = 5$, $q \\le 8$, $q \\ne 5$: $q = 2, 3, 7$, so 3; for $p = 7$, $q \\le 4$: $q = 2, 3$, so 2; for $p \\ge 11$, $p^2 q \\ge 242$. Total $1 + 14 + 7 + 3 + 2 = 27$. Transferable idea: a fixed divisor count pins down the possible exponent patterns, and then each pattern is counted with a bound on the primes.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-01"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "AM-0268",
+  "contest": "AMC12",
+  "slot": 2,
+  "area": "CP",
+  "topic": "CP-01",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A smoothie bar lets each customer choose one of $3$ bases, exactly $2$ different fruits from a list of $5$, and either one of $4$ toppings or no topping at all. The order in which the fruits are named does not matter. How many different smoothies can be ordered?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$150$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$225$",
+      "correct": false,
+      "misconception": "I allowed the two fruits to be the same fruit, so I counted 15 fruit pairs instead of 10 and got 3 times 15 times 5."
+    },
+    {
+      "key": "C",
+      "text": "$300$",
+      "correct": false,
+      "misconception": "I counted the fruits in order, 5 times 4 = 20, even though naming them in the other order gives the same smoothie."
+    },
+    {
+      "key": "D",
+      "text": "$375$",
+      "correct": false,
+      "misconception": "I picked a first fruit and a second fruit, 5 times 5 = 25, as if order mattered and repeats were allowed, and got 3 times 25 times 5."
+    },
+    {
+      "key": "E",
+      "text": "$480$",
+      "correct": false,
+      "misconception": "I read the topping rule as any collection of the 4 toppings, giving 2 to the fourth = 16 options instead of 5."
+    }
+  ],
+  "hints": [
+    "Make the three decisions separately, then combine them.",
+    "Bases and fruits are independent choices, so multiply. For the fruits, order does not matter, so use a combination. Remember that no topping is an option too.",
+    "Bases: $3$. Fruits: $\\binom{5}{2} = 10$. Toppings: $4 + 1 = 5$. Multiply."
+  ],
+  "solutions": {
+    "reliable": "There are $3$ ways to choose the base. The two fruits form an unordered pair of different fruits, so there are $\\binom{5}{2} = \\frac{5 \\cdot 4}{2} = 10$ ways. For the topping there are two cases: one of the $4$ toppings, or none, for $5$ options in all. The total is $3 \\cdot 10 \\cdot 5 = 150$. The idea: split an or-choice into cases and add, then multiply across independent decisions.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-03"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "AM-0283",
+  "contest": "AMC12",
+  "slot": 11,
+  "area": "CP",
+  "topic": "CP-08",
+  "types": [
+    "T-LINEARITY",
+    "T-SYMMETRY"
+  ],
+  "statement": "Each of six complex numbers $z_1, z_2, \\ldots, z_6$ is chosen independently to be either $1$ or $i$, each with probability $\\frac{1}{2}$. Let $S = z_1 + z_2 + \\cdots + z_6$. What is the expected value of $|S|^2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I expanded |S| squared and assumed every cross term averages to 0, as it would for a variable with mean 0, but here each z has mean (1 + i)/2."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{21}{2}$",
+      "correct": false,
+      "misconception": "I computed the expected square of the real part of S, the number of 1s, and forgot to add the expected square of the imaginary part."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{27}{2}$",
+      "correct": false,
+      "misconception": "I counted only the 15 unordered pairs of different indices, but the expansion of S times its conjugate has 30 ordered cross terms."
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I squared the modulus of the expected sum, |3 + 3i| squared, but the expectation of a square is not the square of the expectation."
+    },
+    {
+      "key": "E",
+      "text": "$21$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "$|S|^2 = S \\cdot \\overline{S}$. Expand it.",
+    "Expanding gives $\\sum_j |z_j|^2 + \\sum_{j \\ne k} z_j \\overline{z_k}$. Use linearity and independence: $E[z_j \\overline{z_k}] = E[z_j]\\,E[\\overline{z_k}]$ for $j \\ne k$.",
+    "$|z_j|^2 = 1$ always, and $E[z_j] = \\frac{1+i}{2}$, so $E[z_j]\\,\\overline{E[z_k]} = \\frac{(1+i)(1-i)}{4} = \\frac{1}{2}$. There are $30$ ordered pairs $j \\ne k$."
+  ],
+  "solutions": {
+    "reliable": "Expand $|S|^2 = S\\overline{S} = \\sum_{j} z_j\\overline{z_j} + \\sum_{j \\ne k} z_j\\overline{z_k}$. Each $z_j\\overline{z_j} = |z_j|^2 = 1$, contributing $6$. For $j \\ne k$, independence gives $E[z_j\\overline{z_k}] = E[z_j]\\,\\overline{E[z_k]} = \\frac{1+i}{2}\\cdot\\frac{1-i}{2} = \\frac{1}{2}$, and there are $6 \\cdot 5 = 30$ ordered pairs, contributing $15$. So $E|S|^2 = 6 + 15 = 21$. Check another way: if $A$ of the numbers are $1$, then $S = A + (6 - A)i$ and $|S|^2 = A^2 + (6 - A)^2$. With $A$ binomial, $E[A] = 3$ and $E[A^2] = \\operatorname{Var}(A) + 9 = \\frac{3}{2} + 9 = \\frac{21}{2}$, and by symmetry $6 - A$ has the same distribution, so $E|S|^2 = \\frac{21}{2} + \\frac{21}{2} = 21$. The idea: the expected square of a sum is the sum of all pairwise expectations, and the cross terms only vanish when the mean is zero.",
+    "elegant": "$|S|^2 = A^2 + (6-A)^2$ where $A$ and $6 - A$ have the same binomial distribution, so the answer is $2E[A^2] = 2\\left(\\frac{3}{2} + 9\\right) = 21$."
+  },
+  "formulas": [
+    "F-CP-09",
+    "F-CP-16"
+  ],
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

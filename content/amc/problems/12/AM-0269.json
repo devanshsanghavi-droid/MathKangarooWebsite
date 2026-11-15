@@ -1,0 +1,70 @@
+{
+  "id": "AM-0269",
+  "contest": "AMC12",
+  "slot": 3,
+  "area": "CP",
+  "topic": "CP-07",
+  "types": [
+    "T-COMPLEMENT",
+    "T-GEOPROB"
+  ],
+  "statement": "A point is chosen uniformly at random inside a cube of edge length $5$. What is the probability that the point is within distance $1$ of at least one face of the cube?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{27}{125}$",
+      "correct": false,
+      "misconception": "I found the volume of the inner 3 by 3 by 3 cube, which is where the point is far from every face, and reported that instead of its complement."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{2}{5}$",
+      "correct": false,
+      "misconception": "I worked in one direction only: a coordinate is within 1 of an end with probability 2/5, and I forgot the other two directions."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{61}{125}$",
+      "correct": false,
+      "misconception": "I shrank each edge by 1 instead of 2 to get the inner cube, forgetting that each edge loses 1 at both ends, so I got 1 minus (4/5) cubed."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{16}{25}$",
+      "correct": false,
+      "misconception": "I treated the cube like a square and computed 1 minus (3/5) squared, leaving out the third dimension."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{98}{125}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Being near at least one face is awkward to count directly. What does the opposite event look like?",
+    "The point is farther than 1 from every face exactly when it lies in a smaller cube in the middle. Find that cube's edge, compare volumes, and subtract from 1.",
+    "The inner cube has edge $5 - 2 = 3$, so the probability of being far from every face is $\\frac{27}{125}$."
+  ],
+  "solutions": {
+    "reliable": "The point is more than $1$ away from every face exactly when each of its three coordinates (measured from one corner) lies strictly between $1$ and $4$. That region is a cube of edge $5 - 1 - 1 = 3$ and volume $27$, out of a total volume of $125$. So the probability of being within $1$ of some face is $1 - \\frac{27}{125} = \\frac{98}{125}$. Check: in each direction a coordinate is far from both ends with probability $\\frac{3}{5}$, the three directions are independent, and $1 - \\left(\\frac{3}{5}\\right)^3 = \\frac{98}{125}$. The idea: for at least one, compute the probability of none and subtract.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-11",
+    "F-CP-06"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

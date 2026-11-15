@@ -1,0 +1,67 @@
+{
+  "id": "AM-0160",
+  "contest": "AMC12",
+  "slot": 5,
+  "area": "ALG",
+  "topic": "ALG-08",
+  "types": [
+    "T-CASEWORK",
+    "T-SUBSTITUTION"
+  ],
+  "statement": "A linear function $f(x) = ax + b$ satisfies $f(f(x)) = 9x + 8$ for all real $x$. What is the sum of all possible values of $f(1)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-7$",
+      "correct": false,
+      "misconception": "I took only $a = -3$, thinking a function that turns $f(f(x))$ into $9x + 8$ had to flip sign, and found $f(x) = -3x - 4$ with $f(1) = -7$, missing $a = 3$."
+    },
+    {
+      "key": "B",
+      "text": "$-2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I expanded $f(f(x))$ as $a^2 x + ab$, dropping the final $+b$, so $b = \\pm\\frac{8}{3}$ and the two values of $f(1)$ cancelled to $0$."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I took $a = 3$ only, since $a^2 = 9$ seemed to mean $a = 3$, and found $f(x) = 3x + 2$ with $f(1) = 5$."
+    },
+    {
+      "key": "E",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I expanded $f(f(x))$ as $a^2 x + 2b$, so $b = 4$ for both signs of $a$, giving $f(1) = 7$ and $f(1) = 1$, which add to $8$."
+    }
+  ],
+  "hints": [
+    "Compute $f(f(x))$ in terms of $a$ and $b$ and match coefficients.",
+    "Matching the $x$-coefficient gives $a^2 = 9$, which has two solutions. Each one fixes $b$ through the constant term, so there are two functions.",
+    "$f(f(x)) = a(ax + b) + b = a^2 x + (a + 1)b$. So $a = \\pm 3$ and $b = \\frac{8}{a + 1}$."
+  ],
+  "solutions": {
+    "reliable": "We have $f(f(x)) = a(ax + b) + b = a^2x + (a+1)b$. Matching with $9x + 8$ gives $a^2 = 9$ and $(a+1)b = 8$. If $a = 3$, then $b = 2$ and $f(1) = 5$; check $3(3x + 2) + 2 = 9x + 8$. If $a = -3$, then $b = -4$ and $f(1) = -7$; check $-3(-3x - 4) - 4 = 9x + 8$. The sum is $5 + (-7) = -2$. Transferable idea: an equation like $a^2 = 9$ in a functional problem almost always means two separate cases to carry through.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 105,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

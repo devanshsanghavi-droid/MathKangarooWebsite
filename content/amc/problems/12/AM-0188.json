@@ -1,0 +1,70 @@
+{
+  "id": "AM-0188",
+  "contest": "AMC12",
+  "slot": 23,
+  "area": "ALG",
+  "topic": "ALG-04",
+  "types": [
+    "T-VIETA",
+    "T-BOUNDING",
+    "T-EXTREME"
+  ],
+  "statement": "Real numbers $a$, $b$, $c$ satisfy $a + b + c = 0$ and $a^2 + b^2 + c^2 = 6$. What is the largest possible value of $a^5 + b^5 + c^5$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found the largest possible value of $a^3 + b^3 + c^3 = 3abc$, which is $6$, and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I made $a$ as large as possible, $a = 2$, and counted only $a^5$, forgetting that $b = c = -1$ each contribute $-1$."
+    },
+    {
+      "key": "D",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I assumed $a^5 + b^5 + c^5 = (a^2 + b^2 + c^2)(a^3 + b^3 + c^3) = 6 \\cdot 6$, but when $a + b + c = 0$ the true identity has an extra factor of $\\frac56$."
+    },
+    {
+      "key": "E",
+      "text": "$36\\sqrt{6}$",
+      "correct": false,
+      "misconception": "I ignored $a + b + c = 0$ and put all of the $6$ into one variable, $a = \\sqrt6$, so $a^5 = 36\\sqrt6$."
+    }
+  ],
+  "hints": [
+    "Find $ab + bc + ca$, then view $a, b, c$ as roots of a cubic.",
+    "Name $p = abc$ and write the cubic with roots $a, b, c$. Express the fifth-power sum in terms of $p$ with Newton's sums, then ask which $p$ allow three real roots.",
+    "$ab + bc + ca = -3$, so $a, b, c$ are the roots of $t^3 - 3t - p$. Newton's sums give $a^5 + b^5 + c^5 = 15p$, and the cubic has three real roots only when $|p| \\le 2$."
+  ],
+  "solutions": {
+    "reliable": "From $(a + b + c)^2 = 0$, $ab + bc + ca = -3$. With $p = abc$, the numbers are the roots of $t^3 - 3t - p = 0$, so each satisfies $t^3 = 3t + p$. Write $s_k = a^k + b^k + c^k$: $s_1 = 0$, $s_2 = 6$, $s_3 = 3s_1 + 3p = 3p$, $s_4 = 3s_2 + p\\,s_1 = 18$, $s_5 = 3s_3 + p\\,s_2 = 9p + 6p = 15p$. For three real roots, the discriminant $4 \\cdot 27 - 27p^2$ must be nonnegative, so $|p| \\le 2$. At $p = 2$ the cubic is $t^3 - 3t - 2 = (t - 2)(t + 1)^2$, giving $(a, b, c) = (2, -1, -1)$, which satisfies both conditions, and $s_5 = 32 - 1 - 1 = 30$. Transferable idea: with the first two power sums fixed, every symmetric expression is a function of $abc$, and real roots bound $abc$.",
+    "elegant": "When $a + b + c = 0$, the identity $a^5 + b^5 + c^5 = \\frac56(a^2 + b^2 + c^2)(a^3 + b^3 + c^3)$ holds, so the target is $\\frac56 \\cdot 6 \\cdot 3abc = 15abc$. If $abc \\le 0$ the target is not positive. Otherwise one number, say $a$, is positive and $b, c$ are negative. Then $bc \\le \\left(\\frac{b + c}{2}\\right)^2 = \\frac{a^2}{4}$ and $6 = a^2 + b^2 + c^2 \\ge a^2 + \\frac{(b + c)^2}{2} = \\frac{3a^2}{2}$, so $a \\le 2$ and $abc \\le \\frac{a^3}{4} \\le 2$. The maximum $15 \\cdot 2 = 30$ occurs at $(2, -1, -1)$."
+  },
+  "formulas": [
+    "F-ALG-01"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

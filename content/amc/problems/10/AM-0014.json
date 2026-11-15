@@ -1,0 +1,67 @@
+{
+  "id": "AM-0014",
+  "contest": "BOTH",
+  "slot": 11,
+  "area": "ALG",
+  "topic": "ALG-11",
+  "types": [
+    "T-CASEWORK",
+    "T-SMALL-CASES"
+  ],
+  "statement": "What is the sum of all positive integers $n$ such that $\\left\\lfloor \\frac{n}{2} \\right\\rfloor + \\left\\lfloor \\frac{n}{3} \\right\\rfloor = n - 4$? (Here $\\lfloor t \\rfloor$ is the greatest integer less than or equal to $t$.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I ignored the floor signs and solved n/2 + n/3 = n - 4, which has the single solution n = 24."
+    },
+    {
+      "key": "B",
+      "text": "$99$",
+      "correct": false,
+      "misconception": "I did casework on n = 6q + r but only used remainders r = 1 through 5, and forgot the case r = 0, which gives n = 24."
+    },
+    {
+      "key": "C",
+      "text": "$106$",
+      "correct": false,
+      "misconception": "I tested values downward from 24 and stopped when n = 18 failed, so I missed n = 17 and added only 24, 22, 21, 20 and 19."
+    },
+    {
+      "key": "D",
+      "text": "$123$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$129$",
+      "correct": false,
+      "misconception": "I merged the two floors into one, solving floor(5n/6) = n - 4, which gives n = 19 through 24 and a sum of 129."
+    }
+  ],
+  "hints": [
+    "The left side is roughly $\\frac{5n}{6}$, so $n$ cannot be very large.",
+    "Write $n = 6q + r$ with $0 \\le r \\le 5$. Then both floors can be written exactly in terms of $q$ and $r$, and the equation gives $q$ for each $r$.",
+    "The equation becomes $5q + \\lfloor r/2 \\rfloor + \\lfloor r/3 \\rfloor = 6q + r - 4$, so $q = 4 + \\lfloor r/2 \\rfloor + \\lfloor r/3 \\rfloor - r$. Compute $q$ for each $r$ from $0$ to $5$."
+  ],
+  "solutions": {
+    "reliable": "Let $n = 6q + r$ with $0 \\le r \\le 5$. Then $\\lfloor n/2 \\rfloor = 3q + \\lfloor r/2 \\rfloor$ and $\\lfloor n/3 \\rfloor = 2q + \\lfloor r/3 \\rfloor$, so the equation becomes $q = 4 + \\lfloor r/2 \\rfloor + \\lfloor r/3 \\rfloor - r$. Now: $r = 0$ gives $q = 4$, $n = 24$; $r = 1$ gives $q = 3$, $n = 19$; $r = 2$ gives $q = 3$, $n = 20$; $r = 3$ gives $q = 3$, $n = 21$; $r = 4$ gives $q = 3$, $n = 22$; $r = 5$ gives $q = 2$, $n = 17$. Each value of $r$ gives exactly one $n$, so these six are all. Their sum is $17 + 19 + 20 + 21 + 22 + 24 = 123$. The transferable idea: with floors of $n/a$ and $n/b$, write $n$ in terms of its remainder mod $\\operatorname{lcm}(a, b)$ so every floor becomes exact.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

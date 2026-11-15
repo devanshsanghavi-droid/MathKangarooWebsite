@@ -1,0 +1,71 @@
+{
+  "id": "AM-0215",
+  "contest": "AMC12",
+  "slot": 16,
+  "area": "GEO",
+  "topic": "GEO-02",
+  "types": [
+    "T-SIMILAR",
+    "T-POWER-POINT"
+  ],
+  "statement": "Triangle $ABC$ has $AB = 6$, $BC = 7$ and $CA = 8$. The tangent line to the circumcircle of $ABC$ at $A$ meets line $BC$ at $P$. What is $PA$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{21}{4}$",
+      "correct": false,
+      "misconception": "I wrote power of a point as PA^2 = PB times BC instead of PB times PC, and with PA = (4/3)PB that gave PB = 63/16 and PA = 21/4."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I set up the similar triangles correctly and solved for PB = 9, then reported PB instead of the tangent length PA."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I solved the similar triangles correctly but reported PC = 16, the far intersection, instead of the tangent length PA."
+    },
+    {
+      "key": "E",
+      "text": "$14\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I set PB : PC equal to AB : CA = 3 : 4, but that ratio applies to PA : PC; the ratio PB : PC is its square, 9 : 16. My version gave PB = 21 and PA^2 = 21 times 28."
+    }
+  ],
+  "hints": [
+    "Look for two similar triangles that share the angle at $P$.",
+    "The tangent-chord angle $\\angle PAB$ equals the inscribed angle $\\angle ACB$, so triangles $PAB$ and $PCA$ are similar. Their ratio is $AB : CA$.",
+    "With $PB = x$ and $PC = x + 7$: $\\dfrac{PA}{PC} = \\dfrac{PB}{PA} = \\dfrac{6}{8}$. So $PA = \\tfrac34(x+7)$ and $PA = \\tfrac43 x$."
+  ],
+  "solutions": {
+    "reliable": "Because $AB < AC$, the tangent at $A$ meets line $BC$ beyond $B$; let $PB = x$, so $PC = x + 7$. The angle between tangent $PA$ and chord $AB$ equals the inscribed angle $\\angle ACB$, and the triangles $PAB$ and $PCA$ share the angle at $P$, so they are similar with ratio $\\dfrac{AB}{CA} = \\dfrac34$. Hence $\\dfrac{PA}{PC} = \\dfrac34$ and $\\dfrac{PB}{PA} = \\dfrac34$, giving $\\tfrac34(x + 7) = \\tfrac43 x$, so $9x + 63 = 16x$ and $x = 9$. Then $PA = \\tfrac43\\cdot 9 = 12$. Check with power of a point: $PA^2 = PB\\cdot PC = 9\\cdot 16 = 144$. The idea: a tangent and a secant from one point create a pair of similar triangles with ratio equal to the ratio of the two chords from the tangency point.",
+    "elegant": "From the similarity, $\\dfrac{PB}{PC} = \\left(\\dfrac{AB}{AC}\\right)^2 = \\dfrac{9}{16}$. Since $PC - PB = 7$, the parts are $PB = 9$ and $PC = 16$, and $PA = \\sqrt{9\\cdot 16} = 12$."
+  },
+  "formulas": [
+    "F-GEO-11",
+    "F-GEO-01",
+    "F-GEO-13"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

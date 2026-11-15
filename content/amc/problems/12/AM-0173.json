@@ -1,0 +1,70 @@
+{
+  "id": "AM-0173",
+  "contest": "AMC12",
+  "slot": 13,
+  "area": "ALG",
+  "topic": "ALG-05",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-VIETA"
+  ],
+  "statement": "What is the sum of all real numbers $x$ that satisfy $9^x - 3^{x+2} + 18 = 0$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I found $3^x = 3$ or $3^x = 6$, added these to get $9$ and took $\\log_3 9 = 2$, but adding exponents matches multiplying the powers, not adding them."
+    },
+    {
+      "key": "B",
+      "text": "$\\log_3 18$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found $3^x = 3$ or $3^x = 6$ and then divided by $3$ to get $x$, as if that undid the power, so I got $x = 1$ and $x = 2$."
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I reported the sum of the two values of $3^x$, which is $3 + 6$, instead of the sum of the exponents."
+    },
+    {
+      "key": "E",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I used Vieta to get the product of the two values of $3^x$, which is $18$, and stopped before taking the logarithm base $3$."
+    }
+  ],
+  "hints": [
+    "Both $9^x$ and $3^{x+2}$ are built from $3^x$.",
+    "Substitute $u = 3^x$. Then $9^x = u^2$ and $3^{x+2} = 9u$, so the equation is a quadratic in $u$.",
+    "Solve $u^2 - 9u + 18 = 0$ to get $u = 3$ or $u = 6$. So $x = 1$ or $x = \\log_3 6$; add these."
+  ],
+  "solutions": {
+    "reliable": "Let $u = 3^x > 0$. The equation becomes $u^2 - 9u + 18 = 0$, so $(u - 3)(u - 6) = 0$ and $u = 3$ or $u = 6$, both positive. Then $x = 1$ or $x = \\log_3 6$, and the sum is $1 + \\log_3 6 = \\log_3 3 + \\log_3 6 = \\log_3 18$. Transferable idea: an equation in $a^{2x}$ and $a^x$ is a quadratic in disguise; substitute $u = a^x$ and check that each root is positive.",
+    "elegant": "If the two solutions are $x_1, x_2$, then $3^{x_1}$ and $3^{x_2}$ are the roots of $u^2 - 9u + 18$, so by Vieta $3^{x_1 + x_2} = 3^{x_1}\\cdot 3^{x_2} = 18$ and $x_1 + x_2 = \\log_3 18$."
+  },
+  "formulas": [
+    "F-ALG-02",
+    "F-ALG-10"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

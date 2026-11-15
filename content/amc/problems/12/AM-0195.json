@@ -1,0 +1,67 @@
+{
+  "id": "AM-0195",
+  "contest": "AMC12",
+  "slot": 4,
+  "area": "GEO",
+  "topic": "GEO-09",
+  "types": [
+    "T-AUXILIARY",
+    "T-SUBSTITUTION"
+  ],
+  "statement": "An acute angle $\\theta$ satisfies $\\tan\\theta = 3$. What is the value of $\\sin 2\\theta + \\cos 2\\theta$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-\\frac{7}{5}$",
+      "correct": false,
+      "misconception": "I decided that the angle 2 theta lands in the third quadrant, so I made both sin 2 theta and cos 2 theta negative and got -3/5 - 4/5."
+    },
+    {
+      "key": "B",
+      "text": "$-\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I used sin 2 theta = sin theta times cos theta, forgetting the factor 2, so I got 3/10 - 4/5."
+    },
+    {
+      "key": "C",
+      "text": "$-\\frac{1}{5}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I mixed up the identity sin squared plus cos squared equals 1 with sin plus cos, and assumed the sum is always 1."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{7}{5}$",
+      "correct": false,
+      "misconception": "I used cos 2 theta = 1 - 2 cos squared theta, which has the sign flipped, so I got 3/5 + 4/5."
+    }
+  ],
+  "hints": [
+    "Draw a right triangle that contains $\\theta$.",
+    "A right triangle with legs $1$ and $3$ has $\\tan\\theta = 3$. Read off $\\sin\\theta$ and $\\cos\\theta$, then use the double-angle formulas.",
+    "$\\sin\\theta = \\frac{3}{\\sqrt{10}}$ and $\\cos\\theta = \\frac{1}{\\sqrt{10}}$. So $\\sin 2\\theta = 2\\sin\\theta\\cos\\theta = \\frac{3}{5}$ and $\\cos 2\\theta = \\cos^2\\theta - \\sin^2\\theta = -\\frac{4}{5}$."
+  ],
+  "solutions": {
+    "reliable": "Take a right triangle with opposite leg $3$, adjacent leg $1$ and hypotenuse $\\sqrt{10}$. Then $\\sin\\theta = \\frac{3}{\\sqrt{10}}$ and $\\cos\\theta = \\frac{1}{\\sqrt{10}}$. So $\\sin 2\\theta = 2\\cdot\\frac{3}{\\sqrt{10}}\\cdot\\frac{1}{\\sqrt{10}} = \\frac{6}{10} = \\frac{3}{5}$ and $\\cos 2\\theta = \\frac{1}{10} - \\frac{9}{10} = -\\frac{4}{5}$. The sum is $\\frac{3}{5} - \\frac{4}{5} = -\\frac{1}{5}$. Sanity check: $\\theta$ is above $45^\\circ$, so $2\\theta$ is between $90^\\circ$ and $180^\\circ$, where sine is positive and cosine negative. Transferable idea: turn a given tangent into a right triangle.",
+    "elegant": "With $t = \\tan\\theta$, $\\sin 2\\theta = \\frac{2t}{1+t^2} = \\frac{6}{10}$ and $\\cos 2\\theta = \\frac{1-t^2}{1+t^2} = -\\frac{8}{10}$, so the sum is $\\frac{6 - 8}{10} = -\\frac{1}{5}$. Transferable idea: the tangent half-angle forms express everything in $\\tan\\theta$."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

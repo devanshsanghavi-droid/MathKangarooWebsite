@@ -1,0 +1,69 @@
+{
+  "id": "AM-0132",
+  "contest": "BOTH",
+  "slot": 11,
+  "area": "CP",
+  "topic": "CP-08",
+  "types": [
+    "T-LINEARITY",
+    "T-SYMMETRY"
+  ],
+  "statement": "The numbers $1, 2, 3, 4, 5, 6$ are put in a random order $a_1, a_2, \\ldots, a_6$, with all orders equally likely. What is the expected number of positions $i$ for which $a_i > i$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{5}{6}$",
+      "correct": false,
+      "misconception": "I found the probability for position 1 only, that a_1 > 1, which is 5/6, and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{5}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I argued by symmetry that a_i > i half of the time, so 6/2 = 3, forgetting that a_i = i is also possible."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{7}{2}$",
+      "correct": false,
+      "misconception": "I used (7 - i)/6 for each position, which counts a_i greater than or equal to i instead of strictly greater."
+    },
+    {
+      "key": "E",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I counted the positions where a bigger number is possible at all, i = 1 to 5, instead of averaging over orders."
+    }
+  ],
+  "hints": [
+    "Use an indicator for each position and linearity of expectation.",
+    "Each $a_i$ alone is equally likely to be any of the six numbers. Find the chance that position $i$ holds a number bigger than $i$, then add over all positions.",
+    "$P(a_i > i) = \\dfrac{6 - i}{6}$. Sum this for $i = 1, \\ldots, 6$."
+  ],
+  "solutions": {
+    "reliable": "Let $X_i = 1$ if $a_i > i$ and $0$ otherwise. In a uniformly random order, $a_i$ is equally likely to be each of $1, \\ldots, 6$, and exactly $6 - i$ of those exceed $i$, so $E[X_i] = \\tfrac{6 - i}{6}$. By linearity of expectation the expected count is $\\tfrac{5 + 4 + 3 + 2 + 1 + 0}{6} = \\tfrac{15}{6} = \\tfrac{5}{2}$. Transferable idea: for an expected count over positions, find the probability for one position and add.",
+    "elegant": "Each position has $a_i > i$, $a_i = i$ or $a_i < i$. The expected number of fixed points ($a_i = i$) is $6 \\cdot \\tfrac16 = 1$. Replacing an order by its inverse (send each value back to its position) is a one-to-one map on all orders, and it turns every position with $a_i > i$ into one with $a_j < j$ and vice versa. So the two kinds are equally common on average, and each has expected count $\\tfrac{6 - 1}{2} = \\tfrac{5}{2}$."
+  },
+  "formulas": [
+    "F-CP-09"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

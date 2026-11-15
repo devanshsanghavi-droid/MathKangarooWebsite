@@ -1,0 +1,69 @@
+{
+  "id": "AM-0047",
+  "contest": "AMC10",
+  "slot": 6,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-CASEWORK",
+    "T-AUXILIARY"
+  ],
+  "statement": "Two parallel chords of a circle of radius $13$ have lengths $24$ and $10$. What is the sum of all possible distances between the two chords?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I only considered the case where both chords are on the same side of the center, which gives 12 - 5 = 7."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I took each chord's distance from the center to be the radius minus half the chord, 13 - 12 = 1 and 13 - 5 = 8, then added 8 - 1 and 8 + 1."
+    },
+    {
+      "key": "C",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I only considered the case where the chords are on opposite sides of the center, which gives 12 + 5 = 17."
+    },
+    {
+      "key": "D",
+      "text": "$24$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$34$",
+      "correct": false,
+      "misconception": "I counted the opposite-sides case twice, once with each chord on top, and added 17 + 17, forgetting that this is the same distance."
+    }
+  ],
+  "hints": [
+    "How far is each chord from the center?",
+    "Draw the radius to an endpoint of each chord and the perpendicular from the center to that chord. Then decide how the two chords can sit relative to the center.",
+    "The perpendicular from the center bisects each chord, so the distances from the center are $\\sqrt{13^2 - 12^2}$ and $\\sqrt{13^2 - 5^2}$. The chords are on the same side or on opposite sides."
+  ],
+  "solutions": {
+    "reliable": "The perpendicular from the center to a chord bisects it. For the chord of length $24$, the radius $13$ and half-chord $12$ give a distance $\\sqrt{169 - 144} = 5$ from the center. For the chord of length $10$, half-chord $5$ gives $\\sqrt{169 - 25} = 12$. If the chords are on the same side of the center, they are $12 - 5 = 7$ apart. If they are on opposite sides, they are $12 + 5 = 17$ apart. Both configurations exist, so the sum is $7 + 17 = 24$. The transferable idea: radius, half-chord and distance from the center always form a right triangle, and parallel chords give two cases.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

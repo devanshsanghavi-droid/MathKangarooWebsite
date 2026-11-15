@@ -1,0 +1,70 @@
+{
+  "id": "AM-0161",
+  "contest": "AMC12",
+  "slot": 5,
+  "area": "ALG",
+  "topic": "ALG-10",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-CASEWORK"
+  ],
+  "statement": "A complex number $z$ satisfies $z\\bar{z} + 3z = 22 + 6i$, where $\\bar{z}$ is the complex conjugate of $z$. What is the sum of all possible values of $|z|^2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I solved $a^2 + 3a - 18 = 0$ for the real part and added the two roots, $3 + (-6) = -3$, which is the sum of the real parts, not of $|z|^2$."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I kept only the positive root $a = 3$, so I found just $z = 3 + 2i$ with $|z|^2 = 13$, and discarded $z = -6 + 2i$."
+    },
+    {
+      "key": "C",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I matched $z\\bar{z}$ to $22$ and $3z$ to $6i$, as if $3z$ were purely imaginary, so every solution seemed to have $|z|^2 = 22$."
+    },
+    {
+      "key": "D",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I kept only the root $a = -6$, so I found just $z = -6 + 2i$ with $|z|^2 = 40$, and missed $z = 3 + 2i$."
+    },
+    {
+      "key": "E",
+      "text": "$53$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Write $z = a + bi$ with $a$ and $b$ real. What kind of number is $z\\bar{z}$?",
+    "Since $z\\bar{z} = a^2 + b^2$ is real, the imaginary part of the left side comes only from $3z$. Match real parts and imaginary parts separately; one of them gives a quadratic with two roots.",
+    "Imaginary parts: $3b = 6$. Real parts: $a^2 + b^2 + 3a = 22$. Solve for $a$, then find $|z|^2 = a^2 + 4$ in each case."
+  ],
+  "solutions": {
+    "reliable": "Let $z = a + bi$. Then $z\\bar{z} = a^2 + b^2$ is real, so $z\\bar{z} + 3z = (a^2 + b^2 + 3a) + 3bi$. Matching with $22 + 6i$: $3b = 6$, so $b = 2$, and $a^2 + 4 + 3a = 22$, so $a^2 + 3a - 18 = 0$, giving $a = 3$ or $a = -6$. The solutions are $z = 3 + 2i$ with $|z|^2 = 13$ and $z = -6 + 2i$ with $|z|^2 = 40$. Check the second: $40 + 3(-6 + 2i) = 22 + 6i$. The sum is $13 + 40 = 53$. Transferable idea: an equation between complex numbers is two real equations, one for real parts and one for imaginary parts.",
+    "elegant": "The real-part equation says $|z|^2 = 22 - 3a$. The two possible real parts are the roots of $a^2 + 3a - 18 = 0$, which add to $-3$ by Vieta. So the two values of $|z|^2$ add to $2 \\cdot 22 - 3(-3) = 53$, without finding either root."
+  },
+  "formulas": [
+    "F-ALG-16",
+    "F-ALG-02"
+  ],
+  "estSeconds": 105,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

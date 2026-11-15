@@ -1,0 +1,70 @@
+{
+  "id": "AM-0290",
+  "contest": "AMC12",
+  "slot": 16,
+  "area": "CP",
+  "topic": "CP-06",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-STARS-BARS"
+  ],
+  "statement": "Two different positive divisors of $720$ are chosen at random, with every pair of different divisors equally likely. What is the probability that one of the two chosen divisors divides the other?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{2}{29}$",
+      "correct": false,
+      "misconception": "I required the exponent of every prime to go up strictly from the smaller divisor to the larger, so I counted only C(5, 2) times C(3, 2) times C(2, 2) = 30 pairs out of 435."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{8}{29}$",
+      "correct": false,
+      "misconception": "I treated the pair as ordered and required the first divisor to divide the second, so I got 240 out of 30 times 29 = 870, forgetting that either one may divide the other."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{3}{10}$",
+      "correct": false,
+      "misconception": "I counted the 270 ordered pairs (x, y) with x dividing y out of all 900 ordered pairs, forgetting that the two divisors must be different."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{13}{29}$",
+      "correct": false,
+      "misconception": "I worked out the probability that neither divisor divides the other, 195 out of 435, and reported that instead."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{16}{29}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Write $720$ as a product of prime powers. A divisor is fixed by its list of exponents.",
+    "$x$ divides $y$ exactly when each exponent in $x$ is at most the matching exponent in $y$. Count the ordered pairs $(x, y)$ with $x \\mid y$ one prime at a time, then remove the pairs with $x = y$.",
+    "For a prime with exponent $e$, the exponent pairs $0 \\le i \\le j \\le e$ number $\\binom{e+2}{2}$. With $720 = 2^4 \\cdot 3^2 \\cdot 5$ that gives $\\binom62\\binom42\\binom32 = 270$ ordered pairs, and $30$ of them have $x = y$."
+  ],
+  "solutions": {
+    "reliable": "Since $720 = 2^4 \\cdot 3^2 \\cdot 5$, it has $5 \\cdot 3 \\cdot 2 = 30$ divisors, so there are $\\binom{30}{2} = 435$ equally likely pairs. An ordered pair $(x, y)$ with $x \\mid y$ is a choice, for each prime, of exponents $i \\le j$ between $0$ and the prime's exponent $e$, and there are $\\binom{e+2}{2}$ such choices. So there are $\\binom62\\binom42\\binom32 = 15 \\cdot 6 \\cdot 3 = 270$ ordered pairs with $x \\mid y$, of which $30$ have $x = y$. Each of the other $240$ is a pair of different divisors in which the smaller divides the larger, and no pair is counted twice, because $x \\mid y$ and $y \\mid x$ force $x = y$. The probability is $\\frac{240}{435} = \\frac{16}{29}$. Transferable idea: divisibility between divisors of $N$ is a comparison of exponent lists, which can be counted one prime at a time.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-01",
+    "F-CP-03"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

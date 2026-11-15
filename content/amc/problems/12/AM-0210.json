@@ -1,0 +1,69 @@
+{
+  "id": "AM-0210",
+  "contest": "AMC12",
+  "slot": 13,
+  "area": "GEO",
+  "topic": "GEO-09",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "In triangle $ABC$, $AB = 7$, $AC = 8$ and $\\angle BAC = 60^\\circ$. What is the radius of the circle that passes through $A$, $B$ and $C$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{\\sqrt{57}}{2}$",
+      "correct": false,
+      "misconception": "I found BC = sqrt(57) and then took the circumradius to be half of BC, as if BC were a diameter, which only happens when the angle at A is a right angle."
+    },
+    {
+      "key": "B",
+      "text": "$\\sqrt{19}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{13\\sqrt{3}}{3}$",
+      "correct": false,
+      "misconception": "I used the law of cosines with a plus sign, getting BC^2 = 49 + 64 + 56 = 169 and BC = 13, then divided 13 by 2 sin 60 degrees."
+    },
+    {
+      "key": "D",
+      "text": "$\\sqrt{57}$",
+      "correct": false,
+      "misconception": "I set up R = BC / (2 sin A) correctly but used sin 60 degrees = 1/2, so the denominator became 1 and R came out equal to BC."
+    },
+    {
+      "key": "E",
+      "text": "$2\\sqrt{19}$",
+      "correct": false,
+      "misconception": "I used BC / sin A = R, forgetting that the extended law of sines says BC / sin A equals the diameter 2R, not the radius."
+    }
+  ],
+  "hints": [
+    "First find the side opposite the $60^\\circ$ angle.",
+    "The law of cosines gives $BC$. Then the extended law of sines links one side, its opposite angle and the circumradius.",
+    "$BC^2 = 49 + 64 - 2\\cdot 7\\cdot 8\\cdot\\tfrac12 = 57$. Now use $\\dfrac{BC}{\\sin A} = 2R$ with $\\sin 60^\\circ = \\tfrac{\\sqrt3}{2}$."
+  ],
+  "solutions": {
+    "reliable": "By the law of cosines, $BC^2 = 7^2 + 8^2 - 2\\cdot 7\\cdot 8\\cos 60^\\circ = 49 + 64 - 56 = 57$, so $BC = \\sqrt{57}$. The extended law of sines gives $2R = \\dfrac{BC}{\\sin A} = \\dfrac{\\sqrt{57}}{\\sqrt3/2}$, so $R = \\dfrac{\\sqrt{57}}{\\sqrt3} = \\sqrt{19}$. Check with $R = \\dfrac{abc}{4K}$: $K = \\tfrac12\\cdot 7\\cdot 8\\cdot\\tfrac{\\sqrt3}{2} = 14\\sqrt3$, and $\\dfrac{7\\cdot 8\\cdot\\sqrt{57}}{56\\sqrt3} = \\sqrt{19}$. The idea: one side plus its opposite angle fixes the circumradius.",
+    "elegant": "Draw the diameter $BX$ of the circumcircle. The inscribed angle $\\angle BXC$ equals $\\angle BAC = 60^\\circ$ and $\\angle BCX = 90^\\circ$, so $BC = 2R\\sin 60^\\circ = R\\sqrt3$. With $BC = \\sqrt{57}$ this gives $R = \\sqrt{19}$."
+  },
+  "formulas": [
+    "F-GEO-14",
+    "F-GEO-15"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

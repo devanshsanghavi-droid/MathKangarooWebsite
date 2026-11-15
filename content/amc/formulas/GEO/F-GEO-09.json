@@ -1,0 +1,17 @@
+{
+  "id": "F-GEO-09",
+  "area": "GEO",
+  "name": "Shoelace formula",
+  "formula": "K = \\frac{1}{2}\\left| \\sum_{i=1}^{n} (x_i y_{i+1} - x_{i+1} y_i) \\right|, \\qquad (x_{n+1}, y_{n+1}) = (x_1, y_1)",
+  "whenToUse": "You have the coordinates of every vertex of a polygon and need its area.",
+  "example": "For $(0,0)$, $(4,1)$, $(3,5)$, $(-1,3)$ in order, the terms are $0$, $4 \\cdot 5 - 3 \\cdot 1 = 17$, $3 \\cdot 3 - (-1) \\cdot 5 = 14$ and $0$. The area is $\\frac{31}{2}$.",
+  "pitfall": "List the vertices in order around the polygon, not in a random order, or the formula measures a self-crossing shape. Remember to wrap back to the first vertex.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-COORD"
+  ]
+}

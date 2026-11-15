@@ -1,0 +1,69 @@
+{
+  "id": "AM-0124",
+  "contest": "BOTH",
+  "slot": 6,
+  "area": "CP",
+  "topic": "CP-06",
+  "types": [
+    "T-PARITY",
+    "T-CASEWORK"
+  ],
+  "statement": "Three different numbers are chosen at random from $\\{1, 2, 3, \\ldots, 9\\}$. What is the probability that their sum is even?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{1}{6}$",
+      "correct": false,
+      "misconception": "I thought the sum is even only when all three numbers have the same parity, so I counted 4 all-even plus 10 all-odd out of 84."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{10}{21}$",
+      "correct": false,
+      "misconception": "I counted the 40 choices with exactly two odd numbers but forgot the 4 choices with no odd numbers at all."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{1}{2}$",
+      "correct": false,
+      "misconception": "I assumed even and odd sums are equally likely, but there are more odd numbers than even numbers in the set."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{11}{21}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{9}{14}$",
+      "correct": false,
+      "misconception": "I thought three odd numbers add to an even number, so I added the 10 all-odd choices to the correct 44."
+    }
+  ],
+  "hints": [
+    "Only the number of odd numbers chosen matters.",
+    "A sum is even exactly when it contains an even number of odd terms. Count the selections with zero odd numbers and with two odd numbers, using the 5 odd and 4 even numbers.",
+    "No odds: $\\binom{4}{3} = 4$. Two odds: $\\binom{5}{2}\\binom{4}{1} = 40$. Total selections: $\\binom{9}{3} = 84$."
+  ],
+  "solutions": {
+    "reliable": "There are $\\binom{9}{3} = 84$ equally likely choices. The set has $5$ odd numbers and $4$ even numbers, and the sum is even exactly when the number of odd numbers chosen is $0$ or $2$. Zero odd: $\\binom{4}{3} = 4$. Two odd and one even: $\\binom{5}{2} \\cdot 4 = 40$. So the probability is $44/84 = 11/21$. Check with the complement: one odd, $5 \\cdot \\binom{4}{2} = 30$; three odd, $\\binom{5}{3} = 10$; $30 + 10 = 40$ and $44 + 40 = 84$. Transferable idea: for a parity question, sort the objects by parity and count by how many odd ones you take.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-03"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "AM-0189",
+  "contest": "AMC12",
+  "slot": 24,
+  "area": "ALG",
+  "topic": "ALG-08",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-CASEWORK"
+  ],
+  "statement": "Let $f(x) = 2x^2 - 1$. What is the largest real number $x$ such that $f(f(f(x))) = -x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\cos\\dfrac{\\pi}{5}$",
+      "correct": false,
+      "misconception": "I applied $f$ only twice, so I solved $\\cos 4\\theta = -\\cos\\theta$, whose smallest positive solution is $\\theta = \\frac{\\pi}{5}$."
+    },
+    {
+      "key": "B",
+      "text": "$\\cos\\dfrac{\\pi}{7}$",
+      "correct": false,
+      "misconception": "I thought three applications of $f$ multiply the angle by $6$ rather than by $2^3 = 8$, so I solved $\\cos 6\\theta = -\\cos\\theta$ and got $\\theta = \\frac{\\pi}{7}$."
+    },
+    {
+      "key": "C",
+      "text": "$\\cos\\dfrac{\\pi}{9}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\cos\\dfrac{\\pi}{28}$",
+      "correct": false,
+      "misconception": "I confused $2x^2 - 1$ with the triple-angle polynomial $4x^3 - 3x$, so each application multiplied the angle by $3$ and I solved $\\cos 27\\theta = -\\cos\\theta$."
+    },
+    {
+      "key": "E",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I solved $f(f(f(x))) = x$ instead of $-x$; since $f(1) = 1$, the number $1$ is the largest solution of that equation, not of this one."
+    }
+  ],
+  "hints": [
+    "Try $x = \\cos\\theta$. What does $f$ do to $\\cos\\theta$?",
+    "The double-angle formula turns each application of $f$ into doubling the angle. Write the equation as two cosines being equal and solve for every $\\theta$ in $[0, \\pi]$.",
+    "$f(f(f(\\cos\\theta))) = \\cos 8\\theta$, and $-\\cos\\theta = \\cos(\\pi - \\theta)$. So $8\\theta = \\pm(\\pi - \\theta) + 2\\pi k$, giving $\\theta = \\frac{(2k+1)\\pi}{9}$ or $\\theta = \\frac{(2k-1)\\pi}{7}$. The largest $x$ comes from the smallest $\\theta$."
+  ],
+  "solutions": {
+    "reliable": "The equation $f(f(f(x))) + x = 0$ is a polynomial equation of degree $8$, so it has at most $8$ real roots. For $x = \\cos\\theta$ with $\\theta \\in [0, \\pi]$, $f(\\cos\\theta) = \\cos 2\\theta$, so $f(f(f(x))) = \\cos 8\\theta$, and we need $\\cos 8\\theta = \\cos(\\pi - \\theta)$. Either $8\\theta = \\pi - \\theta + 2\\pi k$, so $\\theta = \\frac{(2k+1)\\pi}{9}$, giving $\\frac{\\pi}{9}, \\frac{3\\pi}{9}, \\frac{5\\pi}{9}, \\frac{7\\pi}{9}, \\pi$; or $8\\theta = \\theta - \\pi + 2\\pi k$, so $\\theta = \\frac{(2k - 1)\\pi}{7}$, giving $\\frac{\\pi}{7}, \\frac{3\\pi}{7}, \\frac{5\\pi}{7}, \\pi$. The angle $\\pi$ appears in both lists, so that is $8$ different angles in $[0, \\pi]$, hence $8$ different roots in $[-1, 1]$, so these are all the roots. Cosine decreases on $[0, \\pi]$, so the largest root uses the smallest angle, $\\frac{\\pi}{9} < \\frac{\\pi}{7}$: the answer is $\\cos\\frac{\\pi}{9}$. Transferable idea: iterates of $2x^2 - 1$ become angle doubling under $x = \\cos\\theta$; count the trigonometric solutions against the degree to know you have them all.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 300,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

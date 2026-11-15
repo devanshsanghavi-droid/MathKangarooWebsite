@@ -1,0 +1,69 @@
+{
+  "id": "AM-0271",
+  "contest": "AMC12",
+  "slot": 4,
+  "area": "CP",
+  "topic": "CP-03",
+  "types": [
+    "T-EVALUATE",
+    "T-SYMMETRY"
+  ],
+  "statement": "When $(2x + 1)^8$ is expanded and like terms are combined, what is the sum of the coefficients of the terms in which $x$ is raised to an even power? (The constant term counts as an even power.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$128$",
+      "correct": false,
+      "misconception": "I ignored the coefficient 2 and used the fact that half of the 2 to the eighth subsets have even size, so I got 2 to the seventh."
+    },
+    {
+      "key": "B",
+      "text": "$3280$",
+      "correct": false,
+      "misconception": "I used (f(1) minus f(-1)) divided by 2, which picks out the odd powers instead of the even ones."
+    },
+    {
+      "key": "C",
+      "text": "$3281$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$6561$",
+      "correct": false,
+      "misconception": "I plugged in x = 1, which adds up every coefficient, odd powers included."
+    },
+    {
+      "key": "E",
+      "text": "$6562$",
+      "correct": false,
+      "misconception": "I added f(1) and f(-1) correctly but forgot to divide by 2, so every even coefficient was counted twice."
+    }
+  ],
+  "hints": [
+    "Expanding fully is slow. What does plugging in a number do?",
+    "Let $f(x) = (2x+1)^8$. Then $f(1)$ adds all the coefficients, and $f(-1)$ adds the even ones and subtracts the odd ones. Combine the two.",
+    "$f(1) = 3^8 = 6561$ and $f(-1) = (-1)^8 = 1$, so the even coefficients sum to $\\frac{6561 + 1}{2}$."
+  ],
+  "solutions": {
+    "reliable": "Write $f(x) = (2x+1)^8 = \\sum c_k x^k$. At $x = 1$ we get $\\sum c_k = 3^8 = 6561$. At $x = -1$ we get $\\sum (-1)^k c_k = (-1)^8 = 1$, where even-power coefficients appear with a plus sign and odd ones with a minus sign. Adding, the odd ones cancel and the even ones double: $2 \\sum_{k \\text{ even}} c_k = 6562$, so the answer is $3281$. Check directly: the even-power coefficients are $\\binom{8}{k} 2^k$ for $k = 0, 2, 4, 6, 8$, namely $1 + 112 + 1120 + 1792 + 256 = 3281$. The idea: averaging $f(1)$ and $f(-1)$ keeps exactly the even-power coefficients.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-09"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

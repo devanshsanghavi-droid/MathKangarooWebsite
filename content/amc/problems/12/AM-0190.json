@@ -1,0 +1,70 @@
+{
+  "id": "AM-0190",
+  "contest": "AMC12",
+  "slot": 25,
+  "area": "ALG",
+  "topic": "ALG-10",
+  "types": [
+    "T-ROOTS-UNITY",
+    "T-SYMMETRY",
+    "T-CASEWORK"
+  ],
+  "statement": "Let $\\omega = \\cos\\dfrac{2\\pi}{9} + i\\sin\\dfrac{2\\pi}{9}$. For how many subsets $S$ of $\\{1, 2, 3, \\dots, 8\\}$, including the empty set, is $\\displaystyle\\sum_{k \\in S} \\omega^k$ a real number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I assumed the sum is real only when $S$ contains $k$ and $9 - k$ together, which gives the $2^4$ symmetric subsets, and missed the ones that come from $\\sin 20^\\circ + \\sin 40^\\circ = \\sin 80^\\circ$."
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I found the subsets that come from $\\sin 20^\\circ + \\sin 40^\\circ = \\sin 80^\\circ$ but counted only one of the two sign patterns, adding $2$ instead of $4$."
+    },
+    {
+      "key": "C",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I counted the nonempty subsets correctly but left out the empty set, whose sum $0$ is real."
+    },
+    {
+      "key": "D",
+      "text": "$20$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I found both sign patterns but let the pair $\\{3, 6\\}$ take all four states instead of only both-in or both-out, adding $8$ instead of $4$."
+    }
+  ],
+  "hints": [
+    "A number is real exactly when it equals its conjugate, and $\\overline{\\omega^k} = \\omega^{9 - k}$.",
+    "Pair $k$ with $9 - k$. The symmetric subsets clearly work. For the rest, compare the imaginary parts: look for a relation among sines of multiples of $20^\\circ$, or use the minimal polynomial of $\\omega$.",
+    "The imaginary parts of $\\omega, \\omega^2, \\omega^3, \\omega^4$ are $\\sin 40^\\circ, \\sin 80^\\circ, \\sin 120^\\circ, \\sin 20^\\circ$, and $\\omega^{9-k}$ has the negative. Since $\\sin 20^\\circ + \\sin 40^\\circ = 2\\sin 30^\\circ \\cos 10^\\circ = \\sin 80^\\circ$, the set $\\{1, 4, 7\\}$ works, and so does its mirror $\\{2, 5, 8\\}$."
+  ],
+  "solutions": {
+    "reliable": "The sum is real exactly when it equals its conjugate, $\\sum_{k \\in S}\\omega^{9 - k}$. So with $d_j = [j \\in S] - [9 - j \\in S]$ for $j = 1, \\dots, 8$, the polynomial $A(x) = \\sum d_j x^j$ must vanish at $\\omega$. The minimal polynomial of $\\omega$ is $x^6 + x^3 + 1$, so $A(x) = (x^6 + x^3 + 1)Q(x)$ with $Q$ an integer polynomial of degree at most $2$ and $Q(0) = 0$ (since $A(0) = 0$). Writing $Q = \\alpha x + \\beta x^2$ gives $A = \\alpha x + \\beta x^2 + \\alpha x^4 + \\beta x^5 + \\alpha x^7 + \\beta x^8$. The rule $d_{9-j} = -d_j$ forces $\\beta = -\\alpha$, and $d_j \\in \\{-1, 0, 1\\}$ forces $\\alpha \\in \\{-1, 0, 1\\}$. If $\\alpha = 0$, every pair $\\{k, 9 - k\\}$ is both-in or both-out: $2^4 = 16$ subsets. If $\\alpha = 1$, then $1, 4, 7 \\in S$ and $8, 5, 2 \\notin S$, with $\\{3, 6\\}$ both-in or both-out: $2$ subsets. If $\\alpha = -1$, the mirror image: $2$ subsets. Total $16 + 2 + 2 = 20$. Transferable idea: a sum of roots of unity is zero only through multiples of the minimal polynomial, which turns a trigonometric search into a finite check.",
+    "elegant": "Pair $k$ with $9 - k$; each pair contributes $d \\cdot s$ to the imaginary part, with $d \\in \\{-1, 0, 1\\}$ and $s$ one of $\\sin 40^\\circ, \\sin 80^\\circ, \\sin 120^\\circ, \\sin 20^\\circ$. Using $\\sin 80^\\circ = \\sin 20^\\circ + \\sin 40^\\circ$, the only ways to cancel are all $d = 0$ (16 subsets) or $\\pm(\\sin 40^\\circ - \\sin 80^\\circ + \\sin 20^\\circ)$ with the $\\{3, 6\\}$ pair balanced (2 subsets each), for $20$."
+  },
+  "formulas": [
+    "F-ALG-12"
+  ],
+  "estSeconds": 420,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

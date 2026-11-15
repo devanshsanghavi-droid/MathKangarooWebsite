@@ -1,0 +1,71 @@
+{
+  "id": "AM-0265",
+  "contest": "AMC12",
+  "slot": 24,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-MODULAR",
+    "T-CASEWORK",
+    "T-BIJECTION"
+  ],
+  "statement": "How many positive integers less than $3^{10}$ are divisible by $8$ and have a base-$3$ representation that uses only the digits $0$ and $1$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$105$",
+      "correct": false,
+      "misconception": "I only looked for e + 3o equal to 0 or 8 and forgot that with up to five 1s in each kind of place the total can reach 16, so I missed (4, 4) and (1, 5)."
+    },
+    {
+      "key": "B",
+      "text": "$125$",
+      "correct": false,
+      "misconception": "I assumed the counts e and o had to be equal, so I found (0, 0), (2, 2) and (4, 4) but missed (5, 1) and (1, 5), where 5 + 3 = 8 and 1 + 15 = 16."
+    },
+    {
+      "key": "C",
+      "text": "$135$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$136$",
+      "correct": false,
+      "misconception": "I counted all the valid digit patterns but forgot to remove the all-zero pattern, which is 0 and not a positive integer."
+    },
+    {
+      "key": "E",
+      "text": "$251$",
+      "correct": false,
+      "misconception": "I replaced 3 by -1 and required the number of 1s on even places to equal the number on odd places, but 3 is not -1 modulo 8."
+    }
+  ],
+  "hints": [
+    "What are the powers of $3$ modulo $8$?",
+    "$3^k \\equiv 1 \\pmod 8$ for even $k$ and $3^k \\equiv 3 \\pmod 8$ for odd $k$. If the number has $e$ ones in even places and $o$ ones in odd places, it is $\\equiv e + 3o \\pmod 8$.",
+    "With $0 \\le e, o \\le 5$ the value $e + 3o$ lies between $0$ and $20$, so it must be $0$, $8$ or $16$. Find all five pairs $(e, o)$, count each with $\\binom{5}{e}\\binom{5}{o}$, and remove zero."
+  ],
+  "solutions": {
+    "reliable": "A number below $3^{10}$ whose base-$3$ digits are all $0$ or $1$ is $\\sum_{k \\in A} 3^k$ for a subset $A$ of $\\{0, 1, \\ldots, 9\\}$, and different subsets give different numbers. Since $3^2 = 9 \\equiv 1 \\pmod 8$, we have $3^k \\equiv 1$ for even $k$ and $3^k \\equiv 3$ for odd $k$. If $A$ contains $e$ of the five even positions $\\{0, 2, 4, 6, 8\\}$ and $o$ of the five odd positions $\\{1, 3, 5, 7, 9\\}$, the number is $\\equiv e + 3o \\pmod 8$, and $0 \\le e + 3o \\le 20$. So $e + 3o \\in \\{0, 8, 16\\}$. The value $0$ needs $(0, 0)$. The value $8$ needs $o \\le 2$: $o = 1$ gives $e = 5$, $o = 2$ gives $e = 2$, and $o = 0$ would need $e = 8$. The value $16$ needs $o \\ge 4$: $o = 4$ gives $e = 4$, $o = 5$ gives $e = 1$. The number of subsets is $\\binom{5}{0}^2 + \\binom{5}{5}\\binom{5}{1} + \\binom{5}{2}^2 + \\binom{5}{4}^2 + \\binom{5}{1}\\binom{5}{5} = 1 + 5 + 100 + 25 + 5 = 136$. Removing the empty subset (the number $0$) leaves $135$. The transferable idea: when powers of the base cycle modulo $m$, a digit pattern reduces to counting how many digits sit in each phase.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-11",
+    "F-NT-12"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

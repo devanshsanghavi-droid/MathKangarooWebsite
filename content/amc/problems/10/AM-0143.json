@@ -1,0 +1,69 @@
+{
+  "id": "AM-0143",
+  "contest": "AMC10",
+  "slot": 17,
+  "area": "CP",
+  "topic": "CP-09",
+  "types": [
+    "T-RECURSION",
+    "T-CASEWORK"
+  ],
+  "statement": "Ten lamps stand in a row, and each one is switched on or off. A setting of the lamps is called safe if every lamp that is off is next to at least one lamp that is on. How many of the $2^{10}$ settings are safe?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$144$",
+      "correct": false,
+      "misconception": "I thought no two neighbouring lamps could both be off, but two off lamps side by side are fine when each one has an on lamp on its other side."
+    },
+    {
+      "key": "B",
+      "text": "$149$",
+      "correct": false,
+      "misconception": "I assumed the first and last lamps must both be on, but an end lamp can be off as long as the lamp next to it is on."
+    },
+    {
+      "key": "C",
+      "text": "$230$",
+      "correct": false,
+      "misconception": "I allowed the first lamp to be off but forgot that the last lamp can also be off when the ninth lamp is on."
+    },
+    {
+      "key": "D",
+      "text": "$274$",
+      "correct": false,
+      "misconception": "I cut every setting into the pieces on, off-on and off-off-on, each ending with an on lamp, and counted the ways to fill all 10 lamps. That wrongly lets the first two lamps both be off and never lets the last lamp be off."
+    },
+    {
+      "key": "E",
+      "text": "$355$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Look at the runs of off lamps that sit between lamps that are on.",
+    "A run of off lamps between two on lamps can have length at most $2$, and a run at either end at most $1$. Build the settings from left to right out of a few small pieces; the number of ways to do that satisfies a recursion.",
+    "A safe setting is: an optional single off lamp, then an on lamp, then a sequence of the pieces on, off-on and off-off-on, then an optional single off lamp. The number of ways $t_k$ to fill $k$ lamps with those pieces satisfies $t_k = t_{k-1} + t_{k-2} + t_{k-3}$."
+  ],
+  "solutions": {
+    "reliable": "An off lamp in the middle of three consecutive off lamps has no on neighbour, and an off lamp at an end of the row whose only neighbour is off has none either. So a setting is safe exactly when it has at least one on lamp, every run of off lamps between two on lamps has length $1$ or $2$, and each end has at most one off lamp before the first on lamp or after the last one. Let $t_k$ be the number of ways to fill $k$ lamps with the pieces on, off-on and off-off-on (lengths $1$, $2$, $3$). Looking at the last piece, $t_k = t_{k-1} + t_{k-2} + t_{k-3}$, with $t_0 = 1$, $t_1 = 1$, $t_2 = 2$, so $t_3, \\ldots, t_9$ are $4, 7, 13, 24, 44, 81, 149$. A safe setting is an optional off lamp, a first on lamp, a filling by pieces, and an optional off lamp. With no end lamp off there are $t_9 = 149$ settings; with exactly one end lamp off, $2 t_8 = 162$; with both end lamps off, $t_7 = 44$. The total is $149 + 162 + 44 = 355$. The transferable idea: describe the allowed objects as a sequence of small pieces, and the count of sequences obeys a recursion with one term per piece.",
+    "elegant": "Let $s_n$ be the number of safe settings of $n$ lamps. By listing, $s_1 = 1$, $s_2 = 3$ and $s_3 = 5$. The reliable solution shows $s_n = t_{n-1} + 2t_{n-2} + t_{n-3}$, a combination of shifted terms of the same recursion, so $s_n = s_{n-1} + s_{n-2} + s_{n-3}$ as well. Then $s_4, \\ldots, s_{10}$ are $9, 17, 31, 57, 105, 193, 355$."
+  },
+  "formulas": [
+    "F-CP-19"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

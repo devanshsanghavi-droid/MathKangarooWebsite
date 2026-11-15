@@ -1,0 +1,69 @@
+{
+  "id": "AM-0086",
+  "contest": "BOTH",
+  "slot": 8,
+  "area": "NT",
+  "topic": "NT-09",
+  "types": [
+    "T-PARITY",
+    "T-CASEWORK"
+  ],
+  "statement": "What is the sum of all positive integers $n$ for which both $n - 24$ and $n + 60$ are perfect squares?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I found the two values of n correctly and reported how many there are instead of their sum."
+    },
+    {
+      "key": "B",
+      "text": "$416$",
+      "correct": false,
+      "misconception": "I added the two perfect squares n - 24, which are 400 and 16, instead of the values of n."
+    },
+    {
+      "key": "C",
+      "text": "$464$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$536$",
+      "correct": false,
+      "misconception": "I mixed up the two squares and computed n as m^2 - 24 from the larger square m^2 = n + 60, getting 460 and 76."
+    },
+    {
+      "key": "E",
+      "text": "$584$",
+      "correct": false,
+      "misconception": "I added the two perfect squares n + 60, which are 484 and 100, instead of the values of n."
+    }
+  ],
+  "hints": [
+    "Write $n - 24 = k^2$ and $n + 60 = m^2$. Subtract to get rid of $n$.",
+    "$m^2 - k^2 = 84$, so $(m - k)(m + k) = 84$. The two factors differ by $2k$, so they have the same parity, and since $84$ is even they are both even.",
+    "The factor pairs of $84$ into two even numbers are $2 \\cdot 42$ and $6 \\cdot 14$. Find $k$ from each, then $n = k^2 + 24$."
+  ],
+  "solutions": {
+    "reliable": "Let $n - 24 = k^2$ and $n + 60 = m^2$ with $m > k \\ge 0$. Subtracting, $m^2 - k^2 = 84$, so $(m - k)(m + k) = 84$. The factors differ by $2k$, which is even, so they are both odd or both even; their product $84$ is even, so both are even. The pairs of even factors with the smaller first are $(2, 42)$ and $(6, 14)$, since $84 = 2^2 \\cdot 3 \\cdot 7$ splits as $1 \\cdot 84$, $2 \\cdot 42$, $3 \\cdot 28$, $4 \\cdot 21$, $6 \\cdot 14$, $7 \\cdot 12$. From $(2, 42)$: $m = 22$, $k = 20$, $n = 424$. From $(6, 14)$: $m = 10$, $k = 4$, $n = 40$. Check: $40 - 24 = 16$, $40 + 60 = 100$, $424 - 24 = 400$, $424 + 60 = 484 = 22^2$. The sum is $40 + 424 = 464$.",
+    "elegant": "Write $m - k = 2s$ and $m + k = 2t$, so $st = 21$ and $k = t - s$. The pairs $(s, t) = (1, 21)$ and $(3, 7)$ give $k = 20$ and $k = 4$. The sum of the values $n = k^2 + 24$ is $400 + 16 + 2 \\cdot 24 = 464$."
+  },
+  "formulas": [
+    "F-ALG-05"
+  ],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

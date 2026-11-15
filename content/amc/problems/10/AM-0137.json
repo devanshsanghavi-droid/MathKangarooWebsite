@@ -1,0 +1,69 @@
+{
+  "id": "AM-0137",
+  "contest": "AMC10",
+  "slot": 14,
+  "area": "CP",
+  "topic": "CP-06",
+  "types": [
+    "T-PIE",
+    "T-COMPLEMENT"
+  ],
+  "statement": "Three fair six-sided dice are rolled. What is the probability that the smallest number rolled is $2$ and the largest number rolled is $4$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{1}{18}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{19}{216}$",
+      "correct": false,
+      "misconception": "I counted the 27 rolls that use only 2, 3 and 4, then removed the 8 rolls with no 2, but forgot to remove the rolls with no 4."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{1}{8}$",
+      "correct": false,
+      "misconception": "I counted every roll that uses only 2, 3 and 4, but some of those never show a 2 or never show a 4."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{37}{216}$",
+      "correct": false,
+      "misconception": "I found the probability that the largest number is 4, which is (64 - 27)/216, and ignored the condition on the smallest number."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{91}{216}$",
+      "correct": false,
+      "misconception": "I computed the chance that at least one die shows a 4, 1 - (5/6)^3, and treated that as the chance that 4 is the largest number."
+    }
+  ],
+  "hints": [
+    "Every die must show $2$, $3$ or $4$. What else is required?",
+    "The roll must use only the values from $2$ to $4$, and it must actually contain a $2$ and a $4$. Count the rolls that fail one of those 'contains' conditions and subtract, minding the overlap.",
+    "There are $3^3 = 27$ rolls using only $2$, $3$, $4$. Of these, $2^3 = 8$ have no $2$ and $8$ have no $4$, and exactly $1$ roll, all threes, has neither."
+  ],
+  "solutions": {
+    "reliable": "The smallest is $2$ and the largest is $4$ exactly when every die shows $2$, $3$ or $4$, at least one die shows $2$ and at least one shows $4$. Rolls using only $\\{2,3,4\\}$: $27$. Remove those with no $2$ (only $3$s and $4$s): $8$. Remove those with no $4$: $8$. Add back the one roll with neither, $3,3,3$, which was removed twice. That leaves $27 - 8 - 8 + 1 = 12$ rolls out of $216$, so the probability is $\\frac{12}{216} = \\frac{1}{18}$. The transferable idea: 'the minimum is $a$ and the maximum is $b$' means 'everything in $[a,b]$, and both ends appear', which is an inclusion-exclusion count.",
+    "elegant": "Count by the multiset of values. With a $2$, a $4$ and a $3$, there are $3! = 6$ orders. With values $2, 2, 4$ there are $3$ orders, and with $2, 4, 4$ there are $3$. That is $12$ of the $216$ rolls, so the probability is $\\frac{1}{18}$."
+  },
+  "formulas": [
+    "F-CP-01"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

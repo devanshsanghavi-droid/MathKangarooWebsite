@@ -1,0 +1,18 @@
+{
+  "id": "F-CP-20",
+  "area": "CP",
+  "name": "Pigeonhole principle",
+  "formula": "n \\text{ objects in } k \\text{ boxes} \\implies \\text{some box holds at least } \\left\\lceil \\frac{n}{k} \\right\\rceil",
+  "whenToUse": "Questions asking for the fewest picks that GUARANTEE something, or a proof that two things must share a property.",
+  "example": "A drawer holds socks in $5$ colours. To guarantee $3$ of one colour, $2 \\cdot 5 = 10$ socks are not enough (two of each), but $11$ are.",
+  "pitfall": "Build the worst case explicitly: the most objects you can take WITHOUT the property, then add one. Read whether the problem wants a guarantee or just a possibility.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-PIGEONHOLE",
+    "T-EXTREME"
+  ]
+}

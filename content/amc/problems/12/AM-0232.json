@@ -1,0 +1,67 @@
+{
+  "id": "AM-0232",
+  "contest": "AMC12",
+  "slot": 3,
+  "area": "NT",
+  "topic": "NT-06",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-BOUNDING"
+  ],
+  "statement": "How many digits does the number $4^{30} \\cdot 25^{17}$ have when written in base ten?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$34$",
+      "correct": false,
+      "misconception": "I paired the 5s with 2s to make 10^34 and counted only the 34 zeros, forgetting the digits of the leftover 2^26 in front."
+    },
+    {
+      "key": "B",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I made 10^34 and then added just one digit for the leftover factor, as if 2^26 were a single digit."
+    },
+    {
+      "key": "C",
+      "text": "$41$",
+      "correct": false,
+      "misconception": "I estimated 2^26 as about 6.7 million, which has 7 digits, but 67,108,864 has 8 digits."
+    },
+    {
+      "key": "D",
+      "text": "$42$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$43$",
+      "correct": false,
+      "misconception": "I wrote 2^26 = 2^20 times 2^6 and added the digit counts, 7 for 1,048,576 and 2 for 64, to get 9 digits, but digit counts do not simply add when you multiply."
+    }
+  ],
+  "hints": [
+    "Rewrite everything in terms of the primes $2$ and $5$.",
+    "$4^{30} = 2^{60}$ and $25^{17} = 5^{34}$. Pair each $5$ with a $2$ to make a power of $10$.",
+    "The number is $2^{26} \\cdot 10^{34}$, so count the digits of $2^{26}$ and add $34$."
+  ],
+  "solutions": {
+    "reliable": "We have $4^{30} \\cdot 25^{17} = 2^{60} \\cdot 5^{34} = 2^{26} \\cdot (2 \\cdot 5)^{34} = 2^{26} \\cdot 10^{34}$. Multiplying by $10^{34}$ appends $34$ zeros, so the number of digits is $34$ plus the number of digits of $2^{26}$. Now $2^{26} = 2^{20} \\cdot 2^6 = 1048576 \\cdot 64 = 67108864$, which has $8$ digits. The total is $34 + 8 = 42$.",
+    "elegant": "Bound it: $2^{26} = 64 \\cdot 2^{20}$ and $10^6 < 2^{20} < 1.1 \\cdot 10^6$, so $6.4 \\cdot 10^7 < 2^{26} < 10^8$. Thus $2^{26}$ has $8$ digits and the number has $42$."
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

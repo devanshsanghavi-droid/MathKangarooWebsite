@@ -1,0 +1,69 @@
+{
+  "id": "AM-0128",
+  "contest": "BOTH",
+  "slot": 8,
+  "area": "CP",
+  "topic": "CP-11",
+  "types": [
+    "T-PIGEONHOLE",
+    "T-EXTREME"
+  ],
+  "statement": "What is the smallest number $k$ such that any $k$ different integers chosen from $\\{1, 2, 3, \\ldots, 30\\}$ must include two whose sum is a multiple of $10$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I made 6 boxes by last digit, {0}, {5}, {1, 9}, {2, 8}, {3, 7}, {4, 6}, and took one more than the number of boxes, but two numbers in the same box need not add to a multiple of 10."
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I used the 10 possible last digits as boxes and took one more, but two numbers with the same last digit, like 1 and 11, usually do not add to a multiple of 10."
+    },
+    {
+      "key": "C",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I took one whole last-digit class from each of the pairs {1, 9}, {2, 8}, {3, 7}, {4, 6}, 12 numbers, and forgot that one number ending in 0 and one ending in 5 can also be added safely."
+    },
+    {
+      "key": "D",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I found the largest set with no such pair, which has 14 numbers, and gave its size instead of one more than it."
+    },
+    {
+      "key": "E",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Only the last digit of each number matters.",
+    "Group the last digits so that a bad pair can only come from matching groups. Find the largest set with no two numbers adding to a multiple of 10, then add one.",
+    "From last digits $1$ and $9$ you may use only one of the two, $3$ numbers. The same holds for $2$ and $8$, $3$ and $7$, $4$ and $6$. Digits $0$ and $5$ allow one number each."
+  ],
+  "solutions": {
+    "reliable": "Two numbers add to a multiple of $10$ exactly when their last digits add to $0$ or $10$. Each last digit occurs exactly $3$ times in $\\{1, \\ldots, 30\\}$. Last digits $1$ and $9$ cannot both appear, so that pair of classes gives at most $3$ numbers; the same holds for $2$ and $8$, $3$ and $7$, and $4$ and $6$. Two numbers ending in $0$ add to a multiple of $10$, as do two ending in $5$, so each of those classes gives at most $1$. Hence a set with no bad pair has at most $4 \\cdot 3 + 1 + 1 = 14$ numbers, and $\\{1, 11, 21, 2, 12, 22, 3, 13, 23, 4, 14, 24, 5, 10\\}$ shows $14$ is possible. So $14$ numbers are not enough, but any $15$ must contain a bad pair, and $k = 15$. Transferable idea: the answer to a guarantee question is one more than the largest bad set, and you must show both the bound and the bad set.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-20"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

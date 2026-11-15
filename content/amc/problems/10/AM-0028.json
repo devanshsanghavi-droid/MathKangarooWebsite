@@ -1,0 +1,67 @@
+{
+  "id": "AM-0028",
+  "contest": "AMC10",
+  "slot": 17,
+  "area": "ALG",
+  "topic": "ALG-08",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-SYMMETRY"
+  ],
+  "statement": "A function $f$ is defined for every real number $x \\ne 1$ and satisfies $f(x) + 2f\\!\\left(\\dfrac{x + 1}{x - 1}\\right) = x$ for every $x \\ne 1$. What is $f(3)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-\\frac{1}{3}$",
+      "correct": false,
+      "misconception": "I set up the two equations correctly but eliminated with the wrong sign, getting $3f(3) = 3 - 2 \\cdot 2$ instead of $3f(3) = 2 \\cdot 2 - 3$."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I assumed $f(3)$ and $f(2)$ were equal, so the equation at $x = 3$ became $3f(3) = 3$."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{4}{3}$",
+      "correct": false,
+      "misconception": "I solved the system correctly but reported $f(2)$, the other unknown, instead of $f(3)$."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{5}{3}$",
+      "correct": false,
+      "misconception": "I added the two equations to get $3f(3) + 3f(2) = 5$ and took $f(3) + f(2) = \\frac{5}{3}$ as the value of $f(3)$."
+    }
+  ],
+  "hints": [
+    "Plug in $x = 3$ and see what new input appears.",
+    "At $x = 3$ the inner input is $2$, and at $x = 2$ it is $3$ again. The map $x \\mapsto \\frac{x+1}{x-1}$ undoes itself, so you get two equations in $f(3)$ and $f(2)$.",
+    "The equations are $f(3) + 2f(2) = 3$ and $f(2) + 2f(3) = 2$. Double the second and subtract the first: $3f(3) = 1$."
+  ],
+  "solutions": {
+    "reliable": "At $x = 3$: $\\frac{3+1}{3-1} = 2$, so $f(3) + 2f(2) = 3$. At $x = 2$: $\\frac{2+1}{2-1} = 3$, so $f(2) + 2f(3) = 2$. Doubling the second equation gives $2f(2) + 4f(3) = 4$; subtracting the first gives $3f(3) = 1$, so $f(3) = \\frac13$. Then $f(2) = \\frac{3 - \\frac13}{2} = \\frac43$, and indeed $\\frac43 + \\frac23 = 2$. Transferable idea: when the inner map undoes itself, substitute once more to get a solvable system.",
+    "elegant": "The map $g(x) = \\frac{x+1}{x-1}$ satisfies $g(g(x)) = x$. Writing $y = g(x)$, the pair of equations $f(x) + 2f(y) = x$ and $f(y) + 2f(x) = y$ gives $f(x) = \\frac{2y - x}{3}$ in general, so $f(3) = \\frac{2 \\cdot 2 - 3}{3} = \\frac13$. Transferable idea: solve the system once in general and the whole function falls out."
+  },
+  "formulas": [],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

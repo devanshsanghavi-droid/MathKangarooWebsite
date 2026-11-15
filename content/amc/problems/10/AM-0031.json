@@ -1,0 +1,69 @@
+{
+  "id": "AM-0031",
+  "contest": "AMC10",
+  "slot": 18,
+  "area": "ALG",
+  "topic": "ALG-09",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-BOUNDING"
+  ],
+  "statement": "Real numbers $x$ and $y$ satisfy $x^2 + y^2 = 1$. What is the largest possible value of $x + y - xy$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{2\\sqrt2 - 1}{2}$",
+      "correct": false,
+      "misconception": "I assumed the maximum happens at $x = y = \\frac{\\sqrt2}{2}$, as it does for $x + y$ alone."
+    },
+    {
+      "key": "B",
+      "text": "$1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{5}{4}$",
+      "correct": false,
+      "misconception": "I wrote $xy = s^2 - 1$ instead of $\\frac{s^2 - 1}{2}$, then maximized $s - s^2 + 1$ at $s = \\frac12$."
+    },
+    {
+      "key": "D",
+      "text": "$\\sqrt2 + \\frac12$",
+      "correct": false,
+      "misconception": "I bounded the parts separately, $x + y \\le \\sqrt2$ and $-xy \\le \\frac12$, but these are reached at different points, so they cannot both hold."
+    },
+    {
+      "key": "E",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I substituted correctly and found the largest value of $-s^2 + 2s + 1$ is $2$, but forgot to divide by $2$."
+    }
+  ],
+  "hints": [
+    "Let $s = x + y$ and rewrite everything in terms of $s$.",
+    "From $x^2 + y^2 = 1$ you get $xy = \\frac{s^2 - 1}{2}$. The target becomes a quadratic in $s$. Do not forget that $s$ cannot be just anything.",
+    "The target is $\\frac{-s^2 + 2s + 1}{2}$ with $-\\sqrt2 \\le s \\le \\sqrt2$. Its vertex is at $s = 1$, inside that range."
+  ],
+  "solutions": {
+    "reliable": "Let $s = x + y$. Then $s^2 = 1 + 2xy$, so $xy = \\frac{s^2 - 1}{2}$ and $x + y - xy = s - \\frac{s^2 - 1}{2} = \\frac{-s^2 + 2s + 1}{2} = \\frac{2 - (s - 1)^2}{2}$. Real $x, y$ on the circle allow exactly $-\\sqrt2 \\le s \\le \\sqrt2$, and $s = 1$ is in that range, so the maximum is $\\frac{2}{2} = 1$. It is reached when $x + y = 1$ and $xy = 0$, for example $(x, y) = (1, 0)$: $1 + 0 - 0 = 1$. Transferable idea: for symmetric expressions, switch to $s = x + y$, but keep track of which values of $s$ are actually possible.",
+    "elegant": "Note $(1 - x)(1 - y) = 1 - (x + y - xy)$, so we want to minimize $(1 - x)(1 - y)$. On the unit circle $x, y \\le 1$, so this product is at least $0$, with equality at $(1, 0)$. Hence the maximum is $1$. Transferable idea: adding a constant can turn an awkward expression into a product you can bound."
+  },
+  "formulas": [
+    "F-ALG-17"
+  ],
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

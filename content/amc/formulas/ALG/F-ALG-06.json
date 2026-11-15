@@ -1,0 +1,15 @@
+{
+  "id": "F-ALG-06",
+  "area": "ALG",
+  "name": "Sum and difference of cubes",
+  "formula": "a^3 + b^3 = (a + b)(a^2 - ab + b^2), \\qquad a^3 - b^3 = (a - b)(a^2 + ab + b^2)",
+  "whenToUse": "You know $a + b$ and $ab$ (or $a - b$ and $ab$) and need $a^3 \\pm b^3$, or an expression has a cube you want to factor.",
+  "example": "If $a + b = 5$ and $ab = 3$, then $a^2 - ab + b^2 = (a+b)^2 - 3ab = 16$, so $a^3 + b^3 = 5 \\cdot 16 = 80$.",
+  "pitfall": "The middle sign in the quadratic factor is the opposite of the sign between the cubes. Equivalently use $a^3 + b^3 = (a+b)^3 - 3ab(a+b)$, which is harder to get wrong.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "derivation": "Multiply out $(a + b)(a^2 - ab + b^2)$: the terms $-a^2 b + a^2 b$ and $ab^2 - ab^2$ cancel, leaving $a^3 + b^3$. Replace $b$ with $-b$ for the difference."
+}

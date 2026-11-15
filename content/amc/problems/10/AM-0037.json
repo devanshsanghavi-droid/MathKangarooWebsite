@@ -1,0 +1,69 @@
+{
+  "id": "AM-0037",
+  "contest": "BOTH",
+  "slot": 24,
+  "area": "ALG",
+  "topic": "ALG-09",
+  "types": [
+    "T-AMGM",
+    "T-BOUNDING"
+  ],
+  "statement": "Positive real numbers $a$, $b$ and $c$ satisfy $abc = 1$. What is the smallest possible value of $(a + 1)(b + 2)(c + 4)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I expanded, saw the terms $abc + 8 = 9$, and assumed the other six positive terms could be made as small as I liked."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I expanded and bounded $4ab + 2ac + bc \\ge 6$ with AM-GM, but forgot the terms $8a + 4b + 2c$, which are at least $12$."
+    },
+    {
+      "key": "C",
+      "text": "$16\\sqrt2$",
+      "correct": false,
+      "misconception": "I used $a + 1 \\ge 2\\sqrt a$, $b + 2 \\ge 2\\sqrt{2b}$ and $c + 4 \\ge 2\\sqrt{4c}$, but equality would need $a = 1$, $b = 2$, $c = 4$, and then $abc = 8$, not $1$, so this bound is never reached."
+    },
+    {
+      "key": "D",
+      "text": "$27$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I assumed the minimum happens at $a = b = c = 1$, which gives $2 \\cdot 3 \\cdot 5$, but the factors are not symmetric, so unequal values do better."
+    }
+  ],
+  "hints": [
+    "Try $a = b = c = 1$, then ask whether unequal values can do better.",
+    "An AM-GM bound only counts if its equality case satisfies $abc = 1$. Split each constant into pieces so that every factor can reach equality at the same time.",
+    "Write $a + 1 = a + \\frac12 + \\frac12$, $b + 2 = b + 1 + 1$ and $c + 4 = c + 2 + 2$, and apply three-term AM-GM to each."
+  ],
+  "solutions": {
+    "reliable": "Expand: $(a + 1)(b + 2)(c + 4) = abc + (4ab + 2ac + bc) + (8a + 4b + 2c) + 8$. With $abc = 1$, AM-GM gives $4ab + 2ac + bc \\ge 3\\sqrt[3]{8a^2b^2c^2} = 6$ and $8a + 4b + 2c \\ge 3\\sqrt[3]{64abc} = 12$. So the product is at least $1 + 6 + 12 + 8 = 27$. Both AM-GMs are equalities when $4ab = 2ac = bc$ and $8a = 4b = 2c$, which both hold at $a = \\frac12$, $b = 1$, $c = 2$, where $abc = 1$. There the product is $\\frac32 \\cdot 3 \\cdot 6 = 27$, so the minimum is $27$. The tempting two-term bound $16\\sqrt2 \\approx 22.6$ is true but never attained, and the symmetric guess $a = b = c = 1$ gives only $30$. Transferable idea: an AM-GM bound is a minimum only if its equality case can happen; choose the grouping so that it can.",
+    "elegant": "Split each factor: $a + \\frac12 + \\frac12 \\ge 3\\sqrt[3]{\\frac{a}{4}}$, $b + 1 + 1 \\ge 3\\sqrt[3]{b}$ and $c + 2 + 2 \\ge 3\\sqrt[3]{4c}$. Multiplying, the product is at least $27\\sqrt[3]{\\frac{a}{4} \\cdot b \\cdot 4c} = 27\\sqrt[3]{abc} = 27$, with equality when $a = \\frac12$, $b = 1$, $c = 2$. Transferable idea: split each constant so that the equality cases agree and the constants cancel in the product."
+  },
+  "formulas": [
+    "F-ALG-08"
+  ],
+  "estSeconds": 300,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

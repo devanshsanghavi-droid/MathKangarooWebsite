@@ -1,0 +1,69 @@
+{
+  "id": "AM-0046",
+  "contest": "AMC10",
+  "slot": 6,
+  "area": "GEO",
+  "topic": "GEO-02",
+  "types": [
+    "T-SIMILAR",
+    "T-AREA-RATIO"
+  ],
+  "statement": "Triangle $ABC$ has a right angle at $C$, with $AC = 20$ and $BC = 15$. Point $D$ is the foot of the altitude from $C$ to $AB$. What is the area of triangle $BCD$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$54$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$75$",
+      "correct": false,
+      "misconception": "I assumed the altitude hits AB at its midpoint, so triangle BCD would be exactly half of the area 150."
+    },
+    {
+      "key": "C",
+      "text": "$90$",
+      "correct": false,
+      "misconception": "I used BC = 15 as the base and the altitude CD = 12 as the height, but CD is not perpendicular to BC."
+    },
+    {
+      "key": "D",
+      "text": "$96$",
+      "correct": false,
+      "misconception": "I found BD and AD correctly but computed the area of triangle ACD, (1/2)(16)(12), instead of BCD."
+    },
+    {
+      "key": "E",
+      "text": "$150$",
+      "correct": false,
+      "misconception": "I gave the area of the whole triangle ABC, (1/2)(20)(15)."
+    }
+  ],
+  "hints": [
+    "The altitude to the hypotenuse splits the triangle into two smaller copies of itself.",
+    "Triangle $CBD$ is similar to triangle $ABC$. Find the ratio of a pair of matching sides, then remember that areas scale by the square of that ratio.",
+    "$AB = 25$. In triangle $CBD$ the hypotenuse is $BC = 15$, while in $ABC$ it is $25$. So the area ratio is $(15/25)^2$."
+  ],
+  "solutions": {
+    "reliable": "The hypotenuse is $AB = \\sqrt{20^2 + 15^2} = 25$, and the area of $ABC$ is $\\frac{1}{2} \\cdot 20 \\cdot 15 = 150$, so the altitude is $CD = 2 \\cdot 150 / 25 = 12$. In right triangle $BCD$, $BD = \\sqrt{15^2 - 12^2} = 9$. So the area of $BCD$ is $\\frac{1}{2} \\cdot 9 \\cdot 12 = 54$. Check: the other piece has $AD = 16$ and area $\\frac{1}{2}\\cdot 16 \\cdot 12 = 96$, and $54 + 96 = 150$. The transferable idea: the altitude to the hypotenuse creates two triangles similar to the original.",
+    "elegant": "Triangles $CBD$ and $ABC$ share angle $B$ and both have a right angle, so they are similar with hypotenuses $15$ and $25$. The area of $BCD$ is $150 \\cdot \\left(\\frac{15}{25}\\right)^2 = 150 \\cdot \\frac{9}{25} = 54$."
+  },
+  "formulas": [
+    "F-GEO-11"
+  ],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

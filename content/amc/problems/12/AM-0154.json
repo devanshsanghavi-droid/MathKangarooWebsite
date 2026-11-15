@@ -1,0 +1,66 @@
+{
+  "id": "AM-0154",
+  "contest": "AMC12",
+  "slot": 2,
+  "area": "ALG",
+  "topic": "ALG-02",
+  "types": [
+    "T-BACKWARDS"
+  ],
+  "statement": "The mean of ten numbers is $12$. Four of the numbers are removed, and the mean of the six numbers that remain is $10$. What is the mean of the four numbers that were removed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I averaged the two means, $\\frac{12 + 10}{2} = 11$, without weighting by how many numbers each mean describes."
+    },
+    {
+      "key": "B",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I assumed the removed numbers sit as far above $12$ as the remaining numbers sit below it, so I added $2$ to get $14$."
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I thought every one of the ten numbers lost $2$, a deficit of $20$, and spread it over the four removed numbers: $12 + 5 = 17$."
+    },
+    {
+      "key": "E",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I found the total of the removed numbers, $120 - 60 = 60$, and forgot to divide by $4$ to get their mean."
+    }
+  ],
+  "hints": [
+    "Means are hard to combine directly. Totals are easy.",
+    "Turn each mean back into a total by multiplying by the count. The removed numbers' total is the difference of two totals.",
+    "The ten numbers total $120$ and the six left total $60$, so the four removed total $60$. Divide by $4$."
+  ],
+  "solutions": {
+    "reliable": "The ten numbers sum to $10 \\cdot 12 = 120$. The six that remain sum to $6 \\cdot 10 = 60$. So the four removed numbers sum to $120 - 60 = 60$, and their mean is $\\frac{60}{4} = 15$. Transferable idea: to combine or split groups, convert every mean back into a total first.",
+    "elegant": "Balance around $12$: each of the six remaining numbers is on average $2$ below $12$, a total shortfall of $12$. The four removed numbers must make up that $12$ above the mean, which is $3$ each, so their mean is $12 + 3 = 15$."
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "AM-0199",
+  "contest": "AMC12",
+  "slot": 6,
+  "area": "GEO",
+  "topic": "GEO-02",
+  "types": [
+    "T-SIMILAR"
+  ],
+  "statement": "In right triangle $ABC$ the right angle is at $C$, $AC = 15$ and $BC = 20$. Let $D$ be the foot of the altitude from $C$ to $\\overline{AB}$, and let $E$ be the foot of the perpendicular from $D$ to $\\overline{BC}$. What is $CE$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{36}{5}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{48}{5}$",
+      "correct": false,
+      "misconception": "I found DE, the length of the perpendicular from D, instead of the distance CE along the leg."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I assumed E is the midpoint of BC, which would only happen if D were the midpoint of AB."
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I assumed CE equals the altitude CD, as if triangle CDE were isosceles."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{64}{5}$",
+      "correct": false,
+      "misconception": "I computed the segment along BC from the wrong end, BE = DB squared over BC, instead of CE."
+    }
+  ],
+  "hints": [
+    "Every new perpendicular here makes another triangle similar to $ABC$.",
+    "First find $AB$ and the altitude $CD$. Then triangle $CDB$ is right-angled at $D$, and $DE$ is its altitude to the hypotenuse $CB$.",
+    "$AB = 25$ and $CD = \\frac{15\\cdot 20}{25} = 12$. In right triangle $CDB$ with hypotenuse $CB = 20$, the leg $CD$ projects onto $CB$ as $CE = \\frac{CD^2}{CB}$."
+  ],
+  "solutions": {
+    "reliable": "The hypotenuse is $AB = \\sqrt{15^2 + 20^2} = 25$, and the altitude is $CD = \\frac{AC \\cdot BC}{AB} = \\frac{300}{25} = 12$. Triangle $CDB$ has a right angle at $D$, and $DE$ is the altitude to its hypotenuse $CB$. Triangles $CED$ and $CDB$ are similar (they share angle $C$ and each has a right angle), so $\\frac{CE}{CD} = \\frac{CD}{CB}$ and $CE = \\frac{12^2}{20} = \\frac{144}{20} = \\frac{36}{5}$. Transferable idea: in a right triangle each leg is the geometric mean of the hypotenuse and its projection.",
+    "elegant": "Use coordinates: $C = (0, 0)$, $A = (15, 0)$, $B = (0, 20)$. Line $AB$ is $4x + 3y = 60$, and the foot of the perpendicular from the origin is $D = \\left(\\frac{48}{5}, \\frac{36}{5}\\right)$. Then $E$ is the projection of $D$ onto the $y$-axis, so $CE = \\frac{36}{5}$. Transferable idea: put the right angle at the origin."
+  },
+  "formulas": [
+    "F-GEO-11"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

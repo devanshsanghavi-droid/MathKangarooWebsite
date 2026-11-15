@@ -1,0 +1,67 @@
+{
+  "id": "AM-0008",
+  "contest": "AMC10",
+  "slot": 6,
+  "area": "ALG",
+  "topic": "ALG-08",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-EVALUATE"
+  ],
+  "statement": "A function $f$ satisfies $f(x) + 2f(-x) = x^2 - 6x$ for every real number $x$. What is $f(3)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-15$",
+      "correct": false,
+      "misconception": "I set up the right pair of equations but reported f(-3) = -15, the other unknown, instead of f(3)."
+    },
+    {
+      "key": "B",
+      "text": "$-9$",
+      "correct": false,
+      "misconception": "I plugged in x = 3 and ignored the 2f(-x) term, so I said f(3) = 9 - 18 = -9."
+    },
+    {
+      "key": "C",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I plugged in x = -3 and wrote the right side as 9 - 18 = -9 instead of 9 + 18 = 27, and solving that system gave f(3) = -3."
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I assumed f(-x) = -f(x), so the equation at x = 3 became -f(3) = -9 and f(3) = 9."
+    },
+    {
+      "key": "E",
+      "text": "$21$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Plugging in $x = 3$ alone leaves a second unknown, $f(-3)$.",
+    "Substitute $x = 3$ and $x = -3$. Each equation involves both $f(3)$ and $f(-3)$, so solve the two together.",
+    "With $x = 3$: $f(3) + 2f(-3) = -9$. With $x = -3$: $f(-3) + 2f(3) = 27$. Solve for $f(3)$."
+  ],
+  "solutions": {
+    "reliable": "Let $a = f(3)$ and $b = f(-3)$. Setting $x = 3$ gives $a + 2b = 9 - 18 = -9$. Setting $x = -3$ gives $b + 2a = 9 + 18 = 27$. Doubling the second equation: $4a + 2b = 54$. Subtracting the first: $3a = 63$, so $a = 21$. Check: then $b = 27 - 42 = -15$, and $21 + 2(-15) = -9$. The transferable idea: when $f(x)$ and $f(-x)$ both appear, substituting $x$ and $-x$ gives a system you can solve.",
+    "elegant": "Replace $x$ by $-x$ everywhere: $f(-x) + 2f(x) = x^2 + 6x$. Doubling this and subtracting the original equation gives $3f(x) = 2(x^2 + 6x) - (x^2 - 6x) = x^2 + 18x$. So $f(x) = \\frac{x^2 + 18x}{3}$ and $f(3) = \\frac{9 + 54}{3} = 21$."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

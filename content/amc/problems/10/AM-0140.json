@@ -1,0 +1,70 @@
+{
+  "id": "AM-0140",
+  "contest": "AMC10",
+  "slot": 16,
+  "area": "CP",
+  "topic": "CP-03",
+  "types": [
+    "T-BIJECTION",
+    "T-STARS-BARS"
+  ],
+  "statement": "In how many ways can four numbers be chosen from $\\{1, 2, 3, \\ldots, 15\\}$ so that every two of the chosen numbers differ by at least $3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I subtracted 3 for each of the three gaps, turning the problem into choosing 4 numbers from 15 - 9 = 6, and got C(6, 4) = 15."
+    },
+    {
+      "key": "B",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I subtracted 2 for each of four gaps, wrongly counting a gap after the largest number too, and got C(7, 4) = 35."
+    },
+    {
+      "key": "C",
+      "text": "$126$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$495$",
+      "correct": false,
+      "misconception": "I shrank each of the three gaps by only 1, which is the rule for numbers differing by at least 2, and got C(12, 4) = 495."
+    },
+    {
+      "key": "E",
+      "text": "$1365$",
+      "correct": false,
+      "misconception": "I counted every way to choose 4 of the 15 numbers, C(15, 4) = 1365, and ignored the spacing condition."
+    }
+  ],
+  "hints": [
+    "Write the chosen numbers in increasing order, $a < b < c < d$.",
+    "Squeeze out the forced spacing: subtract a growing amount from each later number so that the spacing condition turns into an ordinary 'strictly increasing' condition. Then the count is a plain binomial coefficient.",
+    "Set $a' = a$, $b' = b - 2$, $c' = c - 4$, $d' = d - 6$. The condition $b - a \\ge 3$ becomes $b' - a' \\ge 1$, and so on, with $1 \\le a' < b' < c' < d' \\le 9$."
+  ],
+  "solutions": {
+    "reliable": "List the choice as $a < b < c < d$ with each gap at least $3$. Map it to $(a, b-2, c-4, d-6)$. Each gap shrinks by $2$, so the new numbers are strictly increasing, and they lie between $1$ and $15 - 6 = 9$. The map can be reversed by adding $0, 2, 4, 6$ back, so it is a bijection between valid choices and $4$-element subsets of $\\{1, \\ldots, 9\\}$. The answer is $\\binom{9}{4} = 126$. The transferable idea: a minimum spacing of $s$ between $k$ chosen numbers from $n$ is removed by shrinking the $k-1$ gaps by $s - 1$ each, giving $\\binom{n - (k-1)(s-1)}{k}$.",
+    "elegant": "Think about the $11$ numbers that are not chosen. They fall into $5$ groups: before $a$, between consecutive choices, and after $d$. The three middle groups need at least $2$ numbers each. Put $2$ in each first; the remaining $5$ unchosen numbers go into $5$ groups freely, which by stars and bars is $\\binom{5 + 4}{4} = 126$ ways."
+  },
+  "formulas": [
+    "F-CP-03",
+    "F-CP-05"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

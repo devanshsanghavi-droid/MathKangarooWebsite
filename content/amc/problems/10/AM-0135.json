@@ -1,0 +1,70 @@
+{
+  "id": "AM-0135",
+  "contest": "AMC10",
+  "slot": 13,
+  "area": "CP",
+  "topic": "CP-05",
+  "types": [
+    "T-STARS-BARS",
+    "T-COMPLEMENT"
+  ],
+  "statement": "A florist sells $4$ kinds of tulips. Priya buys $10$ tulips, getting at least one tulip of each kind and at most $4$ tulips of any one kind. Tulips of the same kind are identical. How many different selections can she make?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$44$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$68$",
+      "correct": false,
+      "misconception": "I gave each kind one tulip but kept the limit at 4 for the extra tulips instead of lowering it to 3, so I only removed the 16 selections where some kind gets 5 or more extras."
+    },
+    {
+      "key": "C",
+      "text": "$74$",
+      "correct": false,
+      "misconception": "I removed the 10 selections where one particular kind gets more than 4 tulips, but forgot that any of the four kinds could be the one over the limit."
+    },
+    {
+      "key": "D",
+      "text": "$84$",
+      "correct": false,
+      "misconception": "I handled 'at least one of each kind' with stars and bars and got 84, but forgot the limit of 4 tulips per kind."
+    },
+    {
+      "key": "E",
+      "text": "$286$",
+      "correct": false,
+      "misconception": "I used stars and bars for 10 tulips and 4 kinds with no conditions at all, C(13, 3) = 286, ignoring both the minimum and the maximum."
+    }
+  ],
+  "hints": [
+    "Hand Priya one tulip of each kind before she chooses anything else.",
+    "After that, the remaining tulips can be shared with stars and bars. The upper limit is easier to handle by counting the selections that break it and subtracting them.",
+    "Six extra tulips go into $4$ kinds with at most $3$ extra of each. Without the limit there are $\\binom{9}{3} = 84$ ways. A kind with $4$ or more extras: give it $4$ more first, then share the last $2$ freely, $\\binom{5}{3} = 10$ ways, for each of $4$ kinds."
+  ],
+  "solutions": {
+    "reliable": "Write the counts as $x_i = 1 + y_i$, so $y_1 + y_2 + y_3 + y_4 = 6$ with $0 \\le y_i \\le 3$. Stars and bars without the upper limit gives $\\binom{6+3}{3} = 84$. A selection breaks the limit when some $y_i \\ge 4$; for a given kind, set $y_i = 4 + z$ and share the remaining $2$ among the four kinds: $\\binom{5}{3} = 10$ ways. Two kinds cannot both break it, since $4 + 4 > 6$. So the answer is $84 - 4 \\cdot 10 = 44$. The transferable idea: shift lower bounds away first, then remove upper-bound violations by complementary counting.",
+    "elegant": "List the possible counts, largest first, each between $1$ and $4$ with total $10$: $\\{4,4,1,1\\}$ in $6$ orders, $\\{4,3,2,1\\}$ in $24$ orders, $\\{4,2,2,2\\}$ in $4$ orders, $\\{3,3,3,1\\}$ in $4$ orders and $\\{3,3,2,2\\}$ in $6$ orders. The total is $6 + 24 + 4 + 4 + 6 = 44$."
+  },
+  "formulas": [
+    "F-CP-05",
+    "F-CP-06"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

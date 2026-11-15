@@ -1,0 +1,69 @@
+{
+  "id": "AM-0094",
+  "contest": "BOTH",
+  "slot": 6,
+  "area": "NT",
+  "topic": "NT-09",
+  "types": [
+    "T-PARITY",
+    "T-MODULAR"
+  ],
+  "statement": "How many ordered pairs of integers $(a, b)$ satisfy $a^2 - b^2 = 2026$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I used n^2 - (n - 1)^2 = 2n - 1 and solved 2n - 1 = 2026 by rounding n to 1013, but 1013^2 - 1012^2 = 2025, not 2026."
+    },
+    {
+      "key": "C",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I set a - b and a + b equal to the factor pairs 1, 2026 and 2, 1013 and counted those two pairs without checking that a and b come out as integers."
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I counted the four ordered positive factorizations 1 x 2026, 2026 x 1, 2 x 1013 and 1013 x 2 without checking that a - b and a + b must have the same parity."
+    },
+    {
+      "key": "E",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I counted every ordered factor pair of 2026 with both signs, 8 in all, without checking that a and b come out as integers."
+    }
+  ],
+  "hints": [
+    "Factor the left side.",
+    "$(a - b)(a + b) = 2026$. The two factors differ by $2b$, so they have the same parity.",
+    "If both factors are odd, the product is odd. If both are even, the product is a multiple of $4$. Is $2026$ either?"
+  ],
+  "solutions": {
+    "reliable": "Write $(a - b)(a + b) = 2026$. The factors $a - b$ and $a + b$ differ by $2b$, which is even, so they are both odd or both even. If both are odd, their product is odd, but $2026$ is even. If both are even, their product is divisible by $4$, but $2026 = 4 \\cdot 506 + 2$ is not. Either way there is a contradiction, so there are $0$ pairs.",
+    "elegant": "Every square is $0$ or $1$ modulo $4$, so $a^2 - b^2$ is $0$, $1$ or $3$ modulo $4$, never $2$. Since $2026 \\equiv 2 \\pmod 4$, no pairs exist."
+  },
+  "formulas": [
+    "F-NT-13"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "AM-0073",
+  "contest": "AMC10",
+  "slot": 22,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-AUXILIARY",
+    "T-SIMILAR"
+  ],
+  "statement": "A right triangle has legs $3$ and $4$ and hypotenuse $5$. Two circles of the same radius $r$ lie inside the triangle and are externally tangent to each other. Both are tangent to the hypotenuse; one is also tangent to the leg of length $3$, and the other is also tangent to the leg of length $4$. What is $r$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac57$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac56$",
+      "correct": false,
+      "misconception": "I split the hypotenuse into $2r + 3r$ plus a gap of $r$ between the tangency points, but the gap between two tangent equal circles' contact points is the distance between centers, $2r$."
+    },
+    {
+      "key": "C",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I added $2r + 3r = 5$ for the two corner pieces and forgot the stretch of length $2r$ between the circles' points of tangency."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{60}{49}$",
+      "correct": false,
+      "misconception": "I measured the corner pieces as $r \\cot A$ and $r \\cot B$ using the full angles, instead of the half angles that the angle bisector through each center makes."
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{30}{17}$",
+      "correct": false,
+      "misconception": "I used $r \\tan(\\theta/2)$ for each corner piece instead of $r \\cot(\\theta/2)$, so the corner pieces came out far too short."
+    }
+  ],
+  "hints": [
+    "Look at where each circle touches the hypotenuse.",
+    "The center of a circle tangent to two sides lies on the angle bisector. The distance from the vertex to the tangency point is $r \\cot(\\theta/2)$; between the two tangency points the distance equals the distance between centers.",
+    "At the vertex opposite the leg $3$, $\\tan\\theta = \\tfrac34$ gives $\\cot(\\theta/2) = 3$; at the other end, $\\cot(\\theta/2) = 2$. So $3r + 2r + 2r = 5$."
+  ],
+  "solutions": {
+    "reliable": "Put the right angle at $C = (0,0)$, $A = (4,0)$, $B = (0,3)$. The circle touching leg $\\overline{CA}$ (length $4$) and the hypotenuse sits in the corner at $A$, where $\\tan A = \\tfrac34$, so $\\cot \\tfrac{A}{2} = \\tfrac{1 + \\cos A}{\\sin A} = \\tfrac{1 + 4/5}{3/5} = 3$; its tangency point on $\\overline{AB}$ is $3r$ from $A$. Similarly at $B$, $\\cot \\tfrac{B}{2} = \\tfrac{1 + 3/5}{4/5} = 2$, so the other tangency point is $2r$ from $B$. The two centers are both $r$ from the hypotenuse, so the segment joining them is parallel to it and the tangency points are $2r$ apart. Hence $3r + 2r + 2r = 5$ and $r = \\tfrac57$. The centers $(\\tfrac{13}{7}, \\tfrac57)$ and $(\\tfrac57, \\tfrac{11}{7})$ are more than $r$ from the other legs, so both circles fit. Transferable idea: a circle in a corner touches the sides at distance $r\\cot(\\theta/2)$ from the vertex.",
+    "elegant": "Without trig: the incircle has radius $1$ and touches the hypotenuse $3$ from $A$ and $2$ from $B$. A circle of radius $r$ in the same corner is the incircle shrunk from the vertex by the factor $r$, so its contact point is $3r$ from $A$, and likewise $2r$ from $B$. Then $7r = 5$."
+  },
+  "formulas": [
+    "F-GEO-17"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

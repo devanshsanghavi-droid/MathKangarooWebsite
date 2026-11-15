@@ -1,0 +1,68 @@
+{
+  "id": "AM-0084",
+  "contest": "BOTH",
+  "slot": 8,
+  "area": "NT",
+  "topic": "NT-08",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "What is the largest integer $k$ such that $6^k$ divides $100!$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I counted the 16 multiples of 6 up to 100, as if every factor of 6 had to come from a single multiple of 6."
+    },
+    {
+      "key": "B",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I counted only the 33 multiples of 3 up to 100 and forgot that multiples of 9, 27 and 81 contribute extra factors of 3."
+    },
+    {
+      "key": "C",
+      "text": "$44$",
+      "correct": false,
+      "misconception": "I added 33 + 11 for the multiples of 3 and 9 but stopped before the multiples of 27 and 81."
+    },
+    {
+      "key": "D",
+      "text": "$47$",
+      "correct": false,
+      "misconception": "I added 33 + 11 + 3 and left out the fourth factor of 3 in 81 = 3^4."
+    },
+    {
+      "key": "E",
+      "text": "$48$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "$6 = 2 \\cdot 3$. Which of the two primes runs out first in $100!$?",
+    "There are far more factors of $2$ than of $3$ in $100!$, so $k$ is the exponent of $3$. Count it with $\\lfloor 100/3 \\rfloor + \\lfloor 100/9 \\rfloor + \\cdots$.",
+    "$\\lfloor 100/3 \\rfloor + \\lfloor 100/9 \\rfloor + \\lfloor 100/27 \\rfloor + \\lfloor 100/81 \\rfloor = 33 + 11 + 3 + 1$."
+  ],
+  "solutions": {
+    "reliable": "Since $6 = 2 \\cdot 3$, $k$ is the smaller of the exponents of $2$ and $3$ in $100!$. By Legendre's formula the exponent of $3$ is $\\lfloor 100/3 \\rfloor + \\lfloor 100/9 \\rfloor + \\lfloor 100/27 \\rfloor + \\lfloor 100/81 \\rfloor = 33 + 11 + 3 + 1 = 48$, and the exponent of $2$ is $50 + 25 + 12 + 6 + 3 + 1 = 97$. The smaller is $48$, so $k = 48$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-08"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

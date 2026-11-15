@@ -1,0 +1,70 @@
+{
+  "id": "AM-0133",
+  "contest": "BOTH",
+  "slot": 12,
+  "area": "CP",
+  "topic": "CP-10",
+  "types": [
+    "T-PIE",
+    "T-COMPLEMENT"
+  ],
+  "statement": "A path from $(0,0)$ to $(5,5)$ uses steps of one unit to the right or one unit up. How many such paths pass through neither $(2,1)$ nor $(3,4)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I subtracted the 36 paths through both points a second time instead of adding them back, so 252 - 210 - 36 = 6."
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I found the 3 x 4 x 3 = 36 paths through both points and gave that as the answer."
+    },
+    {
+      "key": "C",
+      "text": "$42$",
+      "correct": false,
+      "misconception": "I subtracted the 105 paths through each point from 252 but forgot to add back the 36 paths that go through both."
+    },
+    {
+      "key": "D",
+      "text": "$78$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$147$",
+      "correct": false,
+      "misconception": "I removed only the 105 paths through (2, 1) and forgot about the paths through (3, 4)."
+    }
+  ],
+  "hints": [
+    "Count the paths that do touch a forbidden point, then subtract.",
+    "Use inclusion-exclusion on the two forbidden points. The number of paths through a point is the number of ways to reach it times the number of ways to continue to the end. A path through both meets $(2,1)$ first.",
+    "Total $\\binom{10}{5} = 252$. Through $(2,1)$: $\\binom{3}{1}\\binom{7}{3} = 105$. Through $(3,4)$: $\\binom{7}{3}\\binom{3}{1} = 105$. Through both: $3 \\cdot \\binom{4}{1} \\cdot 3 = 36$."
+  ],
+  "solutions": {
+    "reliable": "There are $\\binom{10}{5} = 252$ paths in all. A path through $(2,1)$ splits into a path from $(0,0)$ to $(2,1)$, which is $\\binom{3}{1} = 3$ choices, and a path from $(2,1)$ to $(5,5)$, which is $\\binom{7}{3} = 35$; so $105$ paths. By the same count, $\\binom{7}{3} \\cdot \\binom{3}{1} = 105$ paths pass through $(3,4)$. A path through both goes $(0,0) \\to (2,1) \\to (3,4) \\to (5,5)$, in $3 \\cdot \\binom{4}{1} \\cdot 3 = 36$ ways. By inclusion-exclusion, $105 + 105 - 36 = 174$ paths hit a forbidden point, so $252 - 174 = 78$ avoid both. Transferable idea: forbidden points on a lattice path call for inclusion-exclusion with products of binomial coefficients.",
+    "elegant": "Fill in a table of path counts, writing $0$ at each forbidden point and otherwise adding the counts from the left and from below. The entry at $(5,5)$ comes out to $78$."
+  },
+  "formulas": [
+    "F-CP-15",
+    "F-CP-01"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

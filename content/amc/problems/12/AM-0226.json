@@ -1,0 +1,70 @@
+{
+  "id": "AM-0226",
+  "contest": "AMC12",
+  "slot": 24,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-GEOPROB",
+    "T-PIE",
+    "T-SYMMETRY"
+  ],
+  "statement": "A point $P$ is chosen uniformly at random inside square $ABCD$. What is the probability that exactly two of the four angles $\\angle APB$, $\\angle BPC$, $\\angle CPD$ and $\\angle DPA$ are obtuse?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{\\pi - 2}{8}$",
+      "correct": false,
+      "misconception": "I found the area of one lens where two neighbouring half-disks overlap, pi/2 - 1 in a square of side 2, and divided by the square's area, forgetting that there is one such lens at each of the four corners."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{\\pi - 2}{4}$",
+      "correct": false,
+      "misconception": "I took the overlap of two neighbouring half-disks to be a single circular segment, pi/4 - 1/2, but the lens is made of two such segments."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{\\pi}{8}$",
+      "correct": false,
+      "misconception": "I computed the probability that one particular angle, angle APB, is obtuse, which is the half-disk on AB over the square, and stopped there."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{4 - \\pi}{2}$",
+      "correct": false,
+      "misconception": "I subtracted the overlaps from the whole square, which gives the region where exactly one angle is obtuse, the complement of what was asked."
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{\\pi - 2}{2}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Where in the square is $\\angle APB$ obtuse?",
+    "$\\angle APB$ is obtuse exactly when $P$ lies inside the circle with diameter $AB$. Draw all four half-disks. Since the four angles add to $360^\\circ$, at least one is at least $90^\\circ$, so the half-disks cover the square.",
+    "With side $2$, the half-disks have total area $4\\cdot\\tfrac{\\pi}{2} = 2\\pi$ but cover an area of only $4$. Opposite half-disks meet only at the center, so the excess $2\\pi - 4$ is exactly the region covered twice."
+  ],
+  "solutions": {
+    "reliable": "Take the square to have side $2$, with $A = (0,0)$, $B = (2,0)$, $C = (2,2)$, $D = (0,2)$. By Thales, $\\angle APB$ is obtuse exactly when $P$ is inside the circle with diameter $AB$, that is inside the half-disk of radius $1$ centred at $(1,0)$; similarly for the other three sides. Two neighbouring half-disks, say centred at $(1,0)$ and $(0,1)$, overlap in a lens between $(0,0)$ and $(1,1)$. Their centers are $\\sqrt2$ apart, so the lens is two circular segments of angle $90^\\circ$, with area $2\\left(\\tfrac{\\pi}{4} - \\tfrac12\\right) = \\tfrac{\\pi}{2} - 1$. Opposite half-disks touch only at the center, so no point is in three of them. The region with exactly two obtuse angles is the four lenses, area $4\\left(\\tfrac{\\pi}{2} - 1\\right) = 2\\pi - 4$, and the probability is $\\tfrac{2\\pi - 4}{4} = \\tfrac{\\pi - 2}{2} \\approx 0.571$. A simulation with four million random points gives $0.5708$. The idea: turn each angle condition into a region, then count overlaps.",
+    "elegant": "The four angles sum to $360^\\circ$, so every point lies in at least one half-disk, and none lies in three. Inclusion-exclusion then says the doubly covered area equals the sum of the half-disk areas minus the square: $2\\pi - 4$ out of $4$, so the probability is $\\tfrac{\\pi}{2} - 1$ without computing any lens."
+  },
+  "formulas": [
+    "F-CP-11"
+  ],
+  "estSeconds": 220,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

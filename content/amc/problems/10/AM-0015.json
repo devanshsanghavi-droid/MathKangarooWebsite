@@ -1,0 +1,68 @@
+{
+  "id": "AM-0015",
+  "contest": "AMC10",
+  "slot": 9,
+  "area": "ALG",
+  "topic": "ALG-05",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "What is the value of $\\sqrt{19 + 6\\sqrt{2}} - \\sqrt{19 - 6\\sqrt{2}}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I thought the plus and minus versions would cancel each other out, so I said 0."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I squared the expression and got 4, but forgot to take the square root at the end."
+    },
+    {
+      "key": "D",
+      "text": "$\\sqrt{38}$",
+      "correct": false,
+      "misconception": "I squared but added 19 + 19 = 38 and dropped the cross term, so I got the square root of 38."
+    },
+    {
+      "key": "E",
+      "text": "$6\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I took the square root of 19 - 6 times the square root of 2 to be 1 - 3 times the square root of 2, which is negative, so the difference came out as 6 times the square root of 2."
+    }
+  ],
+  "hints": [
+    "Try to write $19 + 6\\sqrt{2}$ as a perfect square $(a + b\\sqrt{2})^2$.",
+    "Expand $(a + b\\sqrt{2})^2 = a^2 + 2b^2 + 2ab\\sqrt{2}$ and match: $ab = 3$ and $a^2 + 2b^2 = 19$. Be careful that a square root is never negative.",
+    "$19 \\pm 6\\sqrt{2} = (3\\sqrt{2} \\pm 1)^2$, so the square roots are $3\\sqrt{2} + 1$ and $3\\sqrt{2} - 1$."
+  ],
+  "solutions": {
+    "reliable": "Look for $a, b$ with $(a + b\\sqrt{2})^2 = a^2 + 2b^2 + 2ab\\sqrt{2} = 19 + 6\\sqrt{2}$: we need $ab = 3$ and $a^2 + 2b^2 = 19$, which $a = 1$, $b = 3$ satisfy. So $19 + 6\\sqrt{2} = (1 + 3\\sqrt{2})^2$ and $19 - 6\\sqrt{2} = (1 - 3\\sqrt{2})^2 = (3\\sqrt{2} - 1)^2$. Since $3\\sqrt{2} > 1$, the positive square roots are $3\\sqrt{2} + 1$ and $3\\sqrt{2} - 1$. Their difference is $2$. The transferable idea: a square root is the nonnegative root, so choose the sign of $a - b\\sqrt{2}$ that is positive.",
+    "elegant": "Let $D$ be the expression; it is positive. Then $D^2 = 38 - 2\\sqrt{(19 + 6\\sqrt{2})(19 - 6\\sqrt{2})} = 38 - 2\\sqrt{361 - 72} = 38 - 2 \\cdot 17 = 4$, so $D = 2$."
+  },
+  "formulas": [
+    "F-ALG-05"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

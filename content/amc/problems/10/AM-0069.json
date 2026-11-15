@@ -1,0 +1,67 @@
+{
+  "id": "AM-0069",
+  "contest": "AMC10",
+  "slot": 18,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-MASS-POINTS",
+    "T-AREA-RATIO"
+  ],
+  "statement": "Triangle $ABC$ has area $90$. Point $D$ lies on $\\overline{BC}$ with $BD : DC = 2 : 3$, and point $E$ lies on $\\overline{CA}$ with $AE : EC = 1 : 2$. Segments $\\overline{AD}$ and $\\overline{BE}$ meet at $P$. What is the area of quadrilateral $PDCE$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I found the area of triangle $ABP$, which is the piece needed along the way, and gave it as the answer."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I subtracted triangles $ABD$ ($36$) and $ABE$ ($30$) from $90$ but forgot that triangle $ABP$ was removed twice and must be added back."
+    },
+    {
+      "key": "C",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I put the masses on the wrong ends, getting $AP : PD = 4 : 5$ instead of $5 : 4$, so triangle $ABP$ came out as $16$."
+    },
+    {
+      "key": "D",
+      "text": "$44$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$54$",
+      "correct": false,
+      "misconception": "I found the area of triangle $ADC$, which is $\\tfrac35$ of $90$, forgetting that the corner piece $APE$ is cut off by $\\overline{BE}$."
+    }
+  ],
+  "hints": [
+    "The quadrilateral is the triangle minus three pieces, or $90 - [ABD] - [ABE] + [ABP]$.",
+    "Find $AP : PD$ with mass points (or Menelaus). Then triangle $ABP$ is that fraction of triangle $ABD$.",
+    "Masses $B = 3$, $C = 2$, $A = 4$ give $D = 5$, so $AP : PD = 5 : 4$. $[ABD] = 36$, so $[ABP] = \\tfrac59 \\cdot 36 = 20$."
+  ],
+  "solutions": {
+    "reliable": "Areas first: $[ABD] = \\tfrac25 \\cdot 90 = 36$ and $[ABE] = \\tfrac13 \\cdot 90 = 30$. For $AP : PD$, assign masses: $BD : DC = 2 : 3$ means $B$ gets $3$ and $C$ gets $2$; $AE : EC = 1 : 2$ means $A \\cdot 1 = C \\cdot 2$, so $A$ gets $4$. Then $D$ has mass $5$ and $AP : PD = 5 : 4$. Hence $[ABP] = \\tfrac59 \\cdot 36 = 20$. The quadrilateral is what remains after removing $ABD$ and $ABE$, which overlap in $ABP$: $90 - 36 - 30 + 20 = 44$. Transferable idea: mass points turn cevian ratios into area ratios quickly.",
+    "elegant": "Check by pieces: $[APE] = 30 - 20 = 10$ and $[BPD] = 36 - 20 = 16$, so $[PDCE] = 90 - 20 - 10 - 16 = 44$. Coordinates confirm it."
+  },
+  "formulas": [],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

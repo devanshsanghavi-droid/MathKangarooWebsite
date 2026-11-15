@@ -1,0 +1,14 @@
+{
+  "id": "F-ALG-13",
+  "area": "ALG",
+  "name": "De Moivre's theorem (polar form)",
+  "formula": "z = r(\\cos\\theta + i \\sin\\theta) \\implies z^n = r^n(\\cos n\\theta + i \\sin n\\theta)",
+  "whenToUse": "Raise a complex number to a large power, or find the $n$th roots of a complex number, by working with its distance from $0$ and its angle.",
+  "example": "$1 + i$ has $r = \\sqrt{2}$ and $\\theta = 45^\\circ$, so $(1 + i)^8 = (\\sqrt{2})^8(\\cos 360^\\circ + i \\sin 360^\\circ) = 16$. Check: $(1+i)^2 = 2i$ and $(2i)^4 = 16$.",
+  "pitfall": "Multiply the angle by $n$ but RAISE the modulus to the power $n$. Also find the angle from the actual quadrant of $z$, not just from $\\arctan$ of the ratio.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC12"
+  ],
+  "derivation": "Multiplying two complex numbers multiplies their moduli and adds their angles, by the angle-addition formulas for sine and cosine. Repeating $n$ times gives the result."
+}

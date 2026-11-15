@@ -1,0 +1,69 @@
+{
+  "id": "AM-0179",
+  "contest": "AMC12",
+  "slot": 16,
+  "area": "ALG",
+  "topic": "ALG-09",
+  "types": [
+    "T-COORD",
+    "T-BOUNDING"
+  ],
+  "statement": "Real numbers $x$ and $y$, with $x \\neq 0$, satisfy $x^2 + y^2 = 4x + 6y - 9$. What is the smallest possible value of $\\dfrac{y}{x}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{5}{12}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{1}{2}$",
+      "correct": false,
+      "misconception": "I used the lowest point of the circle, $(2, 1)$, but the smallest ratio occurs where a line through the origin is tangent, not at the lowest point."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{3}{4}$",
+      "correct": false,
+      "misconception": "I used the rightmost point of the circle, $(4, 3)$, assuming the largest $x$ gives the smallest ratio."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{3}{2}$",
+      "correct": false,
+      "misconception": "I used the center $(2, 3)$ as if it were a point on the circle."
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{12}{5}$",
+      "correct": false,
+      "misconception": "I wrote the lines as $x = my$, found the tangent value $m = \\frac{12}{5}$ and reported it, but that is the largest value of $\\frac{x}{y}$, the reciprocal of what was asked."
+    }
+  ],
+  "hints": [
+    "Complete the square. What shape do the points $(x, y)$ form?",
+    "A value $\\frac{y}{x} = m$ means $(x, y)$ is on the line $y = mx$ through the origin. Look for the extreme line that still touches the shape.",
+    "The points form the circle with center $(2, 3)$ and radius $2$. The line $y = mx$ is tangent when $\\dfrac{|2m - 3|}{\\sqrt{m^2 + 1}} = 2$; square and solve."
+  ],
+  "solutions": {
+    "reliable": "Rewrite as $(x - 2)^2 + (y - 3)^2 = 4$: the circle with center $(2, 3)$ and radius $2$, lying in $0 \\le x \\le 4$, $1 \\le y \\le 5$. So $y > 0$ and $x > 0$ (the only point with $x = 0$ is excluded). The ratio $m = \\frac{y}{x}$ is the slope of the line from the origin to $(x, y)$; it is smallest when that line is tangent to the circle below the center. Tangency: $\\frac{|2m - 3|}{\\sqrt{m^2 + 1}} = 2$, so $4m^2 - 12m + 9 = 4m^2 + 4$ and $m = \\frac{5}{12}$. (The other tangent from the origin is the vertical line $x = 0$, which gives no finite ratio.) The tangent point is $\\left(\\frac{36}{13}, \\frac{15}{13}\\right)$, which is on the circle, and $\\frac{15}{36} = \\frac{5}{12}$. Transferable idea: $\\frac{y}{x}$ is a slope from the origin, so its extremes on a curve come from tangent lines.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-18"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

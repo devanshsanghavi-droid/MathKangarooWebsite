@@ -1,0 +1,70 @@
+{
+  "id": "AM-0138",
+  "contest": "AMC10",
+  "slot": 15,
+  "area": "CP",
+  "topic": "CP-02",
+  "types": [
+    "T-PIE",
+    "T-COMPLEMENT"
+  ],
+  "statement": "In how many ways can the numbers $1, 2, 3, 4, 5, 6, 7$ be arranged in a row so that $1$ is not next to $2$, $2$ is not next to $3$, and $3$ is not next to $4$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1392$",
+      "correct": false,
+      "misconception": "I glued 1 and 2 into one block and 3 and 4 into another for the overlap, but allowed only 2 orders in all instead of 2 x 2, so I used 240 for that overlap instead of 480."
+    },
+    {
+      "key": "B",
+      "text": "$1632$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$1680$",
+      "correct": false,
+      "misconception": "I subtracted the single pairs and added back the overlaps of two pairs, but never subtracted the 48 arrangements where all three pairs are together."
+    },
+    {
+      "key": "D",
+      "text": "$1728$",
+      "correct": false,
+      "misconception": "I got the inclusion-exclusion signs wrong at the last step and added the 48 arrangements with all three pairs together instead of subtracting them."
+    },
+    {
+      "key": "E",
+      "text": "$3216$",
+      "correct": false,
+      "misconception": "I glued each forbidden pair into a block but forgot that every block can be written in 2 orders, getting 5040 - 2160 + 360 - 24."
+    }
+  ],
+  "hints": [
+    "It is easier to count arrangements in which a forbidden pair is next to each other.",
+    "Call the three bad events '1 next to 2', '2 next to 3' and '3 next to 4' and use inclusion-exclusion. Look carefully at each overlap of two events: two of them force a block of three numbers, but one forces two separate blocks.",
+    "One event: glue the pair, $2 \\cdot 6! = 1440$. '1 next to 2' and '2 next to 3' force the block 123 or 321, $2 \\cdot 5! = 240$, and the same for '2 next to 3' and '3 next to 4'. '1 next to 2' and '3 next to 4' give two separate blocks, $2 \\cdot 2 \\cdot 5! = 480$. All three force 1234 or 4321, $2 \\cdot 4! = 48$."
+  ],
+  "solutions": {
+    "reliable": "There are $7! = 5040$ arrangements in all. Let $P$, $Q$, $R$ be the sets where $1$ is next to $2$, $2$ is next to $3$, and $3$ is next to $4$. Gluing a pair into a block that can face either way gives $|P| = |Q| = |R| = 2 \\cdot 6! = 1440$, a total of $4320$. For $P \\cap Q$, the number $2$ sits between $1$ and $3$, so $123$ or $321$ is one block: $2 \\cdot 5! = 240$; likewise $|Q \\cap R| = 240$. For $P \\cap R$ the blocks $12$ and $34$ are separate, each facing either way: $2 \\cdot 2 \\cdot 5! = 480$. The pairwise total is $960$. Finally $P \\cap Q \\cap R$ forces $1234$ or $4321$: $2 \\cdot 4! = 48$. By inclusion-exclusion, $5040 - 4320 + 960 - 48 = 1632$ arrangements avoid all three. The transferable idea: in inclusion-exclusion, overlaps of the same size can still have different counts, so work out what each overlap actually forces.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-01",
+    "F-CP-02"
+  ],
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

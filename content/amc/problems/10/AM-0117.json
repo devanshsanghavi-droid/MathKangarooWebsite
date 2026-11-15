@@ -1,0 +1,68 @@
+{
+  "id": "AM-0117",
+  "contest": "BOTH",
+  "slot": 3,
+  "area": "CP",
+  "topic": "CP-04",
+  "types": [
+    "T-PIE"
+  ],
+  "statement": "In a class of $40$ students, $23$ play chess, $18$ play go, and $7$ play neither game. How many students play exactly one of the two games?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I found that 23 + 18 - 33 = 8 students play both games and gave that instead of the number who play exactly one."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I found the 8 students who play both and subtracted them from the chess players only, which counts the chess-only students."
+    },
+    {
+      "key": "C",
+      "text": "$25$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I found the 40 - 7 = 33 students who play at least one game, which still includes the students who play both."
+    },
+    {
+      "key": "E",
+      "text": "$41$",
+      "correct": false,
+      "misconception": "I added 23 + 18 = 41, which counts the students who play both games twice."
+    }
+  ],
+  "hints": [
+    "First find how many students play at least one game.",
+    "Inclusion-exclusion links the two game counts, the overlap and the number who play at least one. Find the overlap, then remove it from the at-least-one group.",
+    "At least one game: $40 - 7 = 33$. Both: $23 + 18 - 33 = 8$. Exactly one: $33 - 8$."
+  ],
+  "solutions": {
+    "reliable": "Of the $40$ students, $40 - 7 = 33$ play at least one game. By inclusion-exclusion, $23 + 18 - (\\text{both}) = 33$, so $8$ students play both. The students who play at least one game split into those who play both and those who play exactly one, so exactly one is $33 - 8 = 25$. Check: chess only $23 - 8 = 15$, go only $18 - 8 = 10$, and $15 + 10 = 25$. Transferable idea: draw the two-circle picture and fill in the overlap first.",
+    "elegant": "Adding $23 + 18 = 41$ counts each one-game student once and each two-game student twice. The at-least-one total, $33$, counts everyone once. So $41 - 33 = 8$ play both, and exactly one is $33 - 8 = 25$, or directly $2 \\cdot 33 - 41 = 25$."
+  },
+  "formulas": [
+    "F-CP-01"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

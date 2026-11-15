@@ -1,0 +1,66 @@
+{
+  "id": "AM-0079",
+  "contest": "BOTH",
+  "slot": 2,
+  "area": "NT",
+  "topic": "NT-02",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "What is the smallest positive integer $k$ for which $360k$ is a perfect cube?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I made 360k a perfect square instead of a cube: 360 x 10 = 3600 = 60^2."
+    },
+    {
+      "key": "B",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I raised the 5 to the third power but forgot that 360 = 2^3 x 3^2 x 5 also needs one more 3."
+    },
+    {
+      "key": "C",
+      "text": "$75$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$225$",
+      "correct": false,
+      "misconception": "I thought every prime whose exponent is not already 3 needs two more copies, so I used 3^2 x 5^2. That gives 3^4, which is not a cube exponent."
+    },
+    {
+      "key": "E",
+      "text": "$129600$",
+      "correct": false,
+      "misconception": "I took k = 360^2 so that 360k = 360^3 is a cube, but that is far from the smallest choice."
+    }
+  ],
+  "hints": [
+    "Write $360$ as a product of prime powers.",
+    "$360 = 2^3 \\cdot 3^2 \\cdot 5$. A number is a perfect cube exactly when every exponent in its prime factorization is a multiple of $3$.",
+    "The exponent of $2$ is already $3$. Raise the exponent of $3$ from $2$ to $3$ and the exponent of $5$ from $1$ to $3$."
+  ],
+  "solutions": {
+    "reliable": "Factor: $360 = 8 \\cdot 45 = 2^3 \\cdot 3^2 \\cdot 5$. A perfect cube has every prime exponent a multiple of $3$, and multiplying by $k$ can only raise exponents. The smallest $k$ raises each exponent to the next multiple of $3$: $2^3$ needs nothing, $3^2$ needs one more $3$, and $5^1$ needs two more $5$s. So $k = 3 \\cdot 5^2 = 75$. Check: $360 \\cdot 75 = 27000 = 30^3$.",
+    "elegant": "Since $30^3 = 27000 = 2^3 \\cdot 3^3 \\cdot 5^3$ is the smallest cube divisible by $2 \\cdot 3 \\cdot 5$, and every cube that $360$ divides must be a multiple of $30^3$, the answer is $27000 / 360 = 75$."
+  },
+  "formulas": [],
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

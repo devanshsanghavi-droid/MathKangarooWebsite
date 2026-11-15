@@ -1,0 +1,69 @@
+{
+  "id": "AM-0060",
+  "contest": "AMC10",
+  "slot": 14,
+  "area": "GEO",
+  "topic": "GEO-02",
+  "types": [
+    "T-SIMILAR",
+    "T-AREA-RATIO"
+  ],
+  "statement": "In trapezoid $ABCD$, sides $\\overline{AB}$ and $\\overline{CD}$ are parallel, and the diagonals $\\overline{AC}$ and $\\overline{BD}$ meet at $P$. Triangle $BPC$ has area $12$ and triangle $CPD$ has area $4$. What is the area of the trapezoid?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I correctly found that triangle $APD$ also has area $12$, then added $12 + 12 + 4$ and forgot triangle $APB$ entirely."
+    },
+    {
+      "key": "B",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I saw that $AP : PC = 3 : 1$ and scaled the area of triangle $CPD$ by $3$ to get $12$ for triangle $APB$, but similar triangles scale area by the square of the ratio."
+    },
+    {
+      "key": "C",
+      "text": "$52$",
+      "correct": false,
+      "misconception": "I found triangle $APB$ has area $36$ but added only $36 + 12 + 4$, leaving out triangle $APD$."
+    },
+    {
+      "key": "D",
+      "text": "$64$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$136$",
+      "correct": false,
+      "misconception": "I knew area scales by $9$ but multiplied the area of triangle $BPC$ instead of the similar triangle $CPD$, getting $108$ for triangle $APB$."
+    }
+  ],
+  "hints": [
+    "Triangles $ABD$ and $ABC$ share the base $\\overline{AB}$ and the same height.",
+    "Equal-height triangles give $[APD] = [BPC]$. Triangles $BPC$ and $CPD$ share a height from $C$, so their areas give the ratio $BP : PD$.",
+    "$BP : PD = 12 : 4 = 3 : 1$, so triangles $APB$ and $CPD$ are similar with ratio $3$ and $[APB] = 9 \\cdot 4 = 36$. Add all four pieces."
+  ],
+  "solutions": {
+    "reliable": "Triangles $ABD$ and $ABC$ have the same base and height, so they have equal area; removing the shared triangle $APB$ gives $[APD] = [BPC] = 12$. Triangles $BPC$ and $DPC$ share the vertex $C$ and bases on line $BD$, so $BP : PD = 12 : 4 = 3 : 1$. Because $AB \\parallel CD$, triangle $APB$ is similar to triangle $CPD$ with ratio $BP : PD = 3$, so $[APB] = 9 \\cdot 4 = 36$. The trapezoid has area $36 + 12 + 12 + 4 = 64$. Transferable idea: the diagonals of a trapezoid cut it into two similar triangles and two equal side triangles.",
+    "elegant": "For the four triangles around $P$, $[APB] \\cdot [CPD] = [BPC] \\cdot [DPA]$, since both products equal $\\tfrac14 \\, AP \\cdot PC \\cdot BP \\cdot PD \\cdot \\sin^2 \\angle APB$. So $[APB] = 12 \\cdot 12 / 4 = 36$, and the total is $(\\sqrt{36} + \\sqrt{4})^2 = 64$."
+  },
+  "formulas": [
+    "F-GEO-11"
+  ],
+  "estSeconds": 135,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

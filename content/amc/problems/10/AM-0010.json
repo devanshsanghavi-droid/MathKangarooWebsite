@@ -1,0 +1,69 @@
+{
+  "id": "AM-0010",
+  "contest": "BOTH",
+  "slot": 10,
+  "area": "ALG",
+  "topic": "ALG-09",
+  "types": [
+    "T-AMGM",
+    "T-BOUNDING"
+  ],
+  "statement": "Positive real numbers $x$ and $y$ satisfy $x + 2y = 10$. What is the largest possible value of $x^2 y$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{500}{27}$",
+      "correct": false,
+      "misconception": "I applied AM-GM to x, x and 2y as if they added up to 10, so I got 2x^2y <= (10/3)^3 and x^2y <= 500/27."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1000}{27}$",
+      "correct": false,
+      "misconception": "I made x and y equal, so 3x = 10 and x^2y = (10/3)^3 = 1000/27."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{125}{2}$",
+      "correct": false,
+      "misconception": "I split the 10 evenly between x and 2y, so x = 5 and y = 5/2, and got 25 times 5/2."
+    },
+    {
+      "key": "D",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I only tried whole numbers, and the best I found was x = 6, y = 2, giving 72."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{2000}{27}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "For AM-GM to give a constant bound, the pieces must add to something fixed.",
+    "Split $x$ into two equal halves so that $\\frac{x}{2} + \\frac{x}{2} + 2y = 10$. Apply AM-GM to these three pieces and check when equality holds.",
+    "AM-GM gives $\\frac{x}{2} \\cdot \\frac{x}{2} \\cdot 2y \\le \\left(\\frac{10}{3}\\right)^3$, that is $\\frac{x^2 y}{2} \\le \\frac{1000}{27}$, with equality when $\\frac{x}{2} = 2y = \\frac{10}{3}$."
+  ],
+  "solutions": {
+    "reliable": "Substitute $y = \\frac{10 - x}{2}$, so the quantity is $g(x) = \\frac{x^2(10 - x)}{2}$ for $0 < x < 10$. Trying a few values ($x = 6$ gives $72$, $x = 7$ gives $73.5$) suggests a maximum between them, and the factorization $x^3 - 10x^2 + \\frac{4000}{27} = \\left(x - \\frac{20}{3}\\right)^2\\left(x + \\frac{10}{3}\\right)$ proves it: $\\frac{2000}{27} - g(x) = \\frac{1}{2}\\left(x - \\frac{20}{3}\\right)^2\\left(x + \\frac{10}{3}\\right) \\ge 0$ for every positive $x$. So $g(x) \\le \\frac{2000}{27}$, with equality at $x = \\frac{20}{3}$, $y = \\frac{5}{3}$: check $\\frac{400}{9} \\cdot \\frac{5}{3} = \\frac{2000}{27} \\approx 74.1$. The transferable idea: to maximize a product under a sum constraint, split the sum into pieces that can all be equal at the same time.",
+    "elegant": "Write $10 = \\frac{x}{2} + \\frac{x}{2} + 2y$. By AM-GM, $\\frac{x}{2} \\cdot \\frac{x}{2} \\cdot 2y \\le \\left(\\frac{10}{3}\\right)^3 = \\frac{1000}{27}$. The left side is $\\frac{x^2 y}{2}$, so $x^2 y \\le \\frac{2000}{27}$, with equality when $\\frac{x}{2} = 2y = \\frac{10}{3}$, that is $x = \\frac{20}{3}$ and $y = \\frac{5}{3}$."
+  },
+  "formulas": [
+    "F-ALG-08"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

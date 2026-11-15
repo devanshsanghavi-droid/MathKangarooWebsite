@@ -1,0 +1,17 @@
+{
+  "id": "F-GEO-18",
+  "area": "GEO",
+  "name": "Distance from a point to a line",
+  "formula": "d = \\frac{|Ax_0 + By_0 + C|}{\\sqrt{A^2 + B^2}} \\quad \\text{for the point } (x_0, y_0) \\text{ and the line } Ax + By + C = 0",
+  "whenToUse": "Coordinate problems asking for a height of a triangle, whether a line is tangent to a circle, or the shortest distance from a point to a line.",
+  "example": "The distance from $(1, 2)$ to $3x + 4y - 1 = 0$ is $\\frac{|3 + 8 - 1|}{\\sqrt{9 + 16}} = \\frac{10}{5} = 2$.",
+  "pitfall": "Put the line in the form $Ax + By + C = 0$ first, with everything on one side. Using $y = mx + b$ directly gives the wrong numerator.",
+  "priority": "good-to-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-COORD"
+  ]
+}

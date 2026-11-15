@@ -1,0 +1,66 @@
+{
+  "id": "AM-0159",
+  "contest": "AMC12",
+  "slot": 4,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "The numbers $x$, $x + 6$ and $4x$, in that order, are the first three terms of a geometric sequence. What is the sum of all possible values of the fourth term of the sequence?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I kept only the case $x = -2$, whose sequence is $-2, 4, -8, 16$, and discarded $x = 6$."
+    },
+    {
+      "key": "B",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I treated the sequence as arithmetic, so $6 = 3x - 6$, $x = 4$, and the terms $4, 10, 16$ continue to $22$."
+    },
+    {
+      "key": "C",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I found both cases but took the fourth term of $-2, 4, -8$ to be $-16$, losing the sign flip, so I added $48 + (-16)$."
+    },
+    {
+      "key": "D",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I kept only the case $x = 6$, whose sequence is $6, 12, 24, 48$, and discarded the negative solution."
+    },
+    {
+      "key": "E",
+      "text": "$64$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "In a geometric sequence the middle term squared equals the product of its neighbors.",
+    "Set $(x + 6)^2 = x \\cdot 4x$ and solve the quadratic. Each root gives its own sequence and its own fourth term, so keep every case.",
+    "The equation simplifies to $x^2 - 4x - 12 = 0$, so $x = 6$ or $x = -2$. Find the ratio in each case."
+  ],
+  "solutions": {
+    "reliable": "Three terms $a, b, c$ are geometric exactly when $b^2 = ac$. So $(x + 6)^2 = 4x^2$, which gives $x^2 + 12x + 36 = 4x^2$, or $x^2 - 4x - 12 = 0$, so $x = 6$ or $x = -2$. If $x = 6$ the sequence is $6, 12, 24$ with ratio $2$, so the fourth term is $48$. If $x = -2$ the sequence is $-2, 4, -8$ with ratio $-2$, so the fourth term is $16$. The sum is $48 + 16 = 64$. Transferable idea: a quadratic condition usually produces two sequences, and the question about all possible values wants both.",
+    "elegant": "Taking square roots of $(x+6)^2 = (2x)^2$ gives $x + 6 = \\pm 2x$, so $x = 6$ or $x = -2$ without the quadratic formula. The fourth term is $\\frac{(4x)^2}{x + 6}$, which is $48$ and $16$."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

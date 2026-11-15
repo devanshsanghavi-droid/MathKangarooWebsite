@@ -1,0 +1,70 @@
+{
+  "id": "AM-0080",
+  "contest": "BOTH",
+  "slot": 5,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-SMALL-CASES"
+  ],
+  "statement": "How many odd positive integers less than $500$ have exactly three positive divisors?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I counted the squares of all primes up to 22, including 2^2 = 4, which is even."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I counted every odd perfect square from 9 to 441, not noticing that squares such as 81 = 3^4 and 225 = 3^2 x 5^2 have more than three divisors."
+    },
+    {
+      "key": "D",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I counted all 11 odd perfect squares below 500, including 1, which has only one divisor."
+    },
+    {
+      "key": "E",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I counted all 22 perfect squares from 1 to 484, ignoring both the odd condition and the need for the square root to be prime."
+    }
+  ],
+  "hints": [
+    "If $n = p_1^{a_1} \\cdots p_k^{a_k}$, the number of divisors is $(a_1+1)\\cdots(a_k+1)$. When can that product equal $3$?",
+    "Since $3$ is prime, $n$ must be $p^2$ for a single prime $p$. You need odd primes $p$ with $p^2 < 500$.",
+    "$p^2 < 500$ means $p \\le 22$. The odd primes up to $22$ are $3, 5, 7, 11, 13, 17, 19$."
+  ],
+  "solutions": {
+    "reliable": "The number of divisors of $p_1^{a_1}\\cdots p_k^{a_k}$ is $(a_1+1)\\cdots(a_k+1)$. For this to equal the prime $3$ there must be exactly one prime, with exponent $2$, so $n = p^2$. For $n$ to be odd, $p$ must be an odd prime, and $p^2 < 500$ forces $p \\le 22$ since $23^2 = 529$. The odd primes up to $22$ are $3, 5, 7, 11, 13, 17, 19$, giving $n = 9, 25, 49, 121, 169, 289, 361$. That is $7$ numbers.",
+    "elegant": "Divisors pair up as $d$ and $n/d$, so an odd number of divisors forces $n$ to be a square, with $\\sqrt{n}$ unpaired. Exactly three divisors means the list is $1, \\sqrt{n}, n$ and nothing else, so $\\sqrt{n}$ is prime. Count the odd primes below $\\sqrt{500} \\approx 22.4$: there are $7$."
+  },
+  "formulas": [
+    "F-NT-01",
+    "F-NT-18"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

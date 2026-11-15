@@ -1,0 +1,66 @@
+{
+  "id": "AM-0004",
+  "contest": "AMC10",
+  "slot": 3,
+  "area": "ALG",
+  "topic": "ALG-02",
+  "types": [
+    "T-BACKWARDS"
+  ],
+  "statement": "The mean of eight numbers is $15$. Two of the numbers, which differ by $6$, are removed, and the mean of the six numbers that remain is $14$. What is the larger of the two removed numbers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I thought seven numbers remained, so the removed sum was 120 - 98 = 22, and the larger of two numbers differing by 6 with sum 22 is 14."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I found the two removed numbers, 15 and 21, and reported the smaller one."
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I found the mean of the two removed numbers, 18, and stopped there."
+    },
+    {
+      "key": "D",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I guessed that since the mean dropped by 1, the removed numbers averaged 1 more than 15, so 16, and the larger was 16 + 3 = 19."
+    },
+    {
+      "key": "E",
+      "text": "$21$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Means are hard to subtract. Totals are easy.",
+    "Turn each mean into a total by multiplying by the count. The removed numbers account for the difference in totals.",
+    "The eight numbers total $120$ and the six total $84$, so the two removed numbers add to $36$ and differ by $6$."
+  ],
+  "solutions": {
+    "reliable": "The eight numbers sum to $8 \\cdot 15 = 120$. The six that remain sum to $6 \\cdot 14 = 84$. So the two removed numbers sum to $120 - 84 = 36$. If they are $a$ and $a + 6$, then $2a + 6 = 36$, so $a = 15$ and the larger is $21$. The transferable idea: convert means to totals before adding or removing numbers.",
+    "elegant": "The two removed numbers have mean $36 / 2 = 18$ and sit $3$ on either side of it, so the larger is $18 + 3 = 21$."
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "AM-0026",
+  "contest": "AMC10",
+  "slot": 16,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": [
+    "T-TELESCOPE"
+  ],
+  "statement": "What is the value of $\\dfrac{1}{\\sqrt1 + \\sqrt3} + \\dfrac{1}{\\sqrt2 + \\sqrt4} + \\dfrac{1}{\\sqrt3 + \\sqrt5} + \\cdots + \\dfrac{1}{\\sqrt{48} + \\sqrt{50}}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{5\\sqrt2 - 1}{2}$",
+      "correct": false,
+      "misconception": "I rationalized and halved correctly, but cancelled as if neighbouring terms collapse, keeping only $\\sqrt{50}$ and $\\sqrt1$."
+    },
+    {
+      "key": "B",
+      "text": "$3 + 2\\sqrt2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$5\\sqrt2 - 1$",
+      "correct": false,
+      "misconception": "I treated it like the familiar sum with $\\sqrt{k+1} - \\sqrt{k}$, keeping only $\\sqrt{50} - \\sqrt1$, and also forgot the factor $\\frac12$."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{7 + 4\\sqrt2}{2}$",
+      "correct": false,
+      "misconception": "I kept $\\sqrt{50}$, $\\sqrt{49}$ and $-\\sqrt2$ but forgot that $-\\sqrt1$ also survives at the start of the sum."
+    },
+    {
+      "key": "E",
+      "text": "$6 + 4\\sqrt2$",
+      "correct": false,
+      "misconception": "I found the four surviving terms correctly but forgot the factor $\\frac12$ that comes from rationalizing, since $(k + 2) - k = 2$."
+    }
+  ],
+  "hints": [
+    "Multiply each term by its conjugate.",
+    "Each term becomes $\\frac{\\sqrt{k+2} - \\sqrt{k}}{2}$. Write out the sum and see which terms cancel: they cancel two apart, not next to each other.",
+    "The sum is $\\frac12\\left(\\sqrt{50} + \\sqrt{49} - \\sqrt2 - \\sqrt1\\right) = \\frac12(5\\sqrt2 + 7 - \\sqrt2 - 1)$."
+  ],
+  "solutions": {
+    "reliable": "The general term is $\\frac{1}{\\sqrt k + \\sqrt{k+2}}$ for $k = 1, \\ldots, 48$. Multiplying by the conjugate, it equals $\\frac{\\sqrt{k+2} - \\sqrt k}{(k+2) - k} = \\frac{\\sqrt{k+2} - \\sqrt k}{2}$. Summing, each $\\sqrt m$ with $3 \\le m \\le 48$ appears once with a plus sign and once with a minus sign, so only $\\sqrt{49}$ and $\\sqrt{50}$ (never subtracted) and $\\sqrt1$ and $\\sqrt2$ (never added) survive. The sum is $\\frac12\\left(\\sqrt{50} + \\sqrt{49} - \\sqrt2 - \\sqrt1\\right) = \\frac12\\left(5\\sqrt2 + 7 - \\sqrt2 - 1\\right) = \\frac{6 + 4\\sqrt2}{2} = 3 + 2\\sqrt2$. Transferable idea: when terms cancel $d$ apart, $d$ terms survive at each end.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-18"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

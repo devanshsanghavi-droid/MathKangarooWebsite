@@ -1,0 +1,68 @@
+{
+  "id": "AM-0191",
+  "contest": "AMC12",
+  "slot": 1,
+  "area": "GEO",
+  "topic": "GEO-01",
+  "types": [
+    "T-BACKWARDS"
+  ],
+  "statement": "The interior angles of a convex polygon add up to $2340^\\circ$. How many diagonals does the polygon have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found that the polygon has 15 sides and then counted only the 12 diagonals that start at one vertex."
+    },
+    {
+      "key": "B",
+      "text": "$65$",
+      "correct": false,
+      "misconception": "I divided 2340 by 180 to get 13 sides and forgot that the angle sum is (n - 2) times 180, then used 13 times 10 over 2."
+    },
+    {
+      "key": "C",
+      "text": "$90$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$105$",
+      "correct": false,
+      "misconception": "I counted every pair of vertices, 15 choose 2, which also counts the 15 sides as if they were diagonals."
+    },
+    {
+      "key": "E",
+      "text": "$180$",
+      "correct": false,
+      "misconception": "I used n(n - 3) = 15 times 12 and forgot to divide by 2, so every diagonal was counted from both of its ends."
+    }
+  ],
+  "hints": [
+    "Start by finding the number of sides.",
+    "The interior angles of an $n$-gon sum to $(n-2)\\cdot 180^\\circ$. Each vertex sends a diagonal to every vertex except itself and its two neighbours.",
+    "$(n-2)\\cdot 180 = 2340$ gives $n - 2 = 13$, so $n = 15$. Each vertex starts $15 - 3 = 12$ diagonals, and each diagonal has two ends, so there are $\\frac{15 \\cdot 12}{2}$ of them."
+  ],
+  "solutions": {
+    "reliable": "Solve $(n-2)\\cdot 180 = 2340$: $n - 2 = 13$, so $n = 15$. From each of the 15 vertices there are $15 - 3 = 12$ diagonals (every other vertex except the two neighbours). Counting this way reaches each diagonal twice, once from each end, so the total is $\\frac{15 \\cdot 12}{2} = 90$. Transferable idea: count from one point, then divide by how many times each object was counted.",
+    "elegant": "Diagonals are the pairs of vertices that are not sides: $\\binom{15}{2} - 15 = 105 - 15 = 90$. Transferable idea: count everything, then subtract what is not wanted."
+  },
+  "formulas": [
+    "F-GEO-19"
+  ],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,71 @@
+{
+  "id": "AM-0260",
+  "contest": "AMC12",
+  "slot": 21,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-MODULAR",
+    "T-CASEWORK",
+    "T-PIE"
+  ],
+  "statement": "For how many integers $n$ with $1 \\le n \\le 360$ is $\\cos\\left(n^\\circ\\right) = \\cos\\left((n^2)^\\circ\\right)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I required 360 to divide n or n - 1 (or n or n + 1) outright, not letting the factors 8, 9 and 5 split between the two numbers, so I found only 1, 359 and 360."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I only solved n^2 = n + 360k, forgetting that cosines are also equal when the angles are negatives of each other modulo 360."
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I found 8 solutions of n^2 = n and 8 of n^2 = -n modulo 360, but n = 360 is in both lists, so I counted it twice."
+    },
+    {
+      "key": "E",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I thought the cosines are equal when the angles agree up to a multiple of 180 degrees, so I solved both congruences modulo 180."
+    }
+  ],
+  "hints": [
+    "When is $\\cos \\alpha = \\cos \\beta$ in degrees?",
+    "$\\cos \\alpha = \\cos \\beta$ exactly when $\\beta \\equiv \\alpha$ or $\\beta \\equiv -\\alpha \\pmod{360}$. So you need $n(n-1) \\equiv 0$ or $n(n+1) \\equiv 0 \\pmod{360}$. Use $360 = 8 \\cdot 9 \\cdot 5$.",
+    "Since $n$ and $n \\pm 1$ are coprime, each of $8$, $9$, $5$ must divide one factor entirely: $2^3 = 8$ solutions for each congruence by the Chinese remainder theorem. Then remove the overlap."
+  ],
+  "solutions": {
+    "reliable": "In degrees, $\\cos\\alpha = \\cos\\beta$ exactly when $\\beta \\equiv \\pm\\alpha \\pmod{360}$. So we need $n^2 \\equiv n$ or $n^2 \\equiv -n \\pmod{360}$, that is $360 \\mid n(n-1)$ or $360 \\mid n(n+1)$. Because consecutive integers are coprime, each of the prime powers $8$, $9$, $5$ divides one of the two factors completely. For $n(n-1)$: $n \\equiv 0$ or $1$ modulo each of $8$, $9$, $5$, giving $2^3 = 8$ residues by the Chinese remainder theorem; they are $1, 81, 136, 145, 216, 225, 280, 360$. For $n(n+1)$: $n \\equiv 0$ or $-1$ modulo each, again $8$ residues: $80, 135, 144, 215, 224, 279, 359, 360$. A number in both lists needs $n \\equiv 0$ modulo each prime power, since $1 \\not\\equiv -1$ for $8$, $9$, $5$; only $n = 360$ qualifies. The answer is $8 + 8 - 1 = 15$. The transferable idea: $n(n \\pm 1) \\equiv 0$ modulo $m$ splits into a choice for each prime power of $m$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-09",
+    "F-NT-12"
+  ],
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

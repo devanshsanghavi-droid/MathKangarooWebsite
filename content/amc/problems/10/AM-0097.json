@@ -1,0 +1,69 @@
+{
+  "id": "AM-0097",
+  "contest": "AMC10",
+  "slot": 13,
+  "area": "NT",
+  "topic": "NT-07",
+  "types": [
+    "T-SFFT",
+    "T-CASEWORK"
+  ],
+  "statement": "How many ordered pairs of integers $(m, n)$, positive, negative or zero, satisfy $mn = 2m + 3n + 30$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I listed unordered pairs of positive factors of 36, $(1,36), (2,18), (3,12), (4,9)$, and skipped the square pair $6 \\cdot 6$."
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I counted the five unordered pairs of positive factors of 36, forgetting that order matters and that both factors can be negative."
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I used only the 9 positive divisors of 36 for $m - 3$, forgetting that $m - 3$ and $n - 2$ can both be negative."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I counted the five unordered positive factor pairs and the five negative ones, but did not count a pair and its swap as different."
+    },
+    {
+      "key": "E",
+      "text": "$18$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Move everything to one side and try to factor.",
+    "Add a constant to both sides so the left side becomes a product $(m - a)(n - b)$. This is clever factoring (Simon's favorite factoring trick).",
+    "$mn - 2m - 3n + 6 = 36$, so $(m - 3)(n - 2) = 36$. Each integer divisor $d$ of $36$, positive or negative, gives exactly one pair."
+  ],
+  "solutions": {
+    "reliable": "Rewrite the equation as $mn - 2m - 3n = 30$ and add $6$ to both sides: $mn - 2m - 3n + 6 = 36$, which factors as $(m - 3)(n - 2) = 36$. Every integer divisor $d$ of $36$ gives the pair $m = 3 + d$, $n = 2 + 36/d$, and every solution arises this way. Since $36 = 2^2 \\cdot 3^2$ has $3 \\cdot 3 = 9$ positive divisors, it has $18$ integer divisors, so there are $18$ ordered pairs. For example $d = -4$ gives $(m, n) = (-1, -7)$, and indeed $(-1)(-7) = 7 = -2 - 21 + 30$. Transferable idea: when $xy$, $x$ and $y$ appear together, add the constant that makes the expression factor, then count divisors with both signs.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-01"
+  ],
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

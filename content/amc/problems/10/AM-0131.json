@@ -1,0 +1,70 @@
+{
+  "id": "AM-0131",
+  "contest": "BOTH",
+  "slot": 10,
+  "area": "CP",
+  "topic": "CP-05",
+  "types": [
+    "T-STARS-BARS",
+    "T-COMPLEMENT"
+  ],
+  "statement": "How many three-digit positive integers have digits that add up to $10$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I required all three digits to be nonzero, which gives C(9, 2) = 36 and misses numbers like 307 and 550."
+    },
+    {
+      "key": "B",
+      "text": "$54$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$55$",
+      "correct": false,
+      "misconception": "I handled the nonzero hundreds digit correctly but forgot that a digit cannot be more than 9, so I kept the solution where the hundreds digit would be 10."
+    },
+    {
+      "key": "D",
+      "text": "$63$",
+      "correct": false,
+      "misconception": "I allowed the hundreds digit to be 0, so I counted strings like 019 that are not three-digit numbers."
+    },
+    {
+      "key": "E",
+      "text": "$66$",
+      "correct": false,
+      "misconception": "I counted all solutions of a + b + c = 10 in nonnegative integers, ignoring both the leading-digit rule and the digit limit of 9."
+    }
+  ],
+  "hints": [
+    "Write the number as $abc$ with $a \\ge 1$.",
+    "Shift the hundreds digit so that every variable can be zero, apply stars and bars, then subtract the solutions where some digit is larger than 9.",
+    "Put $a = a' + 1$: $a' + b + c = 9$ has $\\binom{11}{2} = 55$ solutions. Only $a' = 9$, that is $a = 10$, breaks the digit limit."
+  ],
+  "solutions": {
+    "reliable": "Write the number as $\\overline{abc}$ with $1 \\le a \\le 9$ and $0 \\le b, c \\le 9$, and $a + b + c = 10$. Let $a' = a - 1 \\ge 0$, so $a' + b + c = 9$. Stars and bars gives $\\binom{9 + 2}{2} = 55$ nonnegative solutions. Now remove those with a digit too big: $a' \\le 8$ fails only for $a' = 9, b = c = 0$, which is $a = 10$; and $b$ or $c$ equal to $10$ or more is impossible because the total is $9$. So the count is $55 - 1 = 54$. Transferable idea: stars and bars first, then subtract the cases that break an upper bound.",
+    "elegant": "Count by the hundreds digit $a$. Then $b + c = 10 - a$, and since $10 - a \\le 9$ the digit limit never bites, so there are $11 - a$ choices of $b$. Summing over $a = 1, \\ldots, 9$ gives $10 + 9 + 8 + \\cdots + 2 = 54$."
+  },
+  "formulas": [
+    "F-CP-05",
+    "F-CP-06"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

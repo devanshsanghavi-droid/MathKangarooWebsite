@@ -1,0 +1,69 @@
+{
+  "id": "AM-0058",
+  "contest": "AMC10",
+  "slot": 13,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-ANGLE-CHASE"
+  ],
+  "statement": "Twenty points $P_0, P_1, \\dots, P_{19}$ are equally spaced, in that order, around a circle. Chords $\\overline{P_0P_9}$ and $\\overline{P_3P_{14}}$ intersect at a point $X$ inside the circle. What is the degree measure of $\\angle P_0XP_3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I used the rule for two secants meeting outside the circle and took half the difference of the arcs, $\\tfrac12(90^\\circ - 54^\\circ) = 18^\\circ$, but $X$ is inside the circle, where the arcs are added."
+    },
+    {
+      "key": "B",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I treated $\\angle P_0XP_3$ as an inscribed angle on arc $P_0P_3$ and took half of $54^\\circ$, ignoring the arc $P_9P_{14}$ cut off by the vertical angle."
+    },
+    {
+      "key": "C",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I used only the far arc $P_9P_{14}$ of $90^\\circ$ and halved it, as if the angle were inscribed in that arc alone."
+    },
+    {
+      "key": "D",
+      "text": "$54$",
+      "correct": false,
+      "misconception": "I treated the angle as a central angle and gave the arc $P_0P_3$ itself, $3 \\cdot 18^\\circ = 54^\\circ$, but $X$ is not the center."
+    },
+    {
+      "key": "E",
+      "text": "$72$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Each gap between neighbouring points is the same arc. How many degrees is it?",
+    "Two chords crossing inside a circle make an angle equal to half the sum of the arcs cut off by that angle and by its vertical angle.",
+    "Each gap is $18^\\circ$. The angle at $X$ cuts off arc $P_0P_3$ ($54^\\circ$) and its vertical angle cuts off arc $P_9P_{14}$ ($90^\\circ$). Average them."
+  ],
+  "solutions": {
+    "reliable": "The $20$ points split the circle into arcs of $360^\\circ / 20 = 18^\\circ$. The endpoints alternate around the circle in the order $P_0, P_3, P_9, P_{14}$, so the chords do cross. The angle $\\angle P_0XP_3$ opens onto arc $P_0P_3$, which is $3 \\cdot 18^\\circ = 54^\\circ$; its vertical angle $\\angle P_9XP_{14}$ opens onto arc $P_9P_{14}$, which is $5 \\cdot 18^\\circ = 90^\\circ$. For two chords meeting inside a circle the angle is half the sum of these arcs: $\\tfrac12(54^\\circ + 90^\\circ) = 72^\\circ$. Transferable idea: inside the circle, add the arcs and halve; outside, subtract and halve.",
+    "elegant": "Draw chord $\\overline{P_3P_9}$. In triangle $P_3XP_9$ the angle at $X$ we want is exterior, so it equals $\\angle XP_3P_9 + \\angle XP_9P_3$. These are inscribed angles on arcs $P_9P_{14}$ and $P_0P_3$, so they are $45^\\circ$ and $27^\\circ$, giving $72^\\circ$. This is exactly why the half-sum rule is true."
+  },
+  "formulas": [
+    "F-GEO-13",
+    "F-GEO-12"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

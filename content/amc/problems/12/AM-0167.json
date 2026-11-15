@@ -1,0 +1,69 @@
+{
+  "id": "AM-0167",
+  "contest": "AMC12",
+  "slot": 9,
+  "area": "ALG",
+  "topic": "ALG-06",
+  "types": [
+    "T-BOUNDING",
+    "T-SYMMETRY"
+  ],
+  "statement": "How many integers $x$ satisfy $\\log_2 x + \\log_2 (20 - x) \\ge 6$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I solved $|x - 10| \\le 6$ but treated the boundary as excluded, as if the inequality were strict, so I lost $x = 4$ and $x = 16$."
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found the interval $4 \\le x \\le 16$ and counted its integers as $16 - 4 = 12$, forgetting to include both endpoints."
+    },
+    {
+      "key": "C",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I turned $\\ge 6$ into $x(20 - x) \\ge 6^2 = 36$ instead of $2^6 = 64$, which allows $2 \\le x \\le 18$."
+    },
+    {
+      "key": "E",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I only checked that both logarithms are defined, $0 < x < 20$, and counted those $19$ integers without using the inequality."
+    }
+  ],
+  "hints": [
+    "Combine the two logarithms, and remember where each one is defined.",
+    "For $0 < x < 20$, the left side is $\\log_2$ of a product. Undo the log to get a quadratic inequality, and complete the square around the symmetric center $x = 10$.",
+    "The condition is $x(20 - x) \\ge 64$, and $x(20 - x) = 100 - (x - 10)^2$."
+  ],
+  "solutions": {
+    "reliable": "Both logs need $0 < x < 20$. On that range the inequality is $\\log_2\\big(x(20 - x)\\big) \\ge 6$, that is, $x(20 - x) \\ge 2^6 = 64$, because $\\log_2$ is increasing. Since $x(20 - x) = 100 - (x - 10)^2$, this says $(x - 10)^2 \\le 36$, so $4 \\le x \\le 16$, which lies inside the domain. That is $16 - 4 + 1 = 13$ integers. Check the edge: $x = 4$ gives $\\log_2 4 + \\log_2 16 = 2 + 4 = 6$. Transferable idea: a product $x(c - x)$ is largest at the center $\\frac{c}{2}$, so writing it as a square deficit turns the inequality into a distance from the center.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-10"
+  ],
+  "estSeconds": 135,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "AM-0100",
+  "contest": "AMC10",
+  "slot": 15,
+  "area": "NT",
+  "topic": "NT-10",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-COMPLEMENT"
+  ],
+  "statement": "For how many integers $n$ with $1 \\le n \\le 100$ is $\\dfrac{n}{120}$ a terminating decimal but $\\dfrac{n}{36}$ not a terminating decimal?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I mixed up the two conditions and counted the multiples of 9, which are the $n$ that make $n/36$ terminate."
+    },
+    {
+      "key": "B",
+      "text": "$22$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I counted the 33 multiples of 3, which make $n/120$ terminate, and forgot to remove those that also make $n/36$ terminate."
+    },
+    {
+      "key": "D",
+      "text": "$67$",
+      "correct": false,
+      "misconception": "I thought $n/120$ terminates when 3 does not divide $n$, and every such $n$ fails for 36, so I counted the 67 non-multiples of 3."
+    },
+    {
+      "key": "E",
+      "text": "$89$",
+      "correct": false,
+      "misconception": "I counted the 89 values that are not multiples of 9, which handles $n/36$, and ignored the condition on $n/120$."
+    }
+  ],
+  "hints": [
+    "A fraction in lowest terms terminates exactly when its denominator has no prime factors other than 2 and 5.",
+    "Factor $120$ and $36$. For each fraction, decide which factors $n$ must cancel so that only 2s and 5s remain.",
+    "$n/120$ terminates exactly when $3 \\mid n$, and $n/36$ terminates exactly when $9 \\mid n$. Count multiples of 3 that are not multiples of 9."
+  ],
+  "solutions": {
+    "reliable": "Since $120 = 2^3 \\cdot 3 \\cdot 5$, the fraction $n/120$ terminates exactly when $n$ cancels the single factor of 3, that is, when $3 \\mid n$. Since $36 = 2^2 \\cdot 3^2$, the fraction $n/36$ terminates exactly when $9 \\mid n$. So we want multiples of 3 that are not multiples of 9. Between 1 and 100 there are $\\lfloor 100/3 \\rfloor = 33$ multiples of 3 and $\\lfloor 100/9 \\rfloor = 11$ multiples of 9, all of which are multiples of 3. The answer is $33 - 11 = 22$. Transferable idea: whether a fraction terminates depends only on the primes other than 2 and 5 left in its reduced denominator.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-15",
+    "F-NT-20"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

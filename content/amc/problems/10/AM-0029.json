@@ -1,0 +1,69 @@
+{
+  "id": "AM-0029",
+  "contest": "AMC10",
+  "slot": 17,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-TELESCOPE"
+  ],
+  "statement": "A sequence is defined by $a_1 = 1$ and $a_{n+1} = \\dfrac{a_n}{1 + n\\,a_n}$ for $n \\ge 1$. What is $a_{30}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{1}{871}$",
+      "correct": false,
+      "misconception": "I found $\\frac{1}{a_{30}} = 1 + (1 + 2 + \\cdots + 29)$ but computed the sum as $29 \\cdot 30 = 870$, forgetting to halve."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1}{466}$",
+      "correct": false,
+      "misconception": "I added $1 + 2 + \\cdots + 30 = 465$ to $\\frac{1}{a_1} = 1$, one step too many, since reaching $a_{30}$ uses $n = 1$ through $29$."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{1}{436}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{1}{435}$",
+      "correct": false,
+      "misconception": "I summed $1 + 2 + \\cdots + 29 = 435$ correctly but forgot to start from $\\frac{1}{a_1} = 1$."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{1}{407}$",
+      "correct": false,
+      "misconception": "I stopped the sum one term early at $1 + 2 + \\cdots + 28 = 406$, then added $\\frac{1}{a_1} = 1$."
+    }
+  ],
+  "hints": [
+    "Look at the reciprocals of the terms.",
+    "Flip both sides of the recursion. The reciprocal $b_n = \\frac{1}{a_n}$ satisfies a much simpler rule.",
+    "$\\frac{1}{a_{n+1}} = \\frac{1}{a_n} + n$, so $\\frac{1}{a_{30}} = 1 + (1 + 2 + \\cdots + 29) = 1 + 435$."
+  ],
+  "solutions": {
+    "reliable": "Take reciprocals: $\\frac{1}{a_{n+1}} = \\frac{1 + n a_n}{a_n} = \\frac{1}{a_n} + n$. So each step adds $n$ to the reciprocal. Starting from $\\frac{1}{a_1} = 1$ and applying the steps $n = 1, 2, \\ldots, 29$, we get $\\frac{1}{a_{30}} = 1 + \\frac{29 \\cdot 30}{2} = 1 + 435 = 436$. Check small cases: $a_2 = \\frac{1}{2}$, $a_3 = \\frac{1/2}{1 + 1} = \\frac14$, matching $1 + 1 = 2$ and $1 + 1 + 2 = 4$. So $a_{30} = \\frac{1}{436}$. Transferable idea: a fraction-shaped recursion often becomes additive after taking reciprocals.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-03"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

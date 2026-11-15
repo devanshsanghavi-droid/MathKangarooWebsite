@@ -1,0 +1,69 @@
+{
+  "id": "AM-0050",
+  "contest": "BOTH",
+  "slot": 8,
+  "area": "GEO",
+  "topic": "GEO-01",
+  "types": [
+    "T-ANGLE-CHASE",
+    "T-SYMMETRY"
+  ],
+  "statement": "Equilateral triangle $ABP$ is drawn inside regular pentagon $ABCDE$, so that $P$ lies in the interior of the pentagon. What is the degree measure of $\\angle CPD$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$42$",
+      "correct": false,
+      "misconception": "I found angle PCD = 108 - 66 = 42 and stopped there, giving an angle at C instead of the angle at P."
+    },
+    {
+      "key": "B",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I found angle PBC = 108 - 60 = 48 and gave that, which is the angle at B, not at P."
+    },
+    {
+      "key": "C",
+      "text": "$66$",
+      "correct": false,
+      "misconception": "I found the base angle BCP = (180 - 48)/2 = 66 of isosceles triangle BCP and gave that."
+    },
+    {
+      "key": "D",
+      "text": "$84$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$96$",
+      "correct": false,
+      "misconception": "I assumed PC = PD, so I made both base angles of triangle PCD equal to 42 and got 180 - 84 = 96. In fact P is on the line of symmetry through D, so PC = PE."
+    }
+  ],
+  "hints": [
+    "Each interior angle of a regular pentagon is $108^\\circ$. Look at triangle $PBC$.",
+    "Since $BP = BA = BC$, triangle $PBC$ is isosceles. Find its angles, then work in triangle $PCD$, using the pentagon's line of symmetry through $D$.",
+    "$\\angle PBC = 48^\\circ$, so $\\angle BCP = 66^\\circ$ and $\\angle PCD = 42^\\circ$. The symmetry line through $D$ and $P$ bisects $\\angle CDE$, so $\\angle PDC = 54^\\circ$."
+  ],
+  "solutions": {
+    "reliable": "Interior angles of a regular pentagon are $108^\\circ$. Since $ABP$ is equilateral, $BP = AB = BC$ and $\\angle PBC = 108^\\circ - 60^\\circ = 48^\\circ$. Triangle $BCP$ is isosceles with apex $48^\\circ$, so $\\angle BCP = (180^\\circ - 48^\\circ)/2 = 66^\\circ$ and $\\angle PCD = 108^\\circ - 66^\\circ = 42^\\circ$. The perpendicular bisector of $AB$ is a line of symmetry of the pentagon passing through $D$, and $P$ lies on it because $PA = PB$. So $DP$ bisects $\\angle CDE$ and $\\angle PDC = 54^\\circ$. In triangle $PCD$, $\\angle CPD = 180^\\circ - 42^\\circ - 54^\\circ = 84^\\circ$. The transferable idea: equal lengths make isosceles triangles, and a figure's symmetry line hands you a bisected angle.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-19"
+  ],
+  "estSeconds": 135,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

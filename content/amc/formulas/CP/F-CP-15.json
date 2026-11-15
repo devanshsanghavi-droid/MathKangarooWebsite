@@ -1,0 +1,18 @@
+{
+  "id": "F-CP-15",
+  "area": "CP",
+  "name": "Lattice paths",
+  "formula": "\\#\\text{paths from } (0,0) \\text{ to } (m,n) \\text{ with unit steps right and up} = \\binom{m+n}{m}",
+  "whenToUse": "Counting shortest routes on a grid, or any sequence made of a fixed number of two kinds of steps.",
+  "example": "From $(0,0)$ to $(5,3)$ there are $\\binom{8}{3} = 56$ paths. Those through $(2,1)$ number $\\binom{3}{1} \\cdot \\binom{5}{2} = 3 \\cdot 10 = 30$.",
+  "pitfall": "To pass through a point, MULTIPLY the two leg counts. To avoid a point, subtract the paths through it from the total.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "types": [
+    "T-BIJECTION",
+    "T-COMPLEMENT"
+  ]
+}

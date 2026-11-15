@@ -1,0 +1,67 @@
+{
+  "id": "AM-0175",
+  "contest": "AMC12",
+  "slot": 14,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-CASEWORK"
+  ],
+  "statement": "Three real numbers $a$, $b$, $c$ form an arithmetic sequence in that order, with nonzero common difference, and $a + b + c = 18$. Taken in the order $a$, $c$, $b$, the same numbers form a geometric sequence. What is $a$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-18$",
+      "correct": false,
+      "misconception": "I found the common difference $d = -18$ and reported it instead of $a = 6 - d$."
+    },
+    {
+      "key": "B",
+      "text": "$-12$",
+      "correct": false,
+      "misconception": "I put the wrong term in the middle of the geometric sequence and used $a^2 = bc$, which gives $d = 18$ and $a = 6 - 18$."
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I took the root $d = 0$ of $d^2 + 18d = 0$, which makes all three numbers $6$, but the common difference must be nonzero."
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I expanded $(6 + d)^2$ as $36 + 6d + d^2$, forgetting to double the cross term, so I got $d = -12$ and $a = 18$."
+    },
+    {
+      "key": "E",
+      "text": "$24$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Write the three terms around the middle one.",
+    "Since the sum is $18$, the terms are $6 - d$, $6$, $6 + d$. In the order $a, c, b$ the middle term of the geometric sequence is $c$, so $c^2 = ab$.",
+    "$(6 + d)^2 = 6(6 - d)$ simplifies to $d^2 + 18d = 0$. Since $d \\neq 0$, $d = -18$, and $a = 6 - d$."
+  ],
+  "solutions": {
+    "reliable": "Let the terms be $a = 6 - d$, $b = 6$, $c = 6 + d$, so that $a + b + c = 18$. For $a, c, b$ to be geometric, $c^2 = ab$: $(6 + d)^2 = 6(6 - d)$, so $36 + 12d + d^2 = 36 - 6d$ and $d(d + 18) = 0$. The common difference is nonzero, so $d = -18$, giving $a = 24$, $b = 6$, $c = -12$. Check: $24, -12, 6$ is geometric with ratio $-\\tfrac12$. Transferable idea: centre an arithmetic sequence on its middle term so the sum fixes one unknown at once.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

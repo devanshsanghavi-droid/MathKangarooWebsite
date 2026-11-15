@@ -1,0 +1,69 @@
+{
+  "id": "AM-0020",
+  "contest": "AMC10",
+  "slot": 13,
+  "area": "ALG",
+  "topic": "ALG-05",
+  "types": [
+    "T-TELESCOPE",
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Positive numbers $a_1, a_2, \\ldots, a_n$ satisfy $9^{a_1} = 10$, $10^{a_2} = 11$, $11^{a_3} = 12$, and so on, each equation using the previous result as its base, ending with $(n + 8)^{a_n} = n + 9$. The product $a_1 a_2 \\cdots a_n$ equals $2$. What is $n$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I treated the product like the fractions $\\frac{10}{9} \\cdot \\frac{11}{10} \\cdots \\frac{n+9}{n+8} = \\frac{n+9}{9}$, as if each exponent were a ratio of bases, and solved $\\frac{n+9}{9} = 2$."
+    },
+    {
+      "key": "B",
+      "text": "$71$",
+      "correct": false,
+      "misconception": "I found that the chain ends at $81$ but counted only the bases strictly between $9$ and $81$, missing the base $9$ itself."
+    },
+    {
+      "key": "C",
+      "text": "$72$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$73$",
+      "correct": false,
+      "misconception": "I found that the chain ends at $81$ and counted every number from $9$ to $81$, but $81$ is only a result, never a base."
+    },
+    {
+      "key": "E",
+      "text": "$81$",
+      "correct": false,
+      "misconception": "I found that the chain must end at $81 = 9^2$ and reported that final number instead of the number of equations."
+    }
+  ],
+  "hints": [
+    "Start from $9$ and apply the equations one after another.",
+    "Raise $9^{a_1} = 10$ to the power $a_2$ and use $10^{a_2} = 11$. Keep substituting: what power of $9$ equals the last number $n + 9$?",
+    "The chain gives $9^{a_1 a_2 \\cdots a_n} = n + 9$, so $n + 9 = 9^2 = 81$. The bases run from $9$ to $n + 8 = 80$."
+  ],
+  "solutions": {
+    "reliable": "Substitute each equation into the next. From $9^{a_1} = 10$ we get $9^{a_1 a_2} = (9^{a_1})^{a_2} = 10^{a_2} = 11$, then $9^{a_1 a_2 a_3} = 11^{a_3} = 12$, and so on, so $9^{a_1 a_2 \\cdots a_n} = n + 9$. The product is $2$, so $n + 9 = 9^2 = 81$ and $n = 72$. Check the count: the bases are $9, 10, \\ldots, 80$, which is $80 - 9 + 1 = 72$ equations. Transferable idea: a chain of exponent equations collapses when you substitute each into the next.",
+    "elegant": "The $k$th equation has base $k + 8$, so $a_k = \\frac{\\log (k + 9)}{\\log (k + 8)}$. The product telescopes to $\\frac{\\log (n + 9)}{\\log 9} = \\log_9 (n + 9)$, which equals $2$ exactly when $n + 9 = 81$. Transferable idea: change of base turns a product of logarithms into a telescoping product."
+  },
+  "formulas": [
+    "F-ALG-11"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

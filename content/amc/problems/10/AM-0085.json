@@ -1,0 +1,69 @@
+{
+  "id": "AM-0085",
+  "contest": "BOTH",
+  "slot": 10,
+  "area": "NT",
+  "topic": "NT-06",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-CASEWORK"
+  ],
+  "statement": "In how many bases $b \\ge 2$ does the base-$b$ representation of the number $720$ end in exactly two zeros?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I only tried prime bases, and the only prime base that works is 3."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I only tried bases from 2 to 10 and found 3, 4 and 6, missing base 12."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I counted every b with b^2 dividing 720, which includes b = 2, but 720 = 2^4 x 45 ends in four zeros in base 2, not two."
+    },
+    {
+      "key": "E",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I counted all six divisors of 12, including 1, which is not a base, and 2, which gives four zeros."
+    }
+  ],
+  "hints": [
+    "A number ends in a zero in base $b$ exactly when $b$ divides it. What does ending in exactly two zeros mean?",
+    "You need $b^2 \\mid 720$ but $b^3 \\nmid 720$. With $720 = 2^4 \\cdot 3^2 \\cdot 5$, the condition $b^2 \\mid 720$ means $b \\mid 2^2 \\cdot 3 = 12$.",
+    "Test $b = 2, 3, 4, 6, 12$ for $b^3 \\mid 720$. Only $b = 2$ fails, since $8 \\mid 720$."
+  ],
+  "solutions": {
+    "reliable": "In base $b$, the last digit of $N$ is the remainder when $N$ is divided by $b$, so $N$ ends in at least $m$ zeros exactly when $b^m \\mid N$. We need $b^2 \\mid 720$ and $b^3 \\nmid 720$. Since $720 = 2^4 \\cdot 3^2 \\cdot 5$, the condition $b^2 \\mid 720$ allows at most two factors of $2$, at most one $3$ and no $5$ in $b$, so $b \\in \\{2, 3, 4, 6, 12\\}$ (leaving out $1$). Now test cubes: $2^3 = 8$ divides $720$, so base $2$ gives more than two zeros (in fact four). But $3^3 = 27$, $4^3 = 64$, $6^3 = 216$ and $12^3 = 1728$ do not divide $720$. So the bases are $3, 4, 6, 12$: four of them. For example, $720 = 5 \\cdot 12^2$ is written $500$ in base $12$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-11"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,71 @@
+{
+  "id": "AM-0169",
+  "contest": "AMC12",
+  "slot": 10,
+  "area": "ALG",
+  "topic": "ALG-03",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-BOUNDING",
+    "T-CASEWORK"
+  ],
+  "statement": "For how many integers $c$ does the equation $(x^2 - 6x)^2 + 2(x^2 - 6x) = c$ have exactly four distinct real solutions $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$63$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I counted $c = 63$ as well, but there $u = -9$ gives only the single solution $x = 3$, so the equation has three distinct solutions, not four."
+    },
+    {
+      "key": "C",
+      "text": "$65$",
+      "correct": false,
+      "misconception": "I counted both endpoints $c = -1$ and $c = 63$, but $c = -1$ gives only the two solutions of $x^2 - 6x = -1$ and $c = 63$ gives three."
+    },
+    {
+      "key": "D",
+      "text": "$99$",
+      "correct": false,
+      "misconception": "I evaluated $u^2 + 2u$ at $u = -9$ as $81 + 18 = 99$, losing the sign of $2u$, and counted $c = 0, 1, \\ldots, 98$."
+    },
+    {
+      "key": "E",
+      "text": "$\\text{infinitely many}$",
+      "correct": false,
+      "misconception": "I forgot that $u = x^2 - 6x$ can never be less than $-9$, so every $c > -1$ seemed to give two values of $u$ and four solutions."
+    }
+  ],
+  "hints": [
+    "The same expression appears twice. Replace it with one letter, and ask which values that letter can take.",
+    "Let $u = x^2 - 6x = (x - 3)^2 - 9$. Each $u > -9$ comes from two values of $x$, $u = -9$ from one, and $u < -9$ from none. Count solutions $u$ of $u^2 + 2u = c$ in the allowed range.",
+    "Four solutions $x$ need two solutions $u$, both greater than $-9$. The roots are $u = -1 \\pm \\sqrt{1 + c}$; you need $c > -1$ and $-1 - \\sqrt{1 + c} > -9$."
+  ],
+  "solutions": {
+    "reliable": "Let $u = x^2 - 6x = (x - 3)^2 - 9$, so $u \\ge -9$; each $u > -9$ gives two values of $x$, $u = -9$ gives only $x = 3$, and different $u$ give different $x$. The equation $u^2 + 2u = c$ has roots $u = -1 \\pm \\sqrt{1 + c}$. For exactly four solutions $x$ we need two distinct roots $u$, both above $-9$: $c > -1$ and $-1 - \\sqrt{1 + c} > -9$, that is, $\\sqrt{1 + c} < 8$, so $c < 63$. Check the edges: $c = -1$ gives the single $u = -1$ and two solutions; $c = 63$ gives $u = 7$ and $u = -9$, so three solutions. Hence $c = 0, 1, \\ldots, 62$: $63$ integers. Transferable idea: after a substitution $u = g(x)$, track how many $x$ each $u$ produces, which depends on the range of $g$.",
+    "elegant": "Graph $h(u) = u^2 + 2u$ on the allowed range $u \\ge -9$: it falls from $h(-9) = 63$ to $h(-1) = -1$, then rises forever. A horizontal line $y = c$ meets this piece twice exactly when $-1 < c \\le 63$, and the meeting at $u = -9$ (when $c = 63$) is worth only one $x$. So four solutions need $-1 < c < 63$, which is $63$ integers."
+  },
+  "formulas": [
+    "F-ALG-17",
+    "F-ALG-16"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

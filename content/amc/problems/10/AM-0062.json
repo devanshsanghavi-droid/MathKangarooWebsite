@@ -1,0 +1,68 @@
+{
+  "id": "AM-0062",
+  "contest": "AMC10",
+  "slot": 15,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-AUXILIARY",
+    "T-CASEWORK",
+    "T-EXTREME"
+  ],
+  "statement": "A closed rectangular box measures $2$ by $3$ by $6$. An ant walks along the outside surface of the box from one corner to the corner farthest from it. What is the length of the shortest such path?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I computed the space diagonal $\\sqrt{2^2 + 3^2 + 6^2} = 7$, which goes through the inside of the box, where the ant cannot walk."
+    },
+    {
+      "key": "B",
+      "text": "$\\sqrt{61}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\sqrt{73}$",
+      "correct": false,
+      "misconception": "I unfolded the box so that the $2$ and $6$ edges lined up, giving $\\sqrt{(2+6)^2 + 3^2}$, and did not compare it with the other two unfoldings."
+    },
+    {
+      "key": "D",
+      "text": "$\\sqrt{85}$",
+      "correct": false,
+      "misconception": "I unfolded across the $3$ and $6$ edges and got $\\sqrt{(3+6)^2 + 2^2}$, which is the longest of the three unfoldings, not the shortest."
+    },
+    {
+      "key": "E",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I had the ant walk along three edges, $2 + 3 + 6 = 11$, instead of cutting diagonally across two faces."
+    }
+  ],
+  "hints": [
+    "Unfold two adjacent faces flat so the path becomes a straight segment.",
+    "The path crosses two faces and one edge between them. There are three essentially different choices of which edge to cross; compute the straight-line length for each.",
+    "The unfolded rectangles are $(2+3) \\times 6$, $(2+6) \\times 3$ and $(3+6) \\times 2$. Take the shortest diagonal."
+  ],
+  "solutions": {
+    "reliable": "A shortest surface path between opposite corners crosses exactly two faces. Unfolding those two faces into one flat rectangle makes the path a straight diagonal. The three possible rectangles are $5 \\times 6$, $8 \\times 3$ and $9 \\times 2$, with diagonals $\\sqrt{25 + 36} = \\sqrt{61}$, $\\sqrt{64 + 9} = \\sqrt{73}$ and $\\sqrt{81 + 4} = \\sqrt{85}$. The shortest is $\\sqrt{61}$. Transferable idea: for paths on a surface, unfold to the plane, then compare every unfolding.",
+    "elegant": "For a box with edges $a \\le b \\le c$, the three candidates are $\\sqrt{(a+b)^2 + c^2}$, $\\sqrt{(a+c)^2 + b^2}$ and $\\sqrt{(b+c)^2 + a^2}$. Expanding, they differ only in the cross term $2ab$, $2ac$ or $2bc$, so the smallest pairs the two shortest edges: $\\sqrt{(2+3)^2 + 6^2} = \\sqrt{61}$."
+  },
+  "formulas": [],
+  "estSeconds": 135,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-14",
+  "license": "CC-BY-NC-SA-4.0"
+}

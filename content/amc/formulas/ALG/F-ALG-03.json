@@ -1,0 +1,15 @@
+{
+  "id": "F-ALG-03",
+  "area": "ALG",
+  "name": "Sum of an arithmetic series",
+  "formula": "a_n = a_1 + (n-1)d, \\qquad S_n = \\frac{n\\,(a_1 + a_n)}{2}",
+  "whenToUse": "Adding a list of numbers that go up or down by the same step each time, or finding how many terms such a list has.",
+  "example": "For $5 + 9 + 13 + \\cdots + 81$ the step is $4$, so there are $\\frac{81 - 5}{4} + 1 = 20$ terms and the sum is $\\frac{20 \\cdot (5 + 81)}{2} = 860$.",
+  "pitfall": "The number of terms is $\\frac{\\text{last} - \\text{first}}{d} + 1$. Forgetting the $+1$ is the most common off-by-one error on the whole contest.",
+  "priority": "must-know",
+  "contests": [
+    "AMC10",
+    "AMC12"
+  ],
+  "derivation": "Write the sum forwards and backwards and add the two copies term by term. Each of the $n$ pairs adds to $a_1 + a_n$, so twice the sum is $n(a_1 + a_n)$."
+}

@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useProgress } from '@/components/mastery/useProgress';
 
 /**
  * Registers the service worker, and offers the install prompt when the browser fires one.
@@ -12,9 +13,14 @@ import { useEffect, useState } from 'react';
  *  - **No nagging.** The install button appears only if the browser itself decides the site is
  *    installable, it is dismissible, and the dismissal is remembered. An install prompt that
  *    reappears on every visit is an advertisement.
+ *  - **Not on a first look.** It waits until the student has tried a few problems, so a new
+ *    visitor's first screen is the site, not a pop-up.
  */
 
 const DISMISSED_KEY = 'ka-install-dismissed';
+
+/** Distinct problems tried in this browser before the install prompt may appear. */
+const MIN_PROBLEMS_TRIED = 3;
 
 interface InstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -23,6 +29,14 @@ interface InstallPromptEvent extends Event {
 
 export function ServiceWorkerRegistration() {
   const [installEvent, setInstallEvent] = useState<InstallPromptEvent | null>(null);
+  const progress = useProgress();
+  const tried = useMemo(() => {
+    const ids = new Set<string>();
+    for (const attempts of Object.values(progress.attempts)) {
+      for (const attempt of attempts) ids.add(attempt.problemId);
+    }
+    return ids.size;
+  }, [progress]);
 
   useEffect(() => {
     if (process.env.NODE_ENV !== 'production') return;
@@ -65,7 +79,7 @@ export function ServiceWorkerRegistration() {
     await event.userChoice;
   }
 
-  if (!installEvent) return null;
+  if (!installEvent || tried < MIN_PROBLEMS_TRIED) return null;
 
   return (
     <div

@@ -16,6 +16,7 @@ import {
 } from '@/lib/practice-home';
 import { LEVEL_EVENT, LEVEL_KEY, readLevel, writeLevel } from '@/lib/level-pref';
 import { Button, ButtonLink, Card, CardHeader, ProgressBar, StatTile, cx } from '@/components/ui';
+import { HowItWorks, LevelChooser, MoreToExplore, WelcomeHero, type SiteStats } from './Welcome';
 
 /** What the server hands the Practice home: counts and ids, computed at build time. */
 export interface HomeSkill {
@@ -39,6 +40,8 @@ export interface PracticeHomeProps {
   strands: readonly HomeStrand[];
   /** The Problem of the day card, rendered by the server page and slotted in. */
   potd: ReactNode;
+  /** Counted from the content files at build time, for the first-visit hero. */
+  stats: SiteStats;
 }
 
 /** How many problems "Random unsolved" puts in a set. */
@@ -71,7 +74,7 @@ function useLevel(): Band | null {
  * same quick starts. Nothing here asks for an account, and every number is a count of the
  * student's own solved problems: no points, no badges, no comparison with anyone else.
  */
-export function PracticeHome({ problems: rows, skills, strands, potd }: PracticeHomeProps) {
+export function PracticeHome({ problems: rows, skills, strands, potd, stats }: PracticeHomeProps) {
   const file = useProgress();
   const chosenLevel = useLevel();
   const problems = useMemo(
@@ -82,56 +85,31 @@ export function PracticeHome({ problems: rows, skills, strands, potd }: Practice
   const streak = useMemo(() => streakFrom(activeDaysOf(file), localDay(new Date())), [file]);
   const skillById = useMemo(() => new Map(skills.map((skill) => [skill.id, skill])), [skills]);
 
+  // First visit (and the server render): a calm, one-idea-per-section introduction.
+  if (!summary.returning) {
+    return (
+      <div className="grid gap-16 sm:gap-20">
+        <WelcomeHero stats={stats} />
+        <HowItWorks />
+        <LevelChooser problems={problems} summary={summary} chosen={chosenLevel} />
+        <MoreToExplore potd={potd} />
+      </div>
+    );
+  }
+
   return (
     <div className="grid gap-6">
-      {summary.returning ? (
-        <ReturningTop summary={summary} problems={problems} skillById={skillById} streak={streak} />
-      ) : (
-        <NewVisitorHero total={problems.length} skillCount={skills.length} />
-      )}
-
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-        <LevelPanel summary={summary} chosen={chosenLevel} returning={summary.returning} />
-        {potd}
-      </div>
+      <ReturningTop summary={summary} problems={problems} skillById={skillById} streak={streak} />
 
       <QuickStarts problems={problems} summary={summary} skills={skills} level={chosenLevel} />
 
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+        <LevelPanel summary={summary} chosen={chosenLevel} returning={summary.returning} />
+        <div className="grid">{potd}</div>
+      </div>
+
       <StrandPanel strands={strands} summary={summary} />
     </div>
-  );
-}
-
-/* -------------------------------------------------------------------------- */
-/* First visit                                                                 */
-/* -------------------------------------------------------------------------- */
-
-function NewVisitorHero({ total, skillCount }: { total: number; skillCount: number }) {
-  return (
-    <Card as="section" aria-labelledby="hero-heading" padding="lg">
-      <p className="ui m-0 text-xs font-semibold text-accent-700">
-        Free Math Kangaroo practice. No account needed.
-      </p>
-      <h1 id="hero-heading" className="mt-2 mb-0 max-w-3xl text-3xl sm:text-4xl">
-        Math Kangaroo preparation organised by skill, not by year.
-      </h1>
-      <p className="prose-measure mt-4 mb-0 text-lg text-ink-2">
-        Every wrong answer tells you the mistake that produces it, so a score becomes a list of
-        things to work on. {total} original problems across {skillCount} skills.
-      </p>
-      <div className="mt-6 flex flex-wrap gap-3">
-        <ButtonLink href="/practice/diagnostic" variant="primary" size="lg">
-          Take the diagnostic
-        </ButtonLink>
-        <ButtonLink href="/problems" variant="secondary" size="lg">
-          Browse the question bank
-        </ButtonLink>
-      </div>
-      <p className="ui mt-4 mb-0 text-xs text-ink-3">
-        Everything runs on your own device. Progress is saved in this browser and nothing is sent
-        anywhere.
-      </p>
-    </Card>
   );
 }
 

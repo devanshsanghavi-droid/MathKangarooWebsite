@@ -29,9 +29,17 @@ The reference is OnePrep: a calm, white, app-like practice tool.
   Tailwind arbitrary values or theme config. Never a hex literal outside `tokens.css`.
 - **Type**: Figtree for UI. Big confident numbers (counts, progress) in Figtree semibold
   with `tabular-nums`. Problem statements stay in the reading face at `--step-2`.
-- **Accent**: the single teal (`--accent-*`) for the primary action, selected chips, active
+- **Accent**: the teal (`--accent-*`) for the primary action, selected chips, active
   navigation and progress fills. Difficulty uses the neutral `--d1..--d3` ramp with its
   dot glyphs. Mastery/progress uses the `--m0..--m3` teal ramp.
+- **Decorative tints** (owner decision 2026-11-17, after feedback that the home page felt
+  cluttered and flat): `--sky-*`, `--violet-*` and `--rose-*` (100 tint, 500 mid, 700 text)
+  for warmth only: hero glows, step icons, level tiles, feature cards. They carry no meaning,
+  and their hues sit clear of green, red and amber, so they can never be read as feedback.
+- **First-visit home**: one idea per section. Hero (what this is, one primary action),
+  "How it works" in three steps, "Which level are you?" (choosing a level reveals where to
+  start), then "More to explore". The dashboard (Continue, solved counts, strands) appears
+  only once the browser holds progress. The install prompt waits until 3 problems are tried.
 - **Progress bars** are the main "gamified" element: solved / total per skill, strand, level,
   AMC area and topic. Thin (6px) rounded bars, teal fill, label with the numbers. Also
   allowed: the existing streak, "N solved this week", completion rings per area. Not allowed:

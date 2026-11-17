@@ -29,6 +29,15 @@
   --color-accent-100: var(--accent-100);
   --color-on-accent: var(--on-accent);
   --color-track: var(--track);
+  --color-sky-100: var(--sky-100);
+  --color-sky-500: var(--sky-500);
+  --color-sky-700: var(--sky-700);
+  --color-violet-100: var(--violet-100);
+  --color-violet-500: var(--violet-500);
+  --color-violet-700: var(--violet-700);
+  --color-rose-100: var(--rose-100);
+  --color-rose-500: var(--rose-500);
+  --color-rose-700: var(--rose-700);
 
   --color-correct-700: var(--correct-700);
   --color-correct-600: var(--correct-600);
@@ -368,5 +377,36 @@ a:hover {
   .worksheet details,
   .answer-key details {
     display: none;
+  }
+}
+
+/*
+ * The first-visit hero's soft glow (docs/06 §1, decorative tints). Three blurred washes of
+ * the teal accent, violet and sky over the card surface. Decorative only: every piece of text
+ * on it is checked against --surface, and the washes are faint enough not to change that.
+ */
+.hero-glow {
+  background:
+    radial-gradient(
+      55% 70% at 0% 0%,
+      color-mix(in srgb, var(--accent-500) 18%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      50% 65% at 100% 0%,
+      color-mix(in srgb, var(--violet-500) 16%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      60% 60% at 75% 100%,
+      color-mix(in srgb, var(--sky-500) 14%, transparent),
+      transparent 70%
+    ),
+    var(--surface);
+}
+
+@media print {
+  .hero-glow {
+    background: none;
   }
 }

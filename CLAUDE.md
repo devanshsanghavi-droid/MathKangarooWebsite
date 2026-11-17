@@ -34,9 +34,10 @@ These are hard rules. If a task appears to require breaking one, stop and say so
   NFP."*
 - **Green, red and amber are reserved.** They appear only in response to something the student
   did: correct, incorrect, hint taken. Never for difficulty, never for a category, never for
-  decoration. If a component needs a colour and none of the reserved three apply, it uses a
-  neutral or the single teal accent - there is no fourth option. `pnpm check:palette` fails the
-  build on a violation. See `docs/05-DESIGN-DIRECTION.md` §2.
+  decoration. Everything else uses a neutral, the teal accent, or one of the decorative tints
+  (sky, violet, rose), which the owner allowed on 2026-11-17 to make the site warmer. The tints
+  sit clear of the reserved hues and are defined only in `tokens.css`. `pnpm check:palette`
+  fails the build on a violation. See `docs/05-DESIGN-DIRECTION.md` §2 and `docs/06` §1.
 - **Accessibility is not a phase.** WCAG 2.1 AA contrast, full keyboard operation, visible
   focus, `prefers-reduced-motion` respected. A component that fails this is not done.
 - **No scope creep.** Forums, leaderboards, video courses, AI tutors: all out of scope. If it

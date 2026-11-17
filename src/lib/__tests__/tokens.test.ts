@@ -56,6 +56,16 @@ const COLOR_TOKENS = [
   // v3 (docs/06 §1)
   '--on-accent',
   '--track',
+  // decorative tints (owner decision 2026-11-17)
+  '--sky-100',
+  '--sky-500',
+  '--sky-700',
+  '--violet-100',
+  '--violet-500',
+  '--violet-700',
+  '--rose-100',
+  '--rose-500',
+  '--rose-700',
 ] as const;
 
 /** The tokens v2 retired. Their continued absence is part of the contract. */
@@ -134,6 +144,22 @@ const PAIRS: Array<[string, string, number, string]> = [
   ['--hint-700', '--hint-100', 4.5, 'hint text on an opened hint'],
   ['--hint-700', '--surface', 4.5, 'the "Show a hint" control'],
   ['--hint-border', '--hint-100', 3, 'the opened-hint edge'],
+
+  // --- decorative tints: text on its own tint and on a card ---------------
+  ['--sky-700', '--sky-100', 4.5, 'sky text on a sky tint'],
+  ['--sky-700', '--surface', 4.5, 'sky text on a card'],
+  ['--violet-700', '--violet-100', 4.5, 'violet text on a violet tint'],
+  ['--violet-700', '--surface', 4.5, 'violet text on a card'],
+  ['--rose-700', '--rose-100', 4.5, 'rose text on a rose tint'],
+  ['--rose-700', '--surface', 4.5, 'rose text on a card'],
+  ['--ink', '--sky-100', 7, 'body text on a sky tint'],
+  ['--ink', '--violet-100', 7, 'body text on a violet tint'],
+  ['--ink', '--rose-100', 7, 'body text on a rose tint'],
+  ['--ink-2', '--sky-100', 4.5, 'secondary text on a sky tint'],
+  ['--ink-2', '--violet-100', 4.5, 'secondary text on a violet tint'],
+  ['--ink-2', '--rose-100', 4.5, 'secondary text on a rose tint'],
+  ['--ink', '--accent-100', 7, 'body text on a teal tint'],
+  ['--ink-2', '--accent-100', 4.5, 'secondary text on a teal tint'],
 
   // --- v3 practice-app shell (docs/06 §1) ---------------------------------
   ['--on-accent', '--accent-600', 4.5, 'the label on a primary button and a selected segment'],

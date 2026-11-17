@@ -10,7 +10,7 @@ import { dayNumber } from '@/lib/potd';
 import { encodeHomeProblem, potdWindow, previewText } from '@/lib/practice-home';
 import { ProblemOfTheDay } from '@/components/ProblemOfTheDay';
 import { PracticeHome } from '@/components/home/PracticeHome';
-import { PageContainer, StatTile } from '@/components/ui';
+import { PageContainer } from '@/components/ui';
 import { SITE } from '@/lib/site';
 import { StructuredData } from '@/components/StructuredData';
 
@@ -82,48 +82,12 @@ export default function HomePage() {
           skillCount: strand.skillCount,
         }))}
         potd={<ProblemOfTheDay picks={picks} startDay={today} />}
+        stats={{
+          problems: stats.problems,
+          skills: stats.skills,
+          misconceptions: stats.misconceptions,
+        }}
       />
-
-      <section aria-labelledby="counters-heading" className="mt-10">
-        <h2 id="counters-heading" className="ui m-0 text-lg font-semibold">
-          What is here so far
-        </h2>
-        <p className="prose-measure mt-1 mb-4 text-sm text-ink-2">
-          Counted from the files in the repository at build time, so these numbers cannot drift from
-          what the site actually holds.
-        </p>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <StatTile
-            value={stats.skills}
-            label="Skills mapped"
-            detail="Named skills in the Atlas, each with a definition and a prerequisite list."
-          />
-          <StatTile
-            value={stats.problems}
-            label="Problems authored"
-            detail="Original problems written from scratch. No official problem is reproduced here."
-          />
-          <StatTile
-            value={stats.misconceptions}
-            label="Explanations written"
-            detail="One per wrong answer choice: the specific mistake that produces that answer."
-          />
-          <StatTile
-            value={stats.figures}
-            label="Figures drawn"
-            detail="Hand-authored SVG figures, each with author-written alt text."
-          />
-        </div>
-        {/*
-          A "students served" counter belongs to the database and to /impact in Phase 3, and it
-          must never be published below n = 10. Inventing it here would be exactly the kind of
-          unbacked claim /impact exists to avoid.
-        */}
-        <p className="mt-3 mb-0 text-xs text-ink-3">
-          Students-served figures will come from the database, and nothing derived from fewer than
-          ten students is published at all.
-        </p>
-      </section>
     </PageContainer>
   );
 }

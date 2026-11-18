@@ -1,6 +1,7 @@
 import Link from '@/components/AppLink';
 import { PRIMARY_NAV, SITE } from '@/lib/site';
 import { ThemeToggle } from './ThemeToggle';
+import { AccountLink } from './AccountLink';
 import { NavLinks } from './NavLinks';
 import { BrandMark } from './shell/NavIcon';
 
@@ -32,7 +33,8 @@ export function Header() {
           <NavLinks items={PRIMARY_NAV} />
         </nav>
 
-        <div className="ml-auto shrink-0 sm:ml-0">
+        <div className="ml-auto flex shrink-0 items-center gap-2 sm:ml-0">
+          <AccountLink />
           <ThemeToggle />
         </div>
       </div>

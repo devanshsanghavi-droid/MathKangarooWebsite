@@ -65,13 +65,25 @@ export default function PrivacyPage() {
           write about a problem they missed.
         </p>
 
-        <h2 className="mt-10 text-lg">No trackers, no advertising, no cookies</h2>
+        <h2 className="mt-10 text-lg">No trackers, no advertising</h2>
         <p className="prose-measure mt-3 text-ink-2">
           There is no advertising on this site and there never will be. There are no third-party
           analytics, no social media pixels, and no cross-site identifiers. Usage statistics come
           from a self-hosted, cookie-free counter that records the page and nothing about the
-          person. The only thing stored in your browser is your light-or-dark theme choice, which
-          never leaves your device.
+          person. Your theme choice and your progress are stored in your browser. If you sign in,
+          two cookies keep you signed in: one the site cannot read from page scripts, and one that
+          only says &ldquo;signed in&rdquo; so pages know to sync. Neither is shared with anyone.
+        </p>
+
+        <h2 className="mt-10 text-lg">Signing in with Google</h2>
+        <p className="prose-measure mt-3 text-ink-2">
+          Signing in is optional and only syncs your progress between devices. We ask Google for one
+          thing: an anonymous account number. We never ask for, and never receive, your name, email
+          address or photo. We do not even store that number as it is: we scramble it with a secret
+          key first, so the stored id cannot be matched back to a Google account. What is saved
+          against it is the list of problems you tried, whether you got them right, how many hints
+          you opened and when. Google accounts for children under 13 are run by a parent through
+          Google, and Google may ask that parent before a child can sign in to a new site.
         </p>
 
         <h2 className="mt-10 text-lg">Getting your data back, or deleting it</h2>
@@ -92,12 +104,11 @@ export default function PrivacyPage() {
           is saved.
         </p>
 
-        <h2 className="mt-10 text-lg">Where the accounts live</h2>
+        <h2 className="mt-10 text-lg">Where synced progress lives</h2>
         <p className="prose-measure mt-3 text-ink-2">
-          Account data is stored with Supabase, on Postgres, with row-level security so that one
-          student&rsquo;s rows are unreadable to every other account, including other students in
-          the same class. A tutor sees aggregate counts for their class, never another
-          person&rsquo;s individual answers.
+          Synced progress is stored in a Cloudflare D1 database, one row per signed-in account. The
+          site only ever reads or writes the row belonging to the signed-in account. You can delete
+          your row at any time from the sign-in page: the row is removed, not hidden.
         </p>
 
         <h2 className="mt-10 text-lg">Contact</h2>

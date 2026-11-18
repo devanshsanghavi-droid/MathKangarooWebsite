@@ -8,6 +8,7 @@ import { MobileTabBar } from '@/components/MobileTabBar';
 import { SkipLink } from '@/components/SkipLink';
 import { THEME_INIT_SCRIPT } from '@/components/ThemeToggle';
 import { ServiceWorkerRegistration } from '@/components/ServiceWorkerRegistration';
+import { ProgressSync } from '@/components/ProgressSync';
 import { TelemetryProvider } from '@/components/telemetry/TelemetryProvider';
 
 /*
@@ -99,6 +100,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <MobileTabBar />
         <ServiceWorkerRegistration />
+        <ProgressSync />
         <TelemetryProvider />
       </body>
     </html>

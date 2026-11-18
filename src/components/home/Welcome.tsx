@@ -26,16 +26,17 @@ export interface SiteStats {
 }
 
 /** The four decorative tints, in the order the level tiles cycle through them. */
-type Tint = 'sky' | 'violet' | 'rose' | 'teal';
+type Tint = 'sky' | 'violet' | 'rose' | 'mint' | 'amber';
 
 const TINT: Record<Tint, { bg: string; fg: string; ring: string }> = {
   sky: { bg: 'bg-sky-100', fg: 'text-sky-700', ring: 'border-sky-500' },
   violet: { bg: 'bg-violet-100', fg: 'text-violet-700', ring: 'border-violet-500' },
   rose: { bg: 'bg-rose-100', fg: 'text-rose-700', ring: 'border-rose-500' },
-  teal: { bg: 'bg-accent-100', fg: 'text-accent-700', ring: 'border-accent-600' },
+  mint: { bg: 'bg-mint-100', fg: 'text-mint-700', ring: 'border-mint-500' },
+  amber: { bg: 'bg-amber-100', fg: 'text-amber-700', ring: 'border-amber-500' },
 };
 
-const LEVEL_TINTS: readonly Tint[] = ['sky', 'violet', 'rose', 'teal', 'sky', 'violet'];
+const LEVEL_TINTS: readonly Tint[] = ['sky', 'mint', 'amber', 'rose', 'violet', 'sky'];
 
 /* -------------------------------------------------------------------------- */
 /* Hero                                                                        */
@@ -152,7 +153,7 @@ const STEPS: ReadonlyArray<{ tint: Tint; title: string; body: string; icon: Reac
     icon: <path d="M4 17l8 4 8-4M4 12l8 4 8-4M12 3l8 4-8 4-8-4 8-4z" strokeLinejoin="round" />,
   },
   {
-    tint: 'violet',
+    tint: 'mint',
     title: 'Practice by skill',
     body: 'Problems are grouped into small skills, so you know exactly what you are getting better at.',
     icon: <path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" strokeLinejoin="round" />,
@@ -261,7 +262,7 @@ export function LevelChooser({
 
       <ul className="m-0 mx-auto mt-8 grid max-w-3xl list-none grid-cols-2 gap-3 p-0 sm:grid-cols-3">
         {BANDS.map((band, i) => {
-          const tint = TINT[LEVEL_TINTS[i] ?? 'teal'];
+          const tint = TINT[LEVEL_TINTS[i] ?? 'sky'];
           const selected = chosen === band;
           return (
             <li key={band}>
@@ -345,7 +346,7 @@ export function MoreToExplore({ potd }: { potd: ReactNode }) {
             body="See every skill on one map, and which ones lead into which."
           />
           <ExploreCard
-            tint="sky"
+            tint="amber"
             href="/amc"
             title="AMC 10 and 12 (beta)"
             body="Problems sorted by type, plus formula flashcards for the bigger contests."

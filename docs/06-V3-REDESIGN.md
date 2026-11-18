@@ -174,3 +174,16 @@ Static assets (files in `public/`) are free and unlimited. So:
 - Follow the existing convention: `author: "Devansh Sanghavi"`, `reviewedBy: ["pending-review"]`
   (a human review of the AI-drafted batches is still owed), `createdAt: "2026-11-14"`,
   `license: "CC-BY-NC-SA-4.0"`, `calibration: { pValue: null, medianMs: null, n: 0 }`.
+
+## 7. Sign-in and colour (owner decisions, 2026-11-17)
+
+- **Continue with Google** (`/login`, `/api/auth/google`). OpenID Connect with PKCE, scope
+  `openid` only, so no name, email or photo is ever received. The account id is an HMAC of the
+  Google subject under `AUTH_SECRET`. Student sessions last 30 days. A readable
+  `ka_signed_in=1` hint cookie tells static pages to sync without asking the Worker.
+- **Synced progress** lives in Cloudflare D1 (`DB` binding, `migrations/d1`). `/api/progress`
+  GET / PUT / DELETE; PUT merges (a union of attempts), so no device can erase another's work.
+  `ProgressSync` uploads once per page load and a few seconds after each attempt, and only
+  when signed in.
+- **Colour**: the reserved-colour rule is lifted. Sky blue replaces teal as the accent; mint,
+  amber, pink and purple tints, and coloured difficulty pills, follow OnePrep's palette.

@@ -32,12 +32,11 @@ These are hard rules. If a task appears to require breaking one, stop and say so
 - **Trademark hygiene.** "Math Kangaroo" is used descriptively only. Every page footer
   carries: *"Independent project. Not affiliated with or endorsed by Math Kangaroo in USA,
   NFP."*
-- **Green, red and amber are reserved.** They appear only in response to something the student
-  did: correct, incorrect, hint taken. Never for difficulty, never for a category, never for
-  decoration. Everything else uses a neutral, the teal accent, or one of the decorative tints
-  (sky, violet, rose), which the owner allowed on 2026-11-17 to make the site warmer. The tints
-  sit clear of the reserved hues and are defined only in `tokens.css`. `pnpm check:palette`
-  fails the build on a violation. See `docs/05-DESIGN-DIRECTION.md` §2 and `docs/06` §1.
+- **Colour.** The owner lifted the reserved-colour rule on 2026-11-17. The palette follows
+  OnePrep's: sky blue as the main accent, with mint, amber, pink and purple tints, and
+  difficulty shown in colour (mint / amber / pink). Feedback still uses the green / red /
+  amber feedback tokens. Every colour is still defined only in `tokens.css`, and WCAG AA
+  contrast still applies (`src/lib/__tests__/tokens.test.ts`).
 - **Accessibility is not a phase.** WCAG 2.1 AA contrast, full keyboard operation, visible
   focus, `prefers-reduced-motion` respected. A component that fails this is not done.
 - **No scope creep.** Forums, leaderboards, video courses, AI tutors: all out of scope. If it
@@ -58,14 +57,14 @@ this project's realistic scale.
 | Figures | Hand-authored inline SVG React components | free |
 | Content | JSON + MDX committed to the repo - **git is the CMS** | free |
 | Validation | Zod schemas + a `pnpm validate:content` script run in CI | free |
-| Database & auth | Supabase (Postgres, Auth, RLS) - free tier | free |
+| Database & auth | Cloudflare D1 for synced progress; Google sign-in (openid scope only) | free |
 | Spaced repetition | `ts-fsrs` | free |
-| Hosting | Vercel Hobby | free |
+| Hosting | Cloudflare Workers (OpenNext), static pages served as assets | free |
 | Analytics | Umami, self-hosted on the same Supabase Postgres | free |
 | CI | GitHub Actions | free |
 | Email (parent digests) | Resend free tier (3k/mo) | free |
 
-Only recurring cost is an optional domain (~$12/yr). Until then, ship on `*.vercel.app`.
+Only recurring cost is the domain, kangarooatlas.com (~$12/yr).
 
 ## Commands
 

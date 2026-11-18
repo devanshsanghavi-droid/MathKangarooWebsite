@@ -11,11 +11,23 @@
   // Every hashed asset, the public/data bank files, and every prerendered page (copied in by
   // scripts/publish-static-pages.ts) are served straight from the edge without invoking the
   // worker, so they never count against the free plan's 100,000 requests a day. Only
-  // /login, /admin, /api/events, OG images and unknown URLs reach the worker.
+  // /login, /admin, /api/* (sign-in, progress sync, events), OG images and unknown URLs
+  // reach the worker.
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS",
   },
+
+  // Synced progress for students signed in with Google (src/lib/progress-store.ts). Schema
+  // in migrations/d1; apply with `npx wrangler d1 migrations apply kangaroo-atlas --remote`.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "kangaroo-atlas",
+      "database_id": "f83ce929-636b-4707-b1a3-245c2f0d7669",
+      "migrations_dir": "migrations/d1",
+    },
+  ],
 
   "observability": {
     "enabled": true,

@@ -15,6 +15,12 @@ import { timingSafeEqual } from './password';
 export const SESSION_COOKIE = 'ka_session';
 /** Eight hours: a tutoring session plus marking, and short enough that no revocation list is needed. */
 export const MAX_AGE_SECONDS = 8 * 60 * 60;
+/**
+ * Thirty days for a student signed in with Google. A student session can only read and write
+ * that student's own progress, so a long life costs little, and signing in again every
+ * evening would defeat the point of syncing.
+ */
+export const STUDENT_MAX_AGE_SECONDS = 30 * 24 * 60 * 60;
 
 export const ROLES = ['admin', 'student'] as const;
 export type Role = (typeof ROLES)[number];
@@ -92,7 +98,7 @@ export async function decodeSession(
 }
 
 /** The Set-Cookie attributes. `secure` is dropped on localhost, where there is no TLS. */
-export function cookieOptions(isProduction: boolean) {
+export function cookieOptions(isProduction: boolean, maxAge: number = MAX_AGE_SECONDS) {
   return {
     httpOnly: true,
     // Lax, not None: the cookie must not ride along on a cross-site request. There is no
@@ -100,6 +106,6 @@ export function cookieOptions(isProduction: boolean) {
     sameSite: 'lax' as const,
     secure: isProduction,
     path: '/',
-    maxAge: MAX_AGE_SECONDS,
+    maxAge,
   };
 }

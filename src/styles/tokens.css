@@ -81,10 +81,10 @@
 
   /* --- accent - the only saturated colour in ordinary use ------------------- */
   /* 700 is the text-weight step in BOTH themes: dark teal on light, pale teal on dark. */
-  --accent-700: #0b5c66; /* links, primary action text   7.2:1 on --ground */
-  --accent-600: #0e7c86; /* solid fills, strong borders */
-  --accent-500: #17939e; /* hover on a solid fill */
-  --accent-100: #ddf0f2; /* accent-tinted background */
+  --accent-700: #075e91; /* links, primary action text   7.2:1 on --ground */
+  --accent-600: #0a78b8; /* solid fills, strong borders */
+  --accent-500: #1cb0f6; /* hover on a solid fill */
+  --accent-100: #e0f2fe; /* accent-tinted background */
   /*
    * v3 (docs/06 §1). Text and icons on a SOLID --accent-600 fill: the primary button, a
    * selected segment. White in light (4.9:1); near-black in dark, where --accent-600 is too
@@ -100,15 +100,21 @@
    * amber), so a decorative colour can never be read as "you got this right / wrong / took a
    * hint". 700 is the text step and clears 4.5:1 on its own 100 and on --surface.
    */
-  --sky-100: #e2f0fb;
-  --sky-500: #3b8fd0;
-  --sky-700: #1d5a8c;
-  --violet-100: #ece8fd;
-  --violet-500: #7c6ae0;
-  --violet-700: #4b3aa8;
-  --rose-100: #fce7f1;
-  --rose-500: #d4589a;
-  --rose-700: #9a2b66;
+  --sky-100: #e0f2fe;
+  --sky-500: #1cb0f6;
+  --sky-700: #075985;
+  --violet-100: #f3e8ff;
+  --violet-500: #9234ea;
+  --violet-700: #6b21a8;
+  --rose-100: #fce7f3;
+  --rose-500: #de53b4;
+  --rose-700: #a3237f;
+  --mint-100: #dcf7ec;
+  --mint-500: #32c992;
+  --mint-700: #146c4f;
+  --amber-100: #fef3c7;
+  --amber-500: #f59e0b;
+  --amber-700: #8a5300;
 
   /* --- RESERVED - feedback only. See the rule at the top of this file. ------ */
   --correct-700: #146c43; /* "Correct" text            5.7:1 on --correct-100 */
@@ -127,12 +133,12 @@
 
   /* --- difficulty ramp - weight, not alarm (docs/05 §3) --------------------- */
   /* Always rendered with its ●○○ / ●●○ / ●●● glyph, so colour is never the sole carrier. */
-  --d1-bg: #edf1f6;
-  --d1-fg: #4b5563; /* 6.7:1 */
-  --d2-bg: #dce3ed;
-  --d2-fg: #374151; /* 8.0:1 */
-  --d3-bg: #c6cfdd;
-  --d3-fg: #1f2937; /* 9.4:1 */
+  --d1-bg: #dcf7ec;
+  --d1-fg: #146c4f; /* 6.7:1 */
+  --d2-bg: #fef3c7;
+  --d2-fg: #8a5300; /* 8.0:1 */
+  --d3-bg: #fce7f3;
+  --d3-fg: #a3237f; /* 9.4:1 */
 
   /* --- mastery ramp - one teal ramp, four steps (docs/05 §3) ---------------- */
   /*
@@ -143,12 +149,12 @@
    * Every step is also drawn with a --rule-strong outline and labelled with a name and icon.
    */
   --m0: #bfc6cf; /* Not started */
-  --m1: #82adb1; /* Familiar */
-  --m2: #40959e; /* Proficient */
-  --m3: #0e7c86; /* Mastered */
+  --m1: #80aed0; /* Familiar */
+  --m2: #3d8cc0; /* Proficient */
+  --m3: #075e91; /* Mastered */
 
   /* --- focus --------------------------------------------------------------- */
-  --focus: #0e7c86;
+  --focus: #0a78b8;
 
   /* --- elevation ----------------------------------------------------------- */
   --shadow-1: 0 1px 2px rgb(24 27 33 / 5%);
@@ -244,20 +250,26 @@
     --grid: #2b313b;
     --track: #2f3540;
 
-    --accent-700: #7bd7e0; /* 11.0:1 on --ground */
-    --accent-600: #12909c;
-    --accent-500: #17939e;
-    --accent-100: #10333a;
-    --on-accent: #071215;
-    --sky-100: #10283b;
-    --sky-500: #4aa3e6;
-    --sky-700: #9fd0f5;
-    --violet-100: #221e40;
-    --violet-500: #9384ec;
-    --violet-700: #c3b9f8;
-    --rose-100: #351a2a;
-    --rose-500: #e070ad;
-    --rose-700: #f3b0d3;
+    --accent-700: #7dd3fc; /* 11.0:1 on --ground */
+    --accent-600: #1cb0f6;
+    --accent-500: #38bdf8;
+    --accent-100: #0c2a3d;
+    --on-accent: #04121b;
+    --sky-100: #0c2a3d;
+    --sky-500: #38bdf8;
+    --sky-700: #7dd3fc;
+    --violet-100: #2a1745;
+    --violet-500: #a855f7;
+    --violet-700: #d8b4fe;
+    --rose-100: #3a1530;
+    --rose-500: #ec6ac4;
+    --rose-700: #f9a8d4;
+    --mint-100: #0f3326;
+    --mint-500: #32c992;
+    --mint-700: #7ee2b8;
+    --amber-100: #3a2a08;
+    --amber-500: #f5a524;
+    --amber-700: #fcd27a;
 
     --correct-700: #6fd39b;
     --correct-600: #1a8a55;
@@ -273,20 +285,20 @@
     --hint-100: #2c2313;
     --hint-border: #7b6c4c; /* 3.0:1 (doc's #5C4A22 was 1.8:1) */
 
-    --d1-bg: #242a34;
-    --d1-fg: #a9b2bf;
-    --d2-bg: #2e3644;
-    --d2-fg: #c3cbd7;
-    --d3-bg: #3b4555;
-    --d3-fg: #dde3eb;
+    --d1-bg: #0f3326;
+    --d1-fg: #7ee2b8;
+    --d2-bg: #3a2a08;
+    --d2-fg: #fcd27a;
+    --d3-bg: #3a1530;
+    --d3-fg: #f9a8d4;
 
     /* The doc's dark ramp already steps 1.46 / 1.69 / 1.87 - kept as written. */
     --m0: #39414d;
-    --m1: #2c6068;
-    --m2: #1b8993;
-    --m3: #3dbeca;
+    --m1: #235a7c;
+    --m2: #1683bf;
+    --m3: #4cc3f9;
 
-    --focus: #3dbeca;
+    --focus: #38bdf8;
 
     --shadow-1: 0 1px 2px rgb(0 0 0 / 40%);
     --shadow: 0 1px 2px rgb(0 0 0 / 40%), 0 8px 24px -12px rgb(0 0 0 / 70%);
@@ -313,20 +325,26 @@
   --grid: #2b313b;
   --track: #2f3540;
 
-  --accent-700: #7bd7e0;
-  --accent-600: #12909c;
-  --accent-500: #17939e;
-  --accent-100: #10333a;
-  --on-accent: #071215;
-  --sky-100: #10283b;
-  --sky-500: #4aa3e6;
-  --sky-700: #9fd0f5;
-  --violet-100: #221e40;
-  --violet-500: #9384ec;
-  --violet-700: #c3b9f8;
-  --rose-100: #351a2a;
-  --rose-500: #e070ad;
-  --rose-700: #f3b0d3;
+  --accent-700: #7dd3fc;
+  --accent-600: #1cb0f6;
+  --accent-500: #38bdf8;
+  --accent-100: #0c2a3d;
+  --on-accent: #04121b;
+  --sky-100: #0c2a3d;
+  --sky-500: #38bdf8;
+  --sky-700: #7dd3fc;
+  --violet-100: #2a1745;
+  --violet-500: #a855f7;
+  --violet-700: #d8b4fe;
+  --rose-100: #3a1530;
+  --rose-500: #ec6ac4;
+  --rose-700: #f9a8d4;
+  --mint-100: #0f3326;
+  --mint-500: #32c992;
+  --mint-700: #7ee2b8;
+  --amber-100: #3a2a08;
+  --amber-500: #f5a524;
+  --amber-700: #fcd27a;
 
   --correct-700: #6fd39b;
   --correct-600: #1a8a55;
@@ -342,19 +360,19 @@
   --hint-100: #2c2313;
   --hint-border: #7b6c4c;
 
-  --d1-bg: #242a34;
-  --d1-fg: #a9b2bf;
-  --d2-bg: #2e3644;
-  --d2-fg: #c3cbd7;
-  --d3-bg: #3b4555;
-  --d3-fg: #dde3eb;
+  --d1-bg: #0f3326;
+  --d1-fg: #7ee2b8;
+  --d2-bg: #3a2a08;
+  --d2-fg: #fcd27a;
+  --d3-bg: #3a1530;
+  --d3-fg: #f9a8d4;
 
   --m0: #39414d;
-  --m1: #2c6068;
-  --m2: #1b8993;
-  --m3: #3dbeca;
+  --m1: #235a7c;
+  --m2: #1683bf;
+  --m3: #4cc3f9;
 
-  --focus: #3dbeca;
+  --focus: #38bdf8;
 
   --shadow-1: 0 1px 2px rgb(0 0 0 / 40%);
   --shadow: 0 1px 2px rgb(0 0 0 / 40%), 0 8px 24px -12px rgb(0 0 0 / 70%);
@@ -403,6 +421,12 @@
     --rose-100: #ffffff;
     --rose-500: #000000;
     --rose-700: #000000;
+    --mint-100: #ffffff;
+    --mint-500: #000000;
+    --mint-700: #000000;
+    --amber-100: #ffffff;
+    --amber-500: #000000;
+    --amber-700: #000000;
 
     --correct-700: #000000;
     --correct-600: #000000;

@@ -66,6 +66,12 @@ const COLOR_TOKENS = [
   '--rose-100',
   '--rose-500',
   '--rose-700',
+  '--mint-100',
+  '--mint-500',
+  '--mint-700',
+  '--amber-100',
+  '--amber-500',
+  '--amber-700',
 ] as const;
 
 /** The tokens v2 retired. Their continued absence is part of the contract. */
@@ -158,8 +164,14 @@ const PAIRS: Array<[string, string, number, string]> = [
   ['--ink-2', '--sky-100', 4.5, 'secondary text on a sky tint'],
   ['--ink-2', '--violet-100', 4.5, 'secondary text on a violet tint'],
   ['--ink-2', '--rose-100', 4.5, 'secondary text on a rose tint'],
-  ['--ink', '--accent-100', 7, 'body text on a teal tint'],
-  ['--ink-2', '--accent-100', 4.5, 'secondary text on a teal tint'],
+  ['--mint-700', '--mint-100', 4.5, 'mint text on a mint tint'],
+  ['--mint-700', '--surface', 4.5, 'mint text on a card'],
+  ['--amber-700', '--amber-100', 4.5, 'amber text on an amber tint'],
+  ['--amber-700', '--surface', 4.5, 'amber text on a card'],
+  ['--ink-2', '--mint-100', 4.5, 'secondary text on a mint tint'],
+  ['--ink-2', '--amber-100', 4.5, 'secondary text on an amber tint'],
+  ['--ink', '--accent-100', 7, 'body text on an accent tint'],
+  ['--ink-2', '--accent-100', 4.5, 'secondary text on an accent tint'],
 
   // --- v3 practice-app shell (docs/06 §1) ---------------------------------
   ['--on-accent', '--accent-600', 4.5, 'the label on a primary button and a selected segment'],

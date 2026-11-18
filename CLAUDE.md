@@ -40,9 +40,12 @@ These are hard rules. If a task appears to require breaking one, stop and say so
 - **Accessibility is not a phase.** WCAG 2.1 AA contrast, full keyboard operation, visible
   focus, `prefers-reduced-motion` respected. A component that fails this is not done.
 - **No scope creep.** Forums, leaderboards, video courses, AI tutors: all out of scope. If it
-  isn't in `docs/00-SPEC.md` or `docs/06-V3-REDESIGN.md`, it doesn't get built. The one
-  exception, approved by the owner on 2026-11-14, is the AMC 10/12 beta under `/amc`
-  (`docs/06-V3-REDESIGN.md` §5). Its problems are original, never official AMC problems.
+  isn't in `docs/00-SPEC.md`, `docs/06-V3-REDESIGN.md` or `docs/07-EXAMS-PROGRESS-MOCKS.md`, it
+  doesn't get built. The owner overrules this when they ask for something specific; record the
+  approval in a doc. Approved so far: the AMC 10/12 beta under `/amc` (2026-11-14, docs/06 §5),
+  and on 2026-11-17 AMC 8, SAT Math, ACT Math, the `/progress` analytics page, mock and section
+  tests, and an account count on `/admin` (docs/07). All problems are original, never official
+  AMC, SAT or ACT problems.
 
 ## Stack
 
@@ -110,6 +113,8 @@ docs/                              the specs below - read before building
   `00-SPEC.md` and the structure of `/skill/[id]` described there.
 - `docs/06-V3-REDESIGN.md` - the v3 practice-app layout, static-route rule, and the AMC
   beta. Supersedes page layouts in `00-SPEC.md` and shape/layout in `05`. Palette rule stands.
+- `docs/07-EXAMS-PROGRESS-MOCKS.md` - AMC 8, SAT, ACT, `/progress`, mock and section tests,
+  account count.
 
 ## Conventions
 

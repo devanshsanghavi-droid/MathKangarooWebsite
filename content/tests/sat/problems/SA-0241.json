@@ -1,0 +1,56 @@
+{
+  "id": "SA-0241",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-05",
+  "difficulty": "hard",
+  "statement": "A regional energy report models the percent of the region's electricity produced from coal, $y$, as a linear function of $x$, the number of years since $2015$. The line of best fit passes through the points $(2, 15.4)$ and $(10, 9.0)$. According to the model, in what year will the percent of electricity produced from coal be $4.2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2016$",
+      "correct": false,
+      "misconception": "I solved for x = 16 correctly, but I read it as the year 2016 instead of 16 years after 2015."
+    },
+    {
+      "key": "B",
+      "text": "$2021$",
+      "correct": false,
+      "misconception": "I found it takes 6 years to fall from 9.0 to 4.2, but I added those 6 years to 2015 instead of to 2025, the year that goes with 9.0."
+    },
+    {
+      "key": "C",
+      "text": "$2029$",
+      "correct": false,
+      "misconception": "I used 15.4 as the y-intercept, as if the point (2, 15.4) were at x = 0, so I solved 4.2 = 15.4 - 0.8x and got x = 14."
+    },
+    {
+      "key": "D",
+      "text": "$2031$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Find how much the percent changes per year.",
+    "Compute the slope from the two points, write the equation, then set $y = 4.2$ and solve for $x$. Remember what $x$ counts.",
+    "The slope is $\\frac{9.0 - 15.4}{10 - 2} = -0.8$, so $y = 17 - 0.8x$. Solve $17 - 0.8x = 4.2$."
+  ],
+  "solutions": {
+    "reliable": "The slope is $\\frac{9.0 - 15.4}{10 - 2} = \\frac{-6.4}{8} = -0.8$ percentage points per year. Using $(2, 15.4)$: $y = 15.4 - 0.8(x - 2) = 17 - 0.8x$. Setting $17 - 0.8x = 4.2$ gives $0.8x = 12.8$, so $x = 16$. That is $16$ years after $2015$, the year $2031$. Check with the other point: $17 - 0.8(10) = 9.0$.",
+    "elegant": "From $(10, 9.0)$ the percent must still fall $9.0 - 4.2 = 4.8$ points at $0.8$ per year, which takes $6$ years. The point $x = 10$ is the year $2025$, so the answer is $2025 + 6 = 2031$."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

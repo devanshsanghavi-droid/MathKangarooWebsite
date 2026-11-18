@@ -1,0 +1,68 @@
+{
+  "id": "KA-1575",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A, B and C are three different non-zero digits. The six three-digit numbers that can be made from them, ABC, ACB, BAC, BCA, CAB and CBA, add up to 3552. What is the largest possible value of ABC?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "16",
+      "correct": false,
+      "misconception": "I found the digit sum $A + B + C = 16$ and gave that as the answer."
+    },
+    {
+      "key": "B",
+      "text": "169",
+      "correct": false,
+      "misconception": "I found the smallest possible value of ABC instead of the largest."
+    },
+    {
+      "key": "C",
+      "text": "592",
+      "correct": false,
+      "misconception": "I divided 3552 by 6 and took the average of the six numbers as ABC."
+    },
+    {
+      "key": "D",
+      "text": "961",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "970",
+      "correct": false,
+      "misconception": "I made ABC as large as possible with digit sum 16 but used the digit 0, which is not allowed."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "NUM-01",
+      "NUM-02"
+    ]
+  },
+  "hints": [
+    "How many times does each digit appear in the hundreds column?",
+    "Each digit appears twice in each of the three columns, so the total is a fixed multiple of $A + B + C$. Find the digit sum first, then build the largest number allowed.",
+    "The total is $2 \\times 111 \\times (A + B + C) = 222(A + B + C)$."
+  ],
+  "solutions": {
+    "reliable": "Each digit appears exactly twice in each place, so the six numbers add up to $222(A + B + C)$. Then $A + B + C = 3552 / 222 = 16$. To make ABC as large as possible take $A = 9$; then $B + C = 7$ with B as large as possible and both digits non-zero and different, so $B = 6$ and $C = 1$ ($B = 7$ would need $C = 0$). So ABC is 961. Check: $961 + 916 + 691 + 619 + 196 + 169 = 3552$. The transferable idea: in a sum of digit rearrangements, each digit appears equally often in each place.",
+    "elegant": null
+  },
+  "whyOnTest": "Sums of digit rearrangements collapse to a multiple of the digit sum, after which the question is careful choice under the non-zero rule.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

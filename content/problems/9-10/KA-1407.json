@@ -1,0 +1,67 @@
+{
+  "id": "KA-1407",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Three of the eight corners of a cube are chosen. In how many ways can this be done so that the three chosen corners do not all lie on one face of the cube?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I also removed every triple lying in one of the six rectangles that cut through the cube along opposite edges, which the question does not ask for."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted the triples that do lie on one face, which is the opposite of what was asked."
+    },
+    {
+      "key": "C",
+      "text": "32",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "50",
+      "correct": false,
+      "misconception": "I took away only one triple for each of the 6 faces, but each face has 4 corners and so holds 4 different triples."
+    },
+    {
+      "key": "E",
+      "text": "192",
+      "correct": false,
+      "misconception": "I counted ordered choices, 8 × 7 × 6 = 336, and subtracted the ordered triples on a face, but the order of the three corners does not matter."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-09",
+    "secondary": [
+      "CNT-06"
+    ]
+  },
+  "hints": [
+    "'Do not' is a signal: what is easier to count?",
+    "Count all the ways to choose three corners, then count the choices where all three lie on one face, and subtract. Check that no triple lies on two faces at once.",
+    "There are 56 ways to choose 3 of the 8 corners. Each face has 4 corners, which hold 4 triples, and no triple lies on two faces."
+  ],
+  "solutions": {
+    "reliable": "Without any condition there are $\\binom{8}{3} = \\frac{8 \\times 7 \\times 6}{6} = 56$ choices. A face has 4 corners, and any 3 of them can be chosen in 4 ways, so the 6 faces give $6 \\times 4 = 24$ triples on a face. No triple is counted twice: two different faces share at most 2 corners. So $56 - 24 = 32$ triples do not lie on one face. The transferable idea: when a condition says 'not', count everything and subtract the cases you do not want.",
+    "elegant": null
+  },
+  "whyOnTest": "Complementary counting turns an awkward condition into a short subtraction; the traps are counting the wrong side and miscounting the triples on each face.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

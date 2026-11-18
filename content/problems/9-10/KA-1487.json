@@ -1,0 +1,68 @@
+{
+  "id": "KA-1487",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Over one year, the number of fiction books in a library rose by 50%, the number of non-fiction books stayed the same, and the total number of books rose by 20%. What percentage of the books were fiction at the start of the year?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "50%",
+      "correct": false,
+      "misconception": "I found the percentage of fiction books at the end of the year instead of at the start."
+    },
+    {
+      "key": "B",
+      "text": "60%",
+      "correct": false,
+      "misconception": "I found the percentage of non-fiction books at the start instead of fiction books."
+    },
+    {
+      "key": "C",
+      "text": "$66\\frac{2}{3}$%",
+      "correct": false,
+      "misconception": "I found the ratio of fiction to non-fiction books, $2 : 3$, and turned the fraction $\\frac{2}{3}$ into a percentage."
+    },
+    {
+      "key": "D",
+      "text": "30%",
+      "correct": false,
+      "misconception": "I subtracted the 20% rise from the 50% rise and took the difference as the fiction share."
+    },
+    {
+      "key": "E",
+      "text": "40%",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-10",
+    "secondary": [
+      "MOD-01",
+      "NUM-11"
+    ]
+  },
+  "hints": [
+    "Let there be $f$ fiction and $n$ non-fiction books at the start.",
+    "Write the end-of-year total in two ways: from the 50% rise in fiction with non-fiction unchanged, and from the overall 20% rise. Setting them equal gives the ratio of fiction to non-fiction.",
+    "$1.5f + n = 1.2(f + n)$, so $0.3f = 0.2n$."
+  ],
+  "solutions": {
+    "reliable": "With $f$ fiction and $n$ non-fiction books, the end of the year has $1.5f + n$ books, which is also $1.2(f + n)$. So $0.3f = 0.2n$, and $f : n = 2 : 3$. Fiction was $\\frac{2}{5}$ of the books, which is 40%. Check with 200 fiction and 300 non-fiction: at the end there are 300 and 300, 600 books, which is 20% more than 500. The transferable idea: an overall percentage change is a weighted average of the group changes.",
+    "elegant": "The whole collection grew by 20%, a weighted average of fiction's 50% and non-fiction's 0%. Since 20 is $\\frac{20}{50} = \\frac{2}{5}$ of the way from 0 to 50, fiction was $\\frac{2}{5}$ of the books: 40%. The transferable idea: a combined rate sits between the group rates, in proportion to the group sizes."
+  },
+  "whyOnTest": "Percentage-change questions often hide a weighted average; this checks you set up both totals and answer for the right moment.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

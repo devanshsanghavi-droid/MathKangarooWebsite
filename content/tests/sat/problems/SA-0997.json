@@ -1,0 +1,56 @@
+{
+  "id": "SA-0997",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "medium",
+  "statement": "A school garden club sells small plants for $4$ dollars each and large plants for $7$ dollars each. On Saturday the club sold $38$ plants and collected $203$ dollars. How many large plants did the club sell?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$17$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I set up the system and solved it correctly, but I reported the number of small plants, 21, instead of the large ones."
+    },
+    {
+      "key": "C",
+      "text": "$29$",
+      "correct": false,
+      "misconception": "I divided the 203 dollars by the 7-dollar price and ignored the small plants, so I got 29 large plants."
+    },
+    {
+      "key": "D",
+      "text": "$51$",
+      "correct": false,
+      "misconception": "I got to $3L = 51$ after eliminating the small plants, then forgot to divide by 3 and wrote 51."
+    }
+  ],
+  "hints": [
+    "Use one letter for the number of small plants and another for the number of large plants.",
+    "Write one equation for the number of plants and one for the money collected, then eliminate a variable.",
+    "With $S + L = 38$ and $4S + 7L = 203$, multiply the first equation by $4$ and subtract it from the second to get $3L = 51$."
+  ],
+  "solutions": {
+    "reliable": "Let $S$ be the number of small plants and $L$ the number of large plants. Then $S + L = 38$ and $4S + 7L = 203$. Multiplying the first equation by $4$ gives $4S + 4L = 152$. Subtracting, $3L = 51$, so $L = 17$ and $S = 21$. Check: $4(21) + 7(17) = 84 + 119 = 203$.",
+    "elegant": "If all $38$ plants were small the club would collect $4 \\cdot 38 = 152$ dollars, which is $51$ dollars short. Each large plant in place of a small one adds $3$ dollars, so there are $51 / 3 = 17$ large plants."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

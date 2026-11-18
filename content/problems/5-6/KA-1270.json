@@ -1,0 +1,68 @@
+{
+  "id": "KA-1270",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A 1 by 1 square stands on a line with corners at (0, 0), (1, 0), (1, 1) and (0, 1), and there is a dot on the corner at (0, 1). The square rolls to the right: each roll is a quarter turn clockwise about its bottom-right corner. Where is the dot after 10 rolls?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "(1, 0)",
+      "correct": false,
+      "misconception": "I tracked which corner of the square the dot is on, but forgot that the square itself moves 1 to the right with every roll."
+    },
+    {
+      "key": "B",
+      "text": "(10, 1)",
+      "correct": false,
+      "misconception": "I thought the dot comes back to the top-left corner every 2 rolls, so after an even number of rolls it would be back on top."
+    },
+    {
+      "key": "C",
+      "text": "(11, 1)",
+      "correct": false,
+      "misconception": "I thought the dot stays on the top edge as the square rolls, ending at the top-right corner of the last square."
+    },
+    {
+      "key": "D",
+      "text": "(15, 0)",
+      "correct": false,
+      "misconception": "I worked out the dot's position after 2 rolls, (3, 0), and multiplied both numbers by 5 for 10 rolls."
+    },
+    {
+      "key": "E",
+      "text": "(11, 0)",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-09",
+    "secondary": [
+      "PAT-03",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Roll the square a few times and watch the dot.",
+    "After 4 rolls the square has made a full turn, so the dot is back on the same corner, just 4 units further right. Work out the first 4 rolls carefully, then use the cycle.",
+    "The dot goes from (0, 1) to (2, 1), then (3, 0), then stays at (3, 0), then (4, 1). After 4 rolls it is on the top-left corner again, 4 units further right."
+  ],
+  "solutions": {
+    "reliable": "Roll 1 turns about (1, 0) and sends the dot to (2, 1), the top-right corner. Roll 2 turns about (2, 0) and sends it to (3, 0), the bottom-right corner. Roll 3 turns about (3, 0) itself, so the dot stays at (3, 0), which is now the bottom-left corner. Roll 4 turns about (4, 0) and sends it to (4, 1), the top-left corner again. So every 4 rolls the dot returns to the top-left corner, 4 units further right. After 8 rolls it is at (8, 1); two more rolls repeat what rolls 1 and 2 did, giving (10, 1) and then (11, 0). The transferable idea: a repeated rotation has a cycle, so find one full cycle and then use the remainder.",
+    "elegant": "After k rolls the square covers x = k to x = k + 1. The corners repeat every 4 rolls, and 10 = 8 + 2, so the dot is on the corner it reached after 2 rolls, the bottom-right one, which is now at (11, 0)."
+  },
+  "whyOnTest": "Rolling-shape questions test following a rotation carefully through one full cycle and then using the remainder, rather than guessing.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

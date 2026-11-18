@@ -1,0 +1,68 @@
+{
+  "id": "AM-1283",
+  "contest": "AMC8",
+  "slot": 21,
+  "area": "CP",
+  "topic": "CP-03",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "In how many ways can $3$ different numbers be chosen from $\\{1, 2, 3, \\ldots, 12\\}$ so that their sum is a multiple of $3$? The order of the chosen numbers does not matter.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I only counted the choices where all three numbers leave the same remainder when divided by 3, which is 3 times C(4, 3) = 12."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I counted the 12 same-remainder choices, and then counted one number from each remainder group as 4 + 4 + 4 = 12 instead of 4 times 4 times 4, for 24 in all."
+    },
+    {
+      "key": "C",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I only counted the choices with one number from each remainder group, 4 times 4 times 4 = 64, and forgot the choices where all three have the same remainder."
+    },
+    {
+      "key": "D",
+      "text": "$76$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$220$",
+      "correct": false,
+      "misconception": "I counted all C(12, 3) = 220 ways to choose three numbers and never used the multiple of 3 condition."
+    }
+  ],
+  "hints": [
+    "Sort the 12 numbers by their remainder when divided by 3. Each group has 4 numbers.",
+    "The sum of three remainders from 0, 1, 2 is a multiple of 3 only if the remainders are all equal or all different.",
+    "All equal: 3 groups times C(4, 3). All different: one number from each group, 4 times 4 times 4. Add the two counts."
+  ],
+  "solutions": {
+    "reliable": "Split the numbers by their remainder on division by $3$. Remainder $0$: $3, 6, 9, 12$. Remainder $1$: $1, 4, 7, 10$. Remainder $2$: $2, 5, 8, 11$. Only the remainders matter for the sum. Three remainders from $\\{0, 1, 2\\}$ add up to a multiple of $3$ exactly when they are all the same ($0 + 0 + 0$, $1 + 1 + 1$, $2 + 2 + 2$) or all different ($0 + 1 + 2$). All the same: $3 \\cdot \\binom{4}{3} = 12$ ways. All different: $4 \\cdot 4 \\cdot 4 = 64$ ways. The total is $12 + 64 = 76$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-03"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1414",
+  "band": "9-10",
+  "points": 3,
+  "statement": "The price of a concert ticket rose by 25%. Later the new price fell by $x\\%$, and the ticket ended up 20% cheaper than its original price. What is $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "40",
+      "correct": false,
+      "misconception": "I said a 20% fall undoes the 25% rise and then added another 20% for the extra drop, but percentages of different prices cannot be added like that."
+    },
+    {
+      "key": "C",
+      "text": "45",
+      "correct": false,
+      "misconception": "I simply added the 25% rise and the 20% drop."
+    },
+    {
+      "key": "D",
+      "text": "$56\\frac14$",
+      "correct": false,
+      "misconception": "I found the drop of 45 on an original price of 100, but I measured it against the final price of 80 instead of the raised price of 125."
+    },
+    {
+      "key": "E",
+      "text": "64",
+      "correct": false,
+      "misconception": "I found that the raised price had to be multiplied by 0.64 and gave 64 as the fall, but 0.64 is the part that is left."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-10",
+    "secondary": [
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Pick an original price of 100 and follow it through.",
+    "A percentage change is always measured against the price just before that change. Find the raised price and the final price, then ask what percentage of the raised price was taken off.",
+    "From 100 the price rises to 125 and must end at 80. The fall is 45 out of 125."
+  ],
+  "solutions": {
+    "reliable": "Take the original price as 100. After the rise it is 125, and at the end it is 80. The fall is $125 - 80 = 45$, measured against 125: $\\frac{45}{125} = \\frac{36}{100}$, so $x = 36$. Check: $125 \\times 0.64 = 80$. The transferable idea: name the base of each percentage before computing it.",
+    "elegant": "Multiply the factors: $1.25 \\times (1 - \\frac{x}{100}) = 0.8$, so $1 - \\frac{x}{100} = 0.64$ and $x = 36$."
+  },
+  "whyOnTest": "Successive percentage changes act on different bases; every distractor here comes from adding percentages or using the wrong base.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

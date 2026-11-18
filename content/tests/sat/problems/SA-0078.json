@@ -1,0 +1,56 @@
+{
+  "id": "SA-0078",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "hard",
+  "statement": "A print shop offers three monthly plans. Plan A costs $20$ dollars plus $0.05$ dollar per page printed. Plan B costs $8$ dollars plus $0.11$ dollar per page. Plan C costs a flat $35$ dollars for any number of pages. For how many whole numbers of pages $n$, with $0 \\le n \\le 400$, is Plan A strictly cheaper than both of the other plans?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$100$",
+      "correct": false,
+      "misconception": "I counted $n = 201$ through $n = 300$, but at 300 pages Plan A and Plan C both cost 35 dollars, so 300 does not count."
+    },
+    {
+      "key": "B",
+      "text": "$99$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$200$",
+      "correct": false,
+      "misconception": "I compared Plan A only with Plan B, so I counted every value from 201 to 400 and forgot that Plan C is cheaper after 300 pages."
+    },
+    {
+      "key": "D",
+      "text": "$101$",
+      "correct": false,
+      "misconception": "I counted every whole number from 200 through 300, including both tie points, where Plan A is not strictly cheaper."
+    }
+  ],
+  "hints": [
+    "Plan A must beat Plan B and Plan C at the same time.",
+    "Solve $20 + 0.05n < 8 + 0.11n$ and $20 + 0.05n < 35$ separately, then count the whole numbers that satisfy both.",
+    "The first inequality gives $n > 200$ and the second gives $n < 300$. Count the whole numbers strictly between them."
+  ],
+  "solutions": {
+    "reliable": "Plan A beats Plan B when $20 + 0.05n < 8 + 0.11n$, so $12 < 0.06n$ and $n > 200$. Plan A beats Plan C when $20 + 0.05n < 35$, so $0.05n < 15$ and $n < 300$. The whole numbers with $200 < n < 300$ are $201, 202, \\ldots, 299$, which is $299 - 201 + 1 = 99$ values. Key idea: 'cheaper than both' is a system of inequalities, so the answer is the overlap of two solution sets.",
+    "elegant": null
+  },
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

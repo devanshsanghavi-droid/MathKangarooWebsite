@@ -1,0 +1,56 @@
+{
+  "id": "SA-0234",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-04",
+  "difficulty": "medium",
+  "statement": "The list shows the daily high temperatures, in degrees Fahrenheit, in a city over $12$ days, in order from least to greatest. $$58,\\ 61,\\ 63,\\ 64,\\ 66,\\ 67,\\ 70,\\ 71,\\ 73,\\ 75,\\ 78,\\ 84$$ What is the interquartile range of the temperatures?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I rounded the quartile positions and used the 4th and 10th values, 64 and 75, but each quartile is the median of a half, which here is the mean of two values."
+    },
+    {
+      "key": "C",
+      "text": "$26$",
+      "correct": false,
+      "misconception": "I found the range, 84 - 58 = 26, instead of the interquartile range."
+    },
+    {
+      "key": "D",
+      "text": "$68.5$",
+      "correct": false,
+      "misconception": "I found the median of all 12 temperatures, 68.5, instead of the spread of the middle half."
+    }
+  ],
+  "hints": [
+    "Split the list into a lower half and an upper half.",
+    "The first quartile is the median of the lower $6$ values and the third quartile is the median of the upper $6$ values. Subtract them.",
+    "The lower half is $58$ through $67$, with median $\\frac{63 + 64}{2} = 63.5$. Now find the median of the upper half, $70$ through $84$."
+  ],
+  "solutions": {
+    "reliable": "With $12$ values, the lower half is $58, 61, 63, 64, 66, 67$, whose median is $\\frac{63 + 64}{2} = 63.5$. That is the first quartile. The upper half is $70, 71, 73, 75, 78, 84$, whose median is $\\frac{73 + 75}{2} = 74$. That is the third quartile. The interquartile range is $74 - 63.5 = 10.5$ degrees.",
+    "elegant": null
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

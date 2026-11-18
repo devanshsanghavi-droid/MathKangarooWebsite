@@ -1,0 +1,68 @@
+{
+  "id": "KA-1494",
+  "band": "9-10",
+  "points": 5,
+  "statement": "A sequence of positive whole numbers starts with any two such numbers. From then on, each term equals the term before it plus twice the term two places before it. The sixth term is 500. How many such sequences are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I allowed one of the first two terms to be 0, which adds the sequence starting 50, 0."
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I miscounted the terms and wrote my equation for the fifth term, $6a + 5b = 500$."
+    },
+    {
+      "key": "C",
+      "text": "33",
+      "correct": false,
+      "misconception": "I used the simpler rule 'add the two terms before', which gives the sixth term $3a + 5b = 500$."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "1",
+      "correct": false,
+      "misconception": "I miscounted the terms and wrote my equation for the seventh term, $22a + 21b = 500$."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "CNT-04",
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "Call the first two terms $a$ and $b$, and write the sixth term using them.",
+    "Build the terms one at a time with the rule. You get one equation in $a$ and $b$; then count its solutions in positive whole numbers by checking which values of $b$ make $a$ a positive whole number.",
+    "The terms are $a$, $b$, $2a + b$, $2a + 3b$, $6a + 5b$, $10a + 11b$, so $10a + 11b = 500$."
+  ],
+  "solutions": {
+    "reliable": "With first terms $a$ and $b$, the sequence is $a$, $b$, $b + 2a$, then $(2a + b) + 2b = 2a + 3b$, then $(2a + 3b) + 2(2a + b) = 6a + 5b$, then $(6a + 5b) + 2(2a + 3b) = 10a + 11b$. So $10a + 11b = 500$. Then $11b$ must end in 0, so $b$ is a multiple of 10, and $11b < 500$ leaves $b = 10, 20, 30, 40$, with $a = 39, 28, 17, 6$. That is 4 sequences. The transferable idea: write the terms of a recursive sequence in its starting values, then solve in whole numbers.",
+    "elegant": null
+  },
+  "whyOnTest": "Recursion problems often reduce to one equation in the starting values; building each term carefully and then counting whole-number solutions is the skill.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

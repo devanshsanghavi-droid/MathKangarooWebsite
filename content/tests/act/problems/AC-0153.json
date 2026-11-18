@@ -1,0 +1,56 @@
+{
+  "id": "AC-0153",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-02",
+  "difficulty": "medium",
+  "statement": "The function $f$ is defined by $f(x) = \\dfrac{2x + 1}{x - 3}$ for all $x \\ne 3$. Which of the following values is NOT in the range of $f$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I thought an output of $0$ is impossible because a denominator cannot be $0$, mixing up a zero output with a zero denominator."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I knew the missing output comes from the leading coefficients, but I divided them upside down and got $\\frac{1}{2}$ instead of $\\frac{2}{1}$."
+    },
+    {
+      "key": "C",
+      "text": "$2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I gave the input that is excluded from the domain, $x = 3$, instead of the output that the function can never produce."
+    }
+  ],
+  "hints": [
+    "An output $y$ is in the range if some $x$ gives $f(x) = y$.",
+    "Set $\\dfrac{2x + 1}{x - 3} = y$ and try to solve for $x$. The value of $y$ that makes this impossible is not in the range.",
+    "Setting $f(x) = 2$ gives $2x + 1 = 2x - 6$, which simplifies to $1 = -6$. Check that the other choices do have solutions."
+  ],
+  "solutions": {
+    "reliable": "Solve $\\dfrac{2x + 1}{x - 3} = y$ for $x$: $2x + 1 = yx - 3y$, so $x(2 - y) = -3y - 1$ and $x = \\dfrac{-3y - 1}{2 - y}$. This works for every $y$ except $y = 2$, where the denominator is $0$ (and the equation becomes $1 = -6$). For the other choices: $f\\left(-\\frac{1}{2}\\right) = 0$, $f\\left(-\\frac{5}{3}\\right) = \\frac{1}{2}$ and $f(10) = 3$. So $2$ is not in the range.",
+    "elegant": "Rewrite $f(x) = 2 + \\dfrac{7}{x - 3}$. The fraction $\\dfrac{7}{x - 3}$ can be any number except $0$, so $f(x)$ can be any number except $2$."
+  },
+  "estSeconds": 65,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

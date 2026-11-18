@@ -1,0 +1,56 @@
+{
+  "id": "AC-0205",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-02",
+  "difficulty": "easy",
+  "statement": "A graphic designer enlarges a triangular logo. The original triangle $PQR$ has sides $PQ = 4$ cm, $QR = 7$ cm and $PR = 9$ cm. The enlarged triangle $STU$ is similar to triangle $PQR$, with $P$, $Q$ and $R$ corresponding to $S$, $T$ and $U$, and its perimeter is $30$ cm. What is the length of $\\overline{TU}$, in centimeters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I multiplied the scale factor $1.5$ by $PQ = 4$, but $\\overline{PQ}$ matches $\\overline{ST}$, not $\\overline{TU}$."
+    },
+    {
+      "key": "B",
+      "text": "$10.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$13.5$",
+      "correct": false,
+      "misconception": "I multiplied the scale factor $1.5$ by $PR = 9$, which gives $SU$, not $TU$."
+    },
+    {
+      "key": "D",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I saw that the perimeter grew from $20$ cm to $30$ cm and added the extra $10$ cm to $QR$, but similar figures grow by multiplying, not adding."
+    }
+  ],
+  "hints": [
+    "Compare the two perimeters to find the scale factor.",
+    "The original perimeter is $4 + 7 + 9$. Divide the new perimeter by it, then scale the side that corresponds to $\\overline{TU}$.",
+    "The scale factor is $30 \\div 20 = 1.5$, and $\\overline{TU}$ corresponds to $\\overline{QR}$."
+  ],
+  "solutions": {
+    "reliable": "The perimeter of triangle $PQR$ is $4 + 7 + 9 = 20$ cm, so the scale factor is $30 \\div 20 = 1.5$. Side $\\overline{TU}$ corresponds to $\\overline{QR}$, so $TU = 1.5 \\cdot 7 = 10.5$ cm.",
+    "elegant": "Side $\\overline{QR}$ is $\\frac{7}{20}$ of the original perimeter, and $\\overline{TU}$ is the same fraction of the new perimeter: $\\frac{7}{20} \\cdot 30 = 10.5$ cm."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

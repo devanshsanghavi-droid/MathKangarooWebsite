@@ -1,0 +1,67 @@
+{
+  "id": "AM-1064",
+  "contest": "AMC8",
+  "slot": 21,
+  "area": "ALG",
+  "topic": "ALG-08",
+  "types": [
+    "T-SFFT",
+    "T-CASEWORK"
+  ],
+  "statement": "A function has the form $f(x) = ax + b$, where $a$ and $b$ are positive integers. It satisfies $f(f(1)) = 29$. What is the sum of all possible values of $f(1)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I assumed $a$ had to be bigger than $1$, so I found only $f(x) = 3x + 5$ with $f(1) = 8$. But $a = 1$ is allowed and gives $f(x) = x + 14$ as well."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I tried only $a = 1$, which gives $2b = 28$, $b = 14$ and $f(1) = 15$, and never checked the other values of $a$."
+    },
+    {
+      "key": "C",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I found both functions, $f(x) = x + 14$ and $f(x) = 3x + 5$, but added the values of $b$, $14 + 5$, instead of the values of $f(1) = a + b$."
+    },
+    {
+      "key": "D",
+      "text": "$23$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I thought the number part of $f(f(x))$ is $b + b = 2b$, so I solved $a^2 + 2b = 29$ and got $(a, b) = (1, 14), (3, 10), (5, 2)$, which gave $15 + 13 + 7 = 35$. But the first $b$ gets multiplied by $a$."
+    }
+  ],
+  "hints": [
+    "Start with $f(1) = a + b$, then put that into $f$ again.",
+    "$f(f(1)) = a(a + b) + b = a^2 + ab + b$, so you need $a^2 + ab + b = 29$ with $a$ and $b$ positive integers.",
+    "Rewrite it as $b(a + 1) = 29 - a^2$. Since $a^2 < 29$, only $a = 1, 2, 3, 4, 5$ are possible. Check each one."
+  ],
+  "solutions": {
+    "reliable": "We have $f(1) = a + b$, so $f(f(1)) = a(a + b) + b = a^2 + ab + b = 29$, which is $b(a + 1) = 29 - a^2$. Since $b \\ge 1$, we need $a^2 < 29$, so $a \\le 5$. For $a = 1$, $2b = 28$ and $b = 14$. For $a = 2$, $3b = 25$, which has no whole-number solution. For $a = 3$, $4b = 20$ and $b = 5$. For $a = 4$, $5b = 13$, and for $a = 5$, $6b = 4$, neither of which works. So $f(x) = x + 14$ or $f(x) = 3x + 5$, with $f(1) = 15$ or $f(1) = 8$. Check: $f(15) = 29$ and $3 \\cdot 8 + 5 = 29$. The sum is $15 + 8 = 23$.",
+    "elegant": "Let $c = f(1) = a + b$. Then $f(c) = ac + b = 29$, and replacing $b$ by $c - a$ gives $ac + c - a = 29$. Subtracting $1$ from both sides factors it: $(a + 1)(c - 1) = 28$. Now $a + 1$ is a factor of $28$ that is at least $2$, and $b = c - a$ must be positive. The factor $2$ gives $a = 1$, $c = 15$, $b = 14$; the factor $4$ gives $a = 3$, $c = 8$, $b = 5$; the factors $7$, $14$ and $28$ give $b = -1$, $-10$ and $-25$, which are not allowed. So the possible values of $f(1)$ are $15$ and $8$, and their sum is $23$."
+  },
+  "formulas": [],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0162",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-07",
+  "difficulty": "medium",
+  "statement": "$$\\begin{aligned} y &= x^2 - 4x + 1 \\\\ y &= -x^2 + 2x + 9 \\end{aligned}$$ The graphs of the two equations above intersect at two points in the $xy$-plane. What is the sum of the $y$-coordinates of the two intersection points?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I found the intersection point $(4, 1)$ and stopped, forgetting that $x = -1$ gives a second point."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found both $x$-coordinates, $4$ and $-1$, and added those instead of the $y$-coordinates."
+    },
+    {
+      "key": "C",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$31$",
+      "correct": false,
+      "misconception": "I factored $x^2 - 3x - 4$ as $(x + 4)(x - 1)$, so I used $x = -4$ and $x = 1$ in the first equation and got $33 + (-2) = 31$."
+    }
+  ],
+  "hints": [
+    "At an intersection point, both equations give the same $y$ for the same $x$.",
+    "Set $x^2 - 4x + 1 = -x^2 + 2x + 9$, solve for $x$, then find each $y$.",
+    "$2x^2 - 6x - 8 = 0$, so $x^2 - 3x - 4 = 0$ and $(x - 4)(x + 1) = 0$."
+  ],
+  "solutions": {
+    "reliable": "Setting the right sides equal, $x^2 - 4x + 1 = -x^2 + 2x + 9$, so $2x^2 - 6x - 8 = 0$, or $(x - 4)(x + 1) = 0$. For $x = 4$, $y = 16 - 16 + 1 = 1$. For $x = -1$, $y = 1 + 4 + 1 = 6$. Both points also satisfy the second equation: $-16 + 8 + 9 = 1$ and $-1 - 2 + 9 = 6$. The sum of the $y$-coordinates is $1 + 6 = 7$.",
+    "elegant": "Add the two equations: $2y = -2x + 10$, so every intersection point lies on $y = -x + 5$. The $x$-coordinates are $4$ and $-1$, so the $y$-coordinates add to $-(4 + (-1)) + 10 = 7$."
+  },
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

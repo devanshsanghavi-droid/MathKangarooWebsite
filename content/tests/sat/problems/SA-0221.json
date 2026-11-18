@@ -1,0 +1,56 @@
+{
+  "id": "SA-0221",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-05",
+  "difficulty": "hard",
+  "statement": "A lab technician counts the bacteria in a culture over several hours. An exponential model fits the data well, and according to the model the count increases by the same percent each hour. The model gives a count of $1{,}440$ bacteria at hour $2$ and $2{,}073.6$ bacteria at hour $4$. According to the model, how many bacteria were in the culture at hour $0$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$806.4$",
+      "correct": false,
+      "misconception": "I treated the change as linear, so I went back from hour 2 by subtracting the same 633.6 bacteria that were gained from hour 2 to hour 4."
+    },
+    {
+      "key": "B",
+      "text": "$921.6$",
+      "correct": false,
+      "misconception": "I found the growth of $20\\%$ per hour and then undid it by taking $20\\%$ off twice, $1{,}440 \\times 0.8 \\times 0.8$, but dividing by 1.2 is not the same as multiplying by 0.8."
+    },
+    {
+      "key": "C",
+      "text": "$1{,}000$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$1{,}200$",
+      "correct": false,
+      "misconception": "I divided 1,440 by the hourly growth factor 1.2 only once, which goes back to hour 1, not hour 0."
+    }
+  ],
+  "hints": [
+    "For an exponential model, compare counts by dividing, not subtracting.",
+    "Find the factor by which the count grows over $2$ hours. Going back $2$ hours from hour $2$ means dividing by that same factor.",
+    "From hour $2$ to hour $4$ the count is multiplied by $\\dfrac{2{,}073.6}{1{,}440} = 1.44$, which is $1.2$ per hour."
+  ],
+  "solutions": {
+    "reliable": "Write the model as $N(t) = a \\cdot b^t$. Then $\\dfrac{N(4)}{N(2)} = b^2 = \\dfrac{2{,}073.6}{1{,}440} = 1.44$, so $b = 1.2$. From $N(2) = a(1.44) = 1{,}440$, we get $a = 1{,}000$, which is the count at hour $0$. Check: $1{,}000(1.2)^4 = 2{,}073.6$.",
+    "elegant": "Hours $0$, $2$ and $4$ are equally spaced, so the counts there form a geometric sequence and $1{,}440$ is the geometric mean of the other two: $N(0) = \\dfrac{1{,}440^2}{2{,}073.6} = 1{,}000$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

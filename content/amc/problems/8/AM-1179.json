@@ -1,0 +1,68 @@
+{
+  "id": "AM-1179",
+  "contest": "AMC8",
+  "slot": 10,
+  "area": "NT",
+  "topic": "NT-02",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "The prime $13$ has the property that reversing its digits gives a different prime, $31$. How many two-digit primes have this property?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I counted each pair once, 13 and 31, 17 and 71, 37 and 73, 79 and 97, but both primes in each pair have the property."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I also counted 11, but reversing 11 gives 11 again, which is not a different prime."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I also counted 11 and 19, but 11 reverses to itself and 91 = 7 times 13 is not prime."
+    },
+    {
+      "key": "E",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I counted all 21 two-digit primes without checking their reversals."
+    }
+  ],
+  "hints": [
+    "The reversed number must also be a prime, so it cannot end in an even digit or in $5$.",
+    "That means both digits of the original prime are $1$, $3$, $7$ or $9$. List the two-digit primes that use only those digits.",
+    "The list is $11, 13, 17, 19, 31, 37, 71, 73, 79, 97$. Now reverse each one and check."
+  ],
+  "solutions": {
+    "reliable": "A two-digit prime ends in $1$, $3$, $7$ or $9$, and its reversal, also a prime, must end in one of those digits too, so both digits come from $\\{1, 3, 7, 9\\}$. The primes built from those digits are $11, 13, 17, 19, 31, 37, 71, 73, 79, 97$ (the others, $33, 39, 77, 91, 93, 99$, are not prime). Now reverse: $11$ gives itself, which is not a different prime, and $19$ gives $91 = 7 \\cdot 13$. The other eight work in pairs: $13$ and $31$, $17$ and $71$, $37$ and $73$, $79$ and $97$. The answer is $8$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-19"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

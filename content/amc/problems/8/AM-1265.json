@@ -1,0 +1,68 @@
+{
+  "id": "AM-1265",
+  "contest": "AMC8",
+  "slot": 13,
+  "area": "CP",
+  "topic": "CP-07",
+  "types": [
+    "T-GEOPROB"
+  ],
+  "statement": "A dart lands at a random point $P$ on a rectangular board that is $10$ units wide and $6$ units tall, with every point equally likely. What is the probability that the distance from $P$ to the left edge of the board is more than twice the distance from $P$ to the bottom edge?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{5}{12}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I thought any line from the bottom left corner cuts the board into two equal halves."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{7}{12}$",
+      "correct": false,
+      "misconception": "I found the region where the distance to the left edge is less than twice the distance to the bottom, 35 out of 60."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{5}{7}$",
+      "correct": false,
+      "misconception": "I found the triangle of area 25, but I compared it with the other part of the board, 35, instead of the whole board, 60."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{5}{6}$",
+      "correct": false,
+      "misconception": "I took the area of the triangle as 10 x 5 = 50 and forgot to halve it, so I got 50 out of 60."
+    }
+  ],
+  "hints": [
+    "Put the bottom left corner at $(0, 0)$. Then the distance to the left edge is $x$ and the distance to the bottom edge is $y$.",
+    "You want the region where $x > 2y$, which lies below the line $y = \\frac{x}{2}$.",
+    "The line $y = \\frac{x}{2}$ meets the right edge at height $5$, which is below the top. The region is a right triangle with legs $10$ and $5$."
+  ],
+  "solutions": {
+    "reliable": "Place the board with corners $(0, 0)$, $(10, 0)$, $(10, 6)$ and $(0, 6)$. For $P = (x, y)$, the distance to the left edge is $x$ and the distance to the bottom edge is $y$, so we need $x > 2y$, that is, $y < \\frac{x}{2}$. The line $y = \\frac{x}{2}$ runs from $(0, 0)$ to $(10, 5)$, which stays inside the board since $5 < 6$. The region below it is a right triangle with legs $10$ and $5$ and area $\\frac{1}{2} \\cdot 10 \\cdot 5 = 25$. The board has area $60$, so the probability is $\\frac{25}{60} = \\frac{5}{12}$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-11"
+  ],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

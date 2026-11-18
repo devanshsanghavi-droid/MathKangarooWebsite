@@ -1,0 +1,56 @@
+{
+  "id": "AC-0179",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-06",
+  "difficulty": "easy",
+  "statement": "The graph of $y = g(x)$ is made by reflecting the graph of $y = 2^x$ across the $y$-axis and then shifting the result up $3$ units. Which of the following is an equation for $g$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$g(x) = 2^{-x} + 3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$g(x) = -2^{x} + 3$",
+      "correct": false,
+      "misconception": "I negated the whole output, but that reflects the graph across the $x$-axis. A reflection across the $y$-axis changes the sign of the input."
+    },
+    {
+      "key": "C",
+      "text": "$g(x) = 2^{-x + 3}$",
+      "correct": false,
+      "misconception": "I put the $3$ in the exponent, but adding $3$ inside the exponent shifts the graph sideways, not up."
+    },
+    {
+      "key": "D",
+      "text": "$g(x) = -2^{-x} + 3$",
+      "correct": false,
+      "misconception": "I thought a reflection across the $y$-axis changes the sign of both the input and the output, so I used two minus signs."
+    }
+  ],
+  "hints": [
+    "When a point is reflected across the $y$-axis, which coordinate changes sign?",
+    "Across the $y$-axis, $(x, y)$ goes to $(-x, y)$, so replace $x$ with $-x$. Shifting up adds a number to the whole output.",
+    "Reflecting gives $y = 2^{-x}$. Shifting up $3$ adds $3$ outside the power."
+  ],
+  "solutions": {
+    "reliable": "Reflecting across the $y$-axis sends each point $(x, y)$ to $(-x, y)$, so the reflected graph is $y = 2^{-x}$. Shifting a graph up $3$ units adds $3$ to every output, which gives $g(x) = 2^{-x} + 3$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

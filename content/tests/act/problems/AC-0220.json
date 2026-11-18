@@ -1,0 +1,56 @@
+{
+  "id": "AC-0220",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "hard",
+  "statement": "A rectangular swimming pool is $18$ meters long and $12$ meters wide. A concrete deck of uniform width $x$ meters surrounds the pool on all four sides. The area of the deck alone is equal to the area of the pool's surface. What is the value of $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$3.6$",
+      "correct": false,
+      "misconception": "I found the deck area as $2(18x) + 2(12x) = 60x$, which leaves out the four corner squares, so $60x = 216$ gave $x = 3.6$."
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I wrote the outer dimensions as $18 + x$ and $12 + x$, forgetting the deck is on both sides, so $(18 + x)(12 + x) = 432$ gave $x = 6$."
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I reached $x^2 + 15x - 54 = 0$ correctly but chose the root $x = -18$ and dropped its negative sign."
+    }
+  ],
+  "hints": [
+    "If the deck's area equals the pool's area, how does the total area compare with the pool's area?",
+    "The outer rectangle is $(18 + 2x)$ by $(12 + 2x)$, and its area is twice the pool's area, $2 \\cdot 216$. Expand and solve the quadratic.",
+    "$(18 + 2x)(12 + 2x) = 432$ simplifies to $x^2 + 15x - 54 = 0$."
+  ],
+  "solutions": {
+    "reliable": "The pool has area $18 \\cdot 12 = 216$ square meters, so the pool and deck together have area $432$. The outer dimensions are $18 + 2x$ and $12 + 2x$, so $(18 + 2x)(12 + 2x) = 432$. Expanding gives $216 + 60x + 4x^2 = 432$, so $4x^2 + 60x - 216 = 0$ and $x^2 + 15x - 54 = 0$. This factors as $(x + 18)(x - 3) = 0$. A width cannot be negative, so $x = 3$. Check: $24 \\cdot 18 = 432$.",
+    "elegant": null
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

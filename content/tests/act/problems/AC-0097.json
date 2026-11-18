@@ -1,0 +1,56 @@
+{
+  "id": "AC-0097",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-06",
+  "difficulty": "hard",
+  "statement": "Organizers of a charity fun run lower the registration fee as more runners sign up. If $n$ runners register, each runner pays $50 - 0.1n$ dollars, for $n$ up to $400$. What is the least number of runners for which the total registration money is at least $\\$5{,}760$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$116$",
+      "correct": false,
+      "misconception": "I ignored the discount and used $\\$50$ per runner, so $5760 \\div 50 = 115.2$, which I rounded up to 116."
+    },
+    {
+      "key": "B",
+      "text": "$180$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$250$",
+      "correct": false,
+      "misconception": "I found the number of runners that brings in the most money, $n = 250$, instead of the least number that reaches $\\$5{,}760$."
+    },
+    {
+      "key": "D",
+      "text": "$320$",
+      "correct": false,
+      "misconception": "I solved $n(50 - 0.1n) = 5760$ correctly but chose the larger solution, 320."
+    }
+  ],
+  "hints": [
+    "Total money is the number of runners times the fee each one pays.",
+    "Solve $n(50 - 0.1n) = 5760$. Multiplying both sides by $-10$ gives $n^2 - 500n + 57600 = 0$.",
+    "The quadratic formula gives $n = \\tfrac{500 \\pm \\sqrt{250000 - 230400}}{2} = \\tfrac{500 \\pm 140}{2}$. The money is at least $\\$5{,}760$ between the two roots."
+  ],
+  "solutions": {
+    "reliable": "Total money is $R = n(50 - 0.1n)$. Setting $R = 5760$ gives $50n - 0.1n^2 = 5760$, so $n^2 - 500n + 57600 = 0$ and $(n - 180)(n - 320) = 0$. The graph of $R$ is a parabola opening downward, so $R \\ge 5760$ for $180 \\le n \\le 320$. The least number of runners is $180$. Check: $180 \\times (50 - 18) = 180 \\times 32 = 5760$, while $179$ runners bring in $179 \\times 32.1 = 5745.9$ dollars, which is short.",
+    "elegant": null
+  },
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

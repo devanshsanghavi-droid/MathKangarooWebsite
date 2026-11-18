@@ -1,0 +1,56 @@
+{
+  "id": "AC-0270",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-05",
+  "difficulty": "medium",
+  "statement": "A ship sends signals by hanging $6$ flags in a vertical row. It has $3$ identical red flags, $2$ identical blue flags and $1$ green flag, and every signal uses all $6$ flags. Two signals are different if their colors appear in a different order from top to bottom. How many different signals are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$60$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I divided 6 factorial by 3 factorial for the identical red flags, but forgot that the 2 blue flags are identical too."
+    },
+    {
+      "key": "C",
+      "text": "$360$",
+      "correct": false,
+      "misconception": "I divided 6 factorial by 2 factorial for the identical blue flags, but forgot that the 3 red flags are identical too."
+    },
+    {
+      "key": "D",
+      "text": "$720$",
+      "correct": false,
+      "misconception": "I counted all 6 factorial orders as if all 6 flags looked different."
+    }
+  ],
+  "hints": [
+    "If all $6$ flags were different, there would be $6!$ orders. Which of those look the same?",
+    "Swapping identical flags does not change a signal. Divide out those repeats.",
+    "Divide $6!$ by $3!$ for the red flags and by $2!$ for the blue flags."
+  ],
+  "solutions": {
+    "reliable": "If all flags were different there would be $6! = 720$ orders. Each signal is counted once for every way to rearrange the $3$ red flags among themselves ($3! = 6$) and the $2$ blue flags among themselves ($2! = 2$). So the number of signals is $\\dfrac{720}{6 \\cdot 2} = 60$.",
+    "elegant": "Choose the $3$ spots for red in $\\binom{6}{3} = 20$ ways, then $2$ of the remaining $3$ spots for blue in $\\binom{3}{2} = 3$ ways. Green takes the last spot: $20 \\cdot 3 = 60$."
+  },
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

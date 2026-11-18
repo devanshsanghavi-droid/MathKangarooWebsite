@@ -1,0 +1,68 @@
+{
+  "id": "KA-1380",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A jug holds 1 litre of orange drink that is 20% juice. Leo pours some of the drink away and then fills the jug back up to 1 litre with pure juice. Now the drink in the jug is 50% juice. How much drink did Leo pour away?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "240 ml",
+      "correct": false,
+      "misconception": "I got 0.8 times the amount poured away equals 0.3 litres, but multiplied by 0.8 instead of dividing."
+    },
+    {
+      "key": "B",
+      "text": "300 ml",
+      "correct": false,
+      "misconception": "I forgot that the drink I poured away also had juice in it, so I just added the missing 300 ml of juice."
+    },
+    {
+      "key": "C",
+      "text": "500 ml",
+      "correct": false,
+      "misconception": "I assumed that replacing half the drink with juice would make it half juice."
+    },
+    {
+      "key": "D",
+      "text": "375 ml",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "625 ml",
+      "correct": false,
+      "misconception": "I worked out how much of the old drink stayed in the jug instead of how much was poured away."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-08",
+    "secondary": [
+      "MOD-01",
+      "NUM-10"
+    ]
+  },
+  "hints": [
+    "Track only the juice: how much is there at the start and the end?",
+    "Call the amount poured away x litres. Pouring it away removes 20% of x as juice; refilling adds x of pure juice. Write the juice at the end in terms of x and set it equal to half a litre.",
+    "0.2 x (1 - x) + x = 0.5, so 0.2 + 0.8x = 0.5 and 0.8x = 0.3. Solve for x and convert to millilitres."
+  ],
+  "solutions": {
+    "reliable": "Let x litres be poured away. The juice left is 20% of the remaining 1 - x litres, which is 0.2(1 - x). Then x litres of pure juice are added. The jug must contain 0.5 litres of juice: 0.2(1 - x) + x = 0.5, so 0.2 + 0.8x = 0.5, 0.8x = 0.3 and x = 0.375 litres = 375 ml. Check: 625 ml of 20% drink has 125 ml of juice, and 125 + 375 = 500 ml. The transferable idea: in mixture problems, follow one ingredient and remember that whatever you remove carries its share of it.",
+    "elegant": "Each millilitre swapped from drink to pure juice raises the juice by 1 - 0.2 = 0.8 ml. The juice must rise from 200 ml to 500 ml, by 300 ml, so 300 / 0.8 = 375 ml must be swapped."
+  },
+  "whyOnTest": "Mixture reasoning: what you pour away is not pure water, so each swap only gains the difference in strength.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

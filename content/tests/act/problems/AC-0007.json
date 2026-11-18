@@ -1,0 +1,56 @@
+{
+  "id": "AC-0007",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-02",
+  "difficulty": "medium",
+  "statement": "For all $x > 0$, which of the following is equivalent to $\\sqrt[4]{x^{3}} \\cdot \\sqrt{x}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$x^{\\frac{11}{6}}$",
+      "correct": false,
+      "misconception": "I wrote the fourth root of $x^3$ as $x^{\\frac{4}{3}}$, putting the root on top, and then added $\\frac{1}{2}$ to get $\\frac{11}{6}$."
+    },
+    {
+      "key": "B",
+      "text": "$x^{\\frac{5}{4}}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$x^{\\frac{2}{3}}$",
+      "correct": false,
+      "misconception": "I added the exponents by adding the tops and the bottoms, $\\frac{3 + 1}{4 + 2} = \\frac{4}{6} = \\frac{2}{3}$."
+    },
+    {
+      "key": "D",
+      "text": "$x^{\\frac{3}{8}}$",
+      "correct": false,
+      "misconception": "I multiplied the exponents, $\\frac{3}{4} \\cdot \\frac{1}{2} = \\frac{3}{8}$, but multiplying powers of the same base means adding exponents."
+    }
+  ],
+  "hints": [
+    "Write each radical as a power of $x$ with a fraction exponent.",
+    "$\\sqrt[4]{x^{3}} = x^{\\frac{3}{4}}$ and $\\sqrt{x} = x^{\\frac{1}{2}}$. When you multiply powers of the same base, add the exponents.",
+    "$\\frac{3}{4} + \\frac{1}{2} = \\frac{3}{4} + \\frac{2}{4}$."
+  ],
+  "solutions": {
+    "reliable": "A root becomes the denominator of the exponent: $\\sqrt[4]{x^{3}} = x^{\\frac{3}{4}}$ and $\\sqrt{x} = x^{\\frac{1}{2}}$. Multiplying adds the exponents: $\\frac{3}{4} + \\frac{2}{4} = \\frac{5}{4}$, so the product is $x^{\\frac{5}{4}}$. Check with $x = 16$: $\\sqrt[4]{16^{3}} \\cdot \\sqrt{16} = 8 \\cdot 4 = 32$ and $16^{\\frac{5}{4}} = 2^{5} = 32$.",
+    "elegant": "Write both as fourth roots: $\\sqrt{x} = \\sqrt[4]{x^{2}}$, so the product is $\\sqrt[4]{x^{3} \\cdot x^{2}} = \\sqrt[4]{x^{5}} = x^{\\frac{5}{4}}$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

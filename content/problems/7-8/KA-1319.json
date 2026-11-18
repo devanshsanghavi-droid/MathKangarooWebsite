@@ -1,0 +1,68 @@
+{
+  "id": "KA-1319",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Four stacks each hold 10 coins. Each stack is all real (10 g each) or all fake (11 g each), and any number of them, even none, may be fake. You weigh some coins from each stack together, once, on an exact scale. What is the fewest coins in total that always tells you which stacks are fake?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I took one coin from each stack, but then the scale only shows how many stacks are fake, not which ones."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": false,
+      "misconception": "I took 0, 1, 2 and 4 coins, thinking the stack I took nothing from could be worked out at the end, but nothing tells me whether it is fake."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I took 1, 2, 3 and 4 coins, but then the first two stacks being fake adds the same extra weight as the third stack alone."
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": false,
+      "misconception": "I took 1, 2, 4 and 7 coins, checking only that no amount is the sum of two others, but $1 + 2 + 4 = 7$."
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-10",
+    "secondary": [
+      "LOG-09",
+      "CNT-17"
+    ]
+  },
+  "hints": [
+    "The extra grams on the scale equal the number of fake coins weighed.",
+    "Weighing puzzles: every possible set of fake stacks must give a different reading. Count how many sets there are, then ask how large the largest reading must be.",
+    "There are $2^4 = 16$ possible sets of fake stacks, so 16 different extra weights are needed, starting at 0. The largest, when all four stacks are fake, must be at least 15."
+  ],
+  "solutions": {
+    "reliable": "The scale shows the extra weight above 10 g per coin, which equals the number of fake coins weighed. Each of the $2^4 = 16$ possible sets of fake stacks must give a different extra weight. These are 16 different whole numbers, the smallest being 0, so the largest is at least 15. The largest extra weight happens when all four stacks are fake, and it then equals the total number of coins taken, so at least 15 coins are needed. Taking 1, 2, 4 and 8 coins works: every number from 0 to 15 is a sum of some of these in exactly one way, so the reading tells you exactly which stacks are fake. Each amount is at most 10, so the coins are available. The transferable idea: count how many situations must be told apart, and make sure the weighing can give that many different readings.",
+    "elegant": "A pure counting argument gives the bound: 16 situations need 16 different readings, and the readings can only run from 0 up to the number of coins taken, so at least 15 coins. Powers of 2 meet the bound exactly, just as every number from 0 to 15 has one way of being written in binary."
+  },
+  "whyOnTest": "A single weighing can only separate as many cases as it has readings; counting the cases gives the bound, and powers of 2 meet it.",
+  "estSeconds": 220,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

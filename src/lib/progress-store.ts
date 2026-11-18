@@ -5,7 +5,8 @@ import { parseProgress, type ProgressFile } from './local-progress';
 /**
  * Synced progress, one row per signed-in account, in Cloudflare D1 (binding `DB`, schema in
  * migrations/d1). The row holds an opaque account id (see accountIdFor in auth/google.ts), the
- * progress file as JSON and a timestamp. Nothing else about the student exists to store.
+ * progress file as JSON, when it was last saved and when it was first created. Nothing else
+ * about the student exists to store.
  */
 
 /** The slice of the D1 API this file uses, so the code does not depend on workers-types. */
@@ -41,13 +42,31 @@ export async function saveProgress(
   accountId: string,
   file: ProgressFile,
 ): Promise<void> {
-  await db
-    .prepare(
-      'INSERT INTO progress (account_id, data, updated_at) VALUES (?1, ?2, ?3) ' +
-        'ON CONFLICT(account_id) DO UPDATE SET data = excluded.data, updated_at = excluded.updated_at',
-    )
-    .bind(accountId, JSON.stringify(file), Date.now())
-    .run();
+  const data = JSON.stringify(file);
+  const now = Date.now();
+  try {
+    // created_at is written on the first insert only: the upsert branch leaves it alone, so
+    // it stays the day the account first synced (counted on /admin, migrations/d1/0002).
+    await db
+      .prepare(
+        'INSERT INTO progress (account_id, data, updated_at, created_at) VALUES (?1, ?2, ?3, ?3) ' +
+          'ON CONFLICT(account_id) DO UPDATE SET data = excluded.data, updated_at = excluded.updated_at',
+      )
+      .bind(accountId, data, now)
+      .run();
+  } catch (error) {
+    // A database that has not had migration 0002 applied yet has no created_at column. Saving
+    // a student's progress matters more than counting them, so fall back to the old statement
+    // rather than failing the sync. Any other error is a real one.
+    if (!(error instanceof Error) || !/created_at/.test(error.message)) throw error;
+    await db
+      .prepare(
+        'INSERT INTO progress (account_id, data, updated_at) VALUES (?1, ?2, ?3) ' +
+          'ON CONFLICT(account_id) DO UPDATE SET data = excluded.data, updated_at = excluded.updated_at',
+      )
+      .bind(accountId, data, now)
+      .run();
+  }
 }
 
 export async function deleteProgress(db: D1Like, accountId: string): Promise<void> {

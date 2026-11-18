@@ -1,0 +1,68 @@
+{
+  "id": "KA-1456",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A rectangular sheet of paper ABCD has AB = 12 and AD = 9. Point M lies on side CD with DM = 3. The sheet is folded along a straight crease so that corner A lands exactly on M. The crease meets side AD at P. What is the length AP?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found the point P correctly but gave its distance from D, which is 4, instead of its distance from A."
+    },
+    {
+      "key": "B",
+      "text": "4.5",
+      "correct": false,
+      "misconception": "I assumed the crease passes through the midpoint of AD."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{3\\sqrt{10}}{2}$",
+      "correct": false,
+      "misconception": "I took AP to be half of AM, as if P were the midpoint of AM, but the midpoint of AM lies on the crease, not on side AD."
+    },
+    {
+      "key": "E",
+      "text": "$3\\sqrt{5}$",
+      "correct": false,
+      "misconception": "I wrote AP squared = 3 squared + (9 - AP) squared but expanded (9 - AP) squared as 81 - AP squared, which gives 2AP squared = 90."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-15",
+    "secondary": [
+      "GEO-06",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Points on the crease do not move when the paper is folded.",
+    "Since P is on the crease, P is the same distance from A as from M. Call AP = x, write PM using the right-angled triangle PDM, and set up an equation.",
+    "PD = 9 - x and DM = 3, so PM squared = 3 squared + (9 - x) squared. Set this equal to x squared."
+  ],
+  "solutions": {
+    "reliable": "Every point of the crease is equally far from A and from its image M. So with AP = x we need PM = x. In the right-angled triangle PDM, PD = 9 - x and DM = 3, so $x^2 = 9 + (9 - x)^2 = 9 + 81 - 18x + x^2$. This gives 18x = 90, so x = 5. Check: PD = 4, DM = 3 and PM = 5 make a 3-4-5 triangle. The transferable idea: a fold line is the perpendicular bisector of a point and its image, so every point on the crease is equally far from the two.",
+    "elegant": "Use coordinates A = (0, 0), D = (0, 9), M = (3, 9). The crease is the set of points equally far from A and M: $x^2 + y^2 = (x - 3)^2 + (y - 9)^2$, which simplifies to $x + 3y = 15$. On side AD, x = 0, so y = 5."
+  },
+  "whyOnTest": "Paper folding tests seeing the crease as a perpendicular bisector, which turns a physical fold into an equation.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0232",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-03",
+  "difficulty": "hard",
+  "statement": "A lab has $40$ liters of a salt solution that is $15\\%$ salt by volume. Water is evaporated from the solution until it is $24\\%$ salt by volume, and no salt is lost. How many liters of water were evaporated?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I found the final volume, 25 liters, and subtracted the 6 liters of salt, which gives the water left in the solution, not the water removed."
+    },
+    {
+      "key": "C",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I thought the volume changes by the same factor as the percent, 24/15 = 1.6, so I found 40 times 1.6 = 64 liters and a change of 24 liters, but less water means a higher percent."
+    },
+    {
+      "key": "D",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I found the volume of the solution after evaporation, 25 liters, and gave that instead of the amount that evaporated."
+    }
+  ],
+  "hints": [
+    "What quantity stays the same while the water evaporates?",
+    "Find the liters of salt, then find the total volume in which that salt makes up $24\\%$. Compare it with the original $40$ liters.",
+    "There are $0.15 \\times 40 = 6$ liters of salt, and $6$ is $24\\%$ of the final volume $V$: $0.24V = 6$."
+  ],
+  "solutions": {
+    "reliable": "The salt is $0.15 \\times 40 = 6$ liters, and it stays the same. In the final solution, $6$ liters is $24\\%$ of the volume: $0.24V = 6$, so $V = 25$ liters. The water evaporated is $40 - 25 = 15$ liters. Check: $\\frac{6}{25} = 0.24$.",
+    "elegant": "The amount of salt is fixed, so concentration and volume are inversely proportional: $15 \\times 40 = 24 \\times V$, which gives $V = 25$ and $40 - 25 = 15$ liters evaporated."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

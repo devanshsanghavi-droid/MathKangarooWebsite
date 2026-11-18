@@ -1,0 +1,62 @@
+{
+  "id": "AM-1044",
+  "contest": "AMC8",
+  "slot": 16,
+  "area": "ALG",
+  "topic": "ALG-11",
+  "types": ["T-EXTREME", "T-CASEWORK"],
+  "statement": "What is the smallest possible value of $|x - 3| + |x - 8| + |x - 10| + |x - 20|$, where $x$ can be any real number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I thought the smallest total is just the distance from 3 to 20, forgetting that the middle points 8 and 10 add a distance of their own."
+    },
+    {
+      "key": "B",
+      "text": "$19$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$19.5$",
+      "correct": false,
+      "misconception": "I put x at the average of the four numbers, 41 / 4 = 10.25, but the total is smallest anywhere between the middle two numbers, not at the mean."
+    },
+    {
+      "key": "D",
+      "text": "$29$",
+      "correct": false,
+      "misconception": "I put x at the smallest number, 3, and got 0 + 5 + 7 + 17 = 29."
+    },
+    {
+      "key": "E",
+      "text": "$39$",
+      "correct": false,
+      "misconception": "I put x at the largest number, 20, and got 17 + 12 + 10 + 0 = 39."
+    }
+  ],
+  "hints": [
+    "Each term is a distance on the number line, so the expression is the total distance from $x$ to the points $3$, $8$, $10$ and $20$.",
+    "Pair the outer points $3$ and $20$, and pair the inner points $8$ and $10$.",
+    "For any $x$ from $3$ to $20$ the outer pair contributes $17$, and for any $x$ from $8$ to $10$ the inner pair contributes $2$."
+  ],
+  "solutions": {
+    "reliable": "Pair the terms. The sum $|x - 3| + |x - 20|$ is the total distance from $x$ to $3$ and to $20$, which is at least $20 - 3 = 17$, with equality when $3 \\le x \\le 20$. Likewise $|x - 8| + |x - 10| \\ge 2$, with equality when $8 \\le x \\le 10$. Both equalities hold for every $x$ from $8$ to $10$, so the smallest value is $17 + 2 = 19$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

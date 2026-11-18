@@ -1,0 +1,56 @@
+{
+  "id": "AC-0042",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-06",
+  "difficulty": "medium",
+  "statement": "For $i = \\sqrt{-1}$, which of the following is equivalent to $\\dfrac{5 + i}{1 - i}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2 + 3i$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$3 + 3i$",
+      "correct": false,
+      "misconception": "I multiplied by the conjugate $1 + i$, but in the numerator I used $i^2 = 1$, so I got $\\dfrac{6 + 6i}{2}$."
+    },
+    {
+      "key": "C",
+      "text": "$4 + 6i$",
+      "correct": false,
+      "misconception": "I multiplied the numerator by the conjugate $1 + i$ to get $4 + 6i$ but did not divide by the new denominator, 2."
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I divided part by part, $\\tfrac{5}{1} + \\tfrac{i}{-i} = 5 - 1$, as if each part of the fraction could be divided separately."
+    }
+  ],
+  "hints": [
+    "To clear $i$ from a denominator, use its complex conjugate.",
+    "Multiply the top and bottom by $1 + i$. The denominator becomes real because $(1 - i)(1 + i) = 1 - i^2$.",
+    "The numerator is $(5 + i)(1 + i) = 5 + 6i + i^2 = 4 + 6i$, and the denominator is 2."
+  ],
+  "solutions": {
+    "reliable": "Multiply the numerator and denominator by $1 + i$. Numerator: $(5 + i)(1 + i) = 5 + 5i + i + i^2 = 4 + 6i$. Denominator: $(1 - i)(1 + i) = 1 - i^2 = 2$. So the quotient is $\\dfrac{4 + 6i}{2} = 2 + 3i$. Check: $(2 + 3i)(1 - i) = 2 - 2i + 3i - 3i^2 = 5 + i$. The idea: multiplying by the conjugate turns a complex denominator into a real one.",
+    "elegant": "Check the choices by multiplying back by $1 - i$: only $(2 + 3i)(1 - i) = 5 + i$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

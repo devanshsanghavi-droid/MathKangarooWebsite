@@ -1,0 +1,56 @@
+{
+  "id": "AC-0124",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "hard",
+  "statement": "The polynomial $p(x) = x^3 + ax^2 + bx - 6$, where $a$ and $b$ are constants, has $(x - 1)$ and $(x + 2)$ as factors. What is the third zero of $p$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-4$",
+      "correct": false,
+      "misconception": "I found $a = 4$ and $b = 1$ correctly but then took $-a = -4$ as the third zero, mixing up a coefficient with a zero."
+    },
+    {
+      "key": "B",
+      "text": "$-3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I took the product of the zeros to be $-6$, the constant term itself, so I solved $1 \\cdot (-2) \\cdot r = -6$."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I found $a = 4$ but took the sum of the zeros to be $+a$ instead of $-a$, so I solved $1 + (-2) + r = 4$."
+    }
+  ],
+  "hints": [
+    "If $(x - 1)$ is a factor, then $p(1) = 0$.",
+    "Use $p(1) = 0$ and $p(-2) = 0$ to find $a$ and $b$, then factor. Or compare constant terms in $(x - 1)(x + 2)(x - r)$.",
+    "$p(1) = 0$ gives $a + b = 5$, and $p(-2) = 0$ gives $2a - b = 7$."
+  ],
+  "solutions": {
+    "reliable": "$p(1) = 1 + a + b - 6 = 0$, so $a + b = 5$. $p(-2) = -8 + 4a - 2b - 6 = 0$, so $2a - b = 7$. Adding, $3a = 12$, so $a = 4$ and $b = 1$. Then $p(x) = x^3 + 4x^2 + x - 6 = (x - 1)(x + 2)(x + 3)$, so the third zero is $-3$. Check: $p(-3) = -27 + 36 - 3 - 6 = 0$.",
+    "elegant": "Write $p(x) = (x - 1)(x + 2)(x - r)$. Its constant term is $(-1)(2)(-r) = 2r$, which must equal $-6$, so $r = -3$. No need to find $a$ or $b$."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

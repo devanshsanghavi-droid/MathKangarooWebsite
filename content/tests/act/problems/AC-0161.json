@@ -1,0 +1,56 @@
+{
+  "id": "AC-0161",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-05",
+  "difficulty": "easy",
+  "statement": "Maya deposits $\\$5{,}000$ in a savings account that pays $4\\%$ annual interest, compounded quarterly (four times per year). The balance after $t$ years is $A = P\\left(1 + \\frac{r}{n}\\right)^{nt}$, where $P$ is the deposit, $r$ is the annual rate as a decimal and $n$ is the number of compounding periods per year. She makes no other deposits or withdrawals. To the nearest cent, what is the balance after $10$ years?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$5{,}523.11$",
+      "correct": false,
+      "misconception": "I used the quarterly rate of $1\\%$ but compounded it only once per year, so I found $5{,}000(1.01)^{10}$."
+    },
+    {
+      "key": "B",
+      "text": "$\\$7{,}401.22$",
+      "correct": false,
+      "misconception": "I compounded once a year at $4\\%$, finding $5{,}000(1.04)^{10}$, and ignored the word quarterly."
+    },
+    {
+      "key": "C",
+      "text": "$\\$7{,}444.32$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$24{,}005.10$",
+      "correct": false,
+      "misconception": "I compounded $40$ times but used the full $4\\%$ each quarter, so I found $5{,}000(1.04)^{40}$."
+    }
+  ],
+  "hints": [
+    "Quarterly means $n = 4$. What is $r$ as a decimal?",
+    "Substitute $P = 5{,}000$, $r = 0.04$, $n = 4$ and $t = 10$ into the formula.",
+    "The quarterly rate is $\\frac{0.04}{4} = 0.01$ and there are $4 \\cdot 10 = 40$ quarters, so compute $5{,}000(1.01)^{40}$."
+  ],
+  "solutions": {
+    "reliable": "With $r = 0.04$ and $n = 4$, the rate per quarter is $\\frac{0.04}{4} = 0.01$, and in $10$ years there are $nt = 40$ quarters. So $A = 5{,}000(1.01)^{40} \\approx 5{,}000 \\cdot 1.488864 = 7{,}444.32$ dollars.",
+    "elegant": null
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

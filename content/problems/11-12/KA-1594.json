@@ -1,0 +1,68 @@
+{
+  "id": "KA-1594",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Zoe has 6 minutes left. Question A (5 points) needs 6 more minutes; she has already spent 6 on it. Questions B and C (4 points each) would take 3 minutes each. She guesses any question she does not finish: right with probability $\\frac{1}{5}$, and wrong costs nothing. What is her largest expected score from the three?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I chose to finish A and forgot the guessing points on B and C."
+    },
+    {
+      "key": "B",
+      "text": "6.6",
+      "correct": false,
+      "misconception": "I finished A because I had already spent 6 minutes on it, giving $5 + 0.8 + 0.8$, but the time already spent is gone whichever plan I choose."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I solved B and C but forgot to add the guessing points for A."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "10.6",
+      "correct": false,
+      "misconception": "I solved B and C and then also added guessing points for them, $0.8 + 0.8$, as well as 1 point for guessing A."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-08",
+    "secondary": [
+      "CFT-09",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Only the remaining 6 minutes matter. The time already spent is gone.",
+    "List the plans that fit in 6 minutes and work out the expected score of each: a solved question scores its full points, a guessed one scores one fifth of its points on average.",
+    "Finishing A: $5 + \\frac{4}{5} + \\frac{4}{5} = 6.6$. Solving B and C: $4 + 4 + \\frac{5}{5} = 9$."
+  ],
+  "solutions": {
+    "reliable": "In 6 minutes Zoe can either finish A or solve both B and C. (Solving just one of B and C gives $4 + 0.8 + 1 = 5.8$, which is worse.) Finishing A gives 5 points plus guesses on B and C worth $\\frac{4}{5}$ each on average: $6.6$. Solving B and C gives 8 points plus a guess on A worth $\\frac{5}{5} = 1$: $9$. So the largest expected score is 9. The 6 minutes already spent on A are spent in every plan, so they should not affect the choice. The transferable idea: in time triage, compare plans only on the time you still have; time already spent is not a reason to carry on.",
+    "elegant": null
+  },
+  "whyOnTest": "Time already spent on a question is gone; the triage decision depends only on the points each remaining minute can still earn.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

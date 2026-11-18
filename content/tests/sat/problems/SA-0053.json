@@ -1,0 +1,56 @@
+{
+  "id": "SA-0053",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "hard",
+  "statement": "A $40$-liter radiator is filled with a coolant mixture that is $20\\%$ antifreeze. A mechanic drains some of the mixture and replaces it with the same amount of pure antifreeze, so that the radiator is again full and the mixture is $50\\%$ antifreeze. How many liters did the mechanic drain?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I saw that the antifreeze had to rise by 30 percentage points and took $30\\%$ of the 40 liters, which is 12."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I ignored the antifreeze still left in the radiator and asked how much pure antifreeze makes up half of 40 liters, so I got 20."
+    },
+    {
+      "key": "D",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I added pure antifreeze without draining anything first, solving $\\frac{8 + x}{40 + x} = 0.5$, which gave 24."
+    }
+  ],
+  "hints": [
+    "Let $x$ be the liters drained. How much antifreeze is left after draining?",
+    "After draining, $40 - x$ liters of the $20\\%$ mixture remain. Then $x$ liters of pure antifreeze go in. The total antifreeze must be $50\\%$ of 40 liters.",
+    "Solve $0.2(40 - x) + x = 20$. This simplifies to $8 + 0.8x = 20$."
+  ],
+  "solutions": {
+    "reliable": "Let $x$ be the number of liters drained and replaced. After draining, $40 - x$ liters of $20\\%$ mixture remain, containing $0.2(40 - x)$ liters of antifreeze. Adding $x$ liters of pure antifreeze, the total antifreeze is $0.2(40 - x) + x$, and this must be $50\\%$ of $40$, which is $20$. So $8 + 0.8x = 20$, giving $0.8x = 12$ and $x = 15$. Check: $25$ liters at $20\\%$ hold $5$ liters of antifreeze, plus $15$ makes $20$ liters out of $40$, which is $50\\%$.",
+    "elegant": "Each liter swapped replaces $0.2$ liter of antifreeze with $1$ liter, a gain of $0.8$ liter. The radiator must go from $8$ to $20$ liters of antifreeze, a gain of $12$, so $12 / 0.8 = 15$ liters are swapped."
+  },
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

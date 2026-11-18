@@ -1,0 +1,56 @@
+{
+  "id": "AC-0142",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-05",
+  "difficulty": "easy",
+  "statement": "The population of a town is modeled by $P(t) = 52{,}000(1.03)^t$, where $t$ is the number of years after 2024. To the nearest whole person, what population does the model predict for 2028?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$58{,}526$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$60{,}282$",
+      "correct": false,
+      "misconception": "I counted the years 2024, 2025, 2026, 2027 and 2028 as five years, so I used t = 5, but 2028 is only 4 years after 2024."
+    },
+    {
+      "key": "C",
+      "text": "$148{,}517$",
+      "correct": false,
+      "misconception": "I treated the 3% as 0.3, so I used 1.3 as the growth factor and computed 52,000 times 1.3 to the 4th power."
+    },
+    {
+      "key": "D",
+      "text": "$214{,}240$",
+      "correct": false,
+      "misconception": "I multiplied 1.03 by 4 instead of raising it to the 4th power, and 52,000 times 4.12 is 214,240."
+    }
+  ],
+  "hints": [
+    "2028 is how many years after 2024?",
+    "Substitute $t = 4$, and remember that the exponent applies only to $1.03$.",
+    "$(1.03)^4 \\approx 1.12551$. Multiply that by $52{,}000$."
+  ],
+  "solutions": {
+    "reliable": "$t = 2028 - 2024 = 4$. $P(4) = 52{,}000(1.03)^4 = 52{,}000(1.12550881) \\approx 58{,}526.46$, which rounds to $58{,}526$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

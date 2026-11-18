@@ -1,0 +1,67 @@
+{
+  "id": "AM-1218",
+  "contest": "AMC8",
+  "slot": 23,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-MODULAR",
+    "T-CYCLE"
+  ],
+  "statement": "A fruit stand has a crate of fewer than $1000$ oranges. When the oranges are packed into bags of $6$, there are $5$ left over. When they are packed into bags of $8$, there are $3$ left over. When they are packed into bags of $10$, there is $1$ left over. How many different numbers of oranges could be in the crate?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I thought the pattern repeats every $6 \\cdot 8 \\cdot 10 = 480$ oranges, so I counted only $11$, $491$ and $971$."
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I thought the least common multiple of $6$, $8$ and $10$ was $240$, so I counted $11$, $251$, $491$, $731$ and $971$."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I listed the numbers $11 + 120k$ but started at $131$, forgetting that $k = 0$ gives $11$, which also works."
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$42$",
+      "correct": false,
+      "misconception": "I only used the bags of $6$ and $8$, so I counted every number below $1000$ that is $11$ more than a multiple of $24$."
+    }
+  ],
+  "hints": [
+    "Look for the smallest number that works. Numbers with remainder $1$ when divided by $10$ are $1, 11, 21, \\ldots$",
+    "$11$ works for all three bag sizes. If a number works, then adding any common multiple of $6$, $8$ and $10$ gives another number that works, and two numbers that work always differ by such a common multiple.",
+    "The least common multiple of $6$, $8$ and $10$ is $120$, so the possible numbers are $11, 131, 251, \\ldots$. Count those below $1000$."
+  ],
+  "solutions": {
+    "reliable": "The number $11$ works: $11 = 6 + 5 = 8 + 3 = 10 + 1$. If $N$ also works, then $N - 11$ leaves remainder $0$ when divided by $6$, $8$ and $10$, so it is a multiple of $\\operatorname{lcm}(6, 8, 10) = 2^3 \\cdot 3 \\cdot 5 = 120$. Conversely, every number $11 + 120k$ works, since adding $120$ does not change the remainders. So the possible numbers are $11 + 120k$ with $11 + 120k < 1000$, that is, $k = 0, 1, \\ldots, 8$: the numbers $11, 131, 251, 371, 491, 611, 731, 851, 971$. There are $9$ of them.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

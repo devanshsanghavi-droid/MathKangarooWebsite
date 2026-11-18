@@ -1,0 +1,56 @@
+{
+  "id": "SA-0009",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "easy",
+  "statement": "During a hike, a hiker's elevation, in meters, $t$ minutes after she begins descending a trail is modeled by the function $E(t) = 2{,}480 - 7.5t$. What is the best interpretation of $7.5$ in this context?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "The hiker's elevation decreases by $7.5\\%$ each minute.",
+      "correct": false,
+      "misconception": "I saw the number being subtracted each minute and thought it meant a percent decrease, but it is subtracted as meters."
+    },
+    {
+      "key": "B",
+      "text": "The hiker's descent takes $7.5$ minutes in total.",
+      "correct": false,
+      "misconception": "I thought the number multiplying $t$ tells how long the descent lasts, since $t$ stands for minutes."
+    },
+    {
+      "key": "C",
+      "text": "The hiker begins the descent at an elevation of $7.5$ meters.",
+      "correct": false,
+      "misconception": "I mixed up the rate and the starting value, so I thought $7.5$ was the elevation when $t = 0$."
+    },
+    {
+      "key": "D",
+      "text": "The hiker's elevation decreases by $7.5$ meters each minute.",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Ask what happens to $E(t)$ when $t$ goes up by $1$.",
+    "In a linear model, the number multiplying the input is the rate of change. Check its units: meters per minute.",
+    "Compare $E(0) = 2{,}480$ with $E(1) = 2{,}472.5$: the elevation drops by $7.5$ meters in one minute."
+  ],
+  "solutions": {
+    "reliable": "The function is linear in $t$, so $-7.5$ is its slope: each additional minute changes the elevation by $-7.5$ meters. For example $E(0) = 2{,}480$ and $E(1) = 2{,}472.5$. So $7.5$ is the number of meters the elevation decreases each minute. The starting elevation is $2{,}480$ meters, and the decrease is a fixed number of meters, not a percent.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

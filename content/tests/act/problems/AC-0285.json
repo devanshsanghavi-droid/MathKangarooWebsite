@@ -1,0 +1,56 @@
+{
+  "id": "AC-0285",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-05",
+  "difficulty": "easy",
+  "statement": "A gym's locker codes are made of $2$ letters followed by $3$ digits, such as $\\text{CA}\\,407$. The letters are chosen from A, B, C, D, E and F, and the digits from $0$ through $9$. Letters and digits may repeat. How many different locker codes are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$42$",
+      "correct": false,
+      "misconception": "I added the number of choices for each position, 6 + 6 + 10 + 10 + 10, instead of multiplying them."
+    },
+    {
+      "key": "B",
+      "text": "$1{,}036$",
+      "correct": false,
+      "misconception": "I found 36 letter pairs and 1,000 digit strings correctly but added them, when each letter pair can go with every digit string."
+    },
+    {
+      "key": "C",
+      "text": "$21{,}600$",
+      "correct": false,
+      "misconception": "I did not let letters or digits repeat, so I used 6 times 5 times 10 times 9 times 8, but repeats are allowed."
+    },
+    {
+      "key": "D",
+      "text": "$36{,}000$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Each position of the code is chosen independently. How many choices are there for each position?",
+    "Use the multiplication principle: multiply the number of choices for all $5$ positions.",
+    "There are $6$ choices for each letter and $10$ for each digit, so compute $6 \\cdot 6 \\cdot 10 \\cdot 10 \\cdot 10$."
+  ],
+  "solutions": {
+    "reliable": "Each of the $2$ letter positions has $6$ choices and each of the $3$ digit positions has $10$ choices. By the multiplication principle there are $6 \\cdot 6 \\cdot 10 \\cdot 10 \\cdot 10 = 36 \\cdot 1{,}000 = 36{,}000$ codes.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

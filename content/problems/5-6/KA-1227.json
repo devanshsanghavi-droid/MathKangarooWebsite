@@ -1,0 +1,68 @@
+{
+  "id": "KA-1227",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A tin holds 7 yellow, 5 blue and 4 green crayons. In the dark, Leo takes crayons out one at a time. How many must he take to be sure of having at least two crayons of one colour and at least two crayons of another colour?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I imagined the lucky case of 2 yellow and 2 blue straight away and added one spare crayon, but being sure means planning for the unluckiest order."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I imagined all 7 yellow crayons coming first and thought one more crayon would finish the job, but one blue crayon is only a single, not two."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I found the biggest unlucky handful, 7 yellow, 1 blue and 1 green, but forgot to take the one extra crayon that forces success."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "13",
+      "correct": false,
+      "misconception": "I worked out how many crayons guarantee one of every colour, 7 + 5 + 1, which answers a different question."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "CNT-17",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Imagine the unluckiest possible order of pencils.",
+    "Find the largest handful that still fails: at most one colour may have two or more crayons. Make that failing handful as big as possible, then one more crayon forces success.",
+    "A failing handful can hold all 7 yellow crayons but only one blue and one green, which is 9 crayons."
+  ],
+  "solutions": {
+    "reliable": "A handful fails when at most one colour has two or more crayons. To make a failing handful as big as possible, let the largest colour be the one with many: all 7 yellow, plus 1 blue and 1 green, which is 9 crayons and still fails. Using blue or green as the big colour gives fewer, such as 5 + 1 + 1 = 7. Any 10th crayon is blue or green and gives that colour its second crayon, so 10 crayons are always enough, and 9 are not. The transferable idea: to be sure, build the biggest set that still fails, then add one.",
+    "elegant": null
+  },
+  "whyOnTest": "Worst-case questions ask for the largest failing handful plus one; the traps are picturing a lucky draw or answering a different guarantee.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

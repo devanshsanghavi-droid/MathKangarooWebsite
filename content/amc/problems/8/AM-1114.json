@@ -1,0 +1,66 @@
+{
+  "id": "AM-1114",
+  "contest": "AMC8",
+  "slot": 13,
+  "area": "GEO",
+  "topic": "GEO-08",
+  "types": [
+    "T-AREA-RATIO"
+  ],
+  "statement": "In triangle $ABC$, point $D$ is the midpoint of $\\overline{BC}$ and point $E$ is the midpoint of $\\overline{CA}$. Segments $\\overline{AD}$ and $\\overline{BE}$ meet at point $G$. The area of triangle $ABC$ is $54$. What is the area of quadrilateral $GDCE$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I knew the three medians cut the triangle into six equal pieces of area 9, but I counted the quadrilateral as only one piece."
+    },
+    {
+      "key": "B",
+      "text": "$13.5$",
+      "correct": false,
+      "misconception": "I found triangle CDE, which is a quarter of the triangle, 13.5, and forgot the small triangle GDE that is also inside the quadrilateral."
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I took triangle ADC, which is half of the triangle, as if the quadrilateral filled all of it."
+    },
+    {
+      "key": "E",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I subtracted triangle ABG, which is a third of the triangle, from the whole, but that still leaves triangles AGE and BGD in my answer."
+    }
+  ],
+  "hints": [
+    "Draw the third median, from $C$ through $G$ to the midpoint of $\\overline{AB}$. The three medians cut the triangle into six small triangles.",
+    "The six small triangles all have the same area.",
+    "Each small triangle has area $54 / 6 = 9$, and quadrilateral $GDCE$ is made of two of them."
+  ],
+  "solutions": {
+    "reliable": "Median $\\overline{BE}$ splits triangle $ABC$ into two triangles of equal area, so triangle $BCE$ has area $27$. The medians meet at the centroid $G$, which is two thirds of the way from $A$ to $D$, so $GD = \\frac{1}{3}AD$. Triangles $BGD$ and $BAD$ share the height from $B$, so triangle $BGD$ has $\\frac{1}{3}$ the area of triangle $BAD$, which is $\\frac{1}{3} \\cdot 27 = 9$. Quadrilateral $GDCE$ is triangle $BCE$ minus triangle $BGD$, so its area is $27 - 9 = 18$.",
+    "elegant": "The three medians cut any triangle into six small triangles of equal area, here $54 / 6 = 9$ each. Quadrilateral $GDCE$ consists of the two small triangles $GDC$ and $GCE$, so its area is $18$."
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1328",
+  "band": "7-8",
+  "points": 3,
+  "statement": "How many of the whole numbers from 1 to 60 are divisible by 4 or by 6, or by both?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "25",
+      "correct": false,
+      "misconception": "I added the 15 multiples of 4 and the 10 multiples of 6 and forgot that some numbers were counted twice."
+    },
+    {
+      "key": "C",
+      "text": "23",
+      "correct": false,
+      "misconception": "I thought the numbers counted twice were the multiples of $4 \\times 6 = 24$, so I took away only 2 instead of 5."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I counted only the numbers divisible by both 4 and 6, which are the multiples of 12."
+    },
+    {
+      "key": "E",
+      "text": "40",
+      "correct": false,
+      "misconception": "I worked out how many numbers are divisible by neither 4 nor 6 and gave that instead."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-10",
+    "secondary": [
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "Some numbers are multiples of 4 and of 6 at the same time.",
+    "Count the multiples of 4, count the multiples of 6, and subtract the numbers counted twice. A number divisible by both 4 and 6 is a multiple of their least common multiple.",
+    "There are 15 multiples of 4 and 10 multiples of 6. The numbers in both lists are the multiples of 12."
+  ],
+  "solutions": {
+    "reliable": "Multiples of 4 up to 60: 60 / 4 = 15. Multiples of 6: 60 / 6 = 10. A number is in both lists exactly when it is a multiple of 12 (not 24: 12 itself is divisible by both), and there are 60 / 12 = 5 of those. So the count is 15 + 10 - 5 = 20. The transferable idea: add the two groups, subtract the overlap once, and find the overlap with the least common multiple.",
+    "elegant": "The pattern repeats every 12 numbers. From 1 to 12 the numbers that work are 4, 6, 8 and 12, which is 4 of them. There are five blocks of 12 in 60, so $5 \\times 4 = 20$."
+  },
+  "whyOnTest": "Tests two-set inclusion-exclusion with numbers, where the overlap comes from the least common multiple, not the product.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

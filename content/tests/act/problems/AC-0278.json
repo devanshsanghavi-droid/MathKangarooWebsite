@@ -1,0 +1,56 @@
+{
+  "id": "AC-0278",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-02",
+  "difficulty": "medium",
+  "statement": "A weather station recorded the daily high temperature for $30$ days in degrees Celsius. The temperatures had a mean of $20^\\circ\\text{C}$ and a standard deviation of $5^\\circ\\text{C}$. Each temperature is converted to degrees Fahrenheit using $F = 1.8C + 32$. What is the standard deviation of the converted temperatures, in degrees Fahrenheit?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I thought standard deviation never changes when you convert units, so I kept 5, but multiplying by 1.8 stretches the spread."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$16.2$",
+      "correct": false,
+      "misconception": "I multiplied 5 by 1.8 squared, which is how the variance changes, not the standard deviation."
+    },
+    {
+      "key": "D",
+      "text": "$41$",
+      "correct": false,
+      "misconception": "I put the standard deviation into the formula, 1.8 times 5 plus 32, but adding 32 shifts every value and does not change the spread."
+    }
+  ],
+  "hints": [
+    "Think about what each part of $1.8C + 32$ does to the distances between temperatures.",
+    "Adding the same number to every value shifts the data but does not change the spread. Multiplying every value by a positive number multiplies the spread by that number.",
+    "The $+32$ leaves the standard deviation alone, and the $\\times 1.8$ multiplies it by $1.8$, so compute $1.8 \\times 5$."
+  ],
+  "solutions": {
+    "reliable": "Standard deviation measures distances from the mean. Multiplying every value by $1.8$ multiplies every distance by $1.8$, and adding $32$ to every value changes no distance. So the new standard deviation is $1.8 \\times 5 = 9^\\circ\\text{F}$.",
+    "elegant": "Two days that differ by $1^\\circ\\text{C}$ differ by $1.8^\\circ\\text{F}$, so every spread measured in degrees grows by a factor of $1.8$: $5 \\times 1.8 = 9$."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

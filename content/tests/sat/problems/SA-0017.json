@@ -1,0 +1,56 @@
+{
+  "id": "SA-0017",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "medium",
+  "statement": "The points $(a, 3)$ and $(a + 6, b)$ lie on the line $2x - 3y = 12$ in the $xy$-plane, where $a$ and $b$ are constants. What is the value of $b$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I solved for the slope but lost the sign, using $-\\frac{2}{3}$, so a run of $6$ gave a fall of $4$ and $b = 3 - 4 = -1$."
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I assumed that moving $6$ to the right also moves the line $6$ up, so I added $6$ to $3$."
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I wrote the slope upside down as $\\frac{3}{2}$, so a run of $6$ gave a rise of $9$ and $b = 3 + 9 = 12$."
+    }
+  ],
+  "hints": [
+    "You do not need $a$: think about the slope.",
+    "Rewrite the line in slope-intercept form. The second point is $6$ units to the right of the first, so use the slope to find the change in $y$.",
+    "The line is $y = \\frac{2}{3}x - 4$, so a run of $6$ gives a rise of $\\frac{2}{3} \\cdot 6 = 4$."
+  ],
+  "solutions": {
+    "reliable": "Substituting $(a, 3)$: $2a - 9 = 12$, so $a = 10.5$. The second point is $(16.5, b)$: $2(16.5) - 3b = 12$, so $33 - 3b = 12$ and $b = 7$.",
+    "elegant": "The line is $y = \\frac{2}{3}x - 4$, with slope $\\frac{2}{3}$. Moving $6$ units right raises $y$ by $\\frac{2}{3} \\cdot 6 = 4$, so $b = 3 + 4 = 7$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

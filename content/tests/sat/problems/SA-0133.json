@@ -1,0 +1,56 @@
+{
+  "id": "SA-0133",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-02",
+  "difficulty": "hard",
+  "statement": "In the equation $kx^2 + 6x + (k - 8) = 0$, $k$ is a positive constant. If the equation has exactly one real solution, what is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I set the discriminant to zero but used $k$ for the constant term instead of $k - 8$, so I solved $36 - 4k^2 = 0$."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I thought the equation has one solution when its constant term is zero, so I set $k - 8 = 0$."
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I wrote the discriminant as $36 - 4(k - 8)$, leaving out the factor $a = k$, so I solved $36 = 4k - 32$."
+    }
+  ],
+  "hints": [
+    "A quadratic equation has exactly one real solution when its discriminant is $0$.",
+    "Here $a = k$, $b = 6$ and $c = k - 8$. Set $b^2 - 4ac = 36 - 4k(k - 8)$ equal to $0$.",
+    "$36 - 4k^2 + 32k = 0$. Divide by $-4$ to get $k^2 - 8k - 9 = 0$, which factors as $(k - 9)(k + 1) = 0$."
+  ],
+  "solutions": {
+    "reliable": "With $a = k$, $b = 6$ and $c = k - 8$, the discriminant is $36 - 4k(k - 8) = 36 - 4k^2 + 32k$. Setting it equal to $0$ and dividing by $-4$ gives $k^2 - 8k - 9 = 0$, so $(k - 9)(k + 1) = 0$ and $k = 9$ or $k = -1$. Since $k$ is positive, $k = 9$. Check: $9x^2 + 6x + 1 = (3x + 1)^2$, which equals $0$ only at $x = -\\frac{1}{3}$.",
+    "elegant": null
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

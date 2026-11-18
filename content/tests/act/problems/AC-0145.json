@@ -1,0 +1,56 @@
+{
+  "id": "AC-0145",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-05",
+  "difficulty": "medium",
+  "statement": "A lab models the number of bacteria in a culture with $N(t) = a \\cdot b^t$, where $t$ is the time in hours and $a$ and $b$ are positive constants. The culture has $300$ bacteria at $t = 0$ and $1{,}200$ bacteria at $t = 2$. According to the model, how many bacteria are there at $t = 5$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2{,}550$",
+      "correct": false,
+      "misconception": "I used a linear model, adding 450 bacteria per hour, so I got 300 + 5 times 450 = 2,550, but the model is exponential."
+    },
+    {
+      "key": "B",
+      "text": "$9{,}600$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$38{,}400$",
+      "correct": false,
+      "misconception": "I found b = 2 but started from the 1,200 at t = 2 and doubled five more times, which really gives the count at t = 7."
+    },
+    {
+      "key": "D",
+      "text": "$307{,}200$",
+      "correct": false,
+      "misconception": "I took b = 4 because the count was multiplied by 4, but that happened over 2 hours, so the hourly factor is only 2."
+    }
+  ],
+  "hints": [
+    "At $t = 0$, $b^0 = 1$, so $N(0)$ tells you $a$ directly.",
+    "Use $N(2) = ab^2 = 1{,}200$ to find $b$. The growth over $2$ hours is $b^2$, not $b$.",
+    "$a = 300$ and $b^2 = 4$, so $b = 2$."
+  ],
+  "solutions": {
+    "reliable": "$N(0) = a = 300$. Then $300b^2 = 1{,}200$, so $b^2 = 4$ and $b = 2$ (since $b > 0$). So $N(5) = 300 \\cdot 2^5 = 300 \\cdot 32 = 9{,}600$.",
+    "elegant": "The count doubles every hour. From $t = 2$ to $t = 5$ is $3$ more doublings: $1{,}200 \\cdot 8 = 9{,}600$."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

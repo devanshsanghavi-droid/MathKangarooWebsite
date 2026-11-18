@@ -1,0 +1,68 @@
+{
+  "id": "KA-1502",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Two circles have radii 5 and 3, and their centres are 10 apart. A straight line touches both circles, with both circles on the same side of the line. How far apart are the two points where the line touches the circles?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I used the sum of the radii, $\\sqrt{10^2 - 8^2}$, which is the answer for a line that passes between the two circles."
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I assumed the touching points are as far apart as the centres, as if the line were parallel to the line of centres."
+    },
+    {
+      "key": "C",
+      "text": "$2\\sqrt{26}$",
+      "correct": false,
+      "misconception": "I added the square of the difference of the radii instead of subtracting it, $\\sqrt{10^2 + 2^2}$."
+    },
+    {
+      "key": "D",
+      "text": "$2\\sqrt{21}$",
+      "correct": false,
+      "misconception": "I took the difference of the squares of the radii, $25 - 9 = 16$, instead of the square of the difference, and found $\\sqrt{100 - 16}$."
+    },
+    {
+      "key": "E",
+      "text": "$4\\sqrt{6}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "GEO-07",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Draw both radii to the touching points. What angle do they make with the line?",
+    "Both radii meet the line at right angles, so they are parallel. Slide the segment between the touching points to start at the smaller centre, and find a right triangle whose hypotenuse joins the centres.",
+    "Through the centre of the small circle draw a line parallel to the tangent. It meets the big radius 3 from its end, leaving $5 - 3 = 2$. The right triangle has hypotenuse 10 and one leg 2."
+  ],
+  "solutions": {
+    "reliable": "Call the centres $P$ (radius 5) and $Q$ (radius 3), and the touching points $S$ and $T$. Both $PS$ and $QT$ are perpendicular to the line, so $PSTQ$ is a right trapezium. Draw from $Q$ a segment parallel to $ST$; it meets $PS$ at a point $R$ with $RS = 3$, so $PR = 5 - 3 = 2$. Triangle $PRQ$ has a right angle at $R$, hypotenuse $PQ = 10$ and leg $PR = 2$, so $QR = \\sqrt{100 - 4} = \\sqrt{96} = 4\\sqrt{6}$. Since $QR = ST$, the answer is $4\\sqrt{6}$, about 9.8. The transferable idea: when a problem gives tangents in words, draw the radii to the touching points first.",
+    "elegant": null
+  },
+  "whyOnTest": "The words hide a right triangle that appears only once the radii are drawn to the touching points, and the two kinds of common tangent tempt a mix-up.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

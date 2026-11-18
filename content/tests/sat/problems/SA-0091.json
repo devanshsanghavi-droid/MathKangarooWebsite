@@ -1,0 +1,56 @@
+{
+  "id": "SA-0091",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "hard",
+  "statement": "Ravi invested a total of $8{,}000$ dollars in two accounts. One account earns $3\\%$ simple annual interest and the other earns $5\\%$. After one year, the $5\\%$ account had earned $120$ dollars more in interest than the $3\\%$ account. How many dollars did Ravi invest in the $5\\%$ account?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$18{,}000$",
+      "correct": false,
+      "misconception": "I expanded $-0.03(8000 - y)$ as $-240 - 0.03y$, losing the sign change on $y$, so $0.02y - 240 = 120$ gave $y = 18000$."
+    },
+    {
+      "key": "B",
+      "text": "$6{,}000$",
+      "correct": false,
+      "misconception": "I wrote $0.05y - 0.03y = 120$, as if both accounts held the same $y$ dollars, which gave $y = 6000$."
+    },
+    {
+      "key": "C",
+      "text": "$3{,}500$",
+      "correct": false,
+      "misconception": "I solved the equations correctly but gave the amount in the 3% account instead of the 5% account."
+    },
+    {
+      "key": "D",
+      "text": "$4{,}500$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Let $y$ be the amount in the $5\\%$ account.",
+    "The $3\\%$ account then holds $8000 - y$ dollars. Write the interest from each account and set the difference equal to $120$.",
+    "$0.05y - 0.03(8000 - y) = 120$ simplifies to $0.08y - 240 = 120$."
+  ],
+  "solutions": {
+    "reliable": "Let $y$ dollars be in the $5\\%$ account, so $8000 - y$ dollars are in the $3\\%$ account. The difference in interest is $0.05y - 0.03(8000 - y) = 120$. Expanding, $0.05y - 240 + 0.03y = 120$, so $0.08y = 360$ and $y = 4500$. Check: $0.05(4500) = 225$ and $0.03(3500) = 105$, and $225 - 105 = 120$. Key idea: one equation tracks the total invested and the other tracks the interest, and substitution combines them.",
+    "elegant": "With an even split of $4000$ dollars each, the $5\\%$ account earns $200$ dollars and the $3\\%$ account earns $120$, a difference of $80$. Each dollar moved into the $5\\%$ account raises the difference by $0.05 + 0.03 = 0.08$ dollar, so $40 / 0.08 = 500$ more dollars are needed there: $4000 + 500 = 4500$."
+  },
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

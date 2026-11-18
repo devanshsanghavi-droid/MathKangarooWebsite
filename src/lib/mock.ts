@@ -49,6 +49,11 @@ export interface MockState {
   problemIds: string[];
   answers: Record<string, MockAnswer>;
   current: number;
+  /**
+   * The answered questions and the session have been written to the progress file (docs/07
+   * section 5). Optional, so a run saved before this field existed still loads.
+   */
+  recorded?: boolean;
 }
 
 export interface BuildResult {

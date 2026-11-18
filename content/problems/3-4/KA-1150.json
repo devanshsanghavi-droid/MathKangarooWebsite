@@ -1,0 +1,68 @@
+{
+  "id": "KA-1150",
+  "band": "3-4",
+  "points": 3,
+  "statement": "A farmer packs eggs into boxes of 6, with no eggs left over. Which of these numbers of eggs could she have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "126",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "135",
+      "correct": false,
+      "misconception": "I checked that the digits add up to a multiple of 3, but forgot the number must also be even."
+    },
+    {
+      "key": "C",
+      "text": "136",
+      "correct": false,
+      "misconception": "I thought any number ending in 6 can be shared into sixes."
+    },
+    {
+      "key": "D",
+      "text": "148",
+      "correct": false,
+      "misconception": "I only checked that the number is even and forgot it must also be a multiple of 3."
+    },
+    {
+      "key": "E",
+      "text": "184",
+      "correct": false,
+      "misconception": "I knew 18 is a multiple of 6 and thought writing another digit after it keeps it a multiple of 6."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "NUM-05",
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "A multiple of 6 is a multiple of two smaller numbers at once.",
+    "Divisibility by 6: the number must be divisible by 2 (it is even) and by 3 (its digits add up to a multiple of 3). Check both rules for every choice.",
+    "The digit sums are 9, 9, 10, 13 and 13. Which numbers with a digit sum of 9 are even?"
+  ],
+  "solutions": {
+    "reliable": "A number is divisible by 6 exactly when it is divisible by 2 and by 3. Divisible by 2 means even; divisible by 3 means the digit sum is a multiple of 3. 126: even, $1 + 2 + 6 = 9$, so yes, and $126 = 6 \\times 21$. 135: digit sum 9 but odd, no. 136: even but digit sum 10, no. 148: even but digit sum 13, no. 184: even but digit sum 13, no. The answer is 126. The transferable idea: test divisibility by 6 with both the rule for 2 and the rule for 3.",
+    "elegant": null
+  },
+  "whyOnTest": "It checks combining two divisibility rules, since a number must pass both the test for 2 and the test for 3 to be a multiple of 6.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

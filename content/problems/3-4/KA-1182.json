@@ -1,0 +1,70 @@
+{
+  "id": "KA-1182",
+  "band": "3-4",
+  "points": 3,
+  "statement": "The pictogram shows how many apples a stall sold on four days. How many apples did it sell altogether?",
+  "figure": {
+    "component": "AppleSalesPictogram",
+    "alt": "A pictogram of apples sold on four days. A key shows that one whole circle stands for 4 apples. Monday has 3 whole circles. Tuesday has 2 whole circles and a half circle. Wednesday has 4 whole circles. Thursday has 1 whole circle and a half circle."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "11",
+      "correct": false,
+      "misconception": "I worked out that the symbols make 11 whole circles, but forgot that each circle stands for 4 apples."
+    },
+    {
+      "key": "B",
+      "text": "40",
+      "correct": false,
+      "misconception": "I left out the half circles and only counted the 10 whole ones."
+    },
+    {
+      "key": "C",
+      "text": "44",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "42",
+      "correct": false,
+      "misconception": "I counted each half circle as just 1 apple."
+    },
+    {
+      "key": "E",
+      "text": "48",
+      "correct": false,
+      "misconception": "I counted each half circle as a whole circle, making 12 circles."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-09",
+    "secondary": [
+      "NUM-09"
+    ]
+  },
+  "hints": [
+    "Look at the key, and at the half circles.",
+    "Each whole circle means 4 apples, so a half circle means half of 4. Count the symbols, then multiply.",
+    "There are 10 whole circles and 2 half circles, which is 11 whole circles in all."
+  ],
+  "solutions": {
+    "reliable": "Monday $3 \\times 4 = 12$, Tuesday $2 \\times 4 + 2 = 10$, Wednesday $4 \\times 4 = 16$, Thursday $4 + 2 = 6$. Total: $12 + 10 + 16 + 6 = 44$. The transferable idea: read the key first, and work out what a part of a symbol is worth.",
+    "elegant": "Two half circles make one whole, so there are 11 whole circles in all, and $11 \\times 4 = 44$."
+  },
+  "whyOnTest": "Pictograms test reading a key and handling a part-symbol, the two steps students most often skip.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

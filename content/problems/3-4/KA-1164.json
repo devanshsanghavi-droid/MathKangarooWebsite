@@ -1,0 +1,67 @@
+{
+  "id": "KA-1164",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Rosa, Pia, Quinn, Sam and Tom ran a race with no ties. Pia finished after Rosa but before Quinn, and Sam right after Quinn. Tom was neither first nor last. How many orders are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought the clues fix the whole order, but Pia and Tom can swap places."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I forgot that Tom cannot be last, so I also allowed Tom to finish after Sam."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I ignored the clue about Tom, so I let him go in any gap except between Quinn and Sam."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted every order of Pia, Quinn and Tom in the middle three places, ignoring that Quinn must come right before Sam."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-04",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Who can be first? Who can be last?",
+    "Write Rosa, Pia, Quinn, Sam in their forced order, with Quinn and Sam glued together. Then list every gap where Tom could go, and cross out the ones the clues forbid.",
+    "Tom cannot go before Rosa, because then he is first, or after Sam, because then he is last, or between Quinn and Sam. That leaves two gaps."
+  ],
+  "solutions": {
+    "reliable": "The clues force Rosa before Pia before Quinn, with Sam right after Quinn: Rosa, Pia, Quinn, Sam. Tom must be added somewhere. The possible gaps are before Rosa, between Rosa and Pia, between Pia and Quinn, between Quinn and Sam, and after Sam. Before Rosa makes Tom first and after Sam makes him last, both forbidden, and between Quinn and Sam breaks the clue that Sam is right after Quinn. Two orders remain: Rosa, Tom, Pia, Quinn, Sam and Rosa, Pia, Tom, Quinn, Sam. The transferable idea: build the forced order first, then list where the free item can go.",
+    "elegant": "Rosa must be first and Sam must be last, since nobody else can be. Quinn is right before Sam, so fourth. Pia and Tom fill second and third in either order: 2 orders."
+  },
+  "whyOnTest": "Ranking clues probe careful use of words like right after and neither; asking how many orders checks that nothing is assumed.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

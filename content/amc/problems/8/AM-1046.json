@@ -1,0 +1,62 @@
+{
+  "id": "AM-1046",
+  "contest": "AMC8",
+  "slot": 14,
+  "area": "ALG",
+  "topic": "ALG-11",
+  "types": ["T-CASEWORK", "T-SYMMETRY"],
+  "statement": "A point $(x, y)$ is called a lattice point if $x$ and $y$ are both integers. How many lattice points satisfy $|x| + |y| \\le 3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I counted only the points where |x| + |y| is exactly 3, the outline of the diamond, and left out everything inside."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I counted 4 + 8 + 12 = 24 points where |x| + |y| is 1, 2 or 3, but forgot the origin, where it is 0."
+    },
+    {
+      "key": "C",
+      "text": "$25$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I counted the 10 points with x and y both at least 0 and multiplied by 4 for the four quadrants, but that counts the points on the axes more than once."
+    },
+    {
+      "key": "E",
+      "text": "$49$",
+      "correct": false,
+      "misconception": "I counted every lattice point with |x| at most 3 and |y| at most 3, which is a 7 by 7 square, not the diamond."
+    }
+  ],
+  "hints": [
+    "Sort the points by the value of $x$, which can be any integer from $-3$ to $3$.",
+    "When $x = 0$, the condition is $|y| \\le 3$. When $x = \\pm 1$, it is $|y| \\le 2$.",
+    "The counts for $x = -3, -2, \\ldots, 3$ are $1, 3, 5, 7, 5, 3, 1$."
+  ],
+  "solutions": {
+    "reliable": "Count by $x$. For $x = 0$, $|y| \\le 3$ allows $7$ values. For $x = \\pm 1$, $|y| \\le 2$ allows $5$ each. For $x = \\pm 2$, $|y| \\le 1$ allows $3$ each. For $x = \\pm 3$, only $y = 0$ works. The total is $7 + 2(5 + 3 + 1) = 25$.",
+    "elegant": "For each $k \\ge 1$, the lattice points with $|x| + |y| = k$ form a diamond with $4k$ points, and $k = 0$ gives only the origin. So the count is $1 + 4 + 8 + 12 = 25$."
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

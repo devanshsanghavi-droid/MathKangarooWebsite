@@ -1,0 +1,68 @@
+{
+  "id": "KA-1596",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Two upright poles, each 4 m tall, stand on flat ground. A 10 m rope is tied to both tops. Its middle is pulled down until it just touches the ground, so each half is a straight line from a pole top to that point. How far apart are the poles?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2 m",
+      "correct": false,
+      "misconception": "I subtracted the two pole heights from the rope, $10 - 4 - 4 = 2$, as if the rope ran straight down each pole."
+    },
+    {
+      "key": "B",
+      "text": "3 m",
+      "correct": false,
+      "misconception": "I found the ground distance from one pole to the point where the rope touches, 3 m, and forgot the other half."
+    },
+    {
+      "key": "C",
+      "text": "6 m",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$2\\sqrt{21}$ m",
+      "correct": false,
+      "misconception": "I used the whole 10 m rope as the long side of one right triangle with height 4 m, so I got $\\sqrt{100 - 16} = 2\\sqrt{21}$."
+    },
+    {
+      "key": "E",
+      "text": "10 m",
+      "correct": false,
+      "misconception": "I assumed the poles are as far apart as the rope is long."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "GEO-06",
+      "GEO-08"
+    ]
+  },
+  "hints": [
+    "Draw the poles, the rope and the ground.",
+    "The rope and the poles make two matching right triangles. In each one you know the upright side and the sloping side, so Pythagoras gives the side along the ground.",
+    "Each half of the rope is 5 m and each pole is 4 m, so each triangle has ground side $\\sqrt{5^2 - 4^2} = 3$ m."
+  ],
+  "solutions": {
+    "reliable": "By symmetry the rope touches the ground halfway between the poles. Each half of the rope, 5 m long, is the sloping side of a right triangle whose upright side is a 4 m pole. Its side along the ground is $\\sqrt{5^2 - 4^2} = 3$ m. The two triangles together give a distance of $3 + 3 = 6$ m between the poles. The transferable idea: draw the picture first, and a symmetric picture often splits into two matching right triangles.",
+    "elegant": null
+  },
+  "whyOnTest": "A quick sketch turns a wordy description of a rope into two matching 3, 4, 5 right triangles.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

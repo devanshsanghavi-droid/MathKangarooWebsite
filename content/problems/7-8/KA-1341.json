@@ -1,0 +1,67 @@
+{
+  "id": "KA-1341",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A solid block measuring 2 by 3 by 4 is made of 24 unit cubes. What is the smallest number of unit cubes that must be added to it to make a solid cube?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "64",
+      "correct": false,
+      "misconception": "I found the 4 by 4 by 4 cube but forgot that 24 of its unit cubes are already there."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I aimed for a 3 by 3 by 3 cube, which has 27 unit cubes, but the block is 4 long and cannot fit inside it."
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": false,
+      "misconception": "I added two layers of 3 by 4 to turn the 2 into 4, but forgot that the 3 still had to become 4."
+    },
+    {
+      "key": "D",
+      "text": "40",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I added one layer of 2 by 4 to turn the 3 into 4, but forgot that the 2 still had to become 4."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-13",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "The cube must be at least as long as the block's longest edge.",
+    "The block has an edge of length 4, so the cube needs edges of at least 4. Count the unit cubes in a 4 by 4 by 4 cube and take away the ones you already have.",
+    "A 4 by 4 by 4 cube has 64 unit cubes."
+  ],
+  "solutions": {
+    "reliable": "A cube that contains the block needs every edge at least 4 long, so the smallest is 4 by 4 by 4, with 64 unit cubes. The block already has $2 \\times 3 \\times 4 = 24$, so 64 - 24 = 40 must be added. The transferable idea: the target shape is fixed by the largest dimension, and what is missing is found by subtraction.",
+    "elegant": "Build it in steps as a check: two layers of 3 by 4 turn the 2 into 4, adding 24 cubes and making a 4 by 3 by 4 block; one layer of 4 by 4 then turns the 3 into 4, adding 16 more. 24 + 16 = 40."
+  },
+  "whyOnTest": "Tests building with unit cubes: the smallest cube is fixed by the longest edge, and the cubes needed are found by subtraction.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0257",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-02",
+  "difficulty": "easy",
+  "statement": "Two parallel lines are cut by a transversal. Two angles that lie between the parallel lines and on the same side of the transversal measure $(3x + 15)^\\circ$ and $(2x + 5)^\\circ$. What is the value of $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I thought the two angles add to $90^\\circ$, so I solved $5x + 20 = 90$."
+    },
+    {
+      "key": "B",
+      "text": "$32$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$68$",
+      "correct": false,
+      "misconception": "I thought the two angles add to $360^\\circ$, so I solved $5x + 20 = 360$."
+    },
+    {
+      "key": "D",
+      "text": "$111$",
+      "correct": false,
+      "misconception": "I solved $5x + 20 = 180$ correctly but then reported the angle $3(32) + 15 = 111$ instead of $x$."
+    }
+  ],
+  "hints": [
+    "Same-side interior angles have a fixed sum.",
+    "When the lines are parallel, these two angles are supplementary, so their measures add to $180^\\circ$.",
+    "Solve $(3x + 15) + (2x + 5) = 180$."
+  ],
+  "solutions": {
+    "reliable": "When a transversal crosses two parallel lines, the interior angles on the same side of the transversal are supplementary. So $(3x + 15) + (2x + 5) = 180$, which gives $5x + 20 = 180$, $5x = 160$ and $x = 32$. Check: the angles are $111^\\circ$ and $69^\\circ$, which add to $180^\\circ$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

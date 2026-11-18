@@ -1,0 +1,68 @@
+{
+  "id": "AM-1053",
+  "contest": "AMC8",
+  "slot": 18,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": [
+    "T-SMALL-CASES"
+  ],
+  "statement": "Mia starts a savings jar. On day $1$ she puts in $\\$3$, on day $2$ she puts in $\\$5$, on day $3$ she puts in $\\$7$, and each day after that she puts in $\\$2$ more than the day before. At the end of which day does the total in the jar first exceed $\\$200$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I added the first and last amounts and multiplied by the number of days, but forgot to divide by $2$, so I solved $2n(n + 2) > 200$ and got day $10$."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I found that the total after day $13$ is $\\$195$, the last total below $\\$200$, and gave that day instead of the next one."
+    },
+    {
+      "key": "C",
+      "text": "$14$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I thought the total after $n$ days is $n^2$, like the sum of the first $n$ odd numbers. But Mia's amounts start at $3$, not $1$, so the total is $n^2 + 2n$."
+    },
+    {
+      "key": "E",
+      "text": "$100$",
+      "correct": false,
+      "misconception": "I found the first day on which the amount she puts in that day is more than $\\$200$, which is day $100$, instead of the first day on which the total in the jar is more than $\\$200$."
+    }
+  ],
+  "hints": [
+    "Write out the totals for the first few days and look for a pattern.",
+    "The totals are $3, 8, 15, 24, \\ldots$ Each one is $n \\times (n + 2)$, or one less than a perfect square.",
+    "After $n$ days the total is $n(n + 2)$. Compare $13 \\times 15$ and $14 \\times 16$ with $200$."
+  ],
+  "solutions": {
+    "reliable": "On day $n$ Mia puts in $2n + 1$ dollars. The total after $n$ days is an arithmetic series: $n \\cdot \\frac{3 + (2n + 1)}{2} = n(n + 2)$. After day $13$ the total is $13 \\cdot 15 = 195$, which is not yet more than $200$, and after day $14$ it is $14 \\cdot 16 = 224$. So the total first exceeds $\\$200$ at the end of day $14$.",
+    "elegant": "The amounts are the odd numbers $3, 5, 7, \\ldots$, that is, the odd numbers starting from $1$ with the $1$ left out. The first $n + 1$ odd numbers add up to $(n + 1)^2$, so after $n$ days Mia has $(n + 1)^2 - 1$ dollars. This is more than $200$ when $(n + 1)^2 > 201$, so $n + 1 \\ge 15$ and $n = 14$."
+  },
+  "formulas": [
+    "F-ALG-03"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

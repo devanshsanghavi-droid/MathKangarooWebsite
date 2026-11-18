@@ -1,0 +1,56 @@
+{
+  "id": "SA-0093",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "hard",
+  "statement": "Over a $10$-year period, the population of a town grew linearly from $12{,}000$ to $15{,}000$. If the population continues to grow linearly at the same rate, by what percent will it increase over the next $10$ years?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$25\\%$",
+      "correct": false,
+      "misconception": "I divided the 3,000-person increase by the starting population of 12,000, which is the percent increase for the first 10 years, not the next 10."
+    },
+    {
+      "key": "B",
+      "text": "$16\\frac{2}{3}\\%$",
+      "correct": false,
+      "misconception": "I divided the 3,000-person increase by the population at the end of the next 10 years, 18,000, instead of by the 15,000 at the start of that period."
+    },
+    {
+      "key": "C",
+      "text": "$120\\%$",
+      "correct": false,
+      "misconception": "I found that the population will be 18,000 and divided by 15,000 to get 1.2, then wrote that ratio as 120% instead of a 20% increase."
+    },
+    {
+      "key": "D",
+      "text": "$20\\%$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Linear growth adds the same number of people every $10$ years.",
+    "Find the population after the next $10$ years, then write the increase as a percent of the population at the start of that period.",
+    "The population goes from $15{,}000$ to $18{,}000$. Divide the $3{,}000$ increase by $15{,}000$."
+  ],
+  "solutions": {
+    "reliable": "Linear growth adds the same amount in equal time periods: $15000 - 12000 = 3000$ people per $10$ years. Over the next $10$ years the population goes from $15000$ to $18000$. The percent increase is $\\frac{3000}{15000} = 0.20$, or $20\\%$. Key idea: linear growth adds a constant amount, so its percent increase shrinks as the base grows, and a percent change is always measured from the value at the start of the period.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

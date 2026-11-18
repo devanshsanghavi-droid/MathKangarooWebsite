@@ -1,0 +1,56 @@
+{
+  "id": "AC-0165",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-06",
+  "difficulty": "medium",
+  "statement": "The function $f$ has domain $-2 \\le x \\le 6$ and range $1 \\le y \\le 5$. The function $g$ is defined by $g(x) = -f(x + 3) + 2$. What is the range of $g$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3 \\le y \\le 1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-5 \\le y \\le 3$",
+      "correct": false,
+      "misconception": "I shifted the domain $-2 \\le x \\le 6$ three units left and gave that new domain instead of the range."
+    },
+    {
+      "key": "C",
+      "text": "$-7 \\le y \\le -3$",
+      "correct": false,
+      "misconception": "I added the $2$ before applying the negative sign, so I computed $-(1 + 2)$ and $-(5 + 2)$."
+    },
+    {
+      "key": "D",
+      "text": "$3 \\le y \\le 7$",
+      "correct": false,
+      "misconception": "I ignored the negative sign in front of $f$ and just added $2$ to the range $1 \\le y \\le 5$."
+    }
+  ],
+  "hints": [
+    "A horizontal shift changes inputs only. It cannot change the outputs.",
+    "$f(x + 3)$ still takes every value from $1$ to $5$. Negate those outputs, then add $2$, and put the new endpoints in order.",
+    "Negating gives $-5 \\le y \\le -1$. Now add $2$ to both ends."
+  ],
+  "solutions": {
+    "reliable": "The inside shift $x + 3$ moves the graph left but leaves the set of outputs unchanged, so $f(x + 3)$ has range $1 \\le y \\le 5$. Multiplying by $-1$ flips this to $-5 \\le y \\le -1$. Adding $2$ gives $-3 \\le y \\le 1$. So the range of $g$ is $-3 \\le y \\le 1$.",
+    "elegant": "Track the extreme outputs: the largest output $5$ of $f$ becomes $-5 + 2 = -3$, and the smallest output $1$ becomes $-1 + 2 = 1$."
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0215",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-04",
+  "difficulty": "hard",
+  "statement": "In the standard $(x, y)$ coordinate plane, the edge of a circular pond is modeled by the equation $x^2 + y^2 - 6x + 10y - 2 = 0$. What are the center and the radius of the circle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Center $(-3, 5)$, radius $6$",
+      "correct": false,
+      "misconception": "I completed the square correctly, but I read the center straight from the $-6x$ and $+10y$ terms as $(-3, 5)$, which reverses both signs."
+    },
+    {
+      "key": "B",
+      "text": "Center $(3, -5)$, radius $6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "Center $(3, -5)$, radius $4\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I moved the $-2$ to the right side as $-2$ instead of $+2$, so I got $r^2 = 9 + 25 - 2 = 32$ and $r = 4\\sqrt{2}$."
+    },
+    {
+      "key": "D",
+      "text": "Center $(3, -5)$, radius $36$",
+      "correct": false,
+      "misconception": "I completed the square correctly and got $36$ on the right side, but I gave $36$ as the radius, forgetting to take the square root."
+    }
+  ],
+  "hints": [
+    "Rewrite the equation in the form $(x - h)^2 + (y - k)^2 = r^2$ by completing the square.",
+    "Group $x^2 - 6x$ and $y^2 + 10y$, move the constant to the right side, then add $9$ and $25$ to both sides.",
+    "The equation becomes $(x - 3)^2 + (y + 5)^2 = 2 + 9 + 25$."
+  ],
+  "solutions": {
+    "reliable": "Group the terms: $(x^2 - 6x) + (y^2 + 10y) = 2$. Complete each square by adding $9$ and $25$ to both sides: $(x - 3)^2 + (y + 5)^2 = 36$. So the center is $(3, -5)$ and the radius is $\\sqrt{36} = 6$. Check: the point $(9, -5)$ is $6$ units from the center, and $81 + 25 - 54 - 50 - 2 = 0$, so it satisfies the original equation.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

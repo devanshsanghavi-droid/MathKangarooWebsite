@@ -1,0 +1,68 @@
+{
+  "id": "KA-1565",
+  "band": "11-12",
+  "points": 5,
+  "statement": "How many six-digit numbers can be made by arranging the digits 1, 1, 2, 2, 3 and 4 so that the two 1s are not next to each other and the two 2s are not next to each other?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "36",
+      "correct": false,
+      "misconception": "I subtracted the 24 arrangements with both pairs together instead of adding them back."
+    },
+    {
+      "key": "B",
+      "text": "60",
+      "correct": false,
+      "misconception": "I subtracted the 120 arrangements with a pair together but did not add back the 24 arrangements that were subtracted twice."
+    },
+    {
+      "key": "C",
+      "text": "72",
+      "correct": false,
+      "misconception": "I added back the arrangements with both pairs together but counted only 12 of them, wrongly dividing $4!$ by 2."
+    },
+    {
+      "key": "D",
+      "text": "84",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "180",
+      "correct": false,
+      "misconception": "I counted every arrangement of the six digits and ignored the rule."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-10",
+      "CNT-05"
+    ]
+  },
+  "hints": [
+    "How many arrangements are there with no rule at all?",
+    "Overcount, then correct: subtract the arrangements where the 1s touch and where the 2s touch, then add back those subtracted twice. Glue a touching pair into one block to count them.",
+    "With no rule: $\\frac{6!}{2! \\times 2!} = 180$. With the 1s glued together: $\\frac{5!}{2!} = 60$, and the same for the 2s. With both pairs glued: $4! = 24$."
+  ],
+  "solutions": {
+    "reliable": "Without the rule there are $\\frac{6!}{2! \\times 2!} = 180$ arrangements. Gluing the two 1s into one block leaves 5 items, with the two 2s alike, so $\\frac{5!}{2!} = 60$ arrangements have the 1s together; likewise 60 have the 2s together. The arrangements with both pairs together are arrangements of two blocks and the digits 3 and 4, so there are $4! = 24$ of them, and they were subtracted twice. The answer is $180 - 60 - 60 + 24 = 84$. The transferable idea: subtract the bad cases, then add back what was subtracted twice.",
+    "elegant": null
+  },
+  "whyOnTest": "Two forbidden adjacencies overlap, so plain subtraction overcorrects, and the test is adding back exactly the arrangements removed twice.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

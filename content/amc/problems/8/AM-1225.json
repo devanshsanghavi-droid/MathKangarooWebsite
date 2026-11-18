@@ -1,0 +1,67 @@
+{
+  "id": "AM-1225",
+  "contest": "AMC8",
+  "slot": 25,
+  "area": "NT",
+  "topic": "NT-04",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-COMPLEMENT"
+  ],
+  "statement": "How many ordered pairs $(a, b)$ of positive integers have least common multiple equal to $72$? (The pairs $(8, 9)$ and $(9, 8)$ count as different.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I only counted pairs with no common factor, which are $(1, 72)$, $(72, 1)$, $(8, 9)$ and $(9, 8)$."
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I counted one pair for each of the $12$ divisors $d$ of $72$, thinking the other number always had to be $72$, and ignored the order."
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I counted unordered pairs, treating $(8, 9)$ and $(9, 8)$ as the same pair."
+    },
+    {
+      "key": "D",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I only counted pairs in which one number is $72$, so I counted $(d, 72)$ and $(72, d)$ for all $12$ divisors $d$ and counted $(72, 72)$ twice."
+    },
+    {
+      "key": "E",
+      "text": "$35$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "$72 = 2^3 \\cdot 3^2$. Both $a$ and $b$ must divide $72$, so $a = 2^p 3^q$ and $b = 2^r 3^s$.",
+    "The LCM uses the larger exponent of each prime. So you need $\\max(p, r) = 3$ and $\\max(q, s) = 2$, and you can count the choices for the $2$s and for the $3$s separately.",
+    "Pairs of exponents from $0$ to $3$ with largest value $3$: $4 \\cdot 4 - 3 \\cdot 3 = 7$. Pairs from $0$ to $2$ with largest value $2$: $3 \\cdot 3 - 2 \\cdot 2 = 5$. Multiply."
+  ],
+  "solutions": {
+    "reliable": "Since $72 = 2^3 \\cdot 3^2$, both numbers divide $72$, so $a = 2^p 3^q$ and $b = 2^r 3^s$ with $0 \\le p, r \\le 3$ and $0 \\le q, s \\le 2$. The LCM is $2^{\\max(p, r)} \\cdot 3^{\\max(q, s)}$, so we need $\\max(p, r) = 3$ and $\\max(q, s) = 2$. For the $2$s: of the $4 \\cdot 4 = 16$ pairs $(p, r)$, the $3 \\cdot 3 = 9$ with both at most $2$ fail, leaving $7$. For the $3$s: of the $3 \\cdot 3 = 9$ pairs $(q, s)$, the $2 \\cdot 2 = 4$ with both at most $1$ fail, leaving $5$. The choices are independent, so there are $7 \\cdot 5 = 35$ ordered pairs.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1126",
+  "band": "3-4",
+  "points": 5,
+  "statement": "How many three-digit numbers have digits that add up to 5? For example, 203 is one of them, because $2 + 0 + 3 = 5$.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I counted the groups of digits, like 5, 0, 0 and 4, 1, 0, instead of all the numbers each group can make."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I left out every number with a 0 in it, like 410 and 500."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I never let the tens digit be 0, so I missed numbers like 302, 401 and 500."
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I let the first digit be 0, as in 041, but then the number is not a three-digit number."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-04",
+    "secondary": [
+      "NUM-01",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "The first digit cannot be 0. Try each possible first digit in turn.",
+    "Casework on the hundreds digit: once it is chosen, the tens and ones digits must add up to what is left. Remember that the tens digit or the ones digit can be 0.",
+    "If the hundreds digit is 5, only 500 works. If it is 4, the other two digits add up to 1: 410 and 401. Keep going down to a hundreds digit of 1."
+  ],
+  "solutions": {
+    "reliable": "The hundreds digit can be 1, 2, 3, 4 or 5, but not 0. Hundreds digit 5: the other two digits add up to 0, so only 500. Hundreds digit 4: they add up to 1: 410, 401, that is 2. Hundreds digit 3: they add up to 2: 320, 311, 302, that is 3. Hundreds digit 2: they add up to 3: 230, 221, 212, 203, that is 4. Hundreds digit 1: they add up to 4: 140, 131, 122, 113, 104, that is 5. Total $1 + 2 + 3 + 4 + 5 = 15$. The transferable idea: split the count into cases by the most limited digit, then count each case on its own.",
+    "elegant": "When the tens and ones digits must add up to a number $k$, the tens digit can be $0, 1, \\ldots, k$ and the ones digit is then fixed, so there are $k + 1$ choices. As the hundreds digit goes 5, 4, 3, 2, 1, the rest add up to 0, 1, 2, 3, 4, giving $1 + 2 + 3 + 4 + 5 = 15$."
+  },
+  "whyOnTest": "Choosing the most limited digit as the case to split on, and remembering that 0 is allowed after the first place, is the core of digit casework.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

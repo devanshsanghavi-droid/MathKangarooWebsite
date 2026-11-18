@@ -1,0 +1,56 @@
+{
+  "id": "AC-0255",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-01",
+  "difficulty": "hard",
+  "statement": "The annual salaries, in thousands of dollars, of the $10$ people at a small company are: $$36,\\ 39,\\ 41,\\ 44,\\ 45,\\ 47,\\ 49,\\ 50,\\ 54,\\ 195$$ The $195$ is the owner's salary. If the owner's salary is removed from the list, the mean and the median both decrease. By how many thousand dollars is the decrease in the mean greater than the decrease in the median?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I thought the median of the 10 salaries was 47, so I said it dropped by 2, to 45, and subtracted 2 from 15."
+    },
+    {
+      "key": "B",
+      "text": "$14$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I assumed removing the largest value leaves the median the same, so I gave only the decrease in the mean."
+    },
+    {
+      "key": "D",
+      "text": "$18.5$",
+      "correct": false,
+      "misconception": "I thought taking out 195 lowers the mean by 195 divided by 10, which is 19.5, and then subtracted the median's drop of 1."
+    }
+  ],
+  "hints": [
+    "Find the mean and the median both before and after the owner's salary is removed.",
+    "With $10$ values the median is the mean of the 5th and 6th values; with $9$ values it is the 5th value.",
+    "Before: the total is $600$, so the mean is $60$, and the median is $\\dfrac{45 + 47}{2} = 46$. After: the total is $405$ for $9$ people."
+  ],
+  "solutions": {
+    "reliable": "The total of all $10$ salaries is $600$, so the mean is $60$. The median is $\\dfrac{45 + 47}{2} = 46$. Without the owner, the total is $405$ for $9$ people, so the mean is $45$, and the median is the 5th value, $45$. The mean drops by $60 - 45 = 15$ and the median drops by $46 - 45 = 1$. The difference is $15 - 1 = 14$ thousand dollars.",
+    "elegant": "Removing a value $v$ from $n$ values with mean $m$ lowers the mean by $\\dfrac{v - m}{n - 1} = \\dfrac{195 - 60}{9} = 15$. The median only slides from $\\dfrac{45 + 47}{2} = 46$ to the new middle value, $45$, a drop of $1$. The difference is $15 - 1 = 14$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0012",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-03",
+  "difficulty": "medium",
+  "statement": "A delivery van leaves a warehouse at 7:15 a.m. and drives along a highway at a steady $40$ miles per hour. At 7:45 a.m., a second van leaves the same warehouse and follows the same highway at a steady $60$ miles per hour. At what time does the second van catch up with the first van?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "7:57 a.m.",
+      "correct": false,
+      "misconception": "I added the speeds to get $100$ miles per hour, as if the vans were driving toward each other, so the $20$-mile gap closed in $\\frac{20}{100}$ of an hour, or $12$ minutes."
+    },
+    {
+      "key": "B",
+      "text": "8:05 a.m.",
+      "correct": false,
+      "misconception": "I divided the $20$-mile head start by the second van's speed, $60$ miles per hour, and got $20$ minutes, forgetting that the first van keeps moving."
+    },
+    {
+      "key": "C",
+      "text": "8:15 a.m.",
+      "correct": false,
+      "misconception": "I found that the gap closes in $1$ hour, but I counted that hour from 7:15 a.m., when the first van left, instead of from 7:45 a.m."
+    },
+    {
+      "key": "D",
+      "text": "8:45 a.m.",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "When the second van leaves, how far ahead is the first van?",
+    "The first van has driven for half an hour, so it is $40 \\cdot 0.5 = 20$ miles ahead. Each hour, the second van gains $60 - 40$ miles on it.",
+    "The gap shrinks by $20$ miles every hour, so the $20$-mile gap closes in $1$ hour. Count that hour from the moment the second van leaves."
+  ],
+  "solutions": {
+    "reliable": "Let $t$ be the number of hours after 7:45 a.m. The first van has then driven $t + 0.5$ hours, a distance of $40(t + 0.5)$ miles, and the second van has driven $60t$ miles. They meet when $60t = 40t + 20$, so $20t = 20$ and $t = 1$. The second van catches up at 8:45 a.m. Check: by then the first van has driven $1.5$ hours at $40$ miles per hour and the second van $1$ hour at $60$ miles per hour, and both have gone $60$ miles.",
+    "elegant": "At 7:45 a.m. the first van is $20$ miles ahead, and the gap closes at $60 - 40 = 20$ miles per hour, so it takes $20 \\div 20 = 1$ hour: 8:45 a.m."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "AM-1086",
+  "contest": "AMC8",
+  "slot": 4,
+  "area": "GEO",
+  "topic": "GEO-02",
+  "types": [
+    "T-SIMILAR"
+  ],
+  "statement": "In triangle $ABC$, point $D$ lies on side $AB$ and point $E$ lies on side $AC$ so that segment $DE$ is parallel to side $BC$. If $AD = 4$, $DB = 2$ and $DE = 12$, what is $BC$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I compared $AD$ with $DB$ and wrote $\\frac{DE}{BC} = \\frac{AD}{DB} = \\frac{4}{2}$, which gave $BC = 6$, shorter than $DE$."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I flipped the ratio and used $\\frac{BC}{DE} = \\frac{AD}{AB} = \\frac{4}{6}$, so $BC = 12 \\cdot \\frac{2}{3} = 8$, which would make $BC$ shorter than $DE$."
+    },
+    {
+      "key": "C",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I thought $BC$ was just $DE$ plus the extra piece $DB$, so 12 + 2 = 14."
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I used $\\frac{BC}{DE} = \\frac{AD}{DB} = \\frac{4}{2}$, so $BC = 12 \\cdot 2 = 24$, but the small triangle must be compared with the whole side $AB$, not with the piece $DB$."
+    }
+  ],
+  "hints": [
+    "Because $DE \\parallel BC$, triangles $ADE$ and $ABC$ have the same angles.",
+    "Corresponding sides of similar triangles are in the same ratio: $\\frac{BC}{DE} = \\frac{AB}{AD}$. Be careful: $AB = AD + DB$.",
+    "$AB = 6$ and $AD = 4$, so $BC = 12 \\cdot \\frac{6}{4}$."
+  ],
+  "solutions": {
+    "reliable": "Since $DE \\parallel BC$, triangles $ADE$ and $ABC$ share angle $A$, and the parallel lines make angle $ADE$ equal to angle $ABC$. So the triangles are similar, and $\\frac{BC}{DE} = \\frac{AB}{AD} = \\frac{4 + 2}{4} = \\frac{3}{2}$. Therefore $BC = 12 \\cdot \\frac{3}{2} = 18$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-11"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

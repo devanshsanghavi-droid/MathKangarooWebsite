@@ -1,0 +1,68 @@
+{
+  "id": "KA-1469",
+  "band": "9-10",
+  "points": 4,
+  "statement": "In a pond, 80% of the fish are carp. Some of the carp are taken out, and no other fish are added or removed. Now 50% of the fish in the pond are carp. What percentage of the carp were taken out?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "30%",
+      "correct": false,
+      "misconception": "I subtracted 50 from 80, treating the drop in percentage points as the share of carp removed."
+    },
+    {
+      "key": "B",
+      "text": "37.5%",
+      "correct": false,
+      "misconception": "I thought the carp went from 80 to 50 out of the same 100 fish, so 30 of the 80 carp were removed."
+    },
+    {
+      "key": "C",
+      "text": "40%",
+      "correct": false,
+      "misconception": "I found that 40 fish are left out of the original 100 and gave that instead."
+    },
+    {
+      "key": "D",
+      "text": "60%",
+      "correct": false,
+      "misconception": "I found that 60 fish were removed and gave that as a percentage of all the fish, not of the carp."
+    },
+    {
+      "key": "E",
+      "text": "75%",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-10",
+    "secondary": [
+      "NUM-11",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Which fish do not change in number?",
+    "Imagine 100 fish at the start. The other fish are not touched, so their number stays the same, but they become a larger share of the pond. Use them to find the new total.",
+    "There are 20 other fish. After the removal they make up 50% of the pond, so the pond holds 40 fish."
+  ],
+  "solutions": {
+    "reliable": "Start with 100 fish: 80 carp and 20 others. The 20 others stay, and afterwards they make up 50% of the pond, so the pond now holds 40 fish, of which 20 are carp. So 80 - 20 = 60 carp were taken out, which is 60/80 = 75% of the carp. The transferable idea: when percentages change, anchor on the quantity that does not change.",
+    "elegant": null
+  },
+  "whyOnTest": "Percentage-change questions test anchoring on the part that stays fixed, because the total itself changes.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

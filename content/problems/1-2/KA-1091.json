@@ -1,0 +1,67 @@
+{
+  "id": "KA-1091",
+  "band": "1-2",
+  "points": 4,
+  "statement": "A rectangle has 4 rows of 5 squares. Kim colours every square in the top row and every square in the left column. How many squares does she colour?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "7",
+      "correct": false,
+      "misconception": "I took away the corner square two times, once from the row and once from the column."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted the corner square where the row and the column meet twice."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted the squares that are not coloured."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted every square in the rectangle."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "One square belongs to both the row and the column.",
+    "Count the squares in the top row, then count the squares in the left column. Look at the corner where they cross and make sure it is counted only once.",
+    "The top row has 5 squares and the left column has 4 squares. The top left corner is in both."
+  ],
+  "solutions": {
+    "reliable": "The top row has 5 squares. The left column has 4 squares, but its top square is the corner, already counted in the row. So the column adds only 3 new squares, and $5 + 3 = 8$. The idea to keep: when two groups share a square, count the shared square once.",
+    "elegant": "Add both and take away the overlap: $5 + 4 - 1 = 8$."
+  },
+  "whyOnTest": "Counting a row and a column that cross trains the habit of spotting a square that belongs to two groups.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

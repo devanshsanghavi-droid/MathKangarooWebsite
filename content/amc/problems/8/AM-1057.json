@@ -1,0 +1,66 @@
+{
+  "id": "AM-1057",
+  "contest": "AMC8",
+  "slot": 18,
+  "area": "ALG",
+  "topic": "ALG-01",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Leo's car goes $30$ miles on one gallon of gas on the highway and $20$ miles on one gallon in the city. On a $300$-mile trip, partly on the highway and partly in the city, the car used exactly $12$ gallons of gas. How many of the $300$ miles were driven in the city?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$120$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$150$",
+      "correct": false,
+      "misconception": "I assumed half of the trip was in the city. But $150$ highway miles and $150$ city miles would use $5 + 7.5 = 12.5$ gallons, not $12$."
+    },
+    {
+      "key": "C",
+      "text": "$180$",
+      "correct": false,
+      "misconception": "I found the number of highway miles, $180$, and gave that instead of the number of city miles."
+    },
+    {
+      "key": "D",
+      "text": "$210$",
+      "correct": false,
+      "misconception": "I started from $15$ gallons for an all-city trip, so $3$ gallons were saved, but I thought each highway mile saves $\\frac{1}{30}$ of a gallon. That gave $90$ highway miles and $210$ city miles."
+    },
+    {
+      "key": "E",
+      "text": "$240$",
+      "correct": false,
+      "misconception": "I thought all $12$ gallons were used in the city, so I worked out $12 \\times 20 = 240$ city miles."
+    }
+  ],
+  "hints": [
+    "Let $c$ be the number of city miles. How many highway miles are there?",
+    "City miles use $\\frac{c}{20}$ gallons and the other $300 - c$ highway miles use $\\frac{300 - c}{30}$ gallons. Together that is $12$ gallons.",
+    "Multiply $\\frac{300 - c}{30} + \\frac{c}{20} = 12$ by $60$ to get $2(300 - c) + 3c = 720$."
+  ],
+  "solutions": {
+    "reliable": "Let $c$ be the city miles, so $300 - c$ miles were on the highway. The gas used is $\\frac{300 - c}{30} + \\frac{c}{20} = 12$. Multiplying by $60$ gives $2(300 - c) + 3c = 720$, so $600 + c = 720$ and $c = 120$. Check: $180$ highway miles use $6$ gallons and $120$ city miles use $6$ gallons, $12$ gallons in all.",
+    "elegant": "If all $300$ miles were in the city, the car would use $15$ gallons. Each highway mile instead of a city mile saves $\\frac{1}{20} - \\frac{1}{30} = \\frac{1}{60}$ of a gallon. The car saved $3$ gallons, so $3 \\times 60 = 180$ miles were on the highway and $120$ miles were in the city."
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

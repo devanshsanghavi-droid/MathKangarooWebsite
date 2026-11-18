@@ -1,0 +1,68 @@
+{
+  "id": "KA-1472",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A triangle has its corners at the points (1, 1), (7, 3) and (3, 9). What is its area?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "44",
+      "correct": false,
+      "misconception": "I used the coordinate formula for the area correctly but forgot to halve at the end."
+    },
+    {
+      "key": "B",
+      "text": "22",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": false,
+      "misconception": "I assumed the triangle covers exactly half of the 6 by 8 rectangle around it."
+    },
+    {
+      "key": "D",
+      "text": "26",
+      "correct": false,
+      "misconception": "I worked out the three right-angled triangles around the outside and gave their total instead of subtracting it from the rectangle."
+    },
+    {
+      "key": "E",
+      "text": "48",
+      "correct": false,
+      "misconception": "I gave the area of the 6 by 8 rectangle that surrounds the triangle."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-11",
+    "secondary": [
+      "GEO-04",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Draw the smallest rectangle, with sides along the grid lines, that contains the triangle.",
+    "Box the triangle in a rectangle, then cut away the right-angled triangles in the corners. Check the answer with a second method, such as the shoelace formula.",
+    "The rectangle runs from x = 1 to 7 and from y = 1 to 9, so it is 6 by 8. The three corner triangles have areas 6, 12 and 8."
+  ],
+  "solutions": {
+    "reliable": "The smallest rectangle around the triangle has opposite corners (1, 1) and (7, 9), so it measures 6 by 8 and has area 48. Inside the rectangle but outside the triangle are three right-angled triangles: below the side from (1, 1) to (7, 3), with shorter sides 6 and 2 and area 6; to the right of the side from (7, 3) to (3, 9), with shorter sides 6 and 4 and area 12; to the left of the side from (3, 9) to (1, 1), with shorter sides 2 and 8 and area 8. So the triangle has area 48 - 26 = 22. A second method as a check: the shoelace formula gives half of |1(3 - 9) + 7(9 - 1) + 3(1 - 3)| = half of |-6 + 56 - 6| = 22. The transferable idea: when two independent methods agree, you can mark the answer with confidence.",
+    "elegant": null
+  },
+  "whyOnTest": "Checking with a second method catches slips like a forgotten half: box-and-subtract and the shoelace formula must agree.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

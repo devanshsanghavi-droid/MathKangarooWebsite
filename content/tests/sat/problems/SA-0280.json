@@ -1,0 +1,56 @@
+{
+  "id": "SA-0280",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-02",
+  "difficulty": "medium",
+  "statement": "The three interior angles of a triangular road sign are in the ratio $2 : 3 : 7$. How many degrees greater is the largest angle than the smallest angle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I found the three angles, $30$, $45$ and $105$, and gave the middle angle, $45$, instead of the difference."
+    },
+    {
+      "key": "B",
+      "text": "$75$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$105$",
+      "correct": false,
+      "misconception": "I found the largest angle, $105$, and gave it without subtracting the smallest angle."
+    },
+    {
+      "key": "D",
+      "text": "$150$",
+      "correct": false,
+      "misconception": "I used $360^\\circ$ as the angle sum, so each part was $30^\\circ$ and the difference was $7 \\cdot 30 - 2 \\cdot 30 = 150$."
+    }
+  ],
+  "hints": [
+    "Write the angles as $2k$, $3k$ and $7k$ for some number $k$.",
+    "The angles of a triangle add to $180^\\circ$, so $2k + 3k + 7k = 180$. The difference you want is $7k - 2k$.",
+    "$12k = 180$ gives $k = 15$. The difference is $5k$."
+  ],
+  "solutions": {
+    "reliable": "Let the angles be $2k$, $3k$ and $7k$. Their sum is $12k = 180$, so $k = 15$ and the angles are $30^\\circ$, $45^\\circ$ and $105^\\circ$. The largest exceeds the smallest by $105 - 30 = 75$ degrees.",
+    "elegant": "The difference is $7 - 2 = 5$ parts out of $12$ parts that make $180^\\circ$, so it is $\\frac{5}{12} \\cdot 180 = 75$ degrees."
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

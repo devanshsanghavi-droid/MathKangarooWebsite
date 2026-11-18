@@ -1,0 +1,56 @@
+{
+  "id": "AC-0206",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-02",
+  "difficulty": "medium",
+  "statement": "A farmer is fencing a triangular pasture. Two of its sides measure $9$ meters and $14$ meters, and the third side is a whole number of meters. How many different lengths are possible for the third side?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$17$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I found that the third side is between $5$ and $23$ and subtracted $23 - 5 = 18$, which counts one number too many."
+    },
+    {
+      "key": "C",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I let the third side equal $5$ or $23$ as well, so I counted every whole number from $5$ through $23$, but those two lengths make a flat triangle."
+    },
+    {
+      "key": "D",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I only used the rule that the third side is less than $9 + 14 = 23$, so I counted $1$ through $22$ and forgot it must also be more than $14 - 9 = 5$."
+    }
+  ],
+  "hints": [
+    "Any two sides of a triangle must add to more than the third side.",
+    "The third side must be greater than the difference of the other two sides and less than their sum. Then count the whole numbers strictly between those values.",
+    "The third side $c$ satisfies $5 < c < 23$, so count the whole numbers $6$ through $22$."
+  ],
+  "solutions": {
+    "reliable": "By the triangle inequality, the third side $c$ satisfies $14 - 9 < c < 14 + 9$, so $5 < c < 23$. The whole numbers in this range are $6, 7, \\ldots, 22$, and there are $22 - 6 + 1 = 17$ of them.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

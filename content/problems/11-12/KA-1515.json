@@ -1,0 +1,68 @@
+{
+  "id": "KA-1515",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Ana has 12 minutes for two 5-point questions, X and Y (5 choices each, no penalty). Spending $t$ minutes on X gives a chance $\\frac{t}{10}$ of solving it (certain at 10 minutes); $t$ minutes on Y gives a chance $\\frac{t}{20}$. She guesses at random on any question she does not solve. What is her largest possible expected score?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6.4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$5.6$",
+      "correct": false,
+      "misconception": "I split the time evenly, 6 minutes on each, without comparing how fast each question pays off."
+    },
+    {
+      "key": "C",
+      "text": "$5.5$",
+      "correct": false,
+      "misconception": "I found the best split, 10 minutes on X and 2 on Y, but forgot that unsolved questions are still guessed."
+    },
+    {
+      "key": "D",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I spent all 12 minutes on X, wasting the 2 minutes after it was certain instead of moving to Y."
+    },
+    {
+      "key": "E",
+      "text": "$4.4$",
+      "correct": false,
+      "misconception": "I started with the harder question Y and spent all 12 minutes on it, guessing X."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-12",
+    "secondary": [
+      "CFT-08",
+      "CFT-09"
+    ]
+  },
+  "hints": [
+    "Which question gives more chance per minute?",
+    "Each minute on X adds $\\frac{1}{10}$ to its chance and each minute on Y adds only $\\frac{1}{20}$. Spend minutes where they pay most until that question is certain, then move on. Remember the guesses.",
+    "Put 10 minutes on X (certain) and 2 on Y (chance $\\frac{1}{10}$). An unsolved Y is still guessed with chance $\\frac{1}{5}$."
+  ],
+  "solutions": {
+    "reliable": "A minute on X raises its chance by $\\frac{1}{10}$, a minute on Y by $\\frac{1}{20}$, so all minutes should go to X until it is certain at 10 minutes, and the last 2 to Y. Then X is solved for 5 points. Y is solved with chance $\\frac{2}{20} = \\frac{1}{10}$, and otherwise guessed with chance $\\frac{1}{5}$, so its chance of being right is $\\frac{1}{10} + \\frac{9}{10} \\cdot \\frac{1}{5} = \\frac{7}{25}$, worth $5 \\times \\frac{7}{25} = 1.4$ points. The expected score is $5 + 1.4 = 6.4$. For comparison, 6 and 6 minutes give 5.6, and all 12 on X gives 6. The transferable idea: in the last block, give each minute to the question where it buys the most.",
+    "elegant": "A question solved with chance $p$ and otherwise guessed is worth $5\\left(p + \\frac{1 - p}{5}\\right) = 1 + 4p$ points. So the total is $2 + 4(p_X + p_Y)$, and the largest possible $p_X + p_Y$ is $1 + \\frac{2}{20} = 1.1$, giving $2 + 4.4 = 6.4$."
+  },
+  "whyOnTest": "The last block is won by planning time, and this asks a student to send each minute where it pays most while still counting the guesses.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

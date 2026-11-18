@@ -1,0 +1,68 @@
+{
+  "id": "KA-1572",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Cards numbered 1 to 100 lie face down. You take cards without looking. What is the smallest number of cards you must take to be certain that three of them have consecutive numbers, such as 41, 42 and 43?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "34",
+      "correct": false,
+      "misconception": "I split the cards into 33 groups of three consecutive numbers and took one card from each group plus one more."
+    },
+    {
+      "key": "B",
+      "text": "51",
+      "correct": false,
+      "misconception": "I worked out how many cards guarantee two consecutive numbers, not three."
+    },
+    {
+      "key": "C",
+      "text": "67",
+      "correct": false,
+      "misconception": "I took two cards from each of the 33 groups 1 to 3, 4 to 6, up to 97 to 99, and added one, forgetting that card 100 can also be held safely."
+    },
+    {
+      "key": "D",
+      "text": "68",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "76",
+      "correct": false,
+      "misconception": "I avoided four numbers in a row instead of three, keeping three of every four cards, and then added one."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "CNT-17",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "How many cards can you hold without having three consecutive numbers?",
+    "Worst case: find the largest collection of cards with no three consecutive numbers, then add one. To prove that one more always works, split 1 to 100 into blocks that each force a run.",
+    "Two cards from each of the blocks 1 to 3, 4 to 6, ..., 97 to 99, together with card 100, make 67 cards with no three consecutive numbers."
+  ],
+  "solutions": {
+    "reliable": "The cards 1, 2, 4, 5, 7, 8, ..., 97, 98 and also 100 are $2 \\times 33 + 1 = 67$ cards with no three consecutive numbers, so 67 cards are not enough. Now take any 68 cards. Card 100 is at most one of them, so at least 67 come from the 33 blocks $\\{1, 2, 3\\}, \\{4, 5, 6\\}, \\dots, \\{97, 98, 99\\}$. If each block held at most 2 of them, there would be at most 66, so some block holds all three of its numbers, which are consecutive. The answer is 68. The transferable idea: a worst-case answer needs both a bad example one short of it and an argument that it always works.",
+    "elegant": null
+  },
+  "whyOnTest": "A guarantee needs the largest bad collection plus one, and the leftover card 100 is the detail that separates 67 from 68.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

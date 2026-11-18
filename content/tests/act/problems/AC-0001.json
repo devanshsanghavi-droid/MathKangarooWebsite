@@ -1,0 +1,56 @@
+{
+  "id": "AC-0001",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-01",
+  "difficulty": "easy",
+  "statement": "What is the value of $18 - 6 \\div 3 \\cdot 2 + 4^2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I evaluated $4^2$ as $4 \\cdot 2 = 8$, so I got $18 - 4 + 8 = 22$."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I worked strictly left to right from the start, doing $18 - 6 = 12$ first, then $12 \\div 3 \\cdot 2 = 8$ and $8 + 16 = 24$."
+    },
+    {
+      "key": "C",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I did the multiplication before the division, so $6 \\div (3 \\cdot 2) = 1$ and $18 - 1 + 16 = 33$."
+    }
+  ],
+  "hints": [
+    "Exponents come first, then multiplication and division, then addition and subtraction.",
+    "Multiplication and division have equal rank, so do them from left to right: $6 \\div 3$ comes before $\\cdot 2$.",
+    "$4^2 = 16$ and $6 \\div 3 \\cdot 2 = 2 \\cdot 2 = 4$, so the expression becomes $18 - 4 + 16$."
+  ],
+  "solutions": {
+    "reliable": "Start with the exponent: $4^2 = 16$. Next do multiplication and division from left to right: $6 \\div 3 = 2$, then $2 \\cdot 2 = 4$. The expression is now $18 - 4 + 16$, and working left to right gives $14 + 16 = 30$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

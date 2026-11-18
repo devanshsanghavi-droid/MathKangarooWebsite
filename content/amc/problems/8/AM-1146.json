@@ -1,0 +1,69 @@
+{
+  "id": "AM-1146",
+  "contest": "AMC8",
+  "slot": 24,
+  "area": "GEO",
+  "topic": "GEO-06",
+  "types": [
+    "T-CASEWORK",
+    "T-COORD"
+  ],
+  "statement": "How many squares of area $25$ have all four of their vertices at points $(x, y)$ where $x$ and $y$ are both integers from $0$ to $7$, inclusive?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I only counted the squares whose sides are horizontal and vertical."
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I counted a tilted square for each of the four side directions $(3, 4)$, $(4, 3)$, $(-3, 4)$ and $(-4, 3)$, but each tilted square uses two of those directions, so I counted each one twice."
+    },
+    {
+      "key": "D",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I thought each of the $2$ tilted squares could slide to $2$ positions across and $2$ positions up, $4$ positions each, so I added $2 \\cdot 4 = 8$ tilted squares to the $9$ upright ones."
+    },
+    {
+      "key": "E",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I thought the tilted squares could slide around the grid in as many positions as the upright ones, giving $9 + 9$."
+    }
+  ],
+  "hints": [
+    "A square of area $25$ has side $5$. Which steps between lattice points have length $5$?",
+    "A side can go $5$ across and $0$ up, or $3$ across and $4$ up, or $4$ across and $3$ up (in some directions). A tilted square with a side of $3$ across and $4$ up fits exactly in a box $3 + 4 = 7$ wide and $7$ tall.",
+    "Upright squares: the lower-left corner can be at $x, y \\in \\{0, 1, 2\\}$, giving $9$. Tilted squares: a $7 \\times 7$ box fills the whole grid, so it has only one position, and two different tilted squares fit in it, leaning one way or the other."
+  ],
+  "solutions": {
+    "reliable": "A side has length $5$, and the only ways to write $25$ as a sum of two squares are $25 + 0$ and $9 + 16$. Upright squares have sides $5$ across or $5$ up; the lower-left corner can be any point with $x$ and $y$ in $\\{0, 1, 2\\}$, giving $3 \\cdot 3 = 9$ squares. A tilted square has sides that go $3$ one way and $4$ the other, so its four vertices touch the four sides of a $7 \\times 7$ box around it. The grid itself is exactly $7 \\times 7$, so the box must be the whole grid. Inside it there are two tilted squares: one with vertices $(3, 0), (7, 3), (4, 7), (0, 4)$ and its mirror image $(4, 0), (7, 4), (3, 7), (0, 3)$. The total is $9 + 2 = 11$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

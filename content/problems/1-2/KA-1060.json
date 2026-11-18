@@ -1,0 +1,68 @@
+{
+  "id": "KA-1060",
+  "band": "1-2",
+  "points": 5,
+  "statement": "A bag has 5 balls numbered 2, 3, 5, 8 and 9. Max takes out two balls and adds their numbers. How many of the different pairs he could take give an even total?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought only two even numbers add to an even total, so only 2 and 8 works."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted the even balls, 2 and 8, instead of the pairs."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found the pairs of odd balls but forgot that 2 and 8 also make an even total."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the pairs that give an odd total instead."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "CNT-01",
+      "CNT-06"
+    ]
+  },
+  "hints": [
+    "When is the total of two numbers even?",
+    "Two odd numbers make an even total, and so do two even numbers. An odd and an even make an odd total. Sort the balls into odd and even, then count the matching pairs.",
+    "The odd balls are 3, 5 and 9. The even balls are 2 and 8. Pairs of odd balls: 3 and 5, 3 and 9, 5 and 9. Is there a pair of even balls?"
+  ],
+  "solutions": {
+    "reliable": "List all 10 pairs: 2+3, 2+5, 2+8, 2+9, 3+5, 3+8, 3+9, 5+8, 5+9, 8+9. The even totals are 10 from 2+8, 8 from 3+5, 12 from 3+9 and 14 from 5+9. So 4 pairs give an even total. The idea to keep: odd plus odd and even plus even are both even.",
+    "elegant": "Only whether each number is odd or even matters. Three odd balls make 3 odd pairs, and two even balls make 1 even pair. That is $3 + 1 = 4$ pairs, with no adding needed."
+  },
+  "whyOnTest": "Knowing when a total is even lets you count without adding every pair, and the trap is forgetting that two odd numbers make an even total.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

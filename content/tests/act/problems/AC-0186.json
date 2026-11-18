@@ -1,0 +1,56 @@
+{
+  "id": "AC-0186",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-08",
+  "difficulty": "hard",
+  "statement": "Angle $\\theta$ satisfies $\\pi < \\theta < \\dfrac{3\\pi}{2}$ and $\\sin\\theta = -\\dfrac{5}{13}$. What is the value of $\\tan(2\\theta)$? (Note: $\\tan(2\\theta) = \\dfrac{2\\tan\\theta}{1 - \\tan^2\\theta}$.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-\\frac{120}{119}$",
+      "correct": false,
+      "misconception": "I used a positive cosine and got $\\tan\\theta = -\\frac{5}{12}$, but in the third quadrant sine and cosine are both negative, so $\\tan\\theta = \\frac{5}{12}$."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{5}{6}$",
+      "correct": false,
+      "misconception": "I doubled $\\tan\\theta = \\frac{5}{12}$ to get $\\frac{5}{6}$, as if $\\tan(2\\theta)$ were just $2\\tan\\theta$."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{119}{120}$",
+      "correct": false,
+      "misconception": "I found $\\sin(2\\theta) = \\frac{120}{169}$ and $\\cos(2\\theta) = \\frac{119}{169}$ correctly, but then I divided cosine by sine instead of sine by cosine."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{120}{119}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "First find $\\cos\\theta$. Which sign must it have when $\\theta$ is between $\\pi$ and $\\frac{3\\pi}{2}$?",
+    "Use $\\sin^2\\theta + \\cos^2\\theta = 1$ with a negative cosine, find $\\tan\\theta = \\frac{\\sin\\theta}{\\cos\\theta}$, then use the given identity.",
+    "$\\cos\\theta = -\\frac{12}{13}$, so $\\tan\\theta = \\frac{5}{12}$ and $\\tan(2\\theta) = \\dfrac{2 \\cdot \\frac{5}{12}}{1 - \\frac{25}{144}}$."
+  ],
+  "solutions": {
+    "reliable": "From $\\sin^2\\theta + \\cos^2\\theta = 1$, $\\cos^2\\theta = 1 - \\frac{25}{169} = \\frac{144}{169}$. In the third quadrant cosine is negative, so $\\cos\\theta = -\\frac{12}{13}$ and $\\tan\\theta = \\frac{-5/13}{-12/13} = \\frac{5}{12}$. Then $\\tan(2\\theta) = \\dfrac{2 \\cdot \\frac{5}{12}}{1 - \\frac{25}{144}} = \\dfrac{\\frac{10}{12}}{\\frac{119}{144}} = \\frac{10}{12} \\cdot \\frac{144}{119} = \\frac{120}{119}$.",
+    "elegant": "Check with double angles: $\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta = 2\\left(-\\frac{5}{13}\\right)\\left(-\\frac{12}{13}\\right) = \\frac{120}{169}$ and $\\cos(2\\theta) = 1 - 2\\sin^2\\theta = 1 - \\frac{50}{169} = \\frac{119}{169}$, so $\\tan(2\\theta) = \\frac{120}{119}$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

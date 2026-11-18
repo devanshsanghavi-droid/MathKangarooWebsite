@@ -1,0 +1,69 @@
+{
+  "id": "AM-1144",
+  "contest": "AMC8",
+  "slot": 23,
+  "area": "GEO",
+  "topic": "GEO-02",
+  "types": [
+    "T-SIMILAR",
+    "T-AREA-RATIO"
+  ],
+  "statement": "Trapezoid $ABCD$ has $\\overline{AB} \\parallel \\overline{CD}$, with $AB = 6$, $CD = 14$, and height $8$. Its diagonals $\\overline{AC}$ and $\\overline{BD}$ meet at $P$. What is the area of triangle $BPC$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7.2$",
+      "correct": false,
+      "misconception": "I found the area of triangle $APB$, the triangle on the short base, instead of triangle $BPC$."
+    },
+    {
+      "key": "B",
+      "text": "$16.8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I thought the diagonals cut the trapezoid into four triangles of equal area, so I took $\\frac{80}{4}$."
+    },
+    {
+      "key": "D",
+      "text": "$33.6$",
+      "correct": false,
+      "misconception": "I found the area of both side triangles together, $80 - 7.2 - 39.2$, and forgot to split it between the two of them."
+    },
+    {
+      "key": "E",
+      "text": "$39.2$",
+      "correct": false,
+      "misconception": "I found the area of triangle $CPD$, the triangle on the long base, instead of triangle $BPC$."
+    }
+  ],
+  "hints": [
+    "Triangles $APB$ and $CPD$ are similar. In what ratio does $P$ split each diagonal?",
+    "$AP : PC = AB : CD = 6 : 14 = 3 : 7$, so $P$ is $\\frac{3}{10}$ of the way along $\\overline{AC}$ from $A$. Find the area of triangle $ABC$ first.",
+    "Triangle $ABC$ has area $\\frac{1}{2} \\cdot 6 \\cdot 8 = 24$. Triangle $BPC$ shares the height from $B$ and has base $PC = \\frac{7}{10}AC$."
+  ],
+  "solutions": {
+    "reliable": "Since $\\overline{AB} \\parallel \\overline{CD}$, triangles $APB$ and $CPD$ are similar with ratio $AB : CD = 3 : 7$, so $P$ is $\\frac{3}{10}$ of the height below $\\overline{AB}$, that is $2.4$ below it. Triangle $ABC$ has base $AB = 6$ and height $8$, so area $24$. Triangle $APB$ has base $6$ and height $2.4$, so area $7.2$. Triangle $ABC$ is made of triangles $APB$ and $BPC$, so the area of $BPC$ is $24 - 7.2 = 16.8$.",
+    "elegant": "Triangles $ABC$ and $BPC$ share the vertex $B$ and have bases $AC$ and $PC$ on the same line, so their areas are in the ratio $AC : PC = 10 : 7$. Hence the area of $BPC$ is $\\frac{7}{10} \\cdot 24 = 16.8$."
+  },
+  "formulas": [
+    "F-GEO-11"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0102",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-01",
+  "difficulty": "medium",
+  "statement": "The expression $(2x + 5)(x - 3) - (x - 4)^2$ can be written in the form $ax^2 + bx + c$, where $a$, $b$ and $c$ are constants. What is the value of $b$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-9$",
+      "correct": false,
+      "misconception": "I wrote $-(x - 4)^2$ as $-x^2 - 8x + 16$, changing the sign of only the first term, so $b = -1 - 8 = -9$."
+    },
+    {
+      "key": "B",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I squared $x - 4$ as $x^2 + 16$ and left out the middle term $-8x$, so only the $-x$ from the first product was left."
+    },
+    {
+      "key": "C",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I expanded $(2x + 5)(x - 3)$ with middle terms $6x$ and $-5x$, getting $+x$ instead of $-x$, and then $x + 8x$ gave $9x$."
+    }
+  ],
+  "hints": [
+    "Expand each part separately before you subtract.",
+    "Find $(2x + 5)(x - 3)$ and $(x - 4)^2$ in full, then subtract the whole second result, changing the sign of all three of its terms.",
+    "$(2x + 5)(x - 3) = 2x^2 - x - 15$ and $(x - 4)^2 = x^2 - 8x + 16$. Subtracting, the $x$ terms are $-x - (-8x)$."
+  ],
+  "solutions": {
+    "reliable": "First, $(2x + 5)(x - 3) = 2x^2 - 6x + 5x - 15 = 2x^2 - x - 15$. Next, $(x - 4)^2 = x^2 - 8x + 16$. Subtracting, $2x^2 - x - 15 - x^2 + 8x - 16 = x^2 + 7x - 31$, so $b = 7$. Check with $x = 1$: $(7)(-2) - 9 = -23$ and $1 + 7 - 31 = -23$.",
+    "elegant": "Only the $x$ terms matter for $b$. The first product contributes $-6x + 5x = -x$, and subtracting $(x - 4)^2$ contributes $-(-8x) = +8x$, so $b = -1 + 8 = 7$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

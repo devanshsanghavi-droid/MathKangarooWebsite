@@ -1,0 +1,69 @@
+{
+  "id": "AM-1262",
+  "contest": "AMC8",
+  "slot": 12,
+  "area": "CP",
+  "topic": "CP-06",
+  "types": [
+    "T-COMPLEMENT",
+    "T-CASEWORK"
+  ],
+  "statement": "Two fair six-sided dice are rolled. What is the probability that the product of the two numbers rolled is a multiple of $3$ but the sum of the two numbers is not a multiple of $3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{1}{9}$",
+      "correct": false,
+      "misconception": "I counted the 4 rolls where the product and the sum are both multiples of 3 instead of the rolls where only the product is."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1}{3}$",
+      "correct": false,
+      "misconception": "I found the probability that the sum is a multiple of 3, 12 out of 36, and used that instead."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{4}{9}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{5}{9}$",
+      "correct": false,
+      "misconception": "I found the 20 rolls where the product is a multiple of 3 and forgot to remove the ones where the sum is a multiple of 3 too."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{2}{3}$",
+      "correct": false,
+      "misconception": "I added the chance that the first die is a 3 or 6 to the chance that the second die is, 2/6 + 2/6, and also ignored the sum."
+    }
+  ],
+  "hints": [
+    "The product is a multiple of $3$ exactly when at least one die shows $3$ or $6$.",
+    "Split into two cases: both dice show $3$ or $6$, or exactly one die does.",
+    "If exactly one die is a multiple of $3$, the sum cannot be a multiple of $3$. If both are, the sum always is."
+  ],
+  "solutions": {
+    "reliable": "Out of the $36$ equally likely rolls, the product fails to be a multiple of $3$ only when neither die shows $3$ or $6$, which happens in $4 \\times 4 = 16$ rolls, so $20$ rolls have a product that is a multiple of $3$. Among these, if both dice show $3$ or $6$ ($4$ rolls), the sum is a multiple of $3$. If exactly one die shows $3$ or $6$ ($20 - 4 = 16$ rolls), the sum is a multiple of $3$ plus a number that is not, so it is not a multiple of $3$. The probability is $\\frac{16}{36} = \\frac{4}{9}$.",
+    "elegant": "Exactly one die must be a multiple of $3$. That die can be the first or the second, so the probability is $2 \\times \\frac{2}{6} \\times \\frac{4}{6} = \\frac{16}{36} = \\frac{4}{9}$."
+  },
+  "formulas": [
+    "F-CP-06"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

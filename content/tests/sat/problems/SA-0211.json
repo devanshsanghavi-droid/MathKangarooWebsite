@@ -1,0 +1,56 @@
+{
+  "id": "SA-0211",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-03",
+  "difficulty": "medium",
+  "statement": "The price of a concert ticket was raised by $20\\%$. A month later, the new price was lowered by $25\\%$. After both changes, the ticket cost $\\$9$ less than it did before either change. What was the price of the ticket before either change?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$30.00$",
+      "correct": false,
+      "misconception": "I treated the $\\$9$ as the amount taken off in the second change, so I solved $0.25(1.20p) = 9$, but the $\\$9$ is the net change from the original price."
+    },
+    {
+      "key": "B",
+      "text": "$\\$81.00$",
+      "correct": false,
+      "misconception": "I found the original price of $\\$90$ correctly, but then I subtracted $\\$9$ and reported the price after both changes."
+    },
+    {
+      "key": "C",
+      "text": "$\\$90.00$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$180.00$",
+      "correct": false,
+      "misconception": "I combined the changes into a net decrease of $25\\% - 20\\% = 5\\%$ and divided 9 by 0.05, but percent changes made one after another multiply."
+    }
+  ],
+  "hints": [
+    "Each percent change multiplies the price by a factor. What are the two factors?",
+    "Multiply the two factors to find what fraction of the original price the final price is. The $\\$9$ is the difference between the original price and the final price.",
+    "Raising by $20\\%$ multiplies by $1.20$ and lowering by $25\\%$ multiplies by $0.75$, so the final price is $p(1.20)(0.75) = 0.90p$."
+  ],
+  "solutions": {
+    "reliable": "Let the original price be $p$ dollars. After both changes the price is $p(1.20)(0.75) = 0.90p$, which is $0.10p$ less than the original price. So $0.10p = 9$ and $p = 90$. Check: $90(1.20) = 108$, $108(0.75) = 81$, and $90 - 81 = 9$.",
+    "elegant": "The two changes multiply the price by $1.2 \\cdot 0.75 = 0.9$, a net decrease of $10\\%$. Since $10\\%$ of the original price is $\\$9$, the original price is $\\$90$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

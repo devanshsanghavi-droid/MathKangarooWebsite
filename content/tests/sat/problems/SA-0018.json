@@ -1,0 +1,56 @@
+{
+  "id": "SA-0018",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "medium",
+  "statement": "In the $xy$-plane, a line with slope $2$ passes through the points $(2, 5)$ and $(k, 3k)$, where $k$ is a constant. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{8}{5}$",
+      "correct": false,
+      "misconception": "I wrote the slope as change in $x$ over change in $y$, so I solved $\\frac{k - 2}{3k - 5} = 2$ and got $k = \\frac{8}{5}$."
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I set up $3k - 5 = 2(k - 2)$ but multiplied the $2$ only by $k$, writing $3k - 5 = 2k - 2$, so I got $k = 3$."
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I set up $3k - 5 = 2(k - 2)$ but expanded the right side as $2k + 4$, so I got $k = 9$."
+    }
+  ],
+  "hints": [
+    "Write the slope between the two points using $k$.",
+    "The slope from $(2, 5)$ to $(k, 3k)$ is $\\frac{3k - 5}{k - 2}$. Set it equal to $2$ and solve.",
+    "Solve $3k - 5 = 2(k - 2)$, which is $3k - 5 = 2k - 4$."
+  ],
+  "solutions": {
+    "reliable": "The slope between $(2, 5)$ and $(k, 3k)$ is $\\frac{3k - 5}{k - 2}$. Setting it equal to $2$: $3k - 5 = 2(k - 2) = 2k - 4$, so $k = 1$. Check: the points are $(2, 5)$ and $(1, 3)$, and $\\frac{3 - 5}{1 - 2} = \\frac{-2}{-1} = 2$.",
+    "elegant": "The line is $y = 2x + 1$. The point $(k, 3k)$ lies on it when $3k = 2k + 1$, so $k = 1$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

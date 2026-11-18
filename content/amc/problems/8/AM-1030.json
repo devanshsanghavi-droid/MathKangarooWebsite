@@ -1,0 +1,62 @@
+{
+  "id": "AM-1030",
+  "contest": "AMC8",
+  "slot": 11,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": ["T-SUBSTITUTION"],
+  "statement": "A moving walkway at an airport is $60$ meters long. Standing still on it, Zara is carried from one end to the other in $60$ seconds. Walking at her usual pace on the walkway, in the direction it moves, she gets from one end to the other in $20$ seconds. How many seconds would it take her to walk $60$ meters at the same usual pace on the floor beside the walkway?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I treated the walkway like a second walker and added the rates, 1/20 + 1/60 = 1/15 of the length per second, so I got 15 seconds."
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I thought her speed while walking on the walkway was just her walking speed, so I kept the 20 seconds."
+    },
+    {
+      "key": "C",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I subtracted the two times, 60 - 20 = 40, instead of subtracting the two speeds."
+    },
+    {
+      "key": "E",
+      "text": "$80$",
+      "correct": false,
+      "misconception": "I added the two times, 20 + 60 = 80, as if she had to do both trips."
+    }
+  ],
+  "hints": [
+    "Find the speed of the walkway, and Zara's speed while walking on it.",
+    "The walkway moves $1$ meter per second, and walking on it she moves $3$ meters per second.",
+    "Her own walking speed is the difference, $3 - 1 = 2$ meters per second."
+  ],
+  "solutions": {
+    "reliable": "The walkway moves $60 / 60 = 1$ meter per second. Walking on it, Zara moves $60 / 20 = 3$ meters per second, which is her walking speed plus the walkway's speed. So she walks at $3 - 1 = 2$ meters per second, and $60$ meters on the floor takes her $60 / 2 = 30$ seconds.",
+    "elegant": "In $60$ seconds of walking on the walkway she would cover $3$ walkway lengths, and the walkway itself supplies $1$ of those. So her legs cover $2$ lengths in $60$ seconds, which is $1$ length in $30$ seconds."
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

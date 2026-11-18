@@ -1,0 +1,56 @@
+{
+  "id": "AC-0235",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "easy",
+  "statement": "A running track has two straight sides, each $80$ meters long, joined at each end by a semicircle. The straight sides are $40$ meters apart, so each semicircle has a diameter of $40$ meters. What is the total distance, in meters, once around the track?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$160 + 80\\pi$",
+      "correct": false,
+      "misconception": "I used 40 meters as the radius of each semicircle, so each curved end was 40 pi and the two ends together were 80 pi."
+    },
+    {
+      "key": "B",
+      "text": "$240 + 40\\pi$",
+      "correct": false,
+      "misconception": "I added the two 40 meter diameters to the perimeter as if they were part of the track, even though the semicircles replace them."
+    },
+    {
+      "key": "C",
+      "text": "$160 + 40\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$160 + 20\\pi$",
+      "correct": false,
+      "misconception": "I added only one semicircle, which is 20 pi, and forgot that the track has a curved end at each side."
+    }
+  ],
+  "hints": [
+    "The distance around is the two straight sides plus the two curved ends.",
+    "The two semicircles have the same diameter, so together they make one full circle of diameter $40$.",
+    "A circle of diameter $40$ has circumference $40\\pi$. Add the two $80$ meter sides."
+  ],
+  "solutions": {
+    "reliable": "The straight parts give $2 \\cdot 80 = 160$ meters. Each curved end is a semicircle of diameter $40$, so its length is $\\frac{1}{2} \\pi (40) = 20\\pi$. The two ends give $40\\pi$. The total is $160 + 40\\pi$ meters, about $285.7$ meters.",
+    "elegant": "Push the two semicircles together and they form one full circle of diameter $40$, with circumference $40\\pi$. Add the straightaways: $160 + 40\\pi$."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1431",
+  "band": "9-10",
+  "points": 4,
+  "statement": "How many four-digit numbers have at least one pair of equal digits standing next to each other, such as 3557 or 1000?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6561",
+      "correct": false,
+      "misconception": "I counted the numbers with no two equal neighbouring digits, which is the opposite of what was asked."
+    },
+    {
+      "key": "B",
+      "text": "2439",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "3439",
+      "correct": false,
+      "misconception": "I subtracted 6561 from 10000, but there are only 9000 four-digit numbers."
+    },
+    {
+      "key": "D",
+      "text": "4464",
+      "correct": false,
+      "misconception": "I thought no equal neighbours meant all four digits different, so I subtracted $9 \\times 9 \\times 8 \\times 7 = 4536$ from 9000."
+    },
+    {
+      "key": "E",
+      "text": "1710",
+      "correct": false,
+      "misconception": "I allowed 10 choices for the first digit of a number with no equal neighbours, getting 7290 instead of 6561."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-09",
+    "secondary": [
+      "CNT-03",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "It is easier to count the numbers that do not have this property.",
+    "Complementary counting: count the four-digit numbers in which every digit differs from the one before it, then subtract from the total number of four-digit numbers.",
+    "The first digit has 9 choices (not 0). Every later digit also has 9 choices: anything except the digit just before it."
+  ],
+  "solutions": {
+    "reliable": "There are 9000 four-digit numbers. Count those with no two equal neighbours: the first digit has 9 choices (1 to 9), and each of the next three digits can be any of the 10 digits except the one just before it, so 9 choices each. That gives $9^4 = 6561$. So $9000 - 6561 = 2439$ numbers have a pair of equal neighbours. The transferable idea: 'at least one' is usually counted as the total minus 'none'.",
+    "elegant": null
+  },
+  "whyOnTest": "An 'at least one' condition is a signal for complementary counting, and the traps are using the wrong total or the wrong complement.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

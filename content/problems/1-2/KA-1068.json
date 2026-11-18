@@ -1,0 +1,68 @@
+{
+  "id": "KA-1068",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Stickers cost 6 cents each. Tom pays using only 10-cent coins, and he must not get any change. What is the smallest number of stickers he can buy?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I bought one sticker with one coin and forgot that he would get 4 cents back."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found the number of coins he pays with, not the number of stickers."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I found that 10 stickers works, but there is a smaller number that works too."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": false,
+      "misconception": "I found how many cents he pays, not how many stickers he buys."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-06",
+    "secondary": [
+      "NUM-05",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Count up in sixes. When do you land on a ten?",
+    "With only 10-cent coins and no change, the total cost must be exactly 10, 20, 30 and so on. List the costs of 1, 2, 3 stickers and keep going until one fits.",
+    "The costs go 6, 12, 18, 24, 30. The first cost that is a whole number of tens is 30 cents."
+  ],
+  "solutions": {
+    "reliable": "List the cost: 1 sticker is 6 cents, 2 are 12, 3 are 18, 4 are 24 and 5 are 30. The first of these that is exactly some 10-cent coins is 30 cents, paid with 3 coins. So the smallest number of stickers is 5. The idea to keep: list in order and stop at the first one that works.",
+    "elegant": "Back-solve: check the choices. 1 sticker costs 6 cents, which needs change. 5 stickers cost 30 cents, three coins exactly. 10 stickers also work, but 5 is smaller."
+  },
+  "whyOnTest": "It tests a careful list against a money rule, and two trap answers give the coins or the cents instead of the stickers.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

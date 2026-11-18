@@ -1,0 +1,68 @@
+{
+  "id": "KA-1552",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Lines parallel to the sides cut an equilateral triangle into 9 equal small equilateral triangles. Each small triangle is painted black or white. Two paintings count as the same if one can be turned in its plane to look exactly like the other. How many different paintings are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "120",
+      "correct": false,
+      "misconception": "I also counted a painting and its mirror image as the same, but the triangle may only be turned, not flipped over."
+    },
+    {
+      "key": "B",
+      "text": "168",
+      "correct": false,
+      "misconception": "I grouped the paintings in threes by turning, $504 / 3 = 168$, but forgot the 8 paintings that look the same after a turn."
+    },
+    {
+      "key": "C",
+      "text": "171",
+      "correct": false,
+      "misconception": "I divided all 512 paintings by 3 and rounded up, not noticing that some paintings do not form groups of three."
+    },
+    {
+      "key": "D",
+      "text": "176",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "512",
+      "correct": false,
+      "misconception": "I counted all $2^9$ paintings and did not merge paintings that are turns of each other."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-16",
+      "GEO-08"
+    ]
+  },
+  "hints": [
+    "Which paintings look exactly the same after a one-third turn?",
+    "Most paintings come in groups of three that are turns of each other, and each group counts once. Count the paintings that a turn leaves unchanged separately, because they must not be divided by three.",
+    "A one-third turn moves the 9 small triangles round in three cycles of three. A painting is unchanged exactly when each cycle is all one colour, which gives $2^3 = 8$ paintings."
+  ],
+  "solutions": {
+    "reliable": "There are $2^9 = 512$ paintings. A one-third turn moves the small triangles round in three cycles of three: the three corner triangles, the three triangles pointing the other way, and the three remaining triangles in the middle of the edges. A painting looks the same after a turn exactly when each cycle is all one colour, which gives $2^3 = 8$ paintings. Each of the other 504 paintings has two different turned copies, so they form $504 / 3 = 168$ groups. In total there are $168 + 8 = 176$ different paintings. The transferable idea: under a symmetry, divide only the objects that the symmetry moves, and count the fixed ones separately.",
+    "elegant": "Average the number of paintings that each turn leaves unchanged: doing nothing fixes 512, and each of the two one-third turns fixes 8, so there are $(512 + 8 + 8) / 3 = 176$ paintings. The transferable idea: the number of patterns up to turning is the average number of paintings each turn fixes."
+  },
+  "whyOnTest": "Counting up to rotation means dividing only the paintings that a turn moves, and the traps are dividing everything or allowing flips that were not permitted.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

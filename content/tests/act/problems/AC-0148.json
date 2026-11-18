@@ -1,0 +1,56 @@
+{
+  "id": "AC-0148",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-07",
+  "difficulty": "medium",
+  "statement": "A courier charges $C(w)$ dollars to ship a package that weighs $w$ pounds, where $$C(w) = \\begin{cases} 8 & \\text{if } 0 < w \\le 2 \\\\ 8 + 3(w - 2) & \\text{if } 2 < w \\le 10 \\\\ 32 + 2(w - 10) & \\text{if } w > 10 \\end{cases}$$ A customer paid $\\$41$ to ship one package. How many pounds did the package weigh?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4.5$",
+      "correct": false,
+      "misconception": "I solved 32 + 2(w - 10) = 41 as far as w - 10 = 4.5 and then forgot to add the 10 back."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I used the middle rule, 8 + 3(w - 2) = 41, and got 13 without checking that 13 is outside that rule's interval, which ends at 10."
+    },
+    {
+      "key": "C",
+      "text": "$14.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I saw that 41 is 9 dollars more than 32 and added 9 pounds to 10, forgetting that each pound over 10 costs 2 dollars."
+    }
+  ],
+  "hints": [
+    "First decide which piece of the function can produce a charge of $41$ dollars.",
+    "The middle piece reaches at most $C(10) = 32$, so a $41$-dollar charge must come from the last piece.",
+    "Solve $32 + 2(w - 10) = 41$, which gives $w - 10 = 4.5$."
+  ],
+  "solutions": {
+    "reliable": "The first piece always gives $8$, and the middle piece rises from $8$ to $C(10) = 8 + 3(8) = 32$. So a charge of $41$ must come from the last piece: $32 + 2(w - 10) = 41$, so $2(w - 10) = 9$, $w - 10 = 4.5$ and $w = 14.5$ pounds. Check: $14.5 > 10$, as that piece requires.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

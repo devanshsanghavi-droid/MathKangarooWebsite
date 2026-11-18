@@ -1,0 +1,56 @@
+{
+  "id": "SA-0095",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "medium",
+  "statement": "In a robotics league, a team earns $5$ points for each task it completes and loses $2$ points for each penalty it receives. In one match, a team completed $12$ more tasks than it received penalties and finished with $69$ points. How many tasks did the team complete?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I ignored the penalties and divided 69 points by 5 points per task, which gave 13.8, so I rounded to 14."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I solved the system correctly but gave the number of penalties, 3, instead of the number of tasks."
+    },
+    {
+      "key": "D",
+      "text": "$31$",
+      "correct": false,
+      "misconception": "I wrote the relationship backward as $p = t + 12$, so $5t - 2(t + 12) = 69$ gave $t = 31$."
+    }
+  ],
+  "hints": [
+    "Use one variable for tasks and one for penalties.",
+    "Write $5t - 2p = 69$ and $t = p + 12$. Substitute to get one equation in $p$ alone.",
+    "$5(p + 12) - 2p = 69$ simplifies to $3p + 60 = 69$."
+  ],
+  "solutions": {
+    "reliable": "Let $t$ be the number of tasks and $p$ the number of penalties. Then $5t - 2p = 69$ and $t = p + 12$. Substituting: $5(p + 12) - 2p = 69$, so $3p = 9$, $p = 3$ and $t = 15$. Check: $5(15) - 2(3) = 75 - 6 = 69$. Key idea: when one equation already gives a variable in terms of the other, substitute it.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

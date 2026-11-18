@@ -1,0 +1,67 @@
+{
+  "id": "KA-1096",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Ella has 2 red flowers that look exactly the same and 1 yellow flower. She puts one flower in each of 3 pots standing in a row. How many different-looking rows can she make?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I put the yellow flower at each end but missed the row with yellow in the middle."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I treated the two red flowers as different, so I counted each row twice."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought each pot could be red or yellow, 2 times 2 times 2, and forgot there is only 1 yellow flower."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I multiplied the 3 flowers by the 3 pots, 3 times 3, and forgot that each pot gets just one flower and the reds look the same."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "CNT-02"
+    ]
+  },
+  "hints": [
+    "Decide where the yellow flower goes.",
+    "The two red flowers look the same, so swapping them makes no new row. A row is fixed once you know which pot has the yellow flower.",
+    "The yellow flower can go in the left pot, the middle pot or the right pot. The red flowers fill the rest."
+  ],
+  "solutions": {
+    "reliable": "Once the yellow flower is placed, the two red flowers fill the other two pots, and swapping them changes nothing. The yellow flower can be in the left, middle or right pot, so there are 3 rows: yellow, red, red; red, yellow, red; red, red, yellow. The idea to keep: when things look the same, count by placing the different one.",
+    "elegant": "If the red flowers were different there would be 6 rows, but each row is counted twice because the two reds can swap, so $6 \\div 2 = 3$."
+  },
+  "whyOnTest": "Identical objects shrink a count, and the usual mistake is to list them as if they were different.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

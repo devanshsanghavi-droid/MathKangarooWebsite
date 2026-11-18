@@ -1,0 +1,56 @@
+{
+  "id": "AC-0184",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-08",
+  "difficulty": "easy",
+  "statement": "The bob of a pendulum hangs from a string $90$ centimeters long. In one swing from one side to the other, the string turns through an angle of $\\dfrac{2\\pi}{9}$ radians. How far, in centimeters, does the bob travel along its curved path during one swing?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$20\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$40\\pi$",
+      "correct": false,
+      "misconception": "I treated $\\frac{2\\pi}{9}$ as $\\frac{2}{9}$ of a full turn and took $\\frac{2}{9}$ of the circumference $180\\pi$, but a full turn is $2\\pi$, so this is only $\\frac{1}{9}$ of a turn."
+    },
+    {
+      "key": "C",
+      "text": "$900\\pi$",
+      "correct": false,
+      "misconception": "I found the area of the sector, $\\frac{1}{2} \\cdot 90^2 \\cdot \\frac{2\\pi}{9}$, instead of the length of its arc."
+    },
+    {
+      "key": "D",
+      "text": "$3{,}600$",
+      "correct": false,
+      "misconception": "I converted the angle to $40$ degrees and multiplied by the radius $90$, but the formula $s = r\\theta$ works only with the angle in radians."
+    }
+  ],
+  "hints": [
+    "The bob moves along an arc of a circle whose radius is the length of the string.",
+    "For an angle $\\theta$ in radians, the arc length is $s = r\\theta$.",
+    "$s = 90 \\cdot \\frac{2\\pi}{9}$."
+  ],
+  "solutions": {
+    "reliable": "The bob moves along an arc of a circle with radius $r = 90$ centimeters and central angle $\\theta = \\frac{2\\pi}{9}$ radians. The arc length is $s = r\\theta = 90 \\cdot \\frac{2\\pi}{9} = 20\\pi$ centimeters, about $62.8$ centimeters.",
+    "elegant": "A full turn, $2\\pi$ radians, would trace the whole circumference $180\\pi$. The angle $\\frac{2\\pi}{9}$ is $\\frac{1}{9}$ of a full turn, so the arc is $\\frac{1}{9} \\cdot 180\\pi = 20\\pi$."
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

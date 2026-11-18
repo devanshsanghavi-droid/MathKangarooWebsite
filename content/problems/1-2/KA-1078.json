@@ -1,0 +1,67 @@
+{
+  "id": "KA-1078",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Ali has cards 1, 2, 3, 4 and 5. He removes one, then splits the other four into two piles of two with equal totals. How many different cards could he have removed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I added all five cards, got 15, which is odd, and decided it can never be shared, but I forgot that one card is taken away first."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I found that taking away 5 works and stopped without checking the other cards."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted only the even cards, 2 and 4, because I thought even cards would make sharing work."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "5",
+      "correct": false,
+      "misconception": "I forgot the two piles must have the same total, so I thought any card could be taken away."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Two equal piles always make an even total.",
+    "Find the total of all five cards. Ask which cards leave an even total when taken away, then check that the four cards left really split into two equal pairs.",
+    "Taking away 2 or 4 leaves an odd total, which can never split into two equal piles. Now test taking away 1, 3 and 5."
+  ],
+  "solutions": {
+    "reliable": "Try each card. Take away 1: 2 + 5 = 3 + 4, works. Take away 2: the rest add to 13, odd, fails. Take away 3: 1 + 5 = 2 + 4, works. Take away 4: the rest add to 11, odd, fails. Take away 5: 1 + 4 = 2 + 3, works. So 3 different cards work: 1, 3 and 5. The idea to keep: before searching, use odd and even to throw out the cases that can never work.",
+    "elegant": "Two equal piles make an even total, and 15 is odd, so the card taken away must be odd: 1, 3 or 5. A quick check shows each of these really does split into two equal pairs, so the answer is 3."
+  },
+  "whyOnTest": "Parity narrows a search: the total of two equal piles must be even, which rules out cards before any trying.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

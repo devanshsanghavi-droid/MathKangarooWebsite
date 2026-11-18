@@ -1,0 +1,68 @@
+{
+  "id": "KA-1323",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Four standard dice, whose opposite faces add up to 7, are placed on a table in a 2 by 2 square, so that each die touches two others face to face. A face is hidden if it touches the table or another die. What is the smallest possible total of the dots on all the faces that are not hidden?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "32",
+      "correct": false,
+      "misconception": "I thought the two visible side faces of each die are opposite each other, so they add up to 7, giving $1 + 7 = 8$ per die."
+    },
+    {
+      "key": "C",
+      "text": "40",
+      "correct": false,
+      "misconception": "I thought each die touches only one other die, so I counted the top and three sides: $1 + 2 + 3 + 4 = 10$ per die."
+    },
+    {
+      "key": "D",
+      "text": "60",
+      "correct": false,
+      "misconception": "I found the largest possible total, $4 + 5 + 6 = 15$ per die, instead of the smallest."
+    },
+    {
+      "key": "E",
+      "text": "84",
+      "correct": false,
+      "misconception": "I added all the faces of all four dice, $4 \\times 21$, forgetting that some faces are hidden."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-11",
+    "secondary": [
+      "GEO-13",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "For one die, which three faces show, and where do they meet?",
+    "Dice face relationships: each die shows its top and two outer sides, and these three faces meet at one corner, so no two of them are opposite. Find the smallest possible corner total.",
+    "The faces 1, 2 and 3 have opposites 6, 5 and 4, so no two of them are opposite, and they can meet at a corner. That gives 6 per die."
+  ],
+  "solutions": {
+    "reliable": "Each die has its bottom on the table and two side faces against its neighbours, and those two side faces are next to each other, not opposite. So it shows its top and its two outer sides: three faces that meet at one corner, no two of them opposite. The three smallest numbers, 1, 2 and 3, contain no pair adding to 7, so they can meet at a corner: turn each die so that 1, 2 and 3 are the faces showing. Each die then shows 6 dots, and the smallest total is $4 \\times 6 = 24$. The transferable idea: on a die, the faces that meet at a corner never include an opposite pair.",
+    "elegant": "Count what is hidden instead: each die hides three faces that meet at a corner, worth at most $6 + 5 + 4 = 15$ dots, so it shows at least $21 - 15 = 6$. The total is at least $4 \\times 6 = 24$, and this can be reached."
+  },
+  "whyOnTest": "Seeing which faces of a die meet at a corner, and so can never be opposite, is the key spatial fact behind most dice problems.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

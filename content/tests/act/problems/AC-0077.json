@@ -1,0 +1,56 @@
+{
+  "id": "AC-0077",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "medium",
+  "statement": "A community pool offers two ways to pay. With a season pass, a swimmer pays $\\$84$ once plus a $\\$1.50$ locker fee for each visit. Without a pass, a swimmer pays $\\$6.75$ per visit, locker included. What is the least number of visits for which the season pass costs less than paying per visit?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I forgot the locker fee that comes with the season pass and compared $84$ with $6.75v$, which gave $v > 12.4$, so I chose 13."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I solved $84 + 1.50v = 6.75v$ and got exactly 16, but at 16 visits the two options cost the same, so the pass is not yet cheaper."
+    },
+    {
+      "key": "C",
+      "text": "$17$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$56$",
+      "correct": false,
+      "misconception": "I divided the $\\$84$ pass price by the $\\$1.50$ locker fee and got 56."
+    }
+  ],
+  "hints": [
+    "Write an expression for the cost of each option after $v$ visits.",
+    "Set up $84 + 1.50v < 6.75v$ and solve for $v$. Remember that $v$ must be a whole number.",
+    "The inequality becomes $84 < 5.25v$, so $v > 16$. Which whole number is the smallest one greater than 16?"
+  ],
+  "solutions": {
+    "reliable": "After $v$ visits the season pass costs $84 + 1.50v$ dollars and paying per visit costs $6.75v$ dollars. The pass is cheaper when $84 + 1.50v < 6.75v$, that is $84 < 5.25v$, so $v > 16$. At $16$ visits both options cost $\\$108$, so the least whole number of visits is $17$. Check: at $17$ visits the pass costs $\\$109.50$ and paying per visit costs $\\$114.75$.",
+    "elegant": "Each visit with the pass saves $6.75 - 1.50 = \\$5.25$. The pass is cheaper once those savings exceed $\\$84$, and $84 \\div 5.25 = 16$ exactly, so the savings first exceed $\\$84$ on visit $17$."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

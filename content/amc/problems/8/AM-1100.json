@@ -1,0 +1,66 @@
+{
+  "id": "AM-1100",
+  "contest": "AMC8",
+  "slot": 8,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-INVARIANT"
+  ],
+  "statement": "A running track has two straight sections, each $90$ meters long, joined at their ends by two semicircles. Along the inside edge of the track, each semicircle has radius $30$ meters. Jada runs one lap along a path that stays exactly $2$ meters outside the inside edge all the way around. How many meters farther does she run than someone who runs one lap exactly along the inside edge?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I thought running 2 m farther out adds just 2 m at each curved end, so I got 2 + 2 = 4."
+    },
+    {
+      "key": "B",
+      "text": "$2\\pi$",
+      "correct": false,
+      "misconception": "I added the 2 m to the diameter of the curves instead of to the radius, so the circumference grew by only $2\\pi$."
+    },
+    {
+      "key": "C",
+      "text": "$4\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$4\\pi + 4$",
+      "correct": false,
+      "misconception": "I thought the straight sections also got 2 m longer each, so I added 4 to the $4\\pi$ from the curves."
+    },
+    {
+      "key": "E",
+      "text": "$8\\pi$",
+      "correct": false,
+      "misconception": "I added 2 m to the radius once for each side of the track, so I made the radius 4 m bigger and got $2\\pi \\cdot 4 = 8\\pi$."
+    }
+  ],
+  "hints": [
+    "Which parts of Jada's lap are longer than the inside lap, and which are the same?",
+    "The straight sections are the same length for both runners. On the curves, Jada runs on semicircles of radius $32$ instead of $30$.",
+    "The two semicircles together make a full circle. Compare $2\\pi \\cdot 32$ with $2\\pi \\cdot 30$."
+  ],
+  "solutions": {
+    "reliable": "The straight sections are $90$ m for both runners. The inside lap's two semicircles together make one circle of radius $30$, length $2\\pi \\cdot 30 = 60\\pi$. Jada's curves are semicircles of radius $32$, which together make a circle of length $2\\pi \\cdot 32 = 64\\pi$. So she runs $64\\pi - 60\\pi = 4\\pi$ meters farther, about $12.6$ m.",
+    "elegant": "Only the curves change, and together they make one full circle. A circle's circumference grows by $2\\pi$ for every meter added to its radius, so moving out $2$ m adds $2\\pi \\cdot 2 = 4\\pi$, no matter how long the straights are or how big the curves are."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1265",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A board has 4 rows and 5 columns of squares. One domino is placed on the board so that it covers exactly two squares that share an edge. In how many different positions can it be placed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "16",
+      "correct": false,
+      "misconception": "I only counted the dominoes lying along the rows, 4 in each of the 4 rows, and forgot the upright ones."
+    },
+    {
+      "key": "B",
+      "text": "31",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": false,
+      "misconception": "I thought every row and every column gives 4 positions, but a column has only 4 squares and so only 3 positions."
+    },
+    {
+      "key": "D",
+      "text": "40",
+      "correct": false,
+      "misconception": "I gave every one of the 20 squares two dominoes, one going right and one going down, even for the squares on the right or bottom edge."
+    },
+    {
+      "key": "E",
+      "text": "62",
+      "correct": false,
+      "misconception": "I counted from each square to each of its neighbours, which counts every domino twice, once from each end."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-12",
+    "secondary": [
+      "CNT-16",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Count lying-flat and standing-up positions separately.",
+    "A flat domino fits wherever two squares sit side by side in a row. Count the positions in one row, then multiply by the number of rows. Do the same for the columns.",
+    "A row of 5 squares has 4 places for a flat domino; a column of 4 squares has 3 places for an upright one."
+  ],
+  "solutions": {
+    "reliable": "Flat dominoes: each row of 5 squares has 4 places, and there are 4 rows, so there are 16. Upright dominoes: each column of 4 squares has 3 places, and there are 5 columns, so there are 15. In total there are 16 + 15 = 31 positions. The transferable idea: count the positions of a shape by where its first square can go, in each direction separately.",
+    "elegant": "Every domino position matches one unit edge shared by two squares. Each of the 4 rows has 4 such edges between its squares, 16 in all, and each of the 3 lines between rows has 5, 15 in all. That makes 31."
+  },
+  "whyOnTest": "Sliding-window counting tests counting the positions in each direction, rather than cutting the board into pieces or counting each pair twice.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

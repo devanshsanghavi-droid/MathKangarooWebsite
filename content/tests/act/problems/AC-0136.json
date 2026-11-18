@@ -1,0 +1,56 @@
+{
+  "id": "AC-0136",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-03",
+  "difficulty": "medium",
+  "statement": "Two companies rent moving vans for one day. Company P charges $\\$36$ plus $\\$0.30$ per mile driven. Company Q charges $\\$18$ plus $\\$0.45$ per mile driven. For how many miles driven do the two companies charge the same amount?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I added the two per-mile rates instead of subtracting them, so I divided 18 by 0.75 and got 24."
+    },
+    {
+      "key": "B",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I divided the 18-dollar difference in fees by Company P's rate of 0.30 instead of by the 0.15 difference in rates."
+    },
+    {
+      "key": "C",
+      "text": "$120$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$360$",
+      "correct": false,
+      "misconception": "I added the two fees to get 54 and divided by the 0.15 difference in rates, which gave 360, but the fees should be subtracted."
+    }
+  ],
+  "hints": [
+    "Write a cost expression for each company in terms of the number of miles $m$.",
+    "Set $36 + 0.30m$ equal to $18 + 0.45m$ and solve for $m$.",
+    "Collecting like terms gives $18 = 0.15m$."
+  ],
+  "solutions": {
+    "reliable": "Set the costs equal: $36 + 0.30m = 18 + 0.45m$. Subtract $18$ and $0.30m$ from both sides: $18 = 0.15m$, so $m = 120$. Check: P charges $36 + 36 = 72$ dollars and Q charges $18 + 54 = 72$ dollars.",
+    "elegant": "Company Q starts $\\$18$ cheaper but loses $\\$0.15$ of that lead every mile, so the costs meet after $18 \\div 0.15 = 120$ miles."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

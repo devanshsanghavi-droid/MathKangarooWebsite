@@ -1,0 +1,67 @@
+{
+  "id": "KA-1347",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Eight parcels all have different weights. A balance compares two parcels at a time, one on each pan, and shows which one is heavier. What is the smallest number of weighings that is certain to find the heaviest parcel, however the results turn out?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted the rounds of a knockout, 8 to 4 to 2 to 1, instead of the weighings, but each round needs several weighings."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted only the first round, pairing the 8 parcels into 4 weighings, and forgot that the winners must be compared too."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought every parcel had to be weighed once, so I counted one weighing per parcel."
+    },
+    {
+      "key": "E",
+      "text": "28",
+      "correct": false,
+      "misconception": "I compared every pair of parcels, $8 \\times 7 \\div 2 = 28$ weighings, which is far more than needed."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-10",
+    "secondary": [
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "After a weighing, which parcel can no longer be the heaviest?",
+    "Each weighing can rule out at most one parcel, the lighter one, from being the heaviest. Count how many parcels must be ruled out, and check that a knockout really manages it in that many weighings.",
+    "Seven parcels must be ruled out, and each weighing rules out only one."
+  ],
+  "solutions": {
+    "reliable": "A knockout works: weigh any two parcels, keep the heavier, weigh it against a new parcel, and so on. Each weighing knocks out one parcel, so after 7 weighings only one is left, and it has beaten every other parcel directly or through a chain. Fewer weighings are not enough: a weighing only shows that one parcel is lighter than another, so it rules out at most one parcel. To be sure which parcel is heaviest, all 7 others must have lost at least once, which needs at least 7 weighings. The answer is 7. The transferable idea: when each test can eliminate at most one candidate, you need at least as many tests as candidates to eliminate.",
+    "elegant": null
+  },
+  "whyOnTest": "Tests balance reasoning: each weighing can only eliminate one candidate, so a knockout is best, and rounds are not the same as weighings.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

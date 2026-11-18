@@ -1,0 +1,56 @@
+{
+  "id": "AC-0286",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-05",
+  "difficulty": "medium",
+  "statement": "A robotics club has $7$ juniors and $5$ seniors. The club will choose $4$ of its members to attend a regional competition. The order of choosing does not matter. How many different groups of $4$ contain exactly $2$ seniors?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$31$",
+      "correct": false,
+      "misconception": "I counted 21 ways to pick the juniors and 10 ways to pick the seniors and added them, but each junior pair can go with each senior pair."
+    },
+    {
+      "key": "B",
+      "text": "$210$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$495$",
+      "correct": false,
+      "misconception": "I counted every group of 4 from all 12 members, ignoring the rule that exactly 2 must be seniors."
+    },
+    {
+      "key": "D",
+      "text": "$840$",
+      "correct": false,
+      "misconception": "I counted ordered picks, 7 times 6 for juniors and 5 times 4 for seniors, but the order of choosing does not matter."
+    }
+  ],
+  "hints": [
+    "An allowed group has exactly $2$ seniors and $2$ juniors. Count the two parts separately.",
+    "Count the ways to choose $2$ of $7$ juniors and $2$ of $5$ seniors, then combine with the multiplication principle.",
+    "$\\binom{7}{2} = 21$ and $\\binom{5}{2} = 10$. Multiply."
+  ],
+  "solutions": {
+    "reliable": "A group of $4$ with exactly $2$ seniors has $2$ juniors. There are $\\binom{7}{2} = 21$ ways to choose the juniors and $\\binom{5}{2} = 10$ ways to choose the seniors. Every junior pair can go with every senior pair, so there are $21 \\cdot 10 = 210$ groups.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

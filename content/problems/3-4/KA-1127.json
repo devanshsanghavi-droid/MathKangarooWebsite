@@ -1,0 +1,68 @@
+{
+  "id": "KA-1127",
+  "band": "3-4",
+  "points": 4,
+  "statement": "In how many two-digit numbers is one digit exactly twice the other digit? For example, 36 is one of them.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I only counted numbers where the tens digit is the smaller one, like 12, and forgot 21."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I stopped at 3 and 6 and forgot that 4 and 8 also work."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I also used the pair 5 and 10, which adds 2 more numbers, but 10 is not a single digit."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I counted each number twice, once for each of its two digits."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-04",
+    "secondary": [
+      "CNT-01",
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "Start with the smaller digit and see what the bigger one must be.",
+    "Casework on the smaller digit: for each choice, the bigger digit is fixed. Then decide how many two-digit numbers each pair of digits makes.",
+    "The pairs are 1 and 2, 2 and 4, 3 and 6, 4 and 8. Each pair can be written in two orders."
+  ],
+  "solutions": {
+    "reliable": "Let the smaller digit be 1, 2, 3, 4, ... Its double must also be a single digit, so the smaller digit is at most 4: the pairs are 1 and 2, 2 and 4, 3 and 6, 4 and 8. (The digit 0 only pairs with itself, and 00 is not a two-digit number.) Each pair gives two numbers: 12 and 21, 24 and 42, 36 and 63, 48 and 84. That is $4 \\times 2 = 8$ numbers. The transferable idea: fix the smaller part first, so every case is found exactly once.",
+    "elegant": null
+  },
+  "whyOnTest": "Choosing a clear case variable, here the smaller digit, makes sure every number is counted once and none is missed.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

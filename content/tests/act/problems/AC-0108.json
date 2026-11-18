@@ -1,0 +1,56 @@
+{
+  "id": "AC-0108",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-06",
+  "difficulty": "medium",
+  "statement": "A school club will sell exactly $80$ candles at a fair. Small candles sell for $\\$6$ each and cost the club $\\$1$ each to make. Large candles sell for $\\$10$ each and cost the club $\\$3$ each to make. What is the least number of large candles the club must sell to make a total profit of at least $\\$500$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I used the selling prices as if they were all profit, so I solved $6(80 - L) + 10L \\ge 500$, which gives $L \\ge 5$."
+    },
+    {
+      "key": "B",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I set up $5L + 7(80 - L) \\ge 500$, giving the small-candle profit to the large candles, and got $L \\le 30$, so I answered $30$."
+    },
+    {
+      "key": "C",
+      "text": "$50$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I counted profit only from the large candles, so I solved $7L \\ge 500$, got $L \\ge 71.4$, and rounded up to $72$."
+    }
+  ],
+  "hints": [
+    "Find the profit the club makes on one candle of each size.",
+    "Let $L$ be the number of large candles, so $80 - L$ are small. Write the total profit and require it to be at least $500$.",
+    "The total profit is $5(80 - L) + 7L = 400 + 2L$."
+  ],
+  "solutions": {
+    "reliable": "Each small candle earns $6 - 1 = 5$ dollars of profit, and each large candle earns $10 - 3 = 7$ dollars. With $L$ large candles and $80 - L$ small ones, the profit is $5(80 - L) + 7L = 400 + 2L$. We need $400 + 2L \\ge 500$, so $2L \\ge 100$ and $L \\ge 50$. Check: $50$ large and $30$ small give $350 + 150 = 500$ dollars.",
+    "elegant": "Selling all $80$ as small candles gives $80 \\cdot 5 = 400$ dollars of profit. Each time a small candle is swapped for a large one the profit rises by $7 - 5 = 2$ dollars. The club needs $100$ dollars more, so it needs $100 \\div 2 = 50$ swaps."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

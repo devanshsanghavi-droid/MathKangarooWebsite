@@ -1,0 +1,70 @@
+{
+  "id": "AM-1147",
+  "contest": "AMC8",
+  "slot": 24,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-SYMMETRY"
+  ],
+  "statement": "A solid cube has edge length $6$. At each of its $8$ corners, Leo slices off a small pyramid with a flat cut through the midpoints of the three edges that meet at that corner. What is the total surface area of the solid that remains?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$54 + 18\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I took both the square faces and the triangle faces to have side length $3$ instead of $3\\sqrt{2}$."
+    },
+    {
+      "key": "B",
+      "text": "$108$",
+      "correct": false,
+      "misconception": "I found the six square faces that are left of the cube's faces but forgot the eight triangles made by the cuts."
+    },
+    {
+      "key": "C",
+      "text": "$54 + 36\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I got the triangles right but used side length $3$ for the square faces, as if each face of the cube kept a $3 \\times 3$ square."
+    },
+    {
+      "key": "D",
+      "text": "$108 + 18\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I got the squares right but used side length $3$ for the triangles, the length of a cut-off piece of edge, instead of the distance between two midpoints."
+    },
+    {
+      "key": "E",
+      "text": "$108 + 36\\sqrt{3}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "What shape is left of each face of the cube, and what shape does each cut leave behind?",
+    "Each face of the cube becomes a square whose corners are the midpoints of that face's edges, and each cut is an equilateral triangle. Both have side length equal to the distance between the midpoints of two edges that meet at a corner.",
+    "That distance is $\\sqrt{3^2 + 3^2} = 3\\sqrt{2}$. The six squares give $6 \\cdot 18$, and the eight triangles give $8 \\cdot \\frac{\\sqrt{3}}{4}\\left(3\\sqrt{2}\\right)^2$."
+  ],
+  "solutions": {
+    "reliable": "Two midpoints of edges meeting at a corner are $3$ units from that corner along perpendicular edges, so they are $\\sqrt{3^2 + 3^2} = 3\\sqrt{2}$ apart. On each face of the cube, the four cuts remove the four corners and leave a square whose vertices are the midpoints of the face's edges; its side is $3\\sqrt{2}$, so its area is $18$, and the six faces give $108$. Each cut exposes a triangle whose three sides join midpoints of edges at one corner, so it is equilateral with side $3\\sqrt{2}$ and area $\\frac{\\sqrt{3}}{4} \\cdot 18 = \\frac{9\\sqrt{3}}{2}$; the eight cuts give $36\\sqrt{3}$. The total surface area is $108 + 36\\sqrt{3}$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-16",
+    "F-GEO-20",
+    "F-GEO-03"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

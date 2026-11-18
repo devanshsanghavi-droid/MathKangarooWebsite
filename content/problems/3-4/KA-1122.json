@@ -1,0 +1,67 @@
+{
+  "id": "KA-1122",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A big cube built from 27 small cubes stands on the floor in a corner, touching both walls. How many small cubes cannot be seen from anywhere in the room?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I thought the whole bottom layer is hidden because it sits on the floor."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I thought each of the three layers hides 4 cubes, but the top layer can be seen completely."
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": false,
+      "misconception": "I thought only the top layer can be seen, forgetting the two sides that face the room."
+    },
+    {
+      "key": "E",
+      "text": "19",
+      "correct": false,
+      "misconception": "I counted the cubes that can be seen instead of the ones that cannot."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-14",
+    "secondary": [
+      "GEO-13"
+    ]
+  },
+  "hints": [
+    "Which faces of the big cube face into the room?",
+    "Only the top and the two sides away from the walls can be seen. A small cube is hidden only if it is on none of those three faces. Count layer by layer.",
+    "Take away the top layer and the two open sides: what is left is a block 2 by 2 by 2 in the corner, which is 2 x 2 x 2 = 8 cubes."
+  ],
+  "solutions": {
+    "reliable": "Layer by layer from the bottom. In the bottom layer, the cubes along the two open sides can be seen, which leaves a 2 by 2 square of 4 hidden cubes in the corner. The middle layer is the same: 4 hidden. The top layer can all be seen from above. Total 4 + 4 + 0 = 8. The transferable idea: count hidden cubes layer by layer, deciding for each one whether any of its faces can be seen.",
+    "elegant": "Peel off the top layer and the two open side layers, and a 2 by 2 by 2 cube is left tucked in the corner: 8 hidden cubes."
+  },
+  "whyOnTest": "Counting what cannot be seen forces a careful picture of which faces are exposed, the core of every hidden-cube question.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0134",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-03",
+  "difficulty": "easy",
+  "statement": "A tank at a fish hatchery holds $1{,}800$ liters of water. When the drain is opened, the amount of water left in the tank $t$ minutes later is $W(t) = 1{,}800 - 45t$ liters. How many minutes after the drain is opened will the tank hold $630$ liters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I divided 630 by 45 and got 14, but 630 liters is the amount left in the tank, not the amount that has drained."
+    },
+    {
+      "key": "B",
+      "text": "$26$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I divided 1,800 by 45 and got 40 minutes, which is when the tank is completely empty, not when 630 liters remain."
+    },
+    {
+      "key": "D",
+      "text": "$54$",
+      "correct": false,
+      "misconception": "I added 630 to 1,800 instead of subtracting, then divided 2,430 by 45 to get 54."
+    }
+  ],
+  "hints": [
+    "Set $W(t)$ equal to $630$.",
+    "Solve $1{,}800 - 45t = 630$ by first finding how much water has drained.",
+    "$1{,}800 - 630 = 1{,}170$ liters have drained, at $45$ liters per minute."
+  ],
+  "solutions": {
+    "reliable": "Solve $1{,}800 - 45t = 630$. Subtract $630$ and add $45t$ to both sides: $1{,}170 = 45t$, so $t = 26$ minutes. Check: $1{,}800 - 45(26) = 1{,}800 - 1{,}170 = 630$.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

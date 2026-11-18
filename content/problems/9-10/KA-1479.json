@@ -1,0 +1,68 @@
+{
+  "id": "KA-1479",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Jug A holds 3 litres of a drink that is 40% juice. Jug B holds 4 litres of a drink that is 90% juice. Drink is poured from B into A until the drink in A is 60% juice. Then 1 litre is poured from A back into B. What percentage of the drink in B is now juice?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "75%",
+      "correct": false,
+      "misconception": "I just averaged the two strengths, 90% and 60%, without considering how much of each is in jug B."
+    },
+    {
+      "key": "B",
+      "text": "80%",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "84%",
+      "correct": false,
+      "misconception": "I forgot that 2 litres had already left jug B, so I added the returned litre to the full 4 litres."
+    },
+    {
+      "key": "D",
+      "text": "60%",
+      "correct": false,
+      "misconception": "I added up the juice in jug B correctly but divided by the original 4 litres instead of the 3 litres now in it."
+    },
+    {
+      "key": "E",
+      "text": "70%",
+      "correct": false,
+      "misconception": "I swapped the weights and mixed one part at 90% with two parts at 60%."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-08",
+    "secondary": [
+      "NUM-10",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "First work out how much drink was poured from B into A.",
+    "Track litres of juice, not percentages. After the first pour, find jug A's volume and juice; then follow the litre poured back and recount the juice and the volume in jug B.",
+    "Pouring $x$ litres gives $1.2 + 0.9x = 0.6(3 + x)$, so $x = 2$, and jug B is left with 2 litres of its 90% drink."
+  ],
+  "solutions": {
+    "reliable": "Jug A starts with $0.4 \\times 3 = 1.2$ litres of juice. Pouring $x$ litres from B adds $0.9x$ litres of juice, so $1.2 + 0.9x = 0.6(3 + x)$, which gives $0.3x = 0.6$ and $x = 2$. Jug B now holds 2 litres containing 1.8 litres of juice. One litre of A's 60% drink adds 0.6 litres of juice, so B holds 3 litres containing 2.4 litres of juice, and $2.4 \\div 3 = 0.8$, which is 80%. The transferable idea: in mixture problems, follow the amount of the ingredient, not the percentage.",
+    "elegant": "Jug B ends with 2 litres at 90% and 1 litre at 60%. Its strength is a weighted average, two thirds of the way from 60 towards 90 because there is twice as much of the 90% drink: $60 + 20 = 80$. The transferable idea: a two-part mixture's strength lies closer to the larger part, in proportion to the amounts."
+  },
+  "whyOnTest": "Mixture questions test whether you track the actual amount of an ingredient through several pours rather than averaging percentages.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

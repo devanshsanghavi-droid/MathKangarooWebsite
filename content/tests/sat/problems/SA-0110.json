@@ -1,0 +1,56 @@
+{
+  "id": "SA-0110",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-03",
+  "difficulty": "easy",
+  "statement": "The function $f$ is defined by $f(x) = 2(x + 3)^2 - 5$. What is the minimum value of $f(x)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I gave the $x$-value where the minimum happens, $x = -3$, instead of the minimum value itself."
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I read the vertex straight off $(x + 3)$ as $x = 3$ and gave that number."
+    },
+    {
+      "key": "D",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I set $x = 0$ and got $2(9) - 5 = 13$, which is the $y$-intercept, not the minimum."
+    }
+  ],
+  "hints": [
+    "What is the smallest value that $(x + 3)^2$ can have?",
+    "A square is never negative, so $2(x + 3)^2$ is smallest when $x + 3 = 0$. Find $f$ there.",
+    "At $x = -3$, $2(x + 3)^2 = 0$, so $f(-3) = 0 - 5$."
+  ],
+  "solutions": {
+    "reliable": "Since $(x + 3)^2 \\ge 0$ for every $x$, we have $2(x + 3)^2 \\ge 0$ and $f(x) \\ge -5$. The value $-5$ is reached at $x = -3$, so the minimum value of $f(x)$ is $-5$. In vertex form $a(x - h)^2 + k$ with $a > 0$, the minimum value is $k$.",
+    "elegant": null
+  },
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

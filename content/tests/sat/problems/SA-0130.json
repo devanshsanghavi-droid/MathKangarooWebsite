@@ -1,0 +1,56 @@
+{
+  "id": "SA-0130",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-01",
+  "difficulty": "easy",
+  "statement": "Which expression is equivalent to $(2x^3)^2 \\cdot 3x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6x^7$",
+      "correct": false,
+      "misconception": "I squared $x^3$ to get $x^6$ but did not square the coefficient $2$, so I had $2x^6 \\cdot 3x$."
+    },
+    {
+      "key": "B",
+      "text": "$12x^7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$12x^6$",
+      "correct": false,
+      "misconception": "I squared $x^3$ by adding the exponents $3$ and $2$ to get $x^5$, so I had $4x^5 \\cdot 3x$."
+    },
+    {
+      "key": "D",
+      "text": "$36x^8$",
+      "correct": false,
+      "misconception": "I multiplied $3x$ into the parentheses before squaring, so I computed $(6x^4)^2$."
+    }
+  ],
+  "hints": [
+    "Square the coefficient and the power of $x$ separately.",
+    "$(2x^3)^2 = 2^2 \\cdot (x^3)^2$. Raising a power to a power multiplies the exponents.",
+    "$(2x^3)^2 = 4x^6$. Now multiply $4x^6$ by $3x$, adding exponents."
+  ],
+  "solutions": {
+    "reliable": "First, $(2x^3)^2 = 2^2 \\cdot x^{3 \\cdot 2} = 4x^6$. Then $4x^6 \\cdot 3x = 12x^{6 + 1} = 12x^7$. Check with $x = 1$: $(2)^2 \\cdot 3 = 12$, and with $x = 2$: $16^2 \\cdot 6 = 1536 = 12 \\cdot 128$.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

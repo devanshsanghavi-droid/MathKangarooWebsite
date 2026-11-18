@@ -1,0 +1,56 @@
+{
+  "id": "AC-0027",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-01",
+  "difficulty": "medium",
+  "statement": "A rain barrel is $\\tfrac{2}{5}$ full. After $18$ gallons of water are added, the barrel is $\\tfrac{7}{10}$ full. How many gallons does the barrel hold when it is completely full?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5.4$",
+      "correct": false,
+      "misconception": "I multiplied 18 by the fraction that was added, $\\tfrac{3}{10}$, instead of dividing 18 by it."
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I subtracted the fractions top minus top and bottom minus bottom, $\\tfrac{7-2}{10-5} = 1$, so I thought 18 gallons filled the whole barrel."
+    },
+    {
+      "key": "C",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I divided 18 by the starting fraction $\\tfrac{2}{5}$, as if the 18 gallons were the water already in the barrel."
+    },
+    {
+      "key": "D",
+      "text": "$60$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "What fraction of the barrel do the 18 gallons fill?",
+    "Subtract $\\tfrac{2}{5}$ from $\\tfrac{7}{10}$ using a common denominator. That fraction of the full barrel equals 18 gallons.",
+    "$\\tfrac{7}{10} - \\tfrac{4}{10} = \\tfrac{3}{10}$, so $\\tfrac{3}{10}$ of the capacity is 18 gallons. Divide 18 by $\\tfrac{3}{10}$."
+  ],
+  "solutions": {
+    "reliable": "The 18 gallons raised the level from $\\tfrac{2}{5} = \\tfrac{4}{10}$ to $\\tfrac{7}{10}$, so they fill $\\tfrac{3}{10}$ of the barrel. If $C$ is the capacity, $\\tfrac{3}{10}C = 18$, so $C = 18 \\cdot \\tfrac{10}{3} = 60$ gallons. Check: $\\tfrac{2}{5}$ of 60 is 24, and $24 + 18 = 42$, which is $\\tfrac{7}{10}$ of 60. The idea: a change in amount divided by the change in fraction gives the whole.",
+    "elegant": "Each tenth of the barrel holds $18 \\div 3 = 6$ gallons, so ten tenths hold $60$ gallons."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

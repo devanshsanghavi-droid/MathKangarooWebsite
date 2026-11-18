@@ -1,0 +1,56 @@
+{
+  "id": "AC-0273",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-07",
+  "difficulty": "hard",
+  "statement": "Two fair six-sided dice, one red and one blue, are rolled. You are told that at least one of the dice shows a $3$. Given this information, what is the probability that the sum of the two dice is $8$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{1}{18}$",
+      "correct": false,
+      "misconception": "I counted the 2 rolls that have a 3 and a sum of 8 but divided by all 36 rolls instead of only the rolls with a 3."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{5}{36}$",
+      "correct": false,
+      "misconception": "I found the probability of a sum of 8 out of all 36 rolls and ignored the information that a 3 was showing."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{1}{6}$",
+      "correct": false,
+      "misconception": "I thought that once one die shows 3, the other die just has to show 5, which has probability 1 in 6, but either die could be the 3."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{2}{11}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The information shrinks the set of possible rolls. Which rolls have at least one $3$?",
+    "Count the ordered (red, blue) rolls with at least one $3$, then count how many of those have a sum of $8$.",
+    "There are $6 + 6 - 1 = 11$ rolls with at least one $3$. Of these, only $(3, 5)$ and $(5, 3)$ have a sum of $8$."
+  ],
+  "solutions": {
+    "reliable": "Rolls with at least one $3$: the red die is $3$ in $6$ rolls and the blue die is $3$ in $6$ rolls, and $(3, 3)$ was counted twice, so there are $11$ equally likely rolls. Of these, the ones with sum $8$ are $(3, 5)$ and $(5, 3)$. The probability is $\\dfrac{2}{11}$.",
+    "elegant": "By the formula, $P(\\text{sum } 8 \\mid \\text{a } 3) = \\dfrac{P(\\text{sum } 8 \\text{ and a } 3)}{P(\\text{a } 3)} = \\dfrac{2/36}{11/36} = \\dfrac{2}{11}$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

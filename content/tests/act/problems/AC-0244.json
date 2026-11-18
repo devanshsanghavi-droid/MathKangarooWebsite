@@ -1,0 +1,56 @@
+{
+  "id": "AC-0244",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-07",
+  "difficulty": "medium",
+  "statement": "On a park map drawn on a coordinate grid where each unit is $1$ kilometer, three trail markers are at $(-2, 1)$, $(4, 3)$ and $(1, 7)$. A ranger station covers the triangular region with these three markers as vertices. What is the area of that region, in square kilometers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I used the shoelace sum correctly and got 30, but I forgot to divide by 2 at the end."
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I found the 6 by 6 rectangle that just encloses the triangle and gave its area, 36, without cutting off the three corner triangles."
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I drew the 6 by 6 enclosing rectangle and added up the three right triangles outside the region, 21, and gave that instead of subtracting it from 36."
+    }
+  ],
+  "hints": [
+    "None of the sides is horizontal or vertical, so try boxing the triangle in a rectangle.",
+    "The rectangle from $x = -2$ to $x = 4$ and $y = 1$ to $y = 7$ encloses the triangle. Subtract the three right triangles in its corners.",
+    "The rectangle has area $36$. The corner triangles have legs $6$ and $2$, $3$ and $4$, and $3$ and $6$, so their areas are $6$, $6$ and $9$."
+  ],
+  "solutions": {
+    "reliable": "Enclose the triangle in the rectangle with $-2 \\le x \\le 4$ and $1 \\le y \\le 7$, which has area $6 \\cdot 6 = 36$. Outside the triangle are three right triangles: between $(-2, 1)$ and $(4, 3)$, with legs $6$ and $2$ (area $6$); between $(4, 3)$ and $(1, 7)$, with legs $3$ and $4$ (area $6$); and between $(1, 7)$ and $(-2, 1)$, with legs $3$ and $6$ (area $9$). The triangle's area is $36 - (6 + 6 + 9) = 15$ square kilometers.",
+    "elegant": "By the shoelace formula, the area is $\\frac{1}{2}\\left|(-2)(3 - 7) + 4(7 - 1) + 1(1 - 3)\\right| = \\frac{1}{2}|8 + 24 - 2| = 15$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

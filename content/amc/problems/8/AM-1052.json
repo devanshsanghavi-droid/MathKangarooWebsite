@@ -1,0 +1,66 @@
+{
+  "id": "AM-1052",
+  "contest": "AMC8",
+  "slot": 18,
+  "area": "ALG",
+  "topic": "ALG-02",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Last month, $40\\%$ of the members of a chess club were girls. Then $10$ boys joined the club and nobody left, and now $30\\%$ of the members are girls. How many girls must join the club now so that exactly half of the members are girls?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I used last month's $18$ boys instead of the $28$ boys there are now, and found $18 - 12 = 6$."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I took half of the $40$ members, which is $20$, and subtracted the $12$ girls. But the new girls make the club bigger, so half is no longer $20$."
+    },
+    {
+      "key": "C",
+      "text": "$16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I worked out that there are $28$ boys now and gave that as the number of girls who must join, forgetting the $12$ girls already in the club."
+    },
+    {
+      "key": "E",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I wrote $0.4N = 0.3N + 10$, which gave $N = 100$ with $40$ girls and $70$ boys, so I said $70 - 40 = 30$ girls must join. The $10$ belongs inside: $0.3(N + 10)$."
+    }
+  ],
+  "hints": [
+    "The number of girls did not change when the boys joined.",
+    "If the club had $N$ members last month, then the girls give $0.4N = 0.3(N + 10)$.",
+    "So $N = 30$: there were $12$ girls and $18$ boys, and now there are $12$ girls and $28$ boys. Exactly half are girls when the girls equal the boys."
+  ],
+  "solutions": {
+    "reliable": "Let $N$ be last month's number of members. The girls did not change, so $0.4N = 0.3(N + 10)$, which gives $0.1N = 3$ and $N = 30$. There were $12$ girls and $18$ boys; now there are $12$ girls and $28$ boys. Exactly half the members are girls when there are as many girls as boys, so $28 - 12 = 16$ girls must join. Check: then there are $28$ girls out of $56$ members, which is one half.",
+    "elegant": "The same girls were $\\frac{4}{10}$ of the old club and are $\\frac{3}{10}$ of the new club, so the new club is $\\frac43$ as big as the old one. The extra $\\frac13$ of the old club is the $10$ boys, so the old club had $30$ members: $12$ girls and $18$ boys. Now there are $28$ boys, so $16$ more girls are needed."
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

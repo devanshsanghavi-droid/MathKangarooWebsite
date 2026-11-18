@@ -1,0 +1,56 @@
+{
+  "id": "SA-0127",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-05",
+  "difficulty": "medium",
+  "statement": "A polynomial function $p$ of degree $3$ has zeros at $x = -2$, $x = 1$ and $x = 4$, and no other zeros. If $p(0) = 16$, what is the value of $p(2)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-8$",
+      "correct": false,
+      "misconception": "I wrote $p(x) = (x + 2)(x - 1)(x - 4)$ with a leading coefficient of $1$ and never used $p(0) = 16$, so I got $p(2) = 4 \\cdot 1 \\cdot (-2)$."
+    },
+    {
+      "key": "C",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I wrote the factors with the wrong signs, $p(x) = a(x - 2)(x + 1)(x + 4)$, so $x = 2$ made a factor zero."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I found $a = 2$ correctly, but when I multiplied $2 \\cdot 4 \\cdot 1 \\cdot (-2)$ I dropped the negative sign."
+    }
+  ],
+  "hints": [
+    "Each zero $r$ of a polynomial gives a factor $x - r$.",
+    "Write $p(x) = a(x + 2)(x - 1)(x - 4)$ and use $p(0) = 16$ to find the constant $a$.",
+    "$p(0) = a(2)(-1)(-4) = 8a = 16$, so $a = 2$. Now evaluate $p(2) = 2(2 + 2)(2 - 1)(2 - 4)$."
+  ],
+  "solutions": {
+    "reliable": "Because the zeros are $-2$, $1$ and $4$ and $p$ has degree $3$, $p(x) = a(x + 2)(x - 1)(x - 4)$ for some constant $a$. Then $p(0) = a(2)(-1)(-4) = 8a$, and $8a = 16$ gives $a = 2$. So $p(2) = 2(4)(1)(-2) = -16$.",
+    "elegant": "Compare $p(2)$ with $p(0)$ directly: $\\frac{p(2)}{p(0)} = \\frac{(4)(1)(-2)}{(2)(-1)(-4)} = \\frac{-8}{8} = -1$, so $p(2) = -16$ without finding $a$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

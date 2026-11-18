@@ -1,0 +1,69 @@
+{
+  "id": "AM-1082",
+  "contest": "AMC8",
+  "slot": 3,
+  "area": "GEO",
+  "topic": "GEO-03",
+  "types": [
+    "T-AUXILIARY",
+    "T-COORD"
+  ],
+  "statement": "Starting at a flagpole, Mei walks $7$ meters north, then $4$ meters east, then $2$ meters south, then $8$ meters east. How many meters is she from the flagpole, measured in a straight line?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I found that she ends 5 meters north and 12 meters east, then subtracted 12 - 5 = 7 instead of using the Pythagorean theorem."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I treated the 2 meters south as 2 more meters north, so I got 9 north and 12 east, which gives 15."
+    },
+    {
+      "key": "D",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I added the net distances, 5 north plus 12 east = 17, as if the straight line went along both directions."
+    },
+    {
+      "key": "E",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I added every part of the walk, 7 + 4 + 2 + 8 = 21, which is how far she walked, not how far she ended up from the flagpole."
+    }
+  ],
+  "hints": [
+    "Combine all the north and south moves into one, and all the east moves into one.",
+    "She ends up $7 - 2 = 5$ meters north and $4 + 8 = 12$ meters east. Those are the legs of a right triangle.",
+    "The distance is $\\sqrt{5^2 + 12^2} = \\sqrt{169}$."
+  ],
+  "solutions": {
+    "reliable": "Her net movement north is $7 - 2 = 5$ m and her net movement east is $4 + 8 = 12$ m. The straight-line distance is the hypotenuse of a right triangle with these legs: $\\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$ meters.",
+    "elegant": "Once the net legs are $5$ and $12$, recognize the Pythagorean triple $5$, $12$, $13$."
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

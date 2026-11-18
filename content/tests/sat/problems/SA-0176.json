@@ -1,0 +1,56 @@
+{
+  "id": "SA-0176",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-08",
+  "difficulty": "easy",
+  "statement": "The function $f$ is defined by $f(x) = x^2 + 1$. Which expression is equivalent to $f(x + 3)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$x^2 + 4$",
+      "correct": false,
+      "misconception": "I added $3$ to the output instead of replacing $x$ with $x + 3$, so I got $x^2 + 1 + 3$."
+    },
+    {
+      "key": "B",
+      "text": "$x^2 + 10$",
+      "correct": false,
+      "misconception": "I squared $x + 3$ as $x^2 + 9$, leaving out the middle term $6x$."
+    },
+    {
+      "key": "C",
+      "text": "$x^2 + 3x + 10$",
+      "correct": false,
+      "misconception": "I expanded $(x + 3)^2$ as $x^2 + 3x + 9$, using $3x$ instead of $6x$ for the middle term."
+    },
+    {
+      "key": "D",
+      "text": "$x^2 + 6x + 10$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Replace every $x$ in the formula for $f$ with the whole expression $x + 3$.",
+    "$f(x + 3) = (x + 3)^2 + 1$. Expand the square carefully.",
+    "$(x + 3)^2 = x^2 + 6x + 9$, so add $1$ to that."
+  ],
+  "solutions": {
+    "reliable": "$f(x + 3) = (x + 3)^2 + 1 = (x^2 + 6x + 9) + 1 = x^2 + 6x + 10$. Check at $x = 1$: $f(4) = 16 + 1 = 17$, and $1 + 6 + 10 = 17$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

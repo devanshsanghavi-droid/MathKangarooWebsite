@@ -1,0 +1,68 @@
+{
+  "id": "AM-1220",
+  "contest": "AMC8",
+  "slot": 24,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "A positive integer $N$ has exactly $12$ positive divisors. The number $3N$ has exactly $16$ positive divisors, and the number $2N$ has exactly $18$ positive divisors. How many positive divisors does $6N$ have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I saw that multiplying by $3$ added $4$ divisors and multiplying by $2$ added $6$, so I added both increases to $12$."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$34$",
+      "correct": false,
+      "misconception": "I added the divisor counts of $3N$ and $2N$, getting $16 + 18 = 34$."
+    },
+    {
+      "key": "D",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I multiplied the $4$ divisors of $6$ by the $12$ divisors of $N$, as if divisor counts always multiply."
+    },
+    {
+      "key": "E",
+      "text": "$288$",
+      "correct": false,
+      "misconception": "I multiplied the divisor counts of $3N$ and $2N$, getting $16 \\cdot 18 = 288$."
+    }
+  ],
+  "hints": [
+    "Write $N = 2^a \\cdot 3^b \\cdot m$, where $m$ is not divisible by $2$ or $3$, and say $m$ has $d$ divisors. Write each divisor count as a product.",
+    "$(a+1)(b+1)d = 12$, $(a+1)(b+2)d = 16$ and $(a+2)(b+1)d = 18$. Compare the first equation with each of the other two.",
+    "Subtracting the first from the second gives $(a+1)d = 4$, so $b + 1 = 3$. Subtracting the first from the third gives $(b+1)d = 6$, so $d = 2$ and $a + 1 = 2$. Then $6N = 2^{a+1} \\cdot 3^{b+1} \\cdot m$."
+  ],
+  "solutions": {
+    "reliable": "Write $N = 2^a \\cdot 3^b \\cdot m$ with $m$ not divisible by $2$ or $3$, and let $m$ have $d$ divisors. Then $N$ has $(a+1)(b+1)d = 12$ divisors, $3N$ has $(a+1)(b+2)d = 16$ and $2N$ has $(a+2)(b+1)d = 18$. Subtracting the first equation from the second gives $(a+1)d = 4$, so $(b+1) \\cdot 4 = 12$ and $b = 2$. Subtracting the first from the third gives $(b+1)d = 6$, so $3d = 6$, $d = 2$, and then $a + 1 = 2$, so $a = 1$. Now $6N = 2^{a+1} \\cdot 3^{b+1} \\cdot m$ has $(a+2)(b+2)d = 3 \\cdot 4 \\cdot 2 = 24$ divisors. For example, $N = 90 = 2 \\cdot 3^2 \\cdot 5$ has $12$ divisors, $270$ has $16$, $180$ has $18$, and $6N = 540$ has $24$.",
+    "elegant": "Multiplying by $3$ changes the factor $(b+1)$ in the divisor count to $(b+2)$, so it multiplies the count by $\\frac{b+2}{b+1} = \\frac{16}{12}$. Multiplying by $2$ multiplies the count by $\\frac{a+2}{a+1} = \\frac{18}{12}$. Multiplying by $6$ does both, so $6N$ has $12 \\cdot \\frac{16}{12} \\cdot \\frac{18}{12} = 24$ divisors."
+  },
+  "formulas": [
+    "F-NT-01"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

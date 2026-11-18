@@ -1,0 +1,56 @@
+{
+  "id": "SA-0161",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-06",
+  "difficulty": "medium",
+  "statement": "How many integers $n$ satisfy the inequality $|3n - 4| \\le 11$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I solved the inequality correctly but counted only the integers from $0$ to $5$, leaving out the negative integers $-2$ and $-1$ even though they also satisfy it."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I forgot to add $4$ to the left side, so I used $-11 \\le 3n \\le 15$, which allows $n = -3$ through $5$."
+    },
+    {
+      "key": "D",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I treated the inequality as strict and left out $n = 5$, even though $|3(5) - 4| = 11$ satisfies $\\le 11$."
+    }
+  ],
+  "hints": [
+    "$|3n - 4| \\le 11$ means $3n - 4$ is between $-11$ and $11$, inclusive.",
+    "Solve $-11 \\le 3n - 4 \\le 11$ for $n$, then count the integers in that interval.",
+    "Adding $4$ gives $-7 \\le 3n \\le 15$, so $-\\frac{7}{3} \\le n \\le 5$."
+  ],
+  "solutions": {
+    "reliable": "Rewrite as $-11 \\le 3n - 4 \\le 11$. Adding $4$ gives $-7 \\le 3n \\le 15$, and dividing by $3$ gives $-2.33\\ldots \\le n \\le 5$. The integers in this interval are $-2, -1, 0, 1, 2, 3, 4, 5$, which is $8$ integers. Check the ends: $|3(-2) - 4| = 10 \\le 11$ and $|3(5) - 4| = 11 \\le 11$, while $|3(-3) - 4| = 13$ and $|3(6) - 4| = 14$ are too big.",
+    "elegant": null
+  },
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

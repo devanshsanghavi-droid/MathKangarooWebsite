@@ -1,0 +1,66 @@
+{
+  "id": "AM-1059",
+  "contest": "AMC8",
+  "slot": 15,
+  "area": "ALG",
+  "topic": "ALG-02",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "In a class, the average height of the boys is $150$ cm and the average height of the girls is $140$ cm. The average height of everyone in the class is $146$ cm. There are $12$ girls in the class. How many students are in the class?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I found that there are $18$ boys and gave that as the number of students, forgetting to add the $12$ girls."
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I set up the ratio backwards, boys to girls $= 4 : 6$, which gave $8$ boys and $20$ students. With fewer boys, the class average would be closer to the girls' $140$."
+    },
+    {
+      "key": "C",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I assumed there were as many boys as girls, $12$ of each. But then the class average would be $145$, not $146$."
+    },
+    {
+      "key": "D",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I used boys to girls $= 10 : 6$, comparing the whole $10$ cm gap between the averages with the girls' $6$ cm gap, which gave $20$ boys and $32$ students."
+    }
+  ],
+  "hints": [
+    "The class average is closer to the boys' average than to the girls', so there must be more boys than girls.",
+    "Each boy is 4 cm above the class average and each girl is 6 cm below it. The amounts above and below the average must balance.",
+    "$4 \\times (\\text{number of boys}) = 6 \\times 12$, so there are $18$ boys."
+  ],
+  "solutions": {
+    "reliable": "Let $b$ be the number of boys. The total height of the class is $150b + 140 \\cdot 12$, and it is also $146(b + 12)$. So $150b + 1680 = 146b + 1752$, which gives $4b = 72$ and $b = 18$. The class has $18 + 12 = 30$ students.",
+    "elegant": "Measure every height from the class average. On average each boy is $4$ cm above it and each girl is $6$ cm below it, and these must cancel: $4b = 6 \\cdot 12 = 72$. So $b = 18$, and there are $30$ students."
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

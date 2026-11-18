@@ -1,0 +1,62 @@
+{
+  "id": "AM-1026",
+  "contest": "AMC8",
+  "slot": 9,
+  "area": "ALG",
+  "topic": "ALG-02",
+  "types": ["T-SUBSTITUTION"],
+  "statement": "Five bags of rice have an average weight of $18$ kilograms. Two of the bags are taken away, and the three bags that are left have an average weight of $14$ kilograms. What is the average weight, in kilograms, of the two bags that were taken away?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I subtracted the two averages, 18 - 14 = 4, as if that were the weight of the bags taken away."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I averaged the two averages, (18 + 14) / 2 = 16, but the averages are over different numbers of bags."
+    },
+    {
+      "key": "C",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I thought the removed bags had to be as far above 18 as the remaining bags are below it, so 18 + 4 = 22, but three bags are left and only two were removed."
+    },
+    {
+      "key": "D",
+      "text": "$24$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I found the total weight of the two removed bags, 90 - 42 = 48, and forgot to divide by 2."
+    }
+  ],
+  "hints": [
+    "Turn each average into a total weight.",
+    "The five bags weigh $5 \\cdot 18 = 90$ kilograms, and the three bags left weigh $3 \\cdot 14 = 42$ kilograms.",
+    "The two removed bags weigh $90 - 42 = 48$ kilograms together. Share that between two bags."
+  ],
+  "solutions": {
+    "reliable": "The five bags weigh $5 \\cdot 18 = 90$ kilograms in all, and the three that are left weigh $3 \\cdot 14 = 42$ kilograms. So the two removed bags weigh $90 - 42 = 48$ kilograms together, and their average weight is $48 / 2 = 24$ kilograms.",
+    "elegant": "Each of the three bags left is, on average, $4$ kilograms below $18$, for a total shortfall of $12$ kilograms. Since all five bags average $18$, the two removed bags must be $12$ kilograms above $18$ in total, or $6$ each, so they average $18 + 6 = 24$ kilograms."
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

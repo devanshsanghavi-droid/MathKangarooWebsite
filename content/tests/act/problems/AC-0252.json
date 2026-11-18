@@ -1,0 +1,56 @@
+{
+  "id": "AC-0252",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-01",
+  "difficulty": "easy",
+  "statement": "A bike-repair stand counted its customers on $5$ Saturdays: $8$, $11$, $12$, $19$ and $25$. The owner wants to include a sixth Saturday whose count would leave the mean of the data unchanged. What count for the sixth Saturday would do this?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I picked the middle value, 12, which is the median, but the question is about keeping the mean the same."
+    },
+    {
+      "key": "B",
+      "text": "$12.5$",
+      "correct": false,
+      "misconception": "I added the 5 counts to get 75 and divided by 6 because there would be 6 Saturdays, and gave that as the new count."
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$16.5$",
+      "correct": false,
+      "misconception": "I went halfway between the smallest count, 8, and the largest count, 25, and got 16.5."
+    }
+  ],
+  "hints": [
+    "Find the current mean first.",
+    "Adding a value equal to the current mean keeps the mean the same. Why?",
+    "The current mean is $\\dfrac{8 + 11 + 12 + 19 + 25}{5} = \\dfrac{75}{5}$."
+  ],
+  "solutions": {
+    "reliable": "The current mean is $\\dfrac{75}{5} = 15$. For the mean of $6$ counts to stay $15$, their total must be $6 \\cdot 15 = 90$, so the sixth count is $90 - 75 = 15$.",
+    "elegant": "A new value pulls the mean toward itself. The only value that pulls it nowhere is the mean itself, $15$."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

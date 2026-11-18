@@ -1,0 +1,56 @@
+{
+  "id": "SA-0213",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-03",
+  "difficulty": "hard",
+  "statement": "A store sets the list price of each item $60\\%$ above the amount the store paid for it. During a sale, the store takes $x\\%$ off the list price of an item and still makes a profit equal to $20\\%$ of the amount it paid. What is the value of $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$25$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$33\\frac{1}{3}$",
+      "correct": false,
+      "misconception": "I found that the price has to drop from 1.6 times the cost to 1.2 times the cost, but I divided the drop of 0.4 by the sale factor 1.2 instead of by the list factor 1.6."
+    },
+    {
+      "key": "C",
+      "text": "$37.5$",
+      "correct": false,
+      "misconception": "I found the discount that brings the price all the way back down to what the store paid, $0.6 \\div 1.6$, forgetting that the store still keeps a $20\\%$ profit."
+    },
+    {
+      "key": "D",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I subtracted the percents, $60 - 20 = 40$, but the discount is a percent of the list price, not of the amount the store paid."
+    }
+  ],
+  "hints": [
+    "Pick a convenient amount for what the store paid, such as $\\$100$.",
+    "Find the list price and the sale price in terms of the cost, then find what percent of the list price was taken off.",
+    "If the store paid $\\$100$, the list price is $\\$160$ and the sale price is $\\$120$. The discount is $\\$40$ out of $\\$160$."
+  ],
+  "solutions": {
+    "reliable": "Let the store pay $c$ dollars. The list price is $1.6c$ and the sale price is $1.2c$. Then $1.6c\\left(1 - \\frac{x}{100}\\right) = 1.2c$, so $1 - \\frac{x}{100} = \\frac{1.2}{1.6} = 0.75$ and $x = 25$. Check with $c = 100$: $25\\%$ off $\\$160$ is $\\$120$, which is $20\\%$ above $\\$100$.",
+    "elegant": "The sale price is $\\frac{1.2}{1.6} = \\frac{3}{4}$ of the list price, so one quarter, or $25\\%$, was taken off."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

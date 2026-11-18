@@ -1,0 +1,68 @@
+{
+  "id": "AM-1172",
+  "contest": "AMC8",
+  "slot": 8,
+  "area": "NT",
+  "topic": "NT-09",
+  "types": [
+    "T-PARITY",
+    "T-INVARIANT",
+    "T-CASEWORK"
+  ],
+  "statement": "A $4 \\times 4$ grid has a lamp in each of its $16$ squares, and all the lamps start off. A move consists of choosing one row or one column and switching every lamp in it: a lamp that is off turns on, and a lamp that is on turns off. Any number of moves may be made, including none. Afterwards, Kim counts how many lamps are on. How many different counts are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I only switched rows, or only columns, so I found only the multiples of $4$: $0, 4, 8, 12, 16$."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found $4, 6, 8, 10, 12$ and $16$ but forgot that $0$ lamps on is also possible, for example when no moves are made."
+    },
+    {
+      "key": "C",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I saw that every count is even and assumed every even number from $0$ to $16$ is possible, including $2$ and $14$."
+    },
+    {
+      "key": "E",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I assumed every number from $0$ to $16$ can be reached."
+    }
+  ],
+  "hints": [
+    "Switching the same row twice undoes it, so all that matters is which rows and which columns are switched an odd number of times.",
+    "Say $r$ rows and $c$ columns are switched an odd number of times. A lamp is on exactly when its row or its column was switched, but not both. Count these lamps in terms of $r$ and $c$.",
+    "The number of lamps on is $r(4 - c) + c(4 - r) = 4r + 4c - 2rc$, where $r$ and $c$ can each be anything from $0$ to $4$. List the values."
+  ],
+  "solutions": {
+    "reliable": "Only whether each row and each column is switched an odd or even number of times matters. Say $r$ rows and $c$ columns are switched an odd number of times. A lamp is switched by its row and by its column, so it is on exactly when exactly one of the two was switched. That gives $r(4 - c) + c(4 - r) = 4r + 4c - 2rc$ lamps on. For $r = 0$ this is $4c$ and for $r = 4$ it is $16 - 4c$: the values $0, 4, 8, 12, 16$. For $r = 1$ it is $4 + 2c$ and for $r = 3$ it is $12 - 2c$: the values $4, 6, 8, 10, 12$. For $r = 2$ it is always $8$. Together the possible counts are $0, 4, 6, 8, 10, 12, 16$, which is $7$ counts.",
+    "elegant": "The count $4r + 4c - 2rc$ equals $8 - \\frac{(4 - 2r)(4 - 2c)}{2}$. Each of $4 - 2r$ and $4 - 2c$ is one of $-4, -2, 0, 2, 4$, so their product is one of $0, \\pm 4, \\pm 8, \\pm 16$. The count is therefore one of $8$, $8 \\pm 2$, $8 \\pm 4$, $8 \\pm 8$, which are the $7$ values $0, 4, 6, 8, 10, 12, 16$."
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

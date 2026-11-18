@@ -1,0 +1,56 @@
+{
+  "id": "AC-0157",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-04",
+  "difficulty": "medium",
+  "statement": "In the $xy$-plane, the graph of $y = x^2 + kx + 9$, where $k$ is a constant, has no $x$-intercepts. Which of the following describes all possible values of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-6 < k < 6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-6 \\le k \\le 6$",
+      "correct": false,
+      "misconception": "I included $k = 6$ and $k = -6$, but for those values the discriminant is $0$ and the graph touches the $x$-axis at one point."
+    },
+    {
+      "key": "C",
+      "text": "$-3 < k < 3$",
+      "correct": false,
+      "misconception": "I used $b^2 - 4ac$ but forgot the $4$, so I solved $k^2 - 9 < 0$."
+    },
+    {
+      "key": "D",
+      "text": "$k < -6$ or $k > 6$",
+      "correct": false,
+      "misconception": "I set the discriminant greater than $0$, but that is the condition for two $x$-intercepts, not none."
+    }
+  ],
+  "hints": [
+    "Think about the discriminant of $x^2 + kx + 9$.",
+    "A quadratic has no real zeros exactly when $b^2 - 4ac < 0$. Here $a = 1$, $b = k$ and $c = 9$.",
+    "$k^2 - 4(1)(9) < 0$ means $k^2 < 36$. Which values of $k$ have a square less than $36$?"
+  ],
+  "solutions": {
+    "reliable": "The graph has no $x$-intercepts exactly when $x^2 + kx + 9 = 0$ has no real solutions, that is when the discriminant is negative: $k^2 - 4(1)(9) < 0$, so $k^2 < 36$. This holds exactly when $-6 < k < 6$. At $k = \\pm 6$ the quadratic is $(x \\pm 3)^2$, which touches the $x$-axis, so those values are excluded.",
+    "elegant": "The graph is an upward parabola with minimum value $9 - \\frac{k^2}{4}$ (at $x = -\\frac{k}{2}$). It misses the $x$-axis exactly when this minimum is positive: $k^2 < 36$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0192",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-04",
+  "difficulty": "easy",
+  "statement": "The stream of water from a park fountain follows the path $y = -0.5(x - 3)^2 + 4.5$, where $x$ is the horizontal distance, in feet, from the nozzle and $y$ is the height, in feet, of the water above the nozzle. At what horizontal distance from the nozzle, in feet, does the water come back down to the height of the nozzle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I gave the $x$-coordinate of the vertex, $3$, which is where the water is highest, not where it comes back down."
+    },
+    {
+      "key": "B",
+      "text": "$4.5$",
+      "correct": false,
+      "misconception": "I gave the maximum height, $4.5$ feet, instead of the horizontal distance where the height is back to $0$."
+    },
+    {
+      "key": "C",
+      "text": "about $5.1$",
+      "correct": false,
+      "misconception": "I solved $(x - 3)^2 = 4.5$ without dividing by $0.5$ first, so I got $x = 3 + \\sqrt{4.5} \\approx 5.1$."
+    },
+    {
+      "key": "D",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The height of the nozzle is $y = 0$. Set the expression equal to $0$.",
+    "$-0.5(x - 3)^2 + 4.5 = 0$ gives $(x - 3)^2 = \\frac{4.5}{0.5}$. Solve, and pick the solution that is not the nozzle itself.",
+    "$(x - 3)^2 = 9$, so $x - 3 = \\pm 3$, giving $x = 0$ (the nozzle) or $x = 6$."
+  ],
+  "solutions": {
+    "reliable": "Set $y = 0$: $-0.5(x - 3)^2 + 4.5 = 0$, so $(x - 3)^2 = 9$ and $x - 3 = \\pm 3$. That gives $x = 0$, which is the nozzle, and $x = 6$. The water comes back down $6$ feet from the nozzle.",
+    "elegant": "The path is symmetric about its vertex at $x = 3$. It starts at the nozzle, $x = 0$, which is $3$ feet left of the vertex, so it returns to the same height $3$ feet right of the vertex, at $x = 6$."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

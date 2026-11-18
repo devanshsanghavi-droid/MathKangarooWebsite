@@ -1,0 +1,56 @@
+{
+  "id": "AC-0127",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-01",
+  "difficulty": "easy",
+  "statement": "The table below gives some values of the function $f$. $$\\begin{array}{c|cccccc} x & -2 & -1 & 0 & 1 & 2 & 3 \\\\ \\hline f(x) & 7 & 4 & 3 & 4 & 7 & 12 \\end{array}$$ The function $g$ is defined by $g(x) = 2x - 1$. What is the value of $f(g(2))$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I worked out g(2) as 2(2 - 1) = 2 instead of 2(2) - 1 = 3, and then read f(2) = 7 from the table."
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I did the functions in the wrong order: I read f(2) = 7 from the table and then found g(7) = 13."
+    },
+    {
+      "key": "D",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I multiplied instead of composing: f(2) = 7 and g(2) = 3, and 7 times 3 is 21."
+    }
+  ],
+  "hints": [
+    "Work from the inside out: find $g(2)$ first.",
+    "Once you have $g(2)$, use that number as the input to $f$ and read the table.",
+    "$g(2) = 2(2) - 1 = 3$, and the table gives $f(3)$."
+  ],
+  "solutions": {
+    "reliable": "First, $g(2) = 2(2) - 1 = 3$. Then $f(g(2)) = f(3)$, and the table gives $f(3) = 12$.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0284",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "hard",
+  "statement": "A corner of a garden is shaped like a right triangle. One leg runs $10$ meters along a north fence, the other leg runs $15$ meters along an east fence, and a straight path forms the hypotenuse. A square flower bed is placed with one corner at the right angle, two of its sides along the fences, and the opposite corner touching the path. What is the side length of the flower bed, in meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I matched the legs the wrong way for the small triangle along the $10$-meter fence and wrote $\\frac{10 - s}{s} = \\frac{15}{10}$, which gave $s = 4$."
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I assumed the bed's far corner is the midpoint of the path, which is $5$ meters from the $15$-meter fence, so I took $5$ as the side length without checking that the bed is a square."
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I matched the legs the wrong way for the small triangle along the $15$-meter fence and wrote $\\frac{s}{15 - s} = \\frac{15}{10}$, which gave $s = 9$."
+    }
+  ],
+  "hints": [
+    "The square cuts off two small right triangles, and each is similar to the whole garden triangle.",
+    "Let the side be $s$. The small triangle along the $10$-meter fence has legs $10 - s$ (along the fence) and $s$. Its legs must be in the same ratio as the big triangle's legs, $10 : 15$.",
+    "$\\frac{10 - s}{s} = \\frac{10}{15}$ gives $30 - 3s = 2s$."
+  ],
+  "solutions": {
+    "reliable": "Let the square have side $s$. Above the square, along the $10$-meter fence, is a small right triangle with a leg of $10 - s$ along the fence and a leg of $s$ parallel to the east fence. It is similar to the garden triangle, so the ratio of its fence-direction legs matches: $\\frac{10 - s}{s} = \\frac{10}{15} = \\frac{2}{3}$. Cross-multiplying, $30 - 3s = 2s$, so $s = 6$. Check with the other small triangle: legs $s = 6$ and $15 - 6 = 9$, and $\\frac{6}{9} = \\frac{2}{3}$, the same ratio as $10 : 15$.",
+    "elegant": "Put the right angle at the origin, with the path on the line $\\frac{x}{15} + \\frac{y}{10} = 1$. The square's far corner is $(s, s)$, so $s\\left(\\frac{1}{15} + \\frac{1}{10}\\right) = 1$, which gives $s \\cdot \\frac{1}{6} = 1$ and $s = 6$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

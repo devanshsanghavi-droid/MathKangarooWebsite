@@ -1,0 +1,56 @@
+{
+  "id": "SA-0188",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-06",
+  "difficulty": "medium",
+  "statement": "Which equation has exactly two solutions, $x = 3$ and $x = 11$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$|x + 7| = 4$",
+      "correct": false,
+      "misconception": "I found the midpoint, $7$, but wrote $x + 7$ inside the absolute value, which centers the solutions at $-7$."
+    },
+    {
+      "key": "B",
+      "text": "$|x - 4| = 7$",
+      "correct": false,
+      "misconception": "I swapped the center and the distance, using $4$ as the center and $7$ as the distance."
+    },
+    {
+      "key": "C",
+      "text": "$|x - 3| = 11$",
+      "correct": false,
+      "misconception": "I used the smaller solution, $3$, as the center and the larger solution, $11$, as the distance, instead of using their midpoint and half the distance between them."
+    },
+    {
+      "key": "D",
+      "text": "$|x - 7| = 4$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "$|x - a| = d$ means $x$ is exactly $d$ units from $a$ on the number line.",
+    "The two solutions should be the same distance from the center, so the center is the midpoint of $3$ and $11$.",
+    "The midpoint is $7$ and each solution is $4$ units from it."
+  ],
+  "solutions": {
+    "reliable": "The solutions of $|x - a| = d$ are the two numbers at distance $d$ from $a$, namely $a - d$ and $a + d$. For these to be $3$ and $11$, the center is $a = \\frac{3 + 11}{2} = 7$ and the distance is $d = 11 - 7 = 4$. So the equation is $|x - 7| = 4$. Check: $|3 - 7| = 4$ and $|11 - 7| = 4$.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

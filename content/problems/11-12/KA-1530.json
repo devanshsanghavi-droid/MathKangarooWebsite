@@ -1,0 +1,67 @@
+{
+  "id": "KA-1530",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Every question has 5 choices and a right answer earns 5 points. On Test A a wrong answer costs nothing. On Test B a wrong answer costs 2 points. A blank scores 0 on both. On each test, how many choices must you rule out before a random guess among the rest is expected to beat a blank?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "A: 0, B: 0",
+      "correct": false,
+      "misconception": "I compared the 5 points for a right answer with the 2 points for a wrong one and, since 5 is bigger, thought guessing always pays."
+    },
+    {
+      "key": "B",
+      "text": "A: 0, B: 3",
+      "correct": false,
+      "misconception": "I treated the 2-point loss as certain, so I compared 5 divided by the number of choices left with 2."
+    },
+    {
+      "key": "C",
+      "text": "A: 0, B: 4",
+      "correct": false,
+      "misconception": "I thought that with a penalty you should only answer when you are sure, so all four wrong choices must go."
+    },
+    {
+      "key": "D",
+      "text": "A: 1, B: 2",
+      "correct": false,
+      "misconception": "I thought a blind guess on Test A was pointless, so I wanted at least one choice ruled out first."
+    },
+    {
+      "key": "E",
+      "text": "A: 0, B: 2",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-09",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "On Test A, can a guess ever score less than a blank?",
+    "Work out the expected score of a guess when $m$ choices remain: the chance of being right times 5, minus the chance of being wrong times the penalty. Compare it with 0 for each $m$.",
+    "On Test B with $m$ choices left, the expected score is $\\frac{5}{m} - 2 \\cdot \\frac{m - 1}{m} = \\frac{7 - 2m}{m}$."
+  ],
+  "solutions": {
+    "reliable": "Test A: a guess scores 5 or 0 and a blank scores 0, so any guess with a chance of being right is better, even with no choice ruled out. Test B: with $m$ choices left the expected score is $\\frac{5}{m} - \\frac{2(m - 1)}{m} = \\frac{7 - 2m}{m}$. For $m = 5$ this is $-\\frac{3}{5}$, for $m = 4$ it is $-\\frac{1}{4}$, and for $m = 3$ it is $+\\frac{1}{3}$. So on Test B you need 3 choices left, that is 2 ruled out. The transferable idea: with no penalty a blank can never beat a guess, so never leave a blank.",
+    "elegant": null
+  },
+  "whyOnTest": "Expected score shows why a blank never pays without a penalty, and how many eliminations a penalty demands.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

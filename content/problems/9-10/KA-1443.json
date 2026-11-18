@@ -1,0 +1,67 @@
+{
+  "id": "KA-1443",
+  "band": "9-10",
+  "points": 3,
+  "statement": "The four-digit number $4a7b$ has thousands digit 4, hundreds digit $a$, tens digit 7 and units digit $b$. It is divisible by 45. How many such numbers are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I only tried $b = 0$ and found 4770, forgetting that a multiple of 5 can also end in 5."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I only checked divisibility by 5, which allows every $a$ with $b = 0$ or $b = 5$."
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": false,
+      "misconception": "I only checked divisibility by 9 and forgot that the number must also be a multiple of 5."
+    },
+    {
+      "key": "D",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I used the rules for 3 and 5, but 45 needs divisibility by 9, not just by 3."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Write 45 as a product of two numbers whose divisibility rules you know.",
+    "$45 = 5 \\times 9$, and 5 and 9 share no factor, so the number must pass both tests. The test for 5 fixes $b$, and then the test for 9 fixes $a$.",
+    "$b$ is 0 or 5. Then $4 + a + 7 + b$ must be a multiple of 9."
+  ],
+  "solutions": {
+    "reliable": "Since $45 = 5 \\times 9$ and 5 and 9 have no common factor, the number must be divisible by both 5 and 9. For 5, $b = 0$ or $b = 5$. For 9, the digit sum $4 + a + 7 + b = 11 + a + b$ must be a multiple of 9. If $b = 0$: $11 + a = 18$ when $a = 7$, giving 4770. If $b = 5$: $16 + a = 18$ when $a = 2$, giving 4275. So there are 2 numbers. The transferable idea: to test for a composite divisor, split it into factors with no common factor and apply each rule.",
+    "elegant": null
+  },
+  "whyOnTest": "Divisibility by a composite number tests splitting it into factors with no common factor, and the traps are checking only one factor or using 3 for 9.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

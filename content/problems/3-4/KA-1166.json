@@ -1,0 +1,67 @@
+{
+  "id": "KA-1166",
+  "band": "3-4",
+  "points": 4,
+  "statement": "How many three-digit numbers use only the digits 1, 2, 3, 4 and 5, with each digit bigger than the digit before it, like 135?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted the numbers whose digits go up and also those whose digits go down, like 531."
+    },
+    {
+      "key": "C",
+      "text": "35",
+      "correct": false,
+      "misconception": "I let a digit repeat as long as the digits never went down, so I also counted numbers like 113 and 222."
+    },
+    {
+      "key": "D",
+      "text": "60",
+      "correct": false,
+      "misconception": "I counted every number with three different digits from 1 to 5, $5 \\times 4 \\times 3 = 60$, not just the ones going up."
+    },
+    {
+      "key": "E",
+      "text": "125",
+      "correct": false,
+      "misconception": "I counted every three-digit number made from these digits, $5 \\times 5 \\times 5 = 125$, ignoring the rule."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "CNT-05"
+    ]
+  },
+  "hints": [
+    "List them in order, starting with the ones that begin with 1.",
+    "Work systematically by first digit. Fix the first digit, then list the possible second digits in increasing order, then the third. This way nothing is missed or repeated.",
+    "Starting with 1: 123, 124, 125, 134, 135, 145, which is 6. Starting with 2: 234, 235, 245. Starting with 3: 345."
+  ],
+  "solutions": {
+    "reliable": "List by first digit. Starting with 1: 123, 124, 125, 134, 135, 145, which is 6 numbers. Starting with 2: 234, 235, 245, which is 3. Starting with 3: 345, which is 1. A number cannot start with 4 or 5, since it needs two bigger digits after. Total: $6 + 3 + 1 = 10$. The transferable idea: fix the first position and list in order so the list checks itself.",
+    "elegant": "Choose any three different digits from 1 to 5; there is exactly one way to write them in increasing order. So count the ways to leave out two of the five digits: 10."
+  },
+  "whyOnTest": "Systematic listing is the base skill under all counting; a rule like increasing digits tests whether the list is organised enough to be complete.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

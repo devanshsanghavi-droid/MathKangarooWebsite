@@ -1,0 +1,66 @@
+{
+  "id": "AM-1149",
+  "contest": "AMC8",
+  "slot": 25,
+  "area": "GEO",
+  "topic": "GEO-08",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "Triangle $T$ has side lengths $3$, $4$ and $5$. Consider all points, inside or outside $T$, whose distance to the nearest point on a side of $T$ is at most $1$. What is the area of the region made up of these points?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12 + \\pi$",
+      "correct": false,
+      "misconception": "I counted only the part of the region outside the triangle and forgot the points inside it."
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I counted the triangle and the three strips along the sides, but left out the rounded pieces at the three corners."
+    },
+    {
+      "key": "C",
+      "text": "$18 + \\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$18 + \\frac{3\\pi}{2}$",
+      "correct": false,
+      "misconception": "I put a half circle of radius $1$ at each corner, instead of pieces that fit together into one full circle."
+    },
+    {
+      "key": "E",
+      "text": "$18 + 3\\pi$",
+      "correct": false,
+      "misconception": "I put a full circle of radius $1$ at each corner, instead of pieces that fit together into one full circle."
+    }
+  ],
+  "hints": [
+    "Split the region into the part outside $T$ and the part inside $T$.",
+    "Outside: a strip of width $1$ along each side, plus rounded pieces at the corners. The corner pieces are sectors of radius $1$ whose angles are the exterior angles of $T$. Inside: which points of $T$ are more than $1$ away from every side?",
+    "The exterior angles add to $360^\\circ$, so the corner pieces make one full circle. The inscribed circle of a $3$-$4$-$5$ triangle has radius $1$, so no point inside is more than $1$ from the sides. The total is $6 + (3 + 4 + 5) \\cdot 1 + \\pi$."
+  ],
+  "solutions": {
+    "reliable": "Outside $T$, the region is a $1 \\times 3$, a $1 \\times 4$ and a $1 \\times 5$ rectangle along the sides, total area $12$, together with a sector of radius $1$ at each corner. The angle of each sector is $180^\\circ$ minus the triangle's angle there, and these add to $3 \\cdot 180^\\circ - 180^\\circ = 360^\\circ$, so the three sectors make one circle of area $\\pi$. Inside $T$, the point farthest from all three sides is the center of the inscribed circle, and its distance to the sides is the inradius $r$. From area $= r \\cdot \\frac{\\text{perimeter}}{2}$ we get $6 = r \\cdot 6$, so $r = 1$. So every point of $T$ is within $1$ of a side, and all of $T$, area $6$, is in the region. The total area is $12 + \\pi + 6 = 18 + \\pi$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

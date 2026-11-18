@@ -1,0 +1,56 @@
+{
+  "id": "SA-0061",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "medium",
+  "statement": "In the $xy$-plane, the graph of $5x + 2y = 30$ and the two coordinate axes form a triangle. What is the area of this triangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I used the coefficients 5 and 2 as the lengths of the legs, so I got $\\frac{1}{2}(5)(2) = 5$."
+    },
+    {
+      "key": "B",
+      "text": "$45$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$90$",
+      "correct": false,
+      "misconception": "I found the intercepts 6 and 15 correctly but multiplied them without taking half, so I got 90."
+    },
+    {
+      "key": "D",
+      "text": "$180$",
+      "correct": false,
+      "misconception": "I rewrote the equation as $y = -\\frac{5}{2}x + 30$, forgetting to divide 30 by 2, so I used intercepts 12 and 30 and got $\\frac{1}{2}(12)(30) = 180$."
+    }
+  ],
+  "hints": [
+    "Find where the line crosses each axis.",
+    "Set $y = 0$ to get the $x$-intercept and $x = 0$ to get the $y$-intercept. The legs of the right triangle are those intercepts.",
+    "The intercepts are $(6, 0)$ and $(0, 15)$, so the legs are 6 and 15. Use $\\frac{1}{2} \\cdot \\text{base} \\cdot \\text{height}$."
+  ],
+  "solutions": {
+    "reliable": "Setting $y = 0$ gives $5x = 30$, so the $x$-intercept is $6$. Setting $x = 0$ gives $2y = 30$, so the $y$-intercept is $15$. The triangle has a right angle at the origin and legs $6$ and $15$, so its area is $\\frac{1}{2}(6)(15) = 45$.",
+    "elegant": null
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

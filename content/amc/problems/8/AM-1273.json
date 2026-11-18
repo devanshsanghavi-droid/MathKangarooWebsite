@@ -1,0 +1,68 @@
+{
+  "id": "AM-1273",
+  "contest": "AMC8",
+  "slot": 16,
+  "area": "CP",
+  "topic": "CP-04",
+  "types": [
+    "T-PIE"
+  ],
+  "statement": "Each of the $60$ members of a games club was asked which of chess, Go and checkers they enjoy. In total, $28$ members enjoy chess, $22$ enjoy Go and $20$ enjoy checkers. Also, $10$ enjoy both chess and Go, $8$ enjoy both chess and checkers, and $7$ enjoy both Go and checkers. These counts include the $3$ members who enjoy all three games. How many members enjoy exactly one of the three games?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found the number of members who enjoy none of the games, 60 - 48 = 12, instead of exactly one."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I found the members who enjoy exactly two of the games, 7 + 5 + 4 = 16, instead of exactly one."
+    },
+    {
+      "key": "C",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I subtracted both pair counts from each game's total, but did not add back the 3 members who were subtracted twice: 10 + 5 + 5 = 20."
+    },
+    {
+      "key": "D",
+      "text": "$23$",
+      "correct": false,
+      "misconception": "I found the 48 members who enjoy at least one game and subtracted all the pair counts, 48 - 25 = 23."
+    },
+    {
+      "key": "E",
+      "text": "$29$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Draw a Venn diagram with three circles and fill it in from the middle outward.",
+    "Put $3$ in the center. Then the 'chess and Go only' region has $10 - 3 = 7$, and so on for the other pairs.",
+    "Chess only is $28 - 7 - 5 - 3 = 13$. Find Go only and checkers only the same way and add."
+  ],
+  "solutions": {
+    "reliable": "Fill in a Venn diagram from the center. All three: $3$. Chess and Go only: $10 - 3 = 7$. Chess and checkers only: $8 - 3 = 5$. Go and checkers only: $7 - 3 = 4$. Then chess only is $28 - 7 - 5 - 3 = 13$, Go only is $22 - 7 - 4 - 3 = 8$ and checkers only is $20 - 5 - 4 - 3 = 8$. Exactly one game: $13 + 8 + 8 = 29$. Check: $29 + 16 + 3 = 48$ members enjoy at least one game, which matches $28 + 22 + 20 - 10 - 8 - 7 + 3 = 48$, leaving $12$ who enjoy none.",
+    "elegant": "Let $E_1, E_2, E_3$ be the numbers enjoying exactly one, two and three games. Adding the three game totals counts these members $1, 2, 3$ times: $E_1 + 2E_2 + 3E_3 = 70$. Adding the three pair counts counts them $0, 1, 3$ times: $E_2 + 3E_3 = 25$. With $E_3 = 3$, $E_2 = 16$ and $E_1 = 70 - 32 - 9 = 29$."
+  },
+  "formulas": [
+    "F-CP-01"
+  ],
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

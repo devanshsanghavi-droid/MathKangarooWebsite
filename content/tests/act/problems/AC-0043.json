@@ -1,0 +1,56 @@
+{
+  "id": "AC-0043",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-06",
+  "difficulty": "hard",
+  "statement": "For $i = \\sqrt{-1}$ and a real number $k$, the product $(k + 3i)(2 - i)$ is a real number. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-6$",
+      "correct": false,
+      "misconception": "I tried to make $k + 3i$ a multiple of $2 - i$ by matching $\\tfrac{k}{3} = \\tfrac{2}{-1}$, but a product is real when one factor is a multiple of the other's conjugate."
+    },
+    {
+      "key": "B",
+      "text": "$-\\tfrac{3}{2}$",
+      "correct": false,
+      "misconception": "I set the real part, $2k + 3$, equal to zero, which makes the product purely imaginary, not real."
+    },
+    {
+      "key": "C",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I thought the product is real only when $k + 3i$ is exactly the conjugate $2 + i$, so I matched the real parts and chose $k = 2$."
+    },
+    {
+      "key": "D",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "A complex number is real when its imaginary part is zero.",
+    "Expand $(k + 3i)(2 - i)$, replace $i^2$ with $-1$, and collect the terms with $i$. Set their coefficient equal to zero.",
+    "The product is $(2k + 3) + (6 - k)i$, so you need $6 - k = 0$."
+  ],
+  "solutions": {
+    "reliable": "Expand: $(k + 3i)(2 - i) = 2k - ki + 6i - 3i^2 = (2k + 3) + (6 - k)i$. The product is real exactly when the imaginary part is zero: $6 - k = 0$, so $k = 6$. Check: $(6 + 3i)(2 - i) = 12 - 6i + 6i - 3i^2 = 15$, a real number. The idea: write the result in the form $a + bi$, then set $b = 0$ for a real number or $a = 0$ for a purely imaginary one.",
+    "elegant": "A product $zw$ is real when $z$ is a real multiple of the conjugate of $w$. The conjugate of $2 - i$ is $2 + i$, and $k + 3i = 3(2 + i)$ when $k = 6$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

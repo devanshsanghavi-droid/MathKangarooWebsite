@@ -1,0 +1,56 @@
+{
+  "id": "AC-0191",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-05",
+  "difficulty": "medium",
+  "statement": "What value of $x$ satisfies the equation $\\log_3 x + \\log_3(x - 6) = 3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I solved $x^2 - 6x - 27 = 0$ and kept $x = -3$, but the logarithm of a negative number is undefined, so $-3$ is not a solution."
+    },
+    {
+      "key": "B",
+      "text": "$4.5$",
+      "correct": false,
+      "misconception": "I dropped the logs and solved $x + (x - 6) = 3$, but logarithms do not add the same way their inputs do."
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$16.5$",
+      "correct": false,
+      "misconception": "I combined the logs as $\\log_3(x + x - 6)$ and solved $2x - 6 = 27$, but adding two logs multiplies their inputs."
+    }
+  ],
+  "hints": [
+    "Which property lets you combine $\\log_3 x + \\log_3(x - 6)$ into one logarithm?",
+    "Write the left side as $\\log_3\\big(x(x - 6)\\big)$, rewrite the equation in exponential form, and check any answer in the original equation.",
+    "$x(x - 6) = 3^3 = 27$, so $x^2 - 6x - 27 = 0$, which factors as $(x - 9)(x + 3) = 0$. Only one root keeps both logs defined."
+  ],
+  "solutions": {
+    "reliable": "By the product rule, $\\log_3 x + \\log_3(x - 6) = \\log_3\\big(x(x - 6)\\big)$, so $x(x - 6) = 3^3 = 27$. Then $x^2 - 6x - 27 = 0$, or $(x - 9)(x + 3) = 0$, so $x = 9$ or $x = -3$. Both logs need positive inputs, which rules out $x = -3$. Check $x = 9$: $\\log_3 9 + \\log_3 3 = 2 + 1 = 3$. The solution is $x = 9$.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

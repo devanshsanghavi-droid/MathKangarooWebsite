@@ -1,0 +1,56 @@
+{
+  "id": "AC-0155",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-03",
+  "difficulty": "easy",
+  "statement": "The formula $F = 1.8C + 32$ converts a temperature of $C$ degrees Celsius to $F$ degrees Fahrenheit. One morning the temperature in a city rose by $15$ degrees Celsius. By how many degrees Fahrenheit did the temperature rise?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "About $8.3$",
+      "correct": false,
+      "misconception": "I divided $15$ by $1.8$ instead of multiplying, as if I were converting from Fahrenheit to Celsius."
+    },
+    {
+      "key": "B",
+      "text": "$27$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$47$",
+      "correct": false,
+      "misconception": "I added the $32$ to the $15$ and forgot to multiply by the rate $1.8$."
+    },
+    {
+      "key": "D",
+      "text": "$59$",
+      "correct": false,
+      "misconception": "I converted $15$ degrees Celsius as if it were a temperature, $1.8(15) + 32 = 59$, but a change in temperature does not include the starting value $32$."
+    }
+  ],
+  "hints": [
+    "The number $32$ is a starting value. Which number is the rate?",
+    "In a linear function, each increase of $1$ in $C$ changes $F$ by the slope, $1.8$. A rise of $15$ in $C$ changes $F$ by $15$ times the slope.",
+    "The rise in $F$ is $1.8 \\cdot 15$. The $32$ cancels when you subtract two temperatures."
+  ],
+  "solutions": {
+    "reliable": "If the temperature rises from $C$ to $C + 15$, the Fahrenheit reading rises from $1.8C + 32$ to $1.8(C + 15) + 32$. The difference is $1.8 \\cdot 15 = 27$ degrees Fahrenheit.",
+    "elegant": "The slope $1.8$ means each degree Celsius is worth $1.8$ degrees Fahrenheit, so $15$ degrees Celsius of change is $15 \\cdot 1.8 = 27$ degrees Fahrenheit of change."
+  },
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

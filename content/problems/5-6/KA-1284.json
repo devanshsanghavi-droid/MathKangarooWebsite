@@ -1,0 +1,68 @@
+{
+  "id": "KA-1284",
+  "band": "5-6",
+  "points": 5,
+  "statement": "In a club, 60% of the members are boys. Then 15 girls join the club and nobody leaves. Now 40% of the members are boys. How many boys are in the club?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found that the club started with 30 members, but then took 40% of 30, the new percentage, instead of 60%."
+    },
+    {
+      "key": "B",
+      "text": "18",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "27",
+      "correct": false,
+      "misconception": "I worked out the new total of 45 members, but took 60% of it, the old percentage."
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": false,
+      "misconception": "I gave the number of members at the start instead of the number of boys."
+    },
+    {
+      "key": "E",
+      "text": "45",
+      "correct": false,
+      "misconception": "I thought the 15 new girls made the drop of 20%, so 20% of the club was 15 members and 60% was 45."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-10",
+    "secondary": [
+      "NUM-11",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Which number stays the same when the girls join?",
+    "The number of boys does not change. Compare it with the size of the club before and after, using the two percentages, and find how much the club grew in terms of the boys.",
+    "Boys are 60% of the old club, so the old club is 5/3 of the boys. Boys are 40% of the new club, so the new club is 5/2 of the boys. The difference, 15 members, is 5/2 - 5/3 = 5/6 of the boys."
+  ],
+  "solutions": {
+    "reliable": "Let the club start with T members. The boys are 60% of T, and after 15 girls join they are 40% of T + 15. The number of boys has not changed, so 0.6T = 0.4(T + 15), which gives 0.6T = 0.4T + 6, so 0.2T = 6 and T = 30. The boys are 60% of 30 = 18. Check: after the girls join there are 45 members, and 18 is 40% of 45. The transferable idea: when a percentage changes, find the quantity that stays fixed and build the equation around it.",
+    "elegant": "Think in ratios: 60% boys means boys to girls is 3 : 2, and 40% boys means 2 : 3. Keep the boys fixed at 6 parts: 6 : 4 before and 6 : 9 after. The 15 new girls are 5 parts, so one part is 3 and there are 6 × 3 = 18 boys."
+  },
+  "whyOnTest": "Percentages at 5 points: the whole changes, so you must anchor on the part that stays the same.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

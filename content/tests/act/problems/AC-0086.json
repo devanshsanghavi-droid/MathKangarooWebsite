@@ -1,0 +1,56 @@
+{
+  "id": "AC-0086",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "medium",
+  "statement": "For all $x$ such that $x \\ne 0$ and $x \\ne 3$, which of the following is equivalent to $\\dfrac{\\frac{1}{x} + \\frac{1}{3}}{\\frac{1}{x} - \\frac{1}{3}}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I cancelled the $\\tfrac{1}{x}$ on top against the $\\tfrac{1}{x}$ on the bottom, which left $\\tfrac{1}{3} \\div \\left(-\\tfrac{1}{3}\\right) = -1$."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{x + 3}{x - 3}$",
+      "correct": false,
+      "misconception": "I combined the bottom fractions in the wrong order and wrote $\\tfrac{1}{x} - \\tfrac{1}{3}$ as $\\tfrac{x - 3}{3x}$."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{(3 + x)(3 - x)}{9x^2}$",
+      "correct": false,
+      "misconception": "I combined the top into $\\tfrac{3 + x}{3x}$ and the bottom into $\\tfrac{3 - x}{3x}$, but then I multiplied them instead of dividing."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{3 + x}{3 - x}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Clear the small fractions by multiplying the top and the bottom by the same expression.",
+    "Multiply the numerator and the denominator by $3x$, the least common denominator of $\\tfrac{1}{x}$ and $\\tfrac{1}{3}$.",
+    "$3x\\left(\\tfrac{1}{x} + \\tfrac{1}{3}\\right) = 3 + x$ and $3x\\left(\\tfrac{1}{x} - \\tfrac{1}{3}\\right) = 3 - x$."
+  ],
+  "solutions": {
+    "reliable": "Multiply the top and the bottom by $3x$: the numerator becomes $3 + x$ and the denominator becomes $3 - x$, so the expression equals $\\dfrac{3 + x}{3 - x}$. Check with $x = 1$: $\\dfrac{1 + \\frac{1}{3}}{1 - \\frac{1}{3}} = \\dfrac{4/3}{2/3} = 2$, and $\\dfrac{3 + 1}{3 - 1} = 2$.",
+    "elegant": "Plug in $x = 1$: the expression is $\\dfrac{4/3}{2/3} = 2$. Only choice D equals $2$ at $x = 1$; the others give $-1$, $-2$ and $\\tfrac{8}{9}$."
+  },
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

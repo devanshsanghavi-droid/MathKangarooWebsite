@@ -1,0 +1,67 @@
+{
+  "id": "KA-1312",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Five houses stand in a row. Each house is painted one of 3 colours, and any two houses next to each other must be different colours. In how many different ways can the row be painted?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "48",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I multiplied $3 \\times 2 \\times 2 \\times 2$ and missed one of the five houses."
+    },
+    {
+      "key": "C",
+      "text": "32",
+      "correct": false,
+      "misconception": "I gave every house 2 choices, $2^5$, forgetting that the first house can be any of the 3 colours."
+    },
+    {
+      "key": "D",
+      "text": "11",
+      "correct": false,
+      "misconception": "I added the choices, $3 + 2 + 2 + 2 + 2$, instead of multiplying them."
+    },
+    {
+      "key": "E",
+      "text": "243",
+      "correct": false,
+      "misconception": "I ignored the rule about neighbours and counted $3^5$ ways."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-03",
+    "secondary": [
+      "CNT-11"
+    ]
+  },
+  "hints": [
+    "Paint the houses one at a time, from left to right.",
+    "The multiplication principle: count the colour choices for each house in turn, given the house just before it, then multiply, because all the choices happen together.",
+    "The first house has 3 choices. Every later house only has to differ from the house on its left, so it has 2 choices."
+  ],
+  "solutions": {
+    "reliable": "Paint from left to right. The first house can be any of 3 colours. Each later house must differ from its left neighbour, which leaves 2 choices whatever happened before. So there are $3 \\times 2 \\times 2 \\times 2 \\times 2 = 48$ ways. The transferable idea: when choices are made one after another and the number of options at each step is fixed, multiply.",
+    "elegant": "Check with small cases: 2 houses give $3 \\times 2 = 6$ ways, which is easy to list, and each extra house doubles the count, so 5 houses give $6 \\times 2 \\times 2 \\times 2 = 48$."
+  },
+  "whyOnTest": "Neighbour rules look as if they need casework, but each house only has to avoid one colour, so the multiplication principle applies.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

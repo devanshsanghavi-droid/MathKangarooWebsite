@@ -1,0 +1,56 @@
+{
+  "id": "SA-0283",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "medium",
+  "statement": "In triangle $ABC$, point $D$ lies on side $\\overline{AB}$ and point $E$ lies on side $\\overline{AC}$. Angle $ADE$ has the same measure as angle $ACB$. If $AD = 5$, $AE = 4$ and $AC = 15$, what is the length of $\\overline{AB}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I found $AB = 12$ correctly but then subtracted $AD = 5$ and gave $DB = 7$."
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$13.75$",
+      "correct": false,
+      "misconception": "I assumed $\\overline{DE}$ is parallel to $\\overline{BC}$ and wrote $\\frac{AD}{DB} = \\frac{AE}{EC}$, so $\\frac{5}{DB} = \\frac{4}{11}$, and I gave $DB = 13.75$."
+    },
+    {
+      "key": "D",
+      "text": "$18.75$",
+      "correct": false,
+      "misconception": "I assumed $\\overline{DE}$ is parallel to $\\overline{BC}$ and wrote $\\frac{AD}{AB} = \\frac{AE}{AC}$, so $AB = \\frac{5 \\cdot 15}{4} = 18.75$."
+    }
+  ],
+  "hints": [
+    "Triangles $ADE$ and $ACB$ share angle $A$. What else do they share?",
+    "With angle $A$ shared and angle $ADE = $ angle $ACB$, triangle $ADE$ is similar to triangle $ACB$, with $D$ matching $C$ and $E$ matching $B$. Be careful: $\\overline{DE}$ is not necessarily parallel to $\\overline{BC}$.",
+    "The correspondence gives $\\frac{AD}{AC} = \\frac{AE}{AB}$, so $\\frac{5}{15} = \\frac{4}{AB}$."
+  ],
+  "solutions": {
+    "reliable": "Triangles $ADE$ and $ACB$ share angle $A$, and angle $ADE = $ angle $ACB$, so by angle-angle similarity triangle $ADE \\sim$ triangle $ACB$ with $A \\leftrightarrow A$, $D \\leftrightarrow C$ and $E \\leftrightarrow B$. Corresponding sides give $\\frac{AD}{AC} = \\frac{AE}{AB}$, so $\\frac{5}{15} = \\frac{4}{AB}$ and $AB = 12$. Check: the scale factor from $ADE$ to $ACB$ is $3$, and indeed $AC = 3 \\cdot AD = 15$ and $AB = 3 \\cdot AE = 12$.",
+    "elegant": "Cross-multiplying the similarity ratio $\\frac{AD}{AC} = \\frac{AE}{AB}$ gives $AD \\cdot AB = AE \\cdot AC$. So $5 \\cdot AB = 4 \\cdot 15 = 60$ and $AB = 12$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

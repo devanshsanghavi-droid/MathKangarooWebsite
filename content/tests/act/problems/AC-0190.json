@@ -1,0 +1,56 @@
+{
+  "id": "AC-0190",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-05",
+  "difficulty": "hard",
+  "statement": "After a treatment begins, the population of an invasive beetle in a forest decreases exponentially. The population is $80$ thousand when the treatment begins and $50$ thousand $3$ weeks later. To the nearest tenth of a week, how many weeks after the treatment begins will the population be $10$ thousand?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7.0$",
+      "correct": false,
+      "misconception": "I assumed the population drops by the same $30$ thousand every $3$ weeks, which is $10$ thousand per week, so going down $70$ thousand takes $7$ weeks."
+    },
+    {
+      "key": "B",
+      "text": "$9.0$",
+      "correct": false,
+      "misconception": "I assumed the population halves every $3$ weeks, so $80$ to $10$ is three halvings, but $80$ to $50$ is not a halving."
+    },
+    {
+      "key": "C",
+      "text": "$10.3$",
+      "correct": false,
+      "misconception": "I correctly found the time for the population to fall from $50$ thousand to $10$ thousand but forgot to add the first $3$ weeks."
+    },
+    {
+      "key": "D",
+      "text": "$13.3$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "In exponential decay, the population is multiplied by the same factor over every $3$-week stretch. What is that factor here?",
+    "Write $P(t) = 80\\left(\\frac{5}{8}\\right)^{t/3}$ in thousands, set it equal to $10$, and solve for $t$ with logarithms.",
+    "$\\left(\\frac{5}{8}\\right)^{t/3} = \\frac{1}{8}$, so $\\frac{t}{3} = \\frac{\\log(1/8)}{\\log(5/8)} \\approx 4.424$."
+  ],
+  "solutions": {
+    "reliable": "Over $3$ weeks the population is multiplied by $\\frac{50}{80} = \\frac{5}{8}$, so $P(t) = 80\\left(\\frac{5}{8}\\right)^{t/3}$ thousand, with $t$ in weeks. Setting $P(t) = 10$ gives $\\left(\\frac{5}{8}\\right)^{t/3} = \\frac{1}{8}$. Then $\\frac{t}{3} = \\frac{\\ln(1/8)}{\\ln(5/8)} = \\frac{-2.0794}{-0.4700} \\approx 4.424$, so $t \\approx 13.3$ weeks.",
+    "elegant": "Using $P(t) = 80e^{kt}$: $e^{3k} = \\frac{5}{8}$ gives $k = \\frac{\\ln 0.625}{3} \\approx -0.15667$. Then $e^{kt} = \\frac{1}{8}$ gives $t = \\frac{\\ln 0.125}{k} \\approx \\frac{-2.0794}{-0.15667} \\approx 13.3$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

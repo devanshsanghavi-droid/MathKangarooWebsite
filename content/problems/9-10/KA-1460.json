@@ -1,0 +1,68 @@
+{
+  "id": "KA-1460",
+  "band": "9-10",
+  "points": 5,
+  "statement": "A frog sits at 0 on a number line. It makes ten jumps: the first of length 1, the second of length 2, and so on, up to the tenth of length 10. Each jump goes left or right, as the frog chooses. How many different numbers could the frog finish on?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "28",
+      "correct": false,
+      "misconception": "I counted only the odd numbers to the right of 0, from 1 to 55, and forgot the same numbers on the left."
+    },
+    {
+      "key": "B",
+      "text": "54",
+      "correct": false,
+      "misconception": "I counted the odd numbers strictly between -55 and 55, thinking the two ends could not be reached, though jumping right every time reaches 55."
+    },
+    {
+      "key": "C",
+      "text": "111",
+      "correct": false,
+      "misconception": "I counted every whole number from -55 to 55, forgetting that the finishing number is always odd."
+    },
+    {
+      "key": "D",
+      "text": "56",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "1024",
+      "correct": false,
+      "misconception": "I counted the 1024 ways of choosing the ten directions, as if different choices always finish on different numbers."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-05",
+    "secondary": [
+      "NUM-03",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Is the finishing number odd or even?",
+    "Turning one jump from right to left lowers the finish by twice that jump, so its parity never changes. Find the parity and the range, then check whether every number of that parity in the range can be reached.",
+    "Jumping right every time gives 55. Sending jumps with total length s to the left instead gives 55 - 2s, and s can be any whole number from 0 to 55."
+  ],
+  "solutions": {
+    "reliable": "If every jump goes right, the frog ends at 1 + 2 + ... + 10 = 55. Sending a set of jumps left instead, with lengths adding up to s, changes the finish to 55 - 2s. So the finish is always odd and lies between -55 and 55. Every s from 0 to 55 is possible: from 1 to 10 use a single jump, and larger totals can be built from the largest lengths (for example 11 = 10 + 1 and 30 = 10 + 9 + 8 + 3). So every odd number from -55 to 55 can be reached. There are 28 odd numbers from 1 to 55 and 28 from -55 to -1, so 56 in all. The transferable idea: a parity argument shows which values are impossible; then check that all the others really occur.",
+    "elegant": "The finish is 55 - 2s, where s is the total length of the jumps sent left, and s can be any whole number from 0 to 55. Different values of s give different finishes, so there are 56 of them."
+  },
+  "whyOnTest": "Parity questions test spotting what never changes, here the oddness of the finishing point, before counting what can be reached.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1413",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A whole number $N$ has digit sum 2026, and its last two digits are 52. What is the remainder when $N$ is divided by 36?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I saw that the last two digits, 52, make a multiple of 4 and concluded that $N$ is divisible by 36, without using the digit sum at all."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I found the remainder on division by 9 from the digit sum and gave that as the remainder on division by 36."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I used the digit-sum test for 3 instead of 9, so I wanted a multiple of 4 that is 1 more than a multiple of 3, and took the smallest, 4."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I used only the last digit, 2, for division by 4, so I wanted a number 1 more than a multiple of 9 that leaves remainder 2 on division by 4."
+    },
+    {
+      "key": "E",
+      "text": "28",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "You cannot find $N$ itself, so what do the two facts tell you?",
+    "The digit sum fixes the remainder on division by 9, and the last two digits fix the remainder on division by 4. Since $36 = 4 \\times 9$, look for the number below 36 that fits both.",
+    "$N$ leaves remainder 1 on division by 9 and is divisible by 4. Test 1, 10, 19 and 28 for divisibility by 4."
+  ],
+  "solutions": {
+    "reliable": "A number leaves the same remainder on division by 9 as its digit sum. The digit sum 2026 has digit sum 10, which has digit sum 1, so $N$ leaves remainder 1 on division by 9. A number leaves the same remainder on division by 4 as the number formed by its last two digits, and $52 = 4 \\times 13$, so $N$ is divisible by 4. Write $N = 36q + r$ with $0 \\le r < 36$. Since 36 is a multiple of both 9 and 4, $r$ leaves the same remainders as $N$: 1 on division by 9 and 0 on division by 4. The numbers below 36 that are 1 more than a multiple of 9 are 1, 10, 19 and 28, and only 28 is divisible by 4. So the remainder is 28. Such numbers exist: for example, 2019 ones followed by 52. The transferable idea: a divisibility test gives a remainder, not just a yes or no, and the remainders for 4 and 9 together fix the remainder for 36.",
+    "elegant": null
+  },
+  "whyOnTest": "The digit-sum test and the last-two-digits test give remainders, not just yes or no, and a question about a huge unknown number is settled by combining them.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

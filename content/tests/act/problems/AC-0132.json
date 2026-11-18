@@ -1,0 +1,56 @@
+{
+  "id": "AC-0132",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-02",
+  "difficulty": "hard",
+  "statement": "Let $f(x) = \\dfrac{\\sqrt{x + 5}}{x^2 - 9}$. How many integers $n$ with $-10 \\le n \\le 10$ are in the domain of $f$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I thought the number under the square root had to be positive, so I also threw out x = -5, which left 13."
+    },
+    {
+      "key": "B",
+      "text": "$14$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I solved x^2 - 9 = 0 as x = 3 only and forgot that x = -3 also makes the denominator 0, so I removed just one integer."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I counted every integer from -5 to 10 for the square root but forgot that the denominator cannot be 0."
+    }
+  ],
+  "hints": [
+    "Two things can go wrong: a negative number under the square root, or a zero denominator.",
+    "The root needs $x + 5 \\ge 0$. The denominator is $0$ when $x^2 = 9$. Count the integers from $-5$ to $10$, then remove the bad ones.",
+    "There are $16$ integers from $-5$ to $10$, and both $x = 3$ and $x = -3$ must be removed."
+  ],
+  "solutions": {
+    "reliable": "The square root requires $x + 5 \\ge 0$, so $x \\ge -5$. The value $x = -5$ is allowed because $\\sqrt{0} = 0$ is fine in a numerator. The denominator $x^2 - 9 = (x - 3)(x + 3)$ is $0$ at $x = 3$ and $x = -3$, and both of those satisfy $x \\ge -5$. The integers from $-5$ to $10$ number $10 - (-5) + 1 = 16$, and removing $-3$ and $3$ leaves $14$.",
+    "elegant": null
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

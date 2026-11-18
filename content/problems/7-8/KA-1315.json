@@ -1,0 +1,68 @@
+{
+  "id": "KA-1315",
+  "band": "7-8",
+  "points": 4,
+  "statement": "In a corner of a room, 30 unit cubes are stacked: a 4 by 4 layer on the floor, then 3 by 3, then 2 by 2, then 1 cube, each layer pushed into the corner against both walls. Every cube face not touching the floor, a wall or another cube is painted. How many cubes have no paint?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "16",
+      "correct": false,
+      "misconception": "I counted the cubes that do get paint, 16, instead of the cubes with no paint."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I only counted the hidden cubes in the bottom layer and forgot the hidden cubes in the layers above it."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": false,
+      "misconception": "I forgot the walls and counted as if the stack stood in the middle of the floor, so the cubes against the walls looked painted."
+    },
+    {
+      "key": "D",
+      "text": "1",
+      "correct": false,
+      "misconception": "I counted only the cube surrounded by other cubes on all six sides and forgot that faces against a wall or the floor are not painted either."
+    },
+    {
+      "key": "E",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-14",
+    "secondary": [
+      "GEO-13",
+      "GEO-12"
+    ]
+  },
+  "hints": [
+    "Which faces of a cube in this stack could ever get paint?",
+    "Count cubes in a stack layer by layer: because of the walls and floor, a cube can only show its top face and its two outward side faces. Decide, for each layer, which cubes have all three of those covered.",
+    "A cube with another cube on top of it also has cubes in front of it and beside it, so it shows nothing. In the bottom layer, that is the 3 by 3 block under the next layer."
+  ],
+  "solutions": {
+    "reliable": "Only the top, the front and the outer side of a cube can be painted: its back and other side touch a wall or a cube, and its bottom touches the floor or a cube. In each layer, the cubes covered by the layer above also have cubes in front of them and beside them, because each layer is one cube wider than the one above, so they show nothing. That is $3 \\times 3 = 9$ cubes in the bottom layer, $2 \\times 2 = 4$ in the second and 1 in the third, while the top cube is painted. So $9 + 4 + 1 = 14$ cubes have no paint. The transferable idea: count a stack layer by layer, deciding for each layer which cubes are hidden.",
+    "elegant": "A cube gets paint exactly when nothing sits on top of it. Looking down from above you see a 4 by 4 square, so 16 cubes have nothing on top and get paint. The other $30 - 16 = 14$ cubes have none."
+  },
+  "whyOnTest": "Hidden cubes in a stack must be reasoned about layer by layer, and the walls change which faces can be seen.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

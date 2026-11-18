@@ -1,10 +1,29 @@
 import type { Points } from './schemas';
 import type { MasteryState } from './mastery';
-import { bucketOf, statusOfProblem, amcStatusOf, type StatusBucket } from './progress-summary';
+import {
+  bucketOf,
+  statusOfProblem,
+  amcStatusOf,
+  testStatusOf,
+  type StatusBucket,
+} from './progress-summary';
 import type { ProgressFile } from './local-progress';
-import type { AmcIndexFile, AmcLookups, KaIndexFile, KaLookups } from './bank-data';
-import { amcContestLabel, kaLevelLabel, type PracticeBank } from './practice-item';
-import { AMC_TIER_POINTS, AMC_TIER_SLOTS, AMC_TIERS } from './amc-tier';
+import type { AmcIndexFile, AmcLookups, KaIndexFile, KaLookups, TestIndexFile } from './bank-data';
+import { amcContestLabel, isTestBank, kaLevelLabel, type PracticeBank } from './practice-item';
+import {
+  AMC_FORMULA_CONTESTS,
+  AMC_TIER_POINTS,
+  AMC_TIER_SLOTS,
+  AMC_TIERS,
+  amcInContest,
+} from './amc-tier';
+import {
+  TEST_DIFFICULTIES,
+  TEST_DIFFICULTY_LABEL,
+  TEST_LABEL,
+  TEST_SLUG,
+  testPointsOf,
+} from './test-meta';
 
 /**
  * The question bank's model, shared by the Kangaroo bank (/problems) and the AMC bank
@@ -17,6 +36,8 @@ import { AMC_TIER_POINTS, AMC_TIER_SLOTS, AMC_TIERS } from './amc-tier';
  *   Kangaroo  level = band,     sections = strands -> skills,  no tags,   difficulty = 3/4/5 pt
  *   AMC       level = contest,  sections = areas -> topics,    tags = problem types,
  *             difficulty = Early / Middle / Late (stored as 3/4/5)
+ *   SAT, ACT  no level,         sections = domains -> skills,  no tags,
+ *             difficulty = Easy / Medium / Hard (stored as 3/4/5)
  */
 
 export const BANK_PAGE_SIZE = 50;
@@ -31,7 +52,7 @@ export interface BankRow {
   points: Points;
   /** Bank-specific tier name shown instead of "N pt" (AMC "Early"). */
   tierLabel: string | null;
-  /** Level values this row belongs to. An AMC BOTH problem is in AMC10 and AMC12. */
+  /** Level values this row belongs to. An AMC BOTH problem is in AMC10 and AMC12 (not AMC8). */
   levels: string[];
   levelLabel: string;
   /** Section (strand / area) of the primary group. */
@@ -54,7 +75,8 @@ export interface BankTaxonomy {
   bank: PracticeBank;
   /** Singular noun for one row, "problem". */
   noun: string;
-  level: { label: string; options: BankOption[] };
+  /** Null for a bank with one level only (SAT, ACT): the panel then shows no level control. */
+  level: { label: string; options: BankOption[] } | null;
   sections: {
     label: string;
     items: Array<{ id: string; name: string; groups: Array<{ id: string; name: string }> }>;
@@ -101,7 +123,9 @@ export const EMPTY_FILTERS: BankFilters = {
 
 /** One row's progress state, read the way its bank stores attempts (local-progress.ts). */
 export function rowState(bank: PracticeBank, file: ProgressFile, row: BankRow): MasteryState {
-  return bank === 'amc' ? amcStatusOf(file, row.id) : statusOfProblem(file, row.id, row.groups);
+  if (bank === 'amc') return amcStatusOf(file, row.id);
+  if (isTestBank(bank)) return testStatusOf(file, row.id);
+  return statusOfProblem(file, row.id, row.groups);
 }
 
 export function statusMap(
@@ -293,7 +317,7 @@ function listParam(params: URLSearchParams, key: string): string[] {
 /** Total: unknown values are dropped, never thrown on. */
 export function parseBankFilters(search: string, taxonomy: BankTaxonomy): BankFilters {
   const params = new URLSearchParams(search);
-  const levels = new Set(taxonomy.level.options.map((option) => option.value));
+  const levels = new Set(taxonomy.level?.options.map((option) => option.value) ?? []);
   const groups = new Set(
     taxonomy.sections.items.flatMap((section) => section.groups.map((g) => g.id)),
   );
@@ -430,7 +454,8 @@ export function amcBankTaxonomy(lookups: AmcLookups): BankTaxonomy {
     level: {
       label: 'Contest',
       options: [
-        { value: 'all', label: 'Both', ariaLabel: 'AMC 10 and AMC 12' },
+        { value: 'all', label: 'All', ariaLabel: 'All AMC contests' },
+        { value: 'AMC8', label: 'AMC 8' },
         { value: 'AMC10', label: 'AMC 10' },
         { value: 'AMC12', label: 'AMC 12' },
       ],
@@ -464,7 +489,7 @@ export function amcBankRows(index: AmcIndexFile, names: ReadonlyMap<string, stri
     math: true,
     points: AMC_TIER_POINTS[row.tier],
     tierLabel: row.tier,
-    levels: row.contest === 'BOTH' ? ['AMC10', 'AMC12'] : [row.contest],
+    levels: AMC_FORMULA_CONTESTS.filter((paper) => amcInContest(row.contest, paper)),
     levelLabel: amcContestLabel(row.contest),
     section: row.area,
     groups: [row.topic],
@@ -474,13 +499,68 @@ export function amcBankRows(index: AmcIndexFile, names: ReadonlyMap<string, stri
   }));
 }
 
+/* -------------------------------------------------------------------------- */
+/* SAT / ACT adapter                                                           */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * The SAT or ACT bank: domains -> skills, Easy / Medium / Hard, no level control (each bank is
+ * one test) and no tags. Built from the test's index file, which carries its own lookups.
+ */
+export function testBankTaxonomy(file: Pick<TestIndexFile, 'test' | 'domains'>): BankTaxonomy {
+  return {
+    bank: TEST_SLUG[file.test],
+    noun: 'question',
+    level: null,
+    sections: {
+      label: 'Skills',
+      items: file.domains.map((domain) => ({
+        id: domain.id,
+        name: domain.name,
+        groups: domain.skills.map((skill) => ({ id: skill.id, name: skill.name })),
+      })),
+    },
+    tags: null,
+    difficulty: {
+      label: 'Difficulty',
+      options: TEST_DIFFICULTIES.map((difficulty) => ({
+        points: testPointsOf(difficulty),
+        label: TEST_DIFFICULTY_LABEL[difficulty],
+      })),
+    },
+    params: { group: 'skill', tag: 'type' },
+  };
+}
+
+export function testBankRows(
+  index: Pick<TestIndexFile, 'test' | 'rows'>,
+  names: ReadonlyMap<string, string>,
+): BankRow[] {
+  const slug = TEST_SLUG[index.test];
+  return index.rows.map((row) => ({
+    id: row.id,
+    href: `/${slug}/problem/${row.id}`,
+    statement: row.statement,
+    math: true,
+    points: testPointsOf(row.difficulty),
+    tierLabel: TEST_DIFFICULTY_LABEL[row.difficulty],
+    levels: [],
+    levelLabel: TEST_LABEL[index.test],
+    section: row.domain,
+    groups: [row.skill],
+    primaryName: names.get(row.skill) ?? null,
+    tags: [],
+    hasFigure: row.hasFigure,
+  }));
+}
+
 /** Index file -> rows, for whichever bank. Names come from the taxonomy the page was given. */
 export function bankRowsFromIndex(
   taxonomy: BankTaxonomy,
-  index: KaIndexFile | AmcIndexFile,
+  index: KaIndexFile | AmcIndexFile | TestIndexFile,
 ): BankRow[] {
   const names = taxonomyGroupNames(taxonomy);
-  return taxonomy.bank === 'amc'
-    ? amcBankRows(index as AmcIndexFile, names)
-    : kaBankRows(index as KaIndexFile, names);
+  if (taxonomy.bank === 'amc') return amcBankRows(index as AmcIndexFile, names);
+  if (isTestBank(taxonomy.bank)) return testBankRows(index as TestIndexFile, names);
+  return kaBankRows(index as KaIndexFile, names);
 }

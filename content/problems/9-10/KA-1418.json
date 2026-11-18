@@ -1,0 +1,67 @@
+{
+  "id": "KA-1418",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Two trains on parallel tracks travel towards each other, one 150 m long at 20 metres per second and the other 100 m long at 30 metres per second. How many seconds pass from the moment their fronts meet until their rear ends pass each other?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I used only the length of the shorter train, as if the longer one were a single point."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I used only the length of the longer train, as if the shorter one were a single point."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "12.5",
+      "correct": false,
+      "misconception": "I used the combined length of 250 m but only one train's speed, 20 metres per second, as if the other train stood still."
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": false,
+      "misconception": "I subtracted the speeds, as if the trains travelled in the same direction, instead of adding them."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-03",
+    "secondary": [
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Imagine sitting in one train: how fast does the other seem to move?",
+    "Relative to one train, the other approaches at the sum of their speeds. From fronts meeting to rear ends passing, it must cover the lengths of both trains.",
+    "The relative speed is $20 + 30 = 50$ m/s and the distance to cover is $150 + 100 = 250$ m."
+  ],
+  "solutions": {
+    "reliable": "Watch from the first train. The second train comes past at $20 + 30 = 50$ m/s. When the fronts meet, the rear of the second train is 100 m behind its front, and it must travel until it reaches the rear of the first train, 150 m further, so 250 m in all. Time: $250 \\div 50 = 5$ seconds. The transferable idea: for two moving objects, switch to one object's point of view, where speeds add (towards) or subtract (same way), and count every length that has to be covered.",
+    "elegant": null
+  },
+  "whyOnTest": "Passing trains test relative speed and the full distance to be covered; each trap drops one train's length or one train's speed.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "AM-1222",
+  "contest": "AMC8",
+  "slot": 24,
+  "area": "NT",
+  "topic": "NT-09",
+  "types": [
+    "T-MODULAR",
+    "T-SYMMETRY"
+  ],
+  "statement": "How many perfect squares greater than $10$ and less than $10000$ have their tens digit equal to their units digit?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I only found the squares ending in $44$ and forgot the squares ending in $00$, such as $100$ and $400$."
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I only checked $n$ up to $50$, so I found $100, 400, 900, 1600, 2500$ and $144, 1444$, and missed the larger squares."
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I only counted the squares ending in $00$, because I thought no square could end in two equal digits that are not $0$."
+    },
+    {
+      "key": "D",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I knew the ending had to be $00$ or $44$, so I counted every $n$ from $4$ to $99$ whose square ends in $0$ or $4$, without checking the tens digit."
+    }
+  ],
+  "hints": [
+    "Write the square as $n^2$ with $4 \\le n \\le 99$. A square can only end in the digit $0$, $1$, $4$, $5$, $6$ or $9$, so the last two digits must be $00$, $11$, $44$, $55$, $66$ or $99$.",
+    "Since $100$ is a multiple of $4$, a number leaves the same remainder as its last two digits when divided by $4$. A square always leaves remainder $0$ or $1$. Which of the six endings survive?",
+    "Only $00$ and $44$ are possible. For $44$, $n$ ends in $2$ or $8$. The squares of $n$, $50 - n$, $50 + n$ and $100 - n$ all end in the same two digits, so you only need to test $n = 8, 12, 18, 22$."
+  ],
+  "solutions": {
+    "reliable": "Let the square be $n^2$, so $4 \\le n \\le 99$. The last digit of a square is $0$, $1$, $4$, $5$, $6$ or $9$, so the last two digits must be $00$, $11$, $44$, $55$, $66$ or $99$. An even number squared is a multiple of $4$, and an odd number squared is $(2k + 1)^2 = 4(k^2 + k) + 1$, so every square leaves remainder $0$ or $1$ when divided by $4$. Because $100$ is a multiple of $4$, a number leaves the same remainder as its last two digits. Now $11$, $55$ and $99$ leave remainder $3$ and $66$ leaves remainder $2$, so those endings are impossible, which leaves $00$ and $44$. Ending $00$: $n^2$ is a multiple of $100$ exactly when $n$ is a multiple of $10$, giving $10^2, 20^2, \\ldots, 90^2$, which is $9$ squares. Ending $44$: $n$ must end in $2$ or $8$. Since $(50 - n)^2 = 2500 - 100n + n^2$, $(50 + n)^2 = 2500 + 100n + n^2$ and $(100 - n)^2 = 10000 - 200n + n^2$, these all end in the same two digits as $n^2$, so it is enough to check $n \\le 25$. There $8^2 = 64$, $12^2 = 144$, $18^2 = 324$ and $22^2 = 484$, so only $n = 12$ works (and $2^2 = 4$ is too small anyway). That gives $n = 12, 38, 62, 88$, with squares $144, 1444, 3844, 7744$. In total $9 + 4 = 13$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

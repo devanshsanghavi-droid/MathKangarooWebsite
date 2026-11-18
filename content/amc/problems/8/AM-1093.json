@@ -1,0 +1,68 @@
+{
+  "id": "AM-1093",
+  "contest": "AMC8",
+  "slot": 6,
+  "area": "GEO",
+  "topic": "GEO-02",
+  "types": [
+    "T-SIMILAR"
+  ],
+  "statement": "On a sunny afternoon, Kai, who is $1.5$ meters tall, stands on level ground $10$ meters from the base of a flagpole. His shadow is $2$ meters long and points straight away from the flagpole, and the tip of his shadow lands exactly on the tip of the flagpole's shadow. How tall is the flagpole, in meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7.5$",
+      "correct": false,
+      "misconception": "I used Kai's distance from the flagpole, 10 m, as the length of the flagpole's shadow, forgetting to add his own 2 m shadow, so I got 10 times 0.75 = 7.5."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$13.5$",
+      "correct": false,
+      "misconception": "I added Kai's height to the length of the flagpole's shadow, 12 + 1.5 = 13.5, instead of using the ratio of height to shadow."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I flipped the ratio and used shadow over height, $\\frac{2}{1.5}$, so I got $12 \\cdot \\frac{4}{3} = 16$."
+    },
+    {
+      "key": "E",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I multiplied the flagpole's 12 m shadow by Kai's height, 1.5, and forgot to divide by the length of his 2 m shadow."
+    }
+  ],
+  "hints": [
+    "The sun's rays are parallel, so Kai and his shadow make a triangle with the same shape as the flagpole and its shadow.",
+    "The flagpole's shadow runs from its base to the tip of Kai's shadow, so it is $10 + 2 = 12$ meters long.",
+    "Kai's height is $\\frac{1.5}{2} = \\frac{3}{4}$ of his shadow's length, so the flagpole's height is $\\frac{3}{4}$ of $12$."
+  ],
+  "solutions": {
+    "reliable": "The sun's rays are parallel, so the right triangle formed by Kai and his shadow is similar to the right triangle formed by the flagpole and its shadow. The two shadows end at the same point, so the flagpole's shadow is $10 + 2 = 12$ m long. Then $\\frac{h}{12} = \\frac{1.5}{2}$, so $h = 12 \\cdot \\frac{3}{4} = 9$ meters.",
+    "elegant": "The flagpole's shadow, $12$ m, is $6$ times as long as Kai's shadow, $2$ m, so the flagpole is $6$ times as tall as Kai: $6 \\cdot 1.5 = 9$ m."
+  },
+  "formulas": [
+    "F-GEO-11"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -10,7 +10,11 @@ import {
   amcAreaOf,
   amcContestFolder,
   amcInContest,
+  amcContestLabel,
+  amcPapersLabel,
   isAmcProblemId,
+  AMC_CONTESTS,
+  AMC_FORMULA_CONTESTS,
 } from '../amc-schemas';
 
 const AMC = join(process.cwd(), 'content', 'amc');
@@ -55,6 +59,25 @@ describe('AMC id helpers', () => {
     expect(amcInContest('BOTH', 'AMC12')).toBe(true);
     expect(amcInContest('AMC10', 'AMC12')).toBe(false);
   });
+
+  it('files AMC 8 problems in 8/ and keeps BOTH off the AMC 8 paper', () => {
+    expect(amcContestFolder('AMC8')).toBe('8');
+    expect(amcInContest('AMC8', 'AMC8')).toBe(true);
+    expect(amcInContest('BOTH', 'AMC8')).toBe(false);
+    expect(amcInContest('BOTH', 'AMC10')).toBe(true);
+    expect(amcInContest('AMC8', 'AMC10')).toBe(false);
+    expect(amcInContest('AMC10', 'AMC8')).toBe(false);
+  });
+
+  it('labels contests and formula papers', () => {
+    expect(AMC_CONTESTS).toContain('AMC8');
+    expect(AMC_FORMULA_CONTESTS).toEqual(['AMC8', 'AMC10', 'AMC12']);
+    expect(amcContestLabel('AMC8')).toBe('AMC 8');
+    expect(amcContestLabel('BOTH')).toBe('AMC 10 and 12');
+    expect(amcPapersLabel(['AMC8'])).toBe('AMC 8');
+    expect(amcPapersLabel(['AMC12', 'AMC10'])).toBe('AMC 10 and 12');
+    expect(amcPapersLabel(['AMC8', 'AMC10', 'AMC12'])).toBe('AMC 8, 10 and 12');
+  });
 });
 
 describe('AMC schemas', () => {
@@ -64,6 +87,9 @@ describe('AMC schemas', () => {
       'problems/10/AM-0999.json',
       'problems/10/AM-0997.json',
       'problems/12/AM-0998.json',
+      'problems/8/AM-1997.json',
+      'problems/8/AM-1998.json',
+      'problems/8/AM-1999.json',
     ]) {
       const result = AmcProblemSchema.safeParse(read(file));
       expect(result.success, file).toBe(true);
@@ -86,7 +112,7 @@ describe('AMC schemas', () => {
     ['no types', { types: [] }],
     ['four types', { types: ['T-PIE', 'T-COMPLEMENT', 'T-CASEWORK', 'T-SYMMETRY'] }],
     ['a bad formula id', { formulas: ['F-ALG-1'] }],
-    ['an unknown contest', { contest: 'AMC8' }],
+    ['an unknown contest', { contest: 'AJHSME' }],
     ['an extra field', { tier: 'Early' }],
   ])('rejects %s', (_label, patch) => {
     expect(AmcProblemSchema.safeParse({ ...sample(), ...patch }).success).toBe(false);

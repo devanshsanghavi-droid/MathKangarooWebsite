@@ -1,0 +1,56 @@
+{
+  "id": "AC-0167",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-06",
+  "difficulty": "hard",
+  "statement": "The function $g$ is defined by $g(x) = -3 \\cdot 2^{x - 1} + 5$. What is the range of $g$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$y \\le 2$",
+      "correct": false,
+      "misconception": "I thought $2^{x - 1}$ can never be less than $1$, so every output is at most $-3(1) + 5 = 2$, but $2^{x - 1}$ can be any positive number, even one close to $0$."
+    },
+    {
+      "key": "B",
+      "text": "$y < 5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$y > 5$",
+      "correct": false,
+      "misconception": "I found the asymptote $y = 5$ but forgot that the factor $-3$ flips the graph, so I put the outputs above $5$."
+    },
+    {
+      "key": "D",
+      "text": "All real numbers",
+      "correct": false,
+      "misconception": "I thought stretching and shifting an exponential graph lets it reach every $y$-value, but it never crosses its horizontal asymptote."
+    }
+  ],
+  "hints": [
+    "What values can $2^{x - 1}$ take?",
+    "$2^{x - 1}$ can be any positive number. Follow those values through multiplying by $-3$ and then adding $5$.",
+    "$2^{x - 1} > 0$, so $-3 \\cdot 2^{x - 1} < 0$, and adding $5$ gives outputs less than $5$."
+  ],
+  "solutions": {
+    "reliable": "The expression $2^{x - 1}$ takes every positive value and no others. Multiplying by $-3$ gives every negative value: $-3 \\cdot 2^{x - 1} < 0$. Adding $5$ gives every value less than $5$. So the range is $y < 5$. For example, $g(0) = 3.5$ and $g(5) = -43$, and $g(x)$ approaches $5$ as $x$ decreases but never reaches it.",
+    "elegant": "Start from $y = 2^x$, with range $y > 0$. The horizontal shift does not change the range, the factor $-3$ flips it to $y < 0$, and the shift up $5$ gives $y < 5$."
+  },
+  "estSeconds": 65,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

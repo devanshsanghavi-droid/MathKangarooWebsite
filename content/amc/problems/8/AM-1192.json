@@ -1,0 +1,66 @@
+{
+  "id": "AM-1192",
+  "contest": "AMC8",
+  "slot": 15,
+  "area": "NT",
+  "topic": "NT-01",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A two-digit number is called digit-friendly if it is divisible by each of its two digits. For example, $24$ is digit-friendly because it is divisible by $2$ and by $4$. A number with a digit $0$, such as $30$, is not digit-friendly, since no number can be divided by $0$. How many two-digit numbers are digit-friendly?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I only counted the numbers with two equal digits, 11, 22, up to 99, and missed 12, 15, 24, 36 and 48."
+    },
+    {
+      "key": "B",
+      "text": "$14$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$23$",
+      "correct": false,
+      "misconception": "I ignored the rule about the digit 0 and also counted 10, 20, 30, up to 90, since each is divisible by its tens digit."
+    },
+    {
+      "key": "D",
+      "text": "$41$",
+      "correct": false,
+      "misconception": "I only checked that the number is divisible by its ones digit and forgot to check the tens digit."
+    },
+    {
+      "key": "E",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I counted the numbers that are divisible by at least one of their digits instead of by both of them."
+    }
+  ],
+  "hints": [
+    "Every number with two equal digits, like $77$, is digit-friendly. Look for the others.",
+    "If the number is $10a + b$, then $a$ divides $10a + b$ exactly when $a$ divides $b$. So the ones digit must be a multiple of the tens digit.",
+    "Also $b$ must divide $10a + b$, which means $b$ divides $10a$. Check the tens digits $1$, $2$, $3$ and $4$ one at a time."
+  ],
+  "solutions": {
+    "reliable": "Write the number as $10a + b$ with $a, b$ from $1$ to $9$. It is divisible by $a$ exactly when $a$ divides $b$, and divisible by $b$ exactly when $b$ divides $10a$. For $a = 1$: $b$ must divide $10$, so $b = 1, 2, 5$, giving $11, 12, 15$. For $a = 2$: $b \\in \\{2, 4, 6, 8\\}$ and $b$ divides $20$, giving $22, 24$. For $a = 3$: $b \\in \\{3, 6, 9\\}$ and $b$ divides $30$, giving $33, 36$. For $a = 4$: $b \\in \\{4, 8\\}$ and $b$ divides $40$, giving $44, 48$. For $a = 5$ to $9$: the only multiple of $a$ that is a digit is $b = a$, giving $55, 66, 77, 88, 99$. The total is $3 + 2 + 2 + 2 + 5 = 14$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

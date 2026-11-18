@@ -1,0 +1,56 @@
+{
+  "id": "SA-0114",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-04",
+  "difficulty": "easy",
+  "statement": "The population of a town $t$ years after 2020 is modeled by the function $P(t) = 12{,}500(1.03)^t$. Which statement best describes how the population changes, according to the model?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "It increases by $375$ people each year.",
+      "correct": false,
+      "misconception": "I found 3% of 12,500 once and treated it as a fixed yearly increase, but each year the 3% is taken of a larger population."
+    },
+    {
+      "key": "B",
+      "text": "It increases by $103\\%$ each year.",
+      "correct": false,
+      "misconception": "I read the base 1.03 as a 103% increase, but it means each year's population is 103% of the year before."
+    },
+    {
+      "key": "C",
+      "text": "It increases by $0.03\\%$ each year.",
+      "correct": false,
+      "misconception": "I turned the 0.03 in 1.03 into 0.03%, forgetting that the decimal 0.03 is 3%."
+    },
+    {
+      "key": "D",
+      "text": "It increases by $3\\%$ each year.",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Each time $t$ goes up by $1$, what is $P$ multiplied by?",
+    "Multiplying by $1.03$ keeps $100\\%$ of the old value and adds another $0.03$, which is a percent increase. Is the change a fixed number of people?",
+    "$P(t + 1) = 1.03 \\cdot P(t)$, so each year the population becomes $103\\%$ of what it was."
+  ],
+  "solutions": {
+    "reliable": "Each additional year multiplies the population by $1.03$, so the new population is $103\\%$ of the previous one, an increase of $3\\%$ per year. The yearly increase in people is not constant: from 2020 to 2021 it is $375$, but from 2021 to 2022 it is $0.03 \\cdot 12{,}875 \\approx 386$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

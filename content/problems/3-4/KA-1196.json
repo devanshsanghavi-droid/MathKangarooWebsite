@@ -1,0 +1,67 @@
+{
+  "id": "KA-1196",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Tom writes the digits of 2026 again and again: 202620262026... What is the sum of the first 30 digits he writes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "72",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "70",
+      "correct": false,
+      "misconception": "I found 7 full blocks of 2026 in 30 digits, worth 70, and forgot the 2 digits left over."
+    },
+    {
+      "key": "C",
+      "text": "75",
+      "correct": false,
+      "misconception": "I divided 30 by 4 to get 7 and a half blocks and took 7 and a half times 10."
+    },
+    {
+      "key": "D",
+      "text": "78",
+      "correct": false,
+      "misconception": "I took the 2 leftover digits from the end of a block, 2 and 6, instead of the start."
+    },
+    {
+      "key": "E",
+      "text": "80",
+      "correct": false,
+      "misconception": "I rounded up to 8 full blocks of 2026, which is 32 digits, not 30."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "How many digits are in one block?",
+    "Each block of 4 digits adds the same amount. Find how many whole blocks fit into 30 digits and which digits are left over.",
+    "One block, 2 0 2 6, adds up to 10. Thirty digits are 7 blocks with 2 digits left."
+  ],
+  "solutions": {
+    "reliable": "One block 2, 0, 2, 6 has sum 10. $30 = 7 \\times 4 + 2$, so there are 7 full blocks (sum 70) and then the first 2 digits of a new block, 2 and 0. Total: $70 + 2 + 0 = 72$. The transferable idea: in a repeating pattern, count whole cycles, then deal with the leftover from the start of the cycle.",
+    "elegant": null
+  },
+  "whyOnTest": "Repeating cycles: divide by the cycle length and handle the remainder from the start of the cycle.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0154",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-02",
+  "difficulty": "hard",
+  "statement": "Let $f(x) = \\sqrt{x - 2}$ and $g(x) = \\dfrac{1}{x - 5}$. Which of the following describes the domain of the composite function $g(f(x))$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "All real $x \\ge 2$",
+      "correct": false,
+      "misconception": "I kept only the square root restriction from $f$ and thought the composition removed the restriction from $g$, so I excluded nothing else."
+    },
+    {
+      "key": "B",
+      "text": "All real $x \\ge 2$ except $x = 5$",
+      "correct": false,
+      "misconception": "I copied the restriction $x \\ne 5$ straight from $g$, but in $g(f(x))$ it is $f(x)$, not $x$, that cannot equal $5$."
+    },
+    {
+      "key": "C",
+      "text": "All real $x \\ge 2$ except $x = 7$",
+      "correct": false,
+      "misconception": "I saw that $\\sqrt{x - 2}$ cannot equal $5$, but I solved $\\sqrt{x - 2} = 5$ as $x - 2 = 5$ without squaring the $5$, so I excluded $x = 7$."
+    },
+    {
+      "key": "D",
+      "text": "All real $x \\ge 2$ except $x = 27$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Write out $g(f(x))$ as a single expression first.",
+    "Two things can go wrong: the square root needs a nonnegative input, and the denominator $\\sqrt{x - 2} - 5$ cannot be $0$. Handle each one.",
+    "$g(f(x)) = \\dfrac{1}{\\sqrt{x - 2} - 5}$. You need $x \\ge 2$, and $\\sqrt{x - 2} = 5$ happens when $x - 2 = 25$."
+  ],
+  "solutions": {
+    "reliable": "$g(f(x)) = \\dfrac{1}{\\sqrt{x - 2} - 5}$. The square root needs $x - 2 \\ge 0$, so $x \\ge 2$. The denominator is $0$ when $\\sqrt{x - 2} = 5$, that is $x - 2 = 25$, so $x = 27$. Every other $x \\ge 2$ works, so the domain is all real $x \\ge 2$ except $x = 27$.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

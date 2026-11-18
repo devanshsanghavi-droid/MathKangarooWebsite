@@ -1,0 +1,66 @@
+{
+  "id": "AM-1274",
+  "contest": "AMC8",
+  "slot": 17,
+  "area": "CP",
+  "topic": "CP-05",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "Ines splits $12$ identical cookies into $3$ piles, with at least one cookie in each pile. Only the sizes of the piles matter, so piles of $2$, $3$ and $7$ cookies count as the same split as piles of $7$, $2$ and $3$. How many different splits are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I only counted splits where the three piles have different sizes and left out splits like 1, 1, 10 and 4, 4, 4."
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I allowed a pile to have no cookies, which added the 7 splits with an empty pile."
+    },
+    {
+      "key": "D",
+      "text": "$55$",
+      "correct": false,
+      "misconception": "I treated the piles as first, second and third, so I counted C(11, 2) = 55 ordered splits, but order does not matter."
+    },
+    {
+      "key": "E",
+      "text": "$91$",
+      "correct": false,
+      "misconception": "I treated the piles as ordered and also allowed empty piles, so I got C(14, 2) = 91."
+    }
+  ],
+  "hints": [
+    "To count each split once, list the pile sizes from smallest to largest: $a \\le b \\le c$.",
+    "The smallest pile $a$ can be at most $4$, since $3a \\le 12$. For each $a$, count the choices of $b$ with $a \\le b \\le c$.",
+    "For $a = 1$, $b$ can be $1$ to $5$. For $a = 2$, $b$ can be $2$ to $5$. Keep going."
+  ],
+  "solutions": {
+    "reliable": "Write each split as $a \\le b \\le c$ with $a + b + c = 12$. Since $a$ is the smallest, $3a \\le 12$, so $a \\le 4$. For a given $a$, $b$ runs from $a$ up to the largest value with $b \\le c = 12 - a - b$, that is, $2b \\le 12 - a$. For $a = 1$: $b = 1, \\ldots, 5$, giving $5$ splits. For $a = 2$: $b = 2, \\ldots, 5$, giving $4$. For $a = 3$: $b = 3, 4$, giving $2$. For $a = 4$: $b = 4$, giving $1$. The total is $5 + 4 + 2 + 1 = 12$.",
+    "elegant": "Count ordered splits and correct for repeats. There are $\\binom{11}{2} = 55$ ordered splits. The split $4, 4, 4$ appears once. Splits with exactly two equal piles, $x, x, 12 - 2x$ with $x \\ne 4$ and $1 \\le x \\le 5$, number $4$, and each appears $3$ times, using $12$ ordered splits. The remaining $55 - 1 - 12 = 42$ ordered splits have three different sizes and come $6$ at a time, giving $7$. The total is $1 + 4 + 7 = 12$."
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

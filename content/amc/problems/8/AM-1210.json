@@ -1,0 +1,66 @@
+{
+  "id": "AM-1210",
+  "contest": "AMC8",
+  "slot": 21,
+  "area": "NT",
+  "topic": "NT-04",
+  "types": [
+    "T-MODULAR"
+  ],
+  "statement": "For each positive integer $n$, let $g(n)$ be the greatest common divisor of $4n + 7$ and $6n + 5$. What is the largest possible value of $g(n)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I tried $n = 2$ and $n = 3$, got $1$ both times, and decided the two numbers never share a factor."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I subtracted to get $(6n + 5) - (4n + 7) = 2n - 2$ and decided the greatest common divisor could only be $1$ or $2$."
+    },
+    {
+      "key": "C",
+      "text": "$11$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I multiplied the first number by $3$ to get $12n + 21$ and decided the greatest common divisor must divide $21$, without subtracting $2(6n + 5)$."
+    },
+    {
+      "key": "E",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I thought the greatest common divisor could be as large as $7 \\cdot 5 = 35$, the product of the two constant terms."
+    }
+  ],
+  "hints": [
+    "Any number that divides both $4n + 7$ and $6n + 5$ also divides any combination of them, such as $3(4n + 7) - 2(6n + 5)$.",
+    "$3(4n + 7) - 2(6n + 5) = 12n + 21 - 12n - 10 = 11$. So $g(n)$ always divides $11$.",
+    "So $g(n)$ is $1$ or $11$. Find an $n$ that makes both numbers multiples of $11$; try small values."
+  ],
+  "solutions": {
+    "reliable": "Let $d = g(n)$. Since $d$ divides $4n + 7$ and $6n + 5$, it divides $3(4n + 7) - 2(6n + 5) = 11$. So $d$ is $1$ or $11$. For $n = 1$ we get $4n + 7 = 11$ and $6n + 5 = 11$, so $g(1) = 11$. The largest possible value is $11$. (It happens exactly when $n$ leaves remainder $1$ when divided by $11$, for example $n = 12$ gives $55$ and $77$.)",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

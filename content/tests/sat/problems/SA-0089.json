@@ -1,0 +1,56 @@
+{
+  "id": "SA-0089",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "easy",
+  "statement": "Which of the following equations has no solution?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3(x + 2) = -3x + 2$",
+      "correct": false,
+      "misconception": "I thought $3x$ and $-3x$ would cancel like equal coefficients do, but they have opposite signs, so the equation gives $6x = -4$ and has one solution."
+    },
+    {
+      "key": "B",
+      "text": "$3(x + 2) = 3x + 2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$3(x + 2) = 2x + 6$",
+      "correct": false,
+      "misconception": "I solved it and got $x = 0$, and I thought a solution of zero means there is no solution."
+    },
+    {
+      "key": "D",
+      "text": "$3x + 6 = 3(x + 1) + 3$",
+      "correct": false,
+      "misconception": "I saw the $x$ terms cancel and stopped, but the constants also match, $6 = 6$, so every $x$ is a solution."
+    }
+  ],
+  "hints": [
+    "Simplify both sides of each equation before comparing them.",
+    "An equation has no solution when the $x$ terms cancel and leave a false statement about numbers, such as $5 = 1$.",
+    "Each choice expands to $3x + 6$ on one side. Look for the one where the other side is $3x$ plus a different constant."
+  ],
+  "solutions": {
+    "reliable": "Expand $3(x + 2) = 3x + 6$ in each choice. $3x + 6 = 3x + 2$ leads to $6 = 2$, which is false for every $x$, so it has no solution. $3x + 6 = 2x + 6$ gives $x = 0$, one solution. $3x + 6 = 3x + 3 + 3$ is $3x + 6 = 3x + 6$, true for every $x$. $3x + 6 = -3x + 2$ gives $6x = -4$, one solution. Key idea: the same $x$ coefficient with different constants means no solution, and the same coefficient with the same constant means infinitely many.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

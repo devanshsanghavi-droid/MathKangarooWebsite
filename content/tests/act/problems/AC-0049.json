@@ -1,0 +1,56 @@
+{
+  "id": "AC-0049",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-01",
+  "difficulty": "hard",
+  "statement": "Raffle tickets are numbered from $1$ to $500$. A ticket wins a prize if its number is divisible by $6$ but not divisible by $9$. How many tickets win a prize?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I counted the 83 multiples of 6 and subtracted all 55 multiples of 9, but most multiples of 9 are not multiples of 6, so I removed too many."
+    },
+    {
+      "key": "B",
+      "text": "$56$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$74$",
+      "correct": false,
+      "misconception": "I removed the multiples of $6 \\cdot 9 = 54$, but the numbers divisible by both 6 and 9 are the multiples of their least common multiple, 18."
+    },
+    {
+      "key": "D",
+      "text": "$83$",
+      "correct": false,
+      "misconception": "I counted all the multiples of 6 and forgot to remove the ones that are also divisible by 9."
+    }
+  ],
+  "hints": [
+    "Count the multiples of 6 first, then remove some of them.",
+    "Remove the multiples of 6 that are also multiples of 9. Those are exactly the multiples of the least common multiple of 6 and 9.",
+    "There are $\\lfloor 500 / 6 \\rfloor = 83$ multiples of 6 and $\\lfloor 500 / 18 \\rfloor = 27$ multiples of 18."
+  ],
+  "solutions": {
+    "reliable": "Multiples of 6 up to 500: $\\lfloor 500 \\div 6 \\rfloor = 83$, the largest being 498. A multiple of 6 is also divisible by 9 exactly when it is a multiple of $\\operatorname{lcm}(6, 9) = 18$, and there are $\\lfloor 500 \\div 18 \\rfloor = 27$ of those, the largest being 486. So $83 - 27 = 56$ tickets win. The idea: to count numbers divisible by $a$ but not by $b$, subtract the multiples of $\\operatorname{lcm}(a, b)$ from the multiples of $a$.",
+    "elegant": "In each run of 18 numbers, the multiples of 6 come in a group of three, and only the last of the three is a multiple of 18. The first 81 multiples of 6 form 27 such groups with $27 \\cdot 2 = 54$ winners, and the last two, 492 and 498, both win: $54 + 2 = 56$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

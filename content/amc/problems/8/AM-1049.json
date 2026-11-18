@@ -1,0 +1,62 @@
+{
+  "id": "AM-1049",
+  "contest": "AMC8",
+  "slot": 12,
+  "area": "ALG",
+  "topic": "ALG-02",
+  "types": ["T-SUBSTITUTION"],
+  "statement": "When full, jar B holds twice as much as jar A. Jar A is $\\frac{1}{3}$ full of juice and jar B is $\\frac{1}{4}$ full of juice. All of the juice from both jars is poured into an empty jar C, which holds exactly as much as jars A and B together. What fraction of jar C is now filled with juice?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{5}{18}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{7}{24}$",
+      "correct": false,
+      "misconception": "I averaged the two fractions, (1/3 + 1/4) / 2 = 7/24, ignoring that jar B is twice as big as jar A."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{5}{12}$",
+      "correct": false,
+      "misconception": "I found that the juice would fill 5/6 of jar A, but then divided by 2 as if jar C held two jars A, when it holds three."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{7}{12}$",
+      "correct": false,
+      "misconception": "I added the fractions, 1/3 + 1/4 = 7/12, as if they were parts of the same jar."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{5}{6}$",
+      "correct": false,
+      "misconception": "I found that the juice would fill 5/6 of jar A, but forgot that jar C is three times as big as jar A."
+    }
+  ],
+  "hints": [
+    "Measure everything in jar A's: let jar A hold $1$ cup, so jar B holds $2$ cups.",
+    "Jar A contains $\\frac{1}{3}$ cup and jar B contains $\\frac{1}{4} \\cdot 2 = \\frac{1}{2}$ cup.",
+    "Jar C holds $3$ cups, and it receives $\\frac{1}{3} + \\frac{1}{2} = \\frac{5}{6}$ cup."
+  ],
+  "solutions": {
+    "reliable": "Let jar A hold $6$ cups, so jar B holds $12$ cups and jar C holds $18$ cups. Jar A contains $\\frac{1}{3} \\cdot 6 = 2$ cups of juice and jar B contains $\\frac{1}{4} \\cdot 12 = 3$ cups, for $5$ cups in all. So jar C is $\\frac{5}{18}$ full.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

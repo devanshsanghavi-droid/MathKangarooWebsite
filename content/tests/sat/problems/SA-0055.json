@@ -1,0 +1,56 @@
+{
+  "id": "SA-0055",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "medium",
+  "statement": "While a video plays, the battery level $B$ of a phone, as a percent of a full charge, decreases linearly with time. The table shows $B$ at $t$ minutes after the video starts. $$\\begin{array}{c|c|c|c} t & 10 & 25 & 40 \\\\ \\hline B & 86 & 74 & 62 \\end{array}$$ According to this relationship, how many minutes after the video starts will the battery level be $30$ percent?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$70$",
+      "correct": false,
+      "misconception": "I treated the first column as the start, so I divided the drop from 86 to 30 by 0.8 and got 70, forgetting that 10 minutes had already passed by then."
+    },
+    {
+      "key": "B",
+      "text": "$80$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$87.5$",
+      "correct": false,
+      "misconception": "I assumed the battery was at 100 percent when the video started, so I divided the 70-point drop by 0.8 and got 87.5."
+    },
+    {
+      "key": "D",
+      "text": "$117.5$",
+      "correct": false,
+      "misconception": "I found when the battery reaches 0 percent, $94 \\div 0.8$, instead of when it reaches 30 percent."
+    }
+  ],
+  "hints": [
+    "How much does the battery level drop per minute?",
+    "Find the slope from two columns of the table, then work back to the level at $t = 0$ and write $B$ as a linear function of $t$.",
+    "The slope is $\\frac{74 - 86}{25 - 10} = -0.8$, so at $t = 0$ the level was $86 + 8 = 94$. Solve $94 - 0.8t = 30$."
+  ],
+  "solutions": {
+    "reliable": "The slope is $\\frac{74 - 86}{25 - 10} = \\frac{-12}{15} = -0.8$ percent per minute. Going back $10$ minutes from $(10, 86)$, the level at $t = 0$ was $86 + 0.8(10) = 94$, so $B = 94 - 0.8t$. Setting $B = 30$: $0.8t = 64$ and $t = 80$. Check with the last column: $94 - 0.8(40) = 62$.",
+    "elegant": "From $t = 40$, the level must fall another $62 - 30 = 32$ points at $0.8$ points per minute, which takes $40$ more minutes, so $t = 40 + 40 = 80$."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

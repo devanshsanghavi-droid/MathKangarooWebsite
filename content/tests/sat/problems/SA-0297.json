@@ -1,0 +1,56 @@
+{
+  "id": "SA-0297",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-06",
+  "difficulty": "medium",
+  "statement": "A circular fountain is drawn on a park map in the $xy$-plane, where each unit is $1$ meter. The points $(1, 2)$ and $(7, 10)$ are at opposite ends of a diameter of the fountain. What is the area of the fountain, in square meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10\\pi$",
+      "correct": false,
+      "misconception": "I found the diameter, $10$, and multiplied it by $\\pi$, which gives the circumference, not the area."
+    },
+    {
+      "key": "B",
+      "text": "$25\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$49\\pi$",
+      "correct": false,
+      "misconception": "I added the coordinate differences, $6 + 8 = 14$, as the diameter, so I used a radius of $7$ and got $49\\pi$."
+    },
+    {
+      "key": "D",
+      "text": "$100\\pi$",
+      "correct": false,
+      "misconception": "I found the distance between the points, $10$, and used it as the radius instead of the diameter."
+    }
+  ],
+  "hints": [
+    "The distance between the two points is the diameter.",
+    "Use the distance formula: $\\sqrt{(7 - 1)^2 + (10 - 2)^2}$. The radius is half of that.",
+    "The diameter is $\\sqrt{36 + 64} = 10$, so the radius is $5$. Area is $\\pi r^2$."
+  ],
+  "solutions": {
+    "reliable": "The diameter is the distance between $(1, 2)$ and $(7, 10)$: $\\sqrt{6^2 + 8^2} = \\sqrt{100} = 10$ meters. The radius is $5$ meters, so the area is $\\pi \\cdot 5^2 = 25\\pi$ square meters.",
+    "elegant": "The center is the midpoint $(4, 6)$, and the radius is its distance to $(1, 2)$: $\\sqrt{3^2 + 4^2} = 5$. The area is $25\\pi$."
+  },
+  "estSeconds": 65,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

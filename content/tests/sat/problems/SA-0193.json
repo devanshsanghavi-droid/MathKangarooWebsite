@@ -1,0 +1,56 @@
+{
+  "id": "SA-0193",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-04",
+  "difficulty": "easy",
+  "statement": "A collector buys a rare coin for $50$ dollars. The coin's value increases by $6\\%$ each year. Which function gives the value $V$, in dollars, of the coin $t$ years after it is bought?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$V = 50(1.06)^t$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$V = 50 + 3t$",
+      "correct": false,
+      "misconception": "I added $6\\%$ of the original price, $3$ dollars, every year, which is linear growth instead of percent growth."
+    },
+    {
+      "key": "C",
+      "text": "$V = 50(0.06)^t$",
+      "correct": false,
+      "misconception": "I used the percent, $0.06$, as the base instead of the growth factor $1.06$."
+    },
+    {
+      "key": "D",
+      "text": "$V = 50(1.6)^t$",
+      "correct": false,
+      "misconception": "I wrote $6\\%$ as $0.6$, so I used the growth factor $1.6$."
+    }
+  ],
+  "hints": [
+    "Increasing by $6\\%$ means each year's value is the previous year's value plus $6\\%$ of it.",
+    "Adding $6\\%$ is the same as multiplying by $1 + 0.06 = 1.06$.",
+    "After $t$ years the starting value $50$ has been multiplied by $1.06$ a total of $t$ times."
+  ],
+  "solutions": {
+    "reliable": "Each year the value is multiplied by $1 + 0.06 = 1.06$. Starting from $50$ dollars, after $t$ years the value is $V = 50(1.06)^t$. Check: after $1$ year the coin is worth $50 + 3 = 53$ dollars, and $50(1.06) = 53$; after $2$ years it is worth $53 + 3.18 = 56.18$ dollars, which the linear model $50 + 3t = 56$ misses.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

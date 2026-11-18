@@ -1,0 +1,69 @@
+{
+  "id": "AM-1288",
+  "contest": "AMC8",
+  "slot": 20,
+  "area": "CP",
+  "topic": "CP-07",
+  "types": [
+    "T-GEOPROB",
+    "T-COMPLEMENT"
+  ],
+  "statement": "Square $ABCD$ has side length $4$, with its vertices labeled in order around the square. A point $P$ is chosen at random inside the square. What is the probability that triangle $ABP$ has area greater than $2$ and triangle $BCP$ has area greater than $3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{3}{32}$",
+      "correct": false,
+      "misconception": "I multiplied the chances that each condition fails, (1/4)(3/8), instead of the chances that each condition holds."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1}{8}$",
+      "correct": false,
+      "misconception": "I forgot that the base is 4 and set each height greater than the area itself, so I needed heights above 2 and above 3, giving (1/2)(1/4)."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{3}{8}$",
+      "correct": false,
+      "misconception": "I took away the strip where triangle ABP is too small, 1/4 of the square, and the strip where triangle BCP is too small, 3/8, but forgot to add back the corner where the strips overlap."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{15}{32}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{5}{8}$",
+      "correct": false,
+      "misconception": "I only used the condition on triangle BCP and forgot about triangle ABP."
+    }
+  ],
+  "hints": [
+    "Each triangle has a side of the square as its base, of length 4. Its area depends only on how far P is from that side.",
+    "Triangle ABP has area greater than 2 when P is more than 1 unit from side AB. Triangle BCP has area greater than 3 when P is more than 1.5 units from side BC.",
+    "The points that work fill a rectangle 3 by 2.5 inside the 4 by 4 square."
+  ],
+  "solutions": {
+    "reliable": "Triangle $ABP$ has base $AB = 4$, so its area is $\\frac{1}{2} \\cdot 4 \\cdot h = 2h$, where $h$ is the distance from $P$ to side $AB$. Area greater than $2$ means $h > 1$. In the same way, triangle $BCP$ has area $2k$, where $k$ is the distance from $P$ to side $BC$, and area greater than $3$ means $k > 1.5$. Sides $AB$ and $BC$ are perpendicular, so the points with $h > 1$ and $k > 1.5$ fill a rectangle $3$ by $2.5$, of area $7.5$. The probability is $\\frac{7.5}{16} = \\frac{15}{32}$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-11"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

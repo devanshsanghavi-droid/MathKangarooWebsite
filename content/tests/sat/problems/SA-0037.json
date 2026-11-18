@@ -1,0 +1,56 @@
+{
+  "id": "SA-0037",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "hard",
+  "statement": "In the $xy$-plane, the graph of $5x + by = 30$, where $b$ is a nonzero constant, is a line. The sum of the line's $x$-intercept and its $y$-intercept is $10$. What is the value of $b$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-\\dfrac{15}{2}$",
+      "correct": false,
+      "misconception": "I wrote the $y$-intercept as $-\\dfrac{30}{b}$, so $6 - \\dfrac{30}{b} = 10$ and I got $b = -\\dfrac{15}{2}$."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found the $x$-intercept 6 correctly but thought the $y$-intercept was just $b$, so $6 + b = 10$ gave $b = 4$."
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I took the $x$-intercept to be the coefficient 5, so $5 + \\dfrac{30}{b} = 10$ gave $b = 6$."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{15}{2}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Each intercept is found by setting the other variable equal to $0$.",
+    "With $y = 0$ you get the $x$-intercept; with $x = 0$ you get the $y$-intercept in terms of $b$.",
+    "The $x$-intercept is $\\dfrac{30}{5} = 6$ and the $y$-intercept is $\\dfrac{30}{b}$. Solve $6 + \\dfrac{30}{b} = 10$."
+  ],
+  "solutions": {
+    "reliable": "Set $y = 0$: $5x = 30$, so the $x$-intercept is $6$. Set $x = 0$: $by = 30$, so the $y$-intercept is $\\dfrac{30}{b}$. Then $6 + \\dfrac{30}{b} = 10$, so $\\dfrac{30}{b} = 4$ and $b = \\dfrac{30}{4} = \\dfrac{15}{2}$. Check: $5x + 7.5y = 30$ meets the axes at $(6, 0)$ and $(0, 4)$, and $6 + 4 = 10$.",
+    "elegant": null
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

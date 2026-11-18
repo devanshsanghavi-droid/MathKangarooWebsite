@@ -1,0 +1,56 @@
+{
+  "id": "AC-0051",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "easy",
+  "statement": "What value of $x$ satisfies the equation $3(x - 4) + 2 = 5x - 18$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-4$",
+      "correct": false,
+      "misconception": "I got to $-2x = -8$ and then divided as if the signs were different, so I wrote $x = -4$."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I multiplied the 3 by the $x$ but not by the $-4$, so I had $3x - 4 + 2 = 5x - 18$ and got $x = 8$."
+    },
+    {
+      "key": "D",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I moved the $-10$ across the equals sign but left it as $-10$, so I got $-2x = -28$ and $x = 14$."
+    }
+  ],
+  "hints": [
+    "Start by distributing the $3$ to both terms inside the parentheses.",
+    "After distributing, combine like terms on the left, then gather the $x$ terms on one side and the numbers on the other.",
+    "The left side becomes $3x - 12 + 2 = 3x - 10$, so $3x - 10 = 5x - 18$. Subtract $3x$ and add $18$ to both sides."
+  ],
+  "solutions": {
+    "reliable": "Distribute: $3x - 12 + 2 = 5x - 18$, so $3x - 10 = 5x - 18$. Subtract $3x$ from both sides: $-10 = 2x - 18$. Add $18$: $8 = 2x$, so $x = 4$. Check: $3(4 - 4) + 2 = 2$ and $5(4) - 18 = 2$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

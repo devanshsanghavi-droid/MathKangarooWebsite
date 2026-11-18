@@ -1,0 +1,67 @@
+{
+  "id": "KA-1354",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A ride has this sign: \"You may not ride if you are under 12 years old or shorter than 140 cm.\" Of 30 children, 18 are under 12, 10 are shorter than 140 cm, and 7 are both. How many of the 30 may ride?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I added 18 and 10 to get 28 children kept off, so I counted the 7 children who are both under 12 and short twice."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I used only the age rule and let in everyone who is 12 or older, forgetting the height rule."
+    },
+    {
+      "key": "D",
+      "text": "21",
+      "correct": false,
+      "misconception": "I counted the children who are not allowed to ride instead of the ones who may ride."
+    },
+    {
+      "key": "E",
+      "text": "23",
+      "correct": false,
+      "misconception": "I read \"or\" as \"and\", so I thought only the 7 children who are both under 12 and shorter than 140 cm are kept off."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-01",
+    "secondary": [
+      "CNT-10"
+    ]
+  },
+  "hints": [
+    "Is one broken rule enough to be kept off, or must a child break both?",
+    "The word \"or\" means one reason is enough. Count the children kept off without counting anyone twice, then take them away from 30.",
+    "Adding 18 and 10 counts the 7 children who are both twice, so $18 + 10 - 7 = 21$ children are kept off."
+  ],
+  "solutions": {
+    "reliable": "The word \"or\" in the sign means one reason is enough: a child is kept off if they are under 12, or shorter than 140 cm, or both. Adding $18 + 10 = 28$ counts the 7 children who are both twice, so the number kept off is $18 + 10 - 7 = 21$. The children who may ride are the ones who are neither under 12 nor shorter than 140 cm: $30 - 21 = 9$. The transferable idea: \"not allowed if A or B\" lets in only the people who are neither A nor B.",
+    "elegant": "Set aside the 18 children under 12. That leaves 12 children, and of these $10 - 7 = 3$ are shorter than 140 cm. So $12 - 3 = 9$ children may ride."
+  },
+  "whyOnTest": "Kangaroo logic questions hinge on reading \"or\" and \"not\" exactly, and on counting an overlap only once.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

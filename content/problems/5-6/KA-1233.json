@@ -1,0 +1,70 @@
+{
+  "id": "KA-1233",
+  "band": "5-6",
+  "points": 4,
+  "statement": "The net shown is folded to make a cube. Which number ends up on the face opposite the 5?",
+  "figure": {
+    "component": "CubeNetTwoRows",
+    "alt": "A cube net of six squares in two rows of three. The top row holds 1, 2 and 3 from left to right. The bottom row starts directly under 3 and holds 4, 5 and 6 from left to right, so it sticks out two squares to the right of the top row. Square 5 shares an edge with 4 and 6 and touches 3 only at a corner."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I picked the square farthest from 5 in the net, but distance in the net does not decide which faces end up opposite."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I thought squares that touch only at a corner in the net end up opposite, but 3 and 5 end up as neighbours sharing an edge."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought the square just before 5 in its row folds round behind it, but squares that share an edge in the net always end up side by side."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought an end square of a row of three is opposite the middle square, but in a row of three it is the two end squares that are opposite."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-10",
+    "secondary": [
+      "GEO-11"
+    ]
+  },
+  "hints": [
+    "In a straight row of three squares, which two end up opposite?",
+    "Squares sharing an edge in the net are neighbours on the cube. In a straight row of three, the two end squares are opposite. Use each row to find one opposite pair; the last two numbers form the third pair.",
+    "In the top row, 1 and 3 are opposite. In the bottom row, 4 and 6 are opposite. Which two numbers are left?"
+  ],
+  "solutions": {
+    "reliable": "In a straight row of three squares, the middle square becomes one face and the two end squares fold up on opposite sides of it, so they are opposite. The top row gives 1 opposite 3, and the bottom row gives 4 opposite 6. Every face has exactly one opposite face, so the two numbers left over, 2 and 5, must be opposite each other. The transferable idea: in a cube net, the ends of a straight row of three are opposite; find the easy pairs first, and the last pair is whatever is left.",
+    "elegant": null
+  },
+  "whyOnTest": "Net questions test which faces become opposite; the reliable trick is to find easy pairs from rows of three and let the last pair fall out.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

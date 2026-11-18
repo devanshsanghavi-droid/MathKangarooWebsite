@@ -1,0 +1,67 @@
+{
+  "id": "AM-1085",
+  "contest": "AMC8",
+  "slot": 3,
+  "area": "GEO",
+  "topic": "GEO-10",
+  "types": [
+    "T-SYMMETRY",
+    "T-COORD"
+  ],
+  "statement": "The point $P = (2, 7)$ is reflected across the vertical line $x = 5$. That image is then reflected across the $y$-axis. What are the coordinates of the final image?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$(8, 7)$",
+      "correct": false,
+      "misconception": "I reflected across x = 5 to get (8, 7) and then forgot to do the second reflection."
+    },
+    {
+      "key": "B",
+      "text": "$(8, -7)$",
+      "correct": false,
+      "misconception": "I did the first reflection correctly to get (8, 7), but then reflected across the x-axis instead of the y-axis."
+    },
+    {
+      "key": "C",
+      "text": "$(-2, 7)$",
+      "correct": false,
+      "misconception": "I skipped the first reflection and only reflected (2, 7) across the y-axis."
+    },
+    {
+      "key": "D",
+      "text": "$(-7, 7)$",
+      "correct": false,
+      "misconception": "I thought reflecting across x = 5 meant adding 5 to the x-coordinate, which gave (7, 7), and then the y-axis reflection gave (-7, 7)."
+    },
+    {
+      "key": "E",
+      "text": "$(-8, 7)$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Reflecting across a vertical line does not change the $y$-coordinate.",
+    "$P$ is $3$ units to the left of the line $x = 5$, so its image is $3$ units to the right of that line. Reflecting across the $y$-axis then changes the sign of the $x$-coordinate.",
+    "The first image is $(8, 7)$. Reflecting it across the $y$-axis gives the answer."
+  ],
+  "solutions": {
+    "reliable": "$P$ is $5 - 2 = 3$ units to the left of the line $x = 5$, so its mirror image is $3$ units to the right of the line, at $(8, 7)$. Reflecting across the $y$-axis keeps the $y$-coordinate and changes the sign of the $x$-coordinate, giving $(-8, 7)$.",
+    "elegant": "Reflecting $x$ across the line $x = 5$ sends $x$ to $10 - x$, and reflecting across the $y$-axis sends $x$ to $-x$. Together, $x \\mapsto -(10 - x) = x - 10$, a slide $10$ units left: $(2, 7) \\mapsto (-8, 7)$."
+  },
+  "formulas": [],
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

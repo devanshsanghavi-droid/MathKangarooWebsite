@@ -1,0 +1,56 @@
+{
+  "id": "AC-0061",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "easy",
+  "statement": "What is the sum of the solutions of the equation $x^2 - 5x - 24 = 0$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-24$",
+      "correct": false,
+      "misconception": "I mixed up the sum and the product of the solutions and gave the constant term, $-24$."
+    },
+    {
+      "key": "B",
+      "text": "$-5$",
+      "correct": false,
+      "misconception": "I read the sum straight off the $-5x$ term without changing its sign."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I factored to get $8$ and $3$ and added them, forgetting that the second solution is $-3$."
+    }
+  ],
+  "hints": [
+    "Try to factor the quadratic into two binomials.",
+    "Find two numbers whose product is $-24$ and whose sum is $-5$. They give the factors.",
+    "$x^2 - 5x - 24 = (x - 8)(x + 3)$, so the solutions are $x = 8$ and $x = -3$."
+  ],
+  "solutions": {
+    "reliable": "Factor: $x^2 - 5x - 24 = (x - 8)(x + 3)$. The solutions are $x = 8$ and $x = -3$, and their sum is $8 + (-3) = 5$.",
+    "elegant": "For $x^2 + bx + c = 0$ the solutions add to $-b$. Here $b = -5$, so the sum is $5$."
+  },
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

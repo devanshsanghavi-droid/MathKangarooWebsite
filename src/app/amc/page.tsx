@@ -4,7 +4,8 @@ import { AmcHome, type AmcHomeArea } from '@/components/amc/AmcHome';
 import { BetaBadge, PageContainer, PageHeader } from '@/components/ui';
 
 /**
- * `/amc` - the AMC 10 / AMC 12 beta landing (docs/06 §5): a paper switch, progress by area and
+ * `/amc` - the AMC 8 / AMC 10 / AMC 12 beta landing (docs/06 §5, docs/07 section 2): a paper
+ * switch, progress by area and
  * tier, "Start a mixed set", and the way in to the formula sheet and the problem types.
  *
  * Static: the problem list (id, slot, contest, area, topic) is baked in at build time and the
@@ -12,10 +13,10 @@ import { BetaBadge, PageContainer, PageHeader } from '@/components/ui';
  */
 export const dynamic = 'force-static';
 
-const TITLE = 'AMC 10 and AMC 12 practice (beta)';
+const TITLE = 'AMC 8, AMC 10 and AMC 12 practice (beta)';
 const DESCRIPTION =
-  'A free beta for AMC 10 and AMC 12 preparation: original problems organised by area, topic ' +
-  'and problem type, a must-know formula sheet and spaced-repetition flashcards. No account.';
+  'A free beta for AMC 8, AMC 10 and AMC 12 preparation: original problems organised by area, ' +
+  'topic and problem type, mock tests, a must-know formula sheet and flashcards. No account.';
 
 export function generateMetadata(): Metadata {
   return {
@@ -51,11 +52,11 @@ export default function AmcPage() {
       <PageHeader
         eyebrow={
           <>
-            AMC 10 and AMC 12 <BetaBadge />
+            AMC 8, AMC 10 and AMC 12 <BetaBadge />
           </>
         }
         title="AMC practice"
-        description="Original problems in the style of the AMC 10 and AMC 12, organised by area, topic and the recurring problem types, with feedback written for the mistake you made. This area is new: expect gaps, and tell us what is wrong."
+        description="Original problems in the style of the AMC 8, AMC 10 and AMC 12, organised by area, topic and the recurring problem types, with feedback written for the mistake you made. This area is new: expect gaps, and tell us what is wrong."
       />
       <AmcHome
         problems={problems}

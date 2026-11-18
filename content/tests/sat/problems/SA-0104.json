@@ -1,0 +1,56 @@
+{
+  "id": "SA-0104",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-01",
+  "difficulty": "hard",
+  "statement": "For $x \\ne 1$ and $x \\ne -1$, the equation $\\dfrac{3}{x + 1} + \\dfrac{2x}{x^2 - 1} = \\dfrac{ax + b}{x^2 - 1}$ is true, where $a$ and $b$ are constants. What is the value of $a + b$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I rewrote the first fraction over $x^2 - 1$ but wrote $3(x - 1)$ as $3x - 1$, so my numerator was $5x - 1$ and $a + b = 4$."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I changed the first denominator to $x^2 - 1$ without multiplying its numerator by $x - 1$, so my numerator was $2x + 3$ and $a + b = 5$."
+    },
+    {
+      "key": "D",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I multiplied the 3 by $x + 1$ instead of $x - 1$, so my numerator was $3x + 3 + 2x = 5x + 3$ and $a + b = 8$."
+    }
+  ],
+  "hints": [
+    "Factor $x^2 - 1$ to see what the first fraction is missing.",
+    "Since $x^2 - 1 = (x + 1)(x - 1)$, multiply the top and bottom of $\\frac{3}{x + 1}$ by $x - 1$, then add the numerators.",
+    "$\\frac{3}{x + 1} = \\frac{3(x - 1)}{x^2 - 1} = \\frac{3x - 3}{x^2 - 1}$. Add $2x$ to $3x - 3$ to get $ax + b$."
+  ],
+  "solutions": {
+    "reliable": "Because $x^2 - 1 = (x + 1)(x - 1)$, the first fraction is $\\frac{3(x - 1)}{x^2 - 1} = \\frac{3x - 3}{x^2 - 1}$. Adding, the numerator is $3x - 3 + 2x = 5x - 3$, so $a = 5$, $b = -3$ and $a + b = 2$. Check with $x = 2$: $\\frac{3}{3} + \\frac{4}{3} = \\frac{7}{3}$ and $\\frac{5(2) - 3}{3} = \\frac{7}{3}$.",
+    "elegant": "$a + b$ is the numerator $ax + b$ at $x = 1$, but $x = 1$ is not allowed. Instead, multiply both sides by $x^2 - 1$ to get $3(x - 1) + 2x = ax + b$, a polynomial identity that holds for every $x$. At $x = 1$ it gives $0 + 2 = a + b$, so $a + b = 2$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

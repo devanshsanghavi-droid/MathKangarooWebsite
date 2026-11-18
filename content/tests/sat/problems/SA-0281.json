@@ -1,0 +1,56 @@
+{
+  "id": "SA-0281",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-02",
+  "difficulty": "hard",
+  "statement": "In triangle $ABC$, $AB = AC$. Point $D$ lies on side $\\overline{BC}$ so that $AD = DC$. The measure of angle $BAD$ is twice the measure of angle $ABC$. What is the measure of angle $BAD$, in degrees?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I solved for the base angle, $x = 36$, and gave it as the answer instead of angle $BAD = 2x$."
+    },
+    {
+      "key": "B",
+      "text": "$72$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$90$",
+      "correct": false,
+      "misconception": "I treated angle $BAD = 2x$ as the whole angle at $A$, so I wrote $2x + x + x = 180$, got $x = 45$ and angle $BAD = 90$."
+    },
+    {
+      "key": "D",
+      "text": "$108$",
+      "correct": false,
+      "misconception": "I set up $5x = 180$ correctly but gave the whole angle $BAC = 3x = 108$ instead of angle $BAD$."
+    }
+  ],
+  "hints": [
+    "Call angle $ABC$ $x$. Two different isosceles triangles give you equal angles.",
+    "$AB = AC$ makes angle $ACB = x$. $AD = DC$ makes triangle $ADC$ isosceles, so angle $DAC$ equals angle $DCA = x$ too.",
+    "Angle $BAC = $ angle $BAD + $ angle $DAC = 2x + x = 3x$. The angle sum in triangle $ABC$ is $3x + x + x = 180$."
+  ],
+  "solutions": {
+    "reliable": "Let angle $ABC = x$. Since $AB = AC$, angle $ACB = x$. Since $AD = DC$, triangle $ADC$ is isosceles with equal base angles at $A$ and $C$, so angle $DAC = x$. Then angle $BAC = $ angle $BAD + $ angle $DAC = 2x + x = 3x$. In triangle $ABC$: $3x + x + x = 180$, so $x = 36$ and angle $BAD = 2x = 72$ degrees. Check: triangle $ABD$ has angles $72^\\circ$ at $A$, $36^\\circ$ at $B$ and $72^\\circ$ at $D$, which add to $180^\\circ$, and triangle $ADC$ has angles $36^\\circ$, $36^\\circ$ and $108^\\circ$.",
+    "elegant": null
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

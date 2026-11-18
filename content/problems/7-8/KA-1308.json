@@ -1,0 +1,68 @@
+{
+  "id": "KA-1308",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Zoe has 30 minutes left and six unstarted questions. She would solve each correctly in this time: P (3 points, 4 min), Q (3 points, 6 min), R (4 points, 9 min), S (4 points, 14 min), T (5 points, 5 min), U (5 points, 11 min). Counting only questions she finishes, what is the most points she can score?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "14",
+      "correct": false,
+      "misconception": "I did the 5-point questions first, then the 4-point ones, and stopped as soon as the next one did not fit: T, U and R make 14 points."
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": false,
+      "misconception": "I did the quickest questions first, P, T, Q and R, and stopped when U no longer fitted, which gives 15 points."
+    },
+    {
+      "key": "C",
+      "text": "16",
+      "correct": false,
+      "misconception": "I picked the questions with the most points per minute first, T, P, Q and then U, which left too little time for R and gave 16 points."
+    },
+    {
+      "key": "D",
+      "text": "17",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": false,
+      "misconception": "I left out only the slowest question, S, and did not check that the other five take 35 minutes, which is more than 30."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-08",
+    "secondary": [
+      "CFT-12",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "She cannot do all six. Think about which questions to leave out.",
+    "Time triage: all six take 49 minutes, so at least 19 minutes of questions must be skipped. Find the set of skipped questions that frees enough time while losing as few points as possible.",
+    "Skipping one question frees at most 14 minutes, so at least two must go. Compare the pairs that free 19 minutes or more by the points they cost."
+  ],
+  "solutions": {
+    "reliable": "All six take $4 + 6 + 9 + 14 + 5 + 11 = 49$ minutes, so questions worth at least 19 minutes must be left out, losing as few of the 24 available points as possible. One question frees at most 14 minutes, so at least two must go. The pairs that free 19 minutes or more are S and Q (20 min, 7 points), S and T (19 min, 9 points), S and R (23 min, 8 points), S and U (25 min, 9 points) and R and U (20 min, 9 points). The cheapest is S and Q. Leaving out three questions loses at least $3 + 3 + 4 = 10$ points, which is worse. So Zoe does P, R, T and U: 29 minutes and $3 + 4 + 5 + 5 = 17$ points. The transferable idea: deciding what to skip is a calculation in its own right, and simple rules like biggest first or quickest first can cost points.",
+    "elegant": "Think about what to skip rather than what to do. S is by far the worst value, under 0.3 points per minute, so drop it; then 35 minutes of work remain for 30 minutes of time, and the cheapest way to free 5 more minutes is to drop Q (3 points, 6 minutes). That leaves 17 points."
+  },
+  "whyOnTest": "Choosing which questions to leave is a real exam skill; the greedy rules students use each lose at least a point here.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

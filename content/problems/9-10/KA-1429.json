@@ -1,0 +1,67 @@
+{
+  "id": "KA-1429",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A pizza shop offers 7 different vegetable toppings and 4 different meat toppings. Lea orders a pizza with exactly three different toppings: two vegetables and one meat. How many different pizzas could she order?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "168",
+      "correct": false,
+      "misconception": "I counted the two vegetables as $7 \\times 6$, so each pair was counted twice, once in each order."
+    },
+    {
+      "key": "B",
+      "text": "84",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "165",
+      "correct": false,
+      "misconception": "I chose any 3 of the 11 toppings and ignored the rule of two vegetables and one meat."
+    },
+    {
+      "key": "D",
+      "text": "25",
+      "correct": false,
+      "misconception": "I added the 21 pairs of vegetables and the 4 meats instead of multiplying."
+    },
+    {
+      "key": "E",
+      "text": "119",
+      "correct": false,
+      "misconception": "I counted every three-topping pizza with at least two vegetables, which also adds the 35 pizzas with three vegetables."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Choose the vegetables and the meat separately.",
+    "Picking two vegetables is a selection, so their order does not matter. Then each pair of vegetables can go with any meat.",
+    "There are $\\frac{7 \\times 6}{2} = 21$ pairs of vegetables."
+  ],
+  "solutions": {
+    "reliable": "The pair of vegetables can be chosen in $\\frac{7 \\times 6}{2} = 21$ ways, dividing by 2 because the order of the two does not matter. The meat can be chosen in 4 ways. Each pair works with each meat, so there are $21 \\times 4 = 84$ pizzas. The transferable idea: count each independent selection on its own, then multiply.",
+    "elegant": null
+  },
+  "whyOnTest": "Selections where order does not matter, combined across two groups, test both dividing out order and multiplying independent choices.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0010",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "medium",
+  "statement": "The amount of fuel in a car's tank decreases linearly as the car is driven. After the car has been driven $48$ miles, the tank holds $13.4$ gallons of fuel. After the car has been driven $228$ miles, the tank holds $7.4$ gallons. At this rate, how many miles does the car travel on each gallon of fuel?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{1}{30}$",
+      "correct": false,
+      "misconception": "I found the rate as gallons used per mile, $\\frac{6}{180} = \\frac{1}{30}$, but the question asks for miles per gallon."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I worked back to find how much fuel was in the tank at $0$ miles, $13.4 + 1.6 = 15$ gallons, and gave that instead of the miles per gallon."
+    },
+    {
+      "key": "C",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$38$",
+      "correct": false,
+      "misconception": "I divided the total distance of $228$ miles by the $6$ gallons used between the two readings, but those gallons cover only $180$ miles."
+    }
+  ],
+  "hints": [
+    "Find how many gallons were used between the two readings.",
+    "Compare the miles driven between the two readings with the fuel used over that same stretch.",
+    "From $48$ to $228$ miles the car went $180$ miles and used $13.4 - 7.4 = 6$ gallons."
+  ],
+  "solutions": {
+    "reliable": "Between the two readings the car traveled $228 - 48 = 180$ miles and used $13.4 - 7.4 = 6$ gallons. Because the decrease is linear, the car uses fuel at a constant rate, so it travels $\\frac{180}{6} = 30$ miles per gallon. Check: the slope of fuel against miles is $-\\frac{6}{180} = -\\frac{1}{30}$ gallon per mile, the reciprocal of $30$ miles per gallon.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

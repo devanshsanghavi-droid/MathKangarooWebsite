@@ -1,0 +1,68 @@
+{
+  "id": "KA-1506",
+  "band": "11-12",
+  "points": 3,
+  "statement": "For which of these positive whole numbers $n$ are both $2n + 1$ and $3n + 1$ perfect squares?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I checked only $2n + 1 = 25$, a square, and did not check $3n + 1 = 37$, which is not."
+    },
+    {
+      "key": "B",
+      "text": "$56$",
+      "correct": false,
+      "misconception": "I checked only $3n + 1 = 169$, a square, and did not check $2n + 1 = 113$, which is not."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I misread $2n + 1$ as $2n - 1$; with $n = 5$ that gives 9, and $3n + 1 = 16$, so both looked like squares."
+    },
+    {
+      "key": "D",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I found $2n + 1 = 121$ and then mistook $3n + 1 = 181$ for $13^2$, which is actually 169."
+    },
+    {
+      "key": "E",
+      "text": "$40$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-04",
+    "secondary": [
+      "CFT-01",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Test the choices. Each test is two small calculations.",
+    "Finding all such $n$ from scratch needs real number theory, but checking a given $n$ takes seconds. Test both expressions for every choice, and be careful with the squares near the answer.",
+    "For $n = 40$: $2n + 1 = 81 = 9^2$ and $3n + 1 = 121 = 11^2$. Check that each other choice fails one of the two."
+  ],
+  "solutions": {
+    "reliable": "Test each choice. $n = 12$: $25$ is a square but $37$ is not. $n = 56$: $113$ is not a square. $n = 5$: $11$ is not a square. $n = 60$: $121$ is a square but $181$ is not ($13^2 = 169$, $14^2 = 196$). $n = 40$: $81 = 9^2$ and $121 = 11^2$, both squares. The answer is 40. The transferable idea: when a forward solution is hard and a check is easy, check every choice against both conditions.",
+    "elegant": null
+  },
+  "whyOnTest": "Solving this forwards is an olympiad exercise, but checking the five choices is quick work; the traps pass one test and fail the other.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

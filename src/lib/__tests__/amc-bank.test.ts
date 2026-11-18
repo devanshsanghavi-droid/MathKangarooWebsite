@@ -41,8 +41,8 @@ describe('the AMC bank filters', () => {
     for (const row of rows) expect(row.href).toBe(`/amc/problem/${row.id}`);
   });
 
-  it('keeps AMC 12 only problems off the AMC 10 list, and BOTH problems on either', () => {
-    for (const paper of ['AMC10', 'AMC12'] as const) {
+  it('keeps AMC 12 only problems off the AMC 10 list, BOTH on 10 and 12, AMC 8 on its own', () => {
+    for (const paper of ['AMC8', 'AMC10', 'AMC12'] as const) {
       const matched = filterRows(rows, filters({ level: paper }), none);
       const expected = problems.filter((p) => amcInContest(p.contest, paper));
       expect(matched.map((r) => r.id)).toEqual(expected.map((p) => p.id));
@@ -185,7 +185,7 @@ describe('the mixed set on /amc', () => {
   };
 
   it('takes only problems on the chosen paper, spread across areas, in slot order', () => {
-    for (const paper of ['AMC10', 'AMC12'] as const) {
+    for (const paper of ['AMC8', 'AMC10', 'AMC12'] as const) {
       const ids = mixedSetIds(home, none, paper, 10, seeded());
       expect(ids.length).toBe(Math.min(10, home.filter((p) => onPaper(p, paper)).length));
       const picked = ids.map((id) => byId.get(id));

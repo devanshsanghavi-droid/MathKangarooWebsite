@@ -1,0 +1,66 @@
+{
+  "id": "AM-1107",
+  "contest": "AMC8",
+  "slot": 11,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "Three squares with areas $16$, $36$ and $64$ are placed in a row, from smallest on the left to largest on the right. Their bottom sides lie on the same line, and each square touches the next one along part of a vertical side, so together they form a single shape. What is the perimeter of this shape?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$44$",
+      "correct": false,
+      "misconception": "I added the bottom, 18, the three tops, 4 + 6 + 8 = 18, and the right side, 8, but I left out the vertical steps on the left: the left side of the small square and the two rises, 2 and 2."
+    },
+    {
+      "key": "B",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I treated the shape like a rectangle as wide as all three squares, 18, and as tall as the middle square, 6, and got 2(18 + 6) = 48."
+    },
+    {
+      "key": "C",
+      "text": "$52$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$62$",
+      "correct": false,
+      "misconception": "I added the three perimeters, 16 + 24 + 32 = 72, and took off each shared segment only once, 72 - 4 - 6 = 62. Each shared segment was counted in two perimeters, so it must come off twice."
+    },
+    {
+      "key": "E",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I added the three perimeters, 16 + 24 + 32 = 72, and did not remove the segments where the squares touch, which are inside the shape."
+    }
+  ],
+  "hints": [
+    "The squares have side lengths $4$, $6$ and $8$.",
+    "Where two squares touch, the shared segment is inside the shape, not on its boundary. It is as long as the side of the smaller of the two squares.",
+    "The three perimeters add up to $16 + 24 + 32 = 72$. The shared segments have lengths $4$ and $6$, and each was counted twice, once for each square that has it."
+  ],
+  "solutions": {
+    "reliable": "The side lengths are $\\sqrt{16} = 4$, $\\sqrt{36} = 6$ and $\\sqrt{64} = 8$, so the three perimeters add up to $16 + 24 + 32 = 72$. The small and middle squares touch along a segment of length $4$, and the middle and large squares touch along a segment of length $6$. Each of these segments lies inside the shape but was counted once in each of two perimeters, so the perimeter of the shape is $72 - 2 \\cdot 4 - 2 \\cdot 6 = 52$.",
+    "elegant": "The shape is a staircase. Its top edges add up to $4 + 6 + 8 = 18$, the same as the bottom, and its left-hand vertical edges, $4$, $2$ and $2$, add up to $8$, the same as the right side. So the perimeter equals that of an $18$ by $8$ rectangle: $2(18 + 8) = 52$."
+  },
+  "formulas": [],
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

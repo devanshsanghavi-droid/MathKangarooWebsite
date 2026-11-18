@@ -1,0 +1,67 @@
+{
+  "id": "KA-1011",
+  "band": "1-2",
+  "points": 5,
+  "statement": "A square cake is cut along every straight line that folds the square so that one half lies exactly on top of the other. How many pieces of cake are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I cut across the middle both ways and forgot the two corner-to-corner lines."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I knew there are 4 fold lines, but I thought each cut adds just 1 piece to the cake."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I found only 3 fold lines: the two across the middle and just one corner-to-corner line."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I thought every cut doubles the number of pieces, so 2, 4, 8, 16."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-08",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "How many fold lines does a square have? Do not forget the corners.",
+    "A square folds onto itself across the middle both ways and also from corner to corner both ways. All of these lines pass through the centre. Draw them and count the slices around the centre.",
+    "There are 4 lines, and they all cross at the centre like the spokes of a wheel. Count the slices between the spokes."
+  ],
+  "solutions": {
+    "reliable": "A square has 4 fold lines: across the middle from top to bottom, across the middle from side to side, and the two corner-to-corner lines. All 4 cross at the centre, like the spokes of a wheel. Around the centre they make 8 equal slices, so there are 8 pieces. The idea to keep: straight cuts that all cross at one point make twice as many pieces as there are cuts.",
+    "elegant": "The two middle cuts make 4 small squares. Each corner-to-corner cut halves 2 of those small squares, so the two of them halve all 4, giving 8. The idea to keep: add the cuts one at a time and see which pieces each new cut splits."
+  },
+  "whyOnTest": "Line symmetry: you must find all 4 fold lines of a square, including the corner-to-corner ones, then see how they share the centre.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

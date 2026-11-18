@@ -1,0 +1,56 @@
+{
+  "id": "SA-0079",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "medium",
+  "statement": "Jen traveled a $30$-mile route. She biked part of the way at $12$ miles per hour and walked the rest of the way at $4$ miles per hour. The whole trip took $4$ hours. How many miles did Jen bike?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1.75$",
+      "correct": false,
+      "misconception": "I let $h$ be the hours spent biking and solved $12h + 4(4 - h) = 30$ correctly, but I reported $h = 1.75$ instead of the miles."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I solved the problem correctly but gave the distance she walked, $30 - 21 = 9$ miles, instead of the distance she biked."
+    },
+    {
+      "key": "C",
+      "text": "$21$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I assumed she spent half of the 4 hours on each part, so I said she biked $12 \\times 2 = 24$ miles."
+    }
+  ],
+  "hints": [
+    "Distance equals speed times time for each part of the trip.",
+    "Let $h$ be the hours spent biking, so $4 - h$ hours were spent walking. Write one equation for the total distance.",
+    "Solve $12h + 4(4 - h) = 30$, which simplifies to $8h + 16 = 30$. Then multiply the biking time by $12$."
+  ],
+  "solutions": {
+    "reliable": "Let $h$ be the hours spent biking. Then she walked for $4 - h$ hours, and the two distances add to $30$: $12h + 4(4 - h) = 30$. So $8h + 16 = 30$, $h = 1.75$, and she biked $12(1.75) = 21$ miles. Check: she walked $4(2.25) = 9$ miles, and $21 + 9 = 30$. Key idea: in a two-part trip, use one condition for time and one for distance, and keep track of which unknown answers the question.",
+    "elegant": "Walking for all $4$ hours would cover $16$ miles, which is $14$ short. Each hour switched from walking to biking adds $12 - 4 = 8$ miles, so she biked for $14 / 8 = 1.75$ hours, which is $21$ miles."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

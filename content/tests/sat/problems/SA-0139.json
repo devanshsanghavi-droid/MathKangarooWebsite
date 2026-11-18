@@ -1,0 +1,56 @@
+{
+  "id": "SA-0139",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-04",
+  "difficulty": "hard",
+  "statement": "A pie is taken out of an oven and placed in a kitchen where the temperature stays at $70^\\circ$F. The difference between the pie's temperature and the kitchen's temperature decreases exponentially. $10$ minutes after the pie is taken out, the difference is $120^\\circ$F, and $30$ minutes after it is taken out, the difference is $30^\\circ$F. According to this model, what was the temperature of the pie, in degrees Fahrenheit, when it was taken out of the oven?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$240$",
+      "correct": false,
+      "misconception": "I found the starting difference of $240$ degrees correctly but forgot to add the kitchen's $70$ degrees."
+    },
+    {
+      "key": "B",
+      "text": "$310$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$235$",
+      "correct": false,
+      "misconception": "I assumed the difference dropped by the same amount, $4.5$ degrees, every minute, so I added $45$ to $120$ and then added $70$."
+    },
+    {
+      "key": "D",
+      "text": "$550$",
+      "correct": false,
+      "misconception": "I used the $20$-minute factor of $\\frac{1}{4}$ for the first $10$ minutes, so I multiplied $120$ by $4$ and then added $70$."
+    }
+  ],
+  "hints": [
+    "Work with the difference first. How does it change from minute $10$ to minute $30$?",
+    "Over those $20$ minutes the difference is multiplied by $\\frac{30}{120} = \\frac{1}{4}$, so over each $10$ minutes it is multiplied by $\\frac{1}{2}$.",
+    "Going back $10$ minutes from minute $10$ doubles the difference: $2 \\cdot 120 = 240$. Then add the kitchen temperature."
+  ],
+  "solutions": {
+    "reliable": "Let $D(t) = D_0 r^t$ be the difference $t$ minutes after the pie comes out. Then $\\frac{D(30)}{D(10)} = r^{20} = \\frac{30}{120} = \\frac{1}{4}$, so $r^{10} = \\frac{1}{2}$. Since $D(10) = D_0 r^{10} = 120$, $D_0 = 240$. The pie's temperature at the start was $70 + 240 = 310^\\circ$F. Check: $D(30) = 240 \\cdot \\left(\\frac{1}{2}\\right)^3 = 30$.",
+    "elegant": "The difference halves every $10$ minutes: $120$ at minute $10$, $60$ at minute $20$, $30$ at minute $30$. One step back from minute $10$ gives $240$ at minute $0$, so the pie was $70 + 240 = 310^\\circ$F."
+  },
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

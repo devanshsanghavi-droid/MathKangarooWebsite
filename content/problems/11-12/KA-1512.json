@@ -1,0 +1,68 @@
+{
+  "id": "KA-1512",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Real numbers $a$, $b$ and $c$ satisfy $a + b + c = 6$, $ab + bc + ca = 11$ and $abc = 6$. What is $a^4 + b^4 + c^4$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$196$",
+      "correct": false,
+      "misconception": "I found $a^2 + b^2 + c^2 = 14$ and squared it, forgetting that the square also contains the cross terms $2(a^2b^2 + b^2c^2 + c^2a^2)$."
+    },
+    {
+      "key": "B",
+      "text": "$98$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$147$",
+      "correct": false,
+      "misconception": "I subtracted $a^2b^2 + b^2c^2 + c^2a^2 = 49$ from $14^2$ only once instead of twice."
+    },
+    {
+      "key": "D",
+      "text": "$-46$",
+      "correct": false,
+      "misconception": "I took $a^2b^2 + b^2c^2 + c^2a^2$ to be $(ab + bc + ca)^2 = 121$, forgetting its cross terms, and found $196 - 242$."
+    },
+    {
+      "key": "E",
+      "text": "$1296$",
+      "correct": false,
+      "misconception": "I raised the sum $a + b + c = 6$ to the fourth power, as if the fourth powers could be added inside the bracket."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "CFT-11",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Before any algebra, guess three small numbers that fit all three conditions.",
+    "The grind builds $a^2 + b^2 + c^2$, then the $a^2b^2$ terms, then the fourth powers. The shortcut: the three conditions describe the roots of one cubic, so find those roots.",
+    "$a, b, c$ are the roots of $t^3 - 6t^2 + 11t - 6 = 0$. Try $t = 1$: $1 - 6 + 11 - 6 = 0$. Then factorise."
+  ],
+  "solutions": {
+    "reliable": "The numbers $a, b, c$ are the roots of $t^3 - 6t^2 + 11t - 6 = 0$. Since $t = 1$ is a root, it factorises as $(t - 1)(t - 2)(t - 3)$, so $\\{a, b, c\\} = \\{1, 2, 3\\}$. Then $a^4 + b^4 + c^4 = 1 + 16 + 81 = 98$. The grind confirms it: $a^2 + b^2 + c^2 = 36 - 22 = 14$, and $a^2b^2 + b^2c^2 + c^2a^2 = 11^2 - 2 \\cdot 6 \\cdot 6 = 49$, so $a^4 + b^4 + c^4 = 14^2 - 2 \\cdot 49 = 98$. The transferable idea: when the numbers look suspiciously convenient, spend ten seconds hunting for the shortcut before starting the long route.",
+    "elegant": "$1 + 2 + 3 = 6$, $1 \\cdot 2 + 2 \\cdot 3 + 3 \\cdot 1 = 11$ and $1 \\cdot 2 \\cdot 3 = 6$, so the numbers are 1, 2 and 3, and the answer is $1 + 16 + 81 = 98$."
+  },
+  "whyOnTest": "Convenient numbers signal a shortcut: the long symmetric-sum route is full of traps, while recognising 1, 2, 3 takes seconds.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

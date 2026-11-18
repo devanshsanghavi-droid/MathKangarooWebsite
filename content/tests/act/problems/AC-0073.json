@@ -1,0 +1,56 @@
+{
+  "id": "AC-0073",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "hard",
+  "statement": "How many integers $x$ satisfy the inequality $|2x - 3| \\le x + 3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I distributed the negative only to the $x$, so $-(x + 3)$ became $-x + 3$. That gave $-x + 3 \\le 2x - 3$, so $x \\ge 2$, and I counted $2$ through $6$."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found $0 \\le x \\le 6$ but counted only $1$ through $6$, forgetting that $0$ is an integer."
+    },
+    {
+      "key": "C",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I solved only $2x - 3 \\le x + 3$ to get $x \\le 6$, and for the lower end I only required the right side to be nonnegative, $x \\ge -3$, so I counted $-3$ through $6$."
+    }
+  ],
+  "hints": [
+    "An inequality $|A| \\le B$ means $-B \\le A \\le B$. Here $B$ contains $x$, so keep it in both parts.",
+    "Write $-(x + 3) \\le 2x - 3 \\le x + 3$ and solve the left part and the right part separately.",
+    "The left part, $-x - 3 \\le 2x - 3$, gives $x \\ge 0$. The right part gives $x \\le 6$. Count the integers from $0$ to $6$ inclusive."
+  ],
+  "solutions": {
+    "reliable": "The inequality $|2x - 3| \\le x + 3$ is the same as $-(x + 3) \\le 2x - 3 \\le x + 3$. Left part: $-x - 3 \\le 2x - 3$ gives $0 \\le 3x$, so $x \\ge 0$. Right part: $2x - 3 \\le x + 3$ gives $x \\le 6$. The integers with $0 \\le x \\le 6$ are $0, 1, 2, 3, 4, 5, 6$, which is $7$ integers. Check the edges: $x = 0$ gives $3 \\le 3$ and $x = 6$ gives $9 \\le 9$, but $x = -1$ gives $5 \\le 2$ and $x = 7$ gives $11 \\le 10$, which both fail.",
+    "elegant": null
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

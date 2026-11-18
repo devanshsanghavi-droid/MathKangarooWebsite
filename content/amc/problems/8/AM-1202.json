@@ -1,0 +1,68 @@
+{
+  "id": "AM-1202",
+  "contest": "AMC8",
+  "slot": 18,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "How many positive divisors of $6^6$ are multiples of $12$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I only made sure the divisor was a multiple of $4$, so I counted $2^a 3^b$ with $a \\ge 2$ and forgot that $12$ also needs a factor of $3$."
+    },
+    {
+      "key": "C",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I counted the divisors that are multiples of $6$ instead of $12$, so I only needed at least one $2$ and at least one $3$."
+    },
+    {
+      "key": "D",
+      "text": "$42$",
+      "correct": false,
+      "misconception": "I only made sure the divisor was a multiple of $3$, so I counted $2^a 3^b$ with $b \\ge 1$ and forgot that $12$ also needs two factors of $2$."
+    },
+    {
+      "key": "E",
+      "text": "$49$",
+      "correct": false,
+      "misconception": "I counted all $7 \\cdot 7 = 49$ divisors of $6^6$ and forgot the condition about being a multiple of $12$."
+    }
+  ],
+  "hints": [
+    "Write $6^6 = 2^6 \\cdot 3^6$. Every divisor has the form $2^a \\cdot 3^b$.",
+    "A divisor $2^a \\cdot 3^b$ is a multiple of $12 = 2^2 \\cdot 3$ exactly when $a \\ge 2$ and $b \\ge 1$.",
+    "Count the choices: $a$ can be $2, 3, 4, 5, 6$ and $b$ can be $1, 2, 3, 4, 5, 6$."
+  ],
+  "solutions": {
+    "reliable": "Since $6^6 = 2^6 \\cdot 3^6$, each divisor is $2^a \\cdot 3^b$ with $0 \\le a \\le 6$ and $0 \\le b \\le 6$. It is a multiple of $12 = 2^2 \\cdot 3$ exactly when $a \\ge 2$ and $b \\ge 1$. There are $5$ choices for $a$ ($2$ to $6$) and $6$ choices for $b$ ($1$ to $6$), so $5 \\cdot 6 = 30$ divisors.",
+    "elegant": "The divisors of $6^6$ that are multiples of $12$ are exactly the numbers $12k$ where $k$ divides $\\frac{6^6}{12} = 2^4 \\cdot 3^5$. That number has $(4+1)(5+1) = 30$ divisors."
+  },
+  "formulas": [
+    "F-NT-01"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

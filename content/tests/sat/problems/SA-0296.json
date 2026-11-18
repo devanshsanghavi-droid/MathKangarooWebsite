@@ -1,0 +1,56 @@
+{
+  "id": "SA-0296",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-06",
+  "difficulty": "easy",
+  "statement": "On a map drawn in the $xy$-plane, a radio station's coverage area is a circle with center $(-2, 5)$ and radius $4$. Which equation describes the boundary of the coverage area?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$(x + 2)^2 + (y - 5)^2 = 16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$(x - 2)^2 + (y + 5)^2 = 16$",
+      "correct": false,
+      "misconception": "I put the coordinates of the center into the equation with their own signs, writing $x - 2$ and $y + 5$, which moves the center to $(2, -5)$."
+    },
+    {
+      "key": "C",
+      "text": "$(x + 2)^2 + (y - 5)^2 = 4$",
+      "correct": false,
+      "misconception": "I got the center right but set the right side equal to the radius, $4$, instead of the radius squared."
+    },
+    {
+      "key": "D",
+      "text": "$(x - 2)^2 + (y + 5)^2 = 4$",
+      "correct": false,
+      "misconception": "I used the signs of the center coordinates as written and also put the radius $4$ on the right side instead of $16$."
+    }
+  ],
+  "hints": [
+    "The standard form of a circle is $(x - h)^2 + (y - k)^2 = r^2$, with center $(h, k)$.",
+    "Substitute $h = -2$, $k = 5$ and $r = 4$. Watch the signs when $h$ is negative.",
+    "$x - (-2) = x + 2$, and the right side is $4^2 = 16$."
+  ],
+  "solutions": {
+    "reliable": "A circle with center $(h, k)$ and radius $r$ has equation $(x - h)^2 + (y - k)^2 = r^2$. Here $h = -2$, $k = 5$ and $r = 4$, so the equation is $(x - (-2))^2 + (y - 5)^2 = 4^2$, which is $(x + 2)^2 + (y - 5)^2 = 16$. Check: the point $(2, 5)$ is $4$ units from the center and satisfies $16 + 0 = 16$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

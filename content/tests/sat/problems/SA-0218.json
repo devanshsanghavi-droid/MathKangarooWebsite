@@ -1,0 +1,56 @@
+{
+  "id": "SA-0218",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-04",
+  "difficulty": "hard",
+  "statement": "The scores of a class on a test have a mean of $70$ points and a standard deviation of $8$ points. The teacher rescales every score using the rule $$\\text{new score} = 1.2 \\times (\\text{old score}) + 5.$$ What are the mean and the standard deviation of the new scores?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Mean $89$, standard deviation $9.6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "Mean $89$, standard deviation $14.6$",
+      "correct": false,
+      "misconception": "I applied the whole rule to the standard deviation, multiplying by 1.2 and then adding 5, but adding the same amount to every score does not change the spread."
+    },
+    {
+      "key": "C",
+      "text": "Mean $90$, standard deviation $9.6$",
+      "correct": false,
+      "misconception": "I added the 5 points before multiplying by 1.2, so I got $1.2 \\times 75 = 90$ for the mean, but the rule multiplies first."
+    },
+    {
+      "key": "D",
+      "text": "Mean $89$, standard deviation $8$",
+      "correct": false,
+      "misconception": "I thought the standard deviation never changes when every score is changed by the same rule, but multiplying every score by 1.2 stretches the spread."
+    }
+  ],
+  "hints": [
+    "Think about the two steps separately: multiplying every score, then adding to every score.",
+    "Both steps change the mean. Ask which step changes how spread out the scores are.",
+    "Multiplying by $1.2$ multiplies the mean and the standard deviation by $1.2$. Adding $5$ shifts the mean by $5$ but leaves the standard deviation alone."
+  ],
+  "solutions": {
+    "reliable": "Multiplying every score by $1.2$ gives a mean of $1.2(70) = 84$ and a standard deviation of $1.2(8) = 9.6$. Adding $5$ to every score shifts the mean to $89$ and does not change the distances between scores, so the standard deviation stays $9.6$. Check with two scores $62$ and $78$, one standard deviation below and above the mean: they become $79.4$ and $98.6$, which are $9.6$ below and above $89$.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1012",
+  "band": "1-2",
+  "points": 3,
+  "statement": "Pens are sold only in packs of 2. Jo needs 9 pens. What is the smallest number of packs she must buy?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I put 9 pens into twos, got 4 packs, and forgot about the 1 pen left over."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I thought Jo needs one pack for every pen."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted the pens Jo ends up with, not the packs."
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": false,
+      "misconception": "I multiplied 9 by 2 instead of sharing 9 into twos."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Can 9 be split exactly into twos?",
+    "9 is odd, so packs of 2 can never give exactly 9. Find how many packs give 8, then decide what to do about the last pen.",
+    "4 packs give 8 pens. Jo still needs 1 more pen, and pens only come in packs."
+  ],
+  "solutions": {
+    "reliable": "4 packs give 8 pens, which is 1 too few. One more pack is needed for the ninth pen, so Jo buys 5 packs and has 1 pen spare. The idea to keep: an odd number cannot be split into twos, so there is always one left over, and it still needs a pack.",
+    "elegant": "10 is the first even number that is at least 9, and 10 pens make 5 packs. The idea to keep: when things come in twos, jump up to the next even number."
+  },
+  "whyOnTest": "Odd and even: 9 is odd, so pairs never fit it exactly, and forgetting the leftover pen is the trap.",
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0143",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-06",
+  "difficulty": "easy",
+  "statement": "A factory makes bolts that are designed to be $40$ millimeters long. A bolt is exactly at the limit of the allowed error when its length $L$, in millimeters, satisfies $|L - 40| = 0.6$. Which lengths satisfy this equation?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$40.6$ only",
+      "correct": false,
+      "misconception": "I solved only $L - 40 = 0.6$ and forgot that the expression inside the absolute value can also equal $-0.6$."
+    },
+    {
+      "key": "B",
+      "text": "$-40.6$ and $40.6$",
+      "correct": false,
+      "misconception": "I wrote the second case as $-L - 40 = 0.6$, putting the minus sign only on $L$, and got $L = -40.6$."
+    },
+    {
+      "key": "C",
+      "text": "$-0.6$ and $0.6$",
+      "correct": false,
+      "misconception": "I gave the two values of $L - 40$ instead of solving for $L$."
+    },
+    {
+      "key": "D",
+      "text": "$39.4$ and $40.6$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The absolute value of a number is $0.6$ when the number is $0.6$ or $-0.6$.",
+    "Solve $L - 40 = 0.6$ and $L - 40 = -0.6$ separately.",
+    "$L = 40 + 0.6$ or $L = 40 - 0.6$."
+  ],
+  "solutions": {
+    "reliable": "$|L - 40| = 0.6$ means $L - 40 = 0.6$ or $L - 40 = -0.6$. So $L = 40.6$ or $L = 39.4$. Both are exactly $0.6$ millimeters from the design length of $40$.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

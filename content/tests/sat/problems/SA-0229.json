@@ -1,0 +1,56 @@
+{
+  "id": "SA-0229",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-02",
+  "difficulty": "hard",
+  "statement": "A leaking faucet releases one drop of water every $1.5$ seconds, and each drop has a volume of $0.05$ milliliters. At this rate, how many liters of water will the faucet leak in one week? ($1$ liter $= 1{,}000$ milliliters)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.336$",
+      "correct": false,
+      "misconception": "I used the 10,080 minutes in a week instead of the seconds, so I divided minutes by 1.5 and counted far too few drops."
+    },
+    {
+      "key": "B",
+      "text": "$20.16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$45.36$",
+      "correct": false,
+      "misconception": "I multiplied the seconds in a week by 1.5 instead of dividing, as if each second produced 1.5 drops."
+    },
+    {
+      "key": "D",
+      "text": "$20{,}160$",
+      "correct": false,
+      "misconception": "I found 20,160 milliliters correctly but forgot to divide by 1,000 to change milliliters into liters."
+    }
+  ],
+  "hints": [
+    "Start by finding the number of seconds in one week.",
+    "Divide the seconds by $1.5$ to count drops, multiply by $0.05$ to get milliliters, then convert milliliters to liters.",
+    "One week has $7 \\cdot 24 \\cdot 3{,}600 = 604{,}800$ seconds, which gives $604{,}800 \\div 1.5 = 403{,}200$ drops."
+  ],
+  "solutions": {
+    "reliable": "One week has $7 \\times 24 \\times 60 \\times 60 = 604{,}800$ seconds. One drop every $1.5$ seconds gives $604{,}800 \\div 1.5 = 403{,}200$ drops. Each drop is $0.05$ milliliters, so the leak is $403{,}200 \\times 0.05 = 20{,}160$ milliliters, which is $20{,}160 \\div 1{,}000 = 20.16$ liters.",
+    "elegant": "The leak rate is $\\frac{0.05}{1.5} = \\frac{1}{30}$ milliliter per second. That is $2$ milliliters per minute, $120$ per hour and $2{,}880$ per day, so one week gives $7 \\times 2{,}880 = 20{,}160$ milliliters, or $20.16$ liters."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

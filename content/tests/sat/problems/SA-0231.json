@@ -1,0 +1,56 @@
+{
+  "id": "SA-0231",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-03",
+  "difficulty": "medium",
+  "statement": "At a museum, the price of an adult ticket is $25\\%$ greater than the price of a student ticket. The price of a student ticket is what percent less than the price of an adult ticket?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$20\\%$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$25\\%$",
+      "correct": false,
+      "misconception": "I assumed the percent difference is the same in both directions, but the 25% was measured from the student price, and this comparison is to the larger adult price."
+    },
+    {
+      "key": "C",
+      "text": "$80\\%$",
+      "correct": false,
+      "misconception": "I found that the student price is 80% of the adult price and gave 80% instead of how much less it is."
+    },
+    {
+      "key": "D",
+      "text": "$125\\%$",
+      "correct": false,
+      "misconception": "I divided the adult price by the student price, got 1.25 and wrote 125%, but that compares the prices the other way around."
+    }
+  ],
+  "hints": [
+    "Pick a convenient student price, such as $100$ dollars.",
+    "Find the adult price from your student price, then divide the difference by the adult price, because the comparison is to the adult ticket.",
+    "If a student ticket costs $100$ dollars, an adult ticket costs $125$. The difference is $25$, out of $125$."
+  ],
+  "solutions": {
+    "reliable": "Let the student price be $s$. The adult price is $1.25s$. The student price is less by $1.25s - s = 0.25s$, and as a percent of the adult price that is $\\frac{0.25s}{1.25s} = 0.2 = 20\\%$. Check with numbers: a $100$-dollar student ticket and a $125$-dollar adult ticket differ by $25$, and $\\frac{25}{125} = 20\\%$.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

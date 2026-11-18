@@ -1,0 +1,56 @@
+{
+  "id": "SA-0081",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "medium",
+  "statement": "A bike rental shop charges $C(h) = 4h + 6$ dollars to rent a bike for $h$ hours. Which function gives the same charge, in dollars, in terms of $m$, the number of minutes the bike is rented?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$C(m) = 240m + 6$",
+      "correct": false,
+      "misconception": "I multiplied the hourly rate by 60 to change units, but a minute is only $\\frac{1}{60}$ of an hour, so the rate per minute should be smaller."
+    },
+    {
+      "key": "B",
+      "text": "$C(m) = \\frac{m}{15} + \\frac{1}{10}$",
+      "correct": false,
+      "misconception": "I divided the whole function by 60, including the 6-dollar fee, but the fee is paid once and does not depend on time."
+    },
+    {
+      "key": "C",
+      "text": "$C(m) = 4m + 6$",
+      "correct": false,
+      "misconception": "I replaced $h$ with $m$ without converting minutes to hours, so I charged 4 dollars per minute."
+    },
+    {
+      "key": "D",
+      "text": "$C(m) = \\frac{m}{15} + 6$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "How many hours is $m$ minutes?",
+    "Replace $h$ with $\\frac{m}{60}$ in $C(h) = 4h + 6$, then simplify. Only the part that depends on time changes.",
+    "$4 \\cdot \\frac{m}{60} + 6$. Simplify the fraction $\\frac{4}{60}$."
+  ],
+  "solutions": {
+    "reliable": "Since $m$ minutes is $\\frac{m}{60}$ hours, substitute $h = \\frac{m}{60}$: $C = 4 \\cdot \\frac{m}{60} + 6 = \\frac{m}{15} + 6$. Check with $m = 60$: $\\frac{60}{15} + 6 = 10$, which matches $C(1) = 4 + 6 = 10$. Key idea: to change the input units of a linear function, substitute the conversion for the variable; the slope changes, but the fixed amount does not.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

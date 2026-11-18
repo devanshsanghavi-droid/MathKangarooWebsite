@@ -1,0 +1,67 @@
+{
+  "id": "KA-1358",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Ten villages lie on a ring road, and each has its own height above sea level. A village is called a dip if its height is less than the average of the heights of the two villages next to it on the road. At most how many of the ten villages can be dips?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I thought dips and other villages must take turns round the road, so at most every other village can be a dip."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": false,
+      "misconception": "I thought the highest village and both of the villages next to it can never be dips."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought both the highest village and the lowest village can never be dips."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought every village could be a dip and did not check the highest village."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "Look at the highest village.",
+    "The highest village is at least as high as each of the villages next to it. Can it be lower than their average? Then try to build a ring where every other village is a dip.",
+    "The highest village is never a dip, so there are at most 9. Try heights that fall steadily to a lowest point and then rise again, such as 25, 16, 9, 4, 1, 0, 1, 4, 9, 16 round the road."
+  ],
+  "solutions": {
+    "reliable": "Take the highest village (if several share the greatest height, take any one of them). Each village next to it is at most as high, so the average of those two heights is at most its own height, and it is not a dip. So at most 9 villages are dips. Nine is possible: give the villages, in order round the road, the heights 25, 16, 9, 4, 1, 0, 1, 4, 9 and 16 metres. The village at 25 m is not a dip, but every other village is. For example, 16 sits between 25 and 9, whose average is 17; 9 sits between 16 and 4, average 10; and 0 sits between 1 and 1, average 1. Each of these nine villages is 1 m lower than the average of its two neighbours. The transferable idea: to bound how many things can have a property, look at the extreme one, then build an example that reaches the bound.",
+    "elegant": "Suppose all ten villages were dips. Add up the ten facts \"my height is less than half of my left neighbour's height plus half of my right neighbour's height\". Each height appears once on the left, and twice as a half on the right, so the total of the heights would be less than itself, which is impossible. So at most 9 villages are dips, and the example 25, 16, 9, 4, 1, 0, 1, 4, 9, 16 reaches 9."
+  },
+  "whyOnTest": "Kangaroo bound questions reward looking at the largest value, which often cannot do what all the others do.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

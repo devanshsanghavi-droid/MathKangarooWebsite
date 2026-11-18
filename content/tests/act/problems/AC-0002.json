@@ -1,0 +1,56 @@
+{
+  "id": "AC-0002",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-01",
+  "difficulty": "easy",
+  "statement": "A school supply company packs pencils in boxes that each hold $12$ pencils. What is the least number of boxes needed to pack $350$ pencils?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I divided 350 by 12 and gave the remainder, 2, which is only the number of pencils left over."
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I found 2 pencils left over and worked out that 10 more pencils would fill the last box, but that is not the number of boxes."
+    },
+    {
+      "key": "C",
+      "text": "$29$",
+      "correct": false,
+      "misconception": "I divided 350 by 12 to get about 29.17 and rounded to the nearest whole number, leaving 2 pencils with no box."
+    },
+    {
+      "key": "D",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Divide $350$ by $12$. What does the remainder mean for the pencils?",
+    "$350 = 12 \\cdot 29 + 2$. The $29$ boxes are full, but $2$ pencils are still unpacked.",
+    "The $2$ leftover pencils need one more box, even though it will not be full."
+  ],
+  "solutions": {
+    "reliable": "Since $12 \\cdot 29 = 348$, twenty-nine boxes hold only $348$ pencils, leaving $350 - 348 = 2$ pencils. Those $2$ pencils need one more box, so the least number of boxes is $29 + 1 = 30$. Check: $30$ boxes hold up to $360$ pencils, and $29$ boxes are not enough.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "AM-1043",
+  "contest": "AMC8",
+  "slot": 15,
+  "area": "ALG",
+  "topic": "ALG-09",
+  "types": ["T-AMGM", "T-BOUNDING"],
+  "statement": "A rectangular garden is enclosed by a fence. Two more straight fences, both parallel to one pair of sides of the garden, split it into $3$ smaller rectangles. A total of $96$ meters of fencing is used, including the two inside fences. What is the largest possible area of the whole garden, in square meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$96$",
+      "correct": false,
+      "misconception": "I found the best garden but gave the area of just one of the three small rectangles, 288 / 3 = 96."
+    },
+    {
+      "key": "B",
+      "text": "$256$",
+      "correct": false,
+      "misconception": "I made the garden a square of side s, so the outside 4s plus the inside 2s gave 6s = 96 and s = 16, but a square is not the best shape here."
+    },
+    {
+      "key": "C",
+      "text": "$288$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$384$",
+      "correct": false,
+      "misconception": "I counted only three fences in one direction instead of four (two sides plus two inside fences), and that led me to a 16 by 24 garden with area 384."
+    },
+    {
+      "key": "E",
+      "text": "$576$",
+      "correct": false,
+      "misconception": "I ignored the two inside fences and bent all 96 meters into a square of side 24."
+    }
+  ],
+  "hints": [
+    "Call the length of each inside fence $w$. Four pieces of the fencing have length $w$.",
+    "If the other two sides have length $L$, then $2L + 4w = 96$, so $L = 48 - 2w$ and the area is $w(48 - 2w)$.",
+    "$w(48 - 2w) = 2w(24 - w)$, and $w(24 - w)$ is largest when the two factors are equal."
+  ],
+  "solutions": {
+    "reliable": "Let each inside fence have length $w$, so the two ends of the garden have length $w$ too, and let the other two sides have length $L$. Then $2L + 4w = 96$, so $L = 48 - 2w$, and the area is $w(48 - 2w) = 2w(24 - w)$. Two numbers with sum $24$ have the largest product when they are equal, so $w = 12$ and $L = 24$, and the area is $12 \\cdot 24 = 288$ square meters.",
+    "elegant": "The fencing splits into $2L$ meters in one direction and $4w$ meters in the other, and these add to $96$. The area is $Lw = \\frac{1}{8}(2L)(4w)$, and two numbers with sum $96$ have the largest product when both are $48$. So the area is at most $\\frac{48 \\cdot 48}{8} = 288$ square meters."
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1490",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Six different positive whole numbers have a mean of 10. What is the largest possible value of their median?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "14",
+      "correct": false,
+      "misconception": "I forgot the numbers must all be different, so I made the four largest numbers as equal as possible, such as 1, 1, 14, 14, 15, 15."
+    },
+    {
+      "key": "B",
+      "text": "17",
+      "correct": false,
+      "misconception": "I took the median of six numbers to be the fourth number and made that as large as possible."
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "13.5",
+      "correct": false,
+      "misconception": "I made the two middle numbers equal, wrote $1 + 2 + c + c + (c + 1) + (c + 2) = 60$ and got $c = 13.5$."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought the median of a list must be equal to its mean."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-15",
+    "secondary": [
+      "LOG-11",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "The median of six numbers is the average of the third and fourth.",
+    "The total is fixed at 60. To push the middle two numbers up, make every other number as small as the rules allow: the two smallest as small as possible, and the two largest only just above the fourth.",
+    "With the list $1, 2, c, d, d + 1, d + 2$, the total is $c + 3d + 6 = 60$, and $c < d$."
+  ],
+  "solutions": {
+    "reliable": "Order the numbers $a < b < c < d < e < f$, with total 60 and median $\\frac{c + d}{2}$. Make the others as small as possible: $a = 1$, $b = 2$, $e = d + 1$, $f = d + 2$. Then $c + 3d = 54$, so $c + d = 54 - 2d$, which is largest when $d$ is smallest. But $c < d$ means $54 - 3d < d$, so $d \\ge 14$. With $d = 14$ and $c = 12$, the list 1, 2, 12, 14, 15, 16 totals 60 and has median 13. A median of 13.5 would need $c + d = 27$ with $d \\ge 14$, and then the total is at least $1 + 2 + 27 + 15 + 16 = 61$, which is too much. The transferable idea: to make one part of a fixed total as large as possible, squeeze every other part to its minimum.",
+    "elegant": null
+  },
+  "whyOnTest": "Extremal questions about averages test whether you squeeze the other values while respecting every condition, here that the numbers are all different.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

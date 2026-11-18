@@ -1,0 +1,68 @@
+{
+  "id": "KA-1504",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Which of these numbers is a solution of both equations $x^4 - 10x^2 + 9 = 0$ and $x^3 - 7x + 6 = 0$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I checked only the first equation, where $81 - 90 + 9 = 0$, and did not test the second, which gives 12."
+    },
+    {
+      "key": "B",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I saw that $-1$ solves the first equation and assumed that, because $1$ solves both, $-1$ must solve the second one too."
+    },
+    {
+      "key": "C",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I checked only the second equation, where $8 - 14 + 6 = 0$, and did not test the first, which gives $-15$."
+    },
+    {
+      "key": "D",
+      "text": "$-3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I solved the first equation as a quadratic in $x^2$, got $x^2 = 9$, and gave 9 instead of the value of $x$."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-04",
+    "secondary": [
+      "CFT-01",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "You do not have to solve either equation. Test the choices.",
+    "Substituting a number takes seconds, and the right choice must make both left-hand sides zero. Test each choice in the easier equation first, and only test the survivors in the other.",
+    "For $x = -3$: $81 - 90 + 9 = 0$ and $-27 + 21 + 6 = 0$. Check that every other choice fails at least one equation."
+  ],
+  "solutions": {
+    "reliable": "Test each choice in both equations. $x = 3$: first gives $81 - 90 + 9 = 0$, second gives $27 - 21 + 6 = 12$, so no. $x = -1$: first gives $1 - 10 + 9 = 0$, second gives $-1 + 7 + 6 = 12$, so no. $x = 2$: first gives $16 - 40 + 9 = -15$, so no. $x = 9$: first gives $6561 - 810 + 9 \\neq 0$, so no. $x = -3$: first gives $81 - 90 + 9 = 0$ and second gives $-27 + 21 + 6 = 0$. The answer is $-3$. The transferable idea: when checking a candidate is quicker than solving, test the choices and make sure every condition is checked.",
+    "elegant": "Factorise both: $x^4 - 10x^2 + 9 = (x^2 - 1)(x^2 - 9)$ has roots $\\pm 1, \\pm 3$, and $x^3 - 7x + 6 = (x - 1)(x - 2)(x + 3)$ has roots $1, 2, -3$. The common roots are $1$ and $-3$, and only $-3$ is offered."
+  },
+  "whyOnTest": "Back-solving beats solving when checking is quick, but only if the candidate is checked against every condition in the question.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

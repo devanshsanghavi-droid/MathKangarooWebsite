@@ -1,0 +1,56 @@
+{
+  "id": "SA-0046",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "medium",
+  "statement": "Which of the following describes all solutions to the inequality $-3(2x - 5) > x - 13$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$x < \\dfrac{8}{7}$",
+      "correct": false,
+      "misconception": "I multiplied only the $2x$ by $-3$ and wrote $-6x - 5$, so I got $8 > 7x$ and $x < \\dfrac{8}{7}$."
+    },
+    {
+      "key": "B",
+      "text": "$x < 4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$x > 4$",
+      "correct": false,
+      "misconception": "I got $-7x > -28$ and divided by $-7$ without reversing the inequality sign, so I wrote $x > 4$."
+    },
+    {
+      "key": "D",
+      "text": "$x < \\dfrac{28}{5}$",
+      "correct": false,
+      "misconception": "I combined $-6x$ and $x$ into $-5x$ when I moved the $x$ to the left side, so I got $-5x > -28$ and $x < \\dfrac{28}{5}$."
+    }
+  ],
+  "hints": [
+    "Distribute the $-3$ to both terms inside the parentheses.",
+    "Collect the $x$ terms on one side and the numbers on the other. Dividing by a negative number reverses the inequality.",
+    "$-6x + 15 > x - 13$ gives $28 > 7x$."
+  ],
+  "solutions": {
+    "reliable": "Distribute: $-6x + 15 > x - 13$. Add $6x$ and $13$ to both sides: $28 > 7x$, so $x < 4$. Check: $x = 0$ gives $15 > -13$, true, and $x = 5$ gives $-15 > -8$, false.",
+    "elegant": null
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

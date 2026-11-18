@@ -1,0 +1,68 @@
+{
+  "id": "KA-1144",
+  "band": "3-4",
+  "points": 3,
+  "statement": "A clock shows exactly 11 o'clock. Some time later, its hour hand has turned through exactly $90^\\circ$. What time does the clock show now?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8 o'clock",
+      "correct": false,
+      "misconception": "I turned the hour hand backwards, anticlockwise, from 11 to 8, but clock hands always turn clockwise."
+    },
+    {
+      "key": "B",
+      "text": "11:15",
+      "correct": false,
+      "misconception": "I thought of the minute hand, which turns $90^\\circ$ in 15 minutes, but the hour hand is much slower."
+    },
+    {
+      "key": "C",
+      "text": "12 o'clock",
+      "correct": false,
+      "misconception": "I thought the hour hand turns $90^\\circ$ in one hour, but that is how far it turns in 3 hours."
+    },
+    {
+      "key": "D",
+      "text": "1 o'clock",
+      "correct": false,
+      "misconception": "I counted three numbers starting with 11 itself, 11, 12, 1, but the hand must move across 3 gaps between numbers."
+    },
+    {
+      "key": "E",
+      "text": "2 o'clock",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-18",
+    "secondary": [
+      "MOD-07",
+      "NUM-09"
+    ]
+  },
+  "hints": [
+    "How many degrees does the hour hand turn in one hour?",
+    "A full turn is $360^\\circ$, and the hour hand takes 12 hours to make it. Work out the turn for one hour, then how many hours make $90^\\circ$.",
+    "One hour turns the hour hand $360 \\div 12 = 30$ degrees, so $90^\\circ$ takes 3 hours."
+  ],
+  "solutions": {
+    "reliable": "The hour hand makes a full turn of $360^\\circ$ in 12 hours, so it turns $360 \\div 12 = 30^\\circ$ every hour. To turn $90^\\circ$ it needs $90 \\div 30 = 3$ hours. Three hours after 11 o'clock is 12, then 1, then 2, so the clock shows 2 o'clock. The transferable idea: the hour hand moves $30^\\circ$ for every hour, and you count the gaps between the numbers, not the numbers.",
+    "elegant": "$90^\\circ$ is a quarter of a full turn, and a quarter of the 12 hours on the face is 3 hours. 11 o'clock plus 3 hours is 2 o'clock."
+  },
+  "whyOnTest": "Turning an angle into hours on a clock face, and keeping the hour hand and the minute hand apart, is standard clock geometry.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

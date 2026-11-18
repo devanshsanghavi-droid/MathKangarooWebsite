@@ -1,0 +1,68 @@
+{
+  "id": "KA-1563",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Which of these is closest to $\\sqrt{5050^2 - 5049^2}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I treated $\\sqrt{a^2 - b^2}$ as if it were $a - b$."
+    },
+    {
+      "key": "B",
+      "text": "71",
+      "correct": false,
+      "misconception": "I simplified $5050^2 - 5049^2$ to 5050, forgetting that it equals $(5050 - 5049)(5050 + 5049)$, and took the square root."
+    },
+    {
+      "key": "C",
+      "text": "100",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "142",
+      "correct": false,
+      "misconception": "I wrote the square root of $5050 + 5049$ as $\\sqrt{5050} + \\sqrt{5049}$, which is about 71 + 71."
+    },
+    {
+      "key": "E",
+      "text": "10099",
+      "correct": false,
+      "misconception": "I found that $5050^2 - 5049^2 = 10099$ but forgot to take the square root."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-06",
+    "secondary": [
+      "CFT-07",
+      "NUM-12"
+    ]
+  },
+  "hints": [
+    "Do not square 5050. Factorise instead.",
+    "Use the difference of two squares, $a^2 - b^2 = (a - b)(a + b)$, to turn the expression under the root into a manageable number, then estimate its square root.",
+    "$5050^2 - 5049^2 = 1 \\times 10099$, and $100^2 = 10000$."
+  ],
+  "solutions": {
+    "reliable": "$5050^2 - 5049^2 = (5050 - 5049)(5050 + 5049) = 10099$. Since $100^2 = 10000$ and $101^2 = 10201$, the square root is between 100 and 101 and very close to 100. The transferable idea: factorise a difference of squares before doing any arithmetic, then estimate.",
+    "elegant": null
+  },
+  "whyOnTest": "One factorisation turns huge squares into a number whose root is easy to estimate, and the distractors come from misusing square roots.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

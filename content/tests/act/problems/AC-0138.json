@@ -1,0 +1,56 @@
+{
+  "id": "AC-0138",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-04",
+  "difficulty": "easy",
+  "statement": "A ball is thrown upward from a balcony. Its height above the ground, in feet, $t$ seconds after it is thrown is $h(t) = -16t^2 + 64t + 5$. What is the maximum height, in feet, that the ball reaches?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I found the time when the ball is highest, t = 2 seconds, and gave that instead of the height."
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I used t = -b/a = 4 for the vertex instead of -b/(2a), and h(4) = 5, which is just the starting height again."
+    },
+    {
+      "key": "C",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I found the right time, t = 2, but forgot to add the starting height of 5 feet, so I got 64."
+    },
+    {
+      "key": "D",
+      "text": "$69$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The highest point of a parabola that opens downward is its vertex.",
+    "The vertex is at $t = -\\frac{b}{2a}$. Find that time, then substitute it into $h(t)$.",
+    "$t = -\\frac{64}{2(-16)} = 2$, so compute $h(2) = -64 + 128 + 5$."
+  ],
+  "solutions": {
+    "reliable": "The vertex is at $t = -\\frac{64}{2(-16)} = 2$ seconds. Then $h(2) = -16(4) + 64(2) + 5 = -64 + 128 + 5 = 69$ feet.",
+    "elegant": "Complete the square: $h(t) = -16(t^2 - 4t) + 5 = -16(t - 2)^2 + 64 + 5$. The term $-16(t - 2)^2$ is never positive, so the largest height is $69$ feet."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

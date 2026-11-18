@@ -1,0 +1,56 @@
+{
+  "id": "AC-0158",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-04",
+  "difficulty": "hard",
+  "statement": "A farmer is building a rectangular pen against a long, straight barn wall, so one side of the pen needs no fencing. Fencing is needed for the other three sides and for one straight divider that runs from the barn wall to the opposite side, parallel to the two sides that meet the wall, splitting the pen into two parts. The farmer has $60$ meters of fencing. What is the greatest possible total area, in square meters, of the pen?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$150$",
+      "correct": false,
+      "misconception": "I also put fencing along the barn wall, so I used $3x + 2y = 60$, which halves the side along the wall and gives a maximum of $10 \\cdot 15 = 150$."
+    },
+    {
+      "key": "B",
+      "text": "$225$",
+      "correct": false,
+      "misconception": "I assumed the best rectangle is a square, so I solved $3x + x = 60$ to get $x = 15$ and an area of $15 \\cdot 15 = 225$."
+    },
+    {
+      "key": "C",
+      "text": "$300$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$450$",
+      "correct": false,
+      "misconception": "I forgot about the divider, so I maximized $x(60 - 2x)$ and got $15 \\cdot 30 = 450$."
+    }
+  ],
+  "hints": [
+    "Count how many fence pieces run perpendicular to the wall.",
+    "Let $x$ be the length of each piece perpendicular to the wall and $y$ the side parallel to it. Then $3x + y = 60$. Write the area in terms of $x$ alone.",
+    "Area $= x(60 - 3x) = 60x - 3x^2$, a downward parabola with vertex at $x = 10$."
+  ],
+  "solutions": {
+    "reliable": "Let each of the $3$ pieces perpendicular to the wall (two sides and the divider) have length $x$, and let the side opposite the wall have length $y$. The fencing gives $3x + y = 60$, so $y = 60 - 3x$ and the area is $A(x) = x(60 - 3x) = -3x^2 + 60x$. The vertex is at $x = -\\frac{60}{2(-3)} = 10$, so $y = 30$ and the greatest area is $10 \\cdot 30 = 300$ square meters.",
+    "elegant": "$A = x(60 - 3x)$ is $0$ at $x = 0$ and $x = 20$, and a parabola peaks halfway between its zeros, at $x = 10$. So $A = 10 \\cdot 30 = 300$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

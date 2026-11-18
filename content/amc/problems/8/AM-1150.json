@@ -1,0 +1,69 @@
+{
+  "id": "AM-1150",
+  "contest": "AMC8",
+  "slot": 25,
+  "area": "GEO",
+  "topic": "GEO-10",
+  "types": [
+    "T-SYMMETRY",
+    "T-AUXILIARY"
+  ],
+  "statement": "A billiard table is a $21 \\times 15$ rectangle with pockets only at its four corners. A ball starts in one corner and is shot so that it travels at a $45^\\circ$ angle to the sides. Each time it hits a side, it bounces off at a $45^\\circ$ angle, and it stops as soon as it reaches a corner. How many times does it bounce off a side before it stops?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I counted the ball's arrival at the final corner as one more bounce."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I counted the arrival at the final corner as two bounces, one off each of the two sides that meet there."
+    },
+    {
+      "key": "D",
+      "text": "$34$",
+      "correct": false,
+      "misconception": "I unfolded the table but used $21 \\cdot 15 = 315$ instead of the least common multiple $105$, getting $\\frac{315}{21} + \\frac{315}{15} - 2 = 34$."
+    },
+    {
+      "key": "E",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I divided out the common factor $3$ to get $7$ and $5$, and then multiplied them, thinking the number of bounces is $7 \\cdot 5$."
+    }
+  ],
+  "hints": [
+    "Instead of bouncing the ball, reflect the table each time and let the ball keep going in a straight line.",
+    "In the unfolded picture the ball travels along the line $y = x$ through a grid made of copies of the $21 \\times 15$ table. It stops at the first point where $x$ is a multiple of $21$ and $y$ is a multiple of $15$.",
+    "That first happens at $x = y = 105$. On the way, the line crosses the vertical lines $x = 21, 42, 63, 84$ and the horizontal lines $y = 15, 30, 45, 60, 75, 90$. Each crossing is one bounce."
+  ],
+  "solutions": {
+    "reliable": "Reflect the table across the side the ball hits, again and again, so the ball's path becomes the straight line $y = x$ starting from a corner $(0, 0)$. Copies of the corners sit at points where $x$ is a multiple of $21$ and $y$ is a multiple of $15$, so the ball stops at the first point with $x = y$ that is a multiple of both, the least common multiple $105$. Before that, it crosses the vertical lines $x = 21, 42, 63, 84$ ($4$ bounces off the short sides) and the horizontal lines $y = 15, 30, 45, 60, 75, 90$ ($6$ bounces off the long sides). None of these crossings happens at a corner, since $105$ is the first common multiple. The total is $4 + 6 = 10$.",
+    "elegant": "Shrink the table by the common factor $3$ to a $7 \\times 5$ rectangle; the path has the same shape. The ball stops after travelling $35$ across and $35$ up, crossing $\\frac{35}{7} - 1 = 4$ vertical lines and $\\frac{35}{5} - 1 = 6$ horizontal lines, for $10$ bounces."
+  },
+  "formulas": [
+    "F-NT-03"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

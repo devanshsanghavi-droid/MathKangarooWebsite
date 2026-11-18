@@ -1,0 +1,68 @@
+{
+  "id": "KA-1386",
+  "band": "7-8",
+  "points": 4,
+  "statement": "What is 2026 + 2025 - 2024 - 2023 + 2022 + 2021 - 2020 - 2019 + ... + 6 + 5 - 4 - 3? The signs follow the pattern plus, plus, minus, minus all the way along, and the last number is 3.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought the plus and minus signs come in equal numbers, so everything cancels."
+    },
+    {
+      "key": "B",
+      "text": "2024",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found that each group of four numbers is worth 4 and gave that as the answer."
+    },
+    {
+      "key": "D",
+      "text": "506",
+      "correct": false,
+      "misconception": "I found there are 506 groups of four but forgot that each group is worth 4, not 1."
+    },
+    {
+      "key": "E",
+      "text": "1012",
+      "correct": false,
+      "misconception": "I paired 2026 with 2024 to get 2 in each group of four, and forgot the pair 2025 - 2023."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-08",
+    "secondary": [
+      "PAT-03",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Look at the first four numbers on their own.",
+    "Group the terms in fours following the sign pattern. Work out what one group is worth, then count how many groups there are from 2026 down to 3.",
+    "2026 + 2025 - 2024 - 2023 = 4, and every group of four is worth 4. There are 2026 - 3 + 1 = 2024 numbers in total."
+  ],
+  "solutions": {
+    "reliable": "Group the numbers in fours: (2026 + 2025 - 2024 - 2023) + (2022 + 2021 - 2020 - 2019) + ... + (6 + 5 - 4 - 3). In each group, a + (a - 1) - (a - 2) - (a - 3) = 4. The numbers run from 2026 down to 3, which is 2026 - 3 + 1 = 2024 numbers, so 506 groups. The total is 506 x 4 = 2024. The transferable idea: when signs repeat in a pattern, group by the pattern and find what one group is worth.",
+    "elegant": "Each group of four is worth 4, so the answer equals the number of numbers in the sum, which is 2024."
+  },
+  "whyOnTest": "Clever regrouping: a long alternating sum collapses once you group terms to match the pattern of signs.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

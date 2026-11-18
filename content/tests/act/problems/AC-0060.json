@@ -1,0 +1,56 @@
+{
+  "id": "AC-0060",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "medium",
+  "statement": "If $3x + 5y = 41$ and $5x + 3y = 31$, what is the value of $x^2 - y^2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-45$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I subtracted the first equation from the second and wrote $2x - 2y = 10$, losing the sign of $31 - 41 = -10$. Then $x - y = 5$ and $(x + y)(x - y) = 9 \\cdot 5 = 45$."
+    },
+    {
+      "key": "C",
+      "text": "$53$",
+      "correct": false,
+      "misconception": "I solved the system to get $x = 2$ and $y = 7$, but then added the squares, $4 + 49 = 53$, instead of subtracting them."
+    },
+    {
+      "key": "D",
+      "text": "$81$",
+      "correct": false,
+      "misconception": "I added the equations to get $x + y = 9$ and squared it, thinking $x^2 - y^2$ is the same as $(x + y)^2$."
+    }
+  ],
+  "hints": [
+    "Notice that $x^2 - y^2 = (x + y)(x - y)$.",
+    "Add the two equations to find $x + y$, and subtract one from the other to find $x - y$.",
+    "Adding gives $8x + 8y = 72$, so $x + y = 9$. Subtracting the first from the second gives $2x - 2y = -10$, so $x - y = -5$."
+  ],
+  "solutions": {
+    "reliable": "Add the equations: $8x + 8y = 72$, so $x + y = 9$. Subtract the first from the second: $2x - 2y = -10$, so $x - y = -5$. Then $x^2 - y^2 = (x + y)(x - y) = 9 \\cdot (-5) = -45$. Check: these give $x = 2$ and $y = 7$, and $3(2) + 5(7) = 41$, $5(2) + 3(7) = 31$, $2^2 - 7^2 = 4 - 49 = -45$.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

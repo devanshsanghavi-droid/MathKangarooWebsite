@@ -1,0 +1,66 @@
+{
+  "id": "AM-1076",
+  "contest": "AMC8",
+  "slot": 1,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-SYMMETRY"
+  ],
+  "statement": "A rectangle measures $9$ centimeters by $5$ centimeters. A square has the same perimeter as the rectangle. By how many square centimeters is the area of the square greater than the area of the rectangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I thought two shapes with the same perimeter always have the same area, so the difference is 0."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I compared lengths instead of areas: the square's side 7 is 2 more than the rectangle's width 5, so I answered 2."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I answered with the area of the rectangle, 9 times 5 = 45, instead of the difference between the areas."
+    },
+    {
+      "key": "E",
+      "text": "$49$",
+      "correct": false,
+      "misconception": "I found the square's area, 7 times 7 = 49, and forgot to subtract the rectangle's area."
+    }
+  ],
+  "hints": [
+    "Find the perimeter of the rectangle first.",
+    "The rectangle's perimeter is $2(9 + 5) = 28$, so each side of the square is $28 \\div 4$. Then compare the two areas.",
+    "The square has side $7$ and area $49$. The rectangle has area $9 \\cdot 5 = 45$. Subtract."
+  ],
+  "solutions": {
+    "reliable": "The rectangle's perimeter is $2(9 + 5) = 28$, so the square has side $28 \\div 4 = 7$ and area $7^2 = 49$. The rectangle's area is $9 \\cdot 5 = 45$. The square's area is greater by $49 - 45 = 4$ square centimeters.",
+    "elegant": "The square's side, $7$, is the average of $9$ and $5$. Writing the rectangle's sides as $7 + 2$ and $7 - 2$, its area is $(7 + 2)(7 - 2) = 49 - 4$, so the square is larger by exactly $2^2 = 4$."
+  },
+  "formulas": [],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

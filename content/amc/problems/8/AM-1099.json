@@ -1,0 +1,68 @@
+{
+  "id": "AM-1099",
+  "contest": "AMC8",
+  "slot": 8,
+  "area": "GEO",
+  "topic": "GEO-08",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "Triangle $ABC$ has a right angle at $C$, with $AC = 6$ and $BC = 8$. Point $M$ is the midpoint of side $AB$. What is the perimeter of triangle $ACM$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15.8$",
+      "correct": false,
+      "misconception": "I used the altitude from $C$ to the hypotenuse, $\\frac{6 \\cdot 8}{10} = 4.8$, as the length of $CM$, so I got 6 + 5 + 4.8 = 15.8, but the altitude and the median are different segments."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I knew triangle $ACM$ is isosceles but thought the equal sides were $AC$ and $CM$, so I used $CM = 6$ and got 6 + 5 + 6 = 17."
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I guessed that $CM$ was the average of the two legs, $\\frac{6 + 8}{2} = 7$, so I got 6 + 5 + 7 = 18."
+    },
+    {
+      "key": "E",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I found the perimeter of the whole triangle $ABC$, 6 + 8 + 10 = 24, instead of triangle $ACM$."
+    }
+  ],
+  "hints": [
+    "Find $AB$ first, then $AM$. The hard part is $CM$.",
+    "$AB = 10$, so $AM = 5$. In a right triangle, the midpoint of the hypotenuse is the same distance from all three vertices.",
+    "$CM = AM = BM = 5$, so the perimeter of triangle $ACM$ is $6 + 5 + 5$."
+  ],
+  "solutions": {
+    "reliable": "By the Pythagorean theorem, $AB = \\sqrt{6^2 + 8^2} = 10$, so $AM = 5$. To find $CM$, place $C = (0, 0)$, $A = (6, 0)$ and $B = (0, 8)$. Then $M = (3, 4)$ and $CM = \\sqrt{3^2 + 4^2} = 5$. The perimeter of triangle $ACM$ is $AC + CM + AM = 6 + 5 + 5 = 16$.",
+    "elegant": "The right angle at $C$ means $C$ lies on the circle with diameter $AB$, and $M$ is that circle's center. So $MA = MB = MC = 5$, half the hypotenuse, and the perimeter is $6 + 5 + 5 = 16$."
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0017",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-04",
+  "difficulty": "hard",
+  "statement": "At a high school, $30\\%$ of the students are in the band. Of the students in the band, $20\\%$ are also in the choir. The students who are in both the band and the choir make up $15\\%$ of the choir. What percent of the school's students are in the choir?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4.5\\%$",
+      "correct": false,
+      "misconception": "I took $15\\%$ of the band's $30\\%$, using the choir's percent as if it were a percent of the band, and got $0.15 \\cdot 30\\% = 4.5\\%$."
+    },
+    {
+      "key": "B",
+      "text": "$6\\%$",
+      "correct": false,
+      "misconception": "I found that the students in both groups are $0.20 \\cdot 30\\% = 6\\%$ of the school, and I gave that as the whole choir instead of only the part of the choir that is also in the band."
+    },
+    {
+      "key": "C",
+      "text": "$22.5\\%$",
+      "correct": false,
+      "misconception": "I swapped the two percents, so I used $15\\%$ of the band for the overlap, $0.15 \\cdot 30\\% = 4.5\\%$, and treated that as $20\\%$ of the choir, giving $4.5\\% \\div 0.20 = 22.5\\%$."
+    },
+    {
+      "key": "D",
+      "text": "$40\\%$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Each percent is taken of a different group. Write the number of students in both groups as a percent of the whole school.",
+    "Students in both groups are $20\\%$ of the band, and the band is $30\\%$ of the school, so they are $0.20 \\cdot 30\\% = 6\\%$ of the school.",
+    "That $6\\%$ of the school is $15\\%$ of the choir. If the choir is $C$ percent of the school, solve $0.15C = 6$."
+  ],
+  "solutions": {
+    "reliable": "Picture a school of $1{,}000$ students. The band has $0.30 \\cdot 1{,}000 = 300$ students, and $0.20 \\cdot 300 = 60$ of them are also in the choir. These $60$ students are $15\\%$ of the choir, so the choir has $60 \\div 0.15 = 400$ students. That is $\\frac{400}{1{,}000} = 40\\%$ of the school. Check: $15\\%$ of $400$ is $60$.",
+    "elegant": "The overlap is $0.30 \\cdot 0.20 = 0.06$ of the school and also $0.15$ of the choir, so the choir is $\\frac{0.06}{0.15} = 0.40$ of the school, or $40\\%$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0276",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-01",
+  "difficulty": "medium",
+  "statement": "In Mr. Okafor's physics class, the course grade is a weighted average: homework counts $15\\%$, projects count $25\\%$ and the final exam counts $60\\%$. Lena has a homework average of $96$ and a project average of $82$. What final exam score would give Lena a course grade of exactly $88$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$53.1$",
+      "correct": false,
+      "misconception": "I found the 53.1 points the exam has to contribute to the weighted total and gave that as the score, forgetting to divide by the exam's weight of 0.6."
+    },
+    {
+      "key": "B",
+      "text": "$86$",
+      "correct": false,
+      "misconception": "I ignored the percentages and treated the three scores as an ordinary average, so I solved (96 + 82 + x)/3 = 88 and got 86."
+    },
+    {
+      "key": "C",
+      "text": "$87.3$",
+      "correct": false,
+      "misconception": "I averaged homework and projects to 89 and gave that one score a 40% weight, but 96 and 82 have different weights, so that made the exam score 87.3."
+    },
+    {
+      "key": "D",
+      "text": "$88.5$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Each score contributes (weight) times (score) to the course grade. How much do homework and projects already contribute?",
+    "Write $0.15(96) + 0.25(82) + 0.60x = 88$ and solve for the exam score $x$.",
+    "Homework and projects give $14.4 + 20.5 = 34.9$, so the exam must contribute $88 - 34.9 = 53.1$ points, which means $0.6x = 53.1$."
+  ],
+  "solutions": {
+    "reliable": "Let $x$ be the exam score. Then $0.15(96) + 0.25(82) + 0.60x = 88$, so $14.4 + 20.5 + 0.6x = 88$. That gives $0.6x = 53.1$, so $x = 88.5$.",
+    "elegant": "Think of each score's distance from $88$. Homework is $8$ above, worth $0.15 \\cdot 8 = 1.2$. Projects are $6$ below, worth $0.25 \\cdot (-6) = -1.5$. The exam must make up the net $0.3$: $0.6d = 0.3$, so $d = 0.5$ and the exam score is $88.5$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

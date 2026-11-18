@@ -1,0 +1,56 @@
+{
+  "id": "AC-0081",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "hard",
+  "statement": "In the $xy$-plane, the line $y = 2x - 1$ intersects the parabola $y = x^2 - 4x + 4$ at points $A$ and $B$. What is the distance between $A$ and $B$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found the $x$-coordinates 1 and 5 and gave their difference, 4, as the distance, ignoring the change in $y$."
+    },
+    {
+      "key": "B",
+      "text": "$4\\sqrt{5}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I added the horizontal change 4 and the vertical change 8 instead of using the distance formula."
+    },
+    {
+      "key": "D",
+      "text": "$80$",
+      "correct": false,
+      "misconception": "I found $4^2 + 8^2 = 80$ but forgot to take the square root."
+    }
+  ],
+  "hints": [
+    "Find the coordinates of $A$ and $B$ first. They satisfy both equations.",
+    "Set $x^2 - 4x + 4 = 2x - 1$ and solve for $x$, then use the line to get each $y$-coordinate. Finish with the distance formula.",
+    "The equation is $x^2 - 6x + 5 = 0$, so $x = 1$ or $x = 5$, giving the points $(1, 1)$ and $(5, 9)$."
+  ],
+  "solutions": {
+    "reliable": "Setting $x^2 - 4x + 4 = 2x - 1$ gives $x^2 - 6x + 5 = 0$, so $(x - 1)(x - 5) = 0$ and $x = 1$ or $x = 5$. On the line these give $y = 1$ and $y = 9$, so the points are $(1, 1)$ and $(5, 9)$. Both check in the parabola: $1 - 4 + 4 = 1$ and $25 - 20 + 4 = 9$. The distance is $\\sqrt{(5 - 1)^2 + (9 - 1)^2} = \\sqrt{16 + 64} = \\sqrt{80} = 4\\sqrt{5}$.",
+    "elegant": "Both points lie on a line of slope $2$, so the horizontal change of $4$ between them comes with a vertical change of $2 \\cdot 4 = 8$. The distance is $\\sqrt{4^2 + 8^2} = 4\\sqrt{1 + 2^2} = 4\\sqrt{5}$."
+  },
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

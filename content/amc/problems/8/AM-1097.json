@@ -1,0 +1,68 @@
+{
+  "id": "AM-1097",
+  "contest": "AMC8",
+  "slot": 12,
+  "area": "GEO",
+  "topic": "GEO-03",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "An equilateral triangle has an altitude of length $6$. What is the perimeter of the triangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I found the short leg of the 30-60-90 triangle, $2\\sqrt{3}$, and used it as a full side of the equilateral triangle, but it is only half of a side."
+    },
+    {
+      "key": "B",
+      "text": "$9\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I multiplied the altitude by $\\frac{\\sqrt{3}}{2}$ instead of dividing by it, so each side came out $3\\sqrt{3}$ and the perimeter $9\\sqrt{3}$."
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I treated the altitude as if it were a side, so I got 3 times 6 = 18."
+    },
+    {
+      "key": "D",
+      "text": "$12\\sqrt{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$18\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I thought each side was the altitude times $\\sqrt{3}$, so each side was $6\\sqrt{3}$ and the perimeter $18\\sqrt{3}$."
+    }
+  ],
+  "hints": [
+    "The altitude splits the equilateral triangle into two 30-60-90 right triangles.",
+    "In a 30-60-90 triangle the sides are in the ratio $1 : \\sqrt{3} : 2$, and the altitude is the leg opposite the $60^\\circ$ angle.",
+    "The short leg is $\\frac{6}{\\sqrt{3}} = 2\\sqrt{3}$, which is half of a side, so a full side is $4\\sqrt{3}$."
+  ],
+  "solutions": {
+    "reliable": "The altitude splits the triangle into two $30^\\circ$-$60^\\circ$-$90^\\circ$ triangles. The altitude is the longer leg, so the short leg, which is half of a side, is $\\frac{6}{\\sqrt{3}} = 2\\sqrt{3}$. A full side is $4\\sqrt{3}$, and the perimeter is $3 \\cdot 4\\sqrt{3} = 12\\sqrt{3}$.",
+    "elegant": "For side $s$, the altitude is $\\frac{\\sqrt{3}}{2}s$, so $\\frac{\\sqrt{3}}{2}s = 6$ gives $s = \\frac{12}{\\sqrt{3}} = 4\\sqrt{3}$ and the perimeter is $3s = 12\\sqrt{3}$."
+  },
+  "formulas": [
+    "F-GEO-03"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

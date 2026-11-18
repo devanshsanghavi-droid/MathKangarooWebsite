@@ -1,0 +1,56 @@
+{
+  "id": "SA-0201",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-01",
+  "difficulty": "easy",
+  "statement": "In a school choir, the ratio of sopranos to altos is $5:3$. There are $40$ sopranos and altos in all. How many altos are in the choir?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I divided 40 by the 8 parts to get 5 singers per part and stopped there, without multiplying by the 3 parts that belong to the altos."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I took $\\frac{3}{5}$ of 40, as if 3 out of every 5 singers were altos, and got 24."
+    },
+    {
+      "key": "D",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I found the number of sopranos, $\\frac{5}{8}$ of 40, which is 25, instead of the number of altos."
+    }
+  ],
+  "hints": [
+    "The ratio $5:3$ splits the singers into equal parts. How many parts are there in all?",
+    "Divide 40 by the total number of parts to find the size of one part, then count the parts that belong to the altos.",
+    "There are $5 + 3 = 8$ parts, so each part is $40 \\div 8 = 5$ singers. The altos make up $3$ of those parts."
+  ],
+  "solutions": {
+    "reliable": "Let the number of sopranos be $5k$ and the number of altos be $3k$. Then $5k + 3k = 40$, so $8k = 40$ and $k = 5$. The number of altos is $3k = 15$. Check: $25$ sopranos and $15$ altos give $25:15 = 5:3$ and a total of $40$.",
+    "elegant": "Altos are $\\frac{3}{8}$ of the singers, and $\\frac{3}{8} \\cdot 40 = 15$."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

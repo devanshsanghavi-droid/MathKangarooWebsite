@@ -1,0 +1,68 @@
+{
+  "id": "AM-1180",
+  "contest": "AMC8",
+  "slot": 9,
+  "area": "NT",
+  "topic": "NT-01",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "For how many positive integers $n$ is $3n + 20$ divisible by $n$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I thought n had to divide 3 + 20 = 23, so I only found n = 1 and n = 23."
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I counted the divisors of 20 but left out n = 1, as if 1 did not count."
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I counted the 6 divisors of 20 and also n = 3, because 3 divides 3n, but 3 does not divide 20, so 3 does not divide 3n + 20."
+    },
+    {
+      "key": "E",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I counted the divisors of 3 times 20 = 60 instead of the divisors of 20."
+    }
+  ],
+  "hints": [
+    "The number $n$ always divides $3n$.",
+    "So $n$ divides $3n + 20$ exactly when $n$ divides $20$.",
+    "Count the divisors of $20 = 2^2 \\cdot 5$."
+  ],
+  "solutions": {
+    "reliable": "Since $\\dfrac{3n + 20}{n} = 3 + \\dfrac{20}{n}$, this is a whole number exactly when $n$ divides $20$. The divisors of $20$ are $1, 2, 4, 5, 10, 20$, so there are $6$ values. For example, $n = 4$ gives $\\dfrac{32}{4} = 8$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-01"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

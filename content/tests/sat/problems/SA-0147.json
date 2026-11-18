@@ -1,0 +1,56 @@
+{
+  "id": "SA-0147",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-08",
+  "difficulty": "easy",
+  "statement": "The function $f$ is defined by $f(x) = 3x^2 - 2x$. What is the value of $f(-2)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I found $3(-2)^2 = 12$ but then subtracted $2 \\cdot 2 = 4$, losing the sign of the $-2$."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$-8$",
+      "correct": false,
+      "misconception": "I squared $-2$ as $-4$, so I computed $3(-4) + 4$."
+    },
+    {
+      "key": "D",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I multiplied $3$ by $-2$ before squaring, so I computed $(-6)^2 + 4$."
+    }
+  ],
+  "hints": [
+    "Replace every $x$ with $-2$, using parentheses.",
+    "$f(-2) = 3(-2)^2 - 2(-2)$. Square first, then multiply.",
+    "$(-2)^2 = 4$, so the first term is $12$, and $-2(-2) = 4$."
+  ],
+  "solutions": {
+    "reliable": "$f(-2) = 3(-2)^2 - 2(-2) = 3(4) + 4 = 12 + 4 = 16$.",
+    "elegant": "Factor first: $f(x) = x(3x - 2)$, so $f(-2) = (-2)(-6 - 2) = (-2)(-8) = 16$."
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

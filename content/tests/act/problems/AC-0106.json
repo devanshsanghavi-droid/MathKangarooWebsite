@@ -1,0 +1,56 @@
+{
+  "id": "AC-0106",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-06",
+  "difficulty": "easy",
+  "statement": "In a school cafeteria, the number of chairs, $c$, is $4$ fewer than $3$ times the number of tables, $t$. Which of the following equations shows this relationship?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$t = 3c - 4$",
+      "correct": false,
+      "misconception": "I put the $3$ with the number of chairs instead of the number of tables, which swaps the roles of $c$ and $t$."
+    },
+    {
+      "key": "B",
+      "text": "$c = 4 - 3t$",
+      "correct": false,
+      "misconception": "I read '4 fewer than' as starting from $4$ and subtracting, so I wrote $4 - 3t$ instead of taking $4$ away from $3t$."
+    },
+    {
+      "key": "C",
+      "text": "$c = 3(t - 4)$",
+      "correct": false,
+      "misconception": "I subtracted the $4$ from the number of tables before multiplying by $3$, instead of subtracting it after."
+    },
+    {
+      "key": "D",
+      "text": "$c = 3t - 4$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Test the description with a number of tables, such as $10$.",
+    "'$4$ fewer than' something means take that something and subtract $4$. Here the something is $3$ times the number of tables.",
+    "With $10$ tables there are $3 \\cdot 10 - 4 = 26$ chairs."
+  ],
+  "solutions": {
+    "reliable": "'$3$ times the number of tables' is $3t$, and '$4$ fewer than' that is $3t - 4$. So $c = 3t - 4$. Check with $10$ tables: there are $26$ chairs, and $26$ is $4$ fewer than $30$.",
+    "elegant": null
+  },
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

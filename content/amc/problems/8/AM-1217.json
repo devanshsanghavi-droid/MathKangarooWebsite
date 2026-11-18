@@ -1,0 +1,67 @@
+{
+  "id": "AM-1217",
+  "contest": "AMC8",
+  "slot": 23,
+  "area": "NT",
+  "topic": "NT-08",
+  "types": [
+    "T-CASEWORK",
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "For how many integers $n$ with $2 \\le n \\le 25$ is $n! = 1 \\cdot 2 \\cdot 3 \\cdots n$ divisible by $n^2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$14$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I left out only the primes and counted all $15$ composite numbers, but $4! = 24$ is not divisible by $16$."
+    },
+    {
+      "key": "C",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I checked small cases, found that $n = 2$, $3$ and $4$ fail, and assumed every larger $n$ works."
+    },
+    {
+      "key": "D",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I thought $n!$ is divisible by $n^2$ as soon as $n!$ is bigger than $n^2$, so I left out only $n = 2$ and $n = 3$."
+    },
+    {
+      "key": "E",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I thought $n!$ always contains $n$ twice as a factor, so I counted every $n$ from $2$ to $25$."
+    }
+  ],
+  "hints": [
+    "$n! = n \\cdot (n-1)!$, so $n^2$ divides $n!$ exactly when $n$ divides $(n-1)!$.",
+    "If $n$ is prime, it does not divide $(n-1)!$, because none of $1, 2, \\ldots, n-1$ has $n$ as a factor. What about composite $n$?",
+    "If $n = ab$ with $1 < a < b < n$, both $a$ and $b$ appear in $(n-1)!$. If $n = p^2$, you need both $p$ and $2p$ to be at most $n - 1$. Check $n = 4$ separately."
+  ],
+  "solutions": {
+    "reliable": "Since $n! = n \\cdot (n-1)!$, the condition is that $n$ divides $(n-1)!$. If $n$ is prime, none of the factors $1, \\ldots, n - 1$ contains $n$, so it fails: that rules out $2, 3, 5, 7, 11, 13, 17, 19, 23$. If $n$ is composite and not the square of a prime, then $n = ab$ with $1 < a < b < n$, and $a$ and $b$ are different factors of $(n-1)!$, so it works. If $n = p^2$, then $p$ and $2p$ both appear in $(n-1)!$ when $2p \\le p^2 - 1$, which holds for $p = 3$ and $p = 5$ (so $9$ and $25$ work) but not for $p = 2$: indeed $3! = 6$ is not divisible by $4$. So the values that work are the $15$ composite numbers from $4$ to $25$ except $4$, which is $14$ values.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

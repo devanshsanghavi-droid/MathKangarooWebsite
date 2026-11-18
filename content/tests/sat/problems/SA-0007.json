@@ -1,0 +1,56 @@
+{
+  "id": "SA-0007",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "medium",
+  "statement": "Tank A holds $1{,}200$ liters of water and is drained at a constant rate of $15$ liters per minute. At the same moment, Tank B, which holds $300$ liters, begins filling at a constant rate of $30$ liters per minute. After how many minutes will Tank A hold exactly twice as much water as Tank B?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I doubled Tank B's filling rate but not its starting $300$ liters, so I solved $1{,}200 - 15t = 300 + 60t$ and got $t = 12$."
+    },
+    {
+      "key": "C",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I found when the two tanks hold the same amount, solving $1{,}200 - 15t = 300 + 30t$, instead of when A holds twice as much."
+    },
+    {
+      "key": "D",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I put the factor of $2$ on the wrong tank, solving $2(1{,}200 - 15t) = 300 + 30t$, which gives $t = 35$."
+    }
+  ],
+  "hints": [
+    "Write an expression for the water in each tank after $t$ minutes.",
+    "Tank A has $1{,}200 - 15t$ liters and Tank B has $300 + 30t$ liters. Decide which side the factor of $2$ belongs on.",
+    "Solve $1{,}200 - 15t = 2(300 + 30t)$, which expands to $1{,}200 - 15t = 600 + 60t$."
+  ],
+  "solutions": {
+    "reliable": "After $t$ minutes Tank A holds $1{,}200 - 15t$ liters and Tank B holds $300 + 30t$ liters. Tank A holds twice as much as Tank B when $1{,}200 - 15t = 2(300 + 30t) = 600 + 60t$. Then $600 = 75t$, so $t = 8$. Check: after $8$ minutes Tank A holds $1{,}200 - 120 = 1{,}080$ liters and Tank B holds $300 + 240 = 540$ liters, and $1{,}080 = 2 \\cdot 540$.",
+    "elegant": null
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

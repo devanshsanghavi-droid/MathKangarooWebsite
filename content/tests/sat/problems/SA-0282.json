@@ -1,0 +1,56 @@
+{
+  "id": "SA-0282",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "easy",
+  "statement": "Two triangular metal brackets are congruent. Triangle $PQR$ is congruent to triangle $XYZ$, with $P$, $Q$ and $R$ corresponding to $X$, $Y$ and $Z$. On the brackets, $PQ = 3t + 4$, $XY = 5t - 6$ and $YZ = 2t + 7$, all in centimeters. What is the length of $\\overline{QR}$, in centimeters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I solved $3t + 4 = 5t - 6$ to get $t = 5$ and gave $t$ instead of the length of $\\overline{QR}$."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I matched $PQ$ with $YZ$, so I solved $3t + 4 = 2t + 7$ to get $t = 3$ and then $QR = YZ = 2(3) + 7 = 13$."
+    },
+    {
+      "key": "C",
+      "text": "$17$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I found $t = 5$ correctly but then computed $PQ = 3(5) + 4 = 19$ instead of $QR$."
+    }
+  ],
+  "hints": [
+    "Corresponding sides of congruent triangles are equal. Which side of $XYZ$ matches $\\overline{PQ}$?",
+    "$\\overline{PQ}$ corresponds to $\\overline{XY}$, so $3t + 4 = 5t - 6$. Also $\\overline{QR}$ corresponds to $\\overline{YZ}$.",
+    "$t = 5$, and $QR = YZ = 2t + 7$."
+  ],
+  "solutions": {
+    "reliable": "Since $P \\leftrightarrow X$ and $Q \\leftrightarrow Y$, side $\\overline{PQ}$ corresponds to $\\overline{XY}$, so $3t + 4 = 5t - 6$, giving $2t = 10$ and $t = 5$. Side $\\overline{QR}$ corresponds to $\\overline{YZ}$, so $QR = YZ = 2(5) + 7 = 17$ centimeters. Check: $PQ = XY = 19$.",
+    "elegant": null
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

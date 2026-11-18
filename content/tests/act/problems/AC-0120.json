@@ -1,0 +1,56 @@
+{
+  "id": "AC-0120",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "easy",
+  "statement": "A ball is thrown upward from the roof of a building. Its height $h$, in feet above the ground, $t$ seconds after it is thrown is modeled by $h = -16t^2 + 48t + 64$. How many seconds after it is thrown does the ball hit the ground?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I factored $t^2 - 3t - 4$ as $(t - 1)(t + 4)$, with the signs reversed, so I got $t = 1$ as the positive solution."
+    },
+    {
+      "key": "B",
+      "text": "$1.5$",
+      "correct": false,
+      "misconception": "I found the time when the ball is highest, $t = \\frac{48}{2 \\cdot 16} = 1.5$, instead of the time when its height is $0$."
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I solved $-16t^2 + 48t = 0$ and left out the $64$, which gives the time the ball is back at roof height, not at the ground."
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The ball hits the ground when $h = 0$.",
+    "Set $-16t^2 + 48t + 64 = 0$, divide every term by $-16$, and factor.",
+    "$t^2 - 3t - 4 = (t - 4)(t + 1) = 0$."
+  ],
+  "solutions": {
+    "reliable": "Set $h = 0$: $-16t^2 + 48t + 64 = 0$. Divide every term by $-16$: $t^2 - 3t - 4 = 0$, so $(t - 4)(t + 1) = 0$. Time after the throw cannot be negative, so $t = 4$. Check: $-16(16) + 48(4) + 64 = -256 + 192 + 64 = 0$.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

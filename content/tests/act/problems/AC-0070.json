@@ -1,0 +1,56 @@
+{
+  "id": "AC-0070",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "hard",
+  "statement": "What is the solution set of the equation $\\dfrac{3}{x + 4} + \\dfrac{x}{x - 2} = \\dfrac{12}{x^2 + 2x - 8}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\{-9\\}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\{-1, 0\\}$",
+      "correct": false,
+      "misconception": "I multiplied each numerator by its own denominator instead of the other one when clearing the denominators, so I solved $3(x + 4) + x(x - 2) = 12$, which gave $x^2 + x = 0$."
+    },
+    {
+      "key": "C",
+      "text": "$\\{2\\}$",
+      "correct": false,
+      "misconception": "I found $x = -9$ and $x = 2$ and threw out $-9$ because I thought the answer could not be negative, but it is $2$ that makes a denominator zero."
+    },
+    {
+      "key": "D",
+      "text": "$\\{-9, 2\\}$",
+      "correct": false,
+      "misconception": "I cleared the denominators and solved the quadratic, but did not check whether either answer makes an original denominator zero."
+    }
+  ],
+  "hints": [
+    "Factor $x^2 + 2x - 8$. It is the product of the other two denominators.",
+    "Multiply every term by $(x + 4)(x - 2)$, solve the resulting equation, and then check each answer in the original denominators.",
+    "Clearing denominators gives $3(x - 2) + x(x + 4) = 12$, which simplifies to $x^2 + 7x - 18 = 0$. Solve, then reject any value that makes $x + 4$ or $x - 2$ zero."
+  ],
+  "solutions": {
+    "reliable": "Since $x^2 + 2x - 8 = (x + 4)(x - 2)$, multiply both sides by $(x + 4)(x - 2)$, noting $x \\ne -4$ and $x \\ne 2$: $3(x - 2) + x(x + 4) = 12$. This gives $3x - 6 + x^2 + 4x = 12$, so $x^2 + 7x - 18 = 0$ and $(x + 9)(x - 2) = 0$. So $x = -9$ or $x = 2$. But $x = 2$ makes $x - 2 = 0$, so it is extraneous. Check $x = -9$: $\\frac{3}{-5} + \\frac{-9}{-11} = -\\frac{33}{55} + \\frac{45}{55} = \\frac{12}{55}$ and $\\frac{12}{81 - 18 - 8} = \\frac{12}{55}$. The solution set is $\\{-9\\}$.",
+    "elegant": null
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "AM-1219",
+  "contest": "AMC8",
+  "slot": 23,
+  "area": "NT",
+  "topic": "NT-09",
+  "types": [
+    "T-PARITY",
+    "T-INVARIANT"
+  ],
+  "statement": "Each of the numbers $1, 2, 3, \\ldots, 12$ is given either a plus sign or a minus sign, and then all twelve signed numbers are added. For example, $+1 - 2 + 3 + 4 - 5 + \\cdots$. How many different totals are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I thought the total depends only on how many minus signs there are, so $0$ to $12$ minus signs give $13$ totals."
+    },
+    {
+      "key": "B",
+      "text": "$39$",
+      "correct": false,
+      "misconception": "I only counted the positive totals $2, 4, \\ldots, 78$ and forgot $0$ and the negative totals."
+    },
+    {
+      "key": "C",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I only counted the totals that are $0$ or positive, which are $0, 2, 4, \\ldots, 78$."
+    },
+    {
+      "key": "D",
+      "text": "$78$",
+      "correct": false,
+      "misconception": "I took the largest possible total, $1 + 2 + \\cdots + 12 = 78$, as the number of different totals."
+    },
+    {
+      "key": "E",
+      "text": "$79$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "With all plus signs the total is $78$. What happens to the total when one number $k$ is switched from plus to minus?",
+    "Switching $k$ lowers the total by $2k$. So the total is $78 - 2S$, where $S$ is the sum of the numbers that get minus signs. In particular every total is even.",
+    "$S$ can be any whole number from $0$ to $78$, because any such number is a sum of different numbers from $1$ to $12$. So the totals are $78, 76, \\ldots, -76, -78$."
+  ],
+  "solutions": {
+    "reliable": "Let $S$ be the sum of the numbers given minus signs. The total is $(78 - S) - S = 78 - 2S$, since $1 + 2 + \\cdots + 12 = 78$. Every whole number $S$ from $0$ to $78$ can be made as a sum of different numbers from $1$ to $12$: take $12, 11, 10, \\ldots$ in turn for as long as the running sum stays at most $S$; the amount still missing is then smaller than the next number in line, so it is a single unused number (or zero). So the possible totals are exactly $78 - 2S$ for $S = 0, 1, \\ldots, 78$, which are the even numbers from $-78$ to $78$. There are $79$ of them.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

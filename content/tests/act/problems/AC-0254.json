@@ -1,0 +1,56 @@
+{
+  "id": "AC-0254",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-01",
+  "difficulty": "medium",
+  "statement": "A shipping clerk weighed $8$ packages and recorded a mean weight of $55$ ounces. Later she found that one package that weighs $46$ ounces had been recorded as $64$ ounces. All the other weights were recorded correctly. What is the correct mean weight, in ounces, of the $8$ packages?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$37$",
+      "correct": false,
+      "misconception": "I found the error was 18 ounces and subtracted all 18 from the mean, instead of spreading it over 8 packages."
+    },
+    {
+      "key": "B",
+      "text": "$52.75$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$53$",
+      "correct": false,
+      "misconception": "I divided the 18-ounce error by 9 instead of 8 and subtracted 2 from the mean."
+    },
+    {
+      "key": "D",
+      "text": "$57.25$",
+      "correct": false,
+      "misconception": "I spread the 18-ounce error over the 8 packages but added the 2.25 to the mean instead of subtracting it."
+    }
+  ],
+  "hints": [
+    "Work with the total weight, not the mean.",
+    "Find the recorded total, fix it by the size of the mistake, then divide by $8$ again.",
+    "The recorded total is $8 \\cdot 55 = 440$ ounces, and it is $64 - 46 = 18$ ounces too high."
+  ],
+  "solutions": {
+    "reliable": "The recorded total is $8 \\cdot 55 = 440$ ounces. The true total is $440 - 64 + 46 = 422$ ounces, so the correct mean is $\\dfrac{422}{8} = 52.75$ ounces.",
+    "elegant": "The recorded total was $18$ ounces too high, so the mean was $\\dfrac{18}{8} = 2.25$ ounces too high: $55 - 2.25 = 52.75$."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

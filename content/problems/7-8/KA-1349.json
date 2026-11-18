@@ -1,0 +1,67 @@
+{
+  "id": "KA-1349",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A clock face is marked with the hours 0 to 23 around its edge. Its hour hand turns once every 24 hours and points straight up at midnight. Its minute hand turns once every hour, as on an ordinary clock. What is the smaller angle between the two hands at 16:20, in degrees?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "130",
+      "correct": false,
+      "misconception": "I moved the hour hand on by half a degree per minute, as on an ordinary clock, but on this dial it moves only a quarter of a degree per minute."
+    },
+    {
+      "key": "B",
+      "text": "120",
+      "correct": false,
+      "misconception": "I put the hour hand exactly on the 16 and forgot that it moves on during the 20 minutes."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I treated the clock as an ordinary 12-hour clock showing 4:20."
+    },
+    {
+      "key": "D",
+      "text": "235",
+      "correct": false,
+      "misconception": "I found the larger angle between the hands, 360 - 125, instead of the smaller one."
+    },
+    {
+      "key": "E",
+      "text": "125",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-18",
+    "secondary": [
+      "GEO-05"
+    ]
+  },
+  "hints": [
+    "How many degrees does this hour hand turn in one hour?",
+    "The usual clock facts do not work on this dial. Work out how many degrees each hand turns per minute, find where each hand points, measured clockwise from straight up, and subtract.",
+    "The hour hand turns 360 / 24 = 15 degrees per hour, a quarter of a degree per minute, so at 16:20 it is at $16 \\times 15 + 20 \\times 0.25$ degrees. The minute hand is at $20 \\times 6$ degrees."
+  ],
+  "solutions": {
+    "reliable": "Measure clockwise from straight up. The hour hand moves 360 / 24 = 15 degrees per hour, which is 0.25 degrees per minute. At 16:20 it is at $16 \\times 15 + 20 \\times 0.25 = 240 + 5 = 245$ degrees. The minute hand moves 6 degrees per minute, so it is at $20 \\times 6 = 120$ degrees. The angle between them is 245 - 120 = 125 degrees, and since that is less than 180 it is the smaller angle. The transferable idea: for any clock, find each hand's speed in degrees per minute and locate both hands from the same starting line.",
+    "elegant": null
+  },
+  "whyOnTest": "Tests clock geometry from first principles: the usual 30 and 0.5 degree facts fail on this dial, so each hand's speed must be worked out.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

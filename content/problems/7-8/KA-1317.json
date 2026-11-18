@@ -1,0 +1,67 @@
+{
+  "id": "KA-1317",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Through how many degrees does the hour hand of a clock turn between 9:40 in the morning and 1:10 in the afternoon of the same day?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "21",
+      "correct": false,
+      "misconception": "I moved the hour hand 6 degrees per hour, the way the minute hand moves in one minute."
+    },
+    {
+      "key": "B",
+      "text": "90",
+      "correct": false,
+      "misconception": "I counted only the 3 full hours from 10:00 to 1:00 and ignored the extra minutes."
+    },
+    {
+      "key": "C",
+      "text": "105",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "120",
+      "correct": false,
+      "misconception": "I counted from 9 to 1 as 4 whole hours and ignored the minutes."
+    },
+    {
+      "key": "E",
+      "text": "1260",
+      "correct": false,
+      "misconception": "I worked out how far the minute hand turns, $3.5 \\times 360$, instead of the hour hand."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-18",
+    "secondary": [
+      "MOD-07"
+    ]
+  },
+  "hints": [
+    "How long is it from 9:40 to 1:10?",
+    "Clock geometry: the hour hand turns a full 360 degrees in 12 hours. Find the time that passes, then turn it into degrees for the hour hand.",
+    "From 9:40 to 1:10 is 3 hours 30 minutes, and the hour hand turns $360 \\div 12 = 30$ degrees each hour."
+  ],
+  "solutions": {
+    "reliable": "From 9:40 to 1:10 is 3 hours 30 minutes, which is 3.5 hours. The hour hand goes once round (360 degrees) in 12 hours, so it turns 30 degrees per hour. In 3.5 hours it turns $3.5 \\times 30 = 105$ degrees. The transferable idea: the hour hand turns half a degree every minute, so the minutes matter.",
+    "elegant": "The hour hand turns half a degree per minute. The time is 210 minutes, so it turns $210 \\div 2 = 105$ degrees."
+  },
+  "whyOnTest": "The hour hand keeps moving between the numbers; the test is whether the extra minutes are turned into degrees too.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

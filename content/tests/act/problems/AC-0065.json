@@ -1,0 +1,56 @@
+{
+  "id": "AC-0065",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "hard",
+  "statement": "For how many values of the constant $b$ does the equation $x^2 + bx + 36 = 0$ have two different solutions that are both positive integers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I counted the pair $6$ and $6$ as well, even though the two solutions have to be different."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I also counted pairs of negative integers like $-4$ and $-9$, which multiply to $36$ but are not positive solutions."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I counted every factor pair of $36$, positive and negative, including $6$ and $6$ and $-6$ and $-6$."
+    }
+  ],
+  "hints": [
+    "If the solutions are $r$ and $s$, the equation is $(x - r)(x - s) = 0$.",
+    "Expanding $(x - r)(x - s)$ gives $x^2 - (r + s)x + rs$, so $rs = 36$ and $b = -(r + s)$. Each pair of solutions gives one value of $b$.",
+    "List the pairs of different positive integers that multiply to $36$: $1 \\cdot 36$, $2 \\cdot 18$, and so on. Leave out $6 \\cdot 6$."
+  ],
+  "solutions": {
+    "reliable": "If the solutions are positive integers $r < s$, then $x^2 + bx + 36 = (x - r)(x - s)$, so $rs = 36$ and $b = -(r + s)$. The pairs of different positive integers with product $36$ are $(1, 36)$, $(2, 18)$, $(3, 12)$, $(4, 9)$. They give $b = -37, -20, -15, -13$, which are $4$ different values. The pair $(6, 6)$ is excluded because the solutions must be different.",
+    "elegant": null
+  },
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

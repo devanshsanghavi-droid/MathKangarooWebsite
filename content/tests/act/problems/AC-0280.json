@@ -1,0 +1,56 @@
+{
+  "id": "AC-0280",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-03",
+  "difficulty": "easy",
+  "statement": "A box plot of the scores on a science test has these five values: minimum $52$, first quartile $64$, median $71$, third quartile $80$ and maximum $97$. About what percent of the students scored between $64$ and $97$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$25\\%$",
+      "correct": false,
+      "misconception": "I thought the stretch from 64 to 97 was only one section of the box plot, so I said 25%, but it covers three sections."
+    },
+    {
+      "key": "B",
+      "text": "$33\\%$",
+      "correct": false,
+      "misconception": "I subtracted 64 from 97 to get 33 and called that the percent, but the difference between scores is not a share of the students."
+    },
+    {
+      "key": "C",
+      "text": "$50\\%$",
+      "correct": false,
+      "misconception": "I remembered that the box holds 50% of the data and stopped there, forgetting the upper whisker from 80 to 97 adds another 25%."
+    },
+    {
+      "key": "D",
+      "text": "$75\\%$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The five values of a box plot split the data into four groups. About what share of the data is in each group?",
+    "Each of the four sections (min to $Q_1$, $Q_1$ to median, median to $Q_3$, $Q_3$ to max) holds about $25\\%$ of the scores. How many sections lie between $64$ and $97$?",
+    "From $64$ (the first quartile) to $97$ (the maximum) covers the box and the upper whisker: three sections of $25\\%$."
+  ],
+  "solutions": {
+    "reliable": "The value $64$ is the first quartile, so about $25\\%$ of the scores are below it. The maximum $97$ is the top of the data. So about $100\\% - 25\\% = 75\\%$ of the students scored between $64$ and $97$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

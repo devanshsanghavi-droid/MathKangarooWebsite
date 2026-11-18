@@ -1,0 +1,56 @@
+{
+  "id": "AC-0075",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-07",
+  "difficulty": "hard",
+  "statement": "Line $\\ell$ passes through the point $(3, -1)$ and is perpendicular to the line $4x - 6y = 9$. The point $(k, 5)$ also lies on line $\\ell$. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-6$",
+      "correct": false,
+      "misconception": "I took the negative of the slope $\\frac{2}{3}$ but forgot to flip it, so I used $-\\frac{2}{3}$ for line $\\ell$."
+    },
+    {
+      "key": "B",
+      "text": "$-1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I flipped $\\frac{2}{3}$ to $\\frac{3}{2}$ but forgot to make it negative, so I used slope $\\frac{3}{2}$."
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I used the same slope $\\frac{2}{3}$ as the given line, which would make $\\ell$ parallel to it, not perpendicular."
+    }
+  ],
+  "hints": [
+    "Find the slope of $4x - 6y = 9$ by solving for $y$.",
+    "The given line has slope $\\frac{2}{3}$, so a perpendicular line has slope $-\\frac{3}{2}$. The slope from $(3, -1)$ to $(k, 5)$ must equal this.",
+    "Set $\\frac{5 - (-1)}{k - 3} = -\\frac{3}{2}$, which is $\\frac{6}{k - 3} = -\\frac{3}{2}$, and solve for $k - 3$."
+  ],
+  "solutions": {
+    "reliable": "Solving $4x - 6y = 9$ for $y$ gives $y = \\frac{2}{3}x - \\frac{3}{2}$, so its slope is $\\frac{2}{3}$. A perpendicular line has slope $-\\frac{3}{2}$. The slope from $(3, -1)$ to $(k, 5)$ must equal this: $\\frac{6}{k - 3} = -\\frac{3}{2}$, so $k - 3 = -4$ and $k = -1$. Check: the slope from $(3, -1)$ to $(-1, 5)$ is $\\frac{6}{-4} = -\\frac{3}{2}$, and $\\frac{2}{3} \\cdot \\left(-\\frac{3}{2}\\right) = -1$.",
+    "elegant": "With slope $-\\frac{3}{2}$, each rise of $3$ comes with a run of $2$ to the left. Going from $y = -1$ up to $y = 5$ is a rise of $6$, so $x$ moves $4$ to the left, from $3$ to $-1$."
+  },
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0105",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-02",
+  "difficulty": "easy",
+  "statement": "What is the positive solution to the equation $x^2 - 3x = 28$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I factored $x^2 - 3x - 28$ as $(x + 7)(x - 4)$, with the signs swapped, and took the positive root 4."
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I factored the left side as $x(x - 3) = 28$ and set $x = 28$, but that only works when the right side is 0."
+    },
+    {
+      "key": "D",
+      "text": "$31$",
+      "correct": false,
+      "misconception": "I factored the left side as $x(x - 3) = 28$ and set $x - 3 = 28$, but the zero-product rule needs 0 on the right side."
+    }
+  ],
+  "hints": [
+    "Move everything to one side so the equation equals $0$.",
+    "Write $x^2 - 3x - 28 = 0$ and factor: find two numbers that multiply to $-28$ and add to $-3$.",
+    "$x^2 - 3x - 28 = (x - 7)(x + 4)$, so $x = 7$ or $x = -4$."
+  ],
+  "solutions": {
+    "reliable": "Subtract 28 from both sides: $x^2 - 3x - 28 = 0$. The numbers $-7$ and $4$ multiply to $-28$ and add to $-3$, so $(x - 7)(x + 4) = 0$ and $x = 7$ or $x = -4$. The positive solution is $7$. Check: $49 - 21 = 28$.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

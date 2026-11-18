@@ -1,0 +1,56 @@
+{
+  "id": "SA-0045",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "easy",
+  "statement": "A delivery van can safely carry at most $1{,}800$ pounds of driver and cargo combined. The driver weighs $180$ pounds, and each box to be loaded weighs $35$ pounds. What is the greatest number of boxes the van can safely carry on one trip with the driver?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$46$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$47$",
+      "correct": false,
+      "misconception": "I found that $(1{,}800 - 180) \\div 35 \\approx 46.3$ and rounded up to 47, but 47 boxes would put the van over the limit."
+    },
+    {
+      "key": "C",
+      "text": "$51$",
+      "correct": false,
+      "misconception": "I forgot about the driver and worked out $1{,}800 \\div 35 \\approx 51.4$, so I got 51 boxes."
+    },
+    {
+      "key": "D",
+      "text": "$56$",
+      "correct": false,
+      "misconception": "I added the driver's weight to the limit instead of subtracting it, so I got $1{,}980 \\div 35 \\approx 56.6$ and 56 boxes."
+    }
+  ],
+  "hints": [
+    "Write an inequality: driver plus boxes must be no more than $1{,}800$ pounds.",
+    "With $n$ boxes, $180 + 35n \\le 1{,}800$. Solve for $n$, then remember that $n$ must be a whole number.",
+    "$35n \\le 1{,}620$, so $n \\le 46.28\\ldots$ The number of boxes must be a whole number that does not break the limit."
+  ],
+  "solutions": {
+    "reliable": "With $n$ boxes the total weight is $180 + 35n$, which must satisfy $180 + 35n \\le 1{,}800$. So $35n \\le 1{,}620$ and $n \\le 46.28\\ldots$ The greatest whole number is $46$. Check: $180 + 35(46) = 1{,}790 \\le 1{,}800$, but $180 + 35(47) = 1{,}825 > 1{,}800$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

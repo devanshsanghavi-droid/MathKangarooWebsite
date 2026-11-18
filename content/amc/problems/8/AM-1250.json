@@ -1,0 +1,69 @@
+{
+  "id": "AM-1250",
+  "contest": "AMC8",
+  "slot": 8,
+  "area": "CP",
+  "topic": "CP-04",
+  "types": [
+    "T-PIE",
+    "T-COMPLEMENT"
+  ],
+  "statement": "Lockers in a hallway are numbered $1$ to $120$. Ana puts a sticker on every locker with an even number, Ben puts a sticker on every locker whose number is a multiple of $3$, and Cara puts a sticker on every locker whose number is a multiple of $5$. How many lockers get no sticker at all?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I added 60 + 40 + 24 = 124 stickered lockers, which is more than 120, so I decided every locker gets a sticker."
+    },
+    {
+      "key": "B",
+      "text": "$32$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I subtracted the overlaps 20, 12 and 8 but forgot to add back the 4 multiples of 30, so I got 120 - 84 = 36."
+    },
+    {
+      "key": "D",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I subtracted the 4 multiples of 30 again instead of adding them back, so I got 124 - 40 - 4 = 80 stickered lockers and 120 - 80 = 40."
+    },
+    {
+      "key": "E",
+      "text": "$88$",
+      "correct": false,
+      "misconception": "I found the number of lockers with at least one sticker, 88, instead of the number with no sticker."
+    }
+  ],
+  "hints": [
+    "A locker gets no sticker exactly when its number is not divisible by $2$, $3$ or $5$.",
+    "Use inclusion-exclusion to count the lockers with at least one sticker: add the three groups, subtract the pairs, then add back the lockers in all three groups.",
+    "At least one sticker: $60 + 40 + 24 - 20 - 12 - 8 + 4 = 88$. Subtract from $120$."
+  ],
+  "solutions": {
+    "reliable": "Among $1$ to $120$ there are $60$ multiples of $2$, $40$ of $3$ and $24$ of $5$. Multiples of $6$, $10$ and $15$ number $20$, $12$ and $8$, and multiples of $30$ number $4$. By inclusion-exclusion, $60 + 40 + 24 - 20 - 12 - 8 + 4 = 88$ lockers get at least one sticker, so $120 - 88 = 32$ get none.",
+    "elegant": "The pattern of stickers repeats every $30$ lockers. From $1$ to $30$, the numbers divisible by none of $2$, $3$, $5$ are $1, 7, 11, 13, 17, 19, 23, 29$, which is $8$ numbers. Since $120 = 4 \\cdot 30$, there are $4 \\cdot 8 = 32$ such lockers."
+  },
+  "formulas": [
+    "F-CP-01"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

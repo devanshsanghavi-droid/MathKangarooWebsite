@@ -1,0 +1,56 @@
+{
+  "id": "AC-0296",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-08",
+  "difficulty": "medium",
+  "statement": "A carnival game costs $\\$2$ to play. The player rolls a fair six-sided die once. A roll of $6$ wins a prize worth $\\$8$, a roll of $5$ wins a prize worth $\\$3$, and any other roll wins nothing. To the nearest cent, what is the player's expected net gain per game (prize value minus the cost to play)?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-\\$0.17$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\$1.17$",
+      "correct": false,
+      "misconception": "I took the 2 dollars off only on the winning rolls, but the player pays 2 dollars on every roll, including the losing ones."
+    },
+    {
+      "key": "C",
+      "text": "$\\$1.67$",
+      "correct": false,
+      "misconception": "I treated the three results, 8, 3 and 0 dollars, as equally likely, so I averaged them to 11/3 and subtracted the 2 dollar cost, but 0 dollars happens on 4 of the 6 faces."
+    },
+    {
+      "key": "D",
+      "text": "$\\$1.83$",
+      "correct": false,
+      "misconception": "I found the expected prize value, 11/6 dollars, but forgot to subtract the 2 dollars it costs to play."
+    }
+  ],
+  "hints": [
+    "Find the expected prize value first, then account for the cost.",
+    "The expected prize is $8 \\cdot \\frac{1}{6} + 3 \\cdot \\frac{1}{6} + 0 \\cdot \\frac{4}{6}$. The $\\$2$ is paid every game.",
+    "The expected prize is $\\frac{11}{6} \\approx 1.83$ dollars. Subtract $2$."
+  ],
+  "solutions": {
+    "reliable": "The expected prize value is $8 \\cdot \\frac{1}{6} + 3 \\cdot \\frac{1}{6} + 0 \\cdot \\frac{4}{6} = \\frac{11}{6}$ dollars. The player pays $\\$2$ every game, so the expected net gain is $\\frac{11}{6} - 2 = -\\frac{1}{6} \\approx -\\$0.17$.",
+    "elegant": "List net gains: $+6$ on a $6$, $+1$ on a $5$, and $-2$ on each of the other $4$ faces. The average is $\\frac{6 + 1 - 8}{6} = -\\frac{1}{6} \\approx -\\$0.17$."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

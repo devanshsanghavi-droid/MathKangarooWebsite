@@ -1,0 +1,56 @@
+{
+  "id": "AC-0114",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-07",
+  "difficulty": "medium",
+  "statement": "A taxi company's fare is a linear function of the distance traveled. The table shows the fares for two trips. $$\\begin{array}{c|c} \\text{Distance (miles)} & \\text{Fare (dollars)} \\\\ \\hline 3 & 11.10 \\\\ 8 & 22.60 \\end{array}$$ What is the fare, in dollars, for a $12$-mile trip?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$27.60$",
+      "correct": false,
+      "misconception": "I found the rate of $\\$2.30$ per mile and multiplied it by $12$, leaving out the fixed starting charge of $\\$4.20$."
+    },
+    {
+      "key": "B",
+      "text": "$31.80$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$33.90$",
+      "correct": false,
+      "misconception": "I treated the fare as proportional to distance and used $22.60 \\div 8 = 2.825$ dollars per mile for all $12$ miles."
+    },
+    {
+      "key": "D",
+      "text": "$44.40$",
+      "correct": false,
+      "misconception": "I saw that $12$ miles is $4$ times $3$ miles, so I multiplied the $3$-mile fare of $\\$11.10$ by $4$."
+    }
+  ],
+  "hints": [
+    "Use the two rows to find the cost per mile.",
+    "The slope is the change in fare over the change in distance. Then use either row to find the starting charge.",
+    "The rate is $\\frac{22.60 - 11.10}{8 - 3} = 2.30$ dollars per mile."
+  ],
+  "solutions": {
+    "reliable": "The rate is $\\frac{22.60 - 11.10}{8 - 3} = \\frac{11.50}{5} = 2.30$ dollars per mile. The starting charge is $11.10 - 3(2.30) = 4.20$ dollars, so the fare is $F = 4.20 + 2.30d$. For $12$ miles, $F = 4.20 + 27.60 = 31.80$ dollars.",
+    "elegant": "From $8$ miles to $12$ miles is $4$ more miles at $\\$2.30$ each, so the fare is $22.60 + 4(2.30) = 31.80$ dollars."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

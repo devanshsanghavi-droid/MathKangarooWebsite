@@ -1,0 +1,68 @@
+{
+  "id": "KA-1219",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A code is made of 3 letters, each chosen from A, B, C, D, E and F. Letters may repeat. How many codes contain at least one vowel (A or E)?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the codes made only of vowels."
+    },
+    {
+      "key": "B",
+      "text": "64",
+      "correct": false,
+      "misconception": "I counted the codes with no vowel at all, which is the opposite of what was asked."
+    },
+    {
+      "key": "C",
+      "text": "72",
+      "correct": false,
+      "misconception": "I put a vowel in the first place and let the other two letters be anything, 2 × 6 × 6."
+    },
+    {
+      "key": "D",
+      "text": "96",
+      "correct": false,
+      "misconception": "I counted the codes with exactly one vowel and missed those with two or three vowels."
+    },
+    {
+      "key": "E",
+      "text": "152",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-09",
+    "secondary": [
+      "CNT-03",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Which codes are easier to count: those with a vowel or those without?",
+    "Use complementary counting. Count all possible codes, then take away the codes that contain no vowel at all.",
+    "All codes: 6 × 6 × 6 = 216. Codes with no vowel use only B, C, D and F: 4 × 4 × 4 = 64."
+  ],
+  "solutions": {
+    "reliable": "There are 6 × 6 × 6 = 216 codes in all. The codes with no vowel use only B, C, D and F, and there are 4 × 4 × 4 = 64 of them. Every other code has at least one vowel, so the answer is 216 - 64 = 152. The transferable idea: at least one is usually easiest to count as everything minus none.",
+    "elegant": "Casework agrees. Exactly one vowel: 3 places for it, 2 vowels, 4 × 4 other letters, so 96. Exactly two vowels: 3 places for the other letter, 4 choices for it, 2 × 2 vowels, so 48. Three vowels: 2 × 2 × 2 = 8. Total 96 + 48 + 8 = 152."
+  },
+  "whyOnTest": "At least one is the classic signal for complementary counting, which replaces three cases with one subtraction.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

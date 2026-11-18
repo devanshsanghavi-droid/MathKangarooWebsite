@@ -1,0 +1,68 @@
+{
+  "id": "KA-1293",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Ana, Ben, Cleo and Dev each go to a different club: chess, judo, swimming or tennis, which meet one per day, Monday to Thursday. Tennis is on Thursday. Chess is the day before Ben's. Swimming is later than chess. Cleo's club is earlier than Ana's, and Ana's earlier than Dev's. Cleo does not play chess. Which club is Ben's?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Chess",
+      "correct": false,
+      "misconception": "I mixed up the clue and made Ben the chess player, instead of the child whose club comes the day after chess."
+    },
+    {
+      "key": "B",
+      "text": "Judo",
+      "correct": false,
+      "misconception": "I let Cleo play chess on Monday, missing the clue that she does not, and then gave Ben judo on Tuesday."
+    },
+    {
+      "key": "C",
+      "text": "Swimming",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "Tennis",
+      "correct": false,
+      "misconception": "I read 'the day just before' as 'some day before', so I let Ben go on Thursday and play tennis."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be decided",
+      "correct": false,
+      "misconception": "I forgot the clue that swimming is later than chess, so I found more than one way to fit everything."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-03",
+    "secondary": [
+      "LOG-04",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "On which days could Ben's club meet?",
+    "Ben cannot be on Monday, since chess comes the day before his club. Try each of the other days for Ben and see which clue breaks. The order of Cleo, Ana and Dev fixes the rest.",
+    "If Ben is on Thursday, chess is Wednesday and swimming has no later free day. If Ben is on Tuesday, chess is Monday, but Cleo must be on Monday and she does not play chess. So Ben is on Wednesday."
+  ],
+  "solutions": {
+    "reliable": "Ben's club cannot be on Monday, because chess is the day before it. If Ben is on Thursday, he plays tennis and chess is on Wednesday, but then swimming would have to be on Thursday too, which is impossible. If Ben is on Tuesday, chess is on Monday, and the other three children fill Monday, Wednesday and Thursday in the order Cleo, Ana, Dev, so Cleo is on Monday playing chess, which the last clue forbids. So Ben is on Wednesday, chess is on Tuesday, and Cleo, Ana and Dev are on Monday, Tuesday and Thursday. Ana plays chess, Dev plays tennis, swimming must be after Tuesday, so it is Ben's Wednesday club, and Cleo does judo. The transferable idea: in an elimination puzzle, test the cases for the most constrained person and let each contradiction remove one case.",
+    "elegant": null
+  },
+  "whyOnTest": "Elimination at 5 points: two lists to match at once, and each clue removes a case only when combined with another.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

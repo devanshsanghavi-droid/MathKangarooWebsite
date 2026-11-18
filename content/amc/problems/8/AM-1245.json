@@ -1,0 +1,70 @@
+{
+  "id": "AM-1245",
+  "contest": "AMC8",
+  "slot": 7,
+  "area": "CP",
+  "topic": "CP-03",
+  "types": [
+    "T-COMPLEMENT",
+    "T-CASEWORK"
+  ],
+  "statement": "A pizza shop offers $6$ different toppings, including mushrooms and olives. Tara orders a pizza with either exactly $2$ or exactly $3$ different toppings, and she refuses to have mushrooms and olives together on the same pizza. How many different pizzas could she order?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I only counted the pizzas with exactly 2 toppings, 15 - 1 = 14, and forgot the pizzas with 3 toppings."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I only counted the pizzas with exactly 3 toppings, 20 - 4 = 16, and forgot the pizzas with 2 toppings."
+    },
+    {
+      "key": "C",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I thought the rule meant no mushrooms at all, so I chose all the toppings from the other 5: 10 + 10 = 20."
+    },
+    {
+      "key": "D",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I counted the 3-topping pizzas with both mushrooms and olives as C(4, 2) = 6 instead of 4, so I got 35 - 1 - 6 = 28. Only one more topping is chosen, not two."
+    },
+    {
+      "key": "E",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Count all the pizzas first, then take away the ones Tara refuses.",
+    "There are $\\binom{6}{2} + \\binom{6}{3}$ pizzas with no rule. A refused pizza has both mushrooms and olives; how many other toppings can go with them?",
+    "With no rule: $15 + 20 = 35$. Refused: $1$ two-topping pizza (just mushrooms and olives) and $4$ three-topping pizzas (mushrooms, olives and one of the other $4$). Subtract."
+  ],
+  "solutions": {
+    "reliable": "Without the rule, there are $\\binom{6}{2} = 15$ two-topping pizzas and $\\binom{6}{3} = 20$ three-topping pizzas, $35$ in all. The refused pizzas contain both mushrooms and olives: there is $1$ such two-topping pizza, and $4$ such three-topping pizzas, one for each choice of third topping. So Tara could order $35 - 1 - 4 = 30$ pizzas.",
+    "elegant": "Count directly. Pizzas with neither mushrooms nor olives: $\\binom{4}{2} + \\binom{4}{3} = 6 + 4 = 10$. Pizzas with exactly one of the two: $2 \\cdot \\left(\\binom{4}{1} + \\binom{4}{2}\\right) = 2 \\cdot 10 = 20$. Total $10 + 20 = 30$."
+  },
+  "formulas": [
+    "F-CP-03",
+    "F-CP-06"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1161",
+  "band": "3-4",
+  "points": 4,
+  "statement": "One of Ann, Ben and Cal took the last cookie. Ann: \"It was Ben or Cal.\" Ben: \"It was not me.\" Cal: \"It was Ann.\" Only one of them tells the truth. Who took it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Ben",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "Ann",
+      "correct": false,
+      "misconception": "I believed Cal because he named one person directly, and I did not check how many statements were then true."
+    },
+    {
+      "key": "C",
+      "text": "Cal",
+      "correct": false,
+      "misconception": "I believed both Ann and Ben, so I decided it was Cal, but then two children would be telling the truth."
+    },
+    {
+      "key": "D",
+      "text": "Ann or Cal, the clues do not decide",
+      "correct": false,
+      "misconception": "I worked as if exactly one child was lying, and then both Ann and Cal fitted."
+    },
+    {
+      "key": "E",
+      "text": "Nobody fits all the clues",
+      "correct": false,
+      "misconception": "I tested only Ann and Cal as the cookie-taker, found two true statements each time, and gave up."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-01",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Try each child in turn as the cookie-taker.",
+    "There are only three possibilities. For each one, decide whether each of the three statements is true or false, then count the true statements. Keep the case with exactly one.",
+    "If Ann took it, Ben and Cal are both right. If Cal took it, Ann and Ben are both right. Now check Ben."
+  ],
+  "solutions": {
+    "reliable": "Test each possibility. If Ann took it: Ann is wrong, Ben is right, Cal is right, so 2 truths. If Cal took it: Ann is right, Ben is right, Cal is wrong, so 2 truths. If Ben took it: Ann is right, Ben is wrong, Cal is wrong, so exactly 1 truth. Only Ben fits. The transferable idea: when there are few possibilities, test each one against every clue.",
+    "elegant": "Ann and Cal can never both be right, since one blames Ben or Cal and the other blames Ann. So the single true statement is Ann's or Cal's, which means Ben's \"It was not me\" is false."
+  },
+  "whyOnTest": "It checks reading each statement precisely and counting truths case by case, the core move in every liar puzzle.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

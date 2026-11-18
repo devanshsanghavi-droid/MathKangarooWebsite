@@ -1,0 +1,56 @@
+{
+  "id": "AC-0016",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-04",
+  "difficulty": "medium",
+  "statement": "The price of a jacket at Store A is $20\\%$ more than its price at Store B. The jacket costs $\\$84$ at Store A. What does the jacket cost at Store B?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$64.00$",
+      "correct": false,
+      "misconception": "I subtracted 20 dollars from 84, treating 20 percent as if it were 20 dollars."
+    },
+    {
+      "key": "B",
+      "text": "$\\$67.20$",
+      "correct": false,
+      "misconception": "I took 20 percent off Store A's price, but the 20 percent is figured on Store B's price, not Store A's."
+    },
+    {
+      "key": "C",
+      "text": "$\\$70.00$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$105.00$",
+      "correct": false,
+      "misconception": "I thought Store A's price was 80 percent of Store B's, so I divided 84 by 0.8 and made Store B the more expensive store."
+    }
+  ],
+  "hints": [
+    "The $20\\%$ is a percent of Store B's price. Call that price $b$.",
+    "Store A's price is $b + 0.20b = 1.2b$, so $1.2b = 84$.",
+    "Divide $84$ by $1.2$."
+  ],
+  "solutions": {
+    "reliable": "Let $b$ be Store B's price. Store A charges $20\\%$ more, so $1.2b = 84$ and $b = 84 \\div 1.2 = 70$ dollars. Check: $20\\%$ of $70$ is $14$, and $70 + 14 = 84$.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1543",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A sequence has $a_1 = 2$ and $a_{n+1} = \\dfrac{2a_n}{a_n + 2}$ for every $n$. What is $a_1 a_2 + a_2 a_3 + a_3 a_4 + \\dots + a_9 a_{10}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{9}{10}$",
+      "correct": false,
+      "misconception": "I guessed $a_n = \\frac{1}{n}$ from the look of the rule instead of computing the first terms."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{32}{9}$",
+      "correct": false,
+      "misconception": "I stopped one product too early, ending with $a_8 a_9$."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{18}{5}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{40}{11}$",
+      "correct": false,
+      "misconception": "I went one product too far, ending with $a_{10} a_{11}$."
+    },
+    {
+      "key": "E",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I thought the telescoping leaves just the first term, forgetting the part left over at the end."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "CFT-07",
+      "PAT-07"
+    ]
+  },
+  "hints": [
+    "Work out $a_2$, $a_3$ and $a_4$. Do you see a pattern?",
+    "Turn the rule upside down: $\\frac{1}{a_{n+1}}$ is a simple function of $\\frac{1}{a_n}$. That gives a formula for $a_n$, and then each product splits into a difference of two fractions.",
+    "$\\frac{1}{a_{n+1}} = \\frac{1}{a_n} + \\frac{1}{2}$, so $a_n = \\frac{2}{n}$ and $a_n a_{n+1} = \\frac{4}{n(n + 1)} = 4\\left(\\frac{1}{n} - \\frac{1}{n + 1}\\right)$."
+  ],
+  "solutions": {
+    "reliable": "The first terms are $2, 1, \\frac{2}{3}, \\frac{1}{2}, \\frac{2}{5}$, which suggests $a_n = \\frac{2}{n}$. To prove it, take reciprocals: $\\frac{1}{a_{n+1}} = \\frac{a_n + 2}{2a_n} = \\frac{1}{2} + \\frac{1}{a_n}$, so $\\frac{1}{a_n}$ grows by $\\frac{1}{2}$ each step from $\\frac{1}{2}$, giving $\\frac{1}{a_n} = \\frac{n}{2}$. Then $a_n a_{n+1} = \\frac{4}{n(n + 1)} = 4\\left(\\frac{1}{n} - \\frac{1}{n + 1}\\right)$, and the sum for $n = 1$ to $9$ telescopes to $4\\left(1 - \\frac{1}{10}\\right) = \\frac{18}{5}$. The transferable idea: generate a few terms of a recursive rule, guess the pattern, then confirm it with a substitution such as reciprocals.",
+    "elegant": null
+  },
+  "whyOnTest": "Generating terms reveals $a_n = 2/n$, and then the products telescope: a recursive rule turned into a closed form.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

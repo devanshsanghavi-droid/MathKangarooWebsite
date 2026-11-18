@@ -1,0 +1,68 @@
+{
+  "id": "KA-1236",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Lia, Max and Noa each have a different pet (cat, dog, rabbit) and a different favourite colour (red, blue, green). The cat's owner likes blue. Max neither owns the dog nor likes red. Noa neither likes blue nor owns the rabbit. The rabbit's owner does not like green. Who owns the dog, and what colour does that child like?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Max, blue",
+      "correct": false,
+      "misconception": "I answered for the cat's owner, Max, who likes blue, instead of the dog's owner."
+    },
+    {
+      "key": "B",
+      "text": "Lia, red",
+      "correct": false,
+      "misconception": "I named the rabbit's owner, Lia, who likes red, instead of the dog's owner."
+    },
+    {
+      "key": "C",
+      "text": "Lia, green",
+      "correct": false,
+      "misconception": "I gave Noa the rabbit, forgetting the clue that Noa does not own the rabbit, so the dog went to Lia."
+    },
+    {
+      "key": "D",
+      "text": "Noa, red",
+      "correct": false,
+      "misconception": "I gave Lia the cat and blue, which only works if I ignore the clue that the rabbit's owner does not like green, and that left red for Noa."
+    },
+    {
+      "key": "E",
+      "text": "Noa, green",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-03",
+    "secondary": [
+      "LOG-09",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Who could be the child who likes blue?",
+    "The cat's owner and the child who likes blue are the same person. Noa does not like blue, so try the two possibilities, Lia or Max, and see which one breaks a clue.",
+    "If Lia liked blue, she would own the cat, Max would have to own the rabbit and like green, and the rabbit clue would be broken. So Max likes blue."
+  ],
+  "solutions": {
+    "reliable": "The child who likes blue owns the cat. Noa does not like blue, so it is Lia or Max. Suppose it is Lia: then Lia owns the cat. Max does not own the dog, so Max owns the rabbit and Noa the dog. Max does not like red, and blue is taken, so Max likes green, but the rabbit's owner does not like green. That fails, so Max likes blue and owns the cat. Noa does not own the rabbit, so Noa owns the dog and Lia the rabbit. Lia, the rabbit's owner, does not like green, so Lia likes red and Noa likes green. Check every clue against Lia (rabbit, red), Max (cat, blue) and Noa (dog, green). The transferable idea: when no clue fixes a cell, test the possibilities and let a contradiction remove the wrong one.",
+    "elegant": null
+  },
+  "whyOnTest": "Two-attribute logic grids test linking clues: one clue joins the pets to the colours, and a short trial removes the wrong case.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,71 @@
+{
+  "id": "KA-1269",
+  "band": "5-6",
+  "points": 5,
+  "statement": "In the 5 by 5 grid shown, three squares are shaded. What is the smallest number of further squares that must be shaded so that both dashed diagonals are lines of symmetry of the pattern?",
+  "figure": {
+    "component": "GridTwoDiagonals",
+    "alt": "A 5 by 5 grid of squares with both diagonals drawn as dashed lines. Counting rows from the top and columns from the left, three squares are shaded: row 1 column 2, row 2 column 5, and row 4 column 4. The square in row 4 column 4 lies on the diagonal from the top-left corner to the bottom-right corner."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I only made the pattern symmetric about the diagonal from the top left to the bottom right, which needs just 2 more squares."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I only made the pattern symmetric about the diagonal from the top right to the bottom left, which needs 3 more squares."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": false,
+      "misconception": "I reflected each shaded square once in each diagonal but did not reflect the new squares again, so I missed the square opposite each one through the centre."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought the square lying on a diagonal needs no partner at all, so I added 3 squares for each of the other two."
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-08",
+    "secondary": [
+      "GEO-09",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Reflect each shaded square in both diagonals, and keep going.",
+    "Every reflection of a shaded square in either diagonal must be shaded, and so must the reflections of those new squares. Each shaded square brings a whole group with it, and a square on a diagonal brings a smaller group.",
+    "Row 1 column 2 brings row 2 column 1, row 4 column 5 and row 5 column 4. Row 2 column 5 brings three more squares. Row 4 column 4 brings only row 2 column 2."
+  ],
+  "solutions": {
+    "reliable": "Count rows from the top and columns from the left. Reflecting in the diagonal from top left to bottom right swaps the row and column numbers; reflecting in the other diagonal sends row r, column c to row 6 - c, column 6 - r. Row 1 column 2 forces row 2 column 1, row 4 column 5 and row 5 column 4: 3 new squares. Row 2 column 5 forces row 5 column 2, row 1 column 4 and row 4 column 1: 3 new squares. Row 4 column 4 lies on the first diagonal and forces only row 2 column 2: 1 new square. These 10 squares reflect onto each other in both diagonals, so 3 + 3 + 1 = 7 more squares are needed and enough. The transferable idea: a symmetric pattern is made of complete groups of squares that the symmetries move onto each other.",
+    "elegant": "Two reflections in the diagonals together also give a half turn, so a square that is on neither diagonal belongs to a group of 4, and a square on one diagonal (other than the centre) belongs to a group of 2. The three groups hold 4 + 4 + 2 = 10 squares, and 3 are already shaded, so 7 more are needed."
+  },
+  "whyOnTest": "Symmetry completion tests whether you keep reflecting until nothing new appears, rather than reflecting each square only once.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

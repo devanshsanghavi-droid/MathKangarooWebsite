@@ -1,0 +1,56 @@
+{
+  "id": "SA-0005",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "medium",
+  "statement": "A shop buys a jacket for $w$ dollars, raises that price by $40\\%$, and then a customer uses a $\\$6$ coupon on the raised price. The customer pays $\\$57$ for the jacket. What is the value of $w$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$23$",
+      "correct": false,
+      "misconception": "I raised the price by $40$ dollars instead of $40\\%$, so I solved $w + 40 - 6 = 57$ and got $23$."
+    },
+    {
+      "key": "B",
+      "text": "$37.8$",
+      "correct": false,
+      "misconception": "I added the coupon back to get $63$ dollars and then took $40\\%$ off it, which gave $0.6 \\cdot 63 = 37.8$."
+    },
+    {
+      "key": "C",
+      "text": "$45$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$157.5$",
+      "correct": false,
+      "misconception": "I multiplied $w$ by $0.4$ instead of $1.4$ for the raised price, so I solved $0.4w - 6 = 57$ and got $157.5$."
+    }
+  ],
+  "hints": [
+    "A $40\\%$ increase turns $w$ into $1.4w$.",
+    "Write an equation for the price the customer pays: the raised price minus the coupon equals $57$. Then solve for $w$.",
+    "The equation is $1.4w - 6 = 57$, so $1.4w = 63$."
+  ],
+  "solutions": {
+    "reliable": "Raising $w$ by $40\\%$ gives $1.4w$ dollars, and the coupon takes off $6$ dollars, so $1.4w - 6 = 57$. Then $1.4w = 63$ and $w = 45$. Check: $40\\%$ of $45$ is $18$, so the raised price is $63$ dollars, and $63 - 6 = 57$.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

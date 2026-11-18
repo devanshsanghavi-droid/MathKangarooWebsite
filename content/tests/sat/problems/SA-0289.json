@@ -1,0 +1,56 @@
+{
+  "id": "SA-0289",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-04",
+  "difficulty": "medium",
+  "statement": "The cross section of a concrete drainage channel is an isosceles trapezoid. The flat bottom is $8$ feet wide, the open top is $20$ feet wide, and each slanted side is $10$ feet long. What is the area of the cross section, in square feet?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$84$",
+      "correct": false,
+      "misconception": "I found the horizontal overhang on each side, $6$ feet, and used it as the depth, so I got $\\frac{8 + 20}{2} \\cdot 6 = 84$."
+    },
+    {
+      "key": "B",
+      "text": "$112$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$140$",
+      "correct": false,
+      "misconception": "I used the slanted side, $10$ feet, as the depth, so I got $\\frac{8 + 20}{2} \\cdot 10 = 140$."
+    },
+    {
+      "key": "D",
+      "text": "$224$",
+      "correct": false,
+      "misconception": "I found the depth $8$ correctly but forgot to halve the sum of the bases, so I computed $(8 + 20) \\cdot 8 = 224$."
+    }
+  ],
+  "hints": [
+    "You need the depth of the channel. Drop straight lines down from the ends of the top to the bottom.",
+    "Those lines cut off two right triangles. Each has hypotenuse $10$ and a horizontal leg of $\\frac{20 - 8}{2}$.",
+    "The horizontal leg is $6$, so the depth is $\\sqrt{10^2 - 6^2} = 8$. Then use area $= \\frac{b_1 + b_2}{2} \\cdot h$."
+  ],
+  "solutions": {
+    "reliable": "Drop perpendiculars from the ends of the $8$-foot bottom up to the top. The top extends $\\frac{20 - 8}{2} = 6$ feet past the bottom on each side, so each slanted side is the hypotenuse of a right triangle with a horizontal leg of $6$. The depth is $\\sqrt{10^2 - 6^2} = \\sqrt{64} = 8$ feet. The trapezoid's area is $\\frac{8 + 20}{2} \\cdot 8 = 14 \\cdot 8 = 112$ square feet.",
+    "elegant": "Cut the trapezoid into an $8 \\times 8$ rectangle and two right triangles with legs $6$ and $8$: $64 + 2 \\cdot \\frac{1}{2} \\cdot 6 \\cdot 8 = 64 + 48 = 112$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

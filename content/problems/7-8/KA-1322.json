@@ -1,0 +1,67 @@
+{
+  "id": "KA-1322",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A board 48 cm by 60 cm is to be covered exactly with identical square tiles, without cutting or overlapping any tile. The tiles are to be as large as possible. How many tiles are needed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found the side of each tile, 12 cm, and gave that instead of the number of tiles."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "80",
+      "correct": false,
+      "misconception": "I used 6 cm tiles, which fit but are not the largest possible, so I got $8 \\times 10 = 80$."
+    },
+    {
+      "key": "D",
+      "text": "180",
+      "correct": false,
+      "misconception": "I used 4 cm tiles, a common factor of 48 and 60 but not the greatest one, so I got $12 \\times 15 = 180$."
+    },
+    {
+      "key": "E",
+      "text": "240",
+      "correct": false,
+      "misconception": "I divided the board's area, 2880 square centimetres, by 12 instead of by the tile's area, $12 \\times 12$."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-05",
+    "secondary": [
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "The side of a tile must divide both 48 and 60.",
+    "Factors and the greatest common factor: the largest square tile that fits exactly has a side equal to the greatest common factor of 48 and 60. Then count the tiles along each side.",
+    "The greatest common factor of 48 and 60 is 12, so the tiles are 12 cm by 12 cm."
+  ],
+  "solutions": {
+    "reliable": "The tile side must divide both 48 and 60, and it should be as large as possible, so it is the greatest common factor. The factors of 48 are 1, 2, 3, 4, 6, 8, 12, 16, 24 and 48, and the largest that also divides 60 is 12. So there are $48 \\div 12 = 4$ tiles along one side and $60 \\div 12 = 5$ along the other, making $4 \\times 5 = 20$ tiles. The transferable idea: 'the largest piece that fits exactly' means the greatest common factor.",
+    "elegant": "Check by area: the board is $48 \\times 60 = 2880$ square centimetres, each tile is $12 \\times 12 = 144$, and $2880 \\div 144 = 20$."
+  },
+  "whyOnTest": "The largest tile that fits both sides is the greatest common factor in disguise; the traps are a smaller common factor or dividing an area by a length.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

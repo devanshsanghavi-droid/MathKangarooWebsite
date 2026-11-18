@@ -1,0 +1,68 @@
+{
+  "id": "KA-1554",
+  "band": "11-12",
+  "points": 4,
+  "statement": "What is the smallest number $n$ such that among any $n$ whole numbers there are always two whose squares differ by a multiple of 10?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I only made the squares agree on division by 5, where squares leave remainder 0, 1 or 4, and forgot that they must also agree on division by 2."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I found the 6 possible last digits of a square but forgot that the pigeonhole principle needs one more number than there are boxes."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I used the 10 possible last digits of the numbers themselves and forgot that I need one more number than there are boxes."
+    },
+    {
+      "key": "E",
+      "text": "11",
+      "correct": false,
+      "misconception": "I used the 10 possible last digits of the numbers themselves, not of their squares, and added one."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-17",
+    "secondary": [
+      "NUM-07",
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "When do two squares differ by a multiple of 10?",
+    "Pigeonhole: the boxes are the possible last digits of a square. Find how many there are, and check that one number in each box really avoids the property.",
+    "Squares can end only in 0, 1, 4, 5, 6 or 9. The numbers 0, 1, 2, 3, 4, 5 have squares ending in six different digits."
+  ],
+  "solutions": {
+    "reliable": "The difference of two squares is a multiple of 10 exactly when the squares have the same last digit. The last digit of a square depends only on the last digit of the number, and the squares of 0 to 9 end in 0, 1, 4, 9, 6, 5, 6, 9, 4, 1, so the only possible endings are 0, 1, 4, 5, 6 and 9: six boxes. Any 7 numbers put two squares in the same box. But 6 numbers are not enough: the squares of 0, 1, 2, 3, 4, 5 are 0, 1, 4, 9, 16, 25, which all end differently. So $n = 7$. The transferable idea: the pigeonhole answer is one more than the largest collection that avoids the property, so build that collection to be sure.",
+    "elegant": null
+  },
+  "whyOnTest": "Pigeonhole needs the right boxes: here they are the last digits a square can have, not the last digits of the numbers.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

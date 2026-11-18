@@ -1,0 +1,56 @@
+{
+  "id": "SA-0013",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "hard",
+  "statement": "For the linear function $f$, $f(2x) = 2f(x) - 5$ for all values of $x$, and $f(4) = 11$. What is the value of $f(1)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2.75$",
+      "correct": false,
+      "misconception": "I treated $f$ as if it were proportional and ignored the $-5$, so I halved $11$ twice and got $\\frac{11}{4} = 2.75$."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I used $x = 2$ correctly to get $f(2) = 8$, but in the next step I forgot the $-5$ and just halved $8$ to get $4$."
+    },
+    {
+      "key": "C",
+      "text": "$6.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$29$",
+      "correct": false,
+      "misconception": "I used the rule in the wrong direction, taking $f(2) = 2f(4) - 5 = 17$ and then $f(1) = 2f(2) - 5 = 29$."
+    }
+  ],
+  "hints": [
+    "The rule holds for every $x$, so you may choose convenient values of $x$.",
+    "Put $x = 2$ into the rule to connect $f(4)$ with $f(2)$, then put $x = 1$ into it to connect $f(2)$ with $f(1)$.",
+    "With $x = 2$: $11 = 2f(2) - 5$, so $f(2) = 8$. With $x = 1$: $f(2) = 2f(1) - 5$."
+  ],
+  "solutions": {
+    "reliable": "Write $f(x) = mx + b$. Then $f(2x) = 2mx + b$ and $2f(x) - 5 = 2mx + 2b - 5$. These are equal for all $x$, so $b = 2b - 5$ and $b = 5$. From $f(4) = 4m + 5 = 11$, $m = 1.5$, so $f(x) = 1.5x + 5$ and $f(1) = 6.5$. Check: $f(2x) = 3x + 5$ and $2f(x) - 5 = 3x + 10 - 5 = 3x + 5$.",
+    "elegant": "Put $x = 2$ into the rule: $f(4) = 2f(2) - 5$, so $11 = 2f(2) - 5$ and $f(2) = 8$. Put $x = 1$: $f(2) = 2f(1) - 5$, so $8 = 2f(1) - 5$ and $f(1) = 6.5$."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

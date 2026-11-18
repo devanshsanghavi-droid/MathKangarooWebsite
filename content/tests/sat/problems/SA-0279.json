@@ -1,0 +1,56 @@
+{
+  "id": "SA-0279",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-02",
+  "difficulty": "easy",
+  "statement": "A plot of land is shaped like a quadrilateral. Its four interior angles measure $x^\\circ$, $(2x)^\\circ$, $(2x + 15)^\\circ$ and $(x + 45)^\\circ$. What is the measure, in degrees, of the largest interior angle of the plot?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I solved for $x$ and got $50$, then gave $x$ as the answer instead of the largest angle."
+    },
+    {
+      "key": "B",
+      "text": "$65$",
+      "correct": false,
+      "misconception": "I used $180^\\circ$ as the angle sum, as for a triangle, so $6x + 60 = 180$, $x = 20$, and the largest angle was $x + 45 = 65$."
+    },
+    {
+      "key": "C",
+      "text": "$100$",
+      "correct": false,
+      "misconception": "I found $x = 50$ correctly but assumed the angle $2x$ was the largest, so I gave $100$."
+    },
+    {
+      "key": "D",
+      "text": "$115$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "What do the interior angles of any quadrilateral add up to?",
+    "Set the sum of the four expressions equal to $360$ and solve for $x$. Then evaluate every angle.",
+    "$x + 2x + (2x + 15) + (x + 45) = 6x + 60 = 360$, so $x = 50$. Now compute all four angles and pick the biggest."
+  ],
+  "solutions": {
+    "reliable": "The interior angles of a quadrilateral add to $360^\\circ$. So $x + 2x + (2x + 15) + (x + 45) = 360$, which gives $6x + 60 = 360$ and $x = 50$. The angles are $50^\\circ$, $100^\\circ$, $115^\\circ$ and $95^\\circ$, which add to $360^\\circ$ as a check. The largest is $115^\\circ$.",
+    "elegant": null
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

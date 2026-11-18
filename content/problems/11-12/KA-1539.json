@@ -1,0 +1,68 @@
+{
+  "id": "KA-1539",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Eight friends split into two teams of four for a game. Two of the friends insist on being on different teams. In how many ways can the teams be formed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "15",
+      "correct": false,
+      "misconception": "I counted the splits where the two friends are on the same team."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "35",
+      "correct": false,
+      "misconception": "I counted all the ways to split eight people into two teams of four and forgot the condition."
+    },
+    {
+      "key": "D",
+      "text": "40",
+      "correct": false,
+      "misconception": "I chose 3 teammates for the first friend in 20 ways and then doubled it, counting each split once for each team."
+    },
+    {
+      "key": "E",
+      "text": "70",
+      "correct": false,
+      "misconception": "I chose one team of 4 in $\\binom{8}{4}$ ways, counting each split twice, and ignored the condition."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-06",
+      "CNT-09"
+    ]
+  },
+  "hints": [
+    "Is choosing team X then team Y different from choosing Y then X?",
+    "Count teams as if they had names, then correct for the double count, because the two teams are not labelled. Or put one of the two friends on a team and count the choices for that team alone.",
+    "Once the first friend is placed, her team needs 3 more people from the 6 who are not the other friend."
+  ],
+  "solutions": {
+    "reliable": "Put the first of the two friends on a team. The other friend must be on the opposite team, so the team of the first friend is completed by choosing 3 of the remaining 6 people: $\\binom{6}{3} = 20$ ways. Each choice gives a different split, and every allowed split arises once. So there are 20 ways. Check: all splits number $\\binom{8}{4} \\div 2 = 35$, those with the two friends together number $\\binom{6}{2} = 15$, and $35 - 15 = 20$. The transferable idea: when groups have no names, count as if they did, then divide by the number of ways the names could be swapped.",
+    "elegant": null
+  },
+  "whyOnTest": "Unlabelled teams are the classic place to double count, and naming the overcount exactly is the skill.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

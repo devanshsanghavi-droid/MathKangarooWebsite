@@ -1,0 +1,56 @@
+{
+  "id": "AC-0151",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-01",
+  "difficulty": "easy",
+  "statement": "The function $f$ is defined by $f(x) = kx^2 + 3$, where $k$ is a constant. If $f(2) = 23$, what is the value of $f(-3)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-48$",
+      "correct": false,
+      "misconception": "I found $f(3) = 48$ and thought a negative input just makes the output negative, so I said $f(-3) = -48$."
+    },
+    {
+      "key": "B",
+      "text": "$-42$",
+      "correct": false,
+      "misconception": "I found $k = 5$ but squared $-3$ as $-9$, so I computed $5(-9) + 3 = -42$."
+    },
+    {
+      "key": "C",
+      "text": "$48$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$54.75$",
+      "correct": false,
+      "misconception": "I divided $23$ by $4$ without subtracting the $3$ first, so I used $k = 5.75$ and got $5.75 \\cdot 9 + 3 = 54.75$."
+    }
+  ],
+  "hints": [
+    "Use $f(2) = 23$ to find $k$ first.",
+    "Substitute $x = 2$ into the formula and set it equal to $23$. Solve for $k$, then substitute $x = -3$, remembering that $(-3)^2$ is positive.",
+    "$4k + 3 = 23$ gives $k = 5$. Then $f(-3) = 5(-3)^2 + 3 = 5 \\cdot 9 + 3$."
+  ],
+  "solutions": {
+    "reliable": "From $f(2) = k(2)^2 + 3 = 4k + 3 = 23$, we get $4k = 20$ and $k = 5$. So $f(x) = 5x^2 + 3$, and $f(-3) = 5(-3)^2 + 3 = 5(9) + 3 = 48$.",
+    "elegant": "$f$ depends only on $x^2$, so $f(-3) = f(3)$. Going from $x = 2$ to $x = 3$, $x^2$ goes from $4$ to $9$, so $kx^2$ goes from $20$ to $\\frac{9}{4} \\cdot 20 = 45$, and $f(-3) = 45 + 3 = 48$."
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "AM-1999",
+  "contest": "AMC8",
+  "slot": 22,
+  "area": "CP",
+  "topic": "CP-09",
+  "types": ["T-RECURSION", "T-SMALL-CASES"],
+  "statement": "Lena climbs a staircase of $8$ steps. Each move she goes up either $1$ step or $2$ steps, but she never makes two $2$-step moves in a row. In how many different ways can she climb from the bottom to the top?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I assumed her last move had to be a single step, so I only counted the ways to climb the first 7 steps, which is 13."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I counted the 34 climbs without the rule and then found the 15 climbs that do have two 2-step moves in a row, and I answered 15 instead of 34 - 15."
+    },
+    {
+      "key": "C",
+      "text": "$19$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I ignored the rule and used the Fibonacci numbers 1, 1, 2, 3, 5, 8, 13, 21, taking the eighth one as the answer for 8 steps."
+    },
+    {
+      "key": "E",
+      "text": "$34$",
+      "correct": false,
+      "misconception": "I counted every way to climb with 1-step and 2-step moves and forgot the rule about two 2-step moves in a row."
+    }
+  ],
+  "hints": [
+    "Count the ways for small staircases first: 1 step, 2 steps, 3 steps, 4 steps.",
+    "Look at the last move. If it is a 1-step move, anything allowed can come before it. If it is a 2-step move, the move before it must be a 1-step move.",
+    "So the number of ways for n steps is the number for n - 1 steps plus the number for n - 3 steps. Start from 1, 2, 3 for 1, 2, 3 steps."
+  ],
+  "solutions": {
+    "reliable": "Let $f(n)$ be the number of allowed climbs of $n$ steps, with $f(0) = 1$ for the empty climb. Look at the last move. If it is a $1$-step move, the first $n - 1$ steps can be any allowed climb: $f(n-1)$ ways. If it is a $2$-step move, the move before it cannot also be a $2$-step move, so it is a $1$-step move (or there is no move before it), and the first $n - 3$ steps are any allowed climb: $f(n-3)$ ways. So $f(n) = f(n-1) + f(n-3)$. Directly, $f(1) = 1$, $f(2) = 2$ (that is $1{+}1$ or $2$) and $f(3) = 3$. Then $f(4) = 3 + 1 = 4$, $f(5) = 4 + 2 = 6$, $f(6) = 6 + 3 = 9$, $f(7) = 9 + 4 = 13$ and $f(8) = 13 + 6 = 19$.",
+    "elegant": "Sort by the number $k$ of $2$-step moves. Then there are $8 - 2k$ single steps, and the $2$-step moves must go into separate gaps among them: the $9 - 2k$ gaps before, between and after the single steps. That gives $\\binom{9}{0} + \\binom{7}{1} + \\binom{5}{2} + \\binom{3}{3} = 1 + 7 + 10 + 1 = 19$."
+  },
+  "formulas": ["F-CP-19"],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

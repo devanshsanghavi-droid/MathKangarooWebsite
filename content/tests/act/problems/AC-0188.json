@@ -1,0 +1,56 @@
+{
+  "id": "AC-0188",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-05",
+  "difficulty": "easy",
+  "statement": "Marisol buys a used car for $\\$24{,}000$. Each year the car loses $20\\%$ of the value it had at the start of that year. What is the car's value $3$ years after she buys it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$192$",
+      "correct": false,
+      "misconception": "I used $0.20$ as the yearly multiplier, but $0.20$ is the part that is lost. The car keeps $0.80$ of its value each year."
+    },
+    {
+      "key": "B",
+      "text": "$\\$9{,}600$",
+      "correct": false,
+      "misconception": "I took $20\\%$ of the original price off three times, $60\\%$ in all, but each year's $20\\%$ is taken from a smaller value."
+    },
+    {
+      "key": "C",
+      "text": "$\\$12{,}288$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$41{,}472$",
+      "correct": false,
+      "misconception": "I multiplied by $1.20$ each year, as if the value were growing by $20\\%$ instead of shrinking."
+    }
+  ],
+  "hints": [
+    "Losing $20\\%$ of a value leaves what percent of it?",
+    "Each year multiply the value by $0.80$. Do this $3$ times.",
+    "The value is $24{,}000(0.80)^3$."
+  ],
+  "solutions": {
+    "reliable": "Keeping $80\\%$ each year means multiplying by $0.80$ each year. After $3$ years the value is $24{,}000(0.80)^3 = 24{,}000 \\cdot 0.512 = 12{,}288$ dollars.",
+    "elegant": "Year by year: $24{,}000 \\cdot 0.8 = 19{,}200$, then $19{,}200 \\cdot 0.8 = 15{,}360$, then $15{,}360 \\cdot 0.8 = 12{,}288$."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

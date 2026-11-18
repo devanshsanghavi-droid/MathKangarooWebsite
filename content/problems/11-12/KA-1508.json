@@ -1,0 +1,68 @@
+{
+  "id": "KA-1508",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Point $P$ lies inside a square of side 10. Which of these could be the sum of the distances from $P$ to the four corners of the square?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I thought the distance from the centre to each corner was 5, half the side, so the smallest sum looked like 20 and 25 seemed possible."
+    },
+    {
+      "key": "B",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I used $\\sqrt{2} \\approx 1.4$, so the smallest sum looked like $20 \\times 1.4 = 28$, which made 28 seem reachable."
+    },
+    {
+      "key": "D",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I took $\\sqrt{2}$ as 1.5, so the largest sum, at a corner, looked like $10 + 10 + 15 = 35$."
+    },
+    {
+      "key": "E",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I thought the sum could be as large as the perimeter, 40, when $P$ is close to a corner."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-05",
+    "secondary": [
+      "GEO-17",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "Find the smallest and the largest the sum can be.",
+    "Pair the corners along each diagonal. The triangle inequality bounds each pair from below by a diagonal. For the upper bound, see what happens as $P$ moves towards a corner. Then keep only choices strictly inside the range.",
+    "For opposite corners $A$ and $C$, $PA + PC \\geq AC = 10\\sqrt{2}$, with equality on the diagonal. Doing both diagonals gives a sum at least $20\\sqrt{2} \\approx 28.28$. At a corner the sum is $10 + 10 + 10\\sqrt{2} \\approx 34.14$."
+  ],
+  "solutions": {
+    "reliable": "Call the corners $A, B, C, D$ in order. By the triangle inequality, $PA + PC \\geq AC = 10\\sqrt{2}$ and $PB + PD \\geq BD = 10\\sqrt{2}$, so the sum is at least $20\\sqrt{2} \\approx 28.28$, reached at the centre. The sum is largest at a corner, where it is $0 + 10 + 10 + 10\\sqrt{2} \\approx 34.14$, and for $P$ inside the square it is smaller still. As $P$ moves from the centre towards a corner, the sum changes continuously from about 28.28 towards 34.14, so every value in between, including 30, occurs. Of the choices, 25 and 28 are too small, 35 and 40 are too large, and 30 is possible. The transferable idea: two bounds can eliminate four choices without ever finding $P$.",
+    "elegant": null
+  },
+  "whyOnTest": "No position for P is needed: a lower bound from the diagonals and an upper bound from the corners leave exactly one choice, and the traps come from rounding $\\sqrt{2}$.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

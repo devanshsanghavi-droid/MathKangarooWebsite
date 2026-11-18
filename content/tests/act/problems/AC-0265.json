@@ -1,0 +1,56 @@
+{
+  "id": "AC-0265",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-03",
+  "difficulty": "hard",
+  "statement": "The cumulative frequency table shows the finishing times of the $80$ runners in a $5$-kilometer race. Each entry gives the number of runners who finished in less than the given time. $$\\begin{array}{c|c} \\text{Finishing time} & \\text{Number of runners} \\\\ \\hline \\text{Less than } 20 \\text{ minutes} & 6 \\\\ \\text{Less than } 25 \\text{ minutes} & 22 \\\\ \\text{Less than } 30 \\text{ minutes} & 47 \\\\ \\text{Less than } 35 \\text{ minutes} & 68 \\\\ \\text{Less than } 40 \\text{ minutes} & 80 \\end{array}$$ What percent of the runners finished in at least $25$ minutes but less than $35$ minutes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$26.25\\%$",
+      "correct": false,
+      "misconception": "I used only the runners from 30 to less than 35 minutes, 68 minus 47, which is 21, and divided by 80."
+    },
+    {
+      "key": "B",
+      "text": "$31.25\\%$",
+      "correct": false,
+      "misconception": "I used only the runners from 25 to less than 30 minutes, 47 minus 22, which is 25, and divided by 80."
+    },
+    {
+      "key": "C",
+      "text": "$46\\%$",
+      "correct": false,
+      "misconception": "I correctly found 46 runners in the time window but wrote 46 as the percent without dividing by 80."
+    },
+    {
+      "key": "D",
+      "text": "$57.5\\%$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Each row counts all runners below that time, including the ones counted in earlier rows.",
+    "Runners with times from $25$ up to $35$ minutes are the ones under $35$ minutes who are not under $25$ minutes.",
+    "That is $68 - 22 = 46$ runners. Now turn $46$ out of $80$ into a percent."
+  ],
+  "solutions": {
+    "reliable": "The number of runners under $35$ minutes is $68$, and $22$ of them were under $25$ minutes. So $68 - 22 = 46$ runners finished in at least $25$ but less than $35$ minutes. As a percent of all runners, that is $\\dfrac{46}{80} = 0.575 = 57.5\\%$.",
+    "elegant": null
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "AM-1152",
+  "contest": "AMC8",
+  "slot": 1,
+  "area": "NT",
+  "topic": "NT-02",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "What is the value of $\\dfrac{2^5 \\cdot 5^3}{10}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I treated the powers as multiplication, $2^5 = 2 \\cdot 5 = 10$ and $5^3 = 5 \\cdot 3 = 15$, so I got $\\dfrac{10 \\cdot 15}{10} = 15$."
+    },
+    {
+      "key": "B",
+      "text": "$100$",
+      "correct": false,
+      "misconception": "I paired the $2$s with the $5$s to get $10^3 = 1000$ but forgot the two extra $2$s, so I got $1000 \\div 10 = 100$."
+    },
+    {
+      "key": "C",
+      "text": "$400$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$4000$",
+      "correct": false,
+      "misconception": "I worked out $2^5 \\cdot 5^3 = 32 \\cdot 125 = 4000$ correctly but forgot to divide by $10$."
+    },
+    {
+      "key": "E",
+      "text": "$40000$",
+      "correct": false,
+      "misconception": "I got $2^5 \\cdot 5^3 = 4000$ but then multiplied by $10$ instead of dividing, so I got $40000$."
+    }
+  ],
+  "hints": [
+    "Each pair of one $2$ and one $5$ makes a $10$.",
+    "Write $2^5 \\cdot 5^3$ as $2^2 \\cdot (2^3 \\cdot 5^3) = 2^2 \\cdot 10^3$.",
+    "$2^5 \\cdot 5^3 = 4 \\cdot 1000 = 4000$. Divide that by $10$."
+  ],
+  "solutions": {
+    "reliable": "Compute directly: $2^5 = 32$ and $5^3 = 125$, so $2^5 \\cdot 5^3 = 32 \\cdot 125 = 4000$. Then $\\dfrac{4000}{10} = 400$.",
+    "elegant": "Three $2$s pair with the three $5$s to make $10^3$, leaving $2^2 = 4$. So the top is $4 \\cdot 10^3$, and dividing by $10$ leaves $4 \\cdot 10^2 = 400$."
+  },
+  "formulas": [],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

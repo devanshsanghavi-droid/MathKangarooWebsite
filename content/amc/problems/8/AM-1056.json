@@ -1,0 +1,66 @@
+{
+  "id": "AM-1056",
+  "contest": "AMC8",
+  "slot": 19,
+  "area": "ALG",
+  "topic": "ALG-05",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "At 12:00 noon a lab dish holds $4^5$ bacteria. The number of bacteria doubles every $12$ minutes. At what time does the dish hold exactly $8^9$ bacteria?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12:48 p.m.",
+      "correct": false,
+      "misconception": "I divided the bases and subtracted the exponents, $\\frac{8^9}{4^5} = 2^{9-5} = 2^4$, so I counted only $4$ doublings, which is $48$ minutes."
+    },
+    {
+      "key": "B",
+      "text": "1:00 p.m.",
+      "correct": false,
+      "misconception": "I added the exponents when I rewrote the numbers as powers of $2$, so I got $4^5 = 2^7$ and $8^9 = 2^{12}$, which is only $5$ doublings, or $60$ minutes."
+    },
+    {
+      "key": "C",
+      "text": "2:04 p.m.",
+      "correct": false,
+      "misconception": "I correctly found $17$ doublings and $17 \\times 12 = 204$ minutes, but then I read $204$ minutes as $2$ hours $4$ minutes instead of $3$ hours $24$ minutes."
+    },
+    {
+      "key": "D",
+      "text": "3:24 p.m.",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "5:24 p.m.",
+      "correct": false,
+      "misconception": "I counted all $27$ doublings needed to reach $2^{27}$, forgetting that the dish already starts with $2^{10}$ bacteria."
+    }
+  ],
+  "hints": [
+    "Write both numbers of bacteria as powers of 2.",
+    "$4^5 = (2^2)^5 = 2^{10}$ and $8^9 = (2^3)^9 = 2^{27}$. Each doubling raises the exponent by $1$.",
+    "Going from $2^{10}$ to $2^{27}$ takes $17$ doublings, which is $17 \\times 12 = 204$ minutes."
+  ],
+  "solutions": {
+    "reliable": "Since $4^5 = (2^2)^5 = 2^{10}$ and $8^9 = (2^3)^9 = 2^{27}$, the dish must go from $2^{10}$ to $2^{27}$ bacteria. Each doubling multiplies by $2$, which adds $1$ to the exponent, so it takes $27 - 10 = 17$ doublings. That is $17 \\times 12 = 204$ minutes, which is $3$ hours $24$ minutes, so the time is 3:24 p.m.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

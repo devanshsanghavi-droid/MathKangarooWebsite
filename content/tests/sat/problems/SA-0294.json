@@ -1,0 +1,56 @@
+{
+  "id": "SA-0294",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "easy",
+  "statement": "In triangle $DEF$, angle $F$ is a right angle, $DF = 12$, $EF = 35$ and $DE = 37$. What is the value of $\\sin D$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{12}{37}$",
+      "correct": false,
+      "misconception": "I used the side next to angle $D$ over the hypotenuse, $\\frac{12}{37}$, which is $\\cos D$, not $\\sin D$."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{12}{35}$",
+      "correct": false,
+      "misconception": "I divided $DF$ by $EF$ and got $\\frac{12}{35}$, which compares the two legs instead of a leg and the hypotenuse."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{35}{37}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{35}{12}$",
+      "correct": false,
+      "misconception": "I used the opposite side over the adjacent side, $\\frac{35}{12}$, which is $\\tan D$, not $\\sin D$."
+    }
+  ],
+  "hints": [
+    "Sine is opposite over hypotenuse. Which side is opposite angle $D$?",
+    "The side opposite angle $D$ does not touch vertex $D$. The hypotenuse is opposite the right angle at $F$.",
+    "The side opposite $D$ is $\\overline{EF} = 35$, and the hypotenuse is $\\overline{DE} = 37$."
+  ],
+  "solutions": {
+    "reliable": "The hypotenuse is opposite the right angle at $F$, so it is $DE = 37$. The side opposite angle $D$ is the side that does not touch $D$, which is $EF = 35$. So $\\sin D = \\frac{EF}{DE} = \\frac{35}{37}$. Check: $12^2 + 35^2 = 144 + 1225 = 1369 = 37^2$, so the triangle really is right-angled at $F$.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

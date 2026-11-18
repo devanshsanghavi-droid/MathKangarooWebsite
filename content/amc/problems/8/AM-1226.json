@@ -1,0 +1,66 @@
+{
+  "id": "AM-1226",
+  "contest": "AMC8",
+  "slot": 1,
+  "area": "CP",
+  "topic": "CP-01",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "Mia packs $3$ T-shirts, $4$ pairs of shorts and $2$ caps for camp. Each day she wears one T-shirt and one pair of shorts, and she either wears one of the caps or goes without a cap. How many different outfits can she make?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I added the numbers of items, 3 + 4 + 2 = 9, instead of multiplying the numbers of choices."
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I saw that there are 3 choices for the head, but I added 3 + 4 + 3 = 10 instead of multiplying."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I multiplied the 3 T-shirts by the 4 pairs of shorts to get 12 and forgot about the caps."
+    },
+    {
+      "key": "D",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I multiplied 3 times 4 times 2 = 24 and forgot that going without a cap is also a choice."
+    },
+    {
+      "key": "E",
+      "text": "$36$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Each outfit is built from three separate choices: a T-shirt, a pair of shorts, and what goes on her head.",
+    "Count the choices for each part and multiply. How many choices does Mia have for her head? Going without a cap counts.",
+    "There are $3$ T-shirt choices, $4$ shorts choices and $3$ head choices (cap one, cap two, or no cap). Multiply $3 \\cdot 4 \\cdot 3$."
+  ],
+  "solutions": {
+    "reliable": "Mia makes three independent choices. She has $3$ T-shirts and $4$ pairs of shorts. For her head she has $3$ options: the first cap, the second cap, or no cap. By the multiplication principle there are $3 \\cdot 4 \\cdot 3 = 36$ outfits.",
+    "elegant": "There are $3 \\cdot 4 = 12$ shirt and shorts pairs. Each pair can be worn with no cap ($12$ outfits) or with one of the $2$ caps ($24$ outfits), for $12 + 24 = 36$."
+  },
+  "formulas": [],
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

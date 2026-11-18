@@ -1,0 +1,66 @@
+{
+  "id": "AM-1153",
+  "contest": "AMC8",
+  "slot": 1,
+  "area": "NT",
+  "topic": "NT-01",
+  "types": [
+    "T-CHOICES"
+  ],
+  "statement": "A farm collects $200$ eggs and packs them into cartons that each hold $12$ eggs, filling one carton completely before starting the next. How many more eggs are needed to fill the last, partly filled carton?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I divided on a calculator, $200 \\div 12 = 16.67$, and read the $6$ after the decimal point as the $6$ eggs still needed."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I found $200 = 12 \\cdot 16 + 8$ and gave the remainder $8$, which is how many eggs are already in the last carton, not how many are missing."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I gave the quotient of $200 \\div 12$, which is the number of full cartons, $16$."
+    },
+    {
+      "key": "E",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I counted all the cartons that get used, $16$ full ones plus the partly filled one, and answered $17$."
+    }
+  ],
+  "hints": [
+    "Find how many cartons can be filled completely and how many eggs are left over.",
+    "Divide $200$ by $12$ and look at the remainder. The last carton holds that many eggs.",
+    "$200 = 12 \\cdot 16 + 8$, so the last carton has $8$ eggs. It holds $12$."
+  ],
+  "solutions": {
+    "reliable": "Since $12 \\cdot 16 = 192$ and $200 - 192 = 8$, the farm fills $16$ cartons and has $8$ eggs in a seventeenth carton. That carton needs $12 - 8 = 4$ more eggs.",
+    "elegant": "The next multiple of $12$ after $200$ is $12 \\cdot 17 = 204$, so $204 - 200 = 4$ more eggs are needed."
+  },
+  "formulas": [],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

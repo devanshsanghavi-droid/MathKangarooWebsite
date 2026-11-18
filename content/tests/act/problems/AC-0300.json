@@ -1,0 +1,56 @@
+{
+  "id": "AC-0300",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-09",
+  "difficulty": "hard",
+  "statement": "A university has $4{,}800$ students. In a random sample of $250$ of them, $38\\%$ said they ride the campus bus at least once a week. The margin of error for this estimate is $6$ percentage points. Based on this survey, which range most plausibly contains the number of students at the university who ride the bus at least once a week?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$80$ to $110$",
+      "correct": false,
+      "misconception": "I applied the range 32% to 44% to the 250 students surveyed instead of to all 4,800 students at the university."
+    },
+    {
+      "key": "B",
+      "text": "$1{,}536$ to $2{,}112$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$1{,}715$ to $1{,}933$",
+      "correct": false,
+      "misconception": "I took 6% of the estimate 1,824 as the margin, but 6 percentage points means 6% of all 4,800 students."
+    },
+    {
+      "key": "D",
+      "text": "$1{,}818$ to $1{,}830$",
+      "correct": false,
+      "misconception": "I estimated 1,824 riders and then added and subtracted 6 students, but the margin of error is 6 percentage points, not 6 students."
+    }
+  ],
+  "hints": [
+    "The margin of error gives a range of plausible percents for the whole university.",
+    "The plausible percents are $38\\% - 6\\%$ to $38\\% + 6\\%$. Apply them to all $4{,}800$ students.",
+    "$32\\%$ of $4{,}800$ is $1{,}536$ and $44\\%$ of $4{,}800$ is $2{,}112$."
+  ],
+  "solutions": {
+    "reliable": "With a margin of error of $6$ percentage points, the plausible percent of riders is from $32\\%$ to $44\\%$. Applied to all $4{,}800$ students: $0.32 \\times 4{,}800 = 1{,}536$ and $0.44 \\times 4{,}800 = 2{,}112$. So the plausible number is from $1{,}536$ to $2{,}112$.",
+    "elegant": "The estimate is $0.38 \\times 4{,}800 = 1{,}824$ students, and $6\\%$ of $4{,}800$ is $288$, so the range is $1{,}824 \\pm 288$, which is $1{,}536$ to $2{,}112$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

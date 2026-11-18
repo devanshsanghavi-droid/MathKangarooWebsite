@@ -1,0 +1,67 @@
+{
+  "id": "KA-1184",
+  "band": "3-4",
+  "points": 3,
+  "statement": "A bus has 26 passengers. At the first stop, 9 get off and 5 get on. At the second stop, 7 get off and 12 get on. How many passengers are on the bus now?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "22",
+      "correct": false,
+      "misconception": "I worked out the first stop correctly but forgot about the second stop."
+    },
+    {
+      "key": "B",
+      "text": "27",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I mixed up the two kinds: I added the people who got off and took away the people who got on."
+    },
+    {
+      "key": "D",
+      "text": "35",
+      "correct": false,
+      "misconception": "I mixed up getting on and off at the first stop, but did the second stop correctly."
+    },
+    {
+      "key": "E",
+      "text": "59",
+      "correct": false,
+      "misconception": "I added every number in the problem, as if everyone who got off also stayed on."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-10",
+    "secondary": [
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "People getting off make the number smaller.",
+    "Go one stop at a time: take away the people who get off, then add the people who get on.",
+    "After the first stop there are $26 - 9 + 5 = 22$ passengers."
+  ],
+  "solutions": {
+    "reliable": "First stop: $26 - 9 + 5 = 22$. Second stop: $22 - 7 + 12 = 27$. The transferable idea: follow the story in order, one change at a time.",
+    "elegant": "Altogether $9 + 7 = 16$ got off and $5 + 12 = 17$ got on, so the bus gained 1 passenger: $26 + 1 = 27$."
+  },
+  "whyOnTest": "A multi-step story where each step changes the total, testing careful tracking of increases and decreases.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

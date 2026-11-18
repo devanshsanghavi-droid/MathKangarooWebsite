@@ -1,0 +1,67 @@
+{
+  "id": "KA-1159",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A paper strip is folded in half, then in half again. One straight cut is made across it, through all the layers, away from the folds. How many pieces are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I thought one straight cut always makes two pieces, however the paper was folded."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I thought folding in half twice makes only 2 layers, so the cut went through the strip in 2 places."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I worked out there are 4 layers, so the strip is cut in 4 places, but I forgot that 4 cuts make one more piece than cuts."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought each of the 4 layers is cut into 2 separate pieces, giving $4 \\times 2 = 8$."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-15",
+    "secondary": [
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "How many layers of paper does the scissors go through?",
+    "Each fold in half doubles the layers. A cut through every layer cuts the unfolded strip in that many places. Then think of a straight strip cut in several places: how many pieces?",
+    "After two folds there are 4 layers, so the strip is cut in 4 places. Cutting a strip in 4 places gives one more piece than the number of cuts."
+  ],
+  "solutions": {
+    "reliable": "One fold in half makes 2 layers; folding again makes 4 layers. The cut goes through all 4 layers, so when the strip is opened it has been cut in 4 different places. A strip cut in 4 places falls into $4 + 1 = 5$ pieces. You can check with a real strip of paper: the three middle pieces each have a fold in them and the two end pieces do not. The transferable idea: count layers to count cuts, then remember that cuts in a strip make one more piece.",
+    "elegant": "Small cases: no fold, one cut, 2 pieces. One fold gives 2 layers, 2 cuts, 3 pieces. Two folds give 4 layers, 4 cuts, 5 pieces. The pieces are always one more than the layers."
+  },
+  "whyOnTest": "Folding and cutting questions reward tracking layers rather than picturing the final shape, and the fence-post step catches the hasty.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

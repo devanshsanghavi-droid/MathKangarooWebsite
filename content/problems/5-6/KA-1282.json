@@ -1,0 +1,68 @@
+{
+  "id": "KA-1282",
+  "band": "5-6",
+  "points": 4,
+  "statement": "In the calculation $1 + 2 + 3 - 4 + 5 + 6 + 7 - 8 + \\dots + 21 + 22 + 23 - 24$, every fourth number is subtracted and all the others are added. What is the result?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "84",
+      "correct": false,
+      "misconception": "I only added up the numbers that are subtracted, 4 + 8 + ... + 24."
+    },
+    {
+      "key": "B",
+      "text": "90",
+      "correct": false,
+      "misconception": "I grouped the numbers in fours, but I only made five groups instead of six."
+    },
+    {
+      "key": "C",
+      "text": "132",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "216",
+      "correct": false,
+      "misconception": "I added all the numbers to get 300 and then took away the multiples of 4 only once."
+    },
+    {
+      "key": "E",
+      "text": "300",
+      "correct": false,
+      "misconception": "I added all the numbers from 1 to 24 and ignored the minus signs."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-08",
+    "secondary": [
+      "PAT-02",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Look at the numbers in groups of four.",
+    "Group the terms in fours, each group ending with a subtracted number. Work out what each group is worth and look for a pattern in those values, then add them up.",
+    "The groups give 1 + 2 + 3 - 4 = 2, 5 + 6 + 7 - 8 = 10, 9 + 10 + 11 - 12 = 18, and so on. There are six groups, worth 2, 10, 18, 26, 34 and 42."
+  ],
+  "solutions": {
+    "reliable": "Group the terms in fours: (1 + 2 + 3 - 4) + (5 + 6 + 7 - 8) + ... + (21 + 22 + 23 - 24). The groups are worth 2, 10, 18, 26, 34 and 42, six groups going up by 8. Pair them from the outside in: 2 + 42 = 10 + 34 = 18 + 26 = 44, so the sum is 3 × 44 = 132. Second method: all numbers from 1 to 24 add to 300, and the multiples of 4 add to 4 + 8 + ... + 24 = 84. Each multiple of 4 is subtracted instead of added, which takes away twice its value: 300 - 2 × 84 = 132. The transferable idea: group terms so the pattern repeats, and check by a second grouping.",
+    "elegant": "Every subtracted number is counted with the wrong sign, so start from the full total and take each of them away twice: 300 - 2 × 84 = 132."
+  },
+  "whyOnTest": "Clever regrouping: pairing or tripling terms turns a long sum into a short pattern you can add in your head.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

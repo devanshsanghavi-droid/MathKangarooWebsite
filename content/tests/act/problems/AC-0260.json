@@ -1,0 +1,56 @@
+{
+  "id": "AC-0260",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-02",
+  "difficulty": "medium",
+  "statement": "Four volunteers worked $7$, $9$, $9$ and $15$ hours at a food bank last month. For this problem, the standard deviation of a data set is the square root of the mean of the squared distances of the values from their mean. What is the standard deviation of these four numbers of hours?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2.5$",
+      "correct": false,
+      "misconception": "I averaged the distances from the mean, 3, 1, 1 and 5, without squaring them first, and got 2.5."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I subtracted the smallest value from the largest, 15 minus 7, which is the range, not the standard deviation."
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I found the mean of the squared distances, 9, but forgot to take the square root at the end."
+    }
+  ],
+  "hints": [
+    "Start with the mean of the four values.",
+    "Find each value's distance from the mean, square the distances, average the squares, then take the square root.",
+    "The mean is $10$. The distances are $3, 1, 1, 5$ and their squares are $9, 1, 1, 25$."
+  ],
+  "solutions": {
+    "reliable": "The mean is $\\dfrac{7 + 9 + 9 + 15}{4} = 10$. The squared distances from $10$ are $9$, $1$, $1$ and $25$, which add to $36$. Their mean is $\\dfrac{36}{4} = 9$, and the standard deviation is $\\sqrt{9} = 3$ hours.",
+    "elegant": null
+  },
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

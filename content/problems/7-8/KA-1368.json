@@ -1,0 +1,67 @@
+{
+  "id": "KA-1368",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A square sheet of paper is folded in half, then in half again to make a smaller square, and then along a diagonal of that square to make a triangle. One hole is punched through all the layers, exactly at the middle of the last fold line. How many holes are there when the sheet is unfolded?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted one hole for each fold."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted two holes for each of the three folds."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I knew a hole on a fold line makes one fewer hole, so I took one away from 8."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted 8 layers and gave one hole per layer, ignoring that the hole sits on the last fold."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-15",
+    "secondary": [
+      "GEO-08"
+    ]
+  },
+  "hints": [
+    "Unfold one step at a time, starting with the last fold.",
+    "Undo the folds in reverse order. A hole that sits on a fold line becomes one whole hole when that fold opens, while a hole away from a fold line is copied on both sides.",
+    "Opening the diagonal fold gives one hole in the middle of the small square. The next two unfoldings each copy it, since it is away from those fold lines."
+  ],
+  "solutions": {
+    "reliable": "Unfold in reverse order. The hole is on the diagonal fold, so opening that fold gives just one hole, at the centre of the small square. That centre is away from the two earlier fold lines, which are edges of the small square. Opening the second fold copies it to make 2 holes, and opening the first fold copies those to make 4 holes, one in the middle of each quarter of the sheet. The transferable idea: unfold step by step; a hole on a fold line does not double at that fold.",
+    "elegant": "The triangle has 8 layers, but the hole on the diagonal fold passes through those layers in 4 folded pairs, and each folded pair opens out into a single hole: $8 \\div 2 = 4$."
+  },
+  "whyOnTest": "Paper folding tests careful unfolding: each fold doubles a hole, except a hole punched on the fold itself.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

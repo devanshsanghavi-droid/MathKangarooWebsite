@@ -1,0 +1,56 @@
+{
+  "id": "AC-0216",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-04",
+  "difficulty": "medium",
+  "statement": "A circular fountain has a radius of $8$ feet. A straight garden path touches the edge of the fountain at exactly one point, $T$. A lamp stands on the path $15$ feet from $T$. What is the shortest distance, in feet, from the lamp to the edge of the fountain?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I subtracted the radius from the distance along the path, $15 - 8 = 7$, but the shortest route to the edge points toward the center, not along the path."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I found the distance from the lamp to the center of the fountain, $17$ feet, and forgot to subtract the radius."
+    },
+    {
+      "key": "D",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I found the distance to the center, $17$ feet, then added the radius, which gives the farthest point on the edge, not the nearest one."
+    }
+  ],
+  "hints": [
+    "A radius drawn to the point of tangency is perpendicular to the tangent line.",
+    "The center, $T$ and the lamp form a right triangle with legs $8$ and $15$. The nearest point on the edge lies on the segment from the lamp to the center.",
+    "The lamp is $\\sqrt{8^2 + 15^2} = 17$ feet from the center of the fountain."
+  ],
+  "solutions": {
+    "reliable": "The path is tangent to the circle at $T$, so the radius to $T$ is perpendicular to the path. The center $O$, the point $T$ and the lamp $L$ form a right triangle with legs $OT = 8$ and $TL = 15$, so $OL = \\sqrt{64 + 225} = 17$ feet. The nearest point of the edge lies on $\\overline{OL}$, one radius from $O$, so the shortest distance is $17 - 8 = 9$ feet.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

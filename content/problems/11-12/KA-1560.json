@@ -1,0 +1,68 @@
+{
+  "id": "KA-1560",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A radio host chooses 3 songs from a list of 9 for a show, and the order does not matter. Song A must be one of the three, but song B must not. In how many ways can she choose the songs?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "21",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "28",
+      "correct": false,
+      "misconception": "I made sure song A was chosen but forgot to leave out song B, so I chose the other 2 songs from 8."
+    },
+    {
+      "key": "C",
+      "text": "35",
+      "correct": false,
+      "misconception": "I left out both song A and song B and chose all 3 songs from the other 7."
+    },
+    {
+      "key": "D",
+      "text": "56",
+      "correct": false,
+      "misconception": "I left out song B but did not make sure that song A was chosen, so I chose 3 songs from 8."
+    },
+    {
+      "key": "E",
+      "text": "84",
+      "correct": false,
+      "misconception": "I counted every choice of 3 songs from 9 and ignored both conditions."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-11",
+      "CNT-09"
+    ]
+  },
+  "hints": [
+    "Once song A is in, how many places are left to fill?",
+    "Deal with the conditions first: put song A in, cross song B off the list, and then count the free selections from the songs that are left.",
+    "Two more songs are needed, chosen from the 7 songs that are neither A nor B."
+  ],
+  "solutions": {
+    "reliable": "Song A is in, so 2 more songs are needed. Song B is out, so they come from the other 7 songs: $\\binom72 = 21$ ways. The transferable idea: settle the forced and forbidden items first, then count the free choice.",
+    "elegant": "Check by complement: of the $\\binom83 = 56$ choices without song B, $\\binom73 = 35$ also leave out song A, so $56 - 35 = 21$ include it. The transferable idea: a complement count is a quick second method."
+  },
+  "whyOnTest": "Forced and forbidden items shrink a selection before any counting, and each distractor forgets one of the two conditions.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

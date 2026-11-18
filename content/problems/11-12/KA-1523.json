@@ -1,0 +1,68 @@
+{
+  "id": "KA-1523",
+  "band": "11-12",
+  "points": 3,
+  "statement": "In triangle $ABC$, the point $D$ lies on side $BC$ so that $BD = DA = AC$. Angle $BAC$ is $99^\\circ$. What is the size of angle $ABC$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$33^\\circ$",
+      "correct": false,
+      "misconception": "I assumed the three equal lengths split the $99^\\circ$ angle at $A$ into three equal parts of $33^\\circ$."
+    },
+    {
+      "key": "B",
+      "text": "$40.5^\\circ$",
+      "correct": false,
+      "misconception": "I assumed triangle $ABC$ itself is isosceles and split the remaining $81^\\circ$ equally between $B$ and $C$."
+    },
+    {
+      "key": "C",
+      "text": "$54^\\circ$",
+      "correct": false,
+      "misconception": "I worked out the angle at $C$, which is $54^\\circ$, and gave that instead of the angle at $B$."
+    },
+    {
+      "key": "D",
+      "text": "$27^\\circ$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$81^\\circ$",
+      "correct": false,
+      "misconception": "I found $180^\\circ - 99^\\circ = 81^\\circ$, which is the angles at $B$ and $C$ together, and gave it as the angle at $B$."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "CFT-02",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Draw it, and mark the two isosceles triangles.",
+    "Call angle $ABC$ $x$. Triangle $ABD$ has $DB = DA$, and triangle $ADC$ has $AD = AC$. Use the exterior angle at $D$ to write every angle in terms of $x$.",
+    "Angle $BAD = x$, so the exterior angle $ADC = 2x$, and then angle $ACD = 2x$ too. Angle $DAC = 180^\\circ - 4x$, so angle $BAC = x + (180^\\circ - 4x)$."
+  ],
+  "solutions": {
+    "reliable": "Let angle $ABC = x$. In triangle $ABD$, $DB = DA$, so angle $BAD = x$. Angle $ADC$ is an exterior angle of triangle $ABD$, so it equals $x + x = 2x$. In triangle $ADC$, $AD = AC$, so angle $ACD$ equals angle $ADC$, which is $2x$, and angle $DAC = 180^\\circ - 4x$. Then angle $BAC = x + (180^\\circ - 4x) = 180^\\circ - 3x = 99^\\circ$, so $x = 27^\\circ$. Check: the angles of triangle $ABC$ are $99^\\circ$, $27^\\circ$ and $54^\\circ$, which add to $180^\\circ$, and angle $DAC = 72^\\circ$ is positive, so $D$ really lies on side $BC$. The transferable idea: in a chain of isosceles triangles, name one angle and let the exterior angle rule carry it along the chain.",
+    "elegant": "The chain shows that angle $C$ is twice angle $B$: the exterior angle at $D$ is $2x$, and triangle $ADC$ copies it to $C$. The angle sum of triangle $ABC$ then gives $99^\\circ + x + 2x = 180^\\circ$, so $x = 27^\\circ$."
+  },
+  "whyOnTest": "Two isosceles triangles hide inside one triangle; drawing it and following the exterior angle along the chain turns three equal lengths into one equation.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

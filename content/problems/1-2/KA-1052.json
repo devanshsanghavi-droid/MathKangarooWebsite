@@ -1,0 +1,68 @@
+{
+  "id": "KA-1052",
+  "band": "1-2",
+  "points": 3,
+  "statement": "A contest has 24 questions. With one minute left, Max has answered 19 and cannot solve the rest. Wrong answers and blanks both score 0. How many more should he guess?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought a blank was safer than a guess, so he should not guess at all."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted 19, 20, 21, 22, 23, 24 and got 6, but question 19 is already answered."
+    },
+    {
+      "key": "D",
+      "text": "19",
+      "correct": false,
+      "misconception": "I gave the number of questions he has already answered."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I gave the number of questions in the whole contest."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-09",
+    "secondary": [
+      "CFT-08",
+      "MOD-10"
+    ]
+  },
+  "hints": [
+    "Can a guess ever lose him points?",
+    "A wrong answer scores the same as a blank, so every guess can only add points. Max should guess on every question he has not answered. Count how many those are.",
+    "He has answered 19 of the 24 questions. Count on from 19 to 24 by the jumps, not the numbers."
+  ],
+  "solutions": {
+    "reliable": "A wrong guess scores 0, exactly like a blank, and a right guess scores points. So Max should guess on every question he has not answered. He has answered 19 of 24, so $24 - 19 = 5$ are left. He should guess on all 5. The idea to keep: when wrong answers cost nothing, fill in every blank before time runs out.",
+    "elegant": null
+  },
+  "whyOnTest": "Using the last minute to fill every blank is free points, and the trap answers come from fearing a guess or miscounting what is left.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

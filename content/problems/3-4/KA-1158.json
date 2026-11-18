@@ -1,0 +1,67 @@
+{
+  "id": "KA-1158",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A 5 by 6 rectangle of squared paper is cut along the grid lines into squares. The squares do not all have to be the same size. What is the smallest number of squares?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found square numbers that add up to 30, $25 + 4 + 1$, and did not check that a 5 by 5, a 2 by 2 and a 1 by 1 square fit together into the rectangle."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found four square numbers that add up to 30, $16 + 9 + 4 + 1$, but a 4 by 4, a 3 by 3, a 2 by 2 and a 1 by 1 square cannot fit together into a 5 by 6 rectangle."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I started with the biggest square, 5 by 5, and then cut the 5 by 1 strip left over into 5 small squares, $1 + 5 = 6$."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I used only 2 by 2 and 1 by 1 squares: 6 big ones fit, and the 6 small squares left over make $6 + 6 = 12$."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-14",
+    "secondary": [
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "Is cutting the biggest possible square first always best?",
+    "Try the biggest square first and look at what is left over. Then try squares that are a bit smaller but leave no thin strips. Remember the areas of the squares must add up to 30.",
+    "Cut the top 3 rows into two 3 by 3 squares side by side, and the bottom 2 rows into three 2 by 2 squares: 5 squares. Four is impossible: the only four square numbers that add to 30 are 16, 9, 4 and 1, and a 3 by 3 square never fits beside a 4 by 4 one in this rectangle."
+  ],
+  "solutions": {
+    "reliable": "Cutting a 5 by 5 square first leaves a 5 by 1 strip that needs 5 tiny squares, 6 squares in all. Better: cut the top 3 rows into two 3 by 3 squares and the bottom 2 rows into three 2 by 2 squares. That is 5 squares, and the areas check: $9 + 9 + 4 + 4 + 4 = 30$. Can it be done with fewer? The areas must add up to 30. Two squares never make 30. Three squares only make 30 as $25 + 4 + 1$, and the 5 by 5 leaves a strip 1 square wide, too thin for the 2 by 2. Four squares only make 30 as $16 + 9 + 4 + 1$, and beside the 4 by 4 there is only 1 free row and 2 free columns, too thin for the 3 by 3. So 5 is the smallest. The transferable idea: biggest-first can leave thin strips, so check what really fits, not just the areas.",
+    "elegant": null
+  },
+  "whyOnTest": "Tiling questions test whether you check what physically fits instead of trusting the areas or the biggest-first habit.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

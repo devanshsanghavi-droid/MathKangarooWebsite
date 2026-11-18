@@ -1,0 +1,67 @@
+{
+  "id": "KA-1375",
+  "band": "7-8",
+  "points": 3,
+  "statement": "What is the value of $19 + 28 + 37 + 46 + 55 + 64 + 73 + 82 + 91$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "90",
+      "correct": false,
+      "misconception": "I added all the tens digits and all the ones digits, 45 each, but forgot that the tens digits stand for tens."
+    },
+    {
+      "key": "B",
+      "text": "440",
+      "correct": false,
+      "misconception": "I paired the numbers into sums of 110 but forgot the middle number, 55, which has no partner."
+    },
+    {
+      "key": "C",
+      "text": "450",
+      "correct": false,
+      "misconception": "I added only the tens, $10 + 20 + \\dots + 90$, and left out the ones digits."
+    },
+    {
+      "key": "D",
+      "text": "495",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "550",
+      "correct": false,
+      "misconception": "I paired the numbers into sums of 110 but counted five pairs, although nine numbers make only four pairs and one left over."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-08",
+    "secondary": [
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "Add the first and the last number. Then add the second and the second-to-last.",
+    "Pair the numbers from the outside in: every pair has the same sum. Count the pairs and deal with any number left in the middle.",
+    "$19 + 91 = 28 + 82 = 37 + 73 = 46 + 64 = 110$, and 55 is left over."
+  ],
+  "solutions": {
+    "reliable": "Pair the numbers from the outside in: $19 + 91$, $28 + 82$, $37 + 73$ and $46 + 64$ each make 110. That is $4 \\times 110 = 440$, and the middle number 55 has no partner, so the total is $440 + 55 = 495$. The transferable idea: in a list that goes up in equal steps, pairing the first with the last gives equal sums.",
+    "elegant": "The numbers go up by 9 each time, so their average is the middle number, 55. Nine numbers with average 55 add up to $9 \\times 55 = 495$."
+  },
+  "whyOnTest": "Pairing numbers from the two ends of an evenly spaced list turns a long addition into one multiplication.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

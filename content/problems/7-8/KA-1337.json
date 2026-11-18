@@ -1,0 +1,68 @@
+{
+  "id": "KA-1337",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A point starts at (1, 2). It is reflected in the line x = 3, then in the line x = 7, then in x = 3 again, then in x = 7 again, and so on, taking turns. Where is the point after 10 reflections?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "(21, 2)",
+      "correct": false,
+      "misconception": "I thought each pair of reflections moves the point by the distance between the lines, 4, instead of twice that distance."
+    },
+    {
+      "key": "B",
+      "text": "(41, 2)",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "(81, 2)",
+      "correct": false,
+      "misconception": "I thought every single reflection moves the point 8 to the right, so I added 80."
+    },
+    {
+      "key": "D",
+      "text": "(1, 2)",
+      "correct": false,
+      "misconception": "I thought reflecting twice always brings a point back to where it started, so 10 reflections change nothing."
+    },
+    {
+      "key": "E",
+      "text": "(-39, 2)",
+      "correct": false,
+      "misconception": "I found that each pair of reflections moves the point 8 units, but I moved it to the left instead of the right."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-09",
+    "secondary": [
+      "GEO-02",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Work out the first two reflections carefully. Where does the point end up?",
+    "Reflecting in two parallel lines one after the other is the same as a slide. Find how far and which way one pair of reflections moves the point, then use that five times.",
+    "After two reflections the point is at (9, 2): it has moved 8 to the right."
+  ],
+  "solutions": {
+    "reliable": "Reflecting (1, 2) in x = 3 gives (5, 2), since 1 is 2 to the left of the line and 5 is 2 to the right of it. Reflecting (5, 2) in x = 7 gives (9, 2). So one pair of reflections moves the point 8 to the right. The 10 reflections are 5 such pairs, so the point moves $5 \\times 8 = 40$ to the right and ends at (41, 2). Checking the next pair: (9, 2) goes to (-3, 2) and then to (17, 2), again 8 further right. The transferable idea: two reflections in parallel lines make a slide of twice the distance between the lines.",
+    "elegant": null
+  },
+  "whyOnTest": "Tests composing transformations: two reflections in parallel lines combine into a slide of twice the gap, not a return to the start.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

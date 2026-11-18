@@ -1,0 +1,56 @@
+{
+  "id": "SA-0070",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "easy",
+  "statement": "A community pool holds $12{,}000$ gallons of water. For repairs, it is drained at a constant rate of $450$ gallons per hour, but at least $3{,}000$ gallons must stay in the pool. What is the greatest number of whole hours the pool can be drained?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I divided the 3,000 gallons that must stay by 450, about 6.7, and rounded down to 6."
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$26$",
+      "correct": false,
+      "misconception": "I ignored the 3,000 gallons that must stay and divided 12,000 by 450 to get about 26.7, then rounded down to 26."
+    },
+    {
+      "key": "D",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I added 3,000 to 12,000 instead of subtracting, and $15{,}000 \\div 450 \\approx 33.3$, which I rounded down to 33."
+    }
+  ],
+  "hints": [
+    "How much water is left after $h$ hours of draining?",
+    "After $h$ hours the pool holds $12{,}000 - 450h$ gallons. Set this at least 3,000 and solve for $h$.",
+    "$12{,}000 - 450h \\ge 3{,}000$ gives $450h \\le 9{,}000$."
+  ],
+  "solutions": {
+    "reliable": "After $h$ hours the pool holds $12{,}000 - 450h$ gallons, and this must be at least $3{,}000$: $12{,}000 - 450h \\ge 3{,}000$, so $450h \\le 9{,}000$ and $h \\le 20$. The greatest whole number of hours is $20$. Check: after $20$ hours exactly $12{,}000 - 9{,}000 = 3{,}000$ gallons remain.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1302",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A rectangular pool measures 12 m by 5 m. A path 1 m wide runs all the way around the outside of the pool. What is the area of the path, in square metres?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "18",
+      "correct": false,
+      "misconception": "I added 1 m to the length and to the width instead of 2 m, so I worked out $13 \\times 6 - 60 = 18$."
+    },
+    {
+      "key": "B",
+      "text": "34",
+      "correct": false,
+      "misconception": "I multiplied the pool's perimeter, 34 m, by the 1 m width and forgot the four corner squares of the path."
+    },
+    {
+      "key": "C",
+      "text": "38",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "42",
+      "correct": false,
+      "misconception": "I multiplied the outer perimeter, 42 m, by the 1 m width, which counts each corner square twice."
+    },
+    {
+      "key": "E",
+      "text": "98",
+      "correct": false,
+      "misconception": "I found the area of the whole outer rectangle, $14 \\times 7$, and forgot to take away the pool."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "GEO-04",
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "Sketch the pool with the path around it and label the outer measurements.",
+    "Draw the diagram: the path is the big outer rectangle minus the pool. Work out how much the path adds to each side length, remembering that it sits on both sides.",
+    "The outer rectangle is 14 m by 7 m, because the path adds 1 m at each end. Subtract the pool's $12 \\times 5$."
+  ],
+  "solutions": {
+    "reliable": "The path adds 1 m at both ends of each side, so the outer rectangle is $12 + 2 = 14$ m by $5 + 2 = 7$ m, with area $14 \\times 7 = 98$ square metres. The pool covers $12 \\times 5 = 60$ square metres. The path is $98 - 60 = 38$ square metres. The transferable idea: a quick sketch with the numbers written on it shows that the path sticks out past the pool at both ends.",
+    "elegant": "Split the path into pieces: two long strips $12 \\times 1$, two short strips $5 \\times 1$ and four $1 \\times 1$ corner squares. That is $24 + 10 + 4 = 38$, and the sketch makes the four corners impossible to forget."
+  },
+  "whyOnTest": "Drawing the path around the pool exposes the corner squares, which is exactly where most mental answers go wrong.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

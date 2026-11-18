@@ -1,0 +1,56 @@
+{
+  "id": "AC-0226",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-01",
+  "difficulty": "easy",
+  "statement": "A garden plot is shaped like a quadrilateral. Its four interior angles measure $(2x)^\\circ$, $(3x - 10)^\\circ$, $(x + 20)^\\circ$ and $(4x - 10)^\\circ$. What is the measure of the largest of these angles?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$36^\\circ$",
+      "correct": false,
+      "misconception": "I solved 10x = 360 correctly to get x = 36, but then I gave the value of x instead of the largest angle."
+    },
+    {
+      "key": "B",
+      "text": "$134^\\circ$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$62^\\circ$",
+      "correct": false,
+      "misconception": "I used 180 degrees as the angle sum, as if the plot were a triangle, so 10x = 180 gave x = 18 and 4x - 10 = 62 degrees."
+    },
+    {
+      "key": "D",
+      "text": "$206^\\circ$",
+      "correct": false,
+      "misconception": "I used 540 degrees as the angle sum, which is the sum for a pentagon, so 10x = 540 gave x = 54 and 4x - 10 = 206 degrees."
+    }
+  ],
+  "hints": [
+    "What is the sum of the interior angles of any quadrilateral?",
+    "The four angles add to $360^\\circ$. Add the four expressions, set the total equal to $360$, and solve for $x$.",
+    "$2x + (3x - 10) + (x + 20) + (4x - 10) = 10x$, so $10x = 360$ and $x = 36$. Evaluate each expression and pick the largest."
+  ],
+  "solutions": {
+    "reliable": "A quadrilateral splits into two triangles, so its interior angles add to $2 \\cdot 180^\\circ = 360^\\circ$. Adding the expressions, $2x + (3x - 10) + (x + 20) + (4x - 10) = 10x$, so $10x = 360$ and $x = 36$. The angles are $72^\\circ$, $98^\\circ$, $56^\\circ$ and $134^\\circ$, which do add to $360^\\circ$. The largest is $4(36) - 10 = 134^\\circ$.",
+    "elegant": "The constants $-10 + 20 - 10$ cancel, so the sum is simply $10x = 360$ and $x = 36$. The expression with the biggest coefficient, $4x - 10$, gives the largest angle here: $4(36) - 10 = 134^\\circ$."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

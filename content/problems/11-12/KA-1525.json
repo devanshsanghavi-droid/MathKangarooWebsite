@@ -1,0 +1,68 @@
+{
+  "id": "KA-1525",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A sequence starts with $a_1 = 3$, and each later term is given by $a_{n+1} = a_n^2 - 2a_n + 2$. The term $a_{10}$ can be written as $2^k + 1$. What is $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$512$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$1024$",
+      "correct": false,
+      "misconception": "I wrote $a_n = 2^{2^n} + 1$, which is off by one, since $a_1 = 3 = 2^{2^0} + 1$."
+    },
+    {
+      "key": "C",
+      "text": "$256$",
+      "correct": false,
+      "misconception": "I counted the squarings from $a_1$ to $a_{10}$ as 8 instead of 9."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I saw $a_1 - 1 = 2$ and $a_2 - 1 = 4$ and assumed $a_n - 1$ doubles each time, giving $2^{10}$."
+    },
+    {
+      "key": "E",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I confused $2^{n - 1}$ with $2(n - 1)$ for the exponent, getting $2 \\times 9 = 18$."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "PAT-07",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Compute the first few terms. What do you notice about each term minus 1?",
+    "The rule looks messy, but completing the square shows what it does to $a_n - 1$. Rewrite the recursion in terms of $b_n = a_n - 1$ and see how $b_n$ grows.",
+    "$a_{n+1} - 1 = a_n^2 - 2a_n + 1 = (a_n - 1)^2$. So $b_{n+1} = b_n^2$ with $b_1 = 2$."
+  ],
+  "solutions": {
+    "reliable": "Subtract 1 from both sides: $a_{n+1} - 1 = a_n^2 - 2a_n + 1 = (a_n - 1)^2$. Let $b_n = a_n - 1$, so $b_1 = 2$ and each term is the square of the one before. Squaring doubles the exponent: $b_1 = 2^1$, $b_2 = 2^2$, $b_3 = 2^4$, and in general $b_n = 2^{2^{n-1}}$. Check: $a_2 = 5$, $a_3 = 17$, $a_4 = 257$. So $a_{10} = 2^{2^9} + 1 = 2^{512} + 1$, and $k = 512$. The transferable idea: a substitution that completes the square can turn an awkward recursive rule into a simple one.",
+    "elegant": null
+  },
+  "whyOnTest": "The rule hides a perfect square, and once seen the sequence squares itself; the traps are off-by-one counts of the squarings.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

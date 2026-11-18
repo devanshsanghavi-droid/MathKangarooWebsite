@@ -1,0 +1,66 @@
+{
+  "id": "AM-1287",
+  "contest": "AMC8",
+  "slot": 22,
+  "area": "CP",
+  "topic": "CP-06",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A bag holds $4$ red marbles and $3$ blue marbles. Jo draws marbles one at a time at random, without putting any back, and stops as soon as she has drawn at least one marble of each color. What is the probability that she draws exactly $3$ marbles?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{4}{35}$",
+      "correct": false,
+      "misconception": "I only counted the case blue, blue, red, which has probability (3/7)(2/6)(4/5), and forgot red, red, blue."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{6}{35}$",
+      "correct": false,
+      "misconception": "I only counted the case red, red, blue, which has probability (4/7)(3/6)(3/5), and forgot blue, blue, red."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{12}{49}$",
+      "correct": false,
+      "misconception": "I treated the draws as if each marble were put back, so I used (4/7)(4/7)(3/7) + (3/7)(3/7)(4/7)."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{1}{4}$",
+      "correct": false,
+      "misconception": "I thought the 8 color patterns for three draws were equally likely and that 2 of them, red red blue and blue blue red, work, so I got 2/8."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{2}{7}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Drawing exactly 3 marbles means the first two match and the third is the other color.",
+    "There are only two cases: red, red, blue and blue, blue, red. Multiply the probabilities along each case, remembering that the bag gets smaller.",
+    "(4/7)(3/6)(3/5) + (3/7)(2/6)(4/5) = 36/210 + 24/210."
+  ],
+  "solutions": {
+    "reliable": "Jo stops at the third draw exactly when the first two marbles have the same color and the third has the other color. Red, red, blue: $\\frac{4}{7} \\cdot \\frac{3}{6} \\cdot \\frac{3}{5} = \\frac{36}{210}$. Blue, blue, red: $\\frac{3}{7} \\cdot \\frac{2}{6} \\cdot \\frac{4}{5} = \\frac{24}{210}$. The total is $\\frac{60}{210} = \\frac{2}{7}$.",
+    "elegant": "Imagine Jo drawing all $7$ marbles. The color pattern of the row is fixed by where the $3$ blues are, and all $\\binom{7}{3} = 35$ patterns are equally likely. The row starts red, red, blue when the last $4$ spots hold $2$ reds and $2$ blues: $\\binom{4}{2} = 6$ patterns. It starts blue, blue, red when the last $4$ spots hold $3$ reds and $1$ blue: $\\binom{4}{1} = 4$ patterns. The probability is $\\frac{6 + 4}{35} = \\frac{2}{7}$."
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

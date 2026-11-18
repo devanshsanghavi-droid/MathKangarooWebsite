@@ -1,0 +1,67 @@
+{
+  "id": "KA-1362",
+  "band": "7-8",
+  "points": 4,
+  "statement": "The numbers go up and down like this: $1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5, 4, \\dots$, always going up from 1 to 5 and back down to 1, and so on. What is the sum of the first 100 numbers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "276",
+      "correct": false,
+      "misconception": "I took the repeating block to be $1, 2, 3, 4, 5, 4, 3, 2, 1$, counting the 1 at the end as well as the 1 that starts the next block."
+    },
+    {
+      "key": "B",
+      "text": "288",
+      "correct": false,
+      "misconception": "I used 12 full blocks and forgot the 4 numbers left over at the end."
+    },
+    {
+      "key": "C",
+      "text": "300",
+      "correct": false,
+      "misconception": "I took the average of 1 to 5, which is 3, and multiplied by 100."
+    },
+    {
+      "key": "D",
+      "text": "298",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "312",
+      "correct": false,
+      "misconception": "I rounded up to 13 full blocks of 8 numbers."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "Find the shortest block that repeats exactly.",
+    "Find the block that repeats, its length and its sum. Then see how many whole blocks fit into 100 numbers, and add the leftover numbers at the start of the next block.",
+    "The block $1, 2, 3, 4, 5, 4, 3, 2$ has 8 numbers adding to 24. And $100 = 12 \\times 8 + 4$."
+  ],
+  "solutions": {
+    "reliable": "The pattern repeats the block $1, 2, 3, 4, 5, 4, 3, 2$, which has 8 numbers adding to 24; the next 1 starts the next block. Since $100 = 12 \\times 8 + 4$, the first 100 numbers are 12 full blocks and then $1, 2, 3, 4$. The sum is $12 \\times 24 + (1 + 2 + 3 + 4) = 288 + 10 = 298$. The transferable idea: find the exact repeating block, divide with remainder, and handle the leftover separately.",
+    "elegant": null
+  },
+  "whyOnTest": "Repeating patterns test finding the true period; the shared 1 at each turn makes the block length a trap.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

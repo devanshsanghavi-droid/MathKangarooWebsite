@@ -1,0 +1,68 @@
+{
+  "id": "KA-1202",
+  "band": "5-6",
+  "points": 5,
+  "statement": "The number 333...33 is written with twenty 3s, and it is multiplied by itself. What is the sum of the digits of the answer?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I kept adding the digits of the answer until only one digit was left, and that always comes to 9 here."
+    },
+    {
+      "key": "B",
+      "text": "60",
+      "correct": false,
+      "misconception": "I added the digits of the number itself, twenty 3s, instead of the digits of its square."
+    },
+    {
+      "key": "C",
+      "text": "171",
+      "correct": false,
+      "misconception": "I saw the pattern of 1s, a 0, 8s and a final 9, wrote nineteen 1s and nineteen 8s, but forgot the final 9."
+    },
+    {
+      "key": "D",
+      "text": "180",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "189",
+      "correct": false,
+      "misconception": "I treated 33 × 33 as the first case of my pattern, so I added 9 one time too many and got 18 + 19 × 9."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "PAT-07",
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "Square 3, 33 and 333, and add up the digits each time.",
+    "Try small cases. The squares follow a clear digit pattern, and so do their digit sums. Check the rule on one more case before you trust it for twenty 3s.",
+    "3 × 3 = 9, 33 × 33 = 1089, 333 × 333 = 110889 and 3333 × 3333 = 11108889. The digit sums are 9, 18, 27, 36, which is 9 times the number of 3s."
+  ],
+  "solutions": {
+    "reliable": "Small cases: 3 × 3 = 9 (digit sum 9), 33 × 33 = 1089 (18), 333 × 333 = 110889 (27), 3333 × 3333 = 11108889 (36). With n threes the square is n - 1 ones, then a 0, then n - 1 eights, then a 9. For twenty 3s that is nineteen 1s, a 0, nineteen 8s and a 9, so the digit sum is 19 + 0 + 19 × 8 + 9 = 19 + 152 + 9 = 180. The transferable idea: a problem with a huge number is usually a pattern problem in disguise, and three or four small cases reveal it.",
+    "elegant": "Each extra 3 adds one more 1 and one more 8 to the square, which adds 1 + 8 = 9 to the digit sum. A single 3 gives 9, so twenty 3s give 9 × 20 = 180."
+  },
+  "whyOnTest": "Nobody can multiply a 20-digit number by hand in a contest; trying 3, 33 and 333 first shows the pattern that makes the answer easy.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

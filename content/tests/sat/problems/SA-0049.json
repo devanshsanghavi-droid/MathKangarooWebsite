@@ -1,0 +1,56 @@
+{
+  "id": "SA-0049",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "medium",
+  "statement": "Malik's scores on four tests were $84$, $91$, $78$ and $88$. The final exam counts as two test scores when his average is computed, so the average is the sum of the four test scores plus twice the final exam score, divided by $6$. What is the minimum score Malik needs on the final exam to have an average of at least $87$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$47$",
+      "correct": false,
+      "misconception": "I doubled the final exam score but still divided by 5, so I solved $\\dfrac{341 + 2f}{5} \\ge 87$ and got $f \\ge 47$."
+    },
+    {
+      "key": "B",
+      "text": "$88.75$",
+      "correct": false,
+      "misconception": "I averaged the test average $85.25$ with the final exam as if each counted half, so I solved $\\dfrac{85.25 + f}{2} \\ge 87$ and got $88.75$."
+    },
+    {
+      "key": "C",
+      "text": "$90.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$94$",
+      "correct": false,
+      "misconception": "I counted the final exam only once, so I solved $\\dfrac{341 + f}{5} \\ge 87$ and got $f \\ge 94$."
+    }
+  ],
+  "hints": [
+    "First add the four test scores.",
+    "With final exam score $f$, the average is $\\dfrac{341 + 2f}{6}$. Set this at least $87$ and solve.",
+    "$341 + 2f \\ge 6 \\times 87 = 522$, so $2f \\ge 181$."
+  ],
+  "solutions": {
+    "reliable": "The four tests sum to $84 + 91 + 78 + 88 = 341$. We need $\\dfrac{341 + 2f}{6} \\ge 87$, so $341 + 2f \\ge 522$, $2f \\ge 181$ and $f \\ge 90.5$. Check: $\\dfrac{341 + 181}{6} = \\dfrac{522}{6} = 87$.",
+    "elegant": "Measure each score against $87$: the tests are $-3$, $+4$, $-9$ and $+1$, a total of $-7$. The final exam counts twice, so it must be $3.5$ above $87$, which is $90.5$."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

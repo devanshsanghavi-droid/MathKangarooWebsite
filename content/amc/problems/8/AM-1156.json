@@ -1,0 +1,68 @@
+{
+  "id": "AM-1156",
+  "contest": "AMC8",
+  "slot": 2,
+  "area": "NT",
+  "topic": "NT-02",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "How many prime numbers are greater than $30$ and less than $50$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I counted $49$ as a prime because it is odd and not divisible by $3$ or $5$, but $49 = 7 \\cdot 7$."
+    },
+    {
+      "key": "C",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I listed the odd numbers from $31$ to $49$ and crossed out only the multiples of $3$, leaving $31, 35, 37, 41, 43, 47, 49$."
+    },
+    {
+      "key": "D",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I listed the odd numbers from $31$ to $49$ and crossed out only the multiples of $5$, leaving $8$ numbers."
+    },
+    {
+      "key": "E",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I thought every odd number is prime, so I counted all $10$ odd numbers from $31$ to $49$."
+    }
+  ],
+  "hints": [
+    "Only odd numbers can be primes here. List them.",
+    "A number below $50$ is prime if no prime up to $7$ divides it (since $7^2 = 49$ and $8^2 = 64$). Check $3$, $5$ and $7$.",
+    "Of the odd numbers $31, 33, \\ldots, 49$, cross out $33, 39, 45$ (multiples of $3$), $35$ (multiple of $5$) and $49$ (multiple of $7$)."
+  ],
+  "solutions": {
+    "reliable": "The odd numbers between $30$ and $50$ are $31, 33, 35, 37, 39, 41, 43, 45, 47, 49$. Since $\\sqrt{49} = 7$, a number here is prime unless $3$, $5$ or $7$ divides it. Crossing out $33, 39, 45$ (multiples of $3$), $35$ (multiple of $5$) and $49$ (multiple of $7$) leaves $31, 37, 41, 43, 47$. That is $5$ primes.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-19"
+  ],
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

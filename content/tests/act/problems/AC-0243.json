@@ -1,0 +1,56 @@
+{
+  "id": "AC-0243",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-07",
+  "difficulty": "easy",
+  "statement": "On a city map drawn on a coordinate grid, a straight bike trail runs from the library at point $A(-3, 8)$ to the pool at point $B$. A water fountain sits exactly at the midpoint of the trail, at $M(2, 1)$. What are the coordinates of the pool?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$(-0.5, 4.5)$",
+      "correct": false,
+      "misconception": "I found the midpoint of A and M by averaging their coordinates, but M is already the midpoint, so B has to be on the other side of M."
+    },
+    {
+      "key": "B",
+      "text": "$(5, -7)$",
+      "correct": false,
+      "misconception": "I subtracted the coordinates of A from M and got (5, -7), which is the step from A to M, not the location of B."
+    },
+    {
+      "key": "C",
+      "text": "$(-8, 15)$",
+      "correct": false,
+      "misconception": "I doubled A and subtracted M, which mixes up which point is the midpoint, so I got (-8, 15)."
+    },
+    {
+      "key": "D",
+      "text": "$(7, -6)$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The midpoint is halfway, so the step from $A$ to $M$ is the same as the step from $M$ to $B$.",
+    "Find how far $x$ and $y$ change from $A$ to $M$, then make the same change again starting at $M$.",
+    "From $A$ to $M$, $x$ goes up $5$ and $y$ goes down $7$. Do that again from $(2, 1)$."
+  ],
+  "solutions": {
+    "reliable": "Let $B = (x, y)$. The midpoint formula gives $\\frac{-3 + x}{2} = 2$ and $\\frac{8 + y}{2} = 1$. So $x = 4 + 3 = 7$ and $y = 2 - 8 = -6$. The pool is at $(7, -6)$.",
+    "elegant": "From $A(-3, 8)$ to $M(2, 1)$ is a step of $(+5, -7)$. Taking the same step from $M$ gives $B = (2 + 5, 1 - 7) = (7, -6)$."
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

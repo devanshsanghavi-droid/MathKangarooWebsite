@@ -1,0 +1,67 @@
+{
+  "id": "KA-1115",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Home has 3 paths to the park and 1 straight to the shop. The park has 2 paths to the shop. How many routes go from home to the shop, visiting no place twice?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the 3 paths to the park and the straight path, and forgot the choice from the park to the shop."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I added 3 and 2 instead of multiplying, and forgot the straight path."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the routes through the park but forgot the path straight to the shop."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I treated the straight path as a fourth path to the park, so I multiplied 4 by 2."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Draw a tree: what are the choices for the first step?",
+    "Start a tree with every possible first step. Each route through the park branches again at the park; the straight path does not branch at all.",
+    "Through the park: 3 paths, each followed by 2, so 3 x 2 = 6 routes. Straight: 1 route. Total 6 + 1 = 7."
+  ],
+  "solutions": {
+    "reliable": "Split the routes by their first step. Through the park: each of the 3 paths to the park can be followed by either of the 2 paths to the shop, so 3 x 2 = 6 routes. Straight to the shop: 1 route. Total 6 + 1 = 7. The transferable idea: in a tree, multiply along a branch that splits again and add the separate branches.",
+    "elegant": null
+  },
+  "whyOnTest": "Real trees mix multiplying along branches with adding separate branches; the straight path tests whether students know when to add.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1316",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A model of a car is built at a scale of 1 to 25, so every length on the model is $\\frac{1}{25}$ of the real length. The roof of the model has an area of 40 square centimetres. What is the area of the real car's roof, in square metres?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0.1",
+      "correct": false,
+      "misconception": "I multiplied the area by 25 as if it were a length, getting 1000 square centimetres, which is 0.1 square metres."
+    },
+    {
+      "key": "B",
+      "text": "2.5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I got 25 000 square centimetres but thought that 1 square metre is 1000 square centimetres."
+    },
+    {
+      "key": "D",
+      "text": "62.5",
+      "correct": false,
+      "misconception": "I multiplied by 25 three times, as for a volume, and got 625 000 square centimetres."
+    },
+    {
+      "key": "E",
+      "text": "250",
+      "correct": false,
+      "misconception": "I got 25 000 square centimetres but thought that 1 square metre is 100 square centimetres."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-16",
+    "secondary": [
+      "MOD-07",
+      "NUM-11"
+    ]
+  },
+  "hints": [
+    "If every length grows 25 times, how does an area grow?",
+    "Scaling: areas scale by the square of the length factor. After scaling, change square centimetres into square metres, remembering that 1 m is 100 cm in both directions.",
+    "The real roof is $40 \\times 25 \\times 25 = 25\\,000$ square centimetres, and 1 square metre is $100 \\times 100 = 10\\,000$ square centimetres."
+  ],
+  "solutions": {
+    "reliable": "Every length of the real car is 25 times the model's, so every area is $25 \\times 25 = 625$ times as big: $40 \\times 625 = 25\\,000$ square centimetres. One square metre is $100 \\text{ cm} \\times 100 \\text{ cm} = 10\\,000$ square centimetres, so the roof is $25\\,000 \\div 10\\,000 = 2.5$ square metres. The transferable idea: lengths scale by $k$, areas by $k^2$ and volumes by $k^3$.",
+    "elegant": "Picture a 1 cm by 1 cm square on the model: on the car it is 25 cm by 25 cm, which is $\\frac{1}{4}$ m by $\\frac{1}{4}$ m, or $\\frac{1}{16}$ of a square metre. Forty such squares make $\\frac{40}{16} = 2.5$ square metres."
+  },
+  "whyOnTest": "Area scales by the square of the length factor, and square units need squaring too: two separate chances to slip.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

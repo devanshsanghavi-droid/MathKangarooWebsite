@@ -51,6 +51,12 @@ export const FEEDBACK_FILES: ReadonlyArray<{ path: string; because: string }> = 
     because: 'per-question correct/incorrect on the post-exam scatter',
   },
   {
+    path: 'src/components/exam-runner/ExamReport.tsx',
+    because:
+      'the mock and section-test report: right or wrong per question, and the misconception ' +
+      'behind the wrong letter the student picked',
+  },
+  {
     path: 'src/app/author/new/AuthorForm.tsx',
     because:
       'marks which choice the author flagged correct, and marks a problem CI would reject - ' +

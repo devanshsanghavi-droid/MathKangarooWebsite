@@ -1,4 +1,5 @@
 import { AMC_DISCLAIMER } from '@/lib/site';
+import { TrademarkNotice } from './TrademarkNotice';
 
 /**
  * The MAA trademark notice docs/06-V3-REDESIGN.md §2 requires on every page under /amc, on
@@ -7,15 +8,5 @@ import { AMC_DISCLAIMER } from '@/lib/site';
  * in lib/site.ts so it has exactly one definition.
  */
 export function AmcDisclaimer() {
-  return (
-    <div className="mx-auto w-full max-w-app px-4 pb-6 sm:px-6">
-      <p
-        role="note"
-        aria-label="Trademark notice"
-        className="ui m-0 rounded-card border border-rule bg-surface-2 px-4 py-3 text-xs font-medium text-ink-2"
-      >
-        {AMC_DISCLAIMER}
-      </p>
-    </div>
-  );
+  return <TrademarkNotice text={AMC_DISCLAIMER} />;
 }

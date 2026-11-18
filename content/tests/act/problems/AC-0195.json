@@ -1,0 +1,56 @@
+{
+  "id": "AC-0195",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-01",
+  "difficulty": "easy",
+  "statement": "At a bakery, the number of loaves baked in $h$ hours is $n(h) = 45h + 10$, and the cost, in dollars, of baking $n$ loaves is $C(n) = 0.8n + 60$. What is the value of $C\\big(n(4)\\big)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$152$",
+      "correct": false,
+      "misconception": "I found $n(4) = 190$ and multiplied by $0.8$, but I forgot to add the fixed cost of $60$."
+    },
+    {
+      "key": "B",
+      "text": "$212$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$253.2$",
+      "correct": false,
+      "misconception": "I added $n(4) = 190$ and $C(4) = 63.2$ instead of putting $n(4)$ into $C$."
+    },
+    {
+      "key": "D",
+      "text": "$2{,}854$",
+      "correct": false,
+      "misconception": "I worked in the wrong order and put $C(4) = 63.2$ into $n$, which gives $n\\big(C(4)\\big)$ instead of $C\\big(n(4)\\big)$."
+    }
+  ],
+  "hints": [
+    "Work from the inside out: find $n(4)$ first.",
+    "$n(4)$ is the number of loaves baked in $4$ hours. Use that number as the input to $C$.",
+    "$n(4) = 45 \\cdot 4 + 10 = 190$, so $C\\big(n(4)\\big) = C(190) = 0.8 \\cdot 190 + 60$."
+  ],
+  "solutions": {
+    "reliable": "First, $n(4) = 45 \\cdot 4 + 10 = 190$ loaves. Then $C(190) = 0.8 \\cdot 190 + 60 = 152 + 60 = 212$. So $C\\big(n(4)\\big) = 212$, the cost in dollars of baking for $4$ hours.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

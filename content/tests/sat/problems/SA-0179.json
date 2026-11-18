@@ -1,0 +1,56 @@
+{
+  "id": "SA-0179",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-08",
+  "difficulty": "medium",
+  "statement": "A pebble dropped into a pond makes a circular ripple. The radius of the ripple, in centimeters, $t$ seconds after the pebble hits the water is $r(t) = 3 + 2t$, and the area of a circle with radius $r$ is $A(r) = \\pi r^2$. Which expression gives the area, in square centimeters, of the region inside the ripple $t$ seconds after the pebble hits the water?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3 + 2\\pi t^2$",
+      "correct": false,
+      "misconception": "I put the area function inside the radius function, computing $r(A(t))$ instead of $A(r(t))$."
+    },
+    {
+      "key": "B",
+      "text": "$\\pi(9 + 4t^2)$",
+      "correct": false,
+      "misconception": "I squared $3 + 2t$ term by term and lost the middle term $12t$."
+    },
+    {
+      "key": "C",
+      "text": "$\\pi t^2(3 + 2t)$",
+      "correct": false,
+      "misconception": "I multiplied $A(t)$ by $r(t)$ instead of putting $r(t)$ into the area formula."
+    },
+    {
+      "key": "D",
+      "text": "$\\pi(3 + 2t)^2$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The area depends on the radius, and the radius depends on time, so you need a composition.",
+    "You want $A(r(t))$: put the expression for $r(t)$ in place of $r$ in $A(r) = \\pi r^2$.",
+    "$A(r(t)) = \\pi \\cdot (r(t))^2 = \\pi(3 + 2t)^2$."
+  ],
+  "solutions": {
+    "reliable": "At time $t$ the radius is $r(t) = 3 + 2t$, and the area of a circle with that radius is $A(r(t)) = \\pi(3 + 2t)^2$. Check at $t = 1$: the radius is $5$, the area is $25\\pi$, and $\\pi(3 + 2)^2 = 25\\pi$. The choice $\\pi(9 + 4t^2)$ would give $13\\pi$ at $t = 1$, so it is not equivalent.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

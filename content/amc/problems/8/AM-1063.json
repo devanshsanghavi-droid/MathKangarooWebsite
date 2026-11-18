@@ -1,0 +1,67 @@
+{
+  "id": "AM-1063",
+  "contest": "AMC8",
+  "slot": 22,
+  "area": "ALG",
+  "topic": "ALG-09",
+  "types": [
+    "T-SYMMETRY",
+    "T-AMGM"
+  ],
+  "statement": "Zoe sells lemonade. If she charges $p$ dollars per cup, she sells $100 - 20p$ cups in a day, for any price $p$ from $\\$1$ to $\\$5$. Each cup costs her $\\$1$ to make, and she makes only the cups she sells. What is the greatest daily profit she can make, in dollars?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I assumed she always makes $100$ cups, so I subtracted $\\$100$ from her largest possible sales, $\\$125$, and got $25$."
+    },
+    {
+      "key": "B",
+      "text": "$75$",
+      "correct": false,
+      "misconception": "I first found the price that brings in the most money, $\\$2.50$, and then worked out the profit at that price: $50 \\times 1.50 = 75$."
+    },
+    {
+      "key": "C",
+      "text": "$80$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I found the best price, $\\$3$, but forgot to subtract the cost of the cups, so I gave her sales of $40 \\times 3 = 120$."
+    },
+    {
+      "key": "E",
+      "text": "$125$",
+      "correct": false,
+      "misconception": "I found the most money she can take in, $50 \\times 2.50 = 125$, and forgot about the cost of making the cups."
+    }
+  ],
+  "hints": [
+    "Her profit on each cup is the price minus $\\$1$.",
+    "Profit $= (p - 1)(100 - 20p) = 20(p - 1)(5 - p)$. The two factors $p - 1$ and $5 - p$ always add up to $4$.",
+    "Two numbers with a fixed sum have the largest product when they are equal, so take $p - 1 = 5 - p = 2$."
+  ],
+  "solutions": {
+    "reliable": "Profit is the number of cups times the profit per cup: $(100 - 20p)(p - 1) = 20(5 - p)(p - 1)$. The factors $5 - p$ and $p - 1$ add up to $4$, and two numbers with a fixed sum have the largest product when they are equal, so the best choice is $5 - p = p - 1 = 2$, which is $p = 3$. She sells $40$ cups at a profit of $\\$2$ each, for $\\$80$. Nearby prices do worse: at $p = 2.5$ the profit is $50 \\times 1.5 = 75$, and at $p = 3.5$ it is $30 \\times 2.5 = 75$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0105",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "hard",
+  "statement": "What is the solution set of the equation $|2x - 5| = |x + 1|$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\{6\\}$",
+      "correct": false,
+      "misconception": "I solved only $2x - 5 = x + 1$ and forgot that the two expressions inside the bars can also be opposites."
+    },
+    {
+      "key": "B",
+      "text": "$\\{-2, 6\\}$",
+      "correct": false,
+      "misconception": "I solved the second case, $2x - 5 = -x - 1$, but subtracted $5$ from both sides instead of adding it, so I got $3x = -6$ and $x = -2$."
+    },
+    {
+      "key": "C",
+      "text": "$\\{2, 6\\}$",
+      "correct": false,
+      "misconception": "I wrote $-(x + 1)$ as $-x + 1$ in the second case, so I solved $2x - 5 = -x + 1$ and got $x = 2$."
+    },
+    {
+      "key": "D",
+      "text": "$\\left\\{\\frac{4}{3}, 6\\right\\}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "If $|A| = |B|$, then $A$ and $B$ are either equal or opposites.",
+    "Solve $2x - 5 = x + 1$ and $2x - 5 = -(x + 1)$ separately, then check each answer in the original equation.",
+    "The first case gives $x = 6$, and the second gives $3x = 4$."
+  ],
+  "solutions": {
+    "reliable": "Two numbers have the same absolute value exactly when they are equal or opposites. Case 1: $2x - 5 = x + 1$ gives $x = 6$. Case 2: $2x - 5 = -(x + 1) = -x - 1$ gives $3x = 4$, so $x = \\frac{4}{3}$. Check: at $x = 6$ both sides equal $7$, and at $x = \\frac{4}{3}$ both sides equal $\\frac{7}{3}$, since $\\left|\\frac{8}{3} - 5\\right| = \\frac{7}{3}$ and $\\left|\\frac{4}{3} + 1\\right| = \\frac{7}{3}$. The solution set is $\\left\\{\\frac{4}{3}, 6\\right\\}$.",
+    "elegant": "Both sides are nonnegative, so squaring them gives an equivalent equation: $(2x - 5)^2 = (x + 1)^2$. Expanding, $4x^2 - 20x + 25 = x^2 + 2x + 1$, so $3x^2 - 22x + 24 = 0$, which factors as $(3x - 4)(x - 6) = 0$. The solutions are $x = \\frac{4}{3}$ and $x = 6$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

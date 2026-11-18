@@ -1,0 +1,56 @@
+{
+  "id": "AC-0076",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "easy",
+  "statement": "A bike-share company charges $C = 1.25 + 0.30t$ dollars for a ride that lasts $t$ minutes. Which of the following expresses $t$ in terms of $C$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$t = \\dfrac{C + 1.25}{0.30}$",
+      "correct": false,
+      "misconception": "I added 1.25 to both sides instead of subtracting it."
+    },
+    {
+      "key": "B",
+      "text": "$t = \\dfrac{C}{0.30} - 1.25$",
+      "correct": false,
+      "misconception": "I divided both sides by 0.30 first but did not divide the 1.25 by 0.30 as well."
+    },
+    {
+      "key": "C",
+      "text": "$t = 0.30(C - 1.25)$",
+      "correct": false,
+      "misconception": "I subtracted 1.25 correctly but then multiplied by 0.30 instead of dividing by it."
+    },
+    {
+      "key": "D",
+      "text": "$t = \\dfrac{C - 1.25}{0.30}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Undo the operations on $t$ in reverse order.",
+    "First remove the fixed $\\$1.25$ from both sides, then undo the multiplication by $0.30$.",
+    "Subtracting gives $C - 1.25 = 0.30t$. Divide both sides by $0.30$."
+  ],
+  "solutions": {
+    "reliable": "Start with $C = 1.25 + 0.30t$. Subtract $1.25$ from both sides: $C - 1.25 = 0.30t$. Divide both sides by $0.30$: $t = \\dfrac{C - 1.25}{0.30}$. Check: a $10$-minute ride costs $1.25 + 3 = 4.25$ dollars, and $\\dfrac{4.25 - 1.25}{0.30} = 10$.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

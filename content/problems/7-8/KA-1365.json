@@ -1,0 +1,67 @@
+{
+  "id": "KA-1365",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A number machine always uses the same rule. It turns 2 into 7, 5 into 16 and 11 into 34. Which number does it turn into 61?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "38",
+      "correct": false,
+      "misconception": "I used the rule \"add 23\", which turns 11 into 34, and worked back from 61 without testing it on 2 and 5."
+    },
+    {
+      "key": "C",
+      "text": "56",
+      "correct": false,
+      "misconception": "I used the rule \"add 5\", which turns 2 into 7, and worked back from 61 without testing it on 5 and 11."
+    },
+    {
+      "key": "D",
+      "text": "60",
+      "correct": false,
+      "misconception": "I found the rule \"times 3, add 1\" and undid the adding of 1, but forgot to undo the multiplying by 3."
+    },
+    {
+      "key": "E",
+      "text": "184",
+      "correct": false,
+      "misconception": "I put 61 into the machine instead of finding the number that comes out as 61."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "When the input goes up by 1, how much does the output go up?",
+    "Find one rule that fits all three examples. Then run it backwards, undoing the last step first.",
+    "From 2 to 5 the output rises by 9, and from 5 to 11 by 18, so each extra 1 on the input adds 3 to the output. The rule is \"times 3, add 1\"."
+  ],
+  "solutions": {
+    "reliable": "From input 2 to input 5 the output rises from 7 to 16, by 9, which is 3 for each step of 1. From 5 to 11 it rises by 18, again 3 for each step. So the rule is \"multiply by 3, then add 1\": $3 \\times 2 + 1 = 7$, $3 \\times 5 + 1 = 16$ and $3 \\times 11 + 1 = 34$. To get 61 out, undo the steps in reverse order: $61 - 1 = 60$ and $60 \\div 3 = 20$. Check: $3 \\times 20 + 1 = 61$. The transferable idea: test a rule on every example, and to run a rule backwards, undo its steps in reverse order.",
+    "elegant": "The output goes up by 3 for every 1 the input goes up. From output 34 to output 61 is 27 more, which needs $27 \\div 3 = 9$ more on the input: $11 + 9 = 20$."
+  },
+  "whyOnTest": "Machine questions check that a rule fits every example and that you can run it in reverse.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

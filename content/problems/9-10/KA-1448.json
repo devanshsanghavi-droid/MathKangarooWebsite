@@ -1,0 +1,68 @@
+{
+  "id": "KA-1448",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Two of the 16 squares of a 4 by 4 board are removed. There are 120 ways to choose the two squares. For how many of these choices can the remaining 14 squares be covered exactly by seven 1 by 2 dominoes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "120",
+      "correct": false,
+      "misconception": "I thought any two removed squares leave 14 squares, an even number, so seven dominoes always fit."
+    },
+    {
+      "key": "B",
+      "text": "56",
+      "correct": false,
+      "misconception": "I thought the two removed squares had to be the same colour on a chessboard pattern, but a domino always covers one square of each colour."
+    },
+    {
+      "key": "C",
+      "text": "32",
+      "correct": false,
+      "misconception": "I found the $8 \\times 8 = 64$ pairs of opposite colours and then halved, thinking each pair had been counted twice."
+    },
+    {
+      "key": "D",
+      "text": "128",
+      "correct": false,
+      "misconception": "I counted each pair twice, once with the black square chosen first and once with the white square chosen first."
+    },
+    {
+      "key": "E",
+      "text": "64",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-07",
+    "secondary": [
+      "LOG-09",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Colour the board like a chessboard.",
+    "Every domino covers one black and one white square, so the two removed squares must have different colours. Then ask whether every such choice really works.",
+    "There are $8 \\times 8 = 64$ pairs made of one black and one white square. A closed path through all 16 squares, stepping between side neighbours, shows whether all 64 can be covered."
+  ],
+  "solutions": {
+    "reliable": "Colour the board like a chessboard, with 8 black and 8 white squares. Each domino covers one of each, so seven dominoes cover 7 black and 7 white squares, and the two removed squares must be one black and one white. That allows at most $8 \\times 8 = 64$ choices. Every one of them works. The 16 squares can be visited in one closed loop of side steps: go along the top row from left to right, snake left and right through rows 2, 3 and 4 using columns 2 to 4 (row 4 runs all the way back to column 1), and return up column 1. Colours alternate around the loop, so removing one black and one white square cuts it into two pieces, each with an even number of squares, and each piece is covered by dominoes laid along the loop. The answer is 64. The transferable idea: a colouring proves what is impossible; a construction proves the rest are possible.",
+    "elegant": null
+  },
+  "whyOnTest": "Colouring arguments show which removals are impossible, and the second half of the problem is showing that every remaining case really can be covered.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0123",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "easy",
+  "statement": "For all $x$ with $x \\neq 0$ and $x \\neq -3$, which of the following is equivalent to $\\dfrac{1}{x} + \\dfrac{2}{x + 3}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{3x + 3}{x(x + 3)}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{3}{2x + 3}$",
+      "correct": false,
+      "misconception": "I added the numerators and added the denominators, but fractions are not added that way."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{3}{x(x + 3)}$",
+      "correct": false,
+      "misconception": "I used the common denominator $x(x + 3)$ but kept the numerators $1$ and $2$ without multiplying them by the factors each fraction was missing."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{x + 5}{x(x + 3)}$",
+      "correct": false,
+      "misconception": "I rewrote $\\frac{1}{x}$ as $\\frac{x + 3}{x(x + 3)}$ but left the $2$ as it was instead of changing it to $2x$."
+    }
+  ],
+  "hints": [
+    "Fractions need a common denominator before you add them.",
+    "Use $x(x + 3)$ as the common denominator and rewrite each fraction over it.",
+    "$\\frac{x + 3}{x(x + 3)} + \\frac{2x}{x(x + 3)}$"
+  ],
+  "solutions": {
+    "reliable": "Over the common denominator $x(x + 3)$: $\\frac{1}{x} = \\frac{x + 3}{x(x + 3)}$ and $\\frac{2}{x + 3} = \\frac{2x}{x(x + 3)}$. Adding gives $\\frac{x + 3 + 2x}{x(x + 3)} = \\frac{3x + 3}{x(x + 3)}$. Check at $x = 1$: $1 + \\frac{2}{4} = \\frac{3}{2}$ and $\\frac{6}{4} = \\frac{3}{2}$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

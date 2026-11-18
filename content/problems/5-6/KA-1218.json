@@ -1,0 +1,68 @@
+{
+  "id": "KA-1218",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Six teams play in a league, and every team plays every other team twice. A win gives the winner 3 points and the loser 0; a draw gives each team 1 point. Altogether the six teams scored 80 points. How many games were draws?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I thought a draw gives out only 1 point in total, so each draw lowers the total by 2."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted each draw twice, once for each of the two teams that drew."
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": false,
+      "misconception": "I worked out the number of games played and gave that instead of the number of draws."
+    },
+    {
+      "key": "E",
+      "text": "35",
+      "correct": false,
+      "misconception": "I counted each pair of teams playing only once, 15 games worth 45 points, and took 45 away from 80."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-08",
+    "secondary": [
+      "MOD-01",
+      "LOG-06"
+    ]
+  },
+  "hints": [
+    "First count the games. Then think about how many points each game gives out.",
+    "Count the pairs of teams, then double for the two games. A game with a winner gives out 3 points in total, and a draw gives out 2, so each draw makes the grand total 1 smaller.",
+    "There are 15 pairs of teams, so 30 games. If every game had a winner, the teams would score 90 points altogether."
+  ],
+  "solutions": {
+    "reliable": "Each team plays 5 others, which gives 6 × 5 ÷ 2 = 15 pairs of teams. Each pair plays twice, so there are 30 games. A game with a winner gives out 3 points and a draw gives out 1 + 1 = 2 points. If all 30 games had winners, the total would be 90. Each draw makes it 1 less, and the total is 80, so there were 90 - 80 = 10 draws. The transferable idea: count pairs to count games, then track the total of something every game hands out.",
+    "elegant": null
+  },
+  "whyOnTest": "Counting pairs gives the number of games, and the points each game hands out turn the total into the number of draws.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0183",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-07",
+  "difficulty": "medium",
+  "statement": "The system of equations below has exactly one solution $(x, y)$. $$\\begin{aligned} y &= 3x^2 - 2x - 1 \\\\ y &= 3x^2 + 4x + 11 \\end{aligned}$$ What is the value of $y$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-9$",
+      "correct": false,
+      "misconception": "I found $x = -2$ correctly but computed $3(-2)^2$ as $3(-4) = -12$, so I got $-12 + 4 - 1 = -9$."
+    },
+    {
+      "key": "B",
+      "text": "$-2$",
+      "correct": false,
+      "misconception": "I solved for $x$ correctly and reported $x = -2$ instead of the value of $y$."
+    },
+    {
+      "key": "C",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I simplified $-6x = 12$ to $x = 2$ by dropping the negative sign, and then $y = 12 - 4 - 1 = 7$."
+    },
+    {
+      "key": "D",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Both equations give $y$, so set their right sides equal.",
+    "The $3x^2$ terms cancel, leaving the linear equation $-2x - 1 = 4x + 11$.",
+    "Solving gives $x = -2$; substitute it into either equation to get $y$."
+  ],
+  "solutions": {
+    "reliable": "Setting $3x^2 - 2x - 1 = 3x^2 + 4x + 11$ and subtracting $3x^2$ from both sides gives $-2x - 1 = 4x + 11$, so $-6x = 12$ and $x = -2$. Then $y = 3(4) - 2(-2) - 1 = 12 + 4 - 1 = 15$. Check with the other equation: $3(4) + 4(-2) + 11 = 12 - 8 + 11 = 15$.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

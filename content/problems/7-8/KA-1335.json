@@ -1,0 +1,67 @@
+{
+  "id": "KA-1335",
+  "band": "7-8",
+  "points": 3,
+  "statement": "The angles of a triangle are in the ratio 2 : 3 : 4. At each corner, an exterior angle is made by extending one side beyond that corner. What is the size of the smallest exterior angle, in degrees?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "40",
+      "correct": false,
+      "misconception": "I gave the smallest interior angle instead of the smallest exterior angle."
+    },
+    {
+      "key": "B",
+      "text": "100",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "80",
+      "correct": false,
+      "misconception": "I found the largest interior angle, 80 degrees, and stopped there."
+    },
+    {
+      "key": "D",
+      "text": "140",
+      "correct": false,
+      "misconception": "I thought the smallest exterior angle sits at the smallest interior angle, so I worked out 180 - 40."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": false,
+      "misconception": "I used 360 degrees as the angle sum of a triangle, which made the angles 80, 120 and 160 and the smallest exterior angle 180 - 160."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "NUM-11"
+    ]
+  },
+  "hints": [
+    "An exterior angle and the interior angle beside it make a straight line.",
+    "Split 180 degrees in the ratio 2 : 3 : 4 to find the interior angles. Each exterior angle is 180 minus its interior angle, so the largest interior angle gives the smallest exterior angle.",
+    "The interior angles are 40, 60 and 80 degrees."
+  ],
+  "solutions": {
+    "reliable": "The ratio has 2 + 3 + 4 = 9 parts sharing 180 degrees, so one part is 20 degrees and the angles are 40, 60 and 80. Each exterior angle is 180 minus the interior angle at that corner: 140, 120 and 100. The smallest is 100 degrees. The transferable idea: the biggest interior angle has the smallest exterior angle beside it.",
+    "elegant": "An exterior angle equals the sum of the two interior angles at the other corners. The smallest exterior angle is at the largest interior angle, so it equals the two smaller angles together: 2 + 3 = 5 parts of 20 degrees, which is 100 degrees."
+  },
+  "whyOnTest": "Tests angles on a straight line and in a triangle, and the trap that the smallest exterior angle sits at the largest interior angle.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "AM-1134",
+  "contest": "AMC8",
+  "slot": 20,
+  "area": "GEO",
+  "topic": "GEO-03",
+  "types": [
+    "T-BOUNDING"
+  ],
+  "statement": "Kira draws a chain of right triangles. Triangle $1$ has legs of length $1$ and $1$. For each $n \\ge 2$, triangle $n$ has one leg equal to the hypotenuse of triangle $n - 1$ and its other leg of length $n$. For example, triangle $2$ has legs $\\sqrt{2}$ and $2$. What is the smallest $n$ for which the hypotenuse of triangle $n$ is longer than $20$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I compared the square of the hypotenuse with $20$ instead of with $20^2 = 400$, and triangle $4$ is the first with a square above $20$."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I thought each hypotenuse is the previous hypotenuse plus the new leg, so starting from about $1.4$ I added $2, 3, 4, 5, 6$ and passed $20$ at triangle $6$."
+    },
+    {
+      "key": "C",
+      "text": "$11$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I thought the square of the hypotenuse of triangle $n$ is just $n^2 + 1$, using only the newest leg, so I needed $n^2 + 1 > 400$."
+    },
+    {
+      "key": "E",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I added $n$ instead of $n^2$ to the square of the hypotenuse each time, so I needed $1 + (1 + 2 + \\cdots + n) > 400$."
+    }
+  ],
+  "hints": [
+    "Work with the squares of the hypotenuses instead of the hypotenuses themselves.",
+    "By the Pythagorean theorem, the square of the hypotenuse of triangle $n$ is the square of the hypotenuse of triangle $n - 1$ plus $n^2$. So the squares go $2$, then $2 + 4 = 6$, then $6 + 9 = 15$, and so on.",
+    "The square of the hypotenuse of triangle $n$ is $1 + 1^2 + 2^2 + \\cdots + n^2$. You need this to be more than $20^2 = 400$."
+  ],
+  "solutions": {
+    "reliable": "Let $h_n$ be the hypotenuse of triangle $n$. Then $h_1^2 = 1 + 1 = 2$ and $h_n^2 = h_{n-1}^2 + n^2$. The running totals are $h_1^2 = 2$, $h_2^2 = 6$, $h_3^2 = 15$, $h_4^2 = 31$, $h_5^2 = 56$, $h_6^2 = 92$, $h_7^2 = 141$, $h_8^2 = 205$, $h_9^2 = 286$, $h_{10}^2 = 386$ and $h_{11}^2 = 507$. We need $h_n > 20$, that is $h_n^2 > 400$. Since $386 < 400 < 507$, the answer is $n = 11$.",
+    "elegant": "In general $h_n^2 = 1 + (1^2 + 2^2 + \\cdots + n^2) = 1 + \\frac{n(n+1)(2n+1)}{6}$. For $n = 10$ this is $1 + 385 = 386 < 400$, and for $n = 11$ it is $1 + 506 = 507 > 400$. So $n = 11$."
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

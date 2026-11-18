@@ -1,0 +1,56 @@
+{
+  "id": "SA-0021",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "hard",
+  "statement": "In March, the two branches of a public library had a combined total of $4{,}500$ visitors. In April, visits to the North branch increased by $12\\%$ and visits to the South branch increased by $30\\%$ compared with March, for a combined total of $5{,}400$ visitors. How many visitors did the South branch have in March?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2{,}000$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$2{,}500$",
+      "correct": false,
+      "misconception": "I solved the system correctly but gave the North branch's March visitors instead of the South branch's."
+    },
+    {
+      "key": "C",
+      "text": "$2{,}600$",
+      "correct": false,
+      "misconception": "I found $2{,}000$ South branch visitors in March but then reported April's number, $1.3 \\cdot 2{,}000 = 2{,}600$."
+    },
+    {
+      "key": "D",
+      "text": "$3{,}000$",
+      "correct": false,
+      "misconception": "I thought all $900$ extra visitors came from the South branch's $30\\%$ increase, so I divided $900$ by $0.30$."
+    }
+  ],
+  "hints": [
+    "Use one variable for each branch's March visitors.",
+    "Write one equation for the March total and one for the April total, using $1.12$ and $1.30$ as multipliers. Then eliminate a variable.",
+    "With $n + s = 4{,}500$ and $1.12n + 1.30s = 5{,}400$, subtracting $1.12$ times the first equation gives $0.18s = 360$."
+  ],
+  "solutions": {
+    "reliable": "Let $n$ and $s$ be the March visitors to the North and South branches. Then $n + s = 4{,}500$ and $1.12n + 1.30s = 5{,}400$. Multiply the first equation by $1.12$: $1.12n + 1.12s = 5{,}040$. Subtract: $0.18s = 360$, so $s = 2{,}000$ and $n = 2{,}500$. Check: $1.12(2{,}500) + 1.30(2{,}000) = 2{,}800 + 2{,}600 = 5{,}400$.",
+    "elegant": "The increase was $900$ visitors. If both branches had grown by $12\\%$, the increase would be $0.12 \\cdot 4{,}500 = 540$. The extra $360$ comes from the South branch growing $18$ percentage points faster, so $s = 360 \\div 0.18 = 2{,}000$."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

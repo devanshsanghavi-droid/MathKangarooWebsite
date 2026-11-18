@@ -1,0 +1,56 @@
+{
+  "id": "SA-0111",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-03",
+  "difficulty": "medium",
+  "statement": "The arch of a footbridge is modeled by $y = -0.02x(x - 80)$, where $y$ is the height, in feet, of the arch above the water at a horizontal distance of $x$ feet from one end of the bridge, for $0 \\le x \\le 80$. What is the greatest height, in feet, of the arch above the water?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$32$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I found the horizontal distance to the highest point, $x = 40$, and gave that instead of the height."
+    },
+    {
+      "key": "C",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I computed $0.02 \\cdot 40 \\cdot 80$, using the full span 80 in place of $40 - 80 = -40$."
+    },
+    {
+      "key": "D",
+      "text": "$80$",
+      "correct": false,
+      "misconception": "I gave the width of the arch, since $y = 0$ at $x = 80$, instead of its height."
+    }
+  ],
+  "hints": [
+    "The arch meets the water at both ends, where $y = 0$.",
+    "The zeros are $x = 0$ and $x = 80$, so the highest point is halfway between them. Substitute that $x$ into the model.",
+    "The highest point is at $x = 40$, and $y = -0.02(40)(40 - 80) = -0.02(40)(-40)$."
+  ],
+  "solutions": {
+    "reliable": "The model is $0$ at $x = 0$ and $x = 80$, and the parabola opens downward, so the maximum is at the midpoint $x = 40$. There, $y = -0.02(40)(-40) = 0.02 \\cdot 1{,}600 = 32$ feet. Check by expanding: $y = -0.02x^2 + 1.6x$, so $-\\frac{b}{2a} = \\frac{1.6}{0.04} = 40$.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

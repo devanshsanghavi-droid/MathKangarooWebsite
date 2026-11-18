@@ -1,0 +1,56 @@
+{
+  "id": "AC-0080",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "medium",
+  "statement": "At an airport, Dani walks along a moving walkway in the direction it moves and covers $120$ meters in $30$ seconds. Walking at the same pace against the walkway's motion, she covers the same $120$ meters in $60$ seconds. How many seconds would it take Dani to travel $120$ meters if she stood still on the walkway?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I found Dani's walking speed, 3 meters per second, and used it, which tells how long walking on the floor takes, not riding the walkway."
+    },
+    {
+      "key": "B",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I averaged the two times, 30 and 60 seconds."
+    },
+    {
+      "key": "C",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I took the walkway's speed to be the difference $4 - 2 = 2$ meters per second without halving it, so I got $120 \\div 2 = 60$."
+    },
+    {
+      "key": "D",
+      "text": "$120$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Find the two combined speeds first, in meters per second.",
+    "Let $w$ be Dani's walking speed and $v$ the walkway's speed. Then $w + v = 4$ and $w - v = 2$.",
+    "Adding the equations gives $2w = 6$, so $w = 3$ and $v = 1$. Standing still, she moves at the walkway's speed."
+  ],
+  "solutions": {
+    "reliable": "With the walkway her speed is $120 \\div 30 = 4$ meters per second, so $w + v = 4$. Against it her speed is $120 \\div 60 = 2$ meters per second, so $w - v = 2$. Subtracting the equations gives $2v = 2$, so $v = 1$ (and $w = 3$). Standing still she moves at $1$ meter per second, so $120$ meters takes $120$ seconds.",
+    "elegant": "The walkway's speed is half the difference of the two combined speeds: $\\tfrac{4 - 2}{2} = 1$ meter per second, so $120$ meters takes $120$ seconds."
+  },
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

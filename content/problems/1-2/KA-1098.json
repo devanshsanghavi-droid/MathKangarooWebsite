@@ -1,0 +1,67 @@
+{
+  "id": "KA-1098",
+  "band": "1-2",
+  "points": 5,
+  "statement": "A bucket full of water weighs 10 kg. When it is only half full, it weighs 6 kg. How much does the empty bucket weigh?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I thought the empty bucket weighs half of the half-full weight, so I halved 6."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found the weight of half the water, 10 take away 6, and stopped there."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I thought the bucket weighs half of the full weight, so I halved 10."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I found the weight of all the water, not the bucket."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-02",
+    "secondary": [
+      "NUM-09"
+    ]
+  },
+  "hints": [
+    "What is different between the full bucket and the half-full bucket?",
+    "Draw two bars: bucket plus all the water, and bucket plus half the water. The difference between them is exactly half the water. Find all the water, then the bucket.",
+    "Going from full to half full removes half the water, and the weight drops by 4 kg. So all the water weighs twice that."
+  ],
+  "solutions": {
+    "reliable": "The full bucket and the half-full bucket differ only by half the water, and $10 - 6 = 4$ kg. So half the water is 4 kg and all the water is 8 kg. The bucket is $10 - 8 = 2$ kg. Check: half full is $2 + 4 = 6$ kg. The idea to keep: compare two totals that share a part, and the difference shows the part that changed.",
+    "elegant": "The half-full bucket is the bucket and half the water, and half the water is 4 kg, so the bucket is $6 - 4 = 2$ kg."
+  },
+  "whyOnTest": "Comparing two totals that share a hidden part is the core move of bar-model reasoning.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

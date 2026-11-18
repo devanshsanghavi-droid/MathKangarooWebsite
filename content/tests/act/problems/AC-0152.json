@@ -1,0 +1,56 @@
+{
+  "id": "AC-0152",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-01",
+  "difficulty": "medium",
+  "statement": "The function $f$ is defined by $f(x) = 2x^2 - x + 5$. Which of the following expressions is equal to $f(x + 1) - f(x)$ for every real number $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I treated $f(x + 1)$ as $f(x) + 1$, so subtracting $f(x)$ left only $1$."
+    },
+    {
+      "key": "B",
+      "text": "$2x$",
+      "correct": false,
+      "misconception": "I expanded $2(x + 1)^2$ as $2x^2 + 2x + 1$, doubling only the first two terms, and that lost $2x + 1$ from the difference."
+    },
+    {
+      "key": "C",
+      "text": "$4x + 2$",
+      "correct": false,
+      "misconception": "I replaced $x$ with $x + 1$ in the squared term but left the middle term as $-x$ instead of $-(x + 1)$."
+    },
+    {
+      "key": "D",
+      "text": "$4x + 1$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Replace every $x$ in the formula with $x + 1$, including the middle term.",
+    "Write $f(x + 1) = 2(x + 1)^2 - (x + 1) + 5$, expand it fully, then subtract $2x^2 - x + 5$ term by term.",
+    "$f(x + 1) = 2x^2 + 4x + 2 - x - 1 + 5 = 2x^2 + 3x + 6$. Subtract $2x^2 - x + 5$."
+  ],
+  "solutions": {
+    "reliable": "Substitute $x + 1$ for every $x$: $f(x + 1) = 2(x + 1)^2 - (x + 1) + 5 = 2(x^2 + 2x + 1) - x - 1 + 5 = 2x^2 + 3x + 6$. Then $f(x + 1) - f(x) = (2x^2 + 3x + 6) - (2x^2 - x + 5) = 4x + 1$. Check with $x = 0$: $f(1) - f(0) = 6 - 5 = 1$, and $4(0) + 1 = 1$.",
+    "elegant": "Test a value. With $x = 1$: $f(2) - f(1) = 11 - 6 = 5$. Only $4x + 1$ gives $5$ at $x = 1$ ($1$, $2x$ and $4x + 2$ give $1$, $2$ and $6$)."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

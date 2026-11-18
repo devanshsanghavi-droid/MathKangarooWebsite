@@ -1,0 +1,67 @@
+{
+  "id": "KA-1531",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A wall is 4.5 m long and 2.4 m high. It needs two coats of paint. One litre of paint covers 12 square metres, and paint is sold only in 0.5-litre tins. How many tins must be bought?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1.8",
+      "correct": false,
+      "misconception": "I worked out the litres of paint needed and gave that, not the number of tins."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I forgot that the wall needs two coats, so I worked out 1.8 tins and bought 2."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found 3.6 tins and rounded down, which leaves part of the second coat unpainted."
+    },
+    {
+      "key": "D",
+      "text": "3.6",
+      "correct": false,
+      "misconception": "I divided correctly but forgot that tins can only be bought whole."
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-10",
+    "secondary": [
+      "MOD-07"
+    ]
+  },
+  "hints": [
+    "What exactly is being counted in the answer?",
+    "Find the area, double it for two coats, change square metres into litres, then litres into tins. Before answering, re-read: tins come whole.",
+    "The area is $10.8\\text{ m}^2$, two coats make $21.6\\text{ m}^2$, which needs $1.8$ litres, that is $3.6$ tins."
+  ],
+  "solutions": {
+    "reliable": "The wall has area $4.5 \\times 2.4 = 10.8\\text{ m}^2$. Two coats cover $21.6\\text{ m}^2$, which needs $21.6 \\div 12 = 1.8$ litres. Each tin holds $0.5$ litres, so $1.8 \\div 0.5 = 3.6$ tins of paint are used. Three tins are not enough, so 4 tins must be bought. The transferable idea: before answering, check the units and whether the answer has to be a whole number.",
+    "elegant": null
+  },
+  "whyOnTest": "Each step is easy; the marks are lost on the second coat, the unit of the answer and rounding up to whole tins.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

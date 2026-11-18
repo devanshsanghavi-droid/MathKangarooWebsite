@@ -1,0 +1,65 @@
+{
+  "id": "KA-1045",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Leo has plenty of 1-cent, 2-cent, 5-cent and 10-cent coins. He wants to pay exactly 27 cents using as few coins as possible. How many coins does he use?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I made 25 cents with 10 + 10 + 5 and forgot the last 2 cents."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": false,
+      "misconception": "I used two 1-cent coins at the end instead of one 2-cent coin."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I started with 5-cent coins: five of them make 25, then one 2-cent coin."
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I counted the cents instead of the coins."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-06",
+    "secondary": []
+  },
+  "hints": [
+    "Start with the biggest coin you can.",
+    "To use few coins, use big coins first. Take as many 10-cent coins as fit, then 5-cent coins, then 2-cent coins, then 1-cent coins.",
+    "Two 10-cent coins make 20. Then 7 cents are left. One 5-cent coin leaves 2 cents."
+  ],
+  "solutions": {
+    "reliable": "Use the biggest coins first. Two 10-cent coins make 20 cents, leaving 7. One 5-cent coin leaves 2. One 2-cent coin finishes it. So $10 + 10 + 5 + 2 = 27$ uses 4 coins. Three coins are not enough, since the three biggest coins give only $10 + 10 + 10 = 30$, and no three coins from the list make exactly 27. The idea to keep: for fewest coins, take the biggest coin that still fits, again and again.",
+    "elegant": null
+  },
+  "whyOnTest": "Paying with the fewest coins rewards working from the biggest coin down, and checking that fewer is impossible.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

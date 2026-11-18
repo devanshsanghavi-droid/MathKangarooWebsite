@@ -1,0 +1,56 @@
+{
+  "id": "AC-0031",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-03",
+  "difficulty": "easy",
+  "statement": "On a hiking map, $2.5$ centimeters represent $4$ kilometers. Two campsites are $9$ centimeters apart on the map. What is the actual distance, in kilometers, between the campsites?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5.625$",
+      "correct": false,
+      "misconception": "I set up the proportion upside down and computed $9 \\cdot 2.5 \\div 4$."
+    },
+    {
+      "key": "B",
+      "text": "$10.5$",
+      "correct": false,
+      "misconception": "I reasoned by adding: 9 cm is 6.5 cm more than 2.5 cm, so I added 6.5 to the 4 km."
+    },
+    {
+      "key": "C",
+      "text": "$14.4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I treated each centimeter as 4 kilometers and multiplied 9 by 4, but the 4 km goes with 2.5 cm, not 1 cm."
+    }
+  ],
+  "hints": [
+    "How many kilometers does one centimeter represent?",
+    "Find kilometers per centimeter by dividing 4 by 2.5, then multiply by the 9 centimeters.",
+    "Each centimeter is $4 \\div 2.5 = 1.6$ kilometers, so 9 centimeters is $9 \\cdot 1.6$ kilometers."
+  ],
+  "solutions": {
+    "reliable": "Set up a proportion with kilometers over centimeters: $\\dfrac{4}{2.5} = \\dfrac{d}{9}$. Then $d = \\dfrac{4 \\cdot 9}{2.5} = \\dfrac{36}{2.5} = 14.4$ kilometers. The idea: a map scale is a constant ratio, so keep the same units in the same position on both sides of the proportion.",
+    "elegant": "One centimeter stands for $4 \\div 2.5 = 1.6$ km, so $9$ cm stands for $9 \\cdot 1.6 = 14.4$ km."
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

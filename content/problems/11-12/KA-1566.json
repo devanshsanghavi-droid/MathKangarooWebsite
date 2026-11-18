@@ -1,0 +1,68 @@
+{
+  "id": "KA-1566",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A short stick holds 4 beads in a row, and each bead is red, green or blue. Turning the stick end to end reverses the order of the beads. Two sticks count as the same if one becomes the other when turned. How many different sticks are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "36",
+      "correct": false,
+      "misconception": "I removed the 9 sticks that read the same both ways and halved the rest, $(81 - 9)/2$, but forgot to add those 9 back."
+    },
+    {
+      "key": "B",
+      "text": "45",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "54",
+      "correct": false,
+      "misconception": "I halved the 72 sticks that read differently each way and then counted each of the 9 symmetric sticks twice."
+    },
+    {
+      "key": "D",
+      "text": "72",
+      "correct": false,
+      "misconception": "I removed the 9 sticks that read the same both ways but did not halve the others."
+    },
+    {
+      "key": "E",
+      "text": "81",
+      "correct": false,
+      "misconception": "I counted all $3^4$ colourings and did not merge a stick with its reverse."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-03",
+      "GEO-08"
+    ]
+  },
+  "hints": [
+    "Which sticks look exactly the same after turning?",
+    "Pair each colouring with its reverse. Most pairs contain two different colourings that must count once, but some colourings are their own reverse and must not be halved.",
+    "A colouring is its own reverse when bead 1 matches bead 4 and bead 2 matches bead 3: $3 \\times 3 = 9$ such colourings."
+  ],
+  "solutions": {
+    "reliable": "There are $3^4 = 81$ colourings. A colouring reads the same both ways when beads 1 and 4 match and beads 2 and 3 match: $3 \\times 3 = 9$ of them, each a stick on its own. The other 72 colourings pair up with their reverses, giving $72 / 2 = 36$ sticks. The total is $9 + 36 = 45$. The transferable idea: under a symmetry, halve only the objects that the symmetry moves.",
+    "elegant": "Average the number of colourings that each move leaves unchanged: doing nothing fixes 81 and turning fixes 9, so there are $(81 + 9)/2 = 45$ sticks. The transferable idea: the number of patterns up to a symmetry is the average number of colourings each move fixes."
+  },
+  "whyOnTest": "Dividing by the symmetry only works for objects that the symmetry moves, and the symmetric ones are where students go wrong.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

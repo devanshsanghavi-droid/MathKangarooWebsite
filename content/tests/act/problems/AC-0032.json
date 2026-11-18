@@ -1,0 +1,56 @@
+{
+  "id": "AC-0032",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-03",
+  "difficulty": "medium",
+  "statement": "Lena bikes $24$ kilometers to a lake at an average speed of $12$ kilometers per hour. She returns along the same route at an average speed of $8$ kilometers per hour. What is her average speed, in kilometers per hour, for the whole round trip?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4.8$",
+      "correct": false,
+      "misconception": "I divided the one-way distance of 24 km by the total time of 5 hours, forgetting she rode 48 km in all."
+    },
+    {
+      "key": "B",
+      "text": "$9.6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I averaged the two speeds, 12 and 8, but she spends more time at the slower speed, so that simple average is too high."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I divided the total distance of 48 km by only the 3 hours of the return trip."
+    }
+  ],
+  "hints": [
+    "Average speed is total distance divided by total time.",
+    "Find the time for each leg by dividing distance by speed, add the times, then divide the total distance by the total time.",
+    "The trip out takes $24 \\div 12 = 2$ hours and the trip back takes $24 \\div 8 = 3$ hours, so she rides 48 km in 5 hours."
+  ],
+  "solutions": {
+    "reliable": "Going: $24 \\div 12 = 2$ hours. Returning: $24 \\div 8 = 3$ hours. The total distance is $48$ km and the total time is $5$ hours, so the average speed is $48 \\div 5 = 9.6$ km/h. The idea: average speed is total distance over total time, not the average of the speeds, because the slower leg lasts longer.",
+    "elegant": "For two legs of equal distance, the average speed is the harmonic mean of the speeds: $\\dfrac{2 \\cdot 12 \\cdot 8}{12 + 8} = \\dfrac{192}{20} = 9.6$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

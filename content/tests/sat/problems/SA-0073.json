@@ -1,0 +1,56 @@
+{
+  "id": "SA-0073",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "medium",
+  "statement": "Ana earns $15$ dollars per hour tutoring and $12$ dollars per hour working at a cafe. She wants to earn at least $540$ dollars this month and can work at most $45$ hours in total. If she tutors for $14$ hours this month, what is the least whole number of hours she can work at the cafe to meet her goal?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I solved $210 + 12h \\ge 540$ and got 27.5, then rounded down to 27, which leaves her short of 540 dollars."
+    },
+    {
+      "key": "B",
+      "text": "$28$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$31$",
+      "correct": false,
+      "misconception": "I found the most cafe hours she is allowed, $45 - 14 = 31$, instead of the fewest hours that reach her goal."
+    },
+    {
+      "key": "D",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I ignored the tutoring money and divided 540 by 12 to get 45 cafe hours."
+    }
+  ],
+  "hints": [
+    "How much does Ana earn from the $14$ tutoring hours?",
+    "Write an inequality for total earnings with $h$ cafe hours, solve it, and check that the total hours stay at or under 45.",
+    "$15(14) + 12h \\ge 540$ gives $12h \\ge 330$, so $h \\ge 27.5$."
+  ],
+  "solutions": {
+    "reliable": "Tutoring earns $15 \\cdot 14 = 210$ dollars. With $h$ cafe hours she needs $210 + 12h \\ge 540$, so $12h \\ge 330$ and $h \\ge 27.5$. The least whole number is $28$. Check the hours limit: $14 + 28 = 42 \\le 45$, and her earnings are $210 + 336 = 546 \\ge 540$. With $27$ hours she earns only $210 + 324 = 534$.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

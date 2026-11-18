@@ -1,0 +1,56 @@
+{
+  "id": "SA-0034",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "easy",
+  "statement": "A bakery has $60$ cups of flour. Each loaf of bread uses $3$ cups of flour and each tray of muffins uses $2$ cups. The equation $3b + 2m = 60$ describes the numbers of loaves $b$ and trays $m$ that use all of the flour. If the bakery makes $14$ loaves of bread, how many trays of muffins can it make with the flour that is left?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I found the 18 cups of flour left over and gave that as the answer without dividing by the 2 cups each tray needs."
+    },
+    {
+      "key": "C",
+      "text": "$23$",
+      "correct": false,
+      "misconception": "I subtracted the 14 loaves straight from the 60 cups, so I got $(60 - 14) \\div 2 = 23$, but the loaves use 3 cups each."
+    },
+    {
+      "key": "D",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I used all 60 cups for muffins, $60 \\div 2 = 30$, and forgot that the bread had already used some flour."
+    }
+  ],
+  "hints": [
+    "Substitute $b = 14$ into the equation.",
+    "Find how much flour the bread uses, then see how many trays the rest makes.",
+    "$3(14) = 42$ cups go to bread, leaving $60 - 42 = 18$ cups. Each tray uses $2$ cups."
+  ],
+  "solutions": {
+    "reliable": "Substitute $b = 14$: $3(14) + 2m = 60$, so $42 + 2m = 60$, $2m = 18$ and $m = 9$. Check: $42 + 18 = 60$ cups.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

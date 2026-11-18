@@ -1,0 +1,66 @@
+{
+  "id": "AM-1016",
+  "contest": "AMC8",
+  "slot": 5,
+  "area": "ALG",
+  "topic": "ALG-01",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Three houses next to each other on one side of a street have consecutive odd house numbers. The sum of the three numbers is $3$ more than twice the largest number. What is the largest of the three house numbers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I solved it correctly but gave the smallest house number, 5, instead of the largest."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I used consecutive whole numbers n, n + 1, n + 2 instead of consecutive odd numbers, which gave 4, 5, 6."
+    },
+    {
+      "key": "C",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I solved it correctly but gave the middle house number, 7."
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I found the three numbers but gave their sum, 21, instead of the largest number."
+    }
+  ],
+  "hints": [
+    "Consecutive odd numbers go up by $2$, like $11, 13, 15$.",
+    "Call the middle number $n$, so the three numbers are $n - 2$, $n$ and $n + 2$. Their sum is $3n$.",
+    "Solve $3n = 2(n + 2) + 3$. Then remember the question asks for the largest number."
+  ],
+  "solutions": {
+    "reliable": "Let the numbers be $n - 2$, $n$, $n + 2$. Their sum is $3n$, so $3n = 2(n + 2) + 3 = 2n + 7$, which gives $n = 7$. The houses are $5$, $7$ and $9$, and the largest is $9$. Check: $5 + 7 + 9 = 21$ and $2 \\cdot 9 + 3 = 21$.",
+    "elegant": "The sum is the largest number plus the two smaller ones, so the two smaller numbers must add to the largest number plus $3$. If the largest is $L$, then $(L - 4) + (L - 2) = L + 3$, so $L = 9$."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

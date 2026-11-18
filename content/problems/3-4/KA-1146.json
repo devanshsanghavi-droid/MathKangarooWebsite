@@ -1,0 +1,68 @@
+{
+  "id": "KA-1146",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Picture 1 is a square with a star in its top left corner and 1 dot. Each new picture moves the star one corner clockwise and adds a dot. What does picture 10 look like?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "The star is in the top right corner, with 9 dots",
+      "correct": false,
+      "misconception": "I counted only the 9 dots added after picture 1 and forgot the dot that picture 1 already has."
+    },
+    {
+      "key": "B",
+      "text": "The star is in the top right corner, with 10 dots",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "The star is in the top right corner, with 11 dots",
+      "correct": false,
+      "misconception": "I added 10 new dots to picture 1, but from picture 1 to picture 10 there are only 9 new pictures."
+    },
+    {
+      "key": "D",
+      "text": "The star is in the bottom right corner, with 10 dots",
+      "correct": false,
+      "misconception": "I moved the star 10 times, but from picture 1 to picture 10 it only moves 9 times."
+    },
+    {
+      "key": "E",
+      "text": "The star is in the bottom left corner, with 10 dots",
+      "correct": false,
+      "misconception": "I moved the star anticlockwise instead of clockwise."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-03",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "The star and the dots change separately. Follow each one on its own.",
+    "The star goes round 4 corners, so its place repeats every 4 pictures. The dots simply go up by 1 each time. Count how many moves there are from picture 1 to picture 10.",
+    "From picture 1 to picture 10 there are 9 moves, which is 2 full trips round the square and 1 more corner. Picture 1 has 1 dot and picture 2 has 2 dots, so picture 10 has 10 dots."
+  ],
+  "solutions": {
+    "reliable": "The star: it is in the top left corner in pictures 1, 5 and 9, because every 4 moves bring it back. Picture 10 is one move after picture 9, so the star is in the top right corner. The dots: picture 1 has 1 dot, picture 2 has 2 dots, and so on, so picture 10 has 10 dots. Picture 10 has the star in the top right corner and 10 dots. The transferable idea: when a pattern changes two things at once, follow each change on its own and then put them together.",
+    "elegant": "The star is in the top right corner in pictures 2, 6, 10, and so on, every 4 pictures starting from picture 2. Every picture has as many dots as its number. So picture 10: top right, 10 dots."
+  },
+  "whyOnTest": "A pattern that changes two things at once, one going round a cycle and one that keeps growing, is a common Kangaroo trap.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0103",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-01",
+  "difficulty": "hard",
+  "statement": "For $x > 0$, the expression $\\dfrac{\\left(x^{5/4}\\right)^{2} \\cdot \\sqrt[3]{x^{2}}}{x^{1/6}}$ is equivalent to $x^{k}$, where $k$ is a constant. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{15}{4}$",
+      "correct": false,
+      "misconception": "I added the exponents for the power, writing $\\left(x^{5/4}\\right)^2$ as $x^{13/4}$, so I got $\\frac{13}{4} + \\frac{2}{3} - \\frac{1}{6} = \\frac{15}{4}$."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{23}{6}$",
+      "correct": false,
+      "misconception": "I wrote $\\sqrt[3]{x^2}$ as $x^{3/2}$, with the fraction upside down, so I got $\\frac{5}{2} + \\frac{3}{2} - \\frac{1}{6} = \\frac{23}{6}$."
+    },
+    {
+      "key": "D",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I added the top exponents to get $\\frac{19}{6}$ and then divided by $\\frac{1}{6}$ instead of subtracting it."
+    }
+  ],
+  "hints": [
+    "Write every factor as a power of $x$ with a fractional exponent.",
+    "A power of a power multiplies exponents, $\\sqrt[3]{x^2} = x^{2/3}$, multiplying adds exponents and dividing subtracts them.",
+    "The numerator is $x^{5/2} \\cdot x^{2/3}$ and the denominator is $x^{1/6}$, so $k = \\frac{5}{2} + \\frac{2}{3} - \\frac{1}{6}$. Use sixths."
+  ],
+  "solutions": {
+    "reliable": "$\\left(x^{5/4}\\right)^2 = x^{5/2}$ and $\\sqrt[3]{x^2} = x^{2/3}$. Multiplying adds exponents and dividing subtracts them, so $k = \\frac{5}{2} + \\frac{2}{3} - \\frac{1}{6} = \\frac{15}{6} + \\frac{4}{6} - \\frac{1}{6} = \\frac{18}{6} = 3$. Check with $x = 64$: $\\left(64^{5/4}\\right)^2 = 64^{5/2} = 32{,}768$, $\\sqrt[3]{64^2} = 16$, and $64^{1/6} = 2$, so the expression is $32{,}768 \\cdot 16 / 2 = 262{,}144 = 64^3$.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

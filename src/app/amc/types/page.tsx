@@ -12,7 +12,7 @@ export const dynamic = 'force-static';
 
 const TITLE = 'AMC problem types (beta)';
 const DESCRIPTION =
-  'The recurring patterns behind AMC 10 and AMC 12 problems, from complementary counting and ' +
+  'The recurring patterns behind AMC 8, AMC 10 and AMC 12 problems, from complementary counting and ' +
   "Vieta's formulas to power of a point, each with the cues that should make you reach for it.";
 
 export function generateMetadata(): Metadata {
@@ -46,7 +46,7 @@ export default function AmcTypesPage() {
       <PageHeader
         eyebrow={
           <>
-            AMC 10 and AMC 12 <BetaBadge />
+            AMC 8, AMC 10 and AMC 12 <BetaBadge />
           </>
         }
         title="Problem types"

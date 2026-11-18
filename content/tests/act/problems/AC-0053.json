@@ -1,0 +1,56 @@
+{
+  "id": "AC-0053",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "hard",
+  "statement": "For a certain constant $k$, the solution set of the inequality $3x - k \\ge 5x + 7$ is $x \\le -4$. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I moved the $-k$ to the right side but kept it as $-k$, so I had $-2x \\ge 7 - k$, and $\\frac{k - 7}{2} = -4$ gave $k = -1$."
+    },
+    {
+      "key": "C",
+      "text": "$-11$",
+      "correct": false,
+      "misconception": "I got $-2x \\ge 7 + k$ and set $7 + k$ equal to $-4$, forgetting that the $-4$ is the boundary for $x$, not for $-2x$."
+    },
+    {
+      "key": "D",
+      "text": "$-15$",
+      "correct": false,
+      "misconception": "I divided by $-2$ but dropped the negative from the right side, so I set $\\frac{7 + k}{2} = -4$ and got $k = -15$."
+    }
+  ],
+  "hints": [
+    "Solve the inequality for $x$ while keeping $k$ as a letter.",
+    "Collect the $x$ terms on one side. You will divide by a negative number, so the sign flips. Then match the boundary to $-4$.",
+    "You should reach $-2x \\ge 7 + k$, so $x \\le -\\frac{7 + k}{2}$. Set $-\\frac{7 + k}{2} = -4$ and solve for $k$."
+  ],
+  "solutions": {
+    "reliable": "Subtract $5x$ and add $k$ to both sides: $-2x \\ge 7 + k$. Divide by $-2$ and reverse the sign: $x \\le -\\frac{7 + k}{2}$. This must be $x \\le -4$, so $\\frac{7 + k}{2} = 4$, giving $7 + k = 8$ and $k = 1$. Check: with $k = 1$, $3x - 1 \\ge 5x + 7$ gives $-8 \\ge 2x$, so $x \\le -4$.",
+    "elegant": "The boundary of the solution set is where the two sides are equal. At $x = -4$: $3(-4) - k = 5(-4) + 7$, so $-12 - k = -13$ and $k = 1$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

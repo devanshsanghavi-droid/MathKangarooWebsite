@@ -1,0 +1,68 @@
+{
+  "id": "KA-1581",
+  "band": "11-12",
+  "points": 4,
+  "statement": "For how many whole numbers $n$ from 1 to 100 is $n^6 - 1$ divisible by 7?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "14",
+      "correct": false,
+      "misconception": "I counted the multiples of 7, which are exactly the numbers that do not work."
+    },
+    {
+      "key": "B",
+      "text": "44",
+      "correct": false,
+      "misconception": "I only counted the $n$ for which $n^3 - 1$ is a multiple of 7 and forgot that $n^3 + 1$ can be the multiple instead."
+    },
+    {
+      "key": "C",
+      "text": "84",
+      "correct": false,
+      "misconception": "I only checked up to 98, the last multiple of 7, and missed 99 and 100."
+    },
+    {
+      "key": "D",
+      "text": "86",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "100",
+      "correct": false,
+      "misconception": "I used the rule that $n^6$ always leaves remainder 1 on division by 7, but it fails when $n$ is itself a multiple of 7."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "NUM-05",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Only the remainder of $n$ on division by 7 matters.",
+    "Check the seven possible remainders $0, 1, \\dots, 6$ of $n$ and find the remainder of $n^6$ in each case. Then count how many numbers from 1 to 100 have the good remainders.",
+    "$n^6 - 1 = (n^3 - 1)(n^3 + 1)$. Cubes leave remainder 0, 1 or 6 on division by 7, and 0 happens only when 7 divides $n$."
+  ],
+  "solutions": {
+    "reliable": "Write $n^6 - 1 = (n^3 - 1)(n^3 + 1)$. Checking remainders: $1^3, 2^3, 4^3$ leave remainder 1 ($1, 8, 64$) and $3^3, 5^3, 6^3$ leave remainder 6 ($27, 125, 216$), so for these $n$ one of the two brackets is a multiple of 7. If 7 divides $n$, then $n^6 - 1$ leaves remainder 6. So $n^6 - 1$ is divisible by 7 exactly when 7 does not divide $n$. From 1 to 100 there are 14 multiples of 7, leaving $100 - 14 = 86$. The transferable idea: test every remainder once and the answer holds for all numbers.",
+    "elegant": "Fermat's little theorem says $n^6$ leaves remainder 1 on division by 7 whenever 7 does not divide $n$. So every $n$ except the 14 multiples of 7 works: 86."
+  },
+  "whyOnTest": "Remainder tables settle questions about infinitely many numbers, and the factorisation tempts students to count only half the cases.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

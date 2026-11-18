@@ -1,0 +1,65 @@
+{
+  "id": "KA-1107",
+  "band": "3-4",
+  "points": 5,
+  "statement": "The numbers 1 to 10 are written on a board. Again and again, Kim rubs out two numbers and writes their sum minus 1 instead. When one number is left, what is it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "37",
+      "correct": false,
+      "misconception": "I thought each step takes away 2, one for each number rubbed out."
+    },
+    {
+      "key": "B",
+      "text": "45",
+      "correct": false,
+      "misconception": "I took away 1 for each of the 10 numbers, but going from ten numbers to one takes only 9 steps."
+    },
+    {
+      "key": "C",
+      "text": "46",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "54",
+      "correct": false,
+      "misconception": "I took away 1 only once, as if Kim did the rubbing out a single time."
+    },
+    {
+      "key": "E",
+      "text": "55",
+      "correct": false,
+      "misconception": "I added up 1 to 10 and forgot that each step takes 1 away from the total."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": []
+  },
+  "hints": [
+    "Try it with just 1, 2 and 3 first.",
+    "Watch what happens to the total of all the numbers on the board at each step, and count how many steps it takes to go from ten numbers down to one.",
+    "The total starts at 1 + 2 + ... + 10 = 55. Each step lowers the total by exactly 1 and leaves one number fewer, so there are 9 steps. The last number is 55 - 9 = 46."
+  ],
+  "solutions": {
+    "reliable": "Small case: with 1, 2, 3, rub out 1 and 2 and write 2, leaving 2 and 3, then write 2 + 3 - 1 = 4. That is the total 6 minus 1 for each of the 2 steps. In general each step lowers the total by 1 and removes one number. Ten numbers need 9 steps, and 1 + 2 + ... + 10 = 55, so the last number is 55 - 9 = 46, whatever order Kim chooses. The transferable idea: try a tiny case, then look for a quantity that changes in a predictable way.",
+    "elegant": "The total 55 drops by exactly 1 per step, and 9 steps turn ten numbers into one, so the last number is 46."
+  },
+  "whyOnTest": "The process looks too long to follow, but a tiny case shows the total falls by 1 each step, the kind of idea 5-point problems test.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

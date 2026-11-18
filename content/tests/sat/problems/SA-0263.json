@@ -1,0 +1,56 @@
+{
+  "id": "SA-0263",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "easy",
+  "statement": "A sailmaker makes two triangular sails that are similar. One side of the smaller sail is $4$ meters long, and the corresponding side of the larger sail is $6$ meters long. The smaller sail has an area of $16$ square meters. What is the area of the larger sail, in square meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I multiplied the area by the length ratio $\\frac{6}{4} = 1.5$ instead of by its square."
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$54$",
+      "correct": false,
+      "misconception": "I cubed the length ratio, using $1.5^3 = 3.375$, as if area scaled like volume."
+    },
+    {
+      "key": "D",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I used the difference of the sides, $6 - 4 = 2$, and multiplied the area by $2^2 = 4$."
+    }
+  ],
+  "hints": [
+    "Areas of similar figures do not scale like lengths.",
+    "If lengths are multiplied by $k$, areas are multiplied by $k^2$. Find $k$ from the corresponding sides.",
+    "Here $k = \\frac{6}{4} = 1.5$, so multiply $16$ by $1.5^2 = 2.25$."
+  ],
+  "solutions": {
+    "reliable": "The scale factor from the smaller sail to the larger sail is $\\frac{6}{4} = 1.5$. Areas of similar figures scale by the square of the scale factor, so the larger area is $16 \\times 1.5^2 = 16 \\times 2.25 = 36$ square meters.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

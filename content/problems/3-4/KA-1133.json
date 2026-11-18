@@ -1,0 +1,68 @@
+{
+  "id": "KA-1133",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Kai builds a cube wall 5 long, 3 tall and 2 thick. He removes an archway 1 cube wide and 2 tall from the middle of the bottom, right through. How many cubes are left?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "13",
+      "correct": false,
+      "misconception": "I only counted the front layer that I could picture, 15 cubes, and took away its 2 archway cubes."
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": false,
+      "misconception": "I only counted the front layer of the wall and forgot the archway too."
+    },
+    {
+      "key": "C",
+      "text": "22",
+      "correct": false,
+      "misconception": "I took away 4 cubes from the front layer and 4 from the back layer, but each layer only loses 2."
+    },
+    {
+      "key": "D",
+      "text": "26",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "28",
+      "correct": false,
+      "misconception": "I only took the archway out of the front layer, but it goes right through, so the back layer loses 2 cubes as well."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-14",
+    "secondary": [
+      "GEO-13",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "How many cubes does the whole wall have before the archway?",
+    "Count the full block as length times height times thickness. Then count the cubes removed: the archway goes through every layer of the thickness, not just the one you can see.",
+    "The full wall has $5 \\times 3 \\times 2 = 30$ cubes. The archway removes 2 cubes from the front layer and 2 from the back layer."
+  ],
+  "solutions": {
+    "reliable": "The full wall is $5 \\times 3 = 15$ cubes in each layer, and there are 2 layers, so 30 cubes. The archway is 1 cube wide and 2 cubes tall, so it takes 2 cubes out of each layer. It goes right through, so both layers lose 2: that is 4 cubes. $30 - 4 = 26$. The transferable idea: count a solid layer by layer, including the layers you cannot see.",
+    "elegant": "Each layer becomes $15 - 2 = 13$ cubes, and there are 2 identical layers: $2 \\times 13 = 26$."
+  },
+  "whyOnTest": "It checks that the student counts the hidden back layer of a solid, not just the face they can picture.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

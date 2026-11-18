@@ -1,0 +1,56 @@
+{
+  "id": "SA-0159",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-06",
+  "difficulty": "easy",
+  "statement": "What value of $x$ satisfies the equation $|2x - 6| + 4 = 4$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I set $2x - 6$ equal to $0$ but moved the $6$ without changing its sign, so I got $2x = -6$ and $x = -3$."
+    },
+    {
+      "key": "B",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I forgot to subtract $4$ from both sides and solved $|2x - 6| = 4$, using the case $2x - 6 = -4$, which gives $x = 1$."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I forgot to subtract $4$ from both sides and solved $|2x - 6| = 4$, using the case $2x - 6 = 4$, which gives $x = 5$."
+    },
+    {
+      "key": "D",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Get the absolute value by itself on one side first.",
+    "Subtract $4$ from both sides. Which number has an absolute value of $0$?",
+    "$|2x - 6| = 0$ happens only when $2x - 6 = 0$."
+  ],
+  "solutions": {
+    "reliable": "Subtracting $4$ from both sides gives $|2x - 6| = 0$. The only number with absolute value $0$ is $0$, so $2x - 6 = 0$ and $x = 3$. Check: $|0| + 4 = 4$.",
+    "elegant": null
+  },
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

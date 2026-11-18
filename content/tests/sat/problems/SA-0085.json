@@ -1,0 +1,56 @@
+{
+  "id": "SA-0085",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "easy",
+  "statement": "A bakery's proofing cabinet must stay within $2.5$ degrees Celsius of $27$ degrees Celsius. Which inequality gives all the allowed temperatures $T$, in degrees Celsius?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24.5 \\le T \\le 29.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$27 \\le T \\le 29.5$",
+      "correct": false,
+      "misconception": "I allowed the temperature to go 2.5 degrees above 27 but not 2.5 degrees below it."
+    },
+    {
+      "key": "C",
+      "text": "$22 \\le T \\le 32$",
+      "correct": false,
+      "misconception": "I doubled the tolerance and went 5 degrees above and below 27, but 'within 2.5' already means 2.5 degrees in each direction."
+    },
+    {
+      "key": "D",
+      "text": "$T \\le 29.5$",
+      "correct": false,
+      "misconception": "I wrote only the upper limit, so my inequality allows temperatures far below 27 degrees."
+    }
+  ],
+  "hints": [
+    "'Within $2.5$ of $27$' allows going up or down.",
+    "Find the lowest allowed temperature and the highest allowed temperature, then write one compound inequality.",
+    "The lowest is $27 - 2.5$ and the highest is $27 + 2.5$, and both endpoints are allowed."
+  ],
+  "solutions": {
+    "reliable": "Within $2.5$ degrees of $27$ means the temperature can be as low as $27 - 2.5 = 24.5$ and as high as $27 + 2.5 = 29.5$, endpoints included. So $24.5 \\le T \\le 29.5$. The same condition can be written $|T - 27| \\le 2.5$. Key idea: a tolerance around a target value gives a compound inequality centered on the target.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

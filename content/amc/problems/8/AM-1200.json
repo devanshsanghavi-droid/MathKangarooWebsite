@@ -1,0 +1,66 @@
+{
+  "id": "AM-1200",
+  "contest": "AMC8",
+  "slot": 17,
+  "area": "NT",
+  "topic": "NT-04",
+  "types": [
+    "T-COMPLEMENT"
+  ],
+  "statement": "For how many integers $n$ with $1 \\le n \\le 100$ is the greatest common divisor of $n$ and $n + 12$ equal to $4$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I thought the greatest common divisor is 4 only when n leaves remainder 4 on division by 12, so I counted 4, 16, 28, up to 100 and missed numbers like 8 and 20."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I only counted n with n + 12 at most 100, so I stopped at 88 and lost 92 and 100."
+    },
+    {
+      "key": "C",
+      "text": "$17$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I counted every multiple of 4, but when n is also a multiple of 3 the greatest common divisor is 12, not 4."
+    },
+    {
+      "key": "E",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I added the 25 multiples of 4 and the 8 multiples of 12 instead of taking the multiples of 12 away."
+    }
+  ],
+  "hints": [
+    "Any number that divides both $n$ and $n + 12$ also divides their difference.",
+    "So the common divisors of $n$ and $n + 12$ are the same as the common divisors of $n$ and $12$. When is $\\gcd(n, 12) = 4$?",
+    "$n$ must be a multiple of $4$ but not a multiple of $3$. Count the multiples of $4$ up to $100$, then remove the multiples of $12$."
+  ],
+  "solutions": {
+    "reliable": "A number divides both $n$ and $n + 12$ exactly when it divides both $n$ and $12$, so $\\gcd(n, n + 12) = \\gcd(n, 12)$. Since $12 = 2^2 \\cdot 3$, $\\gcd(n, 12) = 4$ exactly when $4$ divides $n$ and $3$ does not (an extra factor of $2$ in $n$ does not matter, because $12$ has only two). From $1$ to $100$ there are $25$ multiples of $4$, and $8$ of them ($12, 24, \\ldots, 96$) are multiples of $3$. So $25 - 8 = 17$ values work. For example, $\\gcd(8, 20) = 4$ but $\\gcd(12, 24) = 12$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

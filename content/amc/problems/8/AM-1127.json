@@ -1,0 +1,68 @@
+{
+  "id": "AM-1127",
+  "contest": "AMC8",
+  "slot": 18,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-SYMMETRY"
+  ],
+  "statement": "Three solid blocks are glued together into a tower. The bottom block is $6 \\times 6 \\times 2$, the middle block is $4 \\times 4 \\times 2$, and the top block is $2 \\times 2 \\times 2$, where the $2$ is the height of each block. Each block sits centered on top of the one below it, with its edges parallel to the edges of that block. What is the total surface area of the tower, including the face it stands on?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$132$",
+      "correct": false,
+      "misconception": "I left out the bottom face of the tower, the $6 \\times 6$ square it stands on, which is still part of its surface."
+    },
+    {
+      "key": "B",
+      "text": "$136$",
+      "correct": false,
+      "misconception": "I counted the side walls ($96$), the top of the small block ($4$) and the bottom face ($36$), but I missed the uncovered rings on top of the two lower blocks."
+    },
+    {
+      "key": "C",
+      "text": "$148$",
+      "correct": false,
+      "misconception": "I forgot the uncovered ring on top of the bottom block, which is the $36 - 16 = 20$ square units around the middle block."
+    },
+    {
+      "key": "D",
+      "text": "$156$",
+      "correct": false,
+      "misconception": "I forgot the uncovered ring on top of the middle block, which is the $16 - 4 = 12$ square units around the top block."
+    },
+    {
+      "key": "E",
+      "text": "$168$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Look straight down at the tower. How much upward-facing surface do you see altogether?",
+    "All the upward-facing pieces together look exactly like a $6 \\times 6$ square from above, and so does the bottom face. After that, only the vertical side walls of the three blocks are left to add.",
+    "Top pieces and bottom face give $36 + 36 = 72$. The side walls give $4 \\cdot 6 \\cdot 2 + 4 \\cdot 4 \\cdot 2 + 4 \\cdot 2 \\cdot 2$."
+  ],
+  "solutions": {
+    "reliable": "Every face of the tower points up, down, or sideways. The faces that point up are the top of the small block and the two uncovered rings; seen from above they fit together into a full $6 \\times 6$ square, so they have area $36$. The face that points down is the bottom of the big block, area $36$. The sideways faces are the four walls of each block: $4 \\cdot (6 \\cdot 2) = 48$, $4 \\cdot (4 \\cdot 2) = 32$ and $4 \\cdot (2 \\cdot 2) = 16$, for $96$ in all. The total is $36 + 36 + 96 = 168$.",
+    "elegant": "The three blocks on their own have surface areas $2 \\cdot 36 + 4 \\cdot 12 = 120$, $2 \\cdot 16 + 4 \\cdot 8 = 64$ and $6 \\cdot 4 = 24$, a total of $208$. Each glued contact hides two faces of the same size, one on each block: the $4 \\times 4$ contact hides $2 \\cdot 16 = 32$ and the $2 \\times 2$ contact hides $2 \\cdot 4 = 8$. So the tower has surface area $208 - 32 - 8 = 168$."
+  },
+  "formulas": [
+    "F-GEO-16"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0078",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "medium",
+  "statement": "In the equation $a(x - 3) = 4x + 6$, $a$ is a constant. For which value of $a$ does the equation have no solution?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-4$",
+      "correct": false,
+      "misconception": "I thought the $x$ terms disappear when $ax$ and $4x$ are opposites, so I chose $a = -4$."
+    },
+    {
+      "key": "B",
+      "text": "$-2$",
+      "correct": false,
+      "misconception": "I made the constant terms match by setting $-3a = 6$, which gives $a = -2$."
+    },
+    {
+      "key": "C",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I thought choosing $a = 0$ would wipe out the left side and leave nothing to solve."
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Expand the left side and collect the $x$ terms on one side.",
+    "After expanding you get $ax - 3a = 4x + 6$. A linear equation has no solution when the $x$ terms cancel but the constants do not match.",
+    "Rewrite it as $(a - 4)x = 3a + 6$. The $x$ term vanishes when $a = 4$; check that the right side is then not zero."
+  ],
+  "solutions": {
+    "reliable": "Expand: $ax - 3a = 4x + 6$, so $(a - 4)x = 3a + 6$. If $a \\ne 4$, divide by $a - 4$ to get exactly one solution. If $a = 4$, the equation becomes $0 \\cdot x = 18$, which is false for every $x$. So $a = 4$ gives no solution. (For comparison, $a = -4$ gives $x = \\tfrac{3}{4}$, $a = -2$ gives $x = 0$ and $a = 0$ gives $x = -\\tfrac{3}{2}$.)",
+    "elegant": "Think of each side as a line in $x$. No solution means the lines are parallel and distinct: equal slopes, $a = 4$, and then the intercepts $-12$ and $6$ differ."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

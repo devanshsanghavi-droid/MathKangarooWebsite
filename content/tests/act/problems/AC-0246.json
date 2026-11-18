@@ -1,0 +1,56 @@
+{
+  "id": "AC-0246",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-07",
+  "difficulty": "medium",
+  "statement": "In the $xy$-plane, the points $(-1, 2)$ and $(5, 10)$ are the endpoints of a diameter of a circle. Which of the following is an equation of the circle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$(x - 2)^2 + (y - 6)^2 = 25$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$(x - 2)^2 + (y - 6)^2 = 100$",
+      "correct": false,
+      "misconception": "I found that the diameter is 10 but used 10 as the radius, so I squared 10 and put 100 on the right side."
+    },
+    {
+      "key": "C",
+      "text": "$(x + 2)^2 + (y + 6)^2 = 25$",
+      "correct": false,
+      "misconception": "I found the center (2, 6) correctly but wrote plus signs in the equation, which would put the center at (-2, -6)."
+    },
+    {
+      "key": "D",
+      "text": "$(x - 3)^2 + (y - 4)^2 = 25$",
+      "correct": false,
+      "misconception": "I took half of the change in x and half of the change in y, 6/2 and 8/2, as the center instead of averaging the endpoints."
+    }
+  ],
+  "hints": [
+    "The center of the circle is the midpoint of any diameter.",
+    "Average the endpoints to get the center, and use the distance formula to get the diameter. The radius is half the diameter.",
+    "The center is $\\left(\\frac{-1 + 5}{2}, \\frac{2 + 10}{2}\\right) = (2, 6)$ and the diameter is $\\sqrt{6^2 + 8^2} = 10$, so $r = 5$."
+  ],
+  "solutions": {
+    "reliable": "The center is the midpoint of the diameter: $\\left(\\frac{-1 + 5}{2}, \\frac{2 + 10}{2}\\right) = (2, 6)$. The diameter has length $\\sqrt{(5 - (-1))^2 + (10 - 2)^2} = \\sqrt{36 + 64} = 10$, so the radius is $5$ and $r^2 = 25$. The equation is $(x - 2)^2 + (y - 6)^2 = 25$. Check: $(-1, 2)$ gives $9 + 16 = 25$.",
+    "elegant": "A point $(x, y)$ is on a circle with diameter $\\overline{PQ}$ exactly when $(x + 1)(x - 5) + (y - 2)(y - 10) = 0$. Expanding gives $x^2 - 4x + y^2 - 12y + 15 = 0$, which completes to $(x - 2)^2 + (y - 6)^2 = 25$."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

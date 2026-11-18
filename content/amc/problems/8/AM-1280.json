@@ -1,0 +1,68 @@
+{
+  "id": "AM-1280",
+  "contest": "AMC8",
+  "slot": 19,
+  "area": "CP",
+  "topic": "CP-02",
+  "types": [
+    "T-SYMMETRY"
+  ],
+  "statement": "Six friends, Ana, Ben, Cal, Dev, Eve and Fay, line up in a row for a photo. Dev and Eve insist on standing next to each other. Also, reading from left to right, Ana must appear somewhere before Ben, and Ben somewhere before Cal, though they need not be next to each other. How many different line-ups are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$40$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$80$",
+      "correct": false,
+      "misconception": "I glued Dev and Eve together to get 240 line-ups, but then divided by 3 instead of 6 because there are 3 people in the Ana, Ben, Cal rule."
+    },
+    {
+      "key": "C",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I divided all 720 line-ups by 6 for the Ana, Ben, Cal rule and forgot that Dev and Eve must stand together."
+    },
+    {
+      "key": "D",
+      "text": "$240$",
+      "correct": false,
+      "misconception": "I handled Dev and Eve as one block with 2 orders, getting 240 line-ups, but forgot the Ana, Ben, Cal rule."
+    },
+    {
+      "key": "E",
+      "text": "$720$",
+      "correct": false,
+      "misconception": "I ignored both rules and counted every line-up of the 6 friends, 6! = 720."
+    }
+  ],
+  "hints": [
+    "Treat Dev and Eve as a single block. How many units are being arranged, and in how many ways can the block itself be ordered?",
+    "Ana, Ben and Cal can appear in 6 different orders among the spots they take, and by symmetry each order happens equally often.",
+    "With the block there are 5! times 2 = 240 line-ups, and exactly one out of every 6 of them has Ana, Ben, Cal in that order."
+  ],
+  "solutions": {
+    "reliable": "Glue Dev and Eve into one block. Then $5$ units are arranged, in $5! = 120$ ways, and the block can be Dev-Eve or Eve-Dev, so $240$ line-ups have Dev and Eve together. In any of these, look at the three spots taken by Ana, Ben and Cal. Shuffling those three people among their spots keeps Dev and Eve together, so all $3! = 6$ orders of Ana, Ben and Cal happen equally often. Exactly one of the $6$ orders is Ana, Ben, Cal from left to right, so the answer is $\\frac{240}{6} = 40$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-02"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

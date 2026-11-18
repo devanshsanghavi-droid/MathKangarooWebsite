@@ -1,0 +1,56 @@
+{
+  "id": "SA-0260",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-02",
+  "difficulty": "hard",
+  "statement": "In triangle $PQR$, the measure of angle $P$ is $64^\\circ$. The bisector of angle $Q$ and the bisector of angle $R$ intersect at point $T$ inside the triangle. What is the measure of angle $QTR$, in degrees?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$58$",
+      "correct": false,
+      "misconception": "I found $Q + R = 116$ and took half of it, 58, which is the sum of the two half angles, not the angle at $T$."
+    },
+    {
+      "key": "B",
+      "text": "$116$",
+      "correct": false,
+      "misconception": "I found $Q + R = 180 - 64 = 116$ and reported that sum as angle $QTR$."
+    },
+    {
+      "key": "C",
+      "text": "$122$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$148$",
+      "correct": false,
+      "misconception": "I halved only angle $P$ and subtracted it from 180, so I got $180 - 32 = 148$."
+    }
+  ],
+  "hints": [
+    "Look at triangle $QTR$. What do you know about its angles at $Q$ and $R$?",
+    "Angle $TQR$ is half of angle $Q$ and angle $TRQ$ is half of angle $R$. You only need the sum $Q + R$, not each angle.",
+    "Since $Q + R = 116$, the two half angles add to $58$, so angle $QTR = 180 - 58$."
+  ],
+  "solutions": {
+    "reliable": "In triangle $PQR$, $Q + R = 180 - 64 = 116$ degrees. The bisectors cut these angles in half, so in triangle $QTR$ the angles at $Q$ and $R$ are $\\frac{Q}{2}$ and $\\frac{R}{2}$, which add to $58$ degrees. Therefore angle $QTR = 180 - 58 = 122$ degrees.",
+    "elegant": "Since only $Q + R$ matters, try $Q = R = 58$. The half angles are $29$ each, so angle $QTR = 180 - 58 = 122$. In general, angle $QTR = 90 + \\frac{P}{2} = 90 + 32 = 122$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

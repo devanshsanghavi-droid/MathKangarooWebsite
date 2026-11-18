@@ -1,0 +1,66 @@
+{
+  "id": "AM-1194",
+  "contest": "AMC8",
+  "slot": 15,
+  "area": "NT",
+  "topic": "NT-08",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "What is the smallest positive integer $n$ for which $n! = 1 \\cdot 2 \\cdot 3 \\cdots n$ is divisible by $2^{10} = 1024$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I found the smallest n with n! at least 1024, which is 7 since 7! = 5040, but being bigger than 1024 is not the same as being divisible by it."
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I matched the exponent and guessed n = 10 because of 2^10, but 10! has only 8 factors of 2."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I counted only two factors of 2 in 8 instead of three, so I thought 12! had just 9 factors of 2 and went on to 14."
+    },
+    {
+      "key": "E",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I counted one factor of 2 for each even number, so I thought I needed ten even numbers, all the way up to 20."
+    }
+  ],
+  "hints": [
+    "Count the factors of $2$ in $n!$ by going through the even numbers one at a time.",
+    "The even numbers $2, 4, 6, 8, 10, 12$ contribute $1, 2, 1, 3, 1, 2$ factors of $2$.",
+    "Keep a running total and stop as soon as it reaches $10$. Odd numbers add nothing."
+  ],
+  "solutions": {
+    "reliable": "Only even factors contribute $2$s. Keeping a running total: $2$ gives $1$; $4 = 2^2$ brings it to $3$; $6$ to $4$; $8 = 2^3$ to $7$; $10$ to $8$; $12 = 2^2 \\cdot 3$ to $10$. So $11!$ has only $8$ factors of $2$, while $12!$ has exactly $10$. The smallest $n$ is $12$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

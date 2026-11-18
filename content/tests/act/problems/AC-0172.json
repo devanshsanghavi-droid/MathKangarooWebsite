@@ -1,0 +1,56 @@
+{
+  "id": "AC-0172",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-08",
+  "difficulty": "easy",
+  "statement": "A buoy bobs up and down on waves. Its height above the sea floor varies between a minimum of $1.2$ meters and a maximum of $4.8$ meters. The height is modeled by $h(t) = A\\sin(Bt) + D$, where $A > 0$. What is the value of $A$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1.8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I averaged the maximum and minimum, $\\frac{4.8 + 1.2}{2} = 3$, but that is the midline $D$, not the amplitude."
+    },
+    {
+      "key": "C",
+      "text": "$3.6$",
+      "correct": false,
+      "misconception": "I subtracted the minimum from the maximum to get $3.6$ and forgot that the amplitude is only half of that distance."
+    },
+    {
+      "key": "D",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I added the maximum and minimum, $4.8 + 1.2 = 6$, thinking the amplitude covers the whole height."
+    }
+  ],
+  "hints": [
+    "The amplitude is the distance from the midline to the maximum.",
+    "The midline is halfway between the maximum and minimum. The amplitude is half the distance from the minimum to the maximum.",
+    "$A = \\frac{4.8 - 1.2}{2}$."
+  ],
+  "solutions": {
+    "reliable": "The graph of $A\\sin(Bt) + D$ goes from $D - A$ up to $D + A$, so the distance from minimum to maximum is $2A$. Here $2A = 4.8 - 1.2 = 3.6$, so $A = 1.8$. (The midline is $D = \\frac{4.8 + 1.2}{2} = 3$.)",
+    "elegant": null
+  },
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

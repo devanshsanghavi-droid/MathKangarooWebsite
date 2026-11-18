@@ -1,0 +1,56 @@
+{
+  "id": "SA-0212",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-03",
+  "difficulty": "medium",
+  "statement": "In 2020, a school had $640$ students, and $15\\%$ of them were in the band. In 2024, the school had $720$ students, and $20\\%$ of them were in the band. By what percent did the number of students in the band increase from 2020 to 2024?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5\\%$",
+      "correct": false,
+      "misconception": "I subtracted the two percents, $20\\% - 15\\%$, but that is the change in percentage points, not the percent increase in the number of band students."
+    },
+    {
+      "key": "B",
+      "text": "$12.5\\%$",
+      "correct": false,
+      "misconception": "I found the percent increase in the total number of students, $80 \\div 640$, instead of the increase in band students."
+    },
+    {
+      "key": "C",
+      "text": "$33\\frac{1}{3}\\%$",
+      "correct": false,
+      "misconception": "I divided the increase of 48 band students by the 2024 count of 144 instead of by the 2020 count of 96."
+    },
+    {
+      "key": "D",
+      "text": "$50\\%$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Find the actual number of band students in each year before comparing.",
+    "Percent increase is the change in the number of band students divided by the original number of band students.",
+    "There were $0.15 \\cdot 640 = 96$ band students in 2020 and $0.20 \\cdot 720 = 144$ in 2024, a change of $48$."
+  ],
+  "solutions": {
+    "reliable": "In 2020 there were $0.15(640) = 96$ band students, and in 2024 there were $0.20(720) = 144$. The increase is $144 - 96 = 48$, and $\\dfrac{48}{96} = 0.5$, so the number increased by $50\\%$.",
+    "elegant": "The ratio of band students is $\\dfrac{0.20 \\cdot 720}{0.15 \\cdot 640} = \\dfrac{4}{3} \\cdot \\dfrac{9}{8} = \\dfrac{3}{2}$, so the number grew by half, or $50\\%$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

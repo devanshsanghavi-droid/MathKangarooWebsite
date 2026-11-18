@@ -1,0 +1,67 @@
+{
+  "id": "AM-1008",
+  "contest": "AMC8",
+  "slot": 3,
+  "area": "ALG",
+  "topic": "ALG-02",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-INVARIANT"
+  ],
+  "statement": "Right now, the ages of Lena and her older cousin Marco are in the ratio $3 : 5$. In $4$ years, the ratio of their ages will be $2 : 3$. What is the sum of their ages right now?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I added the parts of the ratio, 3 + 5 = 8, and thought that was the sum of the ages."
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found Lena's age, 12, and gave that instead of the sum of both ages."
+    },
+    {
+      "key": "C",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I found Marco's age, 20, and gave that instead of the sum of both ages."
+    },
+    {
+      "key": "D",
+      "text": "$32$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I found their ages in 4 years, 16 and 24, and added those, but the question asks about their ages right now."
+    }
+  ],
+  "hints": [
+    "Call the ages now $3k$ and $5k$ for some number $k$.",
+    "In $4$ years the ages are $3k + 4$ and $5k + 4$, and these are in the ratio $2 : 3$.",
+    "So $3(3k + 4) = 2(5k + 4)$. Solve for $k$, then add the two ages now."
+  ],
+  "solutions": {
+    "reliable": "Let the ages now be $3k$ and $5k$. In $4$ years, $\\frac{3k + 4}{5k + 4} = \\frac{2}{3}$, so $9k + 12 = 10k + 8$ and $k = 4$. Lena is $12$ and Marco is $20$, so the sum is $32$. Check: in $4$ years they are $16$ and $24$, and $16 : 24 = 2 : 3$.",
+    "elegant": "The difference between their ages never changes. Now it is $2$ parts of the $3 : 5$ ratio, and in $4$ years it is $1$ part of the $2 : 3$ ratio, so a later part is twice a part now. Lena goes from $3$ parts now to $2$ later parts, which is $4$ parts now, so the $4$ years are exactly one part now. The sum now is $8$ parts, which is $32$."
+  },
+  "formulas": [],
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

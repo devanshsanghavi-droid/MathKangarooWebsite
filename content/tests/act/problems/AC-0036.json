@@ -1,0 +1,56 @@
+{
+  "id": "AC-0036",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-04",
+  "difficulty": "hard",
+  "statement": "A store buys a lamp at wholesale cost and marks the price up by $p\\%$. During a sale, the marked price is reduced by $20\\%$. At the sale price, the store still makes a profit of $12\\%$ of the wholesale cost. What is the value of $p$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$40$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$34.4$",
+      "correct": false,
+      "misconception": "I undid the 20% discount by adding 20% to 1.12, so I computed $1.12 \\cdot 1.2 = 1.344$, but a 20% cut is undone by dividing by 0.8."
+    },
+    {
+      "key": "C",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I added the 20% discount and the 12% profit to get 32%, as if percent changes simply add."
+    },
+    {
+      "key": "D",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I divided 12 by 0.8 to get 15, working with the profit alone instead of the full multiplier 1.12."
+    }
+  ],
+  "hints": [
+    "Let the wholesale cost be 100 dollars to make the percents concrete.",
+    "Write the sale price two ways: as 80% of the marked price, and as the cost plus a 12% profit. Set them equal and solve for the marked price.",
+    "With a cost of 100 dollars, the sale price is 112 dollars, so the marked price $M$ satisfies $0.8M = 112$."
+  ],
+  "solutions": {
+    "reliable": "Let the wholesale cost be $C$. The marked price is $C\\left(1 + \\tfrac{p}{100}\\right)$ and the sale price is $0.8\\,C\\left(1 + \\tfrac{p}{100}\\right)$. This equals $1.12\\,C$, so $1 + \\tfrac{p}{100} = \\dfrac{1.12}{0.8} = 1.4$ and $p = 40$. Check with $C = 100$: the marked price is 140 and the sale price is $0.8 \\cdot 140 = 112$, a profit of 12. The idea: successive percent changes multiply, so undo a change by dividing by its multiplier.",
+    "elegant": "Pick a cost of $\\$100$. The sale price is $\\$112$, which is $80\\%$ of the marked price, so the marked price is $112 \\div 0.8 = 140$, a $40\\%$ markup."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

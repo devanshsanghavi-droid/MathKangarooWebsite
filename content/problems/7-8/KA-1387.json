@@ -1,0 +1,68 @@
+{
+  "id": "KA-1387",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Mia reads a book. On the first day she reads 18 pages, and each day after that she reads 3 more pages than the day before. On her last day she reads 69 pages. On how many days does she read?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "17",
+      "correct": false,
+      "misconception": "I divided the extra 51 pages by 3 to get the number of steps, and forgot to count the first day."
+    },
+    {
+      "key": "B",
+      "text": "23",
+      "correct": false,
+      "misconception": "I divided the 69 pages of the last day by 3."
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": false,
+      "misconception": "I divided the 69 pages of the last day by 3 and added 1."
+    },
+    {
+      "key": "D",
+      "text": "51",
+      "correct": false,
+      "misconception": "I found how many more pages she reads on the last day than on the first day."
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-02",
+    "secondary": [
+      "CFT-03",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "How many more pages does Mia read on the last day than on the first?",
+    "The daily page counts form an arithmetic sequence with step 3. Count the steps from 18 to 69, then remember that the number of days is one more than the number of steps.",
+    "69 - 18 = 51 extra pages, added 3 at a time, which is 17 steps."
+  ],
+  "solutions": {
+    "reliable": "From 18 pages to 69 pages is 51 extra pages, added 3 at a time, so there are 51 / 3 = 17 steps from one day to the next. Seventeen steps join 18 days, just as one step joins two days. So Mia reads on 18 days. Check: on day 18 she reads 18 + 17 x 3 = 69 pages. The transferable idea: in an arithmetic sequence, the number of terms is the number of steps plus one.",
+    "elegant": null
+  },
+  "whyOnTest": "Arithmetic sequences and the fence-post trap: counting steps between terms is not the same as counting terms.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

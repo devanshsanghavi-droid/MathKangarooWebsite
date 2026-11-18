@@ -1,0 +1,56 @@
+{
+  "id": "AC-0250",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-08",
+  "difficulty": "hard",
+  "statement": "Every point in the $xy$-plane is reflected across the $x$-axis, and then the result is reflected across the line $y = 4$. Which single transformation has the same effect on every point?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "A translation $8$ units up",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "A translation $8$ units down",
+      "correct": false,
+      "misconception": "I did the reflections in the opposite order, first across y = 4 and then across the x-axis, which moves every point 8 units down."
+    },
+    {
+      "key": "C",
+      "text": "A translation $4$ units up",
+      "correct": false,
+      "misconception": "I thought the combined move equals the distance between the two lines, 4, instead of twice that distance."
+    },
+    {
+      "key": "D",
+      "text": "A reflection across the line $y = 2$",
+      "correct": false,
+      "misconception": "I thought two reflections combine into one reflection across the line halfway between them, y = 2."
+    }
+  ],
+  "hints": [
+    "Try a specific point, such as $(0, 0)$ or $(3, -2)$, and follow it through both reflections.",
+    "Reflecting across the $x$-axis sends $(x, y)$ to $(x, -y)$. Reflecting across $y = 4$ sends $(x, y)$ to $(x, 8 - y)$.",
+    "Combine them: $(x, y) \\to (x, -y) \\to (x, 8 - (-y)) = (x, y + 8)$."
+  ],
+  "solutions": {
+    "reliable": "Reflecting across the $x$-axis sends $(x, y)$ to $(x, -y)$. Reflecting across $y = 4$ keeps $x$ and replaces a $y$-coordinate $t$ with $8 - t$, so $(x, -y)$ goes to $(x, 8 + y)$. Every point $(x, y)$ ends at $(x, y + 8)$, which is a translation $8$ units up. For example, $(3, -2) \\to (3, 2) \\to (3, 6)$.",
+    "elegant": "Two reflections across parallel lines always make a translation, perpendicular to the lines, by twice the distance between them, in the direction from the first line toward the second. The lines are $4$ apart and the second line is above the first, so the result is a translation $8$ units up."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

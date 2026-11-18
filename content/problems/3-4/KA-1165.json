@@ -1,0 +1,67 @@
+{
+  "id": "KA-1165",
+  "band": "3-4",
+  "points": 3,
+  "statement": "When a class stands in rows of 6, there are 4 children left over. In rows of 5, there are also 4 left over. Which of these could be the number of children?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20",
+      "correct": false,
+      "misconception": "I multiplied the 5 in each row by the 4 left over, $5 \\times 4 = 20$."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I multiplied the 6 in each row by the 4 left over, $6 \\times 4 = 24$."
+    },
+    {
+      "key": "C",
+      "text": "28",
+      "correct": false,
+      "misconception": "I checked rows of 6, where 28 leaves 4, but forgot to check rows of 5, where it leaves 3."
+    },
+    {
+      "key": "D",
+      "text": "34",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "44",
+      "correct": false,
+      "misconception": "I checked rows of 5, where 44 leaves 4, but forgot to check rows of 6, where it leaves 2."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-04",
+    "secondary": [
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "Test each choice. Both conditions must hold.",
+    "Instead of solving from scratch, try each answer choice. Divide it into rows of 6 and look at the leftover, then into rows of 5. Only one choice leaves 4 both times.",
+    "Rows of 5 leave 4 for numbers ending in 4 or 9, so only 24, 34 and 44 survive. Now check rows of 6 for those three."
+  ],
+  "solutions": {
+    "reliable": "Check every choice. 20: rows of 6 leave 2. 24: rows of 6 leave 0. 28: rows of 6 leave 4, but rows of 5 leave 3. 34: rows of 6 make 5 rows of 30 with 4 left, and rows of 5 make 6 rows of 30 with 4 left. 44: rows of 6 leave 2. Only 34 works. The transferable idea: when the choices are numbers, testing them can be faster than solving.",
+    "elegant": "Take away the 4 extra children and the rest fill rows of 6 and rows of 5 exactly, so that number is a multiple of 30. The class could be $30 + 4 = 34$."
+  },
+  "whyOnTest": "Back-solving from the choices is a real contest skill: checking five numbers can be quicker and safer than building the answer.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

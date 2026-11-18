@@ -1,0 +1,68 @@
+{
+  "id": "KA-1496",
+  "band": "9-10",
+  "points": 5,
+  "statement": "A screen shows the number 2027. In one move you may add 12 to the number on the screen or subtract 33 from it, but the number on the screen must always stay positive. What is the smallest number that can appear on the screen?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "14",
+      "correct": false,
+      "misconception": "I only subtracted 33 as many times as possible and never used the additions."
+    },
+    {
+      "key": "B",
+      "text": "11",
+      "correct": false,
+      "misconception": "I treated each pair of moves as one step down of 21 and stopped when I could not take another 21."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I thought the smallest number would be 3 itself, since every move changes the number by a multiple of 3."
+    },
+    {
+      "key": "D",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought that by mixing additions and subtractions the number could be brought all the way down to 1."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "NUM-06",
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "What do 12 and 33 have in common?",
+    "Both moves change the number by a multiple of 3, so the remainder on division by 3 never changes. That rules out many numbers; then check that the smallest allowed one really can be reached.",
+    "2027 leaves remainder 2 when divided by 3, so every number that appears does too."
+  ],
+  "solutions": {
+    "reliable": "Each move adds or subtracts a multiple of 3, so the remainder on division by 3 never changes. 2027 leaves remainder 2, so the screen can never show 1 or 3, and 2 is the best possible. It can be reached: subtracting 33 sixty-one times gives $2027 - 2013 = 14$. From 14, add 12 twice and subtract 33 to get 5; add 12 three times and subtract 33 to get 8; do that again to get 11; then add 12 twice and subtract 33 to get 2. The number stays positive throughout. The transferable idea: an invariant shows what is impossible, and a construction shows the best remaining value is possible.",
+    "elegant": null
+  },
+  "whyOnTest": "Invariant questions ask what never changes under the moves; here the remainder on division by 3 is fixed, and you must also show the bound is reached.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

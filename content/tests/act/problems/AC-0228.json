@@ -1,0 +1,56 @@
+{
+  "id": "AC-0228",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-02",
+  "difficulty": "easy",
+  "statement": "A straight conveyor belt rises from the floor of a warehouse to a loading platform. A vertical support post stands on the floor under the belt, $6$ feet from the bottom end of the belt measured along the floor, and the post meets the belt at a height of $2$ feet. The top end of the belt is $15$ feet from the bottom end, measured along the floor. How high above the floor, in feet, is the top end of the belt?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I used the 9 feet of floor beyond the post instead of the full 15 feet, so I computed 2 times 9 divided by 6 = 3."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{10}{3}$",
+      "correct": false,
+      "misconception": "I matched the post with the 9 feet of floor beyond it instead of the 6 feet before it, so I computed 2 times 15 divided by 9 = 10/3."
+    },
+    {
+      "key": "D",
+      "text": "$0.8$",
+      "correct": false,
+      "misconception": "I flipped the ratio and computed 2 times 6 divided by 15 = 0.8, which would make the top end lower than the post."
+    }
+  ],
+  "hints": [
+    "The belt, the floor and the post form a small right triangle inside a larger right triangle made by the belt, the floor and the height of the top end.",
+    "The two triangles share the angle at the bottom end of the belt, so they are similar. Match the post with the $6$ feet of floor under the belt before it, and the top height with the full $15$ feet.",
+    "$\\frac{h}{15} = \\frac{2}{6}$. Solve for $h$."
+  ],
+  "solutions": {
+    "reliable": "Let $h$ be the height of the top end. The post and the vertical drop from the top end are both perpendicular to the floor, so the small triangle (bottom end, foot of the post, top of the post) and the large triangle (bottom end, the floor point below the top end, the top end) each have a right angle and share the angle at the bottom end. They are similar, so $\\frac{h}{15} = \\frac{2}{6}$, giving $h = 15 \\cdot \\frac{1}{3} = 5$ feet.",
+    "elegant": "The belt rises $2$ feet over the first $6$ feet of floor, which is $\\frac{1}{3}$ foot of rise per foot of floor. Over $15$ feet it rises $15 \\cdot \\frac{1}{3} = 5$ feet."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

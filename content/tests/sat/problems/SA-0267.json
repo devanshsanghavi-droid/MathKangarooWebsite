@@ -1,0 +1,56 @@
+{
+  "id": "SA-0267",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-04",
+  "difficulty": "easy",
+  "statement": "The screen of a television is a rectangle $48$ inches wide and $27$ inches tall. To the nearest tenth of an inch, what is the length of the diagonal of the screen?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$21.0$",
+      "correct": false,
+      "misconception": "I subtracted the height from the width and got 21."
+    },
+    {
+      "key": "B",
+      "text": "$39.7$",
+      "correct": false,
+      "misconception": "I subtracted the squares, $48^2 - 27^2$, as if the width were the hypotenuse, and got about 39.7."
+    },
+    {
+      "key": "C",
+      "text": "$55.1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$75.0$",
+      "correct": false,
+      "misconception": "I added the width and the height instead of using the Pythagorean theorem."
+    }
+  ],
+  "hints": [
+    "The diagonal and two sides of the screen form a right triangle.",
+    "The diagonal is the hypotenuse, so add the squares of the width and the height.",
+    "Compute $\\sqrt{48^2 + 27^2} = \\sqrt{3{,}033}$."
+  ],
+  "solutions": {
+    "reliable": "The width, the height and the diagonal form a right triangle with the diagonal as the hypotenuse. So $d^2 = 48^2 + 27^2 = 2{,}304 + 729 = 3{,}033$ and $d = \\sqrt{3{,}033} \\approx 55.07$, which is $55.1$ inches to the nearest tenth.",
+    "elegant": "Both sides are multiples of $3$: $48 = 3 \\cdot 16$ and $27 = 3 \\cdot 9$. So $d = 3\\sqrt{16^2 + 9^2} = 3\\sqrt{337} \\approx 55.1$."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

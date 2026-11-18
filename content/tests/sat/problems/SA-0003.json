@@ -1,0 +1,56 @@
+{
+  "id": "SA-0003",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "easy",
+  "statement": "What value of $x$ satisfies the equation $1.5(2x - 4) = 0.5x + 9$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1.2$",
+      "correct": false,
+      "misconception": "I distributed correctly to get $3x - 6 = 0.5x + 9$, but I moved the $6$ across as $-6$, so I had $2.5x = 3$ and $x = 1.2$."
+    },
+    {
+      "key": "B",
+      "text": "$5.2$",
+      "correct": false,
+      "misconception": "I multiplied the $1.5$ by $2x$ but not by the $4$, so I had $3x - 4 = 0.5x + 9$, then $2.5x = 13$ and $x = 5.2$."
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$12.5$",
+      "correct": false,
+      "misconception": "I got to $2.5x = 15$ correctly, but then I subtracted $2.5$ from $15$ instead of dividing $15$ by $2.5$."
+    }
+  ],
+  "hints": [
+    "Distribute the $1.5$ to both terms in the parentheses.",
+    "After distributing, collect the $x$ terms on one side and the constants on the other. Multiplying every term by $2$ can clear the decimals.",
+    "Distributing gives $3x - 6 = 0.5x + 9$, so $2.5x = 15$."
+  ],
+  "solutions": {
+    "reliable": "Distribute: $3x - 6 = 0.5x + 9$. Subtract $0.5x$ from both sides and add $6$ to both sides: $2.5x = 15$, so $x = \\frac{15}{2.5} = 6$. Check: $1.5(2 \\cdot 6 - 4) = 1.5(8) = 12$ and $0.5(6) + 9 = 3 + 9 = 12$.",
+    "elegant": "Multiply both sides by $2$ to clear the decimals: $3(2x - 4) = x + 18$, so $6x - 12 = x + 18$, $5x = 30$ and $x = 6$."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "AM-1211",
+  "contest": "AMC8",
+  "slot": 21,
+  "area": "NT",
+  "topic": "NT-07",
+  "types": [
+    "T-SFFT"
+  ],
+  "statement": "How many ordered pairs $(x, y)$ of positive integers satisfy $\\frac{2}{x} + \\frac{3}{y} = 1$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I guessed that $x$ and $y$ should be equal, found $x = y = 5$, and assumed it was the only solution."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I only counted pairs with $x < y$, which are $(3, 9)$ and $(4, 6)$."
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I left out $(5, 5)$, because I thought $x$ and $y$ had to be different."
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I also counted the negative factor pairs of $6$, without checking that $x$ and $y$ come out positive."
+    }
+  ],
+  "hints": [
+    "Clear the fractions by multiplying both sides by $xy$.",
+    "$2y + 3x = xy$, so $xy - 3x - 2y = 0$. Add $6$ to both sides so the left side factors.",
+    "$(x - 2)(y - 3) = 6$. Check that both factors must be positive, then list the factor pairs of $6$."
+  ],
+  "solutions": {
+    "reliable": "Multiplying by $xy$ gives $2y + 3x = xy$, so $xy - 3x - 2y + 6 = 6$, that is, $(x - 2)(y - 3) = 6$. Since $\\frac{3}{y} > 0$, we need $\\frac{2}{x} < 1$, so $x \\ge 3$ and $x - 2 \\ge 1$. Then $y - 3 = \\frac{6}{x - 2}$ is positive too. The factor pairs of $6$ are $(1, 6)$, $(2, 3)$, $(3, 2)$, $(6, 1)$, giving $(x, y) = (3, 9)$, $(4, 6)$, $(5, 5)$, $(8, 4)$. Check: $\\frac{2}{3} + \\frac{3}{9} = 1$, $\\frac{2}{4} + \\frac{3}{6} = 1$, $\\frac{2}{5} + \\frac{3}{5} = 1$, $\\frac{2}{8} + \\frac{3}{4} = 1$. So there are $4$ pairs.",
+    "elegant": "Since $\\frac{2}{x} < 1$, $x \\ge 3$. Solve for $y$: $y = \\frac{3x}{x - 2} = 3 + \\frac{6}{x - 2}$. This is a whole number exactly when $x - 2$ divides $6$, so $x - 2 \\in \\{1, 2, 3, 6\\}$, giving $4$ pairs."
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

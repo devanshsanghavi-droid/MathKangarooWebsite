@@ -3,6 +3,8 @@ import { SITE } from '@/lib/site';
 import { contentIndex, paperKey } from '@/lib/content';
 import { STRANDS } from '@/lib/schemas';
 import { getAllAmcProblems, getAmcTaxonomy } from '@/lib/amc-content';
+import { getAllTestProblems } from '@/lib/test-content';
+import { STD_TESTS, TEST_SLUG } from '@/lib/test-meta';
 
 /**
  * The sitemap is generated from content, not hand-listed: adding a skill file adds its page
@@ -29,6 +31,33 @@ export const AMC_ROUTES = [
   { path: '/amc/types', priority: 0.6 },
   { path: '/amc/formulas', priority: 0.6 },
   { path: '/amc/formulas/drill', priority: 0.3 },
+] as const;
+
+/**
+ * The exams hub and the SAT and ACT areas (docs/07 section 4). As with AMC, /sat/practice and
+ * /act/practice are noindex tool pages and are left out.
+ */
+export const EXAM_ROUTES = [
+  { path: '/exams', priority: 0.7 },
+  { path: '/sat', priority: 0.7 },
+  { path: '/sat/problems', priority: 0.6 },
+  { path: '/act', priority: 0.7 },
+  { path: '/act/problems', priority: 0.6 },
+] as const;
+
+/**
+ * The mock and section-test pages (docs/07 section 4). Unlike the practice runners they are
+ * listed: each has a fixed, prerendered page explaining the format, and the query string only
+ * preselects a choice. Low priority, because they are tools.
+ */
+export const TIMED_TEST_ROUTES = [
+  { path: '/practice/section', priority: 0.4 },
+  { path: '/amc/mock', priority: 0.5 },
+  { path: '/amc/section', priority: 0.4 },
+  { path: '/sat/mock', priority: 0.5 },
+  { path: '/sat/section', priority: 0.4 },
+  { path: '/act/mock', priority: 0.5 },
+  { path: '/act/section', priority: 0.4 },
 ] as const;
 
 /*
@@ -116,6 +145,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.4,
       lastModified: new Date(problem.createdAt),
     });
+  }
+
+  for (const route of EXAM_ROUTES) {
+    entries.push({
+      url: `${SITE.url}${route.path}`,
+      changeFrequency: 'weekly',
+      priority: route.priority,
+    });
+  }
+
+  for (const route of TIMED_TEST_ROUTES) {
+    entries.push({
+      url: `${SITE.url}${route.path}`,
+      changeFrequency: 'monthly',
+      priority: route.priority,
+    });
+  }
+
+  for (const test of STD_TESTS) {
+    for (const problem of getAllTestProblems(test)) {
+      entries.push({
+        url: `${SITE.url}/${TEST_SLUG[test]}/problem/${problem.id}`,
+        changeFrequency: 'monthly',
+        priority: 0.4,
+        lastModified: new Date(problem.createdAt),
+      });
+    }
   }
 
   return entries;

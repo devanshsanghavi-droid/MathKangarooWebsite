@@ -1,0 +1,56 @@
+{
+  "id": "SA-0059",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "easy",
+  "statement": "A glass elevator starts at a height of $96$ meters and descends at a constant rate. Its height, in meters, $t$ seconds after it starts is given by $h(t) = 96 - 3t$. How many seconds after it starts is the elevator at a height of $39$ meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I divided the target height, 39, by the rate of 3 and got 13, instead of first finding how far the elevator has to fall."
+    },
+    {
+      "key": "B",
+      "text": "$19$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I found how long it takes to reach the ground, $96 \\div 3 = 32$, instead of how long it takes to reach 39 meters."
+    },
+    {
+      "key": "D",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I added 39 to 96 instead of subtracting, so I got $135 \\div 3 = 45$."
+    }
+  ],
+  "hints": [
+    "Set $h(t)$ equal to 39.",
+    "Solve $96 - 3t = 39$ by moving the constant to one side and then dividing.",
+    "$3t = 96 - 39 = 57$."
+  ],
+  "solutions": {
+    "reliable": "Set $96 - 3t = 39$. Then $3t = 57$ and $t = 19$. Check: $96 - 3(19) = 96 - 57 = 39$.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

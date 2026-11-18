@@ -1,0 +1,56 @@
+{
+  "id": "SA-0124",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-08",
+  "difficulty": "easy",
+  "statement": "The functions $f$ and $g$ are defined by $f(x) = x^2 - 3x$ and $g(x) = 2x + 1$. What is the value of $f(g(2))$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-10$",
+      "correct": false,
+      "misconception": "I multiplied $f(2) = -2$ by $g(2) = 5$ instead of putting $g(2)$ into $f$."
+    },
+    {
+      "key": "B",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I found $f(2) = -2$ first and then $g(-2) = -3$, which is $g(f(2))$, not $f(g(2))$."
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I added $f(2) = -2$ and $g(2) = 5$ instead of putting one function inside the other."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Work from the inside out: start with $g(2)$.",
+    "Find $g(2)$, then use that number as the input to $f$.",
+    "$g(2) = 2(2) + 1 = 5$, so $f(g(2)) = f(5) = 5^2 - 3(5)$."
+  ],
+  "solutions": {
+    "reliable": "First $g(2) = 2(2) + 1 = 5$. Then $f(g(2)) = f(5) = 25 - 15 = 10$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

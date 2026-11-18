@@ -1,0 +1,68 @@
+{
+  "id": "KA-1564",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Lamps numbered 1 to 360 are all off. Ana flips the switch of every lamp whose number is a multiple of 9. Then Ben flips the switch of every lamp whose number is a multiple of 12. How many lamps are on at the end?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "50",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "60",
+      "correct": false,
+      "misconception": "I counted every lamp that was flipped at least once, $40 + 30 - 10$, but lamps flipped twice are off again."
+    },
+    {
+      "key": "C",
+      "text": "64",
+      "correct": false,
+      "misconception": "I took the lamps flipped by both to be the multiples of $9 \\times 12 = 108$ and removed them from both counts: $40 + 30 - 2 \\times 3$."
+    },
+    {
+      "key": "D",
+      "text": "67",
+      "correct": false,
+      "misconception": "I counted the lamps flipped at least once and took the overlap to be the multiples of 108: $40 + 30 - 3$."
+    },
+    {
+      "key": "E",
+      "text": "70",
+      "correct": false,
+      "misconception": "I added Ana's 40 lamps and Ben's 30 lamps, forgetting that some lamps were flipped by both."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-10",
+    "secondary": [
+      "NUM-05",
+      "LOG-05"
+    ]
+  },
+  "hints": [
+    "What happens to a lamp whose switch is flipped twice?",
+    "A lamp ends up on exactly when it was flipped by exactly one of the two people. Count each person's lamps, find the overlap carefully using the least common multiple, and remove the overlap from both counts.",
+    "Multiples of 9: 40. Multiples of 12: 30. Multiples of both 9 and 12 are the multiples of 36: 10."
+  ],
+  "solutions": {
+    "reliable": "A lamp is on at the end exactly when its switch was flipped once. Ana flips $360 / 9 = 40$ lamps and Ben flips $360 / 12 = 30$. A lamp is flipped by both when its number is a multiple of both 9 and 12, that is a multiple of their least common multiple 36: 10 lamps. These appear in both lists and end up off, so the lamps that are on number $(40 - 10) + (30 - 10) = 50$. The transferable idea: exactly one of two sets is the two counts minus twice the overlap.",
+    "elegant": "Follow Ben's turn: after Ana, 40 lamps are on. Of Ben's 30 lamps, the 10 multiples of 36 were on and go off, and the other 20 were off and come on. That leaves $40 - 10 + 20 = 50$. The transferable idea: track how each step changes the count instead of recounting from scratch."
+  },
+  "whyOnTest": "Counting exactly one of two sets needs the overlap removed twice, and the overlap of multiples of 9 and 12 is the multiples of 36, not 108.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

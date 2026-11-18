@@ -1,0 +1,69 @@
+{
+  "id": "AM-1182",
+  "contest": "AMC8",
+  "slot": 13,
+  "area": "NT",
+  "topic": "NT-01",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-SMALL-CASES"
+  ],
+  "statement": "Ravi writes down the $20$ numbers $1, 11, 111, 1111, \\ldots$, where each number has one more digit $1$ than the one before, so the last number is made of twenty $1$s. How many of these numbers are divisible by $33$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I used the test for 9 by mistake, so I needed the number of 1s to be a multiple of 9 and even, and only the number with 18 ones passed."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I only checked divisibility by 3, so I counted the numbers with 3, 6, 9, 12, 15 or 18 ones."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I only checked divisibility by 11, so I counted the numbers with an even number of ones."
+    },
+    {
+      "key": "E",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I added the 6 numbers divisible by 3 and the 10 numbers divisible by 11, but a number has to pass both tests."
+    }
+  ],
+  "hints": [
+    "$33 = 3 \\cdot 11$, so the number must be divisible by both $3$ and $11$.",
+    "A number made of $k$ ones has digit sum $k$. Its alternating digit sum $1 - 1 + 1 - \\cdots$ is $0$ when $k$ is even and $1$ when $k$ is odd.",
+    "So $k$ must be a multiple of $3$ and also even, which means $k$ is a multiple of $6$."
+  ],
+  "solutions": {
+    "reliable": "Let the number have $k$ ones. It is divisible by $3$ exactly when its digit sum, $k$, is a multiple of $3$. It is divisible by $11$ exactly when its alternating digit sum is a multiple of $11$; that sum is $0$ when $k$ is even and $1$ when $k$ is odd, so $k$ must be even. Both hold exactly when $k$ is a multiple of $6$: $k = 6, 12, 18$. Check the first: $111111 = 33 \\cdot 3367$. So $3$ of the numbers are divisible by $33$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-07"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

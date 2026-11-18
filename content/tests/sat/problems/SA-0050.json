@@ -1,0 +1,56 @@
+{
+  "id": "SA-0050",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "easy",
+  "statement": "What is the greatest value of $x$ that satisfies $7 - 2x \\ge 3x + 22$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-15$",
+      "correct": false,
+      "misconception": "I combined $-2x$ and $3x$ into just $x$ instead of $5x$, so I got $7 - 22 \\ge x$ and a greatest value of $-15$."
+    },
+    {
+      "key": "B",
+      "text": "$-\\dfrac{29}{5}$",
+      "correct": false,
+      "misconception": "I added the 7 to the 22 instead of subtracting it, so I got $-29 \\ge 5x$ and $x \\le -\\dfrac{29}{5}$."
+    },
+    {
+      "key": "C",
+      "text": "$-3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I moved the numbers the wrong way and wrote $22 - 7 = 15 \\ge 5x$, so I got $x \\le 3$ and a greatest value of 3."
+    }
+  ],
+  "hints": [
+    "Get all the $x$ terms on one side and all the numbers on the other.",
+    "Add $2x$ to both sides and subtract $22$ from both sides.",
+    "That gives $-15 \\ge 5x$. Divide both sides by $5$."
+  ],
+  "solutions": {
+    "reliable": "Add $2x$ to both sides: $7 \\ge 5x + 22$. Subtract $22$: $-15 \\ge 5x$. Divide by $5$: $x \\le -3$. The greatest value is $-3$. Check: $x = -3$ gives $7 + 6 = 13$ and $-9 + 22 = 13$, so equality holds.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

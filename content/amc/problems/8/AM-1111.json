@@ -1,0 +1,68 @@
+{
+  "id": "AM-1111",
+  "contest": "AMC8",
+  "slot": 12,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "Triangle $PQR$ has all three of its vertices on a circle of radius $5$, and side $\\overline{PQ}$ passes through the center of the circle. If $PR = 6$, what is the area of triangle $PQR$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I used the radius, 5, as the height to side PR and got (1/2)(6)(5) = 15."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I used PR = 6 and the diameter PQ = 10 as the two legs, (1/2)(6)(10) = 30, but the diameter is the hypotenuse."
+    },
+    {
+      "key": "D",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I used QR = 8 and the diameter 10 as the two legs, (1/2)(8)(10) = 40, but the diameter is the hypotenuse."
+    },
+    {
+      "key": "E",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I found the legs 6 and 8 and multiplied them without taking half."
+    }
+  ],
+  "hints": [
+    "$\\overline{PQ}$ is a diameter. What do you know about the angle at $R$?",
+    "An angle whose sides go to the two ends of a diameter, with its vertex on the circle, is a right angle. So triangle $PQR$ is a right triangle with hypotenuse $10$.",
+    "The legs are $PR = 6$ and $QR$, with $6^2 + QR^2 = 10^2$, so $QR = 8$."
+  ],
+  "solutions": {
+    "reliable": "Since $\\overline{PQ}$ passes through the center, it is a diameter of length $10$, and the angle at $R$ is a right angle (an angle inscribed in a semicircle). The legs are $PR = 6$ and $QR = \\sqrt{10^2 - 6^2} = 8$, so the area is $\\frac{1}{2} \\cdot 6 \\cdot 8 = 24$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

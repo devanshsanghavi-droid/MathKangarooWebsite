@@ -1,0 +1,56 @@
+{
+  "id": "AC-0021",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-05",
+  "difficulty": "hard",
+  "statement": "A video service streams a movie at an average rate of $3$ megabits per second. Using $1$ byte $= 8$ bits and $1$ gigabyte $= 1{,}000$ megabytes, how many gigabytes of data does a $2$-hour movie use?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.045$",
+      "correct": false,
+      "misconception": "I changed 2 hours into 120, which is the number of minutes, and used it as the number of seconds."
+    },
+    {
+      "key": "B",
+      "text": "$2.7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$21.6$",
+      "correct": false,
+      "misconception": "I divided the megabits by 1,000 to get gigabytes but never divided by 8 to turn bits into bytes."
+    },
+    {
+      "key": "D",
+      "text": "$172.8$",
+      "correct": false,
+      "misconception": "I multiplied by 8 to change bits to bytes, but a byte is bigger than a bit, so I should have divided by 8."
+    }
+  ],
+  "hints": [
+    "Find the total number of megabits first. How many seconds are in $2$ hours?",
+    "$2$ hours is $7{,}200$ seconds, so the movie uses $3 \\cdot 7{,}200 = 21{,}600$ megabits. Now change bits to bytes.",
+    "$21{,}600$ megabits is $21{,}600 \\div 8 = 2{,}700$ megabytes."
+  ],
+  "solutions": {
+    "reliable": "Two hours is $2 \\cdot 60 \\cdot 60 = 7{,}200$ seconds, so the movie uses $3 \\cdot 7{,}200 = 21{,}600$ megabits. Each byte is $8$ bits, so that is $21{,}600 \\div 8 = 2{,}700$ megabytes, and $2{,}700 \\div 1{,}000 = 2.7$ gigabytes.",
+    "elegant": "Chain the units so they cancel: $\\frac{3 \\text{ Mb}}{1 \\text{ s}} \\cdot 7{,}200 \\text{ s} \\cdot \\frac{1 \\text{ MB}}{8 \\text{ Mb}} \\cdot \\frac{1 \\text{ GB}}{1{,}000 \\text{ MB}} = 2.7 \\text{ GB}$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

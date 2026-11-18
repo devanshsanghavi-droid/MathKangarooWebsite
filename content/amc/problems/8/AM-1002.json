@@ -1,0 +1,66 @@
+{
+  "id": "AM-1002",
+  "contest": "AMC8",
+  "slot": 1,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": [
+    "T-CHOICES"
+  ],
+  "statement": "A school printer prints $45$ pages every minute. How many seconds does it take to print $30$ pages?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I subtracted 30 from 45 and got 15."
+    },
+    {
+      "key": "B",
+      "text": "$40$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$67$",
+      "correct": false,
+      "misconception": "I found that 30 pages take 2/3 of a minute, wrote that as 0.67 minutes, and read it as 67 seconds."
+    },
+    {
+      "key": "D",
+      "text": "$90$",
+      "correct": false,
+      "misconception": "I divided 45 by 30 to get 1.5 minutes, which is 90 seconds, but that is the time for 45 pages at 30 pages a minute."
+    },
+    {
+      "key": "E",
+      "text": "$1350$",
+      "correct": false,
+      "misconception": "I multiplied the printing rate by the number of pages, 45 times 30 = 1350."
+    }
+  ],
+  "hints": [
+    "Thirty pages is fewer than one minute's worth of printing, so the answer is less than $60$.",
+    "Find how many seconds one page takes, or what fraction of a minute $30$ pages is.",
+    "$30$ pages is $\\frac{30}{45} = \\frac{2}{3}$ of a minute's work. Two thirds of $60$ seconds is the answer."
+  ],
+  "solutions": {
+    "reliable": "The printer prints $45$ pages in $60$ seconds. Thirty pages is $\\frac{30}{45} = \\frac{2}{3}$ of that, so it takes $\\frac{2}{3} \\cdot 60 = 40$ seconds.",
+    "elegant": "Forty-five pages in $60$ seconds is $3$ pages every $4$ seconds. Thirty pages is $10$ groups of $3$, which takes $10 \\cdot 4 = 40$ seconds."
+  },
+  "formulas": [],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

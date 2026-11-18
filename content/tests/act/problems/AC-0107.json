@@ -1,0 +1,56 @@
+{
+  "id": "AC-0107",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-06",
+  "difficulty": "medium",
+  "statement": "Maya's phone battery is at $100\\%$ at noon. While she streams video, the battery level drops $9$ percentage points per hour; at all other times it drops $1.5$ percentage points per hour. At 10 p.m., $10$ hours later, the battery is at $40\\%$. For how many of those $10$ hours was Maya streaming video?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{10}{3}$",
+      "correct": false,
+      "misconception": "I used $40$, the percent that was left, as the amount the battery dropped, so I solved $9h + 1.5(10 - h) = 40$."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I let $h$ be the streaming hours but attached the $9$ to the other hours, solving $1.5h + 9(10 - h) = 60$, so my answer was really the hours she was not streaming."
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{20}{3}$",
+      "correct": false,
+      "misconception": "I ignored the slower drop during the hours she was not streaming and simply divided the $60$-point drop by $9$."
+    }
+  ],
+  "hints": [
+    "How many percentage points did the battery lose in all?",
+    "Let $h$ be the streaming hours, so $10 - h$ hours were not streaming. Write the total drop as a sum of two products and set it equal to the total loss.",
+    "Solve $9h + 1.5(10 - h) = 60$."
+  ],
+  "solutions": {
+    "reliable": "The battery fell $100 - 40 = 60$ percentage points. With $h$ streaming hours, $9h + 1.5(10 - h) = 60$, so $7.5h + 15 = 60$, $7.5h = 45$, and $h = 6$. Check: $6 \\cdot 9 + 4 \\cdot 1.5 = 54 + 6 = 60$.",
+    "elegant": "If Maya never streamed, the battery would drop only $10 \\cdot 1.5 = 15$ points. Each streaming hour costs $9 - 1.5 = 7.5$ extra points, and $60 - 15 = 45$ extra points were lost, so she streamed for $45 \\div 7.5 = 6$ hours."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

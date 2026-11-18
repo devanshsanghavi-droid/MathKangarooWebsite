@@ -1,0 +1,68 @@
+{
+  "id": "KA-1468",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A six-digit number is made by writing the same two-digit number three times in a row, such as 474747 or 101010. Which of these numbers divides every six-digit number made in this way?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I saw that the digit sum is three times the digit sum of the two-digit number and thought that made it a multiple of 9, but it only makes it a multiple of 3."
+    },
+    {
+      "key": "B",
+      "text": "11",
+      "correct": false,
+      "misconception": "I thought a repeating pattern of digits always passes the test for 11, but the alternating sum is 3 times the difference of the two digits, which is usually not 0."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "101",
+      "correct": false,
+      "misconception": "I remembered that four-digit numbers like 4747 are multiples of 101 and assumed the same holds for six digits."
+    },
+    {
+      "key": "E",
+      "text": "1001",
+      "correct": false,
+      "misconception": "I mixed this up with numbers like 474474, a three-digit block written twice, which are multiples of 1001."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "NUM-05",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Write 474747 as 47 times something.",
+    "Writing a two-digit number three times in a row is the same as multiplying it by one fixed number. Find that number and factorise it.",
+    "474747 = 47 × 10101, and the same multiplier works for every two-digit block. Now factorise 10101."
+  ],
+  "solutions": {
+    "reliable": "If the two-digit block is n, the six-digit number is n × 10000 + n × 100 + n = n × 10101. Now 10101 = 3 × 3367 = 3 × 7 × 481 = 3 × 7 × 13 × 37, so every such number is a multiple of 3, 7, 13 and 37. Of the choices, only 7 always divides. The others fail for n = 10: 101010 has digit sum 3, so it is not a multiple of 9; 101010 ÷ 11 is not a whole number; 101010 ÷ 101 is not a whole number; and 1001 = 7 × 11 × 13 would need a factor 11. The transferable idea: write a digit pattern as a block times a fixed multiplier, then factorise the multiplier.",
+    "elegant": null
+  },
+  "whyOnTest": "Divisibility questions about digit patterns test writing the pattern as a block times a fixed number, here 10101 = 3 × 7 × 13 × 37.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

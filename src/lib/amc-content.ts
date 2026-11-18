@@ -5,6 +5,7 @@ import {
   AmcProblemSchema,
   FormulaSchema,
   AMC_AREAS,
+  AMC_FORMULA_CONTESTS,
   AMC_TIERS,
   amcInContest,
   amcTierOf,
@@ -41,7 +42,8 @@ export interface AmcCounts {
   byTopic: ReadonlyMap<string, number>;
   byType: ReadonlyMap<string, number>;
   byTier: ReadonlyMap<AmcTier, number>;
-  /** AMC10 and AMC12 each include the BOTH problems, so they can add to more than total. */
+  /** Per paper. AMC10 and AMC12 each include the BOTH problems, so the three can add to more
+   * than total. AMC8 never includes BOTH. */
   byContest: ReadonlyMap<AmcFormulaContest, number>;
 }
 
@@ -88,10 +90,7 @@ function bump<K>(map: Map<K, number>, key: K): void {
 export function countAmcProblems(problems: readonly AmcProblem[]): AmcCounts {
   const byArea = new Map<AmcAreaId, number>(AMC_AREAS.map((a) => [a, 0]));
   const byTier = new Map<AmcTier, number>(AMC_TIERS.map((t) => [t, 0]));
-  const byContest = new Map<AmcFormulaContest, number>([
-    ['AMC10', 0],
-    ['AMC12', 0],
-  ]);
+  const byContest = new Map<AmcFormulaContest, number>(AMC_FORMULA_CONTESTS.map((c) => [c, 0]));
   const byTopic = new Map<string, number>();
   const byType = new Map<string, number>();
   for (const problem of problems) {
@@ -99,8 +98,9 @@ export function countAmcProblems(problems: readonly AmcProblem[]): AmcCounts {
     bump(byTier, amcTierOf(problem.slot));
     bump(byTopic, problem.topic);
     for (const type of problem.types) bump(byType, type);
-    if (amcInContest(problem.contest, 'AMC10')) bump(byContest, 'AMC10');
-    if (amcInContest(problem.contest, 'AMC12')) bump(byContest, 'AMC12');
+    for (const paper of AMC_FORMULA_CONTESTS) {
+      if (amcInContest(problem.contest, paper)) bump(byContest, paper);
+    }
   }
   return { total: problems.length, byArea, byTopic, byType, byTier, byContest };
 }
@@ -153,7 +153,7 @@ export function getAmcProblem(id: string): AmcProblem | undefined {
   return amcIndex().problemById.get(id);
 }
 
-/** Problems that belong on a given paper; BOTH problems appear under either contest. */
+/** Problems that belong on a given paper; BOTH problems appear under AMC 10 and AMC 12, not AMC 8. */
 export function getAmcProblemsFor(contest: AmcFormulaContest): readonly AmcProblem[] {
   return amcIndex().problems.filter((p) => amcInContest(p.contest, contest));
 }

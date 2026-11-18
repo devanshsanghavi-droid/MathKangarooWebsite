@@ -1,0 +1,68 @@
+{
+  "id": "AM-1079",
+  "contest": "AMC8",
+  "slot": 2,
+  "area": "GEO",
+  "topic": "GEO-01",
+  "types": [
+    "T-ANGLE-CHASE"
+  ],
+  "statement": "The four interior angles of a quadrilateral measure $x^\\circ$, $2x^\\circ$, $3x^\\circ$ and $4x^\\circ$. What is the measure, in degrees, of the largest angle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I used 180 degrees as the angle sum, as for a triangle, so 10x = 180, and I gave x = 18 as the answer."
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I solved 10x = 360 correctly to get x = 36, but I gave x instead of the largest angle, 4x."
+    },
+    {
+      "key": "C",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I used 180 degrees as the angle sum, as for a triangle, so x = 18 and the largest angle came out 4 times 18 = 72."
+    },
+    {
+      "key": "D",
+      "text": "$108$",
+      "correct": false,
+      "misconception": "I found x = 36 but multiplied it by 3 instead of 4, so I gave the second largest angle."
+    },
+    {
+      "key": "E",
+      "text": "$144$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "What do the four interior angles of any quadrilateral add up to?",
+    "The angles add up to $360^\\circ$, so $x + 2x + 3x + 4x = 360$.",
+    "$10x = 360$ gives $x = 36$. The largest angle is $4x$."
+  ],
+  "solutions": {
+    "reliable": "The interior angles of a quadrilateral add up to $360^\\circ$, so $x + 2x + 3x + 4x = 10x = 360$ and $x = 36$. The largest angle is $4x = 144^\\circ$. Check: $36 + 72 + 108 + 144 = 360$.",
+    "elegant": "The largest angle is $4$ of the $10$ equal parts that make up $360^\\circ$, so it is $\\frac{4}{10} \\cdot 360^\\circ = 144^\\circ$."
+  },
+  "formulas": [
+    "F-GEO-19"
+  ],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

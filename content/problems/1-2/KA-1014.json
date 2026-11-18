@@ -1,0 +1,67 @@
+{
+  "id": "KA-1014",
+  "band": "1-2",
+  "points": 5,
+  "statement": "A board has 3 rows of 5 squares. Each tile covers 2 squares that share a side. Tiles may not overlap. What is the smallest number of squares that can be left uncovered?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought the tiles could cover the whole board, but 15 squares cannot be shared out into twos."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I laid every tile flat along the rows, so each row of 5 squares left 1 square uncovered."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I stood every tile up and down, so each column of 3 squares left 1 square uncovered."
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": false,
+      "misconception": "I worked out how many tiles fit, 7, and gave that instead of the number of squares left uncovered."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "GEO-14"
+    ]
+  },
+  "hints": [
+    "How many squares does the board have? Is that odd or even?",
+    "Every tile covers 2 squares, so the covered squares always make an even number. Compare that with the number of squares on the board. Then check it can really be done by mixing flat tiles and standing tiles.",
+    "The board has 15 squares, which is odd, so at least 1 square stays uncovered. Try leaving just one corner square empty."
+  ],
+  "solutions": {
+    "reliable": "The board has 3 x 5 = 15 squares. Tiles cover 2 squares each, so they always cover an even number of squares, and 15 is odd. So at least 1 square must stay uncovered. One is possible: leave the top left corner empty, cover the other 4 squares of the top row with 2 flat tiles, and cover the bottom two rows with 5 standing tiles. The smallest number is 1. The idea to keep: pairs always make an even number, so an odd number of squares always leaves one out.",
+    "elegant": "Covered squares come in twos, so they are even. Odd take away even is odd, so the number of uncovered squares is always odd: 1, 3, 5 and so on. The smallest odd number is 1, and the tiling above shows it can happen. The idea to keep: decide odd or even first, then look for the smallest case that works."
+  },
+  "whyOnTest": "Odd and even: tiles cover squares in twos, so on a board with an odd number of squares at least one square must stay uncovered.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

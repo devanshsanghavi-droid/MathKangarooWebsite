@@ -1,0 +1,68 @@
+{
+  "id": "KA-1453",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Each of the 120 five-digit numbers that use the digits 1, 2, 3, 4 and 5 once each is tested to see whether it is a perfect square. How many of them are perfect squares?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I kept only the numbers ending in 25, because a square ending in 5 must end in 25, and assumed they were all squares without testing them."
+    },
+    {
+      "key": "B",
+      "text": "0",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "48",
+      "correct": false,
+      "misconception": "I thought a square can only end in 1, 4, 6 or 9, so I counted the numbers ending in 1 or 4 and assumed they were all squares."
+    },
+    {
+      "key": "D",
+      "text": "54",
+      "correct": false,
+      "misconception": "I used the last-digit rules, ending in 1 or 4, or in 25, and assumed every number that passed them was a square."
+    },
+    {
+      "key": "E",
+      "text": "72",
+      "correct": false,
+      "misconception": "I only checked that a square cannot end in 2 or 3, and counted every number ending in 1, 4 or 5 as a square."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "NUM-04",
+      "CNT-05"
+    ]
+  },
+  "hints": [
+    "Add up the digits. What does that tell you about every one of these numbers?",
+    "All 120 numbers have the same digit sum, so they leave the same remainders on division by 3 and by 9. Think about what else a perfect square that is divisible by 3 must be divisible by.",
+    "The digit sum is 15, so each number is divisible by 3 but not by 9. A square that is divisible by 3 is divisible by 9."
+  ],
+  "solutions": {
+    "reliable": "Whatever the order, the digit sum is 1 + 2 + 3 + 4 + 5 = 15. So every one of the numbers is divisible by 3, because 15 is, but not by 9, because 15 is not. If a perfect square $n^2$ is divisible by 3, then n is divisible by 3, since 3 is prime, and so $n^2$ is divisible by 9. Hence none of the 120 numbers is a perfect square. The transferable idea: to show that something never happens, find a property that every case shares and that the target can never have.",
+    "elegant": null
+  },
+  "whyOnTest": "Proof by contradiction settles 120 cases at once: a digit sum of 15 forces divisibility by 3 but not by 9, which no perfect square allows.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

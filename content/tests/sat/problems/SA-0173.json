@@ -1,0 +1,56 @@
+{
+  "id": "SA-0173",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-04",
+  "difficulty": "easy",
+  "statement": "An online chess club has $500$ members. The number of members triples every $4$ months. If this pattern continues, how many members will the club have $12$ months from now?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4{,}500$",
+      "correct": false,
+      "misconception": "I saw that $12$ months is $3$ periods of $4$ months, but I multiplied by $3 \\times 3 = 9$ instead of $3^3 = 27$."
+    },
+    {
+      "key": "B",
+      "text": "$13{,}500$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$18{,}000$",
+      "correct": false,
+      "misconception": "I multiplied $500$ by $3$ for the tripling and then by $12$ for the months, getting $18{,}000$."
+    },
+    {
+      "key": "D",
+      "text": "$3{,}500$",
+      "correct": false,
+      "misconception": "I treated tripling as adding a fixed $1{,}000$ members every $4$ months, so after $3$ periods I got $500 + 3{,}000 = 3{,}500$."
+    }
+  ],
+  "hints": [
+    "Count how many $4$-month periods fit into $12$ months.",
+    "The number of members is multiplied by $3$ once for each $4$-month period.",
+    "There are $3$ periods, so the number of members is $500 \\cdot 3 \\cdot 3 \\cdot 3$."
+  ],
+  "solutions": {
+    "reliable": "In $12$ months there are $12 / 4 = 3$ tripling periods. The number of members becomes $500 \\cdot 3^3 = 500 \\cdot 27 = 13{,}500$. Step by step: $500 \\to 1{,}500 \\to 4{,}500 \\to 13{,}500$.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

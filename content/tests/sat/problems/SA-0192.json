@@ -1,0 +1,56 @@
+{
+  "id": "SA-0192",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-05",
+  "difficulty": "hard",
+  "statement": "The function $f$ is defined by $f(x) = (x - 1)^2(x + 3)(x - 5)$. How many integers $x$ with $-8 \\le x \\le 8$ satisfy $f(x) < 0$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I found that $f(x) < 0$ for $-3 < x < 5$, but I forgot that $f(1) = 0$, so I counted $x = 1$ as well."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I treated $(x - 1)^2$ like a single factor, so I thought the sign changes at $x = 1$ and counted $x < -3$ and $1 < x < 5$ in the interval: $5 + 3 = 8$."
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I counted every integer from $-3$ to $5$, including the zeros, which solves $f(x) \\le 0$ instead of $f(x) < 0$."
+    }
+  ],
+  "hints": [
+    "$(x - 1)^2$ is never negative, so the sign of $f$ comes from $(x + 3)(x - 5)$, except where $f$ equals $0$.",
+    "$(x + 3)(x - 5) < 0$ exactly when $-3 < x < 5$. Which integer in that range still makes $f(x) = 0$?",
+    "There are $7$ integers from $-2$ to $4$; remove $x = 1$, where $(x - 1)^2 = 0$."
+  ],
+  "solutions": {
+    "reliable": "For $x \\ne 1$, $(x - 1)^2 > 0$, so $f(x) < 0$ exactly when $(x + 3)(x - 5) < 0$, which happens for $-3 < x < 5$. At $x = 1$, $f(1) = 0$, which is not negative. The integers with $-3 < x < 5$ are $-2, -1, 0, 1, 2, 3, 4$; removing $1$ leaves $6$ integers. All of them lie in $-8 \\le x \\le 8$, and outside $-3 < x < 5$ the function is never negative, so the answer is $6$.",
+    "elegant": null
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

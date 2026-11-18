@@ -1,0 +1,62 @@
+{
+  "id": "AM-1050",
+  "contest": "AMC8",
+  "slot": 13,
+  "area": "ALG",
+  "topic": "ALG-02",
+  "types": ["T-SUBSTITUTION"],
+  "statement": "A pet shelter has only cats, dogs and rabbits. The ratio of cats to dogs is $2 : 3$, and the ratio of dogs to rabbits is $4 : 5$. There are $21$ more rabbits than cats. How many animals are at the shelter?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I found the number of dogs, 36, instead of the total number of animals."
+    },
+    {
+      "key": "B",
+      "text": "$69$",
+      "correct": false,
+      "misconception": "I found 24 cats and 45 rabbits and added them, forgetting the 36 dogs."
+    },
+    {
+      "key": "C",
+      "text": "$70$",
+      "correct": false,
+      "misconception": "I joined the ratios as 2 : 3 : 5 without making the dog numbers match, so 3 parts = 21 and the total was 10 parts = 70."
+    },
+    {
+      "key": "D",
+      "text": "$77$",
+      "correct": false,
+      "misconception": "I joined the ratios as 2 : 4 : 5 by just putting the 4 in for dogs, so rabbits minus cats was 3 parts = 21 and the total was 11 parts = 77."
+    },
+    {
+      "key": "E",
+      "text": "$105$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Rewrite both ratios so that the number of dogs matches.",
+    "$2 : 3 = 8 : 12$ and $4 : 5 = 12 : 15$, so cats : dogs : rabbits $= 8 : 12 : 15$.",
+    "Rabbits minus cats is $15 - 8 = 7$ parts, and that is $21$ animals."
+  ],
+  "solutions": {
+    "reliable": "Scale the ratios so they share the dog count: cats : dogs $= 8 : 12$ and dogs : rabbits $= 12 : 15$, so cats : dogs : rabbits $= 8 : 12 : 15$. Rabbits outnumber cats by $7$ parts, which is $21$ animals, so one part is $3$ animals. The shelter has $(8 + 12 + 15) \\cdot 3 = 105$ animals: $24$ cats, $36$ dogs and $45$ rabbits.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

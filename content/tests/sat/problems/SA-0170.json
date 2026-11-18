@@ -1,0 +1,56 @@
+{
+  "id": "SA-0170",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-02",
+  "difficulty": "easy",
+  "statement": "What are all the solutions to the equation $x(x - 5) = 6$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$ and $5$",
+      "correct": false,
+      "misconception": "I set each factor equal to $0$, as if the equation were $x(x - 5) = 0$, and ignored the $6$ on the right side."
+    },
+    {
+      "key": "B",
+      "text": "$-6$ and $1$",
+      "correct": false,
+      "misconception": "I rewrote the equation as $x^2 - 5x - 6 = 0$ but factored it as $(x + 6)(x - 1)$, mixing up the signs."
+    },
+    {
+      "key": "C",
+      "text": "$-1$ and $6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$6$ and $11$",
+      "correct": false,
+      "misconception": "I set each factor equal to $6$, solving $x = 6$ and $x - 5 = 6$, which gives $6$ and $11$."
+    }
+  ],
+  "hints": [
+    "The zero product property only works when one side is $0$.",
+    "Expand the left side, subtract $6$, and factor.",
+    "$x^2 - 5x - 6 = 0$ factors as $(x - 6)(x + 1) = 0$."
+  ],
+  "solutions": {
+    "reliable": "Expand and move everything to one side: $x^2 - 5x - 6 = 0$. Factoring gives $(x - 6)(x + 1) = 0$, so $x = 6$ or $x = -1$. Check: $6(1) = 6$ and $(-1)(-6) = 6$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

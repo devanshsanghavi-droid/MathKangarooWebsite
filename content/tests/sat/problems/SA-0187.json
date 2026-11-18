@@ -1,0 +1,56 @@
+{
+  "id": "SA-0187",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-06",
+  "difficulty": "easy",
+  "statement": "What value of $x$ satisfies the equation $\\sqrt[3]{x - 5} = -2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I multiplied $-2$ by $3$ instead of cubing it, so I solved $x - 5 = -6$."
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I squared $-2$ instead of cubing it, so I solved $x - 5 = 4$."
+    },
+    {
+      "key": "D",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I cubed $2$ instead of $-2$, so I solved $x - 5 = 8$."
+    }
+  ],
+  "hints": [
+    "Undo a cube root by cubing both sides.",
+    "$(-2)^3 = -8$, so $x - 5 = -8$.",
+    "Add $5$ to both sides of $x - 5 = -8$."
+  ],
+  "solutions": {
+    "reliable": "Cubing both sides gives $x - 5 = (-2)^3 = -8$, so $x = -3$. Check: $\\sqrt[3]{-3 - 5} = \\sqrt[3]{-8} = -2$. Unlike a square root, a cube root can be negative, so there is nothing to reject.",
+    "elegant": null
+  },
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

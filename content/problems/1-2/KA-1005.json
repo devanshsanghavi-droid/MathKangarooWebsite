@@ -1,0 +1,67 @@
+{
+  "id": "KA-1005",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Jo cuts a paper square into 4 equal smaller squares. Then she cuts one of those small squares into 4 equal tiny squares. How many pieces of paper does she have now?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only the small squares that were never cut and forgot the tiny ones."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I thought cutting one small square gave just 1 more piece, so 4 + 1 = 5."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I added the 4 tiny squares to all 4 small squares, but the small square that was cut up is gone."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I thought every one of the 4 small squares was cut into 4 tiny squares."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Draw it. What happens to the small square that gets cut?",
+    "Draw the first cut, then the second. The small square that is cut stops being one piece and becomes 4 pieces. Count every piece in your final drawing.",
+    "After the first cut there are 4 pieces. One of them turns into 4 tiny pieces, and the other 3 stay as they are."
+  ],
+  "solutions": {
+    "reliable": "After the first cut there are 4 small squares. One of them is cut into 4 tiny squares, so that one piece is replaced by 4 pieces. That leaves 3 small squares and 4 tiny squares: 3 + 4 = 7 pieces. The idea to keep: when one piece is cut into 4, the count goes up by 3, not by 4.",
+    "elegant": "Each time one piece is cut into 4, the number of pieces goes up by 3. Start with 1 piece, add 3 for the first cutting and 3 for the second: 1 + 3 + 3 = 7. The idea to keep: count what each step adds."
+  },
+  "whyOnTest": "Drawing the diagram: a sketch shows that the cut square disappears into 4 new pieces, which is the step people forget.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

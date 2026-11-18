@@ -1,0 +1,67 @@
+{
+  "id": "KA-1535",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Three consecutive even numbers have a product of 21840. What is their sum?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "28",
+      "correct": false,
+      "misconception": "I found the middle number and gave it instead of the sum."
+    },
+    {
+      "key": "B",
+      "text": "56",
+      "correct": false,
+      "misconception": "I found the numbers 26, 28 and 30 but added only the smallest and the largest."
+    },
+    {
+      "key": "C",
+      "text": "78",
+      "correct": false,
+      "misconception": "I thought 28 was the largest of the three numbers and added 24, 26 and 28."
+    },
+    {
+      "key": "D",
+      "text": "84",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "90",
+      "correct": false,
+      "misconception": "I thought 28 was the smallest number, because the cube root of 21840 is nearly 28, and added 28, 30 and 32."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-04",
+    "secondary": [
+      "CFT-06"
+    ]
+  },
+  "hints": [
+    "Each choice divided by 3 gives the middle number. Test it.",
+    "The sum of three consecutive even numbers is 3 times the middle one, so each choice names a candidate middle number. Multiply out the candidate triple and compare with 21840.",
+    "The choice 84 gives the middle number 28, and $26 \\times 28 \\times 30 = 21840$."
+  ],
+  "solutions": {
+    "reliable": "The cube root of 21840 is just under 28, so the middle number is near 28. Try 26, 28, 30: $26 \\times 30 = 780$ and $780 \\times 28 = 21840$. The sum is $26 + 28 + 30 = 84$. Back-solving gives the same: a sum of 84 means a middle number of 28, and that triple works, while the other choices either are not multiples of 6 or give triples with the wrong product. The transferable idea: when the answers are numbers, testing a choice can be faster than solving forwards.",
+    "elegant": null
+  },
+  "whyOnTest": "Testing the choices, each one naming a middle number, is quicker than solving a cubic equation.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0245",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-07",
+  "difficulty": "hard",
+  "statement": "In the $xy$-plane, a circular sprinkler zone is centered at $(4, -1)$. Its edge just touches a straight walkway that lies along the line $3x + 4y = 18$, meeting it at exactly one point. What is the radius of the zone?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I found the absolute value of 3 times 4 plus 4 times -1 minus 18, which is 10, but I forgot to divide by the square root of 3 squared plus 4 squared, which is 5."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$5.2$",
+      "correct": false,
+      "misconception": "I wrote the line as 3x + 4y + 18 = 0 with the wrong sign on the 18, so I got the absolute value of 12 - 4 + 18 = 26, divided by 5."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{10}{\\sqrt{7}}$",
+      "correct": false,
+      "misconception": "I divided 10 by the square root of 3 + 4 instead of the square root of 3 squared plus 4 squared."
+    }
+  ],
+  "hints": [
+    "A circle that touches a line at exactly one point is tangent to it. How is the radius related to the line?",
+    "The radius to the point of tangency is perpendicular to the line, so the radius is the distance from the center to the line.",
+    "Write the line as $3x + 4y - 18 = 0$ and use $\\frac{|3x_0 + 4y_0 - 18|}{\\sqrt{3^2 + 4^2}}$ with $(x_0, y_0) = (4, -1)$."
+  ],
+  "solutions": {
+    "reliable": "The walkway is tangent to the circle, so the radius equals the perpendicular distance from the center $(4, -1)$ to the line $3x + 4y - 18 = 0$. That distance is $\\frac{|3(4) + 4(-1) - 18|}{\\sqrt{3^2 + 4^2}} = \\frac{|12 - 4 - 18|}{5} = \\frac{10}{5} = 2$.",
+    "elegant": "Go from the center along the perpendicular direction $\\langle 3, 4 \\rangle$, whose length is $5$. The point $(4 + 3t, -1 + 4t)$ is on the line when $3(4 + 3t) + 4(-1 + 4t) = 18$, so $25t = 10$ and $t = 0.4$. The distance is $5t = 2$, reaching the line at $(5.2, 0.6)$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

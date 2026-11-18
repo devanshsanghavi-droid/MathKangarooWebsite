@@ -1,0 +1,68 @@
+{
+  "id": "KA-1463",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Eleven teams play in a league. Every two teams play each other exactly once; each match has a winner, who gets 1 point, and a loser, who gets 0. At the end, ten of the teams have the same number of points (the eleventh may or may not have that number too). How many points does the eleventh team have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed the team that is different from the others must have lost every match."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I assumed the team that is different from the others must have won every match."
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": false,
+      "misconception": "I gave each of the ten teams 4 points and the remaining 55 - 40 = 15 to the eleventh team, forgetting that it plays only 10 matches."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be determined",
+      "correct": false,
+      "misconception": "I thought many different results were possible, so I did not look for a reason why only one score fits."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "MOD-01",
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "How many points are handed out in the whole league?",
+    "Count the matches to get the total number of points. If the ten equal teams have p points each, write the total using p and the eleventh team's score, and remember how many matches each team plays.",
+    "There are 55 matches, so 10p + q = 55, where q is the eleventh team's score and q is between 0 and 10."
+  ],
+  "solutions": {
+    "reliable": "Each match gives out exactly 1 point, and there are 11 × 10 ÷ 2 = 55 matches, so the points add up to 55. If the ten teams have p points each and the eleventh has q, then 10p + q = 55. The eleventh team plays only 10 matches, so q is between 0 and 10. Since 55 - q must be a multiple of 10, q ends in 5, and the only such number from 0 to 10 is 5. Then p = 5 as well, so in fact all eleven teams finish level. This can really happen: place the teams around a circle and let each team beat the next five teams clockwise. The transferable idea: suppose a different value and show that it breaks a total you know exactly.",
+    "elegant": "The ten teams' points add up to a multiple of 10, so the eleventh team's score has the same last digit as 55. A score from 0 to 10 that ends in 5 must be 5."
+  },
+  "whyOnTest": "Proof by contradiction tests ruling out every other value with a fixed count, here the 55 points shared out in the league.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

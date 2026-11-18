@@ -1,0 +1,68 @@
+{
+  "id": "AM-1108",
+  "contest": "AMC8",
+  "slot": 11,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-SIMILAR"
+  ],
+  "statement": "Two water tanks have exactly the same shape: the larger one is an enlarged copy of the smaller one. The smaller tank is $2$ meters tall and the larger tank is $3$ meters tall. The smaller tank holds $400$ liters when full. How many liters does the larger tank hold when full?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$600$",
+      "correct": false,
+      "misconception": "I scaled the volume by the height ratio 3/2 just once, as if volume grew the same way length does."
+    },
+    {
+      "key": "B",
+      "text": "$900$",
+      "correct": false,
+      "misconception": "I squared the ratio, 400 times 9/4 = 900, but that is how area scales, not volume."
+    },
+    {
+      "key": "C",
+      "text": "$1350$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$3600$",
+      "correct": false,
+      "misconception": "I multiplied by 3 squared, 400 times 9 = 3600, because the big tank is 3 meters tall, and I forgot to compare with the small tank's 2 meters at all."
+    },
+    {
+      "key": "E",
+      "text": "$10800$",
+      "correct": false,
+      "misconception": "I cubed 3, the big tank's height, and got 400 times 27 = 10800, forgetting to divide by 2 cubed for the small tank."
+    }
+  ],
+  "hints": [
+    "When every length of a solid is multiplied by the same factor, its volume is multiplied by that factor three times over.",
+    "Every length on the larger tank is $\\frac{3}{2}$ times the matching length on the smaller tank.",
+    "The volume is multiplied by $\\left(\\frac{3}{2}\\right)^3 = \\frac{27}{8}$."
+  ],
+  "solutions": {
+    "reliable": "The tanks are similar with length ratio $\\frac{3}{2}$. Volume scales by the cube of the length ratio, so the larger tank holds $400 \\cdot \\left(\\frac{3}{2}\\right)^3 = 400 \\cdot \\frac{27}{8} = 1350$ liters.",
+    "elegant": "Picture the small tank filled with tiny cubes. In the big tank each tiny cube becomes $\\frac{3}{2}$ times as wide, as deep and as tall, so it holds $\\frac{3}{2} \\cdot \\frac{3}{2} \\cdot \\frac{3}{2} = \\frac{27}{8}$ times as much. The whole tank holds $\\frac{27}{8} \\cdot 400 = 1350$ liters."
+  },
+  "formulas": [
+    "F-GEO-11"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0234",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-04",
+  "difficulty": "hard",
+  "statement": "The cross section of a tunnel is part of a circle cut off by a flat, horizontal floor. The floor is $12$ meters wide, and the highest point of the tunnel ceiling is $9$ meters above the floor. To the nearest tenth of a meter, what is the radius of the circle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$6.0$",
+      "correct": false,
+      "misconception": "I assumed the radius was half the floor width, 12 divided by 2 = 6, as if the floor were a diameter of the circle."
+    },
+    {
+      "key": "C",
+      "text": "$9.0$",
+      "correct": false,
+      "misconception": "I assumed the floor passes through the center of the circle, so I said the radius equals the 9 meter height."
+    },
+    {
+      "key": "D",
+      "text": "$7.6$",
+      "correct": false,
+      "misconception": "I expanded (9 - r) squared as 81 - r squared, so I got 81 - r squared + 36 = r squared and r = the square root of 58.5, about 7.6."
+    }
+  ],
+  "hints": [
+    "Draw the circle, the floor as a chord, and the radius from the center to one end of the floor.",
+    "If the radius is $r$, the center is $9 - r$ meters above the floor. The radius to an end of the floor is the hypotenuse of a right triangle with legs $6$ and $9 - r$.",
+    "$(9 - r)^2 + 6^2 = r^2$. Expand carefully: $81 - 18r + r^2 + 36 = r^2$, so $18r = 117$."
+  ],
+  "solutions": {
+    "reliable": "Let the radius be $r$. The highest point of the ceiling is directly above the middle of the floor, and the center of the circle lies on that vertical line, $r$ below the top, so the center is $9 - r$ meters above the floor. The radius drawn to one end of the floor forms a right triangle with legs $6$ (half the floor) and $9 - r$, so $(9 - r)^2 + 6^2 = r^2$. Expanding, $81 - 18r + r^2 + 36 = r^2$, so $18r = 117$ and $r = 6.5$ meters. Check: the center is $2.5$ meters above the floor and $2.5^2 + 6^2 = 42.25 = 6.5^2$.",
+    "elegant": "Use intersecting chords. The vertical diameter through the top point is cut by the floor into pieces $9$ and $2r - 9$, and the floor is cut into $6$ and $6$. So $9(2r - 9) = 6 \\cdot 6 = 36$, giving $2r - 9 = 4$ and $r = 6.5$."
+  },
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

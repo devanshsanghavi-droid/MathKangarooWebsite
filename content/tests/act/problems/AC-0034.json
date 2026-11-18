@@ -1,0 +1,56 @@
+{
+  "id": "AC-0034",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-04",
+  "difficulty": "easy",
+  "statement": "A pair of hiking boots is priced at $\\$80$. The boots are on sale for $25\\%$ off, and then a $6\\%$ sales tax is charged on the sale price. What is the total cost of the boots?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$58.30$",
+      "correct": false,
+      "misconception": "I took 25 dollars off instead of 25 percent, then added 6% tax to the 55 dollars that was left."
+    },
+    {
+      "key": "B",
+      "text": "$\\$60.00$",
+      "correct": false,
+      "misconception": "I took the 25% off correctly but forgot to add the sales tax."
+    },
+    {
+      "key": "C",
+      "text": "$\\$63.60$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$64.80$",
+      "correct": false,
+      "misconception": "I combined the two percents into one 19% discount and took 19% off 80, but the tax is figured on the lower sale price."
+    }
+  ],
+  "hints": [
+    "Work in two steps: the discount first, then the tax on the new price.",
+    "Find the sale price by taking 75% of 80. Then multiply the sale price by 1.06 to include the tax.",
+    "The sale price is $0.75 \\cdot 80 = 60$ dollars, and the total is $60 \\cdot 1.06$ dollars."
+  ],
+  "solutions": {
+    "reliable": "The discount leaves $100\\% - 25\\% = 75\\%$ of the price: $0.75 \\cdot 80 = 60$ dollars. The tax adds $6\\%$ of the sale price: $0.06 \\cdot 60 = 3.60$ dollars. The total is $60 + 3.60 = \\$63.60$. The idea: apply successive percent changes one at a time, each to the amount it actually acts on.",
+    "elegant": "Multiply the multipliers: $80 \\cdot 0.75 \\cdot 1.06 = 63.60$."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

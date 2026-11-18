@@ -1,0 +1,68 @@
+{
+  "id": "AM-1084",
+  "contest": "AMC8",
+  "slot": 5,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "A square with side length $6$ has all four of its vertices on a circle. What is the area of the circle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3\\sqrt{2}\\,\\pi$",
+      "correct": false,
+      "misconception": "I found the radius $3\\sqrt{2}$ and multiplied it by $\\pi$, but I forgot to square the radius."
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I found $r^2 = 18$ correctly but forgot to multiply by $\\pi$."
+    },
+    {
+      "key": "C",
+      "text": "$6\\sqrt{2}\\,\\pi$",
+      "correct": false,
+      "misconception": "I found the radius $3\\sqrt{2}$ but then computed the circumference, $2\\pi r = 6\\sqrt{2}\\,\\pi$, instead of the area."
+    },
+    {
+      "key": "D",
+      "text": "$9\\pi$",
+      "correct": false,
+      "misconception": "I used a radius of 3, half the side, but that is the circle that fits inside the square, not the one through its corners."
+    },
+    {
+      "key": "E",
+      "text": "$18\\pi$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Which segment of the square is a diameter of the circle?",
+    "The diagonal of the square passes through the center of the circle, so it is a diameter. Find the diagonal of a square with side $6$.",
+    "The diagonal is $6\\sqrt{2}$, so the radius is $3\\sqrt{2}$ and $r^2 = 18$."
+  ],
+  "solutions": {
+    "reliable": "The diagonal of the square is a diameter of the circle. By the Pythagorean theorem the diagonal is $\\sqrt{6^2 + 6^2} = 6\\sqrt{2}$, so the radius is $3\\sqrt{2}$ and $r^2 = 9 \\cdot 2 = 18$. The area of the circle is $\\pi r^2 = 18\\pi$.",
+    "elegant": "Skip the square roots: $r^2 = \\left(\\frac{d}{2}\\right)^2 = \\frac{d^2}{4} = \\frac{6^2 + 6^2}{4} = 18$, so the area is $18\\pi$."
+  },
+  "formulas": [
+    "F-GEO-03"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

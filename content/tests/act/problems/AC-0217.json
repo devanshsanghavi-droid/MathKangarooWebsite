@@ -1,0 +1,56 @@
+{
+  "id": "AC-0217",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-04",
+  "difficulty": "hard",
+  "statement": "A circular stage has a radius of $12$ meters. Points $A$, $B$ and $C$ lie on the edge of the stage, with $C$ on the longer arc between $A$ and $B$. A camera at $C$ sees $A$ and $B$ so that angle $ACB$ measures $35^\\circ$. What is the length, in meters, of the shorter arc of the stage's edge from $A$ to $B$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{7\\pi}{3}$",
+      "correct": false,
+      "misconception": "I treated the $35^\\circ$ angle as a central angle, but an angle with its vertex on the circle intercepts an arc twice its measure."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{14\\pi}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{28\\pi}{3}$",
+      "correct": false,
+      "misconception": "I doubled $35^\\circ$ to get $70^\\circ$ correctly, but then I used the diameter, $24$, in place of the radius in the arc length formula."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{58\\pi}{3}$",
+      "correct": false,
+      "misconception": "I doubled $35^\\circ$ to get $70^\\circ$, but then I used $360^\\circ - 70^\\circ = 290^\\circ$, which measures the longer arc."
+    }
+  ],
+  "hints": [
+    "Angle $ACB$ has its vertex on the circle. How does an inscribed angle compare with the arc it intercepts?",
+    "The intercepted arc $AB$ measures twice the inscribed angle. Then the arc length is $\\frac{\\text{arc measure}}{360^\\circ} \\cdot 2\\pi r$.",
+    "The shorter arc measures $70^\\circ$, so its length is $\\frac{70}{360} \\cdot 2\\pi \\cdot 12$."
+  ],
+  "solutions": {
+    "reliable": "An inscribed angle is half of the arc it intercepts. Since $C$ is on the longer arc, angle $ACB$ intercepts the shorter arc $AB$, which therefore measures $2 \\cdot 35^\\circ = 70^\\circ$. Its length is $\\frac{70}{360} \\cdot 2\\pi \\cdot 12 = \\frac{7}{36} \\cdot 24\\pi = \\frac{14\\pi}{3} \\approx 14.7$ meters.",
+    "elegant": "In radians, the central angle is $2 \\cdot 35^\\circ = \\frac{7\\pi}{18}$, and arc length is radius times angle: $12 \\cdot \\frac{7\\pi}{18} = \\frac{14\\pi}{3}$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -67,20 +67,34 @@ describe('the AMC layout', () => {
 });
 
 describe('/amc', () => {
-  it('shows a card per area and switches between the AMC 10 and AMC 12', async () => {
+  it('shows a card per area and switches between the AMC 8, AMC 10 and AMC 12', async () => {
     const user = userEvent.setup();
     render(AmcPage());
     expect(screen.getByRole('heading', { level: 1, name: 'AMC practice' })).toBeInTheDocument();
     for (const area of taxonomy.areas) {
       expect(screen.getByRole('heading', { level: 3, name: area.name })).toBeInTheDocument();
     }
-    const amc10 = problems.filter((p) => p.contest !== 'AMC12').length;
-    const amc12 = problems.filter((p) => p.contest !== 'AMC10').length;
+    // BOTH is on the AMC 10 and the AMC 12, never on the AMC 8 (docs/07 section 2).
+    const amc8 = problems.filter((p) => p.contest === 'AMC8').length;
+    const amc10 = problems.filter((p) => p.contest === 'AMC10' || p.contest === 'BOTH').length;
+    const amc12 = problems.filter((p) => p.contest === 'AMC12' || p.contest === 'BOTH').length;
     expect(screen.getByText(`of ${amc10} solved`)).toBeInTheDocument();
     await user.click(screen.getByRole('radio', { name: 'AMC 12' }));
     expect(screen.getByText(`of ${amc12} solved`)).toBeInTheDocument();
     expect(window.localStorage.getItem('ka-amc-paper')).toBe('AMC12');
     expect(screen.getByRole('button', { name: /Start a mixed set/ })).toBeEnabled();
+    await user.click(screen.getByRole('radio', { name: 'AMC 8' }));
+    expect(screen.getByText(`of ${amc8} solved`)).toBeInTheDocument();
+    expect(window.localStorage.getItem('ka-amc-paper')).toBe('AMC8');
+  });
+
+  it('links the AMC mock and section tests', () => {
+    render(AmcPage());
+    expect(screen.getByRole('link', { name: 'Mock test' })).toHaveAttribute('href', '/amc/mock');
+    expect(screen.getByRole('link', { name: 'Section test' })).toHaveAttribute(
+      'href',
+      '/amc/section',
+    );
   });
 });
 
@@ -92,6 +106,7 @@ describe('/amc/problems', () => {
     await waitFor(() => expect(container.querySelector('[data-bank-loaded]')).not.toBeNull());
     const panel = screen.getByRole('complementary', { name: 'Filters' });
     expect(within(panel).getByRole('radio', { name: 'AMC 12' })).toBeInTheDocument();
+    expect(within(panel).getByRole('radio', { name: 'AMC 8' })).toBeInTheDocument();
     expect(within(panel).getByText('Problem types')).toBeInTheDocument();
     expect(within(panel).getByText('Middle')).toBeInTheDocument();
 
@@ -141,6 +156,15 @@ describe('/amc/problem/[id]', () => {
     const structured = container.querySelector('script[type="application/ld+json"]');
     const correct = firstProblem.choices.find((c) => c.correct);
     expect(structured?.textContent).not.toContain(correct?.text ?? '###');
+  });
+
+  it('labels an AMC 8 problem as AMC 8 and never advises a skip (no penalty on the AMC 8)', async () => {
+    const late8 = problems.find((p) => p.contest === 'AMC8' && p.slot >= 21);
+    if (!late8) return;
+    render(await AmcProblemPage({ params: Promise.resolve({ id: late8.id }) }));
+    expect(screen.getAllByText(/AMC 8/).length).toBeGreaterThan(0);
+    expect(screen.getByText(/always put down your best guess/)).toBeInTheDocument();
+    expect(screen.queryByText(/Skipping is often the right call/)).toBeNull();
   });
 });
 
@@ -199,6 +223,11 @@ describe('/amc/formulas', () => {
       (f) => f.priority === 'must-know' && f.contests.includes('AMC10'),
     ).length;
     expect(count()).toBe(`${both} ${both === 1 ? 'formula' : 'formulas'}`);
+    await user.click(screen.getByRole('radio', { name: 'AMC 8' }));
+    const amc8 = formulas.filter(
+      (f) => f.priority === 'must-know' && f.contests.includes('AMC8'),
+    ).length;
+    expect(count()).toBe(`${amc8} ${amc8 === 1 ? 'formula' : 'formulas'}`);
   });
 });
 

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1551",
+  "band": "11-12",
+  "points": 3,
+  "statement": "How many of the whole numbers from 1 to 200 are multiples of 4, or perfect squares, or both?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "7",
+      "correct": false,
+      "misconception": "I counted only the numbers that are in both lists, the even squares 4, 16, 36, up to 196."
+    },
+    {
+      "key": "B",
+      "text": "43",
+      "correct": false,
+      "misconception": "I counted the multiples of 4 that are not squares, 50 - 7, and forgot to add the odd squares."
+    },
+    {
+      "key": "C",
+      "text": "57",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "64",
+      "correct": false,
+      "misconception": "I added the 50 multiples of 4 and the 14 squares without noticing that 7 numbers are in both lists."
+    },
+    {
+      "key": "E",
+      "text": "71",
+      "correct": false,
+      "misconception": "I added the 7 numbers that are in both lists instead of subtracting them: 50 + 14 + 7."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-10",
+    "secondary": [
+      "NUM-04",
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "Which perfect squares are already multiples of 4?",
+    "Count each list on its own, then deal with the numbers that appear in both lists so that nothing is counted twice: add the two counts and subtract the overlap.",
+    "There are 50 multiples of 4 and 14 squares up to 200, since $14^2 = 196$. A square is a multiple of 4 exactly when it is even, which gives $2^2, 4^2, \\dots, 14^2$."
+  ],
+  "solutions": {
+    "reliable": "Multiples of 4 from 1 to 200: $200 / 4 = 50$. Perfect squares: $1^2$ up to $14^2 = 196$, so 14 of them. An odd square is odd, while an even square $(2k)^2 = 4k^2$ is a multiple of 4, so the overlap is the 7 even squares $2^2, 4^2, \\dots, 14^2$. The total is $50 + 14 - 7 = 57$. The transferable idea: when two lists overlap, add them and subtract what was counted twice.",
+    "elegant": "Every even square is already a multiple of 4, so only the odd squares are new: $1^2, 3^2, \\dots, 13^2$, which is 7 numbers. The answer is $50 + 7 = 57$. The transferable idea: count one list in full, then add only the members of the other list that are new."
+  },
+  "whyOnTest": "Two overlapping lists must be added and the overlap removed once, and seeing that even squares are multiples of 4 is the key step.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -20,9 +20,12 @@ const outDir = process.env.STATIC_DATA_DIR ?? join(root, 'public', 'data');
 try {
   const result = writeStaticData({ contentDir, outDir });
   const amc = result.amc ? `, ${result.amc.problems} AMC problems` : ', no AMC content';
+  const tests = Object.entries(result.tests)
+    .map(([test, n]) => `, ${n} ${test} problems`)
+    .join('');
   console.log(
     `wrote ${relative(root, outDir) || outDir} - ${result.ka.problems} Kangaroo problems, ` +
-      `${result.ka.skills} skills${amc}, ${result.files} files`,
+      `${result.ka.skills} skills${amc}${tests}, ${result.files} files`,
   );
 } catch (error) {
   console.error(error instanceof Error ? error.message : error);

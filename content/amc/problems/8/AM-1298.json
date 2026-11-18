@@ -1,0 +1,68 @@
+{
+  "id": "AM-1298",
+  "contest": "AMC8",
+  "slot": 18,
+  "area": "CP",
+  "topic": "CP-04",
+  "types": [
+    "T-COMPLEMENT"
+  ],
+  "statement": "How many integers from $1$ to $300$ are divisible by $4$ or by $6$, but are not divisible by $9$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$67$",
+      "correct": false,
+      "misconception": "I counted the 100 numbers divisible by 4 or 6 and then subtracted all 33 multiples of 9 from 1 to 300, even the ones not divisible by 4 or 6."
+    },
+    {
+      "key": "B",
+      "text": "$84$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$92$",
+      "correct": false,
+      "misconception": "I only removed the 8 multiples of 36 when taking out multiples of 9, and forgot the multiples of 18 that are not multiples of 4."
+    },
+    {
+      "key": "D",
+      "text": "$100$",
+      "correct": false,
+      "misconception": "I counted the numbers divisible by 4 or 6 but forgot to remove the ones divisible by 9."
+    },
+    {
+      "key": "E",
+      "text": "$125$",
+      "correct": false,
+      "misconception": "I added the 75 multiples of 4 and the 50 multiples of 6 without removing the multiples of 12 counted twice, and I never used the 9."
+    }
+  ],
+  "hints": [
+    "First count the numbers divisible by 4 or 6, using the multiples of 12 to fix the double count.",
+    "Then remove the ones that are also divisible by 9. A multiple of 4 and 9 is a multiple of 36, and a multiple of 6 and 9 is a multiple of 18.",
+    "75 + 50 - 25 = 100. Every multiple of 36 is also a multiple of 18, so you only need to remove the 16 multiples of 18. 100 - 16 = 84."
+  ],
+  "solutions": {
+    "reliable": "Multiples of $4$: $75$. Multiples of $6$: $50$. Multiples of both, which are the multiples of $12$: $25$. So $75 + 50 - 25 = 100$ numbers are divisible by $4$ or $6$. Among these, a number divisible by $9$ is a multiple of $36$ (if it is a multiple of $4$) or of $18$ (if it is a multiple of $6$). Every multiple of $36$ is a multiple of $18$, so these are just the multiples of $18$ up to $300$, and there are $16$ of them, since $18 \\cdot 16 = 288$. The answer is $100 - 16 = 84$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-01"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1297",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A 5 by 5 board has its centre square cut out. A straight strip of 3 squares is placed on the board along a row or a column, so that it covers exactly 3 squares of the board and does not lie over the hole. In how many different positions can the strip be placed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "27",
+      "correct": false,
+      "misconception": "I took away the 3 positions in the middle row that cover the hole, but forgot the 3 in the middle column."
+    },
+    {
+      "key": "C",
+      "text": "28",
+      "correct": false,
+      "misconception": "I thought only the strip centred on the hole is blocked, so I took away just 1 position in the middle row and 1 in the middle column."
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": false,
+      "misconception": "I counted all the positions on a full board and forgot about the hole."
+    },
+    {
+      "key": "E",
+      "text": "32",
+      "correct": false,
+      "misconception": "I thought a strip of 3 can start in 4 places along a row of 5, then took away 4 positions in the middle row and 4 in the middle column."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-12",
+    "secondary": [
+      "CNT-09",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Count the positions on a board with no hole first.",
+    "On a full board, slide the strip along one row to count its positions, then use all the rows and columns. Then find which of those positions cover the centre square.",
+    "On a full board there are 3 positions in each row and each column, 30 in all. In the middle row every one of the 3 positions covers the centre square, and the same is true in the middle column."
+  ],
+  "solutions": {
+    "reliable": "First ignore the hole. In one row of 5 squares the strip can cover squares 1 to 3, 2 to 4 or 3 to 5, so 5 - 3 + 1 = 3 positions, and 5 rows give 15. The columns give another 15, so 30 in all. Now remove the positions that cover the centre square. It is square 3 of the middle row, and all three positions in that row include square 3. The same holds for the middle column. No other position covers the centre, so 30 - 3 - 3 = 24 positions remain. The transferable idea: count the easy whole first, then subtract exactly the cases that break the rule.",
+    "elegant": "Count directly. The 4 rows without the hole have 3 positions each, 12 in all, and the middle row has none, because every block of 3 squares in a row of 5 includes the middle square. The columns give the same 12, so there are 24 positions."
+  },
+  "whyOnTest": "Counting by position with a twist: slide a window to count, then remove the blocked cases, noticing that every window in the middle line is blocked.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

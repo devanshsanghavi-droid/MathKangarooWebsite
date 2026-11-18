@@ -1,0 +1,66 @@
+{
+  "id": "AM-1234",
+  "contest": "AMC8",
+  "slot": 3,
+  "area": "CP",
+  "topic": "CP-08",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A prize wheel is split into $5$ equal sections. The sections show $2$, $4$, $8$, $8$ and $8$ tickets. On each spin, the wheel is equally likely to stop on any section, and the player wins the number of tickets shown there. On average, how many tickets does a player win per spin?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{14}{3}$",
+      "correct": false,
+      "misconception": "I averaged the different amounts 2, 4 and 8, each counted once, to get 14 divided by 3, but 8 is on three sections."
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I averaged the smallest and the largest amounts, (2 + 8) divided by 2 = 5."
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I picked 8 because it is the amount the wheel lands on most often, but the smaller amounts pull the average down."
+    },
+    {
+      "key": "E",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I added the tickets on all five sections to get 30 and forgot to divide by the 5 equally likely sections."
+    }
+  ],
+  "hints": [
+    "Imagine spinning the wheel $5$ times and landing on each section exactly once.",
+    "Each section has probability $\\frac{1}{5}$. The average win is the mean of the five section values, with $8$ counted three times.",
+    "The five sections add to $2 + 4 + 8 + 8 + 8 = 30$. Divide by $5$."
+  ],
+  "solutions": {
+    "reliable": "Each of the $5$ sections comes up with probability $\\frac{1}{5}$, so the expected win is $\\frac{1}{5}(2 + 4 + 8 + 8 + 8) = \\frac{30}{5} = 6$ tickets per spin.",
+    "elegant": "Over $5$ typical spins the wheel lands on each section once and pays $30$ tickets in all, which is $6$ per spin."
+  },
+  "formulas": [],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

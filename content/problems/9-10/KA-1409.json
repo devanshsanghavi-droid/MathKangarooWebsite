@@ -1,0 +1,67 @@
+{
+  "id": "KA-1409",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Five parcels P, Q, R, S and T all have different masses. P is heavier than Q, R is heavier than S, Q is heavier than S, and T is heavier than R. Which of these statements must be true?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "S is the lightest parcel.",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "P is the heaviest parcel.",
+      "correct": false,
+      "misconception": "I lined up the clues in the order they were given and put P at the top, without noticing that T could be heavier still."
+    },
+    {
+      "key": "C",
+      "text": "Q is heavier than R.",
+      "correct": false,
+      "misconception": "I stacked the chain P, Q on top of the chain T, R, S, as if everything in the first chain were heavier than everything in the second."
+    },
+    {
+      "key": "D",
+      "text": "T is heavier than Q.",
+      "correct": false,
+      "misconception": "I assumed the parcel mentioned in the last clue, T, must be heavier than all the others in that part of the list."
+    },
+    {
+      "key": "E",
+      "text": "Q is the second lightest parcel.",
+      "correct": false,
+      "misconception": "I placed Q just above S because they appear together in a clue, but R is also heavier than S and could be the one just above it."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-04",
+    "secondary": [
+      "LOG-01"
+    ]
+  },
+  "hints": [
+    "Draw the clues as arrows from heavier to lighter.",
+    "Ordering clues are easiest on a single line or as a diagram of arrows. A statement must be true only if every order that fits the clues makes it true, so look for one order that breaks it.",
+    "The clues form two chains, P above Q and T above R, both ending above S. Nothing links P with T or Q with R."
+  ],
+  "solutions": {
+    "reliable": "Draw arrows from heavier to lighter: P to Q, Q to S, T to R and R to S. Every other parcel is heavier than S, directly (Q and R) or through a chain (P through Q, T through R), so S must be the lightest. The other statements can all fail, because two different orders fit every clue. In the order T, R, P, Q, S (heaviest first), P is not the heaviest and Q is lighter than R. In the order P, Q, T, R, S, T is lighter than Q, and R, not Q, is the second lightest. The transferable idea: 'must be true' means true in every order that fits, so one counterexample is enough to rule a statement out.",
+    "elegant": null
+  },
+  "whyOnTest": "Partial orders test whether you see what the clues really fix; the traps are reading an order into the sequence the clues happen to be written in.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

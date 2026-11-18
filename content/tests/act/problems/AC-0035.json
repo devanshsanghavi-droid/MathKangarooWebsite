@@ -1,0 +1,56 @@
+{
+  "id": "AC-0035",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-04",
+  "difficulty": "medium",
+  "statement": "In one city, $32\\%$ of household waste was recycled in 2023. In 2025, $40\\%$ was recycled. By what percent did the recycling rate increase from 2023 to 2025?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8\\%$",
+      "correct": false,
+      "misconception": "I subtracted 32 from 40 and called the change of 8 percentage points an 8 percent increase."
+    },
+    {
+      "key": "B",
+      "text": "$20\\%$",
+      "correct": false,
+      "misconception": "I divided the change of 8 by the new rate, 40, instead of by the starting rate, 32."
+    },
+    {
+      "key": "C",
+      "text": "$25\\%$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$125\\%$",
+      "correct": false,
+      "misconception": "I divided 40 by 32 and got 1.25, which is the new rate as a percent of the old one, not the increase."
+    }
+  ],
+  "hints": [
+    "Percent increase compares the change to the starting value.",
+    "Find the change in the rate, divide it by the 2023 rate, and write the result as a percent.",
+    "The rate went up by $40 - 32 = 8$ points, and $\\dfrac{8}{32}$ is the fractional increase."
+  ],
+  "solutions": {
+    "reliable": "The rate rose from 32 to 40, a change of 8 percentage points. Percent increase is $\\dfrac{\\text{change}}{\\text{original}} = \\dfrac{8}{32} = 0.25 = 25\\%$. The idea: when the quantity is itself a percent, a change in percentage points is not the same as a percent change; divide the change by the starting value.",
+    "elegant": "$\\dfrac{40}{32} = 1.25$, so the new rate is $125\\%$ of the old one, which is a $25\\%$ increase."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

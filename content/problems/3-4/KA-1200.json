@@ -1,0 +1,68 @@
+{
+  "id": "KA-1200",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Numbers 1 to 100 snake through a 5-column table: row 1 runs 1 to 5 left to right, row 2 runs 6 to 10 right to left, and so on. What is directly below 67?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "64",
+      "correct": false,
+      "misconception": "I found the number directly above 67 instead of below it."
+    },
+    {
+      "key": "B",
+      "text": "68",
+      "correct": false,
+      "misconception": "I gave the next number, as if below meant after."
+    },
+    {
+      "key": "C",
+      "text": "72",
+      "correct": false,
+      "misconception": "I added 5, as if every row ran from left to right."
+    },
+    {
+      "key": "D",
+      "text": "74",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "77",
+      "correct": false,
+      "misconception": "I thought going down one row always adds 10, because two rows hold 10 numbers."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-06",
+    "secondary": [
+      "NUM-06",
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "Which row is 67 in, and which way does that row run?",
+    "Each row holds 5 numbers, and rows with even row numbers run right to left. Find the column of 67, then find the number in that column one row lower.",
+    "67 is in row 14, which runs right to left: 66 is in column 5, so 67 is in column 4."
+  ],
+  "solutions": {
+    "reliable": "Row 14 holds 66 to 70 and runs right to left, so 66 is in column 5 and 67 in column 4. Row 15 holds 71 to 75 and runs left to right, so column 4 holds 74. The transferable idea: in a snaking table, find the row, check its direction, then find the column.",
+    "elegant": "In two neighbouring rows the numbers in one column add to the same total: 70 above 71, 69 above 72, 68 above 73, 67 above 74, all adding to 141. So the number below 67 is $141 - 67 = 74$."
+  },
+  "whyOnTest": "Snaking tables test careful position tracking: the direction of each row decides the column.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

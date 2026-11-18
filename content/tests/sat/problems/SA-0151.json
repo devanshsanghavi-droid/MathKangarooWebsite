@@ -1,0 +1,56 @@
+{
+  "id": "SA-0151",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-05",
+  "difficulty": "easy",
+  "statement": "Two volunteers are folding letters for a mailing. Working alone, Jordan can fold all the letters in $6$ hours and Kai can fold all of them in $12$ hours. Working together at these rates, they fold all the letters in $t$ hours, where $\\dfrac{1}{6} + \\dfrac{1}{12} = \\dfrac{1}{t}$. What is the value of $t$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{1}{4}$",
+      "correct": false,
+      "misconception": "I added the fractions correctly to get one fourth, but I gave that as the time instead of taking its reciprocal to solve for t."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I averaged the two times, 6 and 12, as if working together takes the average of the separate times."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I added the two times, 6 plus 12, as if the volunteers took turns instead of working at the same time."
+    }
+  ],
+  "hints": [
+    "The left side is the fraction of the job the two volunteers finish together in one hour.",
+    "Add the two fractions using a common denominator of $12$, then solve for $t$.",
+    "$\\dfrac{1}{6} + \\dfrac{1}{12} = \\dfrac{2}{12} + \\dfrac{1}{12} = \\dfrac{3}{12} = \\dfrac{1}{4}$, so $\\dfrac{1}{t} = \\dfrac{1}{4}$."
+  ],
+  "solutions": {
+    "reliable": "Jordan folds $\\frac{1}{6}$ of the letters per hour and Kai folds $\\frac{1}{12}$. Together they fold $\\frac{1}{6} + \\frac{1}{12} = \\frac{3}{12} = \\frac{1}{4}$ of the letters per hour. Since $\\frac{1}{t} = \\frac{1}{4}$, $t = 4$. Check: in $4$ hours Jordan folds $\\frac{4}{6}$ and Kai folds $\\frac{4}{12}$, and $\\frac{2}{3} + \\frac{1}{3} = 1$ whole job.",
+    "elegant": "Think of Kai as half as fast as Jordan. Together they work like $1.5$ Jordans, so the job takes $6 / 1.5 = 4$ hours."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

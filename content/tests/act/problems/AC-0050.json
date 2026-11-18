@@ -1,0 +1,56 @@
+{
+  "id": "AC-0050",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-05",
+  "difficulty": "hard",
+  "statement": "A solid steel block measures $2$ inches by $3$ inches by $5$ inches. Steel has a density of $7.8$ grams per cubic centimeter, and $1$ inch $= 2.54$ centimeters. To the nearest hundredth of a kilogram, what is the mass of the block?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3.83$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$1.51$",
+      "correct": false,
+      "misconception": "I converted cubic inches to cubic centimeters by multiplying by $2.54^2$, a factor for square units, instead of $2.54^3$."
+    },
+    {
+      "key": "C",
+      "text": "$0.59$",
+      "correct": false,
+      "misconception": "I multiplied the 30 cubic inches by 2.54 only once, treating a volume conversion like a length conversion."
+    },
+    {
+      "key": "D",
+      "text": "$0.01$",
+      "correct": false,
+      "misconception": "I divided the 30 cubic inches by $2.54^3$ instead of multiplying, which converts in the wrong direction."
+    }
+  ],
+  "hints": [
+    "Find the volume in cubic inches, then convert it to cubic centimeters.",
+    "One cubic inch is $2.54^3$ cubic centimeters. Multiply the volume by that, then by the density, then change grams to kilograms.",
+    "The volume is $30$ cubic inches, which is $30 \\cdot 2.54^3 \\approx 491.6$ cubic centimeters."
+  ],
+  "solutions": {
+    "reliable": "Volume: $2 \\cdot 3 \\cdot 5 = 30$ cubic inches. Since $1 \\text{ in} = 2.54 \\text{ cm}$, $1 \\text{ in}^3 = 2.54^3 \\text{ cm}^3 \\approx 16.387 \\text{ cm}^3$, so the volume is about $30 \\cdot 16.387 \\approx 491.6 \\text{ cm}^3$. Mass: $491.6 \\cdot 7.8 \\approx 3{,}834.6$ grams, which is about $3.83$ kilograms. The idea: when converting a volume, the length conversion factor must be cubed.",
+    "elegant": "Convert each edge first: $5.08$ cm, $7.62$ cm and $12.7$ cm. The volume is $5.08 \\cdot 7.62 \\cdot 12.7 \\approx 491.6 \\text{ cm}^3$, and the mass is $491.6 \\cdot 7.8 \\approx 3{,}835$ g, or about $3.83$ kg."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

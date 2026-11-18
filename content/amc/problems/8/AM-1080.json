@@ -1,0 +1,68 @@
+{
+  "id": "AM-1080",
+  "contest": "AMC8",
+  "slot": 2,
+  "area": "GEO",
+  "topic": "GEO-01",
+  "types": [
+    "T-ANGLE-CHASE"
+  ],
+  "statement": "In an isosceles triangle, the angle between the two equal sides is $3$ times as large as each of the other two angles. What is the measure, in degrees, of the angle between the two equal sides?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I found the two equal angles, 36 degrees each, and gave one of those instead of the angle between the equal sides."
+    },
+    {
+      "key": "B",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I wrote 3x + x = 180, counting only one of the two equal angles, so I got x = 45 and gave that."
+    },
+    {
+      "key": "C",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I found that each of the other two angles is 36 degrees, then doubled it instead of tripling it."
+    },
+    {
+      "key": "D",
+      "text": "$108$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$135$",
+      "correct": false,
+      "misconception": "I wrote 3x + x = 180, forgetting that there are two equal angles, so x = 45 and 3x = 135."
+    }
+  ],
+  "hints": [
+    "In an isosceles triangle, the two angles that are not between the equal sides are equal to each other.",
+    "Call each of those two angles $x^\\circ$. The third angle is $3x^\\circ$, and all three add up to $180^\\circ$.",
+    "$x + x + 3x = 5x = 180$, so $x = 36$. Now find $3x$."
+  ],
+  "solutions": {
+    "reliable": "The two angles opposite the equal sides are equal; call each of them $x^\\circ$. The angle between the equal sides is $3x^\\circ$. The angles of a triangle add up to $180^\\circ$, so $x + x + 3x = 5x = 180$, which gives $x = 36$. The angle between the equal sides is $3 \\cdot 36^\\circ = 108^\\circ$. Check: $36 + 36 + 108 = 180$.",
+    "elegant": "The three angles are in the ratio $1 : 1 : 3$, so the largest is $\\frac{3}{5}$ of $180^\\circ$, which is $108^\\circ$."
+  },
+  "formulas": [
+    "F-GEO-19"
+  ],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

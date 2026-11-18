@@ -1,0 +1,68 @@
+{
+  "id": "KA-1455",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A square sheet of paper is folded in half to make a rectangle, then folded in half again to make a smaller square, four layers thick. One straight cut goes through all the layers, parallel to a side of the small square and halfway between that side and the opposite side. Into how many pieces does the sheet fall?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I ignored the folds and thought one straight cut always splits a sheet into two pieces."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": false,
+      "misconception": "I thought each of the four layers is cut once, so the sheet gets four cuts in a row and 4 + 1 = 5 pieces."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought each of the four layers falls into two pieces, giving 4 × 2 = 8, forgetting that the folds join layers together."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I unfolded the cut in both directions, as if it made two lines across the sheet and two lines down it, a 3 by 3 grid of 9 pieces."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-15",
+    "secondary": [
+      "GEO-09",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Unfold the paper one fold at a time and draw where the cut goes.",
+    "Each unfolding reflects the cut in a fold line. A fold parallel to the cut gives a second cut, but a fold at right angles to the cut only makes the same cut longer.",
+    "The cut becomes two straight lines, each running right across the unfolded sheet, parallel to one side and a quarter of the way in from opposite edges."
+  ],
+  "solutions": {
+    "reliable": "Let the sheet be the square with corners (0, 0) and (4, 4). Fold it along x = 2 and then along y = 2, so the small square has corners (0, 0) and (2, 2), with folds along two of its sides. Suppose the cut is the line x = 1 across the small square. Undo the second fold, along y = 2: the cut is reflected in a line at right angles to it, so it simply continues, and becomes the whole line x = 1 from y = 0 to y = 4. Undo the first fold, along x = 2: the cut is reflected in a parallel line, so a second cut appears along x = 3. Two full cuts across the sheet leave 3 strips. A cut in the other direction, along y = 1, works the same way: unfolding gives full cuts along y = 1 and y = 3, and again 3 pieces. The transferable idea: unfold a cut one fold at a time, reflecting it in each fold line, before counting pieces.",
+    "elegant": "Each fold either doubles the cut, if the fold is parallel to it, or just lengthens it, if the fold is at right angles to it. A cut parallel to a side is parallel to exactly one of the two folds, so the open sheet has 2 full cuts and falls into 3 strips."
+  },
+  "whyOnTest": "Folding and cutting questions test unfolding a cut by reflection, instead of assuming every layer adds more pieces.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

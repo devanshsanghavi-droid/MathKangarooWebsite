@@ -1,0 +1,67 @@
+{
+  "id": "KA-1187",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Which of these numbers can be divided exactly by 12?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "540",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "128",
+      "correct": false,
+      "misconception": "I thought a number divides by 12 if it starts with the digits 1 and 2."
+    },
+    {
+      "key": "C",
+      "text": "236",
+      "correct": false,
+      "misconception": "I thought a number divides by 12 when its last two digits, here 36, make a multiple of 12."
+    },
+    {
+      "key": "D",
+      "text": "471",
+      "correct": false,
+      "misconception": "I thought a number divides by 12 when its digits add up to 12."
+    },
+    {
+      "key": "E",
+      "text": "618",
+      "correct": false,
+      "misconception": "I thought dividing by 12 only needs the number to divide by 2 and by 6, and 618 does."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "12 is 3 times 4.",
+    "A number divides by 12 exactly when it divides by both 3 and 4. Use the digit-sum rule for 3 and the last-two-digits rule for 4.",
+    "For 540, the digits add to 9 and the last two digits make 40."
+  ],
+  "solutions": {
+    "reliable": "Check 3 (digit sum) and 4 (last two digits). 128: digit sum 11, fails 3. 236: digit sum 11, fails 3. 471: odd, fails 4. 618: 18 is not a multiple of 4, fails 4. 540: digit sum 9 passes 3, and 40 is a multiple of 4, so 540 divides by 12 ($540 = 12 \\times 45$). The transferable idea: to test a number like 12, split it into factors with no common factor, here 3 and 4, and test each.",
+    "elegant": null
+  },
+  "whyOnTest": "Divisibility by 12 combines the rules for 3 and 4; the trap is that 2 and 6 share a factor, so they are not enough.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

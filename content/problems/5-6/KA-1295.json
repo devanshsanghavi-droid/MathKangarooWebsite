@@ -1,0 +1,67 @@
+{
+  "id": "KA-1295",
+  "band": "5-6",
+  "points": 4,
+  "statement": "On a balance, 1 red brick and 2 blue bricks balance 11 marbles. On another balance, 2 red bricks and 1 blue brick balance 13 marbles. All red bricks weigh the same, all blue bricks weigh the same and all marbles weigh the same. How many marbles balance 1 red brick and 1 blue brick together?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I worked out the weight of a blue brick and gave that instead of a red and a blue brick together."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I worked out the weight of a red brick and gave that instead of a red and a blue brick together."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I thought one red and one blue brick must sit halfway between the two balances, so I took the average of 11 and 13."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I put both balances together, 3 red and 3 blue bricks against 24 marbles, and gave 24 without sharing it into three equal groups."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-10",
+    "secondary": [
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "What happens if you put everything from both balances onto one balance?",
+    "Put both left pans together and both right pans together, and the balance still holds. Count the red and blue bricks that are then on the left, and split them into equal groups.",
+    "Together the pans hold 3 red bricks and 3 blue bricks against 11 + 13 = 24 marbles. That is three groups of one red and one blue brick, so each group balances 24 ÷ 3 marbles."
+  ],
+  "solutions": {
+    "reliable": "Put both balances together: 3 red bricks and 3 blue bricks balance 11 + 13 = 24 marbles. These bricks make three equal groups of 1 red and 1 blue brick, so each group balances 24 ÷ 3 = 8 marbles. Check by finding each brick: the second balance has one more red brick and one fewer blue brick than the first, and 2 more marbles, so a red brick is 2 marbles heavier than a blue one. Then 1 red and 2 blue bricks are as heavy as 3 blue bricks and 2 marbles, which is 11 marbles, so a blue brick is 3 marbles, a red brick is 5 marbles, and 5 + 3 = 8. The transferable idea: combining balances can answer the question directly, without finding every weight.",
+    "elegant": "Back-solve: if one red and one blue brick together are 8 marbles, the first balance is that pair plus a blue brick, so a blue brick is 11 - 8 = 3, and the second is the pair plus a red brick, so a red brick is 13 - 8 = 5. Then 5 + 3 = 8, which fits."
+  },
+  "whyOnTest": "Balance puzzles test substitution and combining: adding two balances can answer the question without finding every weight.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

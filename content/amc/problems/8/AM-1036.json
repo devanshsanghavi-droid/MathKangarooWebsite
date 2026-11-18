@@ -1,0 +1,62 @@
+{
+  "id": "AM-1036",
+  "contest": "AMC8",
+  "slot": 12,
+  "area": "ALG",
+  "topic": "ALG-01",
+  "types": ["T-SUBSTITUTION"],
+  "statement": "A teacher hands out pencils from a box. If she gives each student $5$ pencils, she has $14$ pencils left over. If instead she gives $7$ pencils to every student except the last one, then the last student gets only $3$ pencils and the box is empty. How many pencils are in the box?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I found the 9 students, but then multiplied by 5 and forgot the 14 pencils left over."
+    },
+    {
+      "key": "B",
+      "text": "$49$",
+      "correct": false,
+      "misconception": "I ignored the last student being short and wrote 7s = 5s + 14, which gave 7 students and 49 pencils."
+    },
+    {
+      "key": "C",
+      "text": "$59$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$63$",
+      "correct": false,
+      "misconception": "I found the 9 students and multiplied by 7, forgetting that the last student got only 3 pencils."
+    },
+    {
+      "key": "E",
+      "text": "$66$",
+      "correct": false,
+      "misconception": "I found the 9 students, but then gave every one of them 7 pencils and added the last student's 3 on top: 7 × 9 + 3 = 66."
+    }
+  ],
+  "hints": [
+    "Let $s$ be the number of students and count the pencils in two ways.",
+    "The first way gives $5s + 14$ pencils. The second gives $7(s - 1) + 3$ pencils.",
+    "Setting $5s + 14 = 7s - 4$ gives $s = 9$."
+  ],
+  "solutions": {
+    "reliable": "Let there be $s$ students. Giving $5$ to each uses $5s$ pencils and leaves $14$, so the box has $5s + 14$ pencils. Giving $7$ to each of $s - 1$ students and $3$ to the last uses $7(s - 1) + 3 = 7s - 4$ pencils. So $5s + 14 = 7s - 4$, giving $s = 9$, and the box has $5 \\cdot 9 + 14 = 59$ pencils. Check: $7 \\cdot 8 + 3 = 59$.",
+    "elegant": "If the last student had received a full $7$, the teacher would have needed $4$ more pencils. Going from $5$ each with $14$ to spare to $7$ each with $4$ missing, the extra $2$ pencils per student used up $14 + 4 = 18$ pencils. So there are $9$ students and $5 \\cdot 9 + 14 = 59$ pencils."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

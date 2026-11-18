@@ -1,0 +1,56 @@
+{
+  "id": "AC-0171",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-07",
+  "difficulty": "hard",
+  "statement": "The graph of $f(x) = \\dfrac{x^2 + 2x - 8}{x^2 - 4}$ in the $xy$-plane has a hole (a single missing point). What are the coordinates of the hole?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$(-4, 0)$",
+      "correct": false,
+      "misconception": "I cancelled the common factor and then gave the $x$-intercept of what was left, where $x + 4 = 0$, instead of the missing point."
+    },
+    {
+      "key": "B",
+      "text": "$(2, 0)$",
+      "correct": false,
+      "misconception": "I thought a hole sits on the $x$-axis because the original numerator is $0$ at $x = 2$."
+    },
+    {
+      "key": "C",
+      "text": "$\\left(2, \\frac{2}{3}\\right)$",
+      "correct": false,
+      "misconception": "I found the hole at $x = 2$ but flipped the simplified fraction, evaluating $\\frac{x + 2}{x + 4}$ to get $\\frac{4}{6}$."
+    },
+    {
+      "key": "D",
+      "text": "$\\left(2, \\frac{3}{2}\\right)$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Factor the numerator and the denominator.",
+    "A factor that cancels from the top and bottom marks the $x$-coordinate of the hole. Its $y$-coordinate is the simplified expression evaluated there.",
+    "$f(x) = \\dfrac{(x + 4)(x - 2)}{(x + 2)(x - 2)}$, which is $\\dfrac{x + 4}{x + 2}$ for $x \\ne 2$. Evaluate that at $x = 2$."
+  ],
+  "solutions": {
+    "reliable": "Factor: $x^2 + 2x - 8 = (x + 4)(x - 2)$ and $x^2 - 4 = (x + 2)(x - 2)$. The factor $x - 2$ cancels, so $f(x) = \\dfrac{x + 4}{x + 2}$ for $x \\ne 2, -2$. At $x = -2$ the denominator is still $0$, so that is a vertical asymptote. At $x = 2$ the original function is undefined but the simplified one gives $\\dfrac{6}{4} = \\dfrac{3}{2}$, so the hole is at $\\left(2, \\frac{3}{2}\\right)$.",
+    "elegant": null
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

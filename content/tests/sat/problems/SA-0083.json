@@ -1,0 +1,56 @@
+{
+  "id": "SA-0083",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "medium",
+  "statement": "The sum of three consecutive even integers is $54$ more than the largest of the three integers. What is the smallest of the three integers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I compared the sum with the smallest integer instead of the largest, so I solved $3n + 6 = n + 54$ and got 24."
+    },
+    {
+      "key": "B",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I found the integers 26, 28 and 30 correctly, but I gave the largest one instead of the smallest."
+    },
+    {
+      "key": "C",
+      "text": "$26$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I set the sum equal to 54, $3n + 6 = 54$, and ignored the words 'more than the largest'."
+    }
+  ],
+  "hints": [
+    "Call the smallest integer $n$ and write the other two using $n$.",
+    "Consecutive even integers are $n$, $n + 2$ and $n + 4$. Their sum equals the largest one, $n + 4$, plus $54$.",
+    "$3n + 6 = (n + 4) + 54$, which gives $2n = 52$."
+  ],
+  "solutions": {
+    "reliable": "Let the integers be $n$, $n + 2$ and $n + 4$. Their sum is $3n + 6$, and it is $54$ more than $n + 4$: $3n + 6 = n + 58$. So $2n = 52$ and $n = 26$. Check: $26 + 28 + 30 = 84$, and $30 + 54 = 84$. Key idea: name one unknown, express the others from it, and translate 'more than' as addition.",
+    "elegant": "Taking the largest integer out of the sum leaves the other two, so $n + (n + 2) = 54$ and $n = 26$."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

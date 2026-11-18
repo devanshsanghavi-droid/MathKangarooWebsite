@@ -1,0 +1,68 @@
+{
+  "id": "KA-1533",
+  "band": "11-12",
+  "points": 5,
+  "statement": "The product of all the positive divisors of a whole number $N$, including 1 and $N$, is $6^{24}$. What is $N$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$216$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$1296$",
+      "correct": false,
+      "misconception": "I assumed $N$ has 12 divisors, so $N^6 = 6^{24}$, but $1296 = 6^4$ has 25 divisors."
+    },
+    {
+      "key": "C",
+      "text": "$6^{6}$",
+      "correct": false,
+      "misconception": "I assumed $N$ has 8 divisors, so $N^4 = 6^{24}$, without checking that $6^6$ has 49 divisors."
+    },
+    {
+      "key": "D",
+      "text": "$6^{8}$",
+      "correct": false,
+      "misconception": "I assumed $N$ has 6 divisors, so $N^3 = 6^{24}$, without checking the number of divisors of $6^8$."
+    },
+    {
+      "key": "E",
+      "text": "$6^{12}$",
+      "correct": false,
+      "misconception": "I thought the product of all the divisors of $N$ is always $N^2$."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-12",
+    "secondary": [
+      "NUM-05",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Pair each divisor $d$ with $N \\div d$.",
+    "The divisors pair up into products equal to $N$, so the product of all of them is $N$ to the power (number of divisors) over 2. Test each choice: count its divisors and compute.",
+    "$216 = 2^3 \\cdot 3^3$ has $4 \\times 4 = 16$ divisors, so the product of its divisors is $216^8$."
+  ],
+  "solutions": {
+    "reliable": "Each divisor $d$ of $N$ pairs with $N \\div d$, and each pair multiplies to $N$. If $N$ has $k$ divisors, their product is $N^{k/2}$. Only the primes 2 and 3 divide $6^{24}$, so $N = 2^a 3^b$, and the product is $2^{ak/2} 3^{bk/2}$ with $k = (a + 1)(b + 1)$. Matching $6^{24}$ needs $a = b$ and $a(a + 1)^2 = 48$, so $a = 3$ and $N = 6^3 = 216$. Check: 216 has 16 divisors, and $216^8 = 6^{24}$. The transferable idea: in the last block, choose problems like this one, where a single known fact and a check of the choices finish the job.",
+    "elegant": "Back-solve from the smallest choice: 216 has 16 divisors, giving $216^8 = 6^{24}$. Done, and every larger choice would give a larger product."
+  },
+  "whyOnTest": "A 5-pointer that falls to one fact plus a check of the choices: exactly the kind to pick out when managing the last block.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

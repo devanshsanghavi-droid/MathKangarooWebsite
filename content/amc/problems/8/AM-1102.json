@@ -1,0 +1,66 @@
+{
+  "id": "AM-1102",
+  "contest": "AMC8",
+  "slot": 9,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-AREA-RATIO"
+  ],
+  "statement": "A rectangle is cut into four smaller rectangles by one line parallel to its length and one line parallel to its width. The top-left small rectangle has area $12$, the top-right one has area $18$, and the bottom-left one has area $30$. What is the area of the original rectangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I added the three given areas, 12 + 18 + 30 = 60, and forgot the fourth small rectangle."
+    },
+    {
+      "key": "B",
+      "text": "$78$",
+      "correct": false,
+      "misconception": "I thought the bottom-right rectangle has the same area as the top-right one, 18, because they are in the same column, and got 60 + 18 = 78. They have the same width but not the same height."
+    },
+    {
+      "key": "C",
+      "text": "$80$",
+      "correct": false,
+      "misconception": "I set up the ratio upside down: I said the bottom-right area is to 30 as 12 is to 18, so it came out 20 and the total was 80."
+    },
+    {
+      "key": "D",
+      "text": "$96$",
+      "correct": false,
+      "misconception": "I thought the areas go up by the same amount across a row: the top row goes up by 6, so I made the bottom-right 30 + 6 = 36 and got 96."
+    },
+    {
+      "key": "E",
+      "text": "$105$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Two rectangles in the same row have the same height, so the ratio of their areas is the ratio of their widths.",
+    "The top row shows that the right column is $\\frac{18}{12} = \\frac{3}{2}$ times as wide as the left column. That is true in the bottom row too.",
+    "The bottom-right rectangle has area $30 \\cdot \\frac{3}{2} = 45$. Add all four areas."
+  ],
+  "solutions": {
+    "reliable": "The two top rectangles have the same height, so their widths are in the ratio $12 : 18 = 2 : 3$. The two bottom rectangles have those same two widths and share a height, so their areas are also in the ratio $2 : 3$. The bottom-left area is $30$, so the bottom-right area is $30 \\cdot \\frac{3}{2} = 45$. The original rectangle has area $12 + 18 + 30 + 45 = 105$.",
+    "elegant": "The top row has area $12 + 18 = 30$ and the left column has area $12 + 30 = 42$. Multiplying them gives (width of the whole) $\\times$ (top height) $\\times$ (left width) $\\times$ (height of the whole), and dividing by the top-left area, (left width) $\\times$ (top height), leaves the whole area: $\\frac{30 \\cdot 42}{12} = 105$."
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

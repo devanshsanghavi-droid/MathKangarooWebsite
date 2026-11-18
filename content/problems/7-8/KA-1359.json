@@ -1,0 +1,67 @@
+{
+  "id": "KA-1359",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Ana uses a balance three times, and each time the two pans are level. First, a pear and an apple balance 5 walnuts. Next, an apple and a lemon balance 7 walnuts. Last, a pear and a lemon balance 6 walnuts. All the walnuts weigh the same. How many walnuts balance a pear, an apple and a lemon together?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I worked out that the lemon balances 4 walnuts and gave that instead of the total for all three fruits."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I took the average of 5, 7 and 6, as if one of each fruit matched a typical weighing."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": false,
+      "misconception": "I added only the second and third weighings, 7 + 6, thinking they already contain all three fruits once each."
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": false,
+      "misconception": "I added the three weighings but forgot that this puts two of each fruit on the pan, not one."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-10",
+    "secondary": [
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "What happens if you put everything from all three weighings on one balance?",
+    "Combine the three weighings into one big balance. Count how many pears, apples and lemons are on one side and how many walnuts are on the other.",
+    "Together the three weighings put 2 pears, 2 apples and 2 lemons against $5 + 7 + 6 = 18$ walnuts."
+  ],
+  "solutions": {
+    "reliable": "Put the fruit pans of all three weighings together and the walnut pans together: 2 pears, 2 apples and 2 lemons balance $5 + 7 + 6 = 18$ walnuts. Halving both sides, one pear, one apple and one lemon balance 9 walnuts. Check by finding each fruit: the lemon is $9 - 5 = 4$ walnuts, the pear is $9 - 7 = 2$ and the apple is $9 - 6 = 3$, and indeed $2 + 3 = 5$, $3 + 4 = 7$ and $2 + 4 = 6$. The transferable idea: when every object appears equally often, add all the balances at once.",
+    "elegant": "A pear and an apple are 5 walnuts and a pear and a lemon are 6, so a lemon is 1 walnut heavier than an apple. With an apple and a lemon at 7, the apple is 3 and the lemon is 4, so the pear is 2, and all three together are $2 + 3 + 4 = 9$ walnuts."
+  },
+  "whyOnTest": "Balance puzzles often have a shortcut: combine the weighings so that every object appears equally often.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

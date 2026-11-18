@@ -1,0 +1,66 @@
+{
+  "id": "AM-1065",
+  "contest": "AMC8",
+  "slot": 22,
+  "area": "ALG",
+  "topic": "ALG-08",
+  "types": [
+    "T-CYCLE"
+  ],
+  "statement": "A number machine follows one rule: if the number put in is even, the machine halves it, and if the number is odd, the machine adds $5$ to it. Jada puts in $9$, and then keeps putting each output back into the machine. What is the sum of the first $50$ outputs?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$98$",
+      "correct": false,
+      "misconception": "I thought the outputs would stop changing once they reached $1$, so I added $14 + 7 + 12 + 6 + 3 + 8 + 4 + 2 + 1 = 57$ and then $41$ more 1s. But $1$ is odd, so the machine turns it into $6$."
+    },
+    {
+      "key": "B",
+      "text": "$191$",
+      "correct": false,
+      "misconception": "I added up only the outputs from the repeating loop, outputs $4$ to $50$, and left out the first three outputs, $14$, $7$ and $12$."
+    },
+    {
+      "key": "C",
+      "text": "$201$",
+      "correct": false,
+      "misconception": "I thought the loop $6, 3, 8, 4, 2, 1$ starts with the very first output, so I used $8$ full loops and then $6 + 3$, getting $8 \\times 24 + 9 = 201$."
+    },
+    {
+      "key": "D",
+      "text": "$224$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$231$",
+      "correct": false,
+      "misconception": "I counted the starting number $9$ as the first output, so I added $9$ and the first $49$ real outputs instead of the first $50$ outputs."
+    }
+  ],
+  "hints": [
+    "Write down the first dozen outputs and look for a block that repeats.",
+    "The outputs are $14, 7, 12, 6, 3, 8, 4, 2, 1, 6, \\ldots$ The block $6, 3, 8, 4, 2, 1$ repeats, starting with the 4th output, and each block adds up to $24$.",
+    "Outputs $4$ through $45$ are exactly $7$ copies of the block. Add the first three outputs, the $7$ blocks, and outputs $46$ through $50$."
+  ],
+  "solutions": {
+    "reliable": "The outputs are $14, 7, 12, 6, 3, 8, 4, 2, 1, 6, 3, \\ldots$ The 4th output is $6$, and from there the block $6, 3, 8, 4, 2, 1$, which adds up to $24$, repeats every $6$ uses. The first three outputs add up to $14 + 7 + 12 = 33$. Outputs $4$ through $45$ are $42$ outputs, exactly $7$ blocks, adding up to $7 \\times 24 = 168$. Outputs $46$ through $50$ start a new block: $6 + 3 + 8 + 4 + 2 = 23$. The total is $33 + 168 + 23 = 224$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

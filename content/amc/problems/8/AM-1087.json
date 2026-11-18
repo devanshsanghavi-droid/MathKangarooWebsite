@@ -1,0 +1,66 @@
+{
+  "id": "AM-1087",
+  "contest": "AMC8",
+  "slot": 4,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-COMPLEMENT"
+  ],
+  "statement": "A round pizza has radius $8$ inches. The crust is a ring $3$ inches wide all the way around the outside edge, and the rest of the pizza is a circle of toppings with the same center. What is the area of the crust, in square inches?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6\\pi$",
+      "correct": false,
+      "misconception": "I subtracted the two circumferences, $16\\pi - 10\\pi = 6\\pi$, but that is a difference of lengths, not an area."
+    },
+    {
+      "key": "B",
+      "text": "$9\\pi$",
+      "correct": false,
+      "misconception": "I subtracted the radii first and then squared, $\\pi(8 - 5)^2 = 9\\pi$, which is the area of a small circle of radius 3, not of the ring."
+    },
+    {
+      "key": "C",
+      "text": "$30\\pi$",
+      "correct": false,
+      "misconception": "I unrolled the crust into a strip as long as its inner edge, $10\\pi$, and 3 wide, but the outer edge of the crust is longer than the inner edge."
+    },
+    {
+      "key": "D",
+      "text": "$39\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$48\\pi$",
+      "correct": false,
+      "misconception": "I unrolled the crust into a strip as long as its outer edge, $16\\pi$, and 3 wide, but the inner edge of the crust is shorter than that."
+    }
+  ],
+  "hints": [
+    "The crust is the whole pizza with the circle of toppings cut out of it.",
+    "The circle of toppings has radius $8 - 3 = 5$. Subtract its area from the area of the whole pizza.",
+    "$\\pi \\cdot 8^2 - \\pi \\cdot 5^2 = 64\\pi - 25\\pi$."
+  ],
+  "solutions": {
+    "reliable": "The circle of toppings has radius $8 - 3 = 5$ inches. The crust is the whole pizza with that circle removed, so its area is $\\pi \\cdot 8^2 - \\pi \\cdot 5^2 = 64\\pi - 25\\pi = 39\\pi$ square inches.",
+    "elegant": "Straighten the ring into a strip $3$ inches wide whose length is the circle through the middle of the crust, radius $6.5$: $2\\pi(6.5) \\cdot 3 = 39\\pi$. The middle circle balances the shorter inner edge and the longer outer edge, which is why $30\\pi$ and $48\\pi$ miss on either side."
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

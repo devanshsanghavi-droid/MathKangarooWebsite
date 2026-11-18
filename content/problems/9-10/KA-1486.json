@@ -1,0 +1,67 @@
+{
+  "id": "KA-1486",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A jacket is reduced by 30%. At the till, a further 10% is taken off the reduced price, and the shopper pays 63 euros. What was the original price?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "105 euros",
+      "correct": false,
+      "misconception": "I added the two discounts to make 40% off and divided 63 by 0.6."
+    },
+    {
+      "key": "B",
+      "text": "100 euros",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "90 euros",
+      "correct": false,
+      "misconception": "I only undid the 30% reduction, dividing 63 by 0.7."
+    },
+    {
+      "key": "D",
+      "text": "70 euros",
+      "correct": false,
+      "misconception": "I only undid the 10% reduction, dividing 63 by 0.9."
+    },
+    {
+      "key": "E",
+      "text": "88.20 euros",
+      "correct": false,
+      "misconception": "I added 40% of 63 back on, instead of dividing by the fraction of the price that was paid."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-10",
+    "secondary": [
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "The second discount is taken from the reduced price, not the original.",
+    "Each discount multiplies the price: 30% off means paying 0.7 of it, then 10% off means paying 0.9 of that. Work out the combined multiplier, then undo it.",
+    "The shopper pays $0.7 \\times 0.9 = 0.63$ of the original price."
+  ],
+  "solutions": {
+    "reliable": "After both discounts the shopper pays $0.7 \\times 0.9 = 0.63$ of the original price $P$. So $0.63P = 63$, giving $P = 100$ euros. The transferable idea: successive percentage changes multiply, and undoing a change means dividing by its multiplier.",
+    "elegant": "Check by going forwards from a choice: 100 euros minus 30% is 70 euros, and 10% off 70 euros leaves 63 euros. The transferable idea: back-solving from a choice confirms a chain of percentages quickly."
+  },
+  "whyOnTest": "Stacked discounts multiply rather than add, and undoing a percentage means dividing; both traps are on offer here.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

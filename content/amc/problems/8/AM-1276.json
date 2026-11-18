@@ -1,0 +1,66 @@
+{
+  "id": "AM-1276",
+  "contest": "AMC8",
+  "slot": 18,
+  "area": "CP",
+  "topic": "CP-12",
+  "types": [
+    "T-BACKWARDS"
+  ],
+  "statement": "A list of $8$ whole numbers has a mean of $10$. If the largest number in the list is removed, the mean of the remaining $7$ numbers is $8$. If instead the smallest number is removed, the mean of the remaining $7$ numbers is $11$. What is the range of the list?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I subtracted the two new means, 11 - 8 = 3, and called that the range."
+    },
+    {
+      "key": "B",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I saw that the largest number is 14 more than the mean of 10 and gave 14 as the range, forgetting that the smallest number sits below the mean too."
+    },
+    {
+      "key": "C",
+      "text": "$21$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I found the largest number, 80 - 56 = 24, and gave it as the range without subtracting the smallest number."
+    },
+    {
+      "key": "E",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I found the largest number 24 and the smallest number 3 correctly, but I added them instead of subtracting."
+    }
+  ],
+  "hints": [
+    "Turn each mean into a total: the mean times how many numbers there are.",
+    "The total of all 8 numbers minus the total of the 7 that are left is exactly the number that was removed.",
+    "The total is 80. Removing the largest leaves a total of 7 times 8 = 56, and removing the smallest leaves 7 times 11 = 77. Find both numbers and subtract."
+  ],
+  "solutions": {
+    "reliable": "The $8$ numbers add up to $8 \\cdot 10 = 80$. Without the largest number, the other $7$ add up to $7 \\cdot 8 = 56$, so the largest number is $80 - 56 = 24$. Without the smallest number, the other $7$ add up to $7 \\cdot 11 = 77$, so the smallest number is $80 - 77 = 3$. The range is $24 - 3 = 21$. Such a list really exists, for example $3, 8, 9, 9, 9, 9, 9, 24$.",
+    "elegant": "Removing the largest number pulls the mean of the other seven $2$ below $10$, so the largest number is $7 \\cdot 2 = 14$ above $10$. Removing the smallest number pushes the mean of the other seven $1$ above $10$, so the smallest number is $7 \\cdot 1 = 7$ below $10$. The range is $14 + 7 = 21$."
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

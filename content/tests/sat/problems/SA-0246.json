@@ -1,0 +1,56 @@
+{
+  "id": "SA-0246",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-06",
+  "difficulty": "hard",
+  "statement": "On her drive to work, Mira passes through $3$ traffic lights. Each light is green when she reaches it with probability $0.6$, independently of the other lights. What is the probability that exactly $2$ of the $3$ lights are green when she reaches them?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.144$",
+      "correct": false,
+      "misconception": "I multiplied 0.6 times 0.6 times 0.4 for one order, green, green, not green, but the light that is not green could be any of the 3."
+    },
+    {
+      "key": "B",
+      "text": "$0.36$",
+      "correct": false,
+      "misconception": "I multiplied 0.6 by 0.6 for the two green lights and forgot that the third light must not be green."
+    },
+    {
+      "key": "C",
+      "text": "$0.432$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$0.648$",
+      "correct": false,
+      "misconception": "I found the correct 0.432 and then added the chance that all three lights are green, 0.216, which gives the chance of at least 2 green lights, not exactly 2."
+    }
+  ],
+  "hints": [
+    "List the ways that two lights can be green and one not.",
+    "Each arrangement with two green lights and one other has the same probability. Find it, then multiply by the number of arrangements.",
+    "One arrangement has probability $0.6 \\times 0.6 \\times 0.4 = 0.144$, and the light that is not green can be first, second or third."
+  ],
+  "solutions": {
+    "reliable": "The arrangements with exactly $2$ green lights are GGN, GNG and NGG, where N means not green. Each has probability $0.6 \\times 0.6 \\times 0.4 = 0.144$. The three arrangements cannot happen together, so add: $3 \\times 0.144 = 0.432$. Check by finding all four cases: $P(0) = 0.4^3 = 0.064$, $P(1) = 3(0.6)(0.16) = 0.288$, $P(2) = 0.432$ and $P(3) = 0.6^3 = 0.216$, which add to $1$.",
+    "elegant": null
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1579",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A whole number $N$ leaves remainder 7 when it is divided by 9. What remainder does $N^2 + 5N$ leave when it is divided by 9?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I worked out the remainder of $N^2$ only, $49 = 45 + 4$, and forgot to add the $5N$ part."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I treated $N^2$ as if it left the same remainder as $N$, so I added $7 + 35 = 42$, which leaves 6."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I thought the remainder stays 7 whatever you do to $N$."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I worked out the remainder of $5N$ only, $35 = 27 + 8$, and dropped the $N^2$ part."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "You may replace $N$ by any number that leaves remainder 7.",
+    "Remainders can be added and multiplied: only the remainder of $N$ matters, not $N$ itself. Work with the remainder in place of $N$, then reduce at the end.",
+    "Take $N = 7$: $N^2 + 5N = 49 + 35 = 84 = 9 \\times 9 + 3$."
+  ],
+  "solutions": {
+    "reliable": "Write $N^2 + 5N = N(N + 5)$. Here $N$ leaves remainder 7 and $N + 5$ leaves remainder 12, that is 3. A product leaves the same remainder as the product of the remainders: $7 \\times 3 = 21 = 18 + 3$. So the remainder is 3. Check with $N = 7$: $49 + 35 = 84 = 81 + 3$, and with $N = 16$: $256 + 80 = 336 = 333 + 3$. The transferable idea: in a remainder question, replace each number by its remainder before doing any arithmetic.",
+    "elegant": "Only the remainder matters, and $7 = 9 - 2$, so $N$ behaves like $-2$. Then $N^2 + 5N$ behaves like $4 - 10 = -6$, which is remainder $9 - 6 = 3$."
+  },
+  "whyOnTest": "Remainders survive adding and multiplying, so a question about an unknown number reduces to arithmetic with its remainder.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

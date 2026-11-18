@@ -1,0 +1,56 @@
+{
+  "id": "AC-0258",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-02",
+  "difficulty": "easy",
+  "statement": "Two archers each shot $30$ arrows at a target. Both archers had a mean score of $7.8$ points per arrow. The standard deviation of archer X's scores was $0.6$ points, and the standard deviation of archer Y's scores was $1.9$ points. Which of the following conclusions is best supported by this information?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Archer Y's total score was greater than archer X's total score.",
+      "correct": false,
+      "misconception": "I thought a bigger standard deviation means bigger scores, so archer Y must have scored more points in total."
+    },
+    {
+      "key": "B",
+      "text": "Every one of archer X's scores was between $7.2$ and $8.4$ points.",
+      "correct": false,
+      "misconception": "I thought every score has to lie within one standard deviation of the mean, so all of X's scores were within 0.6 of 7.8."
+    },
+    {
+      "key": "C",
+      "text": "Archer X and archer Y had the same median score.",
+      "correct": false,
+      "misconception": "I thought that if two data sets have the same mean, they must also have the same median."
+    },
+    {
+      "key": "D",
+      "text": "Archer X's scores were, as a group, closer to $7.8$ points than archer Y's scores were.",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Standard deviation measures spread, not size.",
+    "A smaller standard deviation means the values tend to sit closer to the mean.",
+    "Both means are $7.8$, and X's standard deviation, $0.6$, is much smaller than Y's, $1.9$. What does that say about how far the scores fall from $7.8$?"
+  ],
+  "solutions": {
+    "reliable": "Standard deviation describes how far values typically fall from the mean. Both archers have mean $7.8$, and archer X's standard deviation is smaller, so X's scores were more tightly clustered around $7.8$. The totals are equal ($30 \\cdot 7.8 = 234$ for each), values can lie more than one standard deviation from the mean, and equal means do not force equal medians.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

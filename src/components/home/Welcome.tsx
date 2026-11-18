@@ -347,9 +347,9 @@ export function MoreToExplore({ potd }: { potd: ReactNode }) {
           />
           <ExploreCard
             tint="amber"
-            href="/amc"
-            title="AMC 10 and 12 (beta)"
-            body="Problems sorted by type, plus formula flashcards for the bigger contests."
+            href="/exams"
+            title="Other exams"
+            body="AMC 8, 10 and 12, SAT Math and ACT Math: the same kind of practice, with mock tests."
           />
           <ExploreCard
             tint="rose"

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1287",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Figure 1 is a plus sign made of 5 squares: one square in the centre and one square on each of its four sides. To make each new figure, one square is added to the end of each of the four arms. How many squares make up figure 12?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "45",
+      "correct": false,
+      "misconception": "I worked out 1 + 4 × 11, counting one step too few."
+    },
+    {
+      "key": "B",
+      "text": "48",
+      "correct": false,
+      "misconception": "I counted the four arms of 12 squares each but forgot the centre square."
+    },
+    {
+      "key": "C",
+      "text": "49",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "53",
+      "correct": false,
+      "misconception": "I started from figure 1's 5 squares and added 4 squares twelve times, one time too many."
+    },
+    {
+      "key": "E",
+      "text": "60",
+      "correct": false,
+      "misconception": "I multiplied figure 1's 5 squares by 12."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-02",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "How long is each arm in figure 1, figure 2 and figure 3?",
+    "Split each figure into the centre square and four equal arms. Work out how long one arm is in figure n, then put the pieces back together.",
+    "In figure 1 each arm has 1 square, in figure 2 each arm has 2, so in figure 12 each arm has 12 squares. Add the four arms and the centre."
+  ],
+  "solutions": {
+    "reliable": "Figure n is a centre square with four arms of n squares each, so it has 1 + 4n squares. Check with the small cases: figure 1 has 1 + 4 = 5 and figure 2 has 1 + 8 = 9, which matches adding 4 each time. Figure 12 has 1 + 4 × 12 = 49 squares. The transferable idea: describe a growing figure by its parts, a fixed piece plus pieces that grow with n.",
+    "elegant": null
+  },
+  "whyOnTest": "Visual patterns at 3 points check that you can turn a picture rule into a count without an off-by-one slip.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

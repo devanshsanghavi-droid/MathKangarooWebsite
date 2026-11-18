@@ -1,0 +1,56 @@
+{
+  "id": "AC-0194",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-04",
+  "difficulty": "medium",
+  "statement": "A quadratic function $f$ has its vertex at $(3, -8)$, and its graph passes through the point $(5, 4)$. What is the value of $f(0)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-8$",
+      "correct": false,
+      "misconception": "I took the $y$-coordinate of the vertex as the $y$-intercept, but $-8$ is $f(3)$, not $f(0)$."
+    },
+    {
+      "key": "B",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I solved $a(5 - 3)^2 - 8 = 4$ as $4a = 4$, forgetting to add $8$ to both sides, so I got $a = 1$ and $f(0) = 9 - 8 = 1$."
+    },
+    {
+      "key": "C",
+      "text": "$19$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I found $a = 3$ and computed $3(0 - 3)^2 = 27$, but I left off the $-8$ from the vertex form."
+    }
+  ],
+  "hints": [
+    "Use vertex form, $f(x) = a(x - h)^2 + k$.",
+    "Write $f(x) = a(x - 3)^2 - 8$ and use the point $(5, 4)$ to find $a$. Then evaluate at $x = 0$.",
+    "$4 = a(2)^2 - 8$ gives $a = 3$, so $f(0) = 3(0 - 3)^2 - 8$."
+  ],
+  "solutions": {
+    "reliable": "In vertex form, $f(x) = a(x - 3)^2 - 8$. Substituting $(5, 4)$: $4 = a(5 - 3)^2 - 8 = 4a - 8$, so $4a = 12$ and $a = 3$. Then $f(0) = 3(0 - 3)^2 - 8 = 27 - 8 = 19$.",
+    "elegant": "By symmetry about $x = 3$, $f(0) = f(6)$. The point $(5, 4)$ is $2$ units from the vertex and $12$ units above it. A point $3$ units from the vertex rises $\\left(\\frac{3}{2}\\right)^2 = \\frac{9}{4}$ times as far, $12 \\cdot \\frac{9}{4} = 27$, so $f(0) = f(6) = -8 + 27 = 19$."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

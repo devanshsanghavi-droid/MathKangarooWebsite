@@ -1,0 +1,68 @@
+{
+  "id": "KA-1416",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Start with 2027. Each new term is the sum of the squares of the digits of the term before, so the second term is $2^2 + 0^2 + 2^2 + 7^2 = 57$. What is the 2027th term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I assumed that adding the squares of the digits always falls to 1 in the end, without working out the terms."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "42",
+      "correct": false,
+      "misconception": "I found that 37 is the 6th term and starts a cycle of 8, and that 2027 - 6 leaves remainder 5, but I counted 37 itself as the first of the 5 steps."
+    },
+    {
+      "key": "D",
+      "text": "74",
+      "correct": false,
+      "misconception": "I found a cycle of length 8 and used the 3rd term, since 2027 leaves remainder 3 on division by 8, forgetting that the cycle only starts at the 6th term."
+    },
+    {
+      "key": "E",
+      "text": "89",
+      "correct": false,
+      "misconception": "I saw that the cycle starts at 37 but used the remainder of 2027 itself on division by 8, which is 3, and took the 3rd number of the cycle, 89."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "PAT-03",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Just compute terms until something repeats.",
+    "The rule is recursive, so generate terms until a number comes back. Note where the repeating part starts and how long it is, then work out where the 2027th term falls in it.",
+    "The terms are 2027, 57, 74, 65, 61, 37, 58, 89, 145, 42, 20, 4, 16, 37, ... so from the 6th term on they repeat every 8."
+  ],
+  "solutions": {
+    "reliable": "Generating terms: 2027, 57, 74, 65, 61, 37, 58, 89, 145, 42, 20, 4, 16, 37, and 37 is the 6th term as well as the 14th. So from the 6th term on, the terms repeat with period 8: 37, 58, 89, 145, 42, 20, 4, 16. The 2027th term is $2027 - 6 = 2021$ terms after the 6th, and $2021 = 8 \\times 252 + 5$, so it matches the term 5 places after 37 in the cycle, the 11th term, which is 20. The transferable idea: when a rule repeats, find where the cycle starts as well as how long it is.",
+    "elegant": null
+  },
+  "whyOnTest": "Recursive rules are explored by generating terms until they repeat; the extra trap here is that the cycle does not start at the first term.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

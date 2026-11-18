@@ -1,0 +1,56 @@
+{
+  "id": "AC-0231",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "medium",
+  "statement": "Two hikers leave the same campsite at the same time and walk in straight lines. The angle between their two paths is $64^\\circ$. When the first hiker has walked $5$ kilometers and the second has walked $8$ kilometers, about how far apart, in kilometers, are the hikers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7.3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$9.4$",
+      "correct": false,
+      "misconception": "I used the Pythagorean theorem as if the paths met at a right angle, so I took the square root of 25 + 64 and got about 9.4."
+    },
+    {
+      "key": "C",
+      "text": "$11.1$",
+      "correct": false,
+      "misconception": "I added 2 times 5 times 8 times cos 64 degrees in the law of cosines instead of subtracting it, which gave about 11.1."
+    },
+    {
+      "key": "D",
+      "text": "$8.5$",
+      "correct": false,
+      "misconception": "I forgot the 2 in the law of cosines and subtracted only 5 times 8 times cos 64 degrees, which gave about 8.5."
+    }
+  ],
+  "hints": [
+    "The two paths and the segment joining the hikers form a triangle. Which angle and sides do you know?",
+    "You know two sides and the angle between them, so use the law of cosines: $c^2 = a^2 + b^2 - 2ab\\cos C$.",
+    "$c^2 = 5^2 + 8^2 - 2(5)(8)\\cos 64^\\circ = 89 - 80\\cos 64^\\circ \\approx 53.9$. Take the square root."
+  ],
+  "solutions": {
+    "reliable": "The hikers and the campsite form a triangle with sides $5$ and $8$ and an included angle of $64^\\circ$. By the law of cosines, the distance $d$ between the hikers satisfies $d^2 = 5^2 + 8^2 - 2(5)(8)\\cos 64^\\circ = 89 - 80(0.4384) \\approx 53.93$, so $d \\approx 7.34$. The hikers are about $7.3$ kilometers apart.",
+    "elegant": "Check with coordinates: put the campsite at the origin and the first hiker at $(5, 0)$. The second hiker is at $(8\\cos 64^\\circ, 8\\sin 64^\\circ) \\approx (3.507, 7.190)$. The distance is $\\sqrt{(5 - 3.507)^2 + 7.190^2} \\approx \\sqrt{53.93} \\approx 7.3$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

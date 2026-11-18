@@ -1,0 +1,56 @@
+{
+  "id": "SA-0068",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "medium",
+  "statement": "At a cafe, $2$ muffins and $3$ coffees cost a total of $14.10$ dollars, and $3$ muffins and $2$ coffees cost a total of $13.40$ dollars. Each muffin has the same price and each coffee has the same price. What is the total cost, in dollars, of $1$ muffin and $1$ coffee?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.70$",
+      "correct": false,
+      "misconception": "I subtracted the two totals and got 0.70, and took that as the cost of a muffin and a coffee, but subtracting gives the difference between the two prices."
+    },
+    {
+      "key": "B",
+      "text": "$3.10$",
+      "correct": false,
+      "misconception": "I solved the system and found that a coffee costs 3.10 dollars, then gave that price instead of the muffin plus the coffee."
+    },
+    {
+      "key": "C",
+      "text": "$5.50$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$27.50$",
+      "correct": false,
+      "misconception": "I added the two equations to get $5m + 5c = 27.50$ and stopped there without dividing by 5."
+    }
+  ],
+  "hints": [
+    "Look at what happens if you add the two equations.",
+    "Adding $2m + 3c = 14.10$ and $3m + 2c = 13.40$ gives a multiple of $m + c$. Divide to finish.",
+    "The sum is $5m + 5c = 27.50$, so $m + c = 27.50 \\div 5$."
+  ],
+  "solutions": {
+    "reliable": "Let $m$ and $c$ be the prices of a muffin and a coffee. Then $2m + 3c = 14.10$ and $3m + 2c = 13.40$. Subtracting the first from the second gives $m - c = -0.70$, so $c = m + 0.70$. Substituting: $2m + 3m + 2.10 = 14.10$, so $m = 2.40$ and $c = 3.10$. The total is $2.40 + 3.10 = 5.50$ dollars.",
+    "elegant": "Adding the equations gives $5m + 5c = 27.50$, so $m + c = 5.50$ dollars without finding either price."
+  },
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

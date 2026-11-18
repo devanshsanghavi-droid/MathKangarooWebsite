@@ -1,0 +1,56 @@
+{
+  "id": "SA-0150",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-08",
+  "difficulty": "easy",
+  "statement": "The distance $d(t)$, in meters, that a stone has fallen $t$ seconds after it is dropped from a tall bridge is modeled by $d(t) = 4.9t^2$. According to the model, what is the value of $d(3) - d(2)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4.9$",
+      "correct": false,
+      "misconception": "I subtracted the inputs first and computed $d(3 - 2) = d(1)$."
+    },
+    {
+      "key": "B",
+      "text": "$24.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$42.1$",
+      "correct": false,
+      "misconception": "I found $d(3) = 44.1$ and then subtracted the number $2$ instead of subtracting $d(2)$."
+    },
+    {
+      "key": "D",
+      "text": "$9.8$",
+      "correct": false,
+      "misconception": "I doubled $t$ instead of squaring it, so I computed $4.9(6) - 4.9(4)$."
+    }
+  ],
+  "hints": [
+    "Find $d(3)$ and $d(2)$ separately, then subtract.",
+    "$d(3) = 4.9 \\cdot 9$ and $d(2) = 4.9 \\cdot 4$.",
+    "$d(3) - d(2) = 44.1 - 19.6$."
+  ],
+  "solutions": {
+    "reliable": "$d(3) = 4.9(3)^2 = 44.1$ and $d(2) = 4.9(2)^2 = 19.6$, so $d(3) - d(2) = 44.1 - 19.6 = 24.5$ meters. This is how far the stone falls during the third second.",
+    "elegant": "Factor out $4.9$: $d(3) - d(2) = 4.9(9 - 4) = 4.9 \\cdot 5 = 24.5$."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

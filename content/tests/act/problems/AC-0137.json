@@ -1,0 +1,56 @@
+{
+  "id": "AC-0137",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-03",
+  "difficulty": "medium",
+  "statement": "At the start of 2020, Company A had $1{,}240$ employees and Company B had $1{,}690$. Each year since then, Company A's head count has risen by $35$ and Company B's has fallen by $40$. Head counts are taken at the start of each year. If these linear trends continue, in what year will Company A first have more employees than Company B?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2026$",
+      "correct": false,
+      "misconception": "I solved for when the two head counts are equal, t = 6, but in 2026 they are tied at 1,450, so A does not yet have more."
+    },
+    {
+      "key": "B",
+      "text": "$2027$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$2033$",
+      "correct": false,
+      "misconception": "I ignored Company B's losses and asked when A alone closes the 450-employee gap: 450 divided by 35 is about 12.9, so I rounded up to 13 years."
+    },
+    {
+      "key": "D",
+      "text": "$2110$",
+      "correct": false,
+      "misconception": "I subtracted the yearly changes, 40 - 35 = 5, and divided the 450 gap by 5 to get 90 years, but the changes go in opposite directions, so the gap closes by 75 a year."
+    }
+  ],
+  "hints": [
+    "Let $t$ be the number of years after the start of 2020 and write each company's head count as a linear function of $t$.",
+    "Solve $1{,}240 + 35t > 1{,}690 - 40t$. By how many employees does the gap of $450$ shrink each year?",
+    "The gap shrinks by $35 + 40 = 75$ per year, so the head counts are equal at $t = 6$. A must pass B at the next count."
+  ],
+  "solutions": {
+    "reliable": "With $t$ years after 2020, A has $1{,}240 + 35t$ employees and B has $1{,}690 - 40t$. A has more when $1{,}240 + 35t > 1{,}690 - 40t$, that is $75t > 450$, so $t > 6$. At $t = 6$ (2026) both have $1{,}450$, a tie. The first whole number greater than $6$ is $t = 7$, the year 2027, when A has $1{,}485$ and B has $1{,}410$.",
+    "elegant": "The gap is $1{,}690 - 1{,}240 = 450$ and it shrinks by $35 + 40 = 75$ each year, so it is gone after exactly $6$ years, in 2026. A leads from the next count, in 2027."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

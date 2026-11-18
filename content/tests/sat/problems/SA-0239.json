@@ -1,0 +1,56 @@
+{
+  "id": "SA-0239",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-05",
+  "difficulty": "medium",
+  "statement": "A city planner studied the relationship between the number of street trees on a block, $x$, and the block's average summer afternoon surface temperature, $y$, in degrees Fahrenheit. The line of best fit for the data is $y = 102 - 0.75x$. According to the line of best fit, how many more street trees would a block need for its predicted temperature to be $6$ degrees lower?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.125$",
+      "correct": false,
+      "misconception": "I divided 0.75 by 6, which puts the rate upside down."
+    },
+    {
+      "key": "B",
+      "text": "$4.5$",
+      "correct": false,
+      "misconception": "I multiplied 6 by 0.75, which gives the temperature drop from 6 more trees, not the number of trees for a 6-degree drop."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$128$",
+      "correct": false,
+      "misconception": "I set the predicted temperature equal to 6 and solved, getting 128 trees, but 6 is the change in temperature, not the temperature."
+    }
+  ],
+  "hints": [
+    "What does the $-0.75$ mean for each additional tree?",
+    "Each additional tree lowers the predicted temperature by $0.75$ degree. Find how many such drops make $6$ degrees.",
+    "Solve $0.75n = 6$ for $n$."
+  ],
+  "solutions": {
+    "reliable": "The slope $-0.75$ means each additional tree lowers the predicted temperature by $0.75$ degree. For a drop of $6$ degrees, $0.75n = 6$, so $n = 8$ more trees. Check: $102 - 0.75(x + 8) = (102 - 0.75x) - 6$.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

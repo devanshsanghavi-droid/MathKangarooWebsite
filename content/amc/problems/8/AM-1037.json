@@ -1,0 +1,62 @@
+{
+  "id": "AM-1037",
+  "contest": "AMC8",
+  "slot": 17,
+  "area": "ALG",
+  "topic": "ALG-09",
+  "types": ["T-EXTREME", "T-CASEWORK"],
+  "statement": "The numbers $a$ and $b$ satisfy $-4 \\le a \\le 3$ and $-2 \\le b \\le 5$. What is the largest possible value of $a^2 - ab$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-6$",
+      "correct": false,
+      "misconception": "I assumed the largest value comes from the largest numbers, a = 3 and b = 5, which gives 9 - 15 = -6."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I used a = -4 to make $a^2$ big, but then took the smallest b, -2, which gives 16 - 8 = 8."
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I wanted a positive and b negative so that -ab would be positive, so I used a = 3 and b = -2 and got 9 + 6 = 15."
+    },
+    {
+      "key": "D",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I took $a^2 = 16$ from a = -4, then thought -ab is largest when a is positive and b is negative, so I added 6 from a = 3 and b = -2. But a cannot be two numbers at once."
+    },
+    {
+      "key": "E",
+      "text": "$36$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Write $a^2 - ab$ as $a(a - b)$ and think about signs.",
+    "The product $a(a - b)$ is large when $a$ and $a - b$ are both large positive numbers, or both very negative numbers.",
+    "Compare the best positive case with $a = -4$ and $b = 5$, where $a - b = -9$."
+  ],
+  "solutions": {
+    "reliable": "Factor: $a^2 - ab = a(a - b)$. If $a \\ge 0$, then $a \\le 3$ and $a - b \\le 3 - (-2) = 5$, so the product is at most $3 \\cdot 5 = 15$. If $a < 0$, a positive product needs $a - b < 0$, and then the product is $|a| \\cdot (b - a)$ with $|a| \\le 4$ and $b - a \\le 5 + 4 = 9$, so it is at most $4 \\cdot 9 = 36$. The value $36$ is reached at $a = -4$, $b = 5$: $16 - (-20) = 36$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

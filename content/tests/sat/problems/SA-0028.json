@@ -1,0 +1,56 @@
+{
+  "id": "SA-0028",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "hard",
+  "statement": "Priya spent $\\dfrac{1}{3}$ of the value of a gift card on a video game. She then spent $\\dfrac{1}{4}$ of the remaining value on a controller, and after that she spent $\\$36$ on a headset. The card now has $\\$24$ left on it. What was the original value of the gift card, in dollars?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I worked out that $60$ dollars was left after the controller and stopped there instead of finding the original value."
+    },
+    {
+      "key": "B",
+      "text": "$84$",
+      "correct": false,
+      "misconception": "I added $\\dfrac{1}{3}$ and $\\dfrac{1}{4}$ by adding tops and bottoms to get $\\dfrac{2}{7}$ of the card spent, so $\\dfrac{5}{7}V = 60$ and $V = 84$."
+    },
+    {
+      "key": "C",
+      "text": "$120$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$144$",
+      "correct": false,
+      "misconception": "I took both fractions of the original value, so I solved $V - \\dfrac{V}{3} - \\dfrac{V}{4} - 36 = 24$ and got $144$."
+    }
+  ],
+  "hints": [
+    "The $\\dfrac{1}{4}$ is a fraction of what was left after the game, not of the original card.",
+    "Call the original value $V$. Write what is left after each purchase, one step at a time.",
+    "After the game $\\dfrac{2}{3}V$ is left. After the controller $\\dfrac{3}{4} \\cdot \\dfrac{2}{3}V = \\dfrac{1}{2}V$ is left. So $\\dfrac{1}{2}V - 36 = 24$."
+  ],
+  "solutions": {
+    "reliable": "Let $V$ be the original value. After the game, $\\dfrac{2}{3}V$ remains. She spends a quarter of that, so $\\dfrac{3}{4} \\cdot \\dfrac{2}{3}V = \\dfrac{1}{2}V$ remains. After the headset, $\\dfrac{1}{2}V - 36 = 24$, so $\\dfrac{1}{2}V = 60$ and $V = 120$. Check: $120 - 40 = 80$, $80 - 20 = 60$, $60 - 36 = 24$.",
+    "elegant": "Work backward: before the headset the card held $24 + 36 = 60$ dollars. That was $\\dfrac{3}{4}$ of the amount before the controller, so $80$. That was $\\dfrac{2}{3}$ of the original, so the original was $120$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

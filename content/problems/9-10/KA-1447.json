@@ -1,0 +1,68 @@
+{
+  "id": "KA-1447",
+  "band": "9-10",
+  "points": 5,
+  "statement": "The two arms of an angle of $30^\\circ$ meet at the point $O$. A point $P$ lies inside the angle with $OP = 6$. A path starts at $P$, goes to a point on one arm, then to a point on the other arm, and then back to $P$. What is the shortest possible length of the path?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I reflected $P$ in both arms and added the distances from $O$ to the two reflections, instead of measuring the distance between the reflections."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$6\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I thought the two reflections of $P$ are $120^\\circ$ apart as seen from $O$, using $180^\\circ - 2 \\times 30^\\circ$ instead of $2 \\times 30^\\circ$."
+    },
+    {
+      "key": "D",
+      "text": "$2\\pi$",
+      "correct": false,
+      "misconception": "I thought the shortest path follows a circular arc of radius 6 around $O$ between the two reflections."
+    },
+    {
+      "key": "E",
+      "text": "It depends on where $P$ is",
+      "correct": false,
+      "misconception": "I assumed the answer changes with the position of $P$, because the distances from $P$ to the arms change."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-17",
+    "secondary": [
+      "GEO-09",
+      "GEO-05"
+    ]
+  },
+  "hints": [
+    "Reflections turn a bent path into a straight one.",
+    "Reflect $P$ in each arm. The path has the same length as a broken line joining the two reflected points, so the shortest path is the straight segment between them. Find the angle between the reflections at $O$.",
+    "Both reflections are 6 from $O$, and the angle between them at $O$ is twice the angle of $30^\\circ$."
+  ],
+  "solutions": {
+    "reliable": "Reflect $P$ in the first arm to get $P_1$ and in the second arm to get $P_2$. For any path from $P$ to $A$ on the first arm, to $B$ on the second arm, and back to $P$, we have $PA = P_1A$ and $BP = BP_2$, so the length is $P_1A + AB + BP_2$, which is at least the straight distance $P_1P_2$. Reflections keep distances from $O$, so $OP_1 = OP_2 = 6$, and the angle $P_1OP_2$ is $2 \\times 30^\\circ = 60^\\circ$. So triangle $OP_1P_2$ is equilateral and $P_1P_2 = 6$. The straight segment $P_1P_2$ crosses both arms, so a path of length 6 exists. Notice that the answer does not depend on where $P$ is, only on $OP$ and the angle. The transferable idea: to shorten a path that must touch a line, reflect across the line and straighten the path.",
+    "elegant": null
+  },
+  "whyOnTest": "Shortest paths that must touch lines are solved by reflecting, and here the two reflections reveal an equilateral triangle.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

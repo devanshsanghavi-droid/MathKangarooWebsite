@@ -1,0 +1,67 @@
+{
+  "id": "KA-1089",
+  "band": "1-2",
+  "points": 4,
+  "statement": "In a 3 by 3 grid, the centre and top left corner are shaded. At least how many more must be shaded so that the up-down and across middle fold lines both give matching halves?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought the shaded middle square already makes both halves match."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I shaded only the top right corner, which makes the up and down fold work but not the across fold."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I shaded one square for each fold, the top right and bottom left corners, and forgot the bottom right corner."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted all four corners and forgot that the top left corner is already shaded."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-08",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Draw the grid and draw both fold lines.",
+    "Each shaded square needs a partner on the other side of each fold line. Mirror the corner square in one line, then mirror everything you have in the other line.",
+    "The middle square sits on both fold lines, so it needs nothing. The top left corner needs the top right corner for one fold and both bottom corners for the other."
+  ],
+  "solutions": {
+    "reliable": "The middle square lies on both fold lines, so it already matches itself. The top left corner folds up and down onto the top right corner, so shade that. Folding across, the top two corners land on the bottom two corners, so shade both of those. That is 3 extra squares, and all four corners are shaded. The idea to keep: mirror in one line, then mirror the whole new picture in the other line.",
+    "elegant": "With two fold lines, a corner square must come with all three other corners, since each fold sends it to one more corner. Three corners are missing, so 3."
+  },
+  "whyOnTest": "Completing a picture for two lines of symmetry at once checks that the second mirror is applied to everything, not just the first square.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

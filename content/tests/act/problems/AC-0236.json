@@ -1,0 +1,56 @@
+{
+  "id": "AC-0236",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "medium",
+  "statement": "A garden bed is shaped like an isosceles trapezoid. Its parallel sides are $9$ feet and $19$ feet long, and each of its two slanted sides is $13$ feet long. What is the area of the bed, in square feet?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$182$",
+      "correct": false,
+      "misconception": "I used the slanted side, 13 feet, as the height, so I computed (9 + 19) divided by 2 times 13 = 182."
+    },
+    {
+      "key": "B",
+      "text": "$336$",
+      "correct": false,
+      "misconception": "I found the height of 12 feet correctly but forgot to divide the sum of the bases by 2, so I computed 28 times 12 = 336."
+    },
+    {
+      "key": "C",
+      "text": "$112$",
+      "correct": false,
+      "misconception": "I found the overhang of 5 feet and subtracted it from the slanted side to get a height of 8, so I computed 14 times 8 = 112."
+    },
+    {
+      "key": "D",
+      "text": "$168$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "To use the trapezoid area formula you need the height, which is not given.",
+    "Drop perpendiculars from the ends of the short side. They cut off two right triangles, each with hypotenuse $13$ and a bottom leg of $\\frac{19 - 9}{2}$.",
+    "Each bottom leg is $5$, so the height is $\\sqrt{13^2 - 5^2} = 12$. The area is $\\frac{9 + 19}{2} \\cdot 12$."
+  ],
+  "solutions": {
+    "reliable": "Drop perpendiculars from the ends of the $9$-foot side to the $19$-foot side. The middle piece is $9$ feet, so each end piece is $\\frac{19 - 9}{2} = 5$ feet. Each slanted side is the hypotenuse of a right triangle with legs $5$ and $h$, so $h = \\sqrt{13^2 - 5^2} = 12$ feet. The area is $\\frac{9 + 19}{2} \\cdot 12 = 14 \\cdot 12 = 168$ square feet.",
+    "elegant": "Split the trapezoid into a $9 \\times 12$ rectangle and two right triangles with legs $5$ and $12$: $108 + 2 \\cdot \\frac{1}{2}(5)(12) = 108 + 60 = 168$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

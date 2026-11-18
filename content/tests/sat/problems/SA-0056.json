@@ -1,0 +1,56 @@
+{
+  "id": "SA-0056",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "medium",
+  "statement": "The height $h$, in centimeters, of a burning candle $t$ hours after it is lit is modeled by $h(t) = 24 - 1.6t$. According to the model, how many hours does it take for the candle's height to go from $20$ centimeters to $8$ centimeters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I found how long it takes the candle to burn down to 8 centimeters from when it was lit, which is 10 hours, but the candle was already 20 centimeters tall after some time had passed."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found the drop in height, 12 centimeters, and gave that as the number of hours without using the burning rate."
+    },
+    {
+      "key": "D",
+      "text": "$19.2$",
+      "correct": false,
+      "misconception": "I found the 12-centimeter drop and multiplied it by 1.6 instead of dividing by 1.6, so I got 19.2."
+    }
+  ],
+  "hints": [
+    "How many centimeters does the candle lose each hour?",
+    "Either find the time $t$ when $h = 20$ and when $h = 8$ and subtract, or divide the total drop by the hourly drop.",
+    "The candle drops $20 - 8 = 12$ centimeters at $1.6$ centimeters per hour."
+  ],
+  "solutions": {
+    "reliable": "Set $24 - 1.6t = 20$: $t = 2.5$. Set $24 - 1.6t = 8$: $t = 10$. The time between them is $10 - 2.5 = 7.5$ hours.",
+    "elegant": "The slope says the candle loses $1.6$ centimeters per hour. It must lose $20 - 8 = 12$ centimeters, which takes $12 / 1.6 = 7.5$ hours."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

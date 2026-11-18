@@ -1,0 +1,66 @@
+{
+  "id": "AM-1004",
+  "contest": "AMC8",
+  "slot": 2,
+  "area": "ALG",
+  "topic": "ALG-01",
+  "types": [
+    "T-CHOICES"
+  ],
+  "statement": "Tickets to a school play cost $\\$5$ for a student and $\\$8$ for an adult. On opening night $50$ tickets were sold for a total of $\\$310$. How many adult tickets were sold?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I pretended every ticket was a student ticket, found the extra 310 - 250 = 60 dollars, and divided by the student price 5 to get 12."
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I assumed half of the 50 tickets were adult tickets, so I answered 25."
+    },
+    {
+      "key": "D",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I solved the problem correctly but gave the number of student tickets, 30, instead of adult tickets."
+    },
+    {
+      "key": "E",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I pretended every ticket was a student ticket and found 310 - 250 = 60 extra dollars, then gave 60 as the answer."
+    }
+  ],
+  "hints": [
+    "Imagine for a moment that all $50$ tickets were student tickets.",
+    "Fifty student tickets would bring in $\\$250$. Each time a student ticket is swapped for an adult ticket, the total goes up by $\\$3$.",
+    "The total must rise by $310 - 250 = 60$ dollars, and each swap adds $\\$3$."
+  ],
+  "solutions": {
+    "reliable": "Let $a$ be the number of adult tickets, so $50 - a$ were student tickets. Then $8a + 5(50 - a) = 310$, which gives $3a + 250 = 310$, so $3a = 60$ and $a = 20$. Check: $20 \\cdot 8 + 30 \\cdot 5 = 160 + 150 = 310$.",
+    "elegant": "If all $50$ were student tickets the total would be $\\$250$. Each adult ticket adds $\\$3$ more, and $\\$60$ more is needed, so there were $60 / 3 = 20$ adult tickets."
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

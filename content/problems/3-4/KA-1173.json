@@ -1,0 +1,65 @@
+{
+  "id": "KA-1173",
+  "band": "3-4",
+  "points": 3,
+  "statement": "What is $11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 19$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "120",
+      "correct": false,
+      "misconception": "I paired 11 with 19, 12 with 18, 13 with 17 and 14 with 16 to make four 30s, but forgot to add the 15 in the middle."
+    },
+    {
+      "key": "B",
+      "text": "135",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "145",
+      "correct": false,
+      "misconception": "I counted ten tens to make 100 and then added the ones 1 to 9, which is 45, but there are only nine numbers."
+    },
+    {
+      "key": "D",
+      "text": "150",
+      "correct": false,
+      "misconception": "I thought there were ten numbers, which makes five pairs of 30."
+    },
+    {
+      "key": "E",
+      "text": "165",
+      "correct": false,
+      "misconception": "I made five pairs of 30 by pairing 15 with itself, and then added the 15 again."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-08",
+    "secondary": []
+  },
+  "hints": [
+    "Pair the numbers from the outside in.",
+    "Numbers that are the same distance from the middle add to the same total. Pair the first with the last, the second with the second last, and see what is left over.",
+    "11 + 19, 12 + 18, 13 + 17 and 14 + 16 each make 30. That is four 30s, and 15 has no partner."
+  ],
+  "solutions": {
+    "reliable": "Pair from the outside: $11 + 19 = 30$, $12 + 18 = 30$, $13 + 17 = 30$, $14 + 16 = 30$. That is $4 \\times 30 = 120$, and the middle number 15 is left over, so the total is $120 + 15 = 135$. The transferable idea: pair numbers to make round totals, and watch for an unpaired middle.",
+    "elegant": "There are nine numbers and their middle one is 15, so their average is 15. The total is $9 \\times 15 = 135$."
+  },
+  "whyOnTest": "Clever regrouping turns a long sum into a few round numbers; the odd count tests whether you notice the unpaired middle term.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "AM-1289",
+  "contest": "AMC8",
+  "slot": 21,
+  "area": "CP",
+  "topic": "CP-07",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "Two fair eight-sided dice, each with faces numbered $1$ through $8$, are rolled. You are told that the two numbers rolled differ by at most $1$. Given this, what is the probability that the sum of the two numbers is odd?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{7}{32}$",
+      "correct": false,
+      "misconception": "I found the chance of rolling numbers that differ by exactly 1, 14 out of 64, without using the given information to shrink the outcomes."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{11}{32}$",
+      "correct": false,
+      "misconception": "I found the chance that the numbers differ by at most 1, 22 out of 64, which is the given condition, not the answer."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{7}{15}$",
+      "correct": false,
+      "misconception": "I counted unordered pairs, so I had 8 doubles and only 7 pairs that differ by 1, and got 7 out of 15."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I thought the sum of two dice is odd half the time no matter what, so the extra information did not matter."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{7}{11}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "List the outcomes allowed by the given information: either the two numbers match, or they differ by exactly 1.",
+    "Count ordered outcomes. There are 8 doubles, and rolls like (3, 4) and (4, 3) are two different outcomes.",
+    "Doubles always have an even sum, and numbers that differ by 1 always have an odd sum. There are 8 doubles and 14 outcomes that differ by 1."
+  ],
+  "solutions": {
+    "reliable": "Use ordered outcomes, each with probability $\\frac{1}{64}$. Outcomes with equal numbers: $8$. Outcomes that differ by exactly $1$: the pairs $(1, 2), (2, 3), \\ldots, (7, 8)$ in either order, which is $14$ outcomes. So the given information leaves $8 + 14 = 22$ equally likely outcomes. Equal numbers give an even sum, and numbers that differ by $1$ give an odd sum. The probability is $\\frac{14}{22} = \\frac{7}{11}$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

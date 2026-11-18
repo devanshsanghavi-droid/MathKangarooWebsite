@@ -1,0 +1,66 @@
+{
+  "id": "AM-1161",
+  "contest": "AMC8",
+  "slot": 4,
+  "area": "NT",
+  "topic": "NT-02",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "The length, width and height of a closed box, in centimeters, are three different prime numbers. The volume of the box is $195$ cubic centimeters. What is the total area of the six faces of the box, in square centimeters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I found the edge lengths $3$, $5$ and $13$ and just added them up."
+    },
+    {
+      "key": "B",
+      "text": "$84$",
+      "correct": false,
+      "misconception": "I added all $12$ edges of the box, $4 \\cdot (3 + 5 + 13) = 84$, which is the total edge length, not the area of the faces."
+    },
+    {
+      "key": "C",
+      "text": "$119$",
+      "correct": false,
+      "misconception": "I added the areas of the three different faces, $15 + 39 + 65 = 119$, but forgot that the box has two of each face."
+    },
+    {
+      "key": "D",
+      "text": "$195$",
+      "correct": false,
+      "misconception": "I gave the volume, $3 \\cdot 5 \\cdot 13 = 195$, instead of the total area of the faces."
+    },
+    {
+      "key": "E",
+      "text": "$238$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Factor $195$ into primes.",
+    "$195 = 3 \\cdot 5 \\cdot 13$, so those are the edge lengths. The box has six faces in three matching pairs.",
+    "The three different faces have areas $3 \\cdot 5 = 15$, $3 \\cdot 13 = 39$ and $5 \\cdot 13 = 65$. Each appears twice."
+  ],
+  "solutions": {
+    "reliable": "Since $195 = 3 \\cdot 65 = 3 \\cdot 5 \\cdot 13$, and these are the only primes whose product is $195$, the edges are $3$, $5$ and $13$ cm. The faces come in pairs with areas $15$, $39$ and $65$, so the total area is $2(15 + 39 + 65) = 2 \\cdot 119 = 238$ square centimeters.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1405",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Two ordinary six-sided dice are rolled. What is the probability that the larger of the two numbers shown is exactly 4? (If both dice show the same number, that number counts as the larger.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{7}{36}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac29$",
+      "correct": false,
+      "misconception": "I counted 4 outcomes with a 4 on the first die and the other die smaller or equal, and 4 the other way round, counting the outcome (4, 4) twice."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac14$",
+      "correct": false,
+      "misconception": "I counted the outcomes where both dice are at most 3, which is when the larger number is less than 4."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{11}{36}$",
+      "correct": false,
+      "misconception": "I counted every outcome with at least one 4, including ones like (4, 6) where the larger number is 6."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac49$",
+      "correct": false,
+      "misconception": "I counted the outcomes where both dice are at most 4, which also includes the cases where the larger number is 1, 2 or 3."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-11",
+    "secondary": [
+      "CNT-09"
+    ]
+  },
+  "hints": [
+    "List the outcomes in a 6 by 6 table if you are unsure.",
+    "Count the outcomes directly, then confirm with a second method: 'larger is at most 4' minus 'larger is at most 3' gives 'larger is exactly 4'. If the two counts disagree, one of them double-counted.",
+    "The larger is at most 4 in $4 \\times 4 = 16$ outcomes and at most 3 in $3 \\times 3 = 9$ outcomes."
+  ],
+  "solutions": {
+    "reliable": "Direct count: the larger number is 4 when one die shows 4 and the other shows 1 to 4. With the first die showing 4 there are 4 outcomes, with the second die showing 4 there are 4 more, but (4, 4) has been counted twice, so there are 7 outcomes. Second method: both dice at most 4 happens in 16 of the 36 outcomes and both at most 3 in 9, so the larger is exactly 4 in $16 - 9 = 7$ outcomes. Both methods agree: the probability is $\\frac{7}{36}$. The transferable idea: a second count by a different route is the fastest way to catch a double-counted case.",
+    "elegant": "The outcomes with larger number exactly 4 form an L shape in the 6 by 6 table: a 4 by 4 square minus a 3 by 3 square, $16 - 9 = 7$ cells."
+  },
+  "whyOnTest": "Counting the 'larger is 4' outcomes directly invites double counting; a second method, at most 4 minus at most 3, catches it at once.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

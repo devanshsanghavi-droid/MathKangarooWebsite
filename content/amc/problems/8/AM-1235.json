@@ -1,0 +1,68 @@
+{
+  "id": "AM-1235",
+  "contest": "AMC8",
+  "slot": 4,
+  "area": "CP",
+  "topic": "CP-04",
+  "types": [
+    "T-PIE"
+  ],
+  "statement": "A club has $50$ members. Of these, $28$ own a bicycle, $19$ own a skateboard, and $9$ own neither. How many members own a bicycle but not a skateboard?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found the number who own both, 28 + 19 - 41 = 6, and stopped there instead of finding bicycle-only owners."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I subtracted the skateboard owners from the bicycle owners, 28 - 19 = 9, but skateboard owners are not all bicycle owners."
+    },
+    {
+      "key": "C",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I found the number who own a skateboard but not a bicycle, 19 - 6 = 13, which is the other one-item group."
+    },
+    {
+      "key": "D",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I subtracted the 9 members who own neither from the bicycle owners, 28 - 9 = 19, but those 9 are not counted in the 28."
+    },
+    {
+      "key": "E",
+      "text": "$22$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "How many members own at least one of the two items?",
+    "$50 - 9 = 41$ members own at least one. Use $28 + 19$ compared with $41$ to find how many own both.",
+    "Both: $28 + 19 - 41 = 6$. Bicycle but not skateboard: $28 - 6$."
+  ],
+  "solutions": {
+    "reliable": "Since $9$ members own neither, $50 - 9 = 41$ own at least one item. Adding $28 + 19 = 47$ counts the owners of both items twice, so $47 - 41 = 6$ own both. Then $28 - 6 = 22$ own a bicycle but not a skateboard.",
+    "elegant": "Everyone who does not own a skateboard is either a bicycle-only owner or owns neither. That is $50 - 19 = 31$ members, so bicycle-only owners number $31 - 9 = 22$."
+  },
+  "formulas": [
+    "F-CP-01"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

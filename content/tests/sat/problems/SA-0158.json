@@ -1,0 +1,56 @@
+{
+  "id": "SA-0158",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-06",
+  "difficulty": "medium",
+  "statement": "In the $xy$-plane, the graph of $y = |2x - 8| - 6$ crosses the $x$-axis at two points. What is the distance between these two points?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I rewrote the equation as $|x - 4| = 3$ and gave $3$ as the distance, forgetting that the two intercepts are each $3$ units from $4$, on opposite sides."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I found the two $x$-intercepts, $1$ and $7$, and added them instead of finding how far apart they are."
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I solved $2x - 8 = 6$ and $2x - 8 = -6$ but stopped at $2x = 14$ and $2x = 2$, so I subtracted $14 - 2$ without dividing by $2$."
+    }
+  ],
+  "hints": [
+    "The graph crosses the $x$-axis where $y = 0$.",
+    "Solve $|2x - 8| = 6$ by splitting it into two linear equations.",
+    "$2x - 8 = 6$ gives $x = 7$, and $2x - 8 = -6$ gives $x = 1$."
+  ],
+  "solutions": {
+    "reliable": "Set $y = 0$: $|2x - 8| = 6$. Then $2x - 8 = 6$, so $x = 7$, or $2x - 8 = -6$, so $x = 1$. The points are $(1, 0)$ and $(7, 0)$, and the distance between them is $7 - 1 = 6$.",
+    "elegant": "Divide by $2$: $|2x - 8| = 6$ is the same as $|x - 4| = 3$, so the intercepts are $3$ units on either side of $x = 4$, which puts them $2 \\times 3 = 6$ units apart."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

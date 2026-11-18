@@ -1,0 +1,67 @@
+{
+  "id": "AM-1136",
+  "contest": "AMC8",
+  "slot": 21,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-AREA-RATIO",
+    "T-COORD"
+  ],
+  "statement": "Right triangle $ABC$ has its right angle at $C$, with $CA = 10$ and $CB = 15$. A circle has its center on the hypotenuse $\\overline{AB}$ and is tangent to both legs $\\overline{CA}$ and $\\overline{CB}$. What is the radius of the circle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I thought the center had to be the midpoint of $\\overline{AB}$, and I used its distance from leg $\\overline{CB}$, which is $5$."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$7.5$",
+      "correct": false,
+      "misconception": "I thought the center had to be the midpoint of $\\overline{AB}$, and I used its distance from leg $\\overline{CA}$, which is $7.5$."
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I took the area of the triangle as $10 \\cdot 15 = 150$ without the $\\frac{1}{2}$, and then solved $\\frac{1}{2} \\cdot 10r + \\frac{1}{2} \\cdot 15r = 150$."
+    },
+    {
+      "key": "E",
+      "text": "$12.5$",
+      "correct": false,
+      "misconception": "I thought the radius would be the average of the two legs, $\\frac{10 + 15}{2}$."
+    }
+  ],
+  "hints": [
+    "Join the center $O$ of the circle to $C$. This splits triangle $ABC$ into two triangles.",
+    "The radii to the points of tangency are perpendicular to the legs. So triangle $AOC$ has base $CA = 10$ and height $r$, and triangle $BOC$ has base $CB = 15$ and height $r$. Their areas add up to the area of $ABC$.",
+    "$\\frac{1}{2} \\cdot 10r + \\frac{1}{2} \\cdot 15r = \\frac{1}{2} \\cdot 10 \\cdot 15$, so $12.5r = 75$."
+  ],
+  "solutions": {
+    "reliable": "Let $O$ be the center and $r$ the radius. A radius drawn to a point of tangency is perpendicular to the tangent line, so $O$ is at distance $r$ from both legs. Segment $\\overline{OC}$ splits triangle $ABC$ into triangle $AOC$, with base $CA = 10$ and height $r$, and triangle $BOC$, with base $CB = 15$ and height $r$. So $\\frac{1}{2} \\cdot 10r + \\frac{1}{2} \\cdot 15r = \\frac{1}{2} \\cdot 10 \\cdot 15 = 75$, which gives $12.5r = 75$ and $r = 6$.",
+    "elegant": "Put $C = (0, 0)$, $B = (15, 0)$ and $A = (0, 10)$. A point at distance $r$ from both axes, inside the triangle, is $(r, r)$. The hypotenuse is the line $\\frac{x}{15} + \\frac{y}{10} = 1$, so $\\frac{r}{15} + \\frac{r}{10} = 1$, which gives $\\frac{r}{6} = 1$ and $r = 6$."
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

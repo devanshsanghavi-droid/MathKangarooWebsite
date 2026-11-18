@@ -1,4 +1,5 @@
 import type { ComponentType } from 'react';
+import { AppleSalesPictogram } from './AppleSalesPictogram';
 import { BarModelParts } from './BarModelParts';
 import { BlockedGridPaths } from './BlockedGridPaths';
 import { BlockStairStages } from './BlockStairStages';
@@ -7,13 +8,19 @@ import { BoardThreeByThree } from './BoardThreeByThree';
 import { BooksBarChart } from './BooksBarChart';
 import { CircleInSquare } from './CircleInSquare';
 import { ClockThree } from './ClockThree';
+import { CocoaCupsChart } from './CocoaCupsChart';
 import { CornerCubeStack } from './CornerCubeStack';
 import { CubeNetCandidates } from './CubeNetCandidates';
 import { CubeNetCross } from './CubeNetCross';
+import { CubeNetStaircase } from './CubeNetStaircase';
+import { CubeNetStepsNumbered } from './CubeNetStepsNumbered';
+import { CubeNetTwoRows } from './CubeNetTwoRows';
+import { CubeNetZigzag } from './CubeNetZigzag';
 import { CubePlanFront } from './CubePlanFront';
 import { DotStages } from './DotStages';
 import { FlagRotation } from './FlagRotation';
 import { FoldPunchSquare } from './FoldPunchSquare';
+import { GridTwoDiagonals } from './GridTwoDiagonals';
 import { HeptagramSharp } from './HeptagramSharp';
 import { LibraryBarChart } from './LibraryBarChart';
 import { LShapeUnits } from './LShapeUnits';
@@ -33,11 +40,17 @@ import { SquareWithCorner } from './SquareWithCorner';
 import { StaircaseSquares } from './StaircaseSquares';
 import { SymmetryCandidates } from './SymmetryCandidates';
 import { SymmetryGridDashed } from './SymmetryGridDashed';
+import { TeeTileStages } from './TeeTileStages';
+import { TileFrameStages } from './TileFrameStages';
 import { TiltedSquareGrid } from './TiltedSquareGrid';
+import { TravelPieChart } from './TravelPieChart';
 import { TriangleFanCrossed } from './TriangleFanCrossed';
 import { TriangleSplitInThree } from './TriangleSplitInThree';
+import { TriangleTwoIsosceles } from './TriangleTwoIsosceles';
 import { TwoViewsOfSolid } from './TwoViewsOfSolid';
 import { UnitCubeBlock } from './UnitCubeBlock';
+import { ViewsFrontAndRight } from './ViewsFrontAndRight';
+import { WaterTankGraph } from './WaterTankGraph';
 
 /**
  * Every figure component, keyed by the name problem JSON refers to it by.
@@ -49,6 +62,7 @@ import { UnitCubeBlock } from './UnitCubeBlock';
  * renders and every figure a problem references is registered.
  */
 export const FIGURES: Record<string, ComponentType> = {
+  AppleSalesPictogram,
   BarModelParts,
   BlockedGridPaths,
   BlockStairStages,
@@ -57,13 +71,19 @@ export const FIGURES: Record<string, ComponentType> = {
   BooksBarChart,
   CircleInSquare,
   ClockThree,
+  CocoaCupsChart,
   CornerCubeStack,
   CubeNetCandidates,
   CubeNetCross,
+  CubeNetStaircase,
+  CubeNetStepsNumbered,
+  CubeNetTwoRows,
+  CubeNetZigzag,
   CubePlanFront,
   DotStages,
   FlagRotation,
   FoldPunchSquare,
+  GridTwoDiagonals,
   HeptagramSharp,
   LibraryBarChart,
   LShapeUnits,
@@ -83,11 +103,17 @@ export const FIGURES: Record<string, ComponentType> = {
   StaircaseSquares,
   SymmetryCandidates,
   SymmetryGridDashed,
+  TeeTileStages,
+  TileFrameStages,
   TiltedSquareGrid,
+  TravelPieChart,
   TriangleFanCrossed,
   TriangleSplitInThree,
+  TriangleTwoIsosceles,
   TwoViewsOfSolid,
   UnitCubeBlock,
+  ViewsFrontAndRight,
+  WaterTankGraph,
 };
 
 export const FIGURE_NAMES = Object.keys(FIGURES).sort();

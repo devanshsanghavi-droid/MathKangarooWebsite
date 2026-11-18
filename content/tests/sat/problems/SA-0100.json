@@ -1,0 +1,56 @@
+{
+  "id": "SA-0100",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "medium",
+  "statement": "A family's monthly electricity bill $C$, in dollars, is given by $C(k) = 0.16k + 11$, where $k$ is the number of kilowatt-hours used. The family used $340$ kilowatt-hours in June. Their July bill was $19.20$ dollars more than their June bill. How many kilowatt-hours did they use in July?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$460$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$84.60$",
+      "correct": false,
+      "misconception": "I calculated July's bill, 84.60 dollars, and gave that dollar amount instead of the number of kilowatt-hours."
+    },
+    {
+      "key": "C",
+      "text": "$528.75$",
+      "correct": false,
+      "misconception": "I found the July bill, 84.60 dollars, and divided it by 0.16 without first removing the 11-dollar fixed charge."
+    },
+    {
+      "key": "D",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I divided the 19.20 dollars by 0.16 to get 120 extra kilowatt-hours, but forgot to add them to June's 340."
+    }
+  ],
+  "hints": [
+    "Each extra kilowatt-hour adds the same amount to the bill.",
+    "The fixed $11$ dollars is the same in both months, so the extra $19.20$ dollars comes only from extra kilowatt-hours at $0.16$ dollar each.",
+    "$19.20 / 0.16 = 120$ extra kilowatt-hours. Add these to June's usage."
+  ],
+  "solutions": {
+    "reliable": "June's bill was $0.16(340) + 11 = 65.40$ dollars, so July's bill was $65.40 + 19.20 = 84.60$ dollars. Solve $0.16k + 11 = 84.60$: $0.16k = 73.60$ and $k = 460$. Key idea: a change in output divided by the slope gives the change in input.",
+    "elegant": "The fixed charge cancels in the difference: $0.16 \\times (\\text{extra kWh}) = 19.20$, so the extra usage is $120$ and July's usage is $340 + 120 = 460$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

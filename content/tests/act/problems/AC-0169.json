@@ -1,0 +1,56 @@
+{
+  "id": "AC-0169",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-07",
+  "difficulty": "medium",
+  "statement": "The function $f$ is defined by $$f(x) = \\begin{cases} kx + 3 & \\text{if } x < 2 \\\\ x^2 - k & \\text{if } x \\ge 2 \\end{cases}$$ where $k$ is a constant. For what value of $k$ is $f$ continuous, so that its graph has no break?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I made the two pieces meet at $x = 0$ instead of at $x = 2$, so I set $3 = -k$."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I set $2k + 3 = 4 - k$ but moved $-k$ to the left side without changing its sign, getting $2k - k = 4 - 3$."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{7}{3}$",
+      "correct": false,
+      "misconception": "I set $2k + 3 = 4 - k$ but moved the $3$ to the right side without changing its sign, getting $3k = 4 + 3$."
+    }
+  ],
+  "hints": [
+    "The two pieces must give the same value where they meet.",
+    "The pieces meet at $x = 2$. Substitute $x = 2$ into both formulas and set the results equal.",
+    "$2k + 3 = 2^2 - k$, so $3k = 1$."
+  ],
+  "solutions": {
+    "reliable": "The only place the graph could break is $x = 2$, where the rule changes. The left piece approaches $2k + 3$ and the right piece equals $2^2 - k = 4 - k$. Setting them equal: $2k + 3 = 4 - k$, so $3k = 1$ and $k = \\frac{1}{3}$. Check: both pieces give $\\frac{11}{3}$ at $x = 2$.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

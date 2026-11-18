@@ -1,0 +1,67 @@
+{
+  "id": "KA-1008",
+  "band": "1-2",
+  "points": 4,
+  "statement": "A right answer scores 3 points. A wrong answer or a blank scores 0. Kim gets 6 answers right for sure and guesses on 4 more. What is her smallest possible score?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I took 3 points away for each of the 4 guesses that could be wrong, but a wrong answer costs nothing."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted the questions Kim answered, 6 + 4 = 10, not her points."
+    },
+    {
+      "key": "C",
+      "text": "18",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "21",
+      "correct": false,
+      "misconception": "I thought at least 1 of the 4 guesses had to be right."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": false,
+      "misconception": "I found the largest score, as if all 4 guesses were right."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-09",
+    "secondary": [
+      "MOD-10"
+    ]
+  },
+  "hints": [
+    "What happens to the score when a guess is wrong?",
+    "The smallest score comes from the unluckiest guesses. Work out the points from the sure answers, then decide what a wrong guess adds or takes away.",
+    "6 sure answers give 6 x 3 = 18 points. A wrong guess scores 0, the same as a blank."
+  ],
+  "solutions": {
+    "reliable": "The 6 sure answers score 3 + 3 + 3 + 3 + 3 + 3 = 18 points. In the unluckiest case all 4 guesses are wrong, and each wrong answer scores 0, so nothing is lost. The smallest score is 18, exactly what Kim would get by leaving those 4 questions blank. The idea to keep: with no penalty, guessing can never make your score worse, only better.",
+    "elegant": null
+  },
+  "whyOnTest": "Contest craft: with no penalty for a wrong answer, the worst a guess can do is score 0, the same as a blank.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

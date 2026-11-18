@@ -1,0 +1,56 @@
+{
+  "id": "AC-0261",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-03",
+  "difficulty": "easy",
+  "statement": "The stem-and-leaf plot shows the ages of the $12$ volunteers at a park cleanup. In the plot, $1 \\mid 6$ represents $16$ years. $$\\begin{array}{r|l} \\text{Stem} & \\text{Leaf} \\\\ \\hline 1 & 6\\ \\ 8\\ \\ 9 \\\\ 2 & 0\\ \\ 3\\ \\ 3\\ \\ 7 \\\\ 3 & 1\\ \\ 4\\ \\ 8 \\\\ 4 & 2\\ \\ 5 \\end{array}$$ How many of the volunteers are at least $23$ years old?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I read at least 23 as older than 23, so I left out both volunteers who are exactly 23."
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I counted the leaf 3 in the 2 row only once, but there are two volunteers who are 23."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I counted every age in the 2 row, including 20, along with all the ages in the 3 and 4 rows."
+    }
+  ],
+  "hints": [
+    "Each leaf is one volunteer. Read $2 \\mid 3$ as $23$.",
+    "At least $23$ means $23$ or older. Count the qualifying leaves row by row.",
+    "In the $2$ row, the ages $23$, $23$ and $27$ count. Then add every leaf in the $3$ and $4$ rows."
+  ],
+  "solutions": {
+    "reliable": "The ages that are $23$ or more are $23$, $23$, $27$ from the $2$ row, $31$, $34$, $38$ from the $3$ row and $42$, $45$ from the $4$ row. That is $3 + 3 + 2 = 8$ volunteers.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

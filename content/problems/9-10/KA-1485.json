@@ -1,0 +1,68 @@
+{
+  "id": "KA-1485",
+  "band": "9-10",
+  "points": 5,
+  "statement": "For how many whole numbers $n$ from 1 to 100 does $n^n$ end in the digit 6?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I only counted the numbers ending in 6, since every power of such a number ends in 6."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted the numbers ending in 4 or 6 and forgot that numbers ending in 2 or 8 can work too."
+    },
+    {
+      "key": "C",
+      "text": "40",
+      "correct": false,
+      "misconception": "I counted every number ending in 2, 4, 6 or 8, thinking all of their powers end in 6 when the exponent is even."
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": false,
+      "misconception": "I thought powers of a number ending in 4 end in 6 only when the exponent is a multiple of 4, like the cycles for 2 and 8."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-07",
+    "secondary": [
+      "CNT-04",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Only the last digit of $n$ and the exponent matter.",
+    "Sort $n$ by its last digit. For each last digit, find the cycle of last digits of its powers and see which exponents give 6. Remember that the exponent is $n$ itself.",
+    "Last digit 6: always. Last digit 4: the cycle is 4, 6, so even exponents work. Last digits 2 and 8: cycles of length 4 that reach 6 at exponents that are multiples of 4."
+  ],
+  "solutions": {
+    "reliable": "Odd $n$ give odd $n^n$, and $n$ ending in 0 gives last digit 0, so only $n$ ending in 2, 4, 6 or 8 can work. Ending in 6: every power ends in 6, giving 10 numbers. Ending in 4: powers end in 4, 6, 4, 6, ..., so even exponents give 6, and every such $n$ is even, giving 10. Ending in 2: the cycle is 2, 4, 8, 6, so $n$ must be a multiple of 4: 12, 32, 52, 72, 92, giving 5. Ending in 8: the cycle is 8, 4, 2, 6, so again $n$ must be a multiple of 4: 8, 28, 48, 68, 88, giving 5. Total: $10 + 10 + 5 + 5 = 30$. The transferable idea: when the exponent changes too, sort by last digit and use each cycle's length.",
+    "elegant": null
+  },
+  "whyOnTest": "Here the exponent changes with the base, so you must combine last-digit cycles with casework on the last digit; skipping or overcounting a case is the usual loss.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

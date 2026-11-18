@@ -1,0 +1,56 @@
+{
+  "id": "SA-0224",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-07",
+  "difficulty": "easy",
+  "statement": "A researcher surveyed a random sample of $400$ residents of a town and found that $62\\%$ of them support building a new park. The margin of error for this estimate is $4.5$ percentage points. Which interval gives the plausible values for the percent of all residents of the town who support building the park?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "From $53\\%$ to $71\\%$",
+      "correct": false,
+      "misconception": "I thought 4.5 was only half of the margin, so I went 9 points to each side of 62."
+    },
+    {
+      "key": "B",
+      "text": "From $57.5\\%$ to $66.5\\%$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "From $59.75\\%$ to $64.25\\%$",
+      "correct": false,
+      "misconception": "I split the margin of error in half and went only 2.25 points to each side of 62, but the full margin goes on each side of the estimate."
+    },
+    {
+      "key": "D",
+      "text": "From $62\\%$ to $66.5\\%$",
+      "correct": false,
+      "misconception": "I only added the margin of error, but the true percent could be below the sample percent as well as above it."
+    }
+  ],
+  "hints": [
+    "A margin of error describes how far the true value could plausibly be from the sample estimate.",
+    "The true percent could be above or below $62\\%$. Go the margin of error in both directions.",
+    "Subtract $4.5$ from $62$ and add $4.5$ to $62$."
+  ],
+  "solutions": {
+    "reliable": "The sample estimate is $62\\%$ and the margin of error is $4.5$ percentage points, so the plausible values for the population percent run from $62 - 4.5 = 57.5$ to $62 + 4.5 = 66.5$ percent. The percent in the sample itself is known exactly; the interval is a statement about all residents.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

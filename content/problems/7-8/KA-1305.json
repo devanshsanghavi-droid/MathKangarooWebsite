@@ -1,0 +1,68 @@
+{
+  "id": "KA-1305",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Which of these is equal to $\\frac{1}{2} + \\frac{1}{3} + \\frac{1}{4} + \\frac{1}{5} + \\frac{1}{6} + \\frac{1}{7}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{2}{9}$",
+      "correct": false,
+      "misconception": "I added the tops and added the bottoms, getting $\\frac{6}{27} = \\frac{2}{9}$."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{223}{280}$",
+      "correct": false,
+      "misconception": "I used 840 as the common denominator but changed each fraction as if the denominator were 420, so I got $\\frac{669}{840} = \\frac{223}{280}$."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{153}{140}$",
+      "correct": false,
+      "misconception": "I lost the $\\frac{1}{2}$ while rewriting over a common denominator and added only $\\frac{1}{3}$ up to $\\frac{1}{7}$."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{29}{20}$",
+      "correct": false,
+      "misconception": "I lost the $\\frac{1}{7}$ and added only $\\frac{1}{2}$ up to $\\frac{1}{6}$, which gives $\\frac{29}{20}$."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{223}{140}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-05",
+    "secondary": [
+      "NUM-09",
+      "CFT-06"
+    ]
+  },
+  "hints": [
+    "Before adding, ask roughly how big the total must be.",
+    "Bound it: the first three fractions are easy to add exactly, and each of the last three lies between $\\frac{1}{7}$ and $\\frac{1}{5}$. That traps the sum between two numbers, and only one choice fits.",
+    "$\\frac{1}{2} + \\frac{1}{3} + \\frac{1}{4} = \\frac{13}{12}$, and the last three add to between $\\frac{3}{7}$ and $\\frac{3}{5}$. So the sum is between about 1.51 and 1.68."
+  ],
+  "solutions": {
+    "reliable": "First, $\\frac{1}{2} + \\frac{1}{3} + \\frac{1}{4} = \\frac{13}{12} \\approx 1.08$. Each of $\\frac{1}{5}$, $\\frac{1}{6}$ and $\\frac{1}{7}$ is at least $\\frac{1}{7}$ and at most $\\frac{1}{5}$, so together they are between $\\frac{3}{7} \\approx 0.43$ and $\\frac{3}{5} = 0.6$. The sum is therefore between about 1.51 and 1.68. Now $\\frac{2}{9} \\approx 0.22$, $\\frac{223}{280} \\approx 0.80$, $\\frac{153}{140} \\approx 1.09$ and $\\frac{29}{20} = 1.45$ are all too small, which leaves $\\frac{223}{140} \\approx 1.59$. An exact check over 420: $210 + 140 + 105 + 84 + 70 + 60 = 669$, and $\\frac{669}{420} = \\frac{223}{140}$. The transferable idea: a rough lower and upper bound can remove four choices without any exact arithmetic.",
+    "elegant": "Only a lower bound is needed: the sum is more than $\\frac{13}{12} + \\frac{3}{7}$, which is more than 1.5, and only one choice is bigger than 1.5."
+  },
+  "whyOnTest": "Exact addition over 420 is slow and error-prone; bounding the sum between 1.5 and 1.7 picks the answer in seconds.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1329",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Using the digits 0, 1, 2, 3 and 4, with no digit used more than once, how many even three-digit numbers can be made? (A number cannot start with 0.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "18",
+      "correct": false,
+      "misconception": "I forgot that 0 is even, so I only let the number end in 2 or 4."
+    },
+    {
+      "key": "B",
+      "text": "36",
+      "correct": false,
+      "misconception": "I chose the even last digit in 3 ways, then gave the first digit 4 choices and the middle 3, forgetting that the first digit cannot be 0: $3 \\times 4 \\times 3 = 36$."
+    },
+    {
+      "key": "C",
+      "text": "48",
+      "correct": false,
+      "misconception": "I counted all the three-digit numbers with different digits, $4 \\times 4 \\times 3 = 48$, and forgot they must be even."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I only counted the numbers ending in 0 and forgot that 2 and 4 are even too."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-11",
+    "secondary": [
+      "CNT-04",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Fill the most restricted place first. Which digit is special here?",
+    "The last digit must be even and the first digit cannot be 0, and the digit 0 affects both rules. Split into two cases: the number ends in 0, or it ends in 2 or 4.",
+    "Ending in 0: $4 \\times 3$ numbers. Ending in 2 or 4: the first digit can be neither 0 nor the last digit, which leaves 3 choices."
+  ],
+  "solutions": {
+    "reliable": "Case 1, last digit 0: the first digit is any of 1, 2, 3, 4 (4 ways) and the middle is any of the 3 digits left, so 12 numbers. Case 2, last digit 2 or 4 (2 ways): the first digit cannot be 0 or the last digit, so 3 ways, and the middle can be any of the 3 digits left, including 0, so $2 \\times 3 \\times 3 = 18$ numbers. Total 12 + 18 = 30. The transferable idea: when one digit is involved in two restrictions, split into cases on that digit.",
+    "elegant": "Count the opposite: there are $4 \\times 4 \\times 3 = 48$ three-digit numbers with different digits. The odd ones end in 1 or 3 (2 ways), then the first digit has 3 choices (not 0 and not the last digit) and the middle 3, giving 18. So 48 - 18 = 30 are even."
+  },
+  "whyOnTest": "Tests counting with two restrictions that share the digit 0, where the multiplication principle only works after splitting into cases.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

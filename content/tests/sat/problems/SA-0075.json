@@ -1,0 +1,56 @@
+{
+  "id": "SA-0075",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "easy",
+  "statement": "In the $xy$-plane, the boundary of the solution region of a linear inequality is a dashed line that passes through $(0, 6)$ and $(4, 0)$. The shaded region lies below the line and contains the origin. Which inequality has this graph?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3x + 2y \\le 12$",
+      "correct": false,
+      "misconception": "I found the right line and the right side, but I forgot that a dashed boundary means points on the line are not included, so the sign should be strict."
+    },
+    {
+      "key": "B",
+      "text": "$2x + 3y < 12$",
+      "correct": false,
+      "misconception": "I matched the coefficients to the wrong intercepts, so my line crosses the $x$-axis at 6 and the $y$-axis at 4 instead of at 4 and 6."
+    },
+    {
+      "key": "C",
+      "text": "$3x + 2y > 12$",
+      "correct": false,
+      "misconception": "I tested a point above the line, $(4, 6)$, instead of a point in the shaded region, and chose the sign that point satisfies."
+    },
+    {
+      "key": "D",
+      "text": "$3x + 2y < 12$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Find the equation of the boundary line first.",
+    "A line with intercepts $(4, 0)$ and $(0, 6)$ can be written $\\frac{x}{4} + \\frac{y}{6} = 1$. Then use the origin to choose the sign, and the dashed line to choose strict or not.",
+    "Clearing fractions gives $3x + 2y = 12$. The origin gives $0 < 12$, and a dashed line means $<$ rather than $\\le$."
+  ],
+  "solutions": {
+    "reliable": "The boundary passes through $(4, 0)$ and $(0, 6)$, so its slope is $\\frac{6 - 0}{0 - 4} = -\\frac{3}{2}$ and its equation is $y = -\\frac{3}{2}x + 6$, or $3x + 2y = 12$. The origin is in the shaded region and gives $3(0) + 2(0) = 0 < 12$, so the region is $3x + 2y < 12$. The line is dashed, so the inequality is strict: $3x + 2y < 12$.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

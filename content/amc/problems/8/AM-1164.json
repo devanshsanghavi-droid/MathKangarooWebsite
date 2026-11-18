@@ -1,0 +1,69 @@
+{
+  "id": "AM-1164",
+  "contest": "AMC8",
+  "slot": 5,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "How many integers greater than $100$ and less than $400$ have exactly three positive divisors?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I thought the cube of a prime has exactly three divisors because the exponent is $3$, and the only prime cubes in the range are $125$ and $343$."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I thought the square of any odd number has exactly three divisors, so I counted $11^2, 13^2, 15^2, 17^2, 19^2$, but $225 = 15^2$ has more."
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I knew the number had to be a perfect square, so I counted every square from $11^2 = 121$ to $19^2 = 361$, even squares of numbers that are not prime."
+    },
+    {
+      "key": "E",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I counted every perfect square from $11^2$ up to $20^2 = 400$, forgetting that $400$ is not less than $400$ and that most squares have more than three divisors."
+    }
+  ],
+  "hints": [
+    "Divisors usually come in pairs. When can a number have an odd number of them?",
+    "A number with exactly three divisors must be a perfect square, $1$, $p$ and $p^2$, where $p$ is a prime.",
+    "You need primes $p$ with $100 < p^2 < 400$, that is, primes from $11$ to $19$."
+  ],
+  "solutions": {
+    "reliable": "Divisors pair up as $d$ and $n \\div d$, so an odd number of divisors means $n$ is a perfect square. If $n = p^a q^b \\cdots$, it has $(a+1)(b+1)\\cdots$ divisors, and this equals $3$ only when $n = p^2$ for a prime $p$; its divisors are $1, p, p^2$. We need $100 < p^2 < 400$, so $10 < p < 20$, giving $p = 11, 13, 17, 19$. The numbers are $121, 169, 289, 361$: there are $4$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-01",
+    "F-NT-18"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

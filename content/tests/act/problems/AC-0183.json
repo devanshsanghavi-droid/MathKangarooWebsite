@@ -1,0 +1,56 @@
+{
+  "id": "AC-0183",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-07",
+  "difficulty": "medium",
+  "statement": "The graph of a polynomial function $q$ rises to the left and falls to the right: as $x \\to -\\infty$, $q(x) \\to \\infty$, and as $x \\to \\infty$, $q(x) \\to -\\infty$. The graph crosses the $x$-axis at $x = -1$, touches the $x$-axis without crossing it at $x = 2$, and has no other $x$-intercepts. Which of the following could be $q(x)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-(x - 2)^2(x + 1)$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$(x - 2)^2(x + 1)$",
+      "correct": false,
+      "misconception": "I matched the intercepts correctly but used a positive leading coefficient, and a cubic with a positive leading coefficient falls to the left and rises to the right."
+    },
+    {
+      "key": "C",
+      "text": "$-(x + 2)^2(x - 1)$",
+      "correct": false,
+      "misconception": "I wrote each factor with the same sign as its intercept, like $x + 2$ for $x = 2$, but a zero at $x = 2$ comes from the factor $x - 2$."
+    },
+    {
+      "key": "D",
+      "text": "$-(x - 2)(x + 1)^2$",
+      "correct": false,
+      "misconception": "I squared the wrong factor. The square belongs on the zero where the graph only touches, $x = 2$, not on $x = -1$ where it crosses."
+    }
+  ],
+  "hints": [
+    "Each intercept gives a factor. How does the graph's behavior at an intercept tell you the exponent on that factor?",
+    "Crossing at $x = -1$ means a factor $(x + 1)$ to an odd power; touching at $x = 2$ means $(x - 2)$ to an even power. Then check the sign of the leading term for the end behavior.",
+    "$(x - 2)^2(x + 1)$ has the right intercepts and degree $3$. A cubic that rises to the left and falls to the right needs a negative leading coefficient."
+  ],
+  "solutions": {
+    "reliable": "A graph that crosses the $x$-axis at $x = -1$ has a factor $(x + 1)$ with an odd exponent, and a graph that touches without crossing at $x = 2$ has a factor $(x - 2)$ with an even exponent. So $(x - 2)^2(x + 1)$ has the right intercepts. Its leading term is $x^3$, which falls to the left and rises to the right, the opposite of what is described, so multiply by $-1$: $q(x) = -(x - 2)^2(x + 1)$, whose leading term $-x^3$ rises to the left and falls to the right.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

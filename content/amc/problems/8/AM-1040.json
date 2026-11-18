@@ -1,0 +1,62 @@
+{
+  "id": "AM-1040",
+  "contest": "AMC8",
+  "slot": 14,
+  "area": "ALG",
+  "topic": "ALG-11",
+  "types": ["T-CASEWORK"],
+  "statement": "How many integers $x$ satisfy $|x - 3| + |x + 2| \\le 9$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I thought x had to stay between -2 and 3, and I counted those integers as 3 - (-2) = 5, which leaves one end out and also misses the integers outside that range."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I counted only the integers from -2 to 3, where the sum is always 5, and forgot that x can go a little beyond them."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I treated the inequality as strict and got -3 through 4, but the sum equals 9 exactly at x = -4 and at x = 5, so those count too."
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I found the range -4 to 5 correctly but counted 5 - (-4) = 9, which leaves one end out."
+    },
+    {
+      "key": "E",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "$|x - 3| + |x + 2|$ is the distance from $x$ to $3$ plus the distance from $x$ to $-2$ on the number line.",
+    "For $x$ between $-2$ and $3$, the total distance is always $5$. Each step outside that interval adds $2$.",
+    "The total reaches exactly $9$ at $x = 5$ and at $x = -4$."
+  ],
+  "solutions": {
+    "reliable": "If $-2 \\le x \\le 3$, the sum is $(3 - x) + (x + 2) = 5 \\le 9$, so all of these work. If $x > 3$, the sum is $2x - 1 \\le 9$, so $x \\le 5$. If $x < -2$, the sum is $1 - 2x \\le 9$, so $x \\ge -4$. The integers are $-4, -3, \\ldots, 5$, which is $10$ integers.",
+    "elegant": "The points $-2$ and $3$ are $5$ apart, so every $x$ between them has total distance $5$, leaving $4$ to spare. Stepping a distance $d$ outside the interval costs $2d$, so $x$ can go $2$ beyond either end. That allows $-4$ through $5$, which is $10$ integers."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

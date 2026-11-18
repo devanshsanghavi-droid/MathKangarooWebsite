@@ -1,0 +1,56 @@
+{
+  "id": "SA-0024",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "medium",
+  "statement": "A school club sells tickets to a show for $\\$30$ each. The payment service keeps $5\\%$ of every ticket sale as a fee. The club needs to keep at least $\\$2{,}400$ after the fee. What is the least number of tickets the club must sell?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$76$",
+      "correct": false,
+      "misconception": "I took $5\\%$ off the $2{,}400$ dollar goal instead of off each ticket, so I divided $2{,}280$ by $30$ and got $76$."
+    },
+    {
+      "key": "B",
+      "text": "$80$",
+      "correct": false,
+      "misconception": "I divided $2{,}400$ by $30$ and ignored the fee, so I got $80$ tickets."
+    },
+    {
+      "key": "C",
+      "text": "$84$",
+      "correct": false,
+      "misconception": "I added $5\\%$ to the goal to cover the fee, which gave $2{,}520$, and divided by $30$ to get $84$, but $5\\%$ of the larger sales is more than $120$ dollars."
+    },
+    {
+      "key": "D",
+      "text": "$85$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Find how much the club keeps from one ticket.",
+    "The club keeps $95\\%$ of each $30$ dollar sale. Write an inequality for the amount kept and solve it, then round to a whole number of tickets.",
+    "The club keeps $0.95 \\cdot 30 = 28.50$ dollars per ticket, so solve $28.50n \\ge 2{,}400$."
+  ],
+  "solutions": {
+    "reliable": "From each ticket the club keeps $0.95 \\cdot 30 = 28.50$ dollars. It needs $28.50n \\ge 2{,}400$, so $n \\ge 84.21...$. The least whole number is $85$. Check: $85$ tickets keep $85 \\cdot 28.50 = 2{,}422.50$ dollars, while $84$ tickets keep only $2{,}394$ dollars.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

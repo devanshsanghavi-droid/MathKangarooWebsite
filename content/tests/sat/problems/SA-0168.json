@@ -1,0 +1,56 @@
+{
+  "id": "SA-0168",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-01",
+  "difficulty": "medium",
+  "statement": "If $2^{a} = 5$, what is the value of $4^{a + 1}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$100$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$29$",
+      "correct": false,
+      "misconception": "I split $4^{a + 1}$ into $4^{a} + 4^{1}$, as if a sum in the exponent became a sum of powers, so I got $25 + 4 = 29$."
+    },
+    {
+      "key": "C",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I thought $4^{a}$ was $2$ times $2^{a}$ instead of $(2^{a})^2$, so I got $4^{a} = 10$ and then multiplied by $4$ to get $40$."
+    },
+    {
+      "key": "D",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I found $4^{a} = (2^{a})^2 = 25$ but dropped the $+1$ in the exponent, so I left out the extra factor of $4$."
+    }
+  ],
+  "hints": [
+    "Write $4$ as a power of $2$ so that everything uses the same base as $2^{a}$.",
+    "Split off one factor of $4$: $4^{a + 1} = 4^{a} \\cdot 4$, and $4^{a} = (2^2)^{a} = (2^{a})^2$.",
+    "$(2^{a})^2 = 5^2 = 25$, so $4^{a + 1} = 25 \\cdot 4$."
+  ],
+  "solutions": {
+    "reliable": "Since $4 = 2^2$, $4^{a + 1} = 4^{a} \\cdot 4 = (2^2)^{a} \\cdot 4 = (2^{a})^2 \\cdot 4$. Substituting $2^{a} = 5$ gives $5^2 \\cdot 4 = 25 \\cdot 4 = 100$. Check: $a = \\log_2 5 \\approx 2.32$, and $4^{3.32} \\approx 100$.",
+    "elegant": "Rewrite everything in base $2$: $4^{a + 1} = 2^{2a + 2} = (2^{a})^2 \\cdot 2^2 = 25 \\cdot 4 = 100$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

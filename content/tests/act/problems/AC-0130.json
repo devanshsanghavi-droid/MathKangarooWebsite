@@ -1,0 +1,56 @@
+{
+  "id": "AC-0130",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-02",
+  "difficulty": "easy",
+  "statement": "What is the domain of the function $f(x) = \\sqrt{12 - 3x}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$x \\le 4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$x < 4$",
+      "correct": false,
+      "misconception": "I thought a square root of 0 is not allowed, so I left out x = 4, but the square root of 0 is just 0."
+    },
+    {
+      "key": "C",
+      "text": "$x \\ge 4$",
+      "correct": false,
+      "misconception": "I solved 12 - 3x at least 0 but forgot to flip the inequality when I divided both sides by -3, so I got x at least 4."
+    },
+    {
+      "key": "D",
+      "text": "All real numbers except $4$",
+      "correct": false,
+      "misconception": "I treated the square root like a fraction and only threw out the input that makes the inside 0, instead of every input that makes it negative."
+    }
+  ],
+  "hints": [
+    "A square root of a real number is defined only when the number under the root is not negative.",
+    "Solve $12 - 3x \\ge 0$. Watch the sign of the coefficient of $x$.",
+    "$-3x \\ge -12$, and dividing both sides by $-3$ flips the inequality."
+  ],
+  "solutions": {
+    "reliable": "We need $12 - 3x \\ge 0$. Subtract $12$: $-3x \\ge -12$. Divide by $-3$ and flip the inequality: $x \\le 4$. At $x = 4$ the function is $\\sqrt{0} = 0$, which is allowed, so the domain is $x \\le 4$.",
+    "elegant": "Add $3x$ to both sides instead: $12 \\ge 3x$, so $4 \\ge x$. No division by a negative number is needed."
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

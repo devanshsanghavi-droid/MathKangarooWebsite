@@ -1,0 +1,68 @@
+{
+  "id": "KA-1587",
+  "band": "11-12",
+  "points": 5,
+  "statement": "These lines are all true: $$3^2 + 4^2 = 5^2$$ $$10^2 + 11^2 + 12^2 = 13^2 + 14^2$$ $$21^2 + 22^2 + 23^2 + 24^2 = 25^2 + 26^2 + 27^2$$ The pattern continues. One line begins with $210^2$. What is the largest number squared in that line?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "220",
+      "correct": false,
+      "misconception": "I gave the last number on the left-hand side instead of the last number on the right."
+    },
+    {
+      "key": "B",
+      "text": "228",
+      "correct": false,
+      "misconception": "I gave the line ten squares on the left and nine on the right, one too few on each side."
+    },
+    {
+      "key": "C",
+      "text": "230",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "231",
+      "correct": false,
+      "misconception": "I gave the right-hand side as many squares as the left-hand side, eleven."
+    },
+    {
+      "key": "E",
+      "text": "252",
+      "correct": false,
+      "misconception": "I assumed each line runs right up to where the next line begins, and the next line begins at 253."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "PAT-04",
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "How many squares are on each side of line $k$?",
+    "Find a formula for the first number of line $k$ by looking at 3, 10, 21 and their differences. Solve for the line that starts at 210, then count its squares on each side.",
+    "Line $k$ starts at $k(2k + 1)$, with $k + 1$ squares on the left and $k$ on the right. $k(2k + 1) = 210$ gives $k = 10$."
+  ],
+  "solutions": {
+    "reliable": "Line $k$ has $k + 1$ squares on the left and $k$ on the right, so $2k + 1$ consecutive numbers in all. The first numbers 3, 10, 21 have differences 7, 11, so the next difference is 15 and the line starts at 36; in general line $k$ starts at $k(2k + 1)$: $1 \\times 3$, $2 \\times 5$, $3 \\times 7$. Solving $k(2k + 1) = 210$ gives $k = 10$, because $10 \\times 21 = 210$. That line uses the 21 numbers from 210 to 230, so its largest number is 230. The transferable idea: find the rule for where each line starts and how long it is, then jump straight to the line you need.",
+    "elegant": "The numbers $3, 10, 21, 36, \\dots$ are every second triangular number, and 210 is the 20th triangular number, so it starts line 10. Line 10 holds $2 \\times 10 + 1 = 21$ numbers, ending at $210 + 20 = 230$."
+  },
+  "whyOnTest": "Rules inferred from a few lines must cover both where a line starts and how long it is; the 5-point step is using both to jump far ahead.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

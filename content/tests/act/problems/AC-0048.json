@@ -1,0 +1,56 @@
+{
+  "id": "AC-0048",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-07",
+  "difficulty": "medium",
+  "statement": "A juice stand records its sales in matrix $Q$: row 1 is Monday, row 2 is Tuesday, column 1 counts small cups and column 2 counts large cups. Matrix $P$ lists the price of a small cup, then a large cup, in dollars. $$Q = \\begin{bmatrix} 30 & 20 \\\\ 25 & 35 \\end{bmatrix}, \\quad P = \\begin{bmatrix} 3 \\\\ 5 \\end{bmatrix}$$ What is the entry of $QP$ that gives Tuesday's revenue, in dollars?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$190$",
+      "correct": false,
+      "misconception": "I used row 1 of $Q$, which is Monday's sales, instead of row 2 for Tuesday."
+    },
+    {
+      "key": "B",
+      "text": "$230$",
+      "correct": false,
+      "misconception": "I paired Tuesday's small cups with the large-cup price and the large cups with the small-cup price: $25 \\cdot 5 + 35 \\cdot 3$."
+    },
+    {
+      "key": "C",
+      "text": "$250$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$440$",
+      "correct": false,
+      "misconception": "I added both days' revenues together, but each entry of $QP$ is the revenue for a single day."
+    }
+  ],
+  "hints": [
+    "Each entry of $QP$ is one row of $Q$ times the column $P$.",
+    "Tuesday is row 2 of $Q$. Multiply each cup count by its own price, then add.",
+    "Tuesday's entry is $25 \\cdot 3 + 35 \\cdot 5$."
+  ],
+  "solutions": {
+    "reliable": "$QP$ is a $2 \\times 1$ matrix. Its second entry uses row 2 of $Q$, Tuesday: $25 \\cdot 3 + 35 \\cdot 5 = 75 + 175 = 250$ dollars. For comparison, Monday's entry is $30 \\cdot 3 + 20 \\cdot 5 = 190$. The idea: multiplying a matrix of counts by a column of prices gives one total for each row.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

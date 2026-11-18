@@ -1,0 +1,68 @@
+{
+  "id": "KA-1459",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Seven children of different heights stand in a row. Each child counts how many of the children to their left are taller than them. From left to right, the counts are 0, 1, 1, 0, 3, 2, 5. In which position, counting from the left, is the tallest child?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4th",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "1st",
+      "correct": false,
+      "misconception": "I assumed the first child, with nobody on the left, must be the tallest."
+    },
+    {
+      "key": "C",
+      "text": "2nd",
+      "correct": false,
+      "misconception": "I mixed up taller and shorter and found the shortest child, who stands in 2nd place."
+    },
+    {
+      "key": "D",
+      "text": "7th",
+      "correct": false,
+      "misconception": "I assumed the child with the biggest count, 5, is the tallest, but a big count means many taller children."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be determined",
+      "correct": false,
+      "misconception": "I thought the counts do not give enough information to fix the order of the heights."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-04",
+    "secondary": [
+      "LOG-09",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "What count must the tallest child have?",
+    "Nobody is taller than the tallest child, so its count is 0. Also, every child to the right of the tallest has at least one taller child on their left. Use both facts.",
+    "Only the children in positions 1 and 4 count 0. If the tallest stood in position 1, what would the child in position 4 have counted?"
+  ],
+  "solutions": {
+    "reliable": "Nobody is taller than the tallest child, so the tallest child counts 0: that leaves position 1 or position 4. If the tallest child were in position 1, the child in position 4 would have a taller child on the left and could not count 0. So the tallest child is in position 4. Check: the children in positions 5, 6 and 7 all count at least 1, which fits, since the tallest stands to their left. In fact the counts fix the whole order: from tallest to shortest the positions are 4, 1, 6, 3, 5, 7, 2. The transferable idea: in ordering puzzles, start from the extreme item and ask what clue it must produce.",
+    "elegant": "The tallest child counts 0, and every child to its right counts at least 1, so the tallest is always the last child in the row who counts 0. Here that is position 4."
+  },
+  "whyOnTest": "Ordering from clues rewards starting with the extreme case: the tallest child counts 0, so it must be the last 0 in the list.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

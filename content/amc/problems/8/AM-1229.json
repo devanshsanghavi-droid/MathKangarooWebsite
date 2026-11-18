@@ -1,0 +1,68 @@
+{
+  "id": "AM-1229",
+  "contest": "AMC8",
+  "slot": 2,
+  "area": "CP",
+  "topic": "CP-03",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "Five friends finish summer camp. Each friend mails one postcard to each of the other four friends. Also, every two friends take exactly one selfie together, with just the two of them in it. How many postcards and selfies are there in all?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I only counted the selfies, one for each of the 10 pairs of friends, and forgot the postcards."
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I counted the postcards by pairs too, so I got 10 postcards and 10 selfies, 20 in all. But in each pair, both friends mail a postcard."
+    },
+    {
+      "key": "C",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I had each friend mail a postcard to all 5 friends, counting themselves, so I got 25 postcards plus 10 selfies."
+    },
+    {
+      "key": "E",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I counted the selfies the same way as the postcards, 5 times 4 = 20 each, so 40 in all. But one selfie is shared by two friends."
+    }
+  ],
+  "hints": [
+    "A postcard has a sender and a receiver. A selfie just has two people in it. Do these need to be counted the same way?",
+    "Count the postcards as ordered pairs (who sends, who receives) and the selfies as unordered pairs.",
+    "Postcards: $5 \\cdot 4 = 20$. Selfies: each selfie is a pair of friends, and there are $\\binom{5}{2} = 10$ pairs. Add them."
+  ],
+  "solutions": {
+    "reliable": "Each of the $5$ friends mails $4$ postcards, so there are $5 \\cdot 4 = 20$ postcards. A selfie belongs to a pair of friends with no order, so there are $\\binom{5}{2} = \\frac{5 \\cdot 4}{2} = 10$ selfies. In all there are $20 + 10 = 30$.",
+    "elegant": "For each of the $10$ pairs of friends there are exactly $2$ postcards (one each way) and $1$ selfie, so $3$ items per pair and $3 \\cdot 10 = 30$ in all."
+  },
+  "formulas": [
+    "F-CP-03"
+  ],
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

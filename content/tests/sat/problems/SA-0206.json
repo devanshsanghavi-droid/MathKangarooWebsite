@@ -1,0 +1,56 @@
+{
+  "id": "SA-0206",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-02",
+  "difficulty": "easy",
+  "statement": "During a race, a sprinter runs at an average speed of $9$ meters per second. What is this speed in kilometers per hour? ($1$ kilometer $= 1{,}000$ meters)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.54$",
+      "correct": false,
+      "misconception": "I multiplied by 60, as if there were 60 seconds in an hour, and then divided by 1,000 to change meters to kilometers."
+    },
+    {
+      "key": "B",
+      "text": "$2.5$",
+      "correct": false,
+      "misconception": "I multiplied by 1,000 and divided by 3,600, so I used both conversion factors upside down."
+    },
+    {
+      "key": "C",
+      "text": "$32.4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$32{,}400$",
+      "correct": false,
+      "misconception": "I multiplied by 3,600 seconds per hour but forgot to change meters into kilometers."
+    }
+  ],
+  "hints": [
+    "How many seconds are in one hour?",
+    "Multiply by the number of seconds in an hour to get meters per hour, then divide by the number of meters in a kilometer.",
+    "In one hour the sprinter would cover $9 \\cdot 3{,}600 = 32{,}400$ meters. Now change meters to kilometers."
+  ],
+  "solutions": {
+    "reliable": "There are $60 \\cdot 60 = 3{,}600$ seconds in an hour, so $9$ meters per second is $9 \\cdot 3{,}600 = 32{,}400$ meters per hour. Dividing by $1{,}000$ gives $32.4$ kilometers per hour.",
+    "elegant": "Multiplying by $\\dfrac{3{,}600}{1{,}000} = 3.6$ converts meters per second to kilometers per hour, and $9 \\cdot 3.6 = 32.4$."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

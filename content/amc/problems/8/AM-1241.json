@@ -1,0 +1,67 @@
+{
+  "id": "AM-1241",
+  "contest": "AMC8",
+  "slot": 6,
+  "area": "CP",
+  "topic": "CP-11",
+  "types": [
+    "T-COMPLEMENT",
+    "T-BIJECTION"
+  ],
+  "statement": "Each of the $12$ students in a class writes down the names of exactly $3$ classmates they would like to work with. Two students form a match if each wrote down the other's name. A name on a list is called one-sided if the student named did not write down the writer's name. There are exactly $7$ matches. How many of the names written down are one-sided?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I counted the names that belong to matches, 2 for each of the 7 matches, instead of the names that are one-sided."
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I thought exactly half of the 36 names had to be one-sided, but nothing in the problem says that."
+    },
+    {
+      "key": "C",
+      "text": "$22$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$29$",
+      "correct": false,
+      "misconception": "I subtracted one name for each match, 36 - 7 = 29, but each match is made of two names, one on each list."
+    },
+    {
+      "key": "E",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I counted every name written down, 12 times 3 = 36, and forgot to take away the names that are part of matches."
+    }
+  ],
+  "hints": [
+    "First count all the names written down.",
+    "Every name is either one-sided or part of a match. How many names does one match use?",
+    "There are $12 \\cdot 3 = 36$ names. Each match uses $2$ names (one on each student's list), so the $7$ matches use $14$ names."
+  ],
+  "solutions": {
+    "reliable": "The students write $12 \\cdot 3 = 36$ names in all. A match between two students uses exactly two of those names: each student's name on the other's list. The $7$ matches use $7 \\cdot 2 = 14$ names, and every other name is one-sided. So $36 - 14 = 22$ names are one-sided.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0242",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-05",
+  "difficulty": "hard",
+  "statement": "A data analyst fits the line of best fit $y = 4.5x + 12$ to a set of data points. She then learns that every $x$-value was recorded $2$ units too small, so she adds $2$ to each $x$-value and leaves each $y$-value unchanged. Which equation is the line of best fit for the corrected data?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$y = 4.5x + 10$",
+      "correct": false,
+      "misconception": "I subtracted 2 from the y-intercept, as if moving the points 2 units right lowered the line by 2, but the drop is 2 times the slope."
+    },
+    {
+      "key": "B",
+      "text": "$y = 4.5x + 21$",
+      "correct": false,
+      "misconception": "I knew the intercept changes by 2 times the slope, but I added the 9 instead of subtracting it, which moves the line left instead of right."
+    },
+    {
+      "key": "C",
+      "text": "$y = 6.5x + 12$",
+      "correct": false,
+      "misconception": "I added the 2 to the slope, but sliding every point sideways moves the line without changing how steep it is."
+    },
+    {
+      "key": "D",
+      "text": "$y = 4.5x + 3$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Does moving every point $2$ units right change how steep the line is?",
+    "The new line is the old line shifted $2$ units to the right. Replace $x$ with $x - 2$ in the old equation.",
+    "The corrected line is $y = 4.5(x - 2) + 12$. Expand it."
+  ],
+  "solutions": {
+    "reliable": "Adding $2$ to every $x$-value moves every data point $2$ units to the right, so the line of best fit moves $2$ units to the right with the same slope. Replacing $x$ with $x - 2$: $y = 4.5(x - 2) + 12 = 4.5x - 9 + 12 = 4.5x + 3$. Check: the old line passes through $(0, 12)$; that point moves to $(2, 12)$, and $4.5(2) + 3 = 12$.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

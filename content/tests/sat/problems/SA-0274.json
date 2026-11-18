@@ -1,0 +1,56 @@
+{
+  "id": "SA-0274",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-06",
+  "difficulty": "medium",
+  "statement": "The equation $x^2 + y^2 - 10x + 4y = 7$ defines a circle in the $xy$-plane. What is the radius of the circle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\sqrt{7}$",
+      "correct": false,
+      "misconception": "I read the 7 on the right side as $r^2$ without completing the square."
+    },
+    {
+      "key": "B",
+      "text": "$4\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I completed the square for $x$ by adding 25 but forgot to add 4 to the right side for $y$, so I got $r^2 = 32$."
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I completed both squares correctly and found $r^2 = 36$, but I reported 36 as the radius."
+    }
+  ],
+  "hints": [
+    "Rewrite the equation in the form $(x - h)^2 + (y - k)^2 = r^2$.",
+    "Complete the square for $x$ and for $y$, adding the same numbers to both sides.",
+    "Add $25$ and $4$ to both sides to get $(x - 5)^2 + (y + 2)^2 = 36$."
+  ],
+  "solutions": {
+    "reliable": "Group the terms: $(x^2 - 10x) + (y^2 + 4y) = 7$. Adding $25$ and $4$ to both sides completes both squares: $(x - 5)^2 + (y + 2)^2 = 36$. The circle has center $(5, -2)$ and $r^2 = 36$, so the radius is $6$.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

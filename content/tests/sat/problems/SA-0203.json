@@ -1,0 +1,56 @@
+{
+  "id": "SA-0203",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-01",
+  "difficulty": "medium",
+  "statement": "In a student council election with three candidates, the ratio of votes for Ana to votes for Ben was $4:5$, and the ratio of votes for Ben to votes for Cyrus was $3:2$. Cyrus received $120$ votes. What was the total number of votes received by the three candidates?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$264$",
+      "correct": false,
+      "misconception": "I read the second ratio backward, as Cyrus to Ben, so I gave Ben $\\frac{2}{3}$ of 120, or 80 votes, and Ana $\\frac{4}{5}$ of 80, or 64 votes, for a total of 264."
+    },
+    {
+      "key": "B",
+      "text": "$324$",
+      "correct": false,
+      "misconception": "I found Ana's 144 votes and Ben's 180 votes correctly but added only those two and left out Cyrus's 120 votes."
+    },
+    {
+      "key": "C",
+      "text": "$444$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$660$",
+      "correct": false,
+      "misconception": "I joined the ratios straight into $4:5:2$ without making Ben's share match, so 120 votes was 2 of 11 parts and the total came out to 660."
+    }
+  ],
+  "hints": [
+    "Ben appears in both ratios. His share has to be written with the same number of parts in each one.",
+    "Rewrite both ratios so that Ben's part is the same number, using a common multiple of $5$ and $3$, and combine them into one ratio for Ana, Ben and Cyrus.",
+    "Since $4:5 = 12:15$ and $3:2 = 15:10$, the ratio of Ana to Ben to Cyrus is $12:15:10$. Cyrus's $10$ parts are $120$ votes, so one part is $12$ votes."
+  ],
+  "solutions": {
+    "reliable": "From the second ratio, Ben received $\\frac{3}{2} \\cdot 120 = 180$ votes. From the first ratio, Ana received $\\frac{4}{5} \\cdot 180 = 144$ votes. The total is $144 + 180 + 120 = 444$. Check: $144:180 = 4:5$ and $180:120 = 3:2$.",
+    "elegant": "The combined ratio is $12:15:10$, which has $37$ parts. Cyrus's $10$ parts are $120$ votes, so one part is $12$ votes and the total is $37 \\cdot 12 = 444$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "AM-1296",
+  "contest": "AMC8",
+  "slot": 19,
+  "area": "CP",
+  "topic": "CP-11",
+  "types": [
+    "T-PIGEONHOLE",
+    "T-EXTREME"
+  ],
+  "statement": "A drawer holds $8$ red socks, $8$ blue socks, $8$ green socks and $8$ white socks. In the dark, Leo pulls out socks one at a time. What is the smallest number of socks he must pull out to be sure he has two matching pairs? A matching pair is two socks of the same color, and the two pairs may be the same color, so four red socks count as two pairs.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I found how many socks guarantee one matching pair, 4 + 1 = 5, and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I thought one sock of each color plus 2 more socks would give two pairs, so I said 4 + 2 = 6."
+    },
+    {
+      "key": "C",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I thought each pair needs its own worst case of 5 socks, so I doubled 5 to get 10."
+    },
+    {
+      "key": "E",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I solved a different problem, getting four socks of one color, with 3 socks of each color plus 1, which is 13."
+    }
+  ],
+  "hints": [
+    "Find the largest handful of socks that still does not contain two pairs.",
+    "With only one pair, you can have at most 3 socks of one color (4 socks of one color already make two pairs) and at most 1 sock of each other color.",
+    "That worst handful is 3 + 1 + 1 + 1 = 6 socks. One more sock forces a second pair."
+  ],
+  "solutions": {
+    "reliable": "Six socks are not enough: $3$ red, $1$ blue, $1$ green and $1$ white contain only one pair. Now take any $7$ socks and suppose they held at most one pair. Then at most one color could have $2$ or more socks, and that color would have at most $3$ socks, since $4$ socks of one color make two pairs. Each other color would have at most $1$ sock, for a total of at most $3 + 1 + 1 + 1 = 6$ socks, which is impossible. So $7$ socks always contain two matching pairs, and the answer is $7$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-20"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

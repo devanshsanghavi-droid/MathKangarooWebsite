@@ -1,0 +1,56 @@
+{
+  "id": "AC-0197",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-02",
+  "difficulty": "medium",
+  "statement": "What is the domain of the function $h(x) = \\sqrt{10 - 2x} + \\dfrac{3}{x^2 - 4}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "All real numbers $x \\le 5$",
+      "correct": false,
+      "misconception": "I made sure the expression under the square root was not negative, but I forgot that the denominator $x^2 - 4$ cannot be $0$."
+    },
+    {
+      "key": "B",
+      "text": "All real numbers $x \\ge 5$",
+      "correct": false,
+      "misconception": "I divided both sides of $-2x \\ge -10$ by $-2$ without flipping the inequality sign, so I got $x \\ge 5$."
+    },
+    {
+      "key": "C",
+      "text": "All real numbers $x \\le 5$ except $x = 2$",
+      "correct": false,
+      "misconception": "I solved $x^2 - 4 = 0$ and found only $x = 2$, but $x = -2$ also makes the denominator $0$."
+    },
+    {
+      "key": "D",
+      "text": "All real numbers $x \\le 5$ except $x = -2$ and $x = 2$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Two things can go wrong: a negative number under the square root, and a zero denominator.",
+    "Solve $10 - 2x \\ge 0$, remembering to flip the sign when dividing by a negative number. Then remove every $x$ that makes $x^2 - 4 = 0$.",
+    "$10 - 2x \\ge 0$ gives $x \\le 5$, and $x^2 - 4 = 0$ at $x = 2$ and $x = -2$, both of which are less than $5$."
+  ],
+  "solutions": {
+    "reliable": "The square root needs $10 - 2x \\ge 0$, so $-2x \\ge -10$ and, dividing by $-2$ and flipping the sign, $x \\le 5$. The fraction needs $x^2 - 4 \\ne 0$, so $x \\ne 2$ and $x \\ne -2$. Both of those are at most $5$, so they must be removed. The domain is all real numbers $x \\le 5$ except $x = -2$ and $x = 2$.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0143",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-05",
+  "difficulty": "medium",
+  "statement": "The amount of a medication in a patient's bloodstream is halved every $6$ hours. A patient has $400$ milligrams in the bloodstream at 8:00 a.m. If no more is given, how many milligrams will remain at 2:00 a.m. the next day?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I counted the times 8:00 a.m., 2:00 p.m., 8:00 p.m. and 2:00 a.m. as four halvings, but those four times have only three 6-hour gaps between them."
+    },
+    {
+      "key": "B",
+      "text": "$50$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$66\\tfrac{2}{3}$",
+      "correct": false,
+      "misconception": "I divided 400 by 2 times 3 = 6, but halving three times means dividing by 2 cubed, which is 8."
+    },
+    {
+      "key": "D",
+      "text": "$100$",
+      "correct": false,
+      "misconception": "I thought 8:00 a.m. to 2:00 a.m. was 12 hours, so I halved only twice, but it is 18 hours."
+    }
+  ],
+  "hints": [
+    "First find how many hours pass from 8:00 a.m. to 2:00 a.m. the next day.",
+    "Divide the elapsed time by $6$ to count the halvings, then halve $400$ that many times.",
+    "$18$ hours is $3$ halvings: $400 \\to 200 \\to 100 \\to \\ldots$"
+  ],
+  "solutions": {
+    "reliable": "From 8:00 a.m. to 8:00 p.m. is $12$ hours, and 2:00 a.m. is $6$ hours later, so $18$ hours pass. That is $18 \\div 6 = 3$ half-lives. The amount left is $400\\left(\\tfrac{1}{2}\\right)^3 = 400 \\div 8 = 50$ milligrams.",
+    "elegant": "Halve step by step: $200$ at 2:00 p.m., $100$ at 8:00 p.m. and $50$ at 2:00 a.m."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

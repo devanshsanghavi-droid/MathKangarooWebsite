@@ -1,0 +1,68 @@
+{
+  "id": "KA-1392",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Six children, A, B, C, D, E and F, stand in a row for a photo. A must not stand at either end of the row. B and C must stand next to each other. D and E must not stand next to each other. In how many different orders can the children stand?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "96",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "48",
+      "correct": false,
+      "misconception": "I glued B and C together as one block but forgot that the block can be BC or CB."
+    },
+    {
+      "key": "C",
+      "text": "120",
+      "correct": false,
+      "misconception": "I only kept A off the left end of the row and forgot about the right end."
+    },
+    {
+      "key": "D",
+      "text": "144",
+      "correct": false,
+      "misconception": "I forgot the rule that D and E must not stand next to each other."
+    },
+    {
+      "key": "E",
+      "text": "240",
+      "correct": false,
+      "misconception": "I only used the rule that B and C stand together and ignored the other two rules."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-11",
+    "secondary": [
+      "CNT-09",
+      "CNT-05"
+    ]
+  },
+  "hints": [
+    "Deal with B and C first by gluing them into one block.",
+    "With B and C glued, count the orders, then use complementary counting twice: take away the orders with A at an end, then take away the orders where D and E are together while A is not at an end.",
+    "Glued BC: 5! x 2 = 240 orders. A at an end: 2 x 4! x 2 = 96, leaving 144. Now count those 144 in which D and E are also together."
+  ],
+  "solutions": {
+    "reliable": "Glue B and C into one block, which can be BC or CB: 5! x 2 = 240 orders. With A at an end: 2 choices of end, then the block and D, E, F in 4! x 2 = 48 ways, so 96 orders; this leaves 144 with A not at an end. Of these, count the ones where D and E are together: glue DE too (2 ways), giving units A, BC, DE, F in 4! x 2 x 2 = 96 orders, of which 2 x 3! x 2 x 2 = 48 have A at an end, leaving 48. So the answer is 144 - 48 = 96. The transferable idea: glue together what must be together, and count what must be apart by subtracting the orders where it is together.",
+    "elegant": null
+  },
+  "whyOnTest": "Counting with restrictions: gluing for 'together', complementary counting for 'not together' and 'not at the end'.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

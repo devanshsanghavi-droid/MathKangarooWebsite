@@ -1,0 +1,67 @@
+{
+  "id": "KA-1342",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Five friends sit in a row of 5 seats for a photo. Mia insists on sitting at one of the two ends of the row. In how many different orders can the five friends sit?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "48",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I only let Mia sit at the left end and forgot she could sit at the right end too."
+    },
+    {
+      "key": "C",
+      "text": "120",
+      "correct": false,
+      "misconception": "I counted all the orders of the five friends and ignored Mia's wish."
+    },
+    {
+      "key": "D",
+      "text": "72",
+      "correct": false,
+      "misconception": "I worked out the orders where Mia is not at an end, 120 - 48, instead of the ones where she is."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": false,
+      "misconception": "I placed Mia in 2 ways and then added the choices for the other seats, 4 + 3 + 2 + 1 = 10, instead of multiplying them."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-05",
+    "secondary": [
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Seat Mia first.",
+    "Mia has a choice of seats. Once she is seated, the other four friends fill the remaining four seats in any order. Use the multiplication principle.",
+    "Mia has 2 choices. The other four can be arranged in $4 \\times 3 \\times 2 \\times 1 = 24$ ways."
+  ],
+  "solutions": {
+    "reliable": "Mia can take the left end or the right end: 2 ways. Then the other four friends fill the 4 remaining seats: 4 choices for the first free seat, 3 for the next, then 2, then 1, which is 24 ways. So there are $2 \\times 24 = 48$ orders. The transferable idea: place the restricted person first, then arrange everyone else.",
+    "elegant": "Over all 120 orders, Mia is in each of the 5 seats equally often, so 2 out of every 5 orders put her at an end: $120 \\times 2 \\div 5 = 48$."
+  },
+  "whyOnTest": "Tests arrangements with one restriction: place the restricted person first, then multiply by the arrangements of the rest.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

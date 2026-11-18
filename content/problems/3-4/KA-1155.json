@@ -1,0 +1,67 @@
+{
+  "id": "KA-1155",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Mia cuts a paper cube with 1 cm edges along some of its edges and lays it flat as one piece made of 6 squares. What is the perimeter of the flat shape?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I pictured the six squares as a 2 by 3 block, which cannot fold into a cube, and found its perimeter of 10."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I gave the number of edges of the cube, 12, instead of the perimeter of the flat shape."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "19",
+      "correct": false,
+      "misconception": "I took 1 cm off the total of 24 for each of the 5 joins, but each join hides two sides, one from each square."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I added up all the sides of the six squares, $6 \\times 4 = 24$, forgetting that sides where two squares join are not on the outline."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-10",
+    "secondary": [
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "Does the answer depend on which net Mia makes?",
+    "Six squares have 24 sides in all. Count how many places two squares stay joined in a net of a cube, then remember each join hides two sides from the outline.",
+    "A net of a cube has its 6 squares joined in exactly 5 places, because a cube has 12 edges and 7 of them are cut. Each join hides 2 sides, so take $5 \\times 2$ from 24."
+  ],
+  "solutions": {
+    "reliable": "Try the cross-shaped net: a column of four squares with one square on each side of the second square. Walking round its outline gives 14 sides of 1 cm. Every net works the same way: the six squares have $6 \\times 4 = 24$ sides, and in a net the squares stay joined in exactly 5 places. Each join hides two sides, so the perimeter is $24 - 10 = 14$ cm. The transferable idea: count the sides, then subtract twice the number of joins.",
+    "elegant": "Mia cuts 7 of the cube's 12 edges, since 5 must stay joined to hold 6 squares in one piece. Each cut edge becomes two pieces of outline, one on each side of the cut, so the perimeter is $7 \\times 2 = 14$ cm, whatever net she makes."
+  },
+  "whyOnTest": "Nets reward thinking about how the squares join, not drawing every net; here one count of joins answers the question for all of them.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

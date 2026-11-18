@@ -1,0 +1,56 @@
+{
+  "id": "SA-0265",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "hard",
+  "statement": "In right triangle $JKL$, angle $K$ is the right angle. The altitude from $K$ meets the hypotenuse $\\overline{JL}$ at point $M$, dividing it into segments with $JM = 3$ and $ML = 27$. What is the length of $\\overline{KM}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I thought the altitude to the hypotenuse is half the hypotenuse, so I used $\\frac{3 + 27}{2} = 15$."
+    },
+    {
+      "key": "C",
+      "text": "$12\\sqrt{5}$",
+      "correct": false,
+      "misconception": "I treated $KM$ as a leg of a right triangle with hypotenuse $27$ and other leg $3$, so I computed $\\sqrt{27^2 - 3^2} = \\sqrt{720} = 12\\sqrt{5}$."
+    },
+    {
+      "key": "D",
+      "text": "$81$",
+      "correct": false,
+      "misconception": "I found $KM^2 = 3 \\times 27 = 81$ and forgot to take the square root."
+    }
+  ],
+  "hints": [
+    "The altitude splits the big triangle into two smaller right triangles. How are they related?",
+    "Triangles $JMK$ and $KML$ are similar. Match the short leg to the long leg in each one.",
+    "Similarity gives $\\frac{JM}{KM} = \\frac{KM}{ML}$, so $KM^2 = 3 \\times 27$."
+  ],
+  "solutions": {
+    "reliable": "Angle $MKL$ and angle $J$ are both complementary to angle $JKM$, so they are equal, and right triangles $JMK$ and $KML$ are similar. Matching corresponding legs gives $\\frac{JM}{KM} = \\frac{KM}{ML}$, so $KM^2 = JM \\cdot ML = 3 \\cdot 27 = 81$ and $KM = 9$.",
+    "elegant": "Use the Pythagorean theorem three times. $JK^2 = 3^2 + KM^2$ and $KL^2 = 27^2 + KM^2$, and these add to $JL^2 = 30^2 = 900$. So $738 + 2KM^2 = 900$, $KM^2 = 81$ and $KM = 9$."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

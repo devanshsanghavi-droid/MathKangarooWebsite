@@ -1,0 +1,56 @@
+{
+  "id": "SA-0015",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "hard",
+  "statement": "A school can spend its entire technology budget on exactly $8$ laptops and $30$ tablets, or on exactly $14$ laptops and $18$ tablets. Every laptop costs the same amount, and every tablet costs the same amount. If the school spends its entire budget on tablets only, how many tablets can it buy?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$23$",
+      "correct": false,
+      "misconception": "I found that one laptop costs as much as $2$ tablets, but then I gave the number of laptops the budget buys, $46 \\div 2 = 23$, instead of the number of tablets."
+    },
+    {
+      "key": "B",
+      "text": "$34$",
+      "correct": false,
+      "misconception": "I wrote the price relationship upside down, as if one tablet costs as much as $2$ laptops, so I counted the $8$ laptops as $4$ tablets and got $4 + 30 = 34$."
+    },
+    {
+      "key": "C",
+      "text": "$38$",
+      "correct": false,
+      "misconception": "I assumed a laptop and a tablet cost the same amount, so I added $8 + 30 = 38$."
+    },
+    {
+      "key": "D",
+      "text": "$46$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Both shopping lists cost the same amount, so set their costs equal.",
+    "Let $L$ be the price of a laptop and $T$ the price of a tablet. Write $8L + 30T = 14L + 18T$ and find how $L$ compares with $T$.",
+    "The equation simplifies to $12T = 6L$, so $L = 2T$: one laptop costs as much as $2$ tablets."
+  ],
+  "solutions": {
+    "reliable": "Let $L$ and $T$ be the prices of a laptop and a tablet. Both lists cost the whole budget, so $8L + 30T = 14L + 18T$. Then $12T = 6L$, so $L = 2T$. The budget is $8L + 30T = 16T + 30T = 46T$, which buys exactly $46$ tablets. Check with the other list: $14L + 18T = 28T + 18T = 46T$.",
+    "elegant": "Going from the first list to the second adds $6$ laptops and removes $12$ tablets at the same total cost, so $1$ laptop is worth $2$ tablets. The first list is then worth $8 \\cdot 2 + 30 = 46$ tablets."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

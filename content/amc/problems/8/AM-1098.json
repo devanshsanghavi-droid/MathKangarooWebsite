@@ -1,0 +1,68 @@
+{
+  "id": "AM-1098",
+  "contest": "AMC8",
+  "slot": 8,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-COMPLEMENT"
+  ],
+  "statement": "A solid cube with edge length $3$ cm is glued on top of a solid cube with edge length $5$ cm, so that the whole bottom face of the small cube sits on the top face of the large cube. What is the surface area of the new solid, in square centimeters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$150$",
+      "correct": false,
+      "misconception": "I saw that the small cube's top face makes up for the patch of the large cube it covers, but then I forgot to add the small cube's four side faces."
+    },
+    {
+      "key": "B",
+      "text": "$161$",
+      "correct": false,
+      "misconception": "I left out the bottom face of the large cube, 25, because it cannot be seen, but it is still part of the surface: 186 - 25 = 161."
+    },
+    {
+      "key": "C",
+      "text": "$186$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$195$",
+      "correct": false,
+      "misconception": "I added the two surface areas, 150 + 54 = 204, and subtracted only the small cube's bottom face, 9, but the patch of the large cube's top that it covers is hidden too."
+    },
+    {
+      "key": "E",
+      "text": "$204$",
+      "correct": false,
+      "misconception": "I added the two surface areas, 150 + 54 = 204, without removing the two glued faces of area 9 that are hidden."
+    }
+  ],
+  "hints": [
+    "Start with the surface areas of both cubes, then think about which parts are hidden after gluing.",
+    "The large cube has surface area $6 \\cdot 25 = 150$ and the small cube $6 \\cdot 9 = 54$. Gluing hides the small cube's bottom face and an equal patch of the large cube's top.",
+    "Two patches of area $9$ are hidden, so the surface area is $150 + 54 - 2 \\cdot 9$."
+  ],
+  "solutions": {
+    "reliable": "Separately, the cubes have surface areas $6 \\cdot 5^2 = 150$ and $6 \\cdot 3^2 = 54$, which add to $204$. Gluing hides the small cube's bottom face, area $9$, and the $3$ by $3$ patch of the large cube's top that it covers, another $9$. So the surface area of the solid is $204 - 18 = 186$ square centimeters.",
+    "elegant": "Looking down from above, the solid still shows exactly $25$ square cm of top surface, because the small cube's top fills in for the patch it covers. So the solid has all $150$ square cm of the large cube's surface, plus only the small cube's four side faces, $4 \\cdot 9 = 36$: $150 + 36 = 186$."
+  },
+  "formulas": [
+    "F-GEO-16"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "AM-1013",
+  "contest": "AMC8",
+  "slot": 5,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Rosa and Omar start together at the same point of a $400$-meter running track and run around it in the same direction. Rosa runs $200$ meters per minute and Omar runs $250$ meters per minute. How many complete laps has Rosa run at the moment Omar first passes her?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I divided the track length by Rosa's speed, 400 / 200 = 2, but that is how many minutes her first lap takes, not a number of laps."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I worked out the moment correctly but gave Omar's number of laps instead of Rosa's."
+    },
+    {
+      "key": "D",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I found that Omar passes Rosa after 8 minutes and gave the minutes instead of the laps."
+    },
+    {
+      "key": "E",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I found that Rosa has run 4 laps and Omar 5 laps, and added them to get 9 instead of giving only Rosa's laps."
+    }
+  ],
+  "hints": [
+    "To pass Rosa, Omar must get a whole lap, $400$ meters, ahead of her.",
+    "Omar gains $250 - 200 = 50$ meters on Rosa every minute. How long until he has gained $400$ meters?",
+    "He is a full lap ahead after $400 / 50 = 8$ minutes. How far has Rosa run by then?"
+  ],
+  "solutions": {
+    "reliable": "Omar first passes Rosa when he has run exactly one lap more than she has. He gains $50$ meters per minute, so this happens after $400 / 50 = 8$ minutes. By then Rosa has run $200 \\cdot 8 = 1600$ meters, which is $4$ laps, and Omar has run $2000$ meters, which is $5$ laps.",
+    "elegant": "Their speeds are in the ratio $200 : 250 = 4 : 5$, so whenever Rosa has run $4$ laps Omar has run $5$. That is the first time Omar is exactly one lap ahead."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "AM-1047",
+  "contest": "AMC8",
+  "slot": 16,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": ["T-CYCLE", "T-SMALL-CASES"],
+  "statement": "A sequence starts with $a_1 = 3$, and each term after the first comes from the term before it by the rule $a_{n+1} = \\dfrac{1}{1 - a_n}$. (So $a_2 = \\dfrac{1}{1 - 3} = -\\dfrac{1}{2}$.) What is the product $a_1 \\cdot a_2 \\cdot a_3 \\cdots a_{100}$ of the first $100$ terms?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I saw that every block of 3 terms multiplies to -1 and assumed the whole product was -1, but 100 is not a multiple of 3, so one term is left over."
+    },
+    {
+      "key": "C",
+      "text": "$-\\frac{2}{3}$",
+      "correct": false,
+      "misconception": "I found 33 full blocks with product -1 and one leftover term, but I took the leftover term to be the last term of a block, 2/3, instead of the first term, 3."
+    },
+    {
+      "key": "D",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I rounded 100 / 3 up to 34 and treated the product as 34 full blocks of -1, which gives 1, but 34 blocks would be 102 terms."
+    },
+    {
+      "key": "E",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found 33 full blocks and the leftover term 3, but I thought 33 blocks of -1 multiply to 1, when an odd number of factors of -1 multiplies to -1."
+    }
+  ],
+  "hints": [
+    "Work out $a_3$ and $a_4$.",
+    "$a_3 = \\frac{2}{3}$ and $a_4 = 3 = a_1$, so the terms repeat every $3$ terms, and each block multiplies to $3 \\cdot \\left(-\\frac{1}{2}\\right) \\cdot \\frac{2}{3} = -1$.",
+    "The first $99$ terms make $33$ blocks. What is $(-1)^{33}$, and what is the $100$th term?"
+  ],
+  "solutions": {
+    "reliable": "We have $a_2 = -\\frac{1}{2}$, then $a_3 = \\dfrac{1}{1 + \\frac{1}{2}} = \\frac{2}{3}$ and $a_4 = \\dfrac{1}{1 - \\frac{2}{3}} = 3 = a_1$. Each term depends only on the one before it, so the terms repeat $3, -\\frac{1}{2}, \\frac{2}{3}$ forever, and each block of three multiplies to $3 \\cdot \\left(-\\frac{1}{2}\\right) \\cdot \\frac{2}{3} = -1$. The first $99$ terms form $33$ blocks with product $(-1)^{33} = -1$, and the $100$th term is $a_1 = 3$ again. So the product is $-1 \\cdot 3 = -3$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

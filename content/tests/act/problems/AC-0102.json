@@ -1,0 +1,56 @@
+{
+  "id": "AC-0102",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "medium",
+  "statement": "For an object orbiting the Sun, Kepler's third law can be written as $T = a^{3/2}$, where $T$ is the time for one orbit, in years, and $a$ is the object's average distance from the Sun, in astronomical units (AU). An asteroid takes $8$ years to orbit the Sun once. What is its average distance from the Sun, in AU?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I rewrote the equation as $(\\sqrt{a})^3 = 8$ and found $\\sqrt{a} = 2$, then gave $2$ instead of squaring it to get $a$."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{16}{3}$",
+      "correct": false,
+      "misconception": "I treated the exponent $\\frac{3}{2}$ like a coefficient and divided $8$ by $\\frac{3}{2}$."
+    },
+    {
+      "key": "D",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I squared both sides to get $a^3 = 64$ and then gave $64$, forgetting to take the cube root."
+    }
+  ],
+  "hints": [
+    "Substitute $T = 8$. What power undoes the exponent $\\frac{3}{2}$?",
+    "Raise both sides of $a^{3/2} = 8$ to the power $\\frac{2}{3}$, or square both sides to get $a^3 = 64$ and then take a cube root.",
+    "$a^3 = 8^2 = 64$, so $a$ is the cube root of $64$."
+  ],
+  "solutions": {
+    "reliable": "Substitute $T = 8$: $a^{3/2} = 8$. Raise both sides to the power $\\frac{2}{3}$, which undoes the exponent $\\frac{3}{2}$: $a = 8^{2/3} = (\\sqrt[3]{8})^2 = 2^2 = 4$. Check: $4^{3/2} = (\\sqrt{4})^3 = 2^3 = 8$.",
+    "elegant": "Write $a^{3/2}$ as $(\\sqrt{a})^3$. Then $(\\sqrt{a})^3 = 8$, so $\\sqrt{a} = 2$ and $a = 4$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

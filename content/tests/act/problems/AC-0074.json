@@ -1,0 +1,56 @@
+{
+  "id": "AC-0074",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "medium",
+  "statement": "What value of $x$ satisfies the equation $4^{x + 1} = 8^{2x - 3}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{5}{4}$",
+      "correct": false,
+      "misconception": "I rewrote $8^{2x - 3}$ as a power of $2$ but multiplied only the $2x$ by $3$, so I had $2x + 2 = 6x - 3$."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{5}{2}$",
+      "correct": false,
+      "misconception": "I wrote $4^{x + 1}$ as $2^{2x + 1}$, multiplying only the $x$ by $2$, so I solved $2x + 1 = 6x - 9$."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{11}{4}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I set the exponents equal, $x + 1 = 2x - 3$, even though the bases $4$ and $8$ are different."
+    }
+  ],
+  "hints": [
+    "Write both sides as powers of the same base.",
+    "Both $4$ and $8$ are powers of $2$: $4 = 2^2$ and $8 = 2^3$. Use $(2^m)^n = 2^{mn}$, then set the exponents equal.",
+    "The left side is $2^{2(x + 1)} = 2^{2x + 2}$ and the right side is $2^{3(2x - 3)} = 2^{6x - 9}$. Solve $2x + 2 = 6x - 9$."
+  ],
+  "solutions": {
+    "reliable": "Write $4 = 2^2$ and $8 = 2^3$. Then $4^{x + 1} = 2^{2x + 2}$ and $8^{2x - 3} = 2^{6x - 9}$. Equal powers of $2$ have equal exponents, so $2x + 2 = 6x - 9$, giving $4x = 11$ and $x = \\frac{11}{4}$. Check: the left exponent is $2 \\cdot \\frac{15}{4} = 7.5$ and the right exponent is $3 \\cdot \\frac{5}{2} = 7.5$.",
+    "elegant": null
+  },
+  "estSeconds": 65,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0208",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-02",
+  "difficulty": "medium",
+  "statement": "A lamppost is $6$ meters tall. At night, a child who is $1.5$ meters tall stands on level ground $9$ meters from the base of the lamppost. The light at the top of the post casts the child's shadow directly away from the post. How long is the child's shadow, in meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1.8$",
+      "correct": false,
+      "misconception": "I set up $\\frac{1.5}{s} = \\frac{6}{9 - s}$, subtracting the shadow from the distance instead of adding it, and got $s = 1.8$."
+    },
+    {
+      "key": "B",
+      "text": "$2.25$",
+      "correct": false,
+      "misconception": "I wrote $\\frac{1.5}{s} = \\frac{6}{9}$ as if the post's triangle had a base of $9$ meters, but its base is $9$ meters plus the shadow."
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found the shadow correctly but then gave $9 + 3 = 12$, the distance from the post to the tip of the shadow."
+    }
+  ],
+  "hints": [
+    "Sketch the post, the child and the tip of the shadow. You should see two similar right triangles.",
+    "The small triangle has legs $1.5$ and $s$. The big triangle has legs $6$ and $9 + s$. Set the ratios equal.",
+    "$\\frac{1.5}{s} = \\frac{6}{9 + s}$ gives $1.5(9 + s) = 6s$."
+  ],
+  "solutions": {
+    "reliable": "Let the shadow be $s$ meters. The child and the post form similar right triangles that share the angle at the tip of the shadow, so $\\frac{1.5}{s} = \\frac{6}{9 + s}$. Cross-multiplying gives $13.5 + 1.5s = 6s$, so $4.5s = 13.5$ and $s = 3$. Check: $\\frac{1.5}{3} = 0.5 = \\frac{6}{12}$.",
+    "elegant": "The post is $4$ times as tall as the child, so the tip of the shadow is $4$ times as far from the post as from the child. That means $9 + s = 4s$, so $s = 3$."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1517",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A band of 7 players chooses 3 of them to play a trio, and then one of those 3 is chosen to play the solo. In how many ways can this be done?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I counted the ways to choose the trio and forgot to choose who plays the solo."
+    },
+    {
+      "key": "B",
+      "text": "$210$",
+      "correct": false,
+      "misconception": "I counted ordered choices, $7 \\times 6 \\times 5$, as if all three players had different roles."
+    },
+    {
+      "key": "C",
+      "text": "$147$",
+      "correct": false,
+      "misconception": "I chose the soloist and then chose the other two from all 7 players again, including the soloist."
+    },
+    {
+      "key": "D",
+      "text": "$343$",
+      "correct": false,
+      "misconception": "I used $7 \\times 7 \\times 7$, which allows the same player to be chosen more than once."
+    },
+    {
+      "key": "E",
+      "text": "$105$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-03",
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "Choose the soloist first, then the other two.",
+    "Only one of the three has a special role. Either choose the soloist and then a pair from the rest, or choose the trio and then pick its soloist. Both orders must agree.",
+    "Soloist: 7 ways. The other two from the remaining 6: $\\binom{6}{2} = 15$ ways."
+  ],
+  "solutions": {
+    "reliable": "Choose the soloist in 7 ways, then the other two members from the remaining 6 players in $\\binom{6}{2} = 15$ ways. That gives $7 \\times 15 = 105$. Check another way: choose the trio in $\\binom{7}{3} = 35$ ways, then its soloist in 3 ways, giving $35 \\times 3 = 105$. The transferable idea: when a selection has one special role, choose that role and the plain group separately.",
+    "elegant": "Of the $7 \\times 6 \\times 5 = 210$ ordered choices, each outcome appears twice, because the two non-soloists can be listed in either order. So there are $210 / 2 = 105$."
+  },
+  "whyOnTest": "A selection with one special member checks whether a student separates order that matters from order that does not.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

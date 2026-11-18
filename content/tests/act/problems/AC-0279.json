@@ -1,0 +1,56 @@
+{
+  "id": "AC-0279",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-02",
+  "difficulty": "medium",
+  "statement": "The number of minutes $10$ students spent on a math assignment were: $$14,\\ 18,\\ 21,\\ 22,\\ 25,\\ 27,\\ 30,\\ 31,\\ 35,\\ 38$$ Use these rules: $Q_1$ is the median of the lower $5$ values, $Q_3$ is the median of the upper $5$ values, and a time is a high outlier if it is greater than $Q_3 + 1.5(Q_3 - Q_1)$. Using the quartiles of these $10$ times, what is the least whole number of minutes that would count as a high outlier?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$41$",
+      "correct": false,
+      "misconception": "I added 1.5 times the IQR to the median, 26, instead of to the third quartile, which gave 41."
+    },
+    {
+      "key": "B",
+      "text": "$46$",
+      "correct": false,
+      "misconception": "I found the cutoff 46 correctly but thought a value equal to the cutoff counts, though an outlier must be greater than 46."
+    },
+    {
+      "key": "C",
+      "text": "$47$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$53$",
+      "correct": false,
+      "misconception": "I added 1.5 times the IQR to the largest time, 38, instead of to the third quartile, which gave 53."
+    }
+  ],
+  "hints": [
+    "Find $Q_1$ and $Q_3$ first: each is the middle of five numbers.",
+    "$Q_1$ is the median of $14, 18, 21, 22, 25$ and $Q_3$ is the median of $27, 30, 31, 35, 38$. Then find the IQR and the cutoff.",
+    "$Q_1 = 21$ and $Q_3 = 31$, so the IQR is $10$ and the cutoff is $31 + 15 = 46$. The outlier must be greater than that."
+  ],
+  "solutions": {
+    "reliable": "The lower five values are $14, 18, 21, 22, 25$, so $Q_1 = 21$. The upper five values are $27, 30, 31, 35, 38$, so $Q_3 = 31$. The IQR is $31 - 21 = 10$ and the cutoff is $31 + 1.5(10) = 46$. A high outlier must be greater than $46$, so the least whole number is $47$.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

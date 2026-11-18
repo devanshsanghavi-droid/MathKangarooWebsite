@@ -1,0 +1,67 @@
+{
+  "id": "AM-1183",
+  "contest": "AMC8",
+  "slot": 14,
+  "area": "NT",
+  "topic": "NT-09",
+  "types": [
+    "T-CYCLE",
+    "T-PARITY"
+  ],
+  "statement": "The triangular numbers are $1, 3, 6, 10, 15, \\ldots$, where the $n$th triangular number is $1 + 2 + \\cdots + n = \\dfrac{n(n + 1)}{2}$. How many of the first $100$ triangular numbers are odd?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I thought that since n(n + 1) is always even, n(n + 1)/2 must be even too, but half of an even number can be odd."
+    },
+    {
+      "key": "B",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I thought only one triangular number in every four is odd, but the pattern is odd, odd, even, even."
+    },
+    {
+      "key": "C",
+      "text": "$50$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$67$",
+      "correct": false,
+      "misconception": "I thought the pattern was odd, odd, even, repeating every three, so I counted the n from 1 to 100 that are not multiples of 3."
+    },
+    {
+      "key": "E",
+      "text": "$75$",
+      "correct": false,
+      "misconception": "I thought n(n + 1)/2 is even only when n is a multiple of 4, but it is also even when n + 1 is a multiple of 4."
+    }
+  ],
+  "hints": [
+    "Write down whether each of the first eight triangular numbers is odd or even.",
+    "The pattern is odd, odd, even, even, and then it repeats every four.",
+    "$\\dfrac{n(n + 1)}{2}$ is even exactly when $n$ or $n + 1$ is a multiple of $4$. So it is odd when $n$ leaves a remainder of $1$ or $2$ on division by $4$."
+  ],
+  "solutions": {
+    "reliable": "One of $n$ and $n + 1$ is even. If that even number is a multiple of $4$, then $\\dfrac{n(n + 1)}{2}$ still has a factor of $2$ and is even. If the even number is $2$ times an odd number, halving it leaves a product of two odd numbers, which is odd. So the triangular number is odd exactly when $n$ leaves remainder $1$ or $2$ on division by $4$. Each block of four consecutive values of $n$ contains two of these, and $1$ to $100$ is $25$ full blocks, so $25 \\cdot 2 = 50$ of the first $100$ triangular numbers are odd.",
+    "elegant": "Each triangular number is the one before plus $n$. Adding an odd $n$ switches odd and even; adding an even $n$ keeps it. Starting from $1$ (odd), adding $2, 3, 4, 5, \\ldots$ gives keep, switch, keep, switch, so the pattern is odd, odd, even, even, repeating every four. Half of the first $100$ are odd: $50$."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

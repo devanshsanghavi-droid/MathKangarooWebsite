@@ -1,0 +1,56 @@
+{
+  "id": "SA-0268",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-04",
+  "difficulty": "medium",
+  "statement": "A warning sign is shaped like an equilateral triangle. The height of the triangle, measured from one vertex straight down to the midpoint of the opposite side, is $15$ inches. What is the side length of the sign, in inches?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I divided the height 15 by $\\sqrt{3}$ to get the short leg of the 30-60-90 triangle, then used that short leg as the whole side."
+    },
+    {
+      "key": "B",
+      "text": "$10\\sqrt{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$15\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I treated the height as the short leg of the 30-60-90 triangle and multiplied it by $\\sqrt{3}$."
+    },
+    {
+      "key": "D",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I assumed the side is twice the height, as if the height were the short leg opposite the $30^\\circ$ angle."
+    }
+  ],
+  "hints": [
+    "The height splits the sign into two 30-60-90 right triangles.",
+    "In a 30-60-90 triangle the sides are in the ratio $1 : \\sqrt{3} : 2$. The height is the leg opposite the $60^\\circ$ angle.",
+    "If the side is $s$, the short leg is $\\frac{s}{2}$ and the height is $\\frac{s}{2}\\sqrt{3} = 15$."
+  ],
+  "solutions": {
+    "reliable": "The height splits the equilateral triangle into two 30-60-90 triangles. In each one, the hypotenuse is the side $s$, the short leg is $\\frac{s}{2}$ and the height is the long leg, $\\frac{s}{2}\\sqrt{3}$. So $\\frac{s\\sqrt{3}}{2} = 15$, which gives $s = \\frac{30}{\\sqrt{3}} = 10\\sqrt{3}$ inches, about $17.3$ inches.",
+    "elegant": "By the Pythagorean theorem in one half of the sign, $s^2 = \\left(\\frac{s}{2}\\right)^2 + 15^2$, so $\\frac{3}{4}s^2 = 225$, $s^2 = 300$ and $s = 10\\sqrt{3}$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

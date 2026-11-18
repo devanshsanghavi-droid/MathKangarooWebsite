@@ -1,0 +1,56 @@
+{
+  "id": "AC-0003",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-01",
+  "difficulty": "medium",
+  "statement": "A robotics club spends $\\frac{1}{4}$ of its annual budget on parts. It then spends $\\frac{2}{5}$ of the money that remains on travel to competitions. After these two expenses, the club has $\\$630$ left. What was the club's annual budget?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$2{,}100$",
+      "correct": false,
+      "misconception": "I treated the $\\$630$ as the travel spending, which is $\\frac{2}{5} \\cdot \\frac{3}{4} = \\frac{3}{10}$ of the budget, and divided 630 by $\\frac{3}{10}$."
+    },
+    {
+      "key": "B",
+      "text": "$\\$1{,}800$",
+      "correct": false,
+      "misconception": "I took both fractions of the whole budget, so I thought $1 - \\frac{1}{4} - \\frac{2}{5} = \\frac{7}{20}$ was left and divided 630 by $\\frac{7}{20}$."
+    },
+    {
+      "key": "C",
+      "text": "$\\$1{,}400$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$1{,}050$",
+      "correct": false,
+      "misconception": "I undid only the travel step: 630 is $\\frac{3}{5}$ of the money left after parts, so I got 1,050 and forgot to undo the $\\frac{1}{4}$ spent on parts."
+    }
+  ],
+  "hints": [
+    "The $\\frac{2}{5}$ is a fraction of what remains after parts, not of the whole budget.",
+    "Work backward: $\\$630$ is $\\frac{3}{5}$ of the money left after parts, and that money is $\\frac{3}{4}$ of the budget.",
+    "The money left after parts is $630 \\div \\frac{3}{5} = 1{,}050$ dollars, and this is $\\frac{3}{4}$ of the budget."
+  ],
+  "solutions": {
+    "reliable": "Let $B$ be the budget. After parts, $\\frac{3}{4}B$ remains. Travel takes $\\frac{2}{5}$ of that, leaving $\\frac{3}{5} \\cdot \\frac{3}{4}B = \\frac{9}{20}B$. Setting $\\frac{9}{20}B = 630$ gives $B = 630 \\cdot \\frac{20}{9} = 1{,}400$. Check: parts cost $350$, leaving $1{,}050$; travel costs $\\frac{2}{5} \\cdot 1{,}050 = 420$, leaving $630$.",
+    "elegant": "Work backward. Before travel the club had $630 \\div \\frac{3}{5} = 1{,}050$ dollars, and before parts it had $1{,}050 \\div \\frac{3}{4} = 1{,}400$ dollars."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

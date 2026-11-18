@@ -1,0 +1,70 @@
+{
+  "id": "KA-1085",
+  "band": "1-2",
+  "points": 4,
+  "statement": "The picture shows shapes 1, 2 and 3 of a pattern made of square tiles. The pattern keeps growing in the same way. How many tiles are in shape 5?",
+  "figure": {
+    "component": "TeeTileStages",
+    "alt": "Three T-shapes made of equal square tiles, labelled 1, 2 and 3. Shape 1 has a top row of 3 tiles with 1 tile below the middle, 4 tiles in all. Shape 2 has a top row of 5 tiles with a column of 2 tiles below the middle, 7 tiles in all. Shape 3 has a top row of 7 tiles with a column of 3 tiles below the middle, 10 tiles in all."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I added only the 1 new tile in the column for each shape after shape 3, so 11 and then 12, and missed that the top row grows too."
+    },
+    {
+      "key": "B",
+      "text": "13",
+      "correct": false,
+      "misconception": "I continued the pattern one step too few and found shape 4."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": false,
+      "misconception": "I added only the 2 new tiles in the top row for each shape after shape 3, so 12 and then 14, and missed that the column grows too."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": false,
+      "misconception": "I thought shape 1 has 4 tiles, so shape 5 must have 5 times as many."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Look at the top row and the column separately.",
+    "Two things change from one shape to the next. Say in words how the top row changes and how the column changes, then add both changes for each new shape.",
+    "Each new shape adds 2 tiles to the top row and 1 tile to the column, so 3 tiles more each time. Shape 3 has 10 tiles."
+  ],
+  "solutions": {
+    "reliable": "Shape 1 has 4 tiles, shape 2 has 7 and shape 3 has 10: each step adds 2 tiles to the top row and 1 to the column, 3 tiles in all. So shape 4 has 13 tiles and shape 5 has 16. The idea to keep: describe every part that changes before continuing a pattern.",
+    "elegant": "Shape 5 has a top row of 11 tiles and a column of 5 tiles below it, so $11 + 5 = 16$."
+  },
+  "whyOnTest": "A pattern that changes two things at once catches anyone who notices only one of them.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1482",
+  "band": "9-10",
+  "points": 4,
+  "statement": "How many of the 100 square numbers $1^2, 2^2, 3^2, \\dots, 100^2$ leave a remainder of 1 when divided by 8?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "25",
+      "correct": false,
+      "misconception": "I thought only numbers leaving remainder 1 or 7 when divided by 8 have squares leaving remainder 1."
+    },
+    {
+      "key": "B",
+      "text": "13",
+      "correct": false,
+      "misconception": "I thought $n^2$ leaves remainder 1 only when $n$ itself leaves remainder 1."
+    },
+    {
+      "key": "C",
+      "text": "50",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": false,
+      "misconception": "I only looked at the square numbers up to 100, which are 1, 9, 25, 49 and 81."
+    },
+    {
+      "key": "E",
+      "text": "33",
+      "correct": false,
+      "misconception": "I knew squares leave remainder 0, 1 or 4 on division by 8 and assumed each happens equally often, about a third of 100."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "CFT-03",
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "Try the squares of 1, 3, 5 and 7.",
+    "The remainder of $n^2$ on division by 8 depends only on the remainder of $n$. Check all eight possible remainders, or look at what happens to every odd number.",
+    "$1^2, 3^2, 5^2, 7^2$ are 1, 9, 25 and 49, and each leaves remainder 1. Even squares leave remainder 0 or 4."
+  ],
+  "solutions": {
+    "reliable": "The remainder of $n^2$ depends only on the remainder of $n$ on division by 8. Remainders 0 to 7 give squares 0, 1, 4, 9, 16, 25, 36, 49, which leave remainders 0, 1, 4, 1, 0, 1, 4, 1. So remainder 1 happens exactly when $n$ is odd, which is 50 of the numbers from 1 to 100. The transferable idea: to study remainders of a formula, check one representative of each remainder class.",
+    "elegant": "An odd number is $2k + 1$, and $(2k + 1)^2 = 4k(k + 1) + 1$. Since $k(k + 1)$ is even, $4k(k + 1)$ is a multiple of 8, so every odd square leaves remainder 1, while every even square is a multiple of 4 and leaves 0 or 4. The answer is the 50 odd numbers. The transferable idea: the product of two consecutive numbers is always even."
+  },
+  "whyOnTest": "Remainder questions reward checking each remainder class once; here every odd square leaves remainder 1, which surprises students who only test a few cases.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

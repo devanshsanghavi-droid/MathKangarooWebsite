@@ -1,0 +1,56 @@
+{
+  "id": "AC-0264",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-03",
+  "difficulty": "hard",
+  "statement": "The five-number summaries of the scores on the same test for two classes are shown below. $$\\begin{array}{l|c|c|c|c|c} & \\text{Min} & Q_1 & \\text{Median} & Q_3 & \\text{Max} \\\\ \\hline \\text{Class P} & 55 & 68 & 79 & 86 & 98 \\\\ \\text{Class Q} & 50 & 61 & 70 & 79 & 94 \\end{array}$$ The number of students in each class is not given. Which of the following statements must be true?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "The interquartile range of class P's scores is greater than that of class Q's scores.",
+      "correct": false,
+      "misconception": "I compared the third quartiles, 86 and 79, and thought the class with the higher third quartile must have the larger interquartile range."
+    },
+    {
+      "key": "B",
+      "text": "The range of class P's scores is greater than that of class Q's scores.",
+      "correct": false,
+      "misconception": "I compared only the maximum scores, 98 and 94, and forgot that the range also depends on the minimum scores."
+    },
+    {
+      "key": "C",
+      "text": "More students in class Q than in class P scored below $70$.",
+      "correct": false,
+      "misconception": "I saw that half of class Q scored below 70 and fewer than half of class P did, and I assumed the two classes have the same number of students."
+    },
+    {
+      "key": "D",
+      "text": "At least half of the students in class P scored $79$ or higher.",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Compute each class's interquartile range and range before deciding.",
+    "Remember what the median guarantees, and notice that the class sizes are unknown.",
+    "Both interquartile ranges are $18$. The ranges are $43$ for P and $44$ for Q. Class P's median is $79$."
+  ],
+  "solutions": {
+    "reliable": "The interquartile ranges are $86 - 68 = 18$ and $79 - 61 = 18$, which are equal, so the first statement is false. The ranges are $98 - 55 = 43$ and $94 - 50 = 44$, so the second statement is false. Half of class Q scored below $70$ and fewer than half of class P did, but without class sizes we cannot compare the numbers of students, so the third statement need not be true. Class P's median is $79$, so at least half of class P scored $79$ or higher. That statement must be true.",
+    "elegant": null
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

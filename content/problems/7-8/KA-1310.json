@@ -1,0 +1,68 @@
+{
+  "id": "KA-1310",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A leaking tap drips once every 2 seconds, and 20 drops make 1 millilitre. How many litres of water drip from the tap in one day?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0.09",
+      "correct": false,
+      "misconception": "I worked out the water for one hour, 1800 drops or 90 millilitres, and forgot to multiply by 24."
+    },
+    {
+      "key": "B",
+      "text": "2.16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "4.32",
+      "correct": false,
+      "misconception": "I counted one drop every second instead of one drop every 2 seconds."
+    },
+    {
+      "key": "D",
+      "text": "21.6",
+      "correct": false,
+      "misconception": "I thought 1 litre is 100 millilitres, so I divided 2160 by 100."
+    },
+    {
+      "key": "E",
+      "text": "2160",
+      "correct": false,
+      "misconception": "I got 2160 millilitres and forgot to change millilitres into litres."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-10",
+    "secondary": [
+      "MOD-07",
+      "MOD-10"
+    ]
+  },
+  "hints": [
+    "How many seconds are there in a day?",
+    "Check units: go from seconds to drops, from drops to millilitres, then from millilitres to litres. Write the unit after every number so the last step is not skipped.",
+    "A day has $24 \\times 3600 = 86\\,400$ seconds, so there are $43\\,200$ drops, which is $43\\,200 \\div 20 = 2160$ millilitres."
+  ],
+  "solutions": {
+    "reliable": "A day has $24 \\times 60 \\times 60 = 86\\,400$ seconds. One drop every 2 seconds gives $43\\,200$ drops. At 20 drops per millilitre that is $43\\,200 \\div 20 = 2160$ millilitres. Since 1 litre is 1000 millilitres, this is 2.16 litres. The transferable idea: before bubbling, ask whether the number is in the unit the question asked for.",
+    "elegant": "Work per hour to keep the numbers small: 1800 drops, which is 90 millilitres. Per day: $24 \\times 90 = 2160$ millilitres, which is 2.16 litres."
+  },
+  "whyOnTest": "Every step is easy; the marks are lost by stopping at millilitres or at one hour, so this tests the final units check.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

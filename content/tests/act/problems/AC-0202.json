@@ -1,0 +1,56 @@
+{
+  "id": "AC-0202",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-01",
+  "difficulty": "medium",
+  "statement": "Maple Street and Oak Street are parallel. A straight avenue crosses both of them. On one side of the avenue, the two angles that lie between the two streets measure $(3x + 10)^\\circ$ and $(5x - 14)^\\circ$. What is the measure of the larger of these two angles?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$23^\\circ$",
+      "correct": false,
+      "misconception": "I solved for $x$ correctly and got $23$, then gave $x$ as the answer instead of the angle."
+    },
+    {
+      "key": "B",
+      "text": "$46^\\circ$",
+      "correct": false,
+      "misconception": "I set the two angles equal, so $3x + 10 = 5x - 14$ gave $x = 12$ and an angle of $46^\\circ$."
+    },
+    {
+      "key": "C",
+      "text": "$79^\\circ$",
+      "correct": false,
+      "misconception": "I solved for $x = 23$ correctly, but then I gave $3x + 10 = 79^\\circ$, which is the smaller angle."
+    },
+    {
+      "key": "D",
+      "text": "$101^\\circ$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "How are two interior angles on the same side of a transversal related?",
+    "Same-side interior angles between parallel lines are supplementary. Add the two expressions, set the sum equal to $180$ and solve for $x$.",
+    "$8x - 4 = 180$ gives $x = 23$. Now evaluate both angles and pick the larger one."
+  ],
+  "solutions": {
+    "reliable": "Same-side interior angles formed by a transversal of two parallel lines add to $180^\\circ$. So $(3x + 10) + (5x - 14) = 180$, which gives $8x - 4 = 180$ and $x = 23$. The angles are $3(23) + 10 = 79^\\circ$ and $5(23) - 14 = 101^\\circ$, and they do add to $180^\\circ$. The larger angle is $101^\\circ$.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "AM-1282",
+  "contest": "AMC8",
+  "slot": 24,
+  "area": "CP",
+  "topic": "CP-04",
+  "types": [
+    "T-COMPLEMENT",
+    "T-CASEWORK"
+  ],
+  "statement": "A math club has $6$ seventh graders, one of whom is Mia, and $5$ eighth graders, one of whom is Noah. The club will choose a $4$-person team that includes at least one seventh grader and at least one eighth grader. Mia and Noah refuse to be on the team together. How many different teams are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$274$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$294$",
+      "correct": false,
+      "misconception": "I subtracted the 36 teams with both Mia and Noah from all 330 groups of 4, but forgot the rule that both grades must be on the team."
+    },
+    {
+      "key": "C",
+      "text": "$310$",
+      "correct": false,
+      "misconception": "I removed the 15 all-seventh-grade groups and the 5 all-eighth-grade groups from 330, but forgot to remove the teams with both Mia and Noah."
+    },
+    {
+      "key": "D",
+      "text": "$330$",
+      "correct": false,
+      "misconception": "I counted every group of 4 from the 11 students, C(11, 4) = 330, and ignored both rules."
+    },
+    {
+      "key": "E",
+      "text": "$346$",
+      "correct": false,
+      "misconception": "I found the 310 teams with both grades and the 36 teams with Mia and Noah, but I added the 36 instead of subtracting it."
+    }
+  ],
+  "hints": [
+    "Start with all groups of 4 from the 11 students and take away the groups you do not want.",
+    "A group missing a grade is all seventh graders or all eighth graders. A group with both Mia and Noah already has both grades, so the two kinds of bad groups never overlap.",
+    "There are 330 groups in all, 15 that are all seventh graders and 5 that are all eighth graders. Groups with Mia and Noah: choose the 2 other members from the remaining 9 students, 36 ways. Subtract."
+  ],
+  "solutions": {
+    "reliable": "There are $\\binom{11}{4} = 330$ groups of $4$. A group missing a grade is all seventh graders, $\\binom{6}{4} = 15$ ways, or all eighth graders, $\\binom{5}{4} = 5$ ways. That leaves $330 - 20 = 310$ groups with both grades. A group containing both Mia and Noah already has both grades, and its other $2$ members come from the remaining $9$ students in $\\binom{9}{2} = 36$ ways. All $36$ of these are among the $310$, so the answer is $310 - 36 = 274$.",
+    "elegant": "Count by the number of seventh graders. Three seventh graders and one eighth grader: $\\binom{6}{3} \\cdot 5 = 100$, of which $\\binom{5}{2} = 10$ contain Mia and Noah. Two and two: $\\binom{6}{2}\\binom{5}{2} = 150$, of which $5 \\cdot 4 = 20$ contain Mia and Noah. One and three: $6 \\cdot \\binom{5}{3} = 60$, of which $\\binom{4}{2} = 6$ contain Mia and Noah. The total is $(100 - 10) + (150 - 20) + (60 - 6) = 274$."
+  },
+  "formulas": [
+    "F-CP-06",
+    "F-CP-03"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

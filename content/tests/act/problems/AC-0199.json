@@ -1,0 +1,56 @@
+{
+  "id": "AC-0199",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-03",
+  "difficulty": "medium",
+  "statement": "Two candles are lit at the same time. Candle P is $30$ centimeters tall and burns down $1.5$ centimeters per hour. Candle Q is $22$ centimeters tall and burns down $0.7$ centimeters per hour. After how many hours will the two candles be the same height?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "about $3.6$",
+      "correct": false,
+      "misconception": "I added the burn rates, $1.5 + 0.7 = 2.2$, and divided the $8$-centimeter difference in height by $2.2$."
+    },
+    {
+      "key": "B",
+      "text": "about $5.3$",
+      "correct": false,
+      "misconception": "I divided the $8$-centimeter difference in height by Candle P's rate, $1.5$, instead of by the difference in rates, $0.8$."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$65$",
+      "correct": false,
+      "misconception": "I moved the $22$ to the other side without changing its sign, so I divided $30 + 22 = 52$ by $0.8$."
+    }
+  ],
+  "hints": [
+    "Write each candle's height after $t$ hours as a linear function.",
+    "Set $30 - 1.5t = 22 - 0.7t$ and solve for $t$.",
+    "Rearranging gives $8 = 0.8t$."
+  ],
+  "solutions": {
+    "reliable": "After $t$ hours, Candle P is $30 - 1.5t$ centimeters tall and Candle Q is $22 - 0.7t$ centimeters tall. Setting them equal: $30 - 1.5t = 22 - 0.7t$, so $8 = 0.8t$ and $t = 10$. Check: both candles are $15$ centimeters tall after $10$ hours.",
+    "elegant": "Candle P starts $8$ centimeters taller but loses $0.8$ centimeter per hour more than Candle Q, so it closes the gap in $\\frac{8}{0.8} = 10$ hours."
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

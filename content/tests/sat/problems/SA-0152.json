@@ -1,0 +1,56 @@
+{
+  "id": "SA-0152",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-05",
+  "difficulty": "medium",
+  "statement": "The function $p$ is defined by $p(x) = (x + 1)(x - 2)(x - 5)$. On which of the following intervals is $p(x) < 0$ for every value of $x$ in the interval?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2 < x < 5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-1 < x < 2$",
+      "correct": false,
+      "misconception": "I thought the graph of a cubic with a positive leading coefficient starts above the $x$-axis on the far left, so I had it dip below the axis right after the first zero."
+    },
+    {
+      "key": "C",
+      "text": "$-2 < x < 1$",
+      "correct": false,
+      "misconception": "I read the zeros with the wrong signs, as $1$, $-2$ and $-5$, so I found where $(x - 1)(x + 2)(x + 5)$ is negative instead."
+    },
+    {
+      "key": "D",
+      "text": "$-1 < x < 5$",
+      "correct": false,
+      "misconception": "I treated the cubic like an upward parabola and assumed it is negative everywhere between its smallest and largest zeros."
+    }
+  ],
+  "hints": [
+    "The zeros $-1$, $2$ and $5$ split the number line into intervals where the sign of $p(x)$ stays the same.",
+    "Pick one test value inside each interval and find the sign of each factor there.",
+    "At $x = 0$: $(1)(-2)(-5) = 10 > 0$. At $x = 3$: $(4)(1)(-2) = -8 < 0$."
+  ],
+  "solutions": {
+    "reliable": "The zeros of $p$ are $-1$, $2$ and $5$. Test one value in each interval. For $x = -2$: $(-1)(-4)(-7) = -28 < 0$. For $x = 0$: $(1)(-2)(-5) = 10 > 0$. For $x = 3$: $(4)(1)(-2) = -8 < 0$. For $x = 6$: $(7)(4)(1) = 28 > 0$. So $p(x) < 0$ for $x < -1$ and for $2 < x < 5$. Of the choices, only $2 < x < 5$ has $p(x) < 0$ everywhere; the interval $-1 < x < 5$ fails because, for example, $p(0) = 10$.",
+    "elegant": "A cubic with a positive leading coefficient is negative far to the left and positive far to the right, and each zero of odd multiplicity flips the sign. Reading left to right: negative, then positive after $-1$, negative after $2$, positive after $5$."
+  },
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

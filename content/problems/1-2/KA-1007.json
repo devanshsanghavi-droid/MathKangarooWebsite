@@ -1,0 +1,68 @@
+{
+  "id": "KA-1007",
+  "band": "1-2",
+  "points": 3,
+  "statement": "Nina knows the answer to a contest question is even and bigger than 7. The choices are 2, 8, 9, 10 and 13. How many choices can she be sure are wrong?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I only crossed out a choice if it broke both facts, and no choice breaks both."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I crossed out only 2, the choice that is 7 or less, and forgot to cross out the odd numbers."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I crossed out only the odd numbers, 9 and 13, and forgot that 2 is not bigger than 7."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": false,
+      "misconception": "I also crossed out 8, because I mixed up bigger than 7 with bigger than 8."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-09",
+    "secondary": [
+      "NUM-03",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Cross out every choice that breaks one of the two facts.",
+    "Each fact lets you cross out choices: one removes the odd numbers, the other removes the numbers that are 7 or less. A choice that breaks either fact must be wrong.",
+    "The odd choices are 9 and 13. Which other choice is 7 or less?"
+  ],
+  "solutions": {
+    "reliable": "9 and 13 are odd, so they are wrong. 2 is even but not bigger than 7, so it is wrong too. That makes 3 choices Nina can cross out: 2, 9 and 13. Only 8 and 10 are left, and she should guess one of them, because a blank can never score. The idea to keep: crossing out impossible choices turns a wild guess into a much better one.",
+    "elegant": null
+  },
+  "whyOnTest": "Contest craft: a wrong answer costs nothing, so crossing out impossible choices and then guessing always beats leaving a blank.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

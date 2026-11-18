@@ -1,0 +1,56 @@
+{
+  "id": "SA-0128",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-05",
+  "difficulty": "hard",
+  "statement": "The polynomial $p(x) = x^3 + kx^2 - 5x + 6$, where $k$ is a constant, leaves a remainder of $16$ when it is divided by $x - 2$. What is the remainder when $p(x)$ is divided by $x + 1$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I used $p(-2) = 16$ for division by $x - 2$, which gave $8 + 4k = 16$ and $k = 2$, and then $p(-1) = 12$."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I ignored the remainder and set $p(2) = 0$ as if $x - 2$ were a factor, which gave $k = -1$ and then $p(-1) = 9$."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I found $k = 3$ correctly, but I thought dividing by $x + 1$ meant evaluating at $x = 1$, and $p(1) = 5$."
+    },
+    {
+      "key": "D",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The remainder when a polynomial $p(x)$ is divided by $x - a$ is $p(a)$.",
+    "Use $p(2) = 16$ to find $k$. Then the remainder for $x + 1 = x - (-1)$ is $p(-1)$.",
+    "$p(2) = 8 + 4k - 10 + 6 = 4k + 4$, and $4k + 4 = 16$ gives $k = 3$. Now evaluate $p(-1)$ with $k = 3$."
+  ],
+  "solutions": {
+    "reliable": "By the remainder theorem, the remainder on division by $x - 2$ is $p(2)$, so $p(2) = 16$. That is $8 + 4k - 10 + 6 = 16$, so $4k = 12$ and $k = 3$. Since $x + 1 = x - (-1)$, the remainder on division by $x + 1$ is $p(-1) = (-1)^3 + 3(-1)^2 - 5(-1) + 6 = -1 + 3 + 5 + 6 = 13$. Check with long division: $x^3 + 3x^2 - 5x + 6 = (x + 1)(x^2 + 2x - 7) + 13$.",
+    "elegant": null
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

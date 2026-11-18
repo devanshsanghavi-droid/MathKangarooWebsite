@@ -1,0 +1,56 @@
+{
+  "id": "AC-0200",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-03",
+  "difficulty": "easy",
+  "statement": "A hot-air balloon descends at a steady rate, so its altitude is a linear function of time. The table shows the balloon's altitude $a$, in meters, $t$ minutes after it begins to descend. $$\\begin{array}{c|cccc} t & 0 & 4 & 10 & 16 \\\\ \\hline a & 920 & 800 & 620 & 440 \\end{array}$$ Which of the following equations models the altitude?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$a = 920 - 120t$",
+      "correct": false,
+      "misconception": "I used the $120$-meter drop over the first $4$ minutes as the drop per minute, without dividing by $4$."
+    },
+    {
+      "key": "B",
+      "text": "$a = 920 - \\frac{1}{30}t$",
+      "correct": false,
+      "misconception": "I divided the change in time by the change in altitude, $\\frac{4}{120}$, so I got the reciprocal of the rate."
+    },
+    {
+      "key": "C",
+      "text": "$a = 920 + 30t$",
+      "correct": false,
+      "misconception": "I found a rate of $30$ meters per minute but made it positive, even though the balloon is going down."
+    },
+    {
+      "key": "D",
+      "text": "$a = 920 - 30t$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The starting altitude, at $t = 0$, is the constant term. What is the rate of change?",
+    "Rate of change $= \\frac{\\text{change in } a}{\\text{change in } t}$. Use any two columns of the table.",
+    "From $t = 0$ to $t = 4$, $a$ changes by $800 - 920 = -120$, so the rate is $\\frac{-120}{4} = -30$ meters per minute."
+  ],
+  "solutions": {
+    "reliable": "At $t = 0$ the altitude is $920$, so the constant term is $920$. The rate of change is $\\frac{800 - 920}{4 - 0} = -30$ meters per minute, so $a = 920 - 30t$. Check the other columns: $920 - 30 \\cdot 10 = 620$ and $920 - 30 \\cdot 16 = 440$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

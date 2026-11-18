@@ -1,0 +1,56 @@
+{
+  "id": "SA-0136",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-03",
+  "difficulty": "hard",
+  "statement": "A bakery models its daily profit $P(x)$, in dollars, from selling cupcakes at a price of $x$ dollars per dozen with the function $P(x) = -2x^2 + bx + c$, where $b$ and $c$ are constants. The model gives the same daily profit, $600$ dollars, at a price of $15$ dollars per dozen and at a price of $35$ dollars per dozen. According to the model, what is the maximum daily profit, in dollars?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$800$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$700$",
+      "correct": false,
+      "misconception": "I put the vertex at $x = 25$ but left out the factor $-2$, so I solved $600 = -(15 - 25)^2 + k$."
+    },
+    {
+      "key": "C",
+      "text": "$650$",
+      "correct": false,
+      "misconception": "I took the vertex to be at $35 - 15 = 20$ instead of halfway between the prices, so I solved $600 = -2(15 - 20)^2 + k$."
+    },
+    {
+      "key": "D",
+      "text": "$400$",
+      "correct": false,
+      "misconception": "I wrote the vertex form as $P(x) = 2(x - 25)^2 + k$ with a plus sign, so I solved $600 = 200 + k$."
+    }
+  ],
+  "hints": [
+    "Equal profits at two prices tell you where the axis of symmetry is.",
+    "The maximum is halfway between $15$ and $35$, at $x = 25$. Write $P(x) = -2(x - 25)^2 + k$, where $k$ is the maximum profit.",
+    "Use $P(15) = 600$: $-2(15 - 25)^2 + k = 600$, so $-200 + k = 600$."
+  ],
+  "solutions": {
+    "reliable": "Since $P(15) = P(35)$, the axis of symmetry is $x = \\frac{15 + 35}{2} = 25$, so $P(x) = -2(x - 25)^2 + k$, where $k$ is the maximum profit. Then $P(15) = -2(-10)^2 + k = -200 + k = 600$, so $k = 800$. Check with standard form: $P(x) = -2(x - 15)(x - 35) + 600 = -2x^2 + 100x - 450$, and $P(25) = -1250 + 2500 - 450 = 800$.",
+    "elegant": "Write $P(x) - 600 = -2(x - 15)(x - 35)$, since $15$ and $35$ are where $P(x) = 600$. At the midpoint $x = 25$, $P(25) = 600 - 2(10)(-10) = 800$."
+  },
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

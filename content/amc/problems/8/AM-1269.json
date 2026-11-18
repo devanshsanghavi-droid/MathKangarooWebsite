@@ -1,0 +1,66 @@
+{
+  "id": "AM-1269",
+  "contest": "AMC8",
+  "slot": 14,
+  "area": "CP",
+  "topic": "CP-07",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "Two fair six-sided dice, one red and one blue, are rolled. You are told that the sum of the two numbers rolled is at least $10$. Given this, what is the probability that at least one of the dice shows a $6$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{11}{36}$",
+      "correct": false,
+      "misconception": "I found the chance of rolling at least one 6 out of all 36 rolls and did not use the fact that the sum is at least 10."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I only checked whether the blue die showed a 6, which happens in 3 of the 6 rolls with a sum of at least 10."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{2}{3}$",
+      "correct": false,
+      "misconception": "I only counted the rolls where exactly one die shows a 6 and left out the roll where both dice show 6."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{3}{4}$",
+      "correct": false,
+      "misconception": "I listed the sums as 4 and 6, 5 and 5, 5 and 6, 6 and 6 without caring which die is which, and 3 of those 4 have a 6."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{5}{6}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Only the rolls with a sum of at least $10$ matter now. List them all.",
+    "Keep track of which die is red and which is blue, so $(4, 6)$ and $(6, 4)$ are different rolls.",
+    "The rolls are $(4, 6), (6, 4), (5, 5), (5, 6), (6, 5), (6, 6)$. How many contain a $6$?"
+  ],
+  "solutions": {
+    "reliable": "Write each roll as (red, blue). The rolls with a sum of at least $10$ are $(4, 6)$, $(6, 4)$, $(5, 5)$, $(5, 6)$, $(6, 5)$ and $(6, 6)$, and these $6$ rolls are equally likely. All of them except $(5, 5)$ contain a $6$, so the probability is $\\frac{5}{6}$.",
+    "elegant": "Without a $6$, the largest possible sum is $5 + 5 = 10$, and that needs both dice to show $5$. So among the $6$ equally likely rolls with sum at least $10$, only $(5, 5)$ lacks a $6$, and the probability is $1 - \\frac{1}{6} = \\frac{5}{6}$."
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

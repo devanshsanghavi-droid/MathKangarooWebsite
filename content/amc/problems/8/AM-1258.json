@@ -1,0 +1,66 @@
+{
+  "id": "AM-1258",
+  "contest": "AMC8",
+  "slot": 11,
+  "area": "CP",
+  "topic": "CP-12",
+  "types": [
+    "T-EXTREME"
+  ],
+  "statement": "A list of five positive integers has median $7$, mean $8$ and range $10$. The number $4$ appears more often in the list than any other number. What is the second largest number in the list?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I thought the range is measured from the median, so the largest number is 7 + 10 = 17, and then 40 - 4 - 4 - 7 - 17 = 8."
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I worked out the largest number, 4 + 10 = 14, and gave that instead of the second largest."
+    },
+    {
+      "key": "D",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I thought a range of 10 means the largest number is 10, so I got 40 - 4 - 4 - 7 - 10 = 15."
+    },
+    {
+      "key": "E",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I forgot to subtract the median 7 when I used the total 40, so I got 40 - 4 - 4 - 14 = 18."
+    }
+  ],
+  "hints": [
+    "Write the list in order as $a \\le b \\le 7 \\le d \\le e$. What must the total be?",
+    "For $4$ to appear more often than any other number it must appear at least twice. Where can the $4$s go?",
+    "Only $a$ and $b$ can equal $4$, so $a = b = 4$. The range then gives $e$, and the total of $40$ gives $d$."
+  ],
+  "solutions": {
+    "reliable": "Write the list in order as $a \\le b \\le 7 \\le d \\le e$. The mean is $8$, so the total is $5 \\times 8 = 40$. The number $4$ must appear at least twice, and since $4 < 7$ only the two numbers below the median can be $4$, so $a = b = 4$. The range is $10$, so $e = 4 + 10 = 14$. Then $d = 40 - 4 - 4 - 7 - 14 = 11$. The list $4, 4, 7, 11, 14$ satisfies every condition, so the second largest number is $11$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

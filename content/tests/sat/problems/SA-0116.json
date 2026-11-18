@@ -1,0 +1,56 @@
+{
+  "id": "SA-0116",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-04",
+  "difficulty": "medium",
+  "statement": "A scientist counts the bacteria in a lab sample at the start of an experiment and every $4$ hours after that. The table shows the number of bacteria $N$ at $t$ hours after the start. $$\\begin{array}{c|c|c|c} t & 0 & 4 & 8 \\\\ \\hline N & 250 & 750 & 2{,}250 \\end{array}$$ If the pattern continues, which equation models $N$ in terms of $t$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$N = 250(3)^{4t}$",
+      "correct": false,
+      "misconception": "I saw the count triple every 4 hours and multiplied $t$ by 4 in the exponent instead of dividing by 4."
+    },
+    {
+      "key": "B",
+      "text": "$N = 250(4)^{t/3}$",
+      "correct": false,
+      "misconception": "I mixed up the two numbers and used 4 as the growth factor and 3 as the hours per step."
+    },
+    {
+      "key": "C",
+      "text": "$N = 250 + 125t$",
+      "correct": false,
+      "misconception": "I treated the growth as linear, using the first jump of 500 bacteria over 4 hours as 125 per hour."
+    },
+    {
+      "key": "D",
+      "text": "$N = 250(3)^{t/4}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Compare consecutive counts: are they going up by the same amount or the same factor?",
+    "Each count is $3$ times the one before, and the counts are $4$ hours apart. The exponent should count how many $4$-hour periods have passed.",
+    "After $t$ hours there have been $\\frac{t}{4}$ tripling periods, so $N = 250 \\cdot 3^{t/4}$."
+  ],
+  "solutions": {
+    "reliable": "From $250$ to $750$ to $2{,}250$, the count is multiplied by $3$ every $4$ hours, so the growth is exponential with starting value $250$. After $t$ hours, $\\frac{t}{4}$ periods of $4$ hours have passed, so $N = 250(3)^{t/4}$. Check: $t = 4$ gives $750$ and $t = 8$ gives $250 \\cdot 9 = 2{,}250$. The linear choice gives $1{,}250$ at $t = 8$, which does not match.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

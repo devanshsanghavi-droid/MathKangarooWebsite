@@ -1,0 +1,56 @@
+{
+  "id": "SA-0219",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-04",
+  "difficulty": "hard",
+  "statement": "Class A has $18$ students, and their mean score on a quiz was $82$. Class B took the same quiz, and its mean score was $76$. The mean score of all the students in both classes together was $79.6$. How many students are in class B?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I assumed the two classes had the same number of students, but equal classes would give a combined mean of 79, not 79.6."
+    },
+    {
+      "key": "C",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I balanced the distances from the combined mean the wrong way around, writing $18 \\times 3.6 = 2.4b$ instead of $18 \\times 2.4 = 3.6b$."
+    },
+    {
+      "key": "D",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I solved correctly that class B has 12 students but then reported the total number of students in both classes, 30."
+    }
+  ],
+  "hints": [
+    "The combined mean is closer to $82$ than to $76$. What does that say about which class is larger?",
+    "Let class B have $b$ students. Write the total of all scores two ways: as the sum of each class total, and as the combined mean times the total number of students.",
+    "The equation is $18(82) + 76b = 79.6(18 + b)$, which becomes $1{,}476 + 76b = 1{,}432.8 + 79.6b$."
+  ],
+  "solutions": {
+    "reliable": "Let class B have $b$ students. The total of all the scores is $18(82) + 76b$, and it is also $79.6(18 + b)$. So $1{,}476 + 76b = 1{,}432.8 + 79.6b$, which gives $43.2 = 3.6b$ and $b = 12$. Check: $\\dfrac{1{,}476 + 912}{30} = \\dfrac{2{,}388}{30} = 79.6$.",
+    "elegant": "Class A is $2.4$ points above the combined mean and class B is $3.6$ points below it. The amounts above and below must balance, so $18(2.4) = 3.6b$ and $b = 12$."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

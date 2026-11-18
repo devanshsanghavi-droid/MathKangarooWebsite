@@ -1,0 +1,68 @@
+{
+  "id": "KA-1228",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Three corners of a square are at the grid points $(1, 2)$, $(4, 1)$ and $(5, 4)$. Where is the fourth corner?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$(0, -1)$",
+      "correct": false,
+      "misconception": "I treated $(5, 4)$ as the corner between the other two, but the right angle of this square is at $(4, 1)$."
+    },
+    {
+      "key": "B",
+      "text": "$(2, 5)$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$(3, 3)$",
+      "correct": false,
+      "misconception": "I found the point halfway between $(1, 2)$ and $(5, 4)$, which is the centre of the square, not a corner."
+    },
+    {
+      "key": "D",
+      "text": "$(4, 3)$",
+      "correct": false,
+      "misconception": "I took the step from $(4, 1)$ to $(5, 4)$, 1 right and 3 up, but used it the wrong way round as 3 right and 1 up from $(1, 2)$."
+    },
+    {
+      "key": "E",
+      "text": "$(8, 3)$",
+      "correct": false,
+      "misconception": "I treated $(1, 2)$ as the corner between the other two, but the sides from $(1, 2)$ are not equal and do not meet at a right angle."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-02",
+    "secondary": [
+      "GEO-06",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Which of the three corners sits between the other two?",
+    "Describe each side as a step: so many right, so many up or down. Opposite sides of a square are the same step, so copying a step from a known corner reaches the missing one.",
+    "From $(1, 2)$ to $(4, 1)$ is 3 right and 1 down; from $(4, 1)$ to $(5, 4)$ is 1 right and 3 up. The right angle is at $(4, 1)$."
+  ],
+  "solutions": {
+    "reliable": "From $(1, 2)$ to $(4, 1)$ is 3 right and 1 down. From $(4, 1)$ to $(5, 4)$ is 1 right and 3 up. These steps are the same length and turn through a right angle, so $(4, 1)$ is the corner between the other two, and $(1, 2)$ and $(5, 4)$ are opposite corners. The fourth corner is reached from $(1, 2)$ by the same step that took $(4, 1)$ to $(5, 4)$: 1 right and 3 up, giving $(2, 5)$. Check: from $(2, 5)$ to $(5, 4)$ is 3 right and 1 down, the same as the side from $(1, 2)$ to $(4, 1)$. The transferable idea: on a grid, describe sides as steps; opposite sides of a square are the same step.",
+    "elegant": "The two diagonals of a square share a midpoint. The midpoint of $(1, 2)$ and $(5, 4)$ is $(3, 3)$. The corner $(4, 1)$ is 1 right and 2 down from $(3, 3)$, so the opposite corner is 1 left and 2 up from it: $(2, 5)$. Opposite corners mirror each other through the centre."
+  },
+  "whyOnTest": "Lattice questions reward describing sides as steps; a tilted square hides its right angle, so you must first find the corner that sits between the others.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

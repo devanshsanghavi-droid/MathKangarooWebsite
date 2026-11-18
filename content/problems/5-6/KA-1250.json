@@ -1,0 +1,68 @@
+{
+  "id": "KA-1250",
+  "band": "5-6",
+  "points": 5,
+  "statement": "The numbers 1 to 10 are written on a board. A move is: rub out any two numbers $a$ and $b$, and write $a + b - 1$ in their place. After 9 moves only one number is left. What is it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "45",
+      "correct": false,
+      "misconception": "I took 1 off for each of the 10 numbers, but there are only 9 moves, so 1 is taken off only 9 times."
+    },
+    {
+      "key": "B",
+      "text": "46",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "54",
+      "correct": false,
+      "misconception": "I took 1 off only once, as if the whole process were a single move."
+    },
+    {
+      "key": "D",
+      "text": "55",
+      "correct": false,
+      "misconception": "I added up the numbers 1 to 10 but forgot that each move takes 1 away."
+    },
+    {
+      "key": "E",
+      "text": "It depends on the order of the moves",
+      "correct": false,
+      "misconception": "I thought different orders of moves would give different results, but every move lowers the total by exactly 1, whatever the order."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "NUM-08",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "What happens to the total of the numbers after one move?",
+    "Look for something that changes in the same way at every move, whichever two numbers are chosen. The total of all the numbers on the board is a good candidate.",
+    "The total starts at 55, and every move replaces $a + b$ by $a + b - 1$."
+  ],
+  "solutions": {
+    "reliable": "The total on the board starts at $1 + 2 + \\dots + 10 = 55$. A move removes $a$ and $b$ and adds $a + b - 1$, so the total drops by exactly 1, whichever numbers are chosen. After 9 moves the total is $55 - 9 = 46$, and since only one number is left, that number is 46. The transferable idea: look for a quantity that every move changes in a fixed way; then the final result cannot depend on the order of the moves.",
+    "elegant": null
+  },
+  "whyOnTest": "Invariant questions test spotting a quantity that every move changes in the same way, so the final answer cannot depend on the choices made.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1272",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Ana, Ben, Cai and Dia live one per floor on floors 1 to 4. Each plays a different instrument: drum, flute, harp or piano. The harp player lives directly above Ben. Ana lives higher than the drummer, but not on the top floor. The flute player lives on floor 1. Dia lives on floor 4. Who plays the flute?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Ana",
+      "correct": false,
+      "misconception": "I put Ana on floor 1 because the only limit I used was that she is not on the top floor, forgetting that she must live higher than the drummer."
+    },
+    {
+      "key": "B",
+      "text": "Ben",
+      "correct": false,
+      "misconception": "I put Ben on floor 1 with the harp player on floor 2 above him, not noticing that floor 2 must be the drummer's floor."
+    },
+    {
+      "key": "C",
+      "text": "Dia",
+      "correct": false,
+      "misconception": "I mixed up the top and the bottom of the building and put the flute player on floor 4, where Dia lives."
+    },
+    {
+      "key": "D",
+      "text": "Cai",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "It cannot be decided",
+      "correct": false,
+      "misconception": "I left out the clue that Dia lives on floor 4, and without it two different arrangements fit."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-03",
+    "secondary": [
+      "LOG-09",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Where can Ana live?",
+    "Ana is on floor 2 or floor 3. If she were on floor 2, the drummer would be on floor 1, but floor 1 belongs to the flute player. Carry on like this, and use the harp clue last.",
+    "Ana is on floor 3, so the drummer is on floor 2. Ben is directly below the harp player, and floor 2 belongs to the drummer, so Ben must be on floor 2."
+  ],
+  "solutions": {
+    "reliable": "Dia is on floor 4 and Ana is not on the top floor, so Ana is on floor 2 or 3. If Ana were on floor 2, the drummer would be below her on floor 1, but floor 1 is the flute player's, so Ana is on floor 3 and the drummer is on floor 2. Ben and Cai share floors 1 and 2. If Ben were on floor 1, the harp player would be on floor 2, but that is the drummer, so Ben is on floor 2 and plays the drum, and the harp player is Ana on floor 3. Cai is on floor 1, so Cai plays the flute, and Dia plays the piano. The transferable idea: in a logic grid, test each case a clue allows and cross out the ones that clash.",
+    "elegant": null
+  },
+  "whyOnTest": "Elimination puzzles test trying each case a clue allows and ruling cases out by contradiction, rather than guessing a whole arrangement.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

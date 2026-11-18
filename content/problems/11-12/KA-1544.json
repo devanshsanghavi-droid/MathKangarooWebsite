@@ -1,0 +1,67 @@
+{
+  "id": "KA-1544",
+  "band": "11-12",
+  "points": 4,
+  "statement": "An operation $\\star$ on whole numbers has the form $x \\star y = p\\,xy + q(x + y) + r$ for some fixed numbers $p$, $q$ and $r$. We know that $2 \\star 3 = 11$, $4 \\star 1 = 9$ and $3 \\star 3 = 15$. What is $(((1 \\star 2) \\star 3) \\star 4) \\star 5$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "119",
+      "correct": false,
+      "misconception": "I worked out the pattern for the chain as 5! minus 1, using the last number instead of one more than it."
+    },
+    {
+      "key": "B",
+      "text": "550",
+      "correct": false,
+      "misconception": "I used the rule $x \\star y = xy + 5$, which fits the first two examples, without testing it on $3 \\star 3$."
+    },
+    {
+      "key": "C",
+      "text": "719",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "720",
+      "correct": false,
+      "misconception": "I saw that the chain gives $6!$ minus 1 but forgot to subtract the 1 at the end."
+    },
+    {
+      "key": "E",
+      "text": "876",
+      "correct": false,
+      "misconception": "I used $x \\star y = (x + 1)(y + 1)$ and forgot to subtract 1 each time."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Does your rule work for all three examples, including $3 \\star 3$?",
+    "The first two examples have the same sum $x + y = 5$ but different products, which fixes $p$. Several rules then fit those two; the third example decides. Then apply the rule step by step from the inside.",
+    "Comparing $2 \\star 3$ and $4 \\star 1$ gives $p = 1$, and then $3 \\star 3$ gives $q = 1$, $r = 0$: the rule is $x \\star y = xy + x + y$."
+  ],
+  "solutions": {
+    "reliable": "The first two examples give $6p + 5q + r = 11$ and $4p + 5q + r = 9$, so $2p = 2$ and $p = 1$, leaving $5q + r = 5$. The third gives $9 + 6q + r = 15$, so $6q + r = 6$, hence $q = 1$ and $r = 0$. The rule is $x \\star y = xy + x + y$; the rule $xy + 5$ fits the first two examples but gives 14 for $3 \\star 3$. Now compute: $1 \\star 2 = 2 + 3 = 5$, $5 \\star 3 = 15 + 8 = 23$, $23 \\star 4 = 92 + 27 = 119$, $119 \\star 5 = 595 + 124 = 719$. The transferable idea: a rule is only confirmed when it explains every example, including the awkward one.",
+    "elegant": "$xy + x + y = (x + 1)(y + 1) - 1$, so adding 1 to every value turns $\\star$ into multiplication. The chain gives $2 \\cdot 3 \\cdot 4 \\cdot 5 \\cdot 6 - 1 = 719$."
+  },
+  "whyOnTest": "Inferring a rule means testing it against every example; the third one here eliminates the tempting wrong rule.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

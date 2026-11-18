@@ -1,0 +1,68 @@
+{
+  "id": "KA-1306",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A circular running track has a diameter of 64 m. Which of these is closest to the distance, in kilometres, that a runner covers in 5 laps?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0.3",
+      "correct": false,
+      "misconception": "I forgot about $\\pi$ and just multiplied the diameter by 5, getting 320 m."
+    },
+    {
+      "key": "B",
+      "text": "0.5",
+      "correct": false,
+      "misconception": "I worked out each lap as $\\pi$ times the radius, $3.14 \\times 32$, which gave about 500 m for 5 laps."
+    },
+    {
+      "key": "C",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "2",
+      "correct": false,
+      "misconception": "I treated 64 m as the radius, so I worked out $2 \\times 3.14 \\times 64 \\times 5$, about 2000 m."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I got about 1000 m but divided by 100 instead of 1000 to change metres into kilometres."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-06",
+    "secondary": [
+      "GEO-07",
+      "MOD-07"
+    ]
+  },
+  "hints": [
+    "One lap is the distance around the circle. Round $\\pi$ to 3.",
+    "Estimate to the nearest choice: the choices are far apart, so use $\\pi \\approx 3$ for the distance around, multiply by the number of laps, then change metres into kilometres carefully.",
+    "One lap is about $3 \\times 64 \\approx 190$ m, so 5 laps are about 960 m."
+  ],
+  "solutions": {
+    "reliable": "One lap is the circumference, $\\pi \\times 64 \\approx 3.14 \\times 64 \\approx 201$ m. Five laps are about $5 \\times 201 = 1005$ m, which is about 1.005 km. The closest choice is 1. The transferable idea: when the choices differ by large factors, a rough estimate with $\\pi \\approx 3$ is enough to decide.",
+    "elegant": "With $\\pi \\approx 3$: $3 \\times 64 \\times 5 = 960$ m, just under 1 km. The neighbouring choices, 0.5 and 2, are a factor of 2 away, far more than the rounding error."
+  },
+  "whyOnTest": "The choices are so far apart that an estimate with pi about 3 decides it; the traps are radius and diameter mix-ups and unit slips.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

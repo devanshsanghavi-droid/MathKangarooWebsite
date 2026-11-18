@@ -1,0 +1,56 @@
+{
+  "id": "SA-0217",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-04",
+  "difficulty": "easy",
+  "statement": "A data set of $10$ numbers has a mean of $24$. When one more number is added to the data set, the mean of the $11$ numbers is $26$. What number was added?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I subtracted the two means, $26 - 24$, as if the added number were the change in the mean."
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I multiplied both means by 10, so I found $260 - 240 = 20$, but there are 11 numbers after the new one is added."
+    },
+    {
+      "key": "C",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I multiplied both means by 11, so I found $286 - 264 = 22$, but the original sum comes from only 10 numbers."
+    },
+    {
+      "key": "D",
+      "text": "$46$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "A mean times the number of values gives the sum of the values.",
+    "Find the sum of the $10$ original numbers and the sum of all $11$ numbers. The added number is the difference.",
+    "The original sum is $10 \\cdot 24 = 240$ and the new sum is $11 \\cdot 26 = 286$."
+  ],
+  "solutions": {
+    "reliable": "The $10$ original numbers add to $10 \\cdot 24 = 240$. All $11$ numbers add to $11 \\cdot 26 = 286$. The added number is $286 - 240 = 46$. Check: $\\dfrac{240 + 46}{11} = \\dfrac{286}{11} = 26$.",
+    "elegant": "The $10$ original numbers are, on average, $2$ below the new mean of $26$, a total of $20$ below. The added number must make up for that, so it is $26 + 20 = 46$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

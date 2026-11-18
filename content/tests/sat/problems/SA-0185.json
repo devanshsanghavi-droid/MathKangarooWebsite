@@ -1,0 +1,56 @@
+{
+  "id": "SA-0185",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-07",
+  "difficulty": "hard",
+  "statement": "In the $xy$-plane, the graphs of $y = x^2 + 4x - 1$ and $y = -x^2 + 2x + 11$ intersect at two points. A line passes through both of these points. What is the $y$-intercept of this line?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I gave the $y$-intercept of the first parabola, $y = x^2 + 4x - 1$, instead of the line's."
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I added the two equations to get $2y = 6x + 10$ and forgot to divide both sides by $2$."
+    },
+    {
+      "key": "D",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I gave the $y$-intercept of the second parabola, $y = -x^2 + 2x + 11$, instead of the line's."
+    }
+  ],
+  "hints": [
+    "Find the intersection points by setting the two right sides equal.",
+    "$x^2 + 4x - 1 = -x^2 + 2x + 11$ simplifies to $x^2 + x - 6 = 0$, so $x = 2$ or $x = -3$.",
+    "The points are $(2, 11)$ and $(-3, -4)$. Find the slope of the line through them and then its $y$-intercept."
+  ],
+  "solutions": {
+    "reliable": "Setting $x^2 + 4x - 1 = -x^2 + 2x + 11$ gives $2x^2 + 2x - 12 = 0$, so $x^2 + x - 6 = 0$ and $(x - 2)(x + 3) = 0$. At $x = 2$, $y = 4 + 8 - 1 = 11$; at $x = -3$, $y = 9 - 12 - 1 = -4$. The line through $(2, 11)$ and $(-3, -4)$ has slope $\\frac{11 - (-4)}{2 - (-3)} = \\frac{15}{5} = 3$, so it is $y - 11 = 3(x - 2)$, or $y = 3x + 5$, with $y$-intercept $5$.",
+    "elegant": "Add the two equations: the $x^2$ terms cancel and $2y = 6x + 10$, so $y = 3x + 5$. Both intersection points satisfy both equations, so they satisfy their sum, which is a line. Its $y$-intercept is $5$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

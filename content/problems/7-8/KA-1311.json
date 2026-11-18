@@ -1,0 +1,68 @@
+{
+  "id": "KA-1311",
+  "band": "7-8",
+  "points": 4,
+  "statement": "The price of a bike was raised by 25%. Later, the new price was lowered by 20%. The bike now costs 240 euros. What was its price before both changes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "192",
+      "correct": false,
+      "misconception": "I undid only the 25% rise, $240 \\div 1.25 = 192$, and forgot about the 20% cut."
+    },
+    {
+      "key": "B",
+      "text": "216",
+      "correct": false,
+      "misconception": "I undid the changes by adding 20% to 240, which gave 288, and then taking 25% off 288."
+    },
+    {
+      "key": "C",
+      "text": "228",
+      "correct": false,
+      "misconception": "I combined the two changes into a 5% rise and took 5% off 240."
+    },
+    {
+      "key": "D",
+      "text": "240",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "300",
+      "correct": false,
+      "misconception": "I undid only the 20% cut, $240 \\div 0.8 = 300$, and forgot about the 25% rise."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-11",
+    "secondary": [
+      "NUM-10",
+      "LOG-08"
+    ]
+  },
+  "hints": [
+    "Undo the last change first, then the one before it.",
+    "Work backwards, then sanity-check with a second method: push your answer forwards through both changes and see whether you land on 240 euros.",
+    "A 20% cut multiplies the price by 0.8 and a 25% rise multiplies it by 1.25. What is $1.25 \\times 0.8$?"
+  ],
+  "solutions": {
+    "reliable": "Working backwards: before the 20% cut the price was $240 \\div 0.8 = 300$ euros, and before the 25% rise it was $300 \\div 1.25 = 240$ euros. A second method confirms it: start from 240, raise it by 25% to 300, then lower that by 20%; 20% of 300 is 60, giving 240 again. So the original price was 240 euros. The transferable idea: when an answer looks surprising, check it a different way, for example by plugging it back in, instead of rereading the first method.",
+    "elegant": "The two changes multiply the price by $1.25 \\times 0.8 = 1$, so together they change nothing, and the price before was the same 240 euros."
+  },
+  "whyOnTest": "The answer looks too simple to be right, so a forward check is what gives the confidence to bubble it.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1258",
+  "band": "5-6",
+  "points": 3,
+  "statement": "On a square grid, a parallelogram has its corners at the grid points (0, 0), (5, 0), (7, 3) and (2, 3). What is its area, in grid squares?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "7.5",
+      "correct": false,
+      "misconception": "I used the triangle rule and halved the base times the height, but the shape is a parallelogram, not a triangle."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted only the 3 by 3 square between x = 2 and x = 5, where the shape fills the whole height, and left out the two slanted end pieces."
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": false,
+      "misconception": "I drew the 7 by 3 box around the shape but took away only one of the two corner triangles outside it."
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I took the area of the 7 by 3 box around the shape and forgot to remove the two corner triangles outside it."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-03",
+    "secondary": [
+      "GEO-02",
+      "GEO-04"
+    ]
+  },
+  "hints": [
+    "Can you cut off a piece at one end and move it to the other?",
+    "Cut the triangle off one slanted end and slide it to the other end. The pieces then make a rectangle, and cutting and moving does not change the area.",
+    "The triangle with corners (0, 0), (2, 0) and (2, 3) slides 5 units right to fill the gap at (5, 0), (7, 0), (7, 3). The result is a rectangle from x = 2 to x = 7, 3 squares tall."
+  ],
+  "solutions": {
+    "reliable": "Draw the box from (0, 0) to (7, 3); its area is 7 × 3 = 21. Outside the parallelogram but inside the box are two right triangles, one at the top left and one at the bottom right, each with legs 2 and 3. Each has area 2 × 3 / 2 = 3. So the area is 21 - 3 - 3 = 15 grid squares. The transferable idea: a slanted shape on a grid can be measured by cutting and moving pieces, or by subtracting from a box drawn around it.",
+    "elegant": "Cut off the left-hand triangle and slide it 5 units to the right. The parallelogram becomes a 5 by 3 rectangle, so the area is 5 × 3 = 15."
+  },
+  "whyOnTest": "Dissection questions test whether you see that cutting and sliding a piece keeps the area, turning a slanted shape into a rectangle.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

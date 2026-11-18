@@ -1,0 +1,56 @@
+{
+  "id": "AC-0253",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-01",
+  "difficulty": "medium",
+  "statement": "The numbers of books read over the summer by $5$ friends, listed from least to greatest, are $6$, $10$, $x$, $19$ and $25$. The mean of the $5$ numbers is equal to their median. What is the value of $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I set (60 + x)/5 equal to x, but when I collected the x terms I added x to 5x instead of subtracting, so I solved 60 = 6x."
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I added the four known numbers to get 60 and divided by 5, forgetting that x itself is part of the total."
+    },
+    {
+      "key": "C",
+      "text": "$14.5$",
+      "correct": false,
+      "misconception": "I thought x had to be halfway between its neighbors, 10 and 19, so I averaged them."
+    },
+    {
+      "key": "D",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Since the list is in order, which value is the median?",
+    "The median is $x$. Write the mean in terms of $x$ and set it equal to $x$.",
+    "Solve $\\dfrac{6 + 10 + x + 19 + 25}{5} = x$, that is, $\\dfrac{60 + x}{5} = x$."
+  ],
+  "solutions": {
+    "reliable": "The list is in order, so the median is $x$. The mean is $\\dfrac{60 + x}{5}$. Setting $\\dfrac{60 + x}{5} = x$ gives $60 + x = 5x$, so $4x = 60$ and $x = 15$. Check: $10 \\le 15 \\le 19$, and the mean is $\\dfrac{75}{5} = 15$.",
+    "elegant": "If one value equals the mean of all $5$, it also equals the mean of the other $4$: $x = \\dfrac{60}{4} = 15$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

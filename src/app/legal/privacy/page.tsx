@@ -111,6 +111,15 @@ export default function PrivacyPage() {
           your row at any time from the sign-in page: the row is removed, not hidden.
         </p>
 
+        <h2 className="mt-10 text-lg">Counting accounts</h2>
+        <p className="prose-measure mt-3 text-ink-2">
+          Each row records when it was first created and when it was last saved. The site uses those
+          two dates for one thing: counting how many accounts exist, how many are new and how many
+          were used in the last week or month. Only the totals are ever shown, to the site&rsquo;s
+          tutor, and no one account can be picked out of them. Deleting your row removes you from
+          the count.
+        </p>
+
         <h2 className="mt-10 text-lg">Contact</h2>
         <p className="prose-measure mt-3 text-ink-2">
           Questions about any of this go to <Link href="/contact">the contact page</Link>, or

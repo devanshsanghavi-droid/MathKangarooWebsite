@@ -1,0 +1,56 @@
+{
+  "id": "AC-0056",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "easy",
+  "statement": "A community theater sold $150$ tickets for one performance. Adult tickets cost $\\$14$ each and student tickets cost $\\$8$ each. If ticket sales totaled $\\$1{,}680$, how many adult tickets were sold?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I got $6a = 480$ correctly but then divided $480$ by the student price, $8$, and got $60$."
+    },
+    {
+      "key": "B",
+      "text": "$70$",
+      "correct": false,
+      "misconception": "I solved the system correctly but answered with the number of student tickets instead of adult tickets."
+    },
+    {
+      "key": "C",
+      "text": "$80$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I divided the total, $\\$1{,}680$, by the adult price, $\\$14$, as if every ticket sold had been an adult ticket."
+    }
+  ],
+  "hints": [
+    "Use one letter for adult tickets and another for student tickets, and write one equation for tickets and one for money.",
+    "With $a$ adult and $s$ student tickets, $a + s = 150$ and $14a + 8s = 1{,}680$. Replace $s$ with $150 - a$.",
+    "$14a + 8(150 - a) = 1{,}680$ becomes $6a + 1{,}200 = 1{,}680$, so $6a = 480$."
+  ],
+  "solutions": {
+    "reliable": "Let $a$ be adult tickets and $s$ student tickets. Then $a + s = 150$ and $14a + 8s = 1{,}680$. Substitute $s = 150 - a$: $14a + 1{,}200 - 8a = 1{,}680$, so $6a = 480$ and $a = 80$. Then $s = 70$. Check: $14(80) + 8(70) = 1{,}120 + 560 = 1{,}680$.",
+    "elegant": "If all $150$ tickets were student tickets, sales would be $\\$1{,}200$. Each adult ticket adds $\\$6$ more, and the extra is $\\$480$, so there were $480 \\div 6 = 80$ adult tickets."
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

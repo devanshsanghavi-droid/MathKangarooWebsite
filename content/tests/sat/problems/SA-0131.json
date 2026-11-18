@@ -1,0 +1,56 @@
+{
+  "id": "SA-0131",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-01",
+  "difficulty": "hard",
+  "statement": "In the equation $(ax + 3)(bx - 5) = 12x^2 + cx - 15$, $a$, $b$ and $c$ are constants, $a$ and $b$ are positive integers, $a + b = 7$ and $a > b$. If the equation is true for all values of $x$, what is the value of $c$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I found that $a$ and $b$ are $3$ and $4$ but used $a = 3$ and $b = 4$, ignoring the condition $a > b$, so $c = 3(4) - 5(3)$."
+    },
+    {
+      "key": "B",
+      "text": "$29$",
+      "correct": false,
+      "misconception": "I treated the $-5$ as $+5$, so I computed the middle coefficient as $5a + 3b = 20 + 9$."
+    },
+    {
+      "key": "C",
+      "text": "$-2$",
+      "correct": false,
+      "misconception": "I added the constants $3$ and $-5$ to get the middle coefficient, as if $a$ and $b$ were both $1$."
+    },
+    {
+      "key": "D",
+      "text": "$-11$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Expand the left side and match it, term by term, with the right side.",
+    "The $x^2$ terms give $ab = 12$. Together with $a + b = 7$ and $a > b$, this fixes $a$ and $b$.",
+    "So $a = 4$ and $b = 3$. The $x$ coefficient on the left is $3b - 5a$."
+  ],
+  "solutions": {
+    "reliable": "Expanding, $(ax + 3)(bx - 5) = abx^2 - 5ax + 3bx - 15 = abx^2 + (3b - 5a)x - 15$. Matching the $x^2$ coefficients gives $ab = 12$. The positive integers with product $12$ and sum $7$ are $3$ and $4$, and since $a > b$, $a = 4$ and $b = 3$. Matching the $x$ coefficients, $c = 3b - 5a = 9 - 20 = -11$.",
+    "elegant": "Once $a = 4$ and $b = 3$ are known, substitute $x = 1$: $(4 + 3)(3 - 5) = 12 + c - 15$, so $-14 = c - 3$ and $c = -11$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

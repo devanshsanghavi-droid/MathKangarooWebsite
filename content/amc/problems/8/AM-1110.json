@@ -1,0 +1,66 @@
+{
+  "id": "AM-1110",
+  "contest": "AMC8",
+  "slot": 12,
+  "area": "GEO",
+  "topic": "GEO-01",
+  "types": [
+    "T-ANGLE-CHASE"
+  ],
+  "statement": "In triangle $ABC$, $\\angle A = 40^\\circ$ and $\\angle B = 60^\\circ$. Point $H$ lies on side $\\overline{AB}$ so that $\\overline{CH}$ is perpendicular to $\\overline{AB}$, and point $L$ lies on side $\\overline{AB}$ so that $\\overline{CL}$ splits $\\angle ACB$ into two equal angles. What is the degree measure of $\\angle HCL$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I found angle ACH = 50 and angle BCH = 30 and subtracted them, 50 - 30 = 20. The angle I needed is angle ACH minus angle ACL, not minus angle BCH."
+    },
+    {
+      "key": "C",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I gave angle BCH = 90 - 60 = 30, the angle between the altitude and side CB, instead of the angle between the altitude and the bisector."
+    },
+    {
+      "key": "D",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I gave angle ACL = 40, which is half of angle C, instead of the angle between the bisector and the altitude."
+    },
+    {
+      "key": "E",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I gave angle ACH = 90 - 40 = 50 and forgot to take away angle ACL."
+    }
+  ],
+  "hints": [
+    "Find $\\angle ACB$ first, and then half of it.",
+    "Triangle $ACH$ has a right angle at $H$, so $\\angle ACH = 90^\\circ - 40^\\circ = 50^\\circ$.",
+    "$\\angle ACL = 40^\\circ$ is smaller than $\\angle ACH = 50^\\circ$, so $L$ lies between $A$ and $H$, and $\\angle HCL = \\angle ACH - \\angle ACL$."
+  ],
+  "solutions": {
+    "reliable": "The third angle is $\\angle ACB = 180^\\circ - 40^\\circ - 60^\\circ = 80^\\circ$, so the bisector gives $\\angle ACL = 40^\\circ$. In right triangle $ACH$, $\\angle ACH = 90^\\circ - 40^\\circ = 50^\\circ$. Since $40^\\circ < 50^\\circ$, ray $CL$ lies between rays $CA$ and $CH$, so $\\angle HCL = 50^\\circ - 40^\\circ = 10^\\circ$.",
+    "elegant": "From $C$, the altitude makes angles $90^\\circ - A$ and $90^\\circ - B$ with the two sides, while the bisector makes $\\frac{C}{2} = \\frac{180^\\circ - A - B}{2}$ with each. The gap is $(90^\\circ - A) - \\frac{180^\\circ - A - B}{2} = \\frac{B - A}{2} = \\frac{60^\\circ - 40^\\circ}{2} = 10^\\circ$."
+  },
+  "formulas": [],
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

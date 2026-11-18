@@ -1,0 +1,66 @@
+{
+  "id": "AM-1145",
+  "contest": "AMC8",
+  "slot": 23,
+  "area": "GEO",
+  "topic": "GEO-10",
+  "types": [
+    "T-COORD"
+  ],
+  "statement": "A dilation with center $O$ and scale factor $k$ moves each point $X$ to the point $X'$ on ray $OX$ with $OX' = k \\cdot OX$. Mina takes every point of the plane, first applies the dilation with center $(0, 0)$ and scale factor $3$, and then applies the dilation with center $(5, 5)$ and scale factor $\\frac{1}{2}$. Exactly one point ends up where it started. What is that point?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$(-5, -5)$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$(0, 0)$",
+      "correct": false,
+      "misconception": "I thought the center of the first dilation stays put through both steps, but the second dilation moves it to $\\left(\\frac{5}{2}, \\frac{5}{2}\\right)$."
+    },
+    {
+      "key": "C",
+      "text": "$(1, 1)$",
+      "correct": false,
+      "misconception": "I used scale factor $2$ instead of $\\frac{1}{2}$ for the second dilation, so I solved $5 + 2(3x - 5) = x$ and got $x = 1$."
+    },
+    {
+      "key": "D",
+      "text": "$\\left(\\frac{5}{2}, \\frac{5}{2}\\right)$",
+      "correct": false,
+      "misconception": "I thought the two dilations together make a dilation about the midpoint of the two centers."
+    },
+    {
+      "key": "E",
+      "text": "$(5, 5)$",
+      "correct": false,
+      "misconception": "I wrote the second step as $\\frac{3x - 5}{2}$, forgetting to add the center $5$ back, and that equation gave $x = 5$."
+    }
+  ],
+  "hints": [
+    "Write down where a point $(x, y)$ goes after each step.",
+    "The first step sends $(x, y)$ to $(3x, 3y)$. The second step sends a point $Z$ to $(5, 5) + \\frac{1}{2}\\left(Z - (5, 5)\\right)$, the point halfway from $(5, 5)$ to $Z$.",
+    "The $x$-coordinate ends at $5 + \\frac{3x - 5}{2}$. Set this equal to $x$ and solve. The $y$-coordinate works the same way."
+  ],
+  "solutions": {
+    "reliable": "The first dilation sends $(x, y)$ to $(3x, 3y)$. The second sends a point $Z$ to the point halfway from $(5, 5)$ to $Z$, so $(3x, 3y)$ goes to $\\left(5 + \\frac{3x - 5}{2},\\ 5 + \\frac{3y - 5}{2}\\right)$. A point ends where it started when $5 + \\frac{3x - 5}{2} = x$, that is $10 + 3x - 5 = 2x$, so $x = -5$, and in the same way $y = -5$. Check: $(-5, -5)$ goes to $(-15, -15)$, and the point halfway from $(5, 5)$ to $(-15, -15)$ is $(-5, -5)$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

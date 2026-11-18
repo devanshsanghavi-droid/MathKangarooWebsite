@@ -1,0 +1,56 @@
+{
+  "id": "SA-0090",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "medium",
+  "statement": "Dana makes and sells candles. Each month her supplies cost $150$ dollars plus $2.40$ dollars per candle, and she sells each candle for $9$ dollars. What is the least number of candles she must make and sell in a month to earn a profit of at least $600$ dollars?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$84$",
+      "correct": false,
+      "misconception": "I left out the 2.40-dollar cost of each candle and solved $9n - 150 \\ge 600$, which gave about 83.3, so I said 84."
+    },
+    {
+      "key": "B",
+      "text": "$91$",
+      "correct": false,
+      "misconception": "I left out the 150-dollar fixed cost and solved $6.60n \\ge 600$, which gave about 90.9, so I said 91."
+    },
+    {
+      "key": "C",
+      "text": "$114$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$113$",
+      "correct": false,
+      "misconception": "I solved $6.60n \\ge 750$ to get about 113.6 and rounded down to 113, but 113 candles give a profit of only 595.80 dollars."
+    }
+  ],
+  "hints": [
+    "Profit is money in minus all of the money out.",
+    "Write the profit for $n$ candles as $9n - (150 + 2.40n)$, set it greater than or equal to $600$, and solve. The answer must be a whole number.",
+    "$6.60n - 150 \\ge 600$ gives $6.60n \\ge 750$, so $n \\ge 113.6\\ldots$"
+  ],
+  "solutions": {
+    "reliable": "For $n$ candles, revenue is $9n$ and cost is $150 + 2.40n$, so profit is $6.60n - 150$. Solve $6.60n - 150 \\ge 600$: $6.60n \\ge 750$ and $n \\ge 113.64$. The least whole number is $114$. Check: $6.60(114) - 150 = 602.40 \\ge 600$, but $6.60(113) - 150 = 595.80$. Key idea: build profit as revenue minus every cost, then round up when the question asks for a minimum.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

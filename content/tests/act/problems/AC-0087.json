@@ -1,0 +1,56 @@
+{
+  "id": "AC-0087",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "easy",
+  "statement": "For $x \\ne 0$, which of the following is equivalent to $\\dfrac{12x^4 - 8x^3 + 4x^2}{4x^2}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3x^2 - 2x$",
+      "correct": false,
+      "misconception": "I thought $4x^2 \\div 4x^2$ was $0$, so the last term disappeared."
+    },
+    {
+      "key": "B",
+      "text": "$3x^6 - 2x^5 + x^4$",
+      "correct": false,
+      "misconception": "I added the exponents when dividing, instead of subtracting them."
+    },
+    {
+      "key": "C",
+      "text": "$3x^4 - 2x^3 + x^2$",
+      "correct": false,
+      "misconception": "I divided only the coefficients by 4 and left the powers of $x$ unchanged."
+    },
+    {
+      "key": "D",
+      "text": "$3x^2 - 2x + 1$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Divide each term of the numerator by $4x^2$ separately.",
+    "Divide the coefficients and subtract the exponents, using $\\tfrac{x^a}{x^b} = x^{a - b}$.",
+    "$\\tfrac{12x^4}{4x^2} = 3x^2$, $\\tfrac{-8x^3}{4x^2} = -2x$ and $\\tfrac{4x^2}{4x^2} = 1$."
+  ],
+  "solutions": {
+    "reliable": "Split the fraction: $\\tfrac{12x^4}{4x^2} - \\tfrac{8x^3}{4x^2} + \\tfrac{4x^2}{4x^2} = 3x^2 - 2x + 1$. Check by multiplying back: $4x^2(3x^2 - 2x + 1) = 12x^4 - 8x^3 + 4x^2$.",
+    "elegant": "Factor the numerator as $4x^2(3x^2 - 2x + 1)$ and cancel the $4x^2$."
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

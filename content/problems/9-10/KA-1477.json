@@ -1,0 +1,68 @@
+{
+  "id": "KA-1477",
+  "band": "9-10",
+  "points": 4,
+  "statement": "When Leo was born, his mother was 28. Today her age is 4 less than three times Leo's age. In how many years from now will she be exactly twice as old as Leo?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I found Leo's age today and stopped there."
+    },
+    {
+      "key": "C",
+      "text": "28",
+      "correct": false,
+      "misconception": "I found how old Leo will be when his mother is twice his age, not how many years away that is."
+    },
+    {
+      "key": "D",
+      "text": "44",
+      "correct": false,
+      "misconception": "I found the mother's age today instead of the number of years."
+    },
+    {
+      "key": "E",
+      "text": "56",
+      "correct": false,
+      "misconception": "I found the mother's age at the moment she is twice as old as Leo."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-05",
+    "secondary": [
+      "MOD-01",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "The difference between their ages is always 28.",
+    "First use today's information, with the fixed gap of 28, to find Leo's age. Then ask: when is someone twice as old as a person 28 years younger?",
+    "Today $L + 28 = 3L - 4$, so Leo is 16 and his mother is 44. She is twice his age when he is 28."
+  ],
+  "solutions": {
+    "reliable": "Let Leo be $L$ today; his mother is $L + 28$. Then $L + 28 = 3L - 4$, so $L = 16$ and she is 44. In $t$ years, $44 + t = 2(16 + t)$, so $t = 12$. Check: in 12 years they are 28 and 56. The transferable idea: name the unknown the question asks for, then answer that, not a quantity found along the way.",
+    "elegant": "A person 28 years older is exactly twice as old when the younger one is 28, because then the gap equals the younger age. Leo is 16 now (from $L + 28 = 3L - 4$), so that happens in $28 - 16 = 12$ years. The transferable idea: 'twice as old' happens when the younger age equals the gap."
+  },
+  "whyOnTest": "Two-stage age questions reward tracking the fixed age gap and answering the exact question asked, here a number of years, not an age.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

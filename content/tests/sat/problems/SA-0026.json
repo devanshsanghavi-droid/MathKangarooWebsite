@@ -1,0 +1,56 @@
+{
+  "id": "SA-0026",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "easy",
+  "statement": "If $5(x - 3) = 2x + 9$, what is the value of $x - 3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I forgot to multiply the 3 by 5, so I solved $5x - 3 = 2x + 9$, got $x = 4$, and then $x - 3 = 1$."
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I solved the equation correctly and got $x = 8$, then gave that as the answer without subtracting 3."
+    },
+    {
+      "key": "D",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I got $3x = 24$ but forgot to divide by 3, so I used $x = 24$ and got $x - 3 = 21$."
+    }
+  ],
+  "hints": [
+    "The question asks for $x - 3$, not $x$. You can find $x$ first or work with $x - 3$ directly.",
+    "Distribute the 5 on the left, collect the $x$ terms on one side and the numbers on the other.",
+    "$5x - 15 = 2x + 9$ gives $3x = 24$, so $x = 8$. Now compute $x - 3$."
+  ],
+  "solutions": {
+    "reliable": "Distribute: $5x - 15 = 2x + 9$. Subtract $2x$ and add $15$ to both sides: $3x = 24$, so $x = 8$. Then $x - 3 = 5$. Check: $5(5) = 25$ and $2(8) + 9 = 25$.",
+    "elegant": "Let $u = x - 3$, so $x = u + 3$. The equation becomes $5u = 2(u + 3) + 9 = 2u + 15$, so $3u = 15$ and $u = 5$ directly."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

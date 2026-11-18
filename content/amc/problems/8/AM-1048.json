@@ -1,0 +1,62 @@
+{
+  "id": "AM-1048",
+  "contest": "AMC8",
+  "slot": 14,
+  "area": "ALG",
+  "topic": "ALG-03",
+  "types": ["T-SUBSTITUTION", "T-SFFT"],
+  "statement": "The product of two consecutive positive even integers is $482$ more than their sum. What is the smaller of the two integers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$22$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$23$",
+      "correct": false,
+      "misconception": "I called the integers n - 1 and n + 1 and found n = 23, but forgot that the smaller integer is n - 1."
+    },
+    {
+      "key": "C",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I called the integers n - 2 and n and found n = 24, but forgot that n was the larger one."
+    },
+    {
+      "key": "D",
+      "text": "$46$",
+      "correct": false,
+      "misconception": "I found the sum of the two integers, 46, instead of the smaller one."
+    },
+    {
+      "key": "E",
+      "text": "$484$",
+      "correct": false,
+      "misconception": "I reached $n^2 = 484$ and stopped before taking the square root."
+    }
+  ],
+  "hints": [
+    "Call the integers $n$ and $n + 2$, then simplify the product minus the sum.",
+    "$n(n + 2) - (n + n + 2) = n^2 - 2$.",
+    "So $n^2 - 2 = 482$, which gives $n^2 = 484$."
+  ],
+  "solutions": {
+    "reliable": "Let the integers be $n$ and $n + 2$. Then the product minus the sum is $n(n + 2) - (2n + 2) = n^2 + 2n - 2n - 2 = n^2 - 2$. Setting $n^2 - 2 = 482$ gives $n^2 = 484$, so $n = 22$. Check: $22 \\cdot 24 = 528$, and $528 - 46 = 482$.",
+    "elegant": "For any numbers $a$ and $b$, $ab - a - b = (a - 1)(b - 1) - 1$. So $(a - 1)(b - 1) = 483$, where $a - 1$ and $b - 1$ are consecutive odd numbers. Since $483 = 21 \\cdot 23$, the integers are $22$ and $24$."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

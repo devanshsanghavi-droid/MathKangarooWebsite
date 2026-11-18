@@ -1,6 +1,23 @@
 import type { Band, Choice, Figure, Points, Problem } from './schemas.ts';
 import type { AmcContest, AmcProblem } from './amc-schemas.ts';
-import { AMC_PROBLEM_ID_RE, AMC_TIER_SLOTS, amcPointsOf, amcTierOf } from './amc-tier.ts';
+import {
+  AMC_PROBLEM_ID_RE,
+  AMC_TIER_SLOTS,
+  amcContestLabel,
+  amcPointsOf,
+  amcTierOf,
+} from './amc-tier.ts';
+import type { TestProblem } from './test-schemas.ts';
+import {
+  SAT_PROBLEM_ID_RE,
+  ACT_PROBLEM_ID_RE,
+  TEST_DIFFICULTY_LABEL,
+  TEST_LABEL,
+  TEST_SLUG,
+  testPointsOf,
+  type StdTest,
+  type TestDifficulty,
+} from './test-meta.ts';
 
 /**
  * One question as the practice engine sees it, whichever bank it came from.
@@ -20,7 +37,14 @@ import { AMC_PROBLEM_ID_RE, AMC_TIER_SLOTS, amcPointsOf, amcTierOf } from './amc
  * in Zod or the filesystem.
  */
 
-export type PracticeBank = 'ka' | 'amc';
+export type PracticeBank = 'ka' | 'amc' | 'sat' | 'act';
+
+/** The SAT / ACT banks, which share one item shape (TestPracticeItem). */
+export type TestPracticeBank = 'sat' | 'act';
+
+export function isTestBank(bank: PracticeBank): bank is TestPracticeBank {
+  return bank === 'sat' || bank === 'act';
+}
 
 /** A label the end-of-set breakdown groups by: a Kangaroo skill or an AMC topic. */
 export interface PracticeGroup {
@@ -69,17 +93,24 @@ export interface AmcPracticeItem extends PracticeItemBase {
   formulas: string[];
 }
 
-export type PracticeItem = KaPracticeItem | AmcPracticeItem;
+/** SAT or ACT problem. `bank` is the lowercase test slug. */
+export interface TestPracticeItem extends PracticeItemBase {
+  bank: TestPracticeBank;
+  test: StdTest;
+  domain: string;
+  skill: string;
+  difficulty: TestDifficulty;
+}
+
+export type PracticeItem = KaPracticeItem | AmcPracticeItem | TestPracticeItem;
 
 /** Plain hyphen: no en or em dashes anywhere in copy. */
 export function kaLevelLabel(band: Band): string {
   return `Level ${band}`;
 }
 
-export function amcContestLabel(contest: AmcContest): string {
-  if (contest === 'BOTH') return 'AMC 10 and 12';
-  return contest === 'AMC10' ? 'AMC 10' : 'AMC 12';
-}
+/** "AMC 8", "AMC 10", "AMC 12", "AMC 10 and 12". Lives in amc-tier.ts; re-exported here. */
+export { amcContestLabel };
 
 export function amcTierLabel(slot: number): string {
   const tier = amcTierOf(slot);
@@ -147,6 +178,38 @@ export function amcPracticeItem(
   };
 }
 
+/**
+ * SAT / ACT problem -> practice item. `skillName` resolves the skill id from that test's own
+ * taxonomy (skill ids are namespaced per test). Points 3 / 4 / 5 come from the difficulty.
+ */
+export function testPracticeItem(
+  problem: TestProblem,
+  skillName: (id: string) => string | undefined,
+): TestPracticeItem {
+  const slug = TEST_SLUG[problem.test];
+  return {
+    bank: slug,
+    id: problem.id,
+    href: `/${slug}/problem/${problem.id}`,
+    statement: problem.statement,
+    math: true,
+    figure: problem.figure,
+    choices: problem.choices,
+    hints: problem.hints,
+    solutions: problem.solutions,
+    whyOnTest: null,
+    points: testPointsOf(problem.difficulty),
+    tierLabel: TEST_DIFFICULTY_LABEL[problem.difficulty],
+    estSeconds: problem.estSeconds,
+    groups: [{ id: problem.skill, name: skillName(problem.skill) ?? problem.skill }],
+    levelLabel: TEST_LABEL[problem.test],
+    test: problem.test,
+    domain: problem.domain,
+    skill: problem.skill,
+    difficulty: problem.difficulty,
+  };
+}
+
 /* -------------------------------------------------------------------------- */
 /* /practice/set URL                                                           */
 /* -------------------------------------------------------------------------- */
@@ -159,8 +222,23 @@ export const PRACTICE_SET_URL_MAX = 50;
 const KA_ID_RE = /^KA-\d{4}$/;
 
 export function isPracticeId(bank: PracticeBank, id: string): boolean {
-  return bank === 'amc' ? AMC_PROBLEM_ID_RE.test(id) : KA_ID_RE.test(id);
+  if (bank === 'amc') return AMC_PROBLEM_ID_RE.test(id);
+  if (bank === 'sat') return SAT_PROBLEM_ID_RE.test(id);
+  if (bank === 'act') return ACT_PROBLEM_ID_RE.test(id);
+  return KA_ID_RE.test(id);
 }
+
+function parseBank(value: string | null): PracticeBank {
+  return value === 'amc' || value === 'sat' || value === 'act' ? value : 'ka';
+}
+
+/** Where a set of this bank runs. Each exam area has its own layout and trademark notice. */
+const PRACTICE_PATH: Readonly<Record<PracticeBank, string>> = {
+  ka: '/practice/set',
+  amc: '/amc/practice',
+  sat: '/sat/practice',
+  act: '/act/practice',
+};
 
 export interface PracticeSetQuery {
   bank: PracticeBank;
@@ -171,7 +249,7 @@ export interface PracticeSetQuery {
 
 export function parsePracticeSetQuery(search: string | URLSearchParams): PracticeSetQuery {
   const params = typeof search === 'string' ? new URLSearchParams(search) : search;
-  const bank: PracticeBank = params.get('bank') === 'amc' ? 'amc' : 'ka';
+  const bank = parseBank(params.get('bank'));
   const ids = [
     ...new Set(
       params
@@ -195,12 +273,13 @@ export function practiceSetHref({
   name?: string;
 }): string {
   const params = new URLSearchParams();
-  if (bank === 'amc') params.set('bank', 'amc');
+  if (bank !== 'ka') params.set('bank', bank);
   params.set('ids', ids.join(','));
   if (name) params.set('name', name);
   // Commas are safe in a query value and keep the link readable when it is pasted. An AMC set
   // runs at /amc/practice, the same loader under the AMC layout, so it carries the MAA notice;
   // `bank=amc` stays in the query so the loader needs no second code path.
-  const path = bank === 'amc' ? '/amc/practice' : '/practice/set';
+  // SAT and ACT sets work the same way under /sat/practice and /act/practice.
+  const path = PRACTICE_PATH[bank];
   return `${path}?${params.toString().replace(/%2C/g, ',')}`;
 }

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0203",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-01",
+  "difficulty": "hard",
+  "statement": "A landscape architect designs a flower bed shaped like a convex pentagon. The five exterior angles of the pentagon, one at each vertex, are in the ratio $2 : 3 : 4 : 5 : 6$. What is the measure of the largest interior angle of the pentagon?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$72^\\circ$",
+      "correct": false,
+      "misconception": "I took the largest exterior angle, $108^\\circ$, and subtracted it from $180^\\circ$, not noticing that the largest interior angle sits next to the smallest exterior angle."
+    },
+    {
+      "key": "B",
+      "text": "$108^\\circ$",
+      "correct": false,
+      "misconception": "I found the exterior angles correctly and gave the largest one, $108^\\circ$, instead of an interior angle."
+    },
+    {
+      "key": "C",
+      "text": "$144^\\circ$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$162^\\circ$",
+      "correct": false,
+      "misconception": "I split the interior angle sum, $540^\\circ$, in the ratio $2 : 3 : 4 : 5 : 6$, so one part was $27^\\circ$ and the largest angle was $6 \\cdot 27 = 162^\\circ$."
+    }
+  ],
+  "hints": [
+    "What do the exterior angles of any convex polygon add up to?",
+    "The exterior angles add to $360^\\circ$. Split $360^\\circ$ into $20$ equal parts, then remember that each interior angle is $180^\\circ$ minus its exterior angle.",
+    "One part is $18^\\circ$, so the exterior angles are $36^\\circ$, $54^\\circ$, $72^\\circ$, $90^\\circ$ and $108^\\circ$. The largest interior angle goes with the smallest exterior angle."
+  ],
+  "solutions": {
+    "reliable": "The exterior angles of a convex polygon add to $360^\\circ$. The ratio has $2 + 3 + 4 + 5 + 6 = 20$ parts, so one part is $18^\\circ$ and the exterior angles are $36^\\circ$, $54^\\circ$, $72^\\circ$, $90^\\circ$ and $108^\\circ$. Each interior angle is $180^\\circ$ minus the exterior angle at the same vertex, giving $144^\\circ$, $126^\\circ$, $108^\\circ$, $90^\\circ$ and $72^\\circ$. These add to $540^\\circ$, as a pentagon's interior angles must. The largest is $144^\\circ$.",
+    "elegant": "The largest interior angle pairs with the smallest exterior angle, which is $\\frac{2}{20}$ of $360^\\circ$, or $36^\\circ$. So the largest interior angle is $180^\\circ - 36^\\circ = 144^\\circ$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

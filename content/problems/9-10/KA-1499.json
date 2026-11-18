@@ -1,0 +1,68 @@
+{
+  "id": "KA-1499",
+  "band": "9-10",
+  "points": 4,
+  "statement": "At noon a cyclist leaves town A for town B, and at the same moment a walker leaves B for A along the same road. Both keep steady speeds. They pass each other at 12:40, and the cyclist reaches B at 13:00. At what time does the walker reach A?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "13:20",
+      "correct": false,
+      "misconception": "I assumed the walker needs as long after the meeting as before it, another 40 minutes."
+    },
+    {
+      "key": "B",
+      "text": "15:00",
+      "correct": false,
+      "misconception": "I thought the walker is a third as fast as the cyclist, because 20 minutes is a third of 60 minutes."
+    },
+    {
+      "key": "C",
+      "text": "13:40",
+      "correct": false,
+      "misconception": "I added the cyclist's whole journey time, 60 minutes, to the meeting time."
+    },
+    {
+      "key": "D",
+      "text": "1 h 20 min",
+      "correct": false,
+      "misconception": "I worked out how long the walker still needs after the meeting, not the time when the walker arrives."
+    },
+    {
+      "key": "E",
+      "text": "14:00",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "MOD-03",
+    "secondary": [
+      "NUM-11",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Compare the cyclist's last 20 minutes with the walker's first 40 minutes.",
+    "At the meeting point, the stretch the cyclist still has to ride is exactly the stretch the walker has already walked. Comparing the times each needs for that stretch gives the ratio of their speeds.",
+    "The cyclist rides the walker's 40-minute stretch in 20 minutes, so the walker is half as fast as the cyclist."
+  ],
+  "solutions": {
+    "reliable": "After the meeting, the cyclist needs 20 minutes for the stretch the walker covered in 40 minutes, so the walker's speed is half the cyclist's. The cyclist rides the whole road in 60 minutes, so the walker needs 120 minutes and arrives at 14:00. Check: after the meeting the walker must cover the cyclist's 40-minute stretch at half speed, which takes 80 minutes, and 12:40 plus 80 minutes is 14:00. The transferable idea: at a meeting point, each traveller's remaining distance is the other's distance covered so far.",
+    "elegant": null
+  },
+  "whyOnTest": "Rate questions often hide a speed ratio in the times; this checks you compare the same stretch of road and then answer with a clock time.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

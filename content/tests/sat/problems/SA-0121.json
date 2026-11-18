@@ -1,0 +1,56 @@
+{
+  "id": "SA-0121",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-06",
+  "difficulty": "medium",
+  "statement": "What are all the solutions to the equation $\\sqrt{x + 10} = x - 2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-1$ and $6$",
+      "correct": false,
+      "misconception": "I solved the squared equation $x^2 - 5x - 6 = 0$ and kept both roots without checking them in the original equation."
+    },
+    {
+      "key": "B",
+      "text": "$-2$ and $3$",
+      "correct": false,
+      "misconception": "I squared $x - 2$ as $x^2 + 4$, which gave $x^2 - x - 6 = 0$, and kept both of its roots."
+    },
+    {
+      "key": "C",
+      "text": "$3$ only",
+      "correct": false,
+      "misconception": "I squared $x - 2$ as $x^2 + 4$, got $x = 3$ or $x = -2$, and threw out $-2$ just because it is negative."
+    },
+    {
+      "key": "D",
+      "text": "$6$ only",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Square both sides, but remember that squaring can create extra answers.",
+    "Squaring gives $x + 10 = (x - 2)^2$. Expand, solve the quadratic, then test each root in the original equation.",
+    "$x + 10 = x^2 - 4x + 4$ gives $x^2 - 5x - 6 = 0$, so $x = 6$ or $x = -1$. A square root is never negative."
+  ],
+  "solutions": {
+    "reliable": "Square both sides: $x + 10 = x^2 - 4x + 4$, so $x^2 - 5x - 6 = 0$ and $(x - 6)(x + 1) = 0$, giving $x = 6$ or $x = -1$. Check $x = 6$: $\\sqrt{16} = 4$ and $6 - 2 = 4$, so it works. Check $x = -1$: $\\sqrt{9} = 3$ but $-1 - 2 = -3$, so it is extraneous. The only solution is $6$.",
+    "elegant": null
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1207",
+  "band": "5-6",
+  "points": 4,
+  "statement": "What is the value of 2025 × 2025 - 2027 × 2023?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "-4",
+      "correct": false,
+      "misconception": "I found that the two products differ by 4 but subtracted them the wrong way round."
+    },
+    {
+      "key": "B",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought moving 2 from one factor to the other leaves the product unchanged."
+    },
+    {
+      "key": "C",
+      "text": "1",
+      "correct": false,
+      "misconception": "I remembered that 2025 × 2025 is 1 more than 2026 × 2024 and assumed the difference here is also 1."
+    },
+    {
+      "key": "D",
+      "text": "2",
+      "correct": false,
+      "misconception": "I thought the product changes by the 2 that was moved from one factor to the other."
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "NUM-08",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Write 2027 and 2023 in terms of 2025.",
+    "Multiplying out two four-digit products is slow and easy to get wrong. Look for the short way: both numbers are 2025 plus or minus 2. Testing small numbers like 5 × 5 and 7 × 3 can show the pattern.",
+    "Both products contain 2025 × 2023: 2025 × 2025 = 2025 × 2023 + 2025 × 2, and 2027 × 2023 = 2025 × 2023 + 2 × 2023."
+  ],
+  "solutions": {
+    "reliable": "Split both products so they share 2025 × 2023. First, 2025 × 2025 = 2025 × 2023 + 2025 × 2. Second, 2027 × 2023 = 2025 × 2023 + 2 × 2023. The shared part cancels, leaving 2 × 2025 - 2 × 2023 = 2 × 2 = 4. The transferable idea: when numbers are suspiciously close together, a minute spent looking for the trick saves several minutes of error-prone grinding.",
+    "elegant": "Small cases: 5 × 5 - 7 × 3 = 25 - 21 = 4 and 10 × 10 - 12 × 8 = 100 - 96 = 4. Moving 2 from one side of a square to the other loses a 2 by 2 corner, so the difference is always 4."
+  },
+  "whyOnTest": "Suspiciously convenient numbers signal a short way in; the skill is deciding to look for it instead of multiplying out.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

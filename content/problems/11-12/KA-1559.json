@@ -1,0 +1,68 @@
+{
+  "id": "KA-1559",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Which of these numbers can NOT be the sum of the digits of a perfect square?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "19",
+      "correct": false,
+      "misconception": "I tried the squares up to $15^2$, none had digit sum 19, so I decided it was impossible, but $17^2 = 289$ works."
+    },
+    {
+      "key": "B",
+      "text": "22",
+      "correct": false,
+      "misconception": "I thought the digit sum of a square, like a square itself, can never be 2 more than a multiple of 4, but $43^2 = 1849$ has digit sum 22."
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "25",
+      "correct": false,
+      "misconception": "I listed the remainders of squares on division by 9 as only 0, 1 and 4, forgetting 7, which comes from $4^2 = 16$."
+    },
+    {
+      "key": "E",
+      "text": "28",
+      "correct": false,
+      "misconception": "I checked the squares up to $100^2$ and found no digit sum of 28, but $134^2 = 17956$ has it."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "NUM-06",
+      "NUM-04"
+    ]
+  },
+  "hints": [
+    "A number and its digit sum leave the same remainder on division by 9.",
+    "Prove impossibility by contradiction: if some square had that digit sum, the square would leave a particular remainder on division by 9. Check which remainders squares can actually leave.",
+    "Squares leave remainder 0, 1, 4 or 7 on division by 9. Find the remainders of 19, 22, 24, 25 and 28."
+  ],
+  "solutions": {
+    "reliable": "A number leaves the same remainder on division by 9 as its digit sum. The squares of 0, 1, ..., 8 leave remainders 0, 1, 4, 0, 7, 7, 0, 4, 1, so every square leaves remainder 0, 1, 4 or 7. The choices leave remainders 1 (for 19), 4 (for 22), 6 (for 24), 7 (for 25) and 1 (for 28). Only 24 has a remainder that no square can have, so no square has digit sum 24. The others really occur: $17^2 = 289$, $43^2 = 1849$, $67^2 = 4489$ and $134^2 = 17956$ have digit sums 19, 22, 25 and 28. The transferable idea: to show something never happens, find a remainder that it would force and that is impossible.",
+    "elegant": null
+  },
+  "whyOnTest": "Remainders on division by 9 prove that a digit sum is impossible for every square, while searching small cases misleads.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0069",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "medium",
+  "statement": "When the polynomial $p(x) = 3x^3 + kx^2 - 4x - 1$ is divided by $x + 2$, the remainder is $7$. What is the value of the constant $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-6$",
+      "correct": false,
+      "misconception": "I squared $-2$ and got $-4$, so the $kx^2$ term became $-4k$ and I solved $-4k - 17 = 7$."
+    },
+    {
+      "key": "B",
+      "text": "$-2$",
+      "correct": false,
+      "misconception": "I evaluated $p(2)$ instead of $p(-2)$, because the divisor has a plus sign in it, and solved $4k + 15 = 7$."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{17}{4}$",
+      "correct": false,
+      "misconception": "I set $p(-2)$ equal to $0$, as if $x + 2$ divided evenly, instead of setting it equal to the remainder $7$."
+    },
+    {
+      "key": "D",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "You do not need to do the long division. There is a shortcut for the remainder.",
+    "By the remainder theorem, the remainder when $p(x)$ is divided by $x - a$ is $p(a)$. Write $x + 2$ as $x - (-2)$.",
+    "Set $p(-2) = 7$: $3(-8) + k(4) - 4(-2) - 1 = 7$."
+  ],
+  "solutions": {
+    "reliable": "Since $x + 2 = x - (-2)$, the remainder theorem says the remainder is $p(-2)$. Compute $p(-2) = 3(-8) + 4k + 8 - 1 = 4k - 17$. Setting $4k - 17 = 7$ gives $k = 6$. Check by synthetic division of $3x^3 + 6x^2 - 4x - 1$ by $x + 2$: the rows give $3, 0, -4$ and the remainder is $-1 + 8 = 7$.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

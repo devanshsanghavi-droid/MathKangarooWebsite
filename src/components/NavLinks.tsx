@@ -11,10 +11,11 @@ export function navAccessibleName(item: NavItem): string {
 }
 
 /**
- * The top-bar nav (docs/06 §2). Client-side only because it needs the current pathname to
- * mark the active section. The active item carries `aria-current="page"`, a heavier weight
- * and the teal tint, so the state is never colour alone. Between `sm` and `lg` the short
- * labels show; the accessible name is always the full label.
+ * The top-bar nav (docs/06 §2, docs/07 section 4). Client-side only because it needs the
+ * current pathname to mark the active section. The active item carries `aria-current="page"`,
+ * a heavier weight and the teal tint, so the state is never colour alone. Between `sm` and
+ * `xl` the short labels show; the accessible name is always the full label. An item marked
+ * `only: 'wide'` shows from `lg` up and one marked `only: 'compact'` below it (see NavItem).
  */
 export function NavLinks({ items }: { items: NavItem[] }) {
   const pathname = usePathname() ?? '/';
@@ -24,22 +25,31 @@ export function NavLinks({ items }: { items: NavItem[] }) {
       {items.map((item) => {
         const active = isNavItemActive(pathname, item);
         return (
-          <li key={item.href}>
+          <li
+            key={item.href}
+            className={
+              item.only === 'wide'
+                ? 'hidden lg:block'
+                : item.only === 'compact'
+                  ? 'lg:hidden'
+                  : undefined
+            }
+          >
             <Link
               href={item.href}
               aria-current={active ? 'page' : undefined}
               aria-label={navAccessibleName(item)}
               className={[
-                'ui inline-flex min-h-9 items-center gap-1.5 rounded-control px-2.5 text-sm whitespace-nowrap no-underline transition-colors motion-reduce:transition-none lg:px-3',
+                'ui inline-flex min-h-9 items-center gap-1.5 rounded-control px-2.5 text-sm whitespace-nowrap no-underline transition-colors motion-reduce:transition-none xl:px-3',
                 active
                   ? 'bg-accent-100 font-semibold text-accent-700'
                   : 'font-medium text-ink-2 hover:bg-surface-2 hover:text-ink',
               ].join(' ')}
             >
-              <span aria-hidden="true" className="lg:hidden">
+              <span aria-hidden="true" className="xl:hidden">
                 {item.short ?? item.label}
               </span>
-              <span aria-hidden="true" className="hidden lg:inline">
+              <span aria-hidden="true" className="hidden xl:inline">
                 {item.label}
               </span>
               {item.beta ? <BetaBadge /> : null}

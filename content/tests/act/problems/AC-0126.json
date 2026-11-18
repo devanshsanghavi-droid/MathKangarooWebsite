@@ -1,0 +1,56 @@
+{
+  "id": "AC-0126",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-01",
+  "difficulty": "easy",
+  "statement": "A bike-share program charges $C(h) = 6 + 4.5h$ dollars to use a bike for $h$ hours. What is the charge, in dollars, for a ride that lasts $3.5$ hours?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$21.75$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$24.00$",
+      "correct": false,
+      "misconception": "I rounded 3.5 hours up to 4 as if every part of an hour is charged in full, so I got 6 + 4.5(4) = 24, but the formula takes h = 3.5 as it is."
+    },
+    {
+      "key": "C",
+      "text": "$25.50$",
+      "correct": false,
+      "misconception": "I mixed up the two numbers and computed 6 times 3.5 plus 4.5, which is 25.50, but 4.5 is the hourly rate and 6 is the one-time fee."
+    },
+    {
+      "key": "D",
+      "text": "$36.75$",
+      "correct": false,
+      "misconception": "I added 6 and 4.5 first to get 10.5 and then multiplied by 3.5, which gave 36.75, but the multiplication has to come before the addition."
+    }
+  ],
+  "hints": [
+    "Replace $h$ with $3.5$ in the formula.",
+    "Multiply first, then add: work out $4.5 \\cdot 3.5$ before adding the $6$.",
+    "$4.5 \\cdot 3.5 = 15.75$, so $C(3.5) = 6 + 15.75$."
+  ],
+  "solutions": {
+    "reliable": "Substitute $h = 3.5$: $C(3.5) = 6 + 4.5(3.5) = 6 + 15.75 = 21.75$. The charge is $21.75$ dollars.",
+    "elegant": "The $6$ is a one-time fee and $4.5$ is the hourly rate. Three hours cost $13.50$ and the extra half hour costs $2.25$, so the ride costs $6 + 13.50 + 2.25 = 21.75$ dollars."
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

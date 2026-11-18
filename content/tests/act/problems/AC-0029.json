@@ -1,0 +1,56 @@
+{
+  "id": "AC-0029",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-02",
+  "difficulty": "medium",
+  "statement": "For all positive values of $a$, which of the following is equivalent to $\\left(27a^{6}\\right)^{\\frac{2}{3}}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3a^{2}$",
+      "correct": false,
+      "misconception": "I took the cube root of $27a^6$ to get $3a^2$ but forgot to square it for the 2 in the exponent $\\tfrac{2}{3}$."
+    },
+    {
+      "key": "B",
+      "text": "$9a^{4}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$18a^{4}$",
+      "correct": false,
+      "misconception": "I handled $a^6$ correctly but multiplied 27 by $\\tfrac{2}{3}$ instead of raising 27 to the $\\tfrac{2}{3}$ power, so I got 18."
+    },
+    {
+      "key": "D",
+      "text": "$9a^{\\frac{20}{3}}$",
+      "correct": false,
+      "misconception": "I raised 27 correctly but added $\\tfrac{2}{3}$ to the exponent 6 instead of multiplying, giving $a^{\\frac{20}{3}}$."
+    }
+  ],
+  "hints": [
+    "Apply the exponent to the number and to the variable separately.",
+    "A $\\tfrac{2}{3}$ power means take the cube root, then square. For $a^6$, multiply the exponents.",
+    "$27^{\\frac{2}{3}} = \\left(\\sqrt[3]{27}\\right)^2 = 3^2$ and $\\left(a^{6}\\right)^{\\frac{2}{3}} = a^{6 \\cdot \\frac{2}{3}}$."
+  ],
+  "solutions": {
+    "reliable": "Distribute the power: $\\left(27a^6\\right)^{\\frac23} = 27^{\\frac23} \\cdot \\left(a^6\\right)^{\\frac23}$. The cube root of 27 is 3, and $3^2 = 9$. For the variable, a power of a power multiplies exponents: $6 \\cdot \\tfrac23 = 4$, giving $a^4$. The expression equals $9a^4$. The idea: a fractional exponent $\\tfrac{m}{n}$ means an $n$th root and an $m$th power, applied to every factor.",
+    "elegant": "Write $27a^6 = \\left(3a^2\\right)^3$. Then $\\left(\\left(3a^2\\right)^3\\right)^{\\frac23} = \\left(3a^2\\right)^2 = 9a^4$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

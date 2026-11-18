@@ -1,0 +1,56 @@
+{
+  "id": "AC-0014",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-03",
+  "difficulty": "medium",
+  "statement": "At a grocery store, a $24$-ounce bag of Brand X rice costs $\\$4.56$ and a $40$-ounce bag of Brand Y rice costs $\\$7.20$. A restaurant needs exactly $120$ ounces of rice. How much less would the restaurant pay by buying only Brand Y bags instead of only Brand X bags?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$7.92$",
+      "correct": false,
+      "misconception": "I found the price difference of one bag of each, $\\$2.64$, and multiplied it by 3 because the restaurant would buy 3 bags of Brand Y."
+    },
+    {
+      "key": "B",
+      "text": "$\\$2.64$",
+      "correct": false,
+      "misconception": "I subtracted the two bag prices, $\\$7.20 - \\$4.56$, without accounting for the different bag sizes."
+    },
+    {
+      "key": "C",
+      "text": "$\\$1.20$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$0.01$",
+      "correct": false,
+      "misconception": "I found each brand's price per ounce, 19 cents and 18 cents, and gave the 1-cent difference without scaling it up to 120 ounces."
+    }
+  ],
+  "hints": [
+    "Find how many bags of each brand make $120$ ounces, or find each brand's price per ounce.",
+    "Brand X costs $\\$4.56 \\div 24 = \\$0.19$ per ounce. Find Brand Y's price per ounce the same way.",
+    "Brand Y costs $\\$0.18$ per ounce, so it saves $\\$0.01$ on every ounce."
+  ],
+  "solutions": {
+    "reliable": "$120$ ounces is $120 \\div 24 = 5$ bags of Brand X, costing $5 \\cdot \\$4.56 = \\$22.80$, or $120 \\div 40 = 3$ bags of Brand Y, costing $3 \\cdot \\$7.20 = \\$21.60$. The difference is $\\$22.80 - \\$21.60 = \\$1.20$.",
+    "elegant": "Brand X costs $\\$0.19$ per ounce and Brand Y costs $\\$0.18$ per ounce. Saving $\\$0.01$ on each of $120$ ounces saves $\\$1.20$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

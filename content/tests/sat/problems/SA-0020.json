@@ -1,0 +1,56 @@
+{
+  "id": "SA-0020",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "medium",
+  "statement": "A youth hostel has $34$ rooms. Each room has either $4$ beds or $6$ beds, and there are $162$ beds in all. How many of the rooms have $6$ beds?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I solved the system correctly but gave the number of $4$-bed rooms instead of the number of $6$-bed rooms."
+    },
+    {
+      "key": "C",
+      "text": "$26$",
+      "correct": false,
+      "misconception": "I found that $162 - 4 \\cdot 34 = 26$ beds are extra, but I forgot that each $6$-bed room adds $2$ extra beds, so I did not divide by $2$."
+    },
+    {
+      "key": "D",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I divided all $162$ beds by $6$, as if every room had $6$ beds, and ignored that there are only $34$ rooms."
+    }
+  ],
+  "hints": [
+    "Use one variable for each type of room.",
+    "One equation counts rooms and the other counts beds. Solve the system by substitution or elimination.",
+    "With $f$ four-bed rooms and $s$ six-bed rooms, $f + s = 34$ and $4f + 6s = 162$."
+  ],
+  "solutions": {
+    "reliable": "Let $f$ be the number of $4$-bed rooms and $s$ the number of $6$-bed rooms. Then $f + s = 34$ and $4f + 6s = 162$. Multiply the first equation by $4$: $4f + 4s = 136$. Subtract this from the second equation: $2s = 26$, so $s = 13$ and $f = 21$. Check: $4(21) + 6(13) = 84 + 78 = 162$.",
+    "elegant": "If all $34$ rooms had $4$ beds there would be $136$ beds. The other $26$ beds come from $6$-bed rooms, each of which has $2$ more beds than a $4$-bed room, so there are $26 \\div 2 = 13$ of them."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

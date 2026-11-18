@@ -1,0 +1,66 @@
+{
+  "id": "AM-1227",
+  "contest": "AMC8",
+  "slot": 1,
+  "area": "CP",
+  "topic": "CP-12",
+  "types": [
+    "T-CHOICES"
+  ],
+  "statement": "The ages of six cousins are $6$, $13$, $8$, $15$, $11$ and $7$ years. What is the median age, in years?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I found the mean instead of the median: the ages add to 60, and 60 divided by 6 is 10."
+    },
+    {
+      "key": "C",
+      "text": "$10.5$",
+      "correct": false,
+      "misconception": "I averaged the youngest and the oldest ages, (6 + 15) divided by 2 = 10.5, but that is not the median."
+    },
+    {
+      "key": "D",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I sorted the ages but took only the upper of the two middle numbers, 11, instead of averaging 8 and 11."
+    },
+    {
+      "key": "E",
+      "text": "$11.5$",
+      "correct": false,
+      "misconception": "I did not sort the ages first. I averaged the two middle numbers in the list as given, 8 and 15, to get 11.5."
+    }
+  ],
+  "hints": [
+    "The median is the middle value once the numbers are in order.",
+    "Put the six ages in order from youngest to oldest. With an even number of values, the median is the average of the two middle ones.",
+    "In order the ages are $6, 7, 8, 11, 13, 15$. The two middle values are $8$ and $11$; average them."
+  ],
+  "solutions": {
+    "reliable": "In increasing order the ages are $6, 7, 8, 11, 13, 15$. There are six values, so the median is the average of the third and fourth: $\\frac{8 + 11}{2} = 9.5$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0148",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-08",
+  "difficulty": "medium",
+  "statement": "The table shows some values of the function $f$. $$\\begin{array}{c|c|c|c|c|c} x & 0 & 1 & 2 & 3 & 4 \\\\ \\hline f(x) & 7 & 4 & 3 & 4 & 7 \\end{array}$$ The function $g$ is defined by $g(x) = 2f(x + 1) - 3$. What is the value of $g(1)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I shifted the input the wrong way and used $f(1 - 1) = f(0) = 7$, so I computed $2(7) - 3$."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I ignored the $+1$ inside the function and used $f(1) = 4$, so I computed $2(4) - 3$."
+    },
+    {
+      "key": "D",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I subtracted $3$ before doubling, so I computed $2(f(2) - 3) = 2(3 - 3)$."
+    }
+  ],
+  "hints": [
+    "Start inside the parentheses: what input does $f$ receive when $x = 1$?",
+    "$g(1) = 2f(1 + 1) - 3 = 2f(2) - 3$. Read $f(2)$ from the table.",
+    "$f(2) = 3$, so $g(1) = 2(3) - 3$."
+  ],
+  "solutions": {
+    "reliable": "$g(1) = 2f(1 + 1) - 3 = 2f(2) - 3$. From the table, $f(2) = 3$, so $g(1) = 2(3) - 3 = 3$.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

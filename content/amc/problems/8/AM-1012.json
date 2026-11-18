@@ -1,0 +1,66 @@
+{
+  "id": "AM-1012",
+  "contest": "AMC8",
+  "slot": 4,
+  "area": "ALG",
+  "topic": "ALG-05",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "If $2^x = 8^4 \\cdot 4^3$, what is $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$18$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I wrote 8^4 as 2^12 correctly, but I rewrote 4^3 as 2 to the power 2^3 = 2^8 instead of (2^2)^3 = 2^6, so I got 12 + 8 = 20."
+    },
+    {
+      "key": "C",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I multiplied the bases, 8 times 4 = 32 = 2^5, and added the exponents, 4 + 3 = 7, so I got 2^(5 times 7) = 2^35."
+    },
+    {
+      "key": "D",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I multiplied the bases to get 32 = 2^5 and multiplied the exponents to get 12, so I got 2^(5 times 12) = 2^60."
+    },
+    {
+      "key": "E",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I rewrote 8^4 = 2^12 and 4^3 = 2^6 correctly, but then multiplied the exponents 12 and 6 instead of adding them."
+    }
+  ],
+  "hints": [
+    "Write $8$ and $4$ as powers of $2$.",
+    "A power of a power multiplies exponents, and a product of powers of the same base adds exponents.",
+    "$8^4 = (2^3)^4 = 2^{12}$ and $4^3 = (2^2)^3 = 2^6$. Now multiply."
+  ],
+  "solutions": {
+    "reliable": "$8^4 = (2^3)^4 = 2^{12}$ and $4^3 = (2^2)^3 = 2^{6}$. So $8^4 \\cdot 4^3 = 2^{12} \\cdot 2^{6} = 2^{18}$, and $x = 18$.",
+    "elegant": "Count factors of $2$: each $8$ contributes three $2$s and each $4$ contributes two, so there are $4 \\cdot 3 + 3 \\cdot 2 = 18$ twos in the product."
+  },
+  "formulas": [],
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

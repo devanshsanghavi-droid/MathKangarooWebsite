@@ -1,0 +1,67 @@
+{
+  "id": "KA-1404",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A contest lasts 75 minutes and has ten 3-point, ten 4-point and ten 5-point questions. Nadia plans 1.5 minutes for each 3-point question and 2.5 minutes for each 4-point question, and wants 5 minutes left at the end for checking. Sharing the rest equally, how many minutes can she plan for each 5-point question?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2.5",
+      "correct": false,
+      "misconception": "I shared all 75 minutes equally among the 30 questions, ignoring her plan for the easier ones."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "3.5",
+      "correct": false,
+      "misconception": "I forgot to keep the 5 minutes for checking, so I shared 35 minutes instead of 30."
+    },
+    {
+      "key": "D",
+      "text": "4.5",
+      "correct": false,
+      "misconception": "I took off the checking time and the 4-point time but forgot the 15 minutes for the 3-point questions."
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": false,
+      "misconception": "I shared the 70 minutes left after checking, forgetting she has already spent time on the 3-point and 4-point questions."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-08",
+    "secondary": [
+      "CFT-12"
+    ]
+  },
+  "hints": [
+    "Add up every minute that is already promised before sharing out the rest.",
+    "Time triage starts with a budget: the total time, minus the checking time, minus the planned time for the 3-point and 4-point blocks, gives the 5-point budget. Then share it equally.",
+    "The 3-point block takes 15 minutes and the 4-point block 25 minutes. With 5 minutes for checking, 30 minutes remain for ten questions."
+  ],
+  "solutions": {
+    "reliable": "Planned time: $10 \\times 1.5 = 15$ minutes and $10 \\times 2.5 = 25$ minutes, plus 5 minutes of checking, 45 minutes in all. That leaves $75 - 45 = 30$ minutes for the ten 5-point questions, so 3 minutes each. The transferable idea: a time plan is a budget, so subtract every committed minute before sharing out the rest.",
+    "elegant": null
+  },
+  "whyOnTest": "Planning time across the three blocks before the contest starts is a skill in itself; this checks the budget arithmetic behind a sensible plan.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

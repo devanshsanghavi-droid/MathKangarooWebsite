@@ -1,0 +1,56 @@
+{
+  "id": "SA-0067",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "hard",
+  "statement": "In the system of equations below, $k$ is a constant. $$\\begin{aligned} kx - 6y &= 8 \\\\ 2x + (k - 7)y &= 4 \\end{aligned}$$ For which value or values of $k$ does the system have no solution?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$ only",
+      "correct": false,
+      "misconception": "I found the value of $k$ that makes the two equations multiples of each other, but at $k = 4$ the constants also match, so the lines are the same and there are infinitely many solutions."
+    },
+    {
+      "key": "B",
+      "text": "$7$ only",
+      "correct": false,
+      "misconception": "I tried to remove the $y$-term from the second equation by making $k - 7 = 0$, but at $k = 7$ the lines still cross at one point."
+    },
+    {
+      "key": "C",
+      "text": "$3$ and $4$",
+      "correct": false,
+      "misconception": "I solved $k(k - 7) = -12$ to make the lines parallel and kept both roots without checking whether the constants also match."
+    },
+    {
+      "key": "D",
+      "text": "$3$ only",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "No solution means the lines are parallel but not the same line.",
+    "Make the $x$- and $y$-coefficients proportional: $\\frac{k}{2} = \\frac{-6}{k - 7}$. Then check each value against the constants $\\frac{8}{4}$.",
+    "$k(k - 7) = -12$ gives $k^2 - 7k + 12 = 0$, so $k = 3$ or $k = 4$. Only one of these makes the constant ratio different."
+  ],
+  "solutions": {
+    "reliable": "The system has no solution exactly when the coefficient ratios match but the constant ratio does not. Matching coefficients: $\\frac{k}{2} = \\frac{-6}{k - 7}$, so $k(k - 7) = -12$, $k^2 - 7k + 12 = 0$ and $(k - 3)(k - 4) = 0$. For $k = 4$ the equations are $4x - 6y = 8$ and $2x - 3y = 4$; the first is twice the second, so they are the same line (infinitely many solutions). For $k = 3$ they are $3x - 6y = 8$ and $2x - 4y = 4$, which simplify to $x - 2y = \\frac{8}{3}$ and $x - 2y = 2$: parallel and distinct, so no solution. For any other $k$ the lines have different slopes and meet once. The answer is $k = 3$ only.",
+    "elegant": null
+  },
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1360",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Several different positive whole numbers are multiplied together, and the product is 360. At most how many numbers can there be?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I wrote 360 as $2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5$ and counted six factors, forgetting they must all be different."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I counted the six prime factors of 360 and added 1 as an extra factor, without checking they were all different."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found $2 \\times 3 \\times 4 \\times 15$ and forgot that 1 can also be used."
+    },
+    {
+      "key": "E",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only the different primes 2, 3 and 5."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "What is the smallest product six different positive whole numbers can have?",
+    "Use the smallest possible numbers to see how many can fit: the smallest product of n different positive whole numbers is $1 \\times 2 \\times \\dots \\times n$. Compare that with 360, then find an example.",
+    "Six different numbers multiply to at least $1 \\times 2 \\times 3 \\times 4 \\times 5 \\times 6 = 720$, which is more than 360."
+  ],
+  "solutions": {
+    "reliable": "Six different positive whole numbers multiply to at least $1 \\times 2 \\times 3 \\times 4 \\times 5 \\times 6 = 720$, which is already more than 360, so six or more is impossible. Five works: $1 \\times 2 \\times 3 \\times 4 \\times 15 = 360$. So the most is 5. The transferable idea: to find the most items possible, use the smallest allowed values to get a bound, then show the bound can be reached.",
+    "elegant": null
+  },
+  "whyOnTest": "Extremal thinking: the smallest possible values give a bound at once, and one example shows the bound can actually be reached.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

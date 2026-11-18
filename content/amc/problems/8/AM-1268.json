@@ -1,0 +1,62 @@
+{
+  "id": "AM-1268",
+  "contest": "AMC8",
+  "slot": 14,
+  "area": "CP",
+  "topic": "CP-09",
+  "types": ["T-RECURSION", "T-CASEWORK"],
+  "statement": "A code is a string of $5$ letters, each of which is $A$, $B$ or $C$. Every $A$ in a code must be immediately followed by a $B$. For example, $ABCAB$ and $CCBAB$ are codes, but $ABACB$ and $BCCBA$ are not. How many codes are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$29$",
+      "correct": false,
+      "misconception": "I built up the number of codes one letter at a time, but I stopped one letter too early and gave the count for codes of 4 letters."
+    },
+    {
+      "key": "B",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I thought a code could not use the letter A at all, so each of the 5 letters was B or C: 2^5 = 32."
+    },
+    {
+      "key": "C",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I counted the codes with no A (32) and the codes with one AB (32), and forgot the codes with two ABs."
+    },
+    {
+      "key": "D",
+      "text": "$70$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$162$",
+      "correct": false,
+      "misconception": "I only made sure the last letter is not A, so I counted 3^5 - 3^4 = 162, and forgot that an A in the middle must be followed by a B."
+    }
+  ],
+  "hints": [
+    "Every $A$ comes glued to the $B$ after it, so think of a code as a row of blocks: $B$, $C$ or $AB$.",
+    "A code of $n$ letters ends in a $B$ block or a $C$ block after a code of $n - 1$ letters, or ends in an $AB$ block after a code of $n - 2$ letters.",
+    "So the counts follow $f(n) = 2f(n - 1) + f(n - 2)$, with $f(1) = 2$ and $f(2) = 5$. Keep going up to $5$ letters."
+  ],
+  "solutions": {
+    "reliable": "Since every $A$ is immediately followed by a $B$, each code splits in exactly one way into blocks $B$, $C$ and $AB$. Let $f(n)$ be the number of codes with $n$ letters. The last block is $B$ or $C$, after a code of $n - 1$ letters, or $AB$, after a code of $n - 2$ letters, so $f(n) = 2f(n - 1) + f(n - 2)$. We have $f(1) = 2$ ($B$, $C$) and $f(2) = 5$ ($BB$, $BC$, $CB$, $CC$, $AB$). Then $f(3) = 10 + 2 = 12$, $f(4) = 24 + 5 = 29$ and $f(5) = 58 + 12 = 70$.",
+    "elegant": "Count by the number of $AB$ blocks. With none, each of the $5$ letters is $B$ or $C$: $2^5 = 32$ codes. With one, there are $4$ blocks, the $AB$ can be any of them, and the other $3$ blocks are $B$ or $C$: $4 \\times 2^3 = 32$ codes. With two, there are $3$ blocks, the single-letter block can be any of the $3$ and is $B$ or $C$: $3 \\times 2 = 6$ codes. The total is $32 + 32 + 6 = 70$."
+  },
+  "formulas": ["F-CP-19"],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

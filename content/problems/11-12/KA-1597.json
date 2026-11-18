@@ -1,0 +1,68 @@
+{
+  "id": "KA-1597",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A train travels at a steady $90$ km/h. How many metres does it travel in 1 minute 20 seconds?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2000",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "7200",
+      "correct": false,
+      "misconception": "I treated 90 km/h as 90 metres per second and multiplied by 80 seconds."
+    },
+    {
+      "key": "C",
+      "text": "25920",
+      "correct": false,
+      "misconception": "I converted 90 km/h to metres per second by multiplying by 3.6 instead of dividing."
+    },
+    {
+      "key": "D",
+      "text": "108000",
+      "correct": false,
+      "misconception": "I wrote 1 minute 20 seconds as 1.2 and then treated it as 1.2 hours, getting 108 km."
+    },
+    {
+      "key": "E",
+      "text": "120000",
+      "correct": false,
+      "misconception": "I turned the speed into 1.5 km per minute but then treated 1 minute 20 seconds as 80 minutes."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-10",
+    "secondary": [
+      "MOD-07",
+      "MOD-03"
+    ]
+  },
+  "hints": [
+    "Put the speed and the time into matching units first.",
+    "Convert the speed to metres per second, or convert the time to hours, before multiplying. Check the answer is a sensible distance for a train in just over a minute.",
+    "$90$ km/h is $90000$ m in $3600$ s, which is $25$ m/s. The time is $80$ s."
+  ],
+  "solutions": {
+    "reliable": "$90$ km/h means $90000$ m every $3600$ s, which is $25$ m/s. In 1 minute 20 seconds, which is 80 seconds, the train travels $25 \\times 80 = 2000$ m. Check in hours: $80$ s is $\\frac{80}{3600} = \\frac{1}{45}$ h, and $90 \\times \\frac{1}{45} = 2$ km. The transferable idea: convert to matching units before multiplying, and re-read mixed times such as minutes and seconds carefully.",
+    "elegant": null
+  },
+  "whyOnTest": "Unit slips are the cheapest marks to lose: mixed minutes and seconds and the km/h to m/s factor are both tested here.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

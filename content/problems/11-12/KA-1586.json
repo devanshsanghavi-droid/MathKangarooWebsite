@@ -1,0 +1,68 @@
+{
+  "id": "KA-1586",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Look at these facts: $1 \\cdot 2 \\cdot 3 \\cdot 4 + 1 = 5^2$, $\\ 2 \\cdot 3 \\cdot 4 \\cdot 5 + 1 = 11^2$, $\\ 3 \\cdot 4 \\cdot 5 \\cdot 6 + 1 = 19^2$. Following the same pattern, $10 \\cdot 11 \\cdot 12 \\cdot 13 + 1$ is the square of which number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "109",
+      "correct": false,
+      "misconception": "I continued the list 5, 11, 19, 29, ... by its differences but stopped one line early, at the line that starts with 9."
+    },
+    {
+      "key": "B",
+      "text": "130",
+      "correct": false,
+      "misconception": "I noticed the product of the outside numbers matters and used $10 \\times 13 = 130$, but forgot to add 1."
+    },
+    {
+      "key": "C",
+      "text": "131",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "132",
+      "correct": false,
+      "misconception": "I used the product of the two middle numbers, $11 \\times 12$, but forgot to take 1 away."
+    },
+    {
+      "key": "E",
+      "text": "155",
+      "correct": false,
+      "misconception": "I continued the list 5, 11, 19, 29, ... by its differences one line too far, to the line that starts with 11."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "PAT-02",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "How is 5 related to the numbers 1, 2, 3, 4?",
+    "Look for a formula connecting each square root to the four numbers in its product. Compare it with the product of the outer two numbers or of the inner two.",
+    "$5 = 1 \\times 4 + 1$, $11 = 2 \\times 5 + 1$, $19 = 3 \\times 6 + 1$: the square root is the product of the outer numbers plus 1."
+  ],
+  "solutions": {
+    "reliable": "In each line the number being squared is the product of the first and last numbers plus 1: $1 \\times 4 + 1 = 5$, $2 \\times 5 + 1 = 11$, $3 \\times 6 + 1 = 19$. So $10 \\cdot 11 \\cdot 12 \\cdot 13 + 1$ should be $(10 \\times 13 + 1)^2 = 131^2$. Check: $10 \\cdot 11 \\cdot 12 \\cdot 13 = 17160$ and $131^2 = 17161$. The transferable idea: guess a rule from examples, then confirm it on the case you need.",
+    "elegant": "With $m = n^2 + 3n$: $n(n+3) = m$ and $(n+1)(n+2) = m + 2$, so the product plus 1 is $m(m + 2) + 1 = (m + 1)^2$. For $n = 10$, $m + 1 = 131$."
+  },
+  "whyOnTest": "A pattern guessed from three lines can be confirmed by algebra; spotting which pair of factors controls the square is the key step.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

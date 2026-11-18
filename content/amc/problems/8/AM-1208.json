@@ -1,0 +1,67 @@
+{
+  "id": "AM-1208",
+  "contest": "AMC8",
+  "slot": 20,
+  "area": "NT",
+  "topic": "NT-06",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-EXTREME"
+  ],
+  "statement": "What is the smallest positive integer whose digits have a product of $2400$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$25568$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$34558$",
+      "correct": false,
+      "misconception": "I split the leftover $96$ as $3 \\cdot 4 \\cdot 8$ and did not try the other ways to write it as a product of three digits."
+    },
+    {
+      "key": "C",
+      "text": "$44556$",
+      "correct": false,
+      "misconception": "I thought the digits should be as close to each other as possible, so I split $96$ as $4 \\cdot 4 \\cdot 6$."
+    },
+    {
+      "key": "D",
+      "text": "$86552$",
+      "correct": false,
+      "misconception": "I found the right digits but wrote them in decreasing order instead of increasing order."
+    },
+    {
+      "key": "E",
+      "text": "$22222355$",
+      "correct": false,
+      "misconception": "I used the prime factors $2, 2, 2, 2, 2, 3, 5, 5$ as the digits, not seeing that combining them into bigger digits gives fewer digits."
+    }
+  ],
+  "hints": [
+    "Factor $2400$ into primes. Which digits can contain a factor of $5$?",
+    "$2400 = 2^5 \\cdot 3 \\cdot 5^2$. The only digit with a factor of $5$ is $5$ itself, so two of the digits are $5$. A number with fewer digits is smaller, so use as few digits as possible, then put them in increasing order.",
+    "The other digits multiply to $96$. Two digits make at most $9 \\cdot 9 = 81$, so you need three: $96 = 2 \\cdot 6 \\cdot 8 = 3 \\cdot 4 \\cdot 8 = 4 \\cdot 4 \\cdot 6$. Compare the smallest numbers these give."
+  ],
+  "solutions": {
+    "reliable": "No digit can be $0$, and a digit $1$ only makes the number longer, so the digits come from $2$ to $9$. A number with fewer digits is smaller, so first make the number of digits as small as possible. Since $2400 = 2^5 \\cdot 3 \\cdot 5^2$ and the only digit divisible by $5$ is $5$, exactly two digits are $5$, and the remaining digits multiply to $96$. Two digits multiply to at most $81 < 96$, so at least three more digits are needed, and $5$ digits in all is the minimum. The ways to write $96$ as a product of three digits are $2 \\cdot 6 \\cdot 8$, $3 \\cdot 4 \\cdot 8$ and $4 \\cdot 4 \\cdot 6$. Writing each set of five digits in increasing order gives $25568$, $34558$ and $44556$. The smallest is $25568$, and indeed $2 \\cdot 5 \\cdot 5 \\cdot 6 \\cdot 8 = 2400$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0245",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-06",
+  "difficulty": "hard",
+  "statement": "A quality inspector chooses one light bulb at random from box A and one at random from box B. Box A has $40$ bulbs, $4$ of which are defective. Box B has $25$ bulbs, $3$ of which are defective. What is the probability that at least one of the two chosen bulbs is defective?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.208$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$0.22$",
+      "correct": false,
+      "misconception": "I added the chances, 0.10 + 0.12, but that counts the case where both bulbs are defective twice."
+    },
+    {
+      "key": "C",
+      "text": "$0.792$",
+      "correct": false,
+      "misconception": "I found the probability that neither bulb is defective, 0.9 times 0.88, and forgot to subtract it from 1."
+    },
+    {
+      "key": "D",
+      "text": "$0.988$",
+      "correct": false,
+      "misconception": "I subtracted the chance that both bulbs are defective from 1, but that gives the chance that not both are defective, which includes the case with no defective bulb."
+    }
+  ],
+  "hints": [
+    "What is the opposite of at least one defective?",
+    "Find the probability that neither bulb is defective by multiplying, then subtract that from $1$.",
+    "The bulb from box A is good with probability $\\frac{36}{40} = 0.9$, and the bulb from box B with probability $\\frac{22}{25} = 0.88$."
+  ],
+  "solutions": {
+    "reliable": "The opposite of at least one defective bulb is no defective bulbs. The bulb from box A is good with probability $\\frac{36}{40} = 0.9$ and the bulb from box B is good with probability $\\frac{22}{25} = 0.88$. The two choices are independent, so both bulbs are good with probability $0.9 \\times 0.88 = 0.792$. The probability of at least one defective bulb is $1 - 0.792 = 0.208$. Check by cases: only A defective $0.1 \\times 0.88 = 0.088$, only B defective $0.9 \\times 0.12 = 0.108$ and both defective $0.1 \\times 0.12 = 0.012$, for a total of $0.208$.",
+    "elegant": "Add the two chances and remove the overlap counted twice: $0.10 + 0.12 - 0.10 \\times 0.12 = 0.22 - 0.012 = 0.208$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

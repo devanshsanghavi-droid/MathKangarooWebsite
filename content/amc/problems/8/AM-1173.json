@@ -1,0 +1,69 @@
+{
+  "id": "AM-1173",
+  "contest": "AMC8",
+  "slot": 8,
+  "area": "NT",
+  "topic": "NT-04",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-CASEWORK"
+  ],
+  "statement": "For how many positive integers $n$ is the least common multiple of $n$ and $12$ equal to $60$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I assumed $n$ and $12$ share no common factor, so $12n = 60$ and $n = 5$ is the only choice."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I thought $n$ could not share a factor of $2$ with $12$, so I only counted the odd choices, $5$ and $15$."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I thought $n$ had to be smaller than $60$, so I left out $n = 60$ and counted only $5, 10, 15, 20, 30$."
+    },
+    {
+      "key": "D",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I counted all $12$ divisors of $60$, but $n$ must also contain the factor $5$, or the least common multiple would just be $12$."
+    }
+  ],
+  "hints": [
+    "Since $60$ is a common multiple of $n$ and $12$, $n$ must divide $60$.",
+    "$12 = 2^2 \\cdot 3$ and $60 = 2^2 \\cdot 3 \\cdot 5$. Which prime factor must $n$ supply that $12$ does not?",
+    "$n$ must be a divisor of $60$ that is a multiple of $5$, so $n = 5d$ where $d$ divides $12$."
+  ],
+  "solutions": {
+    "reliable": "Because $60$ is a multiple of $n$, $n$ divides $60 = 2^2 \\cdot 3 \\cdot 5$. The factors $2^2$ and $3$ already come from $12 = 2^2 \\cdot 3$, but the factor $5$ must come from $n$, so $5$ divides $n$. Conversely, any $n = 5d$ with $d$ dividing $12$ has least common multiple $2^2 \\cdot 3 \\cdot 5 = 60$ with $12$. The divisors of $12$ are $1, 2, 3, 4, 6, 12$, so $n$ is $5, 10, 15, 20, 30$ or $60$: there are $6$ values.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-01"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

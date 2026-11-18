@@ -1,0 +1,56 @@
+{
+  "id": "AC-0072",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "medium",
+  "statement": "What is the solution set of the equation $\\sqrt{x + 7} + 5 = x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\{2\\}$",
+      "correct": false,
+      "misconception": "I got $x = 2$ and $x = 9$ and kept the wrong one. At $x = 2$ the left side is $3 + 5 = 8$, not $2$."
+    },
+    {
+      "key": "B",
+      "text": "$\\{-6, -3\\}$",
+      "correct": false,
+      "misconception": "I moved the $5$ to the right side without changing its sign, so I solved $\\sqrt{x + 7} = x + 5$, which led to $x^2 + 9x + 18 = 0$."
+    },
+    {
+      "key": "C",
+      "text": "$\\{2, 9\\}$",
+      "correct": false,
+      "misconception": "I isolated the root, squared both sides and solved the quadratic correctly, but did not check my answers in the original equation."
+    },
+    {
+      "key": "D",
+      "text": "$\\{9\\}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Get the square root by itself on one side before squaring, and remember to check your answers at the end.",
+    "Subtracting $5$ gives $\\sqrt{x + 7} = x - 5$. Square both sides, expand $(x - 5)^2$ carefully, solve the quadratic, then substitute each answer into the original equation.",
+    "$x + 7 = x^2 - 10x + 25$ gives $x^2 - 11x + 18 = 0$, so $x = 2$ or $x = 9$. A square root is never negative, so check which value makes $x - 5 \\ge 0$ and both sides equal."
+  ],
+  "solutions": {
+    "reliable": "Subtract $5$: $\\sqrt{x + 7} = x - 5$. Square both sides: $x + 7 = x^2 - 10x + 25$, so $x^2 - 11x + 18 = 0$ and $(x - 2)(x - 9) = 0$. Check $x = 9$: $\\sqrt{16} + 5 = 4 + 5 = 9$, so it works. Check $x = 2$: $\\sqrt{9} + 5 = 8 \\ne 2$, so it is extraneous. The solution set is $\\{9\\}$.",
+    "elegant": null
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

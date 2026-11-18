@@ -1,0 +1,56 @@
+{
+  "id": "SA-0998",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-04",
+  "difficulty": "medium",
+  "statement": "The value, in dollars, of a used car $t$ years after it is bought is modeled by $V(t) = 18{,}000(0.85)^t$. According to the model, by what percent does the car's value decrease over any $2$-year period, to the nearest whole percent?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15\\%$",
+      "correct": false,
+      "misconception": "I saw the 0.85 and read off a 15% drop, but that is the drop over one year, not over two years."
+    },
+    {
+      "key": "B",
+      "text": "$28\\%$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$30\\%$",
+      "correct": false,
+      "misconception": "I took the 15% yearly drop and doubled it to 30%, as if the second year's drop came off the original price."
+    },
+    {
+      "key": "D",
+      "text": "$72\\%$",
+      "correct": false,
+      "misconception": "I worked out $0.85^2 \\approx 0.72$ and gave 72% as the decrease, but 72% is how much of the value is left."
+    }
+  ],
+  "hints": [
+    "Ignore the 18,000 for a moment: what does the car's value get multiplied by each year?",
+    "Over two years the value is multiplied by $0.85$ twice. Percent changes multiply; they do not add.",
+    "$0.85^2 = 0.7225$, so after two years $72.25\\%$ of the value remains. The decrease is $100\\% - 72.25\\%$."
+  ],
+  "solutions": {
+    "reliable": "Each year the value is multiplied by $0.85$. Over any two years it is multiplied by $0.85^2 = 0.7225$, so $72.25\\%$ of the value remains and the value falls by $100\\% - 72.25\\% = 27.75\\%$, which rounds to $28\\%$. The starting value $18{,}000$ and the starting year do not matter.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

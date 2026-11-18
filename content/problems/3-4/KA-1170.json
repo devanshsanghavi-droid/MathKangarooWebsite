@@ -1,0 +1,67 @@
+{
+  "id": "KA-1170",
+  "band": "3-4",
+  "points": 4,
+  "statement": "On a number line, A is at 12 and B is at 48. Point C lies between them and is 3 times as far from A as from B. What number is at C?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "21",
+      "correct": false,
+      "misconception": "I put C 3 times as far from B as from A, which places it a quarter of the way from A instead of three quarters."
+    },
+    {
+      "key": "B",
+      "text": "27",
+      "correct": false,
+      "misconception": "I found the distance from A to C, three quarters of 36, which is 27, and forgot to add it to 12."
+    },
+    {
+      "key": "C",
+      "text": "30",
+      "correct": false,
+      "misconception": "I put C halfway between A and B, ignoring the 3 times."
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": false,
+      "misconception": "I split the gap of 36 into 3 equal parts instead of 4 and went 2 parts from A, $12 + 24 = 36$."
+    },
+    {
+      "key": "E",
+      "text": "39",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-13",
+    "secondary": [
+      "MOD-02"
+    ]
+  },
+  "hints": [
+    "How far apart are A and B?",
+    "C splits the gap from A to B, and the piece next to A is 3 times the piece next to B. Draw the gap as 4 equal parts: 3 from A to C, 1 from C to B.",
+    "The gap is $48 - 12 = 36$, split into $3 + 1 = 4$ equal parts of 9. C is 3 parts, 27, to the right of A."
+  ],
+  "solutions": {
+    "reliable": "The distance from A to B is $48 - 12 = 36$. C is 3 times as far from A as from B, so think of 4 equal parts: 3 from A to C and 1 from C to B. Each part is $36 \\div 4 = 9$. So C is $3 \\times 9 = 27$ to the right of A, at $12 + 27 = 39$. Check: C to B is $48 - 39 = 9$, and 27 is 3 times 9. The transferable idea: turn 'times as far' into equal parts of the gap, then count from the right end point.",
+    "elegant": null
+  },
+  "whyOnTest": "Number line questions test turning distances into equal parts and remembering to start from the end point, not from zero.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

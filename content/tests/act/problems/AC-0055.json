@@ -1,0 +1,56 @@
+{
+  "id": "AC-0055",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "hard",
+  "statement": "Omar is planning a rectangular vegetable garden whose length is $3$ meters more than twice its width. He has at most $72$ meters of fencing to go around the whole garden, and he wants the length to be at least $15$ meters. If the width must be a whole number of meters, how many different widths are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I found the width can go from $6$ to $11$ and subtracted $11 - 6$, which leaves out one of the endpoints."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I only used the fencing limit, $w \\le 11$, and counted the widths $1$ through $11$, forgetting the length must be at least $15$."
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I used length plus width for the fencing instead of the full perimeter, so $3w + 3 \\le 72$ gave $w \\le 23$ and I counted $6$ through $23$."
+    }
+  ],
+  "hints": [
+    "Write the length in terms of the width $w$, then turn each condition into an inequality in $w$.",
+    "The length is $2w + 3$. The fencing condition uses the perimeter, $2(w + 2w + 3) \\le 72$, and the length condition is $2w + 3 \\ge 15$.",
+    "The perimeter condition gives $6w + 6 \\le 72$, so $w \\le 11$. The length condition gives $w \\ge 6$. Count the whole numbers from $6$ to $11$ inclusive."
+  ],
+  "solutions": {
+    "reliable": "Let the width be $w$, so the length is $2w + 3$. Fencing: $2(w + 2w + 3) = 6w + 6 \\le 72$, so $w \\le 11$. Length: $2w + 3 \\ge 15$, so $w \\ge 6$. The whole numbers with $6 \\le w \\le 11$ are $6, 7, 8, 9, 10, 11$, which is $6$ widths. Check the ends: $w = 6$ gives length $15$ and perimeter $42$; $w = 11$ gives length $25$ and perimeter $72$.",
+    "elegant": "The number of whole numbers from $a$ to $b$ inclusive is $b - a + 1$, here $11 - 6 + 1 = 6$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

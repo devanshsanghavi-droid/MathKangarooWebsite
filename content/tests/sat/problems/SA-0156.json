@@ -1,0 +1,56 @@
+{
+  "id": "SA-0156",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-05",
+  "difficulty": "hard",
+  "statement": "The function $f$ is defined by $f(x) = \\dfrac{x^2 + bx - 12}{x - 3}$ for $x \\ne 3$, where $b$ is a constant. In the $xy$-plane, the graph of $y = f(x)$ has no vertical asymptote. What is the value of $f(5)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I found $b = 1$ and factored the numerator, but after canceling I wrote $f(x) = x - 4$ instead of $x + 4$, so I got $f(5) = 1$."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I set $9 + 3b - 12 = 0$ but solved it as $3b = -3$, so I used $b = -1$ and got $f(5) = \\frac{25 - 5 - 12}{2} = 4$."
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I found $b = 1$ and substituted $x = 5$ into the numerator, $25 + 5 - 12 = 18$, but forgot to divide by the denominator $5 - 3$."
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "A rational function like this has no vertical asymptote at $x = 3$ only if the numerator is also $0$ at $x = 3$.",
+    "Set the numerator equal to $0$ at $x = 3$ to find $b$, then factor and simplify $f(x)$.",
+    "$9 + 3b - 12 = 0$ gives $b = 1$, and $x^2 + x - 12 = (x - 3)(x + 4)$, so $f(x) = x + 4$ for $x \\ne 3$."
+  ],
+  "solutions": {
+    "reliable": "The denominator is $0$ at $x = 3$. For the graph to have no vertical asymptote there, the numerator must also be $0$ at $x = 3$: $9 + 3b - 12 = 0$, so $b = 1$. Then $x^2 + x - 12 = (x - 3)(x + 4)$, so $f(x) = x + 4$ for $x \\ne 3$ (the graph is a line with a hole at $x = 3$). Therefore $f(5) = 9$. Check directly: $\\frac{25 + 5 - 12}{5 - 3} = \\frac{18}{2} = 9$.",
+    "elegant": null
+  },
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

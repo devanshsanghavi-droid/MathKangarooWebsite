@@ -1,0 +1,56 @@
+{
+  "id": "AC-0282",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-04",
+  "difficulty": "easy",
+  "statement": "A cafe owner made a scatterplot of the number of hot drinks sold each day against the outdoor temperature. The line of fit is $y = 410 - 6.5x$, where $x$ is the temperature in degrees Fahrenheit and $y$ is the number of hot drinks sold. According to the line of fit, how many hot drinks will be sold on a day when the temperature is $48^\\circ\\text{F}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$98$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$312$",
+      "correct": false,
+      "misconception": "I worked out 6.5 times 48 to get 312 and gave that as the answer, forgetting to subtract it from 410."
+    },
+    {
+      "key": "C",
+      "text": "$355.5$",
+      "correct": false,
+      "misconception": "I subtracted 6.5 and 48 from 410 separately instead of multiplying 6.5 by 48 first."
+    },
+    {
+      "key": "D",
+      "text": "$722$",
+      "correct": false,
+      "misconception": "I added 6.5 times 48 to 410, but the line has a negative slope, so warmer days mean fewer hot drinks."
+    }
+  ],
+  "hints": [
+    "Substitute the temperature for $x$ in the equation of the line.",
+    "Compute $410 - 6.5(48)$, multiplying before subtracting.",
+    "$6.5 \\times 48 = 312$, so the prediction is $410 - 312$."
+  ],
+  "solutions": {
+    "reliable": "Substitute $x = 48$: $y = 410 - 6.5(48) = 410 - 312 = 98$. The line predicts about $98$ hot drinks.",
+    "elegant": null
+  },
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

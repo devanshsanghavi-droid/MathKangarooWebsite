@@ -1,0 +1,56 @@
+{
+  "id": "AC-0189",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-05",
+  "difficulty": "medium",
+  "statement": "A free study app has $300$ downloads on the day it launches, and its total number of downloads doubles every $5$ days. If this pattern continues, to the nearest tenth of a day, how many days after launch will the app reach $7{,}200$ total downloads?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4.6$",
+      "correct": false,
+      "misconception": "I solved $2^n = 24$ and got $n \\approx 4.6$, but $n$ counts doubling periods, and each period lasts $5$ days."
+    },
+    {
+      "key": "B",
+      "text": "$22.9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$115.0$",
+      "correct": false,
+      "misconception": "I treated the growth as linear, adding $300$ downloads every $5$ days, which takes $23$ periods, or $115$ days."
+    },
+    {
+      "key": "D",
+      "text": "$120.0$",
+      "correct": false,
+      "misconception": "I divided $7{,}200$ by $300$ to get $24$ and treated that as the number of doublings, so I multiplied $24$ by $5$ days."
+    }
+  ],
+  "hints": [
+    "Write the total after $t$ days as $300 \\cdot 2^{t/5}$.",
+    "Set $300 \\cdot 2^{t/5} = 7{,}200$, divide by $300$, and solve for the exponent with a logarithm.",
+    "$2^{t/5} = 24$, so $\\frac{t}{5} = \\log_2 24 = \\frac{\\log 24}{\\log 2} \\approx 4.585$."
+  ],
+  "solutions": {
+    "reliable": "After $t$ days the total is $300 \\cdot 2^{t/5}$. Setting this equal to $7{,}200$ gives $2^{t/5} = 24$. Taking logarithms, $\\frac{t}{5} = \\frac{\\log 24}{\\log 2} \\approx \\frac{1.3802}{0.3010} \\approx 4.585$, so $t \\approx 5 \\cdot 4.585 \\approx 22.9$ days.",
+    "elegant": "Estimate first: $2^4 = 16$ and $2^5 = 32$, so $24$ needs between $4$ and $5$ doublings, which is between $20$ and $25$ days. Only $22.9$ fits."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

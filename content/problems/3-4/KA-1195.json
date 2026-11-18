@@ -1,0 +1,68 @@
+{
+  "id": "KA-1195",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Stage 1 of a pyramid is one 1 cm square. Each stage adds a row 2 squares longer underneath, sticking out one square at each end. What is the perimeter of stage 10, in cm?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "52",
+      "correct": false,
+      "misconception": "I found that each new stage adds 6 cm, but I added it only 8 times, which stops at stage 9."
+    },
+    {
+      "key": "B",
+      "text": "100",
+      "correct": false,
+      "misconception": "I counted the number of squares in stage 10 instead of the perimeter."
+    },
+    {
+      "key": "C",
+      "text": "60",
+      "correct": false,
+      "misconception": "I saw that the perimeter grows by 6 each stage and worked out $6 \\times 10$, forgetting that stage 1 has perimeter 4, not 6."
+    },
+    {
+      "key": "D",
+      "text": "58",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "40",
+      "correct": false,
+      "misconception": "I counted the bottom row of 19, the top square of 1 and the two upright sides of 10 each, but forgot the flat edges of the steps."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "GEO-01",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Try stages 1, 2 and 3 first.",
+    "Find the perimeters of the first few stages and see how much each new stage adds. Or slide the flat step edges up to the top line and see what shape has the same outline.",
+    "The first stages have perimeters 4, 10 and 16. Stage 10 has a bottom row of 19 squares."
+  ],
+  "solutions": {
+    "reliable": "Stage 1 has perimeter 4, stage 2 has 10 and stage 3 has 16. Each new row covers the old bottom edge but brings a bottom edge 2 cm longer, two new step tops of 1 cm and two new upright edges of 1 cm, so it adds $2 + 2 + 2 = 6$ cm. Stage 10 has $4 + 9 \\times 6 = 58$ cm. The transferable idea: try small cases, find the step, then check it with a reason.",
+    "elegant": "Slide every flat step edge straight up to the top line. Together with the top square they make a line of $1 + 9 + 9 = 19$ cm, as long as the bottom row. Each side has 10 upright edges of 1 cm. So the outline has the same length as a rectangle 19 cm by 10 cm: $2 \\times (19 + 10) = 58$ cm."
+  },
+  "whyOnTest": "A growing-shape perimeter: small cases show a constant step, and the clever move is to see the stepped outline as a rectangle.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

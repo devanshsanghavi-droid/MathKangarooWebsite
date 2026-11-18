@@ -1,0 +1,56 @@
+{
+  "id": "AC-0084",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "hard",
+  "statement": "The two solutions of the equation $x^2 + bx + c = 0$, where $b$ and $c$ are constants, are each $2$ more than the two solutions of $x^2 - 5x + 3 = 0$. What is the value of $c$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I added 2 to the constant term 3, as if moving the solutions up by 2 also moved $c$ up by 2."
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I thought the product of the solutions grows by $2 \\cdot 2 = 4$, so I used $3 + 4$ and left out the term $2(r + s)$."
+    },
+    {
+      "key": "C",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I expanded $(r + 2)(s + 2)$ as $rs + 2(r + s) = 3 + 10$ and left out the $2 \\cdot 2 = 4$."
+    },
+    {
+      "key": "D",
+      "text": "$17$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "You do not need the solutions themselves. Think about their sum and their product.",
+    "If $r$ and $s$ solve $x^2 - 5x + 3 = 0$, then $r + s = 5$ and $rs = 3$. The new constant $c$ is the product $(r + 2)(s + 2)$.",
+    "Expand: $(r + 2)(s + 2) = rs + 2(r + s) + 4$."
+  ],
+  "solutions": {
+    "reliable": "Let $r$ and $s$ be the solutions of $x^2 - 5x + 3 = 0$, so $r + s = 5$ and $rs = 3$. The new equation has solutions $r + 2$ and $s + 2$, and when the leading coefficient is $1$ the constant term is the product of the solutions. So $c = (r + 2)(s + 2) = rs + 2(r + s) + 4 = 3 + 10 + 4 = 17$. Check: the new equation is $x^2 - 9x + 17 = 0$, whose solutions $\\tfrac{9 \\pm \\sqrt{13}}{2}$ are each $2$ more than the solutions $\\tfrac{5 \\pm \\sqrt{13}}{2}$ of the original.",
+    "elegant": "Moving every solution up by $2$ means replacing $x$ with $x - 2$: $(x - 2)^2 - 5(x - 2) + 3 = x^2 - 9x + 17$. So $c = 17$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

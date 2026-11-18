@@ -1,0 +1,56 @@
+{
+  "id": "SA-0186",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-06",
+  "difficulty": "hard",
+  "statement": "What is the sum of all the solutions to the equation $x - 5\\sqrt{x} + 6 = 0$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I added the values of $\\sqrt{x}$, which are $2$ and $3$, instead of the values of $x$."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I added the values of $\\sqrt{x}$ to get $5$ and then squared that sum instead of squaring each value."
+    },
+    {
+      "key": "D",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I found the solutions $4$ and $9$ but multiplied them instead of adding them."
+    }
+  ],
+  "hints": [
+    "Think of $x$ as $\\left(\\sqrt{x}\\right)^2$.",
+    "Let $u = \\sqrt{x}$. The equation becomes $u^2 - 5u + 6 = 0$.",
+    "$(u - 2)(u - 3) = 0$ gives $\\sqrt{x} = 2$ or $\\sqrt{x} = 3$; square each to find $x$."
+  ],
+  "solutions": {
+    "reliable": "Let $u = \\sqrt{x}$, so $x = u^2$ and the equation becomes $u^2 - 5u + 6 = 0$, or $(u - 2)(u - 3) = 0$. Then $\\sqrt{x} = 2$ or $\\sqrt{x} = 3$, so $x = 4$ or $x = 9$. Both check: $4 - 5(2) + 6 = 0$ and $9 - 5(3) + 6 = 0$. The sum of the solutions is $4 + 9 = 13$.",
+    "elegant": "Isolate the radical: $x + 6 = 5\\sqrt{x}$. Squaring gives $x^2 + 12x + 36 = 25x$, or $x^2 - 13x + 36 = 0$, whose solutions $4$ and $9$ both check, so they add to $13$."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0266",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-04",
+  "difficulty": "easy",
+  "statement": "For $30$ days, Tomas recorded how many hours his phone's screen was on before $6$ p.m. and the percent of battery charge left at $6$ p.m. In a scatterplot of the data, the points lie close to a straight line that falls from left to right. Which of the following is the most likely value of the correlation coefficient, $r$, for these data?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-0.92$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-0.15$",
+      "correct": false,
+      "misconception": "I thought an r value close to 0 means the points are close to the line, so I chose a small negative number."
+    },
+    {
+      "key": "C",
+      "text": "$0.89$",
+      "correct": false,
+      "misconception": "I knew the points were close to a line, so I picked a value near 1, but I forgot that a line falling from left to right means a negative r."
+    },
+    {
+      "key": "D",
+      "text": "$1.25$",
+      "correct": false,
+      "misconception": "I thought a strong relationship needs an r value bigger than 1, but r always stays between -1 and 1."
+    }
+  ],
+  "hints": [
+    "The sign of $r$ shows the direction of the trend.",
+    "A pattern that falls from left to right has a negative $r$. Points close to a line give an $r$ near $1$ or $-1$.",
+    "Look for a negative value that is close to $-1$, and remember that $r$ is never below $-1$ or above $1$."
+  ],
+  "solutions": {
+    "reliable": "More screen time goes with less battery left, so the association is negative and $r < 0$. The points lie close to a line, so the association is strong and $r$ is close to $-1$. Of the choices, $-0.92$ fits. The value $1.25$ is impossible because $-1 \\le r \\le 1$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

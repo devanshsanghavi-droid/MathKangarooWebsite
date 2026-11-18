@@ -1,0 +1,67 @@
+{
+  "id": "KA-1124",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A staircase has 24 steps. Leo climbs it 2 steps at a time and Mia 3 steps at a time, both starting at the bottom. How many steps does neither of them step on?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found the steps that both of them step on, not the steps that neither of them steps on."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I took away only the 12 steps Leo uses and forgot the steps that Mia uses."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I found the steps that at least one of them steps on."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted the steps they do not both step on, taking only the 4 shared steps away from 24."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-01",
+    "secondary": [
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "Which steps does Leo use? Which steps does Mia use?",
+    "Leo uses the even steps and Mia uses every third step. Some steps are used by both, so do not count them twice before finding the steps that nobody uses.",
+    "Leo: 12 steps. Mia: 8 steps. Both: 6, 12, 18 and 24, which is 4 steps. Used by at least one: 12 + 8 - 4 = 16. Used by neither: 24 - 16 = 8."
+  ],
+  "solutions": {
+    "reliable": "Leo steps on 2, 4, ..., 24, which is 12 steps. Mia steps on 3, 6, ..., 24, which is 8 steps. Both step on 6, 12, 18 and 24, which is 4 steps. So 12 + 8 - 4 = 16 steps are used by at least one of them, and 24 - 16 = 8 steps are used by neither: 1, 5, 7, 11, 13, 17, 19 and 23. The transferable idea: check whether the question asks for both, either or neither before you calculate, because each of those counts is waiting among the choices.",
+    "elegant": "The unused steps are the odd steps that are not multiples of 3. In each block of 6 steps only the 1st and the 5th are unused, and 24 steps make 4 blocks, so 4 x 2 = 8."
+  },
+  "whyOnTest": "Both, either and neither each give a different count, and all of them appear as choices, so the question rewards reading which one is asked.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

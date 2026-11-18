@@ -1,0 +1,67 @@
+{
+  "id": "KA-1403",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Real numbers $x$ and $y$ satisfy $x + y = 7$ and $xy = 11$. What is the value of $x^3 + y^3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "112",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "189",
+      "correct": false,
+      "misconception": "I found $x^2 + y^2 = 49 - 22 = 27$ and multiplied it by $x + y = 7$, which adds an extra $xy(x + y)$ to the answer."
+    },
+    {
+      "key": "C",
+      "text": "266",
+      "correct": false,
+      "misconception": "I used $(x + y)^3 - xy(x + y)$ and forgot that the cross terms in the cube come with a factor of 3."
+    },
+    {
+      "key": "D",
+      "text": "310",
+      "correct": false,
+      "misconception": "I subtracted $3xy = 33$ from $7^3$, forgetting to multiply it by $x + y$ as well."
+    },
+    {
+      "key": "E",
+      "text": "343",
+      "correct": false,
+      "misconception": "I assumed $x^3 + y^3$ equals $(x + y)^3 = 7^3$, ignoring the middle terms of the expansion."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Solving for x and y gives messy roots. Is there a faster route?",
+    "Grinding through the roots works but is slow and error-prone. Decide instead to write $x^3 + y^3$ using only $x + y$ and $xy$, starting from the expansion of $(x + y)^3$.",
+    "$(x + y)^3 = x^3 + y^3 + 3xy(x + y)$, so $x^3 + y^3 = 7^3 - 3 \\cdot 11 \\cdot 7$."
+  ],
+  "solutions": {
+    "reliable": "Expand: $(x + y)^3 = x^3 + 3x^2y + 3xy^2 + y^3 = x^3 + y^3 + 3xy(x + y)$. So $x^3 + y^3 = (x + y)^3 - 3xy(x + y) = 343 - 3 \\cdot 11 \\cdot 7 = 343 - 231 = 112$. Check by grinding: $x$ and $y$ are $\\frac{7 \\pm \\sqrt5}{2}$, and the sum of their cubes is $\\frac{2(343 + 3 \\cdot 7 \\cdot 5)}{8} = \\frac{896}{8} = 112$. The transferable idea: when the roots are ugly but the expression is symmetric, decide early to work with the sum and the product instead of the roots.",
+    "elegant": "Factor instead: $x^3 + y^3 = (x + y)(x^2 - xy + y^2) = 7(27 - 11) = 112$, using $x^2 + y^2 = 49 - 22 = 27$."
+  },
+  "whyOnTest": "The roots are ugly, so the test is spotting quickly that a symmetric expression can be built from x + y and xy instead of grinding.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

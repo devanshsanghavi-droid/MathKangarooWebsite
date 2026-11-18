@@ -1,0 +1,66 @@
+{
+  "id": "AM-1187",
+  "contest": "AMC8",
+  "slot": 11,
+  "area": "NT",
+  "topic": "NT-10",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "The sum $\\dfrac{1}{2} + \\dfrac{1}{3} + \\dfrac{1}{4} + \\dfrac{1}{5} + \\dfrac{1}{6}$ is written as a fraction $\\dfrac{m}{n}$ in lowest terms. What is $n$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$20$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$29$",
+      "correct": false,
+      "misconception": "I found 29/20 but gave the numerator, 29, instead of the denominator."
+    },
+    {
+      "key": "C",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I used the common denominator 60 and got 87/60, but I did not notice that 87 and 60 share a factor of 3."
+    },
+    {
+      "key": "D",
+      "text": "$87$",
+      "correct": false,
+      "misconception": "I got 87/60 and gave the numerator, 87, without reducing the fraction."
+    },
+    {
+      "key": "E",
+      "text": "$720$",
+      "correct": false,
+      "misconception": "I used 2 times 3 times 4 times 5 times 6 = 720 as the denominator and did not reduce the fraction."
+    }
+  ],
+  "hints": [
+    "Find the least common denominator of $2, 3, 4, 5$ and $6$.",
+    "It is $60$. Rewrite each fraction over $60$ and add the numerators.",
+    "$30 + 20 + 15 + 12 + 10 = 87$, so the sum is $\\dfrac{87}{60}$. Is that in lowest terms?"
+  ],
+  "solutions": {
+    "reliable": "The least common denominator of $2, 3, 4, 5, 6$ is $60$, and the sum is $\\dfrac{30 + 20 + 15 + 12 + 10}{60} = \\dfrac{87}{60}$. Since $87 = 3 \\cdot 29$ and $60 = 3 \\cdot 20$, this reduces to $\\dfrac{29}{20}$, and $29$ is a prime that does not divide $20$, so the fraction is now in lowest terms. So $n = 20$.",
+    "elegant": "Group the terms: $\\dfrac{1}{2} + \\dfrac{1}{3} + \\dfrac{1}{6} = 1$ and $\\dfrac{1}{4} + \\dfrac{1}{5} = \\dfrac{9}{20}$, so the sum is $1 + \\dfrac{9}{20} = \\dfrac{29}{20}$."
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

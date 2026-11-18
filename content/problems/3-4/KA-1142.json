@@ -1,0 +1,68 @@
+{
+  "id": "KA-1142",
+  "band": "3-4",
+  "points": 3,
+  "statement": "A spinner shows the numbers 1, 2 and 3, each equally often. Zara spins it twice and adds the two numbers. In how many of the possible outcomes is the sum 4?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I only found 2 then 2 and missed 1 then 3 and 3 then 1."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted 1 then 3 and 3 then 1 as the same outcome, but the first and second spins are different."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted 2 then 2 twice, as if the two 2s could be swapped, but swapping them gives the same outcome."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted all the possible outcomes instead of only those with a sum of 4."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-01",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Write down every outcome as first spin, then second spin.",
+    "A tree diagram: three branches for the first spin, and three for the second spin from each. Read along each path and pick the ones whose sum is 4.",
+    "The paths are 1 then 1, 1 then 2, 1 then 3, 2 then 1, and so on. Check which add to 4."
+  ],
+  "solutions": {
+    "reliable": "The tree has 3 branches for the first spin and 3 for the second, so 9 outcomes. Those with sum 4 are 1 then 3, 2 then 2, and 3 then 1. That is 3 outcomes. The transferable idea: in a tree diagram the order of the spins matters, so 1 then 3 and 3 then 1 are different paths.",
+    "elegant": null
+  },
+  "whyOnTest": "Drawing a tree keeps order straight and stops both double counting and missing outcomes.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

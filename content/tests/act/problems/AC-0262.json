@@ -1,0 +1,56 @@
+{
+  "id": "AC-0262",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-03",
+  "difficulty": "medium",
+  "statement": "A school surveyed $50$ students about how many minutes of recreational screen time they had on a school day. The results are shown in the table. $$\\begin{array}{c|c} \\text{Minutes} & \\text{Number of students} \\\\ \\hline 0 \\text{ to less than } 30 & 4 \\\\ 30 \\text{ to less than } 60 & 7 \\\\ 60 \\text{ to less than } 90 & 9 \\\\ 90 \\text{ to less than } 120 & 13 \\\\ 120 \\text{ to less than } 150 & 17 \\end{array}$$ Using the midpoint of each interval to represent every student in that interval, what is the estimated mean screen time, in minutes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$79.2$",
+      "correct": false,
+      "misconception": "I used the left end of each interval, 0, 30, 60, 90 and 120, instead of the midpoints."
+    },
+    {
+      "key": "B",
+      "text": "$94.2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$105$",
+      "correct": false,
+      "misconception": "I found the interval that holds the median, 90 to less than 120, and gave its midpoint as the mean."
+    },
+    {
+      "key": "D",
+      "text": "$109.2$",
+      "correct": false,
+      "misconception": "I used the right end of each interval, 30, 60, 90, 120 and 150, instead of the midpoints."
+    }
+  ],
+  "hints": [
+    "Each interval is $30$ minutes wide. What is the midpoint of $0$ to $30$?",
+    "Multiply each midpoint by its number of students, add the products and divide by the total number of students.",
+    "The midpoints are $15, 45, 75, 105, 135$. Compute $4(15) + 7(45) + 9(75) + 13(105) + 17(135)$ and divide by $50$."
+  ],
+  "solutions": {
+    "reliable": "The midpoints are $15$, $45$, $75$, $105$ and $135$. The estimated total is $4(15) + 7(45) + 9(75) + 13(105) + 17(135) = 60 + 315 + 675 + 1365 + 2295 = 4710$ minutes. The estimated mean is $\\dfrac{4710}{50} = 94.2$ minutes.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

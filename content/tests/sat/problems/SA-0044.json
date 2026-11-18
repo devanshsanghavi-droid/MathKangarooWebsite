@@ -1,0 +1,56 @@
+{
+  "id": "SA-0044",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "medium",
+  "statement": "A video streaming service offers two plans. The Basic plan costs $\\$9$ per month plus $\\$2$ for each movie rented. The Plus plan costs $\\$15$ per month plus $\\$0.50$ for each movie rented. For what number of movie rentals in a month do the two plans cost the same amount?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2.4$",
+      "correct": false,
+      "misconception": "I added the $0.5r$ to the left side instead of subtracting it, so I got $2.5r = 6$ and $r = 2.4$."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I added the 9 to the 15 instead of subtracting it when I moved it across, so I got $1.5r = 24$ and $r = 16$."
+    },
+    {
+      "key": "D",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I solved for the number of rentals correctly but reported the matching cost, $9 + 2(4) = 17$ dollars, instead of the number of rentals."
+    }
+  ],
+  "hints": [
+    "Write the monthly cost of each plan as an expression in $r$, the number of rentals.",
+    "Set the two costs equal to each other and solve for $r$.",
+    "$9 + 2r = 15 + 0.5r$. Collect the $r$ terms on one side and the numbers on the other."
+  ],
+  "solutions": {
+    "reliable": "The Basic plan costs $9 + 2r$ dollars and the Plus plan costs $15 + 0.5r$ dollars. Setting them equal: $9 + 2r = 15 + 0.5r$, so $1.5r = 6$ and $r = 4$. Check: the Basic plan costs $9 + 8 = 17$ and the Plus plan costs $15 + 2 = 17$.",
+    "elegant": "The Plus plan starts $6$ dollars higher, and the Basic plan closes that gap by $1.50$ dollars with each rental, so it takes $6 \\div 1.5 = 4$ rentals."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

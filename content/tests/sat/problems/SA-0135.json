@@ -1,0 +1,56 @@
+{
+  "id": "SA-0135",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-03",
+  "difficulty": "medium",
+  "statement": "In the $xy$-plane, the vertex of the graph of $y = x^2 - 6x + c$, where $c$ is a constant, lies on the line $y = 2x$. What is the value of $c$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found the vertex at $x = 3$ and the point $(3, 6)$ on the line, then set $c$ itself equal to $6$."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I set the vertex's $y$-coordinate, $c - 9$, equal to $3$, the $x$-coordinate, forgetting to double it for the line $y = 2x$."
+    },
+    {
+      "key": "D",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I computed the vertex's $y$-coordinate as $9 - 18 + c$ but simplified it to $c + 9$, so I solved $c + 9 = 6$."
+    }
+  ],
+  "hints": [
+    "Find the $x$-coordinate of the vertex first.",
+    "The vertex is at $x = -\\frac{b}{2a} = 3$. Find its $y$-coordinate in terms of $c$, and find the point on $y = 2x$ with $x = 3$.",
+    "The vertex is $(3, c - 9)$ and the line passes through $(3, 6)$, so $c - 9 = 6$."
+  ],
+  "solutions": {
+    "reliable": "The $x$-coordinate of the vertex is $-\\frac{-6}{2(1)} = 3$, and its $y$-coordinate is $3^2 - 6(3) + c = c - 9$. The vertex lies on $y = 2x$, so $c - 9 = 2(3) = 6$ and $c = 15$. Check: $y = x^2 - 6x + 15 = (x - 3)^2 + 6$ has vertex $(3, 6)$, and $6 = 2 \\cdot 3$.",
+    "elegant": "Complete the square: $x^2 - 6x + c = (x - 3)^2 + (c - 9)$, so the vertex is $(3, c - 9)$, and $c - 9 = 6$."
+  },
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

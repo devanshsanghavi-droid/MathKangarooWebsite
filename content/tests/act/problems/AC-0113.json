@@ -1,0 +1,56 @@
+{
+  "id": "AC-0113",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-07",
+  "difficulty": "medium",
+  "statement": "In the standard $(x, y)$ coordinate plane, the lines $2x + 3y = 12$ and $kx - y = 8$ intersect at a point on the $x$-axis. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-\\frac{4}{3}$",
+      "correct": false,
+      "misconception": "I rewrote $kx - y = 8$ as $y = kx + 8$, getting the sign of the $8$ wrong, so at the point $(6, 0)$ I solved $0 = 6k + 8$."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{3}{4}$",
+      "correct": false,
+      "misconception": "I found the meeting point $(6, 0)$ correctly, but I solved $6k = 8$ by dividing $6$ by $8$ instead of $8$ by $6$."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{4}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I found the $x$-intercept of $2x + 3y = 12$ by dividing $12$ by $3$ instead of by $2$, so I used the point $(4, 0)$ and solved $4k = 8$."
+    }
+  ],
+  "hints": [
+    "Every point on the $x$-axis has $y = 0$.",
+    "Find where $2x + 3y = 12$ crosses the $x$-axis. That point must also lie on $kx - y = 8$.",
+    "Setting $y = 0$ in the first equation gives $x = 6$, so $(6, 0)$ is on both lines."
+  ],
+  "solutions": {
+    "reliable": "On the $x$-axis, $y = 0$, so the first line gives $2x = 12$ and crosses the $x$-axis at $(6, 0)$. The second line passes through this point too: $k(6) - 0 = 8$, so $k = \\frac{8}{6} = \\frac{4}{3}$. Check: the lines have slopes $-\\frac{2}{3}$ and $\\frac{4}{3}$, so they meet at exactly one point, and $\\frac{4}{3}(6) - 0 = 8$.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

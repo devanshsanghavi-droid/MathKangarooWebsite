@@ -1,0 +1,67 @@
+{
+  "id": "KA-1199",
+  "band": "3-4",
+  "points": 3,
+  "statement": "The numbers 1, 2, 3, ... fill a table 4 columns wide: 1 to 4 in row 1, 5 to 8 in row 2, and so on. What number is in row 9, column 2?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "18",
+      "correct": false,
+      "misconception": "I thought the numbers in column 2 go up by 2 from each row to the next."
+    },
+    {
+      "key": "B",
+      "text": "35",
+      "correct": false,
+      "misconception": "I found row 9, which is 33, 34, 35, 36, but counted the columns from the right."
+    },
+    {
+      "key": "C",
+      "text": "34",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "37",
+      "correct": false,
+      "misconception": "I thought row 9 starts at $9 \\times 4 = 36$, so its second number is 37."
+    },
+    {
+      "key": "E",
+      "text": "38",
+      "correct": false,
+      "misconception": "I started at 2 and added 4 nine times instead of eight times."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-06",
+    "secondary": [
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "What is the last number in each row?",
+    "Each row ends with a multiple of 4. Find the last number of row 8, then count along row 9.",
+    "Row 8 ends with $8 \\times 4 = 32$, so row 9 is 33, 34, 35, 36."
+  ],
+  "solutions": {
+    "reliable": "Row 8 ends at $8 \\times 4 = 32$. Row 9 is 33, 34, 35, 36, so column 2 holds 34. The transferable idea: in a table filled row by row, the end of each row gives you a landmark.",
+    "elegant": "Column 2 holds 2, 6, 10, ..., going up by 4. Row 9 is 8 steps down from row 1: $2 + 8 \\times 4 = 34$."
+  },
+  "whyOnTest": "Tables filled row by row: use the end of a row as a landmark and watch for the off-by-one between rows and steps.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

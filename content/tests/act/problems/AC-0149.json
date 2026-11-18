@@ -1,0 +1,56 @@
+{
+  "id": "AC-0149",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-08",
+  "difficulty": "medium",
+  "statement": "A Ferris wheel turns at a constant speed. The height, in feet, of one seat above the ground $t$ minutes after the ride starts is $h(t) = 40 - 35\\cos\\left(\\dfrac{\\pi t}{6}\\right)$. What is the seat's maximum height, and when does the seat first reach it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$75$ feet, at $t = 0$",
+      "correct": false,
+      "misconception": "I thought cosine starts at its peak, so the seat starts at the top, but the minus sign means it starts at the bottom, 5 feet up."
+    },
+    {
+      "key": "B",
+      "text": "$75$ feet, at $t = 3$",
+      "correct": false,
+      "misconception": "I thought the seat reaches the top a quarter of the way around, but a quarter turn only brings it level with the center, 40 feet up."
+    },
+    {
+      "key": "C",
+      "text": "$75$ feet, at $t = 6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$75$ feet, at $t = 12$",
+      "correct": false,
+      "misconception": "I found the period, 12 minutes, and thought the top comes after one full turn, but a full turn brings the seat back to where it started."
+    }
+  ],
+  "hints": [
+    "Cosine ranges from $-1$ to $1$. Because $35\\cos$ is subtracted, which value of the cosine makes $h$ largest?",
+    "$h$ is largest when $\\cos\\left(\\frac{\\pi t}{6}\\right) = -1$. Find the first positive $t$ where that happens.",
+    "$\\cos\\theta = -1$ first at $\\theta = \\pi$, so solve $\\frac{\\pi t}{6} = \\pi$."
+  ],
+  "solutions": {
+    "reliable": "Because $35\\cos\\left(\\frac{\\pi t}{6}\\right)$ is subtracted, $h$ is largest when the cosine equals $-1$, giving $h = 40 + 35 = 75$ feet. The cosine first equals $-1$ when $\\frac{\\pi t}{6} = \\pi$, that is $t = 6$ minutes. At $t = 0$, $h = 40 - 35 = 5$ feet, the bottom of the wheel.",
+    "elegant": "The period is $\\frac{2\\pi}{\\pi/6} = 12$ minutes and the seat starts at the bottom, since $h(0) = 5$. It reaches the top half a turn later, at $t = 6$, at a height of $40 + 35 = 75$ feet."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1128",
+  "band": "3-4",
+  "points": 4,
+  "statement": "At a party, 4 girls and 3 boys meet. Each girl shakes hands once with each boy, and every two girls shake hands once. Boys never shake hands. How many handshakes are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I only counted the handshakes between two girls and forgot the girls shaking hands with the boys."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I only counted the girl and boy handshakes and forgot that the girls also shake hands with each other."
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": false,
+      "misconception": "I counted the girl and boy handshakes as $4 + 3 = 7$ instead of $4 \\times 3 = 12$, then added the 6 between girls."
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": false,
+      "misconception": "I counted the handshakes between the boys, 3, instead of the handshakes between the girls, 6."
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-08",
+    "secondary": [
+      "CNT-03",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "There are two kinds of handshake here. Count each kind on its own.",
+    "Split into girl and boy handshakes, where each girl meets each boy, and girl and girl handshakes, where each pair of girls meets once. Add the two kinds.",
+    "Each of the 4 girls shakes hands with 3 boys: $4 \\times 3 = 12$. The pairs of girls are $3 + 2 + 1 = 6$."
+  ],
+  "solutions": {
+    "reliable": "Girl and boy handshakes: each of the 4 girls shakes hands with each of the 3 boys, so there are $4 \\times 3 = 12$. Girl and girl handshakes: the first girl shakes hands with 3 others, the second with 2 new ones, the third with 1 new one, so $3 + 2 + 1 = 6$. No boy and boy handshakes. Total $12 + 6 = 18$. The transferable idea: when pairs come in different kinds, count each kind separately and add.",
+    "elegant": "All 7 children would make $6 + 5 + 4 + 3 + 2 + 1 = 21$ handshakes. The only missing ones are between the boys: $2 + 1 = 3$. So $21 - 3 = 18$."
+  },
+  "whyOnTest": "Counting pairs by sorting them into kinds, or counting all pairs and removing the forbidden ones, is the heart of handshake problems.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

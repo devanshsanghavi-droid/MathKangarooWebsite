@@ -1,0 +1,56 @@
+{
+  "id": "SA-0249",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-07",
+  "difficulty": "easy",
+  "statement": "An apartment complex has $2{,}400$ apartments. The manager randomly selects $150$ of the apartments and finds that $27$ of them have at least one pet. Based on this sample, which of the following is the best estimate of the number of apartments in the complex that have at least one pet?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$405$",
+      "correct": false,
+      "misconception": "I applied the 18% rate only to the 2,250 apartments outside the sample and forgot to add back the 27 pet apartments I had already found."
+    },
+    {
+      "key": "B",
+      "text": "$432$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$648$",
+      "correct": false,
+      "misconception": "I treated the 27 pet apartments as 27%, but 27 out of 150 is 18%, not 27%."
+    },
+    {
+      "key": "D",
+      "text": "$1{,}968$",
+      "correct": false,
+      "misconception": "I found 432 but then subtracted it from 2,400, which estimates the apartments without pets."
+    }
+  ],
+  "hints": [
+    "What fraction of the sampled apartments have a pet?",
+    "Assume the whole complex has the same fraction of pet apartments as the random sample, then apply that fraction to $2{,}400$.",
+    "In the sample, $\\frac{27}{150} = 0.18$, or $18\\%$, of the apartments have a pet."
+  ],
+  "solutions": {
+    "reliable": "In the random sample, $\\frac{27}{150} = 0.18$ of the apartments have a pet. Applying this proportion to the whole complex gives $0.18 \\times 2{,}400 = 432$ apartments. Check: $2{,}400$ is $16$ times $150$, and $16 \\times 27 = 432$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

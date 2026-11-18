@@ -1,0 +1,68 @@
+{
+  "id": "KA-1397",
+  "band": "7-8",
+  "points": 5,
+  "statement": "In the sum ABC + AB + A = BCB, each letter stands for a digit, different letters stand for different digits, and A is not 0. ABC and BCB are three-digit numbers and AB is a two-digit number. What is the three-digit number ABC?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "337",
+      "correct": false,
+      "misconception": "I did not notice that B came out equal to A, which is not allowed because different letters stand for different digits."
+    },
+    {
+      "key": "B",
+      "text": "674",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "747",
+      "correct": false,
+      "misconception": "I found the digits correctly but gave the total BCB instead of ABC."
+    },
+    {
+      "key": "D",
+      "text": "129",
+      "correct": false,
+      "misconception": "I used only the units column, A + C = 10, and the hundreds column, B = A + 1, and took the smallest A without checking the tens column."
+    },
+    {
+      "key": "E",
+      "text": "No such number exists",
+      "correct": false,
+      "misconception": "I forgot the carry from the units column into the tens column, found that no digits worked, and decided there was no answer."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "CNT-04",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Start with the units: C + B + A must end in B.",
+    "So A + C ends in 0, meaning A + C = 10 with 1 carried into the tens. In the hundreds column, B is A plus the carry from the tens, and B cannot equal A.",
+    "So 1 is carried from the tens column and B = A + 1. The tens column then says B + A + 1 = C + 10. Use C = 10 - A and B = A + 1 to find A."
+  ],
+  "solutions": {
+    "reliable": "Units column: C + B + A ends in B, so A + C ends in 0. Both are digits and A is not 0, so A + C = 10, and 1 is carried into the tens column. Hundreds column: A plus the carry from the tens column gives B. B cannot equal A, so the carry is 1 and B = A + 1. Tens column: B + A + 1 = C + 10, because it ends in C and carries 1. Substituting B = A + 1 and C = 10 - A gives 2A + 2 = 20 - A, so 3A = 18 and A = 6. Then B = 7 and C = 4. Check: 674 + 67 + 6 = 747, which is BCB. So ABC = 674. The transferable idea: in a cryptarithm, work column by column and keep track of every carry.",
+    "elegant": null
+  },
+  "whyOnTest": "A column-by-column cryptarithm where the carries decide everything, and the 'different digits' rule removes a tempting second solution.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "AM-1077",
+  "contest": "AMC8",
+  "slot": 1,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-COMPLEMENT"
+  ],
+  "statement": "A cardboard box with no lid is $5$ cm long, $4$ cm wide and $3$ cm tall. Lena covers the whole outside of the box, including the bottom, with colored paper, with no overlaps. Ignoring the thickness of the cardboard, how many square centimeters of paper does she use?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$54$",
+      "correct": false,
+      "misconception": "I covered only the four sides, 15 + 15 + 12 + 12 = 54, and forgot the bottom of the box."
+    },
+    {
+      "key": "B",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I found the volume of the box, 5 times 4 times 3 = 60, instead of the total area of its faces."
+    },
+    {
+      "key": "C",
+      "text": "$74$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$94$",
+      "correct": false,
+      "misconception": "I found the surface area of a closed box, 94, and forgot that this box has no lid."
+    },
+    {
+      "key": "E",
+      "text": "$100$",
+      "correct": false,
+      "misconception": "I treated all five faces as if each were the same size as the 5 by 4 bottom, so I got 5 times 20 = 100."
+    }
+  ],
+  "hints": [
+    "List the faces of the box. Without a lid, how many faces are there?",
+    "There is a $5$ by $4$ bottom, two $5$ by $3$ sides and two $4$ by $3$ sides.",
+    "The bottom has area $20$, the two long sides $15 + 15 = 30$ and the two short sides $12 + 12 = 24$. Add them."
+  ],
+  "solutions": {
+    "reliable": "The box has five faces: the bottom, with area $5 \\cdot 4 = 20$ square cm; two long sides, each $5 \\cdot 3 = 15$; and two short sides, each $4 \\cdot 3 = 12$. The total is $20 + 2 \\cdot 15 + 2 \\cdot 12 = 20 + 30 + 24 = 74$ square centimeters.",
+    "elegant": "A closed box would need $2(5 \\cdot 4 + 5 \\cdot 3 + 4 \\cdot 3) = 2 \\cdot 47 = 94$ square cm of paper. The missing lid is a $5$ by $4$ face, so Lena uses $94 - 20 = 74$."
+  },
+  "formulas": [
+    "F-GEO-16"
+  ],
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

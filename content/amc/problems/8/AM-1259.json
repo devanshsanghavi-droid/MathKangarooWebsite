@@ -1,0 +1,68 @@
+{
+  "id": "AM-1259",
+  "contest": "AMC8",
+  "slot": 11,
+  "area": "CP",
+  "topic": "CP-06",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A drawer holds $4$ different pairs of gloves, $8$ gloves in all. Each pair has one left glove and one right glove. Ellie takes out $2$ gloves at random. What is the probability that she gets one left glove and one right glove that do not belong to the same pair?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{1}{7}$",
+      "correct": false,
+      "misconception": "I found the probability of a left and a right glove from the same pair, 4 out of 28, instead of from different pairs."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{3}{8}$",
+      "correct": false,
+      "misconception": "I treated the second draw as if the first glove went back in the drawer, so I got 2 x (4/8) x (3/8) = 3/8."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{3}{7}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I thought each glove is a left or a right like a coin flip, so getting one of each happens half the time."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{4}{7}$",
+      "correct": false,
+      "misconception": "I counted every left and right combination, 4 x 4 = 16 out of 28, but forgot to remove the 4 matching pairs."
+    }
+  ],
+  "hints": [
+    "Count the ways to choose $2$ of the $8$ gloves, and count the good choices.",
+    "There are $\\binom{8}{2} = 28$ ways to choose the gloves. A left and a right can be chosen in $4 \\times 4$ ways.",
+    "Of the $16$ left and right combinations, $4$ are matching pairs and must be removed."
+  ],
+  "solutions": {
+    "reliable": "There are $\\binom{8}{2} = 28$ equally likely ways to choose $2$ gloves. Choosing one left glove and one right glove can be done in $4 \\times 4 = 16$ ways, and exactly $4$ of these are matching pairs. So $16 - 4 = 12$ choices are good, and the probability is $\\frac{12}{28} = \\frac{3}{7}$.",
+    "elegant": "Whatever Ellie's first glove is, $7$ gloves remain, and exactly $3$ of them are of the opposite hand and from a different pair. So the probability is $\\frac{3}{7}$."
+  },
+  "formulas": [
+    "F-CP-03"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

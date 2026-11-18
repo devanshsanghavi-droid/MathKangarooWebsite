@@ -1,0 +1,56 @@
+{
+  "id": "SA-0074",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "hard",
+  "statement": "A pottery studio makes $x$ small planters and $y$ large planters each day. A small planter uses $1$ kilogram of clay and a large planter uses $2$ kilograms; the studio has $16$ kilograms of clay per day. A small planter needs $3$ minutes in the glazing booth and a large planter needs $1$ minute; the booth is available for $18$ minutes per day. The profit is $20$ dollars per small planter and $30$ dollars per large planter. What is the greatest possible daily profit, in dollars?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I made only small planters because the glazing limit allows 6 of them, and $6 \\times 20 = 120$, without trying other mixes."
+    },
+    {
+      "key": "B",
+      "text": "$240$",
+      "correct": false,
+      "misconception": "I only checked the corners on the axes and picked 8 large planters for 240 dollars, missing the corner where both limits are used up."
+    },
+    {
+      "key": "C",
+      "text": "$260$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$360$",
+      "correct": false,
+      "misconception": "I took the most small planters (6) and the most large planters (8) separately and added their profits, but the studio cannot make both at once."
+    }
+  ],
+  "hints": [
+    "Write one inequality for clay and one for glazing time.",
+    "The constraints are $x + 2y \\le 16$, $3x + y \\le 18$, $x \\ge 0$ and $y \\ge 0$. The greatest profit occurs at a corner of this region.",
+    "The corners are $(0, 0)$, $(6, 0)$, $(0, 8)$ and the intersection of $x + 2y = 16$ with $3x + y = 18$, which is $(4, 6)$. Evaluate $20x + 30y$ at each."
+  ],
+  "solutions": {
+    "reliable": "The constraints are $x + 2y \\le 16$ (clay), $3x + y \\le 18$ (glazing), $x \\ge 0$ and $y \\ge 0$. The corners of the feasible region are $(0, 0)$, $(6, 0)$, $(0, 8)$ and the point where both limits are tight: from $3x + y = 18$, $y = 18 - 3x$, so $x + 36 - 6x = 16$, $x = 4$ and $y = 6$. The profit $20x + 30y$ is $0$, $120$, $240$ and $80 + 180 = 260$ at these corners. The greatest is $260$ dollars, at $4$ small and $6$ large planters, which uses exactly $16$ kilograms of clay and $18$ minutes of glazing.",
+    "elegant": "Profit is $10(2x + 3y)$, and $2x + 3y = \\frac{7}{5}(x + 2y) + \\frac{1}{5}(3x + y) \\le \\frac{7}{5}(16) + \\frac{1}{5}(18) = 26$. So the profit is at most $260$ dollars, and $(4, 6)$ reaches it."
+  },
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

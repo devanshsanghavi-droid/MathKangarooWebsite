@@ -1,0 +1,68 @@
+{
+  "id": "KA-1395",
+  "band": "7-8",
+  "points": 4,
+  "statement": "In a choir, 40% of the singers are boys. Then 6 more boys join the choir, and now exactly half of the singers are boys. How many singers are in the choir now?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found how many boys were in the choir at the start."
+    },
+    {
+      "key": "B",
+      "text": "18",
+      "correct": false,
+      "misconception": "I found how many boys are in the choir now, not how many singers."
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": false,
+      "misconception": "I found how many singers there were before the new boys joined."
+    },
+    {
+      "key": "E",
+      "text": "60",
+      "correct": false,
+      "misconception": "I thought the 6 new boys raised the share by 10 percentage points, so 6 is 10% of the choir."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-10",
+    "secondary": [
+      "MOD-01",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Call the number of singers at the start n. How many boys is that?",
+    "Write the number of boys before and after in terms of n. After 6 boys join, the boys are half of n + 6 singers. Set up one equation, and read carefully which total the question asks for.",
+    "0.4n + 6 = 0.5(n + 6). This gives 0.1n = 3, so n = 30 at the start."
+  ],
+  "solutions": {
+    "reliable": "Let the choir start with n singers, so 0.4n are boys. After 6 boys join there are n + 6 singers and 0.4n + 6 boys, and this is half: 0.4n + 6 = 0.5n + 3, so 0.1n = 3 and n = 30. The choir now has 30 + 6 = 36 singers, 18 of them boys, which is exactly half. The transferable idea: when a percentage changes because people join, the total changes too, so write both the part and the whole in terms of one unknown.",
+    "elegant": "The girls do not change. At the start they are 60% of the choir, at the end 50%. So the new total is 60/50 of the old one, and the 6 boys are the difference: the old total is 30 and the new one is 36."
+  },
+  "whyOnTest": "Percentages of a changing whole: the base of the percentage moves when people join, which is the trap here.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

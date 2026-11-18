@@ -1,0 +1,56 @@
+{
+  "id": "AC-0005",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-01",
+  "difficulty": "medium",
+  "statement": "A science teacher has $84$ magnets and $126$ batteries. She packs them into identical kits, with every kit holding the same number of magnets and the same number of batteries. She uses every item and makes as many kits as possible. How many items (magnets and batteries together) does each kit hold?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found 2 magnets and 3 batteries per kit, then multiplied $2 \\cdot 3 = 6$ instead of adding them."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I used 21 because it divides both numbers, giving 4 magnets and 6 batteries per kit, but 21 is not the greatest common factor."
+    },
+    {
+      "key": "D",
+      "text": "$42$",
+      "correct": false,
+      "misconception": "I found the greatest common factor, 42, but that is the number of kits, not the number of items in each kit."
+    }
+  ],
+  "hints": [
+    "The number of kits must divide both $84$ and $126$ evenly.",
+    "As many kits as possible means the greatest common factor of $84$ and $126$. Then divide each count by it.",
+    "$84 = 2^2 \\cdot 3 \\cdot 7$ and $126 = 2 \\cdot 3^2 \\cdot 7$, so the greatest common factor is $2 \\cdot 3 \\cdot 7 = 42$."
+  ],
+  "solutions": {
+    "reliable": "The number of kits must divide both $84$ and $126$, and we want the largest such number, the greatest common factor. From $84 = 2^2 \\cdot 3 \\cdot 7$ and $126 = 2 \\cdot 3^2 \\cdot 7$, it is $2 \\cdot 3 \\cdot 7 = 42$. So there are $42$ kits, each with $84 \\div 42 = 2$ magnets and $126 \\div 42 = 3$ batteries, which is $5$ items per kit.",
+    "elegant": "The ratio $84 : 126$ reduces to $2 : 3$. The most kits means the fewest items per kit, which is the fully reduced ratio, so each kit holds $2 + 3 = 5$ items."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

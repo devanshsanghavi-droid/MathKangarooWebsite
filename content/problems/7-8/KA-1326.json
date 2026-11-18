@@ -1,0 +1,67 @@
+{
+  "id": "KA-1326",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A quiz team of 3 is chosen from 5 girls and 4 boys. The team must have exactly 2 girls and 1 boy. How many different teams are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "84",
+      "correct": false,
+      "misconception": "I chose any 3 of the 9 children and forgot the team needs exactly 2 girls and 1 boy."
+    },
+    {
+      "key": "B",
+      "text": "40",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "80",
+      "correct": false,
+      "misconception": "I picked a first girl in 5 ways and a second girl in 4 ways, so every pair of girls was counted twice: $5 \\times 4 \\times 4 = 80$."
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": false,
+      "misconception": "I added the 10 ways to pick the girls and the 4 ways to pick the boy instead of multiplying them."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": false,
+      "misconception": "I counted teams with 2 boys and 1 girl, $6 \\times 5 = 30$, mixing up which group gives two members."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Pick the girls and the boy as two separate jobs.",
+    "Count the pairs of girls, remembering that the order inside a pair does not matter. Then count the choices of boy, and combine with the multiplication principle, because every pair can go with every boy.",
+    "There are $5 \\times 4 \\div 2 = 10$ pairs of girls and 4 boys, and each pair can go with each boy."
+  ],
+  "solutions": {
+    "reliable": "Choose the two girls first. A first girl in 5 ways and a second in 4 ways gives $5 \\times 4 = 20$, but each pair has been counted twice (Ana then Bea is the same pair as Bea then Ana), so there are 10 pairs. Any of the 4 boys can join any pair, so there are $10 \\times 4 = 40$ teams. The transferable idea: split a selection into independent parts, count each part as an unordered choice, then multiply.",
+    "elegant": null
+  },
+  "whyOnTest": "Tests choosing an unordered group in parts: halving the ordered count of girl pairs, then multiplying by the choices for the boy.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

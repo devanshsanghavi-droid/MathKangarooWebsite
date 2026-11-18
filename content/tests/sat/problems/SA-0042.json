@@ -1,0 +1,56 @@
+{
+  "id": "SA-0042",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "hard",
+  "statement": "In the system of equations below, $a$ and $b$ are constants. $$\\begin{aligned} ax + 5y &= 6 \\\\ 12x + by &= 18 \\end{aligned}$$ If the system has infinitely many solutions, what is the value of $a + b$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{17}{3}$",
+      "correct": false,
+      "misconception": "I found $a = 4$ correctly but then divided 5 by 3 for $b$ instead of multiplying, so I got $4 + \\dfrac{5}{3} = \\dfrac{17}{3}$."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I found $a = 4$ but kept $b = 5$ from the first equation instead of scaling it by 3, so I got $4 + 5 = 9$."
+    },
+    {
+      "key": "C",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I thought the two equations had to have the same coefficients, so I set $a = 12$ and $b = 5$ and got 17."
+    },
+    {
+      "key": "D",
+      "text": "$19$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Infinitely many solutions means the two equations describe the same line.",
+    "Then one equation is a constant multiple of the other. Use the constants on the right side to find that multiple.",
+    "Since $18 = 3 \\cdot 6$, the second equation is $3$ times the first: $12 = 3a$ and $b = 3 \\cdot 5$."
+  ],
+  "solutions": {
+    "reliable": "For infinitely many solutions the second equation must be a multiple of the first. Comparing the right sides, $18 = 3 \\cdot 6$, so the multiple is $3$. Then $3a = 12$ gives $a = 4$, and $b = 3 \\cdot 5 = 15$. So $a + b = 19$. Check: $3(4x + 5y) = 12x + 15y$ and $3 \\cdot 6 = 18$.",
+    "elegant": null
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

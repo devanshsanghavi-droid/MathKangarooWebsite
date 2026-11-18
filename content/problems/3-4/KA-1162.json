@@ -1,0 +1,67 @@
+{
+  "id": "KA-1162",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Lea, Max and Noor have different bags (red, blue, green) and fruits (apple, banana, cherry). The apple is in the red bag. Max's is blue. Lea's isn't green. Noor hasn't got the banana. Who has?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Max, in the blue bag",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "Noor, in the green bag",
+      "correct": false,
+      "misconception": "I missed the clue that Noor does not have the banana."
+    },
+    {
+      "key": "C",
+      "text": "Lea, in the red bag",
+      "correct": false,
+      "misconception": "I forgot that the apple is in the red bag, so I let Lea have the banana in her red bag."
+    },
+    {
+      "key": "D",
+      "text": "Max, in the green bag",
+      "correct": false,
+      "misconception": "I mixed up the bag clue and gave Max the green bag instead of the blue one."
+    },
+    {
+      "key": "E",
+      "text": "Lea, in the green bag",
+      "correct": false,
+      "misconception": "I missed the clue that Lea's bag is not green, so I let Lea take the green bag and the banana."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-03",
+    "secondary": [
+      "LOG-01"
+    ]
+  },
+  "hints": [
+    "Start with the bags: which clue fixes a bag straight away?",
+    "Settle the bag colours first, because two clues are about bags. Then the apple clue links one bag to a fruit, and the last clue settles the other two fruits.",
+    "Max has blue, and Lea's bag is not green, so Lea has red and Noor has green. The apple is in the red bag, so Lea has the apple. Noor has no banana."
+  ],
+  "solutions": {
+    "reliable": "Bags first. Max has the blue bag. Lea's bag is not green, and blue is taken, so Lea has red. That leaves green for Noor. The apple is in the red bag, so Lea has the apple. The banana and cherry go to Max and Noor, and Noor has no banana, so Noor has the cherry and Max has the banana, in his blue bag. Check every clue: apple in red, Max blue, Lea not green, Noor no banana. The transferable idea: fix the attribute with the most clues first, then link the rest.",
+    "elegant": null
+  },
+  "whyOnTest": "Elimination grids test using every clue and settling the most-constrained item first, which keeps a two-attribute puzzle short.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "AM-1031",
+  "contest": "AMC8",
+  "slot": 10,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": ["T-SUBSTITUTION"],
+  "statement": "In an arithmetic sequence, the $4$th term is $23$ and the $11$th term is $58$. What is the $30$th term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$118$",
+      "correct": false,
+      "misconception": "I correctly counted 19 steps of 5, but I started from the 4th term, 23, instead of from the 11th term."
+    },
+    {
+      "key": "B",
+      "text": "$148$",
+      "correct": false,
+      "misconception": "I counted 18 steps from the 11th term to the 30th instead of 19, so I got 58 + 18 × 5 = 148."
+    },
+    {
+      "key": "C",
+      "text": "$150$",
+      "correct": false,
+      "misconception": "I found the common difference 5 and then assumed the nth term is just 5n, forgetting the starting value."
+    },
+    {
+      "key": "D",
+      "text": "$153$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$158$",
+      "correct": false,
+      "misconception": "I counted 20 steps from the 11th term to the 30th instead of 19, so I got 58 + 20 × 5 = 158."
+    }
+  ],
+  "hints": [
+    "Going from the $4$th term to the $11$th term takes $7$ equal steps.",
+    "Each step is $(58 - 23) / 7 = 5$.",
+    "From the $11$th term to the $30$th term there are $19$ more steps of $5$."
+  ],
+  "solutions": {
+    "reliable": "From the $4$th term to the $11$th term there are $11 - 4 = 7$ steps, covering $58 - 23 = 35$, so the common difference is $5$. From the $11$th term to the $30$th term there are $30 - 11 = 19$ steps, so the $30$th term is $58 + 19 \\cdot 5 = 153$.",
+    "elegant": "The first term is $23 - 3 \\cdot 5 = 8$, so the $n$th term is $8 + 5(n - 1) = 5n + 3$. Check: $5 \\cdot 4 + 3 = 23$ and $5 \\cdot 11 + 3 = 58$. The $30$th term is $5 \\cdot 30 + 3 = 153$."
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

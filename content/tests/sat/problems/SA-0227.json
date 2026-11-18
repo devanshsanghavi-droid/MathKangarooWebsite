@@ -1,0 +1,56 @@
+{
+  "id": "SA-0227",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-01",
+  "difficulty": "hard",
+  "statement": "A juice stand mixes orange juice and pineapple juice. A $20$-liter batch has orange juice and pineapple juice in the ratio $3:2$ by volume. How many liters of pineapple juice must be added to the batch so that the ratio of orange juice to pineapple juice becomes $4:5$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1.6$",
+      "correct": false,
+      "misconception": "I flipped the new ratio and made pineapple to orange 4:5, so I solved 12/p = 5/4, got p = 9.6 liters and added 9.6 - 8 = 1.6 liters."
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I saw pineapple go from 2 parts to 5 parts and added 3 parts of 4 liters each, but the orange juice stays at 12 liters, so the size of a part changes."
+    },
+    {
+      "key": "D",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I found that the batch needs 15 liters of pineapple juice in all, but 8 liters are already there, so 15 is not the amount to add."
+    }
+  ],
+  "hints": [
+    "How many liters of each juice are in the batch now?",
+    "Only the pineapple juice changes. Keep the orange juice fixed and find the pineapple amount that makes the ratio $4:5$.",
+    "The batch has $12$ liters of orange and $8$ liters of pineapple. Solve $\\frac{12}{p} = \\frac{4}{5}$ for the new pineapple amount $p$."
+  ],
+  "solutions": {
+    "reliable": "The batch is $\\frac{3}{5} \\times 20 = 12$ liters of orange juice and $\\frac{2}{5} \\times 20 = 8$ liters of pineapple juice. Adding pineapple juice does not change the $12$ liters of orange juice. For a $4:5$ ratio, $\\frac{12}{p} = \\frac{4}{5}$, so $4p = 60$ and $p = 15$ liters. The amount to add is $15 - 8 = 7$ liters. Check: $12 : 15 = 4 : 5$.",
+    "elegant": "Orange stays at $12$ liters, and in the new ratio orange is $4$ parts, so each part is $3$ liters. Pineapple must be $5$ parts, or $15$ liters, which is $7$ more than the $8$ liters already there."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

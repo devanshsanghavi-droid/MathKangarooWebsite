@@ -1,0 +1,56 @@
+{
+  "id": "AC-0284",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-04",
+  "difficulty": "hard",
+  "statement": "Researchers recorded the elevation $x$, in hundreds of meters, and the average July temperature $y$, in degrees Celsius, for many towns in a mountain region. The least-squares regression line has slope $-0.65$. The mean of the $x$-values is $12$ and the mean of the $y$-values is $24.5$. A least-squares regression line always passes through the point (mean of $x$, mean of $y$). What temperature does the line predict for a town at an elevation of $2{,}000$ meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$11.5$",
+      "correct": false,
+      "misconception": "I treated 24.5 as the y-intercept and computed 24.5 - 0.65 times 20, but 24.5 is the temperature at x = 12, not at x = 0."
+    },
+    {
+      "key": "B",
+      "text": "$19.3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$29.7$",
+      "correct": false,
+      "misconception": "I moved 8 units of x from the mean but added 0.65 times 8 instead of subtracting, ignoring that the slope is negative."
+    },
+    {
+      "key": "D",
+      "text": "$31$",
+      "correct": false,
+      "misconception": "I converted 2,000 meters to x = 2 by dividing by 1,000 and got 24.5 + 0.65 times 10, but x is in hundreds of meters, so 2,000 meters is x = 20."
+    }
+  ],
+  "hints": [
+    "Elevation is measured in hundreds of meters, so $2{,}000$ meters is $x = 20$. The point $(12, 24.5)$ is on the line.",
+    "Going from $x = 12$ to $x = 20$ changes $x$ by $8$. Each unit of $x$ changes the predicted temperature by $-0.65$.",
+    "The prediction is $24.5 + (-0.65)(8) = 24.5 - 5.2$."
+  ],
+  "solutions": {
+    "reliable": "The line passes through $(12, 24.5)$ with slope $-0.65$, so $\\hat{y} = 24.5 - 0.65(x - 12)$. An elevation of $2{,}000$ meters is $x = 20$, so $\\hat{y} = 24.5 - 0.65(8) = 24.5 - 5.2 = 19.3^\\circ\\text{C}$.",
+    "elegant": "Find the intercept first: $24.5 = b - 0.65(12)$ gives $b = 32.3$, so $\\hat{y} = 32.3 - 0.65x$. At $x = 20$: $32.3 - 13 = 19.3$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

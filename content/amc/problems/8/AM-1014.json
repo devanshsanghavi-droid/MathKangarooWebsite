@@ -1,0 +1,68 @@
+{
+  "id": "AM-1014",
+  "contest": "AMC8",
+  "slot": 5,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": [
+    "T-SYMMETRY"
+  ],
+  "statement": "What is the sum of all the integers from $-20$ to $30$, including both $-20$ and $30$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I added only the first and last numbers, -20 + 30 = 10."
+    },
+    {
+      "key": "B",
+      "text": "$250$",
+      "correct": false,
+      "misconception": "I used the average of the ends, (-20 + 30) / 2 = 5, but counted only 50 numbers from -20 to 30 instead of 51."
+    },
+    {
+      "key": "C",
+      "text": "$255$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$275$",
+      "correct": false,
+      "misconception": "I cancelled -20 through 20, but then added 20 through 30, counting 20 again even though it was already cancelled."
+    },
+    {
+      "key": "E",
+      "text": "$465$",
+      "correct": false,
+      "misconception": "I ignored the negative numbers and added 1 through 30."
+    }
+  ],
+  "hints": [
+    "Many of the numbers cancel in pairs.",
+    "Pair $-1$ with $1$, $-2$ with $2$, and so on up to $-20$ with $20$. Which numbers have no partner?",
+    "Everything from $-20$ to $20$ adds to $0$. What is left is $21 + 22 + \\dots + 30$."
+  ],
+  "solutions": {
+    "reliable": "The numbers from $-20$ to $20$ cancel in pairs (and $0$ adds nothing), so the sum is $21 + 22 + \\dots + 30$. That is $10$ numbers with average $\\frac{21 + 30}{2} = 25.5$, so the sum is $10 \\cdot 25.5 = 255$.",
+    "elegant": "There are $30 - (-20) + 1 = 51$ integers, and their average is the average of the ends, $\\frac{-20 + 30}{2} = 5$. So the sum is $51 \\cdot 5 = 255$."
+  },
+  "formulas": [
+    "F-ALG-03"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

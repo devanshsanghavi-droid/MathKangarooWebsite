@@ -1,0 +1,65 @@
+{
+  "id": "KA-1113",
+  "band": "3-4",
+  "points": 3,
+  "statement": "A bag holds 4 marbles. Each marble is red or blue. How many different bags are possible, if only the number of marbles of each colour matters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted only the bag that is all red and the bag that is all blue."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I left out the two bags that use only one colour."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I forgot the bag with no red marbles at all."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I multiplied 2 colours by 4 marbles instead of listing the bags."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": []
+  },
+  "hints": [
+    "List the bags by how many red marbles they have.",
+    "Systematic listing: the number of red marbles decides the whole bag, because the rest are blue. Go through every possible number of red marbles, including the smallest and the largest.",
+    "The bag can have 0, 1, 2, 3 or 4 red marbles, with the rest blue. That gives 5 different bags."
+  ],
+  "solutions": {
+    "reliable": "Count the red marbles: 0 red and 4 blue, 1 red and 3 blue, 2 red and 2 blue, 3 red and 1 blue, 4 red and 0 blue. That is 5 bags. The transferable idea: list in order of one quantity, from its smallest to its largest value, and include both ends.",
+    "elegant": null
+  },
+  "whyOnTest": "Listing in order shows that only the number of red marbles matters, and checks that the all-red and all-blue bags are not forgotten.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

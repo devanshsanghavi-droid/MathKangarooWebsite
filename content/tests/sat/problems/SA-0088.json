@@ -1,0 +1,56 @@
+{
+  "id": "SA-0088",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "easy",
+  "statement": "A weather balloon is released from a mountain observatory and rises at a constant rate. Two minutes after release, its altitude is $1{,}640$ meters, and five minutes after release, its altitude is $2{,}330$ meters. Which equation gives the balloon's altitude $A$, in meters, $t$ minutes after release?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$A = 230t + 1640$",
+      "correct": false,
+      "misconception": "I found the rate correctly but used the altitude at 2 minutes as the starting altitude."
+    },
+    {
+      "key": "B",
+      "text": "$A = 1180t + 230$",
+      "correct": false,
+      "misconception": "I found both numbers correctly but put the starting altitude where the rate goes and the rate where the starting value goes."
+    },
+    {
+      "key": "C",
+      "text": "$A = 230t + 1180$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$A = 690t + 260$",
+      "correct": false,
+      "misconception": "I used the 690-meter rise as the rate per minute without dividing by the 3 minutes, then worked back 2 minutes from 1,640 meters."
+    }
+  ],
+  "hints": [
+    "Find how many meters the balloon rises per minute.",
+    "Use the points $(2, 1640)$ and $(5, 2330)$ to find the slope, then work back to $t = 0$ for the altitude at release.",
+    "The slope is $\\frac{2330 - 1640}{5 - 2}$. Subtract $2$ times the slope from $1640$ to get the altitude at release."
+  ],
+  "solutions": {
+    "reliable": "The rate is $\\frac{2330 - 1640}{5 - 2} = \\frac{690}{3} = 230$ meters per minute. At $t = 2$ the balloon is at $1640$ meters, so at $t = 0$ it was at $1640 - 2(230) = 1180$ meters, the height of the observatory. So $A = 230t + 1180$. Check: $230(5) + 1180 = 2330$. Key idea: find the slope from two points, then find the intercept by stepping back to time zero.",
+    "elegant": null
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

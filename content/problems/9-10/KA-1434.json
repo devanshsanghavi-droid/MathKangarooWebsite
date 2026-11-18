@@ -1,0 +1,68 @@
+{
+  "id": "KA-1434",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A bag holds 6 red, 8 blue and 10 yellow balls. Without looking, Sam takes balls out one at a time. How many balls must he take to be certain of having at least two balls of each colour?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I took two of each colour, as if Sam could choose which balls come out."
+    },
+    {
+      "key": "B",
+      "text": "19",
+      "correct": false,
+      "misconception": "I allowed for all the yellow and blue balls coming out first and then made sure of only one red ball, but two are needed."
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": false,
+      "misconception": "I let all the yellow balls come out first and then took two of each other colour, but all the blue balls could come out too."
+    },
+    {
+      "key": "D",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": false,
+      "misconception": "I let all the yellow and blue balls come out first and forgot that he still needs two red ones."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "CNT-17",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "Imagine the unluckiest possible order of draws.",
+    "Worst-case counting: the colour that arrives last should be the one with the fewest balls. Count how many balls could come out before Sam has two of that colour.",
+    "All 10 yellow and all 8 blue balls could come out before any red ball."
+  ],
+  "solutions": {
+    "reliable": "In the worst case all 10 yellow and all 8 blue balls come out first, and Sam still has no red ball. He then needs 2 red balls, so $10 + 8 + 2 = 20$. With 19 balls, the bad case of 10 yellow, 8 blue and 1 red is possible, so 19 is not enough. With 20 balls, at most 18 are yellow or blue, so at least 2 are red; at most 16 are red or yellow, so at least 4 are blue; and at most 14 are red or blue, so at least 6 are yellow. The transferable idea: in a worst-case question, build the unluckiest sequence, then show that one more draw always breaks it.",
+    "elegant": null
+  },
+  "whyOnTest": "Certainty questions need the unluckiest case, and the trap is forgetting that two whole colours can be used up first.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

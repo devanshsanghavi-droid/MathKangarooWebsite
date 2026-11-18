@@ -1,0 +1,67 @@
+{
+  "id": "KA-1034",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Ella puts 12 square tiles, each with sides of 1 cm, together to make one rectangle. What is the largest possible distance all the way round her rectangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "13 cm",
+      "correct": false,
+      "misconception": "I added the length 12 and the width 1, but only once each."
+    },
+    {
+      "key": "B",
+      "text": "14 cm",
+      "correct": false,
+      "misconception": "I used the 3 by 4 rectangle, which gives the smallest distance round."
+    },
+    {
+      "key": "C",
+      "text": "16 cm",
+      "correct": false,
+      "misconception": "I stopped at the 2 by 6 rectangle and did not try one long row."
+    },
+    {
+      "key": "D",
+      "text": "24 cm",
+      "correct": false,
+      "misconception": "I counted the top and the bottom of one long row but forgot the two short ends."
+    },
+    {
+      "key": "E",
+      "text": "26 cm",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Which rectangles can 12 tiles make?",
+    "List every rectangle: rows times tiles in a row must make 12. Work out the distance round each one and compare. Long, thin shapes have more edge on the outside.",
+    "The rectangles are 1 by 12, 2 by 6 and 3 by 4. For 1 by 12, go round: 12 along the top, 1 down, 12 along the bottom, 1 up."
+  ],
+  "solutions": {
+    "reliable": "The rectangles made of 12 tiles are 1 by 12, 2 by 6 and 3 by 4. Their distances round are $12 + 1 + 12 + 1 = 26$ cm, $6 + 2 + 6 + 2 = 16$ cm and $4 + 3 + 4 + 3 = 14$ cm. The largest is 26 cm. The idea to keep: the same tiles can have very different distances round, and a long thin shape has the most.",
+    "elegant": "Every tile edge that touches another tile is hidden. A single row hides the fewest edges, only 11 joins, so it shows the most outside: $12 \\times 4 = 48$ edges, minus $2 \\times 11 = 22$ hidden ones, gives 26. The idea to keep: to make the outside long, make the tiles touch as little as possible."
+  },
+  "whyOnTest": "Comparing all rectangles with the same tiles shows that area and distance round are different things.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1370",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A 60 g bag of mixed nuts is 25% almonds by mass. Some of the mixture is scooped out and replaced by the same mass of pure almonds, so the bag again weighs 60 g and is now 40% almonds. How many grams of mixture were scooped out?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I forgot that the mixture scooped out also contained almonds, so I just added the 9 g of almonds that were missing."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": false,
+      "misconception": "I added almonds to the bag without scooping anything out and found how much makes 40%."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I gave the mass of almonds in the bag at the end instead of the mass scooped out."
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": false,
+      "misconception": "I gave the mass of the other nuts left at the end instead of the mass scooped out."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-08",
+    "secondary": [
+      "NUM-10",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Follow the nuts that are not almonds.",
+    "Only the scooping changes the mass of the other nuts, because the replacement is pure almonds. Find how many grams of other nuts there are before and after, and what fraction of a scoop is other nuts.",
+    "Other nuts go from 75% of 60 g to 60% of 60 g, that is from 45 g to 36 g. Each gram scooped out contains 0.75 g of other nuts."
+  ],
+  "solutions": {
+    "reliable": "At the start the bag has $0.25 \\times 60 = 15$ g of almonds and 45 g of other nuts. At the end it has $0.40 \\times 60 = 24$ g of almonds and 36 g of other nuts. The other nuts fell by 9 g, and that happened only through scooping, since the added mass is pure almonds. Every gram scooped out is 75% other nuts, so the mass scooped out is $9 \\div 0.75 = 12$ g. Check: scooping 12 g removes 3 g of almonds and 9 g of other nuts, and adding 12 g of almonds gives $15 - 3 + 12 = 24$ g of almonds in 60 g, which is 40%. The transferable idea: in a mixture problem, track the ingredient that changes in only one way.",
+    "elegant": "Let s grams be scooped out. Almonds: $15 - 0.25s + s = 24$, so $0.75s = 9$ and $s = 12$."
+  },
+  "whyOnTest": "Mixture problems test which quantity to track; following the ingredient that only leaves turns a messy change into one division.",
+  "estSeconds": 190,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

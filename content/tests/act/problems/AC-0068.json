@@ -1,0 +1,56 @@
+{
+  "id": "AC-0068",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "medium",
+  "statement": "For all $x$ where the expression is defined, which of the following is equivalent to $\\dfrac{x^2 - 9}{x^2 + x - 6}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{-9}{x - 6}$",
+      "correct": false,
+      "misconception": "I cancelled the $x^2$ on top with the $x^2$ on the bottom, but you can only cancel factors, not terms."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{x + 3}{x + 2}$",
+      "correct": false,
+      "misconception": "I factored the bottom as $(x - 3)(x + 2)$, with the signs on the wrong numbers, and then cancelled the $x - 3$."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{x - 3}{x - 2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{x + 3}{x - 2}$",
+      "correct": false,
+      "misconception": "I factored $x^2 - 9$ as $(x + 3)(x + 3)$ instead of $(x + 3)(x - 3)$, then cancelled one $x + 3$."
+    }
+  ],
+  "hints": [
+    "Factor the top and the bottom completely before cancelling anything.",
+    "The top is a difference of squares. For the bottom, find two numbers that multiply to $-6$ and add to $1$.",
+    "Top: $(x - 3)(x + 3)$. Bottom: $(x + 3)(x - 2)$. Cancel the common factor."
+  ],
+  "solutions": {
+    "reliable": "Factor: $x^2 - 9 = (x - 3)(x + 3)$ and $x^2 + x - 6 = (x + 3)(x - 2)$. Cancelling the common factor $x + 3$ (allowed where $x \\ne -3$) leaves $\\frac{x - 3}{x - 2}$. Check with $x = 0$: the original is $\\frac{-9}{-6} = \\frac{3}{2}$ and $\\frac{-3}{-2} = \\frac{3}{2}$.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

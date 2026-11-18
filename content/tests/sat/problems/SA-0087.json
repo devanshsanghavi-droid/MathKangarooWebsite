@@ -1,0 +1,56 @@
+{
+  "id": "SA-0087",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "medium",
+  "statement": "The value $V$, in dollars, of an office printer $t$ years after it was bought is modeled by $V(t) = 1{,}260 - 90t$. According to the model, after how many full years will the printer first be worth less than one-fourth of its purchase price?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I found when the printer is worth nothing, $1260 / 90 = 14$, instead of when it drops below one-fourth of its price."
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I solved $1260 - 90t = 315$ to get 10.5 and rounded down to 10, but after 10 years the printer is still worth 360 dollars."
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found when the printer had lost one-fourth of its value, $90t > 315$, which gave $t > 3.5$, so I said 4 years."
+    }
+  ],
+  "hints": [
+    "The purchase price is the value when $t = 0$.",
+    "Find one-fourth of the purchase price, then solve $1260 - 90t < 315$ for $t$ and think about whole years.",
+    "$1260 - 90t < 315$ gives $90t > 945$, so $t > 10.5$."
+  ],
+  "solutions": {
+    "reliable": "The purchase price is $V(0) = 1260$ dollars, and one-fourth of it is $315$. Solve $1260 - 90t < 315$: $-90t < -945$, so $t > 10.5$. The first full year with $t > 10.5$ is $t = 11$. Check: $V(10) = 360$, still above $315$, while $V(11) = 270$, below it. Key idea: the slope is the yearly loss, and 'first time below' means rounding the boundary up to the next whole year.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

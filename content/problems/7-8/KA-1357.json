@@ -1,0 +1,68 @@
+{
+  "id": "KA-1357",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A board with 4 rows and 5 columns of squares is covered exactly by 10 dominoes, with no gaps and no overlaps. Each domino covers two squares that share a side, so it either lies flat, along a row, or stands upright, along a column. How many different numbers of upright dominoes are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found that the number of upright dominoes must be even and at least 2, but forgot that all ten dominoes can stand upright."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I saw that the number must be even but forgot that a row of 5 squares cannot be covered by flat dominoes alone, so I also counted 0."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought any number of upright dominoes from 1 to 10 was possible."
+    },
+    {
+      "key": "E",
+      "text": "11",
+      "correct": false,
+      "misconception": "I thought any number of upright dominoes from 0 to 10 was possible."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-07",
+    "secondary": [
+      "LOG-05",
+      "GEO-02"
+    ]
+  },
+  "hints": [
+    "Colour the columns in stripes, alternating dark and light, starting with dark.",
+    "A flat domino covers one dark and one light square; an upright one covers two of the same colour. Count dark and light squares to decide if the flat count is odd or even. Then check if 0 upright works.",
+    "There are 12 dark squares and 8 light ones. If f dominoes lie flat, the upright dominoes cover the other $12 - f$ dark squares in pairs, so f is even, and so is $10 - f$."
+  ],
+  "solutions": {
+    "reliable": "Colour the first, third and fifth columns dark and the second and fourth light, giving 12 dark squares and 8 light ones. A flat domino covers one square of each colour, and an upright domino covers two squares of the same colour. If f dominoes lie flat, the upright dominoes cover the other $12 - f$ dark squares two at a time, so $12 - f$ is even and f is even. The number of upright dominoes, $10 - f$, is therefore even. It cannot be 0, because each row has 5 squares and flat dominoes alone cover an even number of squares in a row. So the only candidates are 2, 4, 6, 8 and 10. All five happen: cover the first column with 2 upright dominoes and the other four columns with flat dominoes, two in each row. Those flat dominoes form four 2 by 2 blocks, and turning a block into two upright dominoes adds 2, so turning 1, 2, 3 or 4 blocks gives 4, 6, 8 and 10. That is 5 different numbers. The transferable idea: colouring a board in stripes turns a question about every possible covering into an odd-or-even count.",
+    "elegant": "Go column by column. The first column has 4 squares, and upright dominoes inside it cover an even number of them, so an even number of flat dominoes cross from the first column into the second. The second column then has an even number of squares left, so again an even number of flat dominoes cross into the third, and so on. Every flat domino crosses one of these four boundaries, so the number of flat dominoes is even, and so is the number of upright ones. The same row argument as before rules out 0."
+  },
+  "whyOnTest": "Colouring a board turns a question about every possible tiling into a quick odd-or-even count, a classic 5-point idea.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

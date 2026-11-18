@@ -1,0 +1,68 @@
+{
+  "id": "KA-1271",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A square tile is cut into 4 triangles by its diagonals. Each triangle is painted red, blue or yellow, and each colour is used at least once. Two tiles count as the same if one can be turned, without flipping, to look exactly like the other. How many different tiles are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I only counted which colour is used twice and did not think about where the triangles go."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I also treated tiles that are mirror images of each other as the same, but the tiles may not be flipped over."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted 2 ways to place the two matching triangles and 2 orders for the other colours, 4 tiles for each repeated colour, but when the matching triangles are opposite, a half turn makes the two orders look the same."
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": false,
+      "misconception": "I counted every way to paint the four triangles in place, forgetting that turning a tile can make two paintings look the same."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-04",
+      "GEO-08"
+    ]
+  },
+  "hints": [
+    "With 4 triangles and 3 colours, one colour must be used twice.",
+    "Choose the colour that is used twice. Its two triangles are either side by side or opposite each other. In each case, ask whether swapping the other two colours gives a tile that a turn can match.",
+    "If the two matching triangles are opposite, a half turn swaps the other two triangles, so their order does not matter. If they are side by side, the two orders are mirror images, and turning cannot match them."
+  ],
+  "solutions": {
+    "reliable": "Four triangles and three colours, each used at least once, means exactly one colour is used twice, and there are 3 ways to choose it. Say red is used twice. If the two red triangles are opposite each other, the blue and yellow triangles are opposite too, and a half turn swaps them, so there is only 1 such tile. If the two red triangles are side by side, going clockwise after them comes either blue then yellow or yellow then blue; these are mirror images, and no turn changes the clockwise order, so they are 2 different tiles. That is 1 + 2 = 3 tiles for each repeated colour, and 3 × 3 = 9 in all. The transferable idea: when turning makes arrangements the same, sort them by a feature that turning keeps, then count each kind once.",
+    "elegant": "There are 3 × 6 × 2 = 36 ways to paint the triangles in place: choose the repeated colour, choose 2 of the 4 triangles for it, then order the other two colours. A painting with all three colours never looks the same after a quarter or a half turn, because a quarter turn would need all four triangles the same colour and a half turn would need opposite triangles to match, using only two colours. So every tile appears in exactly 4 of the 36 paintings, and 36 / 4 = 9."
+  },
+  "whyOnTest": "Counting up to symmetry tests spotting which arrangements a turn makes identical, and which ones are mirror images that a turn cannot match.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

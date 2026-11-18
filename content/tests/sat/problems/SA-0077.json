@@ -1,0 +1,56 @@
+{
+  "id": "SA-0077",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "easy",
+  "statement": "Which ordered pair $(x, y)$ satisfies both $2x - y = 4$ and $x + 3y = 9$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$(3, 2)$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$(2, 0)$",
+      "correct": false,
+      "misconception": "I checked only the first equation, where $2(2) - 0 = 4$ works, but $2 + 3(0) = 2$, not 9."
+    },
+    {
+      "key": "C",
+      "text": "$(2, 3)$",
+      "correct": false,
+      "misconception": "I solved correctly and found $x = 3$ and $y = 2$, but I wrote the pair in the wrong order."
+    },
+    {
+      "key": "D",
+      "text": "$(0, 3)$",
+      "correct": false,
+      "misconception": "I checked only the second equation, where $0 + 3(3) = 9$ works, but $2(0) - 3 = -3$, not 4."
+    }
+  ],
+  "hints": [
+    "A solution must make both equations true at the same time.",
+    "Either test each pair in both equations, or solve: the first equation gives $y = 2x - 4$, which you can substitute into the second.",
+    "Substituting gives $x + 3(2x - 4) = 9$, so $7x = 21$. Find $x$, then $y$."
+  ],
+  "solutions": {
+    "reliable": "From $2x - y = 4$, $y = 2x - 4$. Substituting into $x + 3y = 9$: $x + 6x - 12 = 9$, so $7x = 21$ and $x = 3$. Then $y = 2(3) - 4 = 2$. Check: $2(3) - 2 = 4$ and $3 + 3(2) = 9$. Key idea: the solution of a system is the one point on both lines, so it must satisfy every equation.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

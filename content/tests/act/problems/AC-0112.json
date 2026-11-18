@@ -1,0 +1,56 @@
+{
+  "id": "AC-0112",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-07",
+  "difficulty": "medium",
+  "statement": "In the standard $(x, y)$ coordinate plane, line $m$ has an $x$-intercept of $4$ and a $y$-intercept of $-6$. Which of the following is an equation of line $m$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2x - 3y = 18$",
+      "correct": false,
+      "misconception": "I found the slope as run over rise, $\\frac{4}{6} = \\frac{2}{3}$, and used the $y$-intercept $-6$, so I wrote $y = \\frac{2}{3}x - 6$."
+    },
+    {
+      "key": "B",
+      "text": "$3x - 2y = -8$",
+      "correct": false,
+      "misconception": "I found the slope $\\frac{3}{2}$ correctly but used the $x$-intercept $4$ as the $y$-intercept, so I wrote $y = \\frac{3}{2}x + 4$."
+    },
+    {
+      "key": "C",
+      "text": "$3x - 2y = 12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$3x + 2y = -12$",
+      "correct": false,
+      "misconception": "I subtracted the $y$-values in one order and the $x$-values in the other order, so I got a slope of $-\\frac{3}{2}$ and wrote $y = -\\frac{3}{2}x - 6$."
+    }
+  ],
+  "hints": [
+    "An $x$-intercept of $4$ means the line passes through $(4, 0)$. What point does the $y$-intercept give?",
+    "Find the slope through $(4, 0)$ and $(0, -6)$, write $y = mx + b$, then rearrange it into the form of the choices. Or test both points in each choice.",
+    "The slope is $\\frac{-6 - 0}{0 - 4} = \\frac{3}{2}$, so $y = \\frac{3}{2}x - 6$."
+  ],
+  "solutions": {
+    "reliable": "The line passes through $(4, 0)$ and $(0, -6)$, so its slope is $\\frac{-6 - 0}{0 - 4} = \\frac{3}{2}$ and its $y$-intercept is $-6$: $y = \\frac{3}{2}x - 6$. Multiply both sides by $2$: $2y = 3x - 12$, which rearranges to $3x - 2y = 12$. Check: $3(4) - 2(0) = 12$ and $3(0) - 2(-6) = 12$.",
+    "elegant": "Test the two intercept points in each choice. Only $3x - 2y = 12$ is true at both $(4, 0)$ and $(0, -6)$: $2x - 3y = 18$ and $3x + 2y = -12$ fail at $(4, 0)$, and $3x - 2y = -8$ fails at both points."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

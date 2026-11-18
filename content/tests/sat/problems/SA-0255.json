@@ -1,0 +1,56 @@
+{
+  "id": "SA-0255",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-01",
+  "difficulty": "medium",
+  "statement": "The inside of a cylindrical water tank has a radius of $3$ feet, and the tank holds some water. A solid concrete block shaped like a cube, with edges $2$ feet long, is set on the bottom of the tank. The water then covers the block completely and does not overflow. By how many feet does the water level rise, to the nearest hundredth of a foot?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.07$",
+      "correct": false,
+      "misconception": "I used 6, the diameter, as the radius, so I divided 8 by $36\\pi$."
+    },
+    {
+      "key": "B",
+      "text": "$0.28$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$0.85$",
+      "correct": false,
+      "misconception": "I forgot to square the radius and divided 8 by $3\\pi$."
+    },
+    {
+      "key": "D",
+      "text": "$0.89$",
+      "correct": false,
+      "misconception": "I divided the volume of the cube by $r^2 = 9$ and left out $\\pi$, so I got $8 \\div 9$."
+    }
+  ],
+  "hints": [
+    "The volume of the water pushed up above the old level equals the volume of the cube.",
+    "The raised water forms a short cylinder with radius $3$. Set $\\pi r^2 h$ equal to the volume of the cube and solve for $h$.",
+    "The cube's volume is $2^3 = 8$ cubic feet, so solve $9\\pi h = 8$."
+  ],
+  "solutions": {
+    "reliable": "The cube pushes aside its own volume, $2^3 = 8$ cubic feet, of water. The water above the old level forms a cylinder of radius $3$ feet and height $h$, with volume $\\pi(3)^2 h = 9\\pi h$. Setting $9\\pi h = 8$ gives $h = \\frac{8}{9\\pi} \\approx 0.283$, which is $0.28$ foot to the nearest hundredth.",
+    "elegant": null
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

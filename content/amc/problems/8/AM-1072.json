@@ -1,0 +1,67 @@
+{
+  "id": "AM-1072",
+  "contest": "AMC8",
+  "slot": 24,
+  "area": "ALG",
+  "topic": "ALG-02",
+  "types": [
+    "T-EXTREME",
+    "T-CASEWORK"
+  ],
+  "statement": "A list of $7$ positive integers has mean $12$ and median $10$, and its only mode is $8$. What is the largest possible value of the largest integer in the list?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$34$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I used $1, 8, 8, 10, 11, 11$ for the six smaller numbers, but then $11$ appears twice, just like $8$, so $8$ is not the only mode."
+    },
+    {
+      "key": "C",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I used $1, 8, 8, 10, 10, 11$ for the six smaller numbers, but then $10$ appears twice, tying with $8$, so $8$ is not the only mode."
+    },
+    {
+      "key": "D",
+      "text": "$37$",
+      "correct": false,
+      "misconception": "I used $1, 8, 8, 10, 10, 10$ for the six smaller numbers, but then $10$ appears three times and becomes the mode."
+    },
+    {
+      "key": "E",
+      "text": "$51$",
+      "correct": false,
+      "misconception": "I ignored the mode and made the six smaller numbers $1, 1, 1, 10, 10, 10$."
+    }
+  ],
+  "hints": [
+    "The seven numbers add up to $84$. To make the largest one big, make the other six as small as possible.",
+    "The middle number is $10$. The mode $8$ must appear at least twice, and since $8 < 10$, the 8s are among the three smallest numbers.",
+    "If $8$ appears exactly twice, no other number may appear twice, so the two numbers just above the median must be at least $11$ and $12$."
+  ],
+  "solutions": {
+    "reliable": "The seven numbers add up to $7 \\times 12 = 84$. In order, call them $a_1 \\le a_2 \\le \\cdots \\le a_7$, so $a_4 = 10$. The value $8$ must appear more often than any other value, and $8 < 10$, so the 8s are among $a_1, a_2, a_3$. If $8$ appears exactly twice, no other value may appear twice. Then $a_5$ and $a_6$ are two different numbers bigger than $10$ (since $10$ is already used once), so they are at least $11$ and $12$, and $a_1$ is at least $1$. The six smaller numbers add up to at least $1 + 8 + 8 + 10 + 11 + 12 = 50$, so $a_7 \\le 34$. If $8$ appears three times, as $a_1, a_2, a_3$, then $a_5$ can be $10$ but $a_6$ must be at least $11$, so the six smaller numbers add up to at least $24 + 10 + 10 + 11 = 55$ and $a_7 \\le 29$. So the answer is $34$, from the list $1, 8, 8, 10, 11, 12, 34$, which has mean $12$, median $10$ and only mode $8$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0067",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "easy",
+  "statement": "Which of the following is equivalent to $(2x - 3)(x + 4)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2x^2 - 12$",
+      "correct": false,
+      "misconception": "I multiplied only the first terms and the last terms, $2x \\cdot x$ and $-3 \\cdot 4$, and skipped the two middle products."
+    },
+    {
+      "key": "B",
+      "text": "$2x^2 + 11x - 12$",
+      "correct": false,
+      "misconception": "I found the middle products $8x$ and $-3x$ but added $8x + 3x$, losing the negative sign on the $3x$."
+    },
+    {
+      "key": "C",
+      "text": "$2x^2 + 5x - 12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$2x^2 - 5x - 12$",
+      "correct": false,
+      "misconception": "I mixed up which middle product was negative and combined them as $3x - 8x = -5x$."
+    }
+  ],
+  "hints": [
+    "Multiply each term in the first binomial by each term in the second.",
+    "There are four products: $2x \\cdot x$, $2x \\cdot 4$, $-3 \\cdot x$ and $-3 \\cdot 4$. Then combine like terms.",
+    "The products are $2x^2$, $8x$, $-3x$ and $-12$. Combine $8x$ and $-3x$."
+  ],
+  "solutions": {
+    "reliable": "$(2x - 3)(x + 4) = 2x \\cdot x + 2x \\cdot 4 - 3 \\cdot x - 3 \\cdot 4 = 2x^2 + 8x - 3x - 12 = 2x^2 + 5x - 12$. Check with $x = 1$: $(-1)(5) = -5$ and $2 + 5 - 12 = -5$.",
+    "elegant": null
+  },
+  "estSeconds": 30,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

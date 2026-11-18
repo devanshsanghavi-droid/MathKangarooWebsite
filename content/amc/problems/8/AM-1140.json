@@ -1,0 +1,66 @@
+{
+  "id": "AM-1140",
+  "contest": "AMC8",
+  "slot": 22,
+  "area": "GEO",
+  "topic": "GEO-06",
+  "types": [
+    "T-COORD"
+  ],
+  "statement": "The points $(1, 2)$ and $(7, 10)$ are opposite vertices of a square. The other two vertices of the square are $P$ and $Q$. What is the area of the triangle with vertices $P$, $Q$ and the origin $(0, 0)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I used the two given vertices together with the origin, instead of the other two vertices of the square."
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I turned the half-diagonal $(3, 4)$ into $(4, 3)$ instead of $(-4, 3)$, which put the other two vertices at $(8, 9)$ and $(0, 3)$."
+    },
+    {
+      "key": "C",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I found the area of the square, $\\frac{10^2}{2} = 50$, and assumed the triangle is half of it."
+    },
+    {
+      "key": "D",
+      "text": "$34$",
+      "correct": false,
+      "misconception": "I assumed the sides of the square were horizontal and vertical, so I used $(1, 10)$ and $(7, 2)$ as the other two vertices."
+    },
+    {
+      "key": "E",
+      "text": "$36$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The diagonals of a square have the same midpoint, the same length, and are perpendicular.",
+    "The center is $(4, 6)$, and the step from the center to $(7, 10)$ is $(3, 4)$. Turn that step by $90^\\circ$ to reach the other two vertices.",
+    "Turning $(3, 4)$ by $90^\\circ$ gives $(-4, 3)$, so the other vertices are $(4, 6) \\pm (-4, 3)$, that is $(0, 9)$ and $(8, 3)$. One of them is on the $y$-axis, which makes a convenient base."
+  ],
+  "solutions": {
+    "reliable": "The center of the square is the midpoint of the given diagonal, $(4, 6)$. The step from the center to $(7, 10)$ is $(3, 4)$. The other diagonal has the same length and is perpendicular, so the steps from the center to $P$ and $Q$ are $(-4, 3)$ and $(4, -3)$. Hence $P = (0, 9)$ and $Q = (8, 3)$. (Check: $(0, 9)$ is $\\sqrt{1 + 49} = \\sqrt{50}$ from $(1, 2)$ and $\\sqrt{49 + 1} = \\sqrt{50}$ from $(7, 10)$.) In triangle $OPQ$, side $\\overline{OP}$ lies on the $y$-axis with length $9$, and the height from $Q$ to the $y$-axis is $8$. The area is $\\frac{1}{2} \\cdot 9 \\cdot 8 = 36$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

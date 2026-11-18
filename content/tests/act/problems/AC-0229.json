@@ -1,0 +1,56 @@
+{
+  "id": "AC-0229",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-02",
+  "difficulty": "hard",
+  "statement": "A designer is building a triangular frame from three straight rods. Two rods are $7$ inches and $12$ inches long, and the third rod has a whole-number length in inches. The frame must be an obtuse triangle. How many different lengths are possible for the third rod?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I only checked the case where the third rod is the longest side, which gives lengths 14 through 18, and forgot that 12 can be the longest side of an obtuse triangle too."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I counted every whole-number length from 6 to 18 that makes a triangle at all and forgot to check that the triangle is obtuse."
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I flipped the inequality and counted the lengths where the square of the longest side is less than the sum of the other two squares, which gives the acute triangles 10, 11, 12 and 13."
+    }
+  ],
+  "hints": [
+    "First list the lengths $x$ that make a triangle at all, using the triangle inequality.",
+    "A triangle is obtuse when the square of its longest side is greater than the sum of the squares of the other two sides. Check two cases: $x$ is the longest side, or $12$ is.",
+    "A triangle needs $5 < x < 19$, so $x = 6, \\dots, 18$. If $x > 12$: $x^2 > 7^2 + 12^2 = 193$. If $x \\le 12$: $12^2 > 7^2 + x^2$, so $x^2 < 95$. Count the lengths in each case."
+  ],
+  "solutions": {
+    "reliable": "By the triangle inequality, $12 - 7 < x < 12 + 7$, so $x$ is one of $6, 7, \\dots, 18$. Case 1, $x$ is the longest side ($x \\ge 13$): obtuse means $x^2 > 49 + 144 = 193$, so $x \\ge 14$, giving $14, 15, 16, 17, 18$ ($5$ lengths). Case 2, $12$ is the longest side ($x \\le 12$): obtuse means $144 > 49 + x^2$, so $x^2 < 95$, giving $x = 6, 7, 8, 9$ ($4$ lengths). No length gives a right triangle, since $193$ and $95$ are not perfect squares. In total there are $5 + 4 = 9$ lengths.",
+    "elegant": "Count the complement. Of the $13$ possible lengths $6$ through $18$, the acute ones need both $x^2 < 193$ and $x^2 > 95$, so $x = 10, 11, 12, 13$. No length is right, so $13 - 4 = 9$ lengths are obtuse."
+  },
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0008",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-02",
+  "difficulty": "hard",
+  "statement": "If $x = \\sqrt{3} + \\sqrt{2}$, what is the value of $x^2 + \\frac{1}{x^2}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{26}{5}$",
+      "correct": false,
+      "misconception": "I squared term by term, so $x^2 = 3 + 2 = 5$, and then I used $\\frac{1}{x^2} = \\frac{1}{5}$, giving $\\frac{26}{5}$."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found $\\frac{1}{x} = \\sqrt{3} - \\sqrt{2}$ but squared both sums term by term, getting $3 + 2 = 5$ and $3 - 2 = 1$, which add to 6."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found $x + \\frac{1}{x} = 2\\sqrt{3}$ and squared it to get 12, forgetting that this square also contains the middle term $2 \\cdot x \\cdot \\frac{1}{x} = 2$."
+    }
+  ],
+  "hints": [
+    "Find $\\frac{1}{x}$ first by rationalizing: multiply $\\frac{1}{\\sqrt{3} + \\sqrt{2}}$ by $\\frac{\\sqrt{3} - \\sqrt{2}}{\\sqrt{3} - \\sqrt{2}}$.",
+    "$\\frac{1}{x} = \\sqrt{3} - \\sqrt{2}$. Square $x$ and $\\frac{1}{x}$ fully, keeping the middle terms.",
+    "$x^2 = 5 + 2\\sqrt{6}$ and $\\frac{1}{x^2} = 5 - 2\\sqrt{6}$."
+  ],
+  "solutions": {
+    "reliable": "Rationalize: $\\frac{1}{\\sqrt{3} + \\sqrt{2}} \\cdot \\frac{\\sqrt{3} - \\sqrt{2}}{\\sqrt{3} - \\sqrt{2}} = \\frac{\\sqrt{3} - \\sqrt{2}}{3 - 2} = \\sqrt{3} - \\sqrt{2}$. Then $x^2 = 3 + 2\\sqrt{6} + 2 = 5 + 2\\sqrt{6}$ and $\\frac{1}{x^2} = 3 - 2\\sqrt{6} + 2 = 5 - 2\\sqrt{6}$. The radicals cancel when we add, so $x^2 + \\frac{1}{x^2} = 10$.",
+    "elegant": "Since $x + \\frac{1}{x} = (\\sqrt{3} + \\sqrt{2}) + (\\sqrt{3} - \\sqrt{2}) = 2\\sqrt{3}$, use $x^2 + \\frac{1}{x^2} = \\left(x + \\frac{1}{x}\\right)^2 - 2 = 12 - 2 = 10$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

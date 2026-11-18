@@ -1,0 +1,67 @@
+{
+  "id": "KA-1537",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A smoothie bar offers 8 different fruits. A smoothie is made with exactly 3 different fruits, but banana and kiwi are never used together. How many different smoothies are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20",
+      "correct": false,
+      "misconception": "I took banana and kiwi off the list completely and chose 3 from the other 6."
+    },
+    {
+      "key": "B",
+      "text": "44",
+      "correct": false,
+      "misconception": "I subtracted the smoothies with both banana and kiwi twice, once for each order."
+    },
+    {
+      "key": "C",
+      "text": "50",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "56",
+      "correct": false,
+      "misconception": "I forgot the rule about banana and kiwi and chose any 3 of the 8."
+    },
+    {
+      "key": "E",
+      "text": "336",
+      "correct": false,
+      "misconception": "I counted the fruits in order, as if banana then mango differs from mango then banana, and also forgot the banana and kiwi rule."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-09"
+    ]
+  },
+  "hints": [
+    "Count all choices of 3, then remove the forbidden ones.",
+    "Order of fruits does not matter, so count selections. Count every selection of 3 from 8, then subtract those containing both banana and kiwi.",
+    "There are $\\binom{8}{3} = 56$ selections, and those with both banana and kiwi need just one more fruit from the other 6."
+  ],
+  "solutions": {
+    "reliable": "Any 3 of the 8 fruits: $\\binom{8}{3} = \\frac{8 \\cdot 7 \\cdot 6}{6} = 56$. A forbidden smoothie contains both banana and kiwi plus one of the other 6 fruits, so there are 6 of them. The number of smoothies is $56 - 6 = 50$. The transferable idea: when order does not matter, count selections, and handle a forbidden pair by subtracting.",
+    "elegant": "Split by cases: neither banana nor kiwi gives $\\binom{6}{3} = 20$; exactly one of them gives $2 \\cdot \\binom{6}{2} = 30$; total $50$."
+  },
+  "whyOnTest": "Choosing a few objects with one forbidden pair tests selections, not arrangements, and a clean subtraction.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

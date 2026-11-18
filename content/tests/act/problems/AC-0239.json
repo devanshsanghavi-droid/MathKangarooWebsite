@@ -1,0 +1,56 @@
+{
+  "id": "AC-0239",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-06",
+  "difficulty": "easy",
+  "statement": "A candle mold is a right circular cylinder with a diameter of $8$ centimeters and a height of $12$ centimeters. What is the volume of the mold, in cubic centimeters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$192\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$768\\pi$",
+      "correct": false,
+      "misconception": "I used the diameter, 8, as the radius, so I computed pi times 8 squared times 12 = 768 pi."
+    },
+    {
+      "key": "C",
+      "text": "$96\\pi$",
+      "correct": false,
+      "misconception": "I computed 2 pi r h = 2 pi times 4 times 12 = 96 pi, which is the area of the curved side, not the volume."
+    },
+    {
+      "key": "D",
+      "text": "$48\\pi$",
+      "correct": false,
+      "misconception": "I forgot to square the radius and computed pi times 4 times 12 = 48 pi."
+    }
+  ],
+  "hints": [
+    "The volume of a cylinder is the area of its circular base times its height.",
+    "Use $V = \\pi r^2 h$. The radius is half the diameter.",
+    "$r = 4$ and $h = 12$, so $V = \\pi (4)^2 (12)$."
+  ],
+  "solutions": {
+    "reliable": "The radius is half of the diameter: $r = 4$ centimeters. The volume is $V = \\pi r^2 h = \\pi \\cdot 16 \\cdot 12 = 192\\pi$ cubic centimeters, about $603$ cubic centimeters.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

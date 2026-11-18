@@ -1,0 +1,62 @@
+{
+  "id": "AM-1045",
+  "contest": "AMC8",
+  "slot": 16,
+  "area": "ALG",
+  "topic": "ALG-03",
+  "types": ["T-CASEWORK"],
+  "statement": "Positive integers $x$ and $y$ satisfy $x^2 - y^2 = 45$. What is the sum of all possible values of $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$23$",
+      "correct": false,
+      "misconception": "I used only the factor pair 1 × 45, which gives x = 23 and y = 22, and missed the other pairs."
+    },
+    {
+      "key": "B",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I used the pairs 1 × 45 and 5 × 9 but missed 3 × 15, so I added only 23 + 7."
+    },
+    {
+      "key": "C",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I used the pairs 1 × 45 and 3 × 15 but missed 5 × 9, so I added only 23 + 9."
+    },
+    {
+      "key": "D",
+      "text": "$39$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$78$",
+      "correct": false,
+      "misconception": "I added the sums of the factor pairs, 46 + 18 + 14 = 78, but each of those sums is (x - y) + (x + y) = 2x, so I needed to halve them."
+    }
+  ],
+  "hints": [
+    "Factor the left side as a difference of squares.",
+    "$(x - y)(x + y) = 45$, and $x + y$ is bigger than $x - y$.",
+    "The factor pairs of $45$ are $1 \\times 45$, $3 \\times 15$ and $5 \\times 9$. In each pair, $x$ is the average of the two factors."
+  ],
+  "solutions": {
+    "reliable": "Since $(x - y)(x + y) = 45$ with $0 < x - y < x + y$, the pair $(x - y, x + y)$ is $(1, 45)$, $(3, 15)$ or $(5, 9)$. In each case $x$ is the average of the two factors, giving $x = 23$, $9$ or $7$, with $y = 22$, $6$ or $2$. All three work; for example, $9^2 - 6^2 = 81 - 36 = 45$. The sum of the possible values of $x$ is $23 + 9 + 7 = 39$.",
+    "elegant": null
+  },
+  "formulas": ["F-ALG-05"],
+  "estSeconds": 105,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

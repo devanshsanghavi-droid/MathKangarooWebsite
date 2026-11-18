@@ -1,0 +1,56 @@
+{
+  "id": "AC-0037",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-04",
+  "difficulty": "medium",
+  "statement": "The table shows the number of students enrolled in a coding club at the start of each school year. $$\\begin{array}{c|c} \\text{Year} & \\text{Students} \\\\ \\hline 2023 & 240 \\\\ 2024 & 276 \\\\ 2025 & 306 \\end{array}$$ To the nearest tenth of a percent, what was the percent increase in enrollment from 2024 to 2025?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9.8\\%$",
+      "correct": false,
+      "misconception": "I divided the increase of 30 students by the 2025 enrollment, 306, instead of the 2024 enrollment."
+    },
+    {
+      "key": "B",
+      "text": "$10.9\\%$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$12.5\\%$",
+      "correct": false,
+      "misconception": "I found the increase of 30 from 2024 to 2025 correctly but divided it by the 2023 enrollment, 240."
+    },
+    {
+      "key": "D",
+      "text": "$27.5\\%$",
+      "correct": false,
+      "misconception": "I used the change from 2023 to 2025, 66 students, and divided by 240, so I measured the wrong pair of years."
+    }
+  ],
+  "hints": [
+    "Which year gives the starting value for this percent change?",
+    "Subtract the 2024 enrollment from the 2025 enrollment, then divide by the 2024 enrollment.",
+    "The increase is $306 - 276 = 30$ students, and you need $\\dfrac{30}{276}$ written as a percent."
+  ],
+  "solutions": {
+    "reliable": "From 2024 to 2025, enrollment rose by $306 - 276 = 30$ students. The percent increase is $\\dfrac{30}{276} \\approx 0.10870$, or about $10.9\\%$. The idea: percent change is the change divided by the value at the start of the period you are asked about.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

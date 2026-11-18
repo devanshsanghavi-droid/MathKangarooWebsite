@@ -1,0 +1,56 @@
+{
+  "id": "AC-0063",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "medium",
+  "statement": "What are the solutions of the equation $2x^2 - 6x + 1 = 0$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$x = \\dfrac{-3 \\pm \\sqrt{7}}{2}$",
+      "correct": false,
+      "misconception": "I used $b$ instead of $-b$ at the start of the quadratic formula, so my numerator started with $-6$ instead of $6$."
+    },
+    {
+      "key": "B",
+      "text": "$x = \\dfrac{3 \\pm \\sqrt{7}}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$x = 3 \\pm \\sqrt{7}$",
+      "correct": false,
+      "misconception": "I divided by $a = 2$ instead of by $2a = 4$, so $\\frac{6 \\pm 2\\sqrt{7}}{2}$ became $3 \\pm \\sqrt{7}$."
+    },
+    {
+      "key": "D",
+      "text": "$x = \\dfrac{3 \\pm \\sqrt{11}}{2}$",
+      "correct": false,
+      "misconception": "I added $4ac$ instead of subtracting it, so the discriminant was $36 + 8 = 44 = 4 \\cdot 11$."
+    }
+  ],
+  "hints": [
+    "This quadratic does not factor nicely, so use the quadratic formula.",
+    "With $a = 2$, $b = -6$, $c = 1$, compute $b^2 - 4ac$ first, then $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$.",
+    "$b^2 - 4ac = 36 - 8 = 28$ and $\\sqrt{28} = 2\\sqrt{7}$, so $x = \\frac{6 \\pm 2\\sqrt{7}}{4}$. Simplify."
+  ],
+  "solutions": {
+    "reliable": "Here $a = 2$, $b = -6$, $c = 1$. The discriminant is $(-6)^2 - 4(2)(1) = 36 - 8 = 28$, and $\\sqrt{28} = 2\\sqrt{7}$. So $x = \\frac{6 \\pm 2\\sqrt{7}}{4} = \\frac{3 \\pm \\sqrt{7}}{2}$. Check: the two solutions add to $3 = \\frac{6}{2}$ and multiply to $\\frac{9 - 7}{4} = \\frac{1}{2}$, matching $-\\frac{b}{a}$ and $\\frac{c}{a}$.",
+    "elegant": "Divide by $2$ and complete the square: $x^2 - 3x = -\\frac{1}{2}$, so $\\left(x - \\frac{3}{2}\\right)^2 = \\frac{9}{4} - \\frac{1}{2} = \\frac{7}{4}$ and $x = \\frac{3}{2} \\pm \\frac{\\sqrt{7}}{2}$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

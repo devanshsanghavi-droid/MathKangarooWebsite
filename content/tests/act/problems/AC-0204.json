@@ -1,0 +1,56 @@
+{
+  "id": "AC-0204",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-01",
+  "difficulty": "easy",
+  "statement": "A floor tile is shaped like parallelogram $ABCD$. Angle $A$ measures $(2x + 8)^\\circ$ and angle $C$ measures $(4x - 30)^\\circ$. What is the measure of angle $B$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$19^\\circ$",
+      "correct": false,
+      "misconception": "I solved $2x + 8 = 4x - 30$ to get $x = 19$ and stopped there, giving $x$ instead of an angle."
+    },
+    {
+      "key": "B",
+      "text": "$44^\\circ$",
+      "correct": false,
+      "misconception": "I found angle $A = 46^\\circ$, but I thought consecutive angles of a parallelogram add to $90^\\circ$, so I got $90 - 46 = 44$."
+    },
+    {
+      "key": "C",
+      "text": "$46^\\circ$",
+      "correct": false,
+      "misconception": "I found angle $A = 46^\\circ$ and assumed angle $B$ was equal to it, but only opposite angles of a parallelogram are equal."
+    },
+    {
+      "key": "D",
+      "text": "$134^\\circ$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Angles $A$ and $C$ are opposite angles. What is true about opposite angles of a parallelogram?",
+    "Set the opposite angles equal to find $x$ and angle $A$. Angles $A$ and $B$ are consecutive, so they add to $180^\\circ$.",
+    "$2x + 8 = 4x - 30$ gives $x = 19$, so angle $A = 46^\\circ$. Now subtract from $180^\\circ$."
+  ],
+  "solutions": {
+    "reliable": "Opposite angles of a parallelogram are equal, so $2x + 8 = 4x - 30$, which gives $38 = 2x$ and $x = 19$. Then angle $A = 2(19) + 8 = 46^\\circ$, and angle $C = 4(19) - 30 = 46^\\circ$ as well. Consecutive angles of a parallelogram are supplementary, so angle $B = 180^\\circ - 46^\\circ = 134^\\circ$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

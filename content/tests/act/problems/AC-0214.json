@@ -1,0 +1,56 @@
+{
+  "id": "AC-0214",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-04",
+  "difficulty": "easy",
+  "statement": "The minute hand of a wall clock is $10$ centimeters long. How far, in centimeters, does the tip of the minute hand travel in $20$ minutes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{10\\pi}{9}$",
+      "correct": false,
+      "misconception": "I thought the minute hand turns $20^\\circ$ in $20$ minutes, so I took $\\frac{20}{360}$ of the circumference $20\\pi$."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{10\\pi}{3}$",
+      "correct": false,
+      "misconception": "I used $\\pi r$ for the circumference instead of $2\\pi r$, so I got $\\frac{1}{3} \\cdot 10\\pi$."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{20\\pi}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{100\\pi}{3}$",
+      "correct": false,
+      "misconception": "I found the area of the sector the hand sweeps, $\\frac{1}{3}\\pi \\cdot 10^2$, instead of the distance the tip travels."
+    }
+  ],
+  "hints": [
+    "What fraction of a full turn does the minute hand make in $20$ minutes?",
+    "The minute hand makes one full turn in $60$ minutes, so in $20$ minutes its tip travels $\\frac{20}{60}$ of the circumference $2\\pi r$.",
+    "The full circumference is $2\\pi \\cdot 10 = 20\\pi$ centimeters."
+  ],
+  "solutions": {
+    "reliable": "The tip of the minute hand moves on a circle of radius $10$ cm, whose circumference is $2\\pi \\cdot 10 = 20\\pi$ cm. In $20$ minutes the hand makes $\\frac{20}{60} = \\frac{1}{3}$ of a turn, so the tip travels $\\frac{1}{3} \\cdot 20\\pi = \\frac{20\\pi}{3} \\approx 20.9$ cm.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

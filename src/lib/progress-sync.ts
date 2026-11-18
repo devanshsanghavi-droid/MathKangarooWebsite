@@ -1,4 +1,11 @@
-import { MAX_ATTEMPTS_PER_SKILL, parseProgress, type ProgressFile } from './local-progress';
+import {
+  MAX_ATTEMPTS_PER_SKILL,
+  cleanSession,
+  normalizeSessions,
+  parseProgress,
+  type ProgressFile,
+  type SessionRecord,
+} from './local-progress';
 
 /**
  * Merging two copies of a student's progress file: the one in this browser and the one synced
@@ -8,6 +15,10 @@ import { MAX_ATTEMPTS_PER_SKILL, parseProgress, type ProgressFile } from './loca
  *
  * An attempt is identified by problem id plus timestamp. The union is sorted oldest first and
  * trimmed to the newest MAX_ATTEMPTS_PER_SKILL per skill, the same cap local-progress keeps.
+ *
+ * Test sessions (docs/07 section 5) merge the same way: union by `kind|exam|at`, known fields
+ * only, oldest first, newest MAX_SESSIONS kept. A file with no sessions on either side merges
+ * to a file with no `sessions` key, so older copies compare equal to themselves.
  */
 
 type Attempt = ProgressFile['attempts'][string][number];
@@ -38,7 +49,13 @@ export function mergeProgress(a: ProgressFile, b: ProgressFile): ProgressFile {
     );
     attempts[skill] = merged.slice(-MAX_ATTEMPTS_PER_SKILL);
   }
-  return { version: Math.max(a.version, b.version), attempts };
+  const version = Math.max(a.version, b.version);
+  const sessions = normalizeSessions(
+    [...(a.sessions ?? []), ...(b.sessions ?? [])]
+      .map(cleanSession)
+      .filter((s): s is SessionRecord => s !== null),
+  );
+  return sessions.length > 0 ? { version, attempts, sessions } : { version, attempts };
 }
 
 /** Same attempts in both? Cheap enough at this size to compare canonical JSON. */

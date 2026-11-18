@@ -1,0 +1,62 @@
+{
+  "id": "AM-1029",
+  "contest": "AMC8",
+  "slot": 11,
+  "area": "ALG",
+  "topic": "ALG-01",
+  "types": ["T-BACKWARDS"],
+  "statement": "A baker sold muffins to two customers. The first customer bought half of the baker's muffins and then $3$ more. The second customer bought one third of the muffins that were left and then $4$ more. After that, the baker had $12$ muffins left. How many muffins did the baker start with?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I worked backward correctly to the 24 muffins the baker had before the second customer, but I stopped there instead of also undoing the first customer."
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I ignored the extra 3 and 4 muffins and only undid the fractions, 12 × 3/2 = 18 and then 18 × 2 = 36."
+    },
+    {
+      "key": "C",
+      "text": "$47$",
+      "correct": false,
+      "misconception": "I undid the steps in the wrong order, undoing each fraction before adding back the extra muffins: 12 × 3/2 + 4 = 22, and then 22 × 2 + 3 = 47."
+    },
+    {
+      "key": "D",
+      "text": "$54$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$102$",
+      "correct": false,
+      "misconception": "I undid the second customer's one third by multiplying by 3, as if the baker had kept one third, so (12 + 4) × 3 = 48 and then (48 + 3) × 2 = 102."
+    }
+  ],
+  "hints": [
+    "Work backward from the $12$ muffins at the end, undoing the last step first.",
+    "Adding back the second customer's extra $4$ gives $16$. Those $16$ muffins are the two thirds that were left after the second customer took one third.",
+    "So the baker had $24$ muffins before the second customer. Add back the first customer's extra $3$, and remember that the result is half of what she started with."
+  ],
+  "solutions": {
+    "reliable": "Work backward. Before the second customer's extra $4$ muffins there were $12 + 4 = 16$, and these were the $\\frac{2}{3}$ left after the second customer's one third, so before the second customer there were $16 \\cdot \\frac{3}{2} = 24$ muffins. Before the first customer's extra $3$ there were $24 + 3 = 27$, and these were the half left after the first customer's half, so the baker started with $27 \\cdot 2 = 54$ muffins. Check: the first customer buys $27 + 3 = 30$, leaving $24$; the second buys $8 + 4 = 12$, leaving $12$.",
+    "elegant": "Let the baker start with $x$ muffins. After the first customer she has $\\frac{x}{2} - 3$. The second customer leaves two thirds of that, minus $4$, so $\\frac{2}{3}\\left(\\frac{x}{2} - 3\\right) - 4 = 12$. This simplifies to $\\frac{x}{3} - 6 = 12$, so $\\frac{x}{3} = 18$ and $x = 54$."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

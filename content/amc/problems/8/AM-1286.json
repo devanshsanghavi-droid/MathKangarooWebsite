@@ -1,0 +1,68 @@
+{
+  "id": "AM-1286",
+  "contest": "AMC8",
+  "slot": 19,
+  "area": "CP",
+  "topic": "CP-06",
+  "types": [
+    "T-COMPLEMENT"
+  ],
+  "statement": "Each of three fair spinners is divided into $5$ equal sections numbered $1, 2, 3, 4, 5$. All three spinners are spun. What is the probability that the largest of the three numbers spun is exactly $4$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{37}{125}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{48}{125}$",
+      "correct": false,
+      "misconception": "I found the chance that exactly one spinner shows 4 as 3 times (1/5)(4/5)(4/5), which lets the other two spinners show 5."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{61}{125}$",
+      "correct": false,
+      "misconception": "I found the chance that at least one spinner shows 4, 1 - (4/5)^3, but that allows a 5 on another spinner."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{64}{125}$",
+      "correct": false,
+      "misconception": "I found the chance that all three numbers are at most 4, but I forgot that one of them actually has to be a 4."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{98}{125}$",
+      "correct": false,
+      "misconception": "I read the question as the largest number being at least 4, so I found 1 - (3/5)^3."
+    }
+  ],
+  "hints": [
+    "The largest number is exactly 4 when every number is at most 4, but the numbers are not all at most 3.",
+    "Count the outcomes with all three numbers at most 4, then remove those with all three numbers at most 3.",
+    "That is 4^3 - 3^3 = 64 - 27 outcomes out of 5^3 = 125."
+  ],
+  "solutions": {
+    "reliable": "There are $5^3 = 125$ equally likely outcomes. The largest number is exactly $4$ when all three numbers are at most $4$ but not all of them are at most $3$. All at most $4$: $4^3 = 64$ outcomes. All at most $3$: $3^3 = 27$ outcomes. So $64 - 27 = 37$ outcomes work, and the probability is $\\frac{37}{125}$.",
+    "elegant": "Count by the number of $4$s, with every other number from $1$ to $3$. Exactly one $4$: $3 \\cdot 3^2 = 27$. Exactly two $4$s: $3 \\cdot 3 = 9$. Three $4$s: $1$. The total is $27 + 9 + 1 = 37$ outcomes out of $125$."
+  },
+  "formulas": [
+    "F-CP-06"
+  ],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

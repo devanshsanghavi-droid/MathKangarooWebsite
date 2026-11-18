@@ -1,0 +1,56 @@
+{
+  "id": "SA-0233",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-04",
+  "difficulty": "easy",
+  "statement": "In a science course, a student's final grade is a weighted mean: homework counts for $20\\%$, quizzes count for $30\\%$ and the final exam counts for $50\\%$. A student has a homework score of $90$, a quiz score of $80$ and a final exam score of $70$. What is the student's final grade?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$59$",
+      "correct": false,
+      "misconception": "I multiplied the quiz and exam scores by their weights, 24 + 35, but forgot to include the homework part."
+    },
+    {
+      "key": "B",
+      "text": "$77$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$80$",
+      "correct": false,
+      "misconception": "I found the ordinary mean of 90, 80 and 70, but the exam counts for more than the other two parts."
+    },
+    {
+      "key": "D",
+      "text": "$83$",
+      "correct": false,
+      "misconception": "I reversed the weights, giving the 50% weight to the homework score of 90 and the 20% weight to the exam score of 70, so I got 45 + 24 + 14 = 83."
+    }
+  ],
+  "hints": [
+    "Each score counts toward the grade by a different amount.",
+    "Multiply each score by its weight written as a decimal, then add the three products.",
+    "$0.20 \\times 90 = 18$ and $0.30 \\times 80 = 24$. Find $0.50 \\times 70$ and add."
+  ],
+  "solutions": {
+    "reliable": "Weighted mean: $0.20(90) + 0.30(80) + 0.50(70) = 18 + 24 + 35 = 77$. The weights add to $1$, so no further division is needed. Check: the grade is below the ordinary mean of $80$ because the lowest score has the largest weight.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

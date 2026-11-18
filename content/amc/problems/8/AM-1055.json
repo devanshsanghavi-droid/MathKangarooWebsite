@@ -1,0 +1,66 @@
+{
+  "id": "AM-1055",
+  "contest": "AMC8",
+  "slot": 19,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": [
+    "T-CYCLE"
+  ],
+  "statement": "Two ordinary $12$-hour clocks with hands are both set to the correct time, 6:00, on Monday morning. One clock gains $2$ minutes every hour, and the other loses $3$ minutes every hour. The next time the two clocks show exactly the same time, what time do they show?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1:12",
+      "correct": false,
+      "misconception": "I worked out that the fast clock gains $4$ hours $48$ minutes, but I subtracted that from 6:00 instead of adding it."
+    },
+    {
+      "key": "B",
+      "text": "3:36",
+      "correct": false,
+      "misconception": "I thought the clocks had to drift a full $24$ hours apart, so I waited $1440 \\div 5 = 288$ hours. Then the fast clock had gained $9$ hours $36$ minutes and showed 3:36. A $12$-hour dial repeats after only $12$ hours."
+    },
+    {
+      "key": "C",
+      "text": "6:00",
+      "correct": false,
+      "misconception": "I thought that when the two clocks agree again, they must both be showing the correct time, which is 6:00."
+    },
+    {
+      "key": "D",
+      "text": "10:48",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "12:00",
+      "correct": false,
+      "misconception": "I thought the clocks meet when each is $6$ hours off, halfway around the dial, so the fast clock would show 6:00 plus $6$ hours. But the two clocks drift at different rates, so they are not each $6$ hours off at the same moment."
+    }
+  ],
+  "hints": [
+    "Two clocks with hands show the same time when one is exactly $12$ hours ahead of the other.",
+    "The gap between the clocks grows by $2 + 3 = 5$ minutes every real hour. How long until the gap is $12$ hours?",
+    "The gap reaches $720$ minutes after $144$ hours. In that time the fast clock gains $288$ minutes, which is $4$ hours $48$ minutes."
+  ],
+  "solutions": {
+    "reliable": "A clock with hands repeats every $12$ hours, so the clocks agree again when the fast one is exactly $12$ hours, or $720$ minutes, ahead of the slow one. The gap grows by $2 + 3 = 5$ minutes per real hour, so this takes $720 \\div 5 = 144$ real hours, which is exactly $6$ days. The real time is then 6:00 again. The fast clock has gained $144 \\times 2 = 288$ minutes, which is $4$ hours $48$ minutes, so it shows 10:48. Check: the slow clock has lost $144 \\times 3 = 432$ minutes, which is $7$ hours $12$ minutes, and going back $7$ hours $12$ minutes from 6:00 also lands on 10:48.",
+    "elegant": "When the clocks agree, the $12$-hour gap is split between them in the ratio of their drift rates, $2 : 3$. So the fast clock is $\\frac25 \\times 12 = 4.8$ hours, or $4$ hours $48$ minutes, ahead of the true time. That takes $288 \\div 2 = 144$ hours, a whole number of days, so the true time is 6:00 and the clocks read 10:48."
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

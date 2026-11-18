@@ -1,0 +1,68 @@
+{
+  "id": "KA-1542",
+  "band": "11-12",
+  "points": 5,
+  "statement": "For how many whole numbers $n$ from 1 to 100 does $n^n$ leave remainder 1 when divided by 5?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20",
+      "correct": false,
+      "misconception": "I only counted the $n$ that leave remainder 1 themselves, missing that other remainders can also reach 1 when raised to a power."
+    },
+    {
+      "key": "B",
+      "text": "25",
+      "correct": false,
+      "misconception": "I thought powers on division by 5 repeat every 4 steps, so one number in every four should work."
+    },
+    {
+      "key": "C",
+      "text": "30",
+      "correct": false,
+      "misconception": "I counted $n$ with remainder 1, and $n$ with remainder 4 and even, but forgot that remainders 2 and 3 also give 1 when $n$ is a multiple of 4."
+    },
+    {
+      "key": "D",
+      "text": "40",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "50",
+      "correct": false,
+      "misconception": "I counted every $n$ with remainder 4, forgetting that 4 to an odd power leaves remainder 4, not 1."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "CNT-04",
+      "NUM-07"
+    ]
+  },
+  "hints": [
+    "The remainder of $n^n$ depends on two things about $n$. Which?",
+    "The base matters only through its remainder on division by 5, and the powers of each remainder repeat in a cycle of length 1, 2 or 4. So the pattern in $n$ repeats every 20. Count one block of 20.",
+    "Base remainder 1 always works; remainder 4 needs an even exponent; remainders 2 and 3 need an exponent that is a multiple of 4; remainder 0 never works."
+  ],
+  "solutions": {
+    "reliable": "Sort by the remainder $r$ of $n$ on division by 5. If $r = 0$, $n^n$ is a multiple of 5. If $r = 1$, every power leaves 1: that is 20 numbers. If $r = 4$, powers alternate 4, 1, so $n$ must be even: $n = 4, 14, 24, \\dots, 94$, which is 10 numbers. If $r = 2$ or $r = 3$, powers cycle with length 4 and give 1 exactly when 4 divides the exponent, so we need $n \\equiv 2 \\pmod 5$ and $4 \\mid n$, that is $n = 12, 32, \\dots, 92$ (5 numbers), or $n \\equiv 3 \\pmod 5$ and $4 \\mid n$, that is $n = 8, 28, \\dots, 88$ (5 numbers). Total $20 + 10 + 5 + 5 = 40$. The transferable idea: when both the base and the exponent vary, find the cycle for each and combine them into one longer cycle.",
+    "elegant": "The pattern repeats every 20, and in 1 to 20 the numbers that work are 1, 4, 6, 8, 11, 12, 14, 16: eight of them. Five blocks give 40."
+  },
+  "whyOnTest": "Remainders of powers cycle, and here two cycles combine into one of length 20, a real test of modular reasoning.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

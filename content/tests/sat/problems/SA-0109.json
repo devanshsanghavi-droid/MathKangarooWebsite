@@ -1,0 +1,56 @@
+{
+  "id": "SA-0109",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-03",
+  "difficulty": "easy",
+  "statement": "In the $xy$-plane, the graph of $y = (x - 3)(x + 7)$ is a parabola. What is the $x$-coordinate of the vertex of the parabola?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-25$",
+      "correct": false,
+      "misconception": "I found the vertex at $x = -2$ and then gave its $y$-coordinate, $(-5)(5) = -25$."
+    },
+    {
+      "key": "B",
+      "text": "$-21$",
+      "correct": false,
+      "misconception": "I set $x = 0$ and gave the $y$-intercept, $(-3)(7) = -21$."
+    },
+    {
+      "key": "C",
+      "text": "$-2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I read the zeros as $-3$ and $7$ straight from the factors, so their average came out $2$."
+    }
+  ],
+  "hints": [
+    "Where does the parabola cross the $x$-axis?",
+    "A parabola is symmetric, so its vertex lies halfway between its two $x$-intercepts.",
+    "The $x$-intercepts are $3$ and $-7$. The vertex is at their average, $\\frac{3 + (-7)}{2}$."
+  ],
+  "solutions": {
+    "reliable": "The graph crosses the $x$-axis where $(x - 3)(x + 7) = 0$, at $x = 3$ and $x = -7$. The axis of symmetry is halfway between them, at $x = \\frac{3 + (-7)}{2} = -2$. Check: expanding gives $y = x^2 + 4x - 21$, and $-\\frac{b}{2a} = -\\frac{4}{2} = -2$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

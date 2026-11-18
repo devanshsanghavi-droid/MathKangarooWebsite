@@ -1,0 +1,71 @@
+{
+  "id": "KA-1261",
+  "band": "5-6",
+  "points": 4,
+  "statement": "The net in the picture is folded into a cube. At each corner of the cube, three faces meet. What is the largest possible total of the three numbers that meet at one corner?",
+  "figure": {
+    "component": "CubeNetZigzag",
+    "alt": "A cube net of six squares. Four squares form a row, labelled 6, 1, 5 and 2 from left to right. A square labelled 4 is attached above the square labelled 1, and a square labelled 3 is attached below the square labelled 2."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I found the smallest corner total, 1 + 3 + 5, instead of the largest."
+    },
+    {
+      "key": "B",
+      "text": "11",
+      "correct": false,
+      "misconception": "I only looked at points where three squares already meet in the flat net, and the best of those was 6 + 1 + 4."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": false,
+      "misconception": "I saw that 6 and 5 are opposite, so I took 6 with the next biggest numbers, 4 and 3, without checking that 4 and 3 are opposite too."
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": false,
+      "misconception": "I added the three biggest numbers, 6, 5 and 4, without checking that 6 and 5 land on opposite faces."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-10",
+    "secondary": [
+      "GEO-11",
+      "CNT-18"
+    ]
+  },
+  "hints": [
+    "First find which faces end up opposite each other.",
+    "Opposite faces never meet at a corner. Every corner uses exactly one face from each pair of opposite faces, so find the three opposite pairs first.",
+    "In the row of four, squares two apart fold to opposite faces: 6 with 5, and 1 with 2. That leaves 4 and 3 as the last pair."
+  ],
+  "solutions": {
+    "reliable": "In a row of four squares, the first and third fold to opposite faces, and so do the second and fourth, so 6 is opposite 5 and 1 is opposite 2. The two remaining squares, 4 and 3, are opposite each other. Each corner of the cube touches one face from each opposite pair, and every such choice of three faces meets at a corner. So the largest total takes the larger number from each pair: 6 + 2 + 4 = 12. The transferable idea: on a cube, three faces meet at a corner exactly when no two of them are opposite.",
+    "elegant": null
+  },
+  "whyOnTest": "Net questions test whether you can find opposite faces before folding, because opposite faces can never share a corner.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

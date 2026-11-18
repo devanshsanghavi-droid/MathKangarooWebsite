@@ -1,0 +1,68 @@
+{
+  "id": "KA-1264",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Three balances are level. On the first, 1 cube balances 3 balls. On the second, 2 balls balance 1 cone and 1 marble. On the third, 1 cone balances 3 marbles. All cubes weigh the same, and so do all balls, all cones and all marbles. How many marbles balance one cube?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I found the weight of a ball, 2 marbles, instead of the weight of a cube."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I worked out what the 2 balls on the second balance weigh, 4 marbles, and took that as the weight of the cube."
+    },
+    {
+      "key": "C",
+      "text": "4.5",
+      "correct": false,
+      "misconception": "I left out the marble on the second balance, so 2 balls balanced only a cone, 3 marbles, and a ball came out as 1.5 marbles."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I read the second balance as 1 ball balancing a cone and a marble, so a ball was 4 marbles and a cube 12."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-10",
+    "secondary": [
+      "MOD-01",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Start from the balance that uses only one kind of unknown object.",
+    "The third balance tells you a cone in marbles. Put that into the second balance to find a ball, then use the first balance to find a cube.",
+    "On the second balance, the cone and the marble together weigh 3 + 1 = 4 marbles, and that is the weight of 2 balls."
+  ],
+  "solutions": {
+    "reliable": "A cone weighs 3 marbles, so the right side of the second balance weighs 3 + 1 = 4 marbles. That is the weight of 2 balls, so one ball weighs 2 marbles. A cube balances 3 balls, which is 3 × 2 = 6 marbles. Check: 3 balls weigh 6 marbles, and 2 balls weigh 4 marbles, the same as a cone and a marble. The transferable idea: in a chain of balances, start with the one that has a single unknown and swap objects for marbles one step at a time.",
+    "elegant": "Turn everything into marbles from the bottom of the chain up: cone = 3, so 2 balls = 3 + 1 = 4, so ball = 2, so cube = 3 × 2 = 6."
+  },
+  "whyOnTest": "Balance puzzles test substitution: swapping each object for what it balances, one balance at a time, until everything is in the same unit.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

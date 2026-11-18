@@ -1,0 +1,56 @@
+{
+  "id": "AC-0111",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-07",
+  "difficulty": "easy",
+  "statement": "Which of the following equations has a graph in the standard $(x, y)$ coordinate plane that is parallel to the graph of $y = 3x - 2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3x + y = 7$",
+      "correct": false,
+      "misconception": "I saw a $3$ next to the $x$ and assumed the slope was $3$, but solving for $y$ gives $y = -3x + 7$, which has slope $-3$."
+    },
+    {
+      "key": "B",
+      "text": "$x - 3y = 4$",
+      "correct": false,
+      "misconception": "I saw the $3$ in the equation and thought the slope was $3$, but solving for $y$ gives $y = \\frac{1}{3}x - \\frac{4}{3}$, so the slope is $\\frac{1}{3}$."
+    },
+    {
+      "key": "C",
+      "text": "$y = -\\frac{1}{3}x + 2$",
+      "correct": false,
+      "misconception": "I chose the negative reciprocal of $3$, but that slope gives a line perpendicular to $y = 3x - 2$, not parallel to it."
+    },
+    {
+      "key": "D",
+      "text": "$6x - 2y = 5$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Parallel lines have the same slope.",
+    "Solve each equation for $y$ and compare the coefficient of $x$ with $3$.",
+    "$6x - 2y = 5$ becomes $y = 3x - \\frac{5}{2}$."
+  ],
+  "solutions": {
+    "reliable": "Solve each equation for $y$. $3x + y = 7$ gives $y = -3x + 7$ (slope $-3$). $x - 3y = 4$ gives $y = \\frac{1}{3}x - \\frac{4}{3}$ (slope $\\frac{1}{3}$). $y = -\\frac{1}{3}x + 2$ has slope $-\\frac{1}{3}$. $6x - 2y = 5$ gives $y = 3x - \\frac{5}{2}$ (slope $3$). Only the last has slope $3$, and its $y$-intercept $-\\frac{5}{2}$ differs from $-2$, so it is a different line parallel to $y = 3x - 2$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

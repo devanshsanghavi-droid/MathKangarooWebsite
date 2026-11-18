@@ -1,0 +1,56 @@
+{
+  "id": "AC-0135",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-03",
+  "difficulty": "medium",
+  "statement": "A plumber's charge for a job is a linear function of the number of hours worked. A $2$-hour job costs $\\$190$ and a $5$-hour job costs $\\$385$. How much does a $4$-hour job cost?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$260$",
+      "correct": false,
+      "misconception": "I found the hourly rate, 65 dollars, and multiplied it by 4, but I left out the 60-dollar fixed charge."
+    },
+    {
+      "key": "B",
+      "text": "$\\$308$",
+      "correct": false,
+      "misconception": "I treated the charge as proportional, using 385 divided by 5 = 77 dollars per hour, and 77 times 4 is 308."
+    },
+    {
+      "key": "C",
+      "text": "$\\$320$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$380$",
+      "correct": false,
+      "misconception": "I assumed the charge is proportional to the hours, so I doubled the 2-hour cost of 190 dollars to get 380."
+    }
+  ],
+  "hints": [
+    "A linear charge is a fixed amount plus a constant rate per hour.",
+    "The rate is the change in cost divided by the change in hours between the two jobs.",
+    "The rate is $\\frac{385 - 190}{5 - 2} = 65$ dollars per hour, so the fixed charge is $190 - 2(65) = 60$ dollars."
+  ],
+  "solutions": {
+    "reliable": "The rate is $\\frac{385 - 190}{5 - 2} = \\frac{195}{3} = 65$ dollars per hour. The fixed charge is $190 - 2(65) = 60$ dollars, so $C(h) = 60 + 65h$ and $C(4) = 60 + 260 = 320$ dollars.",
+    "elegant": "Going from $5$ hours down to $4$ hours removes one hour at $\\$65$: $385 - 65 = 320$ dollars."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

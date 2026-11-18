@@ -1,0 +1,67 @@
+{
+  "id": "KA-1408",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Ada rolls a 16 cm by 10 cm sheet into a tube by joining its two 10 cm edges, without overlap. Ben rolls an identical sheet by joining its two 16 cm edges. Both tubes are closed with a circle at each end. What is the ratio of the volume of Ada's cylinder to Ben's?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5 : 8",
+      "correct": false,
+      "misconception": "I thought joining the two 10 cm edges makes the 10 cm side go round the tube, but those edges become the seam, so the 16 cm side goes round."
+    },
+    {
+      "key": "B",
+      "text": "1 : 1",
+      "correct": false,
+      "misconception": "I thought both cylinders must hold the same amount because they are made from the same sheet, with the same curved area of 160 square cm."
+    },
+    {
+      "key": "C",
+      "text": "8 : 5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "64 : 25",
+      "correct": false,
+      "misconception": "I compared only the areas of the circular ends, which grow with the square of the distance round, and forgot that Ada's cylinder is also shorter."
+    },
+    {
+      "key": "E",
+      "text": "512 : 125",
+      "correct": false,
+      "misconception": "I treated the two cylinders as scaled copies of each other and cubed the ratio 16 : 10, but one is wider while the other is taller."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-10",
+    "secondary": [
+      "GEO-07"
+    ]
+  },
+  "hints": [
+    "Which side of the sheet goes round each tube, and which goes up?",
+    "Two joined edges become the seam, so the other side of the sheet becomes the distance round. Find each radius from the distance round, then compare the volumes.",
+    "Ada: 16 cm round and 10 cm tall. Ben: 10 cm round and 16 cm tall. Use $V = \\pi r^2 h$ with $r = \\frac{C}{2\\pi}$."
+  ],
+  "solutions": {
+    "reliable": "Joining the two 10 cm edges makes them the seam, so Ada's tube is 10 cm tall and 16 cm round, while Ben's is 16 cm tall and 10 cm round. A circle with circumference $C$ has radius $\\frac{C}{2\\pi}$, so a cylinder with circumference $C$ and height $h$ has volume $\\pi \\left(\\frac{C}{2\\pi}\\right)^2 h = \\frac{C^2 h}{4\\pi}$. Ada's volume is $\\frac{16^2 \\times 10}{4\\pi} = \\frac{640}{\\pi}$ and Ben's is $\\frac{10^2 \\times 16}{4\\pi} = \\frac{400}{\\pi}$, so the ratio is $640 : 400 = 8 : 5$. The transferable idea: when a flat piece rolls or folds into a solid, decide which length becomes which before using any formula.",
+    "elegant": "Since the volume is $\\frac{C^2 h}{4\\pi}$, the ratio is $\\frac{16^2 \\times 10}{10^2 \\times 16} = \\frac{16}{10} = \\frac85$: the tube with the longer side going round holds more."
+  },
+  "whyOnTest": "Rolling and folding questions test whether you can match each length on the flat sheet with its new role in the solid before any formula is used.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

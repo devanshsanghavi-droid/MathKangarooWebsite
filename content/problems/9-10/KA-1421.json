@@ -1,0 +1,68 @@
+{
+  "id": "KA-1421",
+  "band": "9-10",
+  "points": 3,
+  "statement": "The five letters of the word ORBIT are arranged in a row. In how many arrangements is neither vowel, O nor I, at either end of the row?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the ways to place O and I in the three middle places, 3 × 2, but forgot to arrange R, B and T in the other places."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I subtracted the arrangements with O at an end and those with I at an end, 48 each, from 120, but the arrangements with both vowels at the ends were taken away twice."
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "72",
+      "correct": false,
+      "misconception": "I only kept O away from the ends and forgot that I must stay away from the ends too."
+    },
+    {
+      "key": "E",
+      "text": "108",
+      "correct": false,
+      "misconception": "I subtracted only the 12 arrangements with a vowel at both ends, but even one vowel at an end is not allowed."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-05",
+    "secondary": [
+      "CNT-11",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Deal with the restricted letters first.",
+    "The vowels must go into the three middle places. Count the ways to place O and I there, then the ways to arrange the three consonants in the places that are left, and multiply.",
+    "O has 3 middle places to choose from, then I has 2. The consonants R, B, T fill the remaining 3 places in $3! = 6$ ways."
+  ],
+  "solutions": {
+    "reliable": "Place the restricted letters first. O goes in one of the 3 middle places and I in one of the other 2: $3 \\times 2 = 6$ ways. R, B and T fill the remaining three places, including both ends, in $3! = 6$ ways. Total $6 \\times 6 = 36$. Check by complement: 120 arrangements, minus 48 with O at an end and 48 with I at an end, plus the 12 with both at the ends that were taken away twice: $120 - 96 + 12 = 36$. The transferable idea: in an arrangement with restrictions, place the most restricted objects first.",
+    "elegant": "Fill the two ends with consonants in order: $3 \\times 2 = 6$ ways. The remaining three letters fill the middle in $3! = 6$ ways: 36."
+  },
+  "whyOnTest": "Arrangements with restrictions reward placing the fussiest letters first; the distractors are the usual slips in the complement count.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

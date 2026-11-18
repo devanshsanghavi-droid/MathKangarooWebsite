@@ -1,0 +1,56 @@
+{
+  "id": "SA-0250",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-07",
+  "difficulty": "hard",
+  "statement": "Two polling organizations surveyed random samples of likely voters in two different towns about a proposed tax. In Town P, $54\\%$ of those surveyed supported the tax, with a margin of error of $3$ percentage points. In Town Q, $49\\%$ of those surveyed supported the tax, with a margin of error of $4$ percentage points. Which conclusion is best supported by these results?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "The percent of likely voters who support the tax is greater in Town P than in Town Q.",
+      "correct": false,
+      "misconception": "I compared 54% with 49% and ignored the margins of error, but the plausible ranges, 51% to 57% and 45% to 53%, overlap, so Town P is not clearly higher."
+    },
+    {
+      "key": "B",
+      "text": "The percent of likely voters who support the tax is exactly $5$ percentage points greater in Town P than in Town Q.",
+      "correct": false,
+      "misconception": "I subtracted the sample percents and treated 5 points as the exact difference, but each sample percent is only an estimate of its town's true percent."
+    },
+    {
+      "key": "C",
+      "text": "A majority of likely voters in each of the two towns support the tax.",
+      "correct": false,
+      "misconception": "I saw that both plausible ranges reach above 50%, but Town Q's range goes as low as 45%, so a majority there is not supported."
+    },
+    {
+      "key": "D",
+      "text": "It is plausible that the percent of likely voters who support the tax is the same in both towns.",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Each margin of error turns a sample percent into a range of plausible values.",
+    "Write the interval of plausible values for each town, then check whether the two intervals share any values.",
+    "Town P: $51\\%$ to $57\\%$. Town Q: $45\\%$ to $53\\%$. Look at the values from $51\\%$ to $53\\%$."
+  ],
+  "solutions": {
+    "reliable": "For Town P the plausible values are $54 \\pm 3$, from $51\\%$ to $57\\%$. For Town Q they are $49 \\pm 4$, from $45\\%$ to $53\\%$. The intervals overlap from $51\\%$ to $53\\%$, so a value such as $52\\%$ is plausible for both towns. The results therefore do not show that support differs between the towns, and it is plausible that the two percents are equal. A majority is not supported for Town Q, whose interval includes values below $50\\%$, and no exact difference can be claimed from two estimates.",
+    "elegant": null
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

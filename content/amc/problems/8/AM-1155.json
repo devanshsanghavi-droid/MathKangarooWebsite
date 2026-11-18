@@ -1,0 +1,67 @@
+{
+  "id": "AM-1155",
+  "contest": "AMC8",
+  "slot": 2,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-CYCLE",
+    "T-MODULAR"
+  ],
+  "statement": "Ava's birthday this year falls on a Friday. Her cousin's birthday this year is exactly $75$ days after Ava's. On what day of the week is her cousin's birthday?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Sunday",
+      "correct": false,
+      "misconception": "I found that $75$ leaves remainder $5$ when divided by $7$, but I counted $5$ days backward from Friday instead of forward."
+    },
+    {
+      "key": "B",
+      "text": "Monday",
+      "correct": false,
+      "misconception": "I divided $75$ by $7$ and used the quotient $10$ instead of the remainder, and $10$ days after Friday is a Monday."
+    },
+    {
+      "key": "C",
+      "text": "Tuesday",
+      "correct": false,
+      "misconception": "I counted Friday itself as day $1$, so I only moved $74$ days ahead, which is $4$ days past Friday."
+    },
+    {
+      "key": "D",
+      "text": "Wednesday",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "Friday",
+      "correct": false,
+      "misconception": "I found the remainder $5$ but counted $5$ school days, skipping Saturday and Sunday, so I landed on Friday again."
+    }
+  ],
+  "hints": [
+    "Every $7$ days the day of the week repeats.",
+    "Remove as many full weeks from $75$ days as you can. Only the leftover days change the weekday.",
+    "$75 = 7 \\cdot 10 + 5$, so the birthday is $5$ days after a Friday."
+  ],
+  "solutions": {
+    "reliable": "Since $75 = 7 \\cdot 10 + 5$, going $75$ days ahead is the same as going $10$ full weeks and then $5$ more days. Ten full weeks after a Friday is again a Friday. Five more days: Saturday, Sunday, Monday, Tuesday, Wednesday. The cousin's birthday is on a Wednesday.",
+    "elegant": "$75$ days is $2$ days short of $77 = 11 \\cdot 7$ days, which would land on Friday. Two days before Friday is Wednesday."
+  },
+  "formulas": [],
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

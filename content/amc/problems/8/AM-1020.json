@@ -1,0 +1,66 @@
+{
+  "id": "AM-1020",
+  "contest": "AMC8",
+  "slot": 7,
+  "area": "ALG",
+  "topic": "ALG-02",
+  "types": [
+    "T-SMALL-CASES"
+  ],
+  "statement": "At a summer camp, $60\\%$ of the campers are in the younger group and the rest are in the older group. One quarter of the younger campers and half of the older campers signed up for an overnight hike. What fraction of the campers who signed up for the hike are in the younger group?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{1}{3}$",
+      "correct": false,
+      "misconception": "I compared the two rates directly, 25% out of 25% + 50%, which gives 1/3, but that ignores that there are more younger campers."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{3}{7}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{4}{7}$",
+      "correct": false,
+      "misconception": "I worked out the hikers correctly but gave the fraction who are older campers, 4/7."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{3}{5}$",
+      "correct": false,
+      "misconception": "I thought the hikers would split the same way as the whole camp, so I used 60% = 3/5."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{3}{4}$",
+      "correct": false,
+      "misconception": "I divided the younger hikers, 15% of the camp, by the older hikers, 20% of the camp, instead of by all the hikers."
+    }
+  ],
+  "hints": [
+    "Pick a convenient number of campers, such as $20$.",
+    "With $20$ campers, $12$ are younger and $8$ are older. How many of each go on the hike?",
+    "Three younger campers and $4$ older campers hike. The question asks what fraction of those $7$ hikers are younger."
+  ],
+  "solutions": {
+    "reliable": "Suppose there are $20$ campers. Then $12$ are younger and $8$ are older. One quarter of $12$ is $3$ and half of $8$ is $4$, so $7$ campers hike, and $3$ of them are younger. The fraction is $\\frac{3}{7}$.",
+    "elegant": "As fractions of the whole camp, younger hikers are $0.6 \\cdot \\frac{1}{4} = 0.15$ and older hikers are $0.4 \\cdot \\frac{1}{2} = 0.2$. The younger share of the hikers is $\\frac{0.15}{0.15 + 0.2} = \\frac{15}{35} = \\frac{3}{7}$."
+  },
+  "formulas": [],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

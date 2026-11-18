@@ -1,0 +1,68 @@
+{
+  "id": "KA-1411",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Boxes A, B and C hold 5, 8 and 12 marbles. A move takes one marble from each of two boxes and puts both of them into the third box. Making as many moves as you like, what is the largest number of marbles that box A can end up holding?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "11",
+      "correct": false,
+      "misconception": "I thought the difference between A and B, which is 3, never changes, so A always holds 3 fewer than B, and the most A can then hold is 11."
+    },
+    {
+      "key": "B",
+      "text": "21",
+      "correct": false,
+      "misconception": "I kept taking a marble from B and one from C and adding both to A until B ran out, giving 21, and assumed I could go no further."
+    },
+    {
+      "key": "C",
+      "text": "23",
+      "correct": false,
+      "misconception": "I thought A always leaves the same remainder on division by 3 as at the start, which is 2, so I took the largest such number up to 25."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": false,
+      "misconception": "I assumed all 25 marbles could end up in box A, without looking for anything that the moves keep fixed."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "NUM-06",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "Look at the three counts after each move, divided by 3.",
+    "Each move changes one box by +2 and the other two by -1. Compare what happens to the remainders of all three boxes on division by 3: something about them never changes.",
+    "On division by 3, adding 2 is the same as taking 1, so every move lowers every remainder by 1. So A and B always leave equal remainders, and C one more. Test the largest values of A against this."
+  ],
+  "solutions": {
+    "reliable": "A move adds 2 to one box and takes 1 from each of the others. On division by 3, adding 2 has the same effect as taking 1, so every move lowers all three remainders by 1 together. At the start the remainders are 2, 2 and 0: A and B agree, and C is one more (going round 0, 1, 2), and this stays true for ever. Could A hold 25? Then B and C are both 0, but C must be one more than B: no. Could A hold 24? Then B + C = 1, and with A and B leaving remainder 0 and C remainder 1, B = 0 and C = 1 fits. It can be reached: take one marble from B and one from C eight times (21, 0, 4); take from A and C into B (20, 2, 3); then take from B and C into A twice (24, 0, 1). The transferable idea: when every move changes things in a fixed pattern, look at remainders to find what never changes.",
+    "elegant": null
+  },
+  "whyOnTest": "An invariant hides in the remainders on division by 3; once found, it rules out the obvious 25 in one line, and a short sequence of moves confirms 24.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

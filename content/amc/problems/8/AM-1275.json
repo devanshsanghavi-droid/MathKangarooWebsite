@@ -1,0 +1,62 @@
+{
+  "id": "AM-1275",
+  "contest": "AMC8",
+  "slot": 17,
+  "area": "CP",
+  "topic": "CP-09",
+  "types": ["T-RECURSION"],
+  "statement": "A $2$ by $6$ rectangle is to be covered exactly, with no gaps or overlaps, using $1$ by $2$ tiles and $2$ by $2$ tiles. A $1$ by $2$ tile may be placed either horizontally or vertically, and tiles of the same size are identical. For example, a $2$ by $2$ square can be covered in $3$ ways: two vertical tiles, two horizontal tiles or one $2$ by $2$ tile. In how many ways can the $2$ by $6$ rectangle be covered?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I forgot about the 2 by 2 tiles and counted only the coverings by 1 by 2 tiles, which go 1, 2, 3, 5, 8, 13."
+    },
+    {
+      "key": "B",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I built up the counts column by column, but I stopped one column too early and gave the count for a 2 by 5 rectangle."
+    },
+    {
+      "key": "C",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I counted the coverings with no 2 by 2 tile (13) and with exactly one 2 by 2 tile (20), and forgot the coverings that use two or three of them."
+    },
+    {
+      "key": "D",
+      "text": "$43$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$85$",
+      "correct": false,
+      "misconception": "I built up the counts column by column, but I went one column too far and gave the count for a 2 by 7 rectangle."
+    }
+  ],
+  "hints": [
+    "Look at the left end of the rectangle. In what ways can the leftmost column be covered?",
+    "Either one vertical tile covers the first column, or the first two columns are covered together, by two horizontal tiles or by one $2$ by $2$ tile.",
+    "If $t(n)$ counts the coverings of a $2$ by $n$ rectangle, then $t(n) = t(n - 1) + 2t(n - 2)$, with $t(1) = 1$ and $t(2) = 3$."
+  ],
+  "solutions": {
+    "reliable": "Let $t(n)$ be the number of coverings of a $2$ by $n$ rectangle. Look at the top left square. If a vertical tile covers it, that tile fills the first column and the rest is a $2$ by $(n - 1)$ rectangle. If a horizontal tile covers it, the square below must also be covered by a horizontal tile, so the first two columns are filled and the rest is a $2$ by $(n - 2)$ rectangle. If a $2$ by $2$ tile covers it, again the first two columns are filled. So $t(n) = t(n - 1) + 2t(n - 2)$. Starting from $t(1) = 1$ and $t(2) = 3$, we get $t(3) = 3 + 2 = 5$, $t(4) = 5 + 6 = 11$, $t(5) = 11 + 10 = 21$ and $t(6) = 21 + 22 = 43$.",
+    "elegant": null
+  },
+  "formulas": ["F-CP-19"],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

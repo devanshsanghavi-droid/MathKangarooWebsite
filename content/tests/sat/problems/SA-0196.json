@@ -1,0 +1,56 @@
+{
+  "id": "SA-0196",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-03",
+  "difficulty": "medium",
+  "statement": "A farmer has $120$ meters of fencing to build a rectangular pen along a long, straight barn wall. The wall forms one side of the pen, so fencing is needed only for the other three sides. What is the greatest possible area, in square meters, of the pen?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$900$",
+      "correct": false,
+      "misconception": "I fenced all four sides of a square, so each side was $\\frac{120}{4} = 30$ meters and the area was $900$."
+    },
+    {
+      "key": "B",
+      "text": "$1{,}600$",
+      "correct": false,
+      "misconception": "I made all three fenced sides equal, $40$ meters each, so the area was $40 \\cdot 40 = 1{,}600$."
+    },
+    {
+      "key": "C",
+      "text": "$1{,}800$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$3{,}600$",
+      "correct": false,
+      "misconception": "I wrote the side parallel to the wall as $120 - x$ instead of $120 - 2x$, so I maximized $x(120 - x)$ at $x = 60$."
+    }
+  ],
+  "hints": [
+    "Let $x$ be the length of each side that meets the wall. How much fencing is left for the side parallel to the wall?",
+    "The parallel side is $120 - 2x$, so the area is $A(x) = x(120 - 2x)$.",
+    "$A(x) = x(120 - 2x)$ has zeros at $x = 0$ and $x = 60$, so its maximum is halfway between, at $x = 30$."
+  ],
+  "solutions": {
+    "reliable": "Let $x$ be the length of each of the two sides perpendicular to the wall. The side parallel to the wall uses the remaining $120 - 2x$ meters, so the area is $A(x) = x(120 - 2x) = -2x^2 + 120x$. This parabola opens downward and has zeros at $x = 0$ and $x = 60$, so its maximum is at $x = 30$: $A(30) = 30 \\cdot 60 = 1{,}800$ square meters.",
+    "elegant": null
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "AM-1244",
+  "contest": "AMC8",
+  "slot": 6,
+  "area": "CP",
+  "topic": "CP-12",
+  "types": [
+    "T-INVARIANT"
+  ],
+  "statement": "Seven numbers have a mean of $20$ and a median of $18$. The largest of the seven numbers is increased by $14$, and the other six numbers stay the same. What is the new mean plus the new median?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$38$",
+      "correct": false,
+      "misconception": "I thought changing just one number would not change the mean, so I added the old mean and median, 20 + 18 = 38."
+    },
+    {
+      "key": "B",
+      "text": "$40$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$42$",
+      "correct": false,
+      "misconception": "I raised both the mean and the median by 2, getting 22 + 20 = 42, but the middle number did not change."
+    },
+    {
+      "key": "D",
+      "text": "$52$",
+      "correct": false,
+      "misconception": "I added the whole 14 to the mean, 34 + 18 = 52, instead of spreading it over the 7 numbers."
+    },
+    {
+      "key": "E",
+      "text": "$66$",
+      "correct": false,
+      "misconception": "I added 14 to both the mean and the median, 34 + 32 = 66."
+    }
+  ],
+  "hints": [
+    "Think about the total of the seven numbers, and about which number sits in the middle.",
+    "The total goes up by $14$, so the mean goes up by $\\frac{14}{7}$. The largest number only gets larger, so the order of the numbers does not change.",
+    "The new mean is $20 + 2 = 22$. The middle number is still $18$, so the new median is $18$. Add them."
+  ],
+  "solutions": {
+    "reliable": "The seven numbers add to $7 \\cdot 20 = 140$. After the change they add to $154$, so the new mean is $\\frac{154}{7} = 22$. The largest number becomes even larger, so the numbers stay in the same order and the fourth number is still $18$; the median stays $18$. The answer is $22 + 18 = 40$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

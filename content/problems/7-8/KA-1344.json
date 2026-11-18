@@ -1,0 +1,68 @@
+{
+  "id": "KA-1344",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Squares of size 2 by 2 are to be cut out of a 7 by 7 sheet of squared paper, cutting only along the grid lines. What is the largest number of 2 by 2 squares that can be cut out?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I divided the 49 small squares by 4 and rounded down, as if hardly any paper had to be wasted."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought only one strip 1 square wide had to be wasted, leaving 42 small squares, and 42 / 4 rounds down to 10."
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": false,
+      "misconception": "I counted all the places where a 2 by 2 square can be drawn, $6 \\times 6 = 36$, forgetting that the pieces cannot overlap."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I marked the 16 squares with an odd row number and an odd column number, and since each 2 by 2 square covers one of them, I said 16 could fit."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-07",
+    "secondary": [
+      "GEO-14",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Mark small squares so that every 2 by 2 square must cover one.",
+    "Number the rows and columns 1 to 7 and mark each small square whose row and column numbers are both even. Every 2 by 2 square covers exactly one mark, so the marks limit the count. Then reach that limit.",
+    "There are 3 even numbers from 1 to 7, so there are $3 \\times 3 = 9$ marked squares."
+  ],
+  "solutions": {
+    "reliable": "Number the rows and columns 1 to 7 and mark the 9 small squares whose row and column numbers are both even. A 2 by 2 square covers two neighbouring rows, exactly one of which is even, and two neighbouring columns, exactly one of which is even, so it covers exactly one marked square. Pieces that do not overlap cover different marked squares, so at most 9 pieces can be cut. And 9 is possible: cut the top left 6 by 6 part into a 3 by 3 arrangement of 2 by 2 squares, wasting the strips along the right and bottom edges. The answer is 9. The transferable idea: to show that more pieces are impossible, mark or colour squares so that every piece must use up one mark.",
+    "elegant": null
+  },
+  "whyOnTest": "Tests a marking argument: the area suggests 12, but marking squares that every piece must cover proves that 9 is the most.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

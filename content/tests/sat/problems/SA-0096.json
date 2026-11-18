@@ -1,0 +1,56 @@
+{
+  "id": "SA-0096",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "hard",
+  "statement": "If $3 \\le 2x - 5 < 11$, what is the greatest possible integer value of $4x - 3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$28$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I added 5 only to the left part, getting $8 \\le 2x < 11$, so $4x - 3 < 19$ and I picked 18."
+    },
+    {
+      "key": "C",
+      "text": "$29$",
+      "correct": false,
+      "misconception": "I found $13 \\le 4x - 3 < 29$ but included 29, even though the upper inequality is strict."
+    },
+    {
+      "key": "D",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I took the greatest integer value of $x$, which is 7, and computed $4(7) - 3$, but $x$ does not have to be an integer."
+    }
+  ],
+  "hints": [
+    "Solve the compound inequality for $x$ first.",
+    "Add $5$ to all three parts and divide by $2$. Then build $4x - 3$ from the bounds on $x$, remembering that $x$ need not be a whole number.",
+    "$4 \\le x < 8$, so $13 \\le 4x - 3 < 29$. Find the greatest integer in that range."
+  ],
+  "solutions": {
+    "reliable": "Add $5$ to every part: $8 \\le 2x < 16$. Divide by $2$: $4 \\le x < 8$. Multiply by $4$ and subtract $3$: $13 \\le 4x - 3 < 29$. The expression can take any value in this range, including $28$ (when $x = 7.75$), but not $29$. So the greatest integer value is $28$. Key idea: transform a compound inequality into the expression you need, and notice which quantity is required to be an integer.",
+    "elegant": "Since $4x - 3 = 2(2x - 5) + 7$, doubling $3 \\le 2x - 5 < 11$ and adding $7$ gives $13 \\le 4x - 3 < 29$ at once."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

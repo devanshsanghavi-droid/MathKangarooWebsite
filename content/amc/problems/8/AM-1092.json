@@ -1,0 +1,68 @@
+{
+  "id": "AM-1092",
+  "contest": "AMC8",
+  "slot": 6,
+  "area": "GEO",
+  "topic": "GEO-01",
+  "types": [
+    "T-ANGLE-CHASE"
+  ],
+  "statement": "Regular hexagon $ABCDEF$ and square $ABGH$ share the side $AB$, and the square lies outside the hexagon. What is the measure, in degrees, of angle $AHF$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I found 180 - 150 = 30 degrees but forgot that it is shared equally by the two base angles of isosceles triangle $AHF$."
+    },
+    {
+      "key": "C",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I thought triangle $AHF$ was a right isosceles triangle, like half of the square, so each base angle was 45 degrees."
+    },
+    {
+      "key": "D",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I saw that $AH$ and $AF$ are equal and assumed triangle $AHF$ is equilateral, so every angle is 60 degrees."
+    },
+    {
+      "key": "E",
+      "text": "$150$",
+      "correct": false,
+      "misconception": "I found angle $FAH = 150$ degrees and gave that instead of angle $AHF$."
+    }
+  ],
+  "hints": [
+    "Find the angle at $A$ between $AF$ and $AH$ first.",
+    "The angles around point $A$ add up to $360^\\circ$. The hexagon's angle there is $120^\\circ$ and the square's angle is $90^\\circ$. Also notice that $AF = AH$.",
+    "Angle $FAH = 150^\\circ$, and triangle $AHF$ is isosceles with $AF = AH$, so its other two angles are equal."
+  ],
+  "solutions": {
+    "reliable": "Each interior angle of a regular hexagon is $\\frac{4 \\cdot 180^\\circ}{6} = 120^\\circ$, and each angle of the square is $90^\\circ$. The angles around $A$ add up to $360^\\circ$, so angle $FAH = 360^\\circ - 120^\\circ - 90^\\circ = 150^\\circ$. Sides $AF$ and $AH$ are both equal to $AB$, so triangle $AHF$ is isosceles, and its two base angles are each $\\frac{180^\\circ - 150^\\circ}{2} = 15^\\circ$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-19"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

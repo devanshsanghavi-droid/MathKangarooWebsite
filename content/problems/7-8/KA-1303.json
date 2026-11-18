@@ -1,0 +1,68 @@
+{
+  "id": "KA-1303",
+  "band": "7-8",
+  "points": 5,
+  "statement": "The number $N$ is written with thirty 3s: $N = 333\\ldots3$. What is the sum of the digits of $N \\times N$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I tried only the smallest case, $3 \\times 3 = 9$, and assumed the digit sum stays 9 for any number of 3s."
+    },
+    {
+      "key": "B",
+      "text": "90",
+      "correct": false,
+      "misconception": "I thought the digit sum of $N \\times N$ is the same as the digit sum of $N$, which is $30 \\times 3 = 90$."
+    },
+    {
+      "key": "C",
+      "text": "261",
+      "correct": false,
+      "misconception": "I saw the pattern of ones, a 0, eights and a final 9, with 29 ones and 29 eights, but I left out the final 9: $29 + 29 \\times 8 = 261$."
+    },
+    {
+      "key": "D",
+      "text": "270",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "279",
+      "correct": false,
+      "misconception": "I thought $N \\times N$ has 30 ones and 30 eights before the final 9, so I got $30 + 240 + 9 = 279$."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "PAT-07",
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "Work out $3^2$, $33^2$ and $333^2$ before thinking about thirty 3s.",
+    "Try small cases first: square the numbers made of one, two, three and four 3s, add up the digits of each result, and look for a rule linking the digit sum to the number of 3s.",
+    "$33^2 = 1089$, $333^2 = 110889$ and $3333^2 = 11108889$. The digit sums are 9, 18, 27 and 36: always 9 times the number of 3s."
+  ],
+  "solutions": {
+    "reliable": "Small cases: $3^2 = 9$ (digit sum 9), $33^2 = 1089$ (18), $333^2 = 110889$ (27), $3333^2 = 11108889$ (36). With $k$ threes, the square is $k - 1$ ones, then a 0, then $k - 1$ eights, then a 9, so its digit sum is $(k - 1) + 8(k - 1) + 9 = 9k$. For $k = 30$ the digit sum is $9 \\times 30 = 270$. The transferable idea: when a problem is far too big to calculate, do the sizes 1, 2, 3 and 4 and let the pattern do the work.",
+    "elegant": "There is no shortcut that beats the small cases here, but one more case makes the rule safe to trust: $33333^2 = 1111088889$, with digit sum $4 + 0 + 32 + 9 = 45 = 9 \\times 5$. So thirty 3s give $9 \\times 30 = 270$."
+  },
+  "whyOnTest": "Nobody can square a 30-digit number in a contest; the problem rewards trying 3, 33 and 333 and spotting the rule.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

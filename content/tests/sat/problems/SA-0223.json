@@ -1,0 +1,56 @@
+{
+  "id": "SA-0223",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-06",
+  "difficulty": "hard",
+  "statement": "At a high school, $40\\%$ of the students are in the upper grades and the rest are in the lower grades. Of the upper-grade students, $30\\%$ ride a bike to school. Of the lower-grade students, $15\\%$ ride a bike to school. A student who rides a bike to school is chosen at random. What is the probability that this student is in the upper grades?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{3}{25}$",
+      "correct": false,
+      "misconception": "I multiplied $40\\%$ by $30\\%$ to get 0.12, which is the chance that a random student is an upper-grade bike rider, not the chance that a bike rider is in the upper grades."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{3}{10}$",
+      "correct": false,
+      "misconception": "I gave the percent of upper-grade students who ride a bike, $30\\%$, which reverses the condition in the question."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{4}{7}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{2}{3}$",
+      "correct": false,
+      "misconception": "I compared only the two bike percents, $\\frac{30}{30 + 15}$, as if there were the same number of upper-grade and lower-grade students."
+    }
+  ],
+  "hints": [
+    "Imagine the school has $1{,}000$ students. How many are in each group?",
+    "Count the bike riders in each group, then find what fraction of all bike riders are upper-grade students.",
+    "Out of $1{,}000$ students, $400$ are in the upper grades and $120$ of them ride a bike. Of the $600$ lower-grade students, $90$ ride a bike."
+  ],
+  "solutions": {
+    "reliable": "Suppose there are $1{,}000$ students. Then $400$ are upper-grade students, of whom $0.30(400) = 120$ bike, and $600$ are lower-grade students, of whom $0.15(600) = 90$ bike. There are $210$ bike riders, and $120$ of them are in the upper grades, so the probability is $\\dfrac{120}{210} = \\dfrac{4}{7}$.",
+    "elegant": "As proportions of the whole school, upper-grade bike riders are $0.4 \\cdot 0.3 = 0.12$ and lower-grade bike riders are $0.6 \\cdot 0.15 = 0.09$, so the probability is $\\dfrac{0.12}{0.12 + 0.09} = \\dfrac{12}{21} = \\dfrac{4}{7}$."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

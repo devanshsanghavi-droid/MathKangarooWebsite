@@ -1,0 +1,67 @@
+{
+  "id": "KA-1179",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Kai's money box holds only 10-cent and 20-cent coins. There are 15 coins, worth 210 cents in total. How many 20-cent coins are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found that 210 is 60 more than 150, but then divided 60 by 20 instead of by 10."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought there would be about the same number of each coin, so I halved 15 and rounded up."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I worked it out correctly but gave the number of 10-cent coins instead of 20-cent coins."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I found how many 20-cent coins fit into 210 cents, 10 of them with 10 cents over, and forgot that there must be 15 coins in all."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "MOD-06",
+    "secondary": [
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "What if every coin were a 10-cent coin?",
+    "Start with all 15 coins as 10-cent coins and see how far short of 210 you are. Each swap to a 20-cent coin adds the same amount.",
+    "Fifteen 10-cent coins make 150 cents, which is 60 cents short. Each swap adds 10 cents."
+  ],
+  "solutions": {
+    "reliable": "If all 15 coins were 10-cent coins, they would make 150 cents. We need 60 cents more. Swapping one 10-cent coin for a 20-cent coin adds 10 cents, so we need $60 \\div 10 = 6$ swaps: 6 coins of 20 cents and 9 of 10 cents. Check: $6 \\times 20 + 9 \\times 10 = 120 + 90 = 210$. The transferable idea: start from an easy guess and count how many swaps fix the total.",
+    "elegant": "Back-solve from the choices: 6 coins of 20 cents and 9 of 10 cents make exactly 210 cents with 15 coins. Each other choice gives the wrong total."
+  },
+  "whyOnTest": "Two kinds of coins with a known count and total: the swap method is a classic way to solve it without algebra.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

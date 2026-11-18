@@ -1,0 +1,56 @@
+{
+  "id": "AC-0283",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-04",
+  "difficulty": "medium",
+  "statement": "For used cars of one model, the line of fit $\\hat{y} = 24{,}000 - 1{,}800x$ predicts the selling price $\\hat{y}$, in dollars, from the age $x$ of the car in years. A $6$-year-old car of this model sold for $\\$14{,}500$. The residual for a data point is the actual value minus the predicted value. What is the residual, in dollars, for this car?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-1{,}300$",
+      "correct": false,
+      "misconception": "I subtracted the actual price from the predicted price, but a residual is actual minus predicted, so my sign is backwards."
+    },
+    {
+      "key": "B",
+      "text": "$1{,}300$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$9{,}500$",
+      "correct": false,
+      "misconception": "I subtracted the sale price from 24,000 and never used the age of the car to find the predicted price."
+    },
+    {
+      "key": "D",
+      "text": "$13{,}200$",
+      "correct": false,
+      "misconception": "I found the predicted price of 13,200 dollars and stopped there instead of comparing it with the actual price."
+    }
+  ],
+  "hints": [
+    "First find what the line predicts for a $6$-year-old car.",
+    "The predicted price is $24{,}000 - 1{,}800(6)$. Then subtract that from the actual price.",
+    "The prediction is $\\$13{,}200$, so the residual is $14{,}500 - 13{,}200$."
+  ],
+  "solutions": {
+    "reliable": "The predicted price is $24{,}000 - 1{,}800(6) = 24{,}000 - 10{,}800 = 13{,}200$ dollars. The residual is actual minus predicted: $14{,}500 - 13{,}200 = 1{,}300$ dollars. The positive residual means the car sold for more than the line predicts.",
+    "elegant": null
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

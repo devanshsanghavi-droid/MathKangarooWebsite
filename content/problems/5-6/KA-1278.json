@@ -1,0 +1,68 @@
+{
+  "id": "KA-1278",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Sara has plenty of 2-euro coins and 5-euro notes, and no other money. She wants to pay exactly 23 euros without getting any change. What is the smallest total number of coins and notes she can use?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only the 5-euro notes and forgot to add the coins."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted only the 2-euro coins and forgot to add the notes."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I used as many notes as possible, four of them, and then two coins, without checking that this makes 24 euros, not 23."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I used one note and nine coins, the first way I found, and did not look for a way with fewer pieces."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-06",
+    "secondary": [
+      "CNT-04",
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "Can she use an even number of 5-euro notes?",
+    "Try each possible number of 5-euro notes and check whether the rest can be paid in 2-euro coins. Then compare the totals and keep the smallest.",
+    "The coins always make an even amount, so the notes must make an odd amount: 1 note or 3 notes. With 3 notes, 8 euros are left, which is 4 coins."
+  ],
+  "solutions": {
+    "reliable": "The 2-euro coins always add up to an even number of euros, and 23 is odd, so the 5-euro notes must make an odd amount: 1 note (5 euros) or 3 notes (15 euros). With 1 note, 18 euros are left, which needs 9 coins, so 10 pieces. With 3 notes, 8 euros are left, which needs 4 coins, so 7 pieces. Four notes would already be 20, leaving 3 euros that coins cannot make. The smallest number is 7. The transferable idea: use parity to cut down the cases before you count.",
+    "elegant": null
+  },
+  "whyOnTest": "Money problems at 3 points check that you test every combination, not just the greedy one.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

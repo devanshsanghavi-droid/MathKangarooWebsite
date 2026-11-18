@@ -271,7 +271,7 @@ export function validateAmcContent(options: AmcValidateOptions): AmcValidateResu
         'amc/problem-id-matches-path',
         file,
         `contest ${problem.contest} expects the folder content/amc/problems/${folder}/ ` +
-          '(AMC10 and BOTH live in 10/, AMC12 in 12/)',
+          '(AMC8 lives in 8/, AMC10 and BOTH in 10/, AMC12 in 12/)',
       );
     }
 
@@ -322,11 +322,14 @@ export function validateAmcContent(options: AmcValidateOptions): AmcValidateResu
             `area ${problem.area} disagrees with topic ${topic.id}, which is in ${topic.area}`,
           );
         }
+        // An AMC 12 only topic is off the AMC 10 and the AMC 8 syllabus alike.
         if (topic.amc12Only && problem.contest !== 'AMC12') {
           add(
             'amc/topic-contest',
             file,
-            `topic ${topic.id} (${topic.name}) is AMC 12 only, so contest must be AMC12`,
+            problem.contest === 'AMC8'
+              ? `topic ${topic.id} (${topic.name}) is AMC 12 only, so it may not appear on AMC 8`
+              : `topic ${topic.id} (${topic.name}) is AMC 12 only, so contest must be AMC12`,
           );
         }
       }

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0051",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "easy",
+  "statement": "What value of $x$ satisfies the equation $\\frac{2}{3}(x - 6) + 4 = 10$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I got to $x - 6 = 9$ and then subtracted 6 from 9 instead of adding 6, so I wrote 3."
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I needed to undo multiplying by $\\frac{2}{3}$, but I multiplied 6 by $\\frac{2}{3}$ instead of by $\\frac{3}{2}$, so I got $x - 6 = 4$ and $x = 10$."
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I multiplied only the $x$ by $\\frac{2}{3}$ and left the 6 alone, so I solved $\\frac{2}{3}x - 6 + 4 = 10$ and got 18."
+    }
+  ],
+  "hints": [
+    "Undo the steps in reverse order: deal with the $+4$ first.",
+    "Subtract 4 from both sides, then multiply both sides by $\\frac{3}{2}$ to clear the fraction, then add 6.",
+    "$\\frac{2}{3}(x - 6) = 6$, so $x - 6 = 6 \\cdot \\frac{3}{2} = 9$. Now add 6 to both sides."
+  ],
+  "solutions": {
+    "reliable": "Subtract 4 from both sides: $\\frac{2}{3}(x - 6) = 6$. Multiply both sides by $\\frac{3}{2}$: $x - 6 = 9$. Add 6: $x = 15$. Check: $\\frac{2}{3}(15 - 6) + 4 = \\frac{2}{3}(9) + 4 = 6 + 4 = 10$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

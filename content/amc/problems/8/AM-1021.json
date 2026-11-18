@@ -1,0 +1,67 @@
+{
+  "id": "AM-1021",
+  "contest": "AMC8",
+  "slot": 7,
+  "area": "ALG",
+  "topic": "ALG-09",
+  "types": [
+    "T-AMGM",
+    "T-CASEWORK"
+  ],
+  "statement": "Three positive integers, not necessarily different, have a product of $72$. What is the smallest possible value of their sum?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I split 72 as 2 times 36 and then split 36 as 6 times 6, giving 2 + 6 + 6 = 14, but I did not try other splits."
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I split 72 as 8 times 9 and then split 8 as 2 times 4, giving 2 + 4 + 9 = 15."
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I found that 8 times 9 is the best way to write 72 as two factors and used 1 as the third number, 1 + 8 + 9 = 18."
+    },
+    {
+      "key": "E",
+      "text": "$74$",
+      "correct": false,
+      "misconception": "I thought using 1s would keep the sum small, so I chose 1, 1 and 72."
+    }
+  ],
+  "hints": [
+    "When the product is fixed, the sum is smallest when the numbers are close to each other.",
+    "Since $4 \\cdot 4 \\cdot 4 = 64$ is close to $72$, look for three factors near $4$.",
+    "$3 \\cdot 4 \\cdot 6 = 72$. Check that no other choice of three factors has a smaller sum."
+  ],
+  "solutions": {
+    "reliable": "List the ways to write $72$ as a product of three positive integers in increasing order: $1 \\cdot 1 \\cdot 72$, $1 \\cdot 2 \\cdot 36$, $1 \\cdot 3 \\cdot 24$, $1 \\cdot 4 \\cdot 18$, $1 \\cdot 6 \\cdot 12$, $1 \\cdot 8 \\cdot 9$, $2 \\cdot 2 \\cdot 18$, $2 \\cdot 3 \\cdot 12$, $2 \\cdot 4 \\cdot 9$, $2 \\cdot 6 \\cdot 6$, $3 \\cdot 3 \\cdot 8$, $3 \\cdot 4 \\cdot 6$. Their sums are $74, 39, 28, 23, 19, 18, 22, 17, 15, 14, 14, 13$. The smallest is $13$, from $3 + 4 + 6$.",
+    "elegant": "Numbers with a fixed product have the smallest sum when they are as equal as possible. The cube root of $72$ is a little more than $4$, and $3 \\cdot 4 \\cdot 6$ uses three factors as close to $4$ as $72$ allows, so the answer is $13$."
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "AM-1062",
+  "contest": "AMC8",
+  "slot": 22,
+  "area": "ALG",
+  "topic": "ALG-03",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "A rectangle has perimeter $20$ and area $18$. What is the length of its diagonal?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2\\sqrt{7}$",
+      "correct": false,
+      "misconception": "I found $(l - w)^2 = 10^2 - 4 \\cdot 18 = 28$ and took its square root, but that is the difference of the sides, not the diagonal."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\sqrt{82}$",
+      "correct": false,
+      "misconception": "I wrote $l^2 + w^2 = (l + w)^2 - lw = 100 - 18 = 82$, forgetting that $(l + w)^2$ has the middle term $2lw$."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I thought $(l + w)^2$ equals $l^2 + w^2$, so the diagonal would just be $l + w = 10$."
+    },
+    {
+      "key": "E",
+      "text": "$2\\sqrt{91}$",
+      "correct": false,
+      "misconception": "I used the whole perimeter, $20$, as $l + w$, so I got $l^2 + w^2 = 400 - 36 = 364$ and a diagonal of $\\sqrt{364} = 2\\sqrt{91}$."
+    }
+  ],
+  "hints": [
+    "You do not need the length and width themselves. What is the square of the diagonal?",
+    "The diagonal $d$ satisfies $d^2 = l^2 + w^2$, and you already know $l + w$ and $lw$.",
+    "$l + w = 10$ and $lw = 18$, so $l^2 + w^2 = (l + w)^2 - 2lw = 100 - 36$."
+  ],
+  "solutions": {
+    "reliable": "Let the sides be $l$ and $w$. The perimeter gives $l + w = 10$ and the area gives $lw = 18$. By the Pythagorean theorem the diagonal $d$ satisfies $d^2 = l^2 + w^2 = (l + w)^2 - 2lw = 100 - 36 = 64$, so $d = 8$. The sides themselves are $5 + \\sqrt7$ and $5 - \\sqrt7$, which are not whole numbers, so guessing them would not have worked.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

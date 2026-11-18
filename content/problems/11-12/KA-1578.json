@@ -1,0 +1,68 @@
+{
+  "id": "KA-1578",
+  "band": "11-12",
+  "points": 4,
+  "statement": "$ABCDEFGHI$ is a regular nine-sided polygon, with its vertices labelled in order. The diagonals $AD$ and $BF$ cross at the point $P$. What is the size of angle $APB$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$20^\\circ$",
+      "correct": false,
+      "misconception": "I halved only the arc $AB$, $40^\\circ$, and forgot the arc on the other side of $P$."
+    },
+    {
+      "key": "B",
+      "text": "$40^\\circ$",
+      "correct": false,
+      "misconception": "I halved only the arc $DF$, $80^\\circ$, and forgot the arc $AB$."
+    },
+    {
+      "key": "C",
+      "text": "$60^\\circ$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$120^\\circ$",
+      "correct": false,
+      "misconception": "I added the arcs $AB$ and $DF$, $40^\\circ + 80^\\circ$, but forgot to halve the total."
+    },
+    {
+      "key": "E",
+      "text": "$140^\\circ$",
+      "correct": false,
+      "misconception": "I assumed the angle between two diagonals equals an interior angle of the nonagon, $140^\\circ$."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "GEO-07",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Draw the circle through all nine vertices.",
+    "Each side of the nonagon cuts off an arc of $40^\\circ$. Angles at a point on the circle are half the arc they stand on. Find two angles of triangle $ABP$ that way.",
+    "Angle $BAP$ is angle $BAD$, which stands on arc $BD$ (two sides, $80^\\circ$), so it is $40^\\circ$. Angle $ABP$ is angle $ABF$, which stands on arc $AF$ not containing $B$ (four sides, $160^\\circ$), so it is $80^\\circ$."
+  ],
+  "solutions": {
+    "reliable": "Put the nonagon in its circle; each side cuts off an arc of $360^\\circ \\div 9 = 40^\\circ$. In triangle $ABP$, angle $BAP = \\angle BAD$ stands on arc $BCD$ of $80^\\circ$, so it is $40^\\circ$. Angle $ABP = \\angle ABF$ stands on arc $FGHIA$ of $160^\\circ$, so it is $80^\\circ$. Then angle $APB = 180^\\circ - 40^\\circ - 80^\\circ = 60^\\circ$. The transferable idea: in a regular polygon, every angle between vertices is a multiple of half the arc of one side.",
+    "elegant": "Two chords crossing inside a circle make an angle equal to half the sum of the arcs they cut off. Angle $APB$ faces arc $AB$ ($40^\\circ$) and its vertical angle faces arc $DF$ ($80^\\circ$), so $APB = (40 + 80) \\div 2 = 60^\\circ$."
+  },
+  "whyOnTest": "Regular polygons live on a circle, and inscribed-angle facts turn any angle between diagonals into simple counting of sides.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

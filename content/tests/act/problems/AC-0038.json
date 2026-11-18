@@ -1,0 +1,56 @@
+{
+  "id": "AC-0038",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-05",
+  "difficulty": "easy",
+  "statement": "A drip irrigation emitter releases $3$ milliliters of water every $10$ seconds. At this rate, how many liters of water does it release in one day? ($1$ liter $= 1{,}000$ milliliters)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.432$",
+      "correct": false,
+      "misconception": "I counted a day as $60 \\cdot 24 = 1{,}440$ seconds, but that is the number of minutes in a day, not seconds."
+    },
+    {
+      "key": "B",
+      "text": "$25.92$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$259.2$",
+      "correct": false,
+      "misconception": "I read the rate as 3 milliliters every second, forgetting that it is every 10 seconds."
+    },
+    {
+      "key": "D",
+      "text": "$25{,}920$",
+      "correct": false,
+      "misconception": "I found 25,920 milliliters correctly but forgot to divide by 1,000 to change milliliters to liters."
+    }
+  ],
+  "hints": [
+    "Change the rate to milliliters per second first.",
+    "Multiply the milliliters per second by the number of seconds in a day, $60 \\cdot 60 \\cdot 24$, then convert to liters.",
+    "The rate is $0.3$ mL per second and a day has $86{,}400$ seconds, so the emitter releases $0.3 \\cdot 86{,}400$ mL."
+  ],
+  "solutions": {
+    "reliable": "The rate is $3 \\div 10 = 0.3$ milliliters per second. One day has $60 \\cdot 60 \\cdot 24 = 86{,}400$ seconds, so the emitter releases $0.3 \\cdot 86{,}400 = 25{,}920$ milliliters. Dividing by $1{,}000$ gives $25.92$ liters. The idea: chain unit conversions so that each unit cancels, and check that the final unit matches the question.",
+    "elegant": "Write it as one chain: $\\dfrac{3\\text{ mL}}{10\\text{ s}} \\cdot \\dfrac{86{,}400\\text{ s}}{1\\text{ day}} \\cdot \\dfrac{1\\text{ L}}{1{,}000\\text{ mL}} = 25.92$ L per day."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

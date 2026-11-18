@@ -1,0 +1,56 @@
+{
+  "id": "SA-0252",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-01",
+  "difficulty": "medium",
+  "statement": "A candle maker pours wax into cylindrical molds. A small candle uses $180$ grams of wax. A large candle is also a cylinder, but its radius and its height are each $1.5$ times those of the small candle. How many grams of wax does the large candle use?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$270$",
+      "correct": false,
+      "misconception": "I multiplied by 1.5 once, as if the amount of wax grew at the same rate as the lengths."
+    },
+    {
+      "key": "B",
+      "text": "$405$",
+      "correct": false,
+      "misconception": "I multiplied by $1.5^2 = 2.25$ for the radius but forgot that the height also grew by a factor of 1.5."
+    },
+    {
+      "key": "C",
+      "text": "$607.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$810$",
+      "correct": false,
+      "misconception": "I multiplied 1.5 by 3 to get 4.5 instead of cubing 1.5, so I got $180 \\times 4.5 = 810$."
+    }
+  ],
+  "hints": [
+    "How does the volume of a cylinder depend on its radius and height?",
+    "In $V = \\pi r^2 h$ the radius is squared. Find the number that multiplies $V$ when both $r$ and $h$ are multiplied by $1.5$.",
+    "The volume is multiplied by $1.5^2 \\times 1.5 = 3.375$, so multiply $180$ by $3.375$."
+  ],
+  "solutions": {
+    "reliable": "The volume of a cylinder is $V = \\pi r^2 h$. Replacing $r$ with $1.5r$ and $h$ with $1.5h$ gives $\\pi (1.5r)^2 (1.5h) = 1.5^3 \\pi r^2 h = 3.375V$. The amount of wax is proportional to the volume, so the large candle uses $180 \\times 3.375 = 607.5$ grams.",
+    "elegant": "Every length of the large candle is $1.5$ times the matching length of the small one, so the candles are similar solids with scale factor $1.5$. Volumes of similar solids scale by the cube of the factor: $180 \\times 1.5^3 = 607.5$ grams."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

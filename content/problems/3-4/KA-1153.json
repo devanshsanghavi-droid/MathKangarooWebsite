@@ -1,0 +1,67 @@
+{
+  "id": "KA-1153",
+  "band": "3-4",
+  "points": 3,
+  "statement": "On a normal die, opposite faces add up to 7. Three dice lie on a table. Their top faces show 2, 4 and 5. What is the total of their three bottom faces?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "11",
+      "correct": false,
+      "misconception": "I added the top faces, $2 + 4 + 5 = 11$, instead of the faces underneath."
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": false,
+      "misconception": "I thought opposite faces add up to 8, so I found $6 + 4 + 3 = 13$."
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": false,
+      "misconception": "I thought the bottom face shows the next number after the top, so I added $3 + 5 + 6 = 14$."
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I added 7 for each die, $3 \\times 7 = 21$, and forgot to take away the top faces."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-11",
+    "secondary": [
+      "MOD-10"
+    ]
+  },
+  "hints": [
+    "Each bottom face is opposite one top face.",
+    "Opposite faces make 7, so each bottom face is 7 take away its top face. You can find the three bottoms one at a time, or use the total of all six faces at once.",
+    "The bottoms are $7 - 2 = 5$, $7 - 4 = 3$ and $7 - 5 = 2$. Add these three numbers."
+  ],
+  "solutions": {
+    "reliable": "Work die by die. Under the 2 is $7 - 2 = 5$, under the 4 is $7 - 4 = 3$, under the 5 is $7 - 5 = 2$. The bottoms add to $5 + 3 + 2 = 10$. The transferable idea: on a die, knowing one face tells you the face opposite it.",
+    "elegant": "Each die's top and bottom add to 7, so the three tops and three bottoms together make $3 \\times 7 = 21$. The tops make 11, so the bottoms make $21 - 11 = 10$."
+  },
+  "whyOnTest": "Dice questions on the test lean on one fact, opposite faces add to 7, and reward using it as a total rather than one face at a time.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

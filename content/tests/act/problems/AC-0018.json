@@ -1,0 +1,56 @@
+{
+  "id": "AC-0018",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-04",
+  "difficulty": "medium",
+  "statement": "The table shows a school club's planned budget for the year. $$\\begin{array}{l|r} \\text{Item} & \\text{Amount} \\\\ \\hline \\text{Supplies} & \\$400 \\\\ \\text{Travel} & \\$900 \\\\ \\text{Food} & \\$300 \\\\ \\text{Prizes} & \\$400 \\end{array}$$ The club decides to increase the amount for Supplies by $30\\%$ and keep every other amount the same. By what percent does the total budget increase?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$30\\%$",
+      "correct": false,
+      "misconception": "I thought raising one item by 30 percent raises the whole budget by 30 percent."
+    },
+    {
+      "key": "B",
+      "text": "$20\\%$",
+      "correct": false,
+      "misconception": "I found that Supplies is 400 out of 2,000, or 20 percent of the budget, and gave that share instead of the increase."
+    },
+    {
+      "key": "C",
+      "text": "$7.5\\%$",
+      "correct": false,
+      "misconception": "I spread the 30 percent evenly across the 4 items, $30\\% \\div 4 = 7.5\\%$, even though the items have different amounts."
+    },
+    {
+      "key": "D",
+      "text": "$6\\%$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Find the total budget and the dollar amount of the increase.",
+    "The total is $\\$2{,}000$, and $30\\%$ of the $\\$400$ for Supplies is $\\$120$.",
+    "The increase as a percent of the total is $\\frac{120}{2{,}000}$."
+  ],
+  "solutions": {
+    "reliable": "The total budget is $400 + 900 + 300 + 400 = 2{,}000$ dollars. Supplies rises by $0.30 \\cdot 400 = 120$ dollars, and nothing else changes, so the total rises by $120$ dollars. As a percent of the original total, that is $\\frac{120}{2{,}000} = 0.06$, or $6\\%$.",
+    "elegant": "Supplies is $\\frac{400}{2{,}000} = 20\\%$ of the budget. Raising $20\\%$ of the budget by $30\\%$ raises the whole by $0.20 \\cdot 30\\% = 6\\%$."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

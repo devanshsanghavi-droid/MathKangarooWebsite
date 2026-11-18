@@ -1,0 +1,66 @@
+{
+  "id": "AM-1148",
+  "contest": "AMC8",
+  "slot": 24,
+  "area": "GEO",
+  "topic": "GEO-01",
+  "types": [
+    "T-ANGLE-CHASE"
+  ],
+  "statement": "Nine points are equally spaced around a circle and numbered $1$ through $9$ in order. Starting at point $1$, Zoe draws a segment to point $5$, then to point $9$, then to point $4$, and so on, each time moving $4$ points forward around the circle, until she returns to point $1$. The segments form a nine-pointed star. What is the degree measure of the angle at each tip of the star?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$20$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I found the $40^\\circ$ arc cut off between the two segments at a tip and used it as the angle, without halving it."
+    },
+    {
+      "key": "C",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I thought connecting every fourth point works like connecting every third point, which draws equilateral triangles with $60^\\circ$ corners."
+    },
+    {
+      "key": "D",
+      "text": "$100$",
+      "correct": false,
+      "misconception": "I subtracted one $40^\\circ$ step from the $140^\\circ$ interior angle of a regular nine-sided polygon."
+    },
+    {
+      "key": "E",
+      "text": "$140$",
+      "correct": false,
+      "misconception": "I used the interior angle of a regular nine-sided polygon, $\\frac{7 \\cdot 180^\\circ}{9}$, as the angle at each tip."
+    }
+  ],
+  "hints": [
+    "The angle at a tip has its vertex on the circle, so it is an inscribed angle. Which arc does it cut off?",
+    "At point $1$ the two segments go to point $5$ and to point $6$ (Zoe reaches point $1$ from point $6$). The tip angle cuts off the arc from $5$ to $6$ that does not contain point $1$.",
+    "That arc is one ninth of the circle, $40^\\circ$, and an inscribed angle is half of the arc it cuts off."
+  ],
+  "solutions": {
+    "reliable": "Zoe visits $1, 5, 9, 4, 8, 3, 7, 2, 6$ and then returns to $1$, so every point is a tip, and by symmetry all tips have the same angle. At point $1$ the two segments go to points $5$ and $6$. The angle at point $1$ is an inscribed angle cutting off the arc from $5$ to $6$ that does not contain point $1$. That arc is one step, $\\frac{360^\\circ}{9} = 40^\\circ$, so the tip angle is $\\frac{40^\\circ}{2} = 20^\\circ$.",
+    "elegant": "Walk around the star. At each tip with angle $t$ you turn by $180^\\circ - t$. Moving $4$ points forward each time, you travel around the circle $4$ times in all ($9$ steps of $4$ is $36$ points, which is $4$ laps), so your total turning is $4 \\cdot 360^\\circ = 1440^\\circ$. Then $9(180^\\circ - t) = 1440^\\circ$, so $180^\\circ - t = 160^\\circ$ and $t = 20^\\circ$."
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

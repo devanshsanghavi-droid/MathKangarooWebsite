@@ -1,0 +1,68 @@
+{
+  "id": "KA-1225",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Four blocks A, B, C and D are compared on a balance. A and B together exactly balance C and D together. A and C together are heavier than B and D together. A and D together are lighter than B and C together. Which block is the heaviest?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "A",
+      "correct": false,
+      "misconception": "I read the third weighing the wrong way round, as if A and D together were heavier than B and C."
+    },
+    {
+      "key": "B",
+      "text": "B",
+      "correct": false,
+      "misconception": "I read the second weighing the wrong way round, as if A and C together were lighter than B and D."
+    },
+    {
+      "key": "C",
+      "text": "C",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "D",
+      "correct": false,
+      "misconception": "I read both of the unbalanced weighings the wrong way round."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be decided",
+      "correct": false,
+      "misconception": "I thought weighing pairs can never single out one block, so I did not combine the weighings."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-10",
+    "secondary": [
+      "LOG-04",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Compare the first weighing with the second. Which two blocks swapped pans?",
+    "Combine the weighings. Going from the first to the second, B and C swap pans; going from the first to the third, B and D swap. Each swap shows which of two blocks is heavier.",
+    "First to second: the pan that gets C instead of B becomes heavier, so C is heavier than B. First to third: the pan that gets D instead of B becomes lighter, so D is lighter than B. Then use A + B = C + D to compare A with C."
+  ],
+  "solutions": {
+    "reliable": "Start from the balance A + B = C + D. In the second weighing, B and C have swapped pans, and the pan holding A now tips down, so C is heavier than B. In the third weighing, B and D have swapped pans compared with the first, and the pan holding A now rises, so D is lighter than B. So C is heavier than B, and B is heavier than D. Finally, A + B = C + D and B is heavier than D, so A must be lighter than C to keep the balance. Therefore C is heavier than all the others. The transferable idea: compare two weighings that differ by one swap, and the swap tells you which of the two blocks is heavier.",
+    "elegant": "Write the first weighing as A + B = C + D. Adding the second weighing's inequality to it shows A > D, subtracting it shows C > B, and the third weighing compared with the first shows B > D. Then A - C = D - B, which is negative, so C > A. C is the heaviest."
+  },
+  "whyOnTest": "Balance puzzles reward combining weighings: two weighings that differ by one swap compare the swapped blocks directly.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

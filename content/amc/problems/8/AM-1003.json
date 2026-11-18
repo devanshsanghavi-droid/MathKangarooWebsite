@@ -1,0 +1,66 @@
+{
+  "id": "AM-1003",
+  "contest": "AMC8",
+  "slot": 1,
+  "area": "ALG",
+  "topic": "ALG-02",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "A jacket has a price tag of $\\$80$. The store takes $25\\%$ off the tag price, and then Omar uses a coupon that takes $10\\%$ off the sale price. How many dollars does Omar pay?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I took 25% off to get 60, then took 10 dollars off instead of 10 percent, so 60 - 10 = 50."
+    },
+    {
+      "key": "B",
+      "text": "$52$",
+      "correct": false,
+      "misconception": "I added the two discounts to get 35% off the tag price, and 65% of 80 is 52."
+    },
+    {
+      "key": "C",
+      "text": "$54$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I took 25% off the tag price but forgot to use the coupon, so I stopped at 60."
+    },
+    {
+      "key": "E",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I used only the 10% coupon on the 80 dollar tag and forgot the 25% sale."
+    }
+  ],
+  "hints": [
+    "Do the two discounts one after the other, not together.",
+    "First find the sale price. Then take $10\\%$ of the sale price, not of $\\$80$.",
+    "The sale price is $80 - 20 = 60$ dollars. Ten percent of $60$ is $6$."
+  ],
+  "solutions": {
+    "reliable": "Twenty-five percent of $\\$80$ is $\\$20$, so the sale price is $\\$60$. Ten percent of $\\$60$ is $\\$6$, so Omar pays $60 - 6 = 54$ dollars.",
+    "elegant": "Each discount multiplies the price: $80 \\cdot 0.75 \\cdot 0.9 = 60 \\cdot 0.9 = 54$. The coupon works on a smaller price, which is why the total discount is less than $35\\%$."
+  },
+  "formulas": [],
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1417",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A jar holds 30 coins. Each coin is worth 5, 10 or 25 cents, and there is at least one coin of each value. Which of these could be the total value of the coins, in cents?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "150",
+      "correct": false,
+      "misconception": "I took the smallest total to be thirty 5-cent coins, forgetting there must be at least one 10-cent and one 25-cent coin."
+    },
+    {
+      "key": "B",
+      "text": "170",
+      "correct": false,
+      "misconception": "I took the smallest total to be 29 coins of 5 cents and one of 25 cents, forgetting the 10-cent coin, so I thought anything from 170 up was possible."
+    },
+    {
+      "key": "C",
+      "text": "377",
+      "correct": false,
+      "misconception": "I only checked that the total lies between the smallest and largest possible values and forgot that every total must be a multiple of 5."
+    },
+    {
+      "key": "D",
+      "text": "400",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "750",
+      "correct": false,
+      "misconception": "I took the largest total to be thirty 25-cent coins, forgetting there must be at least one 5-cent and one 10-cent coin."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-05",
+    "secondary": [
+      "NUM-04"
+    ]
+  },
+  "hints": [
+    "What are the smallest and largest totals possible?",
+    "Before trying to build each total, bound it: find the least and greatest values the rules allow, and note what every total must be divisible by. Most choices fail one of these tests.",
+    "Smallest: 28 fives, one ten and one twenty-five, 175 cents. Largest: 28 twenty-fives, one five and one ten, 715 cents. Every total is a multiple of 5."
+  ],
+  "solutions": {
+    "reliable": "The smallest total uses as many 5-cent coins as allowed: $28 \\times 5 + 10 + 25 = 175$. The largest uses as many 25-cent coins as allowed: $28 \\times 25 + 5 + 10 = 715$. Every total is a multiple of 5. So 150, 170 and 750 are out of range, and 377 is not a multiple of 5. That leaves 400, which really works: ten coins of each value give $50 + 100 + 250 = 400$. The transferable idea: bound the answer from both sides before calculating anything exactly.",
+    "elegant": null
+  },
+  "whyOnTest": "Bounding from both sides plus one divisibility check removes four choices without building a single total, which is exactly the habit this skill trains.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

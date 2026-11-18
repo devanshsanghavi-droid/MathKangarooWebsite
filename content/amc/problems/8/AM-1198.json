@@ -1,0 +1,67 @@
+{
+  "id": "AM-1198",
+  "contest": "AMC8",
+  "slot": 16,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-MODULAR",
+    "T-CYCLE"
+  ],
+  "statement": "For how many integers $n$ with $1 \\le n \\le 100$ is $n^2 + n + 1$ divisible by $7$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I only found that remainder 4 works, so I counted 4, 11, 18, and so on up to 95, which is 14."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I only found that remainder 2 works, so I counted 2, 9, 16, and so on up to 100, which is 15."
+    },
+    {
+      "key": "C",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I saw that 2 out of every 7 numbers work and used 14 full blocks of 7 to get 28, but forgot that the leftover numbers 99 and 100 include 100, which works."
+    },
+    {
+      "key": "D",
+      "text": "$29$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I counted 15 numbers for each of the two good remainders, but the numbers with remainder 4 stop at 95, so there are only 14 of those."
+    }
+  ],
+  "hints": [
+    "Whether $7$ divides $n^2 + n + 1$ depends only on the remainder of $n$ when divided by $7$.",
+    "Try $n = 0, 1, 2, 3, 4, 5, 6$ and see which make $n^2 + n + 1$ a multiple of $7$.",
+    "The values are $1, 3, 7, 13, 21, 31, 43$. Only $n = 2$ and $n = 4$ give multiples of $7$, so $n$ must leave remainder $2$ or $4$."
+  ],
+  "solutions": {
+    "reliable": "Replacing $n$ by $n + 7$ changes $n^2 + n + 1$ by a multiple of $7$, so only the remainder of $n$ matters. For remainders $0$ through $6$, $n^2 + n + 1$ equals $1, 3, 7, 13, 21, 31, 43$, and only $7$ and $21$ (remainders $2$ and $4$) are multiples of $7$. From $1$ to $100$: remainder $2$ gives $2, 9, \\ldots, 100$, which is $\\dfrac{100 - 2}{7} + 1 = 15$ numbers, and remainder $4$ gives $4, 11, \\ldots, 95$, which is $\\dfrac{95 - 4}{7} + 1 = 14$ numbers. The total is $15 + 14 = 29$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

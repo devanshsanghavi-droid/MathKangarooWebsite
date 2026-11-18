@@ -1,0 +1,69 @@
+{
+  "id": "AM-1174",
+  "contest": "AMC8",
+  "slot": 8,
+  "area": "NT",
+  "topic": "NT-10",
+  "types": [
+    "T-COMPLEMENT",
+    "T-PIE"
+  ],
+  "statement": "How many of the $59$ fractions $\\dfrac{1}{60}, \\dfrac{2}{60}, \\dfrac{3}{60}, \\ldots, \\dfrac{59}{60}$ are already in lowest terms?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I crossed out the numerators that share a factor $2$ or $3$ with $60$ but forgot that $60$ also has the prime factor $5$."
+    },
+    {
+      "key": "C",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I crossed out the numerators that share a factor $2$ or $5$ with $60$ but forgot that $60$ also has the prime factor $3$."
+    },
+    {
+      "key": "D",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I only crossed out the even numerators and kept all $30$ odd ones, forgetting the factors $3$ and $5$ of $60$."
+    },
+    {
+      "key": "E",
+      "text": "$43$",
+      "correct": false,
+      "misconception": "I counted the fractions that can be simplified, $59 - 16 = 43$, instead of the ones already in lowest terms."
+    }
+  ],
+  "hints": [
+    "A fraction $\\frac{n}{60}$ is in lowest terms when $n$ and $60$ share no factor bigger than $1$.",
+    "$60 = 2^2 \\cdot 3 \\cdot 5$, so you need numerators $n$ divisible by none of $2$, $3$, $5$.",
+    "Start with the $30$ odd numerators from $1$ to $59$. Remove the odd multiples of $3$ and of $5$, being careful with numbers divisible by both."
+  ],
+  "solutions": {
+    "reliable": "Since $60 = 2^2 \\cdot 3 \\cdot 5$, the fraction $\\frac{n}{60}$ is in lowest terms exactly when $n$ is not divisible by $2$, $3$ or $5$. From $1$ to $59$ there are $30$ odd numbers. The odd multiples of $3$ are $3, 9, \\ldots, 57$: $10$ of them. The odd multiples of $5$ are $5, 15, \\ldots, 55$: $6$ of them. The odd multiples of $15$, $15$ and $45$, were removed twice. So the count is $30 - 10 - 6 + 2 = 16$. The numerators are $1, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 49, 53, 59$.",
+    "elegant": "Among any $30$ consecutive whole numbers, the fraction not divisible by $2$, $3$ or $5$ is $\\frac{1}{2} \\cdot \\frac{2}{3} \\cdot \\frac{4}{5} = \\frac{4}{15}$, which is $8$ out of every $30$. So $1$ to $60$ contains $16$ such numbers, and $60$ itself is not one of them, giving $16$."
+  },
+  "formulas": [
+    "F-CP-01"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

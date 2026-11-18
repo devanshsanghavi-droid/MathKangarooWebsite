@@ -1,0 +1,67 @@
+{
+  "id": "AM-1272",
+  "contest": "AMC8",
+  "slot": 16,
+  "area": "CP",
+  "topic": "CP-08",
+  "types": [
+    "T-CASEWORK",
+    "T-LINEARITY"
+  ],
+  "statement": "Theo flips a fair coin until it lands heads, but he stops after $4$ flips even if he has not gotten heads yet. What is the expected number of times Theo flips the coin?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{13}{8}$",
+      "correct": false,
+      "misconception": "I gave stopping at 4 flips a probability of 1/16, counting only the case where the fourth flip is heads and forgetting four tails."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{15}{8}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I ignored the 4-flip limit and used the fact that the average wait for heads with a fair coin is 2 flips."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{5}{2}$",
+      "correct": false,
+      "misconception": "I treated 1, 2, 3 and 4 flips as equally likely and averaged them, (1 + 2 + 3 + 4) / 4 = 5/2."
+    },
+    {
+      "key": "E",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I assumed he always makes all 4 flips."
+    }
+  ],
+  "hints": [
+    "Find the probability that Theo makes exactly $1$, $2$, $3$ or $4$ flips.",
+    "He stops after $1$ flip with probability $\\frac{1}{2}$ and after $2$ flips with probability $\\frac{1}{4}$. He makes all $4$ flips whenever the first $3$ are tails.",
+    "The probabilities are $\\frac{1}{2}, \\frac{1}{4}, \\frac{1}{8}, \\frac{1}{8}$ for $1, 2, 3, 4$ flips."
+  ],
+  "solutions": {
+    "reliable": "Theo stops after $1$ flip if the first flip is heads, probability $\\frac{1}{2}$. He stops after exactly $2$ flips with probability $\\frac{1}{4}$ (tails, heads) and after exactly $3$ flips with probability $\\frac{1}{8}$. He makes $4$ flips whenever the first three flips are tails, probability $\\frac{1}{8}$, whatever the fourth flip shows. The expected number is $1 \\cdot \\frac{1}{2} + 2 \\cdot \\frac{1}{4} + 3 \\cdot \\frac{1}{8} + 4 \\cdot \\frac{1}{8} = \\frac{4 + 4 + 3 + 4}{8} = \\frac{15}{8}$.",
+    "elegant": "Theo always makes flip $1$. He makes flip $2$ if flip $1$ is tails, flip $3$ if the first two are tails, and flip $4$ if the first three are tails. Adding the chances of making each flip gives $1 + \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} = \\frac{15}{8}$."
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

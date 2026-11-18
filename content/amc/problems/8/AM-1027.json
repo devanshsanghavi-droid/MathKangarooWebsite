@@ -1,0 +1,62 @@
+{
+  "id": "AM-1027",
+  "contest": "AMC8",
+  "slot": 9,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": ["T-SUBSTITUTION"],
+  "statement": "A garden snail crawls at a steady rate of $3$ millimeters every $2$ seconds. How many meters does it crawl in $1$ hour $20$ minutes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6.48$",
+      "correct": false,
+      "misconception": "I wrote 1 hour 20 minutes as 1.2 hours, which is 4320 seconds, but 20 minutes is one third of an hour, not two tenths."
+    },
+    {
+      "key": "B",
+      "text": "$7.2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$14.4$",
+      "correct": false,
+      "misconception": "I used 3 millimeters every second and forgot that the snail needs 2 seconds for each 3 millimeters."
+    },
+    {
+      "key": "D",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I found 7200 millimeters correctly but divided by 100, thinking a meter has 100 millimeters."
+    },
+    {
+      "key": "E",
+      "text": "$720$",
+      "correct": false,
+      "misconception": "I found 7200 millimeters correctly but divided by 10, mixing up millimeters with centimeters."
+    }
+  ],
+  "hints": [
+    "Find the snail's speed in millimeters per second.",
+    "The snail covers $1.5$ millimeters each second, and $1$ hour $20$ minutes is $80$ minutes, or $4800$ seconds.",
+    "In $4800$ seconds it crawls $1.5 \\cdot 4800 = 7200$ millimeters, and a meter is $1000$ millimeters."
+  ],
+  "solutions": {
+    "reliable": "The snail's speed is $3 / 2 = 1.5$ millimeters per second. The time is $80$ minutes, which is $80 \\cdot 60 = 4800$ seconds. So the snail crawls $1.5 \\cdot 4800 = 7200$ millimeters, and since a meter is $1000$ millimeters, that is $7.2$ meters.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

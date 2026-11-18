@@ -1,0 +1,56 @@
+{
+  "id": "SA-0122",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-07",
+  "difficulty": "medium",
+  "statement": "$$\\begin{aligned} y &= x^2 - 2x - 3 \\\\ y &= x + 1 \\end{aligned}$$ The system of equations above has two solutions. If $(a, b)$ is the solution with $a > 0$, what is the value of $b$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I used the other solution, $x = -1$, which gives $y = 0$."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I set the parabola equal to 0 and took its positive $x$-intercept, 3, instead of finding where it meets the line."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found $a = 4$ correctly and gave it instead of the $y$-value $b$."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "At a solution, both equations give the same $y$.",
+    "Set $x^2 - 2x - 3 = x + 1$, move everything to one side and factor. Then use the line to find $y$.",
+    "$x^2 - 3x - 4 = 0$ factors as $(x - 4)(x + 1) = 0$. With $a > 0$, $a = 4$, so $b = 4 + 1$."
+  ],
+  "solutions": {
+    "reliable": "Setting the two expressions for $y$ equal: $x^2 - 2x - 3 = x + 1$, so $x^2 - 3x - 4 = 0$ and $(x - 4)(x + 1) = 0$. The solutions have $x = 4$ and $x = -1$. The one with $a > 0$ has $a = 4$, and $b = 4 + 1 = 5$. Check in the parabola: $16 - 8 - 3 = 5$.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

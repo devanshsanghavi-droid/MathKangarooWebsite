@@ -1,0 +1,56 @@
+{
+  "id": "SA-0092",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "medium",
+  "statement": "An online store takes $15\\%$ off the price of a jacket and then adds a $4.50$ dollar shipping fee to the order. Mo can spend at most $30$ dollars in total. What is the greatest original price, in dollars, of a jacket that Mo can afford?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$22.17$",
+      "correct": false,
+      "misconception": "I multiplied the price by 1.15, which adds 15% instead of taking it off, so I solved $1.15p + 4.50 \\le 30$."
+    },
+    {
+      "key": "B",
+      "text": "$29.33$",
+      "correct": false,
+      "misconception": "I subtracted the shipping to get 25.50 dollars and then undid the discount by adding 15% back, $25.50 \\times 1.15$, instead of dividing by 0.85."
+    },
+    {
+      "key": "C",
+      "text": "$30.00$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$35.29$",
+      "correct": false,
+      "misconception": "I forgot the shipping fee and solved $0.85p \\le 30$, which gave about 35.29 dollars."
+    }
+  ],
+  "hints": [
+    "After the discount, Mo pays $85\\%$ of the original price.",
+    "Write the total cost as $0.85p + 4.50$, require it to be at most $30$, and solve for $p$.",
+    "$0.85p + 4.50 \\le 30$ gives $0.85p \\le 25.50$. Divide by $0.85$."
+  ],
+  "solutions": {
+    "reliable": "Taking $15\\%$ off leaves $0.85p$, and shipping adds $4.50$, so the total is $0.85p + 4.50$. Solve $0.85p + 4.50 \\le 30$: $0.85p \\le 25.50$, so $p \\le \\frac{25.50}{0.85} = 30$. Check: $0.85(30) + 4.50 = 25.50 + 4.50 = 30$. Key idea: a percent decrease is a multiplier, here $0.85$, and undoing it means dividing by that multiplier.",
+    "elegant": null
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

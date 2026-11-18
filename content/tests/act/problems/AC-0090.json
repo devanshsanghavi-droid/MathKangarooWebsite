@@ -1,0 +1,56 @@
+{
+  "id": "AC-0090",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "easy",
+  "statement": "From a height of $h$ feet above calm water, a lookout can see about $d = \\sqrt{1.5h}$ miles to the horizon. According to this model, how high, in feet, must a lookout be to see $30$ miles to the horizon?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I divided 30 by 1.5 and never squared anything."
+    },
+    {
+      "key": "B",
+      "text": "$400$",
+      "correct": false,
+      "misconception": "I divided 30 by 1.5 first and then squared the result, getting $20^2 = 400$."
+    },
+    {
+      "key": "C",
+      "text": "$600$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$1{,}350$",
+      "correct": false,
+      "misconception": "I squared 30 to get 900 but then multiplied by 1.5 instead of dividing by it."
+    }
+  ],
+  "hints": [
+    "Substitute $d = 30$ and work to get $h$ by itself.",
+    "To undo a square root, square both sides of the equation. Then divide.",
+    "Squaring $30 = \\sqrt{1.5h}$ gives $900 = 1.5h$."
+  ],
+  "solutions": {
+    "reliable": "Substitute: $30 = \\sqrt{1.5h}$. Squaring both sides gives $900 = 1.5h$, so $h = 900 \\div 1.5 = 600$. Check: $\\sqrt{1.5 \\cdot 600} = \\sqrt{900} = 30$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

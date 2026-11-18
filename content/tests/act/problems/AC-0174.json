@@ -1,0 +1,56 @@
+{
+  "id": "AC-0174",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-08",
+  "difficulty": "hard",
+  "statement": "How many values of $x$ with $0 \\le x < 2\\pi$ satisfy the equation $2\\sin^2 x - \\sin x - 1 = 0$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I factored correctly but only looked for angles between $0$ and $\\pi$, where sine is never negative, so I found only $x = \\frac{\\pi}{2}$."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I found the two sine values, $1$ and $-\\frac{1}{2}$, and counted one angle for each, without counting how many angles give each value."
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I assumed every sine value comes from exactly two angles in one full turn, but $\\sin x = 1$ happens only at $x = \\frac{\\pi}{2}$."
+    }
+  ],
+  "hints": [
+    "Treat $\\sin x$ like a single variable $u$ and factor $2u^2 - u - 1$.",
+    "Factoring gives $(2\\sin x + 1)(\\sin x - 1) = 0$. For each sine value, count the angles in $0 \\le x < 2\\pi$ on the unit circle.",
+    "$\\sin x = 1$ only at $x = \\frac{\\pi}{2}$. $\\sin x = -\\frac{1}{2}$ at $x = \\frac{7\\pi}{6}$ and $x = \\frac{11\\pi}{6}$."
+  ],
+  "solutions": {
+    "reliable": "Let $u = \\sin x$. Then $2u^2 - u - 1 = (2u + 1)(u - 1) = 0$, so $\\sin x = 1$ or $\\sin x = -\\frac{1}{2}$. In $0 \\le x < 2\\pi$, $\\sin x = 1$ only at $x = \\frac{\\pi}{2}$, the top of the unit circle. $\\sin x = -\\frac{1}{2}$ in quadrants III and IV, at $x = \\frac{7\\pi}{6}$ and $x = \\frac{11\\pi}{6}$. That is $1 + 2 = 3$ solutions.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

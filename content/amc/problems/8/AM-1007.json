@@ -1,0 +1,66 @@
+{
+  "id": "AM-1007",
+  "contest": "AMC8",
+  "slot": 3,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "A movie marathon starts at 9:40 a.m. It shows three films, each $1$ hour $50$ minutes long, with a $15$-minute break between one film and the next. At what time does the third film end?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2:40 p.m.",
+      "correct": false,
+      "misconception": "I treated 1 hour 50 minutes as 1.5 hours, so the films took 4.5 hours, and with 30 minutes of breaks I added 5 hours to 9:40."
+    },
+    {
+      "key": "B",
+      "text": "3:10 p.m.",
+      "correct": false,
+      "misconception": "I added the three films, 5 hours 30 minutes, but forgot the breaks between them."
+    },
+    {
+      "key": "C",
+      "text": "3:40 p.m.",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "3:55 p.m.",
+      "correct": false,
+      "misconception": "I counted a break after every film, so three breaks of 15 minutes instead of two."
+    },
+    {
+      "key": "E",
+      "text": "5:40 p.m.",
+      "correct": false,
+      "misconception": "I read 1 hour 50 minutes as 150 minutes, so the films took 450 minutes, and with two breaks that is 480 minutes, or 8 hours."
+    }
+  ],
+  "hints": [
+    "Three films in a row have only two gaps between them.",
+    "Add the film time and the break time in minutes, then turn the total back into hours.",
+    "The films take $3 \\cdot 110 = 330$ minutes and the breaks take $2 \\cdot 15 = 30$ minutes, which is $6$ hours in all."
+  ],
+  "solutions": {
+    "reliable": "Each film is $110$ minutes, so the three films take $330$ minutes. There are two breaks, for $30$ minutes. The total is $360$ minutes, which is exactly $6$ hours. Six hours after 9:40 a.m. is 3:40 p.m.",
+    "elegant": "Each film plus the break after it is $2$ hours $5$ minutes, and the last film is $10$ minutes shorter than that block. So the total is $3 \\cdot 125 - 15 = 360$ minutes, or $6$ hours."
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1277",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A father is 40 years old. His three children are 13, 10 and 5 years old. In how many years will the father's age be equal to the sum of his three children's ages?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I thought the gap closes by 3 + 1 = 4 years every year, adding the father's year instead of taking it away."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I added 3 years a year to the children's total but forgot that the father gets older too."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I thought the gap of 12 years closes by just 1 year every year."
+    },
+    {
+      "key": "E",
+      "text": "46",
+      "correct": false,
+      "misconception": "I found the right moment but gave the father's age then instead of the number of years."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-05",
+    "secondary": [
+      "MOD-01",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "How much does the children's total grow each year? And the father's age?",
+    "Find the gap between the father's age and the children's total today. Then work out by how much that gap shrinks each year, because the two amounts grow at different speeds.",
+    "Today the children's total is 13 + 10 + 5 = 28, which is 12 less than 40. Each year the total grows by 3 and the father grows by 1, so the gap shrinks by 2 a year."
+  ],
+  "solutions": {
+    "reliable": "Today the children's ages add up to 13 + 10 + 5 = 28, and the father is 40, a gap of 12. Every year each child gets one year older, so their total grows by 3, while the father's age grows by 1. The gap shrinks by 3 - 1 = 2 each year, so it closes after 12 ÷ 2 = 6 years. Check: in 6 years the father is 46 and the children are 19, 16 and 11, which add up to 46. The transferable idea: when two amounts grow at different speeds, divide the gap by the difference of the speeds.",
+    "elegant": "Try the choices: after 6 years the father is 46 and the children total 28 + 18 = 46, a match. After 3 or 4 years the father is still ahead, and after 12 the children's total is past him."
+  },
+  "whyOnTest": "Age problems test whether you track how every quantity changes over time, here a total of three ages against one age.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

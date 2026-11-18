@@ -1,0 +1,56 @@
+{
+  "id": "AC-0233",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-04",
+  "difficulty": "easy",
+  "statement": "A motion-sensor floodlight detects movement up to $18$ feet away, across an angle of $150^\\circ$, so the region it covers is a sector of a circle. What is the area, in square feet, of that region?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15\\pi$",
+      "correct": false,
+      "misconception": "I found the length of the curved edge of the sector, 150 over 360 times 36 pi = 15 pi, instead of its area."
+    },
+    {
+      "key": "B",
+      "text": "$135\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$270\\pi$",
+      "correct": false,
+      "misconception": "I used 180 degrees as the full circle, so I took 150 over 180 of 324 pi and got 270 pi."
+    },
+    {
+      "key": "D",
+      "text": "$33.75\\pi$",
+      "correct": false,
+      "misconception": "I treated 18 feet as the diameter of the circle, so I used a radius of 9 and took 5/12 of 81 pi, which is 33.75 pi."
+    }
+  ],
+  "hints": [
+    "The covered region is a fraction of a full circle of radius $18$. What fraction?",
+    "A $150^\\circ$ sector is $\\frac{150}{360} = \\frac{5}{12}$ of the whole circle. Multiply that fraction by the area of the full circle.",
+    "The full circle has area $\\pi(18)^2 = 324\\pi$, so the sector has area $\\frac{5}{12} \\cdot 324\\pi$."
+  ],
+  "solutions": {
+    "reliable": "The light covers a sector with radius $18$ feet and central angle $150^\\circ$. The full circle has area $\\pi \\cdot 18^2 = 324\\pi$, and the sector is $\\frac{150}{360} = \\frac{5}{12}$ of it. So the area is $\\frac{5}{12} \\cdot 324\\pi = 135\\pi$ square feet, about $424$ square feet.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

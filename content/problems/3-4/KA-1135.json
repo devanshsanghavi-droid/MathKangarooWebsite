@@ -1,0 +1,68 @@
+{
+  "id": "KA-1135",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Five equal squares are placed side by side in a row to make a rectangle. The perimeter of the rectangle is 60 cm. What is the area of one square, in square centimetres?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I found the side of one square, 5 cm, and gave that instead of the area."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I thought the rectangle has $5 \\times 4 = 20$ sides of a square around it, so I got a side of 3 cm, but the inside sides are not on the edge."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": false,
+      "misconception": "I only counted the 10 square sides along the top and bottom and forgot the 2 short ends, so I got a side of 6 cm."
+    },
+    {
+      "key": "E",
+      "text": "125",
+      "correct": false,
+      "misconception": "I found the area of the whole rectangle, not of one square."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": [
+      "MOD-01",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Walk round the rectangle. How many square sides do you pass?",
+    "The perimeter is made of whole sides of the small squares. Count how many of them lie on the outside edge, then share the perimeter between them to find one side.",
+    "Along the top there are 5 sides, along the bottom 5, and 1 at each end: 12 sides in all."
+  ],
+  "solutions": {
+    "reliable": "The outside edge of the rectangle is made of square sides: 5 along the top, 5 along the bottom and 1 at each end, so 12 sides. They add up to 60 cm, so one side is $60 \\div 12 = 5$ cm. The area of one square is $5 \\times 5 = 25$ square centimetres. The transferable idea: only the outside edges count towards a perimeter, the sides that touch inside do not.",
+    "elegant": "The rectangle is 5 sides long and 1 side tall, so its perimeter is $2 \\times (5 + 1) = 12$ sides. $60 \\div 12 = 5$, and $5 \\times 5 = 25$."
+  },
+  "whyOnTest": "It tests knowing which edges belong to a perimeter, and keeping side length and area apart.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

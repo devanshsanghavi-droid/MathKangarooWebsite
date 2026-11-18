@@ -1,0 +1,67 @@
+{
+  "id": "KA-1086",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Ana draws a row of shapes: circle, square, circle, square, and so on. The colours go red, blue, green, red, blue, green, and so on. In which place is the second red square?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found the first red square, not the second."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought the second red square comes where both patterns finish together, at place 6, but place 6 is a green square."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I added 3 to 4 to get the next red shape and forgot to check that it is a square."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought the second red square is at twice the place of the first, 2 times 4."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Write the first twelve places with a shape and a colour each.",
+    "Two patterns run together. Find the places where the shape is a square, then the places where the colour is red, and look for places on both lists.",
+    "Squares are at the even places: 2, 4, 6, 8, 10, ... Red is at places 1, 4, 7, 10, ... Find the second place that is on both lists."
+  ],
+  "solutions": {
+    "reliable": "Squares are in places 2, 4, 6, 8, 10, 12. Red shapes are in places 1, 4, 7, 10, 13. The places on both lists are 4 and then 10, so the second red square is in place 10. The idea to keep: when two patterns repeat at once, list each one and look for where they match.",
+    "elegant": "The shape pattern repeats every 2 and the colour pattern every 3, so the whole picture repeats every 6. The first red square is at 4, so the next is at $4 + 6 = 10$."
+  },
+  "whyOnTest": "Two repeating patterns of different lengths line up only at certain places, a first step towards common multiples.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

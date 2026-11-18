@@ -1,0 +1,66 @@
+{
+  "id": "AM-1001",
+  "contest": "AMC8",
+  "slot": 1,
+  "area": "ALG",
+  "topic": "ALG-05",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "What is the value of $(2^3)^2 + 2^{(3^2)}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$96$",
+      "correct": false,
+      "misconception": "I added the exponents in (2^3)^2 to get 2^5 = 32, and I multiplied 3 times 2 instead of squaring 3, so 2^6 = 64. Then 32 + 64 = 96."
+    },
+    {
+      "key": "B",
+      "text": "$128$",
+      "correct": false,
+      "misconception": "I thought 2^(3^2) means the same thing as (2^3)^2, so I added 64 + 64 = 128."
+    },
+    {
+      "key": "C",
+      "text": "$544$",
+      "correct": false,
+      "misconception": "I added the exponents in (2^3)^2 and got 2^5 = 32, then added 2^9 = 512 to get 544."
+    },
+    {
+      "key": "D",
+      "text": "$576$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$1024$",
+      "correct": false,
+      "misconception": "I thought (2^3)^2 was also 2^9, so I doubled 512 and got 1024."
+    }
+  ],
+  "hints": [
+    "The two terms look alike but the brackets are in different places. Work out each one separately.",
+    "In $(2^3)^2$ you square $8$. In $2^{(3^2)}$ you first find $3^2$, then use it as the exponent of $2$.",
+    "$(2^3)^2 = 8^2 = 64$ and $2^{(3^2)} = 2^9 = 512$. Now add."
+  ],
+  "solutions": {
+    "reliable": "First term: $2^3 = 8$ and $8^2 = 64$. Second term: the exponent is $3^2 = 9$, so the term is $2^9 = 512$. The sum is $64 + 512 = 576$.",
+    "elegant": "A power of a power multiplies exponents, $(2^3)^2 = 2^6$, while a tower works from the top down, $2^{(3^2)} = 2^9$. So the sum is $2^6 + 2^9 = 2^6(1 + 8) = 64 \\cdot 9 = 576$."
+  },
+  "formulas": [],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

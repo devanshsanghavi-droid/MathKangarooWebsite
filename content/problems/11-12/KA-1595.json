@@ -1,0 +1,68 @@
+{
+  "id": "KA-1595",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A sheet of paper is $0.1$ mm thick. Imagine that it could be folded in half 30 times, doubling the thickness each time. Which of these is closest to the thickness of the folded stack?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3 mm",
+      "correct": false,
+      "misconception": "I added 0.1 mm for each fold, $30 \\times 0.1 = 3$ mm, instead of doubling each time."
+    },
+    {
+      "key": "B",
+      "text": "3 m",
+      "correct": false,
+      "misconception": "I treated $2^{30}$ as $30 \\times 2^{10}$, about 30 000, which gives about 3 m."
+    },
+    {
+      "key": "C",
+      "text": "100 m",
+      "correct": false,
+      "misconception": "I used $2^{30} \\approx 10^6$, as if $(10^3)^3$ were $10^6$, which gives about 100 m."
+    },
+    {
+      "key": "D",
+      "text": "100 km",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "100 000 km",
+      "correct": false,
+      "misconception": "I found about $10^8$ mm but divided by 1000 to change millimetres into kilometres, when 1 km is $10^6$ mm."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-06",
+    "secondary": [
+      "NUM-12",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "How many times thicker is the stack after 30 doublings?",
+    "Thirty doublings multiply the thickness by a power of 2. Estimate that power using a power of 2 that is close to a power of 10, then change millimetres into kilometres with care.",
+    "$2^{10} = 1024 \\approx 10^3$, so $2^{30} \\approx 10^9$. The stack is about $0.1 \\times 10^9 = 10^8$ mm, and there are $10^6$ mm in a kilometre."
+  ],
+  "solutions": {
+    "reliable": "Each fold doubles the thickness, so 30 folds multiply it by $2^{30} = (2^{10})^3 = 1024^3$, a little more than $10^9$. The stack is about $0.1 \\times 10^9 = 10^8$ mm thick. One kilometre is $1000 \\times 1000 = 10^6$ mm, so the stack is about $100$ km thick (more exactly, about 107 km). The transferable idea: estimate powers of 2 with $2^{10} \\approx 10^3$, and convert units one factor of 1000 at a time.",
+    "elegant": null
+  },
+  "whyOnTest": "Repeated doubling grows far faster than intuition suggests, and $2^{10} \\approx 1000$ makes its size easy to estimate.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

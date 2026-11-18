@@ -1,0 +1,56 @@
+{
+  "id": "SA-0071",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "easy",
+  "statement": "Which ordered pair $(x, y)$ is a solution to the system of inequalities below? $$\\begin{aligned} y &> 2x - 3 \\\\ x + y &\\le 6 \\end{aligned}$$",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$(3, 3)$",
+      "correct": false,
+      "misconception": "I treated $y > 2x - 3$ as if it allowed equality; for $(3, 3)$ the two sides are both 3, so the strict inequality is false."
+    },
+    {
+      "key": "B",
+      "text": "$(4, 6)$",
+      "correct": false,
+      "misconception": "I only checked the first inequality, which $(4, 6)$ satisfies, but $4 + 6 = 10$ is more than 6."
+    },
+    {
+      "key": "C",
+      "text": "$(1, 4)$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$(5, 1)$",
+      "correct": false,
+      "misconception": "I only checked the second inequality, which $(5, 1)$ satisfies because $5 + 1 = 6$, but $1$ is not greater than $2(5) - 3 = 7$."
+    }
+  ],
+  "hints": [
+    "A solution must make both inequalities true.",
+    "Substitute each ordered pair into both inequalities and watch for the strict $>$ sign.",
+    "For $(1, 4)$: is $4 > 2(1) - 3 = -1$? Is $1 + 4 \\le 6$?"
+  ],
+  "solutions": {
+    "reliable": "Test each pair in both inequalities. $(3, 3)$: $3 > 3$ is false. $(4, 6)$: $6 > 5$ is true but $10 \\le 6$ is false. $(5, 1)$: $1 > 7$ is false. $(1, 4)$: $4 > -1$ is true and $5 \\le 6$ is true. Only $(1, 4)$ satisfies both.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

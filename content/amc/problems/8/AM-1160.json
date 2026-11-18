@@ -1,0 +1,66 @@
+{
+  "id": "AM-1160",
+  "contest": "AMC8",
+  "slot": 4,
+  "area": "NT",
+  "topic": "NT-06",
+  "types": [
+    "T-BOUNDING"
+  ],
+  "statement": "Maya writes a three-digit number. Then she erases its units digit, which leaves a two-digit number. Her three-digit number is $250$ more than the two-digit number. What is the three-digit number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$225$",
+      "correct": false,
+      "misconception": "I thought the two-digit number was $25$, the first two digits of $250$, and subtracted $250 - 25 = 225$, but erasing the last digit of $225$ leaves $22$."
+    },
+    {
+      "key": "B",
+      "text": "$270$",
+      "correct": false,
+      "misconception": "I wrote the number as $100a + 10b + c$ and the difference as $90a + 10b + c$, forgetting to subtract the $b$, so I solved $10b + c = 70$ with $b = 7$ and $c = 0$."
+    },
+    {
+      "key": "C",
+      "text": "$275$",
+      "correct": false,
+      "misconception": "I thought the two-digit number was $25$, the first two digits of $250$, and added $250 + 25 = 275$, but erasing the last digit of $275$ leaves $27$, not $25$."
+    },
+    {
+      "key": "D",
+      "text": "$277$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$278$",
+      "correct": false,
+      "misconception": "I treated erasing the units digit as dividing by $10$, solved $N - \\frac{N}{10} = 250$ to get $N \\approx 277.8$, and rounded up to $278$."
+    }
+  ],
+  "hints": [
+    "Write the three-digit number as $100a + 10b + c$. Erasing the units digit leaves $10a + b$.",
+    "The difference is $90a + 9b + c = 250$. Since $9b + c$ is at most $90$, what must $a$ be?",
+    "$a = 2$ gives $9b + c = 70$. With $c$ a single digit, find $b$."
+  ],
+  "solutions": {
+    "reliable": "Write the number as $100a + 10b + c$ with digits $a, b, c$ and $a \\ge 1$. Erasing the units digit leaves $10a + b$, so the difference is $(100a + 10b + c) - (10a + b) = 90a + 9b + c = 250$. Since $9b + c \\le 81 + 9 = 90$, we need $90a$ to be at least $160$ and at most $250$, so $a = 2$ and $9b + c = 70$. As $0 \\le c \\le 9$, $9b$ is between $61$ and $70$, so $b = 7$ and $c = 7$. The number is $277$, and indeed $277 - 27 = 250$.",
+    "elegant": "Erasing the units digit is roughly dividing by $10$, so the difference is roughly $\\frac{9}{10}$ of the number, which puts the number near $250 \\cdot \\frac{10}{9} \\approx 278$. Within the numbers $270$ to $279$ the two-digit number is always $27$, so the difference is the number minus $27$, and $277 - 27 = 250$."
+  },
+  "formulas": [],
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0121",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "medium",
+  "statement": "Which of the following quadratic equations has solutions $x = 3 + \\sqrt{2}$ and $x = 3 - \\sqrt{2}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$x^2 - 6x + 7 = 0$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$x^2 + 6x + 7 = 0$",
+      "correct": false,
+      "misconception": "I found the sum $6$ and the product $7$ correctly but wrote the equation as $x^2 + (\\text{sum})x + (\\text{product}) = 0$, so the sign of the $x$ term is wrong."
+    },
+    {
+      "key": "C",
+      "text": "$x^2 - 6x + 11 = 0$",
+      "correct": false,
+      "misconception": "I multiplied $(3 + \\sqrt{2})(3 - \\sqrt{2})$ as $9 + 2$, adding the square of $\\sqrt{2}$ instead of subtracting it."
+    },
+    {
+      "key": "D",
+      "text": "$x^2 - 6x + 5 = 0$",
+      "correct": false,
+      "misconception": "I multiplied $(3 + \\sqrt{2})(3 - \\sqrt{2})$ as $9 - 4$, squaring the $2$ instead of squaring $\\sqrt{2}$."
+    }
+  ],
+  "hints": [
+    "Solutions $r$ and $s$ come from $(x - r)(x - s) = 0$.",
+    "Expand $(x - r)(x - s) = x^2 - (r + s)x + rs$. Find the sum and the product of the two solutions.",
+    "The sum is $6$ and the product is $3^2 - (\\sqrt{2})^2 = 9 - 2$."
+  ],
+  "solutions": {
+    "reliable": "The equation is $(x - r)(x - s) = 0$ with $r = 3 + \\sqrt{2}$ and $s = 3 - \\sqrt{2}$, which expands to $x^2 - (r + s)x + rs = 0$. Here $r + s = 6$ and $rs = 3^2 - (\\sqrt{2})^2 = 9 - 2 = 7$, so the equation is $x^2 - 6x + 7 = 0$. Check with the quadratic formula: $x = \\frac{6 \\pm \\sqrt{36 - 28}}{2} = \\frac{6 \\pm 2\\sqrt{2}}{2} = 3 \\pm \\sqrt{2}$.",
+    "elegant": "The solutions are $x = 3 \\pm \\sqrt{2}$, so $x - 3 = \\pm\\sqrt{2}$ and $(x - 3)^2 = 2$. Expanding, $x^2 - 6x + 9 = 2$, which is $x^2 - 6x + 7 = 0$."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

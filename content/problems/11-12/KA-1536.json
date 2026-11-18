@@ -1,0 +1,68 @@
+{
+  "id": "KA-1536",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Which of these is closest to $0.99^{100}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I used $1 - 100 \\times 0.01 = 0$, which only works when the power is small."
+    },
+    {
+      "key": "B",
+      "text": "$0.01$",
+      "correct": false,
+      "misconception": "I thought raising to the power 100 makes the number about 100 times smaller."
+    },
+    {
+      "key": "C",
+      "text": "$0.37$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$0.9$",
+      "correct": false,
+      "misconception": "I worked out $0.99^{10} \\approx 0.9$ and stopped, forgetting to raise it to the power 10 again."
+    },
+    {
+      "key": "E",
+      "text": "$99$",
+      "correct": false,
+      "misconception": "I multiplied 0.99 by 100 instead of raising it to the power 100."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-06",
+    "secondary": [
+      "NUM-12",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Is the answer near 1, near 0, or somewhere between?",
+    "The choices are far apart, so a rough estimate is enough. Write $0.99^{100} = (0.99^{10})^{10}$ and estimate each power, or use the known limit of $\\left(1 - \\frac{1}{n}\\right)^n$.",
+    "$0.99^{10} \\approx 1 - 0.1 + 0.0045 \\approx 0.904$, and $0.904^{10}$ is about $0.37$."
+  ],
+  "solutions": {
+    "reliable": "First $0.99^{10} \\approx 1 - 10(0.01) + 45(0.0001) \\approx 0.904$. Then $0.904^2 \\approx 0.817$, $0.904^4 \\approx 0.668$, $0.904^8 \\approx 0.446$, and $0.904^{10} \\approx 0.446 \\times 0.817 \\approx 0.365$. The closest choice is $0.37$. As a check, $\\left(1 - \\frac{1}{n}\\right)^n$ approaches $\\frac{1}{e} \\approx 0.368$ for large $n$. The transferable idea: when the choices are far apart, estimate roughly and pick the nearest choice.",
+    "elegant": "$\\left(1 - \\frac{1}{100}\\right)^{100}$ is very close to $\\frac{1}{e} \\approx 0.37$."
+  },
+  "whyOnTest": "With choices this far apart, a rough estimate or a known limit picks the answer; the first-order shortcut $1 - 100x$ is the trap.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

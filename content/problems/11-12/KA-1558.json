@@ -1,0 +1,68 @@
+{
+  "id": "KA-1558",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Ten counters lie in a row: five black ones followed by five white ones. A move swaps a black counter with the white counter directly to its right. Moves are made, in any order, until no move is possible. How many moves are made in total?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted the 9 gaps between neighbouring counters and allowed one swap for each gap."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought each of the ten counters moves exactly once."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "45",
+      "correct": false,
+      "misconception": "I counted every pair of counters, $\\binom{10}{2} = 45$, but only pairs with a black counter to the left of a white one ever swap."
+    },
+    {
+      "key": "E",
+      "text": "50",
+      "correct": false,
+      "misconception": "I counted each swap twice, once for the black counter and once for the white one."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "CNT-08",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "Look at pairs made of one black and one white counter.",
+    "Find a quantity that every move changes by exactly one, such as the number of pairs with a black counter somewhere to the left of a white one. It fixes the number of moves in any order.",
+    "At the start all $5 \\times 5$ black and white pairs have the black counter on the left. Each move fixes exactly one such pair, and the process stops only when none are left."
+  ],
+  "solutions": {
+    "reliable": "Call a pair made of one black and one white counter out of order if the black one is to the left of the white one. At the start all $5 \\times 5 = 25$ such pairs are out of order. A move swaps two neighbours, so it changes the order of exactly that one pair and no other: the count drops by exactly 1. If any pair is out of order, somewhere a black counter has a white counter directly to its right, so a move is still possible; the process therefore stops exactly when the count reaches 0. So exactly 25 moves are made, whatever their order. The transferable idea: a quantity that changes by exactly one per move counts the moves for you.",
+    "elegant": "Each white counter must end up to the left of every black counter, and in one move it passes exactly one black counter. Each of the 5 white counters passes 5 black ones, so there are $5 \\times 5 = 25$ moves. The transferable idea: count how many times each object must overtake another."
+  },
+  "whyOnTest": "A process with free choices still has a fixed length when some quantity drops by exactly one each move, which turns a search into a count.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

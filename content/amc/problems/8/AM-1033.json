@@ -1,0 +1,62 @@
+{
+  "id": "AM-1033",
+  "contest": "AMC8",
+  "slot": 11,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": ["T-CASEWORK"],
+  "statement": "A city bus sells single rides for $\\$2.50$, a $5$-ride pass for $\\$11$, and a $12$-ride pass for $\\$24$. Ana needs at least $30$ rides this month, and she does not mind having rides left over. What is the least amount of money she can spend?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$61.50$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\$63.00$",
+      "correct": false,
+      "misconception": "I used as many 12-ride passes as would fit, two of them, and then paid for the last 6 rides as singles."
+    },
+    {
+      "key": "C",
+      "text": "$\\$66.00$",
+      "correct": false,
+      "misconception": "I bought six 5-ride passes for exactly 30 rides and never tried the 12-ride pass."
+    },
+    {
+      "key": "D",
+      "text": "$\\$72.00$",
+      "correct": false,
+      "misconception": "I bought three 12-ride passes because that pass is the cheapest per ride, but 36 rides cost more than a smarter mix."
+    },
+    {
+      "key": "E",
+      "text": "$\\$75.00$",
+      "correct": false,
+      "misconception": "I paid for all 30 rides as singles at 2.50 each."
+    }
+  ],
+  "hints": [
+    "Per ride, the $12$-ride pass costs $\\$2.00$, the $5$-ride pass $\\$2.20$, and a single ride $\\$2.50$.",
+    "Two $12$-ride passes cover $24$ rides. What is the cheapest way to cover the last $6$?",
+    "For the last $6$ rides, compare six singles, a $5$-ride pass plus one single, and a third $12$-ride pass."
+  ],
+  "solutions": {
+    "reliable": "Sort by the number of $12$-ride passes. Three passes cost $\\$72$. Two passes cost $\\$48$ and leave $6$ rides: one $5$-ride pass and one single cost $\\$13.50$, less than six singles ($\\$15$) or two $5$-ride passes ($\\$22$), for a total of $\\$61.50$. One pass costs $\\$24$ and leaves $18$ rides, which cost at least $\\$40.50$ (three $5$-ride passes and three singles), for $\\$64.50$. With no $12$-ride pass, six $5$-ride passes cost $\\$66$. The least amount is $\\$61.50$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

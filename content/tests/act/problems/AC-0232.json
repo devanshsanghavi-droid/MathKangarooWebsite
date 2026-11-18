@@ -1,0 +1,56 @@
+{
+  "id": "AC-0232",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "hard",
+  "statement": "Surveyors mark points $A$ and $B$ on a straight road, $400$ meters apart. A radio tower $T$ stands in a field beside the road. They measure $\\angle TAB = 52^\\circ$ and $\\angle TBA = 71^\\circ$. To the nearest meter, what is the distance from $A$ to the tower?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$376$",
+      "correct": false,
+      "misconception": "I paired AT with the sine of the 52 degree angle at A, so I really found BT, which is about 376 meters."
+    },
+    {
+      "key": "B",
+      "text": "$355$",
+      "correct": false,
+      "misconception": "I wrote the law of sines ratio upside down, 400 times sin 57 degrees divided by sin 71 degrees, which gave about 355."
+    },
+    {
+      "key": "C",
+      "text": "$246$",
+      "correct": false,
+      "misconception": "I assumed the angle at the tower was a right angle and used AT = 400 times cos 52 degrees, which gave about 246."
+    },
+    {
+      "key": "D",
+      "text": "$451$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Find the third angle of triangle $TAB$ first.",
+    "Angle $T$ is $180^\\circ - 52^\\circ - 71^\\circ = 57^\\circ$, and it is opposite the known side $AB$. Use the law of sines, pairing each side with the angle across from it.",
+    "Side $AT$ is opposite the $71^\\circ$ angle at $B$, so $\\frac{AT}{\\sin 71^\\circ} = \\frac{400}{\\sin 57^\\circ}$."
+  ],
+  "solutions": {
+    "reliable": "In triangle $TAB$, $\\angle T = 180^\\circ - 52^\\circ - 71^\\circ = 57^\\circ$. Side $AB = 400$ is opposite $\\angle T$, and side $AT$ is opposite $\\angle B = 71^\\circ$. By the law of sines, $AT = \\frac{400 \\sin 71^\\circ}{\\sin 57^\\circ} \\approx \\frac{400(0.9455)}{0.8387} \\approx 451.0$. The tower is about $451$ meters from $A$.",
+    "elegant": "Check with coordinates: put $A$ at $(0, 0)$ and $B$ at $(400, 0)$. The tower lies on $y = x\\tan 52^\\circ$ and on $y = (400 - x)\\tan 71^\\circ$. Solving gives $x \\approx 277.6$ and $y \\approx 355.4$, and $\\sqrt{277.6^2 + 355.4^2} \\approx 451$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

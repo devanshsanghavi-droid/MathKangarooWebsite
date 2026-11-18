@@ -1,0 +1,65 @@
+{
+  "id": "KA-1097",
+  "band": "1-2",
+  "points": 3,
+  "statement": "Kim has three number cards: 3, 0 and 7. She uses two of the cards to make a two-digit number. What is the smallest number she can make?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "33",
+      "correct": false,
+      "misconception": "I used the card 3 twice, but there is only one 3 card."
+    },
+    {
+      "key": "C",
+      "text": "37",
+      "correct": false,
+      "misconception": "I thought the 0 card cannot be used, so I used 3 and 7."
+    },
+    {
+      "key": "D",
+      "text": "73",
+      "correct": false,
+      "misconception": "I made the biggest number instead of the smallest."
+    },
+    {
+      "key": "E",
+      "text": "307",
+      "correct": false,
+      "misconception": "I used all three cards, but she uses only two."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-01",
+    "secondary": []
+  },
+  "hints": [
+    "Can a two-digit number start with 0?",
+    "Make the tens digit as small as you can, then the ones digit. Remember that a number written with 0 in front is really a one-digit number.",
+    "The tens digit cannot be 0, so the smallest tens digit is 3. Now pick the smallest card left for the ones."
+  ],
+  "solutions": {
+    "reliable": "The tens digit matters most, so make it small. It cannot be 0, because 07 is just 7, a one-digit number. So the tens digit is 3, and the smallest card left is 0, giving 30. The idea to keep: the left digit counts most, and 0 cannot lead.",
+    "elegant": null
+  },
+  "whyOnTest": "Zero can sit in the ones place but never lead a two-digit number, a place-value point several choices are built around.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

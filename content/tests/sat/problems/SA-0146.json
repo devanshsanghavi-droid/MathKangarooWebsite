@@ -1,0 +1,56 @@
+{
+  "id": "SA-0146",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-07",
+  "difficulty": "medium",
+  "statement": "At the same moment, a ball is thrown upward and a balloon is released. The ball's height, in feet, $t$ seconds later is $h(t) = -16t^2 + 72t + 4$. The balloon's height, in feet, $t$ seconds later is $b(t) = 8t + 52$. The ball and the balloon are at the same height at two different times. What is that height, in feet, the second time?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I solved for both times correctly but used the first time, $t = 1$, to find the height."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found the second time, $t = 3$ seconds, and gave that as the answer instead of the height."
+    },
+    {
+      "key": "C",
+      "text": "$85$",
+      "correct": false,
+      "misconception": "I found the ball's maximum height, at $t = 2.25$, instead of where the two heights are equal."
+    },
+    {
+      "key": "D",
+      "text": "$76$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The two are at the same height when $h(t) = b(t)$.",
+    "Set $-16t^2 + 72t + 4 = 8t + 52$ and move everything to one side.",
+    "$-16t^2 + 64t - 48 = 0$, which divides by $-16$ to give $t^2 - 4t + 3 = 0$, so $t = 1$ or $t = 3$."
+  ],
+  "solutions": {
+    "reliable": "Setting $h(t) = b(t)$ gives $-16t^2 + 72t + 4 = 8t + 52$, so $-16t^2 + 64t - 48 = 0$. Dividing by $-16$, $t^2 - 4t + 3 = 0$, so $(t - 1)(t - 3) = 0$ and $t = 1$ or $t = 3$. The second time is $t = 3$, when the height is $b(3) = 8(3) + 52 = 76$ feet. Check: $h(3) = -144 + 216 + 4 = 76$.",
+    "elegant": null
+  },
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

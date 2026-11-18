@@ -1,0 +1,68 @@
+{
+  "id": "AM-1166",
+  "contest": "AMC8",
+  "slot": 6,
+  "area": "NT",
+  "topic": "NT-01",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "In the four-digit number $\\underline{2}\\,\\underline{A}\\,\\underline{6}\\,\\underline{B}$, the letters $A$ and $B$ stand for digits, which may be the same or different. For how many choices of $A$ and $B$ is the number divisible by $12$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I said the number $\\underline{6}\\,\\underline{B}$ must be a multiple of $4$, but I only allowed $B = 4$ and $B = 8$ and forgot that $60$ is a multiple of $4$."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I said about one in every $12$ numbers is a multiple of $12$, and $100 \\div 12 = 8.3$, so I rounded down to $8$."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I checked divisibility by $3$ and only checked that the number is even, but being even is not enough for divisibility by $4$."
+    },
+    {
+      "key": "E",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I checked divisibility by $4$, so $B$ is $0$, $4$ or $8$, but forgot to check divisibility by $3$ and let $A$ be any of the $10$ digits."
+    }
+  ],
+  "hints": [
+    "A number is divisible by $12$ exactly when it is divisible by both $3$ and $4$.",
+    "Divisibility by $4$ depends on the last two digits, $\\underline{6}\\,\\underline{B}$. Divisibility by $3$ depends on the digit sum $8 + A + B$.",
+    "$\\underline{6}\\,\\underline{B}$ is a multiple of $4$ when $B$ is $0$, $4$ or $8$. For each such $B$, count the digits $A$ that make $8 + A + B$ a multiple of $3$."
+  ],
+  "solutions": {
+    "reliable": "Since $12 = 3 \\cdot 4$ and $3$ and $4$ share no factor, we need divisibility by both. For $4$: the last two digits $60 + B$ must be a multiple of $4$, so $B$ is $0$, $4$ or $8$. For $3$: the digit sum $2 + A + 6 + B = 8 + A + B$ must be a multiple of $3$. If $B = 0$, $A$ is $1, 4, 7$ ($3$ choices). If $B = 4$, $A$ is $0, 3, 6, 9$ ($4$ choices). If $B = 8$, $A$ is $2, 5, 8$ ($3$ choices). In total there are $3 + 4 + 3 = 10$ choices.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-07"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "KA-1338",
+  "band": "7-8",
+  "points": 5,
+  "statement": "The net shown is folded to make a cube. What is the sum of the numbers on the four faces that share an edge with the face numbered 1?",
+  "figure": {
+    "component": "CubeNetStepsNumbered",
+    "alt": "A cube net of six squares in a staircase of three steps. Top row: square 1 with square 2 to its right. Middle row: square 3 directly below 2, with square 4 to its right. Bottom row: square 5 directly below 4, with square 6 to its right."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "14",
+      "correct": false,
+      "misconception": "I thought the two ends of the staircase, 1 and 6, finish opposite each other, so I added 2, 3, 4 and 5."
+    },
+    {
+      "key": "B",
+      "text": "17",
+      "correct": false,
+      "misconception": "I thought squares that touch only at a corner in the net, like 1 and 3, finish opposite each other, so I added 2, 4, 5 and 6."
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": false,
+      "misconception": "I added all five other numbers, forgetting that one face of a cube is opposite face 1 and does not touch it."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": false,
+      "misconception": "I thought 5, which lies on the same slanting line as 1, two steps down, finishes opposite 1, so I added 2, 3, 4 and 6."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-10",
+    "secondary": [
+      "GEO-11"
+    ]
+  },
+  "hints": [
+    "Only one face of the cube does not touch face 1. Which one?",
+    "Find the face opposite 1 by folding one square at a time in your head: keep 1 flat as the floor and see where each square lands as you fold along the joins. Then add the other four.",
+    "With 1 as the floor, 2 and 3 fold up as two walls that meet at a corner, and 4 then folds over the top as the roof."
+  ],
+  "solutions": {
+    "reliable": "Keep face 1 flat as the floor. Square 2 is joined to the right edge of 1, so it folds up into a wall. Square 3 is joined to the bottom edge of 2, so it folds round into a second wall, meeting wall 2 at a corner. Square 4 is joined to the edge of 3 that is now at the top, so 4 folds over to become the roof, opposite the floor. Squares 5 and 6 then fill the last two walls. So 4 is opposite 1, and the four faces sharing an edge with 1 are 2, 3, 5 and 6, with sum 2 + 3 + 5 + 6 = 16. The transferable idea: fold a net one square at a time from a fixed base; the face opposite the base is the only one that does not touch it.",
+    "elegant": "Squares 1, 2, 3 and 4 form a Z shape: across, down, across. The two end squares of a Z always finish opposite each other, because the two middle squares fold up as walls that meet at a corner and the end squares become the floor and the roof. So 4 is opposite 1, and in the same way the Z made by 3, 4, 5 and 6 puts 3 opposite 6, which leaves 2 opposite 5. The faces touching 1 are 2, 3, 5 and 6, with sum 16."
+  },
+  "whyOnTest": "Tests folding a net in your head on the trickiest net shape, and the trap of pairing the two ends of the staircase as opposite faces.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

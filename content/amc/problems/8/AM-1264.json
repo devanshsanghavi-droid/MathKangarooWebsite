@@ -1,0 +1,68 @@
+{
+  "id": "AM-1264",
+  "contest": "AMC8",
+  "slot": 13,
+  "area": "CP",
+  "topic": "CP-03",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A choir has $5$ sopranos and $4$ altos. The director will choose $4$ of these singers to form a quartet, and the quartet must have more sopranos than altos. How many different quartets are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I only counted quartets made up entirely of sopranos and forgot the quartets with 3 sopranos and 1 alto."
+    },
+    {
+      "key": "B",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I added 10 + 4 instead of multiplying for the quartets with 3 sopranos and 1 alto, then added the 5 all-soprano quartets."
+    },
+    {
+      "key": "C",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I only counted quartets with 3 sopranos and 1 alto and forgot the quartets with 4 sopranos."
+    },
+    {
+      "key": "D",
+      "text": "$45$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$126$",
+      "correct": false,
+      "misconception": "I counted every group of 4 from the 9 singers and forgot the rule about having more sopranos."
+    }
+  ],
+  "hints": [
+    "List the possible numbers of sopranos in the quartet.",
+    "The quartet has either $4$ sopranos, or $3$ sopranos and $1$ alto.",
+    "Count each case with combinations: $\\binom{5}{4}$ for the first case and $\\binom{5}{3} \\times \\binom{4}{1}$ for the second."
+  ],
+  "solutions": {
+    "reliable": "More sopranos than altos in a group of $4$ means $4$ sopranos, or $3$ sopranos and $1$ alto. The first case gives $\\binom{5}{4} = 5$ quartets. The second gives $\\binom{5}{3} \\times \\binom{4}{1} = 10 \\times 4 = 40$ quartets. In total there are $5 + 40 = 45$ quartets.",
+    "elegant": "Count the opposite. Of the $\\binom{9}{4} = 126$ groups of $4$, those with no more sopranos than altos have $2$, $1$ or $0$ sopranos: $\\binom{5}{2}\\binom{4}{2} + \\binom{5}{1}\\binom{4}{3} + \\binom{4}{4} = 60 + 20 + 1 = 81$. So $126 - 81 = 45$."
+  },
+  "formulas": [
+    "F-CP-03"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

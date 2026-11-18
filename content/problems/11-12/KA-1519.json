@@ -1,0 +1,68 @@
+{
+  "id": "KA-1519",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Water flows through a pipe with an inside diameter of 2 cm at a speed of 50 cm per second, filling the pipe completely. How many litres of water come out of the pipe each minute? (1 litre is $1000 \\text{ cm}^3$.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12\\pi$",
+      "correct": false,
+      "misconception": "I used the diameter, 2 cm, as the radius when I found the area of the pipe's cross-section."
+    },
+    {
+      "key": "B",
+      "text": "$0.05\\pi$",
+      "correct": false,
+      "misconception": "I found the volume per second, $50\\pi \\text{ cm}^3 = 0.05\\pi$ litres, and forgot to multiply by 60 for a minute."
+    },
+    {
+      "key": "C",
+      "text": "$3000\\pi$",
+      "correct": false,
+      "misconception": "I found $3000\\pi \\text{ cm}^3$ per minute and forgot to convert cubic centimetres to litres."
+    },
+    {
+      "key": "D",
+      "text": "$3\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$30\\pi$",
+      "correct": false,
+      "misconception": "I thought a litre was $100 \\text{ cm}^3$ when converting from cubic centimetres."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-10",
+    "secondary": [
+      "MOD-07",
+      "MOD-03"
+    ]
+  },
+  "hints": [
+    "Picture the column of water that leaves in one second.",
+    "Each second a cylinder of water as long as the distance flowed comes out. Find its volume, scale to a minute, and convert units only at the end. Check radius versus diameter.",
+    "The cross-section is $\\pi \\times 1^2 = \\pi \\text{ cm}^2$. Each second $50\\pi \\text{ cm}^3$ comes out, so each minute $3000\\pi \\text{ cm}^3$."
+  ],
+  "solutions": {
+    "reliable": "The radius is 1 cm, so the cross-section has area $\\pi \\times 1^2 = \\pi \\text{ cm}^2$. In one second the water moves 50 cm, so a cylinder of volume $50\\pi \\text{ cm}^3$ leaves the pipe. In one minute that is $60 \\times 50\\pi = 3000\\pi \\text{ cm}^3$, which is $3\\pi$ litres, about 9.4 litres. The transferable idea: carry the units through every step and re-read what unit the question wants before answering.",
+    "elegant": null
+  },
+  "whyOnTest": "Three unit traps sit in one short flow calculation: radius versus diameter, seconds versus minutes, and cubic centimetres versus litres.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

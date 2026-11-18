@@ -1,0 +1,56 @@
+{
+  "id": "AC-0082",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "easy",
+  "statement": "A rectangular rug has an area of $84$ square feet. Its length is $5$ feet more than its width. What is the width of the rug, in feet?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I solved $w(w + 5) = 84$ correctly but gave the length, 12, instead of the width."
+    },
+    {
+      "key": "C",
+      "text": "$16.8$",
+      "correct": false,
+      "misconception": "I divided the area 84 by 5, as if the 5 feet were one of the side lengths."
+    },
+    {
+      "key": "D",
+      "text": "$18.5$",
+      "correct": false,
+      "misconception": "I treated 84 as the perimeter, so I solved $2w + 2(w + 5) = 84$ and got $w = 18.5$."
+    }
+  ],
+  "hints": [
+    "Call the width $w$. What is the length in terms of $w$?",
+    "Area is length times width, so $w(w + 5) = 84$. Rearrange into a quadratic equal to zero and factor it.",
+    "$w^2 + 5w - 84 = 0$ factors as $(w + 12)(w - 7) = 0$. A width cannot be negative."
+  ],
+  "solutions": {
+    "reliable": "Let the width be $w$ feet, so the length is $w + 5$ feet. Then $w(w + 5) = 84$, so $w^2 + 5w - 84 = 0$ and $(w + 12)(w - 7) = 0$. Since a width is positive, $w = 7$. Check: the rug is $7$ by $12$, and $7 \\times 12 = 84$.",
+    "elegant": "Look for two factors of $84$ that differ by $5$: $7 \\times 12 = 84$, so the width is $7$ feet."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

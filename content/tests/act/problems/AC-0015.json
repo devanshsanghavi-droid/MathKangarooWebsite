@@ -1,0 +1,56 @@
+{
+  "id": "AC-0015",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-04",
+  "difficulty": "easy",
+  "statement": "Maya deposits $\\$1{,}500$ into a savings account that pays $3.5\\%$ simple interest per year. She makes no other deposits or withdrawals. What is the balance of the account after $4$ years?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$210.00$",
+      "correct": false,
+      "misconception": "I found the total interest, $\\$210$, but forgot to add it to the $\\$1{,}500$ she deposited."
+    },
+    {
+      "key": "B",
+      "text": "$\\$1{,}552.50$",
+      "correct": false,
+      "misconception": "I found the interest for one year, $\\$52.50$, and added it to the deposit, forgetting to multiply by 4 years."
+    },
+    {
+      "key": "C",
+      "text": "$\\$1{,}710.00$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$1{,}721.28$",
+      "correct": false,
+      "misconception": "I compounded the interest, multiplying by 1.035 four times, but simple interest is earned only on the original deposit."
+    }
+  ],
+  "hints": [
+    "Simple interest is earned only on the original deposit, the same amount each year.",
+    "One year of interest is $0.035 \\cdot 1{,}500$ dollars. Multiply by $4$ years.",
+    "The interest is $\\$52.50$ per year, so $\\$210$ in $4$ years. Add it to the deposit."
+  ],
+  "solutions": {
+    "reliable": "Simple interest is $I = Prt = 1{,}500 \\cdot 0.035 \\cdot 4 = 210$ dollars. The balance is the deposit plus the interest: $1{,}500 + 210 = 1{,}710$ dollars.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

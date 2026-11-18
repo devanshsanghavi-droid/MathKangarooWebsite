@@ -1,0 +1,56 @@
+{
+  "id": "AC-0288",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-06",
+  "difficulty": "easy",
+  "statement": "A playlist has $8$ pop songs, $5$ jazz songs and $7$ rock songs. The playlist is shuffled so that each song is equally likely to play first. What is the probability that the first song is NOT a jazz song?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{1}{4}$",
+      "correct": false,
+      "misconception": "I found the probability that the first song IS jazz, 5 out of 20, instead of the probability that it is not."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{1}{3}$",
+      "correct": false,
+      "misconception": "I compared jazz songs to the other songs, 5 to 15, but a probability compares the jazz songs to all 20 songs."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{2}{5}$",
+      "correct": false,
+      "misconception": "I only counted the 8 pop songs out of 20 and forgot that rock songs are also not jazz."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{3}{4}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "How many songs are on the playlist in total, and how many of them are not jazz?",
+    "The songs that are not jazz are the pop songs and the rock songs. Divide by the total number of songs.",
+    "There are $8 + 7 = 15$ songs that are not jazz out of $20$ songs."
+  ],
+  "solutions": {
+    "reliable": "There are $8 + 5 + 7 = 20$ songs, and $8 + 7 = 15$ of them are not jazz. The probability is $\\dfrac{15}{20} = \\dfrac{3}{4}$.",
+    "elegant": "Use the complement: $P(\\text{jazz}) = \\dfrac{5}{20} = \\dfrac{1}{4}$, so $P(\\text{not jazz}) = 1 - \\dfrac{1}{4} = \\dfrac{3}{4}$."
+  },
+  "estSeconds": 30,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

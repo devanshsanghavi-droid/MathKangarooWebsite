@@ -1,0 +1,56 @@
+{
+  "id": "SA-0040",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "medium",
+  "statement": "In the system of equations below, $k$ is a constant. $$\\begin{aligned} 4x - 7y &= 5 \\\\ kx - 21y &= 9 \\end{aligned}$$ For what value of $k$ does the system have no solution?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-12$",
+      "correct": false,
+      "misconception": "I divided $-21$ by $7$ instead of by $-7$, so I used a multiplier of $-3$ and got $k = -3 \\cdot 4 = -12$."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{4}{3}$",
+      "correct": false,
+      "misconception": "I noticed the $y$-coefficient tripled, but I divided the 4 by 3 instead of multiplying, so I got $k = \\dfrac{4}{3}$."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I thought two lines are parallel when their $x$-coefficients are equal, so I set $k = 4$ without looking at the $y$-coefficients."
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "A linear system has no solution when its two lines are parallel but not the same line.",
+    "Parallel lines have the same slope, which means the coefficients of $x$ and $y$ must be in the same ratio.",
+    "The $y$-coefficient went from $-7$ to $-21$, a factor of $3$. For the same slope, the $x$-coefficient must go from $4$ to $3 \\cdot 4$."
+  ],
+  "solutions": {
+    "reliable": "Write both lines in slope-intercept form. The first is $y = \\dfrac{4}{7}x - \\dfrac{5}{7}$, with slope $\\dfrac{4}{7}$. The second is $y = \\dfrac{k}{21}x - \\dfrac{3}{7}$, with slope $\\dfrac{k}{21}$. Equal slopes need $\\dfrac{k}{21} = \\dfrac{4}{7}$, so $k = 12$. The $y$-intercepts $-\\dfrac{5}{7}$ and $-\\dfrac{3}{7}$ are different, so with $k = 12$ the lines are parallel and distinct, and the system has no solution.",
+    "elegant": "Tripling the first equation gives $12x - 21y = 15$. With $k = 12$ the second equation says $12x - 21y = 9$, and $12x - 21y$ cannot equal both $15$ and $9$."
+  },
+  "estSeconds": 65,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

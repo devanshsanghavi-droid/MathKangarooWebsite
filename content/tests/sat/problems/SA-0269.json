@@ -1,0 +1,56 @@
+{
+  "id": "SA-0269",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-04",
+  "difficulty": "hard",
+  "statement": "A storage box is a rectangular prism whose base measures $12$ inches by $16$ inches. The longest straight rod that fits inside the box, running from one bottom corner to the opposite top corner, is $29$ inches long. What is the height of the box, in inches?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$21$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$24.2$",
+      "correct": false,
+      "misconception": "I left out the 12-inch side and computed $\\sqrt{29^2 - 16^2} \\approx 24.2$, as if the rod lay along one face."
+    },
+    {
+      "key": "C",
+      "text": "$26.4$",
+      "correct": false,
+      "misconception": "I left out the 16-inch side and computed $\\sqrt{29^2 - 12^2} \\approx 26.4$, as if the rod lay along one face."
+    },
+    {
+      "key": "D",
+      "text": "$35.2$",
+      "correct": false,
+      "misconception": "I found the base diagonal, 20, and then added squares, $\\sqrt{29^2 + 20^2} \\approx 35.2$, treating 29 as a leg instead of the hypotenuse."
+    }
+  ],
+  "hints": [
+    "Find the diagonal of the base first.",
+    "The base diagonal, a vertical edge and the rod form a right triangle, with the rod as the hypotenuse.",
+    "The base diagonal is $\\sqrt{12^2 + 16^2} = 20$, so $h^2 = 29^2 - 20^2$."
+  ],
+  "solutions": {
+    "reliable": "The diagonal of the base is $\\sqrt{12^2 + 16^2} = \\sqrt{400} = 20$ inches. The rod, the base diagonal and a vertical edge form a right triangle, so $h^2 + 20^2 = 29^2$. Then $h^2 = 841 - 400 = 441$ and $h = 21$ inches.",
+    "elegant": "For a box, the space diagonal $d$ satisfies $d^2 = \\ell^2 + w^2 + h^2$. So $h^2 = 29^2 - 12^2 - 16^2 = 841 - 144 - 256 = 441$ and $h = 21$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

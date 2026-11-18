@@ -1,0 +1,68 @@
+{
+  "id": "KA-1230",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A four-sided shape has all four sides equal to 5 cm, and one of its angles is a right angle. What is its area?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "It cannot be worked out",
+      "correct": false,
+      "misconception": "I thought a shape with four equal sides could still lean over like a squashed diamond, but one right angle forces all four angles to be right angles."
+    },
+    {
+      "key": "B",
+      "text": "$10\\ \\text{cm}^2$",
+      "correct": false,
+      "misconception": "I added the two sides that meet at the right angle, 5 + 5, instead of multiplying them."
+    },
+    {
+      "key": "C",
+      "text": "$12.5\\ \\text{cm}^2$",
+      "correct": false,
+      "misconception": "I treated the shape as a right-angled triangle with two sides of 5 cm and took half of $5 \\times 5$."
+    },
+    {
+      "key": "D",
+      "text": "$20\\ \\text{cm}^2$",
+      "correct": false,
+      "misconception": "I found the perimeter, $4 \\times 5 = 20$, instead of the area."
+    },
+    {
+      "key": "E",
+      "text": "$25\\ \\text{cm}^2$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-06",
+    "secondary": [
+      "GEO-05",
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "What kind of shape has four equal sides?",
+    "A shape with four equal sides is a rhombus, and its opposite sides are parallel, so any two neighbouring angles add up to 180 degrees. Use that to find all four angles.",
+    "If one angle is 90 degrees, each neighbouring angle is $180 - 90 = 90$ degrees too. What has four equal sides and four right angles?"
+  ],
+  "solutions": {
+    "reliable": "Four equal sides make a rhombus. In a rhombus, opposite sides are parallel, so any two neighbouring angles add up to 180 degrees. One angle is 90 degrees, so both of its neighbours are 90 degrees, and the last angle is $360 - 270 = 90$ degrees. Four equal sides and four right angles make a square, so the area is $5 \\times 5 = 25\\ \\text{cm}^2$. The transferable idea: a rhombus with one right angle is a square.",
+    "elegant": null
+  },
+  "whyOnTest": "Knowing which properties force a shape is tested here: four equal sides plus one right angle leaves no room to lean, so the shape is a square.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

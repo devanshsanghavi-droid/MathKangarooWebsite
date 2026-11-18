@@ -1,0 +1,67 @@
+{
+  "id": "KA-1076",
+  "band": "1-2",
+  "points": 4,
+  "statement": "A lamp starts off. Each button press switches it on or off. Monday to Friday, Ivy presses it 2, 1, 1, 2 and 2 times. On how many days is it on at bedtime?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted the days when she pressed an odd number of times that day, Tuesday and Wednesday, and forgot the lamp keeps its state from the day before."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted the days when she pressed an even number of times that day, because I thought even meant on."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought the lamp started on, so I counted the days it would be on if it began on, which are the days it is really off."
+    },
+    {
+      "key": "E",
+      "text": "5",
+      "correct": false,
+      "misconception": "I thought every press turns the lamp on, so it is on every day."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "The lamp does not reset at night. Keep a running count.",
+    "Two presses bring the lamp back to how it was. So only the total number of presses so far matters: an odd total means on, an even total means off.",
+    "The totals at bedtime are 2, then 3, then 4, then 6, then 8. Look for the odd totals."
+  ],
+  "solutions": {
+    "reliable": "Add up the presses as the week goes on. Monday: 2 presses in all, off. Tuesday: 3, on. Wednesday: 4, off. Thursday: 6, off. Friday: 8, off. The lamp is on at bedtime only on Tuesday, so the answer is 1 day. The idea to keep: a switch that flips each time is decided by whether the total number of flips is odd or even.",
+    "elegant": "Track the lamp itself: off, then 2 presses keep it off; 1 press turns it on; 1 press turns it off; 2 presses keep it off; 2 presses keep it off. It was on only after Tuesday. Pairs of presses cancel, so only the odd days change anything."
+  },
+  "whyOnTest": "Flipping a switch is odd and even in disguise: an odd number of flips changes it, an even number leaves it as it was.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

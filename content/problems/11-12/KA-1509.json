@@ -1,0 +1,68 @@
+{
+  "id": "KA-1509",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A regular polygon with 100 sides has perimeter 100. Which of these is closest to its area?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$625$",
+      "correct": false,
+      "misconception": "I treated the shape as a square with perimeter 100, but a 100-sided polygon is much rounder and encloses more."
+    },
+    {
+      "key": "B",
+      "text": "$7850$",
+      "correct": false,
+      "misconception": "I took the radius to be 50, half the perimeter, and found $\\pi \\times 50^2$."
+    },
+    {
+      "key": "C",
+      "text": "$1600$",
+      "correct": false,
+      "misconception": "I used area = radius times perimeter and forgot the half, getting $15.9 \\times 100$."
+    },
+    {
+      "key": "D",
+      "text": "$800$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$3200$",
+      "correct": false,
+      "misconception": "I took the radius to be $100 / \\pi$, mixing up the radius with the diameter, and found $\\pi (100/\\pi)^2$."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-06",
+    "secondary": [
+      "GEO-07",
+      "GEO-16"
+    ]
+  },
+  "hints": [
+    "What shape does a regular 100-gon look almost exactly like?",
+    "The choices are far apart, so a close model is enough. Replace the polygon by a circle with the same perimeter, find its radius, and use the circle area formula.",
+    "A circle of circumference 100 has radius $\\frac{100}{2\\pi} \\approx 15.9$, and area $\\pi r^2 = \\frac{100^2}{4\\pi} \\approx 796$."
+  ],
+  "solutions": {
+    "reliable": "A regular polygon with 100 sides is very close to a circle, and its area is just under that of the circle with the same perimeter. That circle has radius $r = \\frac{100}{2\\pi} \\approx 15.9$, and area $\\pi r^2 = \\frac{10000}{4\\pi} \\approx 796$. The exact area of the polygon is about 795.5, and the nearest choice is 800. The transferable idea: when choices are far apart, a good approximate model decides the answer.",
+    "elegant": "Any regular polygon is made of thin triangles from its centre, so its area is half the perimeter times the distance from the centre to a side. Here that distance is almost the radius 15.9, so the area is about $\\frac{1}{2} \\times 100 \\times 15.9 \\approx 795$."
+  },
+  "whyOnTest": "An exact calculation needs trigonometry, but the choices are far apart; approximating by a circle picks the answer in seconds.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

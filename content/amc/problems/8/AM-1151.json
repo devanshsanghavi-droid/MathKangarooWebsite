@@ -1,0 +1,66 @@
+{
+  "id": "AM-1151",
+  "contest": "AMC8",
+  "slot": 1,
+  "area": "NT",
+  "topic": "NT-10",
+  "types": [
+    "T-CHOICES"
+  ],
+  "statement": "What is the value of $\\dfrac{0.6}{0.03} + \\dfrac{0.6}{0.3}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2.2$",
+      "correct": false,
+      "misconception": "I treated $0.6 \\div 0.03$ as $0.6 \\div 3 = 0.2$, ignoring the decimal point in the bottom number, then added $0.6 \\div 0.3 = 2$ to get $2.2$."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I ignored every decimal point and just divided the digits, $6 \\div 3 = 2$ for each fraction, so I got $2 + 2 = 4$."
+    },
+    {
+      "key": "C",
+      "text": "$20.2$",
+      "correct": false,
+      "misconception": "I got $0.6 \\div 0.03 = 20$ right, but I thought $0.6 \\div 0.3 = 0.2$, so I added to get $20.2$."
+    },
+    {
+      "key": "D",
+      "text": "$22$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$220$",
+      "correct": false,
+      "misconception": "I moved the decimal points one place too far in both fractions, getting $200$ and $20$, so I added to get $220$."
+    }
+  ],
+  "hints": [
+    "Dividing by a decimal is easier if you first make the bottom number a whole number.",
+    "Multiply the top and bottom of each fraction by the same power of $10$: $\\dfrac{0.6}{0.03} = \\dfrac{60}{3}$ and $\\dfrac{0.6}{0.3} = \\dfrac{6}{3}$.",
+    "$\\dfrac{60}{3} = 20$ and $\\dfrac{6}{3} = 2$. Now add the two results."
+  ],
+  "solutions": {
+    "reliable": "Multiplying the top and bottom of a fraction by the same number does not change its value. So $\\dfrac{0.6}{0.03} = \\dfrac{60}{3} = 20$ (multiply both by $100$) and $\\dfrac{0.6}{0.3} = \\dfrac{6}{3} = 2$ (multiply both by $10$). The sum is $20 + 2 = 22$.",
+    "elegant": "The bottom of the first fraction is $10$ times smaller than the bottom of the second, so the first fraction is $10$ times bigger. Since $\\dfrac{0.6}{0.3} = 2$, the first is $20$, and the total is $22$."
+  },
+  "formulas": [],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

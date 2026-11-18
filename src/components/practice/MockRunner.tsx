@@ -18,6 +18,7 @@ import {
   startMock,
   type MockState,
 } from '@/lib/mock';
+import { saveAttempt, saveSession } from '@/lib/local-progress';
 import { ProblemCardView } from '@/components/ProblemCardView';
 import { MockReportView } from './MockReport';
 import { Button, ButtonLink, buttonClasses, Card, CardHeader } from '@/components/ui';
@@ -95,6 +96,37 @@ export function MockRunner({
     () => (state?.finishedAt ? scoreMock(problems, state) : null),
     [problems, state],
   );
+
+  // Once the paper is scored, every answered question becomes an ordinary attempt and the
+  // paper a session (docs/07 section 5), exactly once: `recorded` is saved with the run, so a
+  // refresh on the report does not count it twice.
+  useEffect(() => {
+    if (!state?.finishedAt || !report || state.recorded) return;
+    const at = state.finishedAt;
+    for (const id of state.problemIds) {
+      const problem = problemsById.get(id);
+      const chosen = state.answers[id]?.chosenKey ?? null;
+      if (!problem || chosen === null) continue;
+      saveAttempt([problem.skills.primary, ...problem.skills.secondary], {
+        problemId: id,
+        points: problem.points,
+        correct: problem.choices.some((choice) => choice.key === chosen && choice.correct),
+        hintsUsed: 0,
+        at,
+      });
+    }
+    saveSession({
+      kind: 'mock',
+      exam: 'KA',
+      at,
+      score: report.score,
+      max: report.maxScore,
+      correct: report.tiers.reduce((sum, tier) => sum + tier.correct, 0),
+      total: state.problemIds.length,
+      durationMs: Math.max(0, Date.parse(at) - Date.parse(state.startedAt)),
+    });
+    setState((current) => (current ? { ...current, recorded: true } : current));
+  }, [state, report, problemsById]);
 
   /** Bank the time spent on the question being left, then move. */
   function goTo(index: number) {

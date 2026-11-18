@@ -1,0 +1,68 @@
+{
+  "id": "KA-1377",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A 5 by 5 board has a rock on its centre square. A snail goes from the top-left square to the bottom-right one, each move to a square sharing a side. It never revisits a square or enters the rock. At most how many squares can it visit, counting the first and last?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "23",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I assumed the snail could visit every square except the rock, as long as it took a clever route."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I forgot that the snail cannot go onto the rock and counted every square of the board."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I coloured the board like a chessboard and counted only the squares with the same colour as the start, leaving out the rock."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I thought the snail had to keep to the edge of the board, so it could only go halfway round from its corner to the opposite corner."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-07",
+    "secondary": [
+      "LOG-05",
+      "CNT-18"
+    ]
+  },
+  "hints": [
+    "Colour the board like a chessboard. What colour are the start, finish and rock?",
+    "Each move changes colour, so the route alternates. A route starting and ending on the same colour has one more square of that colour than of the other. Count the squares of each colour the snail may use.",
+    "With the corners dark there are 13 dark and 12 light squares, and the rock takes one dark square, leaving 12 dark. The route uses at most 12 dark and 11 light squares. Then find a route of that length."
+  ],
+  "solutions": {
+    "reliable": "Colour the board like a chessboard with the corners dark: 13 dark and 12 light squares. The centre is dark, so with the rock there the snail can use 12 dark and 12 light squares. Each move changes colour, so the route goes dark, light, dark, ..., dark: it starts and ends on a dark corner and has one more dark square than light ones. With at most 12 dark squares, it has at most 11 light ones, so at most 12 + 11 = 23 squares. Twenty-three is possible. Number rows 1 to 5 from the top and columns 1 to 5 from the left. Go down column 1 to row 5, then up column 2 to row 1. Then visit row 1 column 3, row 2 column 3, row 2 column 4, row 1 column 4, row 1 column 5, and go down column 5 to row 4. Then go left to row 4 column 3, down to row 5 column 3, and right along row 5 to the finish. Only the rock and the light square in row 3, column 4 are missed. The transferable idea: colour the board so every move switches colour, then compare the colours of the start and the finish with the squares available.",
+    "elegant": null
+  },
+  "whyOnTest": "A colouring argument: start and finish share a colour, so the route has one more square of that colour, and the rock removes one of them.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

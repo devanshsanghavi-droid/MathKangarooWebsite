@@ -1,0 +1,67 @@
+{
+  "id": "KA-1420",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Three friends each choose one of 5 different clubs to join. They do not have to choose different clubs. In how many different ways can the three choices turn out?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted the ways to pick 3 of the 5 clubs, as if the friends had to choose different clubs and it did not matter who chose which."
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": false,
+      "misconception": "I multiplied the 3 friends by the 5 clubs instead of multiplying the choices of the three friends."
+    },
+    {
+      "key": "C",
+      "text": "60",
+      "correct": false,
+      "misconception": "I made the friends choose different clubs, 5 × 4 × 3, but they are allowed to join the same club."
+    },
+    {
+      "key": "D",
+      "text": "125",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "243",
+      "correct": false,
+      "misconception": "I let each of the 5 clubs choose one of the 3 friends, 3 to the power 5, but it is the friends who each make one choice."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-03",
+    "secondary": [
+      "CNT-05"
+    ]
+  },
+  "hints": [
+    "Who is making a choice, and how many options does each have?",
+    "Each friend makes one independent choice, and the three choices happen together, so multiply the numbers of options. Check which way round the power goes.",
+    "Each of the 3 friends has 5 options, whatever the others choose."
+  ],
+  "solutions": {
+    "reliable": "The first friend has 5 options, the second also has 5 (repeats are allowed), and so does the third. The choices happen together, so the total is $5 \\times 5 \\times 5 = 125$. The transferable idea: in the multiplication principle, multiply over the things that make the choices; here each friend makes one choice from 5, giving $5^3$, not $3^5$.",
+    "elegant": null
+  },
+  "whyOnTest": "The multiplication principle is easy to state but easy to turn upside down; the traps are the wrong power and forbidding repeats.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1190",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Ana adds up all the numbers from 1 to 10. Bo adds up all the numbers from 11 to 20. How much bigger is Bo's total than Ana's?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought Bo's total is just 10 more, because his numbers start 10 higher."
+    },
+    {
+      "key": "B",
+      "text": "55",
+      "correct": false,
+      "misconception": "I worked out Ana's total and gave that as the answer."
+    },
+    {
+      "key": "C",
+      "text": "100",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "155",
+      "correct": false,
+      "misconception": "I worked out Bo's total and stopped there."
+    },
+    {
+      "key": "E",
+      "text": "210",
+      "correct": false,
+      "misconception": "I added both totals together instead of finding the difference."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-08",
+    "secondary": [
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "Match each of Bo's numbers with one of Ana's.",
+    "Pair 11 with 1, 12 with 2, and so on. Each of Bo's numbers is bigger than its partner by the same amount. Count the pairs.",
+    "There are 10 pairs, and in each pair Bo's number is 10 bigger."
+  ],
+  "solutions": {
+    "reliable": "Ana: $1 + 2 + \\dots + 10 = 55$. Bo: $11 + 12 + \\dots + 20 = 155$. Difference: $155 - 55 = 100$. The transferable idea: two lists that match up term by term differ by the sum of the gaps.",
+    "elegant": "Pair each of Bo's numbers with one of Ana's: 11 with 1, 12 with 2, up to 20 with 10. Each pair differs by 10, and there are 10 pairs, so Bo is $10 \\times 10 = 100$ ahead without adding anything up."
+  },
+  "whyOnTest": "Matching two lists term by term avoids long addition: the key regrouping idea of finding the difference without the totals.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

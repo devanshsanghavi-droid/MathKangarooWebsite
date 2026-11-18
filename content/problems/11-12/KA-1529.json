@@ -1,0 +1,68 @@
+{
+  "id": "KA-1529",
+  "band": "11-12",
+  "points": 3,
+  "statement": "What is the smaller angle between the hour hand and the minute hand of a clock at 7:24?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$66^\\circ$",
+      "correct": false,
+      "misconception": "I left the hour hand pointing exactly at the 7, forgetting that it moves on during the 24 minutes."
+    },
+    {
+      "key": "B",
+      "text": "$78^\\circ$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$90^\\circ$",
+      "correct": false,
+      "misconception": "I moved the hour hand 1 degree per minute instead of half a degree per minute."
+    },
+    {
+      "key": "D",
+      "text": "$102^\\circ$",
+      "correct": false,
+      "misconception": "I put the minute hand on the 4, as if 24 minutes pointed there, instead of just before the 5."
+    },
+    {
+      "key": "E",
+      "text": "$282^\\circ$",
+      "correct": false,
+      "misconception": "I found the larger angle between the hands instead of the smaller one."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "GEO-18",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "Where exactly is the hour hand at 7:24?",
+    "Measure both hands in degrees clockwise from 12. The minute hand turns 6 degrees per minute; the hour hand turns 30 degrees per hour, which is half a degree per minute.",
+    "The minute hand is at $24 \\times 6 = 144^\\circ$ and the hour hand at $7 \\times 30 + 24 \\times 0.5 = 222^\\circ$."
+  ],
+  "solutions": {
+    "reliable": "Measured clockwise from 12, the minute hand is at $24 \\times 6^\\circ = 144^\\circ$. The hour hand starts at $7 \\times 30^\\circ = 210^\\circ$ at 7:00 and moves $0.5^\\circ$ per minute, so it is at $210^\\circ + 12^\\circ = 222^\\circ$. The angle between them is $222^\\circ - 144^\\circ = 78^\\circ$, which is less than $180^\\circ$, so it is the smaller angle. The transferable idea: turn each hand into an angle from a fixed direction, then subtract.",
+    "elegant": null
+  },
+  "whyOnTest": "Clock hands are angles round a point, and the trap is forgetting that the hour hand keeps moving.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

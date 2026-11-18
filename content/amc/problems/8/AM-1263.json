@@ -1,0 +1,66 @@
+{
+  "id": "AM-1263",
+  "contest": "AMC8",
+  "slot": 12,
+  "area": "CP",
+  "topic": "CP-12",
+  "types": [
+    "T-CHOICES"
+  ],
+  "statement": "A florist sold $30$ bouquets, and each bouquet held a whole number of roses from $1$ to $5$. Exactly $5$ bouquets held $2$ roses, exactly $8$ held $3$ roses and exactly $6$ held $5$ roses. Every other bouquet held either $1$ rose or $4$ roses. The mean number of roses per bouquet was $3.2$. How many bouquets held $4$ roses?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I solved the equations correctly but gave the number of bouquets with 1 rose instead of the number with 4 roses."
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I forgot to take away the 6 bouquets with 5 roses when I found how many held 1 or 4 roses, so I used 17 instead of 11 and got 5."
+    },
+    {
+      "key": "C",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I left the 8 bouquets with 3 roses out of the total number of roses, so the 1-rose and 4-rose bouquets had to hold 56 roses, which gave 15."
+    },
+    {
+      "key": "E",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I left the 6 bouquets with 5 roses out of the total number of roses, so the 1-rose and 4-rose bouquets had to hold 62 roses, which gave 17."
+    }
+  ],
+  "hints": [
+    "Find how many bouquets held $1$ or $4$ roses, and find the total number of roses.",
+    "There are $30 - 5 - 8 - 6 = 11$ bouquets with $1$ or $4$ roses. The total number of roses is $30 \\times 3.2 = 96$.",
+    "The known bouquets hold $10 + 24 + 30 = 64$ roses, so the $11$ other bouquets hold $32$ roses. Each $4$-rose bouquet in place of a $1$-rose bouquet adds $3$ roses."
+  ],
+  "solutions": {
+    "reliable": "Let $x$ bouquets hold $1$ rose and $y$ bouquets hold $4$ roses. Then $x + y = 30 - 5 - 8 - 6 = 11$. The total number of roses is $30 \\times 3.2 = 96$, and the known bouquets hold $5 \\cdot 2 + 8 \\cdot 3 + 6 \\cdot 5 = 64$, so $x + 4y = 32$. Subtracting, $3y = 21$, so $y = 7$ and $x = 4$. Check: $4 + 10 + 24 + 28 + 30 = 96$.",
+    "elegant": "If all $11$ unknown bouquets held $1$ rose, they would hold $11$ roses, but they hold $96 - 64 = 32$. Changing a $1$-rose bouquet to a $4$-rose bouquet adds $3$ roses, so $\\frac{32 - 11}{3} = 7$ bouquets held $4$ roses."
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

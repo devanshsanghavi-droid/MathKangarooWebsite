@@ -1,0 +1,68 @@
+{
+  "id": "AM-1081",
+  "contest": "AMC8",
+  "slot": 2,
+  "area": "GEO",
+  "topic": "GEO-03",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "One side of a rectangle is $6$ inches long, and each diagonal of the rectangle is $10$ inches long. What is the perimeter of the rectangle, in inches?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I added the two different side lengths, 6 + 8 = 14, but a rectangle has two sides of each length."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I added the three sides of the right triangle, 6 + 8 + 10 = 24, instead of the four sides of the rectangle."
+    },
+    {
+      "key": "C",
+      "text": "$28$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I used the diagonal 10 as the other side of the rectangle, so I got 2 times (6 + 10) = 32."
+    },
+    {
+      "key": "E",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I found the area, 6 times 8 = 48, instead of the perimeter."
+    }
+  ],
+  "hints": [
+    "A diagonal cuts the rectangle into two right triangles.",
+    "If the unknown side is $x$, then $6^2 + x^2 = 10^2$.",
+    "$x^2 = 100 - 36 = 64$, so the other side is $8$. Now add all four sides."
+  ],
+  "solutions": {
+    "reliable": "A diagonal is the hypotenuse of a right triangle whose legs are the two sides of the rectangle, $6$ and $x$. So $x^2 = 10^2 - 6^2 = 100 - 36 = 64$, and $x = 8$. The perimeter is $2(6 + 8) = 28$ inches.",
+    "elegant": "$6$, $8$, $10$ is the $3$, $4$, $5$ triangle doubled, so the missing side is $8$ at a glance, and the perimeter is $2(6 + 8) = 28$."
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

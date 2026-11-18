@@ -1,0 +1,68 @@
+{
+  "id": "KA-1549",
+  "band": "11-12",
+  "points": 3,
+  "statement": "In triangle $ABC$, side $BC$ has length 10. A line parallel to $BC$ meets $AB$ at $D$ and $AC$ at $E$, and it cuts the triangle into two pieces of equal area. How long is $DE$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{\\sqrt{2}}{2}$",
+      "correct": false,
+      "misconception": "I found the scale factor between the two triangles and gave it instead of the length $DE$."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{5}{2}$",
+      "correct": false,
+      "misconception": "I squared the area fraction $\\frac{1}{2}$ instead of taking its square root, so I took $DE$ as a quarter of $BC$."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I thought that half the area needs half the length, so I put the line halfway up the triangle."
+    },
+    {
+      "key": "D",
+      "text": "$5\\sqrt{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$5\\sqrt[3]{4}$",
+      "correct": false,
+      "misconception": "I used the cube root of $\\frac{1}{2}$, as if area scaled like volume."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-16",
+    "secondary": [
+      "GEO-06",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Triangle $ADE$ is similar to $ABC$. What fraction of its area does it have?",
+    "Because $DE$ is parallel to $BC$, triangle $ADE$ is similar to triangle $ABC$ and has half its area. Areas of similar figures scale with the square of the length factor, so find the length factor from the area factor.",
+    "The length factor $k$ satisfies $k^2 = \\frac{1}{2}$, so $k = \\frac{\\sqrt{2}}{2}$."
+  ],
+  "solutions": {
+    "reliable": "Because $DE$ is parallel to $BC$, triangle $ADE$ has the same angles as triangle $ABC$, so the two are similar. The line splits $ABC$ into triangle $ADE$ and a trapezium of equal area, so triangle $ADE$ has half the area of $ABC$. If the length factor is $k$, the area factor is $k^2 = \\frac{1}{2}$, so $k = \\frac{\\sqrt{2}}{2}$ and $DE = 10 \\times \\frac{\\sqrt{2}}{2} = 5\\sqrt{2} \\approx 7.07$. Check: $DE^2 = 50$ is half of $BC^2 = 100$, as the area ratio requires. The transferable idea: for similar figures, the area factor is the square of the length factor, so go back through a square root.",
+    "elegant": null
+  },
+  "whyOnTest": "The half-area line sits well below the halfway point, and the trap is halving the length instead of the area.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

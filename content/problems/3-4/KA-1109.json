@@ -1,0 +1,67 @@
+{
+  "id": "KA-1109",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Zara thinks of an even two-digit number. It is 3 times as big as its two digits multiplied together. What is her number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "15",
+      "correct": false,
+      "misconception": "I checked only that 15 is 3 times 1 x 5 and forgot that the number must be even."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "27",
+      "correct": false,
+      "misconception": "I added the digits instead of multiplying them, since 3 x (2 + 7) = 27, and I forgot that the number must be even."
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": false,
+      "misconception": "I checked only that 36 is even and is 3 times 12, without checking that its digits multiply to 18, not 12."
+    },
+    {
+      "key": "E",
+      "text": "42",
+      "correct": false,
+      "misconception": "I found that the digits 2 and 4 work but wrote them in the wrong order, and 42 is not 3 times 4 x 2 = 8."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-04",
+    "secondary": [
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "Each answer choice can be tested against both rules.",
+    "Back-solve: for each choice, check that it is even, then multiply its two digits together and multiply that by 3. Only one choice passes both tests.",
+    "24 is even. Its digits multiply to 2 x 4 = 8, and 3 x 8 = 24. So Zara's number is 24."
+  ],
+  "solutions": {
+    "reliable": "Test each choice on both rules. 15: 3 x 1 x 5 = 15, yes, but 15 is odd. 24: even, and 3 x 2 x 4 = 24, yes. 27: odd, and 3 x 2 x 7 = 42, no. 36: even, but 3 x 3 x 6 = 54, no. 42: even, but 3 x 4 x 2 = 24, no. The number is 24. The transferable idea: when back-solving, test every choice against every condition, not just the first one.",
+    "elegant": "Go through the tens digit. With tens digit 1, the number is 10 more than its ones digit and also 3 times it, so the ones digit is 5, giving 15, which is odd. With tens digit 2, the number is 20 more than its ones digit and also 6 times it, so the ones digit is 4, giving 24."
+  },
+  "whyOnTest": "A rule about multiplying digits is hard to set up at this level, but testing five choices against both rules is quick and exposes the choices that pass only one.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,65 @@
+{
+  "id": "KA-1040",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Children in a class make pairs, and one child is left without a partner. Then 3 more children join, and everybody makes pairs again. How many children are left without a partner now?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought adding children never changes whether one is left over, so it is still 1."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I paired two of the new children and left the third one and the old child alone."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I added the 3 new children to the 1 left over and did not pair any of them."
+    },
+    {
+      "key": "E",
+      "text": "it cannot be worked out",
+      "correct": false,
+      "misconception": "I thought I needed to know how many children were in the class."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": []
+  },
+  "hints": [
+    "Was the number of children odd or even at first?",
+    "One child left over means the class had an odd number of children. Think about what happens when you add an odd number to an odd number.",
+    "The 1 child left over and the 3 new children make 4 children. Can 4 children all find partners?"
+  ],
+  "solutions": {
+    "reliable": "At first one child is left over, so the class has an odd number of children. Adding 3, another odd number, gives an even number, and an even number of children can all be paired. So 0 children are left over. Check with a small class: 5 children leave 1 over, and $5 + 3 = 8$ children make 4 pairs. The idea to keep: odd plus odd is even, so you can answer without knowing the size of the class.",
+    "elegant": "Keep the old pairs as they are. The 1 child left over and the 3 newcomers make 4 children, which is 2 more pairs, with nobody left. The idea to keep: only the leftovers matter."
+  },
+  "whyOnTest": "Parity answers this without the class size, and students must trust that a missing number is not needed.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

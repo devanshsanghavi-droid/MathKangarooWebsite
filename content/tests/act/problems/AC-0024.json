@@ -1,0 +1,56 @@
+{
+  "id": "AC-0024",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-07",
+  "difficulty": "medium",
+  "statement": "A hiker's displacement from camp is the vector $\\langle k, 6 \\rangle$, with components in kilometers east and north, where $k > 0$. The hiker is $10$ kilometers from camp in a straight line. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I subtracted 6 from 10, as if the length of a vector were the sum of its components."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$2\\sqrt{34}$",
+      "correct": false,
+      "misconception": "I added the squares, $10^2 + 6^2 = 136$, instead of subtracting, and took the square root of 136."
+    },
+    {
+      "key": "D",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I set up $k^2 + 36 = 100$ and found $k^2 = 64$, but I forgot to take the square root."
+    }
+  ],
+  "hints": [
+    "The straight-line distance is the magnitude of the vector.",
+    "The magnitude of $\\langle k, 6 \\rangle$ is $\\sqrt{k^{2} + 6^{2}}$. Set it equal to $10$.",
+    "$k^{2} + 36 = 100$, so $k^{2} = 64$."
+  ],
+  "solutions": {
+    "reliable": "The magnitude of $\\langle k, 6 \\rangle$ is $\\sqrt{k^{2} + 36}$, so $\\sqrt{k^{2} + 36} = 10$. Squaring gives $k^{2} + 36 = 100$, so $k^{2} = 64$ and, since $k > 0$, $k = 8$. Check: $\\sqrt{64 + 36} = \\sqrt{100} = 10$.",
+    "elegant": "The components and the distance form a right triangle with legs $k$ and $6$ and hypotenuse $10$. This is a $3$-$4$-$5$ triangle scaled by $2$, so $k = 8$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

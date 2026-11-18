@@ -1,0 +1,70 @@
+{
+  "id": "AM-1267",
+  "contest": "AMC8",
+  "slot": 14,
+  "area": "CP",
+  "topic": "CP-02",
+  "types": [
+    "T-COMPLEMENT",
+    "T-SYMMETRY"
+  ],
+  "statement": "Five friends, Ana, Ben, Cara, Dev and Eli, stand in a row for a photo. Ana and Ben refuse to stand next to each other, and Cara must stand somewhere to the left of Dev, not necessarily next to him. How many different orders of the five friends are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$36$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I glued Ana and Ben into one block to count the orders where they touch, but forgot they can swap inside it: (120 - 24) / 2 = 48."
+    },
+    {
+      "key": "C",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I used the rule about Cara and Dev to halve 120, but forgot that Ana and Ben cannot stand next to each other."
+    },
+    {
+      "key": "D",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I removed the 48 orders where Ana and Ben stand together, but forgot that Cara must be to the left of Dev."
+    },
+    {
+      "key": "E",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I counted every order of the five friends, 5! = 120, and ignored both rules."
+    }
+  ],
+  "hints": [
+    "Count the orders where Ana and Ben do stand together, and subtract.",
+    "Glue Ana and Ben into one block. The block and the other three friends can be arranged in $4!$ ways, and Ana and Ben can swap inside the block.",
+    "That gives $48$ orders with Ana and Ben together, so $72$ without. Swapping Cara and Dev pairs these $72$ orders up."
+  ],
+  "solutions": {
+    "reliable": "There are $5! = 120$ orders in all. To count the orders with Ana and Ben next to each other, treat them as one block: the block and the other three friends can be arranged in $4! = 24$ ways, and Ana and Ben can stand in either order inside the block, giving $48$ orders. So $120 - 48 = 72$ orders keep Ana and Ben apart. Swapping Cara and Dev does not change whether Ana and Ben are next to each other, and it turns an order with Cara on the left of Dev into one with Cara on the right. So exactly half of the $72$ orders work, which is $36$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-02",
+    "F-CP-06"
+  ],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

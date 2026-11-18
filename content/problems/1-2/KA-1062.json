@@ -1,0 +1,68 @@
+{
+  "id": "KA-1062",
+  "band": "1-2",
+  "points": 4,
+  "statement": "A spinner shows 1, 2 and 3. Ben spins it twice: the first spin gives the tens digit, the second the ones digit. How many of his possible numbers are bigger than 20?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I only counted the numbers in the twenties and forgot the ones starting with 3."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I left out 22 and 33, because I thought a number could not use the same digit twice."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": false,
+      "misconception": "I listed the numbers from 21 up but stopped at 32 and forgot 33."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted every number he could make, even the ones smaller than 20."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "NUM-01",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Which first spins give a number bigger than 20?",
+    "A tree diagram helps: branch for the first spin, then for the second. Numbers bigger than 20 must start with 2 or 3. Count the branches below those.",
+    "Starting with 2: 21, 22, 23. Starting with 3: 31, 32, 33. Count them."
+  ],
+  "solutions": {
+    "reliable": "Numbers starting with 1 are 11, 12, 13, all smaller than 20. Starting with 2 gives 21, 22, 23, and starting with 3 gives 31, 32, 33, all bigger than 20. That is 6 numbers. The idea to keep: a tree diagram makes sure every branch is counted once.",
+    "elegant": "There are 2 good first spins, 2 and 3, and each can be followed by any of 3 second spins. That is $2 \\times 3 = 6$."
+  },
+  "whyOnTest": "It joins a tree diagram to place value, and repeated digits like 22 are the case students forget.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

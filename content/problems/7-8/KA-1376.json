@@ -1,0 +1,68 @@
+{
+  "id": "KA-1376",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Zara has 15 dominoes, one for each pair of different numbers from 1 to 6: 1-2, 1-3, 1-4, and so on up to 5-6. She lays some of them end to end in one line, so that wherever two dominoes touch, the touching halves show the same number. At most how many of her dominoes can she use?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "15",
+      "correct": false,
+      "misconception": "I assumed all the dominoes could be laid in one line if the order was chosen cleverly."
+    },
+    {
+      "key": "B",
+      "text": "14",
+      "correct": false,
+      "misconception": "I knew the numbers at the two ends of the line can appear an odd number of times, but I thought leaving out a single domino would fix all the other numbers."
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I thought every number had to appear an even number of times, as in a closed ring, so I left out three dominoes."
+    },
+    {
+      "key": "E",
+      "text": "11",
+      "correct": false,
+      "misconception": "I thought each of the four numbers that cannot be at an end needed its own domino left out, so I worked out 15 - 4."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-05",
+    "secondary": [
+      "NUM-03",
+      "CNT-18"
+    ]
+  },
+  "hints": [
+    "How many of the 15 dominoes show a 1? The same holds for each number.",
+    "A number in the middle of the line shows up on two touching halves each time. So a number not at an end appears an even number of times. Only the end numbers can appear an odd number of times.",
+    "Each number appears on 5 dominoes, an odd number. At least four of the six numbers must lose a domino, and one left-out domino helps only two numbers, so at least 2 dominoes are left out. Then build a line of 13."
+  ],
+  "solutions": {
+    "reliable": "Each number from 1 to 6 appears on 5 of the dominoes, one for each of the other five numbers. In a line, wherever two dominoes touch, the same number appears twice, so a number that does not sit at either end of the line is used an even number of times. Only the numbers at the two ends can be used an odd number of times. So at least four of the six numbers must have at least one of their dominoes left out. A left-out domino carries just two numbers, so at least 2 dominoes are left out, and at most 13 are used. Thirteen is possible: leave out 1-2 and 3-4 and lay 5-1, 1-3, 3-2, 2-4, 4-1, 1-6, 6-2, 2-5, 5-3, 3-6, 6-4, 4-5, 5-6. The transferable idea: in a chain, every inner link uses a value twice, so only the two ends can use a value an odd number of times.",
+    "elegant": null
+  },
+  "whyOnTest": "A parity count: each inner number of a domino line is used in pairs, so four of the six odd counts must be broken, which costs at least two dominoes.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

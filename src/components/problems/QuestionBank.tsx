@@ -4,7 +4,12 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useProgress } from '@/components/mastery/useProgress';
 import { Button, ButtonLink, Card, ProgressBar, Sheet } from '@/components/ui';
 import { EmptyState } from '@/components/EmptyState';
-import { dataPaths, type AmcIndexFile, type KaIndexFile } from '@/lib/bank-data';
+import {
+  dataPaths,
+  type AmcIndexFile,
+  type KaIndexFile,
+  type TestIndexFile,
+} from '@/lib/bank-data';
 import { fetchStaticJson } from '@/lib/bank-client';
 import {
   BANK_PAGE_SIZE,
@@ -22,13 +27,21 @@ import {
   type BankRow,
   type BankTaxonomy,
 } from '@/lib/bank-filter';
-import { PRACTICE_SET_MAX, practiceSetHref } from '@/lib/practice-item';
+import { PRACTICE_SET_MAX, practiceSetHref, type PracticeBank } from '@/lib/practice-item';
 import { BankFilterPanel } from './BankFilterPanel';
 import { BankList, BankPagination } from './BankList';
 import { StatusLegend } from './StatusGlyph';
 
+/** Each bank's static index in public/data/ (bank-data.ts). */
+const INDEX_URL: Readonly<Record<PracticeBank, string>> = {
+  ka: dataPaths.kaIndex,
+  amc: dataPaths.amcIndex,
+  sat: dataPaths.satIndex,
+  act: dataPaths.actIndex,
+};
+
 export interface QuestionBankProps {
-  /** Built at build time on the server: kaBankTaxonomy(...) or amcBankTaxonomy(...). */
+  /** Built at build time on the server: ka-, amc- or testBankTaxonomy(...). */
   taxonomy: BankTaxonomy;
   /**
    * The first page of rows, server-rendered so the prerendered HTML lists real problems for a
@@ -55,7 +68,8 @@ export interface QuestionBankProps {
  *
  * Generic over the bank: the AMC bank passes `amcBankTaxonomy(...)` and AMC rows, and gets
  * contests instead of levels, areas and topics instead of strands and skills, problem-type
- * chips, and Early / Middle / Late tiers.
+ * chips, and Early / Middle / Late tiers. The SAT and ACT banks pass `testBankTaxonomy(...)`:
+ * no level control, domains and skills, Easy / Medium / Hard.
  */
 export function QuestionBank({
   taxonomy,
@@ -72,7 +86,7 @@ export function QuestionBank({
   const urlRead = useRef(false);
   const listTop = useRef<HTMLDivElement>(null);
   const file = useProgress();
-  const url = indexUrl ?? (taxonomy.bank === 'amc' ? dataPaths.amcIndex : dataPaths.kaIndex);
+  const url = indexUrl ?? INDEX_URL[taxonomy.bank];
 
   // Read the shared selection out of the URL once, after hydration.
   useEffect(() => {
@@ -91,7 +105,7 @@ export function QuestionBank({
 
   useEffect(() => {
     let cancelled = false;
-    fetchStaticJson<KaIndexFile | AmcIndexFile>(url)
+    fetchStaticJson<KaIndexFile | AmcIndexFile | TestIndexFile>(url)
       .then((index) => {
         if (!cancelled) setRows(bankRowsFromIndex(taxonomy, index));
       })

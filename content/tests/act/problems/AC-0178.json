@@ -1,0 +1,56 @@
+{
+  "id": "AC-0178",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-06",
+  "difficulty": "hard",
+  "statement": "Let $f(x) = x^2 - 6x + 5$. The graph of $y = g(x)$ is made by reflecting the graph of $y = f(x)$ across the $y$-axis and then shifting the result $3$ units to the right. What is the value of $g(1)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-21$",
+      "correct": false,
+      "misconception": "I reflected across the $x$-axis instead of the $y$-axis, so I used $g(x) = -f(x - 3)$ and got $-f(-2) = -21$."
+    },
+    {
+      "key": "B",
+      "text": "$-3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I shifted right $3$ to get $f(x - 3)$ but forgot the reflection, so I computed $f(-2) = 21$."
+    },
+    {
+      "key": "D",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I reflected correctly to $f(-x)$ and then shifted right by writing $f(-x - 3)$, but replacing $x$ with $x - 3$ gives $f(-(x - 3)) = f(3 - x)$, not $f(-x - 3)$."
+    }
+  ],
+  "hints": [
+    "Reflecting across the $y$-axis replaces $x$ with $-x$. Shifting right $3$ then replaces $x$ with $x - 3$ in the new formula.",
+    "After the reflection the function is $f(-x)$. Replacing $x$ with $x - 3$ gives $g(x) = f(-(x - 3)) = f(3 - x)$.",
+    "$g(1) = f(3 - 1) = f(2)$, and $f(2) = 4 - 12 + 5$."
+  ],
+  "solutions": {
+    "reliable": "Reflecting $y = f(x)$ across the $y$-axis gives $y = f(-x)$. Shifting that graph $3$ units right replaces $x$ with $x - 3$: $g(x) = f(-(x - 3)) = f(3 - x)$. So $g(1) = f(2) = 2^2 - 6 \\cdot 2 + 5 = -3$.",
+    "elegant": "Follow the vertex. $f(x) = (x - 3)^2 - 4$ has vertex $(3, -4)$. Reflecting across the $y$-axis moves it to $(-3, -4)$, and shifting right $3$ moves it to $(0, -4)$. The parabola keeps its shape, so $g(x) = x^2 - 4$ and $g(1) = -3$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

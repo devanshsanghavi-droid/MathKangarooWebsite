@@ -1,0 +1,67 @@
+{
+  "id": "AM-1221",
+  "contest": "AMC8",
+  "slot": 24,
+  "area": "NT",
+  "topic": "NT-01",
+  "types": [
+    "T-PARITY",
+    "T-CASEWORK"
+  ],
+  "statement": "For how many integers $n$ with $1 \\le n \\le 100$ is the product $n(n+1)(n+2)$ a multiple of $24$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I only counted the odd values of $n$ for which $n + 1$ is a multiple of $8$, and forgot that every even $n$ works."
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I thought one of the three numbers had to be a multiple of $8$, so I missed cases like $n = 2$, where $2$ and $4$ together give three factors of $2$."
+    },
+    {
+      "key": "C",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I only counted the even values of $n$ and forgot the odd values for which $n + 1$ is a multiple of $8$."
+    },
+    {
+      "key": "D",
+      "text": "$62$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$75$",
+      "correct": false,
+      "misconception": "I thought it was enough for one of the three numbers to be a multiple of $4$, but for $n = 3$ the product $60$ has only two factors of $2$."
+    }
+  ],
+  "hints": [
+    "$24 = 8 \\cdot 3$, and one of any three consecutive integers is a multiple of $3$. So the question is when the product is a multiple of $8$.",
+    "If $n$ is even, then $n$ and $n + 2$ are consecutive even numbers. If $n$ is odd, then $n + 1$ is the only even number of the three.",
+    "For even $n$, one of $n$ and $n + 2$ is a multiple of $4$ and the other is even, so the product has at least three factors of $2$. For odd $n$, the product is a multiple of $8$ only when $n + 1$ is."
+  ],
+  "solutions": {
+    "reliable": "Since $24 = 8 \\cdot 3$ and one of three consecutive integers is always a multiple of $3$, we need the product to be a multiple of $8$. If $n$ is even, then $n$ and $n + 2$ are consecutive even numbers, so one is a multiple of $4$ and the other is a multiple of $2$, giving at least $2^3 = 8$. So all $50$ even values of $n$ work. If $n$ is odd, then $n$ and $n + 2$ are odd, so all the factors of $2$ come from $n + 1$, which must be a multiple of $8$. That means $n = 7, 15, 23, \\ldots, 95$, which is $12$ values. In total, $50 + 12 = 62$ values of $n$ work.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

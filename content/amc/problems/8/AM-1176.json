@@ -1,0 +1,69 @@
+{
+  "id": "AM-1176",
+  "contest": "AMC8",
+  "slot": 9,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-CHOICES"
+  ],
+  "statement": "Which positive integer less than $50$ has the greatest number of positive divisors?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I chose 30 = 2 times 3 times 5 because it uses the three smallest primes, but it has only 8 divisors, while 48 has 10."
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I thought the perfect square 36 = 2^2 times 3^2 has the most divisors, but it has 9 and 48 has 10."
+    },
+    {
+      "key": "C",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I thought a number ending in 0 would have the most divisors, but 40 = 2^3 times 5 has only 8."
+    },
+    {
+      "key": "D",
+      "text": "$42$",
+      "correct": false,
+      "misconception": "I picked the largest number below 50 with three different prime factors, 42 = 2 times 3 times 7, but it has only 8 divisors."
+    },
+    {
+      "key": "E",
+      "text": "$48$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Count divisors from the prime factorization instead of listing them.",
+    "If $n = p^a q^b \\cdots$, then $n$ has $(a + 1)(b + 1)\\cdots$ divisors. Work this out for each choice.",
+    "$48 = 2^4 \\cdot 3$ has $5 \\cdot 2 = 10$ divisors, $36 = 2^2 \\cdot 3^2$ has $3 \\cdot 3 = 9$, and $30$, $40$ and $42$ have $8$ each."
+  ],
+  "solutions": {
+    "reliable": "Use the rule that $p^a q^b \\cdots$ has $(a+1)(b+1)\\cdots$ divisors. For the choices: $30 = 2 \\cdot 3 \\cdot 5$ has $2 \\cdot 2 \\cdot 2 = 8$; $36 = 2^2 \\cdot 3^2$ has $3 \\cdot 3 = 9$; $40 = 2^3 \\cdot 5$ has $4 \\cdot 2 = 8$; $42 = 2 \\cdot 3 \\cdot 7$ has $8$; $48 = 2^4 \\cdot 3$ has $5 \\cdot 2 = 10$. No other number below $50$ does better: getting $10$ or more divisors needs a factorization like $2^4 \\cdot 3 = 48$, $2^3 \\cdot 3^2 = 72$, $2^2 \\cdot 3 \\cdot 5 = 60$ or $2^9 = 512$, and only $48$ is below $50$. The answer is $48$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-01"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

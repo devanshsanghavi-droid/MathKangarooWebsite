@@ -1,0 +1,66 @@
+{
+  "id": "AM-1213",
+  "contest": "AMC8",
+  "slot": 22,
+  "area": "NT",
+  "topic": "NT-02",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "What is the smallest positive integer $n$ such that $8n$ is a perfect square and $9n$ is a perfect cube?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found the smallest $n$ that makes $8n$ a square, which is $2$, and the smallest $n$ that makes $9n$ a cube, which is $3$, and multiplied them."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I made $9n$ a cube with $n = 2^3 \\cdot 3 = 24$, but then $8n = 2^6 \\cdot 3$ has an odd power of $3$, so it is not a square."
+    },
+    {
+      "key": "C",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I made $8n$ a square with $n = 2^3 \\cdot 3^2 = 72$, but then $9n = 2^3 \\cdot 3^4$ is not a cube, because $3^4$ is not a cube."
+    },
+    {
+      "key": "D",
+      "text": "$648$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$5832$",
+      "correct": false,
+      "misconception": "I found the right $n$ but gave $9n = 5832 = 18^3$ as the answer instead of $n$ itself."
+    }
+  ],
+  "hints": [
+    "Write $n = 2^a \\cdot 3^b$. Any other prime would have to appear with an exponent that is both even and a multiple of $3$, which only makes $n$ bigger.",
+    "$8n = 2^{a+3} \\cdot 3^b$ is a square, so $a + 3$ and $b$ are even. $9n = 2^a \\cdot 3^{b+2}$ is a cube, so $a$ and $b + 2$ are multiples of $3$.",
+    "The smallest $a$ that is odd and a multiple of $3$ is $3$. The smallest $b$ that is even with $b + 2$ a multiple of $3$ is $4$."
+  ],
+  "solutions": {
+    "reliable": "Any prime other than $2$ or $3$ in $n$ would need an exponent that is even (for the square) and a multiple of $3$ (for the cube), so at least $6$; leaving such primes out keeps $n$ smaller. So let $n = 2^a \\cdot 3^b$. Then $8n = 2^{a+3} \\cdot 3^b$ is a square exactly when $a + 3$ and $b$ are even, and $9n = 2^a \\cdot 3^{b+2}$ is a cube exactly when $a$ and $b + 2$ are multiples of $3$. So $a$ is odd and a multiple of $3$, and the smallest choice is $a = 3$. And $b$ is even with $b + 2$ a multiple of $3$: trying $b = 0, 2, 4$ gives $b + 2 = 2, 4, 6$, so the smallest choice is $b = 4$. Thus $n = 2^3 \\cdot 3^4 = 648$. Check: $8n = 5184 = 72^2$ and $9n = 5832 = 18^3$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

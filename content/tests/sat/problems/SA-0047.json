@@ -1,0 +1,56 @@
+{
+  "id": "SA-0047",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "medium",
+  "statement": "A caterer has at most $300$ minutes to prepare sandwiches and salads for an event. Each sandwich takes $4$ minutes to prepare and each salad takes $6$ minutes. The order must include at least $20$ salads. What is the greatest number of sandwiches the caterer can prepare?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$45$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$70$",
+      "correct": false,
+      "misconception": "I subtracted the 20 salads from the 300 minutes as if each salad took 1 minute, so I got $280 \\div 4 = 70$."
+    },
+    {
+      "key": "C",
+      "text": "$75$",
+      "correct": false,
+      "misconception": "I divided all 300 minutes by 4 minutes per sandwich and forgot that the 20 salads need time too."
+    },
+    {
+      "key": "D",
+      "text": "$105$",
+      "correct": false,
+      "misconception": "I added the 120 minutes for the salads to the 300 minutes instead of subtracting them, so I got $420 \\div 4 = 105$."
+    }
+  ],
+  "hints": [
+    "To make as many sandwiches as possible, make as few salads as allowed.",
+    "With $s$ sandwiches and $20$ salads, the time used is $4s + 6(20)$, which must be at most $300$.",
+    "The salads take $6 \\times 20 = 120$ minutes, leaving $180$ minutes for sandwiches."
+  ],
+  "solutions": {
+    "reliable": "Let $s$ be the number of sandwiches and $d$ the number of salads, with $4s + 6d \\le 300$ and $d \\ge 20$. Sandwiches are largest when $d = 20$: $4s + 120 \\le 300$, so $4s \\le 180$ and $s \\le 45$. Check: $4(45) + 6(20) = 300$ minutes exactly.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0001",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "easy",
+  "statement": "A rectangular garden has a perimeter of $86$ feet. The length of the garden is $7$ feet more than its width. What is the width of the garden, in feet?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$18$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$19.75$",
+      "correct": false,
+      "misconception": "I doubled the width terms but added the $7$ only once, writing $4w + 7 = 86$, so I got $w = 19.75$."
+    },
+    {
+      "key": "C",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I solved for the width correctly, $18$ feet, but then gave the length, $18 + 7 = 25$ feet."
+    },
+    {
+      "key": "D",
+      "text": "$39.5$",
+      "correct": false,
+      "misconception": "I added one width and one length, $w + (w + 7) = 86$, forgetting that a perimeter goes around all four sides, so I got $39.5$."
+    }
+  ],
+  "hints": [
+    "Write the length in terms of the width.",
+    "If the width is $w$, the length is $w + 7$. The perimeter adds two widths and two lengths.",
+    "Solve $2w + 2(w + 7) = 86$, which simplifies to $4w + 14 = 86$."
+  ],
+  "solutions": {
+    "reliable": "Let the width be $w$ feet, so the length is $w + 7$ feet. The perimeter is $2w + 2(w + 7) = 4w + 14$, so $4w + 14 = 86$, $4w = 72$ and $w = 18$. Check: the garden is $18$ by $25$ feet, and $2(18) + 2(25) = 36 + 50 = 86$.",
+    "elegant": "Half the perimeter, $43$ feet, is one width plus one length. Taking away the extra $7$ feet leaves $36$, which is two equal widths, so $w = 18$."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

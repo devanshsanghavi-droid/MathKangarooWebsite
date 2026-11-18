@@ -1,0 +1,66 @@
+{
+  "id": "AM-1017",
+  "contest": "AMC8",
+  "slot": 6,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "On a map, $1$ centimeter stands for $2.5$ kilometers. A nature reserve appears on the map as a rectangle $4$ centimeters by $6$ centimeters. What is the actual area of the reserve, in square kilometers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I found the area of the rectangle on the map, 4 times 6 = 24, and forgot to use the scale."
+    },
+    {
+      "key": "B",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I changed the sides to 10 km and 15 km correctly, then added them instead of multiplying."
+    },
+    {
+      "key": "C",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I changed the sides to 10 km and 15 km and then found the perimeter, 2 times (10 + 15) = 50, instead of the area."
+    },
+    {
+      "key": "D",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I found the map area, 24 square centimeters, and multiplied by 2.5 only once. Each square centimeter stands for 2.5 times 2.5 square kilometers."
+    },
+    {
+      "key": "E",
+      "text": "$150$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Change each side of the rectangle to kilometers first.",
+    "Each centimeter is $2.5$ km, so the sides are $4 \\cdot 2.5$ km and $6 \\cdot 2.5$ km.",
+    "The reserve is $10$ km by $15$ km. Find the area of that rectangle."
+  ],
+  "solutions": {
+    "reliable": "The real sides are $4 \\cdot 2.5 = 10$ km and $6 \\cdot 2.5 = 15$ km, so the area is $10 \\cdot 15 = 150$ square kilometers.",
+    "elegant": "A square centimeter on the map is a square $2.5$ km on a side, which is $6.25$ square kilometers. The map rectangle covers $24$ square centimeters, so the reserve is $24 \\cdot 6.25 = 150$ square kilometers. Areas scale by the square of the length scale."
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

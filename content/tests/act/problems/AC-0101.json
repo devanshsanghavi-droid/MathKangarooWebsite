@@ -1,0 +1,56 @@
+{
+  "id": "AC-0101",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "easy",
+  "statement": "What value of $x$ satisfies the equation $\\sqrt{2x - 3} + 5 = 12$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I set $2x - 3$ equal to $7$ without squaring, so I solved $2x = 10$ and got $x = 5$."
+    },
+    {
+      "key": "B",
+      "text": "$23$",
+      "correct": false,
+      "misconception": "I isolated the root and squared to get $2x - 3 = 49$, but then I subtracted $3$ instead of adding it, so I had $2x = 46$."
+    },
+    {
+      "key": "C",
+      "text": "$26$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$71$",
+      "correct": false,
+      "misconception": "I squared both sides before isolating the root and treated the square of the left side as $2x - 3 + 5$, so I solved $2x + 2 = 144$."
+    }
+  ],
+  "hints": [
+    "Get the square root by itself before you square anything.",
+    "Subtract $5$ from both sides, square both sides, then solve the linear equation. Check your answer in the original.",
+    "$\\sqrt{2x - 3} = 7$, so $2x - 3 = 49$ and $2x = 52$."
+  ],
+  "solutions": {
+    "reliable": "Subtract $5$ from both sides: $\\sqrt{2x - 3} = 7$. Square both sides: $2x - 3 = 49$, so $2x = 52$ and $x = 26$. Check: $\\sqrt{2(26) - 3} + 5 = \\sqrt{49} + 5 = 7 + 5 = 12$.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

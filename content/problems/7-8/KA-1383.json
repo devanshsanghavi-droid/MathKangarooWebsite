@@ -1,0 +1,68 @@
+{
+  "id": "KA-1383",
+  "band": "7-8",
+  "points": 3,
+  "statement": "The letter A stands for the same digit in both places. For how many digits A is the four-digit number A3A6 divisible by 12?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I checked only divisibility by 4, which needs A6 to be a multiple of 4, and forgot the test for 3."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I checked only divisibility by 3, which gives A = 3, 6 or 9, and forgot the test for 4."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I only checked that the number is even, which it always is, so I counted every digit from 1 to 9."
+    },
+    {
+      "key": "D",
+      "text": "0",
+      "correct": false,
+      "misconception": "I tested divisibility by 4 using only the last digit 6, which is not a multiple of 4, so I thought no digit worked."
+    },
+    {
+      "key": "E",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "NUM-05",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "12 = 3 x 4, and 3 and 4 have no common factor.",
+    "A number is divisible by 12 exactly when it is divisible by both 3 and 4. Here both tests involve A: the last two digits are A6, and A appears twice in the digit sum.",
+    "For 4: A6 must be a multiple of 4, which happens for 16, 36, 56, 76 and 96. For 3: A + 3 + A + 6 = 2A + 9 must be a multiple of 3. Find the digits that pass both."
+  ],
+  "solutions": {
+    "reliable": "Divisible by 12 means divisible by 3 and by 4. For 4, the last two digits A6 must be a multiple of 4: 16, 36, 56, 76 and 96 are, and 06, 26, 46, 66, 86 are not, so A is 1, 3, 5, 7 or 9. For 3, the digit sum A + 3 + A + 6 = 2A + 9 must be a multiple of 3, so 2A must be, which means A is 0, 3, 6 or 9; A = 0 is not allowed anyway because it is the first digit. Both tests pass only for A = 3 and A = 9, so the answer is 2. Check: 3336 = 12 x 278 and 9396 = 12 x 783. The transferable idea: split a divisor into factors with no common factor and use a simple test for each.",
+    "elegant": null
+  },
+  "whyOnTest": "Divisibility by 12 needs two tests, and here the missing digit affects both, so each test alone gives a tempting wrong count.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

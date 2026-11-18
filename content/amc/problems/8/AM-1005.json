@@ -1,0 +1,68 @@
+{
+  "id": "AM-1005",
+  "contest": "AMC8",
+  "slot": 2,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": [
+    "T-SYMMETRY"
+  ],
+  "statement": "Maya reads $12$ pages of a book on Monday. Each day after that, she reads $3$ more pages than she did the day before. How many pages does she read in all from Monday through Sunday of that week?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$84$",
+      "correct": false,
+      "misconception": "I used 12 pages for every day, 7 times 12 = 84, and forgot that she reads 3 more pages each day."
+    },
+    {
+      "key": "B",
+      "text": "$126$",
+      "correct": false,
+      "misconception": "I averaged Monday's 12 pages and Sunday's 30 pages to get 21, but counted only 6 days from Monday to Sunday, so I got 6 times 21 = 126."
+    },
+    {
+      "key": "C",
+      "text": "$147$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$168$",
+      "correct": false,
+      "misconception": "I added the 3 extra pages on Monday too, so I used 15, 18, 21, 24, 27, 30 and 33, which add to 168."
+    },
+    {
+      "key": "E",
+      "text": "$210$",
+      "correct": false,
+      "misconception": "I used Sunday's 30 pages for every day, 7 times 30 = 210."
+    }
+  ],
+  "hints": [
+    "Write down how many pages Maya reads each day from Monday to Sunday.",
+    "She reads $12, 15, 18, \\dots$ pages. Sunday is the $7$th day, so that day she reads $12 + 6 \\cdot 3 = 30$ pages.",
+    "Pair Monday with Sunday, Tuesday with Saturday and Wednesday with Friday. Each pair adds to $42$, and Thursday's $21$ is left in the middle."
+  ],
+  "solutions": {
+    "reliable": "Maya reads $12, 15, 18, 21, 24, 27$ and $30$ pages. Adding, $12 + 15 + 18 + 21 + 24 + 27 + 30 = 147$.",
+    "elegant": "The daily numbers go up evenly, so their average is the middle day, Thursday, at $21$ pages. Seven days at an average of $21$ pages is $7 \\cdot 21 = 147$ pages."
+  },
+  "formulas": [
+    "F-ALG-03"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

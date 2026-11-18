@@ -1,0 +1,66 @@
+{
+  "id": "AM-1163",
+  "contest": "AMC8",
+  "slot": 5,
+  "area": "NT",
+  "topic": "NT-07",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "At a school fair, prize tickets come only in strips of $5$ tickets and strips of $7$ tickets. Rami ends up with exactly $120$ tickets, and he has at least one strip of each kind. How many different combinations of numbers of $5$-ticket strips and $7$-ticket strips could he have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I also counted $24$ strips of $5$ with no strips of $7$, but Rami has at least one strip of each kind."
+    },
+    {
+      "key": "C",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I thought the number of $7$-ticket strips could be anything from $1$ to $17$, without checking that the rest can be made from strips of $5$."
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I thought the number of $7$-ticket strips could be anything from $0$ to $17$, without checking that the rest can be made from strips of $5$."
+    },
+    {
+      "key": "E",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I divided $120$ by $5$ and answered $24$, the number of $5$-ticket strips if there were no $7$-ticket strips."
+    }
+  ],
+  "hints": [
+    "Let $a$ be the number of $5$-strips and $b$ the number of $7$-strips, so $5a + 7b = 120$.",
+    "Both $5a$ and $120$ are multiples of $5$, so $7b$ must be a multiple of $5$ too. What does that say about $b$?",
+    "$b$ must be a multiple of $5$, and $b \\ge 1$ with $7b < 120$. Try $b = 5, 10, 15$."
+  ],
+  "solutions": {
+    "reliable": "We need positive integers $a, b$ with $5a + 7b = 120$. Since $5a$ and $120$ are multiples of $5$, so is $7b$, which forces $b$ to be a multiple of $5$. Also $7b < 120$, so $b \\le 17$. That leaves $b = 5, 10, 15$, giving $a = 17, 10, 3$, all positive. So there are $3$ combinations.",
+    "elegant": "Start from one solution, $b = 5$ and $a = 17$. Trading seven $5$-strips for five $7$-strips keeps the total at $35$ tickets each way, so the solutions step by $(a, b) \\to (a - 7, b + 5)$: $(17, 5), (10, 10), (3, 15)$. One more step makes $a$ negative, and one step back makes $b = 0$. Three combinations."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

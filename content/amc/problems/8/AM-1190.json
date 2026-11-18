@@ -1,0 +1,67 @@
+{
+  "id": "AM-1190",
+  "contest": "AMC8",
+  "slot": 14,
+  "area": "NT",
+  "topic": "NT-09",
+  "types": [
+    "T-BOUNDING",
+    "T-PARITY"
+  ],
+  "statement": "Six different odd positive integers have a sum of $50$. What is the smallest possible value of the largest of the six integers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I divided 50 by 6 to get about 8.3 and took the next odd number, 9, but there are only five odd numbers from 1 to 9."
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I forgot that the numbers must be odd: six different positive integers like 5, 7, 8, 9, 10 and 11 add to 50, but 8 and 10 are even."
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I found the largest possible value of the biggest number, from 1 + 3 + 5 + 7 + 9 + 25 = 50, instead of the smallest possible value."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be done",
+      "correct": false,
+      "misconception": "I thought six odd numbers always add up to an odd number, so their sum could never be 50."
+    }
+  ],
+  "hints": [
+    "If the largest of the six numbers is $L$, what is the biggest the total could possibly be?",
+    "The total is biggest when the other five numbers are the five odd numbers just below $L$. Try $L = 13$.",
+    "With $L = 13$, the most you can get is $13 + 11 + 9 + 7 + 5 + 3 = 48$, which is less than $50$. Now try $L = 15$."
+  ],
+  "solutions": {
+    "reliable": "First, six odd numbers do have an even sum, so a total of $50$ is possible. If the largest number is the odd number $L$, the six numbers are at most $L, L - 2, L - 4, L - 6, L - 8, L - 10$, so their sum is at most $6L - 30$. We need $6L - 30 \\ge 50$, so $L \\ge 13\\tfrac{1}{3}$, and since $L$ is odd, $L \\ge 15$. And $L = 15$ works: $3 + 5 + 7 + 9 + 11 + 15 = 50$. The answer is $15$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

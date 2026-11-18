@@ -1,0 +1,68 @@
+{
+  "id": "KA-1140",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Pens cost 3 euros each and pencils cost 2 euros each. Lila bought 9 things in total, some pens and some pencils, and paid 23 euros. How many pens did she buy?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I found that 1 pen and 10 pencils cost 23 euros, but did not check that this is 11 things, not 9."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found that 3 pens and 7 pencils cost 23 euros, but did not check that this is 10 things, not 9."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found the number of pencils, 4, instead of the number of pens."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": false,
+      "misconception": "I found that 7 pens and 1 pencil cost 23 euros, but did not check that this is only 8 things, not 9."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-04",
+    "secondary": [
+      "MOD-01",
+      "MOD-06"
+    ]
+  },
+  "hints": [
+    "Try each answer. What else must you check besides the price?",
+    "Back-solve: for each choice, the number of pencils is 9 minus the number of pens. Work out the total cost and keep the choice that makes exactly 23 euros.",
+    "If she bought 5 pens, she bought 4 pencils. Check: $5 \\times 3 + 4 \\times 2$."
+  ],
+  "solutions": {
+    "reliable": "Try the choices, remembering that pens and pencils together make 9. 1 pen and 8 pencils cost $3 + 16 = 19$. 3 pens and 6 pencils cost $9 + 12 = 21$. 4 pens and 5 pencils cost $12 + 10 = 22$. 5 pens and 4 pencils cost $15 + 8 = 23$. That works, so she bought 5 pens. The transferable idea: when you back-solve, check every condition in the question, not just one.",
+    "elegant": "If all 9 things were pencils she would pay 18 euros. She paid 5 euros more, and swapping a pencil for a pen adds 1 euro, so she swapped 5 times: 5 pens."
+  },
+  "whyOnTest": "Back-solving from the choices is fast, but only if every condition is checked; several choices here meet the price alone.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

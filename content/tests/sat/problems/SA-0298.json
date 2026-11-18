@@ -1,0 +1,56 @@
+{
+  "id": "SA-0298",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-06",
+  "difficulty": "hard",
+  "statement": "In the $xy$-plane, the graph of $x^2 + y^2 + 6x - 8y = k$ is a circle that is tangent to the $x$-axis. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I completed the square only for $x$, adding $9$ to both sides, so I wrote $k + 9 = 16$ and got $k = 7$."
+    },
+    {
+      "key": "C",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I found that the radius must be $4$ and set $k$ equal to the radius squared, forgetting the constants added when completing the square."
+    },
+    {
+      "key": "D",
+      "text": "$41$",
+      "correct": false,
+      "misconception": "I completed both squares but subtracted $25$ from $k$ instead of adding it, so I solved $k - 25 = 16$ and got $41$."
+    }
+  ],
+  "hints": [
+    "Complete the square in $x$ and in $y$ to find the center and the radius in terms of $k$.",
+    "The equation becomes $(x + 3)^2 + (y - 4)^2 = k + 25$. A circle tangent to the $x$-axis has radius equal to the distance from its center to the $x$-axis.",
+    "The center is $(-3, 4)$, which is $4$ units from the $x$-axis, so the radius squared must be $16$: $k + 25 = 16$."
+  ],
+  "solutions": {
+    "reliable": "Complete the square: $x^2 + 6x + 9 + y^2 - 8y + 16 = k + 9 + 16$, so $(x + 3)^2 + (y - 4)^2 = k + 25$. The center is $(-3, 4)$ and the radius squared is $k + 25$. Tangent to the $x$-axis means the circle touches the axis at exactly one point, so the radius equals the distance from the center to the axis, which is $|4| = 4$. Then $k + 25 = 16$, so $k = -9$. Check: with $k = -9$, setting $y = 0$ gives $x^2 + 6x + 9 = 0$, or $(x + 3)^2 = 0$, a single point, as tangency requires.",
+    "elegant": "Tangent to the $x$-axis means substituting $y = 0$ gives exactly one solution. That gives $x^2 + 6x - k = 0$, which has one solution when its discriminant is $0$: $36 + 4k = 0$, so $k = -9$."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

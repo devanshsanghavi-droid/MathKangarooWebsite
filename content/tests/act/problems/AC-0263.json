@@ -1,0 +1,56 @@
+{
+  "id": "AC-0263",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-03",
+  "difficulty": "medium",
+  "statement": "The table shows how a school robotics club's budget for the year is divided among categories, as a percent of the total budget. $$\\begin{array}{l|c} \\text{Category} & \\text{Percent of budget} \\\\ \\hline \\text{Travel} & 32\\% \\\\ \\text{Equipment} & 21\\% \\\\ \\text{Food} & 18\\% \\\\ \\text{Competition fees} & 15\\% \\\\ \\text{Other} & 14\\% \\end{array}$$ The club's budget for food is $\\$630$. How many more dollars does the club budget for travel than for equipment?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$35$",
+      "correct": false,
+      "misconception": "I found that each 1 percent of the budget is worth 35 dollars and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "$\\$69.30$",
+      "correct": false,
+      "misconception": "I took the difference, 11 percentage points, as 11 percent of the 630 dollars for food."
+    },
+    {
+      "key": "C",
+      "text": "$\\$385$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$490$",
+      "correct": false,
+      "misconception": "I compared travel with food instead of equipment, using 32 minus 18, which is 14 percent of the total."
+    }
+  ],
+  "hints": [
+    "The $\\$630$ for food is $18\\%$ of the whole budget.",
+    "Find the total budget, or find how many dollars $1\\%$ of the budget is worth.",
+    "$1\\%$ of the budget is $\\dfrac{630}{18} = 35$ dollars, and travel exceeds equipment by $32 - 21 = 11$ percentage points."
+  ],
+  "solutions": {
+    "reliable": "Since $18\\%$ of the budget is $\\$630$, the total budget is $\\dfrac{630}{0.18} = \\$3{,}500$. Travel gets $0.32 \\cdot 3500 = \\$1{,}120$ and equipment gets $0.21 \\cdot 3500 = \\$735$. The difference is $1120 - 735 = \\$385$.",
+    "elegant": "Each $1\\%$ is worth $\\dfrac{630}{18} = \\$35$, and travel exceeds equipment by $11\\%$: $11 \\cdot 35 = \\$385$."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

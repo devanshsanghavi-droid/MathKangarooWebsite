@@ -1,0 +1,56 @@
+{
+  "id": "SA-0253",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-01",
+  "difficulty": "medium",
+  "statement": "A park lawn is made of a rectangle that is $100$ meters long and $60$ meters wide, with a semicircle attached along each of the two $60$-meter sides. Each semicircle has that $60$-meter side as its diameter. Which expression gives the total area of the lawn, in square meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6{,}000 + 450\\pi$",
+      "correct": false,
+      "misconception": "I found the area of one semicircle, $450\\pi$, and forgot that there is a semicircle on each end."
+    },
+    {
+      "key": "B",
+      "text": "$6{,}000 + 900\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$6{,}000 + 1{,}800\\pi$",
+      "correct": false,
+      "misconception": "I treated each end as a full circle of radius 30, so I added $2 \\times 900\\pi = 1{,}800\\pi$."
+    },
+    {
+      "key": "D",
+      "text": "$6{,}000 + 3{,}600\\pi$",
+      "correct": false,
+      "misconception": "I used 60 as the radius instead of the diameter, so the two semicircles became one circle with area $\\pi(60)^2 = 3{,}600\\pi$."
+    }
+  ],
+  "hints": [
+    "Two semicircles with the same diameter make one full circle.",
+    "Add the area of the rectangle to the area of one circle whose diameter is $60$ meters.",
+    "The rectangle has area $100 \\times 60 = 6{,}000$, and the circle has radius $30$, so its area is $\\pi(30)^2$."
+  ],
+  "solutions": {
+    "reliable": "The rectangle has area $100 \\times 60 = 6{,}000$ square meters. Each semicircle has diameter $60$, so radius $30$, and area $\\frac{1}{2}\\pi(30)^2 = 450\\pi$. The two semicircles together have area $900\\pi$. The total area is $6{,}000 + 900\\pi$ square meters.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

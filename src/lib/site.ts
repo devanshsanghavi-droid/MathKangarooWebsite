@@ -38,13 +38,25 @@ export const DISCLAIMER =
  * <AmcDisclaimer> from src/app/amc/layout.tsx in addition to the footer's DISCLAIMER.
  */
 export const AMC_DISCLAIMER =
-  'AMC 10 and AMC 12 are trademarks of the Mathematical Association of America. ' +
+  'AMC 8, AMC 10 and AMC 12 are trademarks of the Mathematical Association of America. ' +
   'Independent project. Not affiliated with or endorsed by the MAA.';
+
+/**
+ * docs/07-EXAMS-PROGRESS-MOCKS.md section 1: the notices every page under /sat and /act
+ * carries, rendered by <TrademarkNotice> from those areas' layouts, verbatim.
+ */
+export const SAT_DISCLAIMER =
+  'SAT is a trademark registered by the College Board, which is not affiliated with, and does ' +
+  'not endorse, this site.';
+
+export const ACT_DISCLAIMER =
+  'ACT is a registered trademark of ACT Education Corp., which is not affiliated with, and ' +
+  'does not endorse, this site.';
 
 export interface NavItem {
   href: string;
   label: string;
-  /** Short label for the mobile tab bar and for the top bar between `sm` and `lg`. */
+  /** Short label for the mobile tab bar and for the top bar between `sm` and `xl`. */
   short?: string;
   /** Shows a "Beta" pill beside the label. */
   beta?: boolean;
@@ -53,23 +65,55 @@ export interface NavItem {
    * (`/`) also owns `/practice/*`, and the Question bank owns `/problem/*`.
    */
   also?: readonly string[];
+  /**
+   * Top bar only. `wide` items show from `lg` up, `compact` items only below it: Past papers,
+   * AMC, SAT and ACT each get their own link on a wide screen, and fold into one "Exams" link
+   * (the /exams hub, which links all four) where eight links would not fit. Hidden with
+   * display:none, so a screen reader never meets the copy that is not on screen.
+   */
+  only?: 'wide' | 'compact';
 }
 
+/** Every exam area, for the Exams entry's highlighting. */
+export const EXAM_AREAS: readonly string[] = ['/exams', '/amc', '/sat', '/act'];
+
 /**
- * docs/06-V3-REDESIGN.md §2: the v3 practice-app nav. The top bar and the mobile tab bar show
- * the same five destinations. The diagnostic and mock test are reached from the Practice home
- * (and the footer); About moved to the footer.
+ * docs/06-V3-REDESIGN.md §2, extended by docs/07 section 4: the top bar. On a wide screen it
+ * reads Practice, Question bank, Skill Atlas, Past papers, AMC, SAT, ACT, Progress. Below `lg`
+ * Past papers and the three exam links fold into one "Exams" link to the /exams hub, so the
+ * row is no wider than the old five-item one and still fits at 640px (a 1280px window at the
+ * 200% zoom CLAUDE.md requires). Measured in Figtree at 15px: about 570px of 592 at 640px,
+ * 950px of 976 at 1024px, and 1110px of 1152 with the full labels from `xl`.
  */
 export const PRIMARY_NAV: NavItem[] = [
   { href: '/', label: 'Practice', short: 'Practice', also: ['/practice'] },
   { href: '/problems', label: 'Question bank', short: 'Bank', also: ['/problem'] },
   { href: '/atlas', label: 'Skill Atlas', short: 'Atlas', also: ['/skill'] },
-  { href: '/papers', label: 'Past papers', short: 'Papers' },
-  { href: '/amc', label: 'AMC', short: 'AMC', beta: true },
+  { href: '/papers', label: 'Past papers', short: 'Papers', only: 'wide' },
+  {
+    href: '/exams',
+    label: 'Exams',
+    short: 'Exams',
+    also: [...EXAM_AREAS, '/papers'],
+    only: 'compact',
+  },
+  { href: '/amc', label: 'AMC', short: 'AMC', beta: true, only: 'wide' },
+  { href: '/sat', label: 'SAT', short: 'SAT', only: 'wide' },
+  { href: '/act', label: 'ACT', short: 'ACT', only: 'wide' },
+  { href: '/progress', label: 'Progress', short: 'Progress' },
 ];
 
-/** The mobile bottom bar: the same destinations as the top bar (docs/06 §2). */
-export const MOBILE_NAV: NavItem[] = PRIMARY_NAV;
+/**
+ * The mobile bottom bar keeps five tabs (docs/07 section 4): the exams sit behind one "Exams"
+ * tab, the /exams hub, which also links the Kangaroo past papers.
+ */
+export const MOBILE_NAV: NavItem[] = [
+  { href: '/', label: 'Practice', short: 'Practice', also: ['/practice'] },
+  { href: '/problems', label: 'Question bank', short: 'Bank', also: ['/problem'] },
+  { href: '/atlas', label: 'Skill Atlas', short: 'Atlas', also: ['/skill'] },
+  { href: '/exams', label: 'Exams', short: 'Exams', also: [...EXAM_AREAS, '/papers'] },
+  { href: '/progress', label: 'Progress', short: 'Progress' },
+];
 
 export const FOOTER_LINKS: NavItem[] = [
   { href: '/about', label: 'About' },

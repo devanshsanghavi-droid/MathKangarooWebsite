@@ -1,0 +1,68 @@
+{
+  "id": "KA-1470",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Four friends sit in a row of seven empty chairs, one person per chair. In how many ways can they sit so that at least two of them are next to each other? (It matters who sits in which chair.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted the seatings where nobody sits next to anybody, which is the opposite case, and forgot to subtract it from the total."
+    },
+    {
+      "key": "B",
+      "text": "34",
+      "correct": false,
+      "misconception": "I counted sets of four chairs, 35 - 1, and forgot that the four friends can be arranged in those chairs in 24 ways."
+    },
+    {
+      "key": "C",
+      "text": "840",
+      "correct": false,
+      "misconception": "I counted all the seatings, 7 × 6 × 5 × 4, without removing those where nobody sits next to anybody."
+    },
+    {
+      "key": "D",
+      "text": "816",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "1440",
+      "correct": false,
+      "misconception": "I chose a pair of neighbouring chairs, seated two friends there and the other two anywhere, which counts many seatings more than once."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-09",
+    "secondary": [
+      "CNT-11",
+      "CNT-05"
+    ]
+  },
+  "hints": [
+    "Count the opposite: when does nobody sit next to anybody?",
+    "Count all the seatings, then subtract those in which no two friends sit side by side. With four people and only seven chairs, very few choices of chairs keep everyone apart.",
+    "All seatings: 7 × 6 × 5 × 4 = 840. Four chairs out of seven with no two next to each other must be chairs 1, 3, 5 and 7."
+  ],
+  "solutions": {
+    "reliable": "All seatings: 7 × 6 × 5 × 4 = 840. If no two friends are neighbours, the four chairs need an empty chair between each pair, which uses at least 4 + 3 = 7 chairs, so the chairs must be 1, 3, 5 and 7, and the friends can sit in them in 4 × 3 × 2 × 1 = 24 ways. So at least two friends are neighbours in 840 - 24 = 816 seatings. The transferable idea: \"at least\" conditions are usually easier through the opposite case.",
+    "elegant": null
+  },
+  "whyOnTest": "Complementary counting tests turning a messy \"at least\" condition into a total minus one small, clean case.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

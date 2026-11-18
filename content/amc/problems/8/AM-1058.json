@@ -1,0 +1,66 @@
+{
+  "id": "AM-1058",
+  "contest": "AMC8",
+  "slot": 20,
+  "area": "ALG",
+  "topic": "ALG-01",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "A tall candle is $30$ cm high and burns down completely in $5$ hours. A short candle is $20$ cm high and burns down completely in $10$ hours. Each candle burns at a steady rate, and they are lit at the same moment. How many hours after they are lit is the short candle exactly twice as tall as the tall candle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I doubled only the $6t$ and not the $30$, writing $20 - 2t = 30 - 12t$, which gives $t = 1$."
+    },
+    {
+      "key": "B",
+      "text": "$2\\tfrac{1}{2}$",
+      "correct": false,
+      "misconception": "I found when the two candles are the same height, which is after $2.5$ hours, instead of when the short one is twice as tall."
+    },
+    {
+      "key": "C",
+      "text": "$3\\tfrac{1}{3}$",
+      "correct": false,
+      "misconception": "I compared the fractions of each candle that are left instead of their heights, solving $1 - \\frac{t}{10} = 2\\left(1 - \\frac{t}{5}\\right)$, which gives $t = \\frac{10}{3}$."
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I thought the short candle would be twice as tall at the moment the tall candle burns out, after $5$ hours. But then the tall candle has height $0$, and $10$ cm is not twice $0$."
+    }
+  ],
+  "hints": [
+    "Find how many centimeters each candle loses per hour.",
+    "After $t$ hours the tall candle is $30 - 6t$ cm high and the short candle is $20 - 2t$ cm high.",
+    "Solve $20 - 2t = 2(30 - 6t)$, then check that the tall candle is still burning at that time."
+  ],
+  "solutions": {
+    "reliable": "The tall candle loses $30 \\div 5 = 6$ cm per hour and the short one loses $20 \\div 10 = 2$ cm per hour. After $t$ hours their heights are $30 - 6t$ and $20 - 2t$. We need $20 - 2t = 2(30 - 6t) = 60 - 12t$, so $10t = 40$ and $t = 4$. Check: after $4$ hours the tall candle is $6$ cm high and the short one is $12$ cm high, and the tall candle, which lasts $5$ hours, is still burning. After the tall candle burns out at $5$ hours, the short candle is taller than it until the short candle burns out too, so $4$ hours is the only answer.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

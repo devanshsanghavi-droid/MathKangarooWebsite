@@ -1,0 +1,67 @@
+{
+  "id": "KA-1402",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Start with the row 1, 2. In each step, between every two neighbouring numbers in the row, write their sum. After one step the row is 1, 3, 2; after two steps it is 1, 4, 3, 5, 2. What is the sum of all the numbers in the row after 8 steps?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "768",
+      "correct": false,
+      "misconception": "I guessed from 3 and 6 that the sum doubles at every step, so I took 3 times 2 to the power 8."
+    },
+    {
+      "key": "B",
+      "text": "3282",
+      "correct": false,
+      "misconception": "I found the right rule but stopped after 7 steps, because I counted the starting row as step 1."
+    },
+    {
+      "key": "C",
+      "text": "9840",
+      "correct": false,
+      "misconception": "I followed the pattern correctly but added up only the numbers between the ends, leaving out the 1 and the 2."
+    },
+    {
+      "key": "D",
+      "text": "9843",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "19683",
+      "correct": false,
+      "misconception": "I thought every number gets counted three times in the new sum, forgetting that the two end numbers have only one neighbour, so I just tripled 3 eight times."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "PAT-05"
+    ]
+  },
+  "hints": [
+    "Work out the sums for the first three or four steps and compare them.",
+    "Small cases are cheap here: the sums 3, 6, 15, 42 come quickly. Look for a rule linking each sum to the one before, then explain why it holds so you can trust it for eight steps.",
+    "Every number except the two ends sits next to two gaps, so the new numbers add up to twice the old sum minus the two ends. New sum = 3 × old sum - 3. Apply this eight times, starting from 3."
+  ],
+  "solutions": {
+    "reliable": "Compute small cases: the sums after 0, 1, 2 and 3 steps are 3, 6, 15 and 42. Each is three times the one before, minus 3. The reason: each new number is the sum of two neighbours, so the new numbers add up to the old sum counted twice, except that the end numbers 1 and 2 have only one neighbour each and are counted once. So new sum = old + (2 × old - 3) = 3 × old - 3. Continuing from 42: 123, 366, 1095, 3282 and finally 9843 after step 8. The transferable idea: when a process repeats many times, run it by hand a few times, then find and justify the rule linking one stage to the next.",
+    "elegant": "The rule $S \\mapsto 3S - 3$ triples $S - \\tfrac32$ each time, so after $n$ steps $S - \\tfrac32 = 3^n \\cdot \\tfrac32$. For $n = 8$: $S = \\tfrac{3 + 3^9}{2} = \\tfrac{19686}{2} = 9843$."
+  },
+  "whyOnTest": "A question about step 8 is a signal to try steps 1, 2 and 3 first; the pattern appears quickly, and explaining it rules out a lucky guess.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

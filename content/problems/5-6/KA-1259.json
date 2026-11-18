@@ -1,0 +1,67 @@
+{
+  "id": "KA-1259",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A rectangular pond is 10 m long and 4 m wide. A frog sits on one long edge, 3 m from a corner. It wants to reach the point directly opposite on the other long edge. It may not swim, but it can walk along the edge of the pond. What is the shortest distance it can walk?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4 m",
+      "correct": false,
+      "misconception": "I measured straight across the pond, but the frog is not allowed to swim."
+    },
+    {
+      "key": "B",
+      "text": "10 m",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "14 m",
+      "correct": false,
+      "misconception": "I thought going round to the opposite point always takes half the perimeter, 14 m, but that is only true when starting from the middle of a side."
+    },
+    {
+      "key": "D",
+      "text": "18 m",
+      "correct": false,
+      "misconception": "I sent the frog round the far end: 7 m to that corner, 4 m across and 7 m back."
+    },
+    {
+      "key": "E",
+      "text": "28 m",
+      "correct": false,
+      "misconception": "I walked the frog all the way round the pond, which is the whole perimeter, 28 m."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-17",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Which corner is nearer to the frog?",
+    "The shortest route around a rectangle follows its edges, so the frog must go round one of the two ends. Work out both ways round and compare them.",
+    "Round the near end: 3 m to the corner, 4 m along the short side, then 3 m back along the other long side."
+  ],
+  "solutions": {
+    "reliable": "Going round the near end, the frog walks 3 m to the corner, 4 m along the short side and 3 m along the other long side to the point opposite: 3 + 4 + 3 = 10 m. Going round the far end it walks 7 + 4 + 7 = 18 m. The shortest walk is 10 m. The transferable idea: around an obstacle, the shortest path hugs the corners, so compare the possible ways round.",
+    "elegant": "Both routes cross one short side of 4 m. The near route adds 3 m twice and the far route adds 7 m twice, so the shortest is 4 + 2 × 3 = 10 m."
+  },
+  "whyOnTest": "Shortest-path questions test whether you respect the obstacle and compare the routes around it, instead of measuring the forbidden straight line.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

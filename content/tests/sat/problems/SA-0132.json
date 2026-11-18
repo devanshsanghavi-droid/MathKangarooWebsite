@@ -1,0 +1,56 @@
+{
+  "id": "SA-0132",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-02",
+  "difficulty": "medium",
+  "statement": "The solutions to the equation $x^2 - 8x + 3 = 0$ can be written as $x = 4 \\pm \\sqrt{k}$, where $k$ is a constant. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I completed the square as $(x - 4)^2 = 16 + 3$, adding the $3$ instead of subtracting it."
+    },
+    {
+      "key": "C",
+      "text": "$52$",
+      "correct": false,
+      "misconception": "I computed the discriminant $64 - 12 = 52$ and used it as $k$, forgetting that the quadratic formula also divides by $2a = 2$."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I added $16$ to complete the square but dropped the constant $3$, so I wrote $(x - 4)^2 = 16$."
+    }
+  ],
+  "hints": [
+    "Try completing the square: move the constant to the other side first.",
+    "Write $x^2 - 8x = -3$ and add $\\left(\\frac{8}{2}\\right)^2 = 16$ to both sides.",
+    "$(x - 4)^2 = 16 - 3$, so $x - 4 = \\pm\\sqrt{16 - 3}$."
+  ],
+  "solutions": {
+    "reliable": "Subtract $3$ from both sides: $x^2 - 8x = -3$. Adding $16$ to both sides completes the square: $x^2 - 8x + 16 = 13$, so $(x - 4)^2 = 13$ and $x = 4 \\pm \\sqrt{13}$. So $k = 13$.",
+    "elegant": "By the quadratic formula, $x = \\frac{8 \\pm \\sqrt{64 - 12}}{2} = \\frac{8 \\pm \\sqrt{52}}{2} = 4 \\pm \\frac{2\\sqrt{13}}{2} = 4 \\pm \\sqrt{13}$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

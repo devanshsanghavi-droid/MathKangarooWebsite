@@ -1,0 +1,67 @@
+{
+  "id": "KA-1438",
+  "band": "9-10",
+  "points": 5,
+  "statement": "A cube with edges of length 1 is cut along some of its edges and unfolded flat into a single piece made of six unit squares joined edge to edge. What is the perimeter of this flat piece?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": false,
+      "misconception": "I added the perimeters of the six squares, $6 \\times 4$, without removing the edges where squares are joined."
+    },
+    {
+      "key": "B",
+      "text": "19",
+      "correct": false,
+      "misconception": "I found the 5 joins but took only 1 off the 24 for each of them, though each join hides a side of two squares."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I thought each of the 12 edges of the cube appears exactly once on the outline of the flat piece."
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought only 5 edges of the cube are cut, one for each join, with each cut edge giving 2 units of outline."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-10",
+    "secondary": [
+      "LOG-06"
+    ]
+  },
+  "hints": [
+    "Does the answer depend on which net you get? Try the cross shape.",
+    "Count the joins. Six squares held together in one piece need a certain number of joins, whatever the shape. Each join hides two unit sides.",
+    "The six squares have 24 unit sides in total, and each of the 5 joins uses up 2 of them."
+  ],
+  "solutions": {
+    "reliable": "Six separate squares have $6 \\times 4 = 24$ unit sides. Build the net square by square: each new square is attached by one join, so 6 squares need exactly 5 joins. (A net can never contain a ring of joined squares, since that would need four squares around one corner, and only three faces of a cube meet at a corner.) Every join hides 2 unit sides, one from each square, so the perimeter is $24 - 2 \\times 5 = 14$. The cross-shaped net confirms it: its outline has 14 unit sides. The transferable idea: when every case looks different, look for a quantity, here the number of joins, that is the same in all of them.",
+    "elegant": "Each cut edge of the cube appears twice on the outline of the net, once on each side of the cut, and each uncut edge does not appear at all. The cube has 12 edges and 5 stay uncut as joins, so 7 are cut, and the perimeter is $2 \\times 7 = 14$."
+  },
+  "whyOnTest": "Nets test linking the flat shape to the solid, and here the key is that every net of a cube has exactly five joins.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

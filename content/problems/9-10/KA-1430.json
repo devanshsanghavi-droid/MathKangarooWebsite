@@ -1,0 +1,68 @@
+{
+  "id": "KA-1430",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A token moves along grid lines from the point $(0, 0)$ to the point $(4, 3)$, one unit right or one unit up at a time. It must never visit a point whose $y$-coordinate is bigger than its $x$-coordinate. How many different routes are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "35",
+      "correct": false,
+      "misconception": "I counted all the routes from $(0, 0)$ to $(4, 3)$ and ignored the rule."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I only threw out routes that start with a step up, but a route can break the rule later."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": false,
+      "misconception": "I did not let the token touch points like $(1, 1)$, where $y$ equals $x$, but those points are allowed."
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "28",
+      "correct": false,
+      "misconception": "I only banned points where $y$ is more than $x + 1$, so I let the token go one unit too high."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-07",
+    "secondary": [
+      "CNT-09",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Write at each allowed point the number of ways to reach it.",
+    "Each point can be reached only from the point on its left or the point below it. Fill in the counts point by point, putting 0 at every banned point.",
+    "Along the bottom row every count is 1. At $(1, 1)$ the count is 1, because $(0, 1)$ is banned."
+  ],
+  "solutions": {
+    "reliable": "Fill in the number of routes to each allowed point, adding the counts from the left and from below. Row $y = 0$: 1, 1, 1, 1, 1 for $x = 0$ to 4. Row $y = 1$ (allowed for $x \\ge 1$): 1, 2, 3, 4. Row $y = 2$ (allowed for $x \\ge 2$): 2, 5, 9. Row $y = 3$ (allowed for $x \\ge 3$): 5, 14. So there are 14 routes to $(4, 3)$. The transferable idea: for grid routes with forbidden points, add the counts point by point instead of hunting for a formula.",
+    "elegant": "Count the bad routes and subtract. A bad route first touches the line $y = x + 1$ somewhere. Reflecting the part of the route before that touch in the line $y = x + 1$ turns it into a route from $(-1, 1)$ to $(4, 3)$, and this matching works both ways. Such routes have 5 steps right and 2 up, so there are $\\binom{7}{2} = 21$ bad routes and $35 - 21 = 14$ good ones."
+  },
+  "whyOnTest": "Grid routes with a boundary reward building the counts point by point, and the trap is fixing only the first step.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

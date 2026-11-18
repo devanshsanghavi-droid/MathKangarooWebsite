@@ -1,0 +1,56 @@
+{
+  "id": "AC-0294",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-07",
+  "difficulty": "hard",
+  "statement": "A hiking club has $160$ members, and each member prefers either mountain trails or coastal trails. Of the members, $70$ are under $40$ years old and the rest are $40$ or older. A total of $55$ members prefer mountain trails, and $30$ of those are under $40$. A member who is $40$ or older is chosen at random. What is the probability that this member prefers coastal trails?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{5}{18}$",
+      "correct": false,
+      "misconception": "I found the 25 older members who prefer mountain trails and divided by 90, which answers the opposite preference."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{13}{32}$",
+      "correct": false,
+      "misconception": "I found the 65 older members who prefer coastal trails but divided by all 160 members instead of the 90 who are 40 or older."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{13}{21}$",
+      "correct": false,
+      "misconception": "I divided the 65 older coastal fans by the 105 members who prefer coastal trails, which reverses the condition."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{13}{18}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Build a two-way table with age group and trail preference, and fill in what you can.",
+    "There are $160 - 70 = 90$ members who are $40$ or older, and $55 - 30 = 25$ of the mountain fans are in that group.",
+    "So $90 - 25 = 65$ older members prefer coastal trails. The chosen member comes from the $90$ older members."
+  ],
+  "solutions": {
+    "reliable": "Members $40$ or older: $160 - 70 = 90$. Mountain fans who are $40$ or older: $55 - 30 = 25$. So $90 - 25 = 65$ of the older members prefer coastal trails. Given the member is $40$ or older, the probability is $\\dfrac{65}{90} = \\dfrac{13}{18}$.",
+    "elegant": null
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

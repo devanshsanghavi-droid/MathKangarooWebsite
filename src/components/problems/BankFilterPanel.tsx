@@ -29,8 +29,8 @@ import {
 const DOTS: Record<Points, string> = { 3: '●○○', 4: '●●○', 5: '●●●' };
 
 /**
- * The bank's left column (docs/06 §4): level, then one accordion per strand (or AMC area) with
- * a checkbox per skill (or topic) showing solved / total, then difficulty, problem types (AMC),
+ * The bank's left column (docs/06 §4): level (none for SAT and ACT), then one accordion per
+ * strand (AMC area, SAT or ACT domain) with a checkbox per skill (or topic) showing solved / total, then difficulty, problem types (AMC),
  * status and "Has a figure".
  *
  * Every control is a button or a checkbox, never a link, so a crawler finds no filter URLs
@@ -121,15 +121,17 @@ export function BankFilterPanel({
         ) : null}
       </div>
 
-      <SegmentedControl
-        label={taxonomy.level.label}
-        showLabel
-        size="sm"
-        wrap
-        options={taxonomy.level.options}
-        value={filters.level}
-        onChange={(level) => set({ level })}
-      />
+      {taxonomy.level ? (
+        <SegmentedControl
+          label={taxonomy.level.label}
+          showLabel
+          size="sm"
+          wrap
+          options={taxonomy.level.options}
+          value={filters.level}
+          onChange={(level) => set({ level })}
+        />
+      ) : null}
 
       <div role="group" aria-labelledby={`${idPrefix}-sections`}>
         <h3 id={`${idPrefix}-sections`} className="m-0 mb-1 text-2xs font-semibold text-ink-2">

@@ -1,0 +1,68 @@
+{
+  "id": "AM-1105",
+  "contest": "AMC8",
+  "slot": 10,
+  "area": "GEO",
+  "topic": "GEO-03",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "A rhombus has perimeter $52$, and one of its diagonals has length $24$. What is the area of the rhombus?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$120$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$130$",
+      "correct": false,
+      "misconception": "I multiplied the side, 13, by the other diagonal, 10, as if that diagonal were the height of the rhombus."
+    },
+    {
+      "key": "C",
+      "text": "$156$",
+      "correct": false,
+      "misconception": "I used the side, 13, in place of the other diagonal and computed (1/2)(24)(13) = 156."
+    },
+    {
+      "key": "D",
+      "text": "$240$",
+      "correct": false,
+      "misconception": "I multiplied the two diagonals, 24 and 10, and forgot the one half."
+    },
+    {
+      "key": "E",
+      "text": "$312$",
+      "correct": false,
+      "misconception": "I multiplied the given diagonal by the side, 24 times 13 = 312."
+    }
+  ],
+  "hints": [
+    "Each side is $52 / 4 = 13$. The diagonals of a rhombus cut each other in half at right angles.",
+    "The diagonals split the rhombus into four congruent right triangles, each with hypotenuse $13$ and one leg $12$.",
+    "The other leg is $5$, so the second diagonal is $10$. The area of a rhombus is half the product of its diagonals."
+  ],
+  "solutions": {
+    "reliable": "Each side has length $52 / 4 = 13$. The diagonals bisect each other at right angles, so half of the given diagonal, $12$, and half of the other diagonal form the legs of a right triangle with hypotenuse $13$. That is a $5$-$12$-$13$ triangle, so the other half-diagonal is $5$ and the other diagonal is $10$. The area is $\\frac{1}{2} \\cdot 24 \\cdot 10 = 120$.",
+    "elegant": "The diagonals cut the rhombus into four right triangles with legs $12$ and $5$. Each has area $\\frac{1}{2} \\cdot 12 \\cdot 5 = 30$, so the rhombus has area $4 \\cdot 30 = 120$."
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

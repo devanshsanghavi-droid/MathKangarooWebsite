@@ -1,0 +1,56 @@
+{
+  "id": "AC-0259",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-02",
+  "difficulty": "medium",
+  "statement": "At a plant nursery, the heights of a large batch of tomato seedlings have a mean of $14.2$ centimeters and a standard deviation of $1.8$ centimeters. One seedling's height is $2.5$ standard deviations below the mean. What is the height of this seedling, in centimeters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9.7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$11.7$",
+      "correct": false,
+      "misconception": "I subtracted 2.5 centimeters from the mean instead of 2.5 standard deviations."
+    },
+    {
+      "key": "C",
+      "text": "$12.4$",
+      "correct": false,
+      "misconception": "I subtracted just one standard deviation, 1.8, from the mean and ignored the 2.5."
+    },
+    {
+      "key": "D",
+      "text": "$18.7$",
+      "correct": false,
+      "misconception": "I found that 2.5 standard deviations is 4.5 centimeters but added it to the mean instead of subtracting."
+    }
+  ],
+  "hints": [
+    "Turn $2.5$ standard deviations into centimeters.",
+    "One standard deviation is $1.8$ cm, so $2.5$ of them is $2.5 \\cdot 1.8$ cm. Below the mean means subtract.",
+    "$2.5 \\cdot 1.8 = 4.5$, so the height is $14.2 - 4.5$."
+  ],
+  "solutions": {
+    "reliable": "Two and a half standard deviations is $2.5 \\cdot 1.8 = 4.5$ centimeters. The seedling is that far below the mean, so its height is $14.2 - 4.5 = 9.7$ centimeters.",
+    "elegant": null
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

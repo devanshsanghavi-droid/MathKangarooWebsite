@@ -1,0 +1,68 @@
+{
+  "id": "KA-1547",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Three of the 12 vertices of a regular 12-sided polygon are chosen and joined to form a triangle. For how many of these triangles is the centre of the polygon strictly inside the triangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "40",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "120",
+      "correct": false,
+      "misconception": "I counted the triangles with an obtuse angle, which are exactly the ones that leave the centre outside."
+    },
+    {
+      "key": "C",
+      "text": "160",
+      "correct": false,
+      "misconception": "I removed only the triangles that have a diameter as a side and forgot the triangles that leave the centre outside."
+    },
+    {
+      "key": "D",
+      "text": "180",
+      "correct": false,
+      "misconception": "I counted the triangles that do not have the centre strictly inside, instead of those that do."
+    },
+    {
+      "key": "E",
+      "text": "220",
+      "correct": false,
+      "misconception": "I counted every triangle, thinking the centre is always inside a triangle drawn on the polygon."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-06",
+      "CNT-09"
+    ]
+  },
+  "hints": [
+    "When does a triangle on a circle fail to contain the centre?",
+    "The centre is outside or on the edge exactly when all three vertices lie in a closed half of the circle. Count those triangles, being careful not to count any twice, and subtract from the total.",
+    "There are $\\binom{12}{3} = 220$ triangles. For a triangle with its centre outside or on an edge, fix the vertex from which the other two lie within the next 6 positions clockwise."
+  ],
+  "solutions": {
+    "reliable": "The total is $\\binom{12}{3} = 220$. The centre is not strictly inside exactly when the three vertices fit in a closed semicircle, that is, when some vertex has the other two among the next 6 vertices clockwise. Such a first vertex is unique, so count by it: 12 choices of first vertex and $\\binom{6}{2} = 15$ choices of the other two, giving $12 \\times 15 = 180$. (These are the 60 right triangles and the 120 obtuse ones.) So $220 - 180 = 40$ triangles contain the centre strictly inside. The transferable idea: count the complement, and pick a rule that names each unwanted triangle exactly once.",
+    "elegant": "For a triangle that contains the centre, the clockwise arcs between its vertices are $a, b, c$ steps with $a + b + c = 12$ and each at most 5. The ordered triples are the 3 orders of $(5, 5, 2)$, the 6 orders of $(5, 4, 3)$ and $(4, 4, 4)$, which is 10 in all. Each can start at any of the 12 vertices, and each triangle arises 3 times, once from each of its vertices, so there are $12 \\times 10 \\div 3 = 40$."
+  },
+  "whyOnTest": "Counting the complement with a rule that names each bad triangle once is the overcount-then-correct idea in its cleanest form.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

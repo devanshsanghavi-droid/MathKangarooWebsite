@@ -1,0 +1,68 @@
+{
+  "id": "KA-1592",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A pizza shop offers 6 different vegetable toppings and 5 different meat toppings. A customer chooses 4 different toppings, including at least one vegetable topping and at least one meat topping. How many different choices are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "310",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "315",
+      "correct": false,
+      "misconception": "I removed the choices with only vegetable toppings but forgot to remove the choices with only meat toppings."
+    },
+    {
+      "key": "C",
+      "text": "325",
+      "correct": false,
+      "misconception": "I removed the choices with only meat toppings but forgot to remove the choices with only vegetable toppings."
+    },
+    {
+      "key": "D",
+      "text": "330",
+      "correct": false,
+      "misconception": "I counted every choice of 4 toppings from 11 and ignored the condition."
+    },
+    {
+      "key": "E",
+      "text": "1080",
+      "correct": false,
+      "misconception": "I picked one vegetable, one meat and then any two others, $6 \\times 5 \\times \\binom{9}{2}$, which counts the same choice several times."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-09",
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "Which choices break the rule?",
+    "Count all selections of 4 toppings from 11, then subtract the selections that are all vegetable or all meat. This is complementary counting.",
+    "There are $\\binom{11}{4} = 330$ selections, $\\binom{6}{4} = 15$ all vegetable and $\\binom{5}{4} = 5$ all meat."
+  ],
+  "solutions": {
+    "reliable": "All selections of 4 from 11 toppings: $\\binom{11}{4} = 330$. The bad ones use only one kind: all vegetable $\\binom{6}{4} = 15$, all meat $\\binom{5}{4} = 5$. So $330 - 15 - 5 = 310$. Check by cases: 1 vegetable and 3 meat $6 \\times 10 = 60$; 2 and 2: $15 \\times 10 = 150$; 3 and 1: $20 \\times 5 = 100$; total $310$. The transferable idea: 'at least one of each' is usually easiest as everything minus the selections that miss a kind.",
+    "elegant": null
+  },
+  "whyOnTest": "'At least one of each' invites an overcount by fixing one of each first; the complement gives a clean answer in one step.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

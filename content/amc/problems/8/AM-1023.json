@@ -1,0 +1,67 @@
+{
+  "id": "AM-1023",
+  "contest": "AMC8",
+  "slot": 8,
+  "area": "ALG",
+  "topic": "ALG-01",
+  "types": [
+    "T-SUBSTITUTION",
+    "T-INVARIANT"
+  ],
+  "statement": "A jar holds $30$ coins, all of them dimes ($10$ cents) and quarters ($25$ cents). The coins are worth $\\$4.50$ in total. If every dime in the jar were replaced by a quarter and every quarter by a dime, how many dollars would the coins in the jar be worth?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1.50$",
+      "correct": false,
+      "misconception": "I found that the swap raises the value by 1.50 dollars and gave that increase instead of the new total."
+    },
+    {
+      "key": "B",
+      "text": "$4.50$",
+      "correct": false,
+      "misconception": "I thought swapping the coins would leave the total value the same."
+    },
+    {
+      "key": "C",
+      "text": "$5.00$",
+      "correct": false,
+      "misconception": "I found 20 dimes and 10 quarters, so after the swap there are 20 quarters worth 5 dollars, but I forgot to add the 10 new dimes."
+    },
+    {
+      "key": "D",
+      "text": "$5.25$",
+      "correct": false,
+      "misconception": "I assumed half the coins were dimes and half were quarters, 15 of each, which is worth 5.25 dollars, and never used the 4.50 dollar total."
+    },
+    {
+      "key": "E",
+      "text": "$6.00$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "First find how many coins of each kind are in the jar.",
+    "If all $30$ coins were dimes they would be worth $300$ cents. Each quarter is worth $15$ cents more than a dime.",
+    "The extra $150$ cents means there are $10$ quarters and $20$ dimes. After the swap there are $20$ quarters and $10$ dimes."
+  ],
+  "solutions": {
+    "reliable": "Work in cents. Thirty dimes would be worth $300$ cents, and each quarter adds $15$ cents more, so the number of quarters is $\\frac{450 - 300}{15} = 10$ and there are $20$ dimes. Check: $20 \\cdot 10 + 10 \\cdot 25 = 450$. After the swap there are $20$ quarters and $10$ dimes, worth $500 + 100 = 600$ cents, which is $6.00$ dollars.",
+    "elegant": "Each coin is a dime in one jar and a quarter in the other, so the value before the swap plus the value after it is $30 \\cdot 35 = 1050$ cents. The value after the swap is $1050 - 450 = 600$ cents, or $6.00$ dollars."
+  },
+  "formulas": [],
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

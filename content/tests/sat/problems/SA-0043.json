@@ -1,0 +1,56 @@
+{
+  "id": "SA-0043",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "medium",
+  "statement": "An office has two printers. Printer A prints $40$ pages per minute and printer B prints $25$ pages per minute. One morning both printers started at the same time, printer B ran $13$ minutes longer than printer A, and together they printed $2{,}275$ pages. For how many minutes did printer A run?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I attached the extra 13 minutes to the faster printer, writing $25t + 40(t + 13) = 2{,}275$, and got 27."
+    },
+    {
+      "key": "B",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I divided $2{,}275$ by the combined rate of 65 pages per minute and got 35, ignoring that printer B ran 13 extra minutes."
+    },
+    {
+      "key": "D",
+      "text": "$43$",
+      "correct": false,
+      "misconception": "I solved the system correctly but gave the running time of printer B, $30 + 13 = 43$ minutes, instead of printer A."
+    }
+  ],
+  "hints": [
+    "Let $t$ be the number of minutes printer A ran. Write printer B's time in terms of $t$.",
+    "Pages printed is rate times time for each printer. Add the two amounts and set the total equal to $2{,}275$.",
+    "$40t + 25(t + 13) = 2{,}275$ gives $65t + 325 = 2{,}275$."
+  ],
+  "solutions": {
+    "reliable": "Let $t$ be printer A's time in minutes, so printer B ran $t + 13$ minutes. Then $40t + 25(t + 13) = 2{,}275$, so $65t + 325 = 2{,}275$, $65t = 1{,}950$ and $t = 30$. Check: $40(30) + 25(43) = 1{,}200 + 1{,}075 = 2{,}275$.",
+    "elegant": "In its $13$ extra minutes printer B printed $25 \\times 13 = 325$ pages. The remaining $1{,}950$ pages were printed while both ran, at $65$ pages per minute, which takes $30$ minutes."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

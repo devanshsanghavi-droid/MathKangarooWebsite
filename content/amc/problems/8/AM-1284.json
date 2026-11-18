@@ -1,0 +1,71 @@
+{
+  "id": "AM-1284",
+  "contest": "AMC8",
+  "slot": 24,
+  "area": "CP",
+  "topic": "CP-05",
+  "types": [
+    "T-STARS-BARS",
+    "T-COMPLEMENT"
+  ],
+  "statement": "Eleven identical cookies are shared among $4$ children, Ava, Ben, Cy and Dot, so that every cookie is given out, each child gets at least $1$ cookie, and no child gets more than $4$ cookies. In how many ways can this be done?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I only listed the different sets of amounts, like 4, 4, 2, 1, and did not count which child gets which amount."
+    },
+    {
+      "key": "B",
+      "text": "$40$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$80$",
+      "correct": false,
+      "misconception": "I counted the ways where some child gets more than 4 cookies, 4 times C(6, 3) = 80, and gave that instead of subtracting it from 120."
+    },
+    {
+      "key": "D",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I gave each child 1 cookie and shared the other 7 freely, C(10, 3) = 120, but forgot the limit of 4 cookies per child."
+    },
+    {
+      "key": "E",
+      "text": "$364$",
+      "correct": false,
+      "misconception": "I forgot both rules and counted every way to share 11 cookies among 4 children, C(14, 3) = 364."
+    }
+  ],
+  "hints": [
+    "Hand every child 1 cookie first. Then 7 cookies are left, and each child may get at most 3 more.",
+    "Without the limit, sharing 7 cookies among 4 children is a stars and bars count. Then remove the shares where some child gets 4 or more extra cookies.",
+    "C(10, 3) = 120 shares in all. If one child gets at least 4 extra, give that child 4 and share the other 3 freely: C(6, 3) = 20 ways, for each of the 4 children. Two children cannot both get 4 extra. So 120 - 80 = 40."
+  ],
+  "solutions": {
+    "reliable": "Give each child $1$ cookie first. Now $7$ cookies remain, and each child may receive at most $3$ more. Without the limit, the number of ways to share $7$ identical cookies among $4$ children is $\\binom{7 + 3}{3} = 120$. A share breaks the limit when some child gets $4$ or more extra cookies, and two children cannot both do that, since $4 + 4 > 7$. If a particular child gets at least $4$ extra, hand that child $4$ and share the remaining $3$ freely: $\\binom{3 + 3}{3} = 20$ ways. With $4$ choices of child, that is $80$ bad shares. The answer is $120 - 80 = 40$.",
+    "elegant": "List the sets of amounts, each from $1$ to $4$, that add up to $11$: $\\{4, 4, 2, 1\\}$, $\\{4, 3, 3, 1\\}$, $\\{4, 3, 2, 2\\}$ and $\\{3, 3, 3, 2\\}$. Each of the first three has exactly two equal amounts, so it can be handed out in $\\frac{4!}{2!} = 12$ ways, and the last can be handed out in $\\frac{4!}{3!} = 4$ ways. The total is $12 + 12 + 12 + 4 = 40$."
+  },
+  "formulas": [
+    "F-CP-05",
+    "F-CP-06",
+    "F-CP-04"
+  ],
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

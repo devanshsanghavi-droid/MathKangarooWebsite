@@ -1,0 +1,67 @@
+{
+  "id": "AM-1162",
+  "contest": "AMC8",
+  "slot": 4,
+  "area": "NT",
+  "topic": "NT-09",
+  "types": [
+    "T-PARITY",
+    "T-COMPLEMENT"
+  ],
+  "statement": "Jo picks a whole number from $1$ to $20$, and Sam picks a whole number from $1$ to $15$. Of all the possible pairs of picks, for how many is the product of the two numbers even?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I added the $10$ even numbers Jo could pick and the $7$ even numbers Sam could pick, getting $17$, instead of counting pairs."
+    },
+    {
+      "key": "B",
+      "text": "$80$",
+      "correct": false,
+      "misconception": "I counted the pairs with an odd product, $10 \\cdot 8 = 80$, instead of the pairs with an even product."
+    },
+    {
+      "key": "C",
+      "text": "$150$",
+      "correct": false,
+      "misconception": "I thought exactly half of the $20 \\cdot 15 = 300$ pairs give an even product."
+    },
+    {
+      "key": "D",
+      "text": "$220$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$290$",
+      "correct": false,
+      "misconception": "I added the $10 \\cdot 15 = 150$ pairs where Jo's number is even and the $20 \\cdot 7 = 140$ pairs where Sam's number is even, counting the pairs where both are even twice."
+    }
+  ],
+  "hints": [
+    "A product of two whole numbers is odd only when both numbers are odd.",
+    "Count the pairs with an odd product, then subtract from the total number of pairs.",
+    "There are $20 \\cdot 15 = 300$ pairs. Jo has $10$ odd numbers to choose from and Sam has $8$."
+  ],
+  "solutions": {
+    "reliable": "There are $20 \\cdot 15 = 300$ pairs. A product is odd exactly when both numbers are odd. Jo has $10$ odd choices ($1, 3, \\ldots, 19$) and Sam has $8$ ($1, 3, \\ldots, 15$), so $10 \\cdot 8 = 80$ pairs have an odd product. The other $300 - 80 = 220$ pairs have an even product.",
+    "elegant": "Sort by Jo's pick. If Jo's number is even ($10$ ways), every one of Sam's $15$ numbers gives an even product: $150$ pairs. If Jo's number is odd ($10$ ways), Sam's number must be even ($7$ ways): $70$ pairs. The total is $150 + 70 = 220$."
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

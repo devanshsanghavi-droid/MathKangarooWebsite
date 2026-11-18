@@ -1,0 +1,68 @@
+{
+  "id": "KA-1148",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Seven children queue up. Ana is 3rd. Bo is behind Ana, with exactly 2 children between them. Cal is directly in front of Bo. Dev is last. How many children are between Cal and Dev?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I put everyone in the right place but did not count Bo, who stands between Cal and Dev."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I put Bo 2 places behind Ana, in 5th place, but then there is only 1 child between them, not 2."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted Cal and Dev themselves as well as the child between them."
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the children in front of Cal instead of the children between Cal and Dev."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-04",
+    "secondary": [
+      "CFT-02",
+      "NUM-13"
+    ]
+  },
+  "hints": [
+    "Draw seven boxes in a row and number them from the front.",
+    "Ordering from clues: place the fixed people first, then use the clues about gaps and neighbours one at a time. Count only the places strictly between the two children.",
+    "Ana is in place 3. With 2 children between, Bo is in place 6. Cal is directly in front, in place 5."
+  ],
+  "solutions": {
+    "reliable": "Number the places 1 to 7 from the front. Ana is in place 3. Exactly 2 children stand between Ana and Bo, so places 4 and 5 are between them and Bo is in place 6. Cal is directly in front of Bo, in place 5. Dev is last, in place 7. Between places 5 and 7 there is only place 6, where Bo stands. So 1 child stands between Cal and Dev. The transferable idea: draw the line with numbered places and translate \"between\" into places, not differences.",
+    "elegant": null
+  },
+  "whyOnTest": "Turning words like \"between\" and \"directly in front of\" into exact positions is the key skill in ordering puzzles.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

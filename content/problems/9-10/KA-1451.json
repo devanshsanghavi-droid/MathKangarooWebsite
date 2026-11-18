@@ -1,0 +1,68 @@
+{
+  "id": "KA-1451",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A shape in the coordinate plane is given a quarter turn ($90^\\circ$) clockwise about the origin, and then the image is reflected in the $y$-axis. Which single transformation has the same effect as these two moves together?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "a quarter turn anticlockwise about the origin",
+      "correct": false,
+      "misconception": "I thought reflecting a shape reverses the direction of any turn, so the clockwise quarter turn would become an anticlockwise one."
+    },
+    {
+      "key": "B",
+      "text": "a half turn about the origin",
+      "correct": false,
+      "misconception": "I treated the reflection in the y-axis as if it were another quarter turn clockwise, so two quarter turns made a half turn."
+    },
+    {
+      "key": "C",
+      "text": "a reflection in the line $y = -x$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "a reflection in the line $y = x$",
+      "correct": false,
+      "misconception": "I did the two moves in the wrong order, reflecting in the y-axis first and then turning, and that order gives the reflection in y = x."
+    },
+    {
+      "key": "E",
+      "text": "a quarter turn clockwise about the origin",
+      "correct": false,
+      "misconception": "I tested only the point (1, 0), which lands on (0, -1) either way, and assumed the reflection changed nothing."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-09",
+    "secondary": [
+      "CFT-05",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Follow two different points through both moves, not just one.",
+    "Track where (1, 0) and (0, 1) go. A transformation that fixes the origin is decided by what it does to these two points. Remember that a reflection reverses orientation and a rotation keeps it.",
+    "The quarter turn clockwise sends (1, 0) to (0, -1) and (0, 1) to (1, 0). Now reflect each image in the y-axis by changing the sign of its first coordinate."
+  ],
+  "solutions": {
+    "reliable": "A quarter turn clockwise about the origin sends $(x, y)$ to $(y, -x)$. Reflecting in the $y$-axis changes the sign of the first coordinate, so $(y, -x)$ goes to $(-y, -x)$. The combined move sends $(x, y)$ to $(-y, -x)$. Check with points: (1, 0) goes to (0, -1), and (0, 1) goes to (-1, 0). Swapping the coordinates and changing both signs is exactly the reflection in the line $y = -x$: points on that line, such as (1, -1), stay where they are. The transferable idea: to name a combined transformation, follow two points that do not lie on one line through the fixed point.",
+    "elegant": "A rotation keeps orientation and a reflection reverses it, so the combination reverses orientation and must be a reflection in a line through the origin. Only two choices are reflections, and (1, 0) going to (0, -1) rules out $y = x$."
+  },
+  "whyOnTest": "Combining transformations tests careful tracking of points and the fact that a rotation followed by a reflection is always a reflection.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

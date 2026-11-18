@@ -45,7 +45,8 @@ export function FormulaSheet({
             showLabel
             size="sm"
             options={[
-              { value: 'all', label: 'Both', ariaLabel: 'AMC 10 and AMC 12' },
+              { value: 'all', label: 'All', ariaLabel: 'All AMC contests' },
+              { value: 'AMC8', label: 'AMC 8' },
               { value: 'AMC10', label: 'AMC 10' },
               { value: 'AMC12', label: 'AMC 12' },
             ]}

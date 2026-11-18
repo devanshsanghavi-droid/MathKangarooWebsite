@@ -1,0 +1,56 @@
+{
+  "id": "AC-0109",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-06",
+  "difficulty": "hard",
+  "statement": "An older printer can print a large batch of flyers in $45$ minutes working alone. A newer printer can print the same batch in $30$ minutes working alone. The older printer starts the job alone, and after $10$ minutes the newer printer joins it. Working together at their usual rates, how many more minutes do the two printers need to finish the batch?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I found that together they take $18$ minutes for a whole batch, then subtracted the $10$ minutes, but those minutes were at the older printer's slower rate."
+    },
+    {
+      "key": "B",
+      "text": "$14$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I found the time for the two printers together to print a whole batch and ignored the part the older printer had already printed."
+    },
+    {
+      "key": "D",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I found the remaining $14$ minutes correctly but then added the first $10$ minutes, which is the length of the whole job, not the time still needed."
+    }
+  ],
+  "hints": [
+    "Think of each rate as a fraction of the batch per minute.",
+    "Find the fraction the older printer finishes in $10$ minutes, then divide what is left by the combined rate.",
+    "In $10$ minutes the older printer does $\\frac{10}{45} = \\frac{2}{9}$. Together they do $\\frac{1}{45} + \\frac{1}{30} = \\frac{1}{18}$ per minute."
+  ],
+  "solutions": {
+    "reliable": "The older printer does $\\frac{1}{45}$ of the batch per minute, so in $10$ minutes it prints $\\frac{10}{45} = \\frac{2}{9}$, leaving $\\frac{7}{9}$. Together the printers do $\\frac{1}{45} + \\frac{1}{30} = \\frac{2 + 3}{90} = \\frac{1}{18}$ of the batch per minute. The rest takes $\\frac{7}{9} \\div \\frac{1}{18} = \\frac{7}{9} \\cdot 18 = 14$ minutes.",
+    "elegant": "Picture a batch of $90$ flyers. The older printer makes $2$ per minute and the newer one makes $3$. After $10$ minutes, $20$ are done and $70$ remain. Together they make $5$ per minute, so they need $70 \\div 5 = 14$ more minutes."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "AM-1997",
+  "contest": "AMC8",
+  "slot": 4,
+  "area": "CP",
+  "topic": "CP-12",
+  "types": ["T-BACKWARDS"],
+  "statement": "Nadia's first five quiz scores have a mean of $84$. After her sixth quiz, the mean of all six scores is $86$. What did Nadia score on her sixth quiz?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$86$",
+      "correct": false,
+      "misconception": "I thought the new score had to be the same as the new mean, so I answered 86."
+    },
+    {
+      "key": "B",
+      "text": "$88$",
+      "correct": false,
+      "misconception": "I saw the mean go up by 2 and thought the new score was just 2 more than the new mean, so 86 + 2 = 88."
+    },
+    {
+      "key": "C",
+      "text": "$94$",
+      "correct": false,
+      "misconception": "I said the new score had to give each of the five old scores 2 extra points, but I added those 10 points to the old mean 84 instead of the new mean 86."
+    },
+    {
+      "key": "D",
+      "text": "$96$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$98$",
+      "correct": false,
+      "misconception": "I added 2 points for all six scores to the new mean, 86 + 6 times 2 = 98, but the sixth score only has to lift the five old ones."
+    }
+  ],
+  "hints": [
+    "Think about totals instead of means.",
+    "A mean of 84 over five quizzes means the five scores add up to $5 \\cdot 84$. What must all six add up to?",
+    "The five scores total $5 \\cdot 84 = 420$ and the six scores total $6 \\cdot 86 = 516$. The sixth score is the difference."
+  ],
+  "solutions": {
+    "reliable": "The mean times the count is the total. The first five scores total $5 \\cdot 84 = 420$. All six scores total $6 \\cdot 86 = 516$. So the sixth score is $516 - 420 = 96$.",
+    "elegant": "To raise the mean from $84$ to $86$, the sixth score must be $86$ itself plus $2$ extra points for each of the five old scores: $86 + 5 \\cdot 2 = 96$."
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

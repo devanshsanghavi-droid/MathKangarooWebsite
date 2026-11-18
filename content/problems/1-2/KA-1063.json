@@ -1,0 +1,67 @@
+{
+  "id": "KA-1063",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Two equal rectangles, each 5 cm long and 3 cm wide, are joined along their long sides to make one bigger rectangle. How far is it all the way around the bigger rectangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "11 cm",
+      "correct": false,
+      "misconception": "I added one long side and one short side of the big rectangle, 5 + 6, and stopped."
+    },
+    {
+      "key": "B",
+      "text": "16 cm",
+      "correct": false,
+      "misconception": "I gave the distance around just one of the small rectangles."
+    },
+    {
+      "key": "C",
+      "text": "22 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "26 cm",
+      "correct": false,
+      "misconception": "I joined them along their short sides, which makes a rectangle 10 cm long and 3 cm wide."
+    },
+    {
+      "key": "E",
+      "text": "32 cm",
+      "correct": false,
+      "misconception": "I added the distances around both small rectangles, counting the sides that are now hidden inside."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Draw the two rectangles joined along their long sides.",
+    "Work out the length and width of the new, bigger rectangle from the drawing. Sides that touch are now inside, so they are not part of the distance around.",
+    "The big rectangle is still 5 cm long, but it is 3 + 3 = 6 cm wide. Go round it: 5, 6, 5, 6."
+  ],
+  "solutions": {
+    "reliable": "Joining along the 5 cm sides stacks the rectangles, so the big rectangle is 5 cm long and $3 + 3 = 6$ cm wide. All the way around is $5 + 6 + 5 + 6 = 22$ cm. The idea to keep: when shapes are joined, the touching sides go inside and stop counting.",
+    "elegant": "Each small rectangle measures 16 cm around, so 32 cm for both. Joining hides one 5 cm side from each rectangle, so take away $5 + 5 = 10$ cm: $32 - 10 = 22$ cm."
+  },
+  "whyOnTest": "Joining shapes hides the touching sides, and which sides touch changes the answer, so drawing the joined shape is the reliable step.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

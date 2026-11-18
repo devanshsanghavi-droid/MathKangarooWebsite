@@ -1,0 +1,56 @@
+{
+  "id": "AC-0088",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "hard",
+  "statement": "The equation $(x + 3)(ax^2 + bx + c) = 2x^3 + 5x^2 - 4x - 3$ is true for all values of $x$, where $a$, $b$ and $c$ are constants. What is the value of $b$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-\\tfrac{4}{3}$",
+      "correct": false,
+      "misconception": "I thought the $x$ term came only from $3 \\cdot bx$, so I solved $3b = -4$."
+    },
+    {
+      "key": "B",
+      "text": "$-1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I matched $b$ directly to the $x^2$ coefficient on the right side without expanding the left side."
+    },
+    {
+      "key": "D",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I expanded as if the factor were $x - 3$, so I used $b - 3a = 5$ with $a = 2$."
+    }
+  ],
+  "hints": [
+    "Expand the left side and match the coefficients of like powers of $x$.",
+    "The $x^3$ terms give $a$ right away. The $x^2$ terms on the left are $bx^2$ and $3ax^2$.",
+    "With $a = 2$, the $x^2$ coefficients give $b + 3(2) = 5$."
+  ],
+  "solutions": {
+    "reliable": "Expanding gives $(x + 3)(ax^2 + bx + c) = ax^3 + (b + 3a)x^2 + (c + 3b)x + 3c$. Matching coefficients: $a = 2$; $b + 3a = 5$, so $b = -1$; $3c = -3$, so $c = -1$. Check the $x$ term: $c + 3b = -1 - 3 = -4$, which matches.",
+    "elegant": "Divide $2x^3 + 5x^2 - 4x - 3$ by $x + 3$ with synthetic division using $-3$: the row is $2, -1, -1$ with remainder $0$, so the quotient is $2x^2 - x - 1$ and $b = -1$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

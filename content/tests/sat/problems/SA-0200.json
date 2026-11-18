@@ -1,0 +1,56 @@
+{
+  "id": "SA-0200",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-01",
+  "difficulty": "hard",
+  "statement": "For all real numbers $x$, $3^{2x + 1} + 9^x = k \\cdot 9^x$, where $k$ is a constant. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I ignored the $+1$ in the exponent and treated $3^{2x + 1}$ as $3^{2x} = 9^x$, so I got $1 + 1 = 2$."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I rewrote $3^{2x + 1}$ as $3 \\cdot 9^x$ but then left out the $9^x$ term, so I gave only its coefficient, $3$."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I read $3^{2x + 1}$ as $(3^2)^{x + 1} = 9^{x + 1} = 9 \\cdot 9^x$, so I got $9 + 1 = 10$."
+    }
+  ],
+  "hints": [
+    "Write both terms with the same base: $9^x = (3^2)^x = 3^{2x}$.",
+    "Use the rule $a^{m + n} = a^m \\cdot a^n$: $3^{2x + 1} = 3^{2x} \\cdot 3^1 = 3 \\cdot 9^x$.",
+    "$3 \\cdot 9^x + 1 \\cdot 9^x$ has a common factor of $9^x$."
+  ],
+  "solutions": {
+    "reliable": "Since $9^x = (3^2)^x = 3^{2x}$, the product rule for exponents gives $3^{2x + 1} = 3^{2x} \\cdot 3 = 3 \\cdot 9^x$. So $3^{2x + 1} + 9^x = 3 \\cdot 9^x + 9^x = (3 + 1) \\cdot 9^x = 4 \\cdot 9^x$, and $k = 4$. Check at $x = 1$: $3^3 + 9^1 = 27 + 9 = 36 = 4 \\cdot 9$.",
+    "elegant": "Since the equation holds for every $x$, take $x = 0$: $3^1 + 9^0 = 3 + 1 = 4 = k \\cdot 1$, so $k = 4$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

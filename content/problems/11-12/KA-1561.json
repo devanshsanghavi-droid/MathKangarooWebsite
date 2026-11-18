@@ -1,0 +1,68 @@
+{
+  "id": "KA-1561",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Three of the 8 corners of a cube are chosen. In how many ways can this be done so that the three chosen corners are the vertices of a right-angled triangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the triangles whose sides are all face diagonals, but those are equilateral, not right-angled."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I only counted right-angled triangles lying in a face of the cube, 4 in each face, and missed the ones that cut through the inside."
+    },
+    {
+      "key": "C",
+      "text": "48",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "52",
+      "correct": false,
+      "misconception": "I subtracted only 4 equilateral triangles, thinking there is just one regular tetrahedron inside the cube, but there are two."
+    },
+    {
+      "key": "E",
+      "text": "56",
+      "correct": false,
+      "misconception": "I counted every choice of three corners and forgot that some of the triangles are equilateral."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-09",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "What shapes can three corners of a cube make?",
+    "Count the complement: every triangle on the corners of a cube turns out to be either right-angled or equilateral. Count all choices of three corners, then subtract the equilateral triangles.",
+    "There are $\\binom83 = 56$ choices. An equilateral triangle has three face diagonals as its sides, and it is cut off by the three face diagonals around one corner."
+  ],
+  "solutions": {
+    "reliable": "Take a cube with edge 1. Two corners are at distance 1, $\\sqrt2$ or $\\sqrt3$. Checking the possible triangles, the sides are 1, 1, $\\sqrt2$ or 1, $\\sqrt2$, $\\sqrt3$, both right-angled by Pythagoras, or $\\sqrt2$, $\\sqrt2$, $\\sqrt2$, which is equilateral. Each corner has exactly three face-diagonal neighbours, and they form one equilateral triangle, so there are 8 equilateral triangles, one for each corner. All $\\binom83 = 56$ choices give a triangle, since no three corners of a cube lie on a line, so $56 - 8 = 48$ are right-angled. The transferable idea: when almost everything qualifies, count what does not and subtract.",
+    "elegant": "Count directly. Right angles inside a face: 6 faces with 4 triangles each, 24. Triangles with sides 1, $\\sqrt2$, $\\sqrt3$: choose one of the 4 long diagonals and any of the other 6 corners, 24. Total $24 + 24 = 48$. The transferable idea: sort the triangles by side lengths and count each type."
+  },
+  "whyOnTest": "Classifying the few triangle shapes a cube allows turns the count into one subtraction, and the trap is missing triangles that cut through the cube.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

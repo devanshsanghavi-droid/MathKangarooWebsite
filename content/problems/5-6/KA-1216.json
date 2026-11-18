@@ -1,0 +1,68 @@
+{
+  "id": "KA-1216",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Five different flowerpots are lined up on a windowsill. Two of them hold cactuses, and neither cactus may stand at either end of the row. In how many different orders can the five pots be lined up?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "72",
+      "correct": false,
+      "misconception": "I multiplied by 2 for swapping the two cactuses, but my count for the middle three spots had already included that swap."
+    },
+    {
+      "key": "C",
+      "text": "84",
+      "correct": false,
+      "misconception": "I counted the orders with a cactus at an end, which is the opposite of what was asked."
+    },
+    {
+      "key": "D",
+      "text": "108",
+      "correct": false,
+      "misconception": "I removed only the orders with cactuses at both ends and forgot the orders with a cactus at just one end."
+    },
+    {
+      "key": "E",
+      "text": "120",
+      "correct": false,
+      "misconception": "I counted all orders of the five pots and ignored the rule about the cactuses."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-05",
+    "secondary": [
+      "CNT-11",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Fill the two end spots first.",
+    "Deal with the restricted spots first. The ends must hold the three pots without cactuses; count the ways to fill both ends, then arrange the rest in the middle.",
+    "The left end can take any of the 3 pots without cactuses and the right end any of the other 2. The middle three spots hold the remaining three pots in 3 × 2 × 1 ways."
+  ],
+  "solutions": {
+    "reliable": "The two ends must hold pots without cactuses. There are 3 choices for the left end and then 2 for the right end. The remaining three pots, the two cactuses and one other, fill the middle three spots in 3 × 2 × 1 = 6 ways. So there are 3 × 2 × 6 = 36 orders. The transferable idea: in an arrangement with a restriction, fill the restricted places first.",
+    "elegant": "Count the complement: of the 120 orders, 2 × 24 = 48 have a cactus on the left end, 48 have one on the right end, and 2 × 6 = 12 have both. So 48 + 48 - 12 = 84 orders break the rule and 120 - 84 = 36 do not."
+  },
+  "whyOnTest": "Arrangements with a restriction are counted by filling the restricted places first; the traps are double counting and the complement.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

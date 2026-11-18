@@ -1,0 +1,67 @@
+{
+  "id": "KA-1013",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Kim has 7 cat cards and 5 dog cards. She makes pairs, and both cards in a pair must show the same animal. What is the largest number of pairs she can make?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I only counted the pairs of dog cards."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I only counted the pairs of cat cards."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I put all 12 cards together and halved them, but a cat card and a dog card cannot make a pair."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted the cards, not the pairs."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Make the cat pairs and the dog pairs separately.",
+    "Pairs only form inside each animal. An odd number of cards always leaves one card alone. Count the pairs for each animal, then add.",
+    "7 cat cards make 3 pairs with 1 card left over. 5 dog cards make 2 pairs with 1 card left over."
+  ],
+  "solutions": {
+    "reliable": "Cat cards: 7 = 2 + 2 + 2 + 1, so 3 pairs and 1 card left over. Dog cards: 5 = 2 + 2 + 1, so 2 pairs and 1 card left over. In all 3 + 2 = 5 pairs, with 2 cards that cannot be paired. The idea to keep: an odd group always leaves one out, so two odd groups leave two out.",
+    "elegant": "12 cards would make 6 pairs, but each odd group strands one card. Two cards are stranded, so the other 10 cards make 5 pairs. The idea to keep: count what is left over, then pair the rest."
+  },
+  "whyOnTest": "Odd and even: each odd group leaves one card without a partner, which is why halving all 12 cards gives too many pairs.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

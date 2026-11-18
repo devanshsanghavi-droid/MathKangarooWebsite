@@ -1,0 +1,56 @@
+{
+  "id": "SA-0190",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-05",
+  "difficulty": "medium",
+  "statement": "The concentration $C$, in milligrams per liter, of a medicine in a patient's blood $t$ hours after it is taken is modeled by $C(t) = \\dfrac{50t}{t^2 + 25}$ for $t \\ge 0$. According to the model, the concentration is $4$ milligrams per liter at two different times. What is the later of these two times, in hours?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2.5$",
+      "correct": false,
+      "misconception": "I solved the equation correctly but chose the earlier time, $2.5$ hours."
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I found the time of the highest concentration, $t = 5$, instead of the times when the concentration is $4$."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$12.5$",
+      "correct": false,
+      "misconception": "I ignored the $25$ in the denominator, so I solved $\\dfrac{50t}{t^2} = 4$ and got $t = 12.5$."
+    }
+  ],
+  "hints": [
+    "Set $C(t) = 4$ and clear the fraction.",
+    "$50t = 4(t^2 + 25)$ becomes $4t^2 - 50t + 100 = 0$; divide every term by $2$.",
+    "$2t^2 - 25t + 50 = (2t - 5)(t - 10) = 0$."
+  ],
+  "solutions": {
+    "reliable": "Setting $\\dfrac{50t}{t^2 + 25} = 4$ and multiplying both sides by $t^2 + 25$, which is never zero, gives $50t = 4t^2 + 100$, so $4t^2 - 50t + 100 = 0$ and $2t^2 - 25t + 50 = 0$. This factors as $(2t - 5)(t - 10) = 0$, so $t = 2.5$ or $t = 10$. The later time is $10$ hours. Check: $C(10) = \\frac{500}{125} = 4$.",
+    "elegant": null
+  },
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

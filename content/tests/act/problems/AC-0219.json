@@ -1,0 +1,56 @@
+{
+  "id": "AC-0219",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "medium",
+  "statement": "A paving stone is shaped like a regular hexagon with sides $6$ inches long. What is the area of the top of the stone, in square inches?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I found the area of one of the six equilateral triangles that make up the hexagon, $9\\sqrt{3}$, and forgot to multiply by $6$."
+    },
+    {
+      "key": "B",
+      "text": "$54\\sqrt{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$108$",
+      "correct": false,
+      "misconception": "I split the hexagon into $6$ triangles but used the side, $6$, as each triangle's height, so I got $6 \\cdot \\frac{1}{2} \\cdot 6 \\cdot 6 = 108$."
+    },
+    {
+      "key": "D",
+      "text": "$108\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I used the correct height, $3\\sqrt{3}$, for each of the $6$ triangles but forgot the $\\frac{1}{2}$, so I got $6 \\cdot 6 \\cdot 3\\sqrt{3} = 108\\sqrt{3}$."
+    }
+  ],
+  "hints": [
+    "A regular hexagon splits into $6$ congruent triangles that meet at its center. What kind of triangles are they?",
+    "Each triangle is equilateral with side $6$. Find its height with the Pythagorean theorem or a $30^\\circ$-$60^\\circ$-$90^\\circ$ triangle, then its area.",
+    "Each triangle has height $3\\sqrt{3}$ and area $\\frac{1}{2} \\cdot 6 \\cdot 3\\sqrt{3} = 9\\sqrt{3}$."
+  ],
+  "solutions": {
+    "reliable": "Segments from the center to the six vertices split the hexagon into $6$ equilateral triangles with side $6$. Each has height $\\sqrt{6^2 - 3^2} = \\sqrt{27} = 3\\sqrt{3}$, so each has area $\\frac{1}{2} \\cdot 6 \\cdot 3\\sqrt{3} = 9\\sqrt{3}$. The hexagon's area is $6 \\cdot 9\\sqrt{3} = 54\\sqrt{3} \\approx 93.5$ square inches.",
+    "elegant": "An equilateral triangle with side $s$ has area $\\frac{\\sqrt{3}}{4}s^2$, so the hexagon has area $6 \\cdot \\frac{\\sqrt{3}}{4} \\cdot 36 = 54\\sqrt{3}$."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

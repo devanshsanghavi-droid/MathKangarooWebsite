@@ -1,0 +1,68 @@
+{
+  "id": "KA-1240",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Notebooks cost 1.45 euros each and a pen costs 0.85 euros. Ava buys 3 notebooks and 1 pen and pays with a 10-euro note. How much change does she get?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4.80 euros",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "5.20 euros",
+      "correct": false,
+      "misconception": "I worked out what Ava spent, 5.20 euros, and gave that instead of her change."
+    },
+    {
+      "key": "C",
+      "text": "5.65 euros",
+      "correct": false,
+      "misconception": "I forgot to pay for the pen and took only the 3 notebooks, 4.35 euros, away from 10 euros."
+    },
+    {
+      "key": "D",
+      "text": "5.80 euros",
+      "correct": false,
+      "misconception": "I found the total of 5.20 euros, but when I took it from 10 euros I did 1.00 - 0.20 = 0.80 and then 10 - 5 = 5, forgetting that the euro I borrowed leaves only 9 euros."
+    },
+    {
+      "key": "E",
+      "text": "7.70 euros",
+      "correct": false,
+      "misconception": "I paid for only one notebook and the pen, 2.30 euros, forgetting that Ava bought 3 notebooks."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-06",
+    "secondary": [
+      "MOD-10",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Find the total cost first.",
+    "Work out the cost of the 3 notebooks, add the pen, and take the total away from 10 euros. Counting up from the total to 10 euros is a good way to avoid borrowing slips.",
+    "The 3 notebooks cost 4.35 euros, so the total is 4.35 + 0.85 = 5.20 euros."
+  ],
+  "solutions": {
+    "reliable": "Three notebooks cost $3 \\times 1.45 = 4.35$ euros. With the pen the total is $4.35 + 0.85 = 5.20$ euros. The change is $10.00 - 5.20 = 4.80$ euros. Check by counting up: from 5.20, add 0.80 to reach 6.00, then 4.00 to reach 10.00, which makes 4.80 euros. The transferable idea: find the total first, then the change, and count up to check.",
+    "elegant": "Round the prices: each notebook is 1.50 euros less 5 cents, and the pen is 1 euro less 15 cents. So the total is $4.50 + 1.00 = 5.50$ euros less $0.15 + 0.15 = 0.30$ euros, which is 5.20 euros, and the change is 4.80 euros. Rounding to friendly amounts and correcting afterwards keeps money sums easy to do in your head."
+  },
+  "whyOnTest": "Money problems test keeping track of every item and subtracting decimals carefully; counting up to the note is a quick check.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

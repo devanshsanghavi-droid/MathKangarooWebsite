@@ -1,0 +1,56 @@
+{
+  "id": "SA-0288",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-04",
+  "difficulty": "medium",
+  "statement": "A patio paver is shaped like a regular hexagon with sides $8$ inches long. What is the distance, in inches, between two opposite parallel sides of the paver?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I found the distance from the center to one side, $4\\sqrt{3}$, and did not double it to reach the opposite side."
+    },
+    {
+      "key": "B",
+      "text": "$8\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I split the hexagon into right triangles but used the $45^\\circ$-$45^\\circ$-$90^\\circ$ ratio, so the center-to-side distance came out as $4\\sqrt{2}$ and the total as $8\\sqrt{2}$."
+    },
+    {
+      "key": "C",
+      "text": "$8\\sqrt{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I measured from one corner to the opposite corner, which is two side lengths, $16$, instead of between parallel sides."
+    }
+  ],
+  "hints": [
+    "A regular hexagon splits into six equilateral triangles that meet at the center.",
+    "The distance from the center to a side is the height of one equilateral triangle with side $8$. The distance across is twice that.",
+    "The height of an equilateral triangle with side $8$ is $\\frac{\\sqrt{3}}{2} \\cdot 8 = 4\\sqrt{3}$, from a $30^\\circ$-$60^\\circ$-$90^\\circ$ triangle."
+  ],
+  "solutions": {
+    "reliable": "Joining the center to each corner splits the hexagon into six equilateral triangles with side $8$. The perpendicular from the center to a side is the height of one of these triangles. Half of that triangle is a $30^\\circ$-$60^\\circ$-$90^\\circ$ triangle with hypotenuse $8$ and short leg $4$, so the height is $4\\sqrt{3}$. Opposite sides are on opposite sides of the center, so the distance between them is $2 \\cdot 4\\sqrt{3} = 8\\sqrt{3} \\approx 13.9$ inches.",
+    "elegant": "Take two corners with exactly one corner between them. The segment joining them runs straight across from one of the parallel sides to the other, perpendicular to both. It is also the third side of a triangle with two sides of $8$ and a $120^\\circ$ angle between them, and splitting that triangle into two $30^\\circ$-$60^\\circ$-$90^\\circ$ triangles gives a length of $2 \\cdot 8 \\cdot \\frac{\\sqrt{3}}{2} = 8\\sqrt{3}$."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

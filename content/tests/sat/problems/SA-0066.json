@@ -1,0 +1,56 @@
+{
+  "id": "SA-0066",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "medium",
+  "statement": "A tour boat travels $48$ kilometers downstream in $2$ hours and then makes the $48$-kilometer return trip upstream in $3$ hours. The boat's speed in still water and the speed of the current are both constant. What is the boat's speed in still water, in kilometers per hour?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I solved the system correctly but gave the speed of the current, 4, instead of the boat's speed in still water."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I used the upstream speed, $48 \\div 3 = 16$, as the speed in still water, but the current slows the boat on that leg."
+    },
+    {
+      "key": "C",
+      "text": "$19.2$",
+      "correct": false,
+      "misconception": "I found the average speed for the whole round trip, 96 kilometers in 5 hours, which is not the speed in still water."
+    },
+    {
+      "key": "D",
+      "text": "$20$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Find the boat's actual speed going each way.",
+    "Downstream the current adds to the boat's speed; upstream it subtracts. Write one equation for each direction.",
+    "With $b + c = 24$ and $b - c = 16$, add the equations."
+  ],
+  "solutions": {
+    "reliable": "Downstream the speed is $48 \\div 2 = 24$ km/h and upstream it is $48 \\div 3 = 16$ km/h. With boat speed $b$ and current speed $c$: $b + c = 24$ and $b - c = 16$. Adding gives $2b = 40$, so $b = 20$ km/h (and $c = 4$ km/h).",
+    "elegant": "The current adds the same amount going one way as it takes away going the other, so the still-water speed is halfway between $24$ and $16$, which is $20$ km/h."
+  },
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

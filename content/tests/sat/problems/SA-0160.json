@@ -1,0 +1,56 @@
+{
+  "id": "SA-0160",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-06",
+  "difficulty": "hard",
+  "statement": "The time $T$, in seconds, for a pendulum to complete one full swing is modeled by $T = 2\\pi\\sqrt{\\dfrac{L}{9.8}}$, where $L$ is the length of the pendulum in meters. If the length of a pendulum is increased by $44\\%$, by what percent does $T$ increase, according to the model?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$20\\%$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$22\\%$",
+      "correct": false,
+      "misconception": "I knew the square root makes the change smaller, so I just took half of $44\\%$ and got $22\\%$."
+    },
+    {
+      "key": "C",
+      "text": "$44\\%$",
+      "correct": false,
+      "misconception": "I treated $T$ as if it were proportional to $L$ itself, so I thought a $44\\%$ increase in length gives a $44\\%$ increase in time."
+    },
+    {
+      "key": "D",
+      "text": "$66\\%$",
+      "correct": false,
+      "misconception": "I took the square root of $0.44$ instead of $1.44$, which is about $0.66$, and read that as a $66\\%$ increase."
+    }
+  ],
+  "hints": [
+    "Only the factor $\\sqrt{L}$ changes; $2\\pi$ and $9.8$ stay the same.",
+    "A $44\\%$ increase multiplies $L$ by $1.44$. Find what that does to $\\sqrt{L}$.",
+    "The new time is $2\\pi\\sqrt{\\dfrac{1.44L}{9.8}} = \\sqrt{1.44} \\cdot 2\\pi\\sqrt{\\dfrac{L}{9.8}} = 1.2\\,T$."
+  ],
+  "solutions": {
+    "reliable": "The new length is $1.44L$, so the new time is $2\\pi\\sqrt{\\frac{1.44L}{9.8}} = \\sqrt{1.44}\\cdot 2\\pi\\sqrt{\\frac{L}{9.8}} = 1.2T$. Multiplying $T$ by $1.2$ is a $20\\%$ increase. Check with numbers: for $L = 1$, $T \\approx 2.007$ seconds; for $L = 1.44$, $T \\approx 2.408$ seconds, and $2.408 / 2.007 \\approx 1.20$.",
+    "elegant": "$T$ is proportional to $\\sqrt{L}$. Multiplying $L$ by $1.44 = 1.2^2$ multiplies $T$ by $1.2$, a $20\\%$ increase."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

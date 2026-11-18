@@ -1,0 +1,56 @@
+{
+  "id": "SA-0153",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-05",
+  "difficulty": "medium",
+  "statement": "The function $f$ is defined by $f(x) = \\dfrac{2x + 6}{x - 1}$ for $x \\ne 1$. If $f(a) = 4$, what is the value of $a$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I set only the numerator equal to $4$, solving $2a + 6 = 4$, and got $a = -1$."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{7}{2}$",
+      "correct": false,
+      "misconception": "I multiplied both sides by $a - 1$ but wrote $4a - 1$ instead of $4(a - 1) = 4a - 4$, so $2a + 6 = 4a - 1$ gave $a = \\frac{7}{2}$."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{14}{3}$",
+      "correct": false,
+      "misconception": "I mixed up the input and the output and computed $f(4) = \\frac{14}{3}$ instead of finding the input that gives an output of $4$."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "$f(a) = 4$ means the output is $4$. You are looking for the input $a$.",
+    "Set $\\dfrac{2a + 6}{a - 1} = 4$ and multiply both sides by $a - 1$.",
+    "$2a + 6 = 4(a - 1) = 4a - 4$, so $10 = 2a$."
+  ],
+  "solutions": {
+    "reliable": "Set $\\frac{2a + 6}{a - 1} = 4$. Multiplying both sides by $a - 1$ (which is not $0$ because $a \\ne 1$) gives $2a + 6 = 4a - 4$, so $2a = 10$ and $a = 5$. Check: $f(5) = \\frac{10 + 6}{5 - 1} = \\frac{16}{4} = 4$.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

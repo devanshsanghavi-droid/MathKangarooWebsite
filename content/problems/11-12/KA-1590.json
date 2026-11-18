@@ -1,0 +1,68 @@
+{
+  "id": "KA-1590",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Three of the eight corners of a cube are painted red. Two painted cubes count as the same if one can be turned to look exactly like the other. How many different painted cubes are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I sorted the red corners into 'all on one face' or 'not all on one face', and missed that the second kind splits into two shapes."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the triangle with an edge, a face diagonal and a long diagonal and its mirror image as different, but a turn takes one to the other."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I took the $\\binom{8}{3} = 56$ choices and divided by 8, the number of corners."
+    },
+    {
+      "key": "E",
+      "text": "56",
+      "correct": false,
+      "misconception": "I counted every choice of three corners, $\\binom{8}{3}$, and forgot that turning the cube makes many of them the same."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "GEO-11",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "The three red corners form a triangle. What lengths can its sides have?",
+    "Any two corners of a cube are joined by an edge, a face diagonal or a long diagonal through the middle. Sort the red triangles by their three side types and check each type is one shape up to turning.",
+    "The possible triangles are: edge, edge, face diagonal (all on one face); three face diagonals; and edge, face diagonal, long diagonal. Check the counts add up to 56."
+  ],
+  "solutions": {
+    "reliable": "Two corners are joined by an edge (length 1), a face diagonal ($\\sqrt{2}$) or a long diagonal ($\\sqrt{3}$). Three red corners form a triangle of one of these types: (1) edge, edge, face diagonal, three corners of one face: $6 \\times 4 = 24$ choices; (2) three face diagonals, an equilateral triangle cut off around one corner: 8 choices; (3) edge, face diagonal, long diagonal: the remaining $56 - 24 - 8 = 24$ choices. In types (1) and (3) only the 'do nothing' turn keeps such a triangle in place, so the cube's 24 turns make 24 different copies of one triangle, which is the whole type. In type (2) the 3 turns about a long diagonal keep the triangle in place, so the 24 turns make 8 copies, again the whole type. So there are 3 different cubes. The transferable idea: up to symmetry, classify by something turning cannot change, such as distances, then check each class is a single shape.",
+    "elegant": null
+  },
+  "whyOnTest": "Counting up to rotation means classifying by invariants such as distances; dividing the raw count by something is the tempting wrong shortcut.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

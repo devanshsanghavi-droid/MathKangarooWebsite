@@ -1,0 +1,68 @@
+{
+  "id": "KA-1321",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Whole numbers are written in a square spiral on squared paper. 1 is in the centre, 2 is to its right, 3 is above 2, then 4 and 5 go to the left, 6 and 7 go down, 8, 9 and 10 go to the right, 11 goes up, and so on, turning anticlockwise. Which number is directly below 2026?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2027",
+      "correct": false,
+      "misconception": "I thought the spiral turns downward after 2026, so the next number, 2027, would be below it."
+    },
+    {
+      "key": "B",
+      "text": "2025",
+      "correct": false,
+      "misconception": "I thought the odd square 2025 sits directly under 2026, when in fact it is just to its left."
+    },
+    {
+      "key": "C",
+      "text": "2116",
+      "correct": false,
+      "misconception": "I thought every perfect square, not only the odd ones, sits on the bottom-right diagonal, so I used $46^2 = 2116$."
+    },
+    {
+      "key": "D",
+      "text": "2210",
+      "correct": false,
+      "misconception": "I added one full lap of the next ring, $8 \\times 23 = 184$, to 2026."
+    },
+    {
+      "key": "E",
+      "text": "2209",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-06",
+    "secondary": [
+      "PAT-04",
+      "GEO-02"
+    ]
+  },
+  "hints": [
+    "Where do the numbers 9, 25 and 49 sit in the spiral?",
+    "Patterns in grids: the odd squares 1, 9, 25, 49 and so on lie on one diagonal, each at the bottom-right corner of a ring. Find the odd square just before 2026, then work out what lies around it.",
+    "$45^2 = 2025$ is the bottom-right corner of a ring, and 2026 starts the next ring, one step to its right. The square directly below 2026 is the bottom-right corner of that new ring."
+  ],
+  "solutions": {
+    "reliable": "In the spiral, 9 is at the bottom-right corner of the first ring around 1, 25 at the bottom-right corner of the next ring, and in general each odd square sits one step down and to the right of the previous odd square. Since $45^2 = 2025$, the number 2025 is a bottom-right corner, and 2026 is one step to its right, starting the next ring, which then goes up. The square directly below 2026 is one step down and to the right of 2025, so it is the next bottom-right corner: $47^2 = 2209$. The transferable idea: find the numbers that sit on a simple diagonal, then locate everything else from them.",
+    "elegant": "Check the rule on a small case first: 9 is a corner, 10 is to its right, and directly below 10 is 25, the next odd square. In the same way, below $45^2 + 1 = 2026$ is $47^2 = 2209$."
+  },
+  "whyOnTest": "Locating a big number in a spiral is hopeless by counting; the odd squares on the diagonal turn it into a short pattern argument.",
+  "estSeconds": 220,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

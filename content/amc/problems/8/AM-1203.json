@@ -1,0 +1,66 @@
+{
+  "id": "AM-1203",
+  "contest": "AMC8",
+  "slot": 18,
+  "area": "NT",
+  "topic": "NT-09",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "How many of the perfect squares $1, 4, 9, 16, 25, \\ldots$ that are less than or equal to $2027$ are multiples of $12$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I thought every perfect square is already a multiple of $4$, so I only needed the square to be a multiple of $3$, which happens for $3^2, 6^2, \\ldots, 45^2$."
+    },
+    {
+      "key": "C",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I thought every perfect square is already a multiple of $3$, so I only needed the square to be a multiple of $4$, which happens for $2^2, 4^2, \\ldots, 44^2$."
+    },
+    {
+      "key": "D",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I counted all the perfect squares from $1^2$ to $45^2 = 2025$ and forgot that they had to be multiples of $12$."
+    },
+    {
+      "key": "E",
+      "text": "$168$",
+      "correct": false,
+      "misconception": "I counted the multiples of $12$ up to $2027$ and forgot that they also had to be perfect squares."
+    }
+  ],
+  "hints": [
+    "If $k^2$ is a multiple of $12$, what must be true about $k$ itself?",
+    "A prime that divides $k^2$ must divide $k$. So $k^2$ is a multiple of $3$ exactly when $k$ is, and $k^2$ is a multiple of $4$ exactly when $k$ is even.",
+    "So $k$ must be a multiple of $6$. Count the multiples of $6$ whose squares are at most $2027$, remembering that $45^2 = 2025$."
+  ],
+  "solutions": {
+    "reliable": "Write $12 = 4 \\cdot 3$. If $3$ divides $k^2$, then $3$ divides $k$, because $3$ is prime. Also $k^2$ is a multiple of $4$ exactly when $k$ is even, since an odd number squared is odd and an even number squared is a multiple of $4$. So $k^2$ is a multiple of $12$ exactly when $k$ is a multiple of both $2$ and $3$, that is, a multiple of $6$. (Note that $k$ does not need to be a multiple of $12$: $6^2 = 36 = 12 \\cdot 3$.) We need $(6m)^2 = 36m^2 \\le 2027$, so $m^2 \\le 56.3$, which gives $m = 1, 2, \\ldots, 7$. The squares are $36, 144, 324, 576, 900, 1296, 1764$, so there are $7$ of them.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

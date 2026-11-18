@@ -1,0 +1,65 @@
+{
+  "id": "KA-1088",
+  "band": "1-2",
+  "points": 3,
+  "statement": "A rectangle is longer than it is wide. In how many different ways can it be folded along a straight line so that the two halves match exactly?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought only squares and circles can be folded so the halves match."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I found only the fold that goes up and down and missed the fold that goes across."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted the two middle folds and one corner-to-corner fold."
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought the corner-to-corner folds work like they do on a square."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-08",
+    "secondary": []
+  },
+  "hints": [
+    "Imagine folding a paper rectangle. Try the corners too.",
+    "A fold works only if every corner lands exactly on another corner. Test the fold through the middle each way, then test a fold from one corner to the opposite corner.",
+    "The folds through the middle, one up and down and one across, both work. Fold a long rectangle corner to corner and look at where the corners land."
+  ],
+  "solutions": {
+    "reliable": "Fold the rectangle in half the short way and the halves match. Fold it in half the long way and they match again. A fold from corner to corner does not work: the two triangles have the same size but the corners do not land on each other, because the sides are different lengths. So there are 2 ways. The idea to keep: a fold line works only when every point lands on a matching point.",
+    "elegant": "A square has 4 fold lines because its sides are all equal. Stretching it into a rectangle breaks the two diagonal folds and keeps the two middle folds."
+  },
+  "whyOnTest": "The diagonal of a rectangle is the most common false line of symmetry, so this checks that symmetry is tested, not assumed.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

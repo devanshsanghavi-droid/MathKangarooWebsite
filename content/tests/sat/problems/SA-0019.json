@@ -1,0 +1,56 @@
+{
+  "id": "SA-0019",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "easy",
+  "statement": "What is the value of $y$ in the solution $(x, y)$ to the system of equations $y = 3x - 5$ and $y = x + 7$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I solved for $x$ and got $x = 6$, then gave that as the answer instead of finding $y$."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I set $3x - 5 = x + 7$ but moved the $5$ across as $-5$ and got $2x = 2$, so $x = 1$ and $y = 1 + 7 = 8$."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I added $x$ to $3x$ instead of subtracting it, so I got $4x = 12$, $x = 3$ and $y = 3 + 7 = 10$."
+    },
+    {
+      "key": "D",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Both equations give $y$, so set the right sides equal.",
+    "Solve $3x - 5 = x + 7$ for $x$, then substitute $x$ into either equation to find $y$.",
+    "From $3x - 5 = x + 7$ you get $2x = 12$, so $x = 6$."
+  ],
+  "solutions": {
+    "reliable": "Set the expressions for $y$ equal: $3x - 5 = x + 7$. Then $2x = 12$, so $x = 6$, and $y = 6 + 7 = 13$. Check in the other equation: $3(6) - 5 = 13$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

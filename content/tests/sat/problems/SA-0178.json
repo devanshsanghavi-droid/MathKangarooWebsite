@@ -1,0 +1,56 @@
+{
+  "id": "SA-0178",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-08",
+  "difficulty": "medium",
+  "statement": "The function $f$ is defined by $f(x) = x^2 + x + 3$. The table shows some values of the function $g$. $$\\begin{array}{c|c|c|c|c} x & 0 & 1 & 2 & 3 \\\\ \\hline g(x) & 9 & 15 & 23 & 33 \\end{array}$$ Which of the following could define $g$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$g(x) = f(x - 2)$",
+      "correct": false,
+      "misconception": "I saw that $g(0)$ equals $f(2)$ and decided the graph had moved $2$ units to the right, so I wrote $f(x - 2)$."
+    },
+    {
+      "key": "B",
+      "text": "$g(x) = f(x + 2)$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$g(x) = f(x) + 6$",
+      "correct": false,
+      "misconception": "I compared only the first column, where $g(0) - f(0) = 9 - 3 = 6$, and did not check the other columns."
+    },
+    {
+      "key": "D",
+      "text": "$g(x) = 3f(x)$",
+      "correct": false,
+      "misconception": "I checked only the first two columns, where $3f(0) = 9$ and $3f(1) = 15$, and did not check $x = 2$."
+    }
+  ],
+  "hints": [
+    "Find $f(0)$, $f(1)$, $f(2)$, and so on, and look for the table's outputs among them.",
+    "$f(0) = 3$, $f(1) = 5$, $f(2) = 9$, $f(3) = 15$, $f(4) = 23$, $f(5) = 33$. How does each $g(x)$ compare with these?",
+    "$g(0) = f(2)$, $g(1) = f(3)$, $g(2) = f(4)$ and $g(3) = f(5)$: each output of $g$ is $f$ evaluated $2$ units further along."
+  ],
+  "solutions": {
+    "reliable": "The values of $f$ are $f(2) = 9$, $f(3) = 15$, $f(4) = 23$ and $f(5) = 33$, so $g(x) = f(x + 2)$ for every $x$ in the table. Checking the others: $f(x - 2)$ gives $f(-2) = 5 \\ne 9$ at $x = 0$; $f(x) + 6$ gives $5 + 6 = 11 \\ne 15$ at $x = 1$; and $3f(x)$ gives $3 \\cdot 9 = 27 \\ne 23$ at $x = 2$.",
+    "elegant": null
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

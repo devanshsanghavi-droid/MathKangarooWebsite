@@ -1,0 +1,67 @@
+{
+  "id": "KA-1526",
+  "band": "11-12",
+  "points": 3,
+  "statement": "What is the value of $1 + 2 - 3 + 4 + 5 - 6 + 7 + 8 - 9 + \\dots + 28 + 29 - 30$, where every third number is subtracted?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$108$",
+      "correct": false,
+      "misconception": "I split the list into groups of three correctly but counted only 9 groups instead of 10."
+    },
+    {
+      "key": "B",
+      "text": "$135$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$155$",
+      "correct": false,
+      "misconception": "I worked out each group of three as $3k - 1$ instead of $3k - 3$."
+    },
+    {
+      "key": "D",
+      "text": "$165$",
+      "correct": false,
+      "misconception": "I thought each group of three adds up to $3k$, its last number."
+    },
+    {
+      "key": "E",
+      "text": "$300$",
+      "correct": false,
+      "misconception": "I left out the multiples of 3 instead of subtracting them."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "Look at the numbers in groups of three.",
+    "Adding 30 numbers one by one is slow and error-prone. Group them as $(1 + 2 - 3)$, $(4 + 5 - 6)$, and so on, find a formula for each group, and add the groups.",
+    "The group ending in $3k$ is $(3k - 2) + (3k - 1) - 3k = 3k - 3$, for $k = 1$ to $10$."
+  ],
+  "solutions": {
+    "reliable": "Group the terms in threes: the group ending in $3k$ is $(3k - 2) + (3k - 1) - 3k = 3k - 3$. The groups give $0, 3, 6, \\dots, 27$ for $k = 1, \\dots, 10$, and their sum is $3(0 + 1 + \\dots + 9) = 3 \\times 45 = 135$. The transferable idea: when a pattern of signs repeats, group one full period and add the groups.",
+    "elegant": "All thirty numbers add up to $465$ and the multiples of 3 add up to $165$. Subtracting them instead of adding means taking them away twice: $465 - 2 \\times 165 = 135$."
+  },
+  "whyOnTest": "A long sum with a repeating sign pattern rewards grouping over grinding, the quick decision this skill is about.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

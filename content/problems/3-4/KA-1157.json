@@ -1,0 +1,70 @@
+{
+  "id": "KA-1157",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Each square of a 2-row, 3-column grid holds a stack of at least one cube. The pictures show the stacks from the front and from the right. How many cubes are there?",
+  "figure": {
+    "component": "ViewsFrontAndRight",
+    "alt": "Two views of the stacks. From the front: three columns of cubes, 2, 3 and 1 cubes tall from left to right. From the right: two columns, 1 and 3 cubes tall from left to right."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted only the cubes in the front view, $2 + 3 + 1 = 6$, as if all the stacks stood in one row."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": false,
+      "misconception": "I put the front view in the tall row and only one cube in the short row, forgetting that every square has at least one cube."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I added the cubes in the two views, $6 + 4 = 10$, but some cubes appear in both views."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I copied the front view into both rows, $2 \\times 6 = 12$, which makes the short row too tall for the view from the right."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-12",
+    "secondary": [
+      "GEO-13"
+    ]
+  },
+  "hints": [
+    "Start with the view from the right. What does it tell you about each row?",
+    "One row is never taller than 1 cube, and every square has a cube, so you know that row exactly. Then use the front view to work out the stacks in the other row.",
+    "The short row has 1 cube on each square: 3 cubes. The front columns of 2 and 3 must be stacks in the tall row, and the column that is 1 tall has 1 cube there too. So the tall row has $2 + 3 + 1 = 6$ cubes, and the total is $3 + 6 = 9$."
+  ],
+  "solutions": {
+    "reliable": "From the right, one row is 1 cube tall and the other is 3 tall. In the short row every square has at least one cube but no stack is taller than 1, so it has exactly 1 cube on each square: 3 cubes. From the front the columns are 2, 3 and 1 tall. The short row only reaches 1, so the stacks of 2 and 3 must be in the tall row. In the last column both stacks are 1 tall. So the tall row has 2, 3 and 1 cubes: 6 cubes. Total: $3 + 6 = 9$. The transferable idea: start with the view that pins down a whole row, then let the other view fill in the rest.",
+    "elegant": null
+  },
+  "whyOnTest": "Views of a solid test whether you can rebuild the stacks from two flat pictures and see which cubes each view hides.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

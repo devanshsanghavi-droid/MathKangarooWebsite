@@ -1,0 +1,68 @@
+{
+  "id": "KA-1503",
+  "band": "11-12",
+  "points": 4,
+  "statement": "In triangle $ABC$, $AB = 10$ and $AC = 17$, and the distance from $A$ to the line $BC$ is 8. What is the sum of all the possible lengths of $BC$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I drew only the triangle where the foot of the height from $A$ lies between $B$ and $C$."
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I drew only the triangle where the foot of the height lies outside $BC$, with the angle at $B$ obtuse."
+    },
+    {
+      "key": "D",
+      "text": "$42$",
+      "correct": false,
+      "misconception": "I found the length 21 and then counted the mirror image of that triangle as a second possible length."
+    },
+    {
+      "key": "E",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I assumed the height from $A$ lands at the midpoint of $BC$, so I doubled $BH = 6$."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "GEO-06",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Draw the height from A. Where can its foot be?",
+    "Drop the perpendicular from $A$ to line $BC$ and use Pythagoras in the two right triangles. Then ask whether $B$ and $C$ must lie on opposite sides of the foot, or could be on the same side.",
+    "With foot $H$: $BH = \\sqrt{100 - 64} = 6$ and $CH = \\sqrt{289 - 64} = 15$. $B$ can be on either side of $H$, so $BC$ is $15 + 6$ or $15 - 6$."
+  ],
+  "solutions": {
+    "reliable": "Let $H$ be the foot of the perpendicular from $A$ to line $BC$, so $AH = 8$. In right triangle $ABH$, $BH = \\sqrt{10^2 - 8^2} = 6$. In right triangle $ACH$, $CH = \\sqrt{17^2 - 8^2} = 15$. If $B$ and $C$ are on opposite sides of $H$, then $BC = 6 + 15 = 21$ (all angles acute). If they are on the same side, then $BC = 15 - 6 = 9$ (the angle at $B$ is obtuse). Both triangles exist and satisfy every condition, so the sum is $21 + 9 = 30$. The transferable idea: when a figure is described in words, draw every arrangement the words allow, not just the first one that comes to mind.",
+    "elegant": null
+  },
+  "whyOnTest": "No picture is given, and a quick sketch shows only one of the two triangles; drawing deliberately reveals the second.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

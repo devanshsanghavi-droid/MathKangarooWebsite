@@ -1,0 +1,56 @@
+{
+  "id": "AC-0176",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-06",
+  "difficulty": "easy",
+  "statement": "The table below gives selected values of the function $f$. $$\\begin{array}{c|cccccc} x & 1 & 2 & 3 & 4 & 5 & 6 \\\\ \\hline f(x) & 7 & 4 & 9 & -2 & 6 & 1 \\end{array}$$ The function $g$ is defined by $g(x) = 3f(x - 2) + 1$. What is the value of $g(4)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-5$",
+      "correct": false,
+      "misconception": "I put $4$ straight into $f$ and used $f(4) = -2$, so I got $3(-2) + 1 = -5$, forgetting the $-2$ inside the parentheses."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I thought $x - 2$ meant I should move two places to the right in the table, so I used $f(6) = 1$ and got $3 \\cdot 1 + 1 = 4$."
+    },
+    {
+      "key": "C",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I found $f(2) = 4$ but added the $1$ before multiplying by $3$, so I got $3(4 + 1) = 15$."
+    }
+  ],
+  "hints": [
+    "Start on the inside: when $x = 4$, what number goes into $f$?",
+    "The input to $f$ is $x - 2 = 2$. Read $f(2)$ from the table, then multiply by $3$ and add $1$.",
+    "$g(4) = 3f(2) + 1$, and the table gives $f(2) = 4$, so compute $3 \\cdot 4 + 1$."
+  ],
+  "solutions": {
+    "reliable": "Substitute $x = 4$ into the definition: $g(4) = 3f(4 - 2) + 1 = 3f(2) + 1$. The table gives $f(2) = 4$, so $g(4) = 3 \\cdot 4 + 1 = 12 + 1 = 13$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

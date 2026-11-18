@@ -1,0 +1,56 @@
+{
+  "id": "SA-0290",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-04",
+  "difficulty": "hard",
+  "statement": "In triangle $ABC$, angle $B$ measures $45^\\circ$, angle $C$ measures $30^\\circ$ and $AB = 6\\sqrt{2}$. What is the length of $\\overline{BC}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6 + 2\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I found the altitude $AD = 6$ correctly but treated it as the longer leg of the $30^\\circ$-$60^\\circ$-$90^\\circ$ triangle, so I got $DC = \\frac{6}{\\sqrt{3}} = 2\\sqrt{3}$ and $BC = 6 + 2\\sqrt{3}$."
+    },
+    {
+      "key": "B",
+      "text": "$3\\sqrt{2} + 3\\sqrt{6}$",
+      "correct": false,
+      "misconception": "I used the $30^\\circ$-$60^\\circ$-$90^\\circ$ rule in the $45^\\circ$ triangle and took $AD = \\frac{1}{2} \\cdot 6\\sqrt{2} = 3\\sqrt{2}$, so $BD = 3\\sqrt{2}$, $DC = 3\\sqrt{2} \\cdot \\sqrt{3} = 3\\sqrt{6}$ and $BC = 3\\sqrt{2} + 3\\sqrt{6}$."
+    },
+    {
+      "key": "C",
+      "text": "$6 + 6\\sqrt{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I found $AD = 6$ but then used the hypotenuse $AC = 2 \\cdot 6 = 12$ as if it lay along $\\overline{BC}$, so I got $BC = 6 + 12 = 18$."
+    }
+  ],
+  "hints": [
+    "Triangle $ABC$ has no right angle, so make one. Drop a perpendicular from $A$ to $\\overline{BC}$ and call its foot $D$.",
+    "The altitude splits $ABC$ into a $45^\\circ$-$45^\\circ$-$90^\\circ$ triangle $ABD$ with hypotenuse $AB$ and a $30^\\circ$-$60^\\circ$-$90^\\circ$ triangle $ADC$. Then $BC = BD + DC$.",
+    "In triangle $ABD$, $AD = BD = \\frac{6\\sqrt{2}}{\\sqrt{2}} = 6$. In triangle $ADC$, $AD$ is opposite the $30^\\circ$ angle, so it is the shorter leg and $DC = AD\\sqrt{3}$."
+  ],
+  "solutions": {
+    "reliable": "Angle $A$ measures $180^\\circ - 45^\\circ - 30^\\circ = 105^\\circ$, so both angles at $B$ and $C$ are acute and the foot $D$ of the perpendicular from $A$ lies between $B$ and $C$. Triangle $ABD$ is a $45^\\circ$-$45^\\circ$-$90^\\circ$ triangle with hypotenuse $AB = 6\\sqrt{2}$, so $AD = BD = 6$. Triangle $ADC$ is a $30^\\circ$-$60^\\circ$-$90^\\circ$ triangle with the $30^\\circ$ angle at $C$, so $AD = 6$ is the shorter leg, $DC = 6\\sqrt{3}$ and $AC = 12$. Therefore $BC = BD + DC = 6 + 6\\sqrt{3} \\approx 16.4$. Check with the law of sines: $\\frac{AB}{\\sin 30^\\circ} = 12\\sqrt{2}$ and $\\frac{AC}{\\sin 45^\\circ} = \\frac{12}{\\frac{\\sqrt{2}}{2}} = 12\\sqrt{2}$, which agree.",
+    "elegant": null
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

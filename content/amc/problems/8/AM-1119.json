@@ -1,0 +1,69 @@
+{
+  "id": "AM-1119",
+  "contest": "AMC8",
+  "slot": 15,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-SYMMETRY"
+  ],
+  "statement": "A closed rectangular box has edges of lengths $a$, $b$ and $c$. The diagonals of its three different faces have lengths $\\sqrt{13}$, $\\sqrt{40}$ and $\\sqrt{45}$. What is the volume of the box?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$36$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$49$",
+      "correct": false,
+      "misconception": "I added the three equations and halved to get a squared + b squared + c squared = 49, and then stopped there."
+    },
+    {
+      "key": "C",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I found the edges 2, 3 and 6 and then computed the surface area, 2(6 + 12 + 18) = 72, instead of the volume."
+    },
+    {
+      "key": "D",
+      "text": "$98$",
+      "correct": false,
+      "misconception": "I added the squares of the three face diagonals, 13 + 40 + 45 = 98, and gave that."
+    },
+    {
+      "key": "E",
+      "text": "$1296$",
+      "correct": false,
+      "misconception": "I multiplied a squared, b squared and c squared, 9 times 4 times 36 = 1296, and forgot to take the square root."
+    }
+  ],
+  "hints": [
+    "Each face diagonal is the hypotenuse of a right triangle whose legs are two edges of the box.",
+    "Write $a^2 + b^2 = 13$, $b^2 + c^2 = 40$ and $a^2 + c^2 = 45$, then add all three equations.",
+    "Adding gives $2(a^2 + b^2 + c^2) = 98$, so $a^2 + b^2 + c^2 = 49$. Subtract each equation from $49$ to get each square."
+  ],
+  "solutions": {
+    "reliable": "Name the edges so that $a^2 + b^2 = 13$, $b^2 + c^2 = 40$ and $a^2 + c^2 = 45$. Adding all three, $2(a^2 + b^2 + c^2) = 98$, so $a^2 + b^2 + c^2 = 49$. Then $c^2 = 49 - 13 = 36$, $a^2 = 49 - 40 = 9$ and $b^2 = 49 - 45 = 4$, so the edges are $3$, $2$ and $6$. Check: $9 + 4 = 13$, $4 + 36 = 40$, $9 + 36 = 45$. The volume is $3 \\cdot 2 \\cdot 6 = 36$.",
+    "elegant": "The volume is $abc = \\sqrt{a^2 \\cdot b^2 \\cdot c^2} = \\sqrt{9 \\cdot 4 \\cdot 36} = 3 \\cdot 2 \\cdot 6 = 36$. As a bonus, $a^2 + b^2 + c^2 = 49$ says the box's space diagonal is $7$."
+  },
+  "formulas": [
+    "F-GEO-02",
+    "F-GEO-16"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

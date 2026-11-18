@@ -1,0 +1,56 @@
+{
+  "id": "SA-0235",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-04",
+  "difficulty": "medium",
+  "statement": "A data set of $12$ numbers has a mean of $50$ and a standard deviation of $8$. A $13$th number, $50$, is added to the data set. Which of the following best describes how the mean and the standard deviation change?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "The mean stays the same, and the standard deviation increases.",
+      "correct": false,
+      "misconception": "I thought that adding more values always spreads a data set out more, so the standard deviation had to go up."
+    },
+    {
+      "key": "B",
+      "text": "The mean stays the same, and the standard deviation stays the same.",
+      "correct": false,
+      "misconception": "I thought a value sitting exactly at the mean has no effect at all, but it adds a distance of 0 while increasing the number of values."
+    },
+    {
+      "key": "C",
+      "text": "The mean increases, and the standard deviation stays the same.",
+      "correct": false,
+      "misconception": "I thought adding any positive number makes the mean go up, but a new value equal to the mean leaves the mean unchanged."
+    },
+    {
+      "key": "D",
+      "text": "The mean stays the same, and the standard deviation decreases.",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "How far is the new value from the mean?",
+    "Standard deviation measures typical distance from the mean. Think about what happens to the average distance when you add a value whose distance is $0$.",
+    "The new value adds $0$ to the sum of squared distances but raises the count from $12$ to $13$, so the average squared distance shrinks."
+  ],
+  "solutions": {
+    "reliable": "The new mean is $\\frac{12 \\times 50 + 50}{13} = \\frac{650}{13} = 50$, so the mean is unchanged. The standard deviation is built from the squared distances of the values from the mean. The new value is $0$ from the mean, so the sum of squared distances stays the same while the number of values goes up from $12$ to $13$. Dividing the same total by a larger number gives a smaller result, so the standard deviation decreases.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

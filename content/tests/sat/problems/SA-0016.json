@@ -1,0 +1,56 @@
+{
+  "id": "SA-0016",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "easy",
+  "statement": "Dev loads $\\$60$ onto a transit card. Each bus ride costs $\\$2.25$ and each train ride costs $\\$3.75$. After taking $b$ bus rides and $t$ train rides, he has $\\$9.75$ left on the card. Which equation represents this situation?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2.25b + 3.75t = 60$",
+      "correct": false,
+      "misconception": "I set the cost of the rides equal to the full $60$ dollars and forgot that $9.75$ dollars is still left on the card."
+    },
+    {
+      "key": "B",
+      "text": "$2.25b + 3.75t = 69.75$",
+      "correct": false,
+      "misconception": "I added the $9.75$ dollars left over to the $60$ instead of subtracting it."
+    },
+    {
+      "key": "C",
+      "text": "$3.75b + 2.25t = 50.25$",
+      "correct": false,
+      "misconception": "I subtracted correctly to get $50.25$, but I attached the train fare to $b$ and the bus fare to $t$."
+    },
+    {
+      "key": "D",
+      "text": "$2.25b + 3.75t = 50.25$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Work out how much money Dev actually spent.",
+    "The amount spent is the amount loaded minus what is left. Then write the cost of $b$ bus rides plus the cost of $t$ train rides.",
+    "He spent $60 - 9.75 = 50.25$ dollars, and $b$ bus rides cost $2.25b$ dollars."
+  ],
+  "solutions": {
+    "reliable": "Dev spent $60 - 9.75 = 50.25$ dollars. The bus rides cost $2.25b$ dollars and the train rides cost $3.75t$ dollars, so $2.25b + 3.75t = 50.25$. Check with trips that fit: $19$ bus rides and $2$ train rides cost $42.75 + 7.50 = 50.25$ dollars, which leaves $60 - 50.25 = 9.75$ dollars.",
+    "elegant": "Equivalently, $60 - 2.25b - 3.75t = 9.75$, the amount left on the card, which rearranges to $2.25b + 3.75t = 50.25$."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

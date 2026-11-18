@@ -1,0 +1,56 @@
+{
+  "id": "SA-0063",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "medium",
+  "statement": "Lena has $40$ dollars to spend on granola bars that cost $2$ dollars each and smoothies that cost $5$ dollars each. The equation $2x + 5y = 40$ represents spending all $40$ dollars on $x$ granola bars and $y$ smoothies. If Lena buys $10$ more granola bars and still spends exactly $40$ dollars, how many fewer smoothies does she buy?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I divided the 10 extra bars by the 5-dollar smoothie price, forgetting that each bar costs 2 dollars, so I got 2."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I found that the 10 extra bars cost 20 dollars and gave that amount instead of turning it into smoothies."
+    },
+    {
+      "key": "D",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I multiplied the 10 extra bars by $\\frac{5}{2}$, flipping the price ratio, and got 25."
+    }
+  ],
+  "hints": [
+    "How much money do the $10$ extra granola bars use?",
+    "The money for the extra bars has to come out of the smoothie budget. Divide that money by the price of one smoothie.",
+    "The extra bars cost $2 \\cdot 10 = 20$ dollars, and each smoothie costs 5 dollars."
+  ],
+  "solutions": {
+    "reliable": "Buying $10$ more granola bars costs $2 \\cdot 10 = 20$ more dollars. To keep the total at $40$ dollars, she must spend $20$ dollars less on smoothies, which is $20 \\div 5 = 4$ fewer smoothies.",
+    "elegant": "Solving for $y$ gives $y = 8 - \\frac{2}{5}x$, so $y$ changes by $-\\frac{2}{5}$ for each extra bar. For $10$ extra bars, $y$ changes by $-\\frac{2}{5} \\cdot 10 = -4$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

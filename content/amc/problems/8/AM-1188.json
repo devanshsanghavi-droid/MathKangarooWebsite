@@ -1,0 +1,68 @@
+{
+  "id": "AM-1188",
+  "contest": "AMC8",
+  "slot": 13,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "How many positive divisors of $10! = 1 \\cdot 2 \\cdot 3 \\cdots 10$ are perfect squares?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I halved the exponents of 2, 3 and 5 to get 4, 2 and 1 and multiplied them, 4 times 2 times 1 = 8, forgetting that an exponent of 0 is also allowed."
+    },
+    {
+      "key": "B",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I gave the prime 7 two choices too, 5 times 3 times 2 times 2 = 60, but 7 appears only once in 10!, so a square divisor cannot use it at all."
+    },
+    {
+      "key": "D",
+      "text": "$135$",
+      "correct": false,
+      "misconception": "I assumed that half of all 270 divisors are perfect squares."
+    },
+    {
+      "key": "E",
+      "text": "$270$",
+      "correct": false,
+      "misconception": "I counted all the divisors of 10!, 9 times 5 times 3 times 2 = 270, not just the perfect squares."
+    }
+  ],
+  "hints": [
+    "Write $10!$ as a product of prime powers.",
+    "A divisor is a perfect square when every prime in it has an even exponent. Count the even exponents available for each prime.",
+    "$10! = 2^8 \\cdot 3^4 \\cdot 5^2 \\cdot 7$. The exponent of $2$ can be $0, 2, 4, 6, 8$; of $3$ can be $0, 2, 4$; of $5$ can be $0, 2$; of $7$ only $0$."
+  ],
+  "solutions": {
+    "reliable": "Counting prime factors in $1$ through $10$: the factors of $2$ come from $2, 4, 6, 8, 10$, giving $1 + 2 + 1 + 3 + 1 = 8$; the factors of $3$ come from $3, 6, 9$, giving $1 + 1 + 2 = 4$; the factors of $5$ come from $5, 10$; and $7$ appears once. So $10! = 2^8 \\cdot 3^4 \\cdot 5^2 \\cdot 7$. A square divisor uses an even exponent on each prime: $5$ choices for $2$ ($0, 2, 4, 6, 8$), $3$ choices for $3$, $2$ choices for $5$, and $1$ choice for $7$ (exponent $0$). That gives $5 \\cdot 3 \\cdot 2 \\cdot 1 = 30$.",
+    "elegant": "A square divisor is $k^2$ where $k^2$ divides $2^8 \\cdot 3^4 \\cdot 5^2 \\cdot 7$, which means $k$ divides $2^4 \\cdot 3^2 \\cdot 5 = 720$. The number $720$ has $5 \\cdot 3 \\cdot 2 = 30$ divisors."
+  },
+  "formulas": [
+    "F-NT-01"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1301",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Three consecutive even numbers add up to 78. What do you get when you multiply the smallest of the three by the largest?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "26",
+      "correct": false,
+      "misconception": "I found the middle number, 26, and stopped there instead of answering the question that was asked."
+    },
+    {
+      "key": "B",
+      "text": "672",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "675",
+      "correct": false,
+      "misconception": "I used consecutive numbers 25, 26 and 27 instead of consecutive even numbers, so I multiplied 25 by 27."
+    },
+    {
+      "key": "D",
+      "text": "676",
+      "correct": false,
+      "misconception": "I thought the smallest times the largest is the same as the middle number squared, $26 \\times 26$."
+    },
+    {
+      "key": "E",
+      "text": "780",
+      "correct": false,
+      "misconception": "I divided 78 by 3 and took 26 as the smallest number, so I used 26, 28 and 30 and multiplied 26 by 30."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-01",
+    "secondary": [
+      "MOD-01",
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "Find the three numbers first, then reread what the question wants.",
+    "Three evenly spaced numbers have their mean in the middle. Once you have the middle one, step 2 down and 2 up, then do exactly what the last sentence asks.",
+    "The middle number is $78 \\div 3 = 26$, so the numbers are 24, 26 and 28. Now multiply the smallest by the largest."
+  ],
+  "solutions": {
+    "reliable": "The three numbers are evenly spaced, so the middle one is their mean: $78 \\div 3 = 26$. The numbers are 24, 26 and 28 (check: $24 + 26 + 28 = 78$). The question asks for the smallest times the largest: $24 \\times 28 = 672$. The transferable idea: after finding the natural quantity, reread the last sentence, because the question often asks for one more step.",
+    "elegant": "With middle number 26, the product is $(26 - 2)(26 + 2) = 26^2 - 4 = 676 - 4 = 672$. This also shows why 676, the square of the middle number, is close but wrong."
+  },
+  "whyOnTest": "The natural answer, the middle number, is not what is asked: this tests reading the final question before bubbling.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

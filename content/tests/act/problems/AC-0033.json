@@ -1,0 +1,56 @@
+{
+  "id": "AC-0033",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-03",
+  "difficulty": "hard",
+  "statement": "A painter has $12$ liters of paint that is blue and yellow in the ratio $3:5$. How many liters of blue paint must she add so that the ratio of blue to yellow becomes $3:2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6.75$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$2.7$",
+      "correct": false,
+      "misconception": "I kept the total at 12 liters and made blue $\\tfrac{3}{5}$ of it, 7.2 liters, then subtracted the 4.5 liters of blue already there."
+    },
+    {
+      "key": "C",
+      "text": "$2.25$",
+      "correct": false,
+      "misconception": "I multiplied the 4.5 liters of blue already there by $\\tfrac{3}{2}$ and subtracted 4.5, basing the new amount on the blue instead of the yellow."
+    },
+    {
+      "key": "D",
+      "text": "$0.5$",
+      "correct": false,
+      "misconception": "I read the new ratio backward as yellow to blue, so I made blue $\\tfrac{2}{3}$ of 7.5, which is 5 liters, and subtracted 4.5."
+    }
+  ],
+  "hints": [
+    "Adding blue paint does not change the amount of yellow.",
+    "Find how much blue and yellow are in the 12 liters now. Then use the new ratio with the unchanged yellow to find the new amount of blue.",
+    "Now there are $4.5$ L of blue and $7.5$ L of yellow. The new amount of blue must be $\\tfrac{3}{2}$ of $7.5$ liters."
+  ],
+  "solutions": {
+    "reliable": "The ratio $3:5$ splits 12 liters into 8 parts of $1.5$ liters, so there are $3 \\cdot 1.5 = 4.5$ L of blue and $5 \\cdot 1.5 = 7.5$ L of yellow. Yellow stays at 7.5 L. For blue to yellow to be $3:2$, blue must be $\\tfrac{3}{2} \\cdot 7.5 = 11.25$ L. She must add $11.25 - 4.5 = 6.75$ liters. Check: $11.25 : 7.5 = 3 : 2$. The idea: when only one part of a mixture changes, anchor the new ratio to the part that stays the same.",
+    "elegant": "Set up $\\dfrac{4.5 + b}{7.5} = \\dfrac{3}{2}$, so $4.5 + b = 11.25$ and $b = 6.75$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

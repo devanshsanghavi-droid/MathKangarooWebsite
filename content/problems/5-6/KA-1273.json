@@ -1,0 +1,68 @@
+{
+  "id": "KA-1273",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Exactly one of these five statements about a positive whole number n is false. (1) n is a multiple of 6. (2) n is a multiple of 9. (3) n is a multiple of 4. (4) n is less than 50. (5) n is odd. What is n?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I trusted statement (5), so I kept the statements that fit an odd number, a multiple of 9 below 50, and picked 9, not noticing that two statements are then false."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I decided statement (2) was the false one and took the smallest multiple of both 6 and 4, forgetting that 12 is not odd either."
+    },
+    {
+      "key": "C",
+      "text": "18",
+      "correct": false,
+      "misconception": "I decided statement (3) was the false one and took the smallest multiple of both 6 and 9, forgetting that 18 is not odd either."
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "72",
+      "correct": false,
+      "misconception": "I decided statement (4) was the false one and took the first multiple of 36 above 50, but 72 is even, so statement (5) is false too."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-01",
+    "secondary": [
+      "LOG-09",
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "Which statements cannot both be true?",
+    "An odd number cannot be a multiple of 6 or of 4. So if statement (5) were true, at least two statements would be false. Decide which statement is the false one first.",
+    "Statement (5) is the false one, so n is a multiple of 6, of 9 and of 4, and it is less than 50."
+  ],
+  "solutions": {
+    "reliable": "If n were odd, it could not be a multiple of 6 or of 4, so statements (1) and (3) would both be false, which is one too many. So statement (5) is the false one, and the other four are true. Then n is a multiple of 6, 9 and 4, which means a multiple of 36, and n is less than 50. The only such positive whole number is 36. Check: 36 is a multiple of 6, 9 and 4, it is less than 50, and it is not odd, so exactly one statement is false. The transferable idea: when exactly one statement is false, find two statements that clash; the false one must be among them.",
+    "elegant": null
+  },
+  "whyOnTest": "'Exactly one is false' puzzles test reading the condition precisely and finding statements that cannot all hold together.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

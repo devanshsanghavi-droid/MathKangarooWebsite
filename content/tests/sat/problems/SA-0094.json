@@ -1,0 +1,56 @@
+{
+  "id": "SA-0094",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "hard",
+  "statement": "The points $A(-1, 4)$, $B(3, 12)$, $C(k, 20)$ and $D(m, 0)$ all lie on the same line in the $xy$-plane. What is the value of $k + m$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I used the slope upside down, $\\frac{1}{2}$ instead of 2, so I got $k = 31$ and $m = -9$."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I found $k = 7$, but solving $0 = 2m + 6$ I lost the sign and got $m = 3$."
+    },
+    {
+      "key": "D",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I mixed up the two intercepts and used the $y$-intercept of the line, $6$, as the value of $m$, so I got $7 + 6 = 13$."
+    }
+  ],
+  "hints": [
+    "All four points share one slope.",
+    "Find the slope from $A$ and $B$ and write the equation of the line. Then substitute $y = 20$ and $y = 0$ to find $k$ and $m$.",
+    "The line is $y = 2x + 6$. Solve $20 = 2k + 6$ and $0 = 2m + 6$."
+  ],
+  "solutions": {
+    "reliable": "The slope through $A$ and $B$ is $\\frac{12 - 4}{3 - (-1)} = 2$, so the line is $y - 4 = 2(x + 1)$, or $y = 2x + 6$. For $C$: $20 = 2k + 6$, so $k = 7$. For $D$: $0 = 2m + 6$, so $m = -3$. So $k + m = 4$. Key idea: once the equation of a line is known, a missing coordinate of any point on it comes from substituting the coordinate you have.",
+    "elegant": "Along the line, $y$ rises $2$ for each $1$ that $x$ rises. From $B$ to $C$, $y$ rises $8$, so $x$ rises $4$ and $k = 7$. From $A$ to $D$, $y$ falls $4$, so $x$ falls $2$ and $m = -3$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

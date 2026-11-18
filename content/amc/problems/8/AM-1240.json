@@ -1,0 +1,69 @@
+{
+  "id": "AM-1240",
+  "contest": "AMC8",
+  "slot": 5,
+  "area": "CP",
+  "topic": "CP-11",
+  "types": [
+    "T-PIGEONHOLE",
+    "T-EXTREME"
+  ],
+  "statement": "In a dark room, a jar holds $10$ red, $8$ blue and $6$ yellow candies that feel exactly alike. Rafa takes candies out one at a time without looking. What is the smallest number of candies he must take to be certain that he has at least one blue candy and at least one yellow candy?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I thought 2 candies were enough for one blue and one yellow, but the first two candies could both be red."
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I planned for all 10 reds coming out first and then took one more, but one candy only gives me one of the two colors I need."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I planned for all 10 reds first and then thought 2 more would surely be one blue and one yellow, but both could be blue."
+    },
+    {
+      "key": "D",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I took the worst case as all 10 reds and all 6 yellows before a blue, 10 + 6 + 1 = 17, but taking all 8 blues first is worse."
+    },
+    {
+      "key": "E",
+      "text": "$19$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Think about the unluckiest possible order in which the candies could come out.",
+    "Rafa is not yet done as long as one of the two colors, blue or yellow, is completely missing. How many candies can he hold while still missing one of them?",
+    "He could take all $10$ red and all $8$ blue candies, $18$ in all, and still have no yellow. One more candy must then be yellow."
+  ],
+  "solutions": {
+    "reliable": "Rafa fails as long as he has no blue or no yellow. The most candies he can hold with no yellow is all $10 + 8 = 18$ red and blue candies. The most with no blue is $10 + 6 = 16$. So $18$ candies might not be enough, but after $19$ he must have both: with $19$ candies he cannot be missing yellow (only $18$ are not yellow) or blue (only $16$ are not blue). The answer is $19$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-20"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

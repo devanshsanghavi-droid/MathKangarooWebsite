@@ -1,0 +1,66 @@
+{
+  "id": "AM-1295",
+  "contest": "AMC8",
+  "slot": 21,
+  "area": "CP",
+  "topic": "CP-10",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A rectangle $5$ units wide and $3$ units tall is divided by grid lines into $15$ unit squares. How many rectangles whose sides lie along the grid lines contain the unit square at the exact center of the big rectangle? Squares count as rectangles, and so does the whole $5$ by $3$ rectangle.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I only counted the squares that contain the center square: one 1 by 1, four 2 by 2 and three 3 by 3."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I found 3 choices for the left side, 3 for the right, 2 for the top and 2 for the bottom, but added left and right, and top and bottom, before multiplying: (3 + 3)(2 + 2) = 24."
+    },
+    {
+      "key": "C",
+      "text": "$36$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$54$",
+      "correct": false,
+      "misconception": "I counted the rectangles that do not contain the center square, 90 - 36 = 54."
+    },
+    {
+      "key": "E",
+      "text": "$90$",
+      "correct": false,
+      "misconception": "I counted all the rectangles in the grid, C(6, 2) times C(4, 2) = 90, whether or not they contain the center square."
+    }
+  ],
+  "hints": [
+    "A grid rectangle is fixed by choosing its left, right, top and bottom sides from the grid lines.",
+    "To contain the center square, the left side must be at or to the left of the square's left edge, the right side at or to the right of its right edge, and similarly for the top and bottom.",
+    "There are 3 choices for the left side, 3 for the right, 2 for the top and 2 for the bottom."
+  ],
+  "solutions": {
+    "reliable": "Number the vertical grid lines $0$ to $5$ from left to right and the horizontal grid lines $0$ to $3$ from bottom to top. The center square lies between vertical lines $2$ and $3$ and between horizontal lines $1$ and $2$. A grid rectangle contains it exactly when its left side is on line $0$, $1$ or $2$, its right side on line $3$, $4$ or $5$, its bottom side on line $0$ or $1$, and its top side on line $2$ or $3$. These choices are independent, so the count is $3 \\cdot 3 \\cdot 2 \\cdot 2 = 36$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

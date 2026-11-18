@@ -22,7 +22,14 @@
 
 import { z } from 'zod';
 import { ChoiceSchema, FigureSchema, CalibrationSchema } from './schemas.ts';
-import { AMC_TIERS, AMC_SLOT_MIN, AMC_SLOT_MAX, AMC_PROBLEM_ID_RE } from './amc-tier.ts';
+import {
+  AMC_TIERS,
+  AMC_SLOT_MIN,
+  AMC_SLOT_MAX,
+  AMC_PROBLEM_ID_RE,
+  AMC_CONTESTS,
+  AMC_FORMULA_CONTESTS,
+} from './amc-tier.ts';
 
 export * from './amc-tier.ts';
 
@@ -31,9 +38,8 @@ export * from './amc-tier.ts';
 /* -------------------------------------------------------------------------- */
 
 export const AMC_AREAS = ['ALG', 'GEO', 'NT', 'CP'] as const;
-export const AMC_CONTESTS = ['AMC10', 'AMC12', 'BOTH'] as const;
-/** A formula is tagged with the papers it is useful on; BOTH is spelled as both entries. */
-export const AMC_FORMULA_CONTESTS = ['AMC10', 'AMC12'] as const;
+// AMC_CONTESTS, AMC_FORMULA_CONTESTS, AmcContest, AmcFormulaContest, amcContestFolder and
+// amcInContest live in amc-tier.ts (browser-safe) and are re-exported above.
 export const FORMULA_PRIORITIES = ['must-know', 'good-to-know'] as const;
 
 export const AmcAreaIdSchema = z.enum(AMC_AREAS);
@@ -43,8 +49,6 @@ export const AmcTierSchema = z.enum(AMC_TIERS);
 export const FormulaPrioritySchema = z.enum(FORMULA_PRIORITIES);
 
 export type AmcAreaId = z.infer<typeof AmcAreaIdSchema>;
-export type AmcContest = z.infer<typeof AmcContestSchema>;
-export type AmcFormulaContest = z.infer<typeof AmcFormulaContestSchema>;
 export type FormulaPriority = z.infer<typeof FormulaPrioritySchema>;
 
 export const AMC_TOPIC_ID_RE = /^(ALG|GEO|NT|CP)-\d{2}$/;
@@ -60,16 +64,6 @@ export const FormulaIdSchema = z.string().regex(AMC_FORMULA_ID_RE, 'must look li
 export function amcAreaOf(id: string): AmcAreaId | null {
   const match = /^(?:F-)?(ALG|GEO|NT|CP)-\d{2}$/.exec(id);
   return match ? (match[1] as AmcAreaId) : null;
-}
-
-/** Folder under content/amc/problems/: BOTH problems live with the AMC 10 ones. */
-export function amcContestFolder(contest: AmcContest): '10' | '12' {
-  return contest === 'AMC12' ? '12' : '10';
-}
-
-/** Does a problem tagged `contest` belong on the given paper? BOTH belongs on either. */
-export function amcInContest(contest: AmcContest, paper: AmcFormulaContest): boolean {
-  return contest === 'BOTH' || contest === paper;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -91,7 +85,8 @@ export const AmcTopicSchema = z
     area: AmcAreaIdSchema,
     /** 1-2 sentences. */
     description: z.string().min(40).max(400),
-    /** True when the topic is on the AMC 12 syllabus but not the AMC 10 one (trig, logs...). */
+    /** True when the topic is on the AMC 12 syllabus but not the AMC 10 one (trig, logs...).
+     * Such a topic never appears on AMC 8 either. */
     amc12Only: z.boolean(),
   })
   .strict();
@@ -121,7 +116,7 @@ export type AmcProblemType = z.infer<typeof AmcProblemTypeSchema>;
 export type AmcTaxonomy = z.infer<typeof AmcTaxonomySchema>;
 
 /* -------------------------------------------------------------------------- */
-/* Problem - content/amc/problems/<10|12>/<ID>.json                            */
+/* Problem - content/amc/problems/<8|10|12>/<ID>.json                           */
 /* -------------------------------------------------------------------------- */
 
 export const AmcProblemSchema = z
@@ -174,7 +169,7 @@ export const FormulaSchema = z
     /** The common mistake, in plain words. */
     pitfall: z.string().min(20).max(400),
     priority: FormulaPrioritySchema,
-    contests: z.array(AmcFormulaContestSchema).min(1).max(2),
+    contests: z.array(AmcFormulaContestSchema).min(1).max(AMC_FORMULA_CONTESTS.length),
     /** Optional problem-type ids this formula is the usual tool for. */
     types: z.array(AmcTypeIdSchema).optional(),
     /** Optional short derivation or reason it is true. Inline math in `$...$`. */

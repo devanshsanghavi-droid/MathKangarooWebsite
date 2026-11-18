@@ -1,0 +1,56 @@
+{
+  "id": "AC-0025",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-07",
+  "difficulty": "hard",
+  "statement": "Matrices $M$ and $N$ are shown below. $$M = \\begin{bmatrix} 3 & 1 \\\\ -2 & 4 \\end{bmatrix}, \\quad N = \\begin{bmatrix} 2 & -1 \\\\ 5 & 0 \\end{bmatrix}$$ What is the determinant of the product $MN$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$70$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I found $\\det M = 14$ and $\\det N = 5$ and added them, thinking the determinant of a product is the sum of the determinants."
+    },
+    {
+      "key": "C",
+      "text": "$-10$",
+      "correct": false,
+      "misconception": "I multiplied matching entries to get $\\begin{bmatrix} 6 & -1 \\\\ -10 & 0 \\end{bmatrix}$, as if matrix products work entry by entry, and its determinant is $-10$."
+    },
+    {
+      "key": "D",
+      "text": "$-50$",
+      "correct": false,
+      "misconception": "I found each determinant as $ad + bc$ instead of $ad - bc$, getting 10 for $M$ and $-5$ for $N$, and multiplied them to get $-50$."
+    }
+  ],
+  "hints": [
+    "You can multiply the matrices first, or use the fact that the determinant of a product is the product of the determinants.",
+    "For $\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$ the determinant is $ad - bc$. Find $\\det M$ and $\\det N$.",
+    "$\\det M = 3 \\cdot 4 - 1 \\cdot (-2) = 14$ and $\\det N = 2 \\cdot 0 - (-1) \\cdot 5 = 5$."
+  ],
+  "solutions": {
+    "reliable": "Multiply each row of $M$ by each column of $N$: $MN = \\begin{bmatrix} 3 \\cdot 2 + 1 \\cdot 5 & 3(-1) + 1 \\cdot 0 \\\\ -2 \\cdot 2 + 4 \\cdot 5 & -2(-1) + 4 \\cdot 0 \\end{bmatrix} = \\begin{bmatrix} 11 & -3 \\\\ 16 & 2 \\end{bmatrix}$. Its determinant is $11 \\cdot 2 - (-3)(16) = 22 + 48 = 70$.",
+    "elegant": "$\\det(MN) = \\det M \\cdot \\det N = (12 + 2)(0 + 5) = 14 \\cdot 5 = 70$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0110",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-06",
+  "difficulty": "easy",
+  "statement": "A food truck's daily profit $P$, in dollars, from selling $n$ tacos is modeled by the equation $P = 3.25n - 140$. Which of the following is the best interpretation of the number $140$ in this model?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "The truck must sell $140$ tacos to break even.",
+      "correct": false,
+      "misconception": "I thought the number subtracted in the model was the number of tacos needed to cover costs, but breaking even means $3.25n = 140$, which is about $43$ tacos."
+    },
+    {
+      "key": "B",
+      "text": "The truck's profit increases by $\\$140$ for each additional taco sold.",
+      "correct": false,
+      "misconception": "I mixed up the constant term with the rate of change. The change in profit for each extra taco is the coefficient $3.25$, not $140$."
+    },
+    {
+      "key": "C",
+      "text": "The most profit the truck can make in one day is $\\$140$.",
+      "correct": false,
+      "misconception": "I thought the constant set a limit on the profit, but in this model profit keeps growing as $n$ increases, so there is no maximum."
+    },
+    {
+      "key": "D",
+      "text": "The truck has $\\$140$ in daily costs that do not depend on how many tacos it sells.",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "What is $P$ when $n = 0$?",
+    "The coefficient of $n$ is the change in profit per taco. The constant tells you what happens when no tacos are sold.",
+    "When $n = 0$, $P = -140$: the truck loses $\\$140$ even on a day it sells nothing."
+  ],
+  "solutions": {
+    "reliable": "When $n = 0$, the model gives $P = 3.25(0) - 140 = -140$, so on a day with no sales the truck loses $\\$140$. That is the part of the daily cost that does not depend on the number of tacos sold, such as fuel or a parking permit. The $3.25$ is the profit from each taco.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,65 @@
+{
+  "id": "KA-1093",
+  "band": "1-2",
+  "points": 3,
+  "statement": "Max has four 10-cent coins. How many 5-cent coins are worth the same amount?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I divided 10 by 5 and forgot that Max has four 10-cent coins."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought the same number of coins is worth the same amount."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "20",
+      "correct": false,
+      "misconception": "I multiplied 4 by 5 instead of working out how many fives make 40."
+    },
+    {
+      "key": "E",
+      "text": "40",
+      "correct": false,
+      "misconception": "I gave the amount of money in cents, not the number of coins."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-06",
+    "secondary": []
+  },
+  "hints": [
+    "Find how much money Max has first.",
+    "Work out the total amount in cents, then count how many 5-cent coins make that amount. Each 10-cent coin can be swapped for a set of 5-cent coins.",
+    "Four 10-cent coins make 40 cents. Count in fives up to 40."
+  ],
+  "solutions": {
+    "reliable": "Four 10-cent coins are worth 40 cents. Counting in fives, 5, 10, 15, 20, 25, 30, 35, 40, takes 8 coins. The idea to keep: change coins into an amount of money before comparing them.",
+    "elegant": "Each 10-cent coin is worth two 5-cent coins, so four of them are worth $4 \\times 2 = 8$ coins."
+  },
+  "whyOnTest": "Swapping coins of one value for another checks that the amount, not the number of coins, is what stays the same.",
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

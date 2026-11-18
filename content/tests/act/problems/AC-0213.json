@@ -1,0 +1,56 @@
+{
+  "id": "AC-0213",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "medium",
+  "statement": "A ski lift cable runs in a straight line from the base station to the top station. The top station is $420$ meters higher than the base station and $1{,}100$ meters away from it horizontally. To the nearest degree, what angle does the cable make with the horizontal?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$21^\\circ$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$22^\\circ$",
+      "correct": false,
+      "misconception": "I used inverse sine of $\\frac{420}{1100}$, treating $1{,}100$ meters as the length of the cable instead of the horizontal distance."
+    },
+    {
+      "key": "C",
+      "text": "$68^\\circ$",
+      "correct": false,
+      "misconception": "I used inverse cosine of $\\frac{420}{1100}$, but cosine compares the adjacent side to the hypotenuse, and neither number is the hypotenuse."
+    },
+    {
+      "key": "D",
+      "text": "$69^\\circ$",
+      "correct": false,
+      "misconception": "I put the horizontal distance over the rise, $\\frac{1100}{420}$, so I found the angle the cable makes with a vertical line."
+    }
+  ],
+  "hints": [
+    "The rise and the horizontal distance are the two legs of a right triangle. Which one is opposite the angle you want?",
+    "The rise is opposite the angle and the horizontal distance is adjacent to it, so use tangent, then inverse tangent.",
+    "$\\tan \\theta = \\frac{420}{1100} \\approx 0.382$, so $\\theta = \\tan^{-1}(0.382)$."
+  ],
+  "solutions": {
+    "reliable": "Let $\\theta$ be the angle with the horizontal. The $420$-meter rise is opposite $\\theta$ and the $1{,}100$-meter horizontal distance is adjacent to it, so $\\tan \\theta = \\frac{420}{1100} \\approx 0.382$. A calculator gives $\\theta = \\tan^{-1}(0.382) \\approx 20.9^\\circ$, which rounds to $21^\\circ$.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

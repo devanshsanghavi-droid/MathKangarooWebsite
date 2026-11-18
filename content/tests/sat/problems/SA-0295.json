@@ -1,0 +1,56 @@
+{
+  "id": "SA-0295",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "hard",
+  "statement": "From a boat on a calm lake, the angle of elevation to the top of a vertical cliff is $52^\\circ$. The boat then sails $40$ meters straight toward the base of the cliff, and the angle of elevation to the top becomes $67^\\circ$. To the nearest meter, how tall is the cliff above the water?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I subtracted the angles to get $15^\\circ$ and computed $40 \\tan 15^\\circ \\approx 11$."
+    },
+    {
+      "key": "B",
+      "text": "$51$",
+      "correct": false,
+      "misconception": "I treated the $40$ meters as the whole distance from the first position to the cliff and computed $40 \\tan 52^\\circ \\approx 51$."
+    },
+    {
+      "key": "C",
+      "text": "$94$",
+      "correct": false,
+      "misconception": "I treated the $40$ meters as the distance from the second position to the cliff and computed $40 \\tan 67^\\circ \\approx 94$."
+    },
+    {
+      "key": "D",
+      "text": "$112$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The $40$ meters is the gap between the two positions, not the distance to the cliff. Let the height be $h$.",
+    "From each position, the horizontal distance to the cliff is $\\frac{h}{\\tan(\\text{angle})}$. The two distances differ by $40$.",
+    "$\\frac{h}{\\tan 52^\\circ} - \\frac{h}{\\tan 67^\\circ} = 40$. Factor out $h$ and use a calculator."
+  ],
+  "solutions": {
+    "reliable": "Let $h$ be the height of the cliff. From the first position the horizontal distance to the cliff is $\\frac{h}{\\tan 52^\\circ}$, and from the second it is $\\frac{h}{\\tan 67^\\circ}$. These differ by $40$ meters, so $h\\left(\\frac{1}{\\tan 52^\\circ} - \\frac{1}{\\tan 67^\\circ}\\right) = 40$. With $\\frac{1}{\\tan 52^\\circ} \\approx 0.7813$ and $\\frac{1}{\\tan 67^\\circ} \\approx 0.4245$, the difference is about $0.3568$, so $h \\approx \\frac{40}{0.3568} \\approx 112.1$. The cliff is about $112$ meters tall. Check: the second distance is about $112.1 \\cdot 0.4245 \\approx 47.6$ meters, the first is about $87.6$ meters, and they differ by $40$.",
+    "elegant": null
+  },
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

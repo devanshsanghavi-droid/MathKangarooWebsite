@@ -1,0 +1,62 @@
+{
+  "id": "AM-1041",
+  "contest": "AMC8",
+  "slot": 14,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": ["T-CHOICES"],
+  "statement": "A clock runs fast: in every real hour, its hands move as if $65$ minutes had passed. The clock is set to the correct time at 6:00 a.m. Later that same day, the clock shows 7:00 p.m. What is the correct time at that moment?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5:55 p.m.",
+      "correct": false,
+      "misconception": "I subtracted 5 minutes for each of the 13 hours the clock shows, 65 minutes in all, but the clock gains 5 minutes per real hour, and only 12 real hours have passed."
+    },
+    {
+      "key": "B",
+      "text": "6:00 p.m.",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "6:55 p.m.",
+      "correct": false,
+      "misconception": "I subtracted only 5 minutes, as if the clock gained 5 minutes in total instead of 5 minutes every hour."
+    },
+    {
+      "key": "D",
+      "text": "7:00 p.m.",
+      "correct": false,
+      "misconception": "I trusted the clock and gave the time it shows, 7:00 p.m., even though the clock runs fast."
+    },
+    {
+      "key": "E",
+      "text": "8:05 p.m.",
+      "correct": false,
+      "misconception": "I worked out that the clock gained 65 minutes, but I added them to 7:00 p.m. instead of subtracting them."
+    }
+  ],
+  "hints": [
+    "For every $60$ real minutes, the clock moves $65$ minutes.",
+    "From 6:00 a.m. to 7:00 p.m., the clock moves $13$ hours, which is $780$ clock minutes.",
+    "Convert back: $780$ clock minutes take $780 \\cdot \\frac{60}{65}$ real minutes."
+  ],
+  "solutions": {
+    "reliable": "In each real hour the clock moves $65$ minutes. From 6:00 a.m. to 7:00 p.m. it has moved $13 \\cdot 60 = 780$ minutes, so the real time that has passed is $780 / 65 = 12$ hours. The correct time is $12$ hours after 6:00 a.m., which is 6:00 p.m.",
+    "elegant": "Test the choice 6:00 p.m.: in those $12$ real hours the clock gains $12 \\cdot 5 = 60$ minutes, so it shows $13$ hours after 6:00 a.m., which is 7:00 p.m. That matches."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

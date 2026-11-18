@@ -1,0 +1,56 @@
+{
+  "id": "SA-0230",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-03",
+  "difficulty": "easy",
+  "statement": "Of the $900$ runners in a city race, $40\\%$ are in the under-30 age group. Of the runners in the under-30 age group, $15\\%$ finished the race in less than $25$ minutes. How many runners in the under-30 age group finished in less than $25$ minutes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$54$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$135$",
+      "correct": false,
+      "misconception": "I took 15% of all 900 runners, but the 15% applies only to the runners in the under-30 group."
+    },
+    {
+      "key": "C",
+      "text": "$360$",
+      "correct": false,
+      "misconception": "I found the number of under-30 runners, 360, and forgot to take 15% of them."
+    },
+    {
+      "key": "D",
+      "text": "$495$",
+      "correct": false,
+      "misconception": "I added 40% and 15% to get 55% and took 55% of 900, but the second percent is a percent of a smaller group."
+    }
+  ],
+  "hints": [
+    "The $15\\%$ is a percent of which group?",
+    "First find how many runners are under 30, then take $15\\%$ of that number.",
+    "There are $0.40 \\times 900 = 360$ runners under 30. Find $15\\%$ of $360$."
+  ],
+  "solutions": {
+    "reliable": "Under-30 runners: $0.40 \\times 900 = 360$. Of these, $15\\%$ finished in less than $25$ minutes: $0.15 \\times 360 = 54$ runners.",
+    "elegant": "A percent of a percent multiplies: $0.40 \\times 0.15 = 0.06$, so $6\\%$ of all $900$ runners, which is $54$, are under 30 and finished in less than $25$ minutes."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

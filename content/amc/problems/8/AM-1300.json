@@ -1,0 +1,69 @@
+{
+  "id": "AM-1300",
+  "contest": "AMC8",
+  "slot": 25,
+  "area": "CP",
+  "topic": "CP-06",
+  "types": [
+    "T-STARS-BARS",
+    "T-BIJECTION"
+  ],
+  "statement": "A fair six-sided die is rolled $4$ times. What is the probability that each roll is greater than or equal to the roll before it? For example, the rolls $2, 2, 3, 6$ work, but the rolls $2, 4, 3, 6$ do not.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{7}{72}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1}{8}$",
+      "correct": false,
+      "misconception": "I gave each of the 3 steps a 1/2 chance of not going down, so I got (1/2)^3."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{343}{1728}$",
+      "correct": false,
+      "misconception": "I found that a roll is at least the roll before it with chance 21/36 = 7/12 and multiplied for the 3 steps, but the steps are not independent."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{7}{27}$",
+      "correct": false,
+      "misconception": "I counted the 56 never-decreasing lists for 3 rolls and divided by 216, so I solved the problem for 3 rolls instead of 4."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{7}{12}$",
+      "correct": false,
+      "misconception": "I counted the 126 never-decreasing lists correctly but divided by 216, the number of outcomes for 3 rolls, instead of 1296."
+    }
+  ],
+  "hints": [
+    "A never-decreasing list of 4 rolls is decided completely by how many 1s, 2s, ..., 6s it contains.",
+    "So count the ways to choose 4 values from 1 to 6 with repetition allowed. Think of 4 stars split by 5 bars into 6 groups.",
+    "There are C(9, 4) = 126 such lists out of 6^4 = 1296 outcomes."
+  ],
+  "solutions": {
+    "reliable": "Each of the $6^4 = 1296$ outcomes is equally likely. A list that never goes down is completely determined by how many times each value $1$ to $6$ appears, because the order is then forced. So we count the ways to write $4 = n_1 + n_2 + \\cdots + n_6$ with each $n_i \\ge 0$. By stars and bars, with $4$ stars and $5$ bars, this is $\\binom{9}{4} = 126$. The probability is $\\frac{126}{1296} = \\frac{7}{72}$.",
+    "elegant": "Match each never-decreasing list $a \\le b \\le c \\le d$ with $a < b + 1 < c + 2 < d + 3$, which are four different numbers from $1$ to $9$. Every set of four different numbers from $1$ to $9$ comes from exactly one such list, so there are $\\binom{9}{4} = 126$ lists, and the probability is $\\frac{126}{1296} = \\frac{7}{72}$."
+  },
+  "formulas": [
+    "F-CP-05"
+  ],
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

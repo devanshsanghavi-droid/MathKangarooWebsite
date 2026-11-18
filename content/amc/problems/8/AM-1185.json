@@ -1,0 +1,67 @@
+{
+  "id": "AM-1185",
+  "contest": "AMC8",
+  "slot": 12,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-CYCLE",
+    "T-MODULAR"
+  ],
+  "statement": "Thirty lanterns hang in a circle, numbered $0$ to $29$. A spark starts at lantern $0$, and every second it moves $8$ places clockwise and lights the lantern it lands on, so its first jump takes it from lantern $0$ to lantern $8$. Lantern $0$ is lit at the start. How many different lanterns are ever lit?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I counted the 15 lanterns and then counted lantern 0 a second time when the spark came back to it."
+    },
+    {
+      "key": "C",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I thought the spark would land on every lantern sooner or later, but it only ever lands on even-numbered lanterns."
+    },
+    {
+      "key": "D",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I found the least common multiple of 8 and 30, which is 120, and gave that, but 120 is how many lanterns the spark passes before it is back at 0, not how many it lights."
+    },
+    {
+      "key": "E",
+      "text": "$240$",
+      "correct": false,
+      "misconception": "I multiplied 8 by 30 to find when the spark gets back to lantern 0, and gave 240 as the answer."
+    }
+  ],
+  "hints": [
+    "After $k$ jumps the spark is at lantern $8k$, minus as many $30$s as needed to get a number from $0$ to $29$.",
+    "Since $8$ and $30$ are both even, the spark only lands on even-numbered lanterns. Does it reach all of them before returning to $0$?",
+    "The spark is back at lantern $0$ when $8k$ is a multiple of $30$. The first time is $k = 15$."
+  ],
+  "solutions": {
+    "reliable": "After $k$ jumps the spark is at the remainder of $8k$ when divided by $30$. It is back at lantern $0$ when $30$ divides $8k$, that is, when $15$ divides $4k$, which first happens at $k = 15$. The positions for $k = 0, 1, \\ldots, 14$ are all different, because if $8i$ and $8j$ left the same remainder, $30$ would divide $8(i - j)$ and $15$ would divide $i - j$. After that the pattern repeats. So exactly $15$ lanterns are lit: all the even-numbered ones, $0, 8, 16, 24, 2, 10, \\ldots$.",
+    "elegant": "The spark always lands on even-numbered lanterns, and there are $30 / \\gcd(8, 30) = 15$ different stops before the pattern repeats, so it lights all $15$ even-numbered lanterns."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

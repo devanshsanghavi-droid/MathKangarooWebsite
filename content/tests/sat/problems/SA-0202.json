@@ -1,0 +1,56 @@
+{
+  "id": "SA-0202",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-01",
+  "difficulty": "medium",
+  "statement": "A post office has two letter-sorting machines that work at constant rates. Machine A sorts $1{,}800$ letters per hour. Working together, machines A and B sort $6{,}000$ letters in $2.5$ hours. How many letters per hour does machine B sort?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$600$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$1{,}500$",
+      "correct": false,
+      "misconception": "I subtracted the 4,500 letters machine A sorts in 2.5 hours from 6,000 and got 1,500, but I forgot to divide by 2.5 hours to turn it into a rate per hour."
+    },
+    {
+      "key": "C",
+      "text": "$2{,}400$",
+      "correct": false,
+      "misconception": "I found the combined rate of both machines, $6{,}000 \\div 2.5 = 2{,}400$ letters per hour, and reported it as machine B's rate."
+    },
+    {
+      "key": "D",
+      "text": "$4{,}200$",
+      "correct": false,
+      "misconception": "I added machine A's rate of 1,800 to the combined rate of 2,400 instead of subtracting it, and got 4,200."
+    }
+  ],
+  "hints": [
+    "First find how many letters per hour the two machines sort together.",
+    "Rates of machines working together add. Subtract machine A's rate from the combined rate.",
+    "Together the machines sort $6{,}000 \\div 2.5 = 2{,}400$ letters per hour. Machine A supplies $1{,}800$ of those letters per hour."
+  ],
+  "solutions": {
+    "reliable": "The combined rate is $\\dfrac{6{,}000}{2.5} = 2{,}400$ letters per hour. If machine B sorts $b$ letters per hour, then $1{,}800 + b = 2{,}400$, so $b = 600$. Check: in $2.5$ hours the machines sort $2.5(1{,}800 + 600) = 2.5(2{,}400) = 6{,}000$ letters.",
+    "elegant": "In $2.5$ hours machine A alone sorts $1{,}800 \\cdot 2.5 = 4{,}500$ letters, so machine B sorts the other $1{,}500$ letters in those $2.5$ hours, which is $1{,}500 \\div 2.5 = 600$ letters per hour."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

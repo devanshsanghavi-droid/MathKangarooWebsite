@@ -1,0 +1,68 @@
+{
+  "id": "KA-1548",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A circular pond has radius 1 m. Points $A$ and $B$ are on opposite sides of it, each 2 m from its centre, with $A$, the centre and $B$ on one straight line. What is the length of the shortest path from $A$ to $B$ that does not enter the pond?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2\\sqrt{3} + \\dfrac{\\pi}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I measured the straight line from A to B, which goes right through the pond."
+    },
+    {
+      "key": "C",
+      "text": "$2\\sqrt{5}$",
+      "correct": false,
+      "misconception": "I walked straight to the top point of the pond and straight down to B, not noticing that both lines cut into the water."
+    },
+    {
+      "key": "D",
+      "text": "$2 + \\pi$",
+      "correct": false,
+      "misconception": "I walked straight to the edge of the pond, went round half of it and walked straight on to B."
+    },
+    {
+      "key": "E",
+      "text": "$2\\sqrt{3} + \\dfrac{2\\pi}{3}$",
+      "correct": false,
+      "misconception": "I used the tangent lines correctly but took the arc between the touching points as $120^\\circ$ instead of $60^\\circ$."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-17",
+    "secondary": [
+      "GEO-07",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "A tight string from A to B round the pond: what shape does it take?",
+    "The shortest path runs along a tangent line from A to the circle, hugs the edge, then leaves along a tangent line to B. Find the tangent lengths with Pythagoras and the arc from the angles at the centre.",
+    "The tangent from A has length $\\sqrt{2^2 - 1^2} = \\sqrt{3}$ and makes a $60^\\circ$ angle at the centre with the line to A, because $\\cos 60^\\circ = \\frac{1}{2}$."
+  ],
+  "solutions": {
+    "reliable": "Let $O$ be the centre. A tight string goes from $A$ along a tangent to a touching point $T$, along the edge to a touching point $U$, then along a tangent to $B$. In right triangle $OTA$, $OT = 1$ and $OA = 2$, so $AT = \\sqrt{3}$ and $\\angle AOT = 60^\\circ$. Likewise $BU = \\sqrt{3}$ and $\\angle BOU = 60^\\circ$. Since $\\angle AOB = 180^\\circ$, the arc from $T$ to $U$ is $180^\\circ - 60^\\circ - 60^\\circ = 60^\\circ$, of length $\\frac{\\pi}{3}$. The total is $2\\sqrt{3} + \\frac{\\pi}{3} \\approx 4.51$ m. The transferable idea: around an obstacle, the shortest path is straight lines that touch it plus the part of the edge between them.",
+    "elegant": null
+  },
+  "whyOnTest": "Around an obstacle the shortest route is tangent, arc, tangent; the tempting straight-line routes either cut through or go too far round.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

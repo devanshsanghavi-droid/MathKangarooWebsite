@@ -1,0 +1,62 @@
+{
+  "id": "AM-1032",
+  "contest": "AMC8",
+  "slot": 10,
+  "area": "ALG",
+  "topic": "ALG-08",
+  "types": ["T-SUBSTITUTION"],
+  "statement": "A taxi charges a fixed fee plus the same amount for every mile. A $4$-mile ride costs $\\$11.00$ and a $10$-mile ride costs $\\$24.50$. How much does a $12$-mile ride cost?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$29.00$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\$29.40$",
+      "correct": false,
+      "misconception": "I treated the fare as proportional to distance using the 10-mile ride, 24.50 × 12 / 10 = 29.40, but the fixed fee does not grow with the distance."
+    },
+    {
+      "key": "C",
+      "text": "$\\$31.40$",
+      "correct": false,
+      "misconception": "I found the 2 dollar fixed fee, but then used 24.50 / 10 = 2.45 as the cost per mile, so I got 2 + 12 × 2.45 = 31.40."
+    },
+    {
+      "key": "D",
+      "text": "$\\$33.00$",
+      "correct": false,
+      "misconception": "I treated the fare as proportional to distance using the 4-mile ride, so a ride 3 times as long cost 11 × 3 = 33."
+    },
+    {
+      "key": "E",
+      "text": "$\\$38.00$",
+      "correct": false,
+      "misconception": "I added the 13.50 difference to the 10-mile fare, as if going from 10 to 12 miles cost as much as going from 4 to 10 miles."
+    }
+  ],
+  "hints": [
+    "The extra money for the $10$-mile ride pays only for the extra miles.",
+    "The extra $6$ miles cost $24.50 - 11.00 = 13.50$ dollars, so each mile costs $13.50 / 6 = 2.25$ dollars.",
+    "A $12$-mile ride is $2$ miles longer than the $10$-mile ride."
+  ],
+  "solutions": {
+    "reliable": "Going from $4$ miles to $10$ miles adds $6$ miles and $\\$13.50$, so each mile costs $\\$2.25$. The fixed fee is $11.00 - 4 \\cdot 2.25 = 2.00$ dollars. A $12$-mile ride costs $2.00 + 12 \\cdot 2.25 = 29.00$ dollars.",
+    "elegant": "Start from the $10$-mile ride and add two more miles at $\\$2.25$ each: $24.50 + 4.50 = 29.00$ dollars. The fixed fee never has to be found."
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

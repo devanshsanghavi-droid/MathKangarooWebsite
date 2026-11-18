@@ -1,0 +1,56 @@
+{
+  "id": "SA-0030",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "medium",
+  "statement": "Water is pumped out of a pond at a constant rate. Three hours after pumping starts, the pond holds $1{,}155$ gallons of water. Eight hours after pumping starts, it holds $980$ gallons. If the pumping continues at the same rate, how many hours after pumping starts will the pond be empty?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I found the rate of 35 gallons per hour and divided the 980 gallons by 35 to get 28, but that is the time after the 8-hour mark, not after pumping started."
+    },
+    {
+      "key": "B",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I divided the 1,155 gallons by 35 to get 33 hours, but that counts from the 3-hour mark, so I forgot to add the 3 hours already gone."
+    },
+    {
+      "key": "C",
+      "text": "$34$",
+      "correct": false,
+      "misconception": "I thought the pond started with only 35 gallons more than at 3 hours, so I used $1{,}190$ gallons and got $1{,}190 \\div 35 = 34$."
+    },
+    {
+      "key": "D",
+      "text": "$36$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "First find how many gallons leave the pond each hour.",
+    "Use the rate to find how much water was in the pond at the start, then find when that amount reaches zero.",
+    "In the $5$ hours between the readings, $175$ gallons left, so $35$ gallons per hour. At the start there were $1{,}155 + 3(35) = 1{,}260$ gallons."
+  ],
+  "solutions": {
+    "reliable": "The rate is $\\dfrac{1{,}155 - 980}{8 - 3} = \\dfrac{175}{5} = 35$ gallons per hour. At $t = 0$ the pond held $1{,}155 + 3(35) = 1{,}260$ gallons, so $W(t) = 1{,}260 - 35t$. Setting $W(t) = 0$ gives $t = 1{,}260 \\div 35 = 36$ hours.",
+    "elegant": "At hour $8$ there are $980$ gallons left, which takes $980 \\div 35 = 28$ more hours to pump out. The pond is empty at $8 + 28 = 36$ hours."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

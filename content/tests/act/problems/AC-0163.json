@@ -1,0 +1,56 @@
+{
+  "id": "AC-0163",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-05",
+  "difficulty": "hard",
+  "statement": "For a positive constant $b \\ne 1$, $\\log_b 2 = p$ and $\\log_b 3 = q$. Which of the following expressions is equal to $\\log_b 72$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3p + 2q$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$2p + 3q$",
+      "correct": false,
+      "misconception": "I swapped the exponents and wrote $72$ as $2^2 \\cdot 3^3$, but that product is $108$, not $72$."
+    },
+    {
+      "key": "C",
+      "text": "$6pq$",
+      "correct": false,
+      "misconception": "I wrote $72 = 2^3 \\cdot 3^2$ but then multiplied the logarithms, $(3p)(2q)$, instead of adding them."
+    },
+    {
+      "key": "D",
+      "text": "$p^3 q^2$",
+      "correct": false,
+      "misconception": "I thought $\\log_b 2^3$ equals $(\\log_b 2)^3$, so I raised $p$ and $q$ to powers and multiplied them."
+    }
+  ],
+  "hints": [
+    "Write 72 as a product of powers of 2 and 3.",
+    "$72 = 2^3 \\cdot 3^2$. Use $\\log_b (MN) = \\log_b M + \\log_b N$ and $\\log_b M^k = k\\log_b M$.",
+    "$\\log_b 72 = \\log_b 2^3 + \\log_b 3^2 = 3\\log_b 2 + 2\\log_b 3$."
+  ],
+  "solutions": {
+    "reliable": "Since $72 = 8 \\cdot 9 = 2^3 \\cdot 3^2$, the product rule gives $\\log_b 72 = \\log_b 2^3 + \\log_b 3^2$, and the power rule gives $3\\log_b 2 + 2\\log_b 3 = 3p + 2q$. Check with $b = 10$: $\\log 72 \\approx 1.857$ and $3(0.301) + 2(0.477) \\approx 1.857$.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

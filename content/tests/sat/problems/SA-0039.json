@@ -1,0 +1,56 @@
+{
+  "id": "SA-0039",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "easy",
+  "statement": "If $2x + y = 17$ and $x + y = 11$, what is the value of $x + 2y$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I solved the system and found $y = 5$, then gave $y$ instead of $x + 2y$."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I subtracted the equations to get $x = 6$ and gave that as the answer, but the question asks for $x + 2y$."
+    },
+    {
+      "key": "C",
+      "text": "$16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I added the two equations and thought the result, 28, was $x + 2y$, but adding them gives $3x + 2y$."
+    }
+  ],
+  "hints": [
+    "Subtracting one equation from the other removes $y$.",
+    "Find $x$ and $y$, then substitute them into $x + 2y$.",
+    "Subtracting gives $x = 6$, and then $y = 11 - 6 = 5$."
+  ],
+  "solutions": {
+    "reliable": "Subtract the second equation from the first: $x = 6$. Then $y = 11 - 6 = 5$. So $x + 2y = 6 + 10 = 16$. Check: $2(6) + 5 = 17$ and $6 + 5 = 11$.",
+    "elegant": "Notice $x + 2y = 3(x + y) - (2x + y) = 3(11) - 17 = 16$, with no need to find $x$ and $y$."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

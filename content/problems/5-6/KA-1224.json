@@ -1,0 +1,68 @@
+{
+  "id": "KA-1224",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Seven children are at a party. Some pairs of them shake hands, each pair at most once. Every child says how many hands they shook, and the seven answers are added up. Which of these could the total be?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "21",
+      "correct": false,
+      "misconception": "I counted each handshake once, giving the largest number of handshakes, 21, but each handshake is counted by both children."
+    },
+    {
+      "key": "B",
+      "text": "35",
+      "correct": false,
+      "misconception": "I imagined every child shaking exactly 5 hands, 7 × 5 = 35, without checking that this can really happen."
+    },
+    {
+      "key": "C",
+      "text": "40",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "41",
+      "correct": false,
+      "misconception": "I imagined everyone shaking hands except one missing handshake and took just 1 off 42, but a missing handshake lowers two answers."
+    },
+    {
+      "key": "E",
+      "text": "49",
+      "correct": false,
+      "misconception": "I let each child shake hands with all 7 children, counting themselves."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "CNT-08",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "How much does one handshake add to the total?",
+    "Each handshake is counted by both children who shake, so think about whether the total must be odd or even, and how big it can possibly be.",
+    "Every handshake adds 2 to the total, so the total is even. There are at most 21 handshakes among 7 children, so the total is at most 42."
+  ],
+  "solutions": {
+    "reliable": "When two children shake hands, each of them counts it, so every handshake adds exactly 2 to the total. The total is therefore twice the number of handshakes, which is even. With 7 children there are 7 × 6 ÷ 2 = 21 pairs, so the total is at most 42. Of the choices, 21, 35, 41 and 49 are odd, and 49 is also too big. 40 is even and at most 42, and it happens when every pair shakes hands except one: 20 handshakes. The transferable idea: when every event is counted twice, the total must be even.",
+    "elegant": "The total is 2 × (number of handshakes), so it is an even number from 0 to 42. Only 40 qualifies."
+  },
+  "whyOnTest": "Parity of a double-counted total is a classic 5-point idea: each handshake adds 2, so an odd total is impossible.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

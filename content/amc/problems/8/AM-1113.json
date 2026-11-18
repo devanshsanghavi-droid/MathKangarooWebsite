@@ -1,0 +1,69 @@
+{
+  "id": "AM-1113",
+  "contest": "AMC8",
+  "slot": 13,
+  "area": "GEO",
+  "topic": "GEO-03",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "The distance between two opposite (parallel) sides of a regular hexagon is $6$. What is the area of the hexagon?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$18\\sqrt{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I treated the hexagon like a 6 by 6 square and got 36."
+    },
+    {
+      "key": "C",
+      "text": "$36\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I found the side length 2 sqrt 3 correctly, but I forgot the one half in the hexagon formula (3 sqrt 3 / 2) times s squared, so I got 36 sqrt 3."
+    },
+    {
+      "key": "D",
+      "text": "$54\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I took 6 as the side length, but 6 is the distance across between opposite sides, which is longer than a side."
+    },
+    {
+      "key": "E",
+      "text": "$72\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I used 6 as the distance from the center to a side. That distance is only half of 6, since the center is halfway between the opposite sides."
+    }
+  ],
+  "hints": [
+    "Split the hexagon into six equilateral triangles that meet at the center.",
+    "The center is halfway between the two opposite sides, so each equilateral triangle has height $3$.",
+    "An equilateral triangle with height $3$ has side $2\\sqrt{3}$ (use a $30$-$60$-$90$ triangle), so its area is $\\frac{1}{2} \\cdot 2\\sqrt{3} \\cdot 3 = 3\\sqrt{3}$."
+  ],
+  "solutions": {
+    "reliable": "The six segments from the center to the vertices cut the hexagon into six equilateral triangles. The center is halfway between the two given parallel sides, so each triangle has height $3$. Half of an equilateral triangle is a $30$-$60$-$90$ triangle whose longer leg is the height $3$, so its short leg is $\\sqrt{3}$ and the side is $2\\sqrt{3}$. Each equilateral triangle has area $\\frac{1}{2} \\cdot 2\\sqrt{3} \\cdot 3 = 3\\sqrt{3}$, and the hexagon has area $6 \\cdot 3\\sqrt{3} = 18\\sqrt{3}$.",
+    "elegant": "With side $s = 2\\sqrt{3}$, the hexagon formula gives $\\frac{3\\sqrt{3}}{2}s^2 = \\frac{3\\sqrt{3}}{2} \\cdot 12 = 18\\sqrt{3}$."
+  },
+  "formulas": [
+    "F-GEO-03",
+    "F-GEO-20"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

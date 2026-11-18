@@ -1,0 +1,68 @@
+{
+  "id": "KA-1279",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A counter starts at 0 on a number line. It makes 10 moves. The first move is 1 step, the second move is 2 steps, and so on, up to 10 steps on the tenth move. Each move can go either left or right. Which of these numbers could the counter finish on?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought the moves could cancel each other out in pairs, so the counter could come back to 0."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I thought that after an even number of moves the counter always lands on an even number."
+    },
+    {
+      "key": "C",
+      "text": "37",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "54",
+      "correct": false,
+      "misconception": "I thought turning the first move round takes just 1 away from 55, which gives 54."
+    },
+    {
+      "key": "E",
+      "text": "57",
+      "correct": false,
+      "misconception": "I only checked that the number is odd and forgot that the counter can get at most 55 steps away."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "LOG-05",
+      "NUM-13"
+    ]
+  },
+  "hints": [
+    "If every move went right, where would the counter end up?",
+    "Start from all moves going right. Think about what happens to the finishing point when one move is turned round to go left. Does it change the parity of the finishing number?",
+    "All moves right gives 1 + 2 + ... + 10 = 55. Turning a move of k steps round changes the end by 2k, an even amount, so the end is always odd and at most 55."
+  ],
+  "solutions": {
+    "reliable": "If every move goes right, the counter ends at 1 + 2 + ... + 10 = 55. Turning a move of k steps round from right to left moves the finish 2k to the left, which is an even change. So every possible finish is 55 minus an even number: it is always odd, and it is never more than 55 or less than -55. That rules out 0, 20 and 54 (even) and 57 (too far). For 37, turn only the 9-step move round: 55 - 18 = 37. The transferable idea: changing a sign in a sum changes the total by an even amount, so the parity never changes.",
+    "elegant": "The sum ±1 ± 2 ± ... ± 10 always has the same parity as 1 + 2 + ... + 10 = 55, because a minus sign instead of a plus changes the total by twice that number. Only odd numbers up to 55 can appear, and 37 is the only choice that fits."
+  },
+  "whyOnTest": "Parity at 4 points: the trick is to see that swapping a direction changes the end point by an even amount.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

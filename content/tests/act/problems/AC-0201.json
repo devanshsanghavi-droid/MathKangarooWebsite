@@ -1,0 +1,56 @@
+{
+  "id": "AC-0201",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-01",
+  "difficulty": "easy",
+  "statement": "The floor of a gazebo is a regular polygon with $12$ sides. What is the measure of each interior angle of the floor?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$30^\\circ$",
+      "correct": false,
+      "misconception": "I divided $360^\\circ$ by $12$, but that gives each exterior angle, not the interior angle."
+    },
+    {
+      "key": "B",
+      "text": "$150^\\circ$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$165^\\circ$",
+      "correct": false,
+      "misconception": "I used $180(n - 1)$ for the angle sum, so I got $180 \\cdot 11 = 1980$ and $1980 \\div 12 = 165$."
+    },
+    {
+      "key": "D",
+      "text": "$300^\\circ$",
+      "correct": false,
+      "misconception": "I used $360(n - 2)$ for the angle sum, so I got $360 \\cdot 10 = 3600$ and $3600 \\div 12 = 300$."
+    }
+  ],
+  "hints": [
+    "Start with the sum of all the interior angles of a polygon.",
+    "The interior angles of an $n$-sided polygon add to $180(n - 2)$ degrees. In a regular polygon they are all equal, so divide by $n$.",
+    "The angles add to $180 \\cdot 10 = 1800$ degrees, shared equally among $12$ angles."
+  ],
+  "solutions": {
+    "reliable": "The interior angles of a $12$-sided polygon add to $180(12 - 2) = 1800^\\circ$. All $12$ angles are equal, so each one is $1800 \\div 12 = 150^\\circ$.",
+    "elegant": "The exterior angles of any convex polygon add to $360^\\circ$, so each exterior angle here is $360 \\div 12 = 30^\\circ$. Each interior angle is $180^\\circ - 30^\\circ = 150^\\circ$."
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1427",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A three-digit number is called balanced if its middle digit equals the sum of its first and last digits, as in 473. How many balanced three-digit numbers are even?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "25",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "45",
+      "correct": false,
+      "misconception": "I counted all balanced numbers and forgot that the number has to be even."
+    },
+    {
+      "key": "C",
+      "text": "16",
+      "correct": false,
+      "misconception": "I forgot that 0 is an even digit, so I never let the last digit be 0."
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": false,
+      "misconception": "I let the first digit be 0 as well, but then the number does not have three digits."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": false,
+      "misconception": "I thought exactly half the choices in each case were even and rounded down, adding $0 + 1 + 1 + 2 + 2 + 3 + 3 + 4 + 4$."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-04",
+    "secondary": [
+      "CNT-11",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Sort the numbers by their middle digit.",
+    "Casework on the middle digit $m$: the first digit is at least 1, the last digit is even, and the two must add up to $m$. Count each case, then add.",
+    "If the middle digit is $m$, the last digit can be $0, 2, 4, \\dots$ as long as it is at most $m - 1$, so that the first digit is at least 1."
+  ],
+  "solutions": {
+    "reliable": "Let the middle digit be $m$, from 1 to 9 (it cannot be 0, since the first digit is at least 1). The last digit $c$ must be even, and the first digit $m - c$ must be at least 1, so $c \\le m - 1$. For $m = 1, 2, \\dots, 9$ the counts are $1, 1, 2, 2, 3, 3, 4, 4, 5$, because $c$ runs through $0, 2, 4, \\dots$ up to $m - 1$. The total is $25$. The transferable idea: choose the case variable that makes every case easy to count, then add.",
+    "elegant": "Split by the last digit instead. Choose an even last digit $c$ and a first digit $a \\ge 1$ with $a + c \\le 9$. For $c = 0, 2, 4, 6, 8$ there are $9, 7, 5, 3, 1$ choices of $a$, and $9 + 7 + 5 + 3 + 1 = 25$. Two different case splits that agree are a strong check."
+  },
+  "whyOnTest": "Casework needs a well-chosen case variable, and the traps are forgetting that 0 is even or letting the leading digit be 0.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

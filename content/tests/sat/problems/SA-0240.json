@@ -1,0 +1,56 @@
+{
+  "id": "SA-0240",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-05",
+  "difficulty": "medium",
+  "statement": "A biologist recorded the area covered by a mold culture at the start of an experiment and once a day after that. In the table, $d$ is the number of days and $A$ is the area, in square millimeters. $$\\begin{array}{c|c|c|c|c} d & 0 & 1 & 2 & 3 \\\\ \\hline A & 500 & 650 & 845 & 1{,}098.5 \\end{array}$$ Which equation best models the data?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$A = 500 + 150d$",
+      "correct": false,
+      "misconception": "I saw that the area went up by 150 on the first day and assumed it went up by 150 every day, but the later increases are 195 and 253.5."
+    },
+    {
+      "key": "B",
+      "text": "$A = 500(0.3)^d$",
+      "correct": false,
+      "misconception": "I knew the area grows by 30% a day, so I used 0.3 as the base, but multiplying by 0.3 each day would shrink the area to 30% of its size."
+    },
+    {
+      "key": "C",
+      "text": "$A = 500(1.3)^d$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$A = 650(1.3)^d$",
+      "correct": false,
+      "misconception": "I used the area after 1 day, 650, as the starting value, but the starting value is the area at d = 0, which is 500."
+    }
+  ],
+  "hints": [
+    "Compare the change from one day to the next. Is it the same each time?",
+    "Check the ratios of consecutive values. A constant ratio means an exponential model, and that ratio is the base.",
+    "$650 \\div 500 = 1.3$, $845 \\div 650 = 1.3$ and $1{,}098.5 \\div 845 = 1.3$, and the value at $d = 0$ is $500$."
+  ],
+  "solutions": {
+    "reliable": "The differences are $150$, $195$ and $253.5$, so the data are not linear. The ratios are $\\frac{650}{500} = 1.3$, $\\frac{845}{650} = 1.3$ and $\\frac{1{,}098.5}{845} = 1.3$, so the area is multiplied by $1.3$ each day: exponential growth of $30\\%$ per day. The starting value at $d = 0$ is $500$, so $A = 500(1.3)^d$. Check: $500(1.3)^3 = 500 \\times 2.197 = 1{,}098.5$.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

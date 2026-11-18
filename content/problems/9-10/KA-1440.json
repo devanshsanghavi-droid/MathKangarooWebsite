@@ -1,0 +1,68 @@
+{
+  "id": "KA-1440",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Twelve cards lie face down on a table. In one move you must turn over exactly seven of the cards (any seven you like). What is the smallest number of moves needed to make all twelve cards lie face up?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I showed that the number of moves must be even and that 2 moves turn 14 cards, at least 12, but I never checked whether 2 moves can really work."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I wanted every card turned over the same number of times, so I needed 7 times the number of moves to be a multiple of 12."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "It can never be done",
+      "correct": false,
+      "misconception": "I thought it was impossible because 12 is not a multiple of 7."
+    },
+    {
+      "key": "E",
+      "text": "3",
+      "correct": false,
+      "misconception": "I thought the number of moves had to be odd because every card is turned an odd number of times, so I took 3, the smallest odd number with $7 \\times 3 \\ge 12$."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-05",
+    "secondary": [
+      "NUM-03",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "How many times must each card be turned over?",
+    "Each card ends face up, so it is turned an odd number of times. Add these up and compare with 7 times the number of moves. A parity argument rules out every odd number of moves.",
+    "Two moves cannot work: in two moves no card is turned three times, so each card would be turned exactly once, which is 12 turns, not 14. Now try to arrange four moves."
+  ],
+  "solutions": {
+    "reliable": "Each card must be turned an odd number of times. With $m$ moves the total number of turns is $7m$, and it is also a sum of twelve odd numbers, which is even. So $m$ is even. Two moves are not enough: a card can be turned at most twice in two moves, and the number must be odd, so every card would be turned exactly once. That is 12 turns, but two moves make $2 \\times 7 = 14$ turns. So $m \\ge 4$. Four moves work: number the cards 1 to 12. The first move leaves out cards 1 and 2, the second leaves out 3 and 4, the third 5 and 6, the fourth 7 and 8, so each move turns six of the cards 1 to 8; each move also turns one of the cards 9, 10, 11, 12, a different one each time. Cards 1 to 8 are turned 3 times each and cards 9 to 12 once each, all odd. The transferable idea: parity shows what is impossible, but the smallest number that passes the parity test still has to be checked, and a construction shows the bound is reached.",
+    "elegant": null
+  },
+  "whyOnTest": "Parity rules out some numbers of moves, but here the smallest number that passes the parity test still fails, so the student must test it and then build an example.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

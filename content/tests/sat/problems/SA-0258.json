@@ -1,0 +1,56 @@
+{
+  "id": "SA-0258",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-02",
+  "difficulty": "medium",
+  "statement": "In triangle $ABC$, the measure of angle $A$ is $20^\\circ$ greater than the measure of angle $B$. The exterior angle at vertex $C$, formed by extending side $BC$ past $C$, measures $130^\\circ$. What is the measure of angle $A$, in degrees?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I took $130^\\circ$ as the interior angle at $C$, so I solved $A + B = 50$ with $A = B + 20$ and got 35."
+    },
+    {
+      "key": "B",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I found the interior angle at $C$, $180 - 130 = 50$, and reported it as angle $A$."
+    },
+    {
+      "key": "C",
+      "text": "$55$",
+      "correct": false,
+      "misconception": "I set up the equations correctly but reported angle $B$, which is 55, instead of angle $A$."
+    },
+    {
+      "key": "D",
+      "text": "$75$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "How is an exterior angle related to the interior angles of the triangle?",
+    "The exterior angle at $C$ equals $A + B$, the sum of the two interior angles not next to it. Combine that with $A = B + 20$.",
+    "Solve $(B + 20) + B = 130$ for $B$, then add $20$ to get $A$."
+  ],
+  "solutions": {
+    "reliable": "The interior angle at $C$ is $180 - 130 = 50$ degrees, so $A + B = 180 - 50 = 130$. With $A = B + 20$, $2B + 20 = 130$, so $B = 55$ and $A = 75$. Check: $75 + 55 + 50 = 180$.",
+    "elegant": "An exterior angle equals the sum of the two remote interior angles, so $A + B = 130$ directly. Two angles that differ by $20$ and add to $130$ are $75$ and $55$, and $A$ is the larger."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

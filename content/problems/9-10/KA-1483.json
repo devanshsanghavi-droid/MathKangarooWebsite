@@ -1,0 +1,68 @@
+{
+  "id": "KA-1483",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Thirteen posts, numbered 0 to 12 in order, stand evenly around a circular track. A runner starts at post 0. In the first minute she runs forward 1 post, in the second minute 2 posts, in the third minute 3 posts, and so on. At which post is she after 100 minutes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I found the remainder of 100, the number of minutes, divided by 13, instead of using the total number of posts run."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I divided the total of 5050 posts by 12, because the posts go up to 12, instead of by the 13 posts."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I worked out $1 + 2 + \\dots + 100$ as $100 \\times 100 \\div 2 = 5000$ instead of 5050."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I found the right remainder, 6, but counted the starting post as post 1 instead of post 0."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "PAT-04",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "How many posts does she pass in total?",
+    "Going once round the track brings her back to post 0, so only the remainder of her total distance, measured in posts, on division by 13 matters. Find the total first.",
+    "The total is $1 + 2 + \\dots + 100 = 5050$ posts."
+  ],
+  "solutions": {
+    "reliable": "In 100 minutes she runs $1 + 2 + \\dots + 100 = \\frac{100 \\times 101}{2} = 5050$ posts forward. Every 13 posts bring her back to post 0, and $5050 = 13 \\times 388 + 6$, so she is at post 6. The transferable idea: positions around a circle of $n$ places are remainders on division by $n$.",
+    "elegant": null
+  },
+  "whyOnTest": "Cyclic positions are remainders in disguise; the test is finding the total distance first and then dividing by the right number of places.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

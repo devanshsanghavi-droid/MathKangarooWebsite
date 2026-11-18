@@ -1,0 +1,56 @@
+{
+  "id": "AC-0295",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-08",
+  "difficulty": "easy",
+  "statement": "The table shows the probability that a city soccer team scores each number of goals in a game. $$\\begin{array}{c|c} \\text{Goals} & \\text{Probability} \\\\ \\hline 0 & 0.20 \\\\ 1 & 0.35 \\\\ 2 & 0.30 \\\\ 3 & 0.15 \\end{array}$$ What is the expected number of goals the team scores in a game?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.25$",
+      "correct": false,
+      "misconception": "I averaged the four probabilities, but they always add to 1, so that average is 0.25 for any table and says nothing about goals."
+    },
+    {
+      "key": "B",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I chose the most likely number of goals, 1, but the expected value weighs every outcome by its probability."
+    },
+    {
+      "key": "C",
+      "text": "$1.4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$1.5$",
+      "correct": false,
+      "misconception": "I averaged 0, 1, 2 and 3 as if they were equally likely, ignoring the probabilities."
+    }
+  ],
+  "hints": [
+    "Expected value is a weighted average of the outcomes.",
+    "Multiply each number of goals by its probability, then add the products.",
+    "Compute $0(0.20) + 1(0.35) + 2(0.30) + 3(0.15)$."
+  ],
+  "solutions": {
+    "reliable": "The expected value is $0(0.20) + 1(0.35) + 2(0.30) + 3(0.15) = 0 + 0.35 + 0.60 + 0.45 = 1.4$ goals.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

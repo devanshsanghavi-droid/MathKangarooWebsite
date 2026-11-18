@@ -1,0 +1,56 @@
+{
+  "id": "AC-0010",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-03",
+  "difficulty": "easy",
+  "statement": "A nurse counts $17$ heartbeats in $15$ seconds. At this rate, how many times does the heart beat in $1$ minute?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1{,}020$",
+      "correct": false,
+      "misconception": "I multiplied 17 by 60, as if the 17 beats happened in one second instead of 15 seconds."
+    },
+    {
+      "key": "B",
+      "text": "$68$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$51$",
+      "correct": false,
+      "misconception": "I multiplied 17 by 3, thinking a minute holds three 15-second intervals instead of four."
+    },
+    {
+      "key": "D",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I divided 60 by 15 to get 4 and then added the 4 to 17 instead of multiplying."
+    }
+  ],
+  "hints": [
+    "How many $15$-second intervals are in one minute?",
+    "One minute is $60$ seconds, which is $60 \\div 15 = 4$ intervals of $15$ seconds.",
+    "Each $15$-second interval has $17$ beats, so multiply $17$ by $4$."
+  ],
+  "solutions": {
+    "reliable": "One minute has $60 \\div 15 = 4$ intervals of $15$ seconds, and each has $17$ beats. So the heart beats $17 \\cdot 4 = 68$ times per minute.",
+    "elegant": "Set up a proportion: $\\frac{17 \\text{ beats}}{15 \\text{ s}} = \\frac{b}{60 \\text{ s}}$, so $b = \\frac{17 \\cdot 60}{15} = 68$."
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

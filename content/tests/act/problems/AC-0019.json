@@ -1,0 +1,56 @@
+{
+  "id": "AC-0019",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-05",
+  "difficulty": "easy",
+  "statement": "A cheetah can run at a top speed of about $112$ kilometers per hour. What is this speed in meters per second, to the nearest tenth? ($1$ kilometer $= 1{,}000$ meters)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$31.1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$403.2$",
+      "correct": false,
+      "misconception": "I remembered that 3.6 links kilometers per hour to meters per second, but I multiplied 112 by 3.6 instead of dividing."
+    },
+    {
+      "key": "C",
+      "text": "$1{,}866.7$",
+      "correct": false,
+      "misconception": "I changed kilometers to meters and divided by 60, which gives meters per minute, not meters per second."
+    },
+    {
+      "key": "D",
+      "text": "$112{,}000$",
+      "correct": false,
+      "misconception": "I changed kilometers to meters but never changed hours to seconds, so I gave meters per hour."
+    }
+  ],
+  "hints": [
+    "Change kilometers to meters and hours to seconds.",
+    "$112$ kilometers is $112{,}000$ meters, and $1$ hour is $60 \\cdot 60 = 3{,}600$ seconds.",
+    "Divide $112{,}000$ meters by $3{,}600$ seconds."
+  ],
+  "solutions": {
+    "reliable": "In one hour the cheetah would cover $112 \\cdot 1{,}000 = 112{,}000$ meters, and one hour is $3{,}600$ seconds. So the speed is $112{,}000 \\div 3{,}600 \\approx 31.1$ meters per second.",
+    "elegant": "Chain the units: $\\frac{112 \\text{ km}}{1 \\text{ h}} \\cdot \\frac{1{,}000 \\text{ m}}{1 \\text{ km}} \\cdot \\frac{1 \\text{ h}}{3{,}600 \\text{ s}} \\approx 31.1 \\text{ m/s}$."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "AM-1090",
+  "contest": "AMC8",
+  "slot": 5,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-SYMMETRY"
+  ],
+  "statement": "On each side of a square with side length $6$, a semicircle is drawn outward, using that side as its diameter. The four semicircular arcs form the boundary of a four-petal shape. What is the perimeter of the four-petal shape?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6\\pi$",
+      "correct": false,
+      "misconception": "I thought the four semicircles fit together into one full circle with diameter 6, so I got $6\\pi$, but four halves make two circles."
+    },
+    {
+      "key": "B",
+      "text": "$12\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$18\\pi$",
+      "correct": false,
+      "misconception": "I found the total area of the four semicircles, $4 \\cdot \\frac{1}{2}\\pi \\cdot 3^2 = 18\\pi$, instead of the length around the shape."
+    },
+    {
+      "key": "D",
+      "text": "$12\\pi + 24$",
+      "correct": false,
+      "misconception": "I added the four sides of the square to the arcs, but the sides are inside the shape, not on its boundary."
+    },
+    {
+      "key": "E",
+      "text": "$24\\pi$",
+      "correct": false,
+      "misconception": "I used 6 as the radius of each semicircle, so each arc was $6\\pi$, but 6 is the diameter."
+    }
+  ],
+  "hints": [
+    "The boundary of the shape is made only of the four arcs.",
+    "Each arc is half of a circle with diameter $6$. The full circle has circumference $6\\pi$.",
+    "Each arc has length $3\\pi$, and there are four of them."
+  ],
+  "solutions": {
+    "reliable": "Each arc is half the circumference of a circle with diameter $6$, so it has length $\\frac{1}{2} \\cdot 6\\pi = 3\\pi$. The sides of the square lie inside the shape, so the boundary is just the four arcs, and the perimeter is $4 \\cdot 3\\pi = 12\\pi$.",
+    "elegant": "Two semicircles of diameter $6$ make one full circle of circumference $6\\pi$. Four of them make two full circles: $2 \\cdot 6\\pi = 12\\pi$."
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

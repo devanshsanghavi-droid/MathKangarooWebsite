@@ -1,0 +1,56 @@
+{
+  "id": "SA-0027",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "medium",
+  "statement": "In the equation $4(2x - k) + 3 = 8x - 17$, $k$ is a constant. If the equation has infinitely many solutions, what is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-5$",
+      "correct": false,
+      "misconception": "I reached $-4k = -20$ but dropped the negative sign when dividing, so I got $k = -5$."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{7}{2}$",
+      "correct": false,
+      "misconception": "I moved the 3 to the right side by adding it, so I got $-4k = -17 + 3 = -14$ and $k = \\dfrac{7}{2}$."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{17}{4}$",
+      "correct": false,
+      "misconception": "I ignored the $+3$ and matched $-4k$ with $-17$, so I got $k = \\dfrac{17}{4}$."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "An equation has infinitely many solutions when both sides are the same expression for every $x$.",
+    "Expand the left side. The $x$ terms already match, so the constant terms must match too.",
+    "The left side is $8x - 4k + 3$. Set $-4k + 3 = -17$ and solve for $k$."
+  ],
+  "solutions": {
+    "reliable": "Expanding, the left side is $8x - 4k + 3$. Both sides have $8x$, so the equation is true for every $x$ exactly when the constants agree: $-4k + 3 = -17$. Then $-4k = -20$ and $k = 5$. Check: with $k = 5$ the left side is $8x - 20 + 3 = 8x - 17$, identical to the right side.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

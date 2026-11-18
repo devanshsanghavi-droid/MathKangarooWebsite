@@ -1,0 +1,68 @@
+{
+  "id": "KA-1514",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Two real numbers have sum 10 and product 20. What is the sum of the squares of their reciprocals, $\\dfrac{1}{x^2} + \\dfrac{1}{y^2}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{1}{2}$",
+      "correct": false,
+      "misconception": "I found the sum of the reciprocals, $\\frac{1}{x} + \\frac{1}{y} = \\frac{10}{20}$, and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{1}{4}$",
+      "correct": false,
+      "misconception": "I squared the sum of the reciprocals, $\\frac{1}{2}$, as if the square of a sum were the sum of the squares."
+    },
+    {
+      "key": "C",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I found $x^2 + y^2 = 100 - 40 = 60$ and forgot that the question asked about the reciprocals."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{3}{20}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I divided $x^2 + y^2 = 60$ by $xy = 20$ instead of by $(xy)^2 = 400$."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-01",
+    "secondary": [
+      "CFT-07",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Write the expression as one fraction before using the facts.",
+    "You do not need $x$ and $y$ themselves. Put the two fractions over a common denominator, then express top and bottom using only the sum and the product.",
+    "$\\frac{1}{x^2} + \\frac{1}{y^2} = \\frac{x^2 + y^2}{(xy)^2}$, and $x^2 + y^2 = (x + y)^2 - 2xy$."
+  ],
+  "solutions": {
+    "reliable": "Combine: $\\frac{1}{x^2} + \\frac{1}{y^2} = \\frac{x^2 + y^2}{x^2y^2}$. The top is $(x + y)^2 - 2xy = 100 - 40 = 60$ and the bottom is $(xy)^2 = 400$. So the value is $\\frac{60}{400} = \\frac{3}{20}$. (Such numbers exist: they are $5 \\pm \\sqrt{5}$.) The transferable idea: re-read what is asked at the end, because three natural stopping points on the way are all wrong answers.",
+    "elegant": "$\\frac{1}{x}$ and $\\frac{1}{y}$ have sum $\\frac{x + y}{xy} = \\frac{1}{2}$ and product $\\frac{1}{20}$. So the sum of their squares is $\\frac{1}{4} - \\frac{2}{20} = \\frac{3}{20}$."
+  },
+  "whyOnTest": "Each step of the calculation produces a number that looks like an answer, so the question rewards reading exactly what is asked.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

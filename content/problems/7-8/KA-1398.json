@@ -1,0 +1,68 @@
+{
+  "id": "KA-1398",
+  "band": "7-8",
+  "points": 4,
+  "statement": "The whole numbers are written in a table that goes on forever to the right and downwards. Row 1 begins 1, 2, 4, 7, 11; row 2 begins 3, 5, 8, 12; row 3 begins 6, 9, 13; row 4 begins 10, 14; row 5 begins 15. What number is in row 5, column 6?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "30",
+      "correct": false,
+      "misconception": "I multiplied the row number by the column number, as in a multiplication table."
+    },
+    {
+      "key": "B",
+      "text": "51",
+      "correct": false,
+      "misconception": "I found the right diagonal but counted along it from the bottom instead of from the top."
+    },
+    {
+      "key": "C",
+      "text": "55",
+      "correct": false,
+      "misconception": "I found the right diagonal but gave its last number instead of the one in row 5."
+    },
+    {
+      "key": "D",
+      "text": "60",
+      "correct": false,
+      "misconception": "I thought the diagonal number was 5 + 6 = 11 instead of 10."
+    },
+    {
+      "key": "E",
+      "text": "50",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-06",
+    "secondary": [
+      "PAT-04",
+      "PAT-07"
+    ]
+  },
+  "hints": [
+    "Follow the numbers 1, 2, 3, 4, 5, 6 in order. Where do they go?",
+    "The numbers fill slanting diagonals: 1; then 2, 3; then 4, 5, 6; each running from row 1 down to column 1. Find the diagonal of row 5, column 6 and its place on it.",
+    "Row r, column c is on diagonal r + c - 1 = 10, at place r = 5 from the top. Diagonals 1 to 9 hold 1 + 2 + ... + 9 = 45 numbers."
+  ],
+  "solutions": {
+    "reliable": "The numbers go along slanting diagonals: 1; then 2, 3; then 4, 5, 6; then 7, 8, 9, 10; each diagonal starting in row 1 and ending in column 1. Diagonal k holds k numbers, and the square in row r and column c is on diagonal r + c - 1, in place r counted from the top. Row 5, column 6 is on diagonal 10, in place 5. The first nine diagonals hold 1 + 2 + ... + 9 = 45 numbers, so diagonal 10 starts with 46, and its fifth number is 50. The transferable idea: find the route the numbers take through a table, then count how many come before the place you want.",
+    "elegant": null
+  },
+  "whyOnTest": "Patterns in tables: spotting the diagonal route the numbers follow, then counting with triangular numbers.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

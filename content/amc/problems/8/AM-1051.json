@@ -1,0 +1,66 @@
+{
+  "id": "AM-1051",
+  "contest": "AMC8",
+  "slot": 18,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "Ana can paint a fence by herself in $4$ hours, Ben can paint it by himself in $6$ hours, and Cal can paint it by himself in $12$ hours. Ana starts painting at 9:00 a.m. Ben joins her at 10:00 a.m., and Cal joins them at 10:30 a.m. Each person works at a steady rate until the fence is finished. At what time is the fence finished?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "11:00 a.m.",
+      "correct": false,
+      "misconception": "I treated all three as starting together at 9:00. Together they paint $\\frac12$ of the fence per hour, so I got 2 hours and 11:00 a.m."
+    },
+    {
+      "key": "B",
+      "text": "11:10 a.m.",
+      "correct": false,
+      "misconception": "I counted the half hour from 10:00 to 10:30 as a full hour of Ana and Ben working, so I had $\\frac14 + \\frac{5}{12} = \\frac23$ done by 10:30 and $40$ more minutes to go."
+    },
+    {
+      "key": "C",
+      "text": "11:30 a.m.",
+      "correct": false,
+      "misconception": "I had Cal join at 10:00 along with Ben, so after Ana's $\\frac14$ the other $\\frac34$ took $1.5$ hours at $\\frac12$ fence per hour."
+    },
+    {
+      "key": "D",
+      "text": "11:35 a.m.",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "12:05 p.m.",
+      "correct": false,
+      "misconception": "I forgot that Ana worked alone from 9:00 to 10:00, so I started the job at 10:00 and had $\\frac{19}{24}$ left at 10:30, which took $95$ more minutes."
+    }
+  ],
+  "hints": [
+    "Think of each person's speed as the fraction of the fence they paint in one hour.",
+    "Ana paints $\\frac14$ of the fence per hour, Ben $\\frac16$ and Cal $\\frac{1}{12}$. Work out how much is painted by 10:00 and by 10:30.",
+    "By 10:30, $\\frac14 + \\frac{5}{24} = \\frac{11}{24}$ of the fence is painted. All three together paint $\\frac12$ of the fence per hour, so find how long the last $\\frac{13}{24}$ takes."
+  ],
+  "solutions": {
+    "reliable": "In fences per hour, Ana paints $\\frac14$, Ben $\\frac16$ and Cal $\\frac{1}{12}$. From 9:00 to 10:00 Ana alone paints $\\frac14$. From 10:00 to 10:30, Ana and Ben paint at $\\frac14 + \\frac16 = \\frac{5}{12}$ per hour for half an hour, which is $\\frac{5}{24}$. By 10:30 the painted part is $\\frac{6}{24} + \\frac{5}{24} = \\frac{11}{24}$, leaving $\\frac{13}{24}$. All three together paint $\\frac14 + \\frac16 + \\frac{1}{12} = \\frac12$ of the fence per hour, so the rest takes $\\frac{13}{24} \\div \\frac12 = \\frac{13}{12}$ hours, which is $65$ minutes. The fence is finished at 11:35 a.m.",
+    "elegant": "Pretend the fence has $12$ equal sections. Ana paints $3$ sections per hour, Ben $2$ and Cal $1$. By 10:00 Ana has painted $3$ sections, and from 10:00 to 10:30 Ana and Ben add $2.5$, for $5.5$. The last $6.5$ sections at $6$ sections per hour take $\\frac{6.5}{6}$ hours, which is $65$ minutes, so they finish at 11:35 a.m."
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

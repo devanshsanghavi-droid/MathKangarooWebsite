@@ -1,0 +1,56 @@
+{
+  "id": "AC-0119",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "hard",
+  "statement": "If $\\dfrac{1}{x} + \\dfrac{1}{y} = \\dfrac{5}{6}$ and $\\dfrac{1}{x} - \\dfrac{1}{y} = \\dfrac{1}{6}$, what is the value of $x + y$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{5}{6}$",
+      "correct": false,
+      "misconception": "I solved for $\\frac{1}{x} = \\frac{1}{2}$ and $\\frac{1}{y} = \\frac{1}{3}$ and added those, forgetting to flip them to get $x$ and $y$."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{6}{5}$",
+      "correct": false,
+      "misconception": "I treated $\\frac{1}{x} + \\frac{1}{y}$ as if it were $\\frac{1}{x + y}$, so I flipped $\\frac{5}{6}$ to get $x + y$."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I added the equations correctly to get $x = 2$, but when I subtracted them I added the right sides instead, getting $\\frac{2}{y} = 1$ and $y = 2$."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Treat $\\frac{1}{x}$ and $\\frac{1}{y}$ as the unknowns.",
+    "Add the two equations to find $\\frac{1}{x}$, subtract them to find $\\frac{1}{y}$, then take reciprocals.",
+    "Adding gives $\\frac{2}{x} = 1$, and subtracting gives $\\frac{2}{y} = \\frac{2}{3}$."
+  ],
+  "solutions": {
+    "reliable": "Add the equations: $\\frac{2}{x} = \\frac{5}{6} + \\frac{1}{6} = 1$, so $x = 2$. Subtract the second equation from the first: $\\frac{2}{y} = \\frac{5}{6} - \\frac{1}{6} = \\frac{2}{3}$, so $y = 3$. Then $x + y = 5$. Check: $\\frac{1}{2} + \\frac{1}{3} = \\frac{5}{6}$ and $\\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

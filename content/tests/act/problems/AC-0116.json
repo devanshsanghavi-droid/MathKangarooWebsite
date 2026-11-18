@@ -1,0 +1,56 @@
+{
+  "id": "AC-0116",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "medium",
+  "statement": "A rideshare driver keeps $75\\%$ of every fare she collects, and she pays $\\$18$ per day to rent her car. Her fares average $\\$12$ each. What is the least number of rides she must give in one day so that she keeps at least $\\$150$ after paying the rental?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I forgot that she keeps only $75\\%$ of each fare, so I solved $12n - 18 \\ge 150$ and got $n \\ge 14$."
+    },
+    {
+      "key": "B",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I left out the $\\$18$ rental, so I solved $9n \\ge 150$, got $n \\ge 16.7$, and rounded up to $17$."
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I solved $9n - 18 \\ge 150$ correctly to get $n \\ge 18.7$ but rounded down to $18$, which leaves her with only $\\$144$."
+    },
+    {
+      "key": "D",
+      "text": "$19$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "How much does she keep from one $\\$12$ fare?",
+    "She keeps $0.75 \\cdot 12 = 9$ dollars per ride. Write an inequality for what she keeps after the rental, solve it, then round sensibly.",
+    "$9n - 18 \\ge 150$ gives $n \\ge 18.\\overline{6}$."
+  ],
+  "solutions": {
+    "reliable": "She keeps $0.75 \\cdot 12 = 9$ dollars per ride. After $n$ rides and the rental she has $9n - 18$ dollars. We need $9n - 18 \\ge 150$, so $9n \\ge 168$ and $n \\ge 18.\\overline{6}$. Rides come in whole numbers, so she needs $19$. Check: $18$ rides leave $162 - 18 = 144$ dollars, too little, while $19$ rides leave $171 - 18 = 153$ dollars.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

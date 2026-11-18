@@ -1,0 +1,56 @@
+{
+  "id": "SA-0214",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-03",
+  "difficulty": "hard",
+  "statement": "An online store first takes $p\\%$ off the price of a phone. At checkout, a coupon takes an additional $20\\%$ off the discounted price. The final price is $44\\%$ less than the original price. What is the value of $p$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I subtracted the coupon's 20 from the total of 44, as if percents taken off one after another simply add."
+    },
+    {
+      "key": "B",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I treated the final price as $44\\%$ of the original instead of $44\\%$ less than it, so I solved $0.8(1 - p) = 0.44$ and got $p = 45$."
+    },
+    {
+      "key": "D",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I added the coupon's 20 to the 44 instead of taking it away."
+    }
+  ],
+  "hints": [
+    "A final price $44\\%$ less than the original is what percent of the original?",
+    "Each discount multiplies the price by a factor. Set the product of the two factors equal to the fraction of the original price that remains.",
+    "The final price is $56\\%$ of the original, so $\\left(1 - \\frac{p}{100}\\right)(0.80) = 0.56$."
+  ],
+  "solutions": {
+    "reliable": "Taking $p\\%$ off and then $20\\%$ off leaves $\\left(1 - \\frac{p}{100}\\right)(0.80)$ of the original price. This must equal $1 - 0.44 = 0.56$. So $1 - \\frac{p}{100} = 0.56 \\div 0.80 = 0.70$ and $p = 30$. Check with a $\\$100$ phone: $30\\%$ off gives $\\$70$, and $20\\%$ off that gives $\\$56$, which is $44\\%$ less than $\\$100$.",
+    "elegant": null
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

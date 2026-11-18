@@ -1,0 +1,68 @@
+{
+  "id": "KA-1186",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Pens cost 3 euros each, or 8 euros for a pack of 4. Nia needs at least 11 pens, and spare pens are fine. What is the least amount she can spend, in euros?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "22",
+      "correct": false,
+      "misconception": "I worked out that a pen in a pack costs 2 euros and multiplied by 11, but pens cannot be bought for 2 euros on their own."
+    },
+    {
+      "key": "B",
+      "text": "25",
+      "correct": false,
+      "misconception": "I bought exactly 11 pens, 2 packs and 3 single pens, and did not think of buying a spare."
+    },
+    {
+      "key": "C",
+      "text": "29",
+      "correct": false,
+      "misconception": "I bought one pack of 4 and then 7 single pens."
+    },
+    {
+      "key": "D",
+      "text": "33",
+      "correct": false,
+      "misconception": "I bought 11 single pens, without using any packs."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "MOD-10",
+    "secondary": [
+      "CNT-04",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Do you have to buy exactly 11?",
+    "Compare the price of a pack with the price of the same number of single pens. Then list the ways to get at least 11 pens and cost each one.",
+    "Two packs and 3 single pens cost $16 + 9 = 25$ euros. Is a third pack cheaper than 3 single pens?"
+  ],
+  "solutions": {
+    "reliable": "Packs are cheaper per pen, so use as many as sensible. Two packs give 8 pens; 3 more single pens cost 9 euros, total 25 euros. A third pack instead costs only 8 euros and gives 12 pens, total $3 \\times 8 = 24$ euros. Four packs cost 32, and fewer packs cost more (1 pack and 7 singles is 29, 11 singles is 33). The least is 24 euros. The transferable idea: when spares are allowed, buying a little more can cost less.",
+    "elegant": "Three single pens cost 9 euros, but a whole pack of 4 costs only 8 euros, so whenever you would need 3 single pens, a pack is cheaper. That gives 3 packs for 24 euros."
+  },
+  "whyOnTest": "Comparing deals needs a careful list of options, and the trap is assuming you must buy exactly what you need.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1213",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Kim has 16 minutes left and six unread 5-point questions. Two would take her 5 minutes to solve and four would take 12 minutes. Reading a question takes 1 minute and shows which kind it is. Every question she finishes is right. How many points can she be sure of, whatever order the questions are in?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought she cannot be sure of anything, because she does not know where the quick questions are."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I had her read all six questions first, 6 minutes, and then counted another minute to read each quick one again, so in the 10 minutes left only one 1 + 5 = 6 minute question fits."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": false,
+      "misconception": "I fitted three 5-minute questions into 16 minutes, forgetting that only two of the questions are quick."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": false,
+      "misconception": "I counted all six questions, as if her guesses on the unfinished ones would all be right."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-12",
+    "secondary": [
+      "CFT-08",
+      "CNT-18"
+    ]
+  },
+  "hints": [
+    "Where could the two quick questions be, in the worst case?",
+    "Plan for the worst case. Reading costs only 1 minute but a long question costs 12. Reading until she finds a quick one, solving it, and then reading on wastes the least time.",
+    "Worst case: the quick ones are the last two she reads. Reading all six takes 6 minutes and solving the two quick ones takes 10 more, exactly 16."
+  ],
+  "solutions": {
+    "reliable": "Strategy: read questions one at a time; skip each long one, and solve each quick one as soon as it is found. However the questions are ordered, she spends at most 6 minutes reading and 5 + 5 = 10 minutes solving, a total of 16, so she always finishes both quick ones: 10 points for sure. She cannot be sure of more: finishing a third question means solving a long one, and 1 + 12 for it plus 1 + 5 + 1 + 5 for the two quick ones is 25 minutes, far more than 16. The transferable idea: in the 5-point block, a minute spent reading every question before committing is cheap, and committing blindly to the first one can cost the whole block.",
+    "elegant": null
+  },
+  "whyOnTest": "The 5-point block rewards reading everything before committing; this puts numbers on why working blindly in order can cost points.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

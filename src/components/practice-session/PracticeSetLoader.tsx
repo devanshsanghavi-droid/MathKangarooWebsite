@@ -5,10 +5,26 @@ import { ButtonLink, Card } from '@/components/ui';
 import { loadPracticeItems } from '@/lib/bank-client';
 import {
   parsePracticeSetQuery,
+  type PracticeBank,
   type PracticeItem,
   type PracticeSetQuery,
 } from '@/lib/practice-item';
 import { PracticeSession } from './PracticeSession';
+
+/** Where "back to the bank" goes, per bank. */
+const BANK_HREF: Readonly<Record<PracticeBank, string>> = {
+  ka: '/problems',
+  amc: '/amc/problems',
+  sat: '/sat/problems',
+  act: '/act/problems',
+};
+
+const SET_TITLE: Readonly<Record<PracticeBank, string>> = {
+  ka: 'Practice set',
+  amc: 'AMC practice set',
+  sat: 'SAT practice set',
+  act: 'ACT practice set',
+};
 
 type LoadState =
   | { status: 'reading' }
@@ -43,9 +59,9 @@ export function PracticeSetLoader({ search }: { search?: string }) {
       return;
     }
     setState({ status: 'loading', query });
-    // KaTeX only travels with an AMC set: a Kangaroo set has no math and never loads it.
+    // KaTeX only travels with an AMC, SAT or ACT set: a Kangaroo set has no math.
     const math =
-      query.bank === 'amc'
+      query.bank !== 'ka'
         ? import('../math/MathProvider').then((module) => module.MathProvider)
         : Promise.resolve(null);
     Promise.all([loadPracticeItems(query.ids), math])
@@ -66,20 +82,18 @@ export function PracticeSetLoader({ search }: { search?: string }) {
 
   if (state.status === 'ready') {
     const { query, items, missing, Math } = state;
-    const amc = query.bank === 'amc';
     const session = (
       <PracticeSession
         items={items}
-        title={query.name || (amc ? 'AMC practice set' : 'Practice set')}
-        exitHref={amc ? '/amc/problems' : '/problems'}
+        title={query.name || SET_TITLE[query.bank]}
+        exitHref={BANK_HREF[query.bank]}
         missing={missing}
       />
     );
     return Math ? <Math>{session}</Math> : session;
   }
 
-  const amc = state.status !== 'reading' && state.query.bank === 'amc';
-  const bankHref = amc ? '/amc/problems' : '/problems';
+  const bankHref = state.status === 'reading' ? BANK_HREF.ka : BANK_HREF[state.query.bank];
 
   if (state.status === 'empty' || state.status === 'error') {
     return (

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1363",
+  "band": "7-8",
+  "points": 3,
+  "statement": "Matchsticks build figures of squares in 2 rows. Figure 1 is a column of 2 squares, one above the other, using 7 matchsticks. Figure 2 has 2 such columns and uses 12. Each new figure adds one more column of 2 squares on the right. How many matchsticks are in Figure 10?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "50",
+      "correct": false,
+      "misconception": "I saw that each column adds 5 matchsticks and multiplied 5 by 10, forgetting the 2 matchsticks on the left edge of the figure."
+    },
+    {
+      "key": "B",
+      "text": "52",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "57",
+      "correct": false,
+      "misconception": "I started from the 7 matchsticks of Figure 1 and added 5 ten times instead of nine times."
+    },
+    {
+      "key": "D",
+      "text": "70",
+      "correct": false,
+      "misconception": "I thought Figure 10 is ten copies of Figure 1, forgetting that neighbouring columns share matchsticks."
+    },
+    {
+      "key": "E",
+      "text": "80",
+      "correct": false,
+      "misconception": "I counted 4 matchsticks for each of the 20 squares, so every shared matchstick was counted twice."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-04",
+    "secondary": [
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "How many matchsticks does each new column add?",
+    "A new column shares its left side with the figure before it. Find how many new matchsticks a column needs, then count the steps from Figure 1 to Figure 10.",
+    "Each new column adds 3 flat matchsticks and 2 upright ones, so 5. From Figure 1 to Figure 10 there are 9 new columns."
+  ],
+  "solutions": {
+    "reliable": "A new column of 2 squares shares its left side with the figure before it, so it needs 3 new flat matchsticks (top, middle and bottom) and 2 new upright ones on its right: 5 in all. That fits 7 and 12, and Figure 3 has 17. Figure 10 has 9 more columns than Figure 1, so it uses $7 + 9 \\times 5 = 52$ matchsticks. The transferable idea: in a growing pattern, find what each step adds and count the steps carefully.",
+    "elegant": "Count by direction. Figure 10 has 3 rows of flat matchsticks with 10 in each row, 30 in all, and 11 upright lines with 2 matchsticks in each, 22 in all: $30 + 22 = 52$."
+  },
+  "whyOnTest": "Growing-pattern questions test whether you can see what each step adds and count the steps without an off-by-one slip.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

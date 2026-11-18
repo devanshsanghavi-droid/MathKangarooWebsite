@@ -1,0 +1,68 @@
+{
+  "id": "KA-1555",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A bag holds 20 balls numbered 1 to 20. Without looking, you take balls out one at a time. What is the smallest number of balls you must take to be certain that the numbers on your balls add up to at least 100?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted the luckiest case, taking 20, 19, 18, 17, 16 and 15, instead of the unluckiest one."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I divided 100 by the average ball number, 10.5, and rounded the result to 10."
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": false,
+      "misconception": "I stopped at 13 balls because $1 + 2 + \\dots + 13$ is close to 100, without checking that 91 is still less than 100."
+    },
+    {
+      "key": "D",
+      "text": "14",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": false,
+      "misconception": "I added one extra ball for safety, as in pigeonhole problems, even though 14 balls already guarantee a total of at least 100."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "CFT-01",
+      "CNT-17"
+    ]
+  },
+  "hints": [
+    "Which balls would be the worst possible ones to draw?",
+    "Worst case: being certain means the guarantee must hold even when you are as unlucky as possible. Here the unluckiest draws are the smallest numbers, so find when the smallest numbers first reach 100.",
+    "$1 + 2 + \\dots + 13 = 91$ and $1 + 2 + \\dots + 14 = 105$."
+  ],
+  "solutions": {
+    "reliable": "Any $k$ balls add up to at least $1 + 2 + \\dots + k$, and you might draw exactly those. With 13 balls the unluckiest total is $91 < 100$, so 13 balls are not enough. With 14 balls the smallest possible total is $105 \\ge 100$, so 14 balls always suffice. The transferable idea: to be certain, plan for the worst possible draw.",
+    "elegant": null
+  },
+  "whyOnTest": "Certainty means beating the unluckiest case, and the trap is reasoning from typical or lucky draws instead.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

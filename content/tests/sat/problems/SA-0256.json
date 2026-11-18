@@ -1,0 +1,56 @@
+{
+  "id": "SA-0256",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-01",
+  "difficulty": "medium",
+  "statement": "A company redesigns a rectangular shipping box. The length is increased by $20\\%$, the width is increased by $25\\%$ and the height is decreased by $40\\%$. How does the volume of the new box compare with the volume of the original box?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "It is $5\\%$ greater.",
+      "correct": false,
+      "misconception": "I added the percent changes, $20 + 25 - 40 = 5$, as if changes to different dimensions combine by adding."
+    },
+    {
+      "key": "B",
+      "text": "It is $50\\%$ greater.",
+      "correct": false,
+      "misconception": "I multiplied the length and width factors, $1.2 \\times 1.25 = 1.5$, and forgot to include the change in height."
+    },
+    {
+      "key": "C",
+      "text": "It is $40\\%$ less.",
+      "correct": false,
+      "misconception": "I used $0.4$ as the factor for a $40\\%$ decrease, so I got $1.2 \\times 1.25 \\times 0.4 = 0.6$, which is $40\\%$ less."
+    },
+    {
+      "key": "D",
+      "text": "It is $10\\%$ less.",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Turn each percent change into a multiplier.",
+    "Volume is length times width times height, so the new volume is the original volume times the product of the three multipliers.",
+    "The multipliers are $1.2$, $1.25$ and $0.6$. Find their product and compare it with $1$."
+  ],
+  "solutions": {
+    "reliable": "Let the original box be $\\ell$ by $w$ by $h$, so $V = \\ell w h$. The new box is $1.2\\ell$ by $1.25w$ by $0.6h$, so its volume is $(1.2)(1.25)(0.6)\\ell w h = 0.9V$. The new volume is $90\\%$ of the original, which is $10\\%$ less.",
+    "elegant": "Try a $10 \\times 10 \\times 10$ box, with volume $1{,}000$. The new box is $12 \\times 12.5 \\times 6$, with volume $900$, which is $10\\%$ less."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0057",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "hard",
+  "statement": "For the linear function $f$, $f(4) = 3f(1)$ and $f(6) = 26$. What is the value of $f(0)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found $f(x) = 4x + 2$ correctly but gave the slope, 4, instead of $f(0)$."
+    },
+    {
+      "key": "C",
+      "text": "$6.5$",
+      "correct": false,
+      "misconception": "I got the relationship backwards and wrote $b = 2m$ instead of $m = 2b$, so $6m + b = 26$ became $4b = 26$ and $b = 6.5$."
+    },
+    {
+      "key": "D",
+      "text": "$26$",
+      "correct": false,
+      "misconception": "I wrote $3f(1)$ as $3m + b$ instead of $3(m + b)$, which made the slope 0, so $f$ was the constant 26."
+    }
+  ],
+  "hints": [
+    "Write $f(x) = mx + b$ and turn each fact into an equation.",
+    "$f(4) = 3f(1)$ becomes $4m + b = 3(m + b)$. Simplify it to relate $m$ and $b$, then use $f(6) = 26$.",
+    "$4m + b = 3m + 3b$ gives $m = 2b$. Then $6m + b = 26$ becomes $12b + b = 26$."
+  ],
+  "solutions": {
+    "reliable": "Let $f(x) = mx + b$. Then $f(4) = 4m + b$ and $3f(1) = 3m + 3b$. Setting them equal gives $m = 2b$. From $f(6) = 26$: $6m + b = 26$, so $12b + b = 13b = 26$ and $b = 2$, $m = 4$. So $f(x) = 4x + 2$ and $f(0) = 2$. Check: $f(4) = 18 = 3 \\cdot 6 = 3f(1)$ and $f(6) = 26$.",
+    "elegant": null
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1441",
+  "band": "9-10",
+  "points": 4,
+  "statement": "The nine cells of a 3 by 3 grid all start at 0. A move adds 1 to each of the four cells of any 2 by 2 block. After some moves, the top-left cell shows 4, the top-middle cell 9, the middle-left cell 7 and the centre cell 20. What does the bottom-right cell show?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I subtracted all three given numbers from the centre, so the moves on the top-left block were taken away three times."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I subtracted only the top-middle and middle-left numbers from the centre, so the moves on the top-left block were taken away twice."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found the number of moves on the bottom-left block, which is what the bottom-left corner shows."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I thought the bottom-right cell equals the top-middle plus the middle-left cell."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "MOD-01",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Each corner cell belongs to only one 2 by 2 block.",
+    "Let the four blocks be used $a$, $b$, $c$ and $d$ times. Every cell shows the total of the counts of the blocks containing it. Write the four given numbers in terms of $a$, $b$, $c$, $d$.",
+    "Top-left is $a$, top-middle is $a + b$, middle-left is $a + c$, the centre is $a + b + c + d$, and bottom-right is $d$."
+  ],
+  "solutions": {
+    "reliable": "Call the numbers of moves on the top-left, top-right, bottom-left and bottom-right blocks $a$, $b$, $c$ and $d$. The top-left cell is in only the first block, so $a = 4$. The top-middle cell is in the two top blocks: $a + b = 9$, so $b = 5$. The middle-left cell: $a + c = 7$, so $c = 3$. The centre is in all four blocks: $a + b + c + d = 20$, so $d = 8$. The bottom-right cell is only in the last block, so it shows 8. The transferable idea: describe every possible state by a few quantities the moves control, here how often each block was used, and then every cell follows.",
+    "elegant": "For any sequence of moves, centre minus top-middle minus middle-left plus top-left equals $(a + b + c + d) - (a + b) - (a + c) + a = d$, the bottom-right cell. So the answer is $20 - 9 - 7 + 4 = 8$. This relation never changes, whatever moves are made."
+  },
+  "whyOnTest": "Invariant problems reward describing every possible state by a few quantities that the moves control, rather than trying to simulate the moves.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

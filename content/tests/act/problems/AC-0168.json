@@ -1,0 +1,56 @@
+{
+  "id": "AC-0168",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-07",
+  "difficulty": "easy",
+  "statement": "The polynomial $p$ is defined by $p(x) = x(3x + 2)(x - 5)$. Which of the following lists all the zeros of $p$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-\\frac{2}{3}$, $0$ and $5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-5$, $0$ and $\\frac{2}{3}$",
+      "correct": false,
+      "misconception": "I flipped the sign of every zero, as if the factor $x - 5$ gave the zero $-5$ and $3x + 2$ gave $\\frac{2}{3}$."
+    },
+    {
+      "key": "C",
+      "text": "$-\\frac{2}{3}$ and $5$ only",
+      "correct": false,
+      "misconception": "I solved $3x + 2 = 0$ and $x - 5 = 0$ but did not count the factor $x$ in front, which makes $p(0) = 0$."
+    },
+    {
+      "key": "D",
+      "text": "$-2$, $0$ and $5$",
+      "correct": false,
+      "misconception": "I read the zero from $3x + 2$ as $-2$ without dividing by the $3$."
+    }
+  ],
+  "hints": [
+    "A product is $0$ exactly when one of its factors is $0$.",
+    "Set each of the three factors, $x$, $3x + 2$ and $x - 5$, equal to $0$ and solve each one.",
+    "$x = 0$, $3x + 2 = 0$ gives $x = -\\frac{2}{3}$, and $x - 5 = 0$ gives $x = 5$."
+  ],
+  "solutions": {
+    "reliable": "$p(x) = 0$ exactly when one factor is $0$. The factor $x$ gives $x = 0$. The factor $3x + 2$ gives $3x = -2$, so $x = -\\frac{2}{3}$. The factor $x - 5$ gives $x = 5$. So the zeros are $-\\frac{2}{3}$, $0$ and $5$. Check: $p\\left(-\\frac{2}{3}\\right) = -\\frac{2}{3}(0)\\left(-\\frac{17}{3}\\right) = 0$.",
+    "elegant": "Test the choices: $p(-5) = -5 \\cdot (-13) \\cdot (-10) \\ne 0$ rules out B, $p(0) = 0$ rules out C, and $p(-2) = -2 \\cdot (-4) \\cdot (-7) \\ne 0$ rules out D."
+  },
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

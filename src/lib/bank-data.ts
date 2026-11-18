@@ -2,6 +2,8 @@ import type { Band, Points, Problem, Skill, Strand, Tier } from './schemas.ts';
 import type { AmcContest, AmcProblem, AmcTaxonomy } from './amc-schemas.ts';
 import { amcTierOf, type AmcTier } from './amc-tier.ts';
 import { STRAND_META } from './taxonomy-meta.ts';
+import type { TestProblem, TestTaxonomy } from './test-schemas.ts';
+import type { StdTest, TestDifficulty } from './test-meta.ts';
 
 /**
  * The static bank data (docs/06 §3), as types and pure builders.
@@ -15,6 +17,8 @@ import { STRAND_META } from './taxonomy-meta.ts';
  *   /data/ka-lookups.json   KaLookups     strands, their skills, names: what the filters need
  *   /data/amc-index.json    AmcIndexFile  one light row per AMC problem
  *   /data/amc-lookups.json  AmcLookups    areas, topics, problem types
+ *   /data/sat-index.json    TestIndexFile rows plus the SAT domains and skills (one fetch)
+ *   /data/act-index.json    TestIndexFile the same for the ACT
  *   /data/p/<ID>.json       PracticeItem  the whole question, see practice-item.ts
  *
  * Every file carries `version`; bump STATIC_DATA_VERSION when a field changes meaning.
@@ -29,6 +33,9 @@ export const dataPaths = {
   kaLookups: `${DATA_BASE}/ka-lookups.json`,
   amcIndex: `${DATA_BASE}/amc-index.json`,
   amcLookups: `${DATA_BASE}/amc-lookups.json`,
+  satIndex: `${DATA_BASE}/sat-index.json`,
+  actIndex: `${DATA_BASE}/act-index.json`,
+  testIndex: (test: StdTest) => `${DATA_BASE}/${test === 'SAT' ? 'sat' : 'act'}-index.json`,
   problem: (id: string) => `${DATA_BASE}/p/${id}.json`,
 } as const;
 
@@ -238,4 +245,84 @@ export function buildAmcLookups(
 /** id -> name over every AMC topic. */
 export function amcTopicNames(lookups: AmcLookups): Map<string, string> {
   return new Map(lookups.areas.flatMap((area) => area.topics.map((t) => [t.id, t.name])));
+}
+
+/* -------------------------------------------------------------------------- */
+/* SAT / ACT                                                                   */
+/* -------------------------------------------------------------------------- */
+
+export interface TestIndexRow {
+  id: string;
+  domain: string;
+  skill: string;
+  difficulty: TestDifficulty;
+  /** KaTeX in `$...$`, cut to STATEMENT_PREVIEW_MAX without splitting a formula. */
+  statement: string;
+  hasFigure: boolean;
+}
+
+export interface TestLookupDomain {
+  id: string;
+  name: string;
+  /** Problems in this domain. */
+  count: number;
+  skills: Array<{ id: string; name: string; count: number }>;
+}
+
+/**
+ * One file per test, rows and lookups together: the banks are small enough that a second
+ * fetch for the filter vocabulary would cost more than it saves.
+ */
+export interface TestIndexFile {
+  version: number;
+  test: StdTest;
+  total: number;
+  /** Taxonomy order. */
+  domains: TestLookupDomain[];
+  /** Sorted by id. */
+  rows: TestIndexRow[];
+}
+
+export function testIndexRow(problem: TestProblem): TestIndexRow {
+  return {
+    id: problem.id,
+    domain: problem.domain,
+    skill: problem.skill,
+    difficulty: problem.difficulty,
+    statement: previewMath(problem.statement),
+    hasFigure: problem.figure !== null,
+  };
+}
+
+export function buildTestIndexFile(
+  taxonomy: TestTaxonomy,
+  problems: readonly TestProblem[],
+): TestIndexFile {
+  const bySkill = new Map<string, number>();
+  const byDomain = new Map<string, number>();
+  for (const p of problems) {
+    bySkill.set(p.skill, (bySkill.get(p.skill) ?? 0) + 1);
+    byDomain.set(p.domain, (byDomain.get(p.domain) ?? 0) + 1);
+  }
+  return {
+    version: STATIC_DATA_VERSION,
+    test: taxonomy.test,
+    total: problems.length,
+    domains: taxonomy.domains.map((domain) => ({
+      id: domain.id,
+      name: domain.name,
+      count: byDomain.get(domain.id) ?? 0,
+      skills: domain.skills.map((skill) => ({
+        id: skill.id,
+        name: skill.name,
+        count: bySkill.get(skill.id) ?? 0,
+      })),
+    })),
+    rows: [...problems].sort((a, b) => a.id.localeCompare(b.id)).map(testIndexRow),
+  };
+}
+
+/** id -> name over every skill of one test. */
+export function testSkillNames(file: Pick<TestIndexFile, 'domains'>): Map<string, string> {
+  return new Map(file.domains.flatMap((d) => d.skills.map((s) => [s.id, s.name])));
 }

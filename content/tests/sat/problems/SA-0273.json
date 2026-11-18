@@ -1,0 +1,56 @@
+{
+  "id": "SA-0273",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "hard",
+  "statement": "For an angle $\\theta$ measured in radians, with $0 < \\theta < \\frac{\\pi}{2}$, it is true that $\\sin \\theta = \\cos\\left(\\frac{\\theta}{2} + \\frac{\\pi}{6}\\right)$. What is the value of $\\theta$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{2\\pi}{9}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{\\pi}{3}$",
+      "correct": false,
+      "misconception": "I set the two angles equal, $\\theta = \\frac{\\theta}{2} + \\frac{\\pi}{6}$, as if sine and cosine of the same angle were equal."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{4\\pi}{9}$",
+      "correct": false,
+      "misconception": "I added $\\frac{\\pi}{6}$ to $\\frac{\\pi}{2}$ instead of subtracting it, so I solved $\\frac{3\\theta}{2} = \\frac{2\\pi}{3}$."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{5\\pi}{9}$",
+      "correct": false,
+      "misconception": "I thought the two angles must add to $\\pi$, so I solved $\\frac{3\\theta}{2} + \\frac{\\pi}{6} = \\pi$."
+    }
+  ],
+  "hints": [
+    "When is the sine of one angle equal to the cosine of another?",
+    "For acute angles, $\\sin A = \\cos B$ when $A + B = \\frac{\\pi}{2}$. Apply that to $\\theta$ and $\\frac{\\theta}{2} + \\frac{\\pi}{6}$.",
+    "Solve $\\theta + \\frac{\\theta}{2} + \\frac{\\pi}{6} = \\frac{\\pi}{2}$, which gives $\\frac{3\\theta}{2} = \\frac{\\pi}{3}$."
+  ],
+  "solutions": {
+    "reliable": "Because $\\cos x = \\sin\\left(\\frac{\\pi}{2} - x\\right)$, the equation says $\\sin\\theta = \\sin\\left(\\frac{\\pi}{3} - \\frac{\\theta}{2}\\right)$. For $0 < \\theta < \\frac{\\pi}{2}$, both $\\theta$ and $\\frac{\\pi}{3} - \\frac{\\theta}{2}$ lie between $0$ and $\\frac{\\pi}{2}$, where sine is increasing, so $\\theta = \\frac{\\pi}{3} - \\frac{\\theta}{2}$. Then $\\frac{3\\theta}{2} = \\frac{\\pi}{3}$ and $\\theta = \\frac{2\\pi}{9}$. Check: $\\frac{\\theta}{2} + \\frac{\\pi}{6} = \\frac{\\pi}{9} + \\frac{\\pi}{6} = \\frac{5\\pi}{18}$, and $\\frac{4\\pi}{18} + \\frac{5\\pi}{18} = \\frac{\\pi}{2}$.",
+    "elegant": "In degrees, $\\frac{\\pi}{6}$ is $30^\\circ$, and complementary angles give $\\theta + \\frac{\\theta}{2} + 30^\\circ = 90^\\circ$. So $\\theta = 40^\\circ$, which is $\\frac{2\\pi}{9}$ radians."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

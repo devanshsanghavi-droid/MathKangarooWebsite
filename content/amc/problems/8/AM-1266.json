@@ -1,0 +1,66 @@
+{
+  "id": "AM-1266",
+  "contest": "AMC8",
+  "slot": 13,
+  "area": "CP",
+  "topic": "CP-11",
+  "types": [
+    "T-INVARIANT"
+  ],
+  "statement": "Kai has $12$ cards numbered $1$ through $12$. He picks any two of the cards, throws them away, and makes a new card showing the sum of their two numbers minus $2$. He keeps doing this until only one card is left. No matter which cards he picks, the last card always shows the same number. What is that number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$54$",
+      "correct": false,
+      "misconception": "I took away 2 for each of the 12 cards instead of for each step, and there are only 11 steps: 78 - 24 = 54."
+    },
+    {
+      "key": "B",
+      "text": "$56$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$67$",
+      "correct": false,
+      "misconception": "I thought each step lowers the total by 1 instead of 2, so after 11 steps I got 78 - 11 = 67."
+    },
+    {
+      "key": "D",
+      "text": "$76$",
+      "correct": false,
+      "misconception": "I took away 2 only once, at the end, so I got 78 - 2 = 76."
+    },
+    {
+      "key": "E",
+      "text": "$78$",
+      "correct": false,
+      "misconception": "I thought the total of the numbers never changes, so I just added 1 through 12 to get 78."
+    }
+  ],
+  "hints": [
+    "Watch what happens to the total of all the numbers on the cards at each step.",
+    "Each step replaces $a$ and $b$ with $a + b - 2$, so the total drops by exactly $2$.",
+    "The starting total is $1 + 2 + \\cdots + 12 = 78$. Each step removes one card, so how many steps are there?"
+  ],
+  "solutions": {
+    "reliable": "Each step removes two cards with numbers $a$ and $b$ and adds one card with $a + b - 2$, so the total of all the numbers on the cards goes down by exactly $2$ and the number of cards goes down by $1$. Going from $12$ cards to $1$ card takes $11$ steps. The starting total is $1 + 2 + \\cdots + 12 = \\frac{12 \\cdot 13}{2} = 78$, so the last card shows $78 - 2 \\times 11 = 56$.",
+    "elegant": "Subtract $2$ from every number. If a card shows $n$, call $n - 2$ its value. The new card's value is $(a + b - 2) - 2 = (a - 2) + (b - 2)$, so values simply add. The total value is $78 - 24 = 54$, and the last card's value is $54$, so it shows $54 + 2 = 56$."
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

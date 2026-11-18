@@ -1,0 +1,68 @@
+{
+  "id": "KA-1143",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Cubes stand on a 2 by 2 square. The front view shows heights 3 (left) and 1 (right). The side view shows 3 (front) and 2 (back). What is the largest possible number of cubes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I added the heights in the front view, $3 + 1 = 4$, as if the front view shows every cube."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I added the heights in the side view, $3 + 2 = 5$, as if the side view shows every cube."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I put no cubes on the back right square, but 1 cube fits there without changing either view."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I added the front view and the side view together, $4 + 5 = 9$, but those views show some of the same cubes."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-12",
+    "secondary": [
+      "GEO-13",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Draw the 2 by 2 square from above and give each place a height.",
+    "Each stack is limited twice: by its half in the front view and by its row in the side view. For the most cubes, make every stack as tall as both limits allow.",
+    "The stack at front left can be 3 tall, at back left 2, at front right 1, at back right 1."
+  ],
+  "solutions": {
+    "reliable": "Call the four places front left, back left, front right, back right. A stack can be no taller than its half in the front view and no taller than its row in the side view. Front left: at most 3 and at most 3, so 3. Back left: at most 3 and at most 2, so 2. Front right: at most 1 and at most 3, so 1. Back right: at most 1 and at most 2, so 1. These heights do give exactly the two views, so the largest number is $3 + 2 + 1 + 1 = 7$. The transferable idea: each view gives an upper limit, so the largest building takes the smaller limit for every stack.",
+    "elegant": null
+  },
+  "whyOnTest": "Combining two views into a plan of heights, and seeing that views limit but do not fix the count, is the key idea of view problems.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

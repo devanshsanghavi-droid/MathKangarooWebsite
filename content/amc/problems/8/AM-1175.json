@@ -1,0 +1,67 @@
+{
+  "id": "AM-1175",
+  "contest": "AMC8",
+  "slot": 8,
+  "area": "NT",
+  "topic": "NT-01",
+  "types": [
+    "T-MODULAR",
+    "T-CASEWORK"
+  ],
+  "statement": "How many three-digit multiples of $7$ have units digit $3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I thought these numbers come once every $70$ and divided the $900$ three-digit numbers by $70$, getting $12.9$, which I rounded down."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I listed $63, 133, 203, \\ldots, 973$ and counted them all, but $63$ is not a three-digit number."
+    },
+    {
+      "key": "D",
+      "text": "$90$",
+      "correct": false,
+      "misconception": "I counted all the three-digit numbers ending in $3$, from $103$ to $993$, without checking which are multiples of $7$."
+    },
+    {
+      "key": "E",
+      "text": "$128$",
+      "correct": false,
+      "misconception": "I counted all the three-digit multiples of $7$, from $105$ to $994$, without checking the units digit."
+    }
+  ],
+  "hints": [
+    "The units digit of $7k$ depends only on the units digit of $k$.",
+    "$7 \\cdot 9 = 63$ is the only product $7k$ with $k$ from $0$ to $9$ that ends in $3$. So $k$ must end in $9$.",
+    "Three-digit multiples of $7$ are $7k$ with $15 \\le k \\le 142$. Count the $k$ in that range ending in $9$: $19, 29, \\ldots, 139$."
+  ],
+  "solutions": {
+    "reliable": "A three-digit multiple of $7$ is $7k$ with $15 \\le k \\le 142$ (since $7 \\cdot 15 = 105$ and $7 \\cdot 142 = 994$). Its units digit is the units digit of $7$ times the units digit of $k$, and among $7 \\cdot 0, 7 \\cdot 1, \\ldots, 7 \\cdot 9$ only $7 \\cdot 9 = 63$ ends in $3$. So $k$ ends in $9$: $k = 19, 29, \\ldots, 139$, which is $13$ values. The numbers are $133, 203, 273, \\ldots, 973$.",
+    "elegant": "The numbers ending in $3$ that are multiples of $7$ repeat every $70$: $63, 133, 203, \\ldots$. The three-digit ones run from $133$ to $973$, and $(973 - 133) \\div 70 + 1 = 12 + 1 = 13$."
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0237",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "hard",
+  "statement": "A rectangular solar panel has a perimeter of $34$ feet, and the diagonal from one corner to the opposite corner is $13$ feet long. What is the area of the panel, in square feet?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I squared the sum of the length and width and subtracted the squared diagonal to get 120, but that is 2 times the area, and I forgot to divide by 2."
+    },
+    {
+      "key": "B",
+      "text": "$60$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$72.25$",
+      "correct": false,
+      "misconception": "I assumed the panel was a square, so each side was 34 divided by 4 = 8.5 and the area was 8.5 squared = 72.25."
+    },
+    {
+      "key": "D",
+      "text": "$84.5$",
+      "correct": false,
+      "misconception": "I used the rule that the area is half the square of the diagonal, 169 divided by 2, but that rule only works for a square."
+    }
+  ],
+  "hints": [
+    "Call the sides $L$ and $W$. Write one equation from the perimeter and one from the diagonal.",
+    "$L + W = 17$ and $L^2 + W^2 = 169$. You want $LW$, so think about $(L + W)^2$.",
+    "$(L + W)^2 = L^2 + 2LW + W^2$, so $289 = 169 + 2LW$. Solve for $LW$."
+  ],
+  "solutions": {
+    "reliable": "Let the sides be $L$ and $W$. The perimeter gives $2(L + W) = 34$, so $L + W = 17$. The diagonal gives $L^2 + W^2 = 13^2 = 169$. Squaring the first equation, $L^2 + 2LW + W^2 = 289$, so $2LW = 289 - 169 = 120$ and $LW = 60$. Check: the sides are $12$ and $5$ feet, with $12 + 5 = 17$, $12^2 + 5^2 = 169$ and area $60$ square feet.",
+    "elegant": "Look for a right triangle with hypotenuse $13$ and legs adding to $17$: the $5$-$12$-$13$ triangle works. The panel is $5$ by $12$, so its area is $60$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

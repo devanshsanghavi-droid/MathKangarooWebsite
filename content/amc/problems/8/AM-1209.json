@@ -1,0 +1,66 @@
+{
+  "id": "AM-1209",
+  "contest": "AMC8",
+  "slot": 20,
+  "area": "NT",
+  "topic": "NT-10",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "For how many integers $n$ with $1 \\le n \\le 100$ is the fraction $\\frac{n}{150}$ equal to a terminating decimal?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I thought $n$ had to cancel both the $3$ and the $5$ in $150$, so I counted the multiples of $15$, which gave $6$."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I thought $n$ had to cancel both the $2$ and the $3$ in $150$, so I counted the multiples of $6$, which gave $16$."
+    },
+    {
+      "key": "C",
+      "text": "$33$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$67$",
+      "correct": false,
+      "misconception": "I found the right rule but counted the fractions that do not terminate instead of the ones that do."
+    },
+    {
+      "key": "E",
+      "text": "$100$",
+      "correct": false,
+      "misconception": "I thought every fraction with denominator $150$ terminates because $150$ ends in $0$."
+    }
+  ],
+  "hints": [
+    "A fraction in lowest terms is a terminating decimal exactly when its denominator has no prime factors other than $2$ and $5$.",
+    "$150 = 2 \\cdot 3 \\cdot 5^2$. After $\\frac{n}{150}$ is reduced, which prime must be gone from the denominator?",
+    "The factor $3$ cancels only when $n$ is a multiple of $3$. Count the multiples of $3$ from $1$ to $100$."
+  ],
+  "solutions": {
+    "reliable": "A fraction in lowest terms is a terminating decimal exactly when its denominator has only the primes $2$ and $5$. Here $150 = 2 \\cdot 3 \\cdot 5^2$. If $3$ divides $n$, then $\\frac{n}{150} = \\frac{n/3}{50}$, and $50 = 2 \\cdot 5^2$, so it terminates (whatever else cancels, the denominator still has only $2$s and $5$s). If $3$ does not divide $n$, the factor $3$ in the denominator never cancels, so the decimal repeats. The multiples of $3$ from $1$ to $100$ are $3, 6, \\ldots, 99$, and there are $33$ of them.",
+    "elegant": "$\\frac{n}{150} = \\frac{n}{3} \\cdot \\frac{1}{50} = \\frac{n}{3} \\cdot 0.02$. If $n$ is a multiple of $3$, this is a whole number times $0.02$, which terminates. If not, then $\\frac{n}{3}$ has a $3$ in its denominator that $0.02 = \\frac{1}{50}$ cannot cancel. So the answer is the number of multiples of $3$ up to $100$, which is $33$."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "AM-1128",
+  "contest": "AMC8",
+  "slot": 18,
+  "area": "GEO",
+  "topic": "GEO-10",
+  "types": [
+    "T-SYMMETRY"
+  ],
+  "statement": "One move takes a point, reflects it across the line $y = x$, and then reflects the result across the $x$-axis. Ravi starts with the point $(5, 2)$ and makes this move $2027$ times in a row. Where does the point end up?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$(-2, 5)$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$(2, -5)$",
+      "correct": false,
+      "misconception": "I thought the point comes back to the start after every two moves, so an odd number of moves would leave it where one move does."
+    },
+    {
+      "key": "C",
+      "text": "$(-5, -2)$",
+      "correct": false,
+      "misconception": "I found that the point repeats every four moves, but I counted the starting point as move $1$, so I landed one step too early in the cycle."
+    },
+    {
+      "key": "D",
+      "text": "$(2, 5)$",
+      "correct": false,
+      "misconception": "I thought each reflection across the $x$-axis just undoes the one before, so only the $2027$ reflections across $y = x$ matter, and an odd number of them sends $(5, 2)$ to $(2, 5)$."
+    },
+    {
+      "key": "E",
+      "text": "$(-2, -5)$",
+      "correct": false,
+      "misconception": "I thought one move was the same as a single reflection across the line $y = -x$, so an odd number of moves would send $(5, 2)$ to $(-2, -5)$."
+    }
+  ],
+  "hints": [
+    "Make the move a few times by hand and watch what happens to the coordinates.",
+    "Reflecting across $y = x$ swaps the coordinates, and reflecting across the $x$-axis changes the sign of the second one. So one move sends $(x, y)$ to $(y, -x)$. Keep going until you are back at $(5, 2)$.",
+    "The points go $(5, 2) \\to (2, -5) \\to (-5, -2) \\to (-2, 5) \\to (5, 2)$, a cycle of $4$ moves. Find the remainder when $2027$ is divided by $4$."
+  ],
+  "solutions": {
+    "reliable": "Reflecting $(x, y)$ across $y = x$ gives $(y, x)$, and then reflecting across the $x$-axis gives $(y, -x)$. So one move sends $(x, y)$ to $(y, -x)$. Starting from $(5, 2)$: after $1$ move $(2, -5)$, after $2$ moves $(-5, -2)$, after $3$ moves $(-2, 5)$, and after $4$ moves $(5, 2)$ again. The positions repeat every $4$ moves. Since $2027 = 4 \\cdot 506 + 3$, the point ends where it is after $3$ moves, at $(-2, 5)$.",
+    "elegant": "Two reflections across lines through the origin that meet at a $45^\\circ$ angle combine into a rotation of $90^\\circ$ about the origin. Here one move sends $(5, 2)$ to $(2, -5)$, a quarter turn clockwise. Then $2027$ quarter turns clockwise is $506$ full turns plus $3$ quarter turns clockwise, which is the same as one quarter turn counterclockwise. That sends $(5, 2)$ to $(-2, 5)$."
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0054",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "easy",
+  "statement": "Marco has $84$ dollars and adds $12$ dollars to his savings every week. Priya has $180$ dollars and spends $12$ dollars of her savings every week. After how many weeks will Marco and Priya have the same amount of money?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I only let Marco's savings grow and forgot that Priya's savings go down, so I solved $84 + 12w = 180$ and got 8."
+    },
+    {
+      "key": "C",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I added the two starting amounts to get 264 and divided by 12, which gave 22."
+    },
+    {
+      "key": "D",
+      "text": "$132$",
+      "correct": false,
+      "misconception": "I solved for the week correctly, but I gave the amount each person has then, 132 dollars, instead of the number of weeks."
+    }
+  ],
+  "hints": [
+    "Write an expression for each person's money after $w$ weeks.",
+    "Marco has $84 + 12w$ and Priya has $180 - 12w$. Set them equal and solve for $w$.",
+    "$84 + 12w = 180 - 12w$ becomes $24w = 96$."
+  ],
+  "solutions": {
+    "reliable": "After $w$ weeks Marco has $84 + 12w$ dollars and Priya has $180 - 12w$ dollars. Setting these equal: $84 + 12w = 180 - 12w$, so $24w = 96$ and $w = 4$. Check: Marco has $84 + 48 = 132$ and Priya has $180 - 48 = 132$.",
+    "elegant": "The gap starts at $180 - 84 = 96$ dollars and closes by $12 + 12 = 24$ dollars each week, so it closes in $96 / 24 = 4$ weeks."
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

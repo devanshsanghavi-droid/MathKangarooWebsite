@@ -1,0 +1,67 @@
+{
+  "id": "KA-1372",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A cube has a different number from 1 to 6 on each face. In one position it shows 1 on top, 3 at the front and 4 on the right. In another position it shows 2 on top, 5 at the front and 4 on the right. Which number is on the face opposite 3?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I worked out the ring of faces around 4 but put 2 and 5 in the wrong order around it."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I assumed opposite faces add up to 7, as on a standard die, although 4 is shown right next to 3."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought 6, the only number never shown, must be on the face opposite 3."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be determined",
+      "correct": false,
+      "misconception": "I thought two views of a cube could never fix where all six numbers are."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-11",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Both views show 4 on the right. Look from the side of 4.",
+    "With 4 facing you, the other four faces form a ring around it. Each view shows two neighbouring faces of that ring, top then front, in order. Fit both pairs into one ring.",
+    "Turning the cube about the axis through 4 moves the ring round. The ring contains 1 followed by 3, and 2 followed by 5, in the same direction, so it must be 1, 3, 2, 5."
+  ],
+  "solutions": {
+    "reliable": "In both views 4 is on the right, so the second position is the first turned about the axis through face 4. Around face 4 lie four faces in a ring: top, front, bottom, back. The first view says that, going top then front, the ring contains 1 then 3. The second view says it contains 2 then 5, in the same direction. The only ring with both is 1, 3, 2, 5 (going top, front, bottom, back in the first view). So the bottom in the first view is 2 and the back is 5. Opposite faces are 1 and 2, 3 and 5, and 4 and 6 (the left face). The face opposite 3 is 5. The transferable idea: when two views share a face, read the ring of faces around it and fit the views into one ring.",
+    "elegant": null
+  },
+  "whyOnTest": "Cube views test spatial reasoning: a shared face fixes an axis, and the faces round it must fit one consistent ring.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

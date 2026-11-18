@@ -1,0 +1,68 @@
+{
+  "id": "KA-1299",
+  "band": "5-6",
+  "points": 5,
+  "statement": "An ant walks in a straight line on a square grid, from the point (0, 0) to the point (24, 16). How many grid points, whose coordinates are both whole numbers, does its path pass through, counting the start and the end?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I divided 24 and 16 by 4, a common factor but not the greatest, so I used steps of (6, 4) and missed the points in between."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": false,
+      "misconception": "I counted only the grid points strictly between the start and the end."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I found the 8 equal steps along the path but counted steps instead of points, forgetting one end."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "17",
+      "correct": false,
+      "misconception": "I thought every whole number height from 0 to 16 gives a grid point on the path."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-02",
+    "secondary": [
+      "NUM-05",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "When the ant has gone 1 up, how far across has it gone?",
+    "Find the smallest step along the path that lands exactly on a grid point. The path is then cut into equal steps of that size, and the grid points are the ends of those steps.",
+    "The path goes 24 across for every 16 up, which is 3 across for every 2 up. So the grid points are (0, 0), (3, 2), (6, 4), and so on up to (24, 16)."
+  ],
+  "solutions": {
+    "reliable": "Along the path, the ant goes 24 across while it goes 16 up, so it goes 3 across for every 2 up, and this is the smallest step that lands on a grid point because 3 and 2 share no common factor. The grid points on the path are (0, 0), (3, 2), (6, 4), (9, 6), (12, 8), (15, 10), (18, 12), (21, 14) and (24, 16), which is 9 points. In general the number of steps is the greatest common factor of 24 and 16, which is 8, and 8 steps have 9 end points. The transferable idea: a straight path between grid points passes through grid points spaced by the greatest common factor, plus one for the start.",
+    "elegant": null
+  },
+  "whyOnTest": "Lattice reasoning at 5 points: the idea is to reduce the slope to lowest terms, a hidden greatest common factor.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

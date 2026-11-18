@@ -1,0 +1,67 @@
+{
+  "id": "KA-1361",
+  "band": "7-8",
+  "points": 3,
+  "statement": "In a sequence, each term is the previous term plus the same fixed number. The 3rd term is 17 and the 8th term is 42. What is the 20th term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "97",
+      "correct": false,
+      "misconception": "I counted back 3 steps from the 3rd term to find the first term, so I started at 2 instead of 7."
+    },
+    {
+      "key": "B",
+      "text": "102",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "100",
+      "correct": false,
+      "misconception": "I found the step 5 and multiplied it by 20, forgetting to start from the first term."
+    },
+    {
+      "key": "D",
+      "text": "105",
+      "correct": false,
+      "misconception": "I scaled in proportion, $42 \\times \\frac{20}{8}$, as if the terms were a fixed multiple of their position."
+    },
+    {
+      "key": "E",
+      "text": "107",
+      "correct": false,
+      "misconception": "I added 20 steps to the first term instead of 19 steps."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-02",
+    "secondary": [
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "How many steps are there from the 3rd term to the 8th?",
+    "Find the fixed step from the gap between two known terms and the number of steps between them. Then count the steps from a known term to the 20th term.",
+    "From the 3rd term to the 8th there are 5 steps, adding 25 in total, so each step is 5."
+  ],
+  "solutions": {
+    "reliable": "From the 3rd term to the 8th term there are $8 - 3 = 5$ steps, and the terms grow by $42 - 17 = 25$, so each step is 5. From the 8th term to the 20th there are 12 steps, so the 20th term is $42 + 12 \\times 5 = 102$. Check with the first term: $17 - 2 \\times 5 = 7$, and $7 + 19 \\times 5 = 102$. The transferable idea: the number of steps between term m and term n is $n - m$, not $n$.",
+    "elegant": null
+  },
+  "whyOnTest": "Arithmetic sequences are about counting steps between positions; the usual slips are off by one.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

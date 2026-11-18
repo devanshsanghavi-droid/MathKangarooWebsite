@@ -8,9 +8,13 @@ import {
   buildKaLookups,
   kaSkillNames,
   amcTopicNames,
+  buildTestIndexFile,
+  testSkillNames,
 } from '../../src/lib/bank-data.ts';
-import { amcPracticeItem, kaPracticeItem } from '../../src/lib/practice-item.ts';
+import { amcPracticeItem, kaPracticeItem, testPracticeItem } from '../../src/lib/practice-item.ts';
 import { buildAmcIndex as loadAmcIndex } from '../../src/lib/amc-content.ts';
+import { buildTestIndex as loadTestIndex } from '../../src/lib/test-content.ts';
+import { STD_TESTS, TEST_SLUG, type StdTest } from '../../src/lib/test-meta.ts';
 
 /**
  * Writes the static bank data (docs/06 §3) for one content directory. The CLI is
@@ -23,6 +27,8 @@ import { buildAmcIndex as loadAmcIndex } from '../../src/lib/amc-content.ts';
 export interface StaticDataResult {
   ka: { problems: number; skills: number };
   amc: { problems: number } | null;
+  /** Problems per test; a test with no content/tests/<slug>/taxonomy.json is absent. */
+  tests: Partial<Record<StdTest, number>>;
   files: number;
 }
 
@@ -99,6 +105,36 @@ function writeAmc(contentDir: string, outDir: string): { problems: number; files
   return { problems: index.problems.length, files: index.problems.length + 2 };
 }
 
+/**
+ * The SAT / ACT half: `<slug>-index.json` plus `p/<ID>.json` per problem, through the tests'
+ * own loader (src/lib/test-content.ts), which throws on anything invalid. Optional per test.
+ */
+function writeTests(
+  contentDir: string,
+  outDir: string,
+): { tests: Partial<Record<StdTest, number>>; files: number } {
+  const tests: Partial<Record<StdTest, number>> = {};
+  let files = 0;
+  for (const test of STD_TESTS) {
+    const slug = TEST_SLUG[test];
+    const dir = join(contentDir, 'tests', slug);
+    if (!existsSync(join(dir, 'taxonomy.json'))) continue;
+    const index = loadTestIndex(dir, test);
+    const file = buildTestIndexFile(index.taxonomy, index.problems);
+    const names = testSkillNames(file);
+    write(join(outDir, `${slug}-index.json`), file);
+    for (const problem of index.problems) {
+      write(
+        join(outDir, 'p', `${problem.id}.json`),
+        testPracticeItem(problem, (id) => names.get(id)),
+      );
+    }
+    tests[test] = index.problems.length;
+    files += index.problems.length + 1;
+  }
+  return { tests, files };
+}
+
 export function writeStaticData({
   contentDir,
   outDir,
@@ -111,9 +147,11 @@ export function writeStaticData({
   mkdirSync(join(outDir, 'p'), { recursive: true });
   const ka = writeKangaroo(contentDir, outDir);
   const amc = writeAmc(contentDir, outDir);
+  const tests = writeTests(contentDir, outDir);
   return {
     ka: { problems: ka.problems, skills: ka.skills },
     amc: amc ? { problems: amc.problems } : null,
-    files: ka.files + (amc?.files ?? 0),
+    tests: tests.tests,
+    files: ka.files + (amc?.files ?? 0) + tests.files,
   };
 }

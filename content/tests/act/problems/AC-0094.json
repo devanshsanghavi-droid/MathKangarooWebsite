@@ -1,0 +1,56 @@
+{
+  "id": "AC-0094",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-06",
+  "difficulty": "easy",
+  "statement": "A $30$-foot climbing rope is cut into three pieces. The second piece is twice as long as the first, and the third piece is $6$ feet longer than the first. How long, in feet, is the third piece?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found the length of the first piece, 6 feet, and gave that instead of the third piece."
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I divided the 30 feet evenly among the three pieces."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$13.5$",
+      "correct": false,
+      "misconception": "I left the extra 6 feet out of the total and solved $4x = 30$, so the first piece was 7.5 feet and the third $7.5 + 6 = 13.5$."
+    }
+  ],
+  "hints": [
+    "Let $x$ be the length of the first piece and write the other two in terms of $x$.",
+    "The pieces are $x$, $2x$ and $x + 6$ feet long, and together they make 30 feet.",
+    "$x + 2x + (x + 6) = 30$ gives $4x + 6 = 30$."
+  ],
+  "solutions": {
+    "reliable": "Let the first piece be $x$ feet. Then the pieces are $x$, $2x$ and $x + 6$, so $4x + 6 = 30$ and $x = 6$. The third piece is $6 + 6 = 12$ feet. Check: $6 + 12 + 12 = 30$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

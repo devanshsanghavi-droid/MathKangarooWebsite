@@ -1,0 +1,68 @@
+{
+  "id": "AM-1124",
+  "contest": "AMC8",
+  "slot": 17,
+  "area": "GEO",
+  "topic": "GEO-02",
+  "types": [
+    "T-SIMILAR"
+  ],
+  "statement": "A lamp sits at the top of a $6$-meter pole on flat ground. Maya, who is $1.5$ meters tall, walks in a straight line directly away from the pole at a steady $1.2$ meters per second, and the lamp casts her shadow on the ground in front of her. How fast, in meters per second, does the tip of her shadow move along the ground?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.3$",
+      "correct": false,
+      "misconception": "I multiplied her speed by her height over the pole's height, 1.2 times 1.5/6 = 0.3."
+    },
+    {
+      "key": "B",
+      "text": "$0.4$",
+      "correct": false,
+      "misconception": "I found how fast the shadow gets longer, 0.4 meters per second, but the tip also moves along with Maya, so I needed to add her 1.2 meters per second."
+    },
+    {
+      "key": "C",
+      "text": "$1.2$",
+      "correct": false,
+      "misconception": "I thought the tip of the shadow just keeps pace with Maya."
+    },
+    {
+      "key": "D",
+      "text": "$1.6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$4.8$",
+      "correct": false,
+      "misconception": "I multiplied her speed by the pole's height over her height, 1.2 times 6/1.5 = 4.8."
+    }
+  ],
+  "hints": [
+    "Let $d$ be Maya's distance from the pole and $s$ the length of her shadow. Look for two similar right triangles.",
+    "The big triangle has the pole as one leg and $d + s$ along the ground. The small triangle has Maya as one leg and $s$ along the ground.",
+    "$\\frac{s}{1.5} = \\frac{d + s}{6}$ gives $s = \\frac{d}{3}$, so the tip is at distance $d + s = \\frac{4}{3}d$ from the pole."
+  ],
+  "solutions": {
+    "reliable": "When Maya is $d$ meters from the pole, let her shadow be $s$ meters long. The light ray over her head makes two similar right triangles: the pole with ground length $d + s$, and Maya with ground length $s$. So $\\frac{s}{1.5} = \\frac{d + s}{6}$, which gives $6s = 1.5d + 1.5s$, so $s = \\frac{d}{3}$. The tip of the shadow is $d + s = \\frac{4}{3}d$ meters from the pole, always $\\frac{4}{3}$ of Maya's distance. Her distance grows by $1.2$ meters each second, so the tip's distance grows by $\\frac{4}{3} \\cdot 1.2 = 1.6$ meters each second.",
+    "elegant": "Check two moments. At $d = 3$ the shadow is $1$ meter long, so the tip is $4$ meters from the pole. At $d = 6$ the shadow is $2$ meters long, so the tip is at $8$. While Maya walked $3$ meters, the tip moved $4$ meters, so the tip always moves $\\frac{4}{3}$ as fast as Maya: $\\frac{4}{3} \\cdot 1.2 = 1.6$."
+  },
+  "formulas": [
+    "F-GEO-11"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

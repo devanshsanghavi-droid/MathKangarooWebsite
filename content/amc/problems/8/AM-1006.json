@@ -1,0 +1,66 @@
+{
+  "id": "AM-1006",
+  "contest": "AMC8",
+  "slot": 2,
+  "area": "ALG",
+  "topic": "ALG-08",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "For any numbers $a$ and $b$, define $a \\odot b = a^2 - b$. What is the value of $(3 \\odot 5) \\odot 2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-18$",
+      "correct": false,
+      "misconception": "I squared the second number and subtracted the first, so 3 ⊙ 5 = 25 - 3 = 22, and then 22 ⊙ 2 = 4 - 22 = -18."
+    },
+    {
+      "key": "B",
+      "text": "$-14$",
+      "correct": false,
+      "misconception": "I worked from the right, finding 5 ⊙ 2 = 23 first, and then 3 ⊙ 23 = 9 - 23 = -14, but the brackets say to start on the left."
+    },
+    {
+      "key": "C",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I read a^2 as 2a, so 3 ⊙ 5 = 6 - 5 = 1 and then 1 ⊙ 2 = 2 - 2 = 0."
+    },
+    {
+      "key": "D",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I found 3 ⊙ 5 = 4 correctly but then forgot to square the 4 and did 4 - 2 = 2."
+    },
+    {
+      "key": "E",
+      "text": "$14$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Start inside the brackets.",
+    "First find $3 \\odot 5$ using $a = 3$ and $b = 5$. That result becomes the new $a$.",
+    "$3 \\odot 5 = 9 - 5 = 4$. Now find $4 \\odot 2$."
+  ],
+  "solutions": {
+    "reliable": "Inside the brackets, $3 \\odot 5 = 3^2 - 5 = 9 - 5 = 4$. Then $4 \\odot 2 = 4^2 - 2 = 16 - 2 = 14$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

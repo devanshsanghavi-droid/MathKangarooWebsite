@@ -1,0 +1,67 @@
+{
+  "id": "KA-1025",
+  "band": "1-2",
+  "points": 4,
+  "statement": "A pattern goes 1, 2, 4, 7, 11, and so on. What number comes next?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I added 1 to 11, because the very first jump in the pattern was 1."
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": false,
+      "misconception": "I added 4 again, the same jump as the last one."
+    },
+    {
+      "key": "C",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": false,
+      "misconception": "I added the two numbers before, 7 + 11."
+    },
+    {
+      "key": "E",
+      "text": "22",
+      "correct": false,
+      "misconception": "I thought each number doubles, like 1, 2, 4, so I doubled 11."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "Look at how much the pattern grows each time.",
+    "Write the jump between each pair of neighbours: from 1 to 2, from 2 to 4, and so on. Then look at how the jumps themselves change.",
+    "The jumps are 1, 2, 3, 4. What is the next jump?"
+  ],
+  "solutions": {
+    "reliable": "The jumps are 1, 2, 3 and 4, so each jump is 1 more than the one before. The next jump is 5, and 11 + 5 = 16. The idea to keep: when a pattern does not grow by the same amount each time, look at the jumps and find their pattern.",
+    "elegant": null
+  },
+  "whyOnTest": "Continuing a pattern: the start looks like doubling, so checking every jump between neighbours is what shows the real rule.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

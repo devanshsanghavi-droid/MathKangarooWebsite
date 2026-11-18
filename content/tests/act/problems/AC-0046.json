@@ -1,0 +1,56 @@
+{
+  "id": "AC-0046",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-07",
+  "difficulty": "easy",
+  "statement": "Matrices $A$ and $B$ are shown below. $$A = \\begin{bmatrix} 2 & -1 \\\\ 0 & 3 \\end{bmatrix}, \\quad B = \\begin{bmatrix} 1 & 4 \\\\ 5 & -2 \\end{bmatrix}$$ What is the entry in row 1, column 2 of the product $AB$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-4$",
+      "correct": false,
+      "misconception": "I multiplied only the matching entries, $-1 \\cdot 4$, as if matrices multiply entry by entry."
+    },
+    {
+      "key": "B",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I used row 1 of $A$ with column 1 of $B$, $2 \\cdot 1 + (-1) \\cdot 5$, which is the entry in row 1, column 1."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I computed $BA$ instead of $AB$, using row 1 of $B$ with column 2 of $A$: $1 \\cdot (-1) + 4 \\cdot 3$."
+    }
+  ],
+  "hints": [
+    "Each entry of $AB$ comes from one row of $A$ and one column of $B$.",
+    "For row 1, column 2, multiply row 1 of $A$ by column 2 of $B$ entry by entry, then add the products.",
+    "Row 1 of $A$ is $(2, -1)$ and column 2 of $B$ is $(4, -2)$, so compute $2 \\cdot 4 + (-1)(-2)$."
+  ],
+  "solutions": {
+    "reliable": "The entry in row 1, column 2 of $AB$ is the dot product of row 1 of $A$, $(2, -1)$, with column 2 of $B$, $(4, -2)$: $2 \\cdot 4 + (-1) \\cdot (-2) = 8 + 2 = 10$. The idea: entry $(r, c)$ of a product is row $r$ of the left matrix dotted with column $c$ of the right matrix, and the order of the factors matters.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

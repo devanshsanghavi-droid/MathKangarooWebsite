@@ -1,0 +1,56 @@
+{
+  "id": "SA-0207",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-02",
+  "difficulty": "medium",
+  "statement": "A rectangular patio measures $4.5$ yards by $6$ yards. Paving stones for the patio cost $\\$2.50$ per square foot. What is the total cost of the paving stones needed to cover the patio? ($1$ yard $= 3$ feet)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$67.50$",
+      "correct": false,
+      "misconception": "I found the area as 27 square yards and multiplied by the price per square foot without converting square yards to square feet."
+    },
+    {
+      "key": "B",
+      "text": "$\\$157.50$",
+      "correct": false,
+      "misconception": "I converted the sides to 13.5 feet and 18 feet but found the perimeter, 63 feet, and multiplied that by the price instead of using the area."
+    },
+    {
+      "key": "C",
+      "text": "$\\$202.50$",
+      "correct": false,
+      "misconception": "I changed 27 square yards to square feet by multiplying by 3, but one square yard is $3 \\times 3 = 9$ square feet."
+    },
+    {
+      "key": "D",
+      "text": "$\\$607.50$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The price is per square foot, but the sides are given in yards.",
+    "Convert each side to feet before finding the area, then multiply the area by the price per square foot.",
+    "The patio is $4.5 \\cdot 3 = 13.5$ feet by $6 \\cdot 3 = 18$ feet, so its area is $13.5 \\cdot 18 = 243$ square feet."
+  ],
+  "solutions": {
+    "reliable": "In feet the patio is $13.5$ by $18$, so the area is $243$ square feet. The cost is $243 \\cdot 2.50 = 607.50$ dollars.",
+    "elegant": "The area is $4.5 \\cdot 6 = 27$ square yards, and each square yard is $9$ square feet, so the area is $243$ square feet and the cost is $243 \\cdot \\$2.50 = \\$607.50$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "AM-1205",
+  "contest": "AMC8",
+  "slot": 19,
+  "area": "NT",
+  "topic": "NT-10",
+  "types": [
+    "T-BOUNDING",
+    "T-SMALL-CASES"
+  ],
+  "statement": "What is the smallest positive integer $b$ for which some fraction $\\frac{a}{b}$, with $a$ a positive integer, lies strictly between $0.43$ and $0.44$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I rounded $\\frac{3}{7} = 0.428\\ldots$ up to $0.43$ and counted it as lying between $0.43$ and $0.44$."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I rounded $\\frac{4}{9} = 0.444\\ldots$ down to $0.44$ and counted it as lying between $0.43$ and $0.44$."
+    },
+    {
+      "key": "C",
+      "text": "$16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$200$",
+      "correct": false,
+      "misconception": "I took the number halfway between, $0.435 = \\frac{87}{200}$, and assumed its denominator was the smallest possible."
+    },
+    {
+      "key": "E",
+      "text": "$1000$",
+      "correct": false,
+      "misconception": "I wrote the halfway number $0.435$ as $\\frac{435}{1000}$ and did not reduce it or look for a smaller denominator."
+    }
+  ],
+  "hints": [
+    "For each $b$, the fraction $\\frac{a}{b}$ is between $0.43$ and $0.44$ exactly when $0.43b < a < 0.44b$. Is there a whole number in that interval?",
+    "The interval from $0.43b$ to $0.44b$ has length only $0.01b$, so for small $b$ it usually misses every whole number. Check $b = 1, 2, 3, \\ldots$ in order.",
+    "Close calls are $\\frac{3}{7} = 0.428\\ldots$ and $\\frac{4}{9} = 0.444\\ldots$, which are both just outside. Try $b = 16$: $0.43 \\cdot 16 = 6.88$ and $0.44 \\cdot 16 = 7.04$."
+  ],
+  "solutions": {
+    "reliable": "We need a whole number $a$ with $0.43b < a < 0.44b$. Checking $b = 1$ to $15$: the interval $(0.43b, 0.44b)$ is $(0.43, 0.44)$, $(0.86, 0.88)$, $(1.29, 1.32)$, $(1.72, 1.76)$, $(2.15, 2.2)$, $(2.58, 2.64)$, $(3.01, 3.08)$, $(3.44, 3.52)$, $(3.87, 3.96)$, $(4.3, 4.4)$, $(4.73, 4.84)$, $(5.16, 5.28)$, $(5.59, 5.72)$, $(6.02, 6.16)$, $(6.45, 6.6)$, and none of these contains a whole number. For $b = 16$ the interval is $(6.88, 7.04)$, which contains $7$, and $\\frac{7}{16} = 0.4375$. So the answer is $16$.",
+    "elegant": "Every fraction strictly between $0.43$ and $0.44$ also lies strictly between $\\frac{3}{7} = 0.428\\ldots$ and $\\frac{4}{9} = 0.444\\ldots$. If $\\frac{3}{7} < \\frac{a}{b} < \\frac{4}{9}$, then $7a - 3b$ and $4b - 9a$ are positive whole numbers, so each is at least $1$. But $9(7a - 3b) + 7(4b - 9a) = b$, so $b \\ge 9 + 7 = 16$. And $b = 16$ works with $\\frac{7}{16} = 0.4375$."
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

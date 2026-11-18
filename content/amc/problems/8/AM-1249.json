@@ -1,0 +1,68 @@
+{
+  "id": "AM-1249",
+  "contest": "AMC8",
+  "slot": 8,
+  "area": "CP",
+  "topic": "CP-02",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "How many four-digit numbers can be made from four different digits chosen from $1, 2, 3, 4, 5$, if the number must be even and greater than $3000$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I gave the first digit 3 choices (3, 4 or 5) and the last digit 2 choices (2 or 4) separately, 3 times 2 times 3 times 2 = 36, but the digit 4 cannot be in both places."
+    },
+    {
+      "key": "C",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I only used the even rule: 2 choices for the last digit, then 4 times 3 times 2 for the rest, giving 48."
+    },
+    {
+      "key": "D",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I only used the greater than 3000 rule: 3 choices for the first digit, then 4 times 3 times 2, giving 72."
+    },
+    {
+      "key": "E",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I counted every four-digit number made from four different digits of the set, 5 times 4 times 3 times 2 = 120, ignoring both rules."
+    }
+  ],
+  "hints": [
+    "The first digit must be $3$, $4$ or $5$, and the last digit must be $2$ or $4$. Which digit appears in both lists?",
+    "Split into cases by the last digit. If it is $4$, then $4$ can no longer be the first digit.",
+    "Last digit $2$: first digit $3$, $4$ or $5$, then $3 \\cdot 2$ for the middle. Last digit $4$: first digit $3$ or $5$, then $3 \\cdot 2$ for the middle. Add the cases."
+  ],
+  "solutions": {
+    "reliable": "The number is even, so it ends in $2$ or $4$; it is greater than $3000$, so it starts with $3$, $4$ or $5$. If it ends in $2$, the first digit has $3$ choices and the middle two digits can be filled from the remaining $3$ digits in $3 \\cdot 2 = 6$ ways: $18$ numbers. If it ends in $4$, the first digit is $3$ or $5$, $2$ choices, and again $6$ ways for the middle: $12$ numbers. In all, $18 + 12 = 30$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-02"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

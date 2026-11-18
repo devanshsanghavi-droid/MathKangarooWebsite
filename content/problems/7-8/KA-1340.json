@@ -1,0 +1,68 @@
+{
+  "id": "KA-1340",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A solid is built by stacking 1 cm cubes on a 4 by 4 grid on a table. The stack heights, back row first, each row left to right, are 3, 2, 2, 1; 2, 2, 1, 1; 2, 1, 1, 0; 1, 1, 0, 0. What is its surface area in square centimetres, including the faces on the table?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "29",
+      "correct": false,
+      "misconception": "I added the areas of the top, front and side views but forgot the matching bottom, back and other side."
+    },
+    {
+      "key": "B",
+      "text": "64",
+      "correct": false,
+      "misconception": "I used the whole 4 by 4 square, 16, for the views from above and below, though three squares of the grid are empty."
+    },
+    {
+      "key": "C",
+      "text": "58",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "120",
+      "correct": false,
+      "misconception": "I counted 6 faces for each of the 20 cubes and forgot that faces glued to another cube are hidden."
+    },
+    {
+      "key": "E",
+      "text": "45",
+      "correct": false,
+      "misconception": "I left out the 13 faces resting on the table."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-12",
+    "secondary": [
+      "GEO-13",
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "Look at the solid from each of the six directions.",
+    "The stacks never get taller as you move forward or to the right, so the solid has no hollows: each square seen from any of the six directions is exactly one face. Add up the six views.",
+    "From above and from below you see 13 squares. From the front and from the back you see 3 + 2 + 2 + 1. From either side you see 3 + 2 + 2 + 1."
+  ],
+  "solutions": {
+    "reliable": "Count the faces direction by direction. Top: each of the 13 non-empty stacks shows one top face, and the bottom also has 13 faces on the table. Front: in each column the stacks get no taller towards the front, so every step down shows its own faces and the column shows as many front faces as its tallest stack: 3 + 2 + 2 + 1 = 8, and the back also shows 8. Each side, in the same way, shows 3 + 2 + 2 + 1 = 8. Total 13 + 13 + 8 + 8 + 8 + 8 = 58 square centimetres. The transferable idea: for a solid with no hollows, the surface area is twice the sum of the top, front and side views.",
+    "elegant": "Check by gluing: the 20 cubes have 120 faces. There are 7 places where one cube sits on another and 24 places where two cubes touch side by side, 31 joins in all, and each join hides 2 faces. So 120 - 62 = 58."
+  },
+  "whyOnTest": "Tests reading a solid from its views: with no hollows, each view shows each outer face once, so the six views give the whole surface.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

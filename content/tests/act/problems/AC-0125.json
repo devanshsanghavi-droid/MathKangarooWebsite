@@ -1,0 +1,56 @@
+{
+  "id": "AC-0125",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "hard",
+  "statement": "Marco paddles his kayak $15$ kilometers upstream and then $15$ kilometers back downstream to where he started. The river's current flows at $2$ kilometers per hour, and the round trip takes $4$ hours of paddling. What is Marco's paddling speed in still water, in kilometers per hour?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3.75$",
+      "correct": false,
+      "misconception": "I set up $\\frac{15}{v - 2} + \\frac{15}{v + 2} = 4$ but added the fractions by adding the tops and adding the bottoms, which gave $\\frac{30}{2v} = 4$."
+    },
+    {
+      "key": "B",
+      "text": "$7.5$",
+      "correct": false,
+      "misconception": "I ignored the current, thinking it helps one way and hurts the other by the same amount, so I solved $\\frac{30}{v} = 4$."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I solved for the still-water speed $v = 8$ but then reported his downstream speed, $v + 2$, instead."
+    }
+  ],
+  "hints": [
+    "Time equals distance divided by speed. What is his speed in each direction?",
+    "Upstream his speed is $v - 2$ and downstream it is $v + 2$. Add the two times, set the sum equal to $4$, and clear the denominators.",
+    "$15(v + 2) + 15(v - 2) = 4(v^2 - 4)$ simplifies to $2v^2 - 15v - 8 = 0$."
+  ],
+  "solutions": {
+    "reliable": "Let $v$ be his still-water speed. Then $\\frac{15}{v - 2} + \\frac{15}{v + 2} = 4$. Multiply by $(v - 2)(v + 2)$: $15(v + 2) + 15(v - 2) = 4(v^2 - 4)$, so $30v = 4v^2 - 16$ and $2v^2 - 15v - 8 = 0$. This factors as $(2v + 1)(v - 8) = 0$. A speed must be positive, so $v = 8$. Check: upstream takes $15 \\div 6 = 2.5$ hours and downstream takes $15 \\div 10 = 1.5$ hours, a total of $4$ hours.",
+    "elegant": "Test the choices in $\\frac{15}{v - 2} + \\frac{15}{v + 2}$: only $v = 8$ gives $\\frac{15}{6} + \\frac{15}{10} = 2.5 + 1.5 = 4$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

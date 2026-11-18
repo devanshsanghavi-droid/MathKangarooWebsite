@@ -1,0 +1,68 @@
+{
+  "id": "KA-1221",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Point D lies on side AC of triangle ABC so that AB = BD = DC. Angle BAC is 64 degrees. How many degrees is angle ABC?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "32",
+      "correct": false,
+      "misconception": "I found angle C, which is half of 64 degrees, and gave that instead of angle ABC."
+    },
+    {
+      "key": "B",
+      "text": "52",
+      "correct": false,
+      "misconception": "I found angle ABD but forgot to add angle DBC to it."
+    },
+    {
+      "key": "C",
+      "text": "84",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "104",
+      "correct": false,
+      "misconception": "I thought triangle BDC has the same angles as triangle ABD, so I added 52 twice."
+    },
+    {
+      "key": "E",
+      "text": "116",
+      "correct": false,
+      "misconception": "I found angle BDC, which is 180 - 64, and gave that instead of angle ABC."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-06",
+    "secondary": [
+      "GEO-05",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Draw the triangle and mark the equal sides. Which angles are equal?",
+    "Triangles ABD and BDC are both isosceles. The angle ADB is the outside angle of triangle BDC at D, so it equals the sum of that triangle's two equal angles.",
+    "In triangle ABD, angle ADB = angle BAD = 64 degrees, so angle ABD = 180 - 128 = 52. In triangle BDC, angles DBC and C are equal and add up to 64, so each is 32."
+  ],
+  "solutions": {
+    "reliable": "Since AB = BD, triangle ABD is isosceles and angle ADB equals angle BAD, 64 degrees. So angle ABD = 180 - 64 - 64 = 52 degrees. Angle BDC = 180 - 64 = 116 degrees. Since BD = DC, triangle BDC is isosceles, so angles DBC and C are equal, and together they make 180 - 116 = 64 degrees, so each is 32. Then angle ABC = 52 + 32 = 84 degrees. Check: 64 + 84 + 32 = 180. The transferable idea: in a chain of isosceles triangles, mark every pair of equal angles and use the outside angle of a triangle.",
+    "elegant": "The outside angle ADB of triangle BDC equals angle DBC + angle C = 2 × angle C, so angle C = 32. The angles of triangle ABC then give angle ABC = 180 - 64 - 32 = 84."
+  },
+  "whyOnTest": "Isosceles triangles hide equal angles; chaining two of them and using an outside angle is a typical 5-point idea.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

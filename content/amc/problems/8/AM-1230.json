@@ -1,0 +1,66 @@
+{
+  "id": "AM-1230",
+  "contest": "AMC8",
+  "slot": 2,
+  "area": "CP",
+  "topic": "CP-12",
+  "types": [
+    "T-COMPLEMENT"
+  ],
+  "statement": "A survey asked $240$ students to name their favorite season. One quarter of them chose summer, $20\\%$ chose winter, $15\\%$ chose spring, and everyone else chose autumn. How many students chose autumn?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I worked out that 40 percent chose autumn and gave 40 as the number of students instead of finding 40 percent of 240."
+    },
+    {
+      "key": "B",
+      "text": "$96$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$132$",
+      "correct": false,
+      "misconception": "I forgot to subtract the spring students, so I used 100 - 25 - 20 = 55 percent, and 55 percent of 240 is 132."
+    },
+    {
+      "key": "D",
+      "text": "$144$",
+      "correct": false,
+      "misconception": "I found the students who did not choose autumn, 25 + 20 + 15 = 60 percent of 240 = 144, instead of the ones who did."
+    },
+    {
+      "key": "E",
+      "text": "$156$",
+      "correct": false,
+      "misconception": "I forgot to subtract summer because it was given as a fraction, so I used 100 - 20 - 15 = 65 percent, and 65 percent of 240 is 156."
+    }
+  ],
+  "hints": [
+    "Write every group as a percent of the whole survey.",
+    "One quarter is $25\\%$. The autumn percent is whatever is left of $100\\%$. Then take that percent of $240$.",
+    "Autumn is $100\\% - 25\\% - 20\\% - 15\\% = 40\\%$ of the students, and $40\\%$ of $240$ is $0.4 \\cdot 240$."
+  ],
+  "solutions": {
+    "reliable": "One quarter is $25\\%$. The autumn group is $100\\% - 25\\% - 20\\% - 15\\% = 40\\%$ of the students. So $0.40 \\cdot 240 = 96$ students chose autumn.",
+    "elegant": "Count the other groups directly: summer $\\frac{240}{4} = 60$, winter $0.2 \\cdot 240 = 48$, spring $0.15 \\cdot 240 = 36$. Autumn is $240 - 60 - 48 - 36 = 96$."
+  },
+  "formulas": [],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

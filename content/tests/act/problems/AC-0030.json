@@ -1,0 +1,56 @@
+{
+  "id": "AC-0030",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-02",
+  "difficulty": "hard",
+  "statement": "If $5^{x} = 3$, what is the value of $25^{x + \\frac{1}{2}}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I rewrote $25^x$ as $\\left(5^x\\right)^2 = 9$ but dropped the $+\\tfrac{1}{2}$ in the exponent, which multiplies by another factor of $25^{\\frac{1}{2}} = 5$."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I assumed $25^x$ is also 3 because the exponent is the same $x$, then multiplied by 5 for the $+\\tfrac{1}{2}$."
+    },
+    {
+      "key": "C",
+      "text": "$45$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$112.5$",
+      "correct": false,
+      "misconception": "I got $25^x = 9$ correctly but read $25^{\\frac{1}{2}}$ as half of 25, so I multiplied 9 by 12.5 instead of by the square root of 25."
+    }
+  ],
+  "hints": [
+    "Write 25 as a power of 5.",
+    "Split the exponent: $25^{x + \\frac{1}{2}} = 25^{x} \\cdot 25^{\\frac{1}{2}}$. Then rewrite $25^x$ using $25 = 5^2$.",
+    "$25^{x} = \\left(5^{x}\\right)^{2} = 3^2$ and $25^{\\frac{1}{2}} = \\sqrt{25}$."
+  ],
+  "solutions": {
+    "reliable": "Split the exponent: $25^{x + \\frac12} = 25^{x} \\cdot 25^{\\frac12}$. Since $25 = 5^2$, $25^{x} = \\left(5^2\\right)^{x} = \\left(5^{x}\\right)^2 = 3^2 = 9$. A $\\tfrac12$ power is a square root, so $25^{\\frac12} = 5$. The value is $9 \\cdot 5 = 45$. Check with a calculator: $x = \\log_5 3 \\approx 0.6826$, and $25^{1.1826} \\approx 45$. The idea: rewrite every base as a power of the base you know, then substitute.",
+    "elegant": "$25^{x + \\frac12} = 5^{2x + 1} = \\left(5^{x}\\right)^{2} \\cdot 5 = 9 \\cdot 5 = 45$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

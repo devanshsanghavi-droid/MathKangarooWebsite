@@ -1,0 +1,71 @@
+{
+  "id": "KA-1193",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Square frames are made from tiles, as shown. The frames keep growing in the same way. How many tiles are in frame 6?",
+  "figure": {
+    "component": "TileFrameStages",
+    "alt": "Three square frames made of square tiles, labelled 1, 2 and 3. Frame 1 is a 3 by 3 square with its centre tile missing, using 8 tiles. Frame 2 is a 4 by 4 square with its 2 by 2 middle missing, using 12 tiles. Frame 3 is a 5 by 5 square with its 3 by 3 middle missing, using 16 tiles."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "20",
+      "correct": false,
+      "misconception": "I thought frame 6 would be a 6 by 6 square, which uses 20 tiles."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I added 4 tiles each time but stopped one frame too early, at frame 5."
+    },
+    {
+      "key": "C",
+      "text": "28",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "32",
+      "correct": false,
+      "misconception": "I counted 4 sides of 8 tiles each, so I counted every corner tile twice."
+    },
+    {
+      "key": "E",
+      "text": "64",
+      "correct": false,
+      "misconception": "I counted all the tiles in a full 8 by 8 square, not just the frame."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-02",
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "How many tiles are added each time?",
+    "Count the tiles in each frame shown and see how the number changes from one frame to the next. Or find the side length of frame 6 and count its border.",
+    "The frames use 8, 12, 16 tiles: 4 more each time. Frame 6 is an 8 by 8 border."
+  ],
+  "solutions": {
+    "reliable": "The frames use 8, 12 and 16 tiles, 4 more each time. Continue: frame 4 has 20, frame 5 has 24, frame 6 has 28. The transferable idea: find the step between stages and keep track of which stage you are on.",
+    "elegant": "Frame 1 is 3 tiles wide, so frame 6 is 8 tiles wide. Its border has 4 sides of 8 tiles, but the 4 corners are counted twice: $4 \\times 8 - 4 = 28$."
+  },
+  "whyOnTest": "Continuing a visual pattern: spot what each stage adds, and check by counting the stage directly.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

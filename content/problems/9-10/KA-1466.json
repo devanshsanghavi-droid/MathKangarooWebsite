@@ -1,0 +1,68 @@
+{
+  "id": "KA-1466",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Ten straight lines are drawn in the plane. No two of them are parallel, and no three of them pass through the same point. Into how many regions do the ten lines divide the plane?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "11",
+      "correct": false,
+      "misconception": "I thought each new line adds just one region, as it would if all the lines were parallel."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I thought each line adds two regions, one on each side of it."
+    },
+    {
+      "key": "C",
+      "text": "55",
+      "correct": false,
+      "misconception": "I added 1 + 2 + ... + 10 = 55 for the regions the lines add, but forgot the one region the plane was before any line was drawn."
+    },
+    {
+      "key": "D",
+      "text": "56",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "1024",
+      "correct": false,
+      "misconception": "I saw that 1 line and 2 lines make 2 and 4 regions and assumed the number keeps doubling, but 3 lines make only 7."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "CFT-03",
+      "PAT-04"
+    ]
+  },
+  "hints": [
+    "Count the regions for 1, 2, 3 and 4 lines.",
+    "Find a rule for how many new regions one more line creates. The new line crosses every earlier line, and each piece of the new line between crossings splits one old region in two.",
+    "The 4th line crosses the 3 earlier lines at 3 different points, so it is cut into 4 pieces and adds 4 regions. In the same way the k-th line adds k regions."
+  ],
+  "solutions": {
+    "reliable": "With no lines the plane is 1 region. The k-th line crosses each of the k - 1 earlier lines exactly once, since no two are parallel, and at k - 1 different points, since no three meet at a point. These points cut the new line into k pieces, and each piece splits one old region into two, so the k-th line adds k regions. The counts are 2, 4, 7, 11, ... for 1, 2, 3, 4 lines, and for ten lines the total is 1 + (1 + 2 + ... + 10) = 1 + 55 = 56. The transferable idea: for a count that grows step by step, find how one more object changes it, then add up the changes.",
+    "elegant": "Count what creates regions: the plane starts as 1 region, each line adds 1 region when it is drawn on its own, and each crossing point adds 1 more. Ten lines have $\\binom{10}{2} = 45$ crossing points, so there are 1 + 10 + 45 = 56 regions."
+  },
+  "whyOnTest": "Recursive counting tests finding how one more line changes the total, instead of guessing a pattern from the first two cases.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

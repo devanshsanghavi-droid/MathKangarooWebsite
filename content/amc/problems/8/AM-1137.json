@@ -1,0 +1,66 @@
+{
+  "id": "AM-1137",
+  "contest": "AMC8",
+  "slot": 21,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-ANGLE-CHASE"
+  ],
+  "statement": "Twelve points are equally spaced around a circle and labeled $1$ through $12$, like the hours on a clock face. One segment joins point $12$ to point $4$, and another segment joins point $2$ to point $9$. The two segments cross inside the circle. What is the degree measure of the acute angle between them?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I found the inscribed angle at point $4$ in the triangle formed by points $2$, $4$ and the crossing point, which is $30^\\circ$, and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I took half the difference of the two arcs, $\\frac{150 - 60}{2}$, which is the rule for two lines that meet outside the circle, not inside."
+    },
+    {
+      "key": "C",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I used the central angle between points $2$ and $4$, $60^\\circ$, as if it were the angle between the two segments."
+    },
+    {
+      "key": "D",
+      "text": "$75$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$105$",
+      "correct": false,
+      "misconception": "I found the obtuse angle at the crossing, $105^\\circ$, instead of the acute one."
+    }
+  ],
+  "hints": [
+    "Neighboring labeled points are $30^\\circ$ apart as seen from the center of the circle.",
+    "Let $X$ be the crossing point and look at the triangle with corners $X$, point $2$ and point $4$. Its angles at points $2$ and $4$ are inscribed angles, and each is half of the arc it cuts off.",
+    "The angle at point $4$ cuts off the arc from $12$ to $2$, which is $60^\\circ$, so it is $30^\\circ$. The angle at point $2$ cuts off the arc from $4$ to $9$, which is $150^\\circ$, so it is $75^\\circ$. The angle at $X$ is what remains of $180^\\circ$."
+  ],
+  "solutions": {
+    "reliable": "Neighboring points are $\\frac{360^\\circ}{12} = 30^\\circ$ apart. Let $X$ be the crossing point and look at the triangle with corners $X$, point $2$ and point $4$. The angle at point $4$, between the segments to point $12$ and to point $2$, is an inscribed angle that cuts off the arc from $12$ to $2$ (two steps, $60^\\circ$), so it is $30^\\circ$. The angle at point $2$, between the segments to point $4$ and to point $9$, cuts off the arc from $4$ to $9$ (five steps, $150^\\circ$), so it is $75^\\circ$. Then the angle at $X$ is $180^\\circ - 30^\\circ - 75^\\circ = 75^\\circ$. The other angle at the crossing is $105^\\circ$, so the acute angle is $75^\\circ$.",
+    "elegant": "When two chords cross inside a circle, each angle at the crossing is half the sum of the arc it faces and the arc its vertical angle faces. The angle facing the arc from $2$ to $4$ ($60^\\circ$) also faces, across the crossing, the arc from $9$ to $12$ ($90^\\circ$). So it is $\\frac{60^\\circ + 90^\\circ}{2} = 75^\\circ$."
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

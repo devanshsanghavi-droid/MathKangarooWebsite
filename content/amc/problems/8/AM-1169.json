@@ -1,0 +1,69 @@
+{
+  "id": "AM-1169",
+  "contest": "AMC8",
+  "slot": 7,
+  "area": "NT",
+  "topic": "NT-04",
+  "types": [
+    "T-PIE",
+    "T-COMPLEMENT"
+  ],
+  "statement": "Starting tomorrow, Lena will go to the library every $4$th day, the pool every $6$th day and the park every $10$th day. So she goes to the library on days $4, 8, 12, \\ldots$, the pool on days $6, 12, 18, \\ldots$ and the park on days $10, 20, 30, \\ldots$. During days $1$ through $365$, on how many days does she go to both the library and the pool but not the park?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I counted the days she goes to all three places, the multiples of $60$, instead of the days she skips the park."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I thought the library and the pool line up every $4 \\cdot 6 = 24$ days, so I counted $365 \\div 24$ rounded down, and I also forgot to remove the park days."
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I subtracted the $6$ days with all three places twice, $30 - 6 - 6 = 18$, instead of once."
+    },
+    {
+      "key": "D",
+      "text": "$24$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I counted the days that are multiples of $12$ but forgot to remove the days she also goes to the park."
+    }
+  ],
+  "hints": [
+    "On which days does she go to both the library and the pool?",
+    "The library and pool days are the multiples of $\\operatorname{lcm}(4, 6) = 12$. Among them, the park days are the multiples of $\\operatorname{lcm}(12, 10) = 60$.",
+    "There are $\\lfloor 365 / 12 \\rfloor = 30$ multiples of $12$ and $\\lfloor 365 / 60 \\rfloor = 6$ multiples of $60$ in the range."
+  ],
+  "solutions": {
+    "reliable": "A day is a library and pool day exactly when it is a multiple of both $4$ and $6$, that is, a multiple of $\\operatorname{lcm}(4, 6) = 12$. From $1$ to $365$ there are $30$ such days, since $12 \\cdot 30 = 360$. Of these, the park days are the multiples of $\\operatorname{lcm}(12, 10) = 60$, and there are $6$ of them ($60, 120, \\ldots, 360$). So the answer is $30 - 6 = 24$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-03"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

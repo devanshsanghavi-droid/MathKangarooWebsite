@@ -1,0 +1,68 @@
+{
+  "id": "KA-1388",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A sequence of whole numbers starts with 11, and each number is d more than the one before, where d is a fixed whole number greater than 0. The number 2026 is in the sequence. How many different values could d have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the divisors of 2026 instead of the divisors of the gap 2026 - 11."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only the prime factors 5, 13 and 31 of 2015."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I left out the differences 1 and 2015 because they seemed too obvious to count."
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": false,
+      "misconception": "I left out d = 2015 because then the sequence jumps straight from 11 to 2026."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-02",
+    "secondary": [
+      "NUM-05",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "How far is 2026 from the first number?",
+    "To land exactly on 2026, a whole number of steps of size d must cover the gap from 11 to 2026. So d must divide that gap. Count its divisors carefully.",
+    "The gap is 2015 = 5 x 13 x 31. Every divisor of 2015 works, including 1 and 2015."
+  ],
+  "solutions": {
+    "reliable": "The terms are 11, 11 + d, 11 + 2d, and so on. 2026 is a term when 2026 - 11 = 2015 is a whole number of steps, that is, when d divides 2015. Now 2015 = 5 x 403 = 5 x 13 x 31, so its divisors are 1, 5, 13, 31, 65, 155, 403 and 2015. Each one works: for example d = 2015 gives 11, 2026. That is 8 values. The transferable idea: a term lands on a target exactly when the step divides the gap.",
+    "elegant": "Each of the three different primes 5, 13 and 31 is either in d or not, so there are 2 x 2 x 2 = 8 divisors."
+  },
+  "whyOnTest": "Arithmetic sequences meet divisors: hitting a given term is the same as the step dividing the distance to it.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

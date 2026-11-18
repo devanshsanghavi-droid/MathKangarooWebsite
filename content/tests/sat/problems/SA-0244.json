@@ -1,0 +1,56 @@
+{
+  "id": "SA-0244",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-06",
+  "difficulty": "medium",
+  "statement": "A survey asked $80$ households how many pets they have. Of these households, $22$ have $0$ pets, $30$ have $1$ pet, $18$ have $2$ pets, $7$ have $3$ pets and $3$ have $4$ pets. If one household that has at least $1$ pet is selected at random, what is the probability that it has at least $2$ pets?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{9}{29}$",
+      "correct": false,
+      "misconception": "I counted only the 18 households with exactly 2 pets, but at least 2 also includes the households with 3 or 4 pets."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{7}{20}$",
+      "correct": false,
+      "misconception": "I divided the 28 households with at least 2 pets by all 80 households, forgetting that the household is chosen only from those with at least 1 pet."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{14}{29}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{29}{40}$",
+      "correct": false,
+      "misconception": "I found the fraction of all households that have at least 1 pet, 58 out of 80, but that is the condition, not the event I was asked about."
+    }
+  ],
+  "hints": [
+    "Which households are you choosing from?",
+    "Count the households with at least $1$ pet; that is your new total. Then count how many of those have $2$ or more pets.",
+    "$80 - 22 = 58$ households have at least $1$ pet, and $18 + 7 + 3 = 28$ have at least $2$."
+  ],
+  "solutions": {
+    "reliable": "Households with at least $1$ pet: $30 + 18 + 7 + 3 = 58$. Households with at least $2$ pets: $18 + 7 + 3 = 28$. Every household with at least $2$ pets also has at least $1$, so the probability is $\\frac{28}{58} = \\frac{14}{29}$.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

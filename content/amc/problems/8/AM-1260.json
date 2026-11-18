@@ -1,0 +1,66 @@
+{
+  "id": "AM-1260",
+  "contest": "AMC8",
+  "slot": 11,
+  "area": "CP",
+  "topic": "CP-08",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "Ravi rolls a fair $8$-sided die with faces numbered $1$ through $8$. If the number rolled is a prime number, he wins that many tokens. If it is not prime, he loses $2$ tokens. What is the expected number of tokens Ravi gains on one roll?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{9}{8}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{3}{2}$",
+      "correct": false,
+      "misconception": "I counted 1 as a prime, so I added 1 + 2 + 3 + 5 + 7 = 18 and took away 2 for each of 4, 6 and 8: (18 - 6) / 8 = 3/2."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{15}{8}$",
+      "correct": false,
+      "misconception": "I added the primes to get 17 and took away 2 tokens only once instead of once for each non-prime roll."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{17}{8}$",
+      "correct": false,
+      "misconception": "I added up the winnings from the primes, 17, divided by 8, and forgot about the tokens he loses."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{17}{4}$",
+      "correct": false,
+      "misconception": "I averaged only the four prime numbers, 17 / 4, as if he always rolled a prime."
+    }
+  ],
+  "hints": [
+    "Find the result of each of the $8$ equally likely rolls and average them.",
+    "The primes from $1$ to $8$ are $2, 3, 5$ and $7$. Remember that $1$ is not prime.",
+    "The four primes add up to $17$, and the four other rolls each give $-2$."
+  ],
+  "solutions": {
+    "reliable": "Each face comes up with probability $\\frac{1}{8}$. The primes on the die are $2, 3, 5, 7$, which give $+2, +3, +5, +7$, a total of $17$. The other faces $1, 4, 6, 8$ each give $-2$, a total of $-8$. The expected gain is $\\frac{17 - 8}{8} = \\frac{9}{8}$ tokens per roll.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

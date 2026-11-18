@@ -1,0 +1,56 @@
+{
+  "id": "AC-0240",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-06",
+  "difficulty": "medium",
+  "statement": "A cylindrical glass vase has an inside radius of $8$ centimeters and is partly filled with water. A solid glass ball with a radius of $6$ centimeters is placed in the vase and sinks until it is completely under water, and no water spills out. By how many centimeters does the water level rise?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2.25$",
+      "correct": false,
+      "misconception": "I used 4 pi r squared, the surface area of the ball, which is 144 pi, instead of its volume, and divided by 64 pi to get 2.25."
+    },
+    {
+      "key": "B",
+      "text": "$3.375$",
+      "correct": false,
+      "misconception": "I forgot the 4/3 in the sphere volume formula and used pi r cubed = 216 pi, then divided by 64 pi to get 3.375."
+    },
+    {
+      "key": "C",
+      "text": "$4.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$1.125$",
+      "correct": false,
+      "misconception": "I used 16, the diameter of the vase, as its radius, so I divided the ball's volume 288 pi by 256 pi and got 1.125."
+    }
+  ],
+  "hints": [
+    "The water rises by exactly the volume of the ball, spread over the circular cross section of the vase.",
+    "Find the ball's volume with $V = \\frac{4}{3}\\pi r^3$. The risen water is a cylinder of radius $8$ and unknown height $h$.",
+    "The ball has volume $\\frac{4}{3}\\pi (6)^3 = 288\\pi$. Solve $\\pi (8)^2 h = 288\\pi$."
+  ],
+  "solutions": {
+    "reliable": "The ball pushes aside its own volume of water: $\\frac{4}{3}\\pi (6)^3 = \\frac{4}{3}\\pi(216) = 288\\pi$ cubic centimeters. That water forms a cylindrical layer of radius $8$ and height $h$ on top of the old level, so $\\pi (8)^2 h = 288\\pi$, giving $64h = 288$ and $h = 4.5$ centimeters.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0013",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-03",
+  "difficulty": "hard",
+  "statement": "A research station stores enough drinking water for $12$ people for $30$ days, with every person using the same amount each day. After $10$ days, $4$ people leave the station, and each person who stays cuts their daily water use by $25\\%$. From that point, how many more days will the remaining water last?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I treated the 25 percent cut as using 1.25 times as much water, so 8 people used 10 people's worth each day and $240 \\div 10 = 24$."
+    },
+    {
+      "key": "B",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I found 240 person-days of water left and divided by 8 people, but I forgot that each person now uses less."
+    },
+    {
+      "key": "C",
+      "text": "$37.5$",
+      "correct": false,
+      "misconception": "I found 30 days for 8 people at full use and then added 25 percent more days, instead of dividing by 0.75."
+    },
+    {
+      "key": "D",
+      "text": "$40$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Measure the water in person-days: the amount one person uses in one day at the original rate.",
+    "After $10$ days, $12 \\cdot 20 = 240$ person-days remain. How many person-days do the $8$ remaining people use each day after the cut?",
+    "Each of the $8$ people now uses $0.75$ of a person-day per day, which is $6$ person-days per day in all."
+  ],
+  "solutions": {
+    "reliable": "The full supply is $12 \\cdot 30 = 360$ person-days. After $10$ days, $12 \\cdot 10 = 120$ have been used, leaving $240$. Now $8$ people each use $0.75$ of the original daily amount, for $8 \\cdot 0.75 = 6$ person-days per day. The water lasts $240 \\div 6 = 40$ more days.",
+    "elegant": null
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

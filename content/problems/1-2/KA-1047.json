@@ -1,0 +1,65 @@
+{
+  "id": "KA-1047",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Stack 1 is 1 can. Stack 2 has rows of 2 and 1 cans. Stack 3 has rows of 3, 2 and 1 cans, and so on. How many cans are in stack 5?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I only counted the bottom row of stack 5."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I worked out stack 4 instead of stack 5."
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "21",
+      "correct": false,
+      "misconception": "I put 6 cans in the bottom row, one more than the stack number."
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": false,
+      "misconception": "I gave every row of stack 5 the same 5 cans."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": []
+  },
+  "hints": [
+    "How many cans are in the bottom row of stack 5?",
+    "Each stack has a bottom row as long as the stack number, and each row above has one can fewer, up to 1 can at the top. Add the rows.",
+    "Stack 5 has rows of 5, 4, 3, 2 and 1 cans. Add them."
+  ],
+  "solutions": {
+    "reliable": "Stack 5 has rows of 5, 4, 3, 2 and 1 cans, so it has $5 + 4 + 3 + 2 + 1 = 15$ cans. Check with the pattern: stacks 1 to 4 have 1, 3, 6 and 10 cans, and each new stack adds a new bottom row one longer than before, so stack 5 adds 5 to make $10 + 5 = 15$. The idea to keep: see how each picture is built from the one before.",
+    "elegant": "Pair the rows: $5 + 0$, $4 + 1$, $3 + 2$ each make 5, and there are 3 pairs, so 15. The idea to keep: pairing numbers to the same total makes adding quick."
+  },
+  "whyOnTest": "Growing patterns test whether a student sees what each new step adds, not just the last number.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

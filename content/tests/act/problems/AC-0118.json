@@ -1,0 +1,56 @@
+{
+  "id": "AC-0118",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "medium",
+  "statement": "In the standard $(x, y)$ coordinate plane, the graphs of $y = x^2 + 2x - 5$ and $y = 3x + 1$ intersect at two points. One of the points is in Quadrant I. What is the $y$-coordinate of that point?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found the points $(3, 10)$ and $(-2, -5)$, but I gave the $x$-coordinate of the Quadrant I point instead of its $y$-coordinate."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I moved $3x$ to the left side by adding it when I set the expressions equal, so I solved $x^2 + 5x - 6 = 0$, used its positive solution $x = 1$, and got $y = 3(1) + 1 = 4$."
+    },
+    {
+      "key": "C",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I reached $x^2 - x - 6 = 0$ but factored it as $(x + 3)(x - 2)$, with the signs reversed, so I used $x = 2$ and got $y = 3(2) + 1 = 7$."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "At an intersection point, both equations give the same $y$.",
+    "Set $x^2 + 2x - 5 = 3x + 1$, solve for $x$, and find the $y$-coordinate of each point. A point in Quadrant I has both coordinates positive.",
+    "$x^2 - x - 6 = 0$ factors as $(x - 3)(x + 2) = 0$."
+  ],
+  "solutions": {
+    "reliable": "Set the expressions equal: $x^2 + 2x - 5 = 3x + 1$, so $x^2 - x - 6 = 0$ and $(x - 3)(x + 2) = 0$, giving $x = 3$ or $x = -2$. From $y = 3x + 1$, the points are $(3, 10)$ and $(-2, -5)$. Only $(3, 10)$ has both coordinates positive, so the answer is $10$. Check on the parabola: $3^2 + 2(3) - 5 = 10$.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

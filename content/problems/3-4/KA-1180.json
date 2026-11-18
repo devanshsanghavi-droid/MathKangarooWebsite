@@ -1,0 +1,67 @@
+{
+  "id": "KA-1180",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Three parcels weigh 1 kg 400 g, 850 g and 2 kg 750 g. How much do they weigh altogether? (1 kg = 1000 g.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3 kg",
+      "correct": false,
+      "misconception": "I added only the kilograms, 1 + 2, and forgot about the grams."
+    },
+    {
+      "key": "B",
+      "text": "4 kg",
+      "correct": false,
+      "misconception": "I added the grams to get 2000 g but counted that as only 1 kg."
+    },
+    {
+      "key": "C",
+      "text": "5 kg",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "12 kg 200 g",
+      "correct": false,
+      "misconception": "I read 850 g as 8 kg 50 g, so I added 1400 g, 8050 g and 2750 g."
+    },
+    {
+      "key": "E",
+      "text": "23 kg",
+      "correct": false,
+      "misconception": "I thought there are 100 grams in a kilogram, so the 2000 g made 20 kg, giving 23 kg."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-07",
+    "secondary": [
+      "MOD-10"
+    ]
+  },
+  "hints": [
+    "Add the grams on their own first.",
+    "Add the kilograms and the grams separately, then change every 1000 grams into one more kilogram.",
+    "The grams are $400 + 850 + 750 = 2000$ g, which is 2 kg."
+  ],
+  "solutions": {
+    "reliable": "Kilograms: $1 + 2 = 3$ kg. Grams: $400 + 850 + 750 = 2000$ g $= 2$ kg. Total: $3 + 2 = 5$ kg. The transferable idea: add each unit separately, then carry over whenever the smaller unit makes a whole larger one.",
+    "elegant": "Pair the grams that make round numbers: $850 + 750 = 1600$ g, and $1600 + 400 = 2000$ g. So the grams give exactly 2 kg."
+  },
+  "whyOnTest": "Mixed units need a careful carry: 1000 grams make a kilogram, just as 10 ones make a ten.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

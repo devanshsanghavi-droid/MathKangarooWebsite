@@ -1,0 +1,56 @@
+{
+  "id": "SA-0165",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-08",
+  "difficulty": "easy",
+  "statement": "The function $f$ is defined by $f(x) = x^2 + 1$. If $f(k) = 26$ and $k > 0$, what is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I divided $26$ by $2$, thinking that undoing a square means halving."
+    },
+    {
+      "key": "B",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I subtracted $1$ to get $k^2 = 25$, but then forgot to take the square root."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$677$",
+      "correct": false,
+      "misconception": "I mixed up the input and output and computed $f(26) = 26^2 + 1 = 677$."
+    }
+  ],
+  "hints": [
+    "$f(k) = 26$ means that the output is $26$ when the input is $k$.",
+    "Set $k^2 + 1 = 26$ and solve for $k$.",
+    "$k^2 = 25$, and $k$ is positive."
+  ],
+  "solutions": {
+    "reliable": "$f(k) = k^2 + 1 = 26$, so $k^2 = 25$ and $k = 5$ or $k = -5$. Since $k > 0$, $k = 5$. Check: $f(5) = 25 + 1 = 26$.",
+    "elegant": null
+  },
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

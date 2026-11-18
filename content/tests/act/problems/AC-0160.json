@@ -1,0 +1,56 @@
+{
+  "id": "AC-0160",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-05",
+  "difficulty": "medium",
+  "statement": "The pH of a liquid is given by $\\text{pH} = -\\log_{10} H$, where $H$ is the hydrogen ion concentration in moles per liter. A sample of lemon juice has a pH of $2.4$, and a sample of tomato juice has a pH of $4.2$. The hydrogen ion concentration of the lemon juice is about how many times that of the tomato juice?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1.75$",
+      "correct": false,
+      "misconception": "I divided the two pH values, $\\frac{4.2}{2.4} = 1.75$, as if pH were proportional to the concentration."
+    },
+    {
+      "key": "B",
+      "text": "$1.8$",
+      "correct": false,
+      "misconception": "I subtracted the pH values to get $1.8$ and stopped, but the difference is an exponent, not the ratio."
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I knew each pH unit means a factor of $10$, so I multiplied the difference $1.8$ by $10$ instead of raising $10$ to the power $1.8$."
+    },
+    {
+      "key": "D",
+      "text": "$63$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Rewrite each pH as a concentration: $H = 10^{-\\text{pH}}$.",
+    "The lemon juice has $H = 10^{-2.4}$ and the tomato juice has $H = 10^{-4.2}$. Divide them using exponent rules.",
+    "$\\dfrac{10^{-2.4}}{10^{-4.2}} = 10^{4.2 - 2.4} = 10^{1.8}$. Use a calculator."
+  ],
+  "solutions": {
+    "reliable": "From $\\text{pH} = -\\log_{10} H$ we get $H = 10^{-\\text{pH}}$. Lemon juice: $H = 10^{-2.4}$. Tomato juice: $H = 10^{-4.2}$. The ratio is $\\dfrac{10^{-2.4}}{10^{-4.2}} = 10^{1.8} \\approx 63.1$, so the lemon juice has about $63$ times the hydrogen ion concentration.",
+    "elegant": "A difference of $1$ in pH is a factor of $10$. The difference here is $1.8$, a factor of $10^{1.8} \\approx 63$, which is between $10^1 = 10$ and $10^2 = 100$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

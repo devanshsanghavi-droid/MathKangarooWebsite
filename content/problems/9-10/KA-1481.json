@@ -1,0 +1,67 @@
+{
+  "id": "KA-1481",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Which of these numbers is divisible by 24?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5832",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "5652",
+      "correct": false,
+      "misconception": "I tested divisibility by 4 and by 6, because $24 = 4 \\times 6$, and 5652 passes both."
+    },
+    {
+      "key": "C",
+      "text": "3516",
+      "correct": false,
+      "misconception": "I tested divisibility by 8 by looking only at the last two digits, 16, as in the test for 4."
+    },
+    {
+      "key": "D",
+      "text": "5384",
+      "correct": false,
+      "misconception": "I checked that 5384 is divisible by 8 and forgot that it must also be divisible by 3."
+    },
+    {
+      "key": "E",
+      "text": "6738",
+      "correct": false,
+      "misconception": "I saw that the digits add up to 24 and thought that makes the number divisible by 24."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Write 24 as a product of two numbers that share no factor.",
+    "Use $24 = 3 \\times 8$: the number must pass the test for 3 (digit sum) and the test for 8 (last three digits). Splitting 24 as $4 \\times 6$ fails, because 4 and 6 share the factor 2.",
+    "Only one choice has a digit sum divisible by 3 and last three digits forming a multiple of 8."
+  ],
+  "solutions": {
+    "reliable": "Divisibility by 24 means divisibility by 3 and by 8, because $3 \\times 8 = 24$ and 3 and 8 share no factor. 5832 has digit sum 18 and ends in 832, and $832 = 8 \\times 104$, so both tests pass; indeed $5832 = 24 \\times 243$. 5652 ends in 652 and 3516 ends in 516, neither a multiple of 8. 5384 has digit sum 20, not a multiple of 3. 6738 ends in 738, not a multiple of 8. The transferable idea: split a divisor into factors with no common factor before applying the simple tests.",
+    "elegant": null
+  },
+  "whyOnTest": "Divisibility tests combine only through factors that share nothing; this checks you split 24 as 3 times 8 and use the last three digits for 8.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

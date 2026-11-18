@@ -1,0 +1,56 @@
+{
+  "id": "AC-0207",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-02",
+  "difficulty": "hard",
+  "statement": "A triangular sail $ABC$ has a straight seam $\\overline{DE}$ sewn parallel to its base $\\overline{BC}$, with $D$ on $\\overline{AB}$ and $E$ on $\\overline{AC}$. Along edge $\\overline{AB}$, $AD = 6$ feet and $DB = 4$ feet. The triangular piece $ADE$ above the seam has an area of $27$ square feet. What is the area, in square feet, of the piece $DBCE$ below the seam?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I used the ratio $DB : AD = 4 : 6$ and squared it, so I got $27 \\cdot \\frac{16}{36} = 12$, but those two segments are not matching sides of similar triangles."
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I scaled the area by the length ratio $\\frac{10}{6}$ instead of its square, so the whole sail was $45$ and the bottom piece was $45 - 27 = 18$."
+    },
+    {
+      "key": "C",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I scaled the area by the length ratio $\\frac{10}{6}$ instead of its square, and I gave that result, $45$, as the answer without subtracting the top piece."
+    },
+    {
+      "key": "D",
+      "text": "$48$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Triangle $ADE$ is similar to triangle $ABC$. What is the ratio of their sides?",
+    "The side ratio is $AD : AB = 6 : 10$. Areas of similar figures scale by the square of the side ratio. Find the area of the whole sail, then subtract the top piece.",
+    "The whole sail has area $27 \\cdot \\left(\\frac{10}{6}\\right)^2 = 75$ square feet."
+  ],
+  "solutions": {
+    "reliable": "Because $\\overline{DE} \\parallel \\overline{BC}$, triangle $ADE$ is similar to triangle $ABC$ with side ratio $\\frac{AD}{AB} = \\frac{6}{10} = \\frac{3}{5}$. Their areas are in the ratio $\\frac{9}{25}$, so the whole sail has area $27 \\cdot \\frac{25}{9} = 75$ square feet. The piece below the seam has area $75 - 27 = 48$ square feet.",
+    "elegant": "The areas of $ADE$ and $ABC$ are in the ratio $9 : 25$, so the bottom piece is $25 - 9 = 16$ of those parts. One part is $27 \\div 9 = 3$ square feet, so the bottom piece is $16 \\cdot 3 = 48$ square feet."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

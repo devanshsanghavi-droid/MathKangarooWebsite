@@ -1,0 +1,56 @@
+{
+  "id": "AC-0275",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-09",
+  "difficulty": "easy",
+  "statement": "A farm stand has $2{,}400$ apples. The owner chooses a random sample of $80$ of the apples and finds that $6$ of them are bruised. Based on this sample, about how many of the $2{,}400$ apples are bruised?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7.5$",
+      "correct": false,
+      "misconception": "I found that 7.5 percent of the sample is bruised and gave that percent as the number of apples."
+    },
+    {
+      "key": "B",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I divided 2,400 by 80 to see how many times bigger the whole batch is than the sample, and stopped there."
+    },
+    {
+      "key": "C",
+      "text": "$180$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$400$",
+      "correct": false,
+      "misconception": "I divided the 2,400 apples by the 6 bruised apples instead of using the fraction of the sample that is bruised."
+    }
+  ],
+  "hints": [
+    "A random sample should have about the same fraction of bruised apples as the whole batch.",
+    "Find the fraction of the sample that is bruised and apply it to all $2{,}400$ apples.",
+    "$\\dfrac{6}{80} = 0.075$, and $0.075 \\cdot 2400 = ?$"
+  ],
+  "solutions": {
+    "reliable": "In the sample, $\\dfrac{6}{80} = 7.5\\%$ of the apples are bruised. Applying this to the whole batch gives $0.075 \\cdot 2400 = 180$ bruised apples.",
+    "elegant": "The batch is $\\dfrac{2400}{80} = 30$ times the size of the sample, so expect about $30 \\cdot 6 = 180$ bruised apples."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1437",
+  "band": "9-10",
+  "points": 4,
+  "statement": "What is the last digit of $1 + 2 + 2^2 + 2^3 + \\dots + 2^{99}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I saw that the sum equals $2^{100} - 1$, found that $2^{100}$ ends in 6, and forgot to subtract the 1."
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I thought the sum was $2^{99} - 1$, and $2^{99}$ ends in 8."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I added the last digits of the powers of 2 from $2^1$ to $2^{99}$ and forgot the first term, 1."
+    },
+    {
+      "key": "E",
+      "text": "1",
+      "correct": false,
+      "misconception": "I matched the exponent 100 with the first digit of the cycle 2, 4, 8, 6, so I thought $2^{100}$ ends in 2 and the sum ends in 1."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-07",
+    "secondary": [
+      "PAT-03",
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "What do you get if you add 1 to the sum?",
+    "Doubling sums collapse: $1 + 1 = 2$, then $2 + 2 = 4$, and so on. Write the sum as one power of 2 minus 1, then use the cycle of last digits of powers of 2.",
+    "The sum equals $2^{100} - 1$. The last digits of $2^1, 2^2, 2^3, 2^4, \\dots$ cycle through 2, 4, 8, 6."
+  ],
+  "solutions": {
+    "reliable": "Add the last digits directly. $2^0 = 1$. From $2^1$ on, the last digits repeat 2, 4, 8, 6, and each block of four adds up to 20, which ends in 0. The 99 terms $2^1$ to $2^{99}$ are 24 full blocks (96 terms) followed by $2^{97}, 2^{98}, 2^{99}$, which end in 2, 4, 8. So the last digit is that of $1 + 0 + 2 + 4 + 8 = 15$, which is 5. The transferable idea: the last digits of powers repeat in short cycles, so reduce the exponent using the cycle length.",
+    "elegant": "Adding 1 to the sum makes it collapse: $1 + 1 = 2$, $2 + 2 = 2^2$, and so on, up to $2^{99} + 2^{99} = 2^{100}$. So the sum is $2^{100} - 1$. Since 100 is a multiple of 4, $2^{100}$ ends in 6, just like $2^4 = 16$, and the sum ends in 5."
+  },
+  "whyOnTest": "Last-digit questions test spotting the repeating cycle of powers, and here also seeing the doubling sum collapse to a single power.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

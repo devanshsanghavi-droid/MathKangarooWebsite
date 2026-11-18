@@ -3,6 +3,7 @@ import type { AttemptRecord } from './mastery';
 import { problemProgress, type ProgressFile } from './local-progress';
 import { bucketOf, type StatusBucket } from './progress-summary';
 import { isAmcProblemId } from './amc-tier';
+import { isTestProblemId } from './test-meta';
 
 /**
  * The numbers on the Practice home (docs/06-V3-REDESIGN.md §4), as pure functions over the
@@ -47,13 +48,14 @@ export function decodeHomeProblem(row: string): HomeProblem | null {
  * Every Kangaroo attempt in the file, grouped by problem id, deduplicated and oldest first.
  *
  * The same attempt is stored once per skill the problem is tagged with, so it is deduplicated on
- * its timestamp. AMC attempts (bucketed under AM ids) are left out: this is the Kangaroo home.
+ * its timestamp. AMC, SAT and ACT attempts (their own buckets) are left out: this is the
+ * Kangaroo home.
  */
 export function attemptsByProblem(file: ProgressFile): Map<string, AttemptRecord[]> {
   const grouped = new Map<string, Map<string, AttemptRecord>>();
   for (const list of Object.values(file.attempts)) {
     for (const attempt of list) {
-      if (isAmcProblemId(attempt.problemId)) continue;
+      if (isAmcProblemId(attempt.problemId) || isTestProblemId(attempt.problemId)) continue;
       let byTime = grouped.get(attempt.problemId);
       if (!byTime) {
         byTime = new Map();

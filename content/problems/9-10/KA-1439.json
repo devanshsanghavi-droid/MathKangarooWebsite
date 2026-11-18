@@ -1,0 +1,68 @@
+{
+  "id": "KA-1439",
+  "band": "9-10",
+  "points": 4,
+  "statement": "In a race of 10 runners with no ties, exactly 3 runners finished between Pia and Quin, exactly 2 between Quin and Rob, and exactly 6 between Pia and Rob. How many different places could Quin have finished in?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I only considered Pia finishing ahead of Rob and forgot that the whole order could be the other way round."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I found 3 places for Quin with Pia ahead and 3 with Rob ahead and added them, without noticing that two places appear in both lists."
+    },
+    {
+      "key": "D",
+      "text": "1",
+      "correct": false,
+      "misconception": "I assumed Pia finished first, which is only one of the possibilities."
+    },
+    {
+      "key": "E",
+      "text": "2",
+      "correct": false,
+      "misconception": "I assumed Pia finished either first or last."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-04",
+    "secondary": [
+      "CFT-01",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Turn 'exactly 3 runners between' into a difference of places.",
+    "The places differ by 4, 3 and 7. Since $4 + 3 = 7$, Quin must be between Pia and Rob. Now slide the three runners along the 10 places, in both directions.",
+    "If Pia is ahead, Pia is 1st, 2nd or 3rd and Quin is 4 places behind Pia. If Rob is ahead, Rob is 1st, 2nd or 3rd and Quin is 3 places behind Rob."
+  ],
+  "solutions": {
+    "reliable": "Exactly 3 runners between two people means their places differ by 4. So Pia and Quin differ by 4, Quin and Rob by 3, and Pia and Rob by 7. Since $4 + 3 = 7$, Quin finished between the other two. If Pia is ahead: Pia is 1st, 2nd or 3rd (Rob is 7 places later, at most 10th), and Quin is 5th, 6th or 7th. If Rob is ahead: Rob is 1st, 2nd or 3rd, and Quin is 4th, 5th or 6th. Together, Quin could be 4th, 5th, 6th or 7th: 4 places. The transferable idea: in ordering puzzles, list every arrangement allowed, including the mirror image, and then count the different outcomes.",
+    "elegant": null
+  },
+  "whyOnTest": "Ordering clues test turning words into differences of places, and the traps are forgetting the reversed order or counting a place twice.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

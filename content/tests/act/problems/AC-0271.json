@@ -1,0 +1,56 @@
+{
+  "id": "AC-0271",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-05",
+  "difficulty": "hard",
+  "statement": "A delivery robot drives along a grid of streets, moving one block at a time, either east or north. It must travel from its warehouse to a customer who is $4$ blocks east and $3$ blocks north of the warehouse. On the way, it must stop at a charging station that is $2$ blocks east and $1$ block north of the warehouse. How many different routes of this kind can the robot take?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I found 3 routes to the charging station and 6 routes from it to the customer, but I added them instead of multiplying."
+    },
+    {
+      "key": "B",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I found the 35 routes in all and subtracted the 18 that pass through the station, which counts the routes that avoid it."
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I counted all routes with 4 east moves and 3 north moves, 7 choose 3, and ignored the required stop at the charging station."
+    }
+  ],
+  "hints": [
+    "Split each route into two legs: warehouse to station, then station to customer.",
+    "Count the routes for each leg by choosing where the north moves go, then combine the two counts.",
+    "Leg one has $2$ east and $1$ north moves: $\\binom{3}{1}$ routes. Leg two has $2$ east and $2$ north moves: $\\binom{4}{2}$ routes."
+  ],
+  "solutions": {
+    "reliable": "To reach the station, the robot makes $3$ moves, $1$ of them north, so there are $\\binom{3}{1} = 3$ routes. From the station to the customer it makes $2$ east and $2$ north moves, so there are $\\binom{4}{2} = 6$ routes. Each first leg can be followed by each second leg, so there are $3 \\cdot 6 = 18$ routes.",
+    "elegant": null
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

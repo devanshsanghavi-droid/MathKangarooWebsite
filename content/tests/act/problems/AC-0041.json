@@ -1,0 +1,56 @@
+{
+  "id": "AC-0041",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-06",
+  "difficulty": "easy",
+  "statement": "For $i = \\sqrt{-1}$, which of the following is equal to $i^{18} + i^{27}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$i$",
+      "correct": false,
+      "misconception": "I added the exponents to get $i^{45}$, but exponents add only when powers are multiplied, not when they are added."
+    },
+    {
+      "key": "B",
+      "text": "$-1 + i$",
+      "correct": false,
+      "misconception": "I found $i^{18} = -1$ correctly but thought $i^{27} = i^{3} = i$, forgetting that $i^3 = -i$."
+    },
+    {
+      "key": "C",
+      "text": "$1 - i$",
+      "correct": false,
+      "misconception": "I got $i^{27} = -i$, but I thought every even power of $i$ is 1, so I used $i^{18} = 1$."
+    },
+    {
+      "key": "D",
+      "text": "$-1 - i$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Powers of $i$ repeat in a cycle of four.",
+    "Divide each exponent by 4. The remainder tells you which of $1$, $i$, $-1$ or $-i$ the power equals.",
+    "$18 = 4 \\cdot 4 + 2$ and $27 = 4 \\cdot 6 + 3$, so the sum equals $i^{2} + i^{3}$."
+  ],
+  "solutions": {
+    "reliable": "The powers of $i$ cycle through $i, -1, -i, 1$ with period 4. Since $18$ leaves remainder 2 when divided by 4, $i^{18} = i^2 = -1$. Since $27$ leaves remainder 3, $i^{27} = i^3 = -i$. The sum is $-1 - i$. The idea: reduce the exponent of $i$ modulo 4 before evaluating.",
+    "elegant": "Factor: $i^{18} + i^{27} = i^{18}\\left(1 + i^{9}\\right) = (-1)(1 + i) = -1 - i$."
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

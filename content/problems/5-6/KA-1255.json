@@ -1,0 +1,67 @@
+{
+  "id": "KA-1255",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A row of square tiles follows a rule. Picture 1 is a black tile with an arrow pointing up. From each picture to the next, the arrow turns a quarter turn clockwise and the tile switches between black and white. So picture 2 is a white tile with an arrow pointing right. What does picture 23 look like?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "A black tile with the arrow pointing down",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "A white tile with the arrow pointing down",
+      "correct": false,
+      "misconception": "I got the arrow right but thought the odd-numbered pictures are white."
+    },
+    {
+      "key": "C",
+      "text": "A black tile with the arrow pointing left",
+      "correct": false,
+      "misconception": "I took the remainder 3 from 23 divided by 4 and turned the arrow 3 quarter turns from up, forgetting that picture 1 has had no turns yet."
+    },
+    {
+      "key": "D",
+      "text": "A white tile with the arrow pointing left",
+      "correct": false,
+      "misconception": "I worked out picture 24 instead of picture 23."
+    },
+    {
+      "key": "E",
+      "text": "A black tile with the arrow pointing up",
+      "correct": false,
+      "misconception": "I thought the arrow repeats every 2 pictures like the colour does, so every odd picture would match picture 1."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "Two things change at once. Track each one on its own.",
+    "The arrow repeats every 4 pictures and the colour every 2. Find where picture 23 falls in each cycle separately, then put the two answers together.",
+    "Pictures 1, 5, 9, ..., 21 have the arrow pointing up, so picture 22 points right and picture 23 points down. Odd-numbered pictures are black."
+  ],
+  "solutions": {
+    "reliable": "The arrow goes up, right, down, left and then repeats, so it has a cycle of 4. Picture 21 = 1 + 4 × 5 points up like picture 1, so picture 22 points right and picture 23 points down. The colour has a cycle of 2: odd pictures are black and even pictures are white, so picture 23 is black. Picture 23 is a black tile with the arrow pointing down. The transferable idea: when a pattern changes two things at once, find each cycle separately and then combine them.",
+    "elegant": "Picture 23 comes after 22 changes. 22 quarter turns is 5 full turns and 2 more, so the arrow points down; 22 colour switches is an even number, so the tile is black, as at the start."
+  },
+  "whyOnTest": "Visual patterns often change two features at once; this tests describing each change separately before choosing the next picture.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

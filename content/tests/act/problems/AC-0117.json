@@ -1,0 +1,56 @@
+{
+  "id": "AC-0117",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "easy",
+  "statement": "At a bakery, $3$ muffins and $2$ scones cost $\\$13.50$, and $1$ muffin and $2$ scones cost $\\$8.50$. Each muffin has the same price and each scone has the same price. What is the price of one scone?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$1.75$",
+      "correct": false,
+      "misconception": "I subtracted the orders to get $2m = 5$ but then used $\\$5$ as the price of a muffin, so I had $2s = 8.50 - 5 = 3.50$."
+    },
+    {
+      "key": "B",
+      "text": "$\\$2.50$",
+      "correct": false,
+      "misconception": "I correctly found the price of a muffin, $\\$2.50$, and gave that as my answer instead of going on to find the price of a scone."
+    },
+    {
+      "key": "C",
+      "text": "$\\$3.00$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$6.00$",
+      "correct": false,
+      "misconception": "I found that $2$ scones cost $\\$6.00$ and forgot to divide by $2$ to get the price of one scone."
+    }
+  ],
+  "hints": [
+    "Compare the two orders. What is different between them?",
+    "Subtract the second order from the first to find the cost of $2$ muffins, then substitute back into either order.",
+    "$2$ muffins cost $13.50 - 8.50 = 5.00$ dollars, so one muffin costs $\\$2.50$."
+  ],
+  "solutions": {
+    "reliable": "Let $m$ and $s$ be the prices. Subtracting $m + 2s = 8.50$ from $3m + 2s = 13.50$ gives $2m = 5$, so $m = 2.50$. Then $2s = 8.50 - 2.50 = 6.00$, so $s = 3.00$. Check: $3(2.50) + 2(3.00) = 7.50 + 6.00 = 13.50$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "AM-1129",
+  "contest": "AMC8",
+  "slot": 19,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "A triangle has side lengths $13$, $13$ and $24$. What is the length of the altitude drawn to one of the sides of length $13$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{60}{13}$",
+      "correct": false,
+      "misconception": "I found the area of the triangle, $60$, and divided it by $13$, forgetting that the area is one half of base times height."
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I found the altitude to the side of length $24$ instead of the altitude to a side of length $13$."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{120}{13}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I saw the $5$-$12$-$13$ right triangles inside the figure and took the leg of length $12$ as the altitude I wanted."
+    },
+    {
+      "key": "E",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I used $13$ as the height for the base of $24$, got an area of $\\frac{1}{2} \\cdot 24 \\cdot 13 = 156$, and then divided twice that area by $13$."
+    }
+  ],
+  "hints": [
+    "Find the area of the triangle first, using the altitude that is easiest to get.",
+    "The altitude to the side of length $24$ cuts it into two halves of length $12$, making two $5$-$12$-$13$ right triangles. So that altitude is $5$ and the area is $\\frac{1}{2} \\cdot 24 \\cdot 5$.",
+    "The area is $60$. The same area is $\\frac{1}{2} \\cdot 13 \\cdot h$, where $h$ is the altitude to a side of length $13$. Solve for $h$."
+  ],
+  "solutions": {
+    "reliable": "The triangle is isosceles, so the altitude from the top vertex to the side of length $24$ lands at its midpoint and splits the triangle into two right triangles with hypotenuse $13$ and one leg $12$. The other leg is $\\sqrt{13^2 - 12^2} = 5$, so the area is $\\frac{1}{2} \\cdot 24 \\cdot 5 = 60$. Now use a side of length $13$ as the base, with altitude $h$: $\\frac{1}{2} \\cdot 13 \\cdot h = 60$, so $h = \\frac{120}{13}$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

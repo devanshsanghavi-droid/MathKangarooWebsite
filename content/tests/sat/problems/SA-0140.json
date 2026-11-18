@@ -1,0 +1,56 @@
+{
+  "id": "SA-0140",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-06",
+  "difficulty": "easy",
+  "statement": "On one type of road surface, accident investigators estimate a car's speed $s$, in miles per hour, from the length $d$, in feet, of its skid marks using the formula $s = \\sqrt{24d}$. According to the formula, how long, in feet, are the skid marks of a car that was traveling at $60$ miles per hour?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$150$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$2.5$",
+      "correct": false,
+      "misconception": "I divided $60$ by $24$ without squaring, as if there were no square root."
+    },
+    {
+      "key": "C",
+      "text": "$1{,}440$",
+      "correct": false,
+      "misconception": "I undid the square root by multiplying $60$ by $24$ instead of squaring $60$ and dividing by $24$."
+    },
+    {
+      "key": "D",
+      "text": "$86{,}400$",
+      "correct": false,
+      "misconception": "I squared $60$ to get $3{,}600$ but then multiplied by $24$ instead of dividing."
+    }
+  ],
+  "hints": [
+    "Substitute $s = 60$ into the formula.",
+    "To undo the square root, square both sides of $60 = \\sqrt{24d}$.",
+    "$3{,}600 = 24d$. Now divide by $24$."
+  ],
+  "solutions": {
+    "reliable": "Substituting $s = 60$ gives $60 = \\sqrt{24d}$. Squaring both sides, $3600 = 24d$, so $d = 150$ feet. Check: $\\sqrt{24 \\cdot 150} = \\sqrt{3600} = 60$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

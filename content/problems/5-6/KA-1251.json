@@ -1,0 +1,68 @@
+{
+  "id": "KA-1251",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A 3 by 3 grid of squares has exactly one shaded square: the middle square of the top row. What is the smallest number of extra squares that must be shaded so that the grid looks exactly the same after a quarter turn about its centre?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I made the grid look the same after a half turn, which only needs the middle square of the bottom row."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I turned the grid a quarter turn twice and shaded where the square landed, but forgot the third quarter turn."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought the centre square, where the turn happens, also has to be shaded, so I added it to the three edge squares."
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": false,
+      "misconception": "I thought every square of the outer ring had to be shaded, so I shaded the other 7 squares around the centre."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-08",
+    "secondary": [
+      "GEO-09",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Follow the shaded square as the grid turns.",
+    "A quarter turn sends each square to a new place. For the pattern to look the same, every place a shaded square can be turned to must be shaded too. Track one square through all four quarter turns.",
+    "One quarter turn moves the top-middle square to the middle of the right side, the next to the middle of the bottom row, the next to the middle of the left side. Those three squares must be shaded, and nothing else is needed."
+  ],
+  "solutions": {
+    "reliable": "Turn the grid a quarter turn clockwise. The top-middle square goes to the middle of the right column. Another quarter turn takes it to the middle of the bottom row, and another to the middle of the left column; the fourth brings it home. For the pattern to look the same after every quarter turn, all four of these squares must be shaded, so at least 3 more are needed. With the four edge-middle squares shaded, a quarter turn just moves them round onto each other, so 3 is enough. The transferable idea: under a symmetry, one shaded square forces every square it can be moved to.",
+    "elegant": "The four edge-middle squares form one group that a quarter turn cycles round. A pattern with quarter-turn symmetry is made of whole groups, so the one shaded square brings in the other 3."
+  },
+  "whyOnTest": "Rotational symmetry questions test whether you follow one square through every turn, rather than guessing that one matching square is enough.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

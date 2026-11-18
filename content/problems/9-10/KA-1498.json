@@ -1,0 +1,68 @@
+{
+  "id": "KA-1498",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Ana walks from home to school at 4 km/h. Her brother leaves home 10 minutes after her, cycles the same route at 12 km/h, and reaches the school at the same moment as Ana. How far is the school from home?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1 km",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "0.6 km",
+      "correct": false,
+      "misconception": "I used 10 minutes as 0.1 hours instead of $\\frac{1}{6}$ of an hour."
+    },
+    {
+      "key": "C",
+      "text": "$1\\frac{1}{3}$ km",
+      "correct": false,
+      "misconception": "I multiplied the difference in speeds, 8 km/h, by the 10 minutes, as if that were the distance to the school."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{2}{3}$ km",
+      "correct": false,
+      "misconception": "I found how far Ana walks during her 10-minute head start, not the length of the route."
+    },
+    {
+      "key": "E",
+      "text": "2 km",
+      "correct": false,
+      "misconception": "I found how far her brother cycles in 10 minutes instead of solving for the distance."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-03",
+    "secondary": [
+      "CFT-10",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Her brother's trip takes 10 minutes less than Ana's.",
+    "Write each journey time as distance divided by speed, in hours. The two times differ by 10 minutes, which is $\\frac{1}{6}$ of an hour.",
+    "$\\frac{d}{4} - \\frac{d}{12} = \\frac{1}{6}$."
+  ],
+  "solutions": {
+    "reliable": "Ana takes $\\frac{d}{4}$ hours and her brother $\\frac{d}{12}$ hours, and the difference is 10 minutes, which is $\\frac{1}{6}$ of an hour. So $\\frac{d}{4} - \\frac{d}{12} = \\frac{d}{6} = \\frac{1}{6}$, giving $d = 1$ km. Check: Ana takes 15 minutes and her brother 5 minutes, 10 minutes apart. The transferable idea: convert minutes to hours before mixing them with km/h.",
+    "elegant": "Her brother is 3 times as fast, so his trip takes a third of Ana's time. The 10-minute difference is two thirds of Ana's time, so she walks for 15 minutes, and at 4 km/h that is 1 km. The transferable idea: over a fixed distance, time is inversely proportional to speed."
+  },
+  "whyOnTest": "Rate questions test unit control and setting up the time difference; turning 10 minutes into 0.1 hours is the classic slip.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

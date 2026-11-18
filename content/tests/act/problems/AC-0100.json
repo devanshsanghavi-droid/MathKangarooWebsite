@@ -1,0 +1,56 @@
+{
+  "id": "AC-0100",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-07",
+  "difficulty": "hard",
+  "statement": "In the $xy$-plane, the line through the points $(a, 3)$ and $(5, a)$ is parallel to the line $2x + 3y = 6$. What is the value of $a$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\tfrac{19}{5}$",
+      "correct": false,
+      "misconception": "I read the slope of $2x + 3y = 6$ as $\\tfrac{2}{3}$, forgetting the negative sign, and solved $\\tfrac{a - 3}{5 - a} = \\tfrac{2}{3}$."
+    },
+    {
+      "key": "C",
+      "text": "$\\tfrac{21}{5}$",
+      "correct": false,
+      "misconception": "I used the perpendicular slope $\\tfrac{3}{2}$ instead of the parallel slope and solved $\\tfrac{a - 3}{5 - a} = \\tfrac{3}{2}$."
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I flipped the slope to $-\\tfrac{3}{2}$, putting the $x$ coefficient on the bottom, and solved $\\tfrac{a - 3}{5 - a} = -\\tfrac{3}{2}$."
+    }
+  ],
+  "hints": [
+    "Parallel lines have equal slopes. Find the slope of $2x + 3y = 6$ first.",
+    "The given line has slope $-\\tfrac{2}{3}$. Write the slope of the line through $(a, 3)$ and $(5, a)$ and set it equal to $-\\tfrac{2}{3}$.",
+    "Solve $\\tfrac{a - 3}{5 - a} = -\\tfrac{2}{3}$ by cross-multiplying: $3(a - 3) = -2(5 - a)$."
+  ],
+  "solutions": {
+    "reliable": "The line $2x + 3y = 6$ is $y = -\\tfrac{2}{3}x + 2$, with slope $-\\tfrac{2}{3}$. The slope through $(a, 3)$ and $(5, a)$ is $\\tfrac{a - 3}{5 - a}$, so $3(a - 3) = -2(5 - a)$, that is $3a - 9 = 2a - 10$, and $a = -1$. Check: the points $(-1, 3)$ and $(5, -1)$ give slope $\\tfrac{-4}{6} = -\\tfrac{2}{3}$.",
+    "elegant": null
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

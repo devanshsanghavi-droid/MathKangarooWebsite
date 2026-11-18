@@ -1,0 +1,69 @@
+{
+  "id": "AM-1216",
+  "contest": "AMC8",
+  "slot": 22,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": [
+    "T-PRIME-FACTOR",
+    "T-CASEWORK"
+  ],
+  "statement": "What is the smallest positive multiple of $15$ that has exactly $10$ positive divisors?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I found the smallest number with exactly $10$ divisors, $2^4 \\cdot 3 = 48$, and forgot that it had to be a multiple of $15$."
+    },
+    {
+      "key": "B",
+      "text": "$405$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$720$",
+      "correct": false,
+      "misconception": "I multiplied $15$ by $48$, the smallest number with $10$ divisors, not noticing that the product $720$ has many more than $10$ divisors."
+    },
+    {
+      "key": "D",
+      "text": "$1875$",
+      "correct": false,
+      "misconception": "I used the form $p^4 q$ but put the fourth power on $5$ instead of on $3$, getting $3 \\cdot 5^4 = 1875$."
+    },
+    {
+      "key": "E",
+      "text": "$6075$",
+      "correct": false,
+      "misconception": "I thought $10 = 5 \\cdot 2$ meant the exponents should be $5$ and $2$, so I used $3^5 \\cdot 5^2 = 6075$."
+    }
+  ],
+  "hints": [
+    "If $n = p^a q^b \\cdots$ for different primes, then $n$ has $(a+1)(b+1)\\cdots$ divisors. How can $10$ be written as such a product?",
+    "$10 = 10$ or $10 = 5 \\cdot 2$, so $n = p^9$ or $n = p^4 q$ for different primes $p$ and $q$. Since both $3$ and $5$ divide $n$, which form is possible?",
+    "$n$ must be $3^4 \\cdot 5$ or $5^4 \\cdot 3$. Put the larger exponent on the smaller prime."
+  ],
+  "solutions": {
+    "reliable": "If $n = p_1^{a_1} p_2^{a_2} \\cdots$, the number of divisors is $(a_1 + 1)(a_2 + 1)\\cdots$. For this to be $10$, either $n = p^9$ (one prime) or $n = p^4 q$ (two primes, since $10 = 5 \\cdot 2$). A multiple of $15$ has at least the two primes $3$ and $5$, so $n = p^4 q$ with $\\{p, q\\} = \\{3, 5\\}$ and no other primes. The two options are $3^4 \\cdot 5 = 405$ and $5^4 \\cdot 3 = 1875$. The smaller is $405$. Check: $405 = 3^4 \\cdot 5$ is a multiple of $15$ and has $(4 + 1)(1 + 1) = 10$ divisors.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-01"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

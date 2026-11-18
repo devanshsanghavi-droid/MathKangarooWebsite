@@ -1,0 +1,66 @@
+{
+  "id": "AM-1142",
+  "contest": "AMC8",
+  "slot": 22,
+  "area": "GEO",
+  "topic": "GEO-08",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "Triangle $ABC$ has $AB = 7$, $BC = 8$ and $CA = 9$. The circle inscribed in the triangle touches side $\\overline{BC}$ at the point $T$. What is the length $CT$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found the two pieces of $\\overline{BC}$ correctly, $3$ and $5$, but gave $BT$ instead of $CT$."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I assumed the inscribed circle touches $\\overline{BC}$ at its midpoint, so I took half of $8$."
+    },
+    {
+      "key": "C",
+      "text": "$4.5$",
+      "correct": false,
+      "misconception": "I split $\\overline{BC}$ in the ratio $AB : AC = 7 : 9$, which is where the angle bisector from $A$ lands, not where the inscribed circle touches."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I wrote $CT$ as $CA + CB - AB = 9 + 8 - 7$ and forgot to divide by $2$."
+    }
+  ],
+  "hints": [
+    "The two tangent segments from a point outside a circle to the circle have equal length.",
+    "Let the tangent lengths from $A$, $B$ and $C$ be $x$, $y$ and $z$. Each side is made of two of them: $AB = x + y = 7$, $BC = y + z = 8$ and $CA = z + x = 9$.",
+    "Adding the three equations gives $2(x + y + z) = 24$, so $x + y + z = 12$. Then $z = 12 - (x + y) = 12 - 7$."
+  ],
+  "solutions": {
+    "reliable": "Let the inscribed circle touch $\\overline{AB}$, $\\overline{BC}$ and $\\overline{CA}$, and let the tangent lengths from $A$, $B$ and $C$ be $x$, $y$ and $z$; tangent segments from the same point are equal. Then $x + y = 7$, $y + z = 8$ and $z + x = 9$. Adding gives $x + y + z = 12$, so $x = 12 - 8 = 4$, $y = 12 - 9 = 3$ and $z = 12 - 7 = 5$. Point $T$ splits $\\overline{BC}$ into $BT = y = 3$ and $CT = z = 5$, which add to $8$ as they should. So $CT = 5$.",
+    "elegant": "The tangent length from a vertex is the semiperimeter minus the opposite side. The semiperimeter is $\\frac{7 + 8 + 9}{2} = 12$, and the side opposite $C$ is $AB = 7$, so $CT = 12 - 7 = 5$."
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

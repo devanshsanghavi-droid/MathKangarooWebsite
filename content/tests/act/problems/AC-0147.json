@@ -1,0 +1,56 @@
+{
+  "id": "AC-0147",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-06",
+  "difficulty": "hard",
+  "statement": "The graph of $y = f(x)$ crosses the $x$-axis at exactly two points, $x = -2$ and $x = 8$. The function $g$ is defined by $g(x) = 3f(2x - 2)$. What is the sum of the $x$-intercepts of the graph of $y = g(x)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I halved each intercept for the factor 2 but then shifted left 1 instead of right 1, which gave -2 and 3."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I halved each intercept for the horizontal compression, giving -1 and 4, but forgot the shift of 1 unit to the right."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I plugged the intercepts into 2x - 2 and got -6 and 14, instead of solving 2x - 2 = -2 and 2x - 2 = 8."
+    }
+  ],
+  "hints": [
+    "$g(x) = 0$ exactly when $f(2x - 2) = 0$. The factor $3$ does not move any zeros.",
+    "$f$ is zero only when its input is $-2$ or $8$, so solve $2x - 2 = -2$ and $2x - 2 = 8$.",
+    "The solutions are $x = 0$ and one more value from $2x - 2 = 8$."
+  ],
+  "solutions": {
+    "reliable": "$g(x) = 0$ exactly when $f(2x - 2) = 0$, which happens only when $2x - 2 = -2$ or $2x - 2 = 8$. These give $x = 0$ and $x = 5$, so the $x$-intercepts of $g$ add to $0 + 5 = 5$.",
+    "elegant": "Write $g(x) = 3f(2(x - 1))$. Compressing horizontally by a factor of $2$ moves the intercepts to $-1$ and $4$, and shifting right $1$ moves them to $0$ and $5$. The vertical stretch by $3$ leaves the zeros in place, so the sum is $5$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

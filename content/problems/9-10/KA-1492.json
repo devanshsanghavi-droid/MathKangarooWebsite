@@ -1,0 +1,68 @@
+{
+  "id": "KA-1492",
+  "band": "9-10",
+  "points": 4,
+  "statement": "In an arithmetic sequence, the first 10 terms add up to 175 and the next 10 terms add up to 475. What is the common difference?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "30",
+      "correct": false,
+      "misconception": "I thought each of the next 10 terms is only one step more than its partner in the first 10, so I divided 300 by 10."
+    },
+    {
+      "key": "B",
+      "text": "1.5",
+      "correct": false,
+      "misconception": "I thought each term of the second group is 20 steps more than its partner, so I divided 300 by 200."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "15",
+      "correct": false,
+      "misconception": "I divided the difference of the sums, 300, by the 20 terms."
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found the first term instead of the common difference."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-02",
+    "secondary": [
+      "MOD-01",
+      "CFT-07"
+    ]
+  },
+  "hints": [
+    "Pair the 1st term with the 11th, the 2nd with the 12th, and so on.",
+    "Each term in the second group is a fixed number of steps further on than its partner in the first group. Compare the two sums pair by pair instead of finding the first term.",
+    "Each of the 10 pairs differs by 10 steps, so the sums differ by $10 \\times 10 = 100$ steps."
+  ],
+  "solutions": {
+    "reliable": "Pair the $k$th term with the $(k + 10)$th term: each pair differs by $10d$, and there are 10 pairs, so $475 - 175 = 100d$, giving $d = 3$. Check: the first term $a$ satisfies $10a + 45 \\times 3 = 175$, so $a = 4$; the terms 11 to 20 run from 34 to 61, and $\\frac{10 \\times (34 + 61)}{2} = 475$. The transferable idea: compare blocks of an arithmetic sequence term by term.",
+    "elegant": "Alternatively, the mean of the first 10 terms is 17.5, the average of the 5th and 6th terms, and the mean of the next 10 is 47.5, the average of the 15th and 16th. These are 10 steps apart, so $10d = 30$ and $d = 3$. The transferable idea: the mean of a block of an arithmetic sequence sits at its middle."
+  },
+  "whyOnTest": "Arithmetic sequence questions reward pairing terms; this checks you count how many steps separate partners and how many pairs there are.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

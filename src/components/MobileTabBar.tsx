@@ -7,9 +7,9 @@ import { NavIcon } from './shell/NavIcon';
 import { navAccessibleName } from './NavLinks';
 
 /**
- * The bottom tab bar, shown only below the `sm` breakpoint, with the same five destinations
- * as the top bar (docs/06 §2). Its row is --tabbar-height tall, which fixed bottom bars such
- * as the ladder's action bar sit on top of. `pb-[env(safe-area-inset-bottom)]` keeps it clear
+ * The bottom tab bar, shown only below the `sm` breakpoint: five tabs (docs/07 section 4),
+ * with every exam area behind one "Exams" tab, the /exams hub. Its row is --tabbar-height
+ * tall, which fixed bottom bars such as the ladder's action bar sit on top of. `pb-[env(safe-area-inset-bottom)]` keeps it clear
  * of the iOS home indicator. The active tab carries aria-current, a teal bar above the icon
  * and a heavier label, so the state is never colour alone.
  */

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0099",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "easy",
+  "statement": "In the $xy$-plane, the graph of $kx + 3y = 12$, where $k$ is a constant, passes through the point $(2, -2)$. What is the slope of the graph?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-9$",
+      "correct": false,
+      "misconception": "I found $k = 9$ and solved for $y$ as $y = -9x + 4$, dividing only the 12 by 3 and not the $x$ term."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I found $k = 9$ and gave it as the slope without solving the equation for $y$."
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found $k = 9$ but wrote the slope as $\\frac{9}{3}$, forgetting that moving $9x$ to the other side makes it negative."
+    },
+    {
+      "key": "D",
+      "text": "$-3$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Substitute the point to find $k$ first.",
+    "Put $x = 2$ and $y = -2$ into $kx + 3y = 12$, then solve the equation for $y$ to read the slope.",
+    "$2k - 6 = 12$ gives $k = 9$. Then $3y = -9x + 12$."
+  ],
+  "solutions": {
+    "reliable": "Substituting $(2, -2)$: $2k + 3(-2) = 12$, so $2k = 18$ and $k = 9$. Then $9x + 3y = 12$ gives $3y = -9x + 12$ and $y = -3x + 4$. The slope is $-3$. Key idea: a point on a line satisfies its equation, and the slope is easiest to read once the equation is solved for $y$.",
+    "elegant": "For a line $ax + by = c$, the slope is $-\\frac{a}{b}$. With $k = 9$, the slope is $-\\frac{9}{3} = -3$."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

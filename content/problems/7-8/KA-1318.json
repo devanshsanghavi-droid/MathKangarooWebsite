@@ -1,0 +1,68 @@
+{
+  "id": "KA-1318",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Five people sit together. Each is a knight, who always tells the truth, or a knave, who always lies. Each person says how many knaves there are among the other four. Their answers are 1, 3, 3, 4 and 4. How many knights are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I trusted one of the people who said 4, so I decided there were 4 knaves and 1 knight, without checking the two people who said 3: as knaves they would each see exactly 3 knaves and be telling the truth."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I worked out that there are 3 knaves and gave the number of knaves instead of the number of knights."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought only the odd one out, the person who said 1, was lying, so I counted 4 knights."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be determined",
+      "correct": false,
+      "misconception": "I forgot that a knave does not count himself, so 'all five are knaves' also seemed to work, and I thought the answer could not be decided."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-09",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Who sees more knaves among the other four: a knight or a knave?",
+    "Truth-tellers and liars: suppose there are $K$ knaves in total. A knight sees exactly $K$ knaves among the others, but a knave sees only $K - 1$. Test each value of $K$ suggested by the answers.",
+    "All knights give the same true answer $K$. Try $K = 3$: the two people who said 3 are the knights and the other three are knaves. Check that each knave's answer is false."
+  ],
+  "solutions": {
+    "reliable": "Say there are $K$ knaves. A knight is not a knave, so a knight sees exactly $K$ knaves among the other four and says $K$; a knave sees $K - 1$ knaves and must say something else. If $K = 1$, only the person who said 1 could be a knight, leaving at least 4 knaves, not 1. If $K = 3$, there are 2 knights, and only the two who said 3 can be knights; the three knaves then each see 2 knaves but say 1, 4 and 4, all false. This works. If $K = 4$, there is 1 knight, but then each knave sees 3 knaves, so the two people who said 3 would be telling the truth. If there are no knights at all, all 5 are knaves and each sees 4, so the people who said 4 would be telling the truth. Any other $K$ would need knights who said a number nobody said. So $K = 3$ and there are $5 - 3 = 2$ knights. The transferable idea: knights all give the same true answer, so sort the speakers by what they said and test each case.",
+    "elegant": null
+  },
+  "whyOnTest": "The key is that a knave does not count himself; that one-person shift is what leaves exactly one consistent case.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

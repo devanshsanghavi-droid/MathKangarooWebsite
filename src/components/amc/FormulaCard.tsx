@@ -1,4 +1,5 @@
 import type { Formula } from '@/lib/amc-schemas';
+import { amcPapersLabel } from '@/lib/amc-tier';
 import { MathText, renderMath } from '@/components/MathText';
 import { Badge, cx } from '@/components/ui';
 
@@ -7,9 +8,9 @@ export const PRIORITY_LABEL: Record<Formula['priority'], string> = {
   'good-to-know': 'Good to know',
 };
 
+/** "AMC 8", "AMC 10 and 12", "AMC 8, 10 and 12". */
 export function formulaContestLabel(contests: readonly string[]): string {
-  if (contests.includes('AMC10') && contests.includes('AMC12')) return 'AMC 10 and 12';
-  return contests.includes('AMC12') ? 'AMC 12' : 'AMC 10';
+  return amcPapersLabel(contests);
 }
 
 /**

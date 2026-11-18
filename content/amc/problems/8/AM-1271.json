@@ -1,0 +1,66 @@
+{
+  "id": "AM-1271",
+  "contest": "AMC8",
+  "slot": 15,
+  "area": "CP",
+  "topic": "CP-05",
+  "types": [
+    "T-STARS-BARS"
+  ],
+  "statement": "A coach shares $10$ identical water bottles among $3$ coolers: one red, one blue and one green. Each cooler must get at least $2$ bottles. In how many ways can she do this?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I gave each cooler 2 bottles and then arranged the 4 extra bottles with 3 dividers instead of 2, so I got C(7, 3) = 35."
+    },
+    {
+      "key": "C",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I only made sure each cooler got at least 1 bottle, so I placed 2 dividers among the 9 gaps and got C(9, 2) = 36."
+    },
+    {
+      "key": "D",
+      "text": "$66$",
+      "correct": false,
+      "misconception": "I forgot the rule that each cooler gets at least 2 bottles and allowed empty coolers, which gives C(12, 2) = 66."
+    },
+    {
+      "key": "E",
+      "text": "$81$",
+      "correct": false,
+      "misconception": "I gave each cooler 2 bottles and then sent each of the 4 extra bottles to one of 3 coolers, 3^4 = 81, but the bottles are identical."
+    }
+  ],
+  "hints": [
+    "Take care of the 'at least $2$' rule first.",
+    "Put $2$ bottles in each cooler. Then $4$ bottles are left to share with no restrictions.",
+    "Sharing $4$ identical bottles among $3$ coolers is the same as arranging $4$ bottles and $2$ dividers in a row."
+  ],
+  "solutions": {
+    "reliable": "Put $2$ bottles in each cooler first, using $6$ bottles. The remaining $4$ identical bottles can go to the coolers in any way. Line up the $4$ bottles and $2$ dividers: bottles before the first divider go in the red cooler, between the dividers in the blue cooler, and after the second divider in the green cooler. Each arrangement gives a different sharing, and there are $\\binom{6}{2} = 15$ arrangements.",
+    "elegant": "List by the red cooler's extra bottles. If red gets $0, 1, 2, 3$ or $4$ extra, the other $4, 3, 2, 1$ or $0$ extra bottles can be split between blue and green in $5, 4, 3, 2, 1$ ways. The total is $5 + 4 + 3 + 2 + 1 = 15$."
+  },
+  "formulas": [],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

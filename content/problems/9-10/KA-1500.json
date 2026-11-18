@@ -1,0 +1,68 @@
+{
+  "id": "KA-1500",
+  "band": "9-10",
+  "points": 5,
+  "statement": "When Ann was as old as Bo is now, Bo was 6. When Bo is as old as Ann is now, Ann will be 30. How old is Ann now?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "14",
+      "correct": false,
+      "misconception": "I found Bo's age now instead of Ann's."
+    },
+    {
+      "key": "B",
+      "text": "18",
+      "correct": false,
+      "misconception": "I assumed Ann's age now is exactly halfway between 6 and 30."
+    },
+    {
+      "key": "C",
+      "text": "22",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I found the age gap between Ann and Bo and gave that as Ann's age."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": false,
+      "misconception": "I gave Ann's age at the later moment, not her age now."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-05",
+    "secondary": [
+      "MOD-01",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "The gap between their ages is always the same.",
+    "Draw a line of ages with four marks: Bo's age back then, Bo's age now, Ann's age now and Ann's age later. Each pair of neighbouring marks is exactly one age gap apart.",
+    "The ages 6, Bo's age now, Ann's age now and 30 are equally spaced, so there are three equal gaps from 6 to 30."
+  ],
+  "solutions": {
+    "reliable": "Let the age gap be $g$. Ann was Bo's current age $g$ years ago, when Bo was 6, so Bo is now $6 + g$ and Ann is $6 + 2g$. Bo reaches Ann's current age in $g$ years, when Ann will be $6 + 3g = 30$. So $g = 8$, Bo is 14 and Ann is 22. Check: 8 years ago Ann was 14 and Bo was 6; in 8 years Bo will be 22 and Ann 30. The transferable idea: in 'when A was as old as B is now' problems, each shift in time is exactly one age gap.",
+    "elegant": null
+  },
+  "whyOnTest": "Tangled age statements become simple once you see that every shift in time is one age gap; the test is turning the words into equally spaced ages.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

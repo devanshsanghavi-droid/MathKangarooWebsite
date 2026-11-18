@@ -1,0 +1,68 @@
+{
+  "id": "KA-1208",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A multiplication table has rows labelled 1 to 6 and columns labelled 1 to 8. Each of its 48 cells holds the product of its row label and its column label. What is the total of all 48 cells?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "57",
+      "correct": false,
+      "misconception": "I added the row labels and the column labels, 21 + 36, instead of multiplying them."
+    },
+    {
+      "key": "B",
+      "text": "216",
+      "correct": false,
+      "misconception": "I added only the last row, 6 × (1 + 2 + ... + 8), and forgot the other five rows."
+    },
+    {
+      "key": "C",
+      "text": "576",
+      "correct": false,
+      "misconception": "I took the middle row label as 3 and the middle column label as 4, so I used 12 as the average cell and multiplied by 48."
+    },
+    {
+      "key": "D",
+      "text": "756",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "1152",
+      "correct": false,
+      "misconception": "I took the average cell to be half of the largest cell, 24, and multiplied by 48."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "NUM-08",
+      "PAT-06"
+    ]
+  },
+  "hints": [
+    "What is the total of row 1? What is the total of row 2?",
+    "Adding 48 numbers one by one is the long way. Look for the trick: every row is a multiple of the first row, so every row total is a multiple of the first row total.",
+    "Row 1 totals 1 + 2 + ... + 8 = 36. Row 2 is row 1 doubled, so it totals 2 × 36, and row r totals r × 36. So the table totals (1 + 2 + ... + 6) × 36."
+  ],
+  "solutions": {
+    "reliable": "Row 1 is 1, 2, ..., 8, which totals 36. Every cell in row r is r times the cell above it in row 1, so row r totals r × 36. The whole table totals (1 + 2 + 3 + 4 + 5 + 6) × 36 = 21 × 36 = 756. The transferable idea: before grinding through many additions, check whether the pieces are multiples of one another.",
+    "elegant": "The table total is (1 + 2 + ... + 6) × (1 + 2 + ... + 8), because multiplying out those two brackets produces every row label times every column label exactly once. That is 21 × 36 = 756."
+  },
+  "whyOnTest": "A 5-point sum of 48 numbers is a signal to hunt for structure; factoring the table turns it into one multiplication.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

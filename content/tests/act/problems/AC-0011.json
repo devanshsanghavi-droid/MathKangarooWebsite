@@ -1,0 +1,56 @@
+{
+  "id": "AC-0011",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-03",
+  "difficulty": "easy",
+  "statement": "A concrete mix uses cement, sand and gravel in the ratio $1 : 2 : 4$ by volume. A contractor has $18$ cubic feet of sand and plenty of cement and gravel. If all of the sand is used, how many cubic feet of mix (cement, sand and gravel together) can be made?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$126$",
+      "correct": false,
+      "misconception": "I treated the 18 cubic feet of sand as one part of the ratio and multiplied it by all 7 parts."
+    },
+    {
+      "key": "B",
+      "text": "$63$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I found that one part is 9 and added the cement and gravel, $9 + 36 = 45$, but forgot to include the sand itself."
+    },
+    {
+      "key": "D",
+      "text": "$31.5$",
+      "correct": false,
+      "misconception": "I matched the 18 cubic feet of sand to the 4 in the ratio, so one part was 4.5 and the total was $7 \\cdot 4.5 = 31.5$."
+    }
+  ],
+  "hints": [
+    "The $2$ in the ratio stands for the sand. How big is one part?",
+    "If $2$ parts are $18$ cubic feet, one part is $9$ cubic feet. Now count the total number of parts.",
+    "The mix has $1 + 2 + 4 = 7$ parts of $9$ cubic feet each."
+  ],
+  "solutions": {
+    "reliable": "Sand is $2$ parts and equals $18$ cubic feet, so one part is $9$ cubic feet. Cement is $1 \\cdot 9 = 9$, sand is $18$ and gravel is $4 \\cdot 9 = 36$ cubic feet. The total is $9 + 18 + 36 = 63$ cubic feet.",
+    "elegant": "Sand is $\\frac{2}{7}$ of the mix, so the mix is $18 \\div \\frac{2}{7} = 63$ cubic feet."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

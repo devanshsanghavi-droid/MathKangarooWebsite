@@ -1,0 +1,69 @@
+{
+  "id": "AM-1123",
+  "contest": "AMC8",
+  "slot": 16,
+  "area": "GEO",
+  "topic": "GEO-01",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "For how many integers $n \\ge 3$ is the degree measure of each interior angle of a regular polygon with $n$ sides a whole number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I required n to divide 180 instead of 360. That gave 18 divisors, and then I removed 1 and 2."
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I counted all 18 divisors of 180, using 180 where I needed 360."
+    },
+    {
+      "key": "C",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I also threw out n = 360, but a regular 360-gon has interior angles of 179 degrees, which is a whole number."
+    },
+    {
+      "key": "D",
+      "text": "$22$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I counted all 24 divisors of 360 but forgot that a polygon needs at least 3 sides, so n = 1 and n = 2 do not count."
+    }
+  ],
+  "hints": [
+    "Each exterior angle of a regular $n$-gon is $\\frac{360}{n}$ degrees, and the interior angle is $180$ minus that.",
+    "The interior angle is a whole number exactly when $\\frac{360}{n}$ is, that is, when $n$ divides $360$.",
+    "$360 = 2^3 \\cdot 3^2 \\cdot 5$ has $(3 + 1)(2 + 1)(1 + 1) = 24$ divisors. Which of them are too small to be the number of sides of a polygon?"
+  ],
+  "solutions": {
+    "reliable": "Each interior angle is $180 - \\frac{360}{n}$ degrees, which is a whole number exactly when $n$ divides $360$. Since $360 = 2^3 \\cdot 3^2 \\cdot 5$, it has $(3 + 1)(2 + 1)(1 + 1) = 24$ positive divisors. Removing $n = 1$ and $n = 2$, which are not polygons, leaves $22$ values, from the equilateral triangle ($60^\\circ$) up to the $360$-gon ($179^\\circ$).",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-19",
+    "F-NT-01"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

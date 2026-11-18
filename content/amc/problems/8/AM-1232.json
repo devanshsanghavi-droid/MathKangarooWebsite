@@ -1,0 +1,66 @@
+{
+  "id": "AM-1232",
+  "contest": "AMC8",
+  "slot": 3,
+  "area": "CP",
+  "topic": "CP-12",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A class of $20$ students was asked how many pets each student has. Exactly $5$ students have no pets, $7$ have $1$ pet, $4$ have $2$ pets, $3$ have $3$ pets, and $1$ student has $6$ pets. What is the mean number of pets per student?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I left out the 5 students with no pets and divided the 30 pets by only 15 students."
+    },
+    {
+      "key": "C",
+      "text": "$2.4$",
+      "correct": false,
+      "misconception": "I averaged the pet numbers 0, 1, 2, 3 and 6 without using how many students had each one: 12 divided by 5 = 2.4."
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I averaged the sizes of the five groups of students, 20 divided by 5 = 4, instead of the numbers of pets."
+    },
+    {
+      "key": "E",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found the 30 pets correctly but divided by the 5 groups instead of by the 20 students."
+    }
+  ],
+  "hints": [
+    "The mean is the total number of pets divided by the number of students.",
+    "For each group, multiply the number of students by the number of pets each has, then add up the results.",
+    "The total is $5 \\cdot 0 + 7 \\cdot 1 + 4 \\cdot 2 + 3 \\cdot 3 + 1 \\cdot 6 = 30$ pets. Divide by all $20$ students, including the ones with no pets."
+  ],
+  "solutions": {
+    "reliable": "The total number of pets is $5 \\cdot 0 + 7 \\cdot 1 + 4 \\cdot 2 + 3 \\cdot 3 + 1 \\cdot 6 = 0 + 7 + 8 + 9 + 6 = 30$. There are $20$ students, so the mean is $\\frac{30}{20} = 1.5$ pets per student.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

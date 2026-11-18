@@ -1,0 +1,56 @@
+{
+  "id": "SA-0261",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-02",
+  "difficulty": "medium",
+  "statement": "Two straight lines intersect, forming four angles. One of the angles measures $(3x + 20)^\\circ$, and the angle vertical to it measures $(5x - 16)^\\circ$. What is the measure, in degrees, of an angle adjacent to the $(3x + 20)^\\circ$ angle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I solved $3x + 20 = 5x - 16$ correctly but reported $x$ instead of an angle measure."
+    },
+    {
+      "key": "B",
+      "text": "$74$",
+      "correct": false,
+      "misconception": "I found the measure of the $(3x + 20)^\\circ$ angle itself, 74, instead of the angle next to it."
+    },
+    {
+      "key": "C",
+      "text": "$94$",
+      "correct": false,
+      "misconception": "I treated the vertical angles as supplementary, so $8x + 4 = 180$ gave $x = 22$, an angle of 86 and a neighbor of 94."
+    },
+    {
+      "key": "D",
+      "text": "$106$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Vertical angles are equal.",
+    "Set the two expressions equal to find $x$. An adjacent angle forms a straight line with the first angle.",
+    "From $3x + 20 = 5x - 16$, $x = 18$, so the angle is $74^\\circ$. The adjacent angle is $180 - 74$."
+  ],
+  "solutions": {
+    "reliable": "Vertical angles are congruent, so $3x + 20 = 5x - 16$, which gives $2x = 36$ and $x = 18$. The angle measures $3(18) + 20 = 74$ degrees. An adjacent angle forms a linear pair with it, so it measures $180 - 74 = 106$ degrees.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

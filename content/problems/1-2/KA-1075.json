@@ -1,0 +1,68 @@
+{
+  "id": "KA-1075",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Ana makes hollow square frames, one tile wide, from square tiles. The first three have 3, 5 and 7 tiles along each side. She keeps going. How many tiles does the next frame need?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "32",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "34",
+      "correct": false,
+      "misconception": "I counted 9 tiles along the top and bottom and 8 down each side, so one corner on each side was counted twice."
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": false,
+      "misconception": "I counted 9 tiles on each of the 4 sides, so every corner tile was counted twice."
+    },
+    {
+      "key": "D",
+      "text": "40",
+      "correct": false,
+      "misconception": "I counted 9 tiles on each of the 4 sides and then added the 4 corner tiles again."
+    },
+    {
+      "key": "E",
+      "text": "81",
+      "correct": false,
+      "misconception": "I counted a full 9 by 9 square and forgot the frame is hollow."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-02",
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "How many tiles along each side does the next frame have?",
+    "The sides grow 3, 5, 7, so the next frame has 9 tiles along each side. Count the tiles in a frame carefully: each corner tile belongs to two sides, so count it only once.",
+    "The frames have 8, 16 and 24 tiles. Each new frame adds the same number of tiles. Or count the 9-tile frame directly: top, bottom, then the tiles left on each side."
+  ],
+  "solutions": {
+    "reliable": "The sides go 3, 5, 7, growing by 2 each time, so the next frame has 9 tiles along each side. Count it: 9 tiles on the top and 9 on the bottom. Each side then needs only 7 more tiles, because its two corner tiles are already counted. That is $9 + 9 + 7 + 7 = 32$ tiles. Check with the pattern: the frames have 8, 16 and 24 tiles, adding 8 each time, and $24 + 8 = 32$. The idea to keep: corner tiles belong to two sides, so count them only once.",
+    "elegant": "Count 4 sides of 9 tiles, which is 36, then take away the 4 corner tiles that were counted twice: $36 - 4 = 32$."
+  },
+  "whyOnTest": "Growing frames test whether corner tiles are counted once, and the classic trap of four times the side double-counts every corner.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

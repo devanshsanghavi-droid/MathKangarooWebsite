@@ -1,0 +1,56 @@
+{
+  "id": "SA-0172",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-03",
+  "difficulty": "hard",
+  "statement": "The function $f$ is defined by $f(x) = ax^2 + bx + c$, where $a$, $b$ and $c$ are constants. In the $xy$-plane, the graph of $y = f(x)$ has its vertex at $(3, -8)$ and passes through the point $(5, 4)$. What is the value of $f(0)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-35$",
+      "correct": false,
+      "misconception": "I found $a = 3$ correctly, but when I evaluated $3(0 - 3)^2 - 8$ I treated $(0 - 3)^2$ as $-9$, which gave $-27 - 8 = -35$."
+    },
+    {
+      "key": "B",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I wrote the vertex form as $a(x - 3)^2 + 8$, using the wrong sign for the $y$-coordinate of the vertex, which led to $a = -1$ and $f(0) = -1$."
+    },
+    {
+      "key": "C",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I found $a = 3$ and computed $3(0 - 3)^2 = 27$, but then forgot to add the $-8$ from the vertex."
+    },
+    {
+      "key": "D",
+      "text": "$19$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Start from vertex form, $f(x) = a(x - h)^2 + k$.",
+    "Write $f(x) = a(x - 3)^2 - 8$ and use the point $(5, 4)$ to find $a$.",
+    "$4 = a(5 - 3)^2 - 8 = 4a - 8$, so $a = 3$ and $f(x) = 3(x - 3)^2 - 8$."
+  ],
+  "solutions": {
+    "reliable": "With vertex $(3, -8)$, $f(x) = a(x - 3)^2 - 8$. Since $(5, 4)$ is on the graph, $4 = a(2)^2 - 8$, so $4a = 12$ and $a = 3$. Then $f(0) = 3(0 - 3)^2 - 8 = 27 - 8 = 19$. In standard form, $f(x) = 3x^2 - 18x + 19$, so $c = 19$ is the $y$-intercept, which matches.",
+    "elegant": "Moving $2$ units from the vertex raised the graph by $4 - (-8) = 12$, so $a \\cdot 2^2 = 12$ and $a = 3$. The point $x = 0$ is $3$ units from the vertex, so $f(0) = -8 + 3 \\cdot 3^2 = 19$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

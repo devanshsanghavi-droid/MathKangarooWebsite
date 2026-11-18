@@ -1,0 +1,56 @@
+{
+  "id": "AC-0221",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "easy",
+  "statement": "A window is shaped like a rectangle that is $4$ feet wide and $6$ feet tall, topped by a semicircle whose diameter is the $4$-foot top edge of the rectangle. A strip of trim goes once around the outside edge of the whole window. How many feet of trim are needed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$16 + 2\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$20 + 2\\pi$",
+      "correct": false,
+      "misconception": "I added all four sides of the rectangle, including the $4$-foot top edge that is hidden under the semicircle."
+    },
+    {
+      "key": "C",
+      "text": "$16 + 4\\pi$",
+      "correct": false,
+      "misconception": "I used the full circumference of a circle with diameter $4$, which is $4\\pi$, instead of half of it."
+    },
+    {
+      "key": "D",
+      "text": "$16 + 8\\pi$",
+      "correct": false,
+      "misconception": "I used $4$ as the radius and took the full circumference, $2\\pi \\cdot 4 = 8\\pi$."
+    }
+  ],
+  "hints": [
+    "Trace the outside edge of the window. Which sides of the rectangle are on the outside?",
+    "The outside edge is the two $6$-foot sides, the $4$-foot bottom and the curved top. The curve is half the circumference of a circle with diameter $4$.",
+    "The curved top is $\\frac{1}{2} \\cdot \\pi \\cdot 4 = 2\\pi$ feet, and the straight parts total $6 + 6 + 4 = 16$ feet."
+  ],
+  "solutions": {
+    "reliable": "The outside edge is made of the two $6$-foot sides, the $4$-foot bottom and the semicircle on top. The top edge of the rectangle is inside the window, so it gets no trim. The semicircle is half of a circle with diameter $4$, so its length is $\\frac{1}{2} \\cdot 4\\pi = 2\\pi$ feet. The total is $16 + 2\\pi \\approx 22.3$ feet.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

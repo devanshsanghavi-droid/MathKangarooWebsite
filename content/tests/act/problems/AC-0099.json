@@ -1,0 +1,56 @@
+{
+  "id": "AC-0099",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-07",
+  "difficulty": "medium",
+  "statement": "In the $xy$-plane, the line $y = (k - 1)x + 3$ is perpendicular to the line $4x - 2y = 7$. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I changed the sign of the slope 2 but did not take its reciprocal, so I solved $k - 1 = -2$."
+    },
+    {
+      "key": "B",
+      "text": "$\\tfrac{1}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\tfrac{3}{2}$",
+      "correct": false,
+      "misconception": "I took the reciprocal of the slope 2 but forgot to change its sign, so I solved $k - 1 = \\tfrac{1}{2}$."
+    },
+    {
+      "key": "D",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I set the slopes equal, $k - 1 = 2$, which is the condition for parallel lines, not perpendicular ones."
+    }
+  ],
+  "hints": [
+    "Perpendicular lines have slopes whose product is $-1$. Find the slope of $4x - 2y = 7$ first.",
+    "Solving $4x - 2y = 7$ for $y$ gives $y = 2x - \\tfrac{7}{2}$, so its slope is $2$. The other line has slope $k - 1$.",
+    "A line perpendicular to a line of slope $2$ has slope $-\\tfrac{1}{2}$, so $k - 1 = -\\tfrac{1}{2}$."
+  ],
+  "solutions": {
+    "reliable": "Solving $4x - 2y = 7$ for $y$ gives $y = 2x - \\tfrac{7}{2}$, so its slope is $2$. The line $y = (k - 1)x + 3$ has slope $k - 1$. Perpendicular slopes multiply to $-1$, so $2(k - 1) = -1$, which gives $k - 1 = -\\tfrac{1}{2}$ and $k = \\tfrac{1}{2}$. Check: the slope is then $\\tfrac{1}{2} - 1 = -\\tfrac{1}{2}$, and $2 \\cdot \\left(-\\tfrac{1}{2}\\right) = -1$.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

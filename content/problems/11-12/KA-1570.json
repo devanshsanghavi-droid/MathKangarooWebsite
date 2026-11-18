@@ -1,0 +1,68 @@
+{
+  "id": "KA-1570",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Three different numbers are chosen from $1, 2, 3, \\dots, 11$. In how many ways can this be done so that their sum is even?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I only counted the choices of three even numbers."
+    },
+    {
+      "key": "B",
+      "text": "30",
+      "correct": false,
+      "misconception": "I added $\\binom62 + 5$ instead of multiplying for two odd numbers and one even number, then added the 10 all-even choices."
+    },
+    {
+      "key": "C",
+      "text": "75",
+      "correct": false,
+      "misconception": "I counted two odd numbers with one even number, but forgot that three even numbers also give an even sum."
+    },
+    {
+      "key": "D",
+      "text": "80",
+      "correct": false,
+      "misconception": "I counted the choices with one or three odd numbers, which are exactly the ones with an odd sum."
+    },
+    {
+      "key": "E",
+      "text": "85",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "NUM-03",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "How many of the numbers 1 to 11 are odd?",
+    "Casework on parity: a sum of three numbers is even exactly when an even number of them are odd. Count the case with no odd numbers and the case with two odd numbers separately, then add.",
+    "There are 6 odd and 5 even numbers. Three evens: $\\binom53$. Two odds and one even: $\\binom62 \\times 5$."
+  ],
+  "solutions": {
+    "reliable": "The numbers 1 to 11 include 6 odd and 5 even numbers. The sum is even when 0 or 2 of the chosen numbers are odd. No odd numbers: $\\binom53 = 10$. Two odd and one even: $\\binom62 \\times 5 = 15 \\times 5 = 75$. The total is $10 + 75 = 85$. The transferable idea: split a selection by parity and multiply the choices within each case.",
+    "elegant": "Check by complement: all $\\binom{11}{3} = 165$ choices, minus the odd sums, which are three odd numbers ($\\binom63 = 20$) or one odd and two even ($6 \\times \\binom52 = 60$), leaves $165 - 80 = 85$. The transferable idea: the complement gives an independent check on a casework count."
+  },
+  "whyOnTest": "Parity casework organises a selection count, and forgetting the all-even case or confusing odd and even sums are the common slips.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

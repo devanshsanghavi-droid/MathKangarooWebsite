@@ -1,0 +1,68 @@
+{
+  "id": "KA-1450",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Two groups of students take the same test. Group A has 18 students with an average score of 70. Group B has an average score of 79. Together, the two groups have an average score of 76. How many students are in group B?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I balanced the wrong way round, setting $18 \\times 3 = 6 \\times B$ instead of $18 \\times 6 = 3 \\times B$."
+    },
+    {
+      "key": "C",
+      "text": "18",
+      "correct": false,
+      "misconception": "I assumed the two groups were the same size."
+    },
+    {
+      "key": "D",
+      "text": "54",
+      "correct": false,
+      "misconception": "I found the total number of students in both groups, not just in group B."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I measured the gaps from 70 instead of from the combined average, 6 up to 76 and 9 up to 79, and worked out $18 \\times \\frac{6}{9} = 12$."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-08",
+    "secondary": [
+      "NUM-15",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "The combined average is closer to 79. What does that say about the group sizes?",
+    "In a weighted average, each group's size times its distance from the combined average must balance on the two sides.",
+    "Group A is 6 below 76, and group B is 3 above it."
+  ],
+  "solutions": {
+    "reliable": "Let group B have $b$ students. Comparing total scores: $18 \\times 70 + 79b = 76(18 + b)$, so $1260 + 79b = 1368 + 76b$, giving $3b = 108$ and $b = 36$. The transferable idea: a combined average sits closer to the bigger group, and the balance tells you by how much.",
+    "elegant": "Balance around 76. Group A's 18 students are each 6 below, a total shortfall of 108. Each student in group B is 3 above, so $108 \\div 3 = 36$ students are needed to balance it."
+  },
+  "whyOnTest": "Weighted averages test the balance idea: group size times distance from the combined average is equal on both sides.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

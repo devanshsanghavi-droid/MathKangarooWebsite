@@ -1,0 +1,56 @@
+{
+  "id": "AC-0289",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-06",
+  "difficulty": "medium",
+  "statement": "Marisol takes a bus and then a train to work. The bus is on time with probability $0.85$ and the train is on time with probability $0.90$. Whether the bus is on time is independent of whether the train is on time. What is the probability that at least one of them is late on a given day?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.015$",
+      "correct": false,
+      "misconception": "I found the probability that both are late, 0.15 times 0.10, but the question asks for at least one being late."
+    },
+    {
+      "key": "B",
+      "text": "$0.235$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$0.25$",
+      "correct": false,
+      "misconception": "I added the chances of each being late, 0.15 and 0.10, but that counts the days when both are late twice."
+    },
+    {
+      "key": "D",
+      "text": "$0.765$",
+      "correct": false,
+      "misconception": "I found the probability that both are on time, 0.85 times 0.90, and forgot to subtract it from 1."
+    }
+  ],
+  "hints": [
+    "At least one late is the opposite of a simpler event.",
+    "The complement of at least one late is both on time. Find that probability using independence.",
+    "Both on time has probability $0.85 \\times 0.90 = 0.765$. Subtract from $1$."
+  ],
+  "solutions": {
+    "reliable": "The opposite of at least one being late is both being on time. By independence, $P(\\text{both on time}) = 0.85 \\times 0.90 = 0.765$. So $P(\\text{at least one late}) = 1 - 0.765 = 0.235$.",
+    "elegant": "Add the chances of each being late and subtract the overlap: $0.15 + 0.10 - (0.15)(0.10) = 0.25 - 0.015 = 0.235$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

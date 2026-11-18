@@ -1,0 +1,68 @@
+{
+  "id": "KA-1476",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Seven numbers have a mean of 12. One of them, $x$, is replaced by $3x$, and the mean of the seven numbers becomes 14. What is $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "14",
+      "correct": false,
+      "misconception": "I found how much the total went up, 14, and gave that as $x$, forgetting the increase is $3x - x = 2x$."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought the number itself went up by 2, the same as the mean, so I solved $2x = 2$."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "21",
+      "correct": false,
+      "misconception": "I found the new number $3x$ instead of the original number $x$."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{14}{3}$",
+      "correct": false,
+      "misconception": "I thought the total went up by $3x$ instead of by $3x - x$, so I solved $3x = 14$."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-15",
+    "secondary": [
+      "MOD-01",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "How much did the total of the seven numbers go up?",
+    "Turn both means into totals. The change in the total comes only from replacing $x$ by $3x$, so compare the increase in the total with $3x - x$.",
+    "The total rose from $7 \\times 12 = 84$ to $7 \\times 14 = 98$, an increase of 14."
+  ],
+  "solutions": {
+    "reliable": "The total was $7 \\times 12 = 84$ and becomes $7 \\times 14 = 98$, so it rose by 14. Replacing $x$ by $3x$ raises the total by $3x - x = 2x$, so $2x = 14$ and $x = 7$. Check: changing 7 to 21 adds 14 to the total. The transferable idea: a change in the mean times the count gives the change in the total.",
+    "elegant": null
+  },
+  "whyOnTest": "Means questions test converting between means and totals; here the trap is mixing up the increase in the total with the number itself.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

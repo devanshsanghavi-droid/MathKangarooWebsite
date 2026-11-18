@@ -1,0 +1,56 @@
+{
+  "id": "AC-0997",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-01",
+  "difficulty": "easy",
+  "statement": "Priya's mean score on her first $5$ chemistry quizzes is $82$. After her sixth quiz, the mean of all $6$ scores is $84$. What did Priya score on the sixth quiz?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$83$",
+      "correct": false,
+      "misconception": "I averaged the two means, 82 and 84, and got 83, without thinking about how many quizzes each mean covers."
+    },
+    {
+      "key": "B",
+      "text": "$86$",
+      "correct": false,
+      "misconception": "I saw the mean go up by 2 and added 2 to the new mean of 84, so I said the sixth score was 86."
+    },
+    {
+      "key": "C",
+      "text": "$94$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$96$",
+      "correct": false,
+      "misconception": "I thought the sixth score had to lift all 6 scores by 2, so I added 12 to 84, but only the first 5 needed lifting."
+    }
+  ],
+  "hints": [
+    "A mean is a total divided by a count. What total do five quizzes with mean 82 have?",
+    "Find the total of the first 5 scores and the total of all 6 scores. The sixth score is the difference.",
+    "The first 5 total $5 \\cdot 82 = 410$ and all 6 total $6 \\cdot 84 = 504$, so subtract."
+  ],
+  "solutions": {
+    "reliable": "The first $5$ scores add to $5 \\cdot 82 = 410$. All $6$ scores add to $6 \\cdot 84 = 504$. The sixth score is $504 - 410 = 94$.",
+    "elegant": "The sixth score must be $84$ itself plus enough to raise each of the first $5$ scores from $82$ to $84$: $84 + 5 \\cdot 2 = 94$."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

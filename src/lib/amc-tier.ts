@@ -59,3 +59,56 @@ export const AMC_TIER_SLOTS: Readonly<Record<AmcTier, readonly [number, number]>
   Middle: [11, 20],
   Late: [21, 25],
 };
+
+/* -------------------------------------------------------------------------- */
+/* Contests                                                                    */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * The contest a problem is written for (docs/07 section 2). BOTH means AMC 10 and AMC 12, never
+ * AMC 8: an AMC 8 problem is always tagged AMC8 and lives in its own folder.
+ *
+ * Kept here, not in amc-schemas.ts, so browser code (the AMC landing, the bank filter, practice
+ * labels) can ask "is this on the AMC 8 paper?" without pulling in Zod. amc-schemas.ts builds
+ * its enums from these lists and re-exports them.
+ */
+export const AMC_CONTESTS = ['AMC8', 'AMC10', 'AMC12', 'BOTH'] as const;
+export type AmcContest = (typeof AMC_CONTESTS)[number];
+
+/** A real paper. Formulas are tagged with the papers they are useful on; BOTH is spelled out. */
+export const AMC_FORMULA_CONTESTS = ['AMC8', 'AMC10', 'AMC12'] as const;
+export type AmcFormulaContest = (typeof AMC_FORMULA_CONTESTS)[number];
+
+/** Folder under content/amc/problems/: AMC 8 in 8/, AMC 10 and BOTH in 10/, AMC 12 in 12/. */
+export function amcContestFolder(contest: AmcContest): '8' | '10' | '12' {
+  if (contest === 'AMC8') return '8';
+  return contest === 'AMC12' ? '12' : '10';
+}
+
+/** Does a problem tagged `contest` belong on the given paper? BOTH is on AMC 10 and AMC 12 only. */
+export function amcInContest(contest: AmcContest, paper: AmcFormulaContest): boolean {
+  if (contest === 'BOTH') return paper === 'AMC10' || paper === 'AMC12';
+  return contest === paper;
+}
+
+/** "AMC 8", "AMC 10", "AMC 12", or "AMC 10 and 12" for BOTH. */
+export function amcContestLabel(contest: AmcContest): string {
+  switch (contest) {
+    case 'AMC8':
+      return 'AMC 8';
+    case 'AMC10':
+      return 'AMC 10';
+    case 'AMC12':
+      return 'AMC 12';
+    case 'BOTH':
+      return 'AMC 10 and 12';
+  }
+}
+
+/** A formula's papers as one label: "AMC 8", "AMC 10 and 12", "AMC 8, 10 and 12". */
+export function amcPapersLabel(papers: readonly string[]): string {
+  const numbers = AMC_FORMULA_CONTESTS.filter((p) => papers.includes(p)).map((p) => p.slice(3));
+  if (numbers.length === 0) return 'AMC';
+  if (numbers.length === 1) return `AMC ${numbers[0]}`;
+  return `AMC ${numbers.slice(0, -1).join(', ')} and ${numbers.at(-1)}`;
+}

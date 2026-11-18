@@ -1,0 +1,56 @@
+{
+  "id": "SA-0163",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-07",
+  "difficulty": "hard",
+  "statement": "$$\\begin{aligned} x^2 + y^2 &= 4 \\\\ y &= x^2 - 2 \\end{aligned}$$ What is the sum of the $y$-coordinates of all the solutions $(x, y)$ to the system of equations above?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I found the two $y$-values, $1$ and $-2$, and added them once each, forgetting that $y = 1$ comes with two solutions, $x = \\sqrt{3}$ and $x = -\\sqrt{3}$."
+    },
+    {
+      "key": "C",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I got $x^4 - 3x^2 = 0$ and divided both sides by $x^2$, which lost the solution $x = 0$, so I only added the $y$-values of $(\\pm\\sqrt{3}, 1)$."
+    },
+    {
+      "key": "D",
+      "text": "$-2$",
+      "correct": false,
+      "misconception": "I gave each $y$-value two solutions with $x = \\pm$ a square root, so I counted $(0, -2)$ twice and added $1 + 1 - 2 - 2$."
+    }
+  ],
+  "hints": [
+    "The second equation gives $x^2$ in terms of $y$: $x^2 = y + 2$.",
+    "Substitute $x^2 = y + 2$ into the circle equation, solve for $y$, then find how many $x$-values go with each $y$.",
+    "$y + 2 + y^2 = 4$ gives $(y + 2)(y - 1) = 0$. For $y = 1$, $x^2 = 3$; for $y = -2$, $x^2 = 0$."
+  ],
+  "solutions": {
+    "reliable": "From the second equation, $x^2 = y + 2$. Substituting into the first, $y + 2 + y^2 = 4$, so $y^2 + y - 2 = 0$ and $(y + 2)(y - 1) = 0$. If $y = 1$, then $x^2 = 3$ and $x = \\pm\\sqrt{3}$: two solutions. If $y = -2$, then $x^2 = 0$ and $x = 0$: one solution. The solutions are $(\\sqrt{3}, 1)$, $(-\\sqrt{3}, 1)$ and $(0, -2)$, and the sum of their $y$-coordinates is $1 + 1 + (-2) = 0$.",
+    "elegant": "Substituting $y = x^2 - 2$ into the circle gives $x^2 + x^4 - 4x^2 + 4 = 4$, so $x^2(x^2 - 3) = 0$. The $x$-values are $0$, $\\sqrt{3}$ and $-\\sqrt{3}$, with $y = -2$, $1$ and $1$, which add to $0$."
+  },
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

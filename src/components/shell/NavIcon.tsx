@@ -1,6 +1,6 @@
 /**
- * Line icons for the five v3 destinations (docs/06 §2), drawn in currentColor so they follow
- * the link's ink in both themes and print black. Always decorative: the label beside each one
+ * Line icons for the nav destinations (docs/06 §2, docs/07 section 4), drawn in currentColor
+ * so they follow the link's ink in both themes and print black. Always decorative: the label beside each one
  * is the accessible name.
  */
 const PATHS: Record<string, string> = {
@@ -16,6 +16,10 @@ const PATHS: Record<string, string> = {
   // AMC: a summation sign. (It was a triangle with a bar and a dot, which reads as a warning
   // sign, the wrong message beside a nav item.)
   '/amc': 'M14.5 4.5h-9l5 5.5-5 5.5h9',
+  // Exams: two stacked sheets.
+  '/exams': 'M6 5.5h8.5V16H6V5.5ZM8 3.5h8.5V14M8.5 9h3.5M8.5 12h3.5',
+  // Progress: a rising line over a baseline.
+  '/progress': 'M3.5 16.5h13M4.5 13l3.5-3.5 3 2.5 4.5-5.5M12.5 6.5h3v3',
 };
 
 export function NavIcon({ href, className }: { href: string; className?: string }) {

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1185",
+  "band": "3-4",
+  "points": 4,
+  "statement": "A garden has 6 rows of 8 tulips. Of these, 15 are red, and there are twice as many yellow tulips as red ones. The rest are white. How many tulips are white?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "16",
+      "correct": false,
+      "misconception": "I read \"twice as many\" as \"2 more\", so I took the yellow tulips as 15 + 2 = 17."
+    },
+    {
+      "key": "B",
+      "text": "18",
+      "correct": false,
+      "misconception": "I took away 15 for the red tulips and only 15 for the yellow ones, forgetting to double."
+    },
+    {
+      "key": "C",
+      "text": "30",
+      "correct": false,
+      "misconception": "I worked out the number of yellow tulips and gave that as the answer."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "33",
+      "correct": false,
+      "misconception": "I only took away the red tulips and forgot the yellow ones."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-10",
+    "secondary": [
+      "MOD-02"
+    ]
+  },
+  "hints": [
+    "How many tulips are there in the whole garden?",
+    "Find the total first, then the number of yellow tulips, then take away both red and yellow to leave the white ones.",
+    "There are $6 \\times 8 = 48$ tulips and $2 \\times 15 = 30$ yellow ones."
+  ],
+  "solutions": {
+    "reliable": "Total: $6 \\times 8 = 48$. Yellow: $2 \\times 15 = 30$. Red and yellow together: $15 + 30 = 45$. White: $48 - 45 = 3$. The transferable idea: in a part-whole story, find the whole, find every known part, and subtract.",
+    "elegant": "Red and yellow together are three times the red, $3 \\times 15 = 45$, so white is $48 - 45 = 3$."
+  },
+  "whyOnTest": "Several small steps in a row, where \"twice as many\" and \"the rest\" each hide a step that is easy to miss.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

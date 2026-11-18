@@ -1,0 +1,56 @@
+{
+  "id": "SA-0270",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-04",
+  "difficulty": "medium",
+  "statement": "A square courtyard has a straight path running along one diagonal, from one corner to the opposite corner. The path is $24$ meters long. What is the area of the courtyard, in square meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$144$",
+      "correct": false,
+      "misconception": "I took half the diagonal, 12, as the side length and squared it."
+    },
+    {
+      "key": "B",
+      "text": "$288$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$576$",
+      "correct": false,
+      "misconception": "I used the diagonal, 24, as if it were the side length, so I got $24^2$."
+    },
+    {
+      "key": "D",
+      "text": "$1{,}152$",
+      "correct": false,
+      "misconception": "I multiplied the diagonal by $\\sqrt{2}$ instead of dividing, so the side was $24\\sqrt{2}$ and the area was 1,152."
+    }
+  ],
+  "hints": [
+    "The diagonal splits the square into two 45-45-90 triangles.",
+    "In a 45-45-90 triangle the hypotenuse is $\\sqrt{2}$ times a leg, so the side of the square is the diagonal divided by $\\sqrt{2}$.",
+    "The side is $\\frac{24}{\\sqrt{2}}$, so the area is $\\frac{24^2}{2}$."
+  ],
+  "solutions": {
+    "reliable": "The diagonal is the hypotenuse of a 45-45-90 triangle whose legs are sides of the square, so $s\\sqrt{2} = 24$ and $s = \\frac{24}{\\sqrt{2}} = 12\\sqrt{2}$. The area is $s^2 = (12\\sqrt{2})^2 = 288$ square meters.",
+    "elegant": "By the Pythagorean theorem, $s^2 + s^2 = 24^2$, so $2s^2 = 576$ and the area is $s^2 = 288$, without ever finding $s$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

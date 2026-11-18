@@ -1,0 +1,56 @@
+{
+  "id": "AC-0230",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "easy",
+  "statement": "A kite is flying at the end of a straight, taut string that is $150$ feet long. The string makes an angle of $38^\\circ$ with the horizontal at the point where it is held. To the nearest foot, how far above the point where the string is held is the kite?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$118$",
+      "correct": false,
+      "misconception": "I used cosine instead of sine, so 150 times cos 38 degrees gave about 118 feet, which is the horizontal distance to the kite."
+    },
+    {
+      "key": "B",
+      "text": "$117$",
+      "correct": false,
+      "misconception": "I used tangent, 150 times tan 38 degrees, and got about 117, but the string is the hypotenuse, not the side next to the angle."
+    },
+    {
+      "key": "C",
+      "text": "$92$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$44$",
+      "correct": false,
+      "misconception": "I computed 150 times sin 38 with my calculator in radian mode, so it treated 38 as radians and gave about 44."
+    }
+  ],
+  "hints": [
+    "The string, the height of the kite and a horizontal line form a right triangle. Which side is the string?",
+    "The string is the hypotenuse, and the height is the side opposite the $38^\\circ$ angle. Which trig ratio links opposite and hypotenuse?",
+    "$\\sin 38^\\circ = \\frac{h}{150}$, so $h = 150 \\sin 38^\\circ$. Make sure your calculator is in degree mode."
+  ],
+  "solutions": {
+    "reliable": "The string is the hypotenuse of a right triangle whose vertical leg is the height $h$ of the kite above the hand. The height is opposite the $38^\\circ$ angle, so $\\sin 38^\\circ = \\frac{h}{150}$ and $h = 150 \\sin 38^\\circ \\approx 150(0.6157) \\approx 92.3$. To the nearest foot, the kite is $92$ feet above the hand.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

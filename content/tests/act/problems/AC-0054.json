@@ -1,0 +1,56 @@
+{
+  "id": "AC-0054",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-06",
+  "difficulty": "medium",
+  "statement": "A salesperson earns a base pay of $\\$2{,}100$ per month plus a commission of $6\\%$ on the part of her monthly sales above $\\$15{,}000$. There is no commission on the first $\\$15{,}000$. What is the minimum amount of sales she needs in a month to earn at least $\\$3{,}000$ that month?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$15{,}000$",
+      "correct": false,
+      "misconception": "I took $6\\%$ of all her sales, so I solved $2{,}100 + 0.06s \\ge 3{,}000$ and got $\\$15{,}000$."
+    },
+    {
+      "key": "B",
+      "text": "$\\$16{,}500$",
+      "correct": false,
+      "misconception": "I wrote $6\\%$ as $0.6$, so $0.6(s - 15{,}000) \\ge 900$ gave $s \\ge 16{,}500$."
+    },
+    {
+      "key": "C",
+      "text": "$\\$30{,}000$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$65{,}000$",
+      "correct": false,
+      "misconception": "I forgot about the base pay and made the commission alone reach $\\$3{,}000$, so $0.06(s - 15{,}000) \\ge 3{,}000$ gave $\\$65{,}000$."
+    }
+  ],
+  "hints": [
+    "How much of the $\\$3{,}000$ has to come from commission?",
+    "The commission must make up $3{,}000 - 2{,}100$. Commission is $0.06$ times the sales above $\\$15{,}000$.",
+    "Solve $2{,}100 + 0.06(s - 15{,}000) \\ge 3{,}000$: the commission part must be at least $\\$900$, so $s - 15{,}000 \\ge 900 \\div 0.06$."
+  ],
+  "solutions": {
+    "reliable": "Let $s$ be her monthly sales. Her pay is $2{,}100 + 0.06(s - 15{,}000)$ when $s > 15{,}000$. Require $2{,}100 + 0.06(s - 15{,}000) \\ge 3{,}000$, so $0.06(s - 15{,}000) \\ge 900$ and $s - 15{,}000 \\ge 15{,}000$. So $s \\ge 30{,}000$. Check: at $\\$30{,}000$ the commission is $0.06 \\cdot 15{,}000 = 900$ and the pay is exactly $\\$3{,}000$.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

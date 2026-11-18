@@ -1,11 +1,18 @@
 import { describe, it, expect } from 'vitest';
 import { getAllProblems, getAllSkills } from '../content';
-import { buildAmcIndex, buildAmcLookups, buildKaIndex, buildKaLookups } from '../bank-data';
+import {
+  buildAmcIndex,
+  buildAmcLookups,
+  buildKaIndex,
+  buildKaLookups,
+  buildTestIndexFile,
+} from '../bank-data';
 import {
   EMPTY_FILTERS,
   amcBankRows,
   amcBankTaxonomy,
   bankFiltersToSearch,
+  bankRowsFromIndex,
   filterRows,
   groupCounts,
   kaBankRows,
@@ -13,12 +20,17 @@ import {
   parseBankFilters,
   practiceIds,
   randomUnsolved,
+  rowState,
   sectionCount,
   taxonomyGroupNames,
+  testBankRows,
+  testBankTaxonomy,
   type BankRow,
 } from '../bank-filter';
 import type { MasteryState } from '../mastery';
 import type { AmcProblem, AmcTaxonomy } from '../amc-schemas';
+import type { TestProblem, TestTaxonomy } from '../test-schemas';
+import { EMPTY_PROGRESS, recordTestAttempt } from '../local-progress';
 
 const problems = getAllProblems();
 const taxonomy = kaBankTaxonomy(buildKaLookups(getAllSkills(), problems));
@@ -184,5 +196,78 @@ describe('the AMC adapter', () => {
     const filters = parseBankFilters('?level=AMC12&topic=ALG-01&type=T-CASEWORK', amc);
     expect(filterRows([row], filters, none)).toHaveLength(1);
     expect(bankFiltersToSearch(filters, amc)).toBe('?level=AMC12&topic=ALG-01&type=T-CASEWORK');
+  });
+});
+
+describe('the SAT / ACT adapter', () => {
+  const satTaxonomy: TestTaxonomy = {
+    test: 'SAT',
+    domains: [
+      {
+        id: 'ALG',
+        name: 'Algebra',
+        description: 'x'.repeat(40),
+        skills: [{ id: 'ALG-01', name: 'Linear equations', description: 'x'.repeat(40) }],
+      },
+      {
+        id: 'GEO',
+        name: 'Geometry and Trigonometry',
+        description: 'x'.repeat(40),
+        skills: [{ id: 'GEO-01', name: 'Area and volume', description: 'x'.repeat(40) }],
+      },
+    ],
+  };
+  const problem = {
+    id: 'SA-0001',
+    test: 'SAT',
+    domain: 'ALG',
+    skill: 'ALG-01',
+    difficulty: 'hard',
+    statement: 'What is $1+1$?',
+    figure: null,
+  } as unknown as TestProblem;
+  const file = buildTestIndexFile(satTaxonomy, [problem]);
+  const sat = testBankTaxonomy(file);
+  const [row] = testBankRows(file, taxonomyGroupNames(sat)) as [BankRow];
+
+  it('has no level control, domains as sections and Easy / Medium / Hard', () => {
+    expect(sat.bank).toBe('sat');
+    expect(sat.level).toBeNull();
+    expect(sat.sections.items.map((item) => item.id)).toEqual(['ALG', 'GEO']);
+    expect(sat.difficulty.options.map((option) => [option.points, option.label])).toEqual([
+      [3, 'Easy'],
+      [4, 'Medium'],
+      [5, 'Hard'],
+    ]);
+  });
+
+  it('makes a row under /sat with the skill as its group and the difficulty as its tier', () => {
+    expect(row.href).toBe('/sat/problem/SA-0001');
+    expect(row.groups).toEqual(['ALG-01']);
+    expect(row.primaryName).toBe('Linear equations');
+    expect(row.points).toBe(5);
+    expect(row.tierLabel).toBe('Hard');
+    expect(row.levelLabel).toBe('SAT Math');
+    expect(row.math).toBe(true);
+    expect(bankRowsFromIndex(sat, file)).toEqual([row]);
+  });
+
+  it('ignores a level in the URL and filters by skill and difficulty', () => {
+    const filters = parseBankFilters('?level=AMC12&skill=ALG-01&points=5', sat);
+    expect(filters.level).toBe('all');
+    expect(filterRows([row], filters, none)).toHaveLength(1);
+    expect(bankFiltersToSearch(filters, sat)).toBe('?skill=ALG-01&points=5');
+  });
+
+  it('reads status from the sat: bucket, not from the Kangaroo skill buckets', () => {
+    const at = new Date().toISOString();
+    const solved = recordTestAttempt(
+      'SA-0001',
+      'hard',
+      { correct: true, hintsUsed: 0, at },
+      EMPTY_PROGRESS,
+    );
+    expect(rowState('sat', EMPTY_PROGRESS, row)).toBe('unseen');
+    expect(rowState('sat', solved, row)).not.toBe('unseen');
   });
 });

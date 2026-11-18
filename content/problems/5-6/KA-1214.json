@@ -1,0 +1,68 @@
+{
+  "id": "KA-1214",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A school lunch is one main dish (4 choices), one drink (3 choices) and one dessert. The dessert is either a piece of fruit (2 kinds) or a yogurt (3 flavours). How many different lunches are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I added all the choices, 4 + 3 + 2 + 3, instead of multiplying."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I multiplied the 4 mains by the 5 desserts and forgot the drink."
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted only the fruit as desserts and forgot the yogurts."
+    },
+    {
+      "key": "D",
+      "text": "60",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "72",
+      "correct": false,
+      "misconception": "I multiplied by 2 and by 3 for the desserts, as if every lunch had both a fruit and a yogurt."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-03",
+    "secondary": [
+      "CNT-04",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "How many desserts are there to choose from altogether?",
+    "Choices made together multiply; choices made instead of each other add. Main, drink and dessert are chosen together, but fruit or yogurt is one or the other.",
+    "There are 2 + 3 = 5 possible desserts, so the number of lunches is 4 × 3 × 5."
+  ],
+  "solutions": {
+    "reliable": "The dessert is a fruit or a yogurt, so there are 2 + 3 = 5 desserts. A lunch is a main and a drink and a dessert, so the choices multiply: 4 × 3 × 5 = 60. The transferable idea: and means multiply, or means add.",
+    "elegant": null
+  },
+  "whyOnTest": "The multiplication principle, with the twist of knowing when to add instead: or-choices add, and-choices multiply.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0248",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-07",
+  "difficulty": "medium",
+  "statement": "A researcher wanted to know how many hours of sleep twelfth graders at Ridgeview High School get on school nights. She entered the names of all $480$ twelfth graders at the school into a computer program, which randomly selected $60$ of them to complete a survey. All $60$ responded. To which group can the results of the survey be most appropriately generalized?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Only the $60$ students who completed the survey",
+      "correct": false,
+      "misconception": "I thought survey results only ever describe the people who answered, but a random sample is chosen so the results can stand for the group it was drawn from."
+    },
+    {
+      "key": "B",
+      "text": "All students at Ridgeview High School",
+      "correct": false,
+      "misconception": "I generalized to every grade at the school, but only twelfth graders could be selected, so the other grades were never represented."
+    },
+    {
+      "key": "C",
+      "text": "All $480$ twelfth graders at Ridgeview High School",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "All twelfth graders in the state",
+      "correct": false,
+      "misconception": "I thought a random sample lets me generalize to twelfth graders anywhere, but the sample came from one school, so it represents only that school's twelfth graders."
+    }
+  ],
+  "hints": [
+    "Which students had a chance of being selected?",
+    "Results from a random sample generalize to the population the sample was drawn from, and no further.",
+    "The program chose from the $480$ twelfth graders at this one school, so that group is the population."
+  ],
+  "solutions": {
+    "reliable": "The sample was selected at random from the $480$ twelfth graders at Ridgeview High School, so every student in that group had the same chance of being chosen and no one outside it could be chosen. The results can therefore be generalized to all twelfth graders at Ridgeview High School, but not to other grades or other schools, which the sample never reached.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

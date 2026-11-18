@@ -1,6 +1,12 @@
 import { POINT_VALUES, type Points } from './schemas';
 import type { MasteryState } from './mastery';
-import { amcAttemptsFor, attemptsFor, problemProgress, type ProgressFile } from './local-progress';
+import {
+  amcAttemptsFor,
+  attemptsFor,
+  problemProgress,
+  testAttemptsFor,
+  type ProgressFile,
+} from './local-progress';
 import { amcPointsOf } from './amc-tier';
 
 /**
@@ -230,4 +236,18 @@ export function amcBankProgress(
     return { points, ...group };
   });
   return { ...all, untouched: all.total - all.solved - all.attempted, byTier };
+}
+
+/* -------------------------------------------------------------------------- */
+/* SAT / ACT                                                                   */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Status of one SAT or ACT problem, read from its own `sat:` / `act:` bucket (see
+ * local-progress.ts). The Kangaroo summaries above never read those buckets: they look up
+ * skill ids, and `bankProgress` counts only skills the Kangaroo bank teaches. Sessions are
+ * never read here either; mock and section answers are already ordinary attempts.
+ */
+export function testStatusOf(file: ProgressFile, problemId: string): MasteryState {
+  return problemProgress(testAttemptsFor(file, problemId));
 }

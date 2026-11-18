@@ -1,0 +1,70 @@
+{
+  "id": "KA-1274",
+  "band": "5-6",
+  "points": 5,
+  "statement": "In triangle ABC, AB = AC and angle BAC is 40 degrees. The point D lies on side AC so that BD = BC, as marked. How many degrees is angle ABD?",
+  "figure": {
+    "component": "TriangleTwoIsosceles",
+    "alt": "Triangle ABC with A at the top and base BC, with sides AB and AC the same length. Point D lies on side AC, a little closer to C than to A, and is joined to B. Segments BD and BC each carry two tick marks, showing they are equal. The angle at A is marked 40 degrees."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "15",
+      "correct": false,
+      "misconception": "I put the two equal angles of triangle BCD at B and D instead of at D and C, so angle DBC came out as 55 degrees and 70 - 55 = 15."
+    },
+    {
+      "key": "B",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "40",
+      "correct": false,
+      "misconception": "I found angle DBC, 40 degrees, which is the other part of angle ABC, not angle ABD."
+    },
+    {
+      "key": "D",
+      "text": "70",
+      "correct": false,
+      "misconception": "I found angle ABC, 70 degrees, the whole angle at B, instead of only the part between BA and BD."
+    },
+    {
+      "key": "E",
+      "text": "110",
+      "correct": false,
+      "misconception": "I found angle ADB, 110 degrees, instead of angle ABD."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-06",
+    "secondary": [
+      "GEO-05"
+    ]
+  },
+  "hints": [
+    "Look for isosceles triangles in the figure.",
+    "Triangle ABC has AB = AC, and triangle BCD has BD = BC. In an isosceles triangle, the angles opposite the equal sides are equal. Start from the 40 degree angle at A.",
+    "Angles ABC and ACB are both 70 degrees. In triangle BCD, angle BDC equals angle BCD, so angle DBC = 180 - 70 - 70 = 40."
+  ],
+  "solutions": {
+    "reliable": "In triangle ABC, AB = AC, so angles ABC and ACB are equal: each is (180 - 40) / 2 = 70 degrees. In triangle BCD, BD = BC, so the angles opposite those sides are equal: angle BDC = angle BCD = 70 degrees. So angle DBC = 180 - 70 - 70 = 40 degrees. Then angle ABD = angle ABC - angle DBC = 70 - 40 = 30 degrees. Check with triangle ABD: angle ADB = 180 - 70 = 110, and 40 + 110 + 30 = 180. The transferable idea: equal sides give equal opposite angles, and a chain of isosceles triangles passes angles from one triangle to the next.",
+    "elegant": "Angle BDC = 70 degrees is an outside angle of triangle ABD, so it equals the sum of the two inside angles at A and B: 40 + angle ABD = 70, giving angle ABD = 30."
+  },
+  "whyOnTest": "Triangle-property questions test spotting isosceles triangles from equal sides and passing angles from one triangle to the next.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0169",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-02",
+  "difficulty": "medium",
+  "statement": "If $x^2 - 6x = 16$, what is the value of $(x - 3)^2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I thought $(x - 3)^2$ was the same as $x^2 - 6x$, forgetting the $+9$ in the expansion, so I said $16$."
+    },
+    {
+      "key": "B",
+      "text": "$25$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I solved for $x$ and got $x = 8$, then squared $x$ instead of squaring $x - 3$."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I solved for $x$ and got $x = 8$, then gave $x - 3 = 5$ without squaring it."
+    }
+  ],
+  "hints": [
+    "Compare $(x - 3)^2$ with $x^2 - 6x$.",
+    "Expand $(x - 3)^2 = x^2 - 6x + 9$ and substitute what you know about $x^2 - 6x$.",
+    "$(x - 3)^2 = (x^2 - 6x) + 9 = 16 + 9$."
+  ],
+  "solutions": {
+    "reliable": "Solve first: $x^2 - 6x - 16 = 0$ factors as $(x - 8)(x + 2) = 0$, so $x = 8$ or $x = -2$. For $x = 8$, $(x - 3)^2 = 5^2 = 25$. For $x = -2$, $(x - 3)^2 = (-5)^2 = 25$. Either way the value is $25$.",
+    "elegant": "Since $(x - 3)^2 = x^2 - 6x + 9$, adding $9$ to both sides of $x^2 - 6x = 16$ gives $(x - 3)^2 = 25$ directly, without solving for $x$."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

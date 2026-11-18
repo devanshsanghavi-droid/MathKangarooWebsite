@@ -1,0 +1,68 @@
+{
+  "id": "KA-1458",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Books stand in a single row on a shelf. The red book is 9th from the left end and the blue book is 14th from the right end. The red book is to the left of the blue book, and exactly three books stand between them. How many books are on the shelf?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "18",
+      "correct": false,
+      "misconception": "I put the blue book to the left of the red one, so it was 5th from the left, which gives 5 + 14 - 1 = 18."
+    },
+    {
+      "key": "B",
+      "text": "23",
+      "correct": false,
+      "misconception": "I added 9 and 14 and forgot the three books between the red book and the blue book."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I placed the blue book three places after the red one, 12th from the left, instead of four places after, and got 12 + 14 - 1."
+    },
+    {
+      "key": "D",
+      "text": "28",
+      "correct": false,
+      "misconception": "I added 9, 3 and 14 and then added the red and blue books again, counting them twice."
+    },
+    {
+      "key": "E",
+      "text": "26",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-04",
+    "secondary": [
+      "CFT-02",
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "First work out the blue book's place counted from the left.",
+    "Draw the shelf as a row of boxes. Three books between red and blue put the blue book four places after the red one. Then use the blue book's place from the right to find the total.",
+    "The blue book is 9 + 4 = 13th from the left and 14th from the right, so 12 books are to its left and 13 to its right."
+  ],
+  "solutions": {
+    "reliable": "The red book is 9th from the left. Three books stand between red and blue, so the blue book is 9 + 3 + 1 = 13th from the left. Being 14th from the right means 13 books stand to its right. The total is 12 to its left, the blue book, and 13 to its right: 12 + 1 + 13 = 26. The transferable idea: when one item's place is counted from both ends, the total is (place from the left) + (place from the right) - 1.",
+    "elegant": "Split the shelf into three blocks: the red book and the 8 to its left (9 books), the 3 in between, and the blue book with the 13 to its right (14 books). Then 9 + 3 + 14 = 26, with nothing counted twice."
+  },
+  "whyOnTest": "Ordering questions test careful counting of positions from both ends, where off-by-one errors are the main trap.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

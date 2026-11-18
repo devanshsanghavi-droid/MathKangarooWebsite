@@ -1,0 +1,56 @@
+{
+  "id": "SA-0262",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "easy",
+  "statement": "A straight ramp rises from level ground to the top of a platform. A vertical post that is $0.6$ meter tall supports the ramp at a point $2.5$ meters from the bottom of the ramp, measured along the ground. The ramp meets the top of the platform $7.5$ meters from the bottom of the ramp, also measured along the ground. How tall is the platform, in meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.2$",
+      "correct": false,
+      "misconception": "I set up the ratio upside down, $0.6 \\times \\frac{2.5}{7.5}$, so I got 0.2."
+    },
+    {
+      "key": "B",
+      "text": "$1.2$",
+      "correct": false,
+      "misconception": "I saw that the remaining 5 meters is twice 2.5, so I doubled 0.6 to get 1.2 and forgot to add the height already reached at the post."
+    },
+    {
+      "key": "C",
+      "text": "$1.8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$3.6$",
+      "correct": false,
+      "misconception": "I found the ratio $7.5 \\div 2.5 = 3$ but added 3 to 0.6 instead of multiplying."
+    }
+  ],
+  "hints": [
+    "The post, the ground and the ramp form a small right triangle.",
+    "The small triangle and the large triangle share the angle at the bottom of the ramp, so they are similar. Match heights to ground distances.",
+    "Solve $\\frac{h}{7.5} = \\frac{0.6}{2.5}$ for $h$."
+  ],
+  "solutions": {
+    "reliable": "The post makes a small right triangle with the ground and the ramp, and the platform makes a large right triangle. They share the angle at the bottom of the ramp, so they are similar, and $\\frac{h}{7.5} = \\frac{0.6}{2.5}$. So $h = 7.5 \\times 0.24 = 1.8$ meters.",
+    "elegant": "The platform is $7.5 \\div 2.5 = 3$ times as far from the bottom of the ramp as the post, so it is $3$ times as high: $3 \\times 0.6 = 1.8$ meters."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

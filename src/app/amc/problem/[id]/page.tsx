@@ -102,6 +102,10 @@ const TIER_MEANING = {
   Late: 'Late problems (slots 21-25) need an idea you have to find. Skipping is often the right call on the day.',
 } as const;
 
+/** The AMC 8 has no penalty for a wrong answer (docs/07 section 2), so never advise a skip. */
+const AMC8_LATE =
+  'Late problems (slots 21-25) need an idea you have to find. A wrong answer costs nothing on the AMC 8, so always put down your best guess.';
+
 /**
  * `/amc/problem/[id]` - one AMC beta problem as a practice session of one (docs/06 §5).
  *
@@ -181,7 +185,9 @@ export default async function AmcProblemPage({ params }: Params) {
           <p className="ui m-0 flex flex-wrap items-baseline gap-2 text-sm text-ink-2">
             <BetaBadge />
             <span className="font-medium text-ink">{item.tierLabel}</span>
-            <span>{TIER_MEANING[tier]}</span>
+            <span>
+              {problem.contest === 'AMC8' && tier === 'Late' ? AMC8_LATE : TIER_MEANING[tier]}
+            </span>
             <span className="text-ink-3">{amcContestLabel(problem.contest)}.</span>
           </p>
 

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0009",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-02",
+  "difficulty": "medium",
+  "statement": "For all nonzero values of $x$ and $y$, which of the following is equivalent to $\\frac{\\left(2x^{3}y^{-2}\\right)^{3}}{4x^{5}y^{-4}}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{2x^{4}}{y^{2}}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{x^{4}}{2y^{2}}$",
+      "correct": false,
+      "misconception": "I cubed the powers of $x$ and $y$ but left the coefficient 2 alone, so I had $\\frac{2}{4} = \\frac{1}{2}$ in front."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{3x^{4}}{2y^{2}}$",
+      "correct": false,
+      "misconception": "I multiplied the coefficient 2 by 3 instead of cubing it, so the coefficient became $\\frac{6}{4} = \\frac{3}{2}$."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{2x^{4}}{y^{10}}$",
+      "correct": false,
+      "misconception": "I dropped a sign when I divided $y^{-6}$ by $y^{-4}$ and computed the exponent as $-6 - 4 = -10$."
+    }
+  ],
+  "hints": [
+    "Raise each factor inside the parentheses to the third power, including the $2$.",
+    "The numerator is $8x^{9}y^{-6}$. Now divide by $4x^{5}y^{-4}$ by dividing coefficients and subtracting exponents.",
+    "$\\frac{8}{4} = 2$, $x^{9 - 5} = x^{4}$ and $y^{-6 - (-4)} = y^{-2}$."
+  ],
+  "solutions": {
+    "reliable": "Cubing the numerator gives $2^{3}x^{9}y^{-6} = 8x^{9}y^{-6}$. Dividing by $4x^{5}y^{-4}$: the coefficient is $\\frac{8}{4} = 2$, the power of $x$ is $x^{9 - 5} = x^{4}$, and the power of $y$ is $y^{-6 - (-4)} = y^{-2}$. So the expression is $2x^{4}y^{-2} = \\frac{2x^{4}}{y^{2}}$. Check with $x = 1$, $y = 2$: the original is $\\frac{(2 \\cdot \\frac{1}{4})^{3}}{4 \\cdot \\frac{1}{16}} = \\frac{\\frac{1}{8}}{\\frac{1}{4}} = \\frac{1}{2}$, and $\\frac{2 \\cdot 1}{4} = \\frac{1}{2}$.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "AM-1118",
+  "contest": "AMC8",
+  "slot": 14,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-AREA-RATIO"
+  ],
+  "statement": "Triangle $ABC$ has area $80$. Point $D$ lies on side $\\overline{BC}$ with $BD : DC = 3 : 5$, and point $E$ is the midpoint of segment $\\overline{AD}$. What is the area of triangle $BEC$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I found triangle BED, which is half of triangle ABD, but triangle BEC also includes triangle CED."
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I assumed the new points cut the triangle into four equal parts and took 80 / 4 = 20."
+    },
+    {
+      "key": "C",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I found triangle CED, which is half of triangle ADC, and forgot triangle BED."
+    },
+    {
+      "key": "D",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I gave triangle ABD, which is 3/8 of the triangle, instead of triangle BEC."
+    },
+    {
+      "key": "E",
+      "text": "$40$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Triangle $BEC$ has the same base $\\overline{BC}$ as triangle $ABC$. Compare their heights.",
+    "$E$ is halfway from $A$ to the point $D$ on line $BC$, so its distance from line $BC$ is half of $A$'s distance.",
+    "Same base and half the height means half the area. The ratio $3 : 5$ never matters."
+  ],
+  "solutions": {
+    "reliable": "Triangles $ABD$ and $ADC$ share the height from $A$, so their areas are in the ratio $3 : 5$: they are $30$ and $50$. Since $E$ is the midpoint of $\\overline{AD}$, segment $\\overline{BE}$ splits triangle $ABD$ into two triangles with equal bases on $\\overline{AD}$ and the same height, so triangle $BED$ has area $15$. In the same way triangle $CED$ has area $25$. Triangle $BEC$ is made of triangles $BED$ and $CED$, so its area is $15 + 25 = 40$.",
+    "elegant": "Triangles $BEC$ and $BAC$ share base $\\overline{BC}$. Because $E$ is the midpoint of $\\overline{AD}$ and $D$ is on $\\overline{BC}$, the height from $E$ to $\\overline{BC}$ is half the height from $A$. So triangle $BEC$ has half the area: $40$."
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

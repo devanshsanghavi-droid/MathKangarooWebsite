@@ -1,0 +1,56 @@
+{
+  "id": "SA-0293",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "medium",
+  "statement": "In right triangle $ABC$, angle $C$ is the right angle, $\\tan A = \\frac{8}{15}$ and $AB = 34$. What is the length of $\\overline{AC}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I read the side lengths straight from the tangent ratio, so I took $AC = 15$ without scaling to the hypotenuse $34$."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I scaled correctly but found $BC = 16$, the side opposite angle $A$, instead of $AC$."
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I found $BC = 16$ and then subtracted it from the hypotenuse, $34 - 16 = 18$, instead of using the Pythagorean theorem."
+    },
+    {
+      "key": "D",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Which sides does $\\tan A$ compare? Opposite and adjacent to angle $A$.",
+    "$\\tan A = \\frac{BC}{AC} = \\frac{8}{15}$, so $BC = 8k$ and $AC = 15k$ for some $k$. Find the hypotenuse in terms of $k$.",
+    "$AB = \\sqrt{(8k)^2 + (15k)^2} = 17k = 34$, so $k = 2$."
+  ],
+  "solutions": {
+    "reliable": "Since $\\tan A = \\frac{BC}{AC} = \\frac{8}{15}$, write $BC = 8k$ and $AC = 15k$. Then $AB = \\sqrt{64k^2 + 225k^2} = \\sqrt{289k^2} = 17k$. Setting $17k = 34$ gives $k = 2$, so $AC = 15 \\cdot 2 = 30$. Check: $16^2 + 30^2 = 256 + 900 = 1156 = 34^2$.",
+    "elegant": "From $\\tan A = \\frac{8}{15}$, the triangle is a scaled $8$-$15$-$17$ triangle, so $\\cos A = \\frac{15}{17}$. Then $AC = AB \\cos A = 34 \\cdot \\frac{15}{17} = 30$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

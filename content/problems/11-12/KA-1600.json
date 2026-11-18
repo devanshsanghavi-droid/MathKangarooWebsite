@@ -1,0 +1,68 @@
+{
+  "id": "KA-1600",
+  "band": "11-12",
+  "points": 4,
+  "statement": "You start with the number 1. A move is either to double the number, or to rearrange its digits in any order, as long as the first digit is not 0. For example, $1 \\to 2 \\to 4 \\to 8 \\to 16 \\to 61$ is allowed. Which of these numbers can never be reached?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "92",
+      "correct": false,
+      "misconception": "I thought every reachable number is a power of 2 or a power of 2 with its digits rearranged, and missed that 32 can become 23, which doubles to 46 and then to 92."
+    },
+    {
+      "key": "B",
+      "text": "526",
+      "correct": false,
+      "misconception": "I thought rearranging could only reverse the digits, and 526 is not the reverse of any power of 2."
+    },
+    {
+      "key": "C",
+      "text": "821",
+      "correct": false,
+      "misconception": "I thought an odd number other than 1 can never appear, because doubling always gives an even number."
+    },
+    {
+      "key": "D",
+      "text": "1023",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "4210",
+      "correct": false,
+      "misconception": "I thought a number ending in 0 can never be reached, because no power of 2 ends in 0."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "NUM-04",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Is there something about a number that rearranging its digits never changes?",
+    "Rearranging digits keeps the digit sum, so it keeps the remainder on division by 3. Ask what doubling does to that remainder, starting from 1.",
+    "Starting from 1, the remainder on division by 3 is never 0: doubling turns 1 into 2 and 2 into 1, and rearranging changes nothing. Now check which option is a multiple of 3."
+  ],
+  "solutions": {
+    "reliable": "Track the remainder on division by 3. Rearranging digits keeps the digit sum, so the remainder stays the same. Doubling turns remainder 1 into 2 and remainder 2 into 1 (since 4 leaves 1), and never produces 0. Starting from 1, no multiple of 3 can ever appear. The digits of 1023 add up to 6, so 1023 is a multiple of 3 and can never be reached. The others can: $32 \\to 23 \\to 46 \\to 92$; $256 \\to 526$; $128 \\to 821$; $1024 \\to 4210$. The transferable idea: to show a target is impossible, find a quantity that every move keeps safe and that the target breaks.",
+    "elegant": null
+  },
+  "whyOnTest": "Invariants prove impossibility: a remainder that no move can change rules out a target, while the other options just need a path.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

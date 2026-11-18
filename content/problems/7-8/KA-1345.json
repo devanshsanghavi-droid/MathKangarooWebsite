@@ -1,0 +1,68 @@
+{
+  "id": "KA-1345",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A shop mixes peanuts costing 6 euros per kilogram with cashews costing 15 euros per kilogram. It makes 12 kg of mix, worth exactly 9 euros per kilogram. How many kilograms of cashews are in the mix?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I found the amount of peanuts in the mix instead of the amount of cashews."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I assumed that the mix must be half peanuts and half cashews."
+    },
+    {
+      "key": "C",
+      "text": "7.2",
+      "correct": false,
+      "misconception": "I divided the whole cost of the mix, $12 \\times 9 = 108$ euros, by the cashew price, as if all the money went on cashews."
+    },
+    {
+      "key": "D",
+      "text": "2.4",
+      "correct": false,
+      "misconception": "I took the cashew share as the 3 euro gap between the mix and peanut prices divided by the cashew price, 3/15 of 12."
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "MOD-08",
+    "secondary": [
+      "MOD-01",
+      "NUM-11"
+    ]
+  },
+  "hints": [
+    "Is 9 euros nearer to the peanut price or the cashew price?",
+    "Write the total value two ways: 12 kg at 9 euros, or peanuts at 6 euros plus cashews at 15 euros. Or compare the gaps: the mix price is 3 above the peanut price and 6 below the cashew price.",
+    "If c kg are cashews, then $6(12 - c) + 15c = 108$."
+  ],
+  "solutions": {
+    "reliable": "Let c be the number of kilograms of cashews, so 12 - c kilograms are peanuts. The mix is worth $12 \\times 9 = 108$ euros, so $6(12 - c) + 15c = 108$, which gives 72 + 9c = 108, so 9c = 36 and c = 4. Check: 8 kg of peanuts cost 48 euros and 4 kg of cashews cost 60 euros, 108 euros in all. The transferable idea: in a mixture, the value of the parts adds up to the value of the whole.",
+    "elegant": "Balance the gaps: each kilogram of peanuts is 3 euros below the mix price and each kilogram of cashews is 6 euros above it. The amounts below and above must cancel, so there must be twice as much peanut as cashew: 8 kg and 4 kg."
+  },
+  "whyOnTest": "Tests a weighted average: the mix price sits nearer the larger ingredient, and the gaps to each price give the ratio.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

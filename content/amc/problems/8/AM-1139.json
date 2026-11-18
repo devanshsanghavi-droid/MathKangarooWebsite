@@ -1,0 +1,69 @@
+{
+  "id": "AM-1139",
+  "contest": "AMC8",
+  "slot": 21,
+  "area": "GEO",
+  "topic": "GEO-01",
+  "types": [
+    "T-BOUNDING",
+    "T-CASEWORK"
+  ],
+  "statement": "Every interior angle of a convex polygon measures $120^\\circ$, $135^\\circ$ or $150^\\circ$, and each of these three measures occurs at least once. What is the greatest number of sides the polygon can have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I set up the equation correctly but found the fewest sides possible instead of the most."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I used exactly one $120^\\circ$ angle and one $150^\\circ$ angle and made all the rest $135^\\circ$, which gave $8$ sides."
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I thought each of the three measures had to occur at least twice, and the best I could do under that rule was $9$ sides."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I forgot that a $120^\\circ$ angle is required, and used two $135^\\circ$ angles and nine $150^\\circ$ angles."
+    }
+  ],
+  "hints": [
+    "Think about the exterior angles instead: in any convex polygon they add up to $360^\\circ$.",
+    "The exterior angles are $60^\\circ$, $45^\\circ$ and $30^\\circ$. To get many sides you want lots of small exterior angles, but you need at least one of each kind.",
+    "With $a$, $b$ and $c$ angles of each kind, $60a + 45b + 30c = 360$, or $4a + 3b + 2c = 24$. Try $a = 1$. Then $3b + 2c = 20$ forces $b$ to be even, so the smallest choice is $b = 2$."
+  ],
+  "solutions": {
+    "reliable": "The exterior angles are $180^\\circ - 120^\\circ = 60^\\circ$, $45^\\circ$ and $30^\\circ$, and they add up to $360^\\circ$. If there are $a$, $b$ and $c$ angles of the three kinds, then $60a + 45b + 30c = 360$, so $4a + 3b + 2c = 24$. Since $4a$, $2c$ and $24$ are even, $b$ must be even, so $b \\ge 2$; also $a \\ge 1$. Rewrite the equation as $2(a + b + c) = 24 - 2a - b$, so the number of sides is $a + b + c = 12 - a - \\frac{b}{2} \\le 12 - 1 - 1 = 10$. Equality holds for $a = 1$, $b = 2$, $c = 7$: indeed $60 + 90 + 210 = 360$, and a convex $10$-gon with these angles exists. The greatest number of sides is $10$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-19"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

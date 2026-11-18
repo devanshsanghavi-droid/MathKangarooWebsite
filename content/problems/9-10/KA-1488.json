@@ -1,0 +1,67 @@
+{
+  "id": "KA-1488",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Which of these is closest to $\\sqrt{50} + \\sqrt{99}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "17",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I added under the square root first, working out $\\sqrt{50 + 99} = \\sqrt{149}$."
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": false,
+      "misconception": "I thought $\\sqrt{50}$ is 5, half of $\\sqrt{100}$, because 50 is half of 100."
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": false,
+      "misconception": "I rounded both square roots up, to 8 and 10."
+    },
+    {
+      "key": "E",
+      "text": "14",
+      "correct": false,
+      "misconception": "I used the square roots of the perfect squares just below, $\\sqrt{25} = 5$ and $\\sqrt{81} = 9$."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-12",
+    "secondary": [
+      "CFT-06"
+    ]
+  },
+  "hints": [
+    "Which perfect squares are close to 50 and to 99?",
+    "Compare each number with the nearest perfect square: 50 is just above 49 and 99 is just below 100. Square roots of sums cannot be split, so estimate each root separately.",
+    "$\\sqrt{50}$ is a little more than 7 and $\\sqrt{99}$ is a little less than 10."
+  ],
+  "solutions": {
+    "reliable": "Since $49 < 50$, $\\sqrt{50}$ is a little more than 7 (about 7.07), and since $99 < 100$, $\\sqrt{99}$ is a little less than 10 (about 9.95). The sum is about 17.02, so 17 is closest. The transferable idea: estimate a square root from the nearest perfect square, and never add under the root sign.",
+    "elegant": null
+  },
+  "whyOnTest": "Estimation questions reward anchoring square roots to nearby perfect squares; adding under the root sign is the classic trap.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

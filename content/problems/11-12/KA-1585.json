@@ -1,0 +1,68 @@
+{
+  "id": "KA-1585",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A function $f$ gives these values: $f(1) = 1$, $f(7) = 2$, $f(12) = 6$, $f(16) = 5$ and $f(30) = 8$. Following the same rule, what is $f(36)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I listed the divisors of 36 in pairs and dropped 6, because it pairs with itself."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I listed the divisors of 36 in pairs and counted 6 twice, once for each place in $6 \\times 6$."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I wrote $36 = 12 \\times 3$ and multiplied $f(12) \\times f(3) = 6 \\times 2$, but 12 and 3 share a factor."
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": false,
+      "misconception": "I thought $f(36) = 3 \\times f(12)$ because 36 is three times 12."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "NUM-05",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Why might 7 give 2 while 16 gives 5?",
+    "Test a rule against every example, not just one. A prime giving 2 and a square giving an odd number are strong clues about counting something related to $n$.",
+    "$f(n)$ is the number of divisors of $n$: 12 has 1, 2, 3, 4, 6, 12 and 16 has 1, 2, 4, 8, 16. Now list the divisors of 36."
+  ],
+  "solutions": {
+    "reliable": "The rule is: $f(n)$ is the number of whole numbers that divide $n$. Check: 1 has one divisor; 7 has 1 and 7; 12 has six; 16 has 1, 2, 4, 8, 16; 30 has 1, 2, 3, 5, 6, 10, 15, 30. The divisors of 36 are 1, 2, 3, 4, 6, 9, 12, 18, 36, so $f(36) = 9$. The transferable idea: a rule must fit every example, and odd outputs here point to perfect squares.",
+    "elegant": "With $36 = 2^2 \\times 3^2$, a divisor is $2^a 3^b$ with $a, b \\in \\{0, 1, 2\\}$, giving $3 \\times 3 = 9$ divisors."
+  },
+  "whyOnTest": "Inferring a rule means testing it on every example; divisor counts are a natural candidate, and perfect squares are where counting slips happen.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

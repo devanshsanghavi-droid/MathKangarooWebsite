@@ -1,0 +1,56 @@
+{
+  "id": "SA-0069",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "medium",
+  "statement": "The ordered pair $(x, y)$ satisfies both $4x - y = 10$ and $2x + 3y = 26$. The same point also lies on the line $kx - y = 30$, where $k$ is a constant. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{17}{3}$",
+      "correct": false,
+      "misconception": "I mixed up the coordinates and substituted $x = 6$ and $y = 4$, so $6k - 4 = 30$ gave $k = \\frac{17}{3}$."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I moved the $y$-term the wrong way and wrote $4k = 30 - 6$ instead of $4k = 30 + 6$, so I got 6."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{15}{2}$",
+      "correct": false,
+      "misconception": "I divided 30 by $x = 4$ and ignored the $-y$ term, so I got $\\frac{15}{2}$."
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "First find the point where the first two lines meet.",
+    "Solve the first two equations together, for example by writing $y = 4x - 10$ and substituting. Then put the point into $kx - y = 30$.",
+    "The first two equations give $x = 4$ and $y = 6$. Then $4k - 6 = 30$."
+  ],
+  "solutions": {
+    "reliable": "From $4x - y = 10$, $y = 4x - 10$. Substituting into $2x + 3y = 26$: $2x + 12x - 30 = 26$, so $14x = 56$, $x = 4$ and $y = 6$. Check: $16 - 6 = 10$ and $8 + 18 = 26$. The point $(4, 6)$ lies on $kx - y = 30$, so $4k - 6 = 30$, $4k = 36$ and $k = 9$.",
+    "elegant": "Multiply the first equation by $3$ and add the second: $12x - 3y + 2x + 3y = 30 + 26$, so $14x = 56$ and $x = 4$, giving $y = 6$ and $k = \\frac{30 + 6}{4} = 9$."
+  },
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1021",
+  "band": "1-2",
+  "points": 3,
+  "statement": "What number is 1 more than 199?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "190",
+      "correct": false,
+      "misconception": "I added 1 to the last 9, wrote 0, and forgot to carry the 1 into the tens."
+    },
+    {
+      "key": "B",
+      "text": "200",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "209",
+      "correct": false,
+      "misconception": "I added 1 ten instead of 1 one."
+    },
+    {
+      "key": "D",
+      "text": "299",
+      "correct": false,
+      "misconception": "I added 1 hundred instead of 1 one."
+    },
+    {
+      "key": "E",
+      "text": "1910",
+      "correct": false,
+      "misconception": "I added 1 to the last 9 and wrote 10 in that place, so I got 19 followed by 10."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-01",
+    "secondary": [
+      "NUM-13"
+    ]
+  },
+  "hints": [
+    "What happens after 9 ones?",
+    "When the ones go past 9 they make a new ten, and when the tens go past 9 they make a new hundred. Add the 1 to the ones and follow what happens to each place.",
+    "199 is 1 hundred, 9 tens and 9 ones. One more one makes 10 ones, which is another ten."
+  ],
+  "solutions": {
+    "reliable": "199 is 1 hundred, 9 tens and 9 ones. Adding 1 makes 10 ones, which is 1 more ten. Now there are 10 tens, which is 1 more hundred. That leaves 2 hundreds, 0 tens and 0 ones: 200. The idea to keep: when a place reaches ten, it becomes 1 of the next place, and that can happen more than once.",
+    "elegant": "Count on: 197, 198, 199, 200. The idea to keep: counting on past a hundred is a quick check of a carry."
+  },
+  "whyOnTest": "Place value: adding 1 to 199 makes the ones and then the tens roll over, and stopping after the first carry is the trap.",
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1593",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A positive number $x$ satisfies $x + \\dfrac{1}{x} = 3$. What is the value of $x^5 + \\dfrac{1}{x^5}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "47",
+      "correct": false,
+      "misconception": "I worked out $x^4 + \\frac{1}{x^4} = 7^2 - 2 = 47$ and stopped one power too early."
+    },
+    {
+      "key": "B",
+      "text": "123",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "126",
+      "correct": false,
+      "misconception": "I multiplied $x^2 + \\frac{1}{x^2} = 7$ by $x^3 + \\frac{1}{x^3} = 18$ but forgot that the product also contains $x + \\frac{1}{x}$, which must be taken away."
+    },
+    {
+      "key": "D",
+      "text": "129",
+      "correct": false,
+      "misconception": "I multiplied $7 \\times 18 = 126$ and then added $x + \\frac{1}{x} = 3$ instead of subtracting it."
+    },
+    {
+      "key": "E",
+      "text": "243",
+      "correct": false,
+      "misconception": "I raised both sides to the fifth power and assumed that $\\left(x + \\frac{1}{x}\\right)^5 = x^5 + \\frac{1}{x^5}$."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-12",
+    "secondary": [
+      "CFT-07",
+      "PAT-05"
+    ]
+  },
+  "hints": [
+    "Solving for $x$ works but is slow. Build up the powers instead.",
+    "Squaring or multiplying expressions of the form $x^k + \\frac{1}{x^k}$ gives a higher power plus a lower one you already know. Find a route to the fifth power in as few steps as possible.",
+    "$x^2 + \\frac{1}{x^2} = 3^2 - 2 = 7$ and $x^3 + \\frac{1}{x^3} = 3^3 - 3 \\times 3 = 18$. Then $\\left(x^2 + \\frac{1}{x^2}\\right)\\left(x^3 + \\frac{1}{x^3}\\right) = x^5 + \\frac{1}{x^5} + x + \\frac{1}{x}$."
+  ],
+  "solutions": {
+    "reliable": "Let $s_k = x^k + \\frac{1}{x^k}$, so $s_1 = 3$. Squaring gives $s_1^2 = s_2 + 2$, so $s_2 = 7$. Cubing gives $s_1^3 = s_3 + 3s_1$, so $s_3 = 27 - 9 = 18$. Multiplying, $s_2 s_3 = x^5 + x + \\frac{1}{x} + \\frac{1}{x^5} = s_5 + s_1$, so $s_5 = 7 \\times 18 - 3 = 123$. Check with the rule $s_{k+1} = 3s_k - s_{k-1}$: $s_4 = 3 \\times 18 - 7 = 47$ and $s_5 = 3 \\times 47 - 18 = 123$. The transferable idea: in the 5-point block, look for an identity that builds the answer from what is given before solving for the unknown.",
+    "elegant": "Multiplying $x + \\frac{1}{x}$ by $x^k + \\frac{1}{x^k}$ gives $s_{k+1} + s_{k-1}$, so $s_{k+1} = 3s_k - s_{k-1}$. Starting from $s_0 = 2$ and $s_1 = 3$, the values run $2, 3, 7, 18, 47, 123$."
+  },
+  "whyOnTest": "Symmetric expressions in $x$ and $\\frac{1}{x}$ can be built from $x + \\frac{1}{x}$ alone, turning a quadratic with surds into three lines of arithmetic.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

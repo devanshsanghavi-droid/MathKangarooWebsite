@@ -1,0 +1,56 @@
+{
+  "id": "SA-0036",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "medium",
+  "statement": "Line $\\ell$ in the $xy$-plane passes through the points $(-3, 10)$ and $(3, 2)$. What is the $x$-coordinate of the point where $\\ell$ crosses the $x$-axis?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{3}{2}$",
+      "correct": false,
+      "misconception": "I lost the negative sign and used a slope of $\\dfrac{4}{3}$, so I moved left from $(3, 2)$ and got $\\dfrac{3}{2}$."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{9}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{17}{3}$",
+      "correct": false,
+      "misconception": "I wrote the slope as run over rise, $-\\dfrac{3}{4}$, so from $(3, 2)$ I needed $\\dfrac{8}{3}$ more units and got $\\dfrac{17}{3}$."
+    },
+    {
+      "key": "D",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found the line $y = -\\dfrac{4}{3}x + 6$ and gave its $y$-intercept, 6, instead of the $x$-intercept."
+    }
+  ],
+  "hints": [
+    "Find the slope first, then decide how far you must move from a known point to bring $y$ down to $0$.",
+    "The slope is $\\dfrac{2 - 10}{3 - (-3)}$. Starting at $(3, 2)$, how much must $x$ change for $y$ to drop by $2$?",
+    "The slope is $-\\dfrac{4}{3}$, so $y$ falls $4$ for every $3$ units right. To fall $2$ more from $(3, 2)$, move $\\dfrac{3}{2}$ to the right."
+  ],
+  "solutions": {
+    "reliable": "The slope is $\\dfrac{2 - 10}{3 - (-3)} = -\\dfrac{8}{6} = -\\dfrac{4}{3}$. Point-slope form through $(3, 2)$: $y - 2 = -\\dfrac{4}{3}(x - 3)$. Setting $y = 0$: $-2 = -\\dfrac{4}{3}(x - 3)$, so $x - 3 = \\dfrac{3}{2}$ and $x = \\dfrac{9}{2}$. Check with the other point: from $(-3, 10)$, $y$ must fall $10$, which takes $10 \\cdot \\dfrac{3}{4} = 7.5$ units, and $-3 + 7.5 = 4.5$.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

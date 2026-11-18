@@ -1,0 +1,56 @@
+{
+  "id": "SA-0194",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-04",
+  "difficulty": "hard",
+  "statement": "Account A has $1{,}000$ dollars, and $50$ dollars is added to it at the end of each year. Account B has $800$ dollars and earns $8\\%$ interest, compounded at the end of each year. No other money is added or removed. After how many years will the balance in account B first be greater than the balance in account A?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I treated account A as staying at $1{,}000$ dollars, and $800(1.08)^3 \\approx 1{,}008$ is the first balance of B above $1{,}000$."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found the last year in which account B is still behind account A and gave that year."
+    },
+    {
+      "key": "C",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I treated account B as growing by $8\\%$ of $800$, or $64$ dollars, every year, so I solved $800 + 64t > 1{,}000 + 50t$."
+    }
+  ],
+  "hints": [
+    "After $t$ years, A has $1{,}000 + 50t$ dollars and B has $800(1.08)^t$ dollars.",
+    "Make a table of both balances, year by year, starting around $t = 5$.",
+    "At $t = 6$: A has $1{,}300$ and B has about $1{,}269.50$. At $t = 7$: A has $1{,}350$ and B has about $1{,}371.06$."
+  ],
+  "solutions": {
+    "reliable": "After $t$ years the balances are $A = 1{,}000 + 50t$ and $B = 800(1.08)^t$. At $t = 5$: $A = 1{,}250$ and $B \\approx 1{,}175.46$. At $t = 6$: $A = 1{,}300$ and $B \\approx 1{,}269.50$. At $t = 7$: $A = 1{,}350$ and $B \\approx 1{,}371.06$. Before $t = 7$ account B is behind, and at $t = 7$ it is ahead for the first time, so the answer is $7$ years.",
+    "elegant": null
+  },
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

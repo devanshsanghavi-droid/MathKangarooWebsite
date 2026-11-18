@@ -1,0 +1,56 @@
+{
+  "id": "AC-0057",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "medium",
+  "statement": "In the system of equations below, $c$ is a constant. For what value of $c$ does the system have no solution? $$\\begin{aligned} y &= -\\frac{3}{4}x + 2 \\\\ 6x + cy &= 5 \\end{aligned}$$",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-8$",
+      "correct": false,
+      "misconception": "I moved the $x$ term to the left side without changing its sign, so I had $-3x + 4y = 8$. Multiplying by $-2$ to get $6x$ gave $6x - 8y$, so I chose $c = -8$."
+    },
+    {
+      "key": "B",
+      "text": "$-\\dfrac{9}{2}$",
+      "correct": false,
+      "misconception": "I thought no solution means the lines are perpendicular, so I set the second slope, $-\\frac{6}{c}$, equal to $\\frac{4}{3}$ and got $c = -\\frac{9}{2}$."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I rewrote the first line as $3x + 4y = 8$ and copied the $4$ for $c$, forgetting that turning $3x$ into $6x$ doubles the $4y$ as well."
+    },
+    {
+      "key": "D",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Two lines have no point in common when they are parallel and different.",
+    "Rewrite the first equation in the form $ax + by = k$, or solve the second for $y$, and then make the slopes equal.",
+    "Multiplying the first equation by $4$ and moving the $x$ term gives $3x + 4y = 8$, and doubling gives $6x + 8y = 16$. Compare this with $6x + cy = 5$."
+  ],
+  "solutions": {
+    "reliable": "Multiply the first equation by $4$ and move the $x$ term: $3x + 4y = 8$. Doubling gives $6x + 8y = 16$. If $c = 8$, the second equation is $6x + 8y = 5$, with the same left side but a different right side, so the lines are parallel and distinct and there is no solution. For any other value of $c$ the second line is not parallel to the first, so the lines meet exactly once. So $c = 8$.",
+    "elegant": "Solve the second equation for $y$: $y = -\\frac{6}{c}x + \\frac{5}{c}$. Parallel lines need $-\\frac{6}{c} = -\\frac{3}{4}$, so $c = 8$, and then the $y$-intercept is $\\frac{5}{8} \\ne 2$, so the lines are distinct."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

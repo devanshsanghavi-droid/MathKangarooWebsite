@@ -1,0 +1,67 @@
+{
+  "id": "KA-1041",
+  "band": "1-2",
+  "points": 3,
+  "statement": "Mia has a 1-cent coin, a 2-cent coin and a 5-cent coin. She picks exactly two of the coins. How many different amounts of money can she make?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I also counted taking all three coins, which is more than two."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted picking the 1 then the 2 and picking the 2 then the 1 as different."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I listed every amount using one, two or three coins."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I added up all three coins instead of picking two."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "MOD-06"
+    ]
+  },
+  "hints": [
+    "Which coin does Mia leave behind?",
+    "List the pairs in order so you miss none: start with the 1-cent coin and pair it with each bigger coin, then do the same for the 2-cent coin. Then add each pair.",
+    "The pairs are 1 and 2, 1 and 5, and 2 and 5. Add each pair and check that the totals are all different."
+  ],
+  "solutions": {
+    "reliable": "The pairs are 1 + 2 = 3, 1 + 5 = 6 and 2 + 5 = 7 cents. The three totals are all different, so there are 3 amounts. The idea to keep: list pairs in a fixed order so that none is missed or counted twice.",
+    "elegant": "Picking two coins out of three is the same as choosing which one coin to leave out, and there are 3 ways to do that. The idea to keep: sometimes it is easier to count what you leave out."
+  },
+  "whyOnTest": "A short, careful list beats guessing, and the order of picking does not make a new pair.",
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0259",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-02",
+  "difficulty": "easy",
+  "statement": "The front of a roof truss is shaped like an isosceles triangle. The angle at the peak, between the two equal sides, measures $38^\\circ$. What is the measure, in degrees, of each of the two base angles?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$38$",
+      "correct": false,
+      "misconception": "I thought the base angles must equal the peak angle because the triangle is isosceles."
+    },
+    {
+      "key": "B",
+      "text": "$52$",
+      "correct": false,
+      "misconception": "I subtracted the peak angle from $90^\\circ$, as if each base angle and the peak angle made a right angle together."
+    },
+    {
+      "key": "C",
+      "text": "$71$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$142$",
+      "correct": false,
+      "misconception": "I found $180 - 38 = 142$ but forgot to split it between the two equal base angles."
+    }
+  ],
+  "hints": [
+    "The two base angles of an isosceles triangle are equal.",
+    "Subtract the peak angle from $180^\\circ$ and share what is left equally between the base angles.",
+    "Each base angle is $(180 - 38) \\div 2$ degrees."
+  ],
+  "solutions": {
+    "reliable": "The angles of a triangle add to $180^\\circ$, so the two base angles together measure $180 - 38 = 142$ degrees. In an isosceles triangle the base angles are equal, so each is $142 \\div 2 = 71$ degrees.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

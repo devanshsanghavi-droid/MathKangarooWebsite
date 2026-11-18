@@ -1,0 +1,66 @@
+{
+  "id": "AM-1243",
+  "contest": "AMC8",
+  "slot": 6,
+  "area": "CP",
+  "topic": "CP-08",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "In a game, Kai flips two fair coins. If both land heads, he scores $5$ points. If exactly one lands heads, he scores $2$ points. If neither lands heads, he loses $3$ points. On average, how many points does Kai score per turn?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I left out the case of exactly one head and only used the other two: 5/4 - 3/4 = 1/2."
+    },
+    {
+      "key": "B",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I gave each of the three results a 1/4 chance, so 5/4 + 2/4 - 3/4 = 1, but exactly one head happens half the time."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{4}{3}$",
+      "correct": false,
+      "misconception": "I thought the three results were equally likely and averaged them: (5 + 2 - 3) divided by 3 = 4/3."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{3}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{9}{4}$",
+      "correct": false,
+      "misconception": "I forgot to subtract the 3 points he loses with no heads: 5/4 + 2/2 = 9/4."
+    }
+  ],
+  "hints": [
+    "List all four equally likely ways two coins can land.",
+    "Two heads has probability $\\frac{1}{4}$, exactly one head has probability $\\frac{1}{2}$, and no heads has probability $\\frac{1}{4}$. Weight each score by its probability.",
+    "The average is $5 \\cdot \\frac{1}{4} + 2 \\cdot \\frac{1}{2} + (-3) \\cdot \\frac{1}{4}$."
+  ],
+  "solutions": {
+    "reliable": "The four equally likely outcomes are HH, HT, TH and TT, worth $5$, $2$, $2$ and $-3$ points. The average is $\\frac{5 + 2 + 2 - 3}{4} = \\frac{6}{4} = \\frac{3}{2}$ points per turn.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

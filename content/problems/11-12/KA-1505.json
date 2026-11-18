@@ -1,0 +1,68 @@
+{
+  "id": "KA-1505",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A rectangle has area 60 and a diagonal of length 13. How long is its longer side?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I picked 10 by 6, which has area 60, without checking that its diagonal is $\\sqrt{136}$, not 13."
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I took the diagonal to be the longer side, but the diagonal is longer than both sides."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I found the sides 12 and 5 but gave the shorter one."
+    },
+    {
+      "key": "E",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I picked 15 by 4, which has area 60, without checking that its diagonal is $\\sqrt{241}$, not 13."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-04",
+    "secondary": [
+      "CFT-01",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Try each choice as a side. What must the other side be?",
+    "If one side is a choice, the area fixes the other side. Then Pythagoras checks the diagonal. Testing a choice is quicker than setting up two equations.",
+    "Try 12: the other side is $60 / 12 = 5$, and $12^2 + 5^2 = 169 = 13^2$. Check which side is longer."
+  ],
+  "solutions": {
+    "reliable": "Test each choice as one side $a$, so the other side is $60 / a$. For 10: the sides are 10 and 6, and $100 + 36 = 136 \\neq 169$. For 15: the sides are 15 and 4, and $225 + 16 = 241 \\neq 169$. For 12: the sides are 12 and 5, and $144 + 25 = 169 = 13^2$. So the rectangle is 12 by 5, and its longer side is 12. (13 cannot be a side, since a side is always shorter than the diagonal.) The transferable idea: test a choice against every condition, not just the first one.",
+    "elegant": "With sides $a$ and $b$: $a^2 + b^2 = 169$ and $2ab = 120$, so $(a + b)^2 = 289$ and $(a - b)^2 = 49$. Then $a + b = 17$ and $a - b = 7$, giving $a = 12$ and $b = 5$."
+  },
+  "whyOnTest": "A choice can be tested in seconds, and the traps are rectangles that pass the area test but fail the diagonal.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

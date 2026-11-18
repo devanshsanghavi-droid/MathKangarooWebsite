@@ -1,0 +1,68 @@
+{
+  "id": "KA-1131",
+  "band": "3-4",
+  "points": 5,
+  "statement": "A 30-day month starts on a Monday, in rows of 7. Ella boxes two dates that share a side, like 3 and 4, or 3 and 10. How many boxes can she draw?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "23",
+      "correct": false,
+      "misconception": "I only counted pairs with one date above the other and forgot the pairs side by side."
+    },
+    {
+      "key": "B",
+      "text": "25",
+      "correct": false,
+      "misconception": "I only counted pairs side by side in a row and forgot the pairs with one date above the other."
+    },
+    {
+      "key": "C",
+      "text": "45",
+      "correct": false,
+      "misconception": "I left out the short last row, so I missed the three boxes that use 29 or 30."
+    },
+    {
+      "key": "D",
+      "text": "48",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "52",
+      "correct": false,
+      "misconception": "I counted pairs like 7 and 8 as side by side, but 8 starts a new row, so they do not touch."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-12",
+    "secondary": [
+      "PAT-06",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Draw the calendar. Count the side-by-side pairs and the up-and-down pairs separately.",
+    "Name each box by its first date, the left or top one. How many side-by-side boxes fit in a full row of 7? A date has a partner below only if the date 7 later is on the calendar.",
+    "A full row of 7 dates gives 6 side-by-side boxes, and the last row, 29 and 30, gives 1. Up-and-down boxes have a top date from 1 to 23."
+  ],
+  "solutions": {
+    "reliable": "The rows are 1 to 7, 8 to 14, 15 to 21, 22 to 28, then 29 and 30 under 22 and 23. Side by side: each full row of 7 dates has 6 neighbouring pairs, so the 4 full rows give $4 \\times 6 = 24$, and the last row adds 1 (29 and 30), making 25. Pairs like 7 and 8 do not count, because 8 starts a new row. One above the other: a date has a partner directly below it when the date 7 later is on the calendar, so the top date can be 1 to 23, giving 23 boxes. Total $25 + 23 = 48$. The transferable idea: name each block by its first square, count the starting places, and check the edges separately.",
+    "elegant": "The numbers 1 to 30 make 29 pairs of neighbours, but 4 of them (7 and 8, 14 and 15, 21 and 22, 28 and 29) break across a row, leaving 25. Up-and-down pairs are $d$ and $d + 7$ with $d + 7 \\le 30$, so $30 - 7 = 23$. Total $25 + 23 = 48$."
+  },
+  "whyOnTest": "Counting overlapping blocks by their first square, and handling the row breaks and ragged last row of a calendar, is classic counting by position.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

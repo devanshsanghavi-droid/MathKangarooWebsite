@@ -1,0 +1,68 @@
+{
+  "id": "AM-1254",
+  "contest": "AMC8",
+  "slot": 10,
+  "area": "CP",
+  "topic": "CP-02",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "Using each of the five digits $1, 1, 2, 2, 3$ exactly once, Mateo writes down every different five-digit number he can make. How many of these numbers are odd?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I only counted the numbers that end in 3, where the other digits 1, 1, 2, 2 can be arranged in 6 ways."
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I only counted the numbers that end in 1, where the other digits 1, 2, 2, 3 can be arranged in 12 ways."
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I found 30 numbers in all and assumed exactly half of them are odd."
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I counted every arrangement of the five digits and forgot that the number has to be odd."
+    }
+  ],
+  "hints": [
+    "A number is odd exactly when its last digit is odd.",
+    "The last digit must be $1$ or $3$. Handle the two cases separately and arrange the other four digits.",
+    "Ending in $1$ leaves $1, 2, 2, 3$, which can be arranged in $\\frac{4!}{2!} = 12$ ways. Ending in $3$ leaves $1, 1, 2, 2$."
+  ],
+  "solutions": {
+    "reliable": "The number is odd exactly when its last digit is $1$ or $3$. If the last digit is $1$, the first four digits are an arrangement of $1, 2, 2, 3$, and there are $\\frac{4!}{2!} = 12$ of those. If the last digit is $3$, the first four digits are an arrangement of $1, 1, 2, 2$, and there are $\\frac{4!}{2!\\,2!} = 6$ of those. In total $12 + 6 = 18$ numbers are odd.",
+    "elegant": "There are $\\frac{5!}{2!\\,2!} = 30$ numbers in all. By symmetry, each of the five digit cards is equally likely to land in the last place, and $3$ of the five cards are odd, so $\\frac{3}{5}$ of the numbers are odd: $\\frac{3}{5} \\times 30 = 18$."
+  },
+  "formulas": [
+    "F-CP-04"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

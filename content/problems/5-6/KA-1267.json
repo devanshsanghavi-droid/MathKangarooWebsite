@@ -1,0 +1,68 @@
+{
+  "id": "KA-1267",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A 5 by 5 by 5 cube is built from 125 unit cubes. A square tunnel, 3 cubes wide and 3 high, is cut straight through the middle from front to back, leaving a border 1 cube thick. A second tunnel of the same size is cut through the middle from left to right. How many unit cubes are left?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "35",
+      "correct": false,
+      "misconception": "I took away 45 cubes for each tunnel, 90 in all, but the two tunnels share a 3 by 3 by 3 block in the middle, so I removed those cubes twice."
+    },
+    {
+      "key": "B",
+      "text": "62",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "80",
+      "correct": false,
+      "misconception": "I only took away the cubes of one tunnel, 45, and forgot the second tunnel."
+    },
+    {
+      "key": "D",
+      "text": "89",
+      "correct": false,
+      "misconception": "I saw that the tunnels share a block of 27 cubes, but I took it off both tunnels, so I removed only 45 + 45 - 27 - 27 = 36 cubes."
+    },
+    {
+      "key": "E",
+      "text": "98",
+      "correct": false,
+      "misconception": "I only took away the 27 cubes where the two tunnels cross."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-14",
+    "secondary": [
+      "GEO-13",
+      "CNT-10"
+    ]
+  },
+  "hints": [
+    "How many cubes does one tunnel remove, and do the two tunnels share any?",
+    "Each tunnel is 3 by 3 cubes across and 5 cubes long. Where the tunnels cross they share a block, and those cubes must be taken away only once.",
+    "Each tunnel has 3 × 3 × 5 = 45 cubes, and the shared block in the middle is 3 × 3 × 3 = 27 cubes."
+  ],
+  "solutions": {
+    "reliable": "Each tunnel removes 3 × 3 × 5 = 45 cubes. The two tunnels cross in the middle of the cube, where they share a block of 3 × 3 × 3 = 27 cubes. So the number of different cubes removed is 45 + 45 - 27 = 63, and 125 - 63 = 62 cubes are left. The transferable idea: when two shapes overlap, add them and then take off the shared part once.",
+    "elegant": "Count what is left directly. The top layer and the bottom layer are untouched: 25 + 25 = 50 cubes. In each of the 3 middle layers only the 4 corner cubes survive, because the two tunnels together cut out a plus shape of 21 squares. That is 4 × 3 = 12 more, so 50 + 12 = 62."
+  },
+  "whyOnTest": "Hidden-cube questions test seeing inside the solid, here that two crossing tunnels share a block of cubes that must not be removed twice.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

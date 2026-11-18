@@ -1,0 +1,56 @@
+{
+  "id": "SA-0266",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "easy",
+  "statement": "On a blueprint, a triangular patio has sides of $3$ centimeters, $4$ centimeters and $5$ centimeters. The actual patio is similar to the drawing, and its longest side is $12.5$ meters. What is the perimeter of the actual patio, in meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$37.5$",
+      "correct": false,
+      "misconception": "I multiplied the longest side, 12.5, by 3 because a triangle has three sides."
+    },
+    {
+      "key": "C",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I matched the 12.5-meter side with the 3-centimeter side, so I used $12.5 \\div 3$ meters per centimeter and got $12 \\times \\frac{12.5}{3} = 50$."
+    },
+    {
+      "key": "D",
+      "text": "$150$",
+      "correct": false,
+      "misconception": "I used 12.5 as the scale and multiplied the drawing's perimeter of 12 centimeters by 12.5."
+    }
+  ],
+  "hints": [
+    "Find how many meters one centimeter on the drawing stands for.",
+    "The longest sides correspond, so the scale is $12.5 \\div 5$ meters per centimeter. Apply it to every side, or to the whole perimeter.",
+    "The scale is $2.5$ meters per centimeter, and the drawing's perimeter is $3 + 4 + 5 = 12$ centimeters."
+  ],
+  "solutions": {
+    "reliable": "The longest sides correspond, so each centimeter on the blueprint stands for $12.5 \\div 5 = 2.5$ meters. The actual sides are $7.5$, $10$ and $12.5$ meters, so the perimeter is $7.5 + 10 + 12.5 = 30$ meters.",
+    "elegant": "Perimeters of similar figures scale by the same factor as their sides, so the perimeter is $12 \\times 2.5 = 30$ meters."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

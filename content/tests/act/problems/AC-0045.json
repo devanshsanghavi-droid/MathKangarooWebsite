@@ -1,0 +1,56 @@
+{
+  "id": "AC-0045",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-07",
+  "difficulty": "medium",
+  "statement": "With its motor alone, a boat would move with velocity $\\langle 12, 5 \\rangle$, measured in kilometers per hour east and north. A river current adds a velocity of $\\langle -4, 1 \\rangle$. To the nearest tenth of a kilometer per hour, what is the boat's actual speed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8.9$",
+      "correct": false,
+      "misconception": "I subtracted the current's speed, $\\sqrt{17}$, from the motor's speed, 13, as if the current pointed straight against the boat."
+    },
+    {
+      "key": "B",
+      "text": "$10.0$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$14.0$",
+      "correct": false,
+      "misconception": "I added the components of the resulting vector, $8 + 6$, instead of using the Pythagorean theorem for its length."
+    },
+    {
+      "key": "D",
+      "text": "$17.1$",
+      "correct": false,
+      "misconception": "I added the two speeds, 13 and $\\sqrt{17}$, but speeds add like that only when the vectors point the same way."
+    }
+  ],
+  "hints": [
+    "The actual velocity is the sum of the two velocity vectors.",
+    "Add the vectors component by component, then find the length of the result with the Pythagorean theorem.",
+    "The actual velocity is $\\langle 8, 6 \\rangle$, so the speed is $\\sqrt{8^2 + 6^2}$."
+  ],
+  "solutions": {
+    "reliable": "The actual velocity is $\\langle 12 + (-4), 5 + 1 \\rangle = \\langle 8, 6 \\rangle$. Speed is the magnitude of the velocity: $\\sqrt{8^2 + 6^2} = \\sqrt{100} = 10.0$ km/h. The idea: add the vectors first, then take the magnitude; magnitudes do not simply add unless the vectors point the same way.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

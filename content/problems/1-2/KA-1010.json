@@ -1,0 +1,67 @@
+{
+  "id": "KA-1010",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Ella puts 7 beads on a string. It looks the same read from either end. From the left, the first 4 beads are blue, green, blue, blue. How many beads are blue?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted only the blue beads among the last 3 beads, the ones I had to work out."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only the blue beads I was told about and did not work out the other 3 beads."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I copied the first 3 beads onto the other end but forgot to count the middle bead."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I copied all 4 beads onto the other end, so I counted the middle bead twice."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-08",
+    "secondary": [
+      "PAT-01"
+    ]
+  },
+  "hints": [
+    "Bead 1 must match bead 7. Which bead must match bead 2?",
+    "Reading the same from both ends means the string is a mirror picture of itself around its middle bead. Pair each bead with the bead the same distance from the other end. The middle bead has no partner.",
+    "Bead 4 is the middle bead. Bead 5 matches bead 3, bead 6 matches bead 2, and bead 7 matches bead 1."
+  ],
+  "solutions": {
+    "reliable": "With 7 beads, bead 4 is in the middle. Bead 5 copies bead 3 (blue), bead 6 copies bead 2 (green) and bead 7 copies bead 1 (blue). The string is blue, green, blue, blue, blue, green, blue, which has 5 blue beads. The idea to keep: in a mirror pattern every piece has a partner except the one sitting on the mirror line.",
+    "elegant": "The 3 beads left of the middle include 2 blue beads, so the 3 beads on the right include 2 more. The middle bead is blue too: 2 + 2 + 1 = 5. The idea to keep: count one side, double it, then add whatever sits on the mirror line."
+  },
+  "whyOnTest": "Line symmetry: the middle bead sits on the mirror line, so it is counted once, and counting it twice is the usual slip.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

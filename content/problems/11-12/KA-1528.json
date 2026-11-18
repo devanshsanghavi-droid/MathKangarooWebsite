@@ -1,0 +1,67 @@
+{
+  "id": "KA-1528",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Positive numbers $a$ and $b$ with $a > b$ satisfy $a^2 + b^2 = 6ab$. What is the value of $\\dfrac{a + b}{a - b}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{\\sqrt{6}}{2}$",
+      "correct": false,
+      "misconception": "I forgot the $2ab$ when expanding $(a + b)^2$, so I got $6ab$ over $4ab$ under the square root."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I found that the square of the fraction is $8ab \\div 4ab = 2$ and forgot to take the square root."
+    },
+    {
+      "key": "C",
+      "text": "$2\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I worked out $(a + b)^2 = 8ab$, took the square root of 8 and never dealt with $a - b$."
+    },
+    {
+      "key": "D",
+      "text": "$3 + 2\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I solved for the ratio $a \\div b$ and gave that instead of the fraction asked for."
+    },
+    {
+      "key": "E",
+      "text": "$\\sqrt{2}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Look at the square of the fraction instead of the fraction.",
+    "Solving for $a \\div b$ works but gives nested roots. Instead, write $(a + b)^2$ and $(a - b)^2$ using the given equation, so both become multiples of $ab$.",
+    "$(a + b)^2 = a^2 + b^2 + 2ab = 8ab$ and $(a - b)^2 = a^2 + b^2 - 2ab = 4ab$."
+  ],
+  "solutions": {
+    "reliable": "From the equation, $(a + b)^2 = a^2 + 2ab + b^2 = 6ab + 2ab = 8ab$ and $(a - b)^2 = 6ab - 2ab = 4ab$. So the square of the fraction is $8ab \\div 4ab = 2$. Because $a > b > 0$, the fraction is positive, so it equals $\\sqrt{2}$. Check by solving: dividing the equation by $b^2$ gives $t^2 - 6t + 1 = 0$ for $t = a \\div b$, so $t = 3 + 2\\sqrt{2}$, and $(t + 1) \\div (t - 1) = (4 + 2\\sqrt{2}) \\div (2 + 2\\sqrt{2}) = \\sqrt{2}$. The transferable idea: when a condition is symmetric, square the target so both parts can be written with the same building blocks.",
+    "elegant": null
+  },
+  "whyOnTest": "Squaring the target turns an awkward ratio into two short expansions, while the direct route through $a \\div b$ needs careful root arithmetic.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

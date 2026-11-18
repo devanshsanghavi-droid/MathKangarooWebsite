@@ -1,0 +1,68 @@
+{
+  "id": "KA-1266",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A number machine turns 2 into 6, 4 into 20 and 5 into 30. It uses the same rule every time. What does it turn 8 into?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": false,
+      "misconception": "I built a rule from the first example only, multiply by 3, and did not test it on 4 or 5."
+    },
+    {
+      "key": "B",
+      "text": "48",
+      "correct": false,
+      "misconception": "I used only the first two examples, which go up by 14 over 2 steps, and assumed every step of 1 adds 7, without checking that 5 would then give 27, not 30."
+    },
+    {
+      "key": "C",
+      "text": "56",
+      "correct": false,
+      "misconception": "I found the rule, multiply the number by the next number, but multiplied 8 by 7, the number before it."
+    },
+    {
+      "key": "D",
+      "text": "64",
+      "correct": false,
+      "misconception": "I multiplied 8 by itself but forgot to add 8."
+    },
+    {
+      "key": "E",
+      "text": "72",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "PAT-04",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Test any rule you find on all three examples.",
+    "The outputs do not grow at a steady rate, so the rule is not just adding the same amount each time. Try writing each output as the input times some other number.",
+    "6 is 2 × 3, 20 is 4 × 5 and 30 is 5 × 6."
+  ],
+  "solutions": {
+    "reliable": "First check a steady-rate rule: from 2 to 4 the output goes up by 14, which is 7 for each step of 1, but from 4 to 5 it goes up by 10, so the rule does not add a fixed amount. Write each output as a product: 6 = 2 × 3, 20 = 4 × 5 and 30 = 5 × 6. Each time the number is multiplied by the next number. So 8 turns into 8 × 9 = 72. The transferable idea: a rule found from examples must fit every example, so test it on all of them before you use it.",
+    "elegant": "Each output is the input squared plus the input: 4 + 2 = 6, 16 + 4 = 20 and 25 + 5 = 30. So 8 gives 64 + 8 = 72."
+  },
+  "whyOnTest": "Rule-finding questions test checking a guessed rule against every example, since a rule that fits one or two examples often fails the third.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

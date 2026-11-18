@@ -1,0 +1,68 @@
+{
+  "id": "KA-1467",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A sheet of paper 0.1 mm thick is cut in half and one half is put on top of the other. The two-sheet stack is cut in half and stacked again in the same way, and so on, 20 cuts in all. Roughly how tall is the final stack?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "about 100 m",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "about 2 mm",
+      "correct": false,
+      "misconception": "I added 0.1 mm for each of the 20 cuts instead of doubling the thickness every time."
+    },
+    {
+      "key": "C",
+      "text": "about 20 cm",
+      "correct": false,
+      "misconception": "I thought 20 doublings make 2 to the power 10 plus 2 to the power 10, about 2000 sheets, instead of 2 to the power 10 times 2 to the power 10."
+    },
+    {
+      "key": "D",
+      "text": "about 1 km",
+      "correct": false,
+      "misconception": "I found about 100 000 mm but divided by 100 instead of by 1000 to change millimetres into metres."
+    },
+    {
+      "key": "E",
+      "text": "about 100 km",
+      "correct": false,
+      "misconception": "I found about 100 000 mm and then read it as 100 000 m, forgetting to change the units."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-12",
+    "secondary": [
+      "CFT-06",
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "How many sheets are in the stack after 20 cuts?",
+    "Each cut doubles the number of sheets, so after 20 cuts there are 2 to the power 20 sheets. Estimate this using 2 to the power 10 ≈ 1000, multiply by the thickness, and change units carefully.",
+    "$2^{20} = 2^{10} \\times 2^{10} \\approx 1000 \\times 1000$, so about a million sheets, each 0.1 mm thick."
+  ],
+  "solutions": {
+    "reliable": "Each cut doubles the number of sheets, so after 20 cuts there are $2^{20}$ sheets. Since $2^{10} = 1024 \\approx 1000$, $2^{20}$ is about 1 000 000 (exactly 1 048 576). The height is about 1 000 000 × 0.1 mm = 100 000 mm. There are 1000 mm in a metre, so this is about 100 m (more exactly 104.9 m), the height of a tall building. The transferable idea: repeated doubling grows by a factor of about 1000 every 10 steps.",
+    "elegant": null
+  },
+  "whyOnTest": "Estimation questions test handling repeated doubling with the benchmark 2 to the 10th ≈ 1000, then converting units without slipping a factor of 10.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

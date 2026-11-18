@@ -1,0 +1,69 @@
+{
+  "id": "AM-1223",
+  "contest": "AMC8",
+  "slot": 25,
+  "area": "NT",
+  "topic": "NT-06",
+  "types": [
+    "T-CASEWORK",
+    "T-PARITY"
+  ],
+  "statement": "How many positive integers less than $10000$ are multiples of $9$ and have only odd digits?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$81$",
+      "correct": false,
+      "misconception": "I only counted the four-digit numbers and forgot the shorter ones: $9$, $99$ and the eleven three-digit numbers."
+    },
+    {
+      "key": "B",
+      "text": "$93$",
+      "correct": false,
+      "misconception": "I forgot that four odd digits can also add up to $36$, so I missed $9999$."
+    },
+    {
+      "key": "C",
+      "text": "$94$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$110$",
+      "correct": false,
+      "misconception": "I gave every four-digit digit set with a repeated digit $12$ orders, but $\\{3, 3, 3, 9\\}$ and $\\{3, 5, 5, 5\\}$ use one digit three times, so they have only $4$ orders each."
+    },
+    {
+      "key": "E",
+      "text": "$182$",
+      "correct": false,
+      "misconception": "I gave each of the seven four-digit digit sets with sum $18$ a full $24$ orders, as if the four digits were always different."
+    }
+  ],
+  "hints": [
+    "A number is a multiple of $9$ exactly when its digit sum is. Split by the number of digits, and think about whether a sum of odd digits is odd or even.",
+    "With $1$ or $3$ odd digits the sum is odd, so it is $9$ or $27$. With $2$ or $4$ odd digits the sum is even, so it is $18$ or $36$. Up to three digits there are $13$ such numbers in all.",
+    "For four digits, list the sets of four odd digits with sum $18$, such as $\\{1, 3, 5, 9\\}$ and $\\{1, 1, 7, 9\\}$. There are seven sets. Count the orders of each: $24$ if all digits differ, $12$ if one digit appears twice, $4$ if one appears three times."
+  ],
+  "solutions": {
+    "reliable": "A number is a multiple of $9$ exactly when its digit sum is. One digit: only $9$. Two odd digits: the sum is even and at most $18$, so it is $18$, giving only $99$. Three odd digits: the sum is odd and at most $27$, so it is $9$ or $27$. Sum $27$ gives $999$. Sum $9$ uses the digit sets $\\{1, 1, 7\\}$ ($3$ orders), $\\{1, 3, 5\\}$ ($6$ orders) and $\\{3, 3, 3\\}$ ($1$ order), which is $10$ numbers. So far that is $1 + 1 + 1 + 10 = 13$. Four odd digits: the sum is even and at most $36$, so it is $18$ or $36$. Sum $36$ gives only $9999$. For sum $18$ the digit sets are $\\{1, 3, 5, 9\\}$ ($24$ orders), $\\{1, 1, 7, 9\\}$, $\\{1, 3, 7, 7\\}$, $\\{1, 5, 5, 7\\}$, $\\{3, 3, 5, 7\\}$ ($12$ orders each) and $\\{3, 3, 3, 9\\}$, $\\{3, 5, 5, 5\\}$ ($4$ orders each), for $24 + 4 \\cdot 12 + 2 \\cdot 4 = 80$ numbers. In total $13 + 1 + 80 = 94$.",
+    "elegant": "Write each odd digit as $2x + 1$ with $0 \\le x \\le 4$. For four digits with sum $18$, the four values of $x$ add to $7$. Without the limit $x \\le 4$ there are $\\binom{10}{3} = 120$ solutions; a value of $5$ or more can occur in only one place at a time, and for each of the $4$ places there are $\\binom{5}{3} = 10$ such solutions, leaving $120 - 40 = 80$. The same idea gives $\\binom{5}{2} = 10$ three-digit numbers with sum $9$. Adding $9$, $99$, $999$ and $9999$ gives $80 + 10 + 4 = 94$."
+  },
+  "formulas": [
+    "F-NT-07"
+  ],
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

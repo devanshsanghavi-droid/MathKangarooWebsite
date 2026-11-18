@@ -1,0 +1,56 @@
+{
+  "id": "SA-0276",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-01",
+  "difficulty": "easy",
+  "statement": "A rectangular swimming pool is $12$ meters long and $5$ meters wide. A wooden deck $2$ meters wide surrounds the pool on all four sides, so the pool and deck together form a larger rectangle. What is the area of the deck alone, in square meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$38$",
+      "correct": false,
+      "misconception": "I added the $2$-meter width to each dimension only once, so I used a $14$ by $7$ rectangle and got $98 - 60 = 38$."
+    },
+    {
+      "key": "B",
+      "text": "$68$",
+      "correct": false,
+      "misconception": "I multiplied the pool's perimeter, $34$ meters, by the deck's width of $2$ meters and got $68$, which misses the four corner squares."
+    },
+    {
+      "key": "C",
+      "text": "$84$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$144$",
+      "correct": false,
+      "misconception": "I found the area of the whole outer rectangle, $16$ by $9$, and forgot to subtract the area of the pool."
+    }
+  ],
+  "hints": [
+    "The deck is the region between two rectangles: the outer one and the pool.",
+    "The deck adds $2$ meters on both ends of each dimension, so find the outer length and width first, then subtract the pool's area.",
+    "The outer rectangle is $(12 + 4)$ by $(5 + 4)$, which is $16$ by $9$, with area $144$. The pool's area is $60$."
+  ],
+  "solutions": {
+    "reliable": "The deck adds $2$ meters on each side, so the outer rectangle is $12 + 2 + 2 = 16$ meters by $5 + 2 + 2 = 9$ meters, with area $16 \\cdot 9 = 144$ square meters. The pool covers $12 \\cdot 5 = 60$ square meters. The deck alone is $144 - 60 = 84$ square meters.",
+    "elegant": "Split the deck into pieces: two strips along the long sides, each $12 \\times 2 = 24$, two strips along the short sides, each $5 \\times 2 = 10$, and four corner squares, each $2 \\times 2 = 4$. The total is $48 + 20 + 16 = 84$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

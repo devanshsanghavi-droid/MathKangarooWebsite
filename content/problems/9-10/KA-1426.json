@@ -1,0 +1,67 @@
+{
+  "id": "KA-1426",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A flag has four horizontal stripes, and each stripe is coloured red, blue, white or yellow. Colours may be used more than once, but two stripes that touch must have different colours. How many different flags are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": false,
+      "misconception": "I made all four stripes different colours, giving $4 \\times 3 \\times 2 \\times 1$, but only stripes that touch must differ."
+    },
+    {
+      "key": "B",
+      "text": "256",
+      "correct": false,
+      "misconception": "I ignored the rule about touching stripes and allowed all $4^4$ colourings."
+    },
+    {
+      "key": "C",
+      "text": "108",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "48",
+      "correct": false,
+      "misconception": "I made each stripe differ from both of the two stripes above it, giving $4 \\times 3 \\times 2 \\times 2$."
+    },
+    {
+      "key": "E",
+      "text": "13",
+      "correct": false,
+      "misconception": "I added the choices for the stripes, $4 + 3 + 3 + 3$, instead of multiplying them."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-03",
+    "secondary": [
+      "CNT-11"
+    ]
+  },
+  "hints": [
+    "Colour the stripes from the top down and count the choices for each one.",
+    "This is the multiplication principle. Each stripe below the top has the same number of choices whatever colours were used above, because it only has to avoid one colour.",
+    "The top stripe has 4 choices. Every later stripe must avoid only the colour just above it, so it has 3 choices."
+  ],
+  "solutions": {
+    "reliable": "Colour from the top. The top stripe can be any of the 4 colours. The second stripe must differ from the first, so it has 3 choices. The third must differ only from the second, so again 3 choices, and the same holds for the fourth. Total $4 \\times 3 \\times 3 \\times 3 = 108$. The transferable idea: when every step has the same number of choices whatever happened before, multiply the counts.",
+    "elegant": null
+  },
+  "whyOnTest": "The multiplication principle is tested with a rule that only links neighbouring stripes, so the trap is restricting too much or too little.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

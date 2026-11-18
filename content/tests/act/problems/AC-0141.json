@@ -1,0 +1,56 @@
+{
+  "id": "AC-0141",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-04",
+  "difficulty": "medium",
+  "statement": "The table below shows some values of a quadratic function $f$. $$\\begin{array}{c|ccccc} x & 0 & 1 & 2 & 3 & 4 \\\\ \\hline f(x) & 5 & 0 & -3 & -4 & -3 \\end{array}$$ What is the value of $f(7)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I assumed the values keep rising by 1 each step, as they did from x = 3 to x = 4, so I got -3 + 1 + 1 + 1 = 0."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I saw the next change would be +3 and kept adding 3 for each step, -3 + 3 + 3 + 3 = 6, but the changes keep growing by 2 each step."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I read the vertex as (3, 4) instead of (3, -4), so I used f(x) = (x - 3)^2 + 4 and got 16 + 4 = 20."
+    }
+  ],
+  "hints": [
+    "Look for symmetry in the table: where do equal outputs appear?",
+    "$f(2) = f(4)$, so the axis of symmetry is $x = 3$ and the vertex is $(3, -4)$. Write $f$ in vertex form or extend the pattern of differences.",
+    "$f(x) = a(x - 3)^2 - 4$, and $f(4) = -3$ gives $a = 1$."
+  ],
+  "solutions": {
+    "reliable": "Since $f(2) = f(4) = -3$, the axis of symmetry is $x = 3$ and the vertex is $(3, -4)$. So $f(x) = a(x - 3)^2 - 4$. Using $f(4) = -3$: $a - 4 = -3$, so $a = 1$. Check: $f(0) = 9 - 4 = 5$, as in the table. Then $f(7) = 16 - 4 = 12$.",
+    "elegant": "By symmetry about $x = 3$, $f(7) = f(-1)$. The first differences in the table are $-5, -3, -1, 1$, so the difference before $x = 0$ is $-7$, which means $f(-1) = 5 + 7 = 12$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

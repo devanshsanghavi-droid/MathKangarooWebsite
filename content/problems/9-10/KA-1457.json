@@ -1,0 +1,68 @@
+{
+  "id": "KA-1457",
+  "band": "9-10",
+  "points": 4,
+  "statement": "An ant is at the centre of the top face of a solid cube with edges of length 2. It walks on the surface of the cube to one of the bottom corners. What is the length of the shortest possible walk?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I walked 1 to an edge and then 2 straight down, as if the corner were directly below the point where I crossed the edge."
+    },
+    {
+      "key": "B",
+      "text": "$\\sqrt{10}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$1 + \\sqrt{5}$",
+      "correct": false,
+      "misconception": "I walked straight to the middle of a top edge and then diagonally down the side face to the corner, a route that bends at the edge."
+    },
+    {
+      "key": "D",
+      "text": "$2 + \\sqrt{2}$",
+      "correct": false,
+      "misconception": "I walked to a top corner first and then straight down the vertical edge."
+    },
+    {
+      "key": "E",
+      "text": "$\\sqrt{6}$",
+      "correct": false,
+      "misconception": "I measured the straight line through the inside of the cube, but the ant has to stay on the surface."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-17",
+    "secondary": [
+      "GEO-10",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "Unfold the faces the ant crosses into one flat piece.",
+    "The ant crosses from the top face onto a side face. Unfold that side face so it lies flat next to the top face; the shortest walk is then a straight line on the flat net.",
+    "With the top face as the square from (0, 0) to (2, 2), the ant starts at (1, 1). Unfolding a side face below the edge y = 0 puts the bottom corner at (0, -2)."
+  ],
+  "solutions": {
+    "reliable": "Any walk goes from the top face onto a side face and then to the corner. Unfold the top face and one side face into a flat 2 by 4 rectangle: with the top face as the square from (0, 0) to (2, 2), the ant starts at (1, 1) and the bottom corner lands at (0, -2). The straight line between them has length $\\sqrt{1^2 + 3^2} = \\sqrt{10} \\approx 3.16$, and it stays inside the unfolded faces, so it is a real walk on the cube. Routes that bend at an edge are longer, for example $1 + \\sqrt{5} \\approx 3.24$ or $2 + \\sqrt{2} \\approx 3.41$, and by symmetry every side face gives the same $\\sqrt{10}$. The transferable idea: unfold the surface, and the shortest walk becomes a straight line on the net.",
+    "elegant": null
+  },
+  "whyOnTest": "Shortest-path questions on solids test unfolding: once the faces lie flat, the shortest walk is a straight line and Pythagoras finishes it.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

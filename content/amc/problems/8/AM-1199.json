@@ -1,0 +1,67 @@
+{
+  "id": "AM-1199",
+  "contest": "AMC8",
+  "slot": 17,
+  "area": "NT",
+  "topic": "NT-07",
+  "types": [
+    "T-SFFT",
+    "T-CASEWORK"
+  ],
+  "statement": "A rectangular garden has side lengths that are whole numbers of meters. A path $1$ meter wide runs all the way around the outside of the garden, and the area of the path equals the area of the garden. What is the sum of all possible areas of the garden, in square meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I put the path along only two sides, so I solved (x + 1)(y + 1) = 2xy and found just a 2 by 3 garden with area 6."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I found the 4 by 6 garden but missed the 3 by 10 garden."
+    },
+    {
+      "key": "C",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I found the 3 by 10 garden but missed the 4 by 6 garden."
+    },
+    {
+      "key": "D",
+      "text": "$34$",
+      "correct": false,
+      "misconception": "I left the four 1 by 1 corner squares out of the path, so I solved xy = 2x + 2y and got gardens of 3 by 6 and 4 by 4, with areas 18 + 16 = 34."
+    },
+    {
+      "key": "E",
+      "text": "$54$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "If the garden is $x$ by $y$, the garden together with the path is $(x + 2)$ by $(y + 2)$.",
+    "The path area is $(x + 2)(y + 2) - xy$. Set it equal to $xy$ and try to factor.",
+    "The equation becomes $xy - 2x - 2y = 4$, which is $(x - 2)(y - 2) = 8$."
+  ],
+  "solutions": {
+    "reliable": "Let the garden be $x$ by $y$ with $x \\le y$. With the path, the outer rectangle is $(x + 2)$ by $(y + 2)$, so the path has area $(x + 2)(y + 2) - xy = 2x + 2y + 4$. Setting this equal to $xy$ gives $xy - 2x - 2y = 4$, and adding $4$ to both sides gives $(x - 2)(y - 2) = 8$. Both factors are positive (if $x \\le 2$ the left side is $0$ or negative), so $(x - 2, y - 2) = (1, 8)$ or $(2, 4)$, giving gardens $3 \\times 10$ and $4 \\times 6$. Check: $5 \\times 12 = 60 = 2 \\cdot 30$ and $6 \\times 8 = 48 = 2 \\cdot 24$. The sum of the areas is $30 + 24 = 54$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

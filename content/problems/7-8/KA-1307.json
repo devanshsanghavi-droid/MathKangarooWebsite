@@ -1,0 +1,68 @@
+{
+  "id": "KA-1307",
+  "band": "7-8",
+  "points": 5,
+  "statement": "What is the value of $1^2 - 2^2 - 3^2 + 4^2 + 5^2 - 6^2 - 7^2 + 8^2 + \\dots + 97^2 - 98^2 - 99^2 + 100^2$? The signs repeat in the pattern plus, minus, minus, plus.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I ignored the squares and worked out $1 - 2 - 3 + 4 = 0$ for each group of four, so I thought everything cancels."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found that the first group, $1 - 4 - 9 + 16$, equals 4, and gave that as the answer."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I counted the 25 groups of four and gave the number of groups as the answer."
+    },
+    {
+      "key": "D",
+      "text": "100",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "400",
+      "correct": false,
+      "misconception": "I found that each group of four adds to 4, but then multiplied 4 by the 100 terms instead of by the 25 groups."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "PAT-03",
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "Work out the first group of four, then the second group of four.",
+    "Spot the trick rather than grind: a hundred squares is far too slow. Group the terms in fours, following the sign pattern, and check whether every group has the same value.",
+    "$1 - 4 - 9 + 16 = 4$ and $25 - 36 - 49 + 64 = 4$. In fact $n^2 - (n+1)^2 - (n+2)^2 + (n+3)^2 = 4$ for every $n$."
+  ],
+  "solutions": {
+    "reliable": "Group the terms in fours: $(1^2 - 2^2 - 3^2 + 4^2) + (5^2 - 6^2 - 7^2 + 8^2) + \\dots$. The first group is $1 - 4 - 9 + 16 = 4$ and the second is $25 - 36 - 49 + 64 = 4$. Expanding shows this always happens: $n^2 - (n^2 + 2n + 1) - (n^2 + 4n + 4) + (n^2 + 6n + 9) = 4$. The 100 terms make 25 groups, so the total is $25 \\times 4 = 100$. The transferable idea: when the long calculation is hopeless, spend a minute hunting for a repeating block before deciding to grind.",
+    "elegant": "Use differences of neighbouring squares inside each group: $(n+3)^2 - (n+2)^2 = 2n + 5$ and $n^2 - (n+1)^2 = -(2n + 1)$. These add to 4 for every group, so 25 groups give 100."
+  },
+  "whyOnTest": "Grinding fifty pluses and minuses of squares is hopeless; the problem tests deciding quickly to look for a repeating block.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

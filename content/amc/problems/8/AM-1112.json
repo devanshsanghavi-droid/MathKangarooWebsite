@@ -1,0 +1,68 @@
+{
+  "id": "AM-1112",
+  "contest": "AMC8",
+  "slot": 12,
+  "area": "GEO",
+  "topic": "GEO-02",
+  "types": [
+    "T-SIMILAR"
+  ],
+  "statement": "A right triangle has legs of lengths $6$ and $12$. A square is drawn inside the triangle so that two of its sides lie along the two legs and the square's fourth vertex lies on the hypotenuse. What is the area of the square?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found the side length, 4, and gave it as the area."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I guessed that the square's side is half of the shorter leg, 3, and got 9."
+    },
+    {
+      "key": "C",
+      "text": "$16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I put the corner at the midpoint of the hypotenuse, which makes a 3 by 6 rectangle, not a square, and gave its area 18."
+    },
+    {
+      "key": "E",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I thought the square's side matches the shorter leg, 6, and got 36. But then its corner would be far outside the hypotenuse."
+    }
+  ],
+  "hints": [
+    "Call the side length of the square $s$. The square leaves a small right triangle between its top side and the hypotenuse.",
+    "That small triangle is similar to the whole triangle, so its legs are in the ratio $6 : 12 = 1 : 2$.",
+    "Stand the triangle with the leg of length $6$ upright. The small triangle on top of the square has an upright leg $6 - s$ and a flat leg $s$, so $6 - s = \\frac{s}{2}$."
+  ],
+  "solutions": {
+    "reliable": "Place the right angle at the origin with the leg of length $12$ along the $x$-axis and the leg of length $6$ along the $y$-axis, and let the square have side $s$. Above the square sits a small right triangle with legs $6 - s$ (vertical) and $s$ (horizontal), similar to the whole triangle, so $\\frac{6 - s}{s} = \\frac{6}{12}$. Then $12 - 2s = s$, so $s = 4$ and the area is $16$.",
+    "elegant": "The square splits the big triangle into the square and two small right triangles with legs $s, 6 - s$ and $s, 12 - s$. Adding areas, $36 = s^2 + \\frac{1}{2}s(6 - s) + \\frac{1}{2}s(12 - s) = 9s$, so $s = 4$ and the square's area is $16$."
+  },
+  "formulas": [
+    "F-GEO-11"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

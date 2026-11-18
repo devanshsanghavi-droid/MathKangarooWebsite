@@ -1,0 +1,68 @@
+{
+  "id": "AM-1117",
+  "contest": "AMC8",
+  "slot": 14,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A solid cylinder has radius $3$ and height $10$. It is sliced into two identical pieces by one flat cut that contains the axis of the cylinder, the line through the centers of its two circular faces. What is the total surface area of one of the two pieces?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$39\\pi$",
+      "correct": false,
+      "misconception": "I took half of the whole cylinder's surface area, (60 pi + 18 pi) / 2 = 39 pi, and forgot the new flat face made by the cut, a 6 by 10 rectangle."
+    },
+    {
+      "key": "B",
+      "text": "$60 + 30\\pi$",
+      "correct": false,
+      "misconception": "I counted half of the curved side, 30 pi, and the 6 by 10 cut face, 60, but forgot the two half-disks at the ends."
+    },
+    {
+      "key": "C",
+      "text": "$60 + 39\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$60 + 48\\pi$",
+      "correct": false,
+      "misconception": "I counted two full circles of area 9 pi each for the ends, but each end of the piece is only half of a circle."
+    },
+    {
+      "key": "E",
+      "text": "$60 + 69\\pi$",
+      "correct": false,
+      "misconception": "I used the whole curved side, 60 pi, instead of half of it, and got 60 pi + 9 pi + 60."
+    }
+  ],
+  "hints": [
+    "List every face of one piece. Some of the faces are new, made by the cut.",
+    "One piece has half of the curved side, two half-disks at the ends, and a flat rectangle where the cut went. The rectangle is as wide as the diameter and as long as the height.",
+    "Half the curved side is $\\frac{1}{2} \\cdot 2\\pi \\cdot 3 \\cdot 10 = 30\\pi$, the two half-disks total $\\pi \\cdot 3^2 = 9\\pi$, and the rectangle is $6 \\times 10 = 60$."
+  ],
+  "solutions": {
+    "reliable": "The cut goes through the axis, so it is a $6$ by $10$ rectangle (the diameter by the height) with area $60$, and each piece is a half-cylinder. Its curved face is half of the original curved side: $\\frac{1}{2} \\cdot 2\\pi \\cdot 3 \\cdot 10 = 30\\pi$. Its two ends are half-disks of radius $3$, with total area $2 \\cdot \\frac{1}{2}\\pi \\cdot 3^2 = 9\\pi$. The total surface area is $60 + 30\\pi + 9\\pi = 60 + 39\\pi$.",
+    "elegant": "The two pieces together have the cylinder's whole surface, $2\\pi \\cdot 3 \\cdot 10 + 2\\pi \\cdot 3^2 = 78\\pi$, plus two copies of the new $6 \\times 10$ cut face. Split evenly, one piece has $\\frac{78\\pi}{2} + 60 = 60 + 39\\pi$."
+  },
+  "formulas": [
+    "F-GEO-16"
+  ],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

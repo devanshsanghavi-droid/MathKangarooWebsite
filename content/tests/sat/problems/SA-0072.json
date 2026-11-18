@@ -1,0 +1,56 @@
+{
+  "id": "SA-0072",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "hard",
+  "statement": "How many points $(x, y)$ whose coordinates are both positive integers satisfy both of the inequalities $y > 2x - 1$ and $y < -x + 11$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I subtracted the lower bound from the upper bound in each column to count the $y$-values, which counts one value too many each time, and got $9 + 6 + 3 = 18$."
+    },
+    {
+      "key": "C",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I treated both inequalities as if they allowed equality, so I also counted points on the two lines and got 22."
+    },
+    {
+      "key": "D",
+      "text": "$26$",
+      "correct": false,
+      "misconception": "I counted points with coordinates that are zero or positive, so I added the 11 points with $x = 0$ to the 15 I found."
+    }
+  ],
+  "hints": [
+    "Fix a value of $x$ and see which $y$-values work.",
+    "For each positive integer $x$, $y$ must be strictly between $2x - 1$ and $-x + 11$. Find where that range becomes empty.",
+    "For $x = 1$: $1 < y < 10$. For $x = 2$: $3 < y < 9$. For $x = 3$: $5 < y < 8$. For $x = 4$: $7 < y < 7$."
+  ],
+  "solutions": {
+    "reliable": "For each positive integer $x$, $y$ must satisfy $2x - 1 < y < 11 - x$. For $x = 1$: $1 < y < 10$, so $y = 2, \\ldots, 9$, which is $8$ points. For $x = 2$: $3 < y < 9$, so $y = 4, \\ldots, 8$, which is $5$ points. For $x = 3$: $5 < y < 8$, so $y = 6, 7$, which is $2$ points. For $x = 4$: $7 < y < 7$ has no solutions, and larger $x$ make the range even emptier (the lines cross at $x = 4$). The total is $8 + 5 + 2 = 15$. Every $y$ counted is positive, so all $15$ points qualify.",
+    "elegant": null
+  },
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

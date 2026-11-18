@@ -1,0 +1,68 @@
+{
+  "id": "AM-1186",
+  "contest": "AMC8",
+  "slot": 12,
+  "area": "NT",
+  "topic": "NT-06",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A palindrome is a number that reads the same forward and backward, such as $3773$. How many four-digit palindromes are divisible by $11$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I used a digit sum test by mistake: I needed the digit sum 2(a + b) to be a multiple of 11, so a + b = 11, which gives only 8 palindromes."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I only counted the palindromes with all four digits the same, 1111, 2222, up to 9999."
+    },
+    {
+      "key": "C",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I thought a palindrome is divisible by 11 only when its middle digits are even, so I counted half of the 90 palindromes."
+    },
+    {
+      "key": "D",
+      "text": "$81$",
+      "correct": false,
+      "misconception": "I did not allow the middle digits to be 0, so I counted 9 times 9 = 81 and missed palindromes like 3003."
+    },
+    {
+      "key": "E",
+      "text": "$90$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "A four-digit palindrome has the form $\\underline{a}\\,\\underline{b}\\,\\underline{b}\\,\\underline{a}$. How many are there in all?",
+    "Use the test for $11$: look at the alternating sum of the digits.",
+    "The alternating sum is $a - b + b - a = 0$ for every palindrome of this form."
+  ],
+  "solutions": {
+    "reliable": "A four-digit palindrome is $\\underline{a}\\,\\underline{b}\\,\\underline{b}\\,\\underline{a}$ with $a$ from $1$ to $9$ and $b$ from $0$ to $9$, so there are $9 \\cdot 10 = 90$ of them. A number is divisible by $11$ when its alternating digit sum is a multiple of $11$, and here that sum is $a - b + b - a = 0$. So every one of the $90$ palindromes is divisible by $11$. For example, $3773 = 11 \\cdot 343$.",
+    "elegant": "Directly, $\\underline{a}\\,\\underline{b}\\,\\underline{b}\\,\\underline{a} = 1000a + 100b + 10b + a = 1001a + 110b = 11(91a + 10b)$."
+  },
+  "formulas": [
+    "F-NT-07"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

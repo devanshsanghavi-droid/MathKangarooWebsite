@@ -1,0 +1,68 @@
+{
+  "id": "AM-1201",
+  "contest": "AMC8",
+  "slot": 18,
+  "area": "NT",
+  "topic": "NT-01",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "How many four-digit numbers can be made from four different digits chosen from $1, 2, 3, 4, 5, 6$ so that the number is divisible by $11$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I found the $7$ ways to split four digits into two pairs with equal sums, and stopped there without arranging the digits."
+    },
+    {
+      "key": "B",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I let either pair go in the first and third places, but I forgot that the two digits within each pair can also swap places."
+    },
+    {
+      "key": "C",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I used a digit-sum rule for $11$, as if it worked like the rule for $9$, and counted the $24$ orders of $1, 2, 3, 5$, whose digits add to $11$."
+    },
+    {
+      "key": "D",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I swapped the digits within each pair, but I forgot that either pair can be the one in the first and third places."
+    },
+    {
+      "key": "E",
+      "text": "$56$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "A number $\\underline{a}\\,\\underline{b}\\,\\underline{c}\\,\\underline{d}$ is divisible by $11$ exactly when $(a + c) - (b + d)$ is a multiple of $11$.",
+    "With different digits from $1$ to $6$, the difference $(a + c) - (b + d)$ is between $-8$ and $8$, so it must be $0$. You need two pairs of digits with the same sum.",
+    "The splits into two pairs with equal sums are $\\{1,4\\},\\{2,3\\}$; $\\{1,5\\},\\{2,4\\}$; $\\{1,6\\},\\{2,5\\}$; $\\{1,6\\},\\{3,4\\}$; $\\{2,5\\},\\{3,4\\}$; $\\{2,6\\},\\{3,5\\}$; $\\{3,6\\},\\{4,5\\}$. Each split can be arranged in $2 \\cdot 2 \\cdot 2$ ways."
+  ],
+  "solutions": {
+    "reliable": "The number $\\underline{a}\\,\\underline{b}\\,\\underline{c}\\,\\underline{d}$ is divisible by $11$ exactly when $(a + c) - (b + d)$ is a multiple of $11$. With four different digits from $1$ to $6$, $a + c \\le 11$ and $b + d \\ge 3$, so the difference is at most $8$, and likewise at least $-8$. So we need $a + c = b + d$. List the ways to choose two disjoint pairs with equal sums. Sum $5$: $\\{1,4\\},\\{2,3\\}$. Sum $6$: $\\{1,5\\},\\{2,4\\}$. Sum $7$: from $\\{1,6\\}, \\{2,5\\}, \\{3,4\\}$ choose any two, which is $3$ ways. Sum $8$: $\\{2,6\\},\\{3,5\\}$. Sum $9$: $\\{3,6\\},\\{4,5\\}$. That is $7$ splits. For each split, choose which pair goes in the first and third places ($2$ ways), then order each pair ($2 \\cdot 2$ ways), for $8$ numbers. In total $7 \\cdot 8 = 56$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-07"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0291",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-07",
+  "difficulty": "easy",
+  "statement": "All $180$ students in a grade were asked whether they play a school sport and whether they play a musical instrument. $$\\begin{array}{l|c|c|c} & \\text{Instrument} & \\text{No instrument} & \\text{Total} \\\\ \\hline \\text{Sport} & 28 & 62 & 90 \\\\ \\text{No sport} & 37 & 53 & 90 \\\\ \\hline \\text{Total} & 65 & 115 & 180 \\end{array}$$ One of these students is chosen at random. What is the probability that the student plays an instrument and does NOT play a sport?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{37}{180}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{13}{36}$",
+      "correct": false,
+      "misconception": "I used everyone who plays an instrument, 65 out of 180, and ignored the condition about not playing a sport."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{37}{90}$",
+      "correct": false,
+      "misconception": "I divided 37 by the 90 students who play no sport, which answers a different question, given no sport, than the one asked."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{37}{65}$",
+      "correct": false,
+      "misconception": "I divided 37 by the 65 instrument players, which is the probability given an instrument, not out of all 180 students."
+    }
+  ],
+  "hints": [
+    "The student is chosen from all $180$ students, so $180$ goes in the denominator.",
+    "Find the one cell where Instrument meets No sport.",
+    "That cell holds $37$ students, so the probability is $37$ out of $180$."
+  ],
+  "solutions": {
+    "reliable": "The student is chosen from all $180$ students. The cell for instrument and no sport has $37$ students, so the probability is $\\dfrac{37}{180}$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

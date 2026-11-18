@@ -1,0 +1,67 @@
+{
+  "id": "KA-1280",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A rectangular board is 84 cm long and 60 cm wide. It is to be covered exactly by equal square tiles, without cutting any tile. The side of each tile is a whole number of centimetres. What is the largest possible side length of a tile, in centimetres?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I found a tile size that fits both sides, 6, but did not check for a bigger one."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": false,
+      "misconception": "I subtracted 60 from 84 and took the difference as the tile size."
+    },
+    {
+      "key": "D",
+      "text": "35",
+      "correct": false,
+      "misconception": "I found the right tile but gave how many tiles are needed, 7 times 5, instead of the side length."
+    },
+    {
+      "key": "E",
+      "text": "420",
+      "correct": false,
+      "misconception": "I found the smallest number that both 84 and 60 divide into, instead of the largest number that divides both."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-05",
+    "secondary": [
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "The tile side must fit exactly along both the long side and the short side.",
+    "The side length must be a factor of 84 and also a factor of 60. List the factors of the smaller number and find the largest one that also divides the bigger number.",
+    "Factors of 60, from the top: 60, 30, 20, 15, 12, ... The first one that also divides 84 is 12, because 84 = 7 × 12."
+  ],
+  "solutions": {
+    "reliable": "A square tile of side s fits a whole number of times along 84 cm and along 60 cm only if s divides both 84 and 60. Going down the factors of 60: 60, 30, 20 and 15 do not divide 84, but 12 does, since 84 = 7 × 12 and 60 = 5 × 12. So the largest tile has side 12 cm, and 7 × 5 = 35 of them cover the board. The transferable idea: the biggest equal piece that fits two lengths exactly is their greatest common factor.",
+    "elegant": "Split both numbers into primes: 84 = 2 × 2 × 3 × 7 and 60 = 2 × 2 × 3 × 5. They share 2 × 2 × 3 = 12."
+  },
+  "whyOnTest": "This tests the greatest common factor in a picture, where students often grab the least common multiple instead.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1379",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A tea blend is made from 3 kg of green tea costing 8 euros per kg and 1 kg of mint costing 4 euros per kg. The blend is sold at the price per kg that exactly covers its cost. What is that price per kg?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5 euros",
+      "correct": false,
+      "misconception": "I matched the weights the wrong way round, using 3 kg at 4 euros and 1 kg at 8 euros."
+    },
+    {
+      "key": "B",
+      "text": "7 euros",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "6 euros",
+      "correct": false,
+      "misconception": "I took the plain average of the two prices without allowing for the different weights."
+    },
+    {
+      "key": "D",
+      "text": "12 euros",
+      "correct": false,
+      "misconception": "I added the two prices per kg together."
+    },
+    {
+      "key": "E",
+      "text": "28 euros",
+      "correct": false,
+      "misconception": "I worked out the total cost of the blend but forgot to divide by its weight."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-08",
+    "secondary": [
+      "NUM-15",
+      "MOD-10"
+    ]
+  },
+  "hints": [
+    "Find the total cost and the total weight first.",
+    "A blend's price per kg is a weighted average: total cost divided by total weight. There is more green tea than mint, so the answer leans towards 8 euros.",
+    "Total cost 3 x 8 + 1 x 4 = 28 euros for 4 kg of blend. Divide."
+  ],
+  "solutions": {
+    "reliable": "The green tea costs 3 x 8 = 24 euros and the mint costs 1 x 4 = 4 euros, so 4 kg of blend cost 28 euros. The price per kg is 28 / 4 = 7 euros. The transferable idea: a mixture's average is total amount divided by total quantity, never the plain average of the parts.",
+    "elegant": "Three of every four kilograms cost 8 euros and one costs 4 euros, so the price is three quarters of the way from 4 to 8, which is 7 euros."
+  },
+  "whyOnTest": "Weighted averages: when the parts come in different amounts, the mixture's price leans towards the larger part.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

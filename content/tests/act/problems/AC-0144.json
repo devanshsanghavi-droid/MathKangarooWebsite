@@ -1,0 +1,56 @@
+{
+  "id": "AC-0144",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-05",
+  "difficulty": "hard",
+  "statement": "Mira deposits $\\$2{,}500$ in an account that earns $4.5\\%$ interest compounded annually, and she makes no other deposits or withdrawals. After how many whole years will the balance first be greater than $\\$4{,}000$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I set up 1.045^t = 1.6 but divided the base-10 log of 1.6, about 0.204, by the rate 0.045 instead of by log 1.045, which gave about 4.5, so I rounded up to 5."
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I found that t is about 10.7 and rounded down to 10, but after 10 years the balance is only about 3,882 dollars."
+    },
+    {
+      "key": "C",
+      "text": "$11$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I used simple interest, 112.50 dollars a year, so 1,500 dollars of interest would take 13.3 years, and I rounded up to 14."
+    }
+  ],
+  "hints": [
+    "The balance after $t$ years is $2{,}500(1.045)^t$.",
+    "Solve $(1.045)^t > 1.6$ by taking a logarithm of both sides.",
+    "$t > \\frac{\\log 1.6}{\\log 1.045} \\approx 10.7$. Which whole number of years is the first that works?"
+  ],
+  "solutions": {
+    "reliable": "We need $2{,}500(1.045)^t > 4{,}000$, so $(1.045)^t > 1.6$. Taking logarithms, $t > \\frac{\\log 1.6}{\\log 1.045} \\approx \\frac{0.2041}{0.01912} \\approx 10.68$. The first whole number of years that works is $11$. Check: $2{,}500(1.045)^{10} \\approx 3{,}882$, which is too small, and $2{,}500(1.045)^{11} \\approx 4{,}057$.",
+    "elegant": null
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

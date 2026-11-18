@@ -1,0 +1,68 @@
+{
+  "id": "KA-1373",
+  "band": "7-8",
+  "points": 4,
+  "statement": "The five-digit number $34A5B$, where A and B are digits (possibly equal), is divisible by 36. How many different pairs of digits A, B are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I only allowed the digit sum to be 18, forgetting that it could also be 27."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I only checked that the number is even for the test for 4, and I also forgot that the digit sum could be 27."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I only checked that the number is even for the test for 4, instead of checking its last two digits."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I used the test for 3 instead of the test for 9, so I only needed the digit sum to be a multiple of 3."
+    },
+    {
+      "key": "E",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "NUM-02",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "36 is 4 times 9. Use both tests.",
+    "A number is divisible by 36 exactly when it is divisible by 4 and by 9. The test for 4 uses the last two digits; the test for 9 uses the digit sum. Find B first, then A.",
+    "The last two digits $5B$ must be 52 or 56. The digit sum $12 + A + B$ must be 18 or 27."
+  ],
+  "solutions": {
+    "reliable": "Since $36 = 4 \\times 9$ and 4 and 9 share no factor, the number must be divisible by both. For 4, the last two digits $5B$ must be a multiple of 4: 52 or 56, so B is 2 or 6. For 9, the digit sum $3 + 4 + A + 5 + B = 12 + A + B$ must be a multiple of 9, so $A + B$ is 6 or 15. If B = 2, then A = 4 (A = 13 is not a digit). If B = 6, then A = 0 or A = 9. The pairs are (4, 2), (0, 6) and (9, 6), giving 34452, 34056 and 34956: 3 pairs. The transferable idea: split a divisor into coprime factors and apply the test for each.",
+    "elegant": null
+  },
+  "whyOnTest": "Divisibility by a composite number tests splitting it into coprime parts and applying each rule fully, including every possible digit sum.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

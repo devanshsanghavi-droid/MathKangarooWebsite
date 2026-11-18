@@ -1,0 +1,67 @@
+{
+  "id": "KA-1346",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A solid chocolate egg weighs 40 g and needs exactly 2 g of foil to cover its surface. A larger solid chocolate egg has exactly the same shape and needs exactly 18 g of the same foil to cover its surface. How much does the larger egg weigh, in grams?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "360",
+      "correct": false,
+      "misconception": "I thought the weight grows in the same way as the foil, so I multiplied 40 by 9."
+    },
+    {
+      "key": "B",
+      "text": "120",
+      "correct": false,
+      "misconception": "I found that the larger egg is 3 times as long and multiplied the weight by 3."
+    },
+    {
+      "key": "C",
+      "text": "3645",
+      "correct": false,
+      "misconception": "I halved 9 instead of taking its square root, so I used a length factor of 4.5 and multiplied 40 by $4.5^3$."
+    },
+    {
+      "key": "D",
+      "text": "1080",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I worked out that the larger egg is 27 times as heavy, then gave 27 as the answer instead of $27 \\times 40$."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-16",
+    "secondary": [
+      "NUM-11"
+    ]
+  },
+  "hints": [
+    "Foil covers a surface. Weight fills a volume.",
+    "The foil needed grows with the area, which grows by the square of the length factor. The weight grows with the volume, which grows by the cube of the length factor. Find the length factor from the foil first.",
+    "The foil grows by a factor of 9, so every length grows by a factor of 3."
+  ],
+  "solutions": {
+    "reliable": "The foil covers the surface, so the ratio of foil is the ratio of areas: 18 / 2 = 9. Areas of similar shapes grow by the square of the length factor, so the length factor is 3, since $3 \\times 3 = 9$. Weight is proportional to volume, which grows by the cube of the length factor, $3^3 = 27$. So the larger egg weighs $27 \\times 40 = 1080$ g. The transferable idea: for similar solids, if lengths scale by k then areas scale by $k^2$ and volumes by $k^3$, so always go through the length factor.",
+    "elegant": null
+  },
+  "whyOnTest": "Tests scaling of similar solids: from an area ratio back to the length factor, then forward to the volume ratio.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

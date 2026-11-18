@@ -1,0 +1,56 @@
+{
+  "id": "SA-0038",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "hard",
+  "statement": "Line $q$ in the $xy$-plane is perpendicular to the line with equation $3x - 2y = 7$, and the two lines have the same $y$-intercept. What is the $x$-intercept of line $q$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-\\dfrac{21}{4}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-\\dfrac{7}{3}$",
+      "correct": false,
+      "misconception": "I made the slope negative but did not flip it, so I used $-\\dfrac{3}{2}$ and got $-\\dfrac{7}{3}$."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{7}{3}$",
+      "correct": false,
+      "misconception": "I used the slope of the given line, $\\dfrac{3}{2}$, for line $q$, which makes it parallel, and got an $x$-intercept of $\\dfrac{7}{3}$."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{21}{4}$",
+      "correct": false,
+      "misconception": "I flipped $\\dfrac{3}{2}$ to $\\dfrac{2}{3}$ but forgot to make it negative, so with $y = \\dfrac{2}{3}x - \\dfrac{7}{2}$ I got $\\dfrac{21}{4}$."
+    }
+  ],
+  "hints": [
+    "Rewrite $3x - 2y = 7$ in slope-intercept form to read off its slope and $y$-intercept.",
+    "A perpendicular line has the negative reciprocal slope. Write line $q$ with that slope and the same $y$-intercept, then set $y = 0$.",
+    "The given line is $y = \\dfrac{3}{2}x - \\dfrac{7}{2}$, so line $q$ is $y = -\\dfrac{2}{3}x - \\dfrac{7}{2}$. Solve $0 = -\\dfrac{2}{3}x - \\dfrac{7}{2}$."
+  ],
+  "solutions": {
+    "reliable": "From $3x - 2y = 7$, $y = \\dfrac{3}{2}x - \\dfrac{7}{2}$: slope $\\dfrac{3}{2}$, $y$-intercept $-\\dfrac{7}{2}$. Line $q$ has slope $-\\dfrac{2}{3}$ and the same $y$-intercept, so $y = -\\dfrac{2}{3}x - \\dfrac{7}{2}$. Setting $y = 0$: $\\dfrac{2}{3}x = -\\dfrac{7}{2}$, so $x = -\\dfrac{21}{4}$. Check: $-\\dfrac{2}{3} \\cdot \\left(-\\dfrac{21}{4}\\right) - \\dfrac{7}{2} = \\dfrac{7}{2} - \\dfrac{7}{2} = 0$.",
+    "elegant": null
+  },
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

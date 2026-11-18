@@ -1,0 +1,56 @@
+{
+  "id": "SA-0205",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-01",
+  "difficulty": "medium",
+  "statement": "A factory has two machines that fill bottles at constant rates. Machine B fills bottles $25\\%$ faster than machine A. Working together, the two machines fill $1{,}440$ bottles in $4$ hours. How many bottles per hour does machine B fill?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$160$",
+      "correct": false,
+      "misconception": "I solved correctly for machine A's rate, 160 bottles per hour, and reported it instead of machine B's rate."
+    },
+    {
+      "key": "B",
+      "text": "$180$",
+      "correct": false,
+      "misconception": "I split the combined rate of 360 bottles per hour evenly between the two machines, ignoring that machine B is faster."
+    },
+    {
+      "key": "C",
+      "text": "$200$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$225$",
+      "correct": false,
+      "misconception": "I split the 360 bottles per hour evenly into 180 for each machine and then raised machine B's share by $25\\%$, which makes the two rates add to more than 360."
+    }
+  ],
+  "hints": [
+    "Find the number of bottles per hour the two machines fill together.",
+    "If machine A fills $a$ bottles per hour, machine B fills $1.25a$. Their rates add to the combined rate.",
+    "Together the machines fill $1{,}440 \\div 4 = 360$ bottles per hour, so $a + 1.25a = 2.25a = 360$."
+  ],
+  "solutions": {
+    "reliable": "The combined rate is $1{,}440 \\div 4 = 360$ bottles per hour. Let machine A fill $a$ bottles per hour, so machine B fills $1.25a$. Then $2.25a = 360$, so $a = 160$ and machine B fills $1.25(160) = 200$ bottles per hour. Check: $4(160 + 200) = 1{,}440$.",
+    "elegant": "Faster by $25\\%$ means the rates are in the ratio $4:5$. Splitting $360$ bottles per hour into $9$ parts gives $40$ per part, and machine B gets $5$ parts, or $200$."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

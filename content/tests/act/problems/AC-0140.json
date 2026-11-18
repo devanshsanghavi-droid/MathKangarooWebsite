@@ -1,0 +1,56 @@
+{
+  "id": "AC-0140",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-04",
+  "difficulty": "hard",
+  "statement": "A shop buys phone cases for $\\$10$ each. If it sells them at a price of $p$ dollars each, it sells $800 - 20p$ cases per week, so its weekly profit is $P(p) = (p - 10)(800 - 20p)$ dollars. What is the greatest possible weekly profit?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$25$",
+      "correct": false,
+      "misconception": "I found the best price, 25 dollars, halfway between the zeros at 10 and 40, and gave the price instead of the profit."
+    },
+    {
+      "key": "B",
+      "text": "$\\$4{,}000$",
+      "correct": false,
+      "misconception": "I maximized revenue, p(800 - 20p), instead of profit, which gives p = 20, and the profit at that price is 10 times 400 = 4,000 dollars."
+    },
+    {
+      "key": "C",
+      "text": "$\\$4{,}500$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$8{,}000$",
+      "correct": false,
+      "misconception": "I found the greatest revenue, 20 times 400 = 8,000 dollars, and forgot to subtract what the cases cost the shop."
+    }
+  ],
+  "hints": [
+    "The profit function is already factored, so its zeros are easy to read.",
+    "A parabola's vertex is halfway between its zeros. Find the zeros of $P$, then the price halfway between them.",
+    "The zeros are $p = 10$ and $p = 40$, so the best price is $p = 25$. Evaluate $P(25)$."
+  ],
+  "solutions": {
+    "reliable": "$P(p) = 0$ when $p = 10$ or when $800 - 20p = 0$, that is $p = 40$. Expanding gives a leading coefficient of $-20$, so the parabola opens downward and its maximum is at the midpoint $p = 25$. Then $P(25) = (15)(800 - 500) = 15 \\cdot 300 = 4{,}500$ dollars.",
+    "elegant": "Expand: $P(p) = -20p^2 + 1{,}000p - 8{,}000$. The vertex is at $p = \\frac{1{,}000}{2(20)} = 25$, and $P(25) = -12{,}500 + 25{,}000 - 8{,}000 = 4{,}500$."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

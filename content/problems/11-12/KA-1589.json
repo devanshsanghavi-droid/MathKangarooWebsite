@@ -1,0 +1,68 @@
+{
+  "id": "KA-1589",
+  "band": "11-12",
+  "points": 5,
+  "statement": "In how many ways can $1000$ be written as a product $a \\times b \\times c$ of three positive whole numbers, if the order of the factors does not matter? For example, $2 \\times 4 \\times 125$ and $125 \\times 2 \\times 4$ count as the same way.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "11",
+      "correct": false,
+      "misconception": "I left out every product that uses the factor 1, such as $1 \\times 8 \\times 125$."
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": false,
+      "misconception": "I only counted the products in which the three factors are all different."
+    },
+    {
+      "key": "C",
+      "text": "17",
+      "correct": false,
+      "misconception": "I counted the 100 ordered products and divided by 6, rounding up, but products with repeated factors are not counted 6 times."
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": false,
+      "misconception": "I forgot the product $10 \\times 10 \\times 10$, where all three factors are equal."
+    },
+    {
+      "key": "E",
+      "text": "19",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "NUM-05",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "First count the products where order does matter.",
+    "Count ordered triples using the prime factors $2^3 \\cdot 5^3$. Dividing by 6 only works for triples with three different numbers, so count the triples with repeated numbers separately and correct.",
+    "Ordered triples: share three 2s among three factors in $\\binom{5}{2} = 10$ ways, and the same for the 5s, so 100. Triples with two equal factors $a, a, c$ need $a^2$ to divide 1000: $a = 1, 2, 5$ (and $a = 10$ gives all three equal)."
+  ],
+  "solutions": {
+    "reliable": "Since $1000 = 2^3 \\cdot 5^3$, an ordered triple shares out three 2s and three 5s among three places, each in $\\binom{5}{2} = 10$ ways, so there are $100$ ordered triples. All equal: only $10 \\times 10 \\times 10$, counted once. Exactly two equal, $a \\times a \\times c$ with $c \\ne a$: $a^2$ must divide 1000, so $a = 1, 2, 5$, giving $1 \\cdot 1 \\cdot 1000$, $2 \\cdot 2 \\cdot 250$, $5 \\cdot 5 \\cdot 40$; each appears in 3 orders, using 9 ordered triples. The remaining $100 - 1 - 9 = 90$ ordered triples have three different factors, each counted 6 times: 15 ways. Total $1 + 3 + 15 = 19$. The transferable idea: divide by the number of orders only after separating the objects that have fewer orders.",
+    "elegant": "List with $a \\le b \\le c$: for $a = 1$: 8 ways ($b = 1, 2, 4, 5, 8, 10, 20, 25$); $a = 2$: 5 ways ($b = 2, 4, 5, 10, 20$); $a = 4$: 2 ways ($b = 5, 10$); $a = 5$: 3 ways ($b = 5, 8, 10$); $a = 10$: 1 way. Total 19."
+  },
+  "whyOnTest": "Overcounting and correcting is only safe when every object is overcounted equally; triples with repeated factors are the trap.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "AM-1158",
+  "contest": "AMC8",
+  "slot": 3,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-CYCLE"
+  ],
+  "statement": "Theo writes the word TOMORROW over and over with no spaces: TOMORROWTOMORROWTOMORROW... How many of the first $100$ letters he writes are the letter O?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I counted one O for each of the $12$ complete copies of the word, forgetting that each copy has three Os and ignoring the leftover letters."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I rounded $100 \\div 8$ up to $13$ copies and counted one O in each copy."
+    },
+    {
+      "key": "C",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I counted $3$ Os in each of the $12$ complete copies but ignored the $4$ leftover letters."
+    },
+    {
+      "key": "D",
+      "text": "$37$",
+      "correct": false,
+      "misconception": "I said $3$ out of every $8$ letters are O, and $\\frac{3}{8} \\cdot 100 = 37.5$, which I rounded down to $37$."
+    },
+    {
+      "key": "E",
+      "text": "$38$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The letters repeat in blocks of $8$.",
+    "Find how many complete copies of TOMORROW fit in $100$ letters, then look carefully at the letters left over.",
+    "$100 = 8 \\cdot 12 + 4$, so there are $12$ complete copies and then the letters T, O, M, O."
+  ],
+  "solutions": {
+    "reliable": "Each copy of TOMORROW has $8$ letters, $3$ of them O. Since $100 = 8 \\cdot 12 + 4$, the first $100$ letters are $12$ complete copies followed by the first $4$ letters of the word, T, O, M, O. The complete copies give $12 \\cdot 3 = 36$ Os and the leftover part gives $2$ more, for $38$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

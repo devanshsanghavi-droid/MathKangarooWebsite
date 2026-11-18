@@ -1,0 +1,56 @@
+{
+  "id": "AC-0150",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-07",
+  "difficulty": "hard",
+  "statement": "Which of the following describes all the vertical and horizontal asymptotes of the graph of $f(x) = \\dfrac{2x^2 - 8}{x^2 - x - 6}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Vertical: $x = 3$ only; horizontal: $y = 2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "Vertical: $x = -2$ and $x = 3$; horizontal: $y = 2$",
+      "correct": false,
+      "misconception": "I found where the denominator is 0, x = -2 and x = 3, but did not notice that x + 2 cancels with a factor of the numerator, which makes a hole at x = -2, not an asymptote."
+    },
+    {
+      "key": "C",
+      "text": "Vertical: $x = 3$ only; horizontal: $y = \\frac{4}{3}$",
+      "correct": false,
+      "misconception": "I got the vertical asymptote right, but for the horizontal one I divided the constant terms, -8 over -6, instead of the leading coefficients."
+    },
+    {
+      "key": "D",
+      "text": "Vertical: $x = -2$ and $x = 2$; horizontal: $y = 2$",
+      "correct": false,
+      "misconception": "I set the numerator equal to 0 to find the vertical asymptotes, but those x-values are where the top is 0, not where the function grows without bound."
+    }
+  ],
+  "hints": [
+    "Factor the numerator and the denominator completely before deciding anything.",
+    "A factor that cancels gives a hole, not a vertical asymptote. For the horizontal asymptote, compare the degrees of the top and the bottom.",
+    "$f(x) = \\frac{2(x - 2)(x + 2)}{(x - 3)(x + 2)}$. The degrees are equal, so use the ratio of the leading coefficients."
+  ],
+  "solutions": {
+    "reliable": "$2x^2 - 8 = 2(x - 2)(x + 2)$ and $x^2 - x - 6 = (x - 3)(x + 2)$. The factor $x + 2$ cancels, so for $x \\ne -2$, $f(x) = \\frac{2(x - 2)}{x - 3}$. There is a hole at $x = -2$, and the only vertical asymptote is $x = 3$. The top and the bottom both have degree $2$, so the horizontal asymptote is the ratio of leading coefficients, $y = \\frac{2}{1} = 2$.",
+    "elegant": null
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

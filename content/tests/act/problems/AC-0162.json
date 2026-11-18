@@ -1,0 +1,56 @@
+{
+  "id": "AC-0162",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-05",
+  "difficulty": "hard",
+  "statement": "The value, in dollars, of an investment $t$ years after it is made is modeled by $V(t) = 3{,}000e^{0.05t}$. To the nearest tenth of a year, how many years after the investment is made will its value be double its starting value?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13.9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$14.2$",
+      "correct": false,
+      "misconception": "I treated the growth as yearly compounding at $5\\%$ and solved $1.05^t = 2$, which gives about $14.2$, but the model uses $e^{0.05t}$."
+    },
+    {
+      "key": "C",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I thought $5\\%$ a year means it takes $\\frac{100}{5} = 20$ years to gain $100\\%$, ignoring that the growth compounds."
+    },
+    {
+      "key": "D",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I got $e^{0.05t} = 2$ and then dropped the $e$, solving $0.05t = 2$ instead of taking the natural log of both sides."
+    }
+  ],
+  "hints": [
+    "Double the starting value means $V(t) = 6{,}000$.",
+    "Divide both sides by $3{,}000$ to get $e^{0.05t} = 2$, then take the natural logarithm of both sides.",
+    "$0.05t = \\ln 2 \\approx 0.6931$, so $t = \\frac{0.6931}{0.05}$."
+  ],
+  "solutions": {
+    "reliable": "Set $3{,}000e^{0.05t} = 6{,}000$, so $e^{0.05t} = 2$. Taking natural logarithms, $0.05t = \\ln 2 \\approx 0.69315$, so $t \\approx 13.863$, which rounds to $13.9$ years. Check: $3{,}000e^{0.05 \\cdot 13.863} \\approx 3{,}000 \\cdot 2.000 = 6{,}000$.",
+    "elegant": "The starting value $3{,}000$ does not matter: doubling needs $e^{0.05t} = 2$, so $t = \\frac{\\ln 2}{0.05} \\approx 13.9$ for any starting amount."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

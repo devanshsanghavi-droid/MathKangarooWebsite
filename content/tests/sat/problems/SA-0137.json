@@ -1,0 +1,56 @@
+{
+  "id": "SA-0137",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-04",
+  "difficulty": "easy",
+  "statement": "The area covered by algae on the surface of a pond is modeled by $A(w) = 30(1.25)^w$, where $A(w)$ is the area, in square meters, $w$ weeks after the first measurement. According to the model, what is the area covered by algae $2$ weeks after the first measurement?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$75$ square meters",
+      "correct": false,
+      "misconception": "I multiplied $30$ by $1.25$ and then by $2$, instead of raising $1.25$ to the power $2$."
+    },
+    {
+      "key": "B",
+      "text": "$45$ square meters",
+      "correct": false,
+      "misconception": "I added $25\\%$ of $30$, which is $7.5$, each week, as if the growth were linear."
+    },
+    {
+      "key": "C",
+      "text": "$46.875$ square meters",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$1{,}406.25$ square meters",
+      "correct": false,
+      "misconception": "I multiplied $30$ by $1.25$ first and then squared the result, computing $(37.5)^2$."
+    }
+  ],
+  "hints": [
+    "Substitute $w = 2$ into the model.",
+    "The exponent applies only to $1.25$, not to $30$. Compute $(1.25)^2$ first.",
+    "$(1.25)^2 = 1.5625$, so $A(2) = 30 \\cdot 1.5625$."
+  ],
+  "solutions": {
+    "reliable": "$A(2) = 30(1.25)^2 = 30(1.5625) = 46.875$ square meters.",
+    "elegant": "Grow one week at a time: $30 \\cdot 1.25 = 37.5$ after one week, and $37.5 \\cdot 1.25 = 46.875$ after two weeks."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

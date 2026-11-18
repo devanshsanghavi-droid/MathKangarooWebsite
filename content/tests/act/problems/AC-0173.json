@@ -1,0 +1,56 @@
+{
+  "id": "AC-0173",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-08",
+  "difficulty": "medium",
+  "statement": "For an acute angle $x$, $\\sin x = 0.28$. What is the value of $\\cos\\left(\\frac{\\pi}{2} - x\\right) + \\sin(\\pi - x)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I thought $\\sin(\\pi - x) = -\\sin x$, so the two terms cancelled: $0.28 - 0.28 = 0$."
+    },
+    {
+      "key": "B",
+      "text": "$0.56$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$1.24$",
+      "correct": false,
+      "misconception": "I thought $\\cos\\left(\\frac{\\pi}{2} - x\\right) = \\cos x = 0.96$ and added the correct $\\sin(\\pi - x) = 0.28$."
+    },
+    {
+      "key": "D",
+      "text": "$1.92$",
+      "correct": false,
+      "misconception": "I thought both expressions turn into $\\cos x$, so I added $0.96 + 0.96$."
+    }
+  ],
+  "hints": [
+    "Each term can be rewritten using only $\\sin x$.",
+    "Use $\\cos\\left(\\frac{\\pi}{2} - x\\right) = \\sin x$ (cofunctions) and $\\sin(\\pi - x) = \\sin x$ (symmetry of the unit circle across the $y$-axis).",
+    "Both terms equal $\\sin x = 0.28$, so the sum is $2(0.28)$."
+  ],
+  "solutions": {
+    "reliable": "The cofunction identity gives $\\cos\\left(\\frac{\\pi}{2} - x\\right) = \\sin x = 0.28$. On the unit circle, the angles $x$ and $\\pi - x$ are mirror images across the $y$-axis, so they have the same $y$-coordinate: $\\sin(\\pi - x) = \\sin x = 0.28$. The sum is $0.28 + 0.28 = 0.56$.",
+    "elegant": "In a right triangle with acute angle $x$, the other acute angle is $\\frac{\\pi}{2} - x$, and its cosine is the side opposite $x$ over the hypotenuse, which is $\\sin x$."
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0091",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "medium",
+  "statement": "Which of the following describes all solutions of the inequality $|2x - 7| < 9$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-1 < x < 8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$x < 8$",
+      "correct": false,
+      "misconception": "I solved only $2x - 7 < 9$ and forgot that $2x - 7$ can also be negative."
+    },
+    {
+      "key": "C",
+      "text": "$-8 < x < 1$",
+      "correct": false,
+      "misconception": "I wrote $-9 < 2x - 7 < 9$ but subtracted 7 from each part instead of adding it."
+    },
+    {
+      "key": "D",
+      "text": "$x < -1$ or $x > 8$",
+      "correct": false,
+      "misconception": "I split the inequality into an or statement, which is the form for a greater-than inequality, not a less-than one."
+    }
+  ],
+  "hints": [
+    "$|A| < 9$ means $A$ is within 9 units of 0.",
+    "Rewrite it as the compound inequality $-9 < 2x - 7 < 9$ and solve all three parts together.",
+    "Adding 7 to each part gives $-2 < 2x < 16$."
+  ],
+  "solutions": {
+    "reliable": "$|2x - 7| < 9$ means $-9 < 2x - 7 < 9$. Adding $7$: $-2 < 2x < 16$. Dividing by $2$: $-1 < x < 8$. Check: $x = 0$ gives $|-7| = 7 < 9$, while $x = 8$ gives $|9| = 9$, which is not less than $9$.",
+    "elegant": "Divide inside and out by 2: $|2x - 7| < 9$ is the same as $|x - 3.5| < 4.5$, so $x$ is within $4.5$ of $3.5$, which means $-1 < x < 8$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

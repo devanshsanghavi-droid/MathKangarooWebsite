@@ -1,0 +1,71 @@
+{
+  "id": "KA-1139",
+  "band": "3-4",
+  "points": 4,
+  "statement": "The net in the picture is folded to make a cube. Which letter ends up on the face opposite the shaded square?",
+  "figure": {
+    "component": "CubeNetStaircase",
+    "alt": "A cube net of six squares arranged like a staircase going down to the right. The shaded square is at the top left. Square M is to its right. Square K is below M. Square F is to the right of K. Square W is below F. Square H is to the right of W."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "F",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "H",
+      "correct": false,
+      "misconception": "I picked the square furthest from the shaded one in the net, thinking the furthest square must be opposite."
+    },
+    {
+      "key": "C",
+      "text": "K",
+      "correct": false,
+      "misconception": "I thought the square that touches the shaded one only at a corner folds round to the opposite side."
+    },
+    {
+      "key": "D",
+      "text": "M",
+      "correct": false,
+      "misconception": "I picked the square right beside the shaded one, but squares that share an edge in a net become neighbours on the cube."
+    },
+    {
+      "key": "E",
+      "text": "W",
+      "correct": false,
+      "misconception": "I followed the diagonal line of squares and used the skip one rule along it, but that rule only works along a straight row."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-10",
+    "secondary": [
+      "GEO-11",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Choose one square to be the bottom, then fold the others up.",
+    "Nets and folding: fix one face as the base, fold its neighbours up as walls, then work out where each remaining square lands. Squares sharing an edge in the net are always neighbours on the cube.",
+    "Put K on the bottom. Then M is the back and F is the right side. The shaded square, joined to M, becomes the left side."
+  ],
+  "solutions": {
+    "reliable": "Put K on the table as the bottom. M is joined to the top of K, so it folds up as the back wall. F is joined to the right of K, so it folds up as the right wall. The shaded square is joined to the left of M, so it folds forward to become the left wall. W is joined below F, so it becomes the front wall, and H, the last square, is the top. The left wall (shaded) is opposite the right wall, F. The transferable idea: fix one face, fold its neighbours, and opposite faces are never neighbours in the net.",
+    "elegant": "In a staircase net like this one, each square is opposite the square three steps further along the staircase: shaded, M, K, F. So F is opposite the shaded square."
+  },
+  "whyOnTest": "Folding a net in your head by fixing one face and building the cube around it is the core skill behind every net question.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

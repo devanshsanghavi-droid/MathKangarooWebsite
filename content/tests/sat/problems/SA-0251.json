@@ -1,0 +1,56 @@
+{
+  "id": "SA-0251",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-01",
+  "difficulty": "easy",
+  "statement": "A rectangular raised garden bed is $6$ feet long and $3.5$ feet wide. It will be filled with soil to a depth of $1.5$ feet. Soil is sold in bags that each hold $2$ cubic feet. What is the least number of bags needed to fill the bed to that depth?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I added the three dimensions to get $11$ instead of multiplying them, then divided by 2 and rounded up to 6."
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I used only the area of the top, $6 \\times 3.5 = 21$ square feet, and ignored the depth, so $21 \\div 2 = 10.5$ rounded up to 11."
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I found $31.5 \\div 2 = 15.75$ bags and rounded down to 15, but 15 bags leave the bed short of soil."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Find how much space the soil fills.",
+    "The volume of a rectangular box is length times width times depth. Then see how many 2-cubic-foot bags that takes.",
+    "The volume is $6 \\times 3.5 \\times 1.5 = 31.5$ cubic feet, and $31.5 \\div 2 = 15.75$. You cannot buy part of a bag."
+  ],
+  "solutions": {
+    "reliable": "The soil fills a rectangular prism, so its volume is $6 \\times 3.5 \\times 1.5 = 31.5$ cubic feet. Each bag holds $2$ cubic feet, so $31.5 \\div 2 = 15.75$ bags are needed. Fifteen bags hold only $30$ cubic feet, which is not enough, so the least number is $16$.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

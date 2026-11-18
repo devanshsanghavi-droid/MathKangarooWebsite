@@ -1,0 +1,56 @@
+{
+  "id": "SA-0097",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "hard",
+  "statement": "Temperatures in degrees Fahrenheit, $F$, and degrees Celsius, $C$, are related by $F = \\frac{9}{5}C + 32$. At what Celsius temperature is the Fahrenheit reading exactly $50$ degrees more than twice the Celsius reading?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-340$",
+      "correct": false,
+      "misconception": "I wrote 'fifty more than twice the Celsius reading' as $2(C + 50)$, so $\\frac{9}{5}C + 32 = 2C + 100$ gave $C = -340$."
+    },
+    {
+      "key": "B",
+      "text": "$90$",
+      "correct": false,
+      "misconception": "I reached $-\\frac{1}{5}C = 18$ and divided without keeping the negative sign, so I got 90."
+    },
+    {
+      "key": "C",
+      "text": "$-130$",
+      "correct": false,
+      "misconception": "I solved correctly for $C = -90$ but then gave the Fahrenheit reading, $-130$, instead of the Celsius temperature."
+    },
+    {
+      "key": "D",
+      "text": "$-90$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Translate the sentence into an equation in $C$ alone.",
+    "Fifty more than twice the Celsius reading is $2C + 50$. Set it equal to $\\frac{9}{5}C + 32$ and solve for $C$.",
+    "$\\frac{9}{5}C + 32 = 2C + 50$ becomes $-\\frac{1}{5}C = 18$."
+  ],
+  "solutions": {
+    "reliable": "The condition is $F = 2C + 50$. Substituting $F = \\frac{9}{5}C + 32$: $\\frac{9}{5}C + 32 = 2C + 50$. Subtract $\\frac{9}{5}C$ and $50$ from both sides: $-18 = \\frac{1}{5}C$, so $C = -90$. Check: $F = \\frac{9}{5}(-90) + 32 = -130$, and $2(-90) + 50 = -130$. Key idea: turn the words into one equation, and trust a negative answer once it checks.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

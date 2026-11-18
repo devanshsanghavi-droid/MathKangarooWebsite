@@ -1,0 +1,68 @@
+{
+  "id": "AM-1083",
+  "contest": "AMC8",
+  "slot": 3,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-BOUNDING"
+  ],
+  "statement": "A closed box has inside measurements $6$ cm by $8$ cm by $9$ cm. Solid cubes with edge length $2$ cm are packed into the box, each with its faces parallel to the faces of the box. What is the greatest number of cubes that fit inside the closed box?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$48$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$54$",
+      "correct": false,
+      "misconception": "I divided the box's volume by one cube's volume, 432 / 8 = 54, but the leftover 1 cm along the 9 cm edge cannot hold half a layer of cubes."
+    },
+    {
+      "key": "C",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I rounded 9 / 2 = 4.5 up to 5 layers, so I got 3 times 4 times 5 = 60, but the fifth layer would stick out of the box."
+    },
+    {
+      "key": "D",
+      "text": "$216$",
+      "correct": false,
+      "misconception": "I divided the box's volume 432 by the edge length 2 instead of by the cube's volume 8."
+    },
+    {
+      "key": "E",
+      "text": "$432$",
+      "correct": false,
+      "misconception": "I found the volume of the box, 432 cubic centimeters, and gave that as the number of cubes."
+    }
+  ],
+  "hints": [
+    "Think about how many cubes fit along each edge of the box separately.",
+    "Only whole cubes fit. Along the $9$ cm edge, $9 \\div 2 = 4.5$, so only $4$ cubes fit in a row that way.",
+    "$3$ cubes fit along the $6$ cm edge, $4$ along the $8$ cm edge and $4$ along the $9$ cm edge."
+  ],
+  "solutions": {
+    "reliable": "Along the $6$ cm edge fit $3$ cubes, along the $8$ cm edge $4$ cubes, and along the $9$ cm edge only $4$ cubes, since a fifth would need $10$ cm. Stacking them in this grid fits $3 \\cdot 4 \\cdot 4 = 48$ cubes. No arrangement does better: every line parallel to the $9$ cm edge passes through at most $4$ cubes (each takes up $2$ cm of it), so the cubes fill at most $8$ of the $9$ cm in that direction, a total volume of at most $6 \\cdot 8 \\cdot 8 = 384$ cubic cm, which is $384 \\div 8 = 48$ cubes.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-16"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

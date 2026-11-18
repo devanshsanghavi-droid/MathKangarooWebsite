@@ -1,0 +1,68 @@
+{
+  "id": "KA-1435",
+  "band": "9-10",
+  "points": 5,
+  "statement": "A circle of radius 1 is drawn in a corner of a large square, touching both sides that meet at that corner. A bigger circle also touches both of those sides, and it touches the small circle from outside, further from the corner. What is the radius of the bigger circle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1 + \\sqrt{2}$",
+      "correct": false,
+      "misconception": "I placed the bigger circle's centre $r\\sqrt{2}$ from the corner but treated the small circle's centre as if it were at the corner, writing $r\\sqrt{2} = r + 1$."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I thought the centre of a circle of radius $r$ in the corner is $2r$ from the corner, instead of $r\\sqrt{2}$, which gave $2r - 2 = r + 1$."
+    },
+    {
+      "key": "C",
+      "text": "$3 + 2\\sqrt{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$2 + \\sqrt{2}$",
+      "correct": false,
+      "misconception": "I wrote the distance between the centres as $r$ instead of $r + 1$, forgetting to add the small circle's radius."
+    },
+    {
+      "key": "E",
+      "text": "$2 + 2\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I used $r\\sqrt{2}$ for the big circle's centre but only 1 for the small circle's distance from the corner, writing $r\\sqrt{2} - 1 = r + 1$."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-07",
+    "secondary": [
+      "GEO-16",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Where do the centres of the two circles lie?",
+    "Both centres lie on the diagonal through the corner. A circle of radius $r$ touching both sides has its centre at distance $r\\sqrt{2}$ from the corner. Write the distance between the two centres in two ways.",
+    "The centres are $r\\sqrt{2} - \\sqrt{2}$ apart along the diagonal, and they are also $r + 1$ apart because the circles touch."
+  ],
+  "solutions": {
+    "reliable": "A circle touching both sides has its centre on the diagonal from the corner, and if its radius is $r$, its centre is $r\\sqrt{2}$ from the corner (the diagonal of an $r$ by $r$ square). So the centres are $\\sqrt{2}$ and $r\\sqrt{2}$ from the corner, and the distance between them is $r\\sqrt{2} - \\sqrt{2}$. Since the circles touch from outside, this distance is also $r + 1$. So $r(\\sqrt{2} - 1) = \\sqrt{2} + 1$, and $r = \\frac{\\sqrt{2} + 1}{\\sqrt{2} - 1} = (\\sqrt{2} + 1)^2 = 3 + 2\\sqrt{2}$, about 5.83. The transferable idea: for circles that touch, the centres are the sum of the radii apart; find a second expression for that distance.",
+    "elegant": "Measure along the diagonal from the corner. The small circle ends $\\sqrt{2} + 1$ from the corner, and that is exactly where the big circle begins. A corner circle of radius $r$ begins $r\\sqrt{2} - r$ from the corner, so $(\\sqrt{2} - 1)r = \\sqrt{2} + 1$ and $r = 3 + 2\\sqrt{2}$."
+  },
+  "whyOnTest": "Touching circles test the rule that their centres are the sum of the radii apart, combined here with the corner distance $r\\sqrt{2}$.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

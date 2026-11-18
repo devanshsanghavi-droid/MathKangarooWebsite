@@ -1,0 +1,67 @@
+{
+  "id": "KA-1090",
+  "band": "1-2",
+  "points": 4,
+  "statement": "In a quiz, right answers score 4 points, and wrong answers or blanks score 0. Sam has 28 points. He guesses on his last 3 questions. Which of these could be his final score?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I added the 7 questions he got right and the 3 he guessed, so I counted questions, not points."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found the most the 3 guesses could add, 3 times 4, and forgot his 28 points."
+    },
+    {
+      "key": "C",
+      "text": "16",
+      "correct": false,
+      "misconception": "I thought each wrong guess takes away 4 points, so if all 3 guesses were wrong he would drop from 28 to 16."
+    },
+    {
+      "key": "D",
+      "text": "31",
+      "correct": false,
+      "misconception": "I added 1 point for each guess, 28 + 3, instead of 4 points for each right guess."
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-09",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Can a wrong guess take away any of his 28 points?",
+    "A wrong guess scores the same as a blank, so his score can only stay the same or go up. Every right guess adds the same number of points, so list what happens with each number of right guesses.",
+    "Sam starts on 28. With 0, 1, 2 or 3 right guesses he adds 0, 4, 8 or 12 points, ending on 28, 32, 36 or 40. Find which of these is a choice."
+  ],
+  "solutions": {
+    "reliable": "A wrong guess scores 0, so it changes nothing. Each right guess adds 4 points. With 0, 1, 2 or 3 right guesses, Sam ends with 28, 32, 36 or 40 points. The only one of these among the choices is 36, which happens when 2 of his guesses are right. The idea to keep: when a wrong answer costs nothing, guessing can only keep a score the same or raise it.",
+    "elegant": "His score can never drop below 28, and it can only grow in steps of 4. That rules out 10, 12 and 16 at once, and 31 is not 28 plus some fours. Only $36 = 28 + 4 + 4$ is left."
+  },
+  "whyOnTest": "With no penalty for a wrong answer, a guess can only keep a score the same or raise it, which is why a blank is never the better choice.",
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

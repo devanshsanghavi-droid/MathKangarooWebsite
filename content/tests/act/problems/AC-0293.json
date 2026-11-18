@@ -1,0 +1,56 @@
+{
+  "id": "AC-0293",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-07",
+  "difficulty": "medium",
+  "statement": "An email company tested a new spam filter on $500$ emails. $$\\begin{array}{l|c|c|c} & \\text{Flagged} & \\text{Not flagged} & \\text{Total} \\\\ \\hline \\text{Spam} & 72 & 8 & 80 \\\\ \\text{Not spam} & 48 & 372 & 420 \\\\ \\hline \\text{Total} & 120 & 380 & 500 \\end{array}$$ Of the emails the filter flagged, what percent were actually spam?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$14.4\\%$",
+      "correct": false,
+      "misconception": "I divided the 72 flagged spam emails by all 500 emails instead of by the 120 flagged emails."
+    },
+    {
+      "key": "B",
+      "text": "$24\\%$",
+      "correct": false,
+      "misconception": "I found the percent of all emails that were flagged, 120 out of 500, which ignores whether they were spam."
+    },
+    {
+      "key": "C",
+      "text": "$60\\%$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$90\\%$",
+      "correct": false,
+      "misconception": "I divided 72 by the 80 spam emails, which tells how much spam got flagged, not how much flagged mail was spam."
+    }
+  ],
+  "hints": [
+    "The question limits you to the flagged emails. How many emails were flagged?",
+    "Use the Flagged column only. What fraction of that column is spam?",
+    "$120$ emails were flagged and $72$ of those were spam."
+  ],
+  "solutions": {
+    "reliable": "The filter flagged $120$ emails, and $72$ of them were spam. The percent is $\\dfrac{72}{120} = 0.6 = 60\\%$.",
+    "elegant": "Compare the two flagged groups: $72$ spam to $48$ not spam is $3 : 2$, so spam makes up $\\frac{3}{5} = 60\\%$ of the flagged emails."
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

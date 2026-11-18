@@ -1,0 +1,68 @@
+{
+  "id": "KA-1553",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A convex solid has 20 faces that are equilateral triangles and 12 faces that are regular pentagons. At each corner of the solid, exactly two triangles and two pentagons meet. How many corners does the solid have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "32",
+      "correct": false,
+      "misconception": "I counted the faces of the solid instead of its corners."
+    },
+    {
+      "key": "C",
+      "text": "40",
+      "correct": false,
+      "misconception": "I divided the 120 face corners by 3, as if three faces met at each corner, but four faces meet there."
+    },
+    {
+      "key": "D",
+      "text": "60",
+      "correct": false,
+      "misconception": "I divided the 120 face corners by 2, as if each corner were shared by two faces, which counts the edges, not the corners."
+    },
+    {
+      "key": "E",
+      "text": "120",
+      "correct": false,
+      "misconception": "I added up the corners of all the faces, $20 \\times 3 + 12 \\times 5$, without noticing that each corner of the solid is shared by four faces."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CFT-07",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Count the corners of all the faces together.",
+    "Overcount, then correct: adding up the corners of every face counts each corner of the solid several times. Work out exactly how many faces meet at each corner, and divide by that.",
+    "The faces have $20 \\times 3 + 12 \\times 5 = 120$ corners in total, and each corner of the solid belongs to 4 faces."
+  ],
+  "solutions": {
+    "reliable": "The faces have $20 \\times 3 + 12 \\times 5 = 60 + 60 = 120$ corners altogether. Each corner of the solid is a corner of exactly four faces, two triangles and two pentagons, so it is counted 4 times. The solid has $120 / 4 = 30$ corners. The transferable idea: count with repetition, then divide by how many times each object was counted.",
+    "elegant": "Use the triangles alone: their $20 \\times 3 = 60$ corners count each corner of the solid exactly twice, because exactly two triangles meet there, so there are $60 / 2 = 30$ corners. The pentagons give the same check: $12 \\times 5 / 2 = 30$. The transferable idea: counting one kind of face gives the answer with a smaller, simpler correction."
+  },
+  "whyOnTest": "Adding the corners of the faces counts each corner of the solid four times, and naming that overcount exactly is the whole problem.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1106",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Ten 2s are multiplied together: $2 \\times 2 \\times 2 \\times \\dots \\times 2$. What is the last digit of the answer?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I added the ten 2s instead of multiplying them, got 20, and took its last digit."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I miscounted along the pattern and found the last digit for nine 2s instead of ten."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I saw the pattern 2, 4, 8, 6 and stopped after two full rounds, forgetting the last two 2s."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the first 2 as step zero of the pattern, so I went one step too far."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "PAT-03"
+    ]
+  },
+  "hints": [
+    "Find the last digit for one 2, then two 2s, then three 2s.",
+    "Try small cases. Only the last digit matters each time you multiply by 2 again, so look for a pattern in the last digits and see where the tenth one falls.",
+    "The last digits go 2, 4, 8, 6, then 2, 4, 8, 6 again, then 2, 4. The tenth is 4. Indeed, ten 2s multiply to 1024."
+  ],
+  "solutions": {
+    "reliable": "Small cases: 2, 4, 8, 16, 32, 64, 128, 256, ... The last digits go 2, 4, 8, 6 and then repeat. Two full rounds use eight 2s and end on 6; the ninth 2 gives 2 and the tenth gives 4. Check by multiplying: ten 2s make 1024, which ends in 4. The transferable idea: when a calculation is long, work out the first few cases and let the pattern carry you the rest of the way.",
+    "elegant": "Five 2s make 32, which ends in 2, and 2 x 2 ends in 4. So ten 2s, which is 32 x 32, ends in the same digit as 2 x 2: 4."
+  },
+  "whyOnTest": "Nobody expects you to multiply ten 2s fast; trying one, two, three 2s reveals a short repeating pattern, the habit this checks.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

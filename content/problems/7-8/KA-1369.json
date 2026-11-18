@@ -1,0 +1,67 @@
+{
+  "id": "KA-1369",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Four identical printers working together would print a large order in 6 hours. All four start at the same time. After 1 hour, one printer breaks down, and 2 hours after that a second printer breaks down. The two printers that are left finish the order. How many hours after the start is the order finished?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I ignored the breakdowns and used the time for all four printers working together."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": false,
+      "misconception": "I found how long the last two printers worked on their own and gave that instead of the time from the start."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I thought each printer that breaks down adds a quarter of 6 hours, so I added $1\\frac{1}{2}$ hours twice to 6."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I worked out that two printers alone would need 12 hours for the whole order and gave that."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-04",
+    "secondary": [
+      "NUM-09"
+    ]
+  },
+  "hints": [
+    "Measure the order in printer-hours: one printer working for one hour.",
+    "Four printers for 6 hours is a fixed amount of work. Work out how much is done before each breakdown, then how long two printers need for the rest.",
+    "The order is $4 \\times 6 = 24$ printer-hours. In the first hour 4 are done, and in the next 2 hours another $3 \\times 2 = 6$."
+  ],
+  "solutions": {
+    "reliable": "The whole order needs $4 \\times 6 = 24$ printer-hours. In the first hour four printers do 4 of them. In the next 2 hours three printers do $3 \\times 2 = 6$ more, so $24 - 4 - 6 = 14$ printer-hours are left. Two printers do 2 printer-hours every hour, so they need $14 \\div 2 = 7$ hours. The order is finished $1 + 2 + 7 = 10$ hours after the start. The transferable idea: when the workers are identical, count the job in worker-hours and subtract as the team changes.",
+    "elegant": "Each printer's fair share is a quarter of the order, 6 printer-hours. The first printer to break worked only 1 hour, leaving 5 hours of its share, and the second worked 3 hours, leaving 3. The two survivors split those 8 missing hours, 4 each, so they work $6 + 4 = 10$ hours."
+  },
+  "whyOnTest": "Work questions reward measuring the job in worker-hours instead of juggling fractions.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

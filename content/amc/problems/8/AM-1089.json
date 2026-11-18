@@ -1,0 +1,66 @@
+{
+  "id": "AM-1089",
+  "contest": "AMC8",
+  "slot": 5,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-PIE"
+  ],
+  "statement": "Two squares, each with side length $6$, overlap so that the region they share is a rectangle $2$ wide and $6$ long. What is the area of the region covered by at least one of the two squares?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found the area of the shared rectangle, 2 times 6 = 12, instead of the area covered by at least one square."
+    },
+    {
+      "key": "B",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I subtracted the shared rectangle from both squares, 72 - 2 times 12 = 48, which is the area covered by exactly one square."
+    },
+    {
+      "key": "C",
+      "text": "$60$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I added the two square areas, 36 + 36 = 72, which counts the shared rectangle twice."
+    },
+    {
+      "key": "E",
+      "text": "$84$",
+      "correct": false,
+      "misconception": "I added the shared rectangle to the two squares, 72 + 12 = 84, instead of subtracting it."
+    }
+  ],
+  "hints": [
+    "Adding the areas of the two squares counts part of the region twice. Which part?",
+    "The shared $2$ by $6$ rectangle is inside both squares, so $36 + 36$ counts it twice.",
+    "Subtract the shared rectangle once: $36 + 36 - 12$."
+  ],
+  "solutions": {
+    "reliable": "Each square has area $6^2 = 36$, so together they have area $72$, but the shared rectangle, with area $2 \\cdot 6 = 12$, is counted in both. Counting it only once, the covered region has area $36 + 36 - 12 = 60$.",
+    "elegant": "The shared rectangle is a full $6$ long, so the squares sit side by side, shifted $6 - 2 = 4$ units apart. Together they form a $6$ by $10$ rectangle, with area $6 \\cdot 10 = 60$."
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

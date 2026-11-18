@@ -1,0 +1,68 @@
+{
+  "id": "KA-1268",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Six children share 50 sweets so that each child gets at least one sweet and no two children get the same number. What is the smallest possible number of sweets for the child who gets the most?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I divided 50 by 6 to get about 8 and thought the biggest share could be as small as the average."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I divided 50 by 6 and rounded up to 9, thinking the biggest share only has to be just above the average."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I chose six numbers in a row ending at 10, but 5 + 6 + 7 + 8 + 9 + 10 is only 45, not 50."
+    },
+    {
+      "key": "D",
+      "text": "11",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "35",
+      "correct": false,
+      "misconception": "I gave the other five children as few as possible, 1, 2, 3, 4 and 5, which makes the biggest share as large as possible, not as small as possible."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "CNT-18",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Suppose the biggest share is m. What is the largest possible total?",
+    "Everyone else has a different, smaller number, so at most m - 1, m - 2, and so on down to m - 5. Use this to find how small m can be, then build an example.",
+    "If the biggest share is m, the total is at most m + (m - 1) + (m - 2) + (m - 3) + (m - 4) + (m - 5) = 6m - 15, and this must reach 50."
+  ],
+  "solutions": {
+    "reliable": "Let the child with the most have m sweets. The others have different, smaller numbers, so the total is at most m + (m - 1) + (m - 2) + (m - 3) + (m - 4) + (m - 5) = 6m - 15. For m = 10 that is only 45, less than 50, so m = 10 is too small, and any smaller m is worse. For m = 11 an example works: 5 + 7 + 8 + 9 + 10 + 11 = 50. So the answer is 11. The transferable idea: to make the largest value as small as possible, push all the other values up close to it, then build an example that reaches the bound.",
+    "elegant": "Six different numbers bunched as tightly as possible are consecutive. Near the average, 5 to 10 add up to 45 and 6 to 11 add up to 51. So the top share is at least 11, and taking 1 away from the 6 gives 5, 7, 8, 9, 10, 11, which add up to exactly 50."
+  },
+  "whyOnTest": "Extremal questions need two halves: an argument that nothing smaller can work, and an example that reaches the bound.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

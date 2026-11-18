@@ -1,0 +1,62 @@
+{
+  "id": "AM-1035",
+  "contest": "AMC8",
+  "slot": 12,
+  "area": "ALG",
+  "topic": "ALG-05",
+  "types": ["T-SUBSTITUTION"],
+  "statement": "If $2^{a} = 5$, what is the value of $8^{a} + 4^{a+1}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$115$",
+      "correct": false,
+      "misconception": "I thought $8^a = (2^3)^a$ meant multiplying $2^a$ by 3, so $8^a = 15$ and the total was 15 + 100 = 115."
+    },
+    {
+      "key": "B",
+      "text": "$150$",
+      "correct": false,
+      "misconception": "I dropped the +1 in the exponent and used $4^a = 25$ in place of $4^{a+1}$, so I got 125 + 25 = 150."
+    },
+    {
+      "key": "C",
+      "text": "$154$",
+      "correct": false,
+      "misconception": "I rewrote $4^{a+1}$ as $4^a + 4 = 29$, adding 4 instead of multiplying by 4, so I got 125 + 29 = 154."
+    },
+    {
+      "key": "D",
+      "text": "$165$",
+      "correct": false,
+      "misconception": "I thought $4^a = 2 \\cdot 2^a = 10$, doubling instead of squaring, so $4^{a+1} = 40$ and the total was 125 + 40 = 165."
+    },
+    {
+      "key": "E",
+      "text": "$225$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Write $8$ and $4$ as powers of $2$.",
+    "$8^a = (2^a)^3$ and $4^a = (2^a)^2$.",
+    "$4^{a+1} = 4 \\cdot 4^a = 4 \\cdot 25$."
+  ],
+  "solutions": {
+    "reliable": "Since $8 = 2^3$, we have $8^a = (2^a)^3 = 5^3 = 125$. Since $4 = 2^2$, we have $4^a = (2^a)^2 = 25$, so $4^{a+1} = 4 \\cdot 4^a = 100$. The sum is $125 + 100 = 225$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

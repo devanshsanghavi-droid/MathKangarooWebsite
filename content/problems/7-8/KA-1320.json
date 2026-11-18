@@ -1,0 +1,68 @@
+{
+  "id": "KA-1320",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A pump fills an empty pool in 6 hours. A drain empties a full pool in 10 hours. The pump is switched on with the pool empty, but the drain is left open for the first 3 hours and then closed. How long after the pump is switched on is the pool full?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4 h 48 min",
+      "correct": false,
+      "misconception": "I worked out the time needed after the drain was closed, 4.8 hours, and forgot to add the first 3 hours."
+    },
+    {
+      "key": "B",
+      "text": "6 h 18 min",
+      "correct": false,
+      "misconception": "I worked out that the drain let out $\\frac{3}{10}$ of the pool and added $\\frac{3}{10}$ of an hour, 18 minutes, instead of the time the pump needs to replace that water."
+    },
+    {
+      "key": "C",
+      "text": "7 h 48 min",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "9 h",
+      "correct": false,
+      "misconception": "I added the 3 hours with the drain open on top of the 6 hours, as if the pump did nothing during them."
+    },
+    {
+      "key": "E",
+      "text": "15 h",
+      "correct": false,
+      "misconception": "I used the combined rate $\\frac{1}{6} - \\frac{1}{10} = \\frac{1}{15}$ for the whole time, as if the drain were never closed."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-04",
+    "secondary": [
+      "NUM-09",
+      "MOD-03"
+    ]
+  },
+  "hints": [
+    "How much of the pool does the drain let out while it is open?",
+    "Combined work rates: in the first 3 hours the pump and the drain both act, so use their combined rate; after that only the pump works. Measure everything in fractions of the pool per hour.",
+    "With both working, the pool gains $\\frac{1}{6} - \\frac{1}{10} = \\frac{1}{15}$ of its volume each hour, so after 3 hours it is $\\frac{1}{5}$ full. The pump fills the remaining $\\frac{4}{5}$ at $\\frac{1}{6}$ of the pool per hour."
+  ],
+  "solutions": {
+    "reliable": "With both working, each hour the pool gains $\\frac{1}{6} - \\frac{1}{10} = \\frac{5 - 3}{30} = \\frac{1}{15}$ of its volume. After 3 hours it is $\\frac{3}{15} = \\frac{1}{5}$ full. The pump alone fills the remaining $\\frac{4}{5}$ in $\\frac{4}{5} \\times 6 = 4.8$ hours, which is 4 hours 48 minutes. The total is $3 + 4.8 = 7.8$ hours, or 7 hours 48 minutes. The transferable idea: add rates as fractions of the job per hour, with a minus sign for anything that undoes the job.",
+    "elegant": "In its 3 open hours the drain lets out $\\frac{3}{10}$ of a pool. The pump needs $\\frac{3}{10} \\times 6 = 1.8$ hours to replace that, so the whole job takes $6 + 1.8 = 7.8$ hours, which is 7 h 48 min."
+  },
+  "whyOnTest": "Rates combine with a minus sign when one machine undoes the other, and here the rate changes partway: two steps, one trap each.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

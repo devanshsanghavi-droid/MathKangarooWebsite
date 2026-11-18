@@ -1,0 +1,68 @@
+{
+  "id": "KA-1057",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Tom stands 5 dominoes in a line. Each is 3 cm thick, with a 1 cm gap between neighbours. How long is the whole line, end to end?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "15 cm",
+      "correct": false,
+      "misconception": "I added the 5 dominoes and forgot the gaps between them."
+    },
+    {
+      "key": "B",
+      "text": "16 cm",
+      "correct": false,
+      "misconception": "I added one gap of 1 cm for the whole line instead of one between every two dominoes."
+    },
+    {
+      "key": "C",
+      "text": "19 cm",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "20 cm",
+      "correct": false,
+      "misconception": "I put a gap after every domino, even after the last one."
+    },
+    {
+      "key": "E",
+      "text": "21 cm",
+      "correct": false,
+      "misconception": "I put a gap between the dominoes and also one at each end of the line."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "GEO-01",
+      "PAT-02"
+    ]
+  },
+  "hints": [
+    "Draw the 5 dominoes and mark the gaps.",
+    "Gaps only go between neighbours, so there is one fewer gap than dominoes. A quick sketch shows exactly how many gaps there are. Then add the dominoes and the gaps.",
+    "The 5 dominoes make 15 cm. Drawing them shows 4 gaps, one between each pair of neighbours. Add the gaps."
+  ],
+  "solutions": {
+    "reliable": "The dominoes are $5 \\times 3 = 15$ cm thick altogether. Between 5 dominoes there are 4 gaps, so the gaps add 4 cm. The line is $15 + 4 = 19$ cm long. The idea to keep: in a row of things, there is one gap fewer than things.",
+    "elegant": "Think of each of the first 4 dominoes with the gap behind it: that is 4 cm each, so 16 cm. The last domino has no gap behind it and adds 3 cm, making 19 cm."
+  },
+  "whyOnTest": "Gaps between objects are a classic off-by-one, and drawing the row is the reliable way to count them.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

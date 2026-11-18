@@ -1,0 +1,56 @@
+{
+  "id": "SA-0191",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-05",
+  "difficulty": "medium",
+  "statement": "In the $xy$-plane, at how many points does the graph of $y = (x - 2)(x + 1)^2(x^2 + 9)$ intersect the $x$-axis?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I counted the repeated factor $(x + 1)^2$ as two separate intersection points."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I thought $x^2 + 9 = 0$ has the solutions $x = 3$ and $x = -3$, so I added two more points to $x = 2$ and $x = -1$."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I counted one point for each degree of the polynomial, and the degree is $5$."
+    }
+  ],
+  "hints": [
+    "The graph meets the $x$-axis where $y = 0$, so look at when each factor equals zero.",
+    "$x - 2 = 0$ and $(x + 1)^2 = 0$ each give a real value. Can $x^2 + 9$ ever equal $0$?",
+    "$x^2 + 9 \\ge 9$ for every real $x$, so it is never $0$. Count the distinct real zeros."
+  ],
+  "solutions": {
+    "reliable": "$y = 0$ exactly when one of the factors is $0$. The factor $x - 2$ gives $x = 2$, and $(x + 1)^2$ gives $x = -1$ (a repeated zero, where the graph touches the axis without crossing, but still only one point). The factor $x^2 + 9$ is at least $9$ for every real $x$, so it is never $0$. The graph meets the $x$-axis at exactly $2$ points, $(2, 0)$ and $(-1, 0)$.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

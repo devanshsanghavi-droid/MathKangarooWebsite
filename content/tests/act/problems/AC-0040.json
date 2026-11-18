@@ -1,0 +1,56 @@
+{
+  "id": "AC-0040",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-05",
+  "difficulty": "hard",
+  "statement": "A lawn sprinkler uses $12$ gallons of water per minute. The town charges $\\$4.50$ per $1{,}000$ cubic feet of water, and $1$ cubic foot holds about $7.48$ gallons. If the sprinkler runs $45$ minutes a day for $30$ days, about how much does the water cost?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$0.32$",
+      "correct": false,
+      "misconception": "I found the cost for a single day of watering and forgot to multiply by the 30 days."
+    },
+    {
+      "key": "B",
+      "text": "$\\$9.75$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\$545.29$",
+      "correct": false,
+      "misconception": "I multiplied the gallons by 7.48 instead of dividing, so I turned gallons into far too many cubic feet."
+    },
+    {
+      "key": "D",
+      "text": "$\\$9{,}745.99$",
+      "correct": false,
+      "misconception": "I converted to cubic feet correctly but multiplied by 4.50 as if the price were per cubic foot instead of per 1,000 cubic feet."
+    }
+  ],
+  "hints": [
+    "Find the total gallons first, then change gallons to cubic feet.",
+    "The total is $12 \\cdot 45 \\cdot 30$ gallons. Divide by 7.48 to get cubic feet, then find how many thousands of cubic feet that is.",
+    "The sprinkler uses $16{,}200$ gallons, which is $16{,}200 \\div 7.48 \\approx 2{,}165.8$ cubic feet."
+  ],
+  "solutions": {
+    "reliable": "Total water: $12 \\cdot 45 \\cdot 30 = 16{,}200$ gallons. In cubic feet: $16{,}200 \\div 7.48 \\approx 2{,}165.8$. That is about $2.1658$ thousand cubic feet, so the cost is $2.1658 \\cdot 4.50 \\approx \\$9.75$. The idea: when a price is quoted per 1,000 units, convert to that unit and count the thousands before multiplying.",
+    "elegant": null
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

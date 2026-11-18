@@ -1,0 +1,56 @@
+{
+  "id": "SA-0195",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-03",
+  "difficulty": "easy",
+  "statement": "The function $f$ is defined by $f(x) = x^2 - 8x + 12$. Which of the following is an equivalent form of $f(x)$ that shows the $x$-intercepts of the graph of $y = f(x)$ as constants?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$f(x) = (x - 4)^2 - 4$",
+      "correct": false,
+      "misconception": "I chose the vertex form, which shows the vertex $(4, -4)$ rather than the $x$-intercepts."
+    },
+    {
+      "key": "B",
+      "text": "$f(x) = (x + 2)(x + 6)$",
+      "correct": false,
+      "misconception": "I factored with the signs reversed, and $(x + 2)(x + 6)$ is not equivalent to $f(x)$."
+    },
+    {
+      "key": "C",
+      "text": "$f(x) = x(x - 8) + 12$",
+      "correct": false,
+      "misconception": "I factored $x$ out of the first two terms and thought $0$ and $8$ were the $x$-intercepts."
+    },
+    {
+      "key": "D",
+      "text": "$f(x) = (x - 2)(x - 6)$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The $x$-intercepts are the values of $x$ that make $f(x) = 0$.",
+    "The factored form $(x - p)(x - q)$ shows that $f(p) = 0$ and $f(q) = 0$.",
+    "Find two numbers that multiply to $12$ and add to $-8$."
+  ],
+  "solutions": {
+    "reliable": "Two numbers that multiply to $12$ and add to $-8$ are $-2$ and $-6$, so $f(x) = (x - 2)(x - 6)$. This form is $0$ when $x = 2$ or $x = 6$, so it shows the $x$-intercepts $2$ and $6$ directly. The vertex form $(x - 4)^2 - 4$ is also equivalent, but it shows the vertex instead.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

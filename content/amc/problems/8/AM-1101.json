@@ -1,0 +1,66 @@
+{
+  "id": "AM-1101",
+  "contest": "AMC8",
+  "slot": 9,
+  "area": "GEO",
+  "topic": "GEO-01",
+  "types": [
+    "T-ANGLE-CHASE"
+  ],
+  "statement": "In triangle $ABC$, $AB = AC$ and $\\angle BAC = 44^\\circ$. Point $D$ lies on side $\\overline{AC}$ so that $BD = BC$. What is the degree measure of $\\angle ABD$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$34$",
+      "correct": false,
+      "misconception": "I thought BD cuts angle ABC exactly in half, so I took half of 68 and got 34."
+    },
+    {
+      "key": "C",
+      "text": "$44$",
+      "correct": false,
+      "misconception": "I found angle DBC = 180 - 68 - 68 = 44 in the small isosceles triangle and gave that angle instead of angle ABD."
+    },
+    {
+      "key": "D",
+      "text": "$68$",
+      "correct": false,
+      "misconception": "I gave the base angle ABC = 68 and forgot that segment BD splits it into two parts."
+    },
+    {
+      "key": "E",
+      "text": "$112$",
+      "correct": false,
+      "misconception": "I found angle ADB = 180 - 68 = 112, which is an angle at D, not the angle at B."
+    }
+  ],
+  "hints": [
+    "Find the base angles of triangle $ABC$ first.",
+    "Since $BD = BC$, triangle $BDC$ is isosceles too, with equal angles at $D$ and at $C$.",
+    "$\\angle C = 68^\\circ$, so $\\angle BDC = 68^\\circ$ and $\\angle DBC = 180^\\circ - 136^\\circ = 44^\\circ$. Subtract that from $\\angle ABC$."
+  ],
+  "solutions": {
+    "reliable": "Triangle $ABC$ is isosceles with apex $44^\\circ$, so its base angles are $\\angle ABC = \\angle ACB = (180^\\circ - 44^\\circ)/2 = 68^\\circ$. Since $BD = BC$, triangle $BDC$ is isosceles with $\\angle BDC = \\angle BCD = 68^\\circ$, so $\\angle DBC = 180^\\circ - 2 \\cdot 68^\\circ = 44^\\circ$. Then $\\angle ABD = \\angle ABC - \\angle DBC = 68^\\circ - 44^\\circ = 24^\\circ$.",
+    "elegant": "$\\angle BDC = 68^\\circ$ is an exterior angle of triangle $ABD$, so it equals the sum of the two far angles: $68^\\circ = 44^\\circ + \\angle ABD$, giving $\\angle ABD = 24^\\circ$."
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

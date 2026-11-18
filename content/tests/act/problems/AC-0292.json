@@ -1,0 +1,56 @@
+{
+  "id": "AC-0292",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-07",
+  "difficulty": "medium",
+  "statement": "A news website surveyed $250$ readers about their age group and where they get most of their news. $$\\begin{array}{l|c|c|c} & \\text{Online} & \\text{TV} & \\text{Total} \\\\ \\hline \\text{Under } 30 & 62 & 18 & 80 \\\\ 30 \\text{ to } 50 & 49 & 41 & 90 \\\\ \\text{Over } 50 & 21 & 59 & 80 \\\\ \\hline \\text{Total} & 132 & 118 & 250 \\end{array}$$ A reader who gets most news from TV is chosen at random. What is the probability that this reader is over $50$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{59}{250}$",
+      "correct": false,
+      "misconception": "I divided 59 by all 250 readers, but the reader is chosen only from the 118 TV readers."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{8}{25}$",
+      "correct": false,
+      "misconception": "I found the share of all readers who are over 50, 80 out of 250, and never used the TV condition."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{1}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{59}{80}$",
+      "correct": false,
+      "misconception": "I divided by the 80 readers over 50, which gives the chance that an over-50 reader prefers TV, the reverse of what was asked."
+    }
+  ],
+  "hints": [
+    "The reader is chosen only from those who prefer TV. Which total goes in the denominator?",
+    "Use the TV column. Divide the over-$50$ count in that column by the TV total.",
+    "The TV column total is $118$ and the over-$50$ entry is $59$."
+  ],
+  "solutions": {
+    "reliable": "The reader is chosen from the $118$ TV readers. Of those, $59$ are over $50$. The probability is $\\dfrac{59}{118} = \\dfrac{1}{2}$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0185",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-08",
+  "difficulty": "medium",
+  "statement": "The change in air pressure, in pascals, near a tuning fork $t$ seconds after it is struck is modeled by $P(t) = 0.02\\sin(880\\pi t)$. According to the model, how many complete cycles does the pressure go through in $1$ second?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{1}{440}$",
+      "correct": false,
+      "misconception": "I found the period, $\\frac{1}{440}$ of a second, which is the time for one cycle, not the number of cycles in a second."
+    },
+    {
+      "key": "B",
+      "text": "$440$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$880$",
+      "correct": false,
+      "misconception": "I thought sine repeats every $\\pi$, so I divided $880\\pi$ by $\\pi$ and got $880$, but sine repeats every $2\\pi$."
+    },
+    {
+      "key": "D",
+      "text": "about $2{,}765$",
+      "correct": false,
+      "misconception": "I took the whole coefficient $880\\pi$, about $2{,}765$, as the number of cycles per second without dividing by $2\\pi$."
+    }
+  ],
+  "hints": [
+    "One complete cycle of $\\sin(\\theta)$ happens each time $\\theta$ increases by $2\\pi$.",
+    "Find how much the angle $880\\pi t$ increases from $t = 0$ to $t = 1$, then divide by $2\\pi$.",
+    "The angle grows by $880\\pi$ in one second, and each cycle uses $2\\pi$ of it, so the number of cycles is $\\frac{880\\pi}{2\\pi}$."
+  ],
+  "solutions": {
+    "reliable": "The period of $\\sin(bt)$ is $\\frac{2\\pi}{b}$. Here $b = 880\\pi$, so the period is $\\frac{2\\pi}{880\\pi} = \\frac{1}{440}$ second. In $1$ second there are $1 \\div \\frac{1}{440} = 440$ complete cycles.",
+    "elegant": "Over $1$ second the angle $880\\pi t$ runs from $0$ to $880\\pi$. Each cycle takes $2\\pi$ of angle, so there are $\\frac{880\\pi}{2\\pi} = 440$ cycles."
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

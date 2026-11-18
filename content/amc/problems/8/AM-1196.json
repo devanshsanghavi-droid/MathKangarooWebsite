@@ -1,0 +1,68 @@
+{
+  "id": "AM-1196",
+  "contest": "AMC8",
+  "slot": 10,
+  "area": "NT",
+  "topic": "NT-02",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "In how many ways can $60$ be written as the sum of two prime numbers? Sums that use the same two primes in a different order, such as $7 + 53$ and $53 + 7$, count as the same way.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I counted 1 as a prime, so I also included 1 + 59, but 1 is not a prime number."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I thought 49 and 57 were prime, so I also counted 11 + 49 and 3 + 57, but 49 = 7 times 7 and 57 = 3 times 19."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I counted the 10 primes below 30, thinking each one pairs with a prime to make 60, but for example 60 - 3 = 57 is not prime."
+    },
+    {
+      "key": "E",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I counted 7 + 53 and 53 + 7 as different ways, and the same for every other pair."
+    }
+  ],
+  "hints": [
+    "The pair $2 + 58$ fails, so both primes are odd. The smaller one is at most $30$.",
+    "For each odd prime $p$ up to $30$, check whether $60 - p$ is prime.",
+    "Test $p = 3, 5, 7, 11, 13, 17, 19, 23, 29$: which of $57, 55, 53, 49, 47, 43, 41, 37, 31$ are prime?"
+  ],
+  "solutions": {
+    "reliable": "Since $58$ is not prime, the prime $2$ cannot be used, so both primes are odd and the smaller one, $p$, is at most $30$. Checking $60 - p$ for $p = 3, 5, 7, 11, 13, 17, 19, 23, 29$ gives $57 = 3 \\cdot 19$, $55 = 5 \\cdot 11$, $53$, $49 = 7^2$, $47$, $43$, $41$, $37$, $31$. The primes among these give $7 + 53$, $13 + 47$, $17 + 43$, $19 + 41$, $23 + 37$ and $29 + 31$: $6$ ways.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-19"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

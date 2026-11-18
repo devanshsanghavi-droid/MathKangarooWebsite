@@ -1,0 +1,69 @@
+{
+  "id": "AM-1279",
+  "contest": "AMC8",
+  "slot": 20,
+  "area": "CP",
+  "topic": "CP-01",
+  "types": [
+    "T-CASEWORK",
+    "T-BIJECTION"
+  ],
+  "statement": "In how many three-digit positive integers is the middle digit greater than the sum of the other two digits? For example, $271$ counts, because $7 > 2 + 1$.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I only counted numbers ending in 0, where the first digit just has to be less than the middle digit, and got 0 + 1 + 2 + ... + 8 = 36."
+    },
+    {
+      "key": "B",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I counted the numbers whose middle digit equals the sum of the other two, which is 45, instead of the ones where it is greater."
+    },
+    {
+      "key": "C",
+      "text": "$84$",
+      "correct": false,
+      "misconception": "I did not allow the last digit to be 0, so for each middle digit I only counted first and last digits from 1 up, and the total came to 84."
+    },
+    {
+      "key": "D",
+      "text": "$120$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$165$",
+      "correct": false,
+      "misconception": "I counted middle digits greater than or equal to the sum of the other two, adding the 45 numbers with equality to the 120."
+    }
+  ],
+  "hints": [
+    "Fix the middle digit b first. Then you need a first digit a of at least 1 and a last digit c of at least 0 with a + c < b.",
+    "For a fixed b, how many choices of c go with a = 1, with a = 2, and so on? The counts form a simple pattern.",
+    "For middle digit b the count is (b - 1) + (b - 2) + ... + 1 = b(b - 1)/2. Add this for b = 2 through 9."
+  ],
+  "solutions": {
+    "reliable": "Call the digits $a$, $b$, $c$, with $a \\ge 1$. Fix the middle digit $b$. For a first digit $a < b$, the last digit $c$ can be any of $0, 1, \\ldots, b - a - 1$, which is $b - a$ choices. So the count for this $b$ is $(b - 1) + (b - 2) + \\cdots + 1 = \\frac{b(b - 1)}{2}$. For $b = 2, 3, \\ldots, 9$ this gives $1, 3, 6, 10, 15, 21, 28, 36$, and the total is $120$.",
+    "elegant": "Match each such number $\\overline{abc}$ with the three numbers $a < a + c + 1 < b + 1$. They are three different numbers from $1$ to $10$, because $a + c + 1 \\le b$. Going back, any three different numbers $x < y < z$ from $1$ to $10$ come from exactly one such number, with $a = x$, $c = y - x - 1$ and $b = z - 1$. So the count is $\\binom{10}{3} = 120$."
+  },
+  "formulas": [
+    "F-CP-03"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

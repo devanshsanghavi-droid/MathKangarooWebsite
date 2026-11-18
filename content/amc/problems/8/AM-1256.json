@@ -1,0 +1,69 @@
+{
+  "id": "AM-1256",
+  "contest": "AMC8",
+  "slot": 10,
+  "area": "CP",
+  "topic": "CP-10",
+  "types": [
+    "T-COMPLEMENT"
+  ],
+  "statement": "The streets in a town form a square grid. Mia walks from her home to the library, which is $5$ blocks east and $2$ blocks north of her home, and each block she walks goes either one block east or one block north. The intersection that is $3$ blocks east and $1$ block north of her home is closed, so she cannot pass through it. How many different routes can she take?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I counted the routes that go through the closed intersection, 4 x 3 = 12, instead of the routes that avoid it."
+    },
+    {
+      "key": "C",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I added the 4 routes to the closed corner and the 3 routes from it, and subtracted 7 instead of 4 x 3 from 21."
+    },
+    {
+      "key": "D",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I subtracted only the 4 routes from home to the closed corner, forgetting that each of them continues in 3 ways."
+    },
+    {
+      "key": "E",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I counted all routes from home to the library and forgot about the closed intersection."
+    }
+  ],
+  "hints": [
+    "Count all the routes, then take away the ones that pass through the closed corner.",
+    "A route is a list of $5$ E moves and $2$ N moves in some order, so there are $\\binom{7}{2}$ routes in all.",
+    "Routes through the closed corner: $\\binom{4}{1} = 4$ ways to reach it times $\\binom{3}{1} = 3$ ways to finish."
+  ],
+  "solutions": {
+    "reliable": "Every route is an arrangement of $5$ east moves and $2$ north moves, so there are $\\binom{7}{2} = 21$ routes. A route through the closed corner first makes $3$ east moves and $1$ north move in some order, which can be done in $\\binom{4}{1} = 4$ ways, and then makes $2$ east moves and $1$ north move, which can be done in $\\binom{3}{1} = 3$ ways. So $4 \\times 3 = 12$ routes are blocked, and $21 - 12 = 9$ routes remain.",
+    "elegant": "Write at each intersection the number of open routes reaching it, adding the number from the west and the number from the south, and write $0$ at the closed corner. The bottom row reads $1, 1, 1, 1, 1, 1$, the middle row $1, 2, 3, 0, 1, 2$, and the top row $1, 3, 6, 6, 7, 9$. The library gets $9$."
+  },
+  "formulas": [
+    "F-CP-15",
+    "F-CP-06"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

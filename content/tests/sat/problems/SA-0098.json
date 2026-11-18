@@ -1,0 +1,56 @@
+{
+  "id": "SA-0098",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "hard",
+  "statement": "The perimeter of a rectangle is $74$ centimeters. If its length is increased by $5$ centimeters and its width is doubled, the perimeter of the new rectangle is $110$ centimeters. What is the area, in square centimeters, of the original rectangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$342$",
+      "correct": false,
+      "misconception": "I wrote the new perimeter as $2L + 2(2W) = 110$ and forgot the 5 centimeters added to the length, so I got $W = 18$ and $L = 19$."
+    },
+    {
+      "key": "B",
+      "text": "$754$",
+      "correct": false,
+      "misconception": "I found $L = 24$ and $W = 13$ correctly but then gave the area of the new rectangle, $29 \\times 26$."
+    },
+    {
+      "key": "C",
+      "text": "$312$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$1{,}333$",
+      "correct": false,
+      "misconception": "I used $L + W = 74$ and $L + 5 + 2W = 110$, forgetting that a perimeter counts each side twice, so I got $L = 43$ and $W = 31$."
+    }
+  ],
+  "hints": [
+    "Write one equation for each perimeter.",
+    "Use $2L + 2W = 74$ and $2(L + 5) + 2(2W) = 110$. Halve both equations, then eliminate $L$.",
+    "Halving gives $L + W = 37$ and $L + 2W = 50$, so subtracting gives $W$ directly."
+  ],
+  "solutions": {
+    "reliable": "From the first perimeter, $L + W = 37$. The new rectangle has sides $L + 5$ and $2W$, so $2(L + 5) + 2(2W) = 110$, which gives $L + 5 + 2W = 55$, or $L + 2W = 50$. Subtracting the first equation, $W = 13$, so $L = 24$. The area is $24 \\times 13 = 312$. Check: $2(24) + 2(13) = 74$ and $2(29) + 2(26) = 110$. Key idea: translate each geometric condition into a linear equation, solve, then answer the question actually asked.",
+    "elegant": null
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

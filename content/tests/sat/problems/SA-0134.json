@@ -1,0 +1,56 @@
+{
+  "id": "SA-0134",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-03",
+  "difficulty": "easy",
+  "statement": "A soccer ball is kicked along a path shaped like a parabola. The ball is $4$ meters above the ground when it is $3$ meters and again when it is $17$ meters horizontally from where it was kicked. How many meters horizontally from where it was kicked is the ball at its highest point?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I found the distance between the two points, $14$, and took half of it, forgetting to start from $3$."
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I added $3$ and $17$ but forgot to divide by $2$."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I used the height of $4$ meters that the two points share as the horizontal distance of the highest point."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "A parabola is symmetric about the vertical line through its highest point.",
+    "Two points at the same height are the same distance from that line of symmetry.",
+    "The highest point is halfway between $3$ and $17$, at $\\frac{3 + 17}{2}$."
+  ],
+  "solutions": {
+    "reliable": "A parabola is symmetric about the vertical line through its vertex, so two points at the same height lie the same distance on either side of that line. The vertex is therefore halfway between $3$ and $17$: $\\frac{3 + 17}{2} = 10$ meters.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

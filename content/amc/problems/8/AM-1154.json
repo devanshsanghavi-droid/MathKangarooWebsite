@@ -1,0 +1,66 @@
+{
+  "id": "AM-1154",
+  "contest": "AMC8",
+  "slot": 2,
+  "area": "NT",
+  "topic": "NT-04",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "Nadia has two ribbons, one $72$ cm long and one $120$ cm long. She cuts both ribbons into pieces that are all the same length, a whole number of centimeters, with nothing left over. She makes the pieces as long as possible. How many pieces does she get in all?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I found the piece length $24$ cm but counted only the pieces from the longer ribbon, $120 \\div 24 = 5$."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I found $72 \\div 24 = 3$ and $120 \\div 24 = 5$ but multiplied $3 \\cdot 5 = 15$ instead of adding, as if the pieces formed a grid."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I used $12$ cm pieces because $12$ divides both lengths, missing the extra common factor $2$, so I got $6 + 10 = 16$ pieces."
+    },
+    {
+      "key": "E",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I found the longest possible piece length, $24$ cm, and gave that instead of the number of pieces."
+    }
+  ],
+  "hints": [
+    "The piece length must divide both $72$ and $120$.",
+    "The longest possible piece length is the greatest common divisor of $72$ and $120$.",
+    "$72 = 2^3 \\cdot 3^2$ and $120 = 2^3 \\cdot 3 \\cdot 5$, so the GCD is $2^3 \\cdot 3 = 24$. Count the pieces from each ribbon."
+  ],
+  "solutions": {
+    "reliable": "A piece length $s$ works exactly when $s$ divides both $72$ and $120$. From $72 = 2^3 \\cdot 3^2$ and $120 = 2^3 \\cdot 3 \\cdot 5$, the greatest common divisor is $2^3 \\cdot 3 = 24$. With $24$ cm pieces, the first ribbon gives $72 \\div 24 = 3$ pieces and the second gives $120 \\div 24 = 5$, so Nadia gets $3 + 5 = 8$ pieces.",
+    "elegant": "The piece length is $\\gcd(72, 120) = 24$ cm. The two ribbons together are $72 + 120 = 192$ cm long, and $192 \\div 24 = 8$ pieces."
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

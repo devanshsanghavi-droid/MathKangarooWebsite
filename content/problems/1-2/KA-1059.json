@@ -1,0 +1,68 @@
+{
+  "id": "KA-1059",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Each sheet of a book has an odd page on the front and the next page on the back, like 1 and 2. Tim tears out pages 5 to 12. How many sheets is that?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I thought page 5 is on the back of page 4, so I counted sheets 4 and 5, 6 and 7, and so on up to 12 and 13."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I took 5 away from 12 instead of counting the sheets."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the pages, not the sheets."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I thought each page was a whole sheet with two sides, so I doubled the 8 pages."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "NUM-13",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Which page is on the back of page 5?",
+    "Every sheet starts with an odd page and ends with the next even page. Pair the pages up from 5 to 12, then count the pairs.",
+    "The sheets are 5 and 6, then 7 and 8, then 9 and 10, then 11 and 12."
+  ],
+  "solutions": {
+    "reliable": "Page 5 is odd, so it is on the front of a sheet with page 6 on the back. The pages pair up as 5 and 6, 7 and 8, 9 and 10, 11 and 12. That is 4 sheets. The idea to keep: odd and even numbers take turns, so a run that starts odd and ends even splits neatly into pairs.",
+    "elegant": "There are 8 pages from 5 to 12, starting with an odd page and ending with an even one, so they fill whole sheets: 8 pages make 4 sheets."
+  },
+  "whyOnTest": "Odd and even numbers take turns, and pairing them correctly is the whole problem, while pairing an even page with the next odd one gives an extra sheet.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

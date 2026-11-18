@@ -1,0 +1,68 @@
+{
+  "id": "KA-1599",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Car A leaves a town at 9:00 at 60 km/h. Car B leaves the same town at 9:30 along the same road at 80 km/h. Car C leaves the town at 10:00 along the same road at a steady speed and passes A and B at exactly the same moment. What is the speed of car C, in km/h?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "60",
+      "correct": false,
+      "misconception": "I found where B catches A, 120 km away at 11:00, but divided by the 2 hours since 9:00 instead of C's 1 hour."
+    },
+    {
+      "key": "B",
+      "text": "70",
+      "correct": false,
+      "misconception": "I took the average of the speeds of A and B."
+    },
+    {
+      "key": "C",
+      "text": "80",
+      "correct": false,
+      "misconception": "I found where B catches A, 120 km away, but divided by the 1.5 hours since 9:30 instead of C's 1 hour."
+    },
+    {
+      "key": "D",
+      "text": "100",
+      "correct": false,
+      "misconception": "I assumed the speeds go up by 20 km/h each time a car leaves later."
+    },
+    {
+      "key": "E",
+      "text": "120",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "MOD-03",
+    "secondary": [
+      "CFT-01",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "When can one car pass two others at the same moment?",
+    "C can only pass A and B together when A and B are side by side, which is when B catches A. Find that time and place, then the speed C needs to get there.",
+    "B catches A when $80(t - \\frac{1}{2}) = 60t$, with $t$ in hours after 9:00. That gives $t = 2$, at 11:00, 120 km from town."
+  ],
+  "solutions": {
+    "reliable": "C passes both cars at once only if A and B are at the same place then, so it happens when B catches A. Measuring $t$ in hours after 9:00: $60t = 80(t - \\frac{1}{2})$ gives $20t = 40$, so $t = 2$: at 11:00, 120 km from the town. C leaves at 10:00, so it covers 120 km in 1 hour: 120 km/h. The transferable idea: in chase problems, first find what has to be true at the key moment, then use distance = speed $\\times$ time.",
+    "elegant": "At 9:30 A is 30 km ahead of B and B gains 20 km each hour, so B catches A 1.5 hours later, at 11:00, after A has driven 2 hours, 120 km. C needs 120 km in 1 hour."
+  },
+  "whyOnTest": "Rate problems reward reading for the hidden condition: passing two cars at once forces those cars to be together, then the arithmetic is short.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

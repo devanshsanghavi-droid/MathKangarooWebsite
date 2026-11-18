@@ -1,0 +1,62 @@
+{
+  "id": "AM-1042",
+  "contest": "AMC8",
+  "slot": 15,
+  "area": "ALG",
+  "topic": "ALG-08",
+  "types": ["T-SMALL-CASES", "T-TELESCOPE"],
+  "statement": "A function $f$ satisfies $f(0) = 3$ and $f(x + 1) = f(x) + 2x + 1$ for every whole number $x$. What is $f(10)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I put x = 10 into 2x + 1 once and added it to f(0), getting 3 + 21 = 24, instead of building up one step at a time."
+    },
+    {
+      "key": "B",
+      "text": "$103$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$123$",
+      "correct": false,
+      "misconception": "I used the new value of x in each step, adding 3, 5, 7, up to 21, which is 120, so I got 123. But the step from f(0) to f(1) adds 2(0) + 1 = 1."
+    },
+    {
+      "key": "D",
+      "text": "$124$",
+      "correct": false,
+      "misconception": "I added 2x + 1 for x = 0 through 10, which is eleven steps, but going from f(0) to f(10) takes only ten steps."
+    },
+    {
+      "key": "E",
+      "text": "$213$",
+      "correct": false,
+      "misconception": "I added 2(10) + 1 = 21 for each of the ten steps, but the amount added changes from step to step."
+    }
+  ],
+  "hints": [
+    "Compute $f(1)$, $f(2)$ and $f(3)$, and look for a pattern.",
+    "$f(1) = 4$, $f(2) = 7$, $f(3) = 12$. Compare each value with a perfect square.",
+    "Going from $f(0)$ to $f(10)$ adds the odd numbers $1 + 3 + 5 + \\cdots + 19$."
+  ],
+  "solutions": {
+    "reliable": "The step from $f(x)$ to $f(x + 1)$ adds $2x + 1$. So from $f(0)$ to $f(10)$ the ten steps add $1 + 3 + 5 + \\cdots + 19$, the first ten odd numbers, whose sum is $10^2 = 100$. So $f(10) = 3 + 100 = 103$.",
+    "elegant": "Guess $f(x) = x^2 + 3$. It gives $f(0) = 3$, and $(x + 1)^2 + 3 = (x^2 + 3) + 2x + 1$, so it obeys the rule. The rule fixes every value once $f(0)$ is known, so $f(10) = 10^2 + 3 = 103$."
+  },
+  "formulas": ["F-ALG-03"],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0048",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "hard",
+  "statement": "A point $(x, y)$ in the $xy$-plane satisfies both of the inequalities $y \\le 3x - 2$ and $y \\le -2x + 18$. What is the greatest possible value of $y$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found where the two boundary lines cross, at $x = 4$, and gave the $x$-coordinate instead of the greatest value of $y$."
+    },
+    {
+      "key": "B",
+      "text": "$7.6$",
+      "correct": false,
+      "misconception": "I solved $3x - 2 = -2x + 18$ but moved the $-2$ across without changing its sign, so I got $5x = 16$, $x = 3.2$ and $y = 3(3.2) - 2 = 7.6$."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I thought the highest point was the $y$-intercept of $y = -2x + 18$, but at $x = 0$ the first inequality only allows $y \\le -2$."
+    }
+  ],
+  "hints": [
+    "Each inequality puts a ceiling on $y$. For a given $x$, $y$ can be no larger than the smaller of $3x - 2$ and $-2x + 18$.",
+    "One ceiling rises as $x$ increases and the other falls, so the highest point of the region is where the two boundary lines meet.",
+    "Solve $3x - 2 = -2x + 18$: $5x = 20$, so $x = 4$. Now find $y$."
+  ],
+  "solutions": {
+    "reliable": "For any $x$, $y$ is at most the smaller of $3x - 2$ and $-2x + 18$. If $x \\le 4$, then $3x - 2 \\le 10$; if $x \\ge 4$, then $-2x + 18 \\le 10$. So every point that satisfies both inequalities has $y \\le 10$, and the point $(4, 10)$ satisfies both, since $3(4) - 2 = 10$ and $-2(4) + 18 = 10$. The greatest possible value of $y$ is $10$.",
+    "elegant": "Multiply the first inequality by $2$ and the second by $3$, then add: $5y \\le (6x - 4) + (-6x + 54) = 50$, so $y \\le 10$, with equality at $x = 4$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

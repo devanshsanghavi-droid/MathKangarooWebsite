@@ -1,0 +1,68 @@
+{
+  "id": "KA-1454",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A cone has base radius 5 cm and height 12 cm. Its curved surface is cut along a straight line from the tip to the edge of the base and unrolled flat, giving a sector of a circle. What is the area of this sector, in square centimetres?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$60\\pi$",
+      "correct": false,
+      "misconception": "I multiplied pi by the base radius 5 and the height 12, but the sector's radius is the slant height, not the height."
+    },
+    {
+      "key": "B",
+      "text": "$65\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$90\\pi$",
+      "correct": false,
+      "misconception": "I added the area of the circular base, 25 pi, but the base is not part of the curved surface."
+    },
+    {
+      "key": "D",
+      "text": "$130\\pi$",
+      "correct": false,
+      "misconception": "I multiplied the arc length 10 pi by the radius 13 and forgot to halve, as you do for the area of a triangle."
+    },
+    {
+      "key": "E",
+      "text": "$169\\pi$",
+      "correct": false,
+      "misconception": "I took the area of the whole circle of radius 13, forgetting that the unrolled surface is only part of that circle."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-10",
+    "secondary": [
+      "GEO-07",
+      "GEO-06"
+    ]
+  },
+  "hints": [
+    "What are the radius and the curved edge of the flat sector?",
+    "The slant height of the cone becomes the radius of the sector, and the rim of the base becomes its curved edge. Find the slant height with Pythagoras, then work out what fraction of a full circle the sector is.",
+    "The slant height is 13, since 5, 12, 13 is a right-angled triangle. The curved edge is the base circumference, $10\\pi$, out of $26\\pi$ for a full circle of radius 13."
+  ],
+  "solutions": {
+    "reliable": "The height 12, the base radius 5 and the slant height form a right-angled triangle, so the slant height is $\\sqrt{25 + 144} = 13$. When the surface is unrolled, the slant height becomes the radius of the sector and the rim of the base, of length $2\\pi \\times 5 = 10\\pi$, becomes its curved edge. A full circle of radius 13 has circumference $26\\pi$ and area $169\\pi$, so the sector is $\\frac{10\\pi}{26\\pi} = \\frac{5}{13}$ of that circle, with area $\\frac{5}{13} \\times 169\\pi = 65\\pi$. The transferable idea: when a solid is unrolled into a net, match the lengths that join, here the rim of the base and the curved edge of the sector.",
+    "elegant": "A sector has area one half of its curved edge times its radius, just like a triangle with the curved edge as base and the radius as height: $\\frac{1}{2} \\times 10\\pi \\times 13 = 65\\pi$. In general the curved surface of a cone has area $\\pi \\times r \\times l$, base radius times slant height times pi."
+  },
+  "whyOnTest": "Unrolling a cone tests matching the lengths that join: the slant height becomes the radius of the sector and the rim of the base becomes its curved edge.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

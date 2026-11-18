@@ -1,0 +1,66 @@
+{
+  "id": "AM-1069",
+  "contest": "AMC8",
+  "slot": 22,
+  "area": "ALG",
+  "topic": "ALG-11",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "What is the sum of all the numbers $x$ that satisfy $\\bigl|\\,x - |2x - 6|\\,\\bigr| = 3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I only worked on the case $x < 3$, where $|2x - 6| = 6 - 2x$, kept its solution $x = 1$, and never tried the case $x \\ge 3$."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I dropped the outer absolute value bars and solved $x - |2x - 6| = 3$, which has only the solution $x = 3$."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I replaced $|2x - 6|$ by $6 - 2x$ for every $x$, solved $|3x - 6| = 3$ to get $x = 1$ and $x = 3$, and added them, missing $x = 9$."
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I replaced $|2x - 6|$ by $2x - 6$ for every $x$, solved $|6 - x| = 3$ to get $x = 3$ and $x = 9$, and missed the solution $x = 1$."
+    },
+    {
+      "key": "E",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Remove the inner absolute value first by splitting into the cases $x \\ge 3$ and $x < 3$.",
+    "If $x \\ge 3$, then $|2x - 6| = 2x - 6$ and the equation becomes $|6 - x| = 3$. If $x < 3$, it becomes $|3x - 6| = 3$.",
+    "Solve each case and keep only the solutions that fit that case's condition. Do not count the same solution twice."
+  ],
+  "solutions": {
+    "reliable": "If $x \\ge 3$, then $|2x - 6| = 2x - 6$ and $x - (2x - 6) = 6 - x$, so the equation is $|6 - x| = 3$, giving $x = 3$ or $x = 9$. Both satisfy $x \\ge 3$. If $x < 3$, then $|2x - 6| = 6 - 2x$ and $x - (6 - 2x) = 3x - 6$, so the equation is $|3x - 6| = 3$, giving $x = 1$ or $x = 3$. Only $x = 1$ satisfies $x < 3$ (and $x = 3$ was already found). The solutions are $1$, $3$ and $9$, and their sum is $13$. Check $x = 1$: $|1 - 4| = 3$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

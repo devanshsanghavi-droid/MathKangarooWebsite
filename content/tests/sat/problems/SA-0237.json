@@ -1,0 +1,56 @@
+{
+  "id": "SA-0237",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-04",
+  "difficulty": "hard",
+  "statement": "A data set consists of $5$ positive integers. The median of the data set is $12$, the mean is $11$, and the only mode is $15$. What is the least possible value of the smallest number in the data set?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I made the second smallest number 12, but then 12 appears twice and ties 15, so 15 would not be the only mode."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I split the 13 between the two smallest numbers as evenly as I could, but that gives the greatest possible smallest number, not the least."
+    },
+    {
+      "key": "D",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I found that the two smallest numbers must add to 13 and gave that sum instead of the smallest number."
+    }
+  ],
+  "hints": [
+    "Where in the ordered list can the copies of $15$ go?",
+    "The mode $15$ must appear at least twice and is greater than the median, so it fills the top two spots. Use the mean to find the sum of the two smallest numbers.",
+    "The numbers are $a, b, 12, 15, 15$ with $a + b = 55 - 42 = 13$, and no other value may appear twice."
+  ],
+  "solutions": {
+    "reliable": "Order the numbers $a \\le b \\le 12 \\le d \\le e$. The only mode is $15$, which must appear at least twice, and $15 > 12$, so $d = e = 15$; then $15$ appears exactly twice and every other value may appear only once. The sum is $5 \\times 11 = 55$, so $a + b = 55 - 12 - 15 - 15 = 13$. Since $b$ cannot be $12$ (that would make $12$ a second mode) and $a \\ne b$, we need $b \\le 11$, so $a \\ge 2$. The data set $2, 11, 12, 15, 15$ works: median $12$, mean $\\frac{55}{5} = 11$ and only mode $15$. The least possible value is $2$.",
+    "elegant": null
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

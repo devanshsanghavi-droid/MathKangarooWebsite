@@ -84,7 +84,7 @@ describe('NavLinks', () => {
     );
   });
 
-  it('renders the five v3 destinations in order (docs/06 §2)', () => {
+  it('renders the destinations in order, papers and exams folding into Exams below lg', () => {
     render(<NavLinks items={PRIMARY_NAV} />);
     const links = screen.getAllByRole('link');
     expect(links.map((link) => link.getAttribute('href'))).toEqual([
@@ -92,13 +92,41 @@ describe('NavLinks', () => {
       '/problems',
       '/atlas',
       '/papers',
+      '/exams',
       '/amc',
+      '/sat',
+      '/act',
+      '/progress',
     ]);
     expect(screen.getByRole('link', { name: 'Practice' })).toHaveAttribute('href', '/');
     expect(screen.getByRole('link', { name: 'Question bank' })).toHaveAttribute(
       'href',
       '/problems',
     );
+    // Only one of the two forms is on screen at a time, and the other is display:none, so a
+    // screen reader meets one or the other, never both.
+    const item = (name: string) => screen.getByRole('link', { name }).closest('li');
+    expect(item('Exams')?.className).toBe('lg:hidden');
+    for (const name of ['Past papers', 'AMC (Beta)', 'SAT', 'ACT']) {
+      expect(item(name)?.className).toBe('hidden lg:block');
+    }
+    expect(item('Progress')?.className ?? '').toBe('');
+  });
+
+  it('highlights Exams inside every exam area', () => {
+    for (const path of ['/exams', '/amc/problems', '/sat', '/act/problem/AC-0001', '/papers']) {
+      pathname.current = path;
+      const { unmount } = render(<NavLinks items={PRIMARY_NAV} />);
+      expect(screen.getByRole('link', { name: 'Exams' }), path).toHaveAttribute(
+        'aria-current',
+        'page',
+      );
+      unmount();
+    }
+    pathname.current = '/sat/problems';
+    render(<NavLinks items={PRIMARY_NAV} />);
+    expect(screen.getByRole('link', { name: 'SAT' })).toHaveAttribute('aria-current', 'page');
+    expect(screen.getByRole('link', { name: 'ACT' })).not.toHaveAttribute('aria-current');
   });
 
   it('carries a visible Beta pill on AMC, and says so to a screen reader', () => {
@@ -183,12 +211,22 @@ describe('MobileTabBar', () => {
     expect(screen.getByRole('navigation', { name: 'Sections' })).toBeInTheDocument();
   });
 
-  it('shows the same destinations as the top bar', () => {
+  it('keeps five tabs, with every exam behind one Exams tab (docs/07 section 4)', () => {
     render(<MobileTabBar />);
-    expect(MOBILE_NAV).toEqual(PRIMARY_NAV);
-    expect(screen.getAllByRole('link').map((link) => link.getAttribute('href'))).toEqual(
-      PRIMARY_NAV.map((item) => item.href),
-    );
+    expect(MOBILE_NAV).toHaveLength(5);
+    expect(screen.getAllByRole('link').map((link) => link.getAttribute('href'))).toEqual([
+      '/',
+      '/problems',
+      '/atlas',
+      '/exams',
+      '/progress',
+    ]);
+  });
+
+  it('marks Exams as the active tab inside an exam area', () => {
+    pathname.current = '/act/problems';
+    render(<MobileTabBar />);
+    expect(screen.getByRole('link', { name: 'Exams' })).toHaveAttribute('aria-current', 'page');
   });
 
   it('marks the active tab', () => {

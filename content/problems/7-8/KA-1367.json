@@ -1,0 +1,68 @@
+{
+  "id": "KA-1367",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A bus travelling at 48 km per hour reaches a town 5 minutes late. If it travelled at 60 km per hour, it would arrive 4 minutes early. How far does the bus travel, in km?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I subtracted the times, $5 - 4 = 1$ minute, instead of seeing that late and early are 9 minutes apart."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I used only the 5 minutes late as the difference between the two journey times."
+    },
+    {
+      "key": "C",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I used only the 4 minutes early as the difference between the two journey times."
+    },
+    {
+      "key": "E",
+      "text": "45",
+      "correct": false,
+      "misconception": "I worked out the journey time at 48 km per hour, 45 minutes, and gave that instead of the distance."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-03",
+    "secondary": [
+      "MOD-07",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "How many minutes apart are the two arrival times?",
+    "The slower journey takes 9 minutes longer than the faster one. Write each journey time as distance divided by speed, and use the difference between them.",
+    "Each km takes $\\frac{60}{48} = 1.25$ minutes at the slow speed and 1 minute at the fast speed, so the slow trip loses 0.25 minutes per km."
+  ],
+  "solutions": {
+    "reliable": "Arriving 5 minutes late versus 4 minutes early means the slow journey takes $5 + 4 = 9$ minutes longer. At 48 km per hour each km takes $\\frac{60}{48} = 1.25$ minutes, and at 60 km per hour it takes 1 minute. So the slow bus loses 0.25 minutes on every km, and 9 minutes are lost over $9 \\div 0.25 = 36$ km. Check: 36 km takes 45 minutes at 48 km per hour and 36 minutes at 60 km per hour, which are 9 minutes apart. The transferable idea: compare two journeys by the time difference per unit of distance.",
+    "elegant": "With distance d km, $\\frac{d}{48} - \\frac{d}{60} = \\frac{9}{60}$ hours. The left side is $\\frac{5d - 4d}{240} = \\frac{d}{240}$, so $d = 240 \\times \\frac{9}{60} = 36$."
+  },
+  "whyOnTest": "Late-or-early problems test turning two scenarios into one time difference; the trap is subtracting 4 from 5 instead of adding.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

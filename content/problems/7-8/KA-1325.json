@@ -1,0 +1,68 @@
+{
+  "id": "KA-1325",
+  "band": "7-8",
+  "points": 3,
+  "statement": "In a calendar, the days of a month are written in rows of 7, from Monday to Sunday. This month has 31 days, and the 1st is a Wednesday. How many different 2 by 2 squares of four dates can be drawn on the calendar, with every box of the square holding a date?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted 6 squares for each of the 4 pairs of neighbouring weeks, as if every week were complete."
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I counted the squares between the full weeks but included only one of the two short weeks, $6 + 6 + 4$."
+    },
+    {
+      "key": "C",
+      "text": "28",
+      "correct": false,
+      "misconception": "I counted 7 squares across each pair of weeks, one for each day, but a 2 by 2 square needs two neighbouring columns."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I only counted squares inside the three complete weeks and ignored both short weeks."
+    },
+    {
+      "key": "E",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-12",
+    "secondary": [
+      "CNT-04",
+      "CNT-13"
+    ]
+  },
+  "hints": [
+    "Sketch the calendar and mark where the first and last weeks start and stop.",
+    "Counting by position: a 2 by 2 square is fixed by its top-left date. Count the possible top-left positions for each pair of neighbouring weeks separately, taking care with the short first and last weeks.",
+    "Week 1 is Wednesday to Sunday (1 to 5) and week 5 is Monday to Friday (27 to 31). Weeks 2, 3 and 4 are complete."
+  ],
+  "solutions": {
+    "reliable": "The weeks are: 1 to 5 (Wednesday to Sunday), 6 to 12, 13 to 19, 20 to 26 (complete), and 27 to 31 (Monday to Friday). A 2 by 2 square uses two neighbouring weeks and two neighbouring days, and every box must hold a date. Weeks 1 and 2 share the five days Wednesday to Sunday, giving 4 squares. Weeks 2 and 3: 7 days, giving 6 squares. Weeks 3 and 4: 6 squares. Weeks 4 and 5: Monday to Friday, 5 days, giving 4 squares. Total $4 + 6 + 6 + 4 = 20$. The transferable idea: in sliding-window counting, label each window by its starting position and count the starting positions row by row.",
+    "elegant": "Two neighbouring weeks that share $n$ days in a row give $n - 1$ squares, one for each pair of neighbouring days: $(5 - 1) + (7 - 1) + (7 - 1) + (5 - 1) = 20$."
+  },
+  "whyOnTest": "Sliding windows are counted by their starting position; the short first and last weeks are where careless counts go wrong.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

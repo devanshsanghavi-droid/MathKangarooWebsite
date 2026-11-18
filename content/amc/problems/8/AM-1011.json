@@ -1,0 +1,67 @@
+{
+  "id": "AM-1011",
+  "contest": "AMC8",
+  "slot": 4,
+  "area": "ALG",
+  "topic": "ALG-09",
+  "types": [
+    "T-CASEWORK",
+    "T-EXTREME"
+  ],
+  "statement": "A shop sells pencils for $30$ cents each, or in packs of $12$ for $\\$3$. What is the greatest number of pencils Ana can buy with $\\$10$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I worked out that Ana should buy 3 packs and gave the number of packs instead of the number of pencils."
+    },
+    {
+      "key": "B",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I bought only single pencils at 30 cents, and 1000 / 30 is 33 with some money left over."
+    },
+    {
+      "key": "C",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I bought 3 packs for 9 dollars but forgot to spend the last dollar on single pencils."
+    },
+    {
+      "key": "D",
+      "text": "$39$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I thought every pencil costs 25 cents, the pack price, so 10 dollars buys 40, but pencils bought one at a time cost 30 cents."
+    }
+  ],
+  "hints": [
+    "Which way of buying is cheaper per pencil?",
+    "A pack works out to $25$ cents a pencil. Buy as many packs as you can, then use what is left.",
+    "Three packs cost $\\$9$ and give $36$ pencils. The last $\\$1$ buys single pencils at $30$ cents each."
+  ],
+  "solutions": {
+    "reliable": "Packs cost $300 / 12 = 25$ cents per pencil, cheaper than $30$ cents, so buy as many packs as possible: $3$ packs for $\\$9$ give $36$ pencils. The remaining $100$ cents buy $3$ more single pencils (with $10$ cents left). Checking the other options: $2$ packs leave $\\$4$, which buys $13$ singles, for $37$; $1$ pack gives $12 + 23 = 35$; no packs gives $33$. The greatest is $39$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

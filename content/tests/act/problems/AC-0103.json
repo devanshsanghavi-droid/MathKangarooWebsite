@@ -1,0 +1,56 @@
+{
+  "id": "AC-0103",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "hard",
+  "statement": "What value of $x$ satisfies the equation $2^{x + 3} - 2^{x} = 56$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I reached $2^x = 8$ correctly but then divided $8$ by $2$ to get $x = 4$, instead of asking what power of $2$ equals $8$."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I factored correctly to $7 \\cdot 2^x = 56$ and found $2^x = 8$, then gave $8$ as the answer instead of the exponent $x$."
+    },
+    {
+      "key": "D",
+      "text": "No real value of $x$ satisfies the equation.",
+      "correct": false,
+      "misconception": "I rewrote $2^{x + 3}$ as $2^x + 2^3$, so the $2^x$ terms cancelled and left $8 = 56$, which made me think there was no solution."
+    }
+  ],
+  "hints": [
+    "Rewrite $2^{x + 3}$ using the rule $a^{m + n} = a^m \\cdot a^n$.",
+    "$2^{x + 3} = 8 \\cdot 2^x$. Factor $2^x$ out of the left side and solve for $2^x$ first.",
+    "$8 \\cdot 2^x - 2^x = 7 \\cdot 2^x = 56$."
+  ],
+  "solutions": {
+    "reliable": "Since $2^{x + 3} = 2^3 \\cdot 2^x = 8 \\cdot 2^x$, the equation becomes $8 \\cdot 2^x - 2^x = 56$, so $7 \\cdot 2^x = 56$ and $2^x = 8 = 2^3$. Therefore $x = 3$. Check: $2^{6} - 2^{3} = 64 - 8 = 56$.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

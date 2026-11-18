@@ -1,0 +1,69 @@
+{
+  "id": "AM-1299",
+  "contest": "AMC8",
+  "slot": 23,
+  "area": "CP",
+  "topic": "CP-03",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "In how many ways can $3$ of the $16$ squares of a $4 \\times 4$ grid be shaded so that no two shaded squares are in the same row and no two shaded squares are in the same column?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I chose the 3 rows in 4 ways and the 3 columns in 4 ways and stopped, forgetting to match the rows with the columns."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I placed one shaded square in each of 3 rows using 4 times 3 times 2 column choices, but I treated the 3 rows as already fixed."
+    },
+    {
+      "key": "C",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I chose the rows and columns in 4 times 4 = 16 ways and thought there were only 3 ways to match 3 rows with 3 columns, instead of 3! = 6."
+    },
+    {
+      "key": "D",
+      "text": "$96$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$192$",
+      "correct": false,
+      "misconception": "I picked the squares one at a time, 16 times 9 times 4 = 576, and divided by 3 instead of by 3! = 6 to undo the order."
+    }
+  ],
+  "hints": [
+    "Decide which 3 rows and which 3 columns contain shaded squares.",
+    "Once the rows and columns are chosen, match each chosen row with a different chosen column.",
+    "There are 4 ways to choose the rows, 4 ways to choose the columns, and 3! = 6 ways to match them."
+  ],
+  "solutions": {
+    "reliable": "The shaded squares use exactly $3$ of the $4$ rows, chosen in $\\binom{4}{3} = 4$ ways, and exactly $3$ of the $4$ columns, also $4$ ways. Then each chosen row gets its shaded square in a different chosen column, in $3! = 6$ ways. The total is $4 \\cdot 4 \\cdot 6 = 96$.",
+    "elegant": "Pick the squares in order: $16$ choices for the first, then $9$ for the second (avoiding the first square's row and column), then $4$ for the third. Each set of $3$ squares was picked in $3! = 6$ orders, so the count is $\\frac{16 \\cdot 9 \\cdot 4}{6} = 96$."
+  },
+  "formulas": [
+    "F-CP-03",
+    "F-CP-02"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0209",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-02",
+  "difficulty": "medium",
+  "statement": "A painter can cover $120$ square feet of wall in $15$ minutes. Working at this rate, how many hours will it take the painter to cover $60$ square yards of wall? ($1$ yard $= 3$ feet)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.375$",
+      "correct": false,
+      "misconception": "I changed 60 square yards to 180 square feet by multiplying by 3, which gave 22.5 minutes, or 0.375 hour, but one square yard is 9 square feet."
+    },
+    {
+      "key": "B",
+      "text": "$1.125$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$4.5$",
+      "correct": false,
+      "misconception": "I divided 540 square feet by 120 square feet and got 4.5, then reported it as hours, but 4.5 counts blocks of 15 minutes."
+    },
+    {
+      "key": "D",
+      "text": "$67.5$",
+      "correct": false,
+      "misconception": "I found the time correctly as 67.5 minutes but forgot to convert minutes into hours."
+    }
+  ],
+  "hints": [
+    "There are two conversions here: square yards to square feet, and minutes to hours.",
+    "Write the area in square feet, find how many minutes that takes at the painter's rate, then change minutes to hours.",
+    "One square yard is $3 \\times 3 = 9$ square feet, so the wall is $540$ square feet. The painter covers $120 \\div 15 = 8$ square feet per minute."
+  ],
+  "solutions": {
+    "reliable": "The wall is $60 \\cdot 9 = 540$ square feet. The painter covers $8$ square feet per minute, so the job takes $540 \\div 8 = 67.5$ minutes, which is $67.5 \\div 60 = 1.125$ hours.",
+    "elegant": "The painter covers $120 \\cdot 4 = 480$ square feet per hour, and $540 \\div 480 = 1.125$ hours."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

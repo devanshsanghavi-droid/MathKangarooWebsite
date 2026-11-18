@@ -1,0 +1,56 @@
+{
+  "id": "AC-0092",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "hard",
+  "statement": "What is the sum of all solutions of the equation $|x - 3| = |2x + 6|$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-9$",
+      "correct": false,
+      "misconception": "I solved only the case $x - 3 = 2x + 6$, which gives $x = -9$, and missed the case where the two expressions are opposites."
+    },
+    {
+      "key": "C",
+      "text": "$-6$",
+      "correct": false,
+      "misconception": "In the second case I wrote $-(2x + 6)$ as $-2x + 6$, so I got $x = 3$ instead of $x = -1$ and a sum of $-9 + 3 = -6$."
+    },
+    {
+      "key": "D",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I solved only the case $x - 3 = -(2x + 6)$, which gives $x = -1$, and missed the case where the two expressions are equal."
+    }
+  ],
+  "hints": [
+    "Two absolute values are equal when the expressions inside them are equal or are opposites.",
+    "Solve $x - 3 = 2x + 6$ and $x - 3 = -(2x + 6)$ separately, then add the solutions.",
+    "The first case gives $x = -9$. The second case is $x - 3 = -2x - 6$, so $3x = -3$."
+  ],
+  "solutions": {
+    "reliable": "Case 1: $x - 3 = 2x + 6$ gives $x = -9$. Case 2: $x - 3 = -(2x + 6) = -2x - 6$ gives $3x = -3$, so $x = -1$. Check: at $x = -9$ both sides equal $12$, and at $x = -1$ both sides equal $4$. The sum of the solutions is $-9 + (-1) = -10$.",
+    "elegant": "Both sides are never negative, so squaring is safe: $(x - 3)^2 = (2x + 6)^2$ gives $x^2 - 6x + 9 = 4x^2 + 24x + 36$, that is $3x^2 + 30x + 27 = 0$, or $x^2 + 10x + 9 = 0$. The sum of its solutions is $-10$."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

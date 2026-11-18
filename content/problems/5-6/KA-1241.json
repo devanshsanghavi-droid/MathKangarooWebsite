@@ -1,0 +1,67 @@
+{
+  "id": "KA-1241",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Five whole numbers have an odd sum and an even product. At most how many of the five numbers can be odd?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought an even product means every number must be even, but one even number is enough."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought an odd sum needs exactly one odd number, but three odd numbers also make an odd sum."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I kept one number even for the product but forgot that four odd numbers add up to an even total."
+    },
+    {
+      "key": "E",
+      "text": "5",
+      "correct": false,
+      "misconception": "I made the sum odd with five odd numbers but forgot that their product would then be odd."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "When is a sum of whole numbers odd?",
+    "A sum is odd exactly when it contains an odd count of odd numbers. A product is even as soon as one of the numbers is even. Combine the two facts.",
+    "The count of odd numbers must be 1, 3 or 5, and it cannot be all five."
+  ],
+  "solutions": {
+    "reliable": "Even numbers never change whether a sum is odd or even, and each odd number flips it. So the sum is odd exactly when there are 1, 3 or 5 odd numbers. The product is even exactly when at least one number is even, so not all five can be odd. The largest count left is 3, and it works: 1 + 3 + 5 + 2 + 4 = 15 is odd, and $1 \\times 3 \\times 5 \\times 2 \\times 4 = 120$ is even. The transferable idea: the parity of a sum depends only on how many odd numbers it has, and a product is odd only when every number in it is odd.",
+    "elegant": null
+  },
+  "whyOnTest": "Parity questions test two rules at once: an odd sum needs an odd count of odd numbers, and one even number makes a product even.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

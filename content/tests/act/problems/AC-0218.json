@@ -1,0 +1,56 @@
+{
+  "id": "AC-0218",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "easy",
+  "statement": "A patio is made of a rectangle that is $20$ feet long and $12$ feet wide, plus a semicircle whose diameter is one of the $12$-foot sides of the rectangle. What is the total area of the patio, in square feet?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$240 + 18\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$240 + 36\\pi$",
+      "correct": false,
+      "misconception": "I added a full circle of radius $6$, but the patio has only half a circle."
+    },
+    {
+      "key": "C",
+      "text": "$240 + 72\\pi$",
+      "correct": false,
+      "misconception": "I used $12$ as the radius of the semicircle instead of its diameter, so I got $\\frac{1}{2}\\pi \\cdot 12^2 = 72\\pi$."
+    },
+    {
+      "key": "D",
+      "text": "$240 + 144\\pi$",
+      "correct": false,
+      "misconception": "I used $12$ as the radius and also added a full circle instead of a semicircle, which gave $\\pi \\cdot 12^2 = 144\\pi$."
+    }
+  ],
+  "hints": [
+    "Split the patio into a rectangle and a semicircle.",
+    "The rectangle's area is length times width. The semicircle has diameter $12$, so find its radius and take half of $\\pi r^2$.",
+    "The semicircle has radius $6$, so its area is $\\frac{1}{2}\\pi \\cdot 6^2$."
+  ],
+  "solutions": {
+    "reliable": "The rectangle has area $20 \\cdot 12 = 240$ square feet. The semicircle has diameter $12$, so its radius is $6$ and its area is $\\frac{1}{2}\\pi \\cdot 6^2 = 18\\pi$ square feet. The total area is $240 + 18\\pi \\approx 296.5$ square feet.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

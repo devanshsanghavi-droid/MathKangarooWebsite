@@ -1,0 +1,68 @@
+{
+  "id": "KA-1410",
+  "band": "9-10",
+  "points": 5,
+  "statement": "The numbers 1 to 12 are placed around a circle in some order. For each of the 12 pairs of neighbours, their sum is worked out, and $k$ is the number of these sums that are odd. Over all possible arrangements, how many different values can $k$ take?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": false,
+      "misconception": "I saw that $k$ must be even but allowed $k = 0$, forgetting that with odd and even numbers both on the circle, at least one neighbour pair mixes them."
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": false,
+      "misconception": "I saw that $k$ is at least 2 but assumed every count from 2 to 12 could happen, without noticing that $k$ must be even."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I assumed every count from 1 to 12 could happen without checking whether an odd value of $k$ is possible."
+    },
+    {
+      "key": "E",
+      "text": "13",
+      "correct": false,
+      "misconception": "I assumed every count from 0 to 12 could happen, so I counted 13 values."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-05",
+    "secondary": [
+      "NUM-03",
+      "LOG-06"
+    ]
+  },
+  "hints": [
+    "When is the sum of two neighbours odd?",
+    "A neighbour sum is odd exactly when the parity changes from one number to the next. Walk once round the circle and think about how many times the parity can change before you are back where you started.",
+    "Going round the circle you must return to the parity you started with, so the number of changes is even. It is at least 2, since both parities appear, and at most 12."
+  ],
+  "solutions": {
+    "reliable": "A neighbour sum is odd exactly when one number is odd and the other even, that is, where the parity switches. Walking once round the circle you end on the parity you started with, so the number of switches $k$ is even. Both parities appear, so $k \\ge 2$, and $k \\le 12$. Every even value really occurs: split the 6 odd numbers into $k/2$ groups and the 6 even numbers into $k/2$ groups, and alternate the groups round the circle (for $k = 12$, simply alternate odd and even). So $k$ can be 2, 4, 6, 8, 10 or 12: six values. The transferable idea: going round a closed loop, the number of changes between two states is always even.",
+    "elegant": null
+  },
+  "whyOnTest": "The parity idea, that a closed loop changes state an even number of times, halves the possible counts at once; the rest is checking the extremes.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

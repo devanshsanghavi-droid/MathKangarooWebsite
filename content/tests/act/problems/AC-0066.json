@@ -1,0 +1,56 @@
+{
+  "id": "AC-0066",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "hard",
+  "statement": "Let $r$ and $s$ be the two solutions of $3x^2 - 12x + 5 = 0$. What is the value of $(r - s)^2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{28}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{38}{3}$",
+      "correct": false,
+      "misconception": "I used $(r - s)^2 = (r + s)^2 - 2rs$, which is the identity for $r^2 + s^2$, so I got $16 - \\frac{10}{3}$."
+    },
+    {
+      "key": "C",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I thought $(r - s)^2$ was the same as $(r + s)^2$, so I just squared the sum $r + s = 4$."
+    },
+    {
+      "key": "D",
+      "text": "$124$",
+      "correct": false,
+      "misconception": "I used $r + s = 12$ and $rs = 5$ straight from the coefficients without dividing by the leading coefficient $3$, so I got $144 - 20$."
+    }
+  ],
+  "hints": [
+    "You do not need to find $r$ and $s$ separately. Think about $r + s$ and $rs$.",
+    "For $ax^2 + bx + c = 0$, $r + s = -\\frac{b}{a}$ and $rs = \\frac{c}{a}$. Also $(r - s)^2 = r^2 - 2rs + s^2 = (r + s)^2 - 4rs$.",
+    "Here $r + s = 4$ and $rs = \\frac{5}{3}$. So $(r - s)^2 = 4^2 - 4 \\cdot \\frac{5}{3}$."
+  ],
+  "solutions": {
+    "reliable": "By the quadratic formula, $r, s = \\frac{12 \\pm \\sqrt{144 - 60}}{6} = \\frac{12 \\pm \\sqrt{84}}{6}$. Their difference is $\\pm \\frac{2\\sqrt{84}}{6} = \\pm \\frac{\\sqrt{84}}{3}$, so $(r - s)^2 = \\frac{84}{9} = \\frac{28}{3}$.",
+    "elegant": "The sum is $r + s = \\frac{12}{3} = 4$ and the product is $rs = \\frac{5}{3}$. Since $(r - s)^2 = (r + s)^2 - 4rs$, this is $16 - \\frac{20}{3} = \\frac{28}{3}$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

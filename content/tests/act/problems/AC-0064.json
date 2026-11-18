@@ -1,0 +1,56 @@
+{
+  "id": "AC-0064",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "easy",
+  "statement": "A quadratic function has zeros at $x = -\\frac{2}{3}$ and $x = 5$, and its leading coefficient is $3$. Which of the following is the function?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$f(x) = 3x^2 - 13x - 10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$f(x) = 3x^2 + 13x - 10$",
+      "correct": false,
+      "misconception": "I used the signs of the zeros directly in the factors, writing $(3x - 2)(x + 5)$ instead of $(3x + 2)(x - 5)$."
+    },
+    {
+      "key": "C",
+      "text": "$f(x) = 3x^2 - 17x - 10$",
+      "correct": false,
+      "misconception": "I combined the middle terms of $(3x + 2)(x - 5)$ as $-15x - 2x$ instead of $-15x + 2x$."
+    },
+    {
+      "key": "D",
+      "text": "$f(x) = x^2 - \\frac{13}{3}x - \\frac{10}{3}$",
+      "correct": false,
+      "misconception": "I wrote $\\left(x + \\frac{2}{3}\\right)(x - 5)$ and expanded it, but forgot to multiply by the leading coefficient $3$."
+    }
+  ],
+  "hints": [
+    "A zero at $x = r$ means $(x - r)$ is a factor.",
+    "The function is $3\\left(x + \\frac{2}{3}\\right)(x - 5)$. Put the $3$ into the first factor to clear the fraction.",
+    "$3\\left(x + \\frac{2}{3}\\right)(x - 5) = (3x + 2)(x - 5)$. Expand this product."
+  ],
+  "solutions": {
+    "reliable": "Zeros at $-\\frac{2}{3}$ and $5$ give factors $\\left(x + \\frac{2}{3}\\right)$ and $(x - 5)$. With leading coefficient $3$: $f(x) = 3\\left(x + \\frac{2}{3}\\right)(x - 5) = (3x + 2)(x - 5) = 3x^2 - 15x + 2x - 10 = 3x^2 - 13x - 10$. Check: $f(5) = 75 - 65 - 10 = 0$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

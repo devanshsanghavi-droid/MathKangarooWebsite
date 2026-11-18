@@ -1,0 +1,68 @@
+{
+  "id": "KA-1497",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Some different positive whole numbers add up to 1000, and the product of any two of them is even. What is the largest possible number of numbers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "32",
+      "correct": false,
+      "misconception": "I allowed one odd number, 1, together with 31 even numbers, without checking whether the total could still be 1000."
+    },
+    {
+      "key": "B",
+      "text": "31",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "44",
+      "correct": false,
+      "misconception": "I ignored the condition on the products and used as many small numbers as possible, since $1 + 2 + \\dots + 44 = 990$."
+    },
+    {
+      "key": "D",
+      "text": "500",
+      "correct": false,
+      "misconception": "I forgot that the numbers must be different and used 500 twos."
+    },
+    {
+      "key": "E",
+      "text": "21",
+      "correct": false,
+      "misconception": "I halved 1000 to allow for the numbers being even and then also used $2 + 4 + \\dots + 2k = k(k + 1)$, so I solved $k(k + 1) \\le 500$."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "NUM-03",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "How many of the numbers can be odd?",
+    "Two odd numbers have an odd product, so at most one number is odd. Ask what a single odd number would do to the parity of the total, then use the smallest possible numbers to bound the count.",
+    "With exactly one odd number the total would be odd, so every number is even. And $2 + 4 + \\dots + 64 = 1056$ is more than 1000."
+  ],
+  "solutions": {
+    "reliable": "If two of the numbers were odd, their product would be odd, so at most one is odd. If exactly one were odd, the total would be odd, not 1000. So all the numbers are even. Then $k$ different even numbers add up to at least $2 + 4 + \\dots + 2k = k(k + 1)$, and $32 \\times 33 = 1056 > 1000$, so $k \\le 31$. Thirty-one works: $2 + 4 + \\dots + 60 = 930$, and $930 + 70 = 1000$, so take 2, 4, ..., 60 and 70. The transferable idea: rule out cases by contradiction, then bound the count using the smallest possible values.",
+    "elegant": null
+  },
+  "whyOnTest": "Proof by contradiction trims the cases; here ruling out a single odd number by parity is the step most solvers miss.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0286",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-04",
+  "difficulty": "easy",
+  "statement": "A straight wheelchair ramp rises $2$ feet over a horizontal distance of $24$ feet. To the nearest tenth of a foot, what is the length of the ramp's surface?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$23.9$",
+      "correct": false,
+      "misconception": "I subtracted the squares instead of adding them, so I got $\\sqrt{24^2 - 2^2} = \\sqrt{572} \\approx 23.9$."
+    },
+    {
+      "key": "B",
+      "text": "$24.1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$26.0$",
+      "correct": false,
+      "misconception": "I added the rise and the horizontal distance, $2 + 24 = 26$, instead of using the Pythagorean theorem."
+    },
+    {
+      "key": "D",
+      "text": "$580.0$",
+      "correct": false,
+      "misconception": "I found $2^2 + 24^2 = 580$ and forgot to take the square root."
+    }
+  ],
+  "hints": [
+    "The rise, the horizontal distance and the ramp surface form a right triangle.",
+    "The ramp surface is the hypotenuse, so its length is $\\sqrt{\\text{rise}^2 + \\text{run}^2}$.",
+    "$\\sqrt{2^2 + 24^2} = \\sqrt{580}$. Use a calculator and round."
+  ],
+  "solutions": {
+    "reliable": "The rise and the horizontal run are the legs of a right triangle, and the ramp surface is the hypotenuse. Its length is $\\sqrt{2^2 + 24^2} = \\sqrt{4 + 576} = \\sqrt{580} \\approx 24.08$, which rounds to $24.1$ feet. As a sense check, the ramp must be a little longer than the $24$-foot run.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

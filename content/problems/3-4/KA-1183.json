@@ -1,0 +1,70 @@
+{
+  "id": "KA-1183",
+  "band": "3-4",
+  "points": 4,
+  "statement": "The chart shows how many cups of cocoa a cafe sold each day. From one day to the next day, what was the biggest increase in the number of cups sold?",
+  "figure": {
+    "component": "CocoaCupsChart",
+    "alt": "A bar chart of cups of cocoa sold on five days. The vertical axis is gridded in ones and labelled 0 to 14 in steps of 2. Monday 6, Tuesday 12, Wednesday 3, Thursday 10, Friday 14."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I worked out the first rise, from Monday to Tuesday, and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I compared Friday with Monday, the last bar with the first, instead of neighbouring days."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I found the biggest change between neighbouring days, but that was the fall from Tuesday to Wednesday, not a rise."
+    },
+    {
+      "key": "D",
+      "text": "11",
+      "correct": false,
+      "misconception": "I took the shortest bar away from the tallest bar, 14 minus 3."
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "MOD-09",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Compare each day only with the day just before it.",
+    "Write down the change for each pair of neighbouring days, and mark which ones go up and which go down. The question wants the biggest one that goes up.",
+    "The changes are: up 6, down 9, up 7, up 4."
+  ],
+  "solutions": {
+    "reliable": "Read the bars: 6, 12, 3, 10, 14. Changes: Monday to Tuesday up 6, Tuesday to Wednesday down 9, Wednesday to Thursday up 7, Thursday to Friday up 4. The biggest increase is 7. The transferable idea: re-read whether the question wants a rise, a fall, or any change.",
+    "elegant": null
+  },
+  "whyOnTest": "Reading a bar chart carefully and answering exactly what is asked: a rise between neighbouring days, not just the biggest gap.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1294",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Ana, Ben, Cy, Dot and Eli stand in a line, one behind another, all facing the front. Exactly two children stand between Ana and Dot. Ben stands directly behind Eli. Dot is somewhere in front of Ben. Cy is not at the front. Who is second from the front?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Ana",
+      "correct": false,
+      "misconception": "I found the right line but counted second from the back instead of from the front."
+    },
+    {
+      "key": "B",
+      "text": "Ben",
+      "correct": false,
+      "misconception": "I read 'Ben stands directly behind Eli' as Ben standing just in front of Eli."
+    },
+    {
+      "key": "C",
+      "text": "Cy",
+      "correct": false,
+      "misconception": "I read 'exactly two children between Ana and Dot' as Ana and Dot being two places apart, with only one child between them."
+    },
+    {
+      "key": "D",
+      "text": "Dot",
+      "correct": false,
+      "misconception": "I forgot the clue that Cy is not at the front and used the line Cy, Dot, Eli, Ben, Ana."
+    },
+    {
+      "key": "E",
+      "text": "Eli",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-04",
+    "secondary": [
+      "LOG-09",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Where can Ana and Dot stand if exactly two children are between them?",
+    "Number the places 1 to 5 from the front. List the few ways to place Ana and Dot, then try to fit Eli and Ben as a pair next to each other, and check the last clues.",
+    "Ana and Dot use places 1 and 4 or places 2 and 5. Dot must be ahead of Ben, and Eli and Ben need two places next to each other. Only Dot 1, Ana 4 survives, with Eli 2 and Ben 3."
+  ],
+  "solutions": {
+    "reliable": "Number the places 1 (front) to 5 (back). With exactly two children between them, Ana and Dot are in places 1 and 4 or in places 2 and 5. Dot cannot be in place 5, because Dot is ahead of Ben. If Dot is in place 4 and Ana in place 1, Ben must be in place 5 and Eli in place 4, but place 4 is taken. If Dot is in place 2 and Ana in place 5, the free places are 1, 3 and 4, so Eli and Ben take 3 and 4 and Cy is at the front, which is not allowed. So Dot is in place 1 and Ana in place 4. The free places are 2, 3 and 5: Eli and Ben take 2 and 3, and Cy takes 5. The line is Dot, Eli, Ben, Ana, Cy, so Eli is second. The transferable idea: start with the clue that allows the fewest positions and test each one against the rest.",
+    "elegant": null
+  },
+  "whyOnTest": "Ordering from clues at 5 points: several clues must be combined, and each case is ruled out by a different clue.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

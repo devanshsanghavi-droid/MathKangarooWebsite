@@ -1,0 +1,56 @@
+{
+  "id": "SA-0008",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "easy",
+  "statement": "The table shows some values of $x$ and $f(x)$ for a linear function $f$. $$\\begin{array}{c|c|c|c|c} x & -3 & 1 & 6 & k \\\\ \\hline f(x) & 20 & 8 & -7 & -25 \\end{array}$$ What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-10$",
+      "correct": false,
+      "misconception": "I found a slope of size $3$ but made it positive, so I used $f(x) = 3x + 5$ and solved $3k + 5 = -25$."
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I found the slope $-3$ but used $f(1) = 8$ as if it were the $y$-intercept, so I solved $-3k + 8 = -25$."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I found the slope $-3$ but used the first output, $20$, as the $y$-intercept, so I solved $-3k + 20 = -25$."
+    }
+  ],
+  "hints": [
+    "Find how much $f(x)$ changes when $x$ goes up by $1$.",
+    "Use two columns to find the slope, write the function, then solve $f(k) = -25$.",
+    "The slope is $\\frac{8 - 20}{1 - (-3)} = -3$ and $f(0) = 8 + 3 = 11$, so $f(x) = -3x + 11$."
+  ],
+  "solutions": {
+    "reliable": "The slope is $\\frac{8 - 20}{1 - (-3)} = \\frac{-12}{4} = -3$, and $\\frac{-7 - 8}{6 - 1} = -3$ confirms it. Since $f(1) = 8$, $f(0) = 11$, so $f(x) = -3x + 11$. Solving $-3k + 11 = -25$ gives $-3k = -36$, so $k = 12$.",
+    "elegant": "From $x = 6$ to $x = k$ the output falls from $-7$ to $-25$, a drop of $18$. At $3$ per unit that is $6$ units, so $k = 6 + 6 = 12$."
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

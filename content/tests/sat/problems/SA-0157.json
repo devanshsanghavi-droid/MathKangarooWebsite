@@ -1,0 +1,56 @@
+{
+  "id": "SA-0157",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-06",
+  "difficulty": "easy",
+  "statement": "What value of $x$ satisfies the equation $\\sqrt[3]{2x + 1} = 3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I did not undo the cube root at all and solved $2x + 1 = 3$, which gives $x = 1$."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I squared both sides as if it were a square root, so I solved $2x + 1 = 9$ and got $x = 4$."
+    },
+    {
+      "key": "D",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I cubed correctly to get $2x + 1 = 27$, but then added $1$ instead of subtracting it, so $2x = 28$ and $x = 14$."
+    }
+  ],
+  "hints": [
+    "To undo a cube root, raise both sides to the third power.",
+    "Cube both sides, then solve the linear equation.",
+    "$2x + 1 = 3^3 = 27$."
+  ],
+  "solutions": {
+    "reliable": "Cubing both sides gives $2x + 1 = 27$, so $2x = 26$ and $x = 13$. Check: $\\sqrt[3]{2(13) + 1} = \\sqrt[3]{27} = 3$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

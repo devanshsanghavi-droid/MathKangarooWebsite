@@ -1,0 +1,68 @@
+{
+  "id": "AM-1061",
+  "contest": "AMC8",
+  "slot": 21,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Ravi walks from home to the library. If he walks at $4$ kilometers per hour, he arrives $5$ minutes late. If he walks at $6$ kilometers per hour, he arrives $5$ minutes early. At what speed, in kilometers per hour, should he walk to arrive exactly on time?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I found the distance, $2$ kilometers, and gave that as the speed."
+    },
+    {
+      "key": "B",
+      "text": "$2.4$",
+      "correct": false,
+      "misconception": "I remembered the formula $\\frac{2uv}{u + v}$ for this kind of problem but left out the $2$, getting $\\frac{4 \\cdot 6}{4 + 6} = 2.4$."
+    },
+    {
+      "key": "C",
+      "text": "$4.8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I averaged the two speeds, $\\frac{4 + 6}{2} = 5$. But the on-time trip takes the average of the two times, which is not the same as using the average of the two speeds."
+    },
+    {
+      "key": "E",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I set the difference between the two trip times to $5$ minutes instead of $10$, which made the distance $1$ km and the on-time trip $10$ minutes, so I got $6$."
+    }
+  ],
+  "hints": [
+    "The two trips take different amounts of time. How many minutes apart are they?",
+    "The slow trip takes $10$ minutes longer than the fast trip, so $\\frac{d}{4} - \\frac{d}{6} = \\frac16$ hour.",
+    "The distance is $2$ km. The slow trip takes $30$ minutes, so the on-time trip takes $25$ minutes."
+  ],
+  "solutions": {
+    "reliable": "Let $d$ be the distance in km. The trip at $4$ km/h takes $10$ minutes longer than the trip at $6$ km/h, so $\\frac{d}{4} - \\frac{d}{6} = \\frac{1}{6}$ hour. That gives $\\frac{d}{12} = \\frac16$, so $d = 2$. At $4$ km/h the trip takes $30$ minutes, so being on time means a $25$-minute trip. The speed is $2 \\div \\frac{25}{60} = \\frac{120}{25} = 4.8$ km/h.",
+    "elegant": "The on-time trip time is exactly halfway between the two trip times, $\\frac{d}{4}$ and $\\frac{d}{6}$. So the on-time speed is $\\frac{2d}{d/4 + d/6}$, which is the average speed over two equal distances at $4$ and $6$ km/h: $\\frac{2 \\cdot 4 \\cdot 6}{4 + 6} = 4.8$."
+  },
+  "formulas": [
+    "F-ALG-20"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0254",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-01",
+  "difficulty": "hard",
+  "statement": "A rectangular sheet of cardboard is $30$ inches long and $20$ inches wide. A square with side length $x$ inches is cut from each corner, and the sides are folded up to make an open-top box. The bottom of the box has an area of $144$ square inches. What is the volume of the box, in cubic inches?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$864$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$1{,}728$",
+      "correct": false,
+      "misconception": "I thought the height of the box was $2x = 12$ because squares are cut from both sides, so I computed $144 \\times 12$."
+    },
+    {
+      "key": "C",
+      "text": "$2{,}736$",
+      "correct": false,
+      "misconception": "I solved $(30 - 2x)(20 - 2x) = 144$ and used the root $x = 19$ without checking that the sides would be negative, so I got $144 \\times 19$."
+    },
+    {
+      "key": "D",
+      "text": "$3{,}600$",
+      "correct": false,
+      "misconception": "I found $x = 6$ but multiplied it by the area of the original sheet, $30 \\times 20 = 600$, instead of the area of the bottom."
+    }
+  ],
+  "hints": [
+    "Write the length and width of the bottom of the box in terms of $x$.",
+    "The bottom measures $(30 - 2x)$ by $(20 - 2x)$. Set the product equal to $144$ and keep only a root that gives positive lengths.",
+    "The two bottom dimensions differ by $10$ and multiply to $144$, so they are $18$ and $8$, which gives $x = 6$. The height of the box is $x$."
+  ],
+  "solutions": {
+    "reliable": "The bottom of the box is $(30 - 2x)$ by $(20 - 2x)$, so $(30 - 2x)(20 - 2x) = 144$. Expanding, $4x^2 - 100x + 600 = 144$, so $x^2 - 25x + 114 = 0$, which factors as $(x - 6)(x - 19) = 0$. The root $x = 19$ would make $20 - 2x$ negative, so $x = 6$. The bottom is $18$ by $8$ and the height is $6$, so the volume is $144 \\times 6 = 864$ cubic inches.",
+    "elegant": "The length and width of the bottom always differ by $30 - 20 = 10$. Two positive numbers that differ by $10$ and multiply to $144$ are $18$ and $8$, so $x = (20 - 8) \\div 2 = 6$ and the volume is $144 \\times 6 = 864$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

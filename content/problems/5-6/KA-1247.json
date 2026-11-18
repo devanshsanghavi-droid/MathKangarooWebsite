@@ -1,0 +1,68 @@
+{
+  "id": "KA-1247",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Three different numbers are chosen from 1, 2, 3, 4, 5, 6, 7, 8, 9, and their sum is even. How many such choices are there? The order of the three numbers does not matter.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I only counted the choices of three even numbers and forgot two odd numbers with one even number."
+    },
+    {
+      "key": "B",
+      "text": "40",
+      "correct": false,
+      "misconception": "I counted two odd numbers with one even number but forgot that three even numbers also give an even sum."
+    },
+    {
+      "key": "C",
+      "text": "42",
+      "correct": false,
+      "misconception": "I assumed exactly half of all 84 choices have an even sum, but there are more odd numbers than even ones, so it is not half."
+    },
+    {
+      "key": "D",
+      "text": "44",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "54",
+      "correct": false,
+      "misconception": "I also counted three odd numbers, but three odd numbers add up to an odd total."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-04",
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "Which mixes of odd and even numbers give an even sum?",
+    "There are 5 odd and 4 even numbers. An even sum needs an even count of odd numbers: none or two. Count each case as a selection where order does not matter, then add the cases.",
+    "Three evens: choose 3 of the 4 even numbers. Two odds and one even: the number of pairs of odd numbers times the number of even numbers."
+  ],
+  "solutions": {
+    "reliable": "The odd numbers are 1, 3, 5, 7, 9 (five of them) and the even numbers are 2, 4, 6, 8 (four). Three numbers have an even sum when 0 or 2 of them are odd. Case 1, three evens: leaving out one of the 4 even numbers gives 4 choices. Case 2, two odds and one even: there are 10 pairs of odd numbers (4 + 3 + 2 + 1) and 4 even numbers, so $10 \\times 4 = 40$ choices. The total is $4 + 40 = 44$. The transferable idea: split by how many odd numbers you pick, count each case as a selection, then add.",
+    "elegant": "There are $\\frac{9 \\times 8 \\times 7}{6} = 84$ choices in all. An odd sum comes from one odd and two evens ($5 \\times 6 = 30$) or three odds (10), which is 40 choices. So $84 - 40 = 44$ choices have an even sum. Counting the opposite case is a good second check."
+  },
+  "whyOnTest": "Selections with a parity condition test clean casework: split by how many odd numbers you choose and count each case without order.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

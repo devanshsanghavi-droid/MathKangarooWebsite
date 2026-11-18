@@ -1,0 +1,68 @@
+{
+  "id": "AM-1255",
+  "contest": "AMC8",
+  "slot": 10,
+  "area": "CP",
+  "topic": "CP-03",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A paint set has $10$ different colors, and $4$ of them are shades of blue. Lina picks $3$ different colors from the set for a poster. Exactly one of the colors she picks must be a shade of blue. How many different sets of $3$ colors can she pick?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I counted the ways to pick the 2 colors that are not blue, C(6, 2) = 15, and forgot to choose which blue to use."
+    },
+    {
+      "key": "B",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I added the 4 ways to pick the blue to the 15 ways to pick the other two colors instead of multiplying."
+    },
+    {
+      "key": "C",
+      "text": "$60$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$100$",
+      "correct": false,
+      "misconception": "I counted the sets with at least one blue, 120 - 20 = 100, but the problem says exactly one blue."
+    },
+    {
+      "key": "E",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I counted every set of 3 colors from the 10, C(10, 3) = 120, and ignored the rule about blue."
+    }
+  ],
+  "hints": [
+    "Split the choice into two parts: the blue color and the colors that are not blue.",
+    "There are $4$ ways to choose the one blue color. The other two colors must come from the $6$ colors that are not blue.",
+    "The two other colors can be chosen in $\\binom{6}{2} = 15$ ways. Combine the two parts."
+  ],
+  "solutions": {
+    "reliable": "Lina must pick exactly one of the $4$ blue shades, which she can do in $4$ ways, and $2$ of the $6$ colors that are not blue, which she can do in $\\binom{6}{2} = 15$ ways. Each pair of choices gives a different set, so there are $4 \\times 15 = 60$ sets.",
+    "elegant": "Sort all $\\binom{10}{3} = 120$ sets by their number of blue colors: $0$ blue gives $\\binom{6}{3} = 20$, $2$ blue gives $\\binom{4}{2} \\cdot 6 = 36$, and $3$ blue gives $\\binom{4}{3} = 4$. The rest have exactly one blue: $120 - 20 - 36 - 4 = 60$."
+  },
+  "formulas": [
+    "F-CP-03"
+  ],
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

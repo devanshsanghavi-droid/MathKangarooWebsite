@@ -1,0 +1,56 @@
+{
+  "id": "SA-0197",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-02",
+  "difficulty": "easy",
+  "statement": "Which of the following gives all the solutions to the equation $(x - 4)^2 = 25$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$x = 9$ only",
+      "correct": false,
+      "misconception": "I took only the positive square root of $25$, so I missed the solution from $x - 4 = -5$."
+    },
+    {
+      "key": "B",
+      "text": "$x = -1$ and $x = 9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$x = 1$ and $x = -9$",
+      "correct": false,
+      "misconception": "I solved $x + 4 = \\pm 5$, using the wrong sign inside the parentheses."
+    },
+    {
+      "key": "D",
+      "text": "$x = -21$ and $x = 29$",
+      "correct": false,
+      "misconception": "I forgot to take the square root, so I solved $x - 4 = \\pm 25$."
+    }
+  ],
+  "hints": [
+    "If a square equals $25$, the quantity being squared is $5$ or $-5$.",
+    "Solve $x - 4 = 5$ and $x - 4 = -5$ separately.",
+    "$x = 4 + 5$ or $x = 4 - 5$."
+  ],
+  "solutions": {
+    "reliable": "Taking square roots, $x - 4 = 5$ or $x - 4 = -5$, so $x = 9$ or $x = -1$. Check: $(9 - 4)^2 = 25$ and $(-1 - 4)^2 = (-5)^2 = 25$.",
+    "elegant": null
+  },
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

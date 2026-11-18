@@ -1,0 +1,68 @@
+{
+  "id": "KA-1288",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Sequence A is 2, 7, 12, 17, ..., going up by 5 each time. Sequence B is 3, 7, 11, 15, ..., going up by 4 each time. How many numbers smaller than 250 appear in both sequences?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I divided 250 by 20 and rounded down, without checking where the shared numbers start."
+    },
+    {
+      "key": "B",
+      "text": "13",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I saw that 7 and 27 both end in 7 and counted every number ending in 7 below 250."
+    },
+    {
+      "key": "D",
+      "text": "27",
+      "correct": false,
+      "misconception": "I thought the shared numbers go up by 5 + 4 = 9, so I counted 7, 16, 25, and so on."
+    },
+    {
+      "key": "E",
+      "text": "49",
+      "correct": false,
+      "misconception": "I counted the numbers of sequence A from 7 upwards and never checked them against sequence B."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-02",
+    "secondary": [
+      "NUM-05",
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "Find the first two numbers that are in both sequences.",
+    "Once one shared number is found, the next shared number must be a jump that is a whole number of 5s and a whole number of 4s. Find that jump, then count the terms of the new sequence below 250.",
+    "The shared numbers start 7, 27, 47, ..., going up by 20, the smallest number that is a multiple of both 5 and 4. The largest one below 250 is 247."
+  ],
+  "solutions": {
+    "reliable": "Sequence A is the numbers that leave remainder 2 when divided by 5, and sequence B is the numbers that leave remainder 3 when divided by 4. The first number in both is 7. To stay in both sequences, the next jump must be a multiple of 5 and of 4, so the shared numbers go up by 20: 7, 27, 47, ..., 247. These are 7 + 20k for k = 0, 1, ..., 12, which is 13 numbers. The next one, 267, is too big. The transferable idea: the numbers common to two arithmetic sequences form a new arithmetic sequence whose step is the least common multiple of the two steps.",
+    "elegant": null
+  },
+  "whyOnTest": "Arithmetic sequences meet the least common multiple here, a classic two-step 4-point problem.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

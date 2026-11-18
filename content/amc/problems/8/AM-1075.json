@@ -1,0 +1,67 @@
+{
+  "id": "AM-1075",
+  "contest": "AMC8",
+  "slot": 25,
+  "area": "ALG",
+  "topic": "ALG-09",
+  "types": [
+    "T-EXTREME",
+    "T-SMALL-CASES"
+  ],
+  "statement": "Some odd positive integers, not necessarily different, add up to $20$. What is the largest possible value of their product?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$243$",
+      "correct": false,
+      "misconception": "I used five 3s, which add up to $15$, and forgot to use the remaining $5$."
+    },
+    {
+      "key": "B",
+      "text": "$625$",
+      "correct": false,
+      "misconception": "I used four 5s, which add up to $20$, but 3s give a bigger product than 5s for the same total."
+    },
+    {
+      "key": "C",
+      "text": "$729$",
+      "correct": false,
+      "misconception": "I used six 3s to make $18$ and then two 1s for the last $2$. The 1s add nothing to the product, and swapping $3 + 1 + 1$ for a $5$ does better."
+    },
+    {
+      "key": "D",
+      "text": "$1024$",
+      "correct": false,
+      "misconception": "I forgot that the numbers must be odd and used ten 2s."
+    },
+    {
+      "key": "E",
+      "text": "$1215$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "A part equal to 1 uses up some of the sum without helping the product, and big parts can be broken into smaller ones.",
+    "Any odd part $p \\ge 7$ can be replaced by $3, 3, p - 6$, which makes the product bigger. Also, two 5s can be replaced by $3, 3, 3, 1$, since $27 > 25$.",
+    "So the parts are 1s, 3s and at most one 5. Compare the best list with one 5 against the best list with no 5."
+  ],
+  "solutions": {
+    "reliable": "First, no part needs to be $7$ or more: an odd part $p \\ge 7$ can be replaced by the odd parts $3, 3, p - 6$, which keeps the sum and has product $9(p - 6) > p$. So every part is $1$, $3$ or $5$. Next, two 5s can be replaced by $3, 3, 3, 1$, which has the same sum and product $27 > 25$, so there is at most one $5$. With one $5$, the other parts are 3s and 1s adding up to $15$, and the best is five 3s, for a product of $3^5 \\cdot 5 = 1215$. With no $5$, the parts are 3s and 1s adding up to $20$, and the best is six 3s and two 1s, for a product of $3^6 = 729$. So the largest product is $1215$, from $3 + 3 + 3 + 3 + 3 + 5 = 20$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

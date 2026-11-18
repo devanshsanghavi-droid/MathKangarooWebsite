@@ -1,0 +1,56 @@
+{
+  "id": "SA-0101",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-01",
+  "difficulty": "easy",
+  "statement": "Which expression is equivalent to $(3x^2 - 5x + 4) - (x^2 - 2x - 6)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2x^2 - 7x - 2$",
+      "correct": false,
+      "misconception": "I subtracted the $x^2$ term but then added $-2x$ and $-6$ instead of subtracting them, so I got $2x^2 - 7x - 2$."
+    },
+    {
+      "key": "B",
+      "text": "$2x^2 - 3x - 2$",
+      "correct": false,
+      "misconception": "I changed the sign of $-2x$ but not of $-6$, so my constant came out $4 - 6 = -2$."
+    },
+    {
+      "key": "C",
+      "text": "$4x^2 - 7x - 2$",
+      "correct": false,
+      "misconception": "I added the two polynomials instead of subtracting the second one."
+    },
+    {
+      "key": "D",
+      "text": "$2x^2 - 3x + 10$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The minus sign in front of the second parentheses applies to every term inside.",
+    "Rewrite the expression without parentheses by changing the sign of each term in the second polynomial, then combine like terms.",
+    "$(3x^2 - 5x + 4) - (x^2 - 2x - 6) = 3x^2 - 5x + 4 - x^2 + 2x + 6$. Now combine the $x^2$ terms, the $x$ terms and the constants."
+  ],
+  "solutions": {
+    "reliable": "Distribute the minus sign: $3x^2 - 5x + 4 - x^2 + 2x + 6$. Combine like terms: $3x^2 - x^2 = 2x^2$, $-5x + 2x = -3x$ and $4 + 6 = 10$. The expression is $2x^2 - 3x + 10$. Check with $x = 1$: the original is $2 - (-7) = 9$ and $2 - 3 + 10 = 9$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

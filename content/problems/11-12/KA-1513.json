@@ -1,0 +1,68 @@
+{
+  "id": "KA-1513",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Mia has 18 minutes and six unstarted questions (5 choices each, no penalty). She would solve each in this time: P (3 points, 3 min), Q (3 points, 5 min), R (4 points, 4 min), S (4 points, 7 min), T (5 points, 6 min), U (5 points, 9 min). Unsolved ones are guessed. What is her largest expected score?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I found the best set of questions to solve, worth 15 points, but did not count the guesses on the other two."
+    },
+    {
+      "key": "B",
+      "text": "$15.2$",
+      "correct": false,
+      "misconception": "I solved the 5-point questions first, U and T, then P, which uses all 18 minutes but solves only 13 points, and then added a fifth of the 11 points I guessed."
+    },
+    {
+      "key": "C",
+      "text": "$16.8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$12.8$",
+      "correct": false,
+      "misconception": "I worked in the order P, Q, R, S and stopped when S no longer fitted, instead of skipping S and solving T."
+    },
+    {
+      "key": "E",
+      "text": "$19.8$",
+      "correct": false,
+      "misconception": "I added a fifth of all 24 points for guessing, including the questions I had already solved."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-08",
+    "secondary": [
+      "CFT-09",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Does guessing change which questions are worth solving?",
+    "Solving a question adds four fifths of its value over guessing it, so guessing does not change which questions to solve. Find the most points that fit in 18 minutes, then add the guesses.",
+    "P, Q, R and T take $3 + 5 + 4 + 6 = 18$ minutes for 15 points. The unsolved S and U are worth 9 points, and guessing earns a fifth of that."
+  ],
+  "solutions": {
+    "reliable": "Expected score = points solved + one fifth of the points guessed. Solving a question worth $p$ raises the expected score by $\\frac{4}{5}p$, so the task is to solve as many points as possible in 18 minutes. P, Q, R and T take exactly 18 minutes and give 15 points; checking the other sets (for example R, S, T takes 17 minutes for 13 points, and P, T, U takes 18 minutes for 13 points) shows 15 is the most. The guesses on S and U add $\\frac{4 + 5}{5} = 1.8$. The largest expected score is $15 + 1.8 = 16.8$. The transferable idea: plan the minutes as a budget, and remember that every unsolved question still gets a guess.",
+    "elegant": null
+  },
+  "whyOnTest": "Choosing which questions to do is itself a calculation; the greedy orders lose points, and the guesses on skipped questions still count.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

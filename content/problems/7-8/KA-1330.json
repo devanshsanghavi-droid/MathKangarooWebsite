@@ -1,0 +1,67 @@
+{
+  "id": "KA-1330",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A large 4 by 4 by 4 cube is built from 64 unit cubes. How many different 2 by 2 by 2 cubes, each made of 8 of the unit cubes, can be found inside it? They are allowed to overlap.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I cut the big cube into separate 2 by 2 by 2 blocks that do not overlap and counted only those."
+    },
+    {
+      "key": "B",
+      "text": "64",
+      "correct": false,
+      "misconception": "I thought the small cube could start at any of 4 positions in each direction, $4 \\times 4 \\times 4$, but from the last position it would stick out."
+    },
+    {
+      "key": "C",
+      "text": "27",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I found 3 positions in each direction but added them, 3 + 3 + 3, instead of multiplying."
+    },
+    {
+      "key": "E",
+      "text": "36",
+      "correct": false,
+      "misconception": "I found the 9 positions in one layer and multiplied by 4 layers, but there are only 3 positions going up as well."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-12",
+    "secondary": [
+      "GEO-13"
+    ]
+  },
+  "hints": [
+    "Slide a block 2 units long along an edge 4 units long. How many stops?",
+    "A 2 by 2 by 2 cube is fixed by where its corner nearest you sits. Count the possible positions in each of the three directions and multiply, because the directions are independent.",
+    "Along an edge of 4 units, a block 2 units long can start at 3 places."
+  ],
+  "solutions": {
+    "reliable": "In one direction, a block of length 2 inside a length of 4 can start at position 1, 2 or 3, so there are 4 - 2 + 1 = 3 places. The same is true across and up. Each choice of the three starting positions gives a different 2 by 2 by 2 cube, so there are $3 \\times 3 \\times 3 = 27$. The transferable idea: count overlapping blocks by sliding, with $n - k + 1$ positions in each direction.",
+    "elegant": "Each 2 by 2 by 2 cube has a centre point where 8 of its unit cubes meet, and that point is a corner of the unit grid strictly inside the big cube. Those inside grid corners form a 3 by 3 by 3 array, so there are 27 such cubes."
+  },
+  "whyOnTest": "Tests the sliding-window count in three dimensions, where the classic slip is cutting the cube into separate pieces.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

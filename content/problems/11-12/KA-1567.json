@@ -1,0 +1,68 @@
+{
+  "id": "KA-1567",
+  "band": "11-12",
+  "points": 5,
+  "statement": "The nine numbers $1 \\times 2, 2 \\times 3, 3 \\times 4, \\dots, 9 \\times 10$ are written on a board. A move erases two numbers $a$ and $b$ and writes $\\frac{ab}{a + b}$ in their place. After eight moves only one number is left. What is it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{9}{10}$",
+      "correct": false,
+      "misconception": "I found that the reciprocals add up to $\\frac{9}{10}$ and gave that, forgetting to turn it upside down."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{10}{11}$",
+      "correct": false,
+      "misconception": "I telescoped the reciprocals to $1 + \\frac{1}{10}$ instead of $1 - \\frac{1}{10}$, then turned the result upside down."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{10}{9}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{9}{8}$",
+      "correct": false,
+      "misconception": "I stopped the telescoping at $\\frac{1}{9}$, getting $1 - \\frac{1}{9} = \\frac{8}{9}$, then turned it upside down."
+    },
+    {
+      "key": "E",
+      "text": "10",
+      "correct": false,
+      "misconception": "I kept only the last term, $\\frac{1}{10}$, of the telescoping sum and turned it upside down."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "CFT-07",
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "Look at $\\frac{1}{a}$ and $\\frac{1}{b}$ rather than at $a$ and $b$.",
+    "Find an invariant: the reciprocal of the new number is the sum of the reciprocals of the two erased numbers. So some total never changes. Compute that total at the start.",
+    "$\\frac{1}{k(k + 1)} = \\frac{1}{k} - \\frac{1}{k + 1}$, so the reciprocals of the nine numbers add up to $1 - \\frac{1}{10}$."
+  ],
+  "solutions": {
+    "reliable": "The new number has reciprocal $\\frac{a + b}{ab} = \\frac{1}{a} + \\frac{1}{b}$, so a move replaces two reciprocals by their sum and the sum of the reciprocals of all the numbers on the board never changes. At the start it is $\\frac{1}{1 \\times 2} + \\frac{1}{2 \\times 3} + \\dots + \\frac{1}{9 \\times 10} = (1 - \\frac{1}{2}) + (\\frac{1}{2} - \\frac{1}{3}) + \\dots + (\\frac{1}{9} - \\frac{1}{10}) = \\frac{9}{10}$. At the end there is one number $x$ with $\\frac{1}{x} = \\frac{9}{10}$, so $x = \\frac{10}{9}$. The transferable idea: when a move combines two numbers, look for a quantity whose total the move preserves.",
+    "elegant": null
+  },
+  "whyOnTest": "The order of moves is irrelevant once the preserved quantity is found, and here it is the sum of reciprocals, which then telescopes.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

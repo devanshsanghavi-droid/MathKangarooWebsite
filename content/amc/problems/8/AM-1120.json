@@ -1,0 +1,66 @@
+{
+  "id": "AM-1120",
+  "contest": "AMC8",
+  "slot": 15,
+  "area": "GEO",
+  "topic": "GEO-06",
+  "types": [
+    "T-COORD"
+  ],
+  "statement": "How many points with both coordinates integers lie on the line segment from $(3, 5)$ to $(39, 32)$, including both endpoints?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I took the GCD of the endpoint coordinates 39 and 32, which is 1, so I counted only the two endpoints. The GCD should use the changes in x and y, 36 and 27."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I reduced the slope 27/36 to 3/4 and thought the lattice points come every 12 units in x, since 12 is a multiple of both 3 and 4, so I counted 36/12 + 1 = 4."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I counted only the lattice points strictly between the endpoints and left out both endpoints."
+    },
+    {
+      "key": "D",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I found 9 equal steps along the segment and counted 9 points, forgetting the point where I started."
+    },
+    {
+      "key": "E",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "From one end to the other, $x$ increases by $36$ and $y$ increases by $27$.",
+    "The slope $\\frac{27}{36}$ reduces to $\\frac{3}{4}$, so the segment meets a lattice point every $4$ units right and $3$ units up, and nowhere in between.",
+    "That is $36 / 4 = 9$ steps, which mark out $9 + 1$ points."
+  ],
+  "solutions": {
+    "reliable": "The segment rises $27$ while it runs $36$. Since $\\frac{27}{36} = \\frac{3}{4}$ in lowest terms, a point on the segment with integer $x$ has integer $y$ exactly when $x - 3$ is a multiple of $4$. Starting at $(3, 5)$ and moving $4$ right and $3$ up each time gives $(3, 5), (7, 8), (11, 11), \\dots, (39, 32)$, which is $36 / 4 + 1 = 10$ points.",
+    "elegant": "The number of lattice points on a segment between lattice points is $\\gcd(\\Delta x, \\Delta y) + 1 = \\gcd(36, 27) + 1 = 9 + 1 = 10$."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0047",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-07",
+  "difficulty": "hard",
+  "statement": "For exactly two real values of $x$, the matrix $\\begin{bmatrix} x & 3 \\\\ 2 & x - 5 \\end{bmatrix}$ does not have an inverse. What is the positive one of these two values?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I set the determinant $x^2 - 5x - 6$ equal to zero but factored it as $(x + 6)(x - 1)$, with the signs swapped."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found the determinant as $x(x - 5) + 6$, adding the cross product instead of subtracting it, so I solved $x^2 - 5x + 6 = 0$, got 2 and 3, and picked the larger."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I thought a matrix has no inverse when one of its entries is zero, so I set $x - 5 = 0$."
+    },
+    {
+      "key": "D",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "A $2 \\times 2$ matrix has no inverse when its determinant is zero.",
+    "For $\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$ the determinant is $ad - bc$. Write it for this matrix, set it equal to zero, and solve.",
+    "The determinant is $x(x - 5) - 6 = x^2 - 5x - 6$, which factors as $(x - 6)(x + 1)$."
+  ],
+  "solutions": {
+    "reliable": "The determinant is $x(x - 5) - 3 \\cdot 2 = x^2 - 5x - 6$. The matrix has no inverse when this is zero: $(x - 6)(x + 1) = 0$, so $x = 6$ or $x = -1$. The positive value is $6$. Check: at $x = 6$ the matrix is $\\begin{bmatrix} 6 & 3 \\\\ 2 & 1 \\end{bmatrix}$, whose first row is 3 times its second, and its determinant is $6 - 6 = 0$. The idea: a square matrix has an inverse exactly when its determinant is not zero.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

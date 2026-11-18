@@ -1,0 +1,68 @@
+{
+  "id": "KA-1465",
+  "band": "9-10",
+  "points": 4,
+  "statement": "The ages of the five members of a family, in whole years, add up to 80 today. Exactly four years ago, the ages of the family members who had already been born added up to 61. How old is the youngest member of the family today?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I noticed the total grew by 19 instead of 20 and took the missing 1 as the youngest's age."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I assumed the youngest was born exactly four years ago, but then the total would have grown by the full 20."
+    },
+    {
+      "key": "C",
+      "text": "19",
+      "correct": false,
+      "misconception": "I subtracted 61 from 80 and gave the difference as the youngest's age."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "The facts contradict each other",
+      "correct": false,
+      "misconception": "I expected all five ages to grow by 4, making 20, so I thought a growth of 19 was impossible, forgetting that someone may not have been born yet."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-05",
+    "secondary": [
+      "LOG-09",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Had all five been alive four years ago, how much would the total grow?",
+    "Each person alive four years ago adds exactly 4 to the total. Someone born more recently adds only their present age. Compare 80 - 61 with what you would expect.",
+    "The total grew by 19, not 20. Four people who were alive four years ago account for 16 of it."
+  ],
+  "solutions": {
+    "reliable": "If all five had been born four years ago, the total would have grown by 5 × 4 = 20, but it grew by 80 - 61 = 19. So someone was born less than four years ago. Each person who was alive four years ago adds exactly 4. If four were alive then, they add 16, and the newest member adds their present age, 19 - 16 = 3, which is under 4, so it fits. If only three were alive, they add 12 and the two youngest would need ages adding up to 7, but each is at most 3, so that is impossible. So the youngest is 3. The transferable idea: in age problems everyone alive ages by the same amount, so compare the real change in a total with the expected change.",
+    "elegant": null
+  },
+  "whyOnTest": "Age problems test that everyone alive ages equally, so a total that grows by less than expected reveals someone not yet born.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

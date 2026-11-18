@@ -1,0 +1,68 @@
+{
+  "id": "KA-1419",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Today is a Thursday. What day of the week will it be $5^{2026}$ days from today?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Monday",
+      "correct": false,
+      "misconception": "I found that 2026 leaves remainder 4 on division by 6 and moved forward 4 days, instead of working out the remainder of $5^4$ on division by 7."
+    },
+    {
+      "key": "B",
+      "text": "Tuesday",
+      "correct": false,
+      "misconception": "I used the last digit of $5^{2026}$, which is 5, and moved forward 5 days, but the week has 7 days, not 10."
+    },
+    {
+      "key": "C",
+      "text": "Wednesday",
+      "correct": false,
+      "misconception": "I divided the exponent 2026 by 7, got remainder 3 and used $5^3 = 125$, which leaves 6, but the powers of 5 repeat every 6 steps on division by 7, not every 7."
+    },
+    {
+      "key": "D",
+      "text": "Friday",
+      "correct": false,
+      "misconception": "I found the remainder 2 correctly but counted today as the first day, so I moved forward only one day."
+    },
+    {
+      "key": "E",
+      "text": "Saturday",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "PAT-03",
+      "NUM-07"
+    ]
+  },
+  "hints": [
+    "Only the remainder of $5^{2026}$ on division by 7 matters.",
+    "Find the remainders of $5, 5^2, 5^3, \\dots$ on division by 7 until they repeat. The length of the cycle tells you which small power behaves like $5^{2026}$.",
+    "The remainders are 5, 4, 6, 2, 3, 1 and then repeat every 6. Since 2026 leaves remainder 4 on division by 6, use the 4th one."
+  ],
+  "solutions": {
+    "reliable": "Days of the week repeat every 7, so we need the remainder of $5^{2026}$ on division by 7. The powers of 5 leave remainders 5, 4, 6, 2, 3, 1 and then repeat with period 6 (each is 5 times the one before, reduced). Since $2026 = 6 \\times 337 + 4$, $5^{2026}$ leaves the same remainder as $5^4 = 625 = 7 \\times 89 + 2$, namely 2. Two days after Thursday is Saturday. The transferable idea: for huge powers, find the cycle of remainders and reduce the exponent by the cycle length.",
+    "elegant": "$5^3 = 125 = 126 - 1$ is one less than a multiple of 7, so $5^6$ is one more than a multiple of 7. Then $5^{2026} = (5^6)^{337} \\times 5^3 \\times 5$ behaves like $1 \\times (-1) \\times 5 = -5$, which is 2 more than a multiple of 7."
+  },
+  "whyOnTest": "Calendar questions are remainder questions in disguise, and huge powers are tamed by the repeating cycle of remainders.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

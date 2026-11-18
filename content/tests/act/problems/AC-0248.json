@@ -1,0 +1,56 @@
+{
+  "id": "AC-0248",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-08",
+  "difficulty": "medium",
+  "statement": "In the $xy$-plane, point $A(5, 2)$ is rotated $90^\\circ$ counterclockwise about the point $C(1, -1)$. What are the coordinates of the image of $A$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$(4, -5)$",
+      "correct": false,
+      "misconception": "I rotated the offset (4, 3) clockwise to (3, -4) instead of counterclockwise, then added C back to get (4, -5)."
+    },
+    {
+      "key": "B",
+      "text": "$(-2, 3)$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$(-2, 5)$",
+      "correct": false,
+      "misconception": "I rotated about the origin instead of about C, using (x, y) to (-y, x) on (5, 2) directly."
+    },
+    {
+      "key": "D",
+      "text": "$(-3, 4)$",
+      "correct": false,
+      "misconception": "I found the offset (4, 3) from C and rotated it to (-3, 4), but I forgot to add the coordinates of C back at the end."
+    }
+  ],
+  "hints": [
+    "Rotating about a point other than the origin is easier if you first measure $A$ relative to $C$.",
+    "Find the offset from $C$ to $A$, rotate that offset $90^\\circ$ counterclockwise using $(a, b) \\to (-b, a)$, then add $C$ back.",
+    "The offset is $(5 - 1, 2 - (-1)) = (4, 3)$. Rotated, it becomes $(-3, 4)$. Add $(1, -1)$."
+  ],
+  "solutions": {
+    "reliable": "Shift so $C$ is at the origin: $A$ becomes $(5 - 1, 2 + 1) = (4, 3)$. A $90^\\circ$ counterclockwise rotation about the origin sends $(a, b)$ to $(-b, a)$, so $(4, 3)$ goes to $(-3, 4)$. Shift back by adding $C$: $(-3 + 1, 4 - 1) = (-2, 3)$.",
+    "elegant": "Check with distances and slopes: $CA$ and $CA'$ both have length $5$, the slope of $\\overline{CA}$ is $\\frac{3}{4}$ and the slope of $\\overline{CA'}$ from $(1, -1)$ to $(-2, 3)$ is $-\\frac{4}{3}$, so they are perpendicular, and moving from $(4, 3)$ to $(-3, 4)$ turns counterclockwise."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

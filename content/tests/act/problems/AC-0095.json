@@ -1,0 +1,56 @@
+{
+  "id": "AC-0095",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-06",
+  "difficulty": "medium",
+  "statement": "A rectangular vegetable garden is twice as long as it is wide. The gardener makes both the length and the width $3$ feet longer, and the area of the garden increases by $99$ square feet. What was the original width of the garden, in feet?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I expanded $(2w + 3)(w + 3)$ as $2w^2 + 9w$, leaving out $3 \\cdot 3 = 9$, so I solved $9w = 99$."
+    },
+    {
+      "key": "C",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I solved correctly but gave the new width, $10 + 3 = 13$, instead of the original width."
+    },
+    {
+      "key": "D",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I solved correctly but gave the original length, which is twice the width, instead of the width."
+    }
+  ],
+  "hints": [
+    "Let $w$ be the original width. Write the original area and the new area in terms of $w$.",
+    "The original garden is $w$ by $2w$ and the new one is $w + 3$ by $2w + 3$. The new area minus the original area is $99$.",
+    "$(2w + 3)(w + 3) - 2w^2 = 9w + 9$, so $9w + 9 = 99$."
+  ],
+  "solutions": {
+    "reliable": "Let the original width be $w$ feet, so the length is $2w$ feet and the area is $2w^2$. The new garden measures $w + 3$ by $2w + 3$, with area $2w^2 + 9w + 9$. The increase is $9w + 9 = 99$, so $9w = 90$ and $w = 10$. Check: the garden grows from $10 \\times 20 = 200$ to $13 \\times 23 = 299$ square feet, an increase of $99$.",
+    "elegant": "The added area is a $3$-foot strip along the length ($3 \\cdot 2w$), a $3$-foot strip along the width ($3w$) and a $3 \\times 3$ corner. So $6w + 3w + 9 = 99$, and $w = 10$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

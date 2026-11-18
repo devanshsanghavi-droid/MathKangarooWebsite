@@ -6,6 +6,8 @@ import { signOut } from '../login/actions';
 import { contentHealth } from '@/lib/analytics/content-health';
 import { PUBLISH_MIN_N } from '@/lib/analytics/item-analysis';
 import { DifficultyPill } from '@/components/DifficultyPill';
+import { progressDb } from '@/lib/progress-store';
+import { accountStatsOrNull, type AccountStats } from '@/lib/account-stats';
 
 export const metadata: Metadata = {
   title: 'Admin',
@@ -27,6 +29,7 @@ export default async function AdminPage() {
 
   const health = contentHealth();
   const covered = health.skills - health.uncovered.length;
+  const accounts = await accountStatsOrNull(await progressDb());
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
@@ -44,6 +47,9 @@ export default async function AdminPage() {
           </button>
         </form>
       </header>
+
+      {/* ---------------------------------------------------------------- accounts */}
+      <AccountsSection stats={accounts} />
 
       {/* ---------------------------------------------------------------- content */}
       <section aria-labelledby="bank" className="mt-8">
@@ -176,5 +182,52 @@ export default async function AdminPage() {
         <code className="mono">AUTH_SECRET</code> ends every one of them immediately.
       </p>
     </div>
+  );
+}
+
+/**
+ * docs/07 section 6: how many accounts exist and how many are in use. Counts only, read from
+ * the synced-progress table; no account id or progress file ever reaches this page.
+ */
+function AccountsSection({ stats }: { stats: AccountStats | null }) {
+  return (
+    <section aria-labelledby="accounts" className="mt-8">
+      <h2 id="accounts" className="m-0 text-lg">
+        Accounts
+      </h2>
+      <p className="mt-1 mb-3 text-sm text-ink-3">
+        Students who signed in with Google to sync progress. New counts the first sync, active
+        counts any sync. Practising without an account is not counted here.
+      </p>
+      {stats === null ? (
+        <p className="m-0 rounded-md border border-dashed border-rule-strong bg-surface-2 p-4 text-sm text-ink-2">
+          Account counts are not available here. They come from the D1 database, which only exists
+          on the deployed site.
+        </p>
+      ) : (
+        <dl className="m-0 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-rule bg-rule sm:grid-cols-5">
+          {(
+            [
+              ['Total accounts', stats.total],
+              ['New, last 7 days', stats.new7],
+              ['New, last 30 days', stats.new30],
+              ['Active, last 7 days', stats.active7],
+              ['Active, last 30 days', stats.active30],
+            ] as const
+          ).map(([label, value], index) => (
+            // The total spans the row on a phone, so five cells fill a two-column grid.
+            <div
+              key={label}
+              className={index === 0 ? 'col-span-2 bg-surface p-4 sm:col-span-1' : 'bg-surface p-4'}
+            >
+              <dt className="m-0 text-2xs text-ink-3">{label}</dt>
+              <dd className="mono m-0 mt-1 text-2xl font-semibold text-ink tabular-nums">
+                {value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      )}
+    </section>
   );
 }

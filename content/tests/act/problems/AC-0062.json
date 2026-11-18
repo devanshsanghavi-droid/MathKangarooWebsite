@@ -1,0 +1,56 @@
+{
+  "id": "AC-0062",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-07",
+  "difficulty": "easy",
+  "statement": "A line in the $xy$-plane passes through the points $(-2, 7)$ and $(4, -5)$. What is the $y$-intercept of the line?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-5$",
+      "correct": false,
+      "misconception": "I subtracted the $x$-values as $4 - 2$ instead of $4 - (-2)$, so I got a slope of $-6$ and then $7 = 12 + b$."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I put the change in $x$ over the change in $y$ and got a slope of $-\\frac{1}{2}$, so $7 = 1 + b$ gave $b = 6$."
+    },
+    {
+      "key": "D",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I dropped the negative sign on the slope and used $2$, so $7 = 2(-2) + b$ gave $b = 11$."
+    }
+  ],
+  "hints": [
+    "First find the slope of the line.",
+    "Slope is change in $y$ over change in $x$. Then substitute one point into $y = mx + b$ to find $b$.",
+    "The slope is $\\frac{-5 - 7}{4 - (-2)} = \\frac{-12}{6} = -2$. Now solve $7 = -2(-2) + b$."
+  ],
+  "solutions": {
+    "reliable": "The slope is $m = \\frac{-5 - 7}{4 - (-2)} = \\frac{-12}{6} = -2$. Using $(-2, 7)$ in $y = -2x + b$: $7 = 4 + b$, so $b = 3$. Check with $(4, -5)$: $-2(4) + 3 = -5$.",
+    "elegant": "From $x = -2$ to $x = 0$ is $2$ steps right, and each step lowers $y$ by $2$, so $y$ drops from $7$ to $7 - 4 = 3$."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

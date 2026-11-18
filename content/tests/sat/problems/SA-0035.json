@@ -1,0 +1,56 @@
+{
+  "id": "SA-0035",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "easy",
+  "statement": "A theater sells adult tickets for $\\$12$ each and student tickets for $\\$8$ each. The equation $12x + 8y = 960$ shows the numbers of adult tickets $x$ and student tickets $y$ that bring in exactly $\\$960$. When this equation is graphed in the $xy$-plane, what is the slope of the line?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-12$",
+      "correct": false,
+      "misconception": "I thought the coefficient of $x$ is always the slope, so I took $-12$ without first solving for $y$."
+    },
+    {
+      "key": "B",
+      "text": "$-\\dfrac{3}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$-\\dfrac{2}{3}$",
+      "correct": false,
+      "misconception": "I put the coefficients upside down and used $-\\dfrac{8}{12}$, which gives $-\\dfrac{2}{3}$."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{3}{2}$",
+      "correct": false,
+      "misconception": "I divided 12 by 8 but forgot that moving $12x$ to the other side makes it negative, so I got $\\dfrac{3}{2}$."
+    }
+  ],
+  "hints": [
+    "Rewrite the equation in the form $y = mx + b$.",
+    "Subtract $12x$ from both sides, then divide every term by $8$.",
+    "$8y = -12x + 960$, so $y = -\\dfrac{12}{8}x + 120$."
+  ],
+  "solutions": {
+    "reliable": "Solve for $y$: $8y = -12x + 960$, so $y = -\\dfrac{3}{2}x + 120$. The slope is $-\\dfrac{3}{2}$: each extra adult ticket replaces $1.5$ student tickets in the same total. Check with intercepts $(80, 0)$ and $(0, 120)$: slope $\\dfrac{120 - 0}{0 - 80} = -\\dfrac{3}{2}$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

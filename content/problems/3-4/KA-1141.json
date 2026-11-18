@@ -1,0 +1,68 @@
+{
+  "id": "KA-1141",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Ben has three cards showing the digits 2, 5 and 8. He makes numbers by placing one, two or all three of the cards in a row. How many different numbers can he make?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I only counted the numbers that use all three cards."
+    },
+    {
+      "key": "B",
+      "text": "7",
+      "correct": false,
+      "misconception": "I counted which cards are used, 3 single cards, 3 pairs and 1 group of three, but forgot that changing the order makes a new number."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted the one-card and two-card numbers but forgot the numbers that use all three cards."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted the two-card and three-card numbers but forgot that a single card is a number too."
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "CNT-05",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Count the one-card, two-card and three-card numbers separately.",
+    "Systematic listing: for each length, list the numbers in order of their first digit so none is missed or repeated. Then add the three lengths.",
+    "One card: 2, 5, 8. Two cards: 25, 28, 52, 58, 82, 85. Three cards: there are 6."
+  ],
+  "solutions": {
+    "reliable": "One card: 2, 5, 8, that is 3 numbers. Two cards: 25, 28, 52, 58, 82, 85, that is 6 numbers. Three cards: 258, 285, 528, 582, 825, 852, that is 6 numbers. Total $3 + 6 + 6 = 15$. The transferable idea: split a listing by size and list each group in a fixed order, so nothing is missed.",
+    "elegant": "For two cards: 3 choices for the first, 2 for the second, so 6. For three cards: $3 \\times 2 \\times 1 = 6$. Add the 3 single cards: 15."
+  },
+  "whyOnTest": "Organised listing, split by the number of cards used, is exactly what stops students missing or repeating cases.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1339",
+  "band": "7-8",
+  "points": 4,
+  "statement": "On a standard die, opposite faces add up to 7. At each of the 8 corners of the die, three faces meet, and the three numbers on those faces are added. How many different totals are there among the 8 corners?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I allowed any three different numbers, including opposite ones like 1 and 6, so every total from 6 to 15 seemed possible."
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted all the ways to choose 3 of the 6 faces, $6 \\times 5 \\times 4 \\div 6 = 20$, but most of those groups never meet at a corner."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought opposite corners of the die always have the same total, so I only counted 4 pairs of corners."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I saw that 8 is impossible as a total, but I missed that 13 is impossible too."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-11",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Can the faces 1 and 6 ever meet at a corner?",
+    "Opposite faces never meet, so a corner uses one face from each pair: 1 or 6, 2 or 5, 3 or 4. Each of these 8 choices is a real corner. List the 8 totals and look for repeats.",
+    "The totals with 1 are 1 + 2 + 3, 1 + 2 + 4, 1 + 5 + 3 and 1 + 5 + 4. Each total with 6 is 5 more than one of these."
+  ],
+  "solutions": {
+    "reliable": "Opposite faces never meet, so a corner takes one number from each of the pairs 1 and 6, 2 and 5, 3 and 4. There are $2 \\times 2 \\times 2 = 8$ such choices and a die has 8 corners, so each choice is exactly one corner. The totals are 1 + 2 + 3 = 6, 1 + 2 + 4 = 7, 1 + 5 + 3 = 9, 1 + 5 + 4 = 10, and with 6 instead of 1: 11, 12, 14 and 15. All 8 are different, so there are 8 different totals. The transferable idea: on a cube, the three faces at a corner take one face from each pair of opposite faces.",
+    "elegant": "The totals using 1 are 6, 7, 9 and 10, and swapping the 1 for a 6 adds 5, giving 11, 12, 14 and 15. The first four are all at most 10 and the last four are all at least 11, so no two totals match, and there are 8."
+  },
+  "whyOnTest": "Tests the key die fact that the three faces at a corner take one face from each opposite pair, followed by careful listing of the totals.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

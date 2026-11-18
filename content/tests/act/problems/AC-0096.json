@@ -1,0 +1,56 @@
+{
+  "id": "AC-0096",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-06",
+  "difficulty": "medium",
+  "statement": "A phone company offers two monthly plans. Plan A costs $\\$35$ and includes $4$ gigabytes (GB) of data, plus $\\$9$ for each GB used beyond $4$. Plan B costs $\\$62$ with unlimited data. For a customer who uses $d$ GB in a month, where $d > 4$, which of the following describes exactly when Plan B costs less than Plan A?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$d < 7$",
+      "correct": false,
+      "misconception": "I wrote the inequality with Plan B costing more, $62 > 35 + 9(d - 4)$, so my answer pointed the wrong way."
+    },
+    {
+      "key": "B",
+      "text": "$d > 3$",
+      "correct": false,
+      "misconception": "I charged $\\$9$ for every GB, not just the ones beyond 4, so I solved $62 < 35 + 9d$."
+    },
+    {
+      "key": "C",
+      "text": "$d > 7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$d > 11$",
+      "correct": false,
+      "misconception": "I solved correctly to get 7 but then added the 4 included GB again, which gave $d > 11$."
+    }
+  ],
+  "hints": [
+    "Write an expression for Plan A's cost when $d$ GB are used.",
+    "Plan A costs $35 + 9(d - 4)$ dollars. Plan B is cheaper when $62 < 35 + 9(d - 4)$.",
+    "Simplify: $62 < 9d - 1$, so $63 < 9d$."
+  ],
+  "solutions": {
+    "reliable": "Plan A costs $35 + 9(d - 4) = 9d - 1$ dollars. Plan B costs less when $62 < 9d - 1$, so $63 < 9d$ and $d > 7$. Check: at $d = 8$, Plan A costs $\\$71$, more than Plan B's $\\$62$; at $d = 6$, Plan A costs only $\\$53$.",
+    "elegant": "Plan B's extra $\\$62 - \\$35 = \\$27$ would buy $27 \\div 9 = 3$ extra GB on Plan A, so the plans tie at $4 + 3 = 7$ GB, and Plan B is cheaper above that."
+  },
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

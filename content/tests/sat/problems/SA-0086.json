@@ -1,0 +1,56 @@
+{
+  "id": "SA-0086",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "easy",
+  "statement": "At a zoo, an adult ticket costs $3$ dollars more than a child ticket. A family paid $41$ dollars for $2$ adult tickets and $3$ child tickets. What is the price, in dollars, of one adult ticket?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8.20$",
+      "correct": false,
+      "misconception": "I assumed all five tickets cost the same and divided 41 dollars by 5."
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I solved correctly for the price of a child ticket, 7 dollars, and gave it instead of the adult price."
+    },
+    {
+      "key": "C",
+      "text": "$6.40$",
+      "correct": false,
+      "misconception": "I wrote the relationship backward as $c = a + 3$, so $2a + 3(a + 3) = 41$ gave $a = 6.40$."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Write the adult price in terms of the child price.",
+    "If a child ticket costs $c$ dollars, an adult ticket costs $c + 3$ dollars. Write one equation for the $41$ dollars the family paid.",
+    "$2(c + 3) + 3c = 41$ gives $5c + 6 = 41$. Solve for $c$, then add $3$."
+  ],
+  "solutions": {
+    "reliable": "Let $c$ be the child price, so the adult price is $a = c + 3$. Then $2a + 3c = 41$ becomes $2(c + 3) + 3c = 41$, so $5c = 35$, $c = 7$ and $a = 10$. Check: $2(10) + 3(7) = 20 + 21 = 41$. Key idea: when one unknown is described in terms of another, substitute to get a single equation.",
+    "elegant": "Take away the extra $3$ dollars on each of the $2$ adult tickets: $41 - 6 = 35$ dollars would buy $5$ child tickets, so a child ticket is $7$ dollars and an adult ticket is $10$."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

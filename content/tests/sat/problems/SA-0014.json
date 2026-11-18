@@ -1,0 +1,56 @@
+{
+  "id": "SA-0014",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "easy",
+  "statement": "A school has $\\$900$ to spend on chess sets, which cost $\\$18$ each, and robotics kits, which cost $\\$45$ each. The equation $18c + 45r = 900$ represents buying $c$ chess sets and $r$ robotics kits for exactly $\\$900$. What is the value of $c$ when $r = 0$, and what does it represent?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$20$; the number of robotics kits the school can buy if it buys no chess sets",
+      "correct": false,
+      "misconception": "I divided $900$ by $45$, which gives the value of $r$ when $c = 0$, instead of the value of $c$ when $r = 0$."
+    },
+    {
+      "key": "B",
+      "text": "$50$; the number of robotics kits the school can buy if it buys no chess sets",
+      "correct": false,
+      "misconception": "I computed $900 \\div 18 = 50$ correctly, but I mixed up which item that number counts."
+    },
+    {
+      "key": "C",
+      "text": "$50$; the number of chess sets the school can buy if it buys no robotics kits",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$18$; the cost, in dollars, of one chess set",
+      "correct": false,
+      "misconception": "I read the coefficient of $c$ as the answer instead of solving for $c$ when $r = 0$."
+    }
+  ],
+  "hints": [
+    "Substitute $r = 0$ into the equation.",
+    "With no robotics kits, all of the money goes to chess sets. Solve for $c$, then say what that number counts.",
+    "With $r = 0$ the equation is $18c = 900$."
+  ],
+  "solutions": {
+    "reliable": "Setting $r = 0$ gives $18c = 900$, so $c = 50$. When no robotics kits are bought, all $900$ dollars buys chess sets at $18$ dollars each, so $50$ is the number of chess sets the school can buy if it buys no robotics kits. Check: $18 \\cdot 50 = 900$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

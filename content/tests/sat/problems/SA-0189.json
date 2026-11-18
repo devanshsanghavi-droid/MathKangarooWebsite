@@ -1,0 +1,56 @@
+{
+  "id": "SA-0189",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-06",
+  "difficulty": "hard",
+  "statement": "How many real solutions does the equation $|x^2 - 6x| = 9$ have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I only used the case $x^2 - 6x = -9$, which gives just $x = 3$."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I only solved $x^2 - 6x = 9$ and forgot the case where the expression inside the absolute value equals $-9$."
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I solved both cases but counted the repeated solution $x = 3$ of $(x - 3)^2 = 0$ twice."
+    }
+  ],
+  "hints": [
+    "An absolute value equals $9$ when the expression inside equals $9$ or $-9$.",
+    "Solve $x^2 - 6x - 9 = 0$ and $x^2 - 6x + 9 = 0$ separately; the discriminant tells you how many real solutions each has.",
+    "The first has discriminant $36 + 36 = 72 > 0$, so it has two solutions; the second is $(x - 3)^2 = 0$, so it has one. Check that no solution is shared."
+  ],
+  "solutions": {
+    "reliable": "Case 1: $x^2 - 6x = 9$, or $x^2 - 6x - 9 = 0$. Its discriminant is $36 + 36 = 72 > 0$, so it has two real solutions, $x = 3 \\pm 3\\sqrt{2}$. Case 2: $x^2 - 6x = -9$, or $(x - 3)^2 = 0$, which has the single solution $x = 3$. Since $3$ is neither $3 + 3\\sqrt{2}$ nor $3 - 3\\sqrt{2}$, the three solutions are distinct, so the equation has $3$ real solutions.",
+    "elegant": "Write $x^2 - 6x = (x - 3)^2 - 9$. The equation says this equals $9$ or $-9$, so $(x - 3)^2 = 18$, with two solutions, or $(x - 3)^2 = 0$, with one solution: $3$ in all."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

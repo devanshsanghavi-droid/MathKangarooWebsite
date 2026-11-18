@@ -1,0 +1,69 @@
+{
+  "id": "AM-1131",
+  "contest": "AMC8",
+  "slot": 19,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "A camping tent is shaped like a pyramid with a square floor that is $10$ feet on each side. The top of the tent is directly above the center of the floor, and each of its four walls is a triangle. On each wall, the distance measured along the wall from the midpoint of the floor edge up to the top of the tent is $13$ feet. What is the volume of the tent, in cubic feet?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$360$",
+      "correct": false,
+      "misconception": "I added the floor and the four walls, $100 + 4 \\cdot 65 = 360$, which is the surface area of the tent, not its volume."
+    },
+    {
+      "key": "B",
+      "text": "$400$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{1300}{3}$",
+      "correct": false,
+      "misconception": "I used the slanted $13$ feet as the height of the pyramid, so I computed $\\frac{1}{3} \\cdot 100 \\cdot 13$."
+    },
+    {
+      "key": "D",
+      "text": "$600$",
+      "correct": false,
+      "misconception": "I used $\\frac{1}{2}$ instead of $\\frac{1}{3}$ in the pyramid volume formula, so I computed $\\frac{1}{2} \\cdot 100 \\cdot 12$."
+    },
+    {
+      "key": "E",
+      "text": "$1200$",
+      "correct": false,
+      "misconception": "I found the height $12$ but forgot the $\\frac{1}{3}$, so I multiplied the floor area by the height like a box."
+    }
+  ],
+  "hints": [
+    "The $13$ feet is a slanted length along a wall. The volume needs the straight-up height.",
+    "From the center of the floor to the middle of an edge is $5$ feet. That $5$, the straight-up height, and the slanted $13$ form a right triangle.",
+    "The height is $\\sqrt{13^2 - 5^2} = 12$. The volume of a pyramid is $\\frac{1}{3}$ times the base area times the height."
+  ],
+  "solutions": {
+    "reliable": "Let $h$ be the height from the center of the floor straight up to the top. The top, the center of the floor, and the middle of a floor edge form a right triangle: one leg is $h$, the other leg is half the floor side, $5$, and the hypotenuse is the slanted $13$. So $h = \\sqrt{13^2 - 5^2} = \\sqrt{144} = 12$. The volume is $\\frac{1}{3} \\cdot 10^2 \\cdot 12 = 400$ cubic feet.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-16",
+    "F-GEO-02"
+  ],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

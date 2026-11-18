@@ -1,0 +1,56 @@
+{
+  "id": "AC-0198",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-02",
+  "difficulty": "hard",
+  "statement": "What is the range of the function $g(x) = \\dfrac{12}{x^2 + 3}$, defined for all real numbers $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0 < y \\le 4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$0 \\le y \\le 4$",
+      "correct": false,
+      "misconception": "I thought the outputs reach $0$ when $x$ is very large, but $12$ divided by a positive number is never $0$, so $0$ is not in the range."
+    },
+    {
+      "key": "C",
+      "text": "$y \\le 4$",
+      "correct": false,
+      "misconception": "I found the largest value, $4$ at $x = 0$, but I forgot that $12$ and $x^2 + 3$ are both positive, so the outputs can never be zero or negative."
+    },
+    {
+      "key": "D",
+      "text": "$y \\ge 4$",
+      "correct": false,
+      "misconception": "I thought the value at $x = 0$ was the smallest, but making the denominator smaller makes the fraction larger, so $4$ is the largest value."
+    }
+  ],
+  "hints": [
+    "What is the smallest value the denominator $x^2 + 3$ can take, and can it get as large as you like?",
+    "$x^2 + 3 \\ge 3$, with equality at $x = 0$. A larger denominator makes the fraction smaller, but $12$ over a positive number is always positive.",
+    "The largest output is $\\frac{12}{3} = 4$. As $x$ grows, the outputs shrink toward $0$ without reaching it."
+  ],
+  "solutions": {
+    "reliable": "Since $x^2 \\ge 0$, the denominator satisfies $x^2 + 3 \\ge 3$, with the smallest value $3$ at $x = 0$. So $g(x) \\le \\frac{12}{3} = 4$, and $g(0) = 4$. The fraction is always positive because both $12$ and $x^2 + 3$ are positive, so $g(x) > 0$. As $x^2 + 3$ takes every value from $3$ upward, $g(x) = \\frac{12}{x^2 + 3}$ takes every value in $0 < y \\le 4$: to reach a value $c$ in that interval, solve $x^2 = \\frac{12}{c} - 3 \\ge 0$. The range is $0 < y \\le 4$.",
+    "elegant": null
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

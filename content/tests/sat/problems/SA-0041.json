@@ -1,0 +1,56 @@
+{
+  "id": "SA-0041",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "medium",
+  "statement": "A juice company mixes a drink that is $15\\%$ fruit juice with a drink that is $40\\%$ fruit juice to make $50$ liters of a drink that is $25\\%$ fruit juice. How many liters of the $40\\%$ drink does the company use?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$20$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I assumed the company used equal amounts of the two drinks, so I split the 50 liters in half."
+    },
+    {
+      "key": "C",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I set up and solved the system correctly, but I reported the 30 liters of the $15\\%$ drink instead of the $40\\%$ drink."
+    },
+    {
+      "key": "D",
+      "text": "$31.25$",
+      "correct": false,
+      "misconception": "I thought the amount of $40\\%$ drink was $\\dfrac{25}{40}$ of the total, so I computed $\\dfrac{25}{40} \\times 50 = 31.25$."
+    }
+  ],
+  "hints": [
+    "Track the amount of fruit juice, not just the amount of drink.",
+    "Let $x$ be the liters of $15\\%$ drink and $y$ the liters of $40\\%$ drink. Write one equation for total liters and one for liters of fruit juice.",
+    "$x + y = 50$ and $0.15x + 0.40y = 0.25(50) = 12.5$. Substitute $x = 50 - y$."
+  ],
+  "solutions": {
+    "reliable": "Let $y$ be the liters of $40\\%$ drink, so $50 - y$ liters are $15\\%$ drink. The juice balances: $0.15(50 - y) + 0.40y = 0.25(50)$. That is $7.5 + 0.25y = 12.5$, so $0.25y = 5$ and $y = 20$. Check: $0.15(30) + 0.40(20) = 4.5 + 8 = 12.5$ liters of juice.",
+    "elegant": "The target $25\\%$ is $10$ points above $15\\%$ and $15$ points below $40\\%$, so the amounts are in the ratio $15 : 10 = 3 : 2$, with more of the drink that is closer to $25\\%$. The $40\\%$ drink is $\\dfrac{2}{5}$ of the $50$ liters, which is $20$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

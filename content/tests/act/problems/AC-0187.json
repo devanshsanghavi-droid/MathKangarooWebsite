@@ -1,0 +1,56 @@
+{
+  "id": "AC-0187",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-08",
+  "difficulty": "medium",
+  "statement": "A point starts at $(1, 0)$ on the unit circle $x^2 + y^2 = 1$ and travels counterclockwise along the circle a distance of $\\dfrac{4\\pi}{3}$ units. What are the coordinates of the point where it stops?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\left(-\\frac{1}{2}, -\\frac{\\sqrt{3}}{2}\\right)$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\left(-\\frac{\\sqrt{3}}{2}, -\\frac{1}{2}\\right)$",
+      "correct": false,
+      "misconception": "I found the right quadrant but swapped the coordinates, using the sine for $x$ and the cosine for $y$."
+    },
+    {
+      "key": "C",
+      "text": "$\\left(-\\frac{1}{2}, \\frac{\\sqrt{3}}{2}\\right)$",
+      "correct": false,
+      "misconception": "I moved clockwise instead of counterclockwise, which lands where the angle $\\frac{2\\pi}{3}$ does when measured the usual way."
+    },
+    {
+      "key": "D",
+      "text": "$\\left(\\frac{1}{2}, -\\frac{\\sqrt{3}}{2}\\right)$",
+      "correct": false,
+      "misconception": "I used the reference angle $\\frac{\\pi}{3}$ but gave $x$ a positive sign, as if the point were in the fourth quadrant."
+    }
+  ],
+  "hints": [
+    "On the unit circle, arc length equals the angle in radians. Which angle is $\\frac{4\\pi}{3}$, and which quadrant is it in?",
+    "$\\frac{4\\pi}{3} = \\pi + \\frac{\\pi}{3}$, so the point is in the third quadrant with reference angle $\\frac{\\pi}{3}$. The point is $\\left(\\cos\\frac{4\\pi}{3}, \\sin\\frac{4\\pi}{3}\\right)$.",
+    "$\\cos\\frac{\\pi}{3} = \\frac{1}{2}$ and $\\sin\\frac{\\pi}{3} = \\frac{\\sqrt{3}}{2}$; in the third quadrant both coordinates are negative."
+  ],
+  "solutions": {
+    "reliable": "On a circle of radius $1$, an arc of length $\\frac{4\\pi}{3}$ subtends an angle of $\\frac{4\\pi}{3}$ radians, so the point stops at $\\left(\\cos\\frac{4\\pi}{3}, \\sin\\frac{4\\pi}{3}\\right)$. Since $\\frac{4\\pi}{3} = \\pi + \\frac{\\pi}{3}$, the angle is in the third quadrant with reference angle $\\frac{\\pi}{3}$, so both coordinates are negative: $\\left(-\\frac{1}{2}, -\\frac{\\sqrt{3}}{2}\\right)$.",
+    "elegant": "Going $\\pi$ units takes the point halfway around to $(-1, 0)$. The remaining $\\frac{\\pi}{3}$ carries it $60^\\circ$ further, below the $x$-axis, to $\\left(-\\frac{1}{2}, -\\frac{\\sqrt{3}}{2}\\right)$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

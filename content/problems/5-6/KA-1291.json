@@ -1,0 +1,68 @@
+{
+  "id": "KA-1291",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A secret rule turns two numbers into one number. Using the rule, $5 \\otimes 3 = 16$, $4 \\otimes 1 = 15$, $6 \\otimes 5 = 11$ and $3 \\otimes 3 = 0$. What is $7 \\otimes 2$ using the same rule?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "18",
+      "correct": false,
+      "misconception": "I only matched the first example: I added the two numbers and doubled the result."
+    },
+    {
+      "key": "B",
+      "text": "45",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "47",
+      "correct": false,
+      "misconception": "I guessed the first number times itself minus the second number, without checking it against the examples."
+    },
+    {
+      "key": "D",
+      "text": "53",
+      "correct": false,
+      "misconception": "I squared both numbers but added the squares instead of taking one from the other."
+    },
+    {
+      "key": "E",
+      "text": "81",
+      "correct": false,
+      "misconception": "I added the two numbers and then squared the result."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "CFT-11",
+      "CFT-04"
+    ]
+  },
+  "hints": [
+    "Why might two equal numbers give 0?",
+    "Equal numbers giving 0 suggests the rule takes something away. Try combining the sum and the difference of the two numbers, or their squares, and test your guess on every example.",
+    "Each answer is the first number squared minus the second number squared: 25 - 9 = 16, 16 - 1 = 15, 36 - 25 = 11 and 9 - 9 = 0."
+  ],
+  "solutions": {
+    "reliable": "Test a guess on all four examples. The rule 'square the first number, square the second, subtract' works: 25 - 9 = 16, 16 - 1 = 15, 36 - 25 = 11 and 9 - 9 = 0. So 7 ⊗ 2 = 49 - 4 = 45. Second method: the same values come from (sum) × (difference): 8 × 2 = 16, 5 × 3 = 15, 11 × 1 = 11 and 6 × 0 = 0, so 7 ⊗ 2 = 9 × 5 = 45. The transferable idea: a guessed rule only counts once it fits every example.",
+    "elegant": "The example 3 ⊗ 3 = 0 hints that the difference of the numbers is a factor. Dividing each answer by the difference gives 8, 5 and 11, which are the sums. So the rule is sum times difference, and 7 ⊗ 2 = 9 × 5 = 45."
+  },
+  "whyOnTest": "Inferring a rule at 5 points: several rules fit one example, and only careful checking against all of them finds the real one.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

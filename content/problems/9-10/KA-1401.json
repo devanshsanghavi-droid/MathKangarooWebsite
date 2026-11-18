@@ -1,0 +1,67 @@
+{
+  "id": "KA-1401",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Fence posts stand all the way round the edge of a square field, exactly 4 m apart, with one post at each corner. There are 40 posts altogether. How long is each side of the field?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "36 m",
+      "correct": false,
+      "misconception": "I gave each side 10 posts, so 9 gaps of 4 m, forgetting that each corner post is shared by two sides."
+    },
+    {
+      "key": "B",
+      "text": "39 m",
+      "correct": false,
+      "misconception": "I thought 40 posts make 39 gaps, as on a straight fence, so I took the perimeter as 156 m and each side as 39 m."
+    },
+    {
+      "key": "C",
+      "text": "40 m",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "44 m",
+      "correct": false,
+      "misconception": "I thought the 40 posts did not include the 4 corner posts, so I counted 44 gaps of 4 m round the field."
+    },
+    {
+      "key": "E",
+      "text": "160 m",
+      "correct": false,
+      "misconception": "I worked out the whole perimeter correctly and gave that instead of the length of one side."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "Sketch the square and mark a few posts, including the corners.",
+    "Draw it: on a closed loop, every post is followed by exactly one gap before the next post. So count gaps, not posts, then turn the perimeter into a side length.",
+    "Round a closed loop, 40 posts make 40 gaps, so the perimeter is $40 \\times 4 = 160$ m."
+  ],
+  "solutions": {
+    "reliable": "Going round the field, each post is followed by one gap before the next post, and the last gap leads back to the first post. So 40 posts make 40 gaps of 4 m, and the perimeter is 160 m. Each side is $160 \\div 4 = 40$ m. Check with the sketch: each side then has 10 gaps and 11 posts counting both corners, and $4 \\times 11 - 4 = 40$ posts, since each corner was counted twice. The transferable idea: a quick sketch shows whether a fence is open (one more post than gaps) or closed (equal numbers).",
+    "elegant": null
+  },
+  "whyOnTest": "Post-and-gap questions are decided by a sketch: a closed loop has as many gaps as posts, and the corners are where miscounts happen.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

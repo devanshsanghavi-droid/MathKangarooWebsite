@@ -1,0 +1,68 @@
+{
+  "id": "KA-1324",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Ola has taken some tests. If she scores 100 on her next test, the mean of all her scores will be 86. If she scores 60 on it instead, the mean will be 81. What is the mean of her scores so far?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "84",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "83.5",
+      "correct": false,
+      "misconception": "I averaged the two possible new means, 86 and 81."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I found the number of tests she has already taken, 7, and gave that instead of the mean."
+    },
+    {
+      "key": "D",
+      "text": "73.5",
+      "correct": false,
+      "misconception": "I divided the new totals by the number of earlier tests instead of including the new test, so I solved $8m + 100 = 8 \\times 86$."
+    },
+    {
+      "key": "E",
+      "text": "84.25",
+      "correct": false,
+      "misconception": "I found that 8 tests share the 40-point difference, but then took 8 as the number of tests before the next one, so I solved $8m + 100 = 9 \\times 86$."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-15",
+    "secondary": [
+      "MOD-01",
+      "LOG-08"
+    ]
+  },
+  "hints": [
+    "The two cases differ only in the next score. Compare them.",
+    "Means and working backwards: changing one score by 40 changes the total by 40, and the mean by 40 divided by the number of tests including the new one. That gives the number of tests, and then the totals.",
+    "The means differ by $86 - 81 = 5$, so there are $40 \\div 5 = 8$ tests in all, including the next one. With a score of 100, the 8 scores total $8 \\times 86 = 688$."
+  ],
+  "solutions": {
+    "reliable": "The two cases differ only in the next score, by $100 - 60 = 40$ points, and the means differ by $86 - 81 = 5$. Since the mean is the total divided by the number of tests, there are $40 \\div 5 = 8$ tests including the next one, so Ola has taken 7 so far. If the next score is 100, the 8 scores total $8 \\times 86 = 688$, so her 7 scores so far total $688 - 100 = 588$, and their mean is $588 \\div 7 = 84$. Check with the other case: $(588 + 60) \\div 8 = 648 \\div 8 = 81$. The transferable idea: changing one value changes the mean by that change divided by how many values there are.",
+    "elegant": "Let her mean so far be $m$. With 8 tests in all, a score of 100 raises the mean by $\\frac{100 - m}{8}$, so $m + \\frac{100 - m}{8} = 86$. Multiplying by 8 gives $8m + 100 - m = 688$, so $7m = 588$ and $m = 84$."
+  },
+  "whyOnTest": "One score change shifting the mean reveals how many values there are; working backwards from a mean is the skill being tested.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

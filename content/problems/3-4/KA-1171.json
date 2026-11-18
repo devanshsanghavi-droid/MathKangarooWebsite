@@ -1,0 +1,67 @@
+{
+  "id": "KA-1171",
+  "band": "3-4",
+  "points": 3,
+  "statement": "A square napkin is folded in half and then in half again, making a smaller square with sides of 10 cm. What is the perimeter of the napkin when it is unfolded?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20",
+      "correct": false,
+      "misconception": "I found the side of the unfolded napkin, 20 cm, and stopped before working out the perimeter."
+    },
+    {
+      "key": "B",
+      "text": "40",
+      "correct": false,
+      "misconception": "I gave the perimeter of the folded square, $4 \\times 10 = 40$, not the unfolded napkin."
+    },
+    {
+      "key": "C",
+      "text": "60",
+      "correct": false,
+      "misconception": "I unfolded only one fold, getting a 20 cm by 10 cm rectangle with a perimeter of 60 cm."
+    },
+    {
+      "key": "D",
+      "text": "80",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "160",
+      "correct": false,
+      "misconception": "I doubled the side once for each fold, making it 40 cm and the perimeter $4 \\times 40 = 160$, but each fold works in one direction only, so the side doubles just once."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-15",
+    "secondary": [
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "Unfold one fold at a time. What happens to the shape?",
+    "Each fold in half halves one direction only. Undo the second fold, then the first, and keep track of both side lengths. Then find the distance all the way round.",
+    "Undoing one fold gives a rectangle 20 cm by 10 cm. Undoing the other fold gives a square 20 cm by 20 cm. Its perimeter is 4 sides of 20 cm."
+  ],
+  "solutions": {
+    "reliable": "The two folds go in different directions, because the result is a square. Unfold one: the 10 cm square becomes a 20 cm by 10 cm rectangle. Unfold the other: it becomes a 20 cm by 20 cm square. The perimeter is $4 \\times 20 = 80$ cm. The transferable idea: undo folds one at a time, tracking each direction separately.",
+    "elegant": null
+  },
+  "whyOnTest": "Folding questions test running a process backwards one step at a time, and noticing that a fold changes only one direction.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

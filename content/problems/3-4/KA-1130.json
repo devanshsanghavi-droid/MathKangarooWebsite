@@ -1,0 +1,68 @@
+{
+  "id": "KA-1130",
+  "band": "3-4",
+  "points": 3,
+  "statement": "A row in a cinema has 10 seats. Three friends want to sit in three seats next to each other in that row. How many different groups of three seats could they choose?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I took away 1 from 10, as if they needed only two seats next to each other."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted one group starting at every seat, but a group cannot start at seat 9 or 10."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I found the 8 groups and then multiplied by 3 because there are 3 friends, but each group is just one choice of seats."
+    },
+    {
+      "key": "E",
+      "text": "48",
+      "correct": false,
+      "misconception": "I counted the 8 groups and also the 6 orders the friends can sit in, but the question only asks which seats."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-12",
+    "secondary": [
+      "CFT-01",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Where can the leftmost seat of the group be?",
+    "Counting by position: name each group by its first seat, then find the last seat a group of three can start at without running off the row.",
+    "A group can start at seat 1, 2, 3 and so on, up to seat 8, which uses seats 8, 9 and 10."
+  ],
+  "solutions": {
+    "reliable": "Name each group by its leftmost seat. Starting at seat 1 uses seats 1, 2, 3. Starting at seat 8 uses seats 8, 9, 10. Starting at seat 9 would need a seat 11, which does not exist. So the starting seat is 1, 2, ..., 8, giving 8 groups. The transferable idea: a block of length $k$ in a row of $n$ fits in $n - k + 1$ positions.",
+    "elegant": null
+  },
+  "whyOnTest": "Sliding a block along a row and counting its starting places is the basic move behind every counting by position problem.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

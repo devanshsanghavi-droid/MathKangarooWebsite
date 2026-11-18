@@ -1,0 +1,68 @@
+{
+  "id": "KA-1428",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Seven-digit numbers are made by arranging all seven of the digits 1, 1, 1, 2, 2, 3, 3. How many of these numbers are odd?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "210",
+      "correct": false,
+      "misconception": "I counted all the arrangements and forgot that the number has to be odd."
+    },
+    {
+      "key": "B",
+      "text": "90",
+      "correct": false,
+      "misconception": "I only counted the numbers ending in 1 and forgot the ones ending in 3."
+    },
+    {
+      "key": "C",
+      "text": "140",
+      "correct": false,
+      "misconception": "I took two thirds of all 210 arrangements because two of the three different digits are odd, but the digits do not appear equally often."
+    },
+    {
+      "key": "D",
+      "text": "180",
+      "correct": false,
+      "misconception": "I worked out the numbers ending in 1 and assumed those ending in 3 would give the same count."
+    },
+    {
+      "key": "E",
+      "text": "150",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-05",
+    "secondary": [
+      "CNT-04",
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "An odd number ends in an odd digit. Which digits can go last?",
+    "Split by the last digit, 1 or 3. In each case arrange the remaining six digits, remembering that swapping two equal digits does not make a new number.",
+    "Ending in 1 leaves 1, 1, 2, 2, 3, 3, with $\\frac{6!}{2!\\,2!\\,2!}$ arrangements. Ending in 3 leaves 1, 1, 1, 2, 2, 3, with $\\frac{6!}{3!\\,2!}$ arrangements."
+  ],
+  "solutions": {
+    "reliable": "The last digit must be 1 or 3. If it is 1, the other six digits are 1, 1, 2, 2, 3, 3, which can be arranged in $\\frac{720}{2 \\times 2 \\times 2} = 90$ ways. If it is 3, the others are 1, 1, 1, 2, 2, 3, arranged in $\\frac{720}{6 \\times 2} = 60$ ways. Total $90 + 60 = 150$. The transferable idea: with repeated objects, divide by the arrangements of each group of equal objects, and split into cases when the cases differ.",
+    "elegant": "There are $\\frac{7!}{3!\\,2!\\,2!} = 210$ arrangements, and each of the seven digit cards is equally likely to end up last. Five of the seven cards are odd (three 1s and two 3s), so $\\frac{5}{7} \\times 210 = 150$ numbers are odd. Weight by cards, not by different digit values."
+  },
+  "whyOnTest": "Arranging repeated digits tests dividing out equal objects, and the final-digit condition tests whether the cases are weighted correctly.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

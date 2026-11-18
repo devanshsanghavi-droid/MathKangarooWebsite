@@ -1,0 +1,68 @@
+{
+  "id": "KA-1296",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Eight children sit around a round table, each with some sweets. Every child has exactly the average of the numbers of sweets held by the two children sitting next to them. Ana has 6 sweets. How many sweets do the eight children have altogether?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I worked out how many sweets each child has, but gave that instead of the total."
+    },
+    {
+      "key": "B",
+      "text": "12",
+      "correct": false,
+      "misconception": "I added the sweets of Ana's two neighbours, which must make 12 together, and stopped there."
+    },
+    {
+      "key": "C",
+      "text": "18",
+      "correct": false,
+      "misconception": "I only added Ana and her two neighbours, because I did not see that the rule fixes everyone else."
+    },
+    {
+      "key": "D",
+      "text": "48",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "It cannot be determined",
+      "correct": false,
+      "misconception": "I thought the rule only tells us about Ana's two neighbours, so the other children could have any number."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-11",
+    "secondary": [
+      "NUM-15",
+      "LOG-09"
+    ]
+  },
+  "hints": [
+    "Think about the child who has the most sweets.",
+    "Pick a child with the largest number of sweets. Their two neighbours have at most that many each, yet their average must equal it. See what that forces, then walk round the table.",
+    "If the largest number is M, both neighbours of that child have at most M and average M, so both have exactly M. Their neighbours then also have M, and so on round the table."
+  ],
+  "solutions": {
+    "reliable": "Let M be the largest number of sweets any child has, and look at a child with M sweets. The two neighbours each have at most M, and their average is M, so both must have exactly M; if one had less, the average would be less than M. Now each of those neighbours has M sweets, so the same argument applies to them, and moving round the table, every child has M sweets. Since Ana has 6, every child has 6, and the total is 8 × 6 = 48. The transferable idea: look at the extreme case, the biggest or smallest, because it is the one the rule squeezes hardest.",
+    "elegant": null
+  },
+  "whyOnTest": "The extremal principle: studying the child with the most sweets turns a puzzle that looks underdetermined into a certainty.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

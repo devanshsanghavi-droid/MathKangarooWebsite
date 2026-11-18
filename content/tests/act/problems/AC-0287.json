@@ -1,0 +1,56 @@
+{
+  "id": "AC-0287",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-05",
+  "difficulty": "hard",
+  "statement": "At a school fair, raffle tickets are numbered from $100$ through $999$. A ticket wins a prize if its number is odd and its three digits are all different. How many tickets win a prize?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$320$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$324$",
+      "correct": false,
+      "misconception": "I counted all 648 numbers with three different digits and took half of them as odd, but different digits makes odd and even not split evenly."
+    },
+    {
+      "key": "C",
+      "text": "$360$",
+      "correct": false,
+      "misconception": "I picked the odd last digit first, then let the first digit be any of the 9 remaining digits, forgetting the first digit cannot be 0."
+    },
+    {
+      "key": "D",
+      "text": "$405$",
+      "correct": false,
+      "misconception": "I used 9 choices for the first digit, 9 for the middle and 5 for the last, without removing digits already used from the last digit's choices."
+    }
+  ],
+  "hints": [
+    "Fill in the digit with the strictest rule first.",
+    "Choose the last digit first (it must be odd), then the first digit (it cannot be $0$ or repeat the last digit), then the middle digit.",
+    "The last digit has $5$ choices. The first digit has $8$ choices (not $0$, not the last digit). The middle digit has $8$ choices (any digit except the two already used)."
+  ],
+  "solutions": {
+    "reliable": "Choose the units digit first: it must be one of $1, 3, 5, 7, 9$, so $5$ choices. The hundreds digit cannot be $0$ or equal the units digit, which leaves $8$ choices. The tens digit can be any of the $10$ digits except the two already used, so $8$ choices. The total is $5 \\cdot 8 \\cdot 8 = 320$.",
+    "elegant": "Count with a leading $0$ allowed, then remove those. Strings of three different digits ending in an odd digit: $5 \\cdot 9 \\cdot 8 = 360$. Of these, the ones starting with $0$ number $5 \\cdot 8 = 40$ (odd last digit, then any of the $8$ unused digits in the middle). So $360 - 40 = 320$."
+  },
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

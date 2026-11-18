@@ -1,0 +1,68 @@
+{
+  "id": "KA-1580",
+  "band": "11-12",
+  "points": 4,
+  "statement": "What is the remainder when $3 + 3^2 + 3^3 + \\dots + 3^{100}$ is divided by 7?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I saw that each block of six remainders adds up to 21, a multiple of 7, and assumed the 100 terms make whole blocks."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I found that 4 terms are left over after the full blocks, but I took the last four remainders of the cycle, $6 + 4 + 5 + 1 = 16$, instead of the first four."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found the remainder of the last term only, $3^{100}$, which leaves 4, instead of the remainder of the whole sum."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought every power of 3 leaves remainder 3, so I used $100 \\times 3 = 300 = 294 + 6$."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "PAT-03",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Find the remainders of the first few powers of 3 on division by 7.",
+    "The remainders of powers repeat in a cycle. Add one full cycle of remainders, see what that total does, then deal with the terms left over after the full cycles.",
+    "Powers of 3 leave remainders $3, 2, 6, 4, 5, 1$, then repeat. One cycle adds up to $21$, a multiple of 7. Since $100 = 6 \\times 16 + 4$, only the first four remainders of a cycle are left over."
+  ],
+  "solutions": {
+    "reliable": "Powers of 3 leave remainders $3, 2, 6, 4, 5, 1$ on division by 7, and then the cycle repeats, since $3^6 = 729 = 7 \\times 104 + 1$. Each full cycle of six terms adds up to $3 + 2 + 6 + 4 + 5 + 1 = 21$, a multiple of 7. The 100 terms make 16 full cycles (96 terms) followed by $3^{97}, 3^{98}, 3^{99}, 3^{100}$, which leave remainders $3, 2, 6, 4$. These add up to $15 = 14 + 1$, so the remainder is 1. The transferable idea: when remainders cycle, a full cycle often adds up to a multiple of the divisor, so only the leftover terms matter.",
+    "elegant": "The sum is $S = \\frac{3^{101} - 3}{2}$, so $2S = 3^{101} - 3$. As $101 = 6 \\times 16 + 5$, $3^{101}$ leaves the same remainder as $3^5 = 243 = 238 + 5$, so $2S$ leaves remainder $5 - 3 = 2$. The only remainder that doubles to 2 is 1, so $S$ leaves remainder 1."
+  },
+  "whyOnTest": "Huge sums of powers become small once remainders cycle, and a full cycle that adds up to a multiple of the divisor simply disappears.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

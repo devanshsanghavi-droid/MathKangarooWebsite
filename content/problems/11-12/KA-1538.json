@@ -1,0 +1,67 @@
+{
+  "id": "KA-1538",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A bracelet has 6 beads equally spaced around a circle: 2 red, 2 blue and 2 green. Two bracelets count as the same if one can be turned or flipped over to look like the other. How many different bracelets are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I divided the 90 arrangements in a row by 12 symmetries, got 7.5 and rounded up."
+    },
+    {
+      "key": "B",
+      "text": "11",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": false,
+      "misconception": "I divided the 90 arrangements by 6 turns, as if every bracelet appeared exactly 6 times."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I counted correctly up to turning but forgot that the bracelet can also be flipped over."
+    },
+    {
+      "key": "E",
+      "text": "90",
+      "correct": false,
+      "misconception": "I counted the arrangements of the beads in fixed positions and did not merge the matching ones."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-16"
+    ]
+  },
+  "hints": [
+    "Do some bracelets look the same after a turn or a flip?",
+    "Simply dividing by the number of symmetries fails because some bracelets are symmetric. Count, for each turn and flip, how many arrangements it leaves unchanged, then average.",
+    "Of the 90 fixed arrangements, the half turn keeps 6 unchanged and each of the 6 flips keeps 6 unchanged; the other turns keep none."
+  ],
+  "solutions": {
+    "reliable": "There are $\\frac{6!}{2!\\,2!\\,2!} = 90$ arrangements in fixed positions, and 12 symmetries (6 turns, 6 flips). Count arrangements each symmetry leaves unchanged: the identity keeps all 90; turning by 3 places keeps those with equal colours opposite, $3! = 6$; turning by 1, 2, 4 or 5 places keeps none, because no colour has 3 or 6 beads; each of the 3 flips through two opposite beads keeps 6 (those two beads share a colour, 3 ways, and the two swapped pairs take the other colours, 2 ways); each of the 3 flips between beads keeps $3! = 6$. Averaging: $(90 + 6 + 18 + 18) \\div 12 = 11$. The transferable idea: when objects can be symmetric, count what each symmetry fixes, then average.",
+    "elegant": "Without flips the count is $(90 + 6) \\div 6 = 16$; flipping then merges 5 pairs of mirror-image bracelets, leaving 11."
+  },
+  "whyOnTest": "Bracelets with symmetric patterns break the divide-by-12 shortcut, which is exactly what counting up to symmetry must handle.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

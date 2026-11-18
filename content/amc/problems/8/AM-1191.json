@@ -1,0 +1,62 @@
+{
+  "id": "AM-1191",
+  "contest": "AMC8",
+  "slot": 14,
+  "area": "NT",
+  "topic": "NT-04",
+  "types": ["T-CASEWORK", "T-PRIME-FACTOR"],
+  "statement": "Two positive integers have a sum of $120$, and their greatest common divisor is $12$. What is the largest possible value of their least common multiple?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$84$",
+      "correct": false,
+      "misconception": "I found the right pair, 36 and 84, but gave the larger of the two numbers, 84, instead of their least common multiple."
+    },
+    {
+      "key": "B",
+      "text": "$108$",
+      "correct": false,
+      "misconception": "I thought the least common multiple is largest when one number is as small as possible, so I chose 12 and 108, whose least common multiple is only 108."
+    },
+    {
+      "key": "C",
+      "text": "$252$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$288$",
+      "correct": false,
+      "misconception": "I chose 48 and 72 and used least common multiple = product / 12 = 288, but 48 and 72 have greatest common divisor 24, not 12."
+    },
+    {
+      "key": "E",
+      "text": "$300$",
+      "correct": false,
+      "misconception": "I chose 60 and 60 to make the numbers as close as possible and worked out 60 times 60 / 12 = 300, but 60 and 60 have greatest common divisor 60, not 12."
+    }
+  ],
+  "hints": [
+    "Since $12$ divides both numbers, write them as $12x$ and $12y$. What must $x + y$ be?",
+    "$x + y = 10$, and for the greatest common divisor to be exactly $12$, the numbers $x$ and $y$ must have no common factor bigger than $1$. Which pairs work?",
+    "Only $\\{1, 9\\}$ and $\\{3, 7\\}$ work. When $x$ and $y$ share no factor, the least common multiple of $12x$ and $12y$ is $12xy$."
+  ],
+  "solutions": {
+    "reliable": "Both numbers are multiples of $12$, so write them as $12x$ and $12y$ with $x \\le y$. Then $12(x + y) = 120$, so $x + y = 10$. Their greatest common divisor is $12 \\cdot \\gcd(x, y)$, so we need $\\gcd(x, y) = 1$. The pairs with $x + y = 10$ are $(1, 9), (2, 8), (3, 7), (4, 6), (5, 5)$; the pairs $(2, 8)$, $(4, 6)$ and $(5, 5)$ share a factor, so only $(1, 9)$ and $(3, 7)$ remain. They give the numbers $12, 108$ with least common multiple $108$, and $36, 84$ with least common multiple $12 \\cdot 3 \\cdot 7 = 252$. Check: $36 = 2^2 \\cdot 3^2$ and $84 = 2^2 \\cdot 3 \\cdot 7$, so their greatest common divisor is $2^2 \\cdot 3 = 12$ and their least common multiple is $2^2 \\cdot 3^2 \\cdot 7 = 252$. The answer is $252$.",
+    "elegant": "Since the greatest common divisor times the least common multiple equals the product of the two numbers, the least common multiple is $\\dfrac{ab}{12}$. So we want the largest product $ab$ among the valid pairs, which is $36 \\cdot 84$, giving $\\dfrac{36 \\cdot 84}{12} = 252$."
+  },
+  "formulas": ["F-NT-03"],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

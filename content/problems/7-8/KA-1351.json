@@ -1,0 +1,67 @@
+{
+  "id": "KA-1351",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A solid clay figure is 6 cm tall and weighs 40 g. A second solid figure has exactly the same shape, is made of the same clay and is 15 cm tall. How much does the second figure weigh, in grams?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "100",
+      "correct": false,
+      "misconception": "I scaled the weight by the height ratio $\\frac{15}{6}$ once, as if weight grew like a length."
+    },
+    {
+      "key": "B",
+      "text": "135",
+      "correct": false,
+      "misconception": "I used the extra height, 9 cm compared with 6 cm, and cubed $\\frac{9}{6}$ instead of $\\frac{15}{6}$."
+    },
+    {
+      "key": "C",
+      "text": "250",
+      "correct": false,
+      "misconception": "I multiplied by the square of $\\frac{15}{6}$, as if weight grew like an area."
+    },
+    {
+      "key": "D",
+      "text": "625",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "2500",
+      "correct": false,
+      "misconception": "I cubed only the 5 in $\\frac{5}{2}$ and forgot to cube the 2, so I multiplied 40 by $\\frac{125}{2}$."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-16",
+    "secondary": [
+      "NUM-11"
+    ]
+  },
+  "hints": [
+    "Weight depends on the amount of clay. How does volume grow?",
+    "Similar solids: if every length is multiplied by a scale factor, every volume, and so every weight of the same material, is multiplied by the cube of that factor.",
+    "The scale factor is $\\frac{15}{6} = \\frac{5}{2}$, so the volume is multiplied by $\\frac{5}{2} \\times \\frac{5}{2} \\times \\frac{5}{2} = \\frac{125}{8}$."
+  ],
+  "solutions": {
+    "reliable": "Every length of the big figure is $\\frac{15}{6} = \\frac{5}{2}$ times the matching length of the small one. Volume uses three lengths multiplied together, so the volume, and with the same clay the weight, is multiplied by $\\left(\\frac{5}{2}\\right)^3 = \\frac{125}{8}$. The weight is $40 \\times \\frac{125}{8} = 5 \\times 125 = 625$ g. The transferable idea: lengths scale by $k$, areas by $k^2$ and volumes by $k^3$.",
+    "elegant": "Measure in units of 3 cm: the small figure is 2 units tall and the big one is 5 units tall. Their volumes compare like $2^3 = 8$ to $5^3 = 125$. So 8 parts weigh 40 g, one part weighs 5 g, and 125 parts weigh 625 g."
+  },
+  "whyOnTest": "Scaling a solid tests whether you know weight follows volume, so it grows with the cube of the length ratio, not the ratio itself.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

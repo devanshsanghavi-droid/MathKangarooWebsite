@@ -1,0 +1,68 @@
+{
+  "id": "KA-1584",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A function $f$ on the positive whole numbers satisfies $f(1) = 1$ and, for every $n \\ge 1$, $f(2n) = f(n)$ and $f(2n + 1) = f(n) + 1$. For how many whole numbers $n$ from 1 to 100 is $f(n) = 3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I listed the numbers with $f(n) = 3$ in base 2 but only went up to five binary digits, the numbers below 32."
+    },
+    {
+      "key": "B",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted numbers with three 1s among six binary digits, $\\binom{6}{3}$, and forgot the numbers from 64 to 100."
+    },
+    {
+      "key": "C",
+      "text": "32",
+      "correct": false,
+      "misconception": "I counted correctly but stopped at 99 and missed 100, which is 1100100 in base 2."
+    },
+    {
+      "key": "D",
+      "text": "33",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "35",
+      "correct": false,
+      "misconception": "I counted all seven-digit binary numbers with three 1s, $\\binom{7}{3}$, without removing the two that are bigger than 100."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "PAT-07",
+      "CNT-06"
+    ]
+  },
+  "hints": [
+    "Work out $f(n)$ for $n = 1$ to $8$. What do the values count?",
+    "Doubling a number adds a 0 to the end of it in base 2, and doubling and adding 1 adds a 1. So $f(n)$ counts something about the binary form of $n$. Then count with a selection.",
+    "$f(n)$ is the number of 1s in the binary form of $n$. Numbers up to 127 have at most seven binary digits, so there are $\\binom{7}{3} = 35$ with three 1s. Now remove those above 100."
+  ],
+  "solutions": {
+    "reliable": "Small values: $f(1) = 1$, $f(2) = 1$, $f(3) = 2$, $f(4) = 1$, $f(5) = 2$, $f(6) = 2$, $f(7) = 3$. In base 2, $2n$ is $n$ with a 0 written after it and $2n + 1$ is $n$ with a 1 after it, so $f(n)$ is the number of 1s in the binary form of $n$. Numbers from 1 to 127 use the seven place values $1, 2, 4, \\dots, 64$, and choosing three of them gives $\\binom{7}{3} = 35$ numbers. Those above 100 must use 64 and two more adding to at least 37: only $64 + 32 + 8 = 104$ and $64 + 32 + 16 = 112$ (note $64 + 32 + 4 = 100$ is allowed). So the answer is $35 - 2 = 33$. The transferable idea: when a rule halves its input, think in base 2.",
+    "elegant": null
+  },
+  "whyOnTest": "Inferring what a recursive rule really computes, here binary digit counts, turns a long calculation into a quick selection count.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

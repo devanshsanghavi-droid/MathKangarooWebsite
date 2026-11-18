@@ -1,0 +1,56 @@
+{
+  "id": "AC-0131",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-02",
+  "difficulty": "medium",
+  "statement": "The function $f(x) = x^2 - 4x + 1$ is defined only for $-1 \\le x \\le 3$. What is the range of $f$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-2 \\le y \\le 6$",
+      "correct": false,
+      "misconception": "I only plugged in the two endpoints, f(-1) = 6 and f(3) = -2, and missed that the vertex at x = 2 gives a lower value, -3."
+    },
+    {
+      "key": "B",
+      "text": "$-3 \\le y \\le -2$",
+      "correct": false,
+      "misconception": "I assumed the largest value is at the right endpoint, f(3) = -2, and the smallest at the vertex, f(2) = -3, without checking the left endpoint."
+    },
+    {
+      "key": "C",
+      "text": "$y \\ge -3$",
+      "correct": false,
+      "misconception": "I found the vertex value -3 and gave the range of the whole parabola, ignoring that x is only allowed from -1 to 3."
+    },
+    {
+      "key": "D",
+      "text": "$-3 \\le y \\le 6$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "On a closed interval, the extreme values of a parabola come from the endpoints or the vertex.",
+    "Find the vertex, $x = -\\frac{b}{2a}$, and check that it lies in $-1 \\le x \\le 3$. Then compare $f$ at the vertex and at both endpoints.",
+    "$f(2) = -3$, $f(-1) = 6$ and $f(3) = -2$."
+  ],
+  "solutions": {
+    "reliable": "The vertex is at $x = \\frac{4}{2} = 2$, which is inside the interval, and $f(2) = 4 - 8 + 1 = -3$. That is the minimum because the parabola opens upward. The endpoints give $f(-1) = 1 + 4 + 1 = 6$ and $f(3) = 9 - 12 + 1 = -2$. The largest of these is $6$, so the range is $-3 \\le y \\le 6$.",
+    "elegant": "Complete the square: $f(x) = (x - 2)^2 - 3$. On $-1 \\le x \\le 3$, the distance $|x - 2|$ runs from $0$ up to $3$ (at $x = -1$), so $(x - 2)^2$ runs from $0$ to $9$ and $f$ runs from $-3$ to $6$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

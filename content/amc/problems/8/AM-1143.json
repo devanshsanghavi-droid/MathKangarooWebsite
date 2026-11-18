@@ -1,0 +1,68 @@
+{
+  "id": "AM-1143",
+  "contest": "AMC8",
+  "slot": 23,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "Square $ABCD$ has side length $6$, with its vertices labeled in order around the square. Inside the square, a quarter circle with center $A$ and radius $6$ is drawn from $B$ to $D$, and a quarter circle with center $B$ and radius $6$ is drawn from $A$ to $C$. What is the area of the part of the square that lies outside both quarter circles?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$36 - 6\\pi - 9\\sqrt{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$36 - 3\\pi - 9\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I added up the covered region using only one of the two $30^\\circ$ sectors next to the equilateral triangle, so I subtracted $3\\pi + 9\\sqrt{3}$ instead of $6\\pi + 9\\sqrt{3}$."
+    },
+    {
+      "key": "C",
+      "text": "$36 - 12\\pi + 9\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I found the area of the region inside both quarter circles and subtracted only that from the square."
+    },
+    {
+      "key": "D",
+      "text": "$36 - 6\\pi$",
+      "correct": false,
+      "misconception": "I added up the two $30^\\circ$ sectors for the covered region but forgot the equilateral triangle between them."
+    },
+    {
+      "key": "E",
+      "text": "$12\\pi - 9\\sqrt{3}$",
+      "correct": false,
+      "misconception": "I found the area of the region inside both quarter circles instead of the region outside both of them."
+    }
+  ],
+  "hints": [
+    "Let $P$ be the point where the two arcs cross. What kind of triangle is $ABP$?",
+    "$PA = PB = AB = 6$, so triangle $ABP$ is equilateral. The covered part of the square splits into triangle $ABP$, a sector at $A$ between $\\overline{AP}$ and $\\overline{AD}$, and a sector at $B$ between $\\overline{BP}$ and $\\overline{BC}$.",
+    "Each of those sectors has angle $90^\\circ - 60^\\circ = 30^\\circ$, so its area is $\\frac{30}{360} \\cdot 36\\pi = 3\\pi$. The triangle has area $\\frac{\\sqrt{3}}{4} \\cdot 6^2 = 9\\sqrt{3}$. Subtract the covered area from $36$."
+  ],
+  "solutions": {
+    "reliable": "Let the arcs cross at $P$. Then $PA = 6$ (on the arc centered at $A$) and $PB = 6$ (on the arc centered at $B$), so triangle $ABP$ is equilateral and $\\angle PAB = \\angle PBA = 60^\\circ$. The region of the square covered by at least one quarter circle is bounded by $\\overline{AB}$, $\\overline{BC}$, the arc from $C$ to $P$, the arc from $P$ to $D$, and $\\overline{DA}$. It splits into three pieces: triangle $ABP$ with area $\\frac{\\sqrt{3}}{4} \\cdot 36 = 9\\sqrt{3}$; the sector at $A$ between $\\overline{AP}$ and $\\overline{AD}$, with angle $90^\\circ - 60^\\circ = 30^\\circ$ and area $\\frac{30}{360} \\cdot 36\\pi = 3\\pi$; and the matching sector at $B$, also $3\\pi$. The covered area is $6\\pi + 9\\sqrt{3}$, so the uncovered area is $36 - 6\\pi - 9\\sqrt{3}$, which is about $1.56$.",
+    "elegant": "Inclusion-exclusion gives the same total. Each quarter circle has area $9\\pi$. The region inside both is two $60^\\circ$ sectors (at $A$ and at $B$, each of area $6\\pi$) overlapping in triangle $ABP$, so its area is $12\\pi - 9\\sqrt{3}$. The covered area is $9\\pi + 9\\pi - (12\\pi - 9\\sqrt{3}) = 6\\pi + 9\\sqrt{3}$, and the answer is $36 - 6\\pi - 9\\sqrt{3}$."
+  },
+  "formulas": [
+    "F-GEO-20"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

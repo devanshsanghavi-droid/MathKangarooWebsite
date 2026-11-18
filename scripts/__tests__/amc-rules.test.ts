@@ -96,6 +96,36 @@ describe('AMC content rules', () => {
     expect(rulesFired(dir)).toContain('amc/problem-id-matches-path');
   });
 
+  it('wants AMC 8 problems in 8/, and nothing else there', () => {
+    const misfiled = scratch();
+    edit(join(misfiled.amc, 'problems/10/AM-0999.json'), (p) => {
+      p.contest = 'AMC8';
+    });
+    expect(rulesFired(misfiled)).toContain('amc/problem-id-matches-path');
+
+    const intruder = scratch();
+    edit(join(intruder.amc, 'problems/8/AM-1997.json'), (p) => {
+      p.contest = 'BOTH';
+    });
+    expect(rulesFired(intruder)).toContain('amc/problem-id-matches-path');
+  });
+
+  it('keeps AMC 12 only topics off AMC 8, and allows AMC 8 on ordinary topics', () => {
+    const dir = scratch();
+    edit(join(dir.amc, 'problems/8/AM-1998.json'), (p) => {
+      p.topic = 'ALG-06';
+    });
+    const findings = validateAmcContent(dir).findings.filter((f) => f.rule === 'amc/topic-contest');
+    expect(findings).toHaveLength(1);
+    expect(findings[0]?.message).toMatch(/may not appear on AMC 8/);
+
+    const clean = scratch();
+    edit(join(clean.amc, 'problems/8/AM-1998.json'), (p) => {
+      p.topic = 'ALG-01';
+    });
+    expect(rulesFired(clean)).toEqual([]);
+  });
+
   it('fires when the file name disagrees with the id, and on a duplicate id', () => {
     const dir = scratch();
     const source = readJson(join(dir.amc, 'problems/10/AM-0999.json'));

@@ -1,0 +1,68 @@
+{
+  "id": "AM-1122",
+  "contest": "AMC8",
+  "slot": 16,
+  "area": "GEO",
+  "topic": "GEO-08",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "A right triangle has legs of lengths $9$ and $40$. What is the radius of the largest circle that fits inside the triangle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I divided the area, 180, by the full perimeter, 90. The radius is the area divided by half the perimeter."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$4.5$",
+      "correct": false,
+      "misconception": "I thought the circle's diameter would equal the shorter leg, 9, so the radius would be 4.5."
+    },
+    {
+      "key": "D",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I used the legs minus the hypotenuse, 9 + 40 - 41 = 8, and forgot to divide by 2."
+    },
+    {
+      "key": "E",
+      "text": "$20.5$",
+      "correct": false,
+      "misconception": "I took half the hypotenuse, 20.5, which is the radius of the circle drawn around the triangle, not the one inside it."
+    }
+  ],
+  "hints": [
+    "First find the hypotenuse. The largest circle inside the triangle touches all three sides.",
+    "Join the circle's center to the three corners. That cuts the triangle into three smaller triangles, each with height $r$ on one side of the big triangle.",
+    "The hypotenuse is $41$, so the three pieces have total area $\\frac{1}{2}r(9 + 40 + 41) = 45r$. Set this equal to the area of the triangle."
+  ],
+  "solutions": {
+    "reliable": "The hypotenuse is $\\sqrt{9^2 + 40^2} = \\sqrt{1681} = 41$, and the area is $\\frac{1}{2} \\cdot 9 \\cdot 40 = 180$. The largest circle inside is tangent to all three sides. Joining its center to the three vertices splits the triangle into three triangles with bases $9$, $40$, $41$ and common height $r$, so $180 = \\frac{1}{2}r(9 + 40 + 41) = 45r$, and $r = 4$.",
+    "elegant": "The two tangent segments from the right-angle corner, together with the radii to the tangent points, form a square of side $r$. So the tangent segments from the other two corners are $9 - r$ and $40 - r$, and they add up to the hypotenuse: $(9 - r) + (40 - r) = 41$, giving $r = 4$."
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

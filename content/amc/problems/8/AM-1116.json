@@ -1,0 +1,67 @@
+{
+  "id": "AM-1116",
+  "contest": "AMC8",
+  "slot": 14,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-AUXILIARY",
+    "T-SYMMETRY"
+  ],
+  "statement": "Two circles each have radius $6$, and each circle passes through the center of the other. What is the perimeter of the region covered by at least one of the circles, that is, the total length of the outer boundary of the figure the two circles form together?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8\\pi$",
+      "correct": false,
+      "misconception": "I found the 240 degree arc of one circle, 8 pi, and forgot the matching arc of the other circle."
+    },
+    {
+      "key": "B",
+      "text": "$16\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$18\\pi$",
+      "correct": false,
+      "misconception": "I guessed each circle loses a quarter of its circumference to the overlap, which left 2 times 9 pi = 18 pi."
+    },
+    {
+      "key": "D",
+      "text": "$20\\pi$",
+      "correct": false,
+      "misconception": "I thought each circle loses only a 60 degree arc, because the overlap is built from equilateral triangles, and got 2 times 10 pi = 20 pi. The lost arc spans two of those 60 degree angles, so it is 120 degrees."
+    },
+    {
+      "key": "E",
+      "text": "$24\\pi$",
+      "correct": false,
+      "misconception": "I added the two full circumferences, also counting the parts that lie inside the other circle."
+    }
+  ],
+  "hints": [
+    "Call the centers $O$ and $P$, and let the circles cross at $X$ and $Y$. What kind of triangle is $OPX$?",
+    "Every side of triangle $OPX$ is a radius, so it is equilateral and $\\angle XOP = 60^\\circ$. By symmetry $\\angle XOY = 120^\\circ$.",
+    "Each circle keeps only the arc outside the other circle, which is $360^\\circ - 120^\\circ = 240^\\circ$ of it."
+  ],
+  "solutions": {
+    "reliable": "Let the centers be $O$ and $P$ and the crossing points $X$ and $Y$. Then $OP = OX = PX = 6$, so triangle $OPX$ is equilateral and $\\angle XOP = 60^\\circ$; by symmetry $\\angle POY = 60^\\circ$ too, so $\\angle XOY = 120^\\circ$. The arc of the circle centered at $O$ that lies inside the other circle is the $120^\\circ$ arc through $P$, so the outer boundary uses the remaining $240^\\circ$ arc, of length $\\frac{240}{360} \\cdot 2\\pi \\cdot 6 = 8\\pi$. The other circle contributes the same, so the perimeter is $16\\pi$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

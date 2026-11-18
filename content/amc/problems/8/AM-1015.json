@@ -1,0 +1,68 @@
+{
+  "id": "AM-1015",
+  "contest": "AMC8",
+  "slot": 3,
+  "area": "ALG",
+  "topic": "ALG-03",
+  "types": [
+    "T-SYMMETRY"
+  ],
+  "statement": "What is the value of $1003^2 - 997^2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I subtracted the two numbers, 1003 - 997 = 6, and forgot about the squares."
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I thought a^2 - b^2 is the same as (a - b)^2, so I got 6^2 = 36."
+    },
+    {
+      "key": "C",
+      "text": "$2000$",
+      "correct": false,
+      "misconception": "I added the two numbers, 1003 + 997 = 2000, and stopped there."
+    },
+    {
+      "key": "D",
+      "text": "$4000$",
+      "correct": false,
+      "misconception": "I remembered that (n + 1)^2 - (n - 1)^2 = 4n and used it with n = 1000, but 1003 and 997 are 3 away from 1000, not 1."
+    },
+    {
+      "key": "E",
+      "text": "$12000$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Do not square $1003$ and $997$ separately. Look for a shortcut.",
+    "A difference of two squares factors as $a^2 - b^2 = (a - b)(a + b)$.",
+    "Here $a - b = 6$ and $a + b = 2000$."
+  ],
+  "solutions": {
+    "reliable": "By the difference of squares, $1003^2 - 997^2 = (1003 - 997)(1003 + 997) = 6 \\cdot 2000 = 12000$. Check by expanding: $1003^2 = 1006009$ and $997^2 = 994009$, and $1006009 - 994009 = 12000$.",
+    "elegant": "Write the numbers as $1000 + 3$ and $1000 - 3$. Squaring gives $1000^2 + 6000 + 9$ and $1000^2 - 6000 + 9$, which differ by $12000$."
+  },
+  "formulas": [
+    "F-ALG-05"
+  ],
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

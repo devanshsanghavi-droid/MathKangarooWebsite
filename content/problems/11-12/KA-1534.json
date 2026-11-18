@@ -1,0 +1,67 @@
+{
+  "id": "KA-1534",
+  "band": "11-12",
+  "points": 3,
+  "statement": "Points $A$, $B$, $C$, $D$ lie on a straight line in that order, with $AB = BC = CD = 2$. A circle has diameter $AD$. The line through $B$ perpendicular to $AD$ meets the circle at a point $P$. How long is $CP$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I found the height $BP$ and gave that instead of $CP$."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I thought $CP$ is a radius because $C$ is close to the centre, but the centre is halfway between $B$ and $C$."
+    },
+    {
+      "key": "C",
+      "text": "$2\\sqrt{6}$",
+      "correct": false,
+      "misconception": "I measured from $D$ instead of from $C$."
+    },
+    {
+      "key": "D",
+      "text": "$2 + 2\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I added $BC$ and $BP$ as if the path from $C$ to $P$ went round the corner at $B$."
+    },
+    {
+      "key": "E",
+      "text": "$2\\sqrt{3}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "GEO-07"
+    ]
+  },
+  "hints": [
+    "Sketch it with the centre of the circle marked.",
+    "Put the line on an axis with $A$ at 0. Then the centre and radius are known, so the height of $P$ above $B$ follows from Pythagoras, and so does $CP$.",
+    "The centre is at 3 and the radius is 3. $B$ is 1 from the centre, so $BP = \\sqrt{9 - 1} = \\sqrt{8}$."
+  ],
+  "solutions": {
+    "reliable": "Place $A = 0$, $B = 2$, $C = 4$, $D = 6$ on a number line. The circle has centre $O = 3$ and radius 3. In right triangle $OBP$, $OB = 1$ and $OP = 3$, so $BP^2 = 9 - 1 = 8$. In right triangle $CBP$, $BC = 2$, so $CP^2 = 4 + 8 = 12$ and $CP = 2\\sqrt{3}$. The transferable idea: a quick sketch with the given lengths written on it shows which right triangles to use.",
+    "elegant": "Angle $APD$ is a right angle because $AD$ is a diameter, so $AP^2 = AB \\cdot AD = 2 \\cdot 6 = 12$. By symmetry about the perpendicular through $B$, $CP = AP = 2\\sqrt{3}$."
+  },
+  "whyOnTest": "Everything is given in words; a sketch with the centre marked turns it into two right triangles.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

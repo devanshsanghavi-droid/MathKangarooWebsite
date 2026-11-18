@@ -1,0 +1,56 @@
+{
+  "id": "AC-0052",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "medium",
+  "statement": "Which of the following describes all real numbers $x$ that satisfy $-10 < 5 - 3x \\le 14$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3 < x \\le 5$",
+      "correct": false,
+      "misconception": "I divided by $-3$ and rewrote the numbers from smallest to largest, but I left the $<$ on the left and the $\\le$ on the right where they started."
+    },
+    {
+      "key": "B",
+      "text": "$-5 < x \\le 3$",
+      "correct": false,
+      "misconception": "I subtracted $5$ correctly but then divided every part by $3$ instead of $-3$, getting $-5 < -x \\le 3$, and then treated $-x$ as if it were $x$."
+    },
+    {
+      "key": "C",
+      "text": "No real number satisfies it.",
+      "correct": false,
+      "misconception": "I divided by $-3$ without flipping the inequality signs and got $5 < x \\le -3$, and since nothing fits that I said there is no solution."
+    },
+    {
+      "key": "D",
+      "text": "$-3 \\le x < 5$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Whatever you do to the middle part you must do to all three parts.",
+    "Subtract $5$ from all three parts, then divide all three parts by $-3$. Dividing by a negative number reverses every inequality sign.",
+    "Subtracting $5$ gives $-15 < -3x \\le 9$. Dividing by $-3$ and flipping both signs gives $5 > x \\ge -3$. Now read it from smallest to largest."
+  ],
+  "solutions": {
+    "reliable": "Subtract $5$ from each part: $-15 < -3x \\le 9$. Divide each part by $-3$, which reverses both signs: $5 > x \\ge -3$. Written from smallest to largest, this is $-3 \\le x < 5$. Check an endpoint: at $x = -3$, $5 - 3x = 14$, which satisfies $\\le 14$; at $x = 5$, $5 - 3x = -10$, which fails $-10 < \\cdots$, so $5$ is excluded.",
+    "elegant": "Each inequality symbol stays attached to its endpoint value. The $\\le 14$ part becomes the endpoint $x = -3$ (included) and the strict $-10 <$ part becomes $x = 5$ (excluded), giving $-3 \\le x < 5$."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

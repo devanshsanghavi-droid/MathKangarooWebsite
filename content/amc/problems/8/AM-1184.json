@@ -1,0 +1,66 @@
+{
+  "id": "AM-1184",
+  "contest": "AMC8",
+  "slot": 11,
+  "area": "NT",
+  "topic": "NT-06",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A sign maker makes plastic digits to number the $120$ seats in a small theater from $1$ to $120$. How many plastic digit $1$s does she need?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I counted the 1s in the ones place and in the tens place, 12 + 20 = 32, but forgot the 1 in the hundreds place of 100 through 120."
+    },
+    {
+      "key": "B",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I counted how many seat numbers contain a 1, so numbers like 11, 101 and 111 were counted only once even though they need more than one plastic 1."
+    },
+    {
+      "key": "C",
+      "text": "$43$",
+      "correct": false,
+      "misconception": "I counted 10 through 19 in the tens place but missed 110 through 119, so I got 12 + 10 + 21 = 43."
+    },
+    {
+      "key": "D",
+      "text": "$52$",
+      "correct": false,
+      "misconception": "I counted the hundreds-place 1s for 100 through 119 only and left out 120, so I got 12 + 20 + 20 = 52."
+    },
+    {
+      "key": "E",
+      "text": "$53$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Count the $1$s place by place: ones, tens and hundreds.",
+    "In the ones place, a $1$ appears once in every ten numbers. In the tens place, it appears in runs like $10$ to $19$.",
+    "Ones place: $1, 11, 21, \\ldots, 111$. Tens place: $10$ to $19$ and $110$ to $119$. Hundreds place: $100$ to $120$."
+  ],
+  "solutions": {
+    "reliable": "Count by place. Ones place: $1, 11, 21, \\ldots, 111$, which is $12$ numbers. Tens place: $10$ through $19$ and $110$ through $119$, which is $20$ numbers. Hundreds place: $100$ through $120$, which is $21$ numbers. The total is $12 + 20 + 21 = 53$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

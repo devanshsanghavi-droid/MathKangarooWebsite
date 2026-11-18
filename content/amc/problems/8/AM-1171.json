@@ -1,0 +1,67 @@
+{
+  "id": "AM-1171",
+  "contest": "AMC8",
+  "slot": 7,
+  "area": "NT",
+  "topic": "NT-07",
+  "types": [
+    "T-CASEWORK",
+    "T-EXTREME"
+  ],
+  "statement": "A rectangular floor is covered by a grid of square tiles with at least $3$ rows and at least $3$ columns. Each tile that touches the outer edge of the floor is blue, and every other tile is white. There are exactly $12$ white tiles. What is the greatest possible number of blue tiles?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I only tried arranging the white tiles in a $3$ by $4$ block, which gives a $5$ by $6$ floor with $30 - 12 = 18$ blue tiles, but that makes the fewest blue tiles, not the most."
+    },
+    {
+      "key": "B",
+      "text": "$26$",
+      "correct": false,
+      "misconception": "I put the white tiles in a $1$ by $12$ strip and counted the blue tiles around it as $2(1 + 12) = 26$, forgetting the four corner tiles."
+    },
+    {
+      "key": "C",
+      "text": "$30$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$34$",
+      "correct": false,
+      "misconception": "I used a $3$ by $14$ floor and counted the blue tiles as $2(3 + 14) = 34$, but that counts each of the four corner tiles twice."
+    },
+    {
+      "key": "E",
+      "text": "$42$",
+      "correct": false,
+      "misconception": "I found the $3$ by $14$ floor but gave the total number of tiles, $42$, instead of the number of blue tiles."
+    }
+  ],
+  "hints": [
+    "If the floor has $m$ rows and $n$ columns, the white tiles form a smaller rectangle inside.",
+    "The white tiles form an $(m - 2)$ by $(n - 2)$ rectangle, so $(m - 2)(n - 2) = 12$. The blue tiles number $mn - 12$.",
+    "The white rectangle can be $1 \\times 12$, $2 \\times 6$ or $3 \\times 4$, giving floors $3 \\times 14$, $4 \\times 8$ or $5 \\times 6$. Compare $mn - 12$."
+  ],
+  "solutions": {
+    "reliable": "With $m$ rows and $n$ columns, the white tiles fill an $(m - 2)$ by $(n - 2)$ rectangle, so $(m - 2)(n - 2) = 12$. The factor pairs of $12$ give white rectangles $1 \\times 12$, $2 \\times 6$, $3 \\times 4$ and floors $3 \\times 14$, $4 \\times 8$, $5 \\times 6$. The blue tiles number $mn - 12$, which is $42 - 12 = 30$, $32 - 12 = 20$ and $30 - 12 = 18$. The greatest is $30$.",
+    "elegant": "The blue border around a white $a \\times b$ rectangle has $2a + 2b + 4$ tiles. With $ab = 12$, this is largest when $a + b$ is largest, which is $1 + 12 = 13$, giving $2 \\cdot 13 + 4 = 30$."
+  },
+  "formulas": [],
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

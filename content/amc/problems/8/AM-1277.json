@@ -1,0 +1,66 @@
+{
+  "id": "AM-1277",
+  "contest": "AMC8",
+  "slot": 20,
+  "area": "CP",
+  "topic": "CP-12",
+  "types": [
+    "T-EXTREME"
+  ],
+  "statement": "Five different positive integers have a mean of $10$. What is the largest possible value of their median?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I thought the median of a list is always equal to its mean."
+    },
+    {
+      "key": "B",
+      "text": "$14$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I wrote the numbers as 1, 2, m, m + 1, m + 2, solved 3m + 6 = 50 to get m = 14 and two thirds, and rounded up to 15."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I forgot that the numbers must be different and used 1, 1, m, m, m, so 2 + 3m = 50 and m = 16."
+    },
+    {
+      "key": "E",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I made the other four numbers 1, 2, 3 and 4 so the median could take the remaining 40, forgetting that two of the numbers must be larger than the median."
+    }
+  ],
+  "hints": [
+    "The five numbers add up to 50. To make the middle number big, make the other numbers as small as the rules allow.",
+    "Call the numbers a < b < m < d < e. The two smallest can be 1 and 2. Once m is chosen, what is the smallest that d and e can be?",
+    "You need 1 + 2 + m + (m + 1) + (m + 2) to be at most 50, so 3m is at most 44. Take the largest whole number m and check that a total of exactly 50 can be reached."
+  ],
+  "solutions": {
+    "reliable": "The five numbers add up to $5 \\cdot 10 = 50$. Write them in order as $a < b < m < d < e$, where $m$ is the median. Since they are different positive integers, $a \\ge 1$, $b \\ge 2$, $d \\ge m + 1$ and $e \\ge m + 2$. So $50 \\ge 1 + 2 + m + (m + 1) + (m + 2) = 3m + 6$, which gives $m \\le \\frac{44}{3}$, so $m \\le 14$. A median of $14$ is possible: $1, 2, 14, 15, 18$ are different and add up to $50$. The largest possible median is $14$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

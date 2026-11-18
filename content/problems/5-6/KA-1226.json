@@ -1,0 +1,67 @@
+{
+  "id": "KA-1226",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A solid has 14 flat faces: 6 squares and 8 triangles. Every edge of the solid is a side of exactly one square and exactly one triangle. How many edges does the solid have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted the $6 \\times 4 = 24$ sides of the squares and halved them, as if two squares met at every edge."
+    },
+    {
+      "key": "B",
+      "text": "14",
+      "correct": false,
+      "misconception": "I counted the faces of the solid instead of its edges."
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": false,
+      "misconception": "I added the 24 square sides to half of the 24 triangle sides, halving only the triangles."
+    },
+    {
+      "key": "E",
+      "text": "48",
+      "correct": false,
+      "misconception": "I added all $6 \\times 4 + 8 \\times 3 = 48$ sides but forgot that each edge is a side of two faces, so every edge was counted twice."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Every edge is a side of how many faces?",
+    "Count all the sides of all the faces, then ask how many times each edge was counted. Overcounting on purpose and then correcting is often the quickest way.",
+    "The squares have 24 sides and the triangles have 24 sides, 48 in all. Each edge is one square side and one triangle side."
+  ],
+  "solutions": {
+    "reliable": "Count sides face by face: the 6 squares have $6 \\times 4 = 24$ sides and the 8 triangles have $8 \\times 3 = 24$ sides, 48 sides in all. Every edge is a side of exactly two faces (one square and one triangle), so each edge was counted twice. The solid has $48 \\div 2 = 24$ edges. The transferable idea: overcount in an easy way, then divide by how many times each object was counted.",
+    "elegant": "Every edge belongs to exactly one square, so the sides of the squares alone list each edge exactly once: $6 \\times 4 = 24$. The triangles give the same count, $8 \\times 3 = 24$, which is a free check. When one family of faces sees each edge exactly once, count that family alone."
+  },
+  "whyOnTest": "Counting edges through faces is a classic overcount: each edge is shared by two faces, so you must divide, or find a family that sees each edge once.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

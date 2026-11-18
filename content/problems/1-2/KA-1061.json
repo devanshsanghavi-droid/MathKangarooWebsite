@@ -1,0 +1,68 @@
+{
+  "id": "KA-1061",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Sam sticks all 18 of his square stickers on a page to make one rectangle with no gaps. A turned rectangle counts as the same. How many different rectangles can he make?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I only thought of 3 rows of 6, because the long thin ones did not look like rectangles to me."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I found 2 rows of 9 and 3 rows of 6, but forgot the single row of 18."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted 1, 2, 3 and 6 rows as four rectangles, but 6 rows of 3 is 3 rows of 6 turned around."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted 1, 2, 3, 6, 9 and 18 rows as six rectangles, counting each turned one again."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "GEO-01",
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "Try 1 row first, then 2 rows, and keep going.",
+    "Make an orderly list by the number of rows. Each row must have the same number of stickers, with none left over. Stop when the rectangles start repeating as turned versions.",
+    "1 row of 18 works. 2 rows of 9 works. 3 rows of 6 works. 4 and 5 rows do not share 18 equally. 6 rows of 3 is the 3-by-6 rectangle turned around."
+  ],
+  "solutions": {
+    "reliable": "List by rows: 1 row of 18, 2 rows of 9, 3 rows of 6. Four rows and five rows do not work, because 18 stickers do not share equally into them. 6 rows of 3, 9 rows of 2 and 18 rows of 1 are the same three rectangles turned around. So there are 3 rectangles. The idea to keep: list in order and stop when the list starts to repeat.",
+    "elegant": null
+  },
+  "whyOnTest": "A careful list is the tool here, and turned shapes counted twice is the classic overcount.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

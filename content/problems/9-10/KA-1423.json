@@ -1,0 +1,68 @@
+{
+  "id": "KA-1423",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Two circles with radii 9 and 4 touch each other, and both touch a straight line, on the same side of it. A third circle fits in the gap between them: it touches both circles and the line. What is the radius of the third circle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac65$",
+      "correct": false,
+      "misconception": "I set up $10\\sqrt r = 12$ correctly but gave $\\sqrt r = \\frac65$ instead of $r$."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{36}{25}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{169}{100}$",
+      "correct": false,
+      "misconception": "I used 13, the distance between the two big centres, as the distance between the points where they touch the line, instead of 12."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac52$",
+      "correct": false,
+      "misconception": "I took half the difference of the two radii, as if the small circle just filled the step between the two big circles."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{36}{13}$",
+      "correct": false,
+      "misconception": "I guessed a rule for the gap, $\\frac1r = \\frac19 + \\frac14$, without using the line or any right triangle."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-07",
+    "secondary": [
+      "GEO-06",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "How far apart are the points where two touching circles meet the line?",
+    "Two circles of radii $a$ and $b$ that touch each other and the same line meet it at points $2\\sqrt{ab}$ apart: use the right triangle through the two centres. Apply this to each pair of circles.",
+    "The big circles touch the line 12 apart. The small circle splits that gap into $2\\sqrt{9r} + 2\\sqrt{4r} = 10\\sqrt r$."
+  ],
+  "solutions": {
+    "reliable": "For two circles of radii $a$ and $b$ touching each other and the same line, join the centres (length $a + b$) and drop perpendiculars to the line (lengths $a$ and $b$). This gives a right triangle with hypotenuse $a + b$ and one leg $|a - b|$, so the other leg, the distance between the touching points, is $\\sqrt{(a + b)^2 - (a - b)^2} = 2\\sqrt{ab}$. For the big circles this is $2\\sqrt{36} = 12$. The small circle of radius $r$ touches the line between them, at distances $2\\sqrt{9r} = 6\\sqrt r$ and $2\\sqrt{4r} = 4\\sqrt r$ from the other two touching points. So $10\\sqrt r = 12$, $\\sqrt r = \\frac65$ and $r = \\frac{36}{25}$. The transferable idea: when circles touch, join the centres; the distance between them is the sum of the radii.",
+    "elegant": "Dividing $2\\sqrt{9r} + 2\\sqrt{4r} = 2\\sqrt{9 \\cdot 4}$ by $2\\sqrt{36r}$ gives $\\frac{1}{\\sqrt r} = \\frac{1}{\\sqrt 9} + \\frac{1}{\\sqrt 4} = \\frac56$, so $r = \\frac{36}{25}$."
+  },
+  "whyOnTest": "Touching circles always mean joining centres; here that gives a right triangle, and one length formula then solves the problem in a single equation.",
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

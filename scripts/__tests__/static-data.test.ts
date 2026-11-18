@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import {
+  cpSync,
   mkdtempSync,
   mkdirSync,
   readFileSync,
@@ -14,9 +15,19 @@ import { join } from 'node:path';
 import { writeStaticData } from '../lib/static-data.ts';
 import bundle from '../../src/lib/content.bundle.json';
 import type { Problem, Skill } from '../../src/lib/schemas.ts';
-import type { AmcIndexFile, AmcLookups, KaIndexFile, KaLookups } from '../../src/lib/bank-data.ts';
+import type {
+  AmcIndexFile,
+  AmcLookups,
+  KaIndexFile,
+  KaLookups,
+  TestIndexFile,
+} from '../../src/lib/bank-data.ts';
 import { previewMath, previewText, STATEMENT_PREVIEW_MAX } from '../../src/lib/bank-data.ts';
-import type { AmcPracticeItem, KaPracticeItem } from '../../src/lib/practice-item.ts';
+import type {
+  AmcPracticeItem,
+  KaPracticeItem,
+  TestPracticeItem,
+} from '../../src/lib/practice-item.ts';
 
 /**
  * scripts/build-static-data.ts against a fixture content tree. The fixture is cut from the
@@ -61,6 +72,7 @@ describe('the Kangaroo files', () => {
     expect(result).toEqual({
       ka: { problems: problems.length, skills: skills.length },
       amc: null,
+      tests: {},
       files: problems.length + 2,
     });
 
@@ -289,3 +301,21 @@ const AMC_PROBLEM = {
   createdAt: '2026-11-14',
   license: 'CC-BY-NC-SA-4.0',
 };
+
+describe('the SAT / ACT files', () => {
+  it('writes <slug>-index.json and a practice item per SA / AC problem', () => {
+    cpSync(join(process.cwd(), 'content', 'tests'), join(contentDir, 'tests'), {
+      recursive: true,
+    });
+    const result = writeStaticData({ contentDir, outDir });
+    const sat = readJson<TestIndexFile>(join(outDir, 'sat-index.json'));
+    const act = readJson<TestIndexFile>(join(outDir, 'act-index.json'));
+    expect(result.tests).toEqual({ SAT: sat.rows.length, ACT: act.rows.length });
+    expect(sat.test).toBe('SAT');
+    expect(sat.rows.some((row) => row.id === 'SA-0997')).toBe(true);
+    expect(act.domains.map((d) => d.id)).toEqual(['NQ', 'ALG', 'FUN', 'GEO', 'STAT']);
+    const item = readJson<TestPracticeItem>(join(outDir, 'p', 'AC-0998.json'));
+    expect(item.bank).toBe('act');
+    expect(item.groups[0]).toEqual({ id: 'NQ-06', name: 'Complex numbers' });
+  });
+});

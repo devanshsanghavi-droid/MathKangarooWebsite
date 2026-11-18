@@ -1,0 +1,56 @@
+{
+  "id": "SA-0029",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "easy",
+  "statement": "A store rents paddleboards. The total cost $C(h)$, in dollars, of renting one paddleboard for $h$ hours is a linear function of $h$. Some values are shown in the table. $$\\begin{array}{c|c} h & C(h) \\\\ \\hline 2 & 38 \\\\ 5 & 65 \\\\ 9 & 101 \\end{array}$$ The cost includes a fixed fee that is charged no matter how long the rental lasts. What is the fixed fee, in dollars?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I found that the cost goes up by 9 dollars per hour and gave the 9 as the fixed fee, but 9 is the hourly rate."
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I saw the cost rise by 27 dollars from one row to the next and stepped back one row from 38 to get $38 - 27 = 11$, but going from 2 hours to 0 hours is only 2 hours, not 3."
+    },
+    {
+      "key": "C",
+      "text": "$20$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I subtracted the number of hours from the cost, $38 - 2 = 36$, instead of subtracting 2 hours times the hourly rate."
+    }
+  ],
+  "hints": [
+    "The fixed fee is the cost when $h = 0$.",
+    "Use two rows of the table to find how much the cost rises for each extra hour.",
+    "From $h = 2$ to $h = 5$ the cost rises by $27$ dollars in $3$ hours, so $9$ dollars per hour. Remove $2$ hours of that from $38$."
+  ],
+  "solutions": {
+    "reliable": "The slope is $\\dfrac{65 - 38}{5 - 2} = \\dfrac{27}{3} = 9$ dollars per hour. Check with the last row: $\\dfrac{101 - 65}{9 - 5} = 9$. So $C(h) = 9h + b$, and $38 = 9(2) + b$ gives $b = 20$. The fixed fee is $C(0) = 20$ dollars.",
+    "elegant": null
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

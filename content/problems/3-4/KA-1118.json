@@ -1,0 +1,65 @@
+{
+  "id": "KA-1118",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Five dots are drawn: the four corners of a square and the centre of the square. How many triangles have all three of their corners on these dots?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted only the triangles made from corners of the square and forgot the ones that use the centre."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I noticed that one diagonal gives three dots in a straight line, but forgot that the other diagonal does too."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted every way to choose 3 of the 5 dots, but three dots on a diagonal make a straight line, not a triangle."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted each triangle that uses the centre twice, once from each of its two square corners."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-04",
+    "secondary": []
+  },
+  "hints": [
+    "Split the triangles into those that use the centre and those that do not.",
+    "Casework: count the triangles made from three corners, then the triangles made from the centre and two corners. Watch out for three dots that lie on one straight line.",
+    "Three corners: 4 triangles. The centre and two corners: 6 pairs of corners, but the 2 pairs of opposite corners lie on a straight line through the centre, so only 4 triangles. Total 4 + 4 = 8."
+  ],
+  "solutions": {
+    "reliable": "Case 1, no centre: choosing 3 of the 4 corners is the same as leaving one corner out, so there are 4 triangles. Case 2, with the centre: choose 2 corners, which can be done in 6 ways. Opposite corners lie on a diagonal through the centre, so those 2 choices make straight lines, not triangles. That leaves 4. Total 4 + 4 = 8. The transferable idea: split the count into cases and check each case for choices that do not really work.",
+    "elegant": "There are 10 ways to choose 3 of the 5 dots. Only the 2 diagonals put three dots in a line, so there are 10 - 2 = 8 triangles."
+  },
+  "whyOnTest": "Casework with a catch: three dots on a line make no triangle, and spotting the two diagonals is what separates the right count from 10.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

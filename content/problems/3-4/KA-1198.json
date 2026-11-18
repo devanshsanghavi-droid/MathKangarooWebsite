@@ -1,0 +1,67 @@
+{
+  "id": "KA-1198",
+  "band": "3-4",
+  "points": 4,
+  "statement": "The second hand of a clock goes once round the face every minute. Which of these is closest to the number of times it goes round in one week?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "100",
+      "correct": false,
+      "misconception": "I counted the hours in a week, 168, instead of the minutes."
+    },
+    {
+      "key": "B",
+      "text": "10,000",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "1,000",
+      "correct": false,
+      "misconception": "I counted the minutes in one day, 1440, and forgot to multiply by 7 days."
+    },
+    {
+      "key": "D",
+      "text": "100,000",
+      "correct": false,
+      "misconception": "I worked out the seconds in one day, $60 \\times 60 \\times 24$, which is 86,400."
+    },
+    {
+      "key": "E",
+      "text": "1,000,000",
+      "correct": false,
+      "misconception": "I counted the seconds in a week, about 600,000, instead of full turns."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-12",
+    "secondary": [
+      "MOD-07"
+    ]
+  },
+  "hints": [
+    "One turn for every minute.",
+    "Count the minutes in a week: minutes in an hour, hours in a day, days in a week. Round each step to make the multiplying easy.",
+    "There are $24 \\times 60 = 1440$ minutes in a day."
+  ],
+  "solutions": {
+    "reliable": "Turns in a week = minutes in a week $= 60 \\times 24 \\times 7 = 1440 \\times 7 = 10{,}080$, which is closest to 10,000. The transferable idea: estimate by counting the right unit, then compare orders of magnitude.",
+    "elegant": "Round: about 1500 minutes a day, times 7 is about 10,000. The choices are far apart, so rough rounding is enough."
+  },
+  "whyOnTest": "Order-of-magnitude estimation: choose the right unit, round sensibly, and the far-apart choices do the rest.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

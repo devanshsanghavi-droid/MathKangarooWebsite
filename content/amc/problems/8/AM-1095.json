@@ -1,0 +1,69 @@
+{
+  "id": "AM-1095",
+  "contest": "AMC8",
+  "slot": 7,
+  "area": "GEO",
+  "topic": "GEO-06",
+  "types": [
+    "T-COORD",
+    "T-AUXILIARY"
+  ],
+  "statement": "Two adjacent vertices of a square are $(1, 2)$ and $(4, 6)$. What is the area of the square?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I found the side length, 5, and gave that instead of the area."
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I multiplied the horizontal change 3 by the vertical change 4, as if the square were a 3 by 4 rectangle."
+    },
+    {
+      "key": "C",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I found the perimeter, 4 times 5 = 20, instead of the area."
+    },
+    {
+      "key": "D",
+      "text": "$25$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$49$",
+      "correct": false,
+      "misconception": "I added the horizontal and vertical changes, 3 + 4 = 7, and used 7 as the side, but the side is slanted, so its length is $\\sqrt{3^2 + 4^2}$."
+    }
+  ],
+  "hints": [
+    "The segment joining two adjacent vertices is one side of the square.",
+    "From $(1, 2)$ to $(4, 6)$ you move $3$ right and $4$ up. The side is the hypotenuse of a right triangle with those legs.",
+    "The side squared is $3^2 + 4^2$, and the area of a square is its side squared."
+  ],
+  "solutions": {
+    "reliable": "The two points are the ends of one side. That side runs $4 - 1 = 3$ units across and $6 - 2 = 4$ units up, so its length is $\\sqrt{3^2 + 4^2} = \\sqrt{25} = 5$. The area of the square is $5^2 = 25$.",
+    "elegant": "The square fits inside a $7$ by $7$ square with sides parallel to the axes, leaving four right triangles with legs $3$ and $4$ in the corners. Its area is $7^2 - 4 \\cdot \\frac{1}{2} \\cdot 3 \\cdot 4 = 49 - 24 = 25$."
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

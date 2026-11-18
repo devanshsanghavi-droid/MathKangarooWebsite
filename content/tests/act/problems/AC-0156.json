@@ -1,0 +1,56 @@
+{
+  "id": "AC-0156",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-03",
+  "difficulty": "medium",
+  "statement": "A linear function $f$ satisfies $f(2) = 7$ and $f\\big(f(2)\\big) = 22$. What is the value of $f(0)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-8$",
+      "correct": false,
+      "misconception": "I read $f(f(2))$ as $f(2 \\cdot 2) = f(4)$, so I used a slope of $\\frac{22 - 7}{4 - 2} = 7.5$ and got $7 - 15 = -8$."
+    },
+    {
+      "key": "B",
+      "text": "$1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found the slope, $3$, and gave that as the answer instead of the value of $f$ at $x = 0$."
+    },
+    {
+      "key": "D",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I found the slope of $3$ but moved the wrong way: going from $x = 2$ down to $x = 0$, I added $2 \\cdot 3$ to $7$ instead of subtracting."
+    }
+  ],
+  "hints": [
+    "Since $f(2) = 7$, the expression $f(f(2))$ is $f(7)$.",
+    "You now know two points on the line: $(2, 7)$ and $(7, 22)$. Find the slope, then step back from $x = 2$ to $x = 0$.",
+    "The slope is $\\frac{22 - 7}{7 - 2} = 3$, so $f(0) = 7 - 2 \\cdot 3$."
+  ],
+  "solutions": {
+    "reliable": "Because $f(2) = 7$, we have $f(f(2)) = f(7) = 22$. The line passes through $(2, 7)$ and $(7, 22)$, so its slope is $\\frac{22 - 7}{7 - 2} = \\frac{15}{5} = 3$. Then $f(x) = 7 + 3(x - 2) = 3x + 1$, and $f(0) = 1$. Check: $f(7) = 22$.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0272",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "medium",
+  "statement": "A surveyor stands on level ground $85$ meters from the base of a radio tower. The angle of elevation from the ground at her position to the top of the tower is $58^\\circ$. To the nearest meter, how tall is the tower?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I used $85\\cos 58^\\circ$, treating 85 as the hypotenuse instead of the side next to the angle."
+    },
+    {
+      "key": "B",
+      "text": "$53$",
+      "correct": false,
+      "misconception": "I divided 85 by $\\tan 58^\\circ$, which flips the ratio of the opposite side to the adjacent side."
+    },
+    {
+      "key": "C",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I used $85\\sin 58^\\circ$, treating 85 as the hypotenuse and the height as the opposite side."
+    },
+    {
+      "key": "D",
+      "text": "$136$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Which sides of the right triangle do you know, and which do you want?",
+    "The 85 meters is adjacent to the $58^\\circ$ angle and the height is opposite it, so use tangent.",
+    "The height is $85 \\tan 58^\\circ$."
+  ],
+  "solutions": {
+    "reliable": "The ground distance, the tower and the line of sight form a right triangle. The ground distance is adjacent to the $58^\\circ$ angle and the height $h$ is opposite it, so $\\tan 58^\\circ = \\frac{h}{85}$. Then $h = 85\\tan 58^\\circ \\approx 85(1.6003) \\approx 136.0$, so the tower is about $136$ meters tall.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

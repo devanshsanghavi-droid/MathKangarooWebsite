@@ -1,0 +1,67 @@
+{
+  "id": "KA-1254",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A frog sits at 0 on a number line. Each jump takes it exactly 3 units to the left or to the right. After exactly 7 jumps, which of these numbers could the frog be on?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought the frog could jump right and left the same number of times and end back at 0, but 7 jumps cannot split into two equal groups."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought 2 more right jumps than left jumps was possible, but with 7 jumps the numbers of right and left jumps differ by an odd number."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I thought 4 more right jumps than left jumps was possible, giving 12, but with 7 jumps that difference must be odd."
+    },
+    {
+      "key": "E",
+      "text": "18",
+      "correct": false,
+      "misconception": "I counted 6 jumps to the right as 18 and forgot about the seventh jump."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "LOG-05"
+    ]
+  },
+  "hints": [
+    "Think about how many jumps go right and how many go left.",
+    "If r jumps go right and l go left, then r + l = 7 and the frog ends on 3 times (r - l). Ask whether r - l can be even when r + l is odd.",
+    "Since r + l = 7 is odd, r - l is odd too: 1, 3, 5 or 7, or minus one of these. So the frog ends on 3 times an odd number."
+  ],
+  "solutions": {
+    "reliable": "Say r jumps go right and l go left, so r + l = 7 and the frog ends on $3(r - l)$. Because r + l is odd, one of r and l is even and the other is odd, so r - l is odd. The possible positions are 3, 9, 15, 21 and their negatives. Of the choices only 9 works, for example with 5 jumps right and 2 jumps left: 15 - 6 = 9. The transferable idea: the sum and the difference of two whole numbers are always both even or both odd.",
+    "elegant": "Each jump changes the frog's position by 3, an odd number, so every jump switches it between odd and even numbers. After an odd number of jumps from 0 it must be on an odd number, and 9 is the only odd choice."
+  },
+  "whyOnTest": "Parity questions reward noticing that an odd number of odd-sized steps always lands on an odd number, which beats listing every route.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

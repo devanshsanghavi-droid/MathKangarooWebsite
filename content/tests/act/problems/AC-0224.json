@@ -1,0 +1,56 @@
+{
+  "id": "AC-0224",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-01",
+  "difficulty": "medium",
+  "statement": "A tile designer draws a convex polygon in which one interior angle measures $120^\\circ$ and every other interior angle measures $150^\\circ$. How many sides does the polygon have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I used $120^\\circ$ as the exterior angle at the special vertex instead of $60^\\circ$, so $120 + 30(n - 1) = 360$ gave $n = 9$."
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I found that there are $10$ angles of $150^\\circ$ but forgot to count the $120^\\circ$ angle as one more vertex."
+    },
+    {
+      "key": "C",
+      "text": "$11$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I divided $360^\\circ$ by the $30^\\circ$ exterior angle as if every angle were $150^\\circ$, ignoring the one $120^\\circ$ angle."
+    }
+  ],
+  "hints": [
+    "Think about exterior angles. What is the exterior angle at each vertex?",
+    "The exterior angles add to $360^\\circ$. The special vertex has an exterior angle of $60^\\circ$, and each other vertex has an exterior angle of $30^\\circ$.",
+    "If there are $n$ sides, then $60 + 30(n - 1) = 360$."
+  ],
+  "solutions": {
+    "reliable": "The exterior angle at the $120^\\circ$ vertex is $60^\\circ$, and the exterior angle at each $150^\\circ$ vertex is $30^\\circ$. The exterior angles of a convex polygon add to $360^\\circ$, so $60 + 30(n - 1) = 360$, giving $n - 1 = 10$ and $n = 11$. Check with interior angles: $120 + 10 \\cdot 150 = 1620 = 180(11 - 2)$.",
+    "elegant": "Using interior angles directly, $120 + 150(n - 1) = 180(n - 2)$ gives $120 + 150n - 150 = 180n - 360$, so $330 = 30n$ and $n = 11$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

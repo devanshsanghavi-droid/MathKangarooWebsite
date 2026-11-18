@@ -1,0 +1,67 @@
+{
+  "id": "KA-1257",
+  "band": "5-6",
+  "points": 3,
+  "statement": "On a square grid, the point P is at (3, 7). P is reflected in the horizontal line y = 4, and then the new point is reflected in the vertical line x = 5. Where does P end up?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "(7, 1)",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "(3, 1)",
+      "correct": false,
+      "misconception": "I did the first reflection, to (3, 1), and forgot the second one."
+    },
+    {
+      "key": "C",
+      "text": "(7, 7)",
+      "correct": false,
+      "misconception": "I skipped the reflection in y = 4 and only reflected (3, 7) in the line x = 5."
+    },
+    {
+      "key": "D",
+      "text": "(5, 4)",
+      "correct": false,
+      "misconception": "I moved the point onto each line instead of across it, first to (3, 4) and then to (5, 4)."
+    },
+    {
+      "key": "E",
+      "text": "(1, 1)",
+      "correct": false,
+      "misconception": "I did the first reflection correctly, then moved the point 2 units, its distance from x = 5, but away from the line instead of across it."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-09",
+    "secondary": [
+      "GEO-02"
+    ]
+  },
+  "hints": [
+    "Do one reflection at a time.",
+    "A reflection in a horizontal line keeps x the same and puts the point the same distance away on the other side of the line. A reflection in a vertical line keeps y the same.",
+    "P is 3 units above y = 4, so its image is 3 units below, at (3, 1). Now (3, 1) is 2 units to the left of x = 5."
+  ],
+  "solutions": {
+    "reliable": "P = (3, 7) is 3 units above the line y = 4, so its reflection is 3 units below the line: (3, 1). That point is 2 units to the left of the line x = 5, so its reflection is 2 units to the right of it: (7, 1). The transferable idea: a reflection keeps the coordinate that runs along the mirror line and sends the point the same distance to the other side.",
+    "elegant": "Reflecting in y = 4 sends y to 8 - y, and reflecting in x = 5 sends x to 10 - x. So (3, 7) goes to (10 - 3, 8 - 7) = (7, 1). In fact, two reflections in perpendicular lines make a half turn about the point where the lines cross, here (5, 4)."
+  },
+  "whyOnTest": "Reflection questions test whether you jump across the mirror line by the same distance, one step at a time, rather than sliding onto it.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

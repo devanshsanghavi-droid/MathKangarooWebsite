@@ -1,0 +1,56 @@
+{
+  "id": "AC-0044",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-07",
+  "difficulty": "easy",
+  "statement": "Vectors $\\mathbf{u} = \\langle 3, -2 \\rangle$ and $\\mathbf{v} = \\langle -1, 5 \\rangle$ are given in component form. What is $2\\mathbf{u} - \\mathbf{v}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\langle 5, 1 \\rangle$",
+      "correct": false,
+      "misconception": "I added $\\mathbf{v}$ to $2\\mathbf{u}$ instead of subtracting it."
+    },
+    {
+      "key": "B",
+      "text": "$\\langle 4, -7 \\rangle$",
+      "correct": false,
+      "misconception": "I subtracted $\\mathbf{v}$ from $\\mathbf{u}$ but forgot to double $\\mathbf{u}$ first."
+    },
+    {
+      "key": "C",
+      "text": "$\\langle 5, -9 \\rangle$",
+      "correct": false,
+      "misconception": "I got the second component right, but for the first I computed $6 - 1$ instead of $6 - (-1)$."
+    },
+    {
+      "key": "D",
+      "text": "$\\langle 7, -9 \\rangle$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Work on one component at a time.",
+    "First double each component of $\\mathbf{u}$. Then subtract each component of $\\mathbf{v}$, watching the signs.",
+    "$2\\mathbf{u} = \\langle 6, -4 \\rangle$, so the answer is $\\langle 6 - (-1), -4 - 5 \\rangle$."
+  ],
+  "solutions": {
+    "reliable": "$2\\mathbf{u} = \\langle 2 \\cdot 3, 2 \\cdot (-2) \\rangle = \\langle 6, -4 \\rangle$. Subtracting $\\mathbf{v}$ component by component gives $\\langle 6 - (-1), -4 - 5 \\rangle = \\langle 7, -9 \\rangle$. The idea: scalar multiplication and vector subtraction both act on each component separately.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

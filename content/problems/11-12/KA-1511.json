@@ -1,0 +1,68 @@
+{
+  "id": "KA-1511",
+  "band": "11-12",
+  "points": 4,
+  "statement": "How many pairs $(x, y)$ of positive whole numbers satisfy $xy = 3x + 2y + 6$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I counted the factor pairs of 12 without order, treating $1 \\times 12$ and $12 \\times 1$ as the same pair."
+    },
+    {
+      "key": "B",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I also counted the negative factor pairs of 12, but they make $x$ or $y$ zero or negative."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I factorised the left side as $(x - 2)(y - 3)$ but forgot to add 6 to the right side too, so I counted the factor pairs of 6."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I tried the values of $x$ from 1 to 10 one by one and stopped, missing $x = 14$, $y = 4$."
+    },
+    {
+      "key": "E",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "NUM-05",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Move everything to one side. Can it be factorised?",
+    "Trying values of $x$ works but you never know when to stop. Instead, add a constant to both sides so the left side factorises into two brackets, then count factor pairs.",
+    "$xy - 3x - 2y = 6$, so $xy - 3x - 2y + 6 = 12$, which is $(x - 2)(y - 3) = 12$. Count positive factor pairs, and check that negative pairs give no positive solutions."
+  ],
+  "solutions": {
+    "reliable": "Rewrite as $xy - 3x - 2y = 6$ and add 6 to both sides: $(x - 2)(y - 3) = 12$. Since $x \\geq 1$ and $y \\geq 1$, we have $x - 2 \\geq -1$ and $y - 3 \\geq -2$. If both brackets were negative, their product 12 would need $|x - 2| \\cdot |y - 3| = 12$ with $|x - 2| \\leq 1$ and $|y - 3| \\leq 2$, which is impossible. So both are positive, one of the six ordered factor pairs $1 \\times 12, 2 \\times 6, 3 \\times 4, 4 \\times 3, 6 \\times 2, 12 \\times 1$. They give $(3, 15), (4, 9), (5, 7), (6, 6), (8, 5), (14, 4)$, each of which checks. There are 6 pairs. The transferable idea: factorising with a well-chosen constant turns an endless search into counting divisors.",
+    "elegant": "Solve for $y$: $y = \\frac{3x + 6}{x - 2} = 3 + \\frac{12}{x - 2}$. So $x - 2$ must be a positive divisor of 12, and 12 has 6 of them."
+  },
+  "whyOnTest": "A search over x never says when to stop; spotting the factorisation finishes the problem, and the traps come from careless factor counting.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

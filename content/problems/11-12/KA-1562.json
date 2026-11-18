@@ -1,0 +1,68 @@
+{
+  "id": "KA-1562",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Mixing 1 litre of drink P with 2 litres of drink Q gives a drink that is 40% juice. Mixing 2 litres of P with 1 litre of Q gives a drink that is 50% juice. What percentage of drink P is juice?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20%",
+      "correct": false,
+      "misconception": "I wrote $p + 2q = 40$ and $2p + q = 50$, forgetting that each mixture has 3 litres, and solved to get $p = 20$."
+    },
+    {
+      "key": "B",
+      "text": "30%",
+      "correct": false,
+      "misconception": "I solved the equations correctly but gave the percentage of juice in drink Q."
+    },
+    {
+      "key": "C",
+      "text": "45%",
+      "correct": false,
+      "misconception": "I averaged the two mixtures, which gives the juice in a half-and-half mix, not in drink P."
+    },
+    {
+      "key": "D",
+      "text": "50%",
+      "correct": false,
+      "misconception": "I assumed the mixture with more P is close enough to P itself and gave its percentage."
+    },
+    {
+      "key": "E",
+      "text": "60%",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "MOD-08",
+    "secondary": [
+      "MOD-01",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Write the amount of juice in each 3-litre mixture.",
+    "Let P be $p\\%$ juice and Q be $q\\%$ juice. Each mixture gives one equation for the litres of juice. Solve the pair, for example by adding and subtracting the equations.",
+    "$p + 2q = 3 \\times 40 = 120$ and $2p + q = 3 \\times 50 = 150$."
+  ],
+  "solutions": {
+    "reliable": "Let P be $p\\%$ juice and Q be $q\\%$ juice. The first mixture holds $\\frac{p + 2q}{100}$ litres of juice in 3 litres, so $p + 2q = 120$. The second gives $2p + q = 150$. Subtracting, $p - q = 30$; adding, $3p + 3q = 270$, so $p + q = 90$. Hence $p = 60$ and $q = 30$. Check: $(60 + 2 \\times 30) / 3 = 40$ and $(2 \\times 60 + 30) / 3 = 50$. The transferable idea: in a mixture, the amounts of the ingredient add up, not the percentages.",
+    "elegant": null
+  },
+  "whyOnTest": "Weighted averages combine amounts of juice rather than percentages, and two mixtures give two equations to solve.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

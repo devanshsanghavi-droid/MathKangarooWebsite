@@ -1,0 +1,62 @@
+{
+  "id": "AM-1028",
+  "contest": "AMC8",
+  "slot": 9,
+  "area": "ALG",
+  "topic": "ALG-05",
+  "types": ["T-BOUNDING"],
+  "statement": "How many integers are strictly between $\\sqrt{40}$ and $\\sqrt{400}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found the integers 7 through 19 but counted them as 19 - 7 = 12, which leaves one end out."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I counted 7 through 20, but 20 is exactly the square root of 400, so it is not strictly between."
+    },
+    {
+      "key": "D",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I counted every positive integer less than 20 and forgot that the integers must also be greater than the square root of 40."
+    },
+    {
+      "key": "E",
+      "text": "$359$",
+      "correct": false,
+      "misconception": "I counted the integers strictly between 40 and 400 themselves, 41 through 399, and forgot about the square roots."
+    }
+  ],
+  "hints": [
+    "A positive integer $n$ is between $\\sqrt{40}$ and $\\sqrt{400}$ exactly when $n^2$ is between $40$ and $400$.",
+    "$6^2 = 36$ is too small but $7^2 = 49$ is big enough, and $\\sqrt{400}$ is exactly $20$.",
+    "The integers are $7, 8, \\ldots, 19$. Count them carefully, including both ends."
+  ],
+  "solutions": {
+    "reliable": "Since $6^2 = 36 < 40 < 49 = 7^2$, the number $\\sqrt{40}$ lies between $6$ and $7$. Also $\\sqrt{400} = 20$ exactly, and the word strictly rules out $20$ itself. So the integers are $7, 8, \\ldots, 19$, and there are $19 - 7 + 1 = 13$ of them.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

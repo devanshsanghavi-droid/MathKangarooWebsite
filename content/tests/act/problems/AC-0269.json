@@ -1,0 +1,56 @@
+{
+  "id": "AC-0269",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-05",
+  "difficulty": "easy",
+  "statement": "Five students, including Maya, will each give a presentation, one at a time. Maya has asked to go first. If Maya goes first, in how many different orders can the $5$ presentations be given?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I counted only the 4 students who could give the second presentation and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$96$",
+      "correct": false,
+      "misconception": "I took all 120 orders of the 5 students and subtracted the 24 with Maya first, which counts the orders where Maya does not go first."
+    },
+    {
+      "key": "D",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I counted every order of all 5 students, 5 times 4 times 3 times 2 times 1, and ignored that Maya's spot is fixed."
+    }
+  ],
+  "hints": [
+    "Maya's spot is decided. Who is left to arrange?",
+    "Arrange the other $4$ students in the remaining $4$ spots.",
+    "There are $4$ choices for second, then $3$ for third, $2$ for fourth and $1$ for fifth."
+  ],
+  "solutions": {
+    "reliable": "Maya is first, so only the other $4$ students need to be ordered. There are $4 \\cdot 3 \\cdot 2 \\cdot 1 = 24$ orders.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

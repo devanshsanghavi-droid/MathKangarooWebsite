@@ -1,0 +1,68 @@
+{
+  "id": "KA-1232",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A card shows the letter F. Ria reflects the picture in a vertical mirror line through its centre, so left and right swap. Then she turns the result half a turn about its centre. Which single move would have given the same final picture?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "A quarter turn about the centre",
+      "correct": false,
+      "misconception": "I thought a flip and a half turn combine into something in between, like a quarter turn, but no turn of an F can ever give its mirror image."
+    },
+    {
+      "key": "B",
+      "text": "A half turn about the centre",
+      "correct": false,
+      "misconception": "I thought the reflection did not matter and only the half turn counted."
+    },
+    {
+      "key": "C",
+      "text": "A reflection in a vertical mirror line",
+      "correct": false,
+      "misconception": "I thought a half turn leaves the letter looking the same, so only the first reflection mattered."
+    },
+    {
+      "key": "D",
+      "text": "No move at all: the F is back to normal",
+      "correct": false,
+      "misconception": "I thought the half turn undoes the reflection, but a turn can never undo a flip."
+    },
+    {
+      "key": "E",
+      "text": "A reflection in a horizontal mirror line",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-09",
+    "secondary": [
+      "GEO-08",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Track where the arms of the F and its top end up.",
+    "Follow one feature, such as the arms of the F, through each move. After the first move the arms point left. Decide where they point after the half turn, and where the top of the letter goes.",
+    "A half turn swaps left with right and top with bottom. The arms started pointing right; after both moves they point right again, but the letter is upside down."
+  ],
+  "solutions": {
+    "reliable": "Start with F: stem on the left, arms pointing right, top at the top. The vertical reflection keeps the top at the top but makes the arms point left. A half turn then swaps left with right and top with bottom: the arms point right again, and the top of the letter is now at the bottom. An F with its arms pointing right but upside down is exactly what a reflection in a horizontal mirror line gives. The transferable idea: a reflection followed by a half turn is another reflection, in the perpendicular mirror line.",
+    "elegant": "Think about what each move does to directions. The vertical reflection swaps left and right only. The half turn swaps left with right and also top with bottom. Together, left and right are swapped twice and so return to normal, while top and bottom are swapped once. Swapping only top and bottom is the horizontal reflection."
+  },
+  "whyOnTest": "Combining moves is tested by tracking one feature; a flip followed by a half turn is a flip in the other direction, never a turn.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

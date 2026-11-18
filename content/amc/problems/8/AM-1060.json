@@ -1,0 +1,67 @@
+{
+  "id": "AM-1060",
+  "contest": "AMC8",
+  "slot": 19,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": [
+    "T-RECURSION",
+    "T-SMALL-CASES"
+  ],
+  "statement": "A sequence begins $3, 4$. Each term after the second is the sum of all the terms that come before it, so the third term is $3 + 4 = 7$. What is the tenth term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$199$",
+      "correct": false,
+      "misconception": "I made each term the sum of only the two terms just before it, like the Fibonacci numbers, which gives $3, 4, 7, 11, 18, \\ldots$ and a tenth term of $199$."
+    },
+    {
+      "key": "B",
+      "text": "$448$",
+      "correct": false,
+      "misconception": "I found the doubling pattern but miscounted the terms and gave the ninth term, $448$."
+    },
+    {
+      "key": "C",
+      "text": "$896$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$1024$",
+      "correct": false,
+      "misconception": "I thought the doubling starts right away, so the third term would be $8$ and the tenth term would be $4 \\cdot 2^8 = 1024$. But the third term is $3 + 4 = 7$."
+    },
+    {
+      "key": "E",
+      "text": "$1792$",
+      "correct": false,
+      "misconception": "I wrote the tenth term as $7 \\cdot 2^8$, counting one doubling too many, which is really the eleventh term."
+    }
+  ],
+  "hints": [
+    "Write out the first six terms.",
+    "Starting with the fourth term, compare each term with the term just before it.",
+    "From the fourth term on, the new term is the previous term plus the sum of everything before the previous term, and that sum is the previous term itself. So the terms double: $7, 14, 28, \\ldots$"
+  ],
+  "solutions": {
+    "reliable": "The terms are $3, 4, 7, 14, 28, 56, 112, 224, 448, 896$, so the tenth term is $896$. The doubling is not a coincidence: for the fourth term on, the new term is the sum of all earlier terms, which is the previous term plus the sum of the terms before the previous term. That last sum is exactly the previous term, so each new term is twice the one before it.",
+    "elegant": "For $n \\ge 4$, the $n$th term is twice the term before it, so the tenth term is $7 \\cdot 2^{7} = 896$."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

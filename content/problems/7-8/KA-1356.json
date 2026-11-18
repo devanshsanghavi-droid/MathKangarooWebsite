@@ -1,0 +1,67 @@
+{
+  "id": "KA-1356",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A wire cube has 12 straight pieces, one per edge, joined at its 8 corners. An ant walks along the wire from corner to corner. It may revisit a corner but never walks along the same piece twice. What is the most pieces it can walk along?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought the ant had to finish at the corner where it started, as if its walk were a closed loop."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": false,
+      "misconception": "I saw that some pieces of wire must be missed but thought that missing two pieces was enough."
+    },
+    {
+      "key": "D",
+      "text": "11",
+      "correct": false,
+      "misconception": "I thought that missing just one piece of wire would be enough to make the walk possible."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I assumed the ant could walk along all 12 pieces without checking how many pieces meet at each corner."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-05",
+    "secondary": [
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "Passing through a corner uses one piece to arrive and another to leave.",
+    "At a corner where the walk neither starts nor ends, the ant uses its pieces in pairs, so an even number of them. Three pieces meet at each cube corner. How many corners must keep an unwalked piece?",
+    "At least 6 corners each have a piece the ant never walks along, and one piece touches only 2 corners, so at least 3 pieces are missed."
+  ],
+  "solutions": {
+    "reliable": "Every time the ant passes through a corner, it arrives along one piece and leaves along another, so at a corner where the walk neither starts nor ends it walks an even number of the pieces there. Three pieces meet at every corner, so at each such corner at least one piece is never walked. At least $8 - 2 = 6$ corners are like this. Each piece of wire touches only 2 corners, so at least $6 \\div 2 = 3$ pieces are missed, and the ant walks along at most $12 - 3 = 9$. Nine is possible: call the bottom corners A, B, C, D in order round the square and the top corners E, F, G, H directly above them. The walk A, B, C, D, A, E, F, G, H, E uses 9 different pieces. The transferable idea: a walk that passes through a point uses the lines there in pairs, so count the points with an odd number of lines.",
+    "elegant": "Leave out the three upright pieces BF, CG and DH. What remains is the bottom square, the top square and the upright piece AE. Now every corner except A and E has 2 pieces, so one walk from A to E can use all 9 pieces, and the counting argument shows no walk can do better."
+  },
+  "whyOnTest": "Whether a route can be traced in one go depends on how many points have an odd number of lines, a favourite Kangaroo path idea.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

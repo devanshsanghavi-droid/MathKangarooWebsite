@@ -1,0 +1,62 @@
+{
+  "id": "AM-1039",
+  "contest": "AMC8",
+  "slot": 13,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": ["T-SYMMETRY"],
+  "statement": "The sum of $12$ consecutive multiples of $4$ is $1032$. What is the smallest of these $12$ numbers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$64$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$66$",
+      "correct": false,
+      "misconception": "I treated the average, 86, as one of the numbers and counted down 5 steps of 4 to get 66, but 86 is not a multiple of 4."
+    },
+    {
+      "key": "C",
+      "text": "$68$",
+      "correct": false,
+      "misconception": "I saw that the middle two numbers are 84 and 88, but I counted only 4 steps of 4 down from 84 instead of 5."
+    },
+    {
+      "key": "D",
+      "text": "$86$",
+      "correct": false,
+      "misconception": "I found the average, 1032 / 12 = 86, and gave it, but the average is not even one of the numbers."
+    },
+    {
+      "key": "E",
+      "text": "$108$",
+      "correct": false,
+      "misconception": "I found the largest of the twelve numbers instead of the smallest."
+    }
+  ],
+  "hints": [
+    "The average of the $12$ numbers is $1032 / 12$.",
+    "With an even number of terms, the average sits halfway between the $6$th and $7$th numbers.",
+    "The average is $86$, so the $6$th and $7$th numbers are $84$ and $88$. Count down from $84$."
+  ],
+  "solutions": {
+    "reliable": "Call the numbers $n, n + 4, \\ldots, n + 44$. Their sum is $12n + 4(0 + 1 + \\cdots + 11) = 12n + 264$. Setting $12n + 264 = 1032$ gives $12n = 768$, so $n = 64$. Check: the numbers $64, 68, \\ldots, 108$ have sum $\\frac{12(64 + 108)}{2} = 1032$.",
+    "elegant": "The average is $1032 / 12 = 86$, which lies halfway between the $6$th and $7$th numbers, so those are $84$ and $88$. The smallest number is $5$ steps of $4$ below $84$: $84 - 20 = 64$."
+  },
+  "formulas": ["F-ALG-03"],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

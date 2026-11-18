@@ -1,0 +1,66 @@
+{
+  "id": "AM-1103",
+  "contest": "AMC8",
+  "slot": 9,
+  "area": "GEO",
+  "topic": "GEO-10",
+  "types": [
+    "T-COORD"
+  ],
+  "statement": "Point $P = (2, 5)$ is reflected over the vertical line $x = 4$ to give point $Q$. Then $Q$ is reflected over the horizontal line $y = 1$ to give point $R$. What is the area of triangle $PQR$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I used the distances from the points to the mirror lines as the legs: P is 2 from x = 4 and Q is 4 from y = 1, so I got (1/2)(2)(4) = 4."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I moved Q only down to the line y = 1 instead of past it, so QR = 4 and the area came out (1/2)(4)(4) = 8."
+    },
+    {
+      "key": "C",
+      "text": "$16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I reflected Q over the x-axis instead of the line y = 1, so R = (6, -5), QR = 10, and the area was (1/2)(4)(10) = 20."
+    },
+    {
+      "key": "E",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I found the legs 4 and 8 but multiplied them without taking half, getting 32."
+    }
+  ],
+  "hints": [
+    "A reflection over a vertical line keeps the $y$-coordinate and puts the point the same distance away on the other side.",
+    "Find $Q$ and $R$. Then notice that $\\overline{PQ}$ is horizontal and $\\overline{QR}$ is vertical.",
+    "$Q = (6, 5)$ and $R = (6, -3)$, so the triangle has a right angle at $Q$ with legs $PQ = 4$ and $QR = 8$."
+  ],
+  "solutions": {
+    "reliable": "$P$ is $2$ units left of the line $x = 4$, so $Q$ is $2$ units right of it: $Q = (6, 5)$. $Q$ is $4$ units above the line $y = 1$, so $R$ is $4$ units below it: $R = (6, -3)$. Segment $\\overline{PQ}$ is horizontal with length $4$ and segment $\\overline{QR}$ is vertical with length $8$, so the right angle is at $Q$ and the area is $\\frac{1}{2} \\cdot 4 \\cdot 8 = 16$.",
+    "elegant": "Each leg is twice a distance to a mirror: $PQ = 2 \\cdot 2 = 4$ (twice the distance from $P$ to $x = 4$) and $QR = 2 \\cdot 4 = 8$ (twice the distance from $Q$ to $y = 1$). The area is $\\frac{1}{2} \\cdot 4 \\cdot 8 = 16$."
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

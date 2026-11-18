@@ -1,0 +1,68 @@
+{
+  "id": "KA-1393",
+  "band": "7-8",
+  "points": 3,
+  "statement": "The numbers 1, 2, 3, ..., 10 are split into five pairs, and the two numbers in each pair are multiplied. At most how many of the five products can be odd?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I assumed every pair could have an odd product, one for each of the five odd numbers."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I divided the five odd numbers by 2 and rounded up."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the odd numbers that end up in pairs with odd products, not the number of pairs."
+    },
+    {
+      "key": "D",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "0",
+      "correct": false,
+      "misconception": "I thought every pair must contain an even number because there are five even numbers."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-03",
+    "secondary": [
+      "LOG-11",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "When is a product of two whole numbers odd?",
+    "A product is odd only when both numbers are odd. Count the odd numbers from 1 to 10 and see how many all-odd pairs you can make.",
+    "There are five odd numbers. Two all-odd pairs use four of them; the fifth odd number has to be paired with an even number."
+  ],
+  "solutions": {
+    "reliable": "A product of two whole numbers is odd only when both numbers are odd. From 1 to 10 there are five odd numbers: 1, 3, 5, 7, 9. Each odd product uses two of them, so at most two odd products are possible, using four odd numbers, and the fifth odd number must be paired with an even number. For example 1 x 3, 5 x 7, 9 x 2, 4 x 6, 8 x 10 gives two odd products. The answer is 2. The transferable idea: odd times odd is the only way to get an odd product, so count the odd numbers available.",
+    "elegant": null
+  },
+  "whyOnTest": "Parity of numbers: an odd product needs two odd factors, so the supply of odd numbers sets the limit.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

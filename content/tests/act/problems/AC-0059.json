@@ -1,0 +1,56 @@
+{
+  "id": "AC-0059",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "hard",
+  "statement": "In the $xy$-plane, the line $y = x + k$ and the parabola $y = x^2 - 3x + 7$ intersect at exactly one point. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I set up $x^2 - 4x + 7 - k = 0$ but wrote the discriminant as $16 - 4(7 + k)$, flipping the sign of $k$, and got $-3$."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{13}{4}$",
+      "correct": false,
+      "misconception": "I thought the line would touch the parabola once if it went through the vertex $\\left(\\frac{3}{2}, \\frac{19}{4}\\right)$, so I solved $\\frac{19}{4} = \\frac{3}{2} + k$."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{19}{4}$",
+      "correct": false,
+      "misconception": "I subtracted $k$ but forgot to subtract the $x$ from $-3x$, so I used $x^2 - 3x + 7 - k = 0$ and set $9 - 4(7 - k) = 0$."
+    }
+  ],
+  "hints": [
+    "Set the two expressions for $y$ equal to each other to find where they meet.",
+    "Exactly one intersection means the resulting quadratic equation has exactly one solution, so its discriminant is $0$.",
+    "$x^2 - 3x + 7 = x + k$ becomes $x^2 - 4x + (7 - k) = 0$. Set $(-4)^2 - 4(1)(7 - k) = 0$."
+  ],
+  "solutions": {
+    "reliable": "Setting the expressions equal: $x^2 - 3x + 7 = x + k$, so $x^2 - 4x + (7 - k) = 0$. One intersection point means one solution, so the discriminant is zero: $16 - 4(7 - k) = 0$, which gives $16 - 28 + 4k = 0$ and $k = 3$. Check: $x^2 - 4x + 4 = (x - 2)^2 = 0$ has the single solution $x = 2$, at the point $(2, 5)$.",
+    "elegant": "For one intersection, $x^2 - 4x + (7 - k)$ must be a perfect square. Since $x^2 - 4x + 4 = (x - 2)^2$, we need $7 - k = 4$, so $k = 3$."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

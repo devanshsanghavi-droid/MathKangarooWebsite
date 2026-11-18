@@ -1,0 +1,66 @@
+{
+  "id": "AM-1178",
+  "contest": "AMC8",
+  "slot": 9,
+  "area": "NT",
+  "topic": "NT-06",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A two-digit number is $3$ more than $4$ times the sum of its digits. What is the sum of all two-digit numbers with this property?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I found the five numbers 11, 23, 35, 47 and 59 but counted them instead of adding them."
+    },
+    {
+      "key": "B",
+      "text": "$116$",
+      "correct": false,
+      "misconception": "I thought the ones digit could not reach 9, so I stopped at 47 and added 11 + 23 + 35 + 47 = 116."
+    },
+    {
+      "key": "C",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I left out the 3 and solved 10a + b = 4(a + b), which gives 12, 24, 36 and 48, adding to 120."
+    },
+    {
+      "key": "D",
+      "text": "$124$",
+      "correct": false,
+      "misconception": "I subtracted 3 instead of adding it, so I solved 10a + b = 4(a + b) - 3, which gives 13, 25, 37 and 49, adding to 124."
+    },
+    {
+      "key": "E",
+      "text": "$175$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Write the number as $10a + b$, where $a$ is the tens digit and $b$ is the ones digit.",
+    "Set $10a + b = 4(a + b) + 3$ and simplify until you can write $b$ in terms of $a$.",
+    "You get $6a = 3b + 3$, so $b = 2a - 1$. The tens digit $a$ can be $1, 2, 3, 4$ or $5$."
+  ],
+  "solutions": {
+    "reliable": "Write the number as $10a + b$. The condition is $10a + b = 4(a + b) + 3$, which simplifies to $6a - 3 = 3b$, so $b = 2a - 1$. Since $a \\ge 1$ and $b \\le 9$, $a$ runs from $1$ to $5$, giving $11, 23, 35, 47, 59$. Check $59$: $4(5 + 9) + 3 = 59$. Their sum is $11 + 23 + 35 + 47 + 59 = 175$.",
+    "elegant": "The five numbers go up by $12$ each time, so their sum is $5$ times the middle one: $5 \\cdot 35 = 175$."
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

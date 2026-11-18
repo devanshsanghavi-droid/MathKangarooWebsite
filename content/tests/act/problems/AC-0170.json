@@ -1,0 +1,56 @@
+{
+  "id": "AC-0170",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-07",
+  "difficulty": "hard",
+  "statement": "The polynomial $p(x) = x^3 + ax^2 + bx - 12$, where $a$ and $b$ are constants, has zeros at $x = 2$ and $x = -3$. What is the value of $a$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I found all three zeros, $2$, $-3$ and $-2$, but I thought $a$ equals their sum instead of the opposite of their sum, so I got $-3$."
+    },
+    {
+      "key": "B",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I thought the product of the zeros equals $-12$, so I solved $2(-3)r = -12$ to get a third zero of $2$, then found $a = -(2 - 3 + 2) = -1$."
+    },
+    {
+      "key": "C",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I used only the two given zeros, so I computed $a = -(2 + (-3)) = 1$ and forgot about the third zero."
+    },
+    {
+      "key": "D",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Each zero makes $p(x) = 0$. Substitute both of them.",
+    "Substituting $x = 2$ and $x = -3$ gives two linear equations in $a$ and $b$. Solve the system.",
+    "$p(2) = 0$ gives $4a + 2b = 4$, and $p(-3) = 0$ gives $9a - 3b = 39$. Eliminate $b$."
+  ],
+  "solutions": {
+    "reliable": "From $p(2) = 8 + 4a + 2b - 12 = 0$ we get $4a + 2b = 4$, or $2a + b = 2$. From $p(-3) = -27 + 9a - 3b - 12 = 0$ we get $9a - 3b = 39$, or $3a - b = 13$. Adding the two simplified equations gives $5a = 15$, so $a = 3$ (and $b = -4$). Check: $(x - 2)(x + 3)(x + 2) = x^3 + 3x^2 - 4x - 12$.",
+    "elegant": "For a cubic $x^3 + ax^2 + bx + c$ with zeros $r_1, r_2, r_3$, the product of the zeros is $-c = 12$ and the sum is $-a$. So $2(-3)r_3 = 12$ gives $r_3 = -2$, and $a = -(2 - 3 - 2) = 3$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

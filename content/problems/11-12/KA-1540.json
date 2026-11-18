@@ -1,0 +1,68 @@
+{
+  "id": "KA-1540",
+  "band": "11-12",
+  "points": 4,
+  "statement": "In triangle $ABC$, the bisectors of the angles at $B$ and $C$ meet at the point $I$. Angle $BIC$ is exactly three times as large as angle $BAC$. What is the size of angle $BAC$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$36^\\circ$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$45^\\circ$",
+      "correct": false,
+      "misconception": "I used angle $BIC = 90^\\circ + \\angle BAC$, forgetting that only half of angles $B$ and $C$ are in triangle $BIC$."
+    },
+    {
+      "key": "C",
+      "text": "$72^\\circ$",
+      "correct": false,
+      "misconception": "I found that the half-angles at $B$ and $C$ add up to $72^\\circ$ and gave that."
+    },
+    {
+      "key": "D",
+      "text": "$108^\\circ$",
+      "correct": false,
+      "misconception": "I found angle $BIC$ and gave that instead of angle $BAC$."
+    },
+    {
+      "key": "E",
+      "text": "$144^\\circ$",
+      "correct": false,
+      "misconception": "I found the sum of the angles at $B$ and $C$ and gave that."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "CFT-02",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Which angles are in triangle $BIC$?",
+    "Triangle $BIC$ contains half of angle $B$ and half of angle $C$. Use the angle sum in triangle $ABC$ to write angle $BIC$ in terms of angle $A$, then set it equal to three times angle $A$.",
+    "$\\angle BIC = 180^\\circ - \\frac{1}{2}(\\angle B + \\angle C) = 180^\\circ - \\frac{1}{2}(180^\\circ - \\angle A) = 90^\\circ + \\frac{1}{2}\\angle A$."
+  ],
+  "solutions": {
+    "reliable": "Let angle $BAC = x$. Then $\\angle B + \\angle C = 180^\\circ - x$. In triangle $BIC$ the angles at $B$ and $C$ are half of these, so $\\angle BIC = 180^\\circ - \\frac{1}{2}(180^\\circ - x) = 90^\\circ + \\frac{x}{2}$. Setting $90^\\circ + \\frac{x}{2} = 3x$ gives $\\frac{5x}{2} = 90^\\circ$, so $x = 36^\\circ$. Check: $\\angle BIC = 108^\\circ = 3 \\times 36^\\circ$. The transferable idea: in an angle chase, name one angle and push the triangle angle sum through each triangle in turn.",
+    "elegant": null
+  },
+  "whyOnTest": "Two triangle angle sums, one inside the other, link angle $BIC$ to angle $A$; the common slip is forgetting the halves.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0058",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "medium",
+  "statement": "A lab technician needs $90$ milliliters of an $18\\%$ salt solution. She makes it by mixing a $12\\%$ salt solution with a $30\\%$ salt solution. How many milliliters of the $12\\%$ solution should she use?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I solved the system but swapped the two amounts, so I gave the amount of the $30\\%$ solution."
+    },
+    {
+      "key": "B",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I assumed she uses equal amounts of the two solutions, so I just took half of $90$."
+    },
+    {
+      "key": "C",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I set the total salt equal to $18$ instead of $18\\%$ of $90$, so $0.12x + 0.30(90 - x) = 18$ gave $x = 50$."
+    },
+    {
+      "key": "D",
+      "text": "$60$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Track two things: the total volume and the total amount of salt.",
+    "Let $x$ mL be the $12\\%$ solution, so $90 - x$ mL is the $30\\%$ solution. The salt in the mixture is $0.18 \\cdot 90$.",
+    "Solve $0.12x + 0.30(90 - x) = 16.2$. This simplifies to $27 - 0.18x = 16.2$."
+  ],
+  "solutions": {
+    "reliable": "Let $x$ be the mL of $12\\%$ solution, so $90 - x$ mL is $30\\%$ solution. Salt: $0.12x + 0.30(90 - x) = 0.18(90) = 16.2$. Then $0.12x + 27 - 0.30x = 16.2$, so $0.18x = 10.8$ and $x = 60$. Check: $0.12(60) + 0.30(30) = 7.2 + 9 = 16.2$.",
+    "elegant": "$18\\%$ is $6$ points above $12\\%$ and $12$ points below $30\\%$. The amounts must be in the inverse ratio, $12 : 6 = 2 : 1$ for the weaker solution, so it is $\\frac{2}{3}$ of $90$, which is $60$ mL."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1591",
+  "band": "11-12",
+  "points": 4,
+  "statement": "An equilateral triangle tile is split into four smaller equilateral triangles by joining the midpoints of its sides. Each small triangle is painted red, yellow or blue; colours may repeat. Two tiles count as the same if one can be turned in its plane to look exactly like the other; flipping is not allowed. How many different tiles are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "24",
+      "correct": false,
+      "misconception": "I grouped the colourings in threes but left out the 9 tiles whose three corner triangles share one colour."
+    },
+    {
+      "key": "B",
+      "text": "27",
+      "correct": false,
+      "misconception": "I divided all $3^4 = 81$ colourings by the 3 turns, but the 9 tiles with three matching corners look the same after every turn."
+    },
+    {
+      "key": "C",
+      "text": "30",
+      "correct": false,
+      "misconception": "I also counted a tile and its mirror image as the same, but flipping over is not allowed."
+    },
+    {
+      "key": "D",
+      "text": "33",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "81",
+      "correct": false,
+      "misconception": "I counted every way to paint the four triangles and did not treat turned copies as the same."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-16",
+      "GEO-09"
+    ]
+  },
+  "hints": [
+    "Which small triangle stays in place when the tile is turned?",
+    "A turn moves the three corner triangles round in a cycle. Most colourings have three different turned copies, but some look the same after every turn: count those separately.",
+    "The middle triangle never moves. There are $3^4 = 81$ colourings. In 9 of them the three corners share a colour, and such a tile is unchanged by turning; the other 72 fall into groups of 3."
+  ],
+  "solutions": {
+    "reliable": "The middle triangle stays in place, and a turn through a third of a full turn moves the three corner triangles round a cycle. There are $3^4 = 81$ colourings in all. If the three corners have the same colour (3 choices), the tile looks the same after every turn; with 3 choices for the middle this gives 9 tiles, each in a group of its own. Any other colouring changes under both turns, so it has exactly three different turned copies, and the other $81 - 9 = 72$ colourings give $72 \\div 3 = 24$ tiles. In total $9 + 24 = 33$. The transferable idea: when counting up to turning, count the colourings that a turn leaves unchanged separately before dividing.",
+    "elegant": "Burnside's lemma: average the number of colourings that each turn leaves unchanged. Doing nothing fixes all 81, and each of the other two turns fixes the 9 with matching corners, so the count is $(81 + 9 + 9) \\div 3 = 33$."
+  },
+  "whyOnTest": "Dividing by the number of turns only works for objects with no symmetry of their own, so the exceptions must be counted on their own.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

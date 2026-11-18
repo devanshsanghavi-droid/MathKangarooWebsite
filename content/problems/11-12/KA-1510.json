@@ -1,0 +1,68 @@
+{
+  "id": "KA-1510",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Which of these is closest to $1 + \\dfrac{1}{2} + \\dfrac{1}{3} + \\dfrac{1}{4} + \\cdots + \\dfrac{1}{1000}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I used $\\log_{10} 1000 = 3$, but the sum grows like the natural logarithm, not the base-10 one."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I grouped the terms into blocks of 1, 2, 4, 8, ... terms, about 10 blocks, and counted each block as 1."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I grouped the terms into blocks of 1, 2, 4, 8, ... terms, about 10 blocks, and counted each block as only $\\frac{1}{2}$."
+    },
+    {
+      "key": "E",
+      "text": "$500$",
+      "correct": false,
+      "misconception": "I multiplied the 1000 terms by an average term of about $\\frac{1}{2}$, the average of the first and last terms."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-06",
+    "secondary": [
+      "CFT-05",
+      "NUM-12"
+    ]
+  },
+  "hints": [
+    "Group the terms in blocks that double in length.",
+    "Split the sum into blocks $\\frac{1}{2}$ to $\\frac{1}{3}$, $\\frac{1}{4}$ to $\\frac{1}{7}$, $\\frac{1}{8}$ to $\\frac{1}{15}$, and so on. Each block sum lies between $\\frac{1}{2}$ and 1. Estimate a typical block more closely to choose between the choices.",
+    "After the first term there are about nine blocks up to $\\frac{1}{1000}$, each worth a little more than $\\ln 2 \\approx 0.69$, so the sum is about $1 + 9 \\times 0.72 \\approx 7.5$."
+  ],
+  "solutions": {
+    "reliable": "After the first term 1, group the rest in blocks that double in length: $\\frac{1}{2}$ to $\\frac{1}{3}$, then $\\frac{1}{4}$ to $\\frac{1}{7}$, then $\\frac{1}{8}$ to $\\frac{1}{15}$, and so on. A block from $\\frac{1}{m}$ to $\\frac{1}{2m - 1}$ has $m$ terms, each between $\\frac{1}{2m}$ and $\\frac{1}{m}$, so its sum lies between $\\frac{1}{2}$ and 1. The actual block sums are about 0.83, 0.76, 0.73, 0.71, and then settle near $\\ln 2 \\approx 0.69$. Up to $\\frac{1}{511}$ there are 8 full blocks, and $\\frac{1}{512}$ to $\\frac{1}{1000}$ is most of a ninth, about 0.67. So the sum is about $1 + 0.83 + 0.76 + 0.73 + 0.71 + 3 \\times 0.70 + 0.69 + 0.67 \\approx 7.5$. The true value is 7.485..., and the nearest choice is 7.5. The transferable idea: blocks that double in length turn a long sum into a short count.",
+    "elegant": "The sum $1 + \\frac{1}{2} + \\cdots + \\frac{1}{n}$ is close to $\\ln n + 0.58$. With $\\ln 1000 = 3 \\ln 10 \\approx 6.9$, the sum is about 7.5."
+  },
+  "whyOnTest": "Nobody adds a thousand fractions in a contest; doubling blocks or a logarithm estimate lands near one choice, and the traps are the crude block bounds.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

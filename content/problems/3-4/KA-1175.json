@@ -1,0 +1,67 @@
+{
+  "id": "KA-1175",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Cubes are stacked in towers on a 3 by 3 square. From the front, from the right and from above, Leo sees a full 3 by 3 square. What is the fewest cubes possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I used three towers of 3 placed so that each row and each column has one, but forgot that from above all 9 squares must be covered."
+    },
+    {
+      "key": "B",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "19",
+      "correct": false,
+      "misconception": "I made the whole front row and the whole left column 3 tall, using 5 tall towers when 3 are enough."
+    },
+    {
+      "key": "D",
+      "text": "21",
+      "correct": false,
+      "misconception": "I used three tall towers for the front view and three different tall towers for the side view, then 1 cube on the other 3 squares."
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I filled the whole 3 by 3 by 3 block, which works but is not the smallest."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-12",
+    "secondary": [
+      "GEO-13"
+    ]
+  },
+  "hints": [
+    "What does the view from above tell you about every square?",
+    "From above, every square must have at least one cube. From the front and the side, every row and every column needs one tower of 3. Use as few tall towers as possible, each doing two jobs.",
+    "Put towers of 3 on a diagonal: each tall tower fills one row and one column. The other 6 squares need just 1 cube each."
+  ],
+  "solutions": {
+    "reliable": "From above Leo sees all 9 squares, so every square has at least 1 cube. From the front each of the 3 columns must look 3 tall, so each column of squares needs a tower of 3 somewhere; from the side the same holds for each row. One tall tower can serve one row and one column, so at least 3 tall towers are needed, and 3 are enough if they sit on a diagonal. The other 6 squares get 1 cube each. Total: $3 \\times 3 + 6 \\times 1 = 15$. The transferable idea: let each tall stack do two jobs at once, and fill every other square as lightly as allowed.",
+    "elegant": null
+  },
+  "whyOnTest": "Three views at once test reasoning about what each view forces; the smallest count needs each tall tower to serve a row and a column.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

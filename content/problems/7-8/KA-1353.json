@@ -1,0 +1,68 @@
+{
+  "id": "KA-1353",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Between 1:00 pm and 5:00 pm on the same afternoon, how many times do the hour hand and the minute hand of a clock make an angle of exactly $90^\\circ$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only the times when the minute hand is a quarter turn behind the hour hand."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted only the times when the minute hand is a quarter turn ahead of the hour hand."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted two right angles in each of the four hours and then added one more for 3:00."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I assumed the hands make a right angle exactly twice in every hour."
+    },
+    {
+      "key": "E",
+      "text": "7",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-18",
+    "secondary": [
+      "MOD-03",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "How much faster than the hour hand does the minute hand turn?",
+    "Track how far the minute hand has gained on the hour hand. A right angle happens each time that gain passes a quarter turn or three quarters of a turn, counted around and around. Watch the moment 3:00.",
+    "The minute hand gains $330^\\circ$ every hour, so $1320^\\circ$ in four hours. At 1:00 it is $30^\\circ$ behind. Right angles happen whenever it is $90^\\circ$ behind or $90^\\circ$ ahead; one of these falls exactly at 3:00."
+  ],
+  "solutions": {
+    "reliable": "The minute hand turns $360^\\circ$ an hour and the hour hand $30^\\circ$, so the minute hand gains $330^\\circ$ every hour on the hour hand. Measure the angle from the hour hand forward to the minute hand. At 1:00 it is $330^\\circ$, and by 5:00 it has grown by $4 \\times 330 = 1320^\\circ$ to $1650^\\circ$. A right angle happens when this angle is $90^\\circ$ or $270^\\circ$ more than a whole number of turns: $450, 630, 810, 990, 1170, 1350, 1530$. That is 7 times, and the one at $990^\\circ$ is exactly 3:00. The hour from 2:00 to 3:00 and the hour from 3:00 to 4:00 share that single right angle, which is why the count is one less than 8. The transferable idea: count events by how much one hand gains on the other, and watch for an event that lands exactly on a boundary.",
+    "elegant": "In 12 hours the minute hand gains 11 full turns, giving 22 right angles, not 24, so some hours contain only one. Listing them: about 1:22, 1:55, 2:27, 3:00, 3:33, 4:05 and 4:38."
+  },
+  "whyOnTest": "Clock problems are relative motion: counting right angles needs the gain of one hand on the other, and the trap is assuming two per hour.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

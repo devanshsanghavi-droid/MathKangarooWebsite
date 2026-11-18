@@ -1,0 +1,66 @@
+{
+  "id": "AM-1009",
+  "contest": "AMC8",
+  "slot": 6,
+  "area": "ALG",
+  "topic": "ALG-11",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "How many integers $x$ satisfy $|2x - 5| \\le 9$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I only kept the integers that make 2x - 5 positive, which are x = 3 to 7, and forgot that 2x - 5 can be negative."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I treated the inequality as strict, so I left out x = -2 and x = 7, which make |2x - 5| exactly 9."
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I found the right endpoints -2 and 7 but subtracted them, 7 - (-2) = 9, instead of counting the integers."
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I forgot the 2 and solved |x - 5| ≤ 9, which allows every integer from -4 to 14."
+    }
+  ],
+  "hints": [
+    "$|2x - 5| \\le 9$ means $2x - 5$ is at most $9$ away from $0$.",
+    "Write it as $-9 \\le 2x - 5 \\le 9$ and solve for $x$.",
+    "Adding $5$ gives $-4 \\le 2x \\le 14$, so $-2 \\le x \\le 7$. Count carefully, both ends included."
+  ],
+  "solutions": {
+    "reliable": "The inequality says $-9 \\le 2x - 5 \\le 9$. Add $5$: $-4 \\le 2x \\le 14$. Divide by $2$: $-2 \\le x \\le 7$. The integers $-2, -1, 0, 1, \\dots, 7$ number $7 - (-2) + 1 = 10$.",
+    "elegant": "Divide by $2$ first: $|2x - 5| \\le 9$ is the same as $\\left|x - \\frac{5}{2}\\right| \\le \\frac{9}{2}$, so $x$ is within $4.5$ of $2.5$. That is the interval from $-2$ to $7$, which holds $10$ integers."
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

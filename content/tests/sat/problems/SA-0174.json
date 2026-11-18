@@ -1,0 +1,56 @@
+{
+  "id": "SA-0174",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-04",
+  "difficulty": "medium",
+  "statement": "The number of subscribers to a hiking newsletter $t$ years after it was launched is modeled by $N(t) = 8{,}400(1.21)^{t/2}$. According to the model, by what percent does the number of subscribers increase each year?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$21\\%$",
+      "correct": false,
+      "misconception": "I read the $1.21$ as the yearly growth factor and ignored the $\\frac{t}{2}$ in the exponent, which means $21\\%$ is the growth over $2$ years."
+    },
+    {
+      "key": "B",
+      "text": "$10.5\\%$",
+      "correct": false,
+      "misconception": "I knew $21\\%$ was the growth over $2$ years, so I divided it by $2$, but percent growth compounds, so it cannot just be split in half."
+    },
+    {
+      "key": "C",
+      "text": "$10\\%$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$46.41\\%$",
+      "correct": false,
+      "misconception": "I thought the exponent $\\frac{t}{2}$ meant I should square $1.21$, so I got $1.4641$ and a $46.41\\%$ increase."
+    }
+  ],
+  "hints": [
+    "Find the growth factor for one year by putting the exponent in the form $t$.",
+    "Rewrite $(1.21)^{t/2}$ as $\\left((1.21)^{1/2}\\right)^t$.",
+    "$(1.21)^{1/2} = \\sqrt{1.21} = 1.1$, so $N(t) = 8{,}400(1.1)^t$."
+  ],
+  "solutions": {
+    "reliable": "Rewrite the model as $N(t) = 8{,}400\\left((1.21)^{1/2}\\right)^t = 8{,}400(1.1)^t$, because $\\sqrt{1.21} = 1.1$. Each year the number of subscribers is multiplied by $1.1$, which is a $10\\%$ increase. Check: two years of $10\\%$ growth gives $1.1^2 = 1.21$, a $21\\%$ increase over $2$ years, matching the original form.",
+    "elegant": null
+  },
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

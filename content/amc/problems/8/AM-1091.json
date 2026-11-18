@@ -1,0 +1,68 @@
+{
+  "id": "AM-1091",
+  "contest": "AMC8",
+  "slot": 5,
+  "area": "GEO",
+  "topic": "GEO-07",
+  "types": [
+    "T-INVARIANT"
+  ],
+  "statement": "A fish tank in the shape of a rectangular box has a base $50$ cm long and $40$ cm wide, and it is $60$ cm tall. It holds water $30$ cm deep. Tomas lowers a solid metal cube with edge length $20$ cm into the tank. The cube sinks to the bottom and ends up completely underwater, and no water spills. By how many centimeters does the water level rise?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.2$",
+      "correct": false,
+      "misconception": "I used the area of one face of the cube, 20 times 20 = 400, as its volume, so I got a rise of 400 / 2000 = 0.2 cm."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I divided the cube's volume by the floor space left beside the cube, 2000 - 400 = 1600, to get 5 cm, but above the top of the cube the water spreads over the whole base again."
+    },
+    {
+      "key": "D",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I thought the water would rise by the full height of the cube, 20 cm."
+    },
+    {
+      "key": "E",
+      "text": "$34$",
+      "correct": false,
+      "misconception": "I found the new depth, 30 + 4 = 34 cm, but the question asks how much the water level rises."
+    }
+  ],
+  "hints": [
+    "The water rises because the cube takes up space that water used to fill.",
+    "The cube's volume, $20^3$ cubic cm, gets spread over the tank's whole base, $50 \\cdot 40$ square cm, because the cube ends up completely underwater.",
+    "The rise is $8000 \\div 2000$ cm."
+  ],
+  "solutions": {
+    "reliable": "The cube's volume is $20^3 = 8000$ cubic cm. The water plus the cube now fill the tank to some new level, and since the cube is completely underwater, the extra $8000$ cubic cm is spread over the whole base of $50 \\cdot 40 = 2000$ square cm. So the level rises by $8000 \\div 2000 = 4$ cm. Check: the new depth is $34$ cm, more than the cube's $20$ cm height, so the cube really is covered.",
+    "elegant": "Count volume up to the new level $h$: below $20$ cm the water fills $2000 - 400 = 1600$ square cm of floor, and above $20$ cm it fills all $2000$. So $1600 \\cdot 20 + 2000(h - 20) = 2000 \\cdot 30$, giving $h - 20 = 14$, $h = 34$, a rise of $4$ cm."
+  },
+  "formulas": [
+    "F-GEO-16"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

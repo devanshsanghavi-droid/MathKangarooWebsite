@@ -1,0 +1,56 @@
+{
+  "id": "SA-0031",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "hard",
+  "statement": "For the linear function $g$, $g(2) = 7$ and $g(g(2)) = 22$. What is the value of $g(10)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I found the slope 3 correctly but wrote $g(10) = 3 \\cdot 10 = 30$ and left out the $+1$."
+    },
+    {
+      "key": "B",
+      "text": "$31$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I assumed $g$ is proportional because $g(2) = 7$, so I used $g(x) = \\dfrac{7}{2}x$ and got $g(10) = 35$."
+    },
+    {
+      "key": "D",
+      "text": "$67$",
+      "correct": false,
+      "misconception": "I read $g(g(2))$ as $g(2 \\cdot 2) = g(4) = 22$, so I got a slope of $7.5$ and $g(10) = 7 + 8(7.5) = 67$."
+    }
+  ],
+  "hints": [
+    "Since $g(2) = 7$, the expression $g(g(2))$ is the same as $g(7)$.",
+    "You now know two points on the graph of $g$: $(2, 7)$ and $(7, 22)$. Find the slope and intercept.",
+    "The slope is $\\dfrac{22 - 7}{7 - 2} = 3$, so $g(x) = 3x + b$ with $3(2) + b = 7$."
+  ],
+  "solutions": {
+    "reliable": "Because $g(2) = 7$, we have $g(7) = 22$. The slope is $\\dfrac{22 - 7}{7 - 2} = 3$. From $g(2) = 3(2) + b = 7$ we get $b = 1$, so $g(x) = 3x + 1$ and $g(10) = 31$. Check: $g(2) = 7$ and $g(7) = 22$.",
+    "elegant": "From $x = 7$ to $x = 10$ is $3$ more units at slope $3$, so $g(10) = 22 + 9 = 31$."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

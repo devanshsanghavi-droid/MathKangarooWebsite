@@ -1,0 +1,68 @@
+{
+  "id": "KA-1546",
+  "band": "11-12",
+  "points": 5,
+  "statement": "The numbers 1, 2, 3, 4, 5, 6 are written in order around a circle. A move adds 1 to two neighbouring numbers, or subtracts 1 from two neighbouring numbers. Which of these could the numbers be after some moves, read in the same order starting from where 1 was?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0, 0, 0, 0, 0, 3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "6, 5, 4, 3, 2, 1",
+      "correct": false,
+      "misconception": "I only checked that the total stays odd, and reversing the numbers keeps the total at 21."
+    },
+    {
+      "key": "C",
+      "text": "4, 4, 4, 4, 4, 4",
+      "correct": false,
+      "misconception": "I thought that with enough moves the numbers can always be evened out."
+    },
+    {
+      "key": "D",
+      "text": "1, 2, 3, 4, 5, 7",
+      "correct": false,
+      "misconception": "I thought a single number could be raised by 1 by combining several moves."
+    },
+    {
+      "key": "E",
+      "text": "2, 1, 4, 3, 6, 5",
+      "correct": false,
+      "misconception": "I thought two neighbours could swap values, because every move works on neighbours."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "LOG-05",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Look for a quantity that no move can change.",
+    "Give the six positions alternating signs plus, minus, plus, minus, plus, minus. Each move changes two neighbours, one with each sign. Compute this signed sum at the start and for each choice.",
+    "At the start, $1 - 2 + 3 - 4 + 5 - 6 = -3$. A move changes one plus-position and one minus-position by the same amount."
+  ],
+  "solutions": {
+    "reliable": "Neighbours around a circle of six always have opposite signs in the pattern $+, -, +, -, +, -$, so a move leaves $S = n_1 - n_2 + n_3 - n_4 + n_5 - n_6$ unchanged. At the start $S = -3$. The choices give $S = 3$ for 6, 5, 4, 3, 2, 1; $0$ for all 4s; $-4$ for 1, 2, 3, 4, 5, 7; $3$ for 2, 1, 4, 3, 6, 5; and $-3$ for 0, 0, 0, 0, 0, 3. Only the last can be reached, and it really can: subtract 1 from the pair (5th, 6th) three times, giving 1, 2, 3, 4, 2, 3; from (4th, 5th) twice, giving 1, 2, 3, 2, 0, 3; from (3rd, 4th) twice, giving 1, 2, 1, 0, 0, 3; from (2nd, 3rd) once, giving 1, 1, 0, 0, 0, 3; and from (1st, 2nd) once, giving 0, 0, 0, 0, 0, 3. The transferable idea: find a quantity every move preserves, then compare it at the start and at the target.",
+    "elegant": null
+  },
+  "whyOnTest": "An alternating sum that no move changes rules out four targets at once, and a short sequence of moves reaches the fifth.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

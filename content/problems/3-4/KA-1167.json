@@ -1,0 +1,67 @@
+{
+  "id": "KA-1167",
+  "band": "3-4",
+  "points": 3,
+  "statement": "A snack is one drink and one fruit. With milk you can have an apple, a pear or a plum; with juice, only an apple or a pear. How many different snacks are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted only the two drinks and forgot that each drink comes with a fruit."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted only the snacks with milk and forgot the ones with juice."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I used 2 fruits for each drink, $2 \\times 2 = 4$, as if milk had only two fruits too."
+    },
+    {
+      "key": "D",
+      "text": "5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I multiplied 2 drinks by 3 fruits, as if every fruit went with both drinks."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Draw a branch for each drink first.",
+    "A tree diagram fits here because the choices after milk are not the same as after juice. Draw the two drink branches, then the fruit branches from each one, and count the ends.",
+    "The milk branch splits into 3 fruits. The juice branch splits into 2 fruits. Every end of the tree is one snack."
+  ],
+  "solutions": {
+    "reliable": "Draw a tree. From milk come apple, pear and plum: 3 snacks. From juice come apple and pear: 2 snacks. The tree has $3 + 2 = 5$ ends, so there are 5 snacks. The transferable idea: when the later choices depend on the earlier one, add the branches instead of multiplying.",
+    "elegant": null
+  },
+  "whyOnTest": "Tree diagrams test when you may multiply and when you must add branches, since unequal branches break the multiplication shortcut.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1461",
+  "band": "9-10",
+  "points": 5,
+  "statement": "The numbers 1, 2, 3, 4, 5, 6, 7 are written on a board. A step means erasing two of the numbers, say $a$ and $b$, and writing the number $ab - a - b + 2$ instead. After six steps only one number is left. What is that number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I found that the product of the numbers each minus 1 never changes, and it is 0 here, but I forgot that the last number is that product plus 1."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "28",
+      "correct": false,
+      "misconception": "I assumed the sum of the numbers stays the same, as it would if each step wrote a + b."
+    },
+    {
+      "key": "D",
+      "text": "721",
+      "correct": false,
+      "misconception": "I multiplied 1 × 2 × 3 × 4 × 5 × 6, one less than each of the numbers 2 to 7, leaving out the factor 0 that comes from the number 1, and then added 1."
+    },
+    {
+      "key": "E",
+      "text": "5040",
+      "correct": false,
+      "misconception": "I assumed the product of all the numbers stays the same, 1 × 2 × 3 × 4 × 5 × 6 × 7."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-06",
+    "secondary": [
+      "CFT-03",
+      "CFT-07"
+    ]
+  },
+  "hints": [
+    "Rewrite $ab - a - b + 2$ as a product plus something.",
+    "Look for a quantity that does not change from step to step. Factorise ab - a - b + 1, and think about each number on the board minus 1.",
+    "ab - a - b + 2 = (a - 1)(b - 1) + 1. So if you think of each number x on the board as x - 1, a step just multiplies two of these together."
+  ],
+  "solutions": {
+    "reliable": "The new number is $(a - 1)(b - 1) + 1$, so the new number minus 1 equals $(a - 1)(b - 1)$. Hence the product of (x - 1) over all the numbers on the board never changes. At the start it is (1 - 1)(2 - 1)(3 - 1)...(7 - 1) = 0, because of the number 1. At the end there is one number N with N - 1 = 0, so N = 1, whatever order the steps are done in. The transferable idea: when a process allows many choices but the question expects one answer, look for a quantity that never changes.",
+    "elegant": "Since the answer cannot depend on the order, pick an easy order. Combining 1 with any number b gives b - 1 - b + 2 = 1. So combine 1 with 2 to get 1, then that 1 with 3, and so on: the last number is 1."
+  },
+  "whyOnTest": "Invariant questions test finding a hidden quantity that never changes, so a long process with many choices has one forced outcome.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

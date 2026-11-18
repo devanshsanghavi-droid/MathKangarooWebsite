@@ -1,0 +1,68 @@
+{
+  "id": "AM-1261",
+  "contest": "AMC8",
+  "slot": 12,
+  "area": "CP",
+  "topic": "CP-01",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "How many four-digit positive integers have only even digits and are divisible by $4$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$180$",
+      "correct": false,
+      "misconception": "I thought both of the last two digits had to be 0, 4 or 8, so I got 4 x 5 x 3 x 3 = 180."
+    },
+    {
+      "key": "B",
+      "text": "$200$",
+      "correct": false,
+      "misconception": "I thought the last digit had to be 4 or 8 and forgot that 0 also works, so I got 4 x 5 x 5 x 2 = 200."
+    },
+    {
+      "key": "C",
+      "text": "$250$",
+      "correct": false,
+      "misconception": "I counted 500 four-digit numbers with only even digits and assumed exactly half of them are divisible by 4."
+    },
+    {
+      "key": "D",
+      "text": "$300$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$375$",
+      "correct": false,
+      "misconception": "I let the first digit be 0 as well, so I got 5 x 5 x 15 = 375, but a four-digit number cannot start with 0."
+    }
+  ],
+  "hints": [
+    "A number is divisible by $4$ exactly when the number formed by its last two digits is divisible by $4$.",
+    "The tens digit is even. When the tens digit is even, which units digits make the last two digits a multiple of $4$?",
+    "With an even tens digit, the last two digits are a multiple of $4$ exactly when the units digit is $0$, $4$ or $8$. Now count the choices for each place."
+  ],
+  "solutions": {
+    "reliable": "A number is divisible by $4$ exactly when its last two digits form a multiple of $4$. If the tens digit $t$ is even, then $10t$ is a multiple of $20$ and so of $4$, so the last two digits are a multiple of $4$ exactly when the units digit is. Among the even digits, that means the units digit is $0$, $4$ or $8$. So the thousands digit has $4$ choices ($2, 4, 6, 8$), the hundreds digit has $5$, the tens digit has $5$ and the units digit has $3$, giving $4 \\times 5 \\times 5 \\times 3 = 300$.",
+    "elegant": "The even two-digit endings $00, 02, 04, \\ldots, 88$ number $25$, and the multiples of $4$ among them are $00, 04, 08, 20, 24, 28, \\ldots, 80, 84, 88$, which is $15$ of them. With $4 \\times 5 = 20$ choices for the first two digits, the answer is $20 \\times 15 = 300$."
+  },
+  "formulas": [
+    "F-NT-07"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

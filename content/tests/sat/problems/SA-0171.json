@@ -1,0 +1,56 @@
+{
+  "id": "SA-0171",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-03",
+  "difficulty": "medium",
+  "statement": "The function $f$ is defined by $f(x) = 2x^2 - 12x + 23$. It can be written in the form $f(x) = 2(x - h)^2 + k$, where $h$ and $k$ are constants. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I completed the square correctly but gave the value of $h$, which is $3$, instead of $k$."
+    },
+    {
+      "key": "C",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I wrote $2(x - 3)^2$ and subtracted only $9$ from $23$, forgetting that the $9$ inside the parentheses is multiplied by $2$."
+    },
+    {
+      "key": "D",
+      "text": "$-49$",
+      "correct": false,
+      "misconception": "I factored out the $2$ but still used half of $12$ inside the parentheses, writing $2(x - 6)^2$, and subtracted $2 \\cdot 36 = 72$ from $23$."
+    }
+  ],
+  "hints": [
+    "$k$ is the minimum value of $f$, the $y$-coordinate of the vertex.",
+    "Factor $2$ out of the first two terms and complete the square inside the parentheses.",
+    "$f(x) = 2(x^2 - 6x + 9) - 18 + 23$."
+  ],
+  "solutions": {
+    "reliable": "Factor $2$ from the $x$ terms: $f(x) = 2(x^2 - 6x) + 23$. Completing the square, $x^2 - 6x = (x - 3)^2 - 9$, so $f(x) = 2(x - 3)^2 - 18 + 23 = 2(x - 3)^2 + 5$. Thus $k = 5$. Check: expanding $2(x - 3)^2 + 5$ gives $2x^2 - 12x + 18 + 5 = 2x^2 - 12x + 23$.",
+    "elegant": "The vertex is at $x = -\\frac{-12}{2(2)} = 3$, and $k$ is the value there: $f(3) = 18 - 36 + 23 = 5$."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

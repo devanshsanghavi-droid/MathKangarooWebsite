@@ -1,0 +1,56 @@
+{
+  "id": "SA-0023",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "easy",
+  "statement": "Lin has $\\$85$ in savings and adds $\\$15$ to her savings each week. Which inequality can be used to find the numbers of weeks $w$ after which Lin will have at least $\\$400$ in savings?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$85 + 15w \\le 400$",
+      "correct": false,
+      "misconception": "I wrote the savings expression correctly but used $\\le$ for at least, which means at most."
+    },
+    {
+      "key": "B",
+      "text": "$15 + 85w \\ge 400$",
+      "correct": false,
+      "misconception": "I swapped the numbers, treating $85$ as the weekly amount and $15$ as the starting savings."
+    },
+    {
+      "key": "C",
+      "text": "$15w \\ge 400 + 85$",
+      "correct": false,
+      "misconception": "I added the starting savings to the goal instead of counting it toward the goal."
+    },
+    {
+      "key": "D",
+      "text": "$85 + 15w \\ge 400$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Write an expression for Lin's savings after $w$ weeks.",
+    "Her savings are the starting amount plus $15$ for each week. At least means greater than or equal to.",
+    "After $w$ weeks she has $85 + 15w$ dollars, and this must be at least $400$."
+  ],
+  "solutions": {
+    "reliable": "After $w$ weeks Lin has her starting $85$ dollars plus $15w$ dollars from weekly deposits, a total of $85 + 15w$ dollars. Having at least $400$ dollars means $85 + 15w \\ge 400$. Check: solving gives $w \\ge 21$, and after $21$ weeks she has $85 + 315 = 400$ dollars.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

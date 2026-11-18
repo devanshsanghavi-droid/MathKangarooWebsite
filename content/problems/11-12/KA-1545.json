@@ -1,0 +1,67 @@
+{
+  "id": "KA-1545",
+  "band": "11-12",
+  "points": 4,
+  "statement": "In the addition ABC + ABC + ABC = BBB, each letter stands for a digit, different letters stand for different digits, and A is not 0. What is A + B + C?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I took ABC = 111, missing that different letters must be different digits."
+    },
+    {
+      "key": "B",
+      "text": "13",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "14",
+      "correct": false,
+      "misconception": "I picked B = 5, so ABC = 185, without checking that its middle digit equals B."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I picked B = 7, so ABC = 259, without checking that its middle digit equals B."
+    },
+    {
+      "key": "E",
+      "text": "17",
+      "correct": false,
+      "misconception": "I picked B = 8, so ABC = 296, without checking that its middle digit equals B."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-14",
+    "secondary": [
+      "NUM-05"
+    ]
+  },
+  "hints": [
+    "What is BBB divided by 3, in terms of B?",
+    "BBB is $111 \\times B$, and $111 = 3 \\times 37$. So ABC is a multiple of 37 for each possible B. Test each B and check the middle digit.",
+    "ABC $= 37 \\times B$. Only $B = 4$ gives a middle digit equal to B: $37 \\times 4 = 148$."
+  ],
+  "solutions": {
+    "reliable": "BBB $= 111B$, so $3 \\times$ ABC $= 111B$ and ABC $= 37B$. The multiples $37B$ for $B = 1, \\dots, 9$ are 037, 074, 111, 148, 185, 222, 259, 296, 333. We need a three-digit number whose middle digit is B and whose three digits are different: 037 and 074 start with 0, 111, 222 and 333 repeat digits, and among the rest only 148 has middle digit 4 = B. Check: $148 \\times 3 = 444$. So A + B + C = 1 + 4 + 8 = 13. The transferable idea: in a cryptarithm, turn the most constrained part into an equation first, here BBB $= 111B$.",
+    "elegant": null
+  },
+  "whyOnTest": "Writing BBB as 111B collapses the puzzle to nine candidates, the constrained-column habit cryptarithms reward.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

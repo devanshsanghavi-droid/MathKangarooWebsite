@@ -1,0 +1,67 @@
+{
+  "id": "KA-1169",
+  "band": "3-4",
+  "points": 3,
+  "statement": "Ava's summer holiday lasts 30 days, numbered 1 to 30. She wants to choose 7 days in a row for a trip. How many different choices does she have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted how many whole weeks fit into 30 days, as if the trips could not overlap."
+    },
+    {
+      "key": "B",
+      "text": "22",
+      "correct": false,
+      "misconception": "I left out the two trips that start on day 1 or end on day 30."
+    },
+    {
+      "key": "C",
+      "text": "23",
+      "correct": false,
+      "misconception": "I took 7 away from 30 and forgot to add 1 for the trip that starts on day 1."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": false,
+      "misconception": "I thought every day could start a trip, but a trip starting after day 24 runs past day 30."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-12",
+    "secondary": [
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Count the possible first days of the trip.",
+    "Each trip is fixed by the day it starts. Find the earliest possible first day and the latest one that still fits 7 days inside the holiday, then count the days from one to the other.",
+    "The first trip is days 1 to 7. The last trip ends on day 30, so it starts on day 24. Count the start days 1 to 24."
+  ],
+  "solutions": {
+    "reliable": "A trip is decided by its first day. It can start on day 1, covering days 1 to 7. The latest start is day 24, covering days 24 to 30, because starting on day 25 would need day 31. The start days 1, 2, ..., 24 give 24 choices. The transferable idea: count sliding windows by counting where they can start.",
+    "elegant": "Small case: a 7-day trip in a 7-day holiday has 1 choice, in an 8-day holiday 2 choices. Each extra day adds one choice, so 30 days give $30 - 7 + 1 = 24$."
+  },
+  "whyOnTest": "Sliding-window counting checks the off-by-one step: the windows are one more than the difference of the lengths.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

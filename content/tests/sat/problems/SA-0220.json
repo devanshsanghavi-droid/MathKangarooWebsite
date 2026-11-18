@@ -1,0 +1,56 @@
+{
+  "id": "SA-0220",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-05",
+  "difficulty": "medium",
+  "statement": "A biologist measured the height of a bean plant on several days. The line of best fit for the data is $y = 2.4x + 15.6$, where $y$ is the predicted height, in centimeters, $x$ days after the first measurement. On day $6$, the plant's measured height was $34$ centimeters. What is the measured height minus the height predicted by the line of best fit for day $6$, in centimeters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-4$",
+      "correct": false,
+      "misconception": "I subtracted in the wrong order, the predicted height minus the measured height, and got $30 - 34 = -4$."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$18.4$",
+      "correct": false,
+      "misconception": "I subtracted only the $y$-intercept, 15.6, from 34 and forgot the $2.4x$ part of the prediction."
+    },
+    {
+      "key": "D",
+      "text": "$30$",
+      "correct": false,
+      "misconception": "I found the predicted height, 30 centimeters, and stopped before subtracting it from the measured height."
+    }
+  ],
+  "hints": [
+    "Use the line of best fit to find the predicted height on day $6$.",
+    "Substitute $x = 6$ into the equation, then subtract that prediction from the measured height.",
+    "The predicted height is $2.4(6) + 15.6 = 14.4 + 15.6 = 30$ centimeters."
+  ],
+  "solutions": {
+    "reliable": "On day $6$ the line predicts $y = 2.4(6) + 15.6 = 30$ centimeters. The measured height is $34$ centimeters, so the measured height minus the predicted height is $34 - 30 = 4$ centimeters. The positive value means the plant was taller than the model predicted.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1557",
+  "band": "11-12",
+  "points": 5,
+  "statement": "A convex polygon has interior angles that are all different whole numbers of degrees. What is the largest number of sides it can have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "18",
+      "correct": false,
+      "misconception": "I took the exterior angles of a polygon to add up to 180° and fitted $1 + 2 + \\dots + 18 = 171$ under that total."
+    },
+    {
+      "key": "B",
+      "text": "26",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "27",
+      "correct": false,
+      "misconception": "I solved $n(n + 1)/2 = 360$, got about 26.3 and rounded up to 27, but 27 different exterior angles need at least 378°."
+    },
+    {
+      "key": "D",
+      "text": "179",
+      "correct": false,
+      "misconception": "I counted how many different whole numbers an interior angle can be, 1° to 179°, and ignored the angle sum."
+    },
+    {
+      "key": "E",
+      "text": "360",
+      "correct": false,
+      "misconception": "I let every exterior angle be 1°, forgetting that the interior angles, and so the exterior angles, must all be different."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "LOG-11",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Look at the exterior angles instead of the interior ones.",
+    "The exterior angles of a convex polygon add up to 360°. If the interior angles are different whole numbers, so are the exterior angles. Make the exterior angles as small as possible to fit in as many as you can.",
+    "The smallest possible exterior angles are 1°, 2°, 3° and so on. Find the largest $n$ with $1 + 2 + \\dots + n \\le 360$."
+  ],
+  "solutions": {
+    "reliable": "Each exterior angle is 180° minus an interior angle, so the exterior angles are different positive whole numbers of degrees, and they add up to 360°. With $n$ sides they total at least $1 + 2 + \\dots + n = n(n + 1)/2$. Since $26 \\times 27 / 2 = 351 \\le 360$ but $27 \\times 28 / 2 = 378 > 360$, there are at most 26 sides. And 26 is possible: take exterior angles 1°, 2°, ..., 25° and 35°, which are different and add up to $325 + 35 = 360$, giving interior angles 179°, 178°, ..., 155° and 145°. A convex polygon with any such exterior angles exists, because the side lengths can be chosen to close the shape. The transferable idea: an extremal question about angles often becomes easy after switching to exterior angles, whose sum is fixed.",
+    "elegant": null
+  },
+  "whyOnTest": "Switching from interior to exterior angles turns a polygon question into fitting different whole numbers under a fixed total of 360.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

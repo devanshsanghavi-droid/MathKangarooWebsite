@@ -1,0 +1,66 @@
+{
+  "id": "AM-1066",
+  "contest": "AMC8",
+  "slot": 19,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": [
+    "T-SMALL-CASES"
+  ],
+  "statement": "Printer A can print a big batch of flyers by itself in $5$ hours. Printer B can print the same batch by itself in $7$ hours. Only one printer can run at a time, so they take turns: A runs for $1$ hour, then B for $1$ hour, then A for $1$ hour, and so on, with no time lost between turns. How many hours does it take to print the whole batch?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2\\tfrac{11}{12}$",
+      "correct": false,
+      "misconception": "I treated the printers as running at the same time, so I added their rates, $\\frac15 + \\frac17 = \\frac{12}{35}$, and got $\\frac{35}{12}$ hours."
+    },
+    {
+      "key": "B",
+      "text": "$5\\tfrac{4}{5}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$5\\tfrac{5}{6}$",
+      "correct": false,
+      "misconception": "I thought taking turns would take exactly twice as long as running together, so I doubled $\\frac{35}{12}$ to get $\\frac{35}{6}$ hours. But the last turn does not need a full partner hour."
+    },
+    {
+      "key": "D",
+      "text": "$5\\tfrac{6}{7}$",
+      "correct": false,
+      "misconception": "I let printer B take the first turn instead of printer A, which leaves A to print the last part and gives $5\\tfrac67$ hours."
+    },
+    {
+      "key": "E",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I counted only whole turns, but the batch is finished partway through the sixth hour."
+    }
+  ],
+  "hints": [
+    "Find what fraction of the batch gets printed in one A-then-B pair of hours.",
+    "Each pair of hours prints $\\frac15 + \\frac17 = \\frac{12}{35}$ of the batch, so after $4$ hours $\\frac{24}{35}$ is done.",
+    "After hour $5$, which is A's turn, $\\frac{31}{35}$ is done. B prints the last $\\frac{4}{35}$ at $\\frac{5}{35}$ of the batch per hour."
+  ],
+  "solutions": {
+    "reliable": "As fractions of the batch, A prints $\\frac{7}{35}$ per hour and B prints $\\frac{5}{35}$ per hour. After $4$ hours (two turns each), $\\frac{24}{35}$ is done. In hour $5$, A brings it to $\\frac{31}{35}$. In hour $6$, B needs to print $\\frac{4}{35}$ at $\\frac{5}{35}$ per hour, which takes $\\frac45$ of an hour. The total is $5\\tfrac45$ hours, which is $5$ hours $48$ minutes.",
+    "elegant": "Say the batch is $35$ pages. A prints $7$ pages per hour and B prints $5$. The running totals after each hour are $7, 12, 19, 24, 31$, and then B prints the last $4$ pages in $\\frac45$ of an hour, for $5\\tfrac45$ hours in all."
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

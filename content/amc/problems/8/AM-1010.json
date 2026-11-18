@@ -1,0 +1,66 @@
+{
+  "id": "AM-1010",
+  "contest": "AMC8",
+  "slot": 4,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "A snow machine can cover a bare practice hill with a full layer of snow in $4$ hours. On a sunny day, the sun alone would melt a full layer of snow on that hill in $12$ hours. The machine starts on the bare hill while the sun shines the whole time. How many hours does it take to cover the hill with a full layer?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{1}{6}$",
+      "correct": false,
+      "misconception": "I found the combined rate, 1/4 - 1/12 = 1/6 of a layer each hour, and gave that rate as the number of hours."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I added the two rates, 1/4 + 1/12 = 1/3, as if the sun were helping the machine instead of undoing its work."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I ignored the sun and used the machine's time alone."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{16}{3}$",
+      "correct": false,
+      "misconception": "I saw that the sun undoes a third of the machine's work, so I added a third of 4 hours, 4 + 4/3 = 16/3. But the machine keeps only 2/3 of its work, so I should have divided 4 by 2/3."
+    },
+    {
+      "key": "E",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The sun works against the machine, so the answer must be more than $4$ hours.",
+    "Think about what happens in $12$ hours, a time that both $4$ and $12$ divide.",
+    "In $12$ hours the machine makes $3$ layers and the sun melts $1$, so the net gain is $2$ layers in $12$ hours."
+  ],
+  "solutions": {
+    "reliable": "Each hour the machine adds $\\frac{1}{4}$ of a layer and the sun removes $\\frac{1}{12}$ of a layer. The net gain is $\\frac{1}{4} - \\frac{1}{12} = \\frac{3}{12} - \\frac{1}{12} = \\frac{1}{6}$ of a layer per hour, so a full layer takes $6$ hours.",
+    "elegant": "In $12$ hours the machine makes $3$ layers and the sun melts $1$, a net of $2$ layers. One layer takes half of that, $6$ hours."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1249",
+  "band": "5-6",
+  "points": 4,
+  "statement": "After 6 basketball games, Jo's mean score is 15 points per game. After the 7th game, the mean is 16 points per game. How many points did Jo score in the 7th game?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I used 6 games for the new total as well, $6 \\times 16 - 6 \\times 15$, but there are now 7 games."
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I thought the score in the new game must equal the new mean."
+    },
+    {
+      "key": "C",
+      "text": "17",
+      "correct": false,
+      "misconception": "I thought the new score only had to be 1 more than the new mean, because the mean went up by 1."
+    },
+    {
+      "key": "D",
+      "text": "22",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "23",
+      "correct": false,
+      "misconception": "I thought the new game must lift all 7 games by 1 on top of the new mean, 16 + 7, but it only has to lift the 6 earlier games."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-15",
+    "secondary": [
+      "LOG-08"
+    ]
+  },
+  "hints": [
+    "Turn each mean into a total.",
+    "A mean times the number of games gives the total points. Find the total after 6 games and the total after 7 games; the 7th game is the difference.",
+    "After 6 games the total is $6 \\times 15 = 90$; after 7 games it is $7 \\times 16$."
+  ],
+  "solutions": {
+    "reliable": "After 6 games Jo has $6 \\times 15 = 90$ points. After 7 games Jo has $7 \\times 16 = 112$ points. So the 7th game gave $112 - 90 = 22$ points. The transferable idea: convert means into totals, and the change in the total is the new value.",
+    "elegant": "The new game has to reach the new mean, 16, and also supply 1 extra point for each of the 6 earlier games so that they average 16 too: $16 + 6 = 22$. A new value equals the new mean plus the rise times the number of old values."
+  },
+  "whyOnTest": "Means are tested by converting them to totals; the trap is thinking a 1-point rise in the mean needs a score only 1 above the mean.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

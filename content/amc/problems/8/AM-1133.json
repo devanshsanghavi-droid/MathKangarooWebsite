@@ -1,0 +1,66 @@
+{
+  "id": "AM-1133",
+  "contest": "AMC8",
+  "slot": 20,
+  "area": "GEO",
+  "topic": "GEO-01",
+  "types": [
+    "T-ANGLE-CHASE"
+  ],
+  "statement": "In triangle $ABC$, point $D$ lies on side $\\overline{BC}$ so that $AB = AD = DC$. If $\\angle BAC = 99^\\circ$, what is the degree measure of $\\angle ABC$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I found $\\angle ACB = 27^\\circ$ correctly and then gave that angle instead of $\\angle ABC$."
+    },
+    {
+      "key": "B",
+      "text": "$31.5$",
+      "correct": false,
+      "misconception": "I assumed $\\overline{AD}$ cuts $\\angle BAC$ exactly in half, $49.5^\\circ$ each, which made $\\angle C = 49.5^\\circ$, and then I took $180 - 99 - 49.5$."
+    },
+    {
+      "key": "C",
+      "text": "$40.5$",
+      "correct": false,
+      "misconception": "I treated triangle $ABC$ as isosceles with $AB = AC$, so I computed $\\frac{180 - 99}{2}$."
+    },
+    {
+      "key": "D",
+      "text": "$54$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$81$",
+      "correct": false,
+      "misconception": "I said the exterior angle $\\angle ADB$ equals $x$ instead of $2x$, so my angle sum gave $180 - x = 99$ and I answered $x = 81$."
+    }
+  ],
+  "hints": [
+    "Mark the equal lengths. How many isosceles triangles can you find?",
+    "Let $\\angle C = x$. Triangle $ADC$ has $DA = DC$, so $\\angle DAC = x$, and the exterior angle $\\angle ADB$ equals $x + x = 2x$. Triangle $ABD$ has $AB = AD$.",
+    "So $\\angle ABD = \\angle ADB = 2x$ and $\\angle BAD = 180^\\circ - 4x$. Then $\\angle BAC = (180^\\circ - 4x) + x = 99^\\circ$."
+  ],
+  "solutions": {
+    "reliable": "Let $\\angle ACB = x$. Since $DA = DC$, triangle $ADC$ is isosceles and $\\angle DAC = x$. The angle $\\angle ADB$ is an exterior angle of triangle $ADC$, so $\\angle ADB = x + x = 2x$. Since $AB = AD$, triangle $ABD$ is isosceles and $\\angle ABD = \\angle ADB = 2x$, so $\\angle BAD = 180^\\circ - 4x$. Then $\\angle BAC = \\angle BAD + \\angle DAC = 180^\\circ - 3x = 99^\\circ$, so $x = 27^\\circ$ and $\\angle ABC = 2x = 54^\\circ$. Check: $54^\\circ + 99^\\circ + 27^\\circ = 180^\\circ$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

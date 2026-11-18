@@ -1,0 +1,68 @@
+{
+  "id": "KA-1234",
+  "band": "5-6",
+  "points": 3,
+  "statement": "A closed box is 6 cm long, 4 cm wide and 2 cm high. An ant walks on the outside of the box from the centre of the top face to the centre of the bottom face. How long is the shortest route, in centimetres?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I measured straight down through the inside of the box, but the ant has to walk on the outside."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I added the walk to the edge of the top and the walk on the bottom, 2 + 2, but forgot the walk down the side."
+    },
+    {
+      "key": "C",
+      "text": "5",
+      "correct": false,
+      "misconception": "I walked 3 cm to the edge of the top and 2 cm down the side, then forgot the walk across the bottom to its centre."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I walked towards one of the small end faces: 3 cm along the top, 2 cm down and 3 cm along the bottom, but going over a long side face is shorter."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-17",
+    "secondary": [
+      "GEO-10",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Which edge of the top face is nearest to its centre?",
+    "Unfold the top, one side face and the bottom into a flat strip. The ant's best route is a straight line on that strip, so pick the side face whose edge is closest to the centre of the top.",
+    "From the centre of the top, the long edges are 2 cm away and the short edges are 3 cm away."
+  ],
+  "solutions": {
+    "reliable": "The ant must get from the centre of the top to an edge, down a side face, and across the bottom to its centre. The centre of the top is 2 cm from each long edge (half of 4) and 3 cm from each short edge (half of 6). Going over a long side face: 2 cm across the top, 2 cm down and 2 cm across the bottom, which unfolds into one straight line of 6 cm. Going over an end face takes 3 + 2 + 3 = 8 cm. Nothing beats 6 cm, because the ant needs at least 2 cm to leave the top, 2 cm to come down and 2 cm to reach the centre of the bottom. The transferable idea: unfold the faces flat and compare straight lines.",
+    "elegant": null
+  },
+  "whyOnTest": "Shortest paths on a box are found by unfolding faces flat; the traps are choosing the longer side or cutting through the inside.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

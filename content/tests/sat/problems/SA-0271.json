@@ -1,0 +1,56 @@
+{
+  "id": "SA-0271",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "easy",
+  "statement": "In right triangle $FGH$, angle $H$ is the right angle and $\\sin F = \\frac{20}{29}$. What is the value of $\\cos G$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{9}{29}$",
+      "correct": false,
+      "misconception": "I thought $\\cos G$ was $1 - \\sin F$, so I subtracted $\\frac{20}{29}$ from 1."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{20}{29}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{21}{29}$",
+      "correct": false,
+      "misconception": "I found the third side, 21, and gave $\\cos F$, which uses the side next to $F$, instead of $\\cos G$."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{20}{21}$",
+      "correct": false,
+      "misconception": "I found the third side, 21, and gave $\\tan F = \\frac{20}{21}$ instead of $\\cos G$."
+    }
+  ],
+  "hints": [
+    "Angles $F$ and $G$ add up to $90^\\circ$.",
+    "The side opposite $F$ is the side adjacent to $G$. Compare the ratio for $\\sin F$ with the ratio for $\\cos G$.",
+    "Both $\\sin F$ and $\\cos G$ equal $\\frac{GH}{FG}$."
+  ],
+  "solutions": {
+    "reliable": "With the right angle at $H$, the hypotenuse is $\\overline{FG}$. Then $\\sin F = \\frac{\\text{side opposite } F}{\\text{hypotenuse}} = \\frac{GH}{FG}$ and $\\cos G = \\frac{\\text{side adjacent to } G}{\\text{hypotenuse}} = \\frac{GH}{FG}$. These are the same ratio, so $\\cos G = \\frac{20}{29}$.",
+    "elegant": "Angles $F$ and $G$ are complementary, so $\\cos G = \\sin(90^\\circ - G) = \\sin F = \\frac{20}{29}$."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

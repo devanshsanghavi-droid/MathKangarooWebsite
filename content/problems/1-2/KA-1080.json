@@ -1,0 +1,67 @@
+{
+  "id": "KA-1080",
+  "band": "1-2",
+  "points": 4,
+  "statement": "A chocolate bar has 3 rows with 4 squares in each row. Ana eats half of the bar. Then Bo eats a quarter of the whole bar. How many squares are left?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I thought a quarter always means 4 squares, so I took away 6 and then 4."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the bar as 4 rows of 4 squares, so I started with 16 instead of 12."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I took away Ana's half and forgot about Bo."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I found how many squares were eaten, not how many are left."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-09",
+    "secondary": [
+      "GEO-01"
+    ]
+  },
+  "hints": [
+    "Count all the squares in the bar first.",
+    "Find the whole, then find half of it and a quarter of it. Both fractions are of the whole bar, so work them out from the same total and take both away.",
+    "The bar has 12 squares. Half of 12 is 6, and a quarter of 12 is 3. Take both away from 12."
+  ],
+  "solutions": {
+    "reliable": "The bar has $3 \\times 4 = 12$ squares. Ana eats half: 6 squares. Bo eats a quarter of the whole bar: 3 squares. That is $6 + 3 = 9$ eaten, so $12 - 9 = 3$ squares are left. The idea to keep: find the whole first, then each fraction of it.",
+    "elegant": "Half and a quarter make three quarters, so one quarter is left. A quarter of 12 is 3."
+  },
+  "whyOnTest": "Two fractions of the same whole must both be taken from that whole, and young solvers often lose track of which part is asked for.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0177",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-06",
+  "difficulty": "medium",
+  "statement": "The range of the function $f$ is $-3 \\le y \\le 5$. The function $g$ is defined by $g(x) = -2f(x) + 1$. What is the range of $g$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-12 \\le y \\le 4$",
+      "correct": false,
+      "misconception": "I added the $1$ to each output of $f$ first and then multiplied by $-2$, but the $-2$ multiplies $f(x)$ before the $1$ is added."
+    },
+    {
+      "key": "B",
+      "text": "$-10 \\le y \\le 6$",
+      "correct": false,
+      "misconception": "I multiplied the endpoints $-3$ and $5$ by $-2$ and put them in order, but I forgot to add the $1$ afterward."
+    },
+    {
+      "key": "C",
+      "text": "$-9 \\le y \\le 7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$-5 \\le y \\le 11$",
+      "correct": false,
+      "misconception": "I multiplied by $2$ and added $1$ but ignored the negative sign, which flips the graph and swaps which end is the top."
+    }
+  ],
+  "hints": [
+    "Apply the steps to the smallest and largest outputs of $f$: first multiply by $-2$, then add $1$.",
+    "Find $-2(-3) + 1$ and $-2(5) + 1$. Multiplying by a negative number reverses the order, so check which result is smaller.",
+    "The two values are $7$ and $-9$. Every output of $f$ between $-3$ and $5$ lands between them."
+  ],
+  "solutions": {
+    "reliable": "Every output $y$ of $f$ satisfies $-3 \\le y \\le 5$. Multiplying by $-2$ reverses the inequalities: $-10 \\le -2y \\le 6$. Adding $1$ gives $-9 \\le -2y + 1 \\le 7$. Since $f$ takes every value from $-3$ to $5$, $g$ takes every value from $-9$ to $7$, so the range of $g$ is $-9 \\le y \\le 7$.",
+    "elegant": "The endpoints of the range move to $-2(-3) + 1 = 7$ and $-2(5) + 1 = -9$. The reflection swaps top and bottom, so the range is $-9 \\le y \\le 7$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

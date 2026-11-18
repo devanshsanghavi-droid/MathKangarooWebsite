@@ -1,0 +1,56 @@
+{
+  "id": "SA-0180",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-08",
+  "difficulty": "medium",
+  "statement": "The function $f$ is defined by $f(x) = (x - 3)^2 - 4$, and the function $g$ is defined by $g(x) = f(2x)$. What are all the values of $x$ for which $g(x) = 0$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-1$ and $3$",
+      "correct": false,
+      "misconception": "I thought $f(2x)$ shifts the graph $2$ units to the left, so I subtracted $2$ from each zero of $f$, which are $1$ and $5$."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1}{2}$ and $\\frac{5}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$1$ and $5$",
+      "correct": false,
+      "misconception": "I thought replacing $x$ with $2x$ changes only the heights of the graph, so I kept the zeros of $f$, which are $1$ and $5$."
+    },
+    {
+      "key": "D",
+      "text": "$2$ and $10$",
+      "correct": false,
+      "misconception": "I doubled the zeros of $f$, $1$ and $5$, instead of halving them."
+    }
+  ],
+  "hints": [
+    "$g(x) = 0$ means $f(2x) = 0$, so $2x$ must be a zero of $f$.",
+    "Solve $(u - 3)^2 - 4 = 0$ to find the zeros of $f$: $u = 1$ or $u = 5$. Then set $2x$ equal to each one.",
+    "$2x = 1$ or $2x = 5$."
+  ],
+  "solutions": {
+    "reliable": "First find the zeros of $f$: $(u - 3)^2 = 4$ gives $u - 3 = \\pm 2$, so $u = 1$ or $u = 5$. Since $g(x) = f(2x)$, $g(x) = 0$ exactly when $2x = 1$ or $2x = 5$, that is, $x = \\frac{1}{2}$ or $x = \\frac{5}{2}$. Check: $g\\left(\\frac{1}{2}\\right) = f(1) = 4 - 4 = 0$.",
+    "elegant": "Replacing $x$ with $2x$ squeezes the graph horizontally toward the $y$-axis by a factor of $2$, so every $x$-intercept is halved: $1$ and $5$ become $\\frac{1}{2}$ and $\\frac{5}{2}$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

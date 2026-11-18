@@ -1,0 +1,56 @@
+{
+  "id": "SA-0117",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-04",
+  "difficulty": "hard",
+  "statement": "Ines deposits $2{,}000$ dollars in a savings account. The balance $B$, in dollars, of the account $t$ years after the deposit is given by $B = 2{,}000(1.012)^{4t}$. Which of the following is closest to the percent increase in the balance each year?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1.2\\%$",
+      "correct": false,
+      "misconception": "I read the rate straight from 1.012, but that is the increase for each quarter of a year, since the exponent is $4t$."
+    },
+    {
+      "key": "B",
+      "text": "$4.8\\%$",
+      "correct": false,
+      "misconception": "I multiplied 1.2% by 4, but the quarterly increases compound, so together they come to more than 4.8%."
+    },
+    {
+      "key": "C",
+      "text": "$4.9\\%$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$104.9\\%$",
+      "correct": false,
+      "misconception": "I computed $1.012^4 \\approx 1.049$ and wrote it as 104.9%, which is the new balance as a percent of the old one, not the increase."
+    }
+  ],
+  "hints": [
+    "Rewrite $(1.012)^{4t}$ as a single base raised to the power $t$.",
+    "By exponent rules $(1.012)^{4t} = \\left(1.012^4\\right)^t$. The number $1.012^4$ is the yearly growth factor.",
+    "$1.012^4 \\approx 1.04887$, so each year the balance is multiplied by about $1.049$."
+  ],
+  "solutions": {
+    "reliable": "Using $(a^m)^n = a^{mn}$, $B = 2{,}000\\left(1.012^4\\right)^t$. A calculator gives $1.012^4 \\approx 1.04887$, so each year the balance is multiplied by about $1.0489$, an increase of about $4.89\\%$, which is closest to $4.9\\%$. Check: after $1$ year $B = 2{,}000(1.012)^4 \\approx 2{,}097.74$, which is about $4.9\\%$ more than $2{,}000$.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

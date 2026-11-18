@@ -1,0 +1,68 @@
+{
+  "id": "KA-1209",
+  "band": "5-6",
+  "points": 4,
+  "statement": "With 10 minutes left, Ivo has five unanswered questions. He knows how long each would take him and that he would get each one right: three 5-point questions taking 4, 5 and 6 minutes, and two 3-point questions taking 2 and 3 minutes. What is the most points he can add in the 10 minutes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I did only the two 3-point questions, because they are the quickest."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I chose the two fastest 5-point questions, taking 4 and 5 minutes, and stopped with 1 minute left."
+    },
+    {
+      "key": "C",
+      "text": "11",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "13",
+      "correct": false,
+      "misconception": "I picked the questions taking 2, 4 and 5 minutes without noticing that they need 11 minutes."
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": false,
+      "misconception": "I counted all three 5-point questions without checking that they need 15 minutes."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-08",
+    "secondary": [
+      "CNT-01",
+      "MOD-10"
+    ]
+  },
+  "hints": [
+    "Which groups of questions fit into 10 minutes?",
+    "Triage means choosing by points for the time spent, not by points alone. List the groups of questions that fit within 10 minutes and compare their totals.",
+    "Two 5-pointers fit (4 + 5 = 9 minutes, 10 points). But the 2, 3 and 4 minute questions also take 9 minutes and give 3 + 3 + 5 points."
+  ],
+  "solutions": {
+    "reliable": "Three 5-point questions need 15 minutes, too long. Two 5-pointers and a 3-pointer need at least 4 + 5 + 2 = 11 minutes, also too long, so 13 points is impossible. The next best is one 5-pointer with both 3-pointers: 4 + 2 + 3 = 9 minutes for 5 + 3 + 3 = 11 points. Two 5-pointers alone give only 10. So the most is 11. The transferable idea: with limited time, compare points per minute and check which combinations fit, instead of grabbing the biggest questions first.",
+    "elegant": null
+  },
+  "whyOnTest": "Contest time is a budget: choosing which questions to do is itself a calculation, and the biggest questions are not always the best buy.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

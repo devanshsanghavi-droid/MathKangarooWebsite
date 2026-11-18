@@ -1,0 +1,68 @@
+{
+  "id": "KA-1390",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A list of numbers starts with 2. Each number after that is found by dividing 1 by the result of 1 minus the previous number. So the second number is 1 / (1 - 2) = -1. What is the product of the first 100 numbers in the list?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I found that each block of three numbers multiplies to -1, but thought that -1 multiplied by itself 33 times is 1."
+    },
+    {
+      "key": "B",
+      "text": "-1",
+      "correct": false,
+      "misconception": "I counted 100 numbers as exactly 33 blocks of three and forgot the 100th number."
+    },
+    {
+      "key": "C",
+      "text": "-1/2",
+      "correct": false,
+      "misconception": "I thought the 100th number was the last number of a block, 1/2, rather than the first, 2."
+    },
+    {
+      "key": "D",
+      "text": "-2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "1",
+      "correct": false,
+      "misconception": "I rounded 100 / 3 up to 34 blocks and multiplied 34 copies of -1."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "PAT-05",
+      "NUM-09"
+    ]
+  },
+  "hints": [
+    "Work out the first four or five numbers in the list.",
+    "The list repeats after a few steps. Find the length of the cycle and the product of one cycle. Then split 100 into whole cycles plus a few leftover numbers.",
+    "The list goes 2, -1, 1/2, 2, -1, 1/2, ... and each block multiplies to 2 x (-1) x 1/2 = -1. 100 = 33 x 3 + 1."
+  ],
+  "solutions": {
+    "reliable": "The numbers are 2, then 1 / (1 - 2) = -1, then 1 / (1 + 1) = 1/2, then 1 / (1 - 1/2) = 2 again, so the list repeats 2, -1, 1/2 in blocks of three. Each block multiplies to 2 x (-1) x 1/2 = -1. Since 100 = 33 x 3 + 1, the first 100 numbers are 33 whole blocks and then the first number of the next block, 2. The product is (-1) multiplied 33 times, which is -1 because 33 is odd, times 2, giving -2. The transferable idea: when a rule repeats, find the cycle, find what one cycle contributes, and handle the leftovers.",
+    "elegant": null
+  },
+  "whyOnTest": "Repeating cycles: a rule that looks complicated often loops, and the product then reduces to one cycle and a remainder.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

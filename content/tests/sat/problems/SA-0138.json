@@ -1,0 +1,56 @@
+{
+  "id": "SA-0138",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-04",
+  "difficulty": "medium",
+  "statement": "A post on a school's news site had $150$ shares when it was first counted, and for the next several days the number of shares doubled every $8$ hours. Which function gives the number of shares $S$ that the post had $d$ days after the first count?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$S(d) = 150(2)^{d/8}$",
+      "correct": false,
+      "misconception": "I used the exponent $\\frac{d}{8}$, which counts doublings when $d$ is in hours, not days."
+    },
+    {
+      "key": "B",
+      "text": "$S(d) = 150(2)^{8d}$",
+      "correct": false,
+      "misconception": "I multiplied the number of days by $8$, the hours between doublings, instead of by $24 \\div 8 = 3$."
+    },
+    {
+      "key": "C",
+      "text": "$S(d) = 150(6)^{d}$",
+      "correct": false,
+      "misconception": "I saw that the shares double $3$ times a day and thought that meant multiplying by $2 \\cdot 3 = 6$ each day."
+    },
+    {
+      "key": "D",
+      "text": "$S(d) = 150(2)^{3d}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "How many $8$-hour periods are there in one day?",
+    "There are $24 \\div 8 = 3$ doublings per day, so in $d$ days there are $3d$ doublings.",
+    "Each doubling multiplies the shares by $2$, so after $3d$ doublings the shares are $150 \\cdot 2^{3d}$."
+  ],
+  "solutions": {
+    "reliable": "One day is $24$ hours, which is $3$ periods of $8$ hours, so the number of shares doubles $3$ times each day and $3d$ times in $d$ days. Starting from $150$, $S(d) = 150(2)^{3d}$. Check: after $1$ day, $S(1) = 150 \\cdot 8 = 1{,}200$, which is $150$ doubled three times: $300$, $600$, $1{,}200$.",
+    "elegant": "Doubling $3$ times multiplies by $2^3 = 8$, so $S(d) = 150(8)^d$, which is the same as $150(2)^{3d}$."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

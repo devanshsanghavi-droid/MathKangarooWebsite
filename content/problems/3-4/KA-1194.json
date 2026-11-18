@@ -1,0 +1,68 @@
+{
+  "id": "KA-1194",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Ivy builds a row of matchstick houses. One house, a square with a triangle roof, uses 6 matches. Two side by side share a wall and use 11. How many matches do 7 houses use?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "31",
+      "correct": false,
+      "misconception": "I added 5 matches for each house after the first, but only did it 5 times instead of 6."
+    },
+    {
+      "key": "B",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "35",
+      "correct": false,
+      "misconception": "I counted 5 matches for every house and forgot the extra wall at the start."
+    },
+    {
+      "key": "D",
+      "text": "41",
+      "correct": false,
+      "misconception": "I started with 6 and added 5 for all 7 houses, counting the first house twice."
+    },
+    {
+      "key": "E",
+      "text": "42",
+      "correct": false,
+      "misconception": "I gave every house 6 matches, forgetting that neighbouring houses share a wall."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "PAT-02",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "How many new matches does each extra house need?",
+    "Going from one house to two adds a certain number of matches. Each new house adds the same number. Count how many houses are added after the first.",
+    "Each new house adds $11 - 6 = 5$ matches, and 6 houses are added after the first."
+  ],
+  "solutions": {
+    "reliable": "The first house uses 6 matches. Each new house shares a wall, so it adds 5. Seven houses: $6 + 6 \\times 5 = 36$. The transferable idea: in a growing pattern, count the first stage, then the same step for each stage after it.",
+    "elegant": "Think of each house as 5 matches (two roof matches, the ceiling, the floor and the right wall) plus one extra left wall for the whole row: $7 \\times 5 + 1 = 36$."
+  },
+  "whyOnTest": "Shared edges in a growing pattern: the classic trap is to count every piece as if nothing were shared.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

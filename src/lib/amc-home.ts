@@ -1,6 +1,6 @@
 import type { MasteryState } from './mastery';
 import { bucketOf, type StatusBucket } from './progress-summary';
-import type { AmcContest, AmcFormulaContest } from './amc-schemas';
+import { amcInContest, type AmcContest, type AmcFormulaContest } from './amc-tier';
 
 /**
  * Pure helpers for the AMC beta landing (/amc): which problems belong on the chosen paper,
@@ -17,8 +17,9 @@ export interface AmcHomeProblem {
 
 export const MIXED_SET_SIZE = 10;
 
+/** BOTH problems are on AMC 10 and AMC 12; AMC 8 takes only AMC8 problems. */
 export function onPaper(problem: { contest: AmcContest }, paper: AmcFormulaContest): boolean {
-  return problem.contest === 'BOTH' || problem.contest === paper;
+  return amcInContest(problem.contest, paper);
 }
 
 /**

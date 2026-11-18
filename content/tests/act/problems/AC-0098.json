@@ -1,0 +1,56 @@
+{
+  "id": "AC-0098",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-07",
+  "difficulty": "easy",
+  "statement": "A line in the $xy$-plane has slope $\\tfrac{2}{3}$ and passes through the point $(6, 1)$. What is the $y$-intercept of the line?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I multiplied the slope by 6 to get a rise of 4 and gave that rise as the $y$-intercept."
+    },
+    {
+      "key": "C",
+      "text": "$\\tfrac{16}{3}$",
+      "correct": false,
+      "misconception": "I swapped the coordinates and used the point $(1, 6)$, so I got $b = 6 - \\tfrac{2}{3} = \\tfrac{16}{3}$."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I moved from $x = 6$ back to $x = 0$ but added the rise of 4 instead of subtracting it, so I got $1 + 4 = 5$."
+    }
+  ],
+  "hints": [
+    "Use the form $y = mx + b$ and the point you know.",
+    "Substitute $m = \\tfrac{2}{3}$, $x = 6$ and $y = 1$ into $y = mx + b$ and solve for $b$.",
+    "$1 = \\tfrac{2}{3}(6) + b$, so $1 = 4 + b$."
+  ],
+  "solutions": {
+    "reliable": "Substituting into $y = mx + b$: $1 = \\tfrac{2}{3}(6) + b = 4 + b$, so $b = -3$. The line is $y = \\tfrac{2}{3}x - 3$; check: at $x = 6$, $y = 4 - 3 = 1$.",
+    "elegant": "Going from $x = 6$ back to $x = 0$ is a run of $-6$, so the rise is $\\tfrac{2}{3}(-6) = -4$ and the intercept is $1 - 4 = -3$."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

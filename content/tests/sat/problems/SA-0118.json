@@ -1,0 +1,56 @@
+{
+  "id": "SA-0118",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-05",
+  "difficulty": "medium",
+  "statement": "The function $p$ is defined by $p(x) = (x - 2)(x + 5)(2x - 3)$. What is the sum of all the zeros of $p$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I added only the zeros 2 and $-5$ and left out the zero that comes from $2x - 3$."
+    },
+    {
+      "key": "B",
+      "text": "$-\\dfrac{3}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I took the zero of $2x - 3$ to be 3 instead of $\\frac{3}{2}$, so I added $2 - 5 + 3$."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{3}{2}$",
+      "correct": false,
+      "misconception": "I flipped the sign of every zero and added $-2$, $5$ and $-\\frac{3}{2}$."
+    }
+  ],
+  "hints": [
+    "A product is $0$ exactly when one of its factors is $0$.",
+    "Set each factor equal to $0$ and solve. Be careful with the factor $2x - 3$.",
+    "The zeros are $x = 2$, $x = -5$ and $x = \\frac{3}{2}$."
+  ],
+  "solutions": {
+    "reliable": "$p(x) = 0$ when $x - 2 = 0$, $x + 5 = 0$ or $2x - 3 = 0$, so the zeros are $2$, $-5$ and $\\frac{3}{2}$. Their sum is $2 - 5 + \\frac{3}{2} = -\\frac{3}{2}$.",
+    "elegant": "Expanding, $p(x) = 2x^3 + 3x^2 - 29x + 30$. For a cubic $ax^3 + bx^2 + \\dots$, the zeros add to $-\\frac{b}{a} = -\\frac{3}{2}$, which matches."
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

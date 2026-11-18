@@ -1,0 +1,56 @@
+{
+  "id": "SA-0025",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "hard",
+  "statement": "A club is buying granola bars, which cost $\\$0.80$ each, and juice boxes, which cost $\\$1.20$ each, for a field trip. The club will spend at most $\\$90$, and it wants to buy at least $3$ times as many granola bars as juice boxes. What is the greatest number of juice boxes the club can buy?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I grouped $3$ juice boxes with each granola bar instead of the other way round, so each group cost $0.80 + 3(1.20) = 4.40$ and $90 / 4.40$ rounds down to $20$."
+    },
+    {
+      "key": "B",
+      "text": "$25$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I divided $90$ by $2.00$, the cost of one bar and one juice box, and ignored that each juice box needs $3$ granola bars."
+    },
+    {
+      "key": "D",
+      "text": "$75$",
+      "correct": false,
+      "misconception": "I ignored the granola bar requirement and divided the whole $90$ dollars by the juice box price, $1.20$."
+    }
+  ],
+  "hints": [
+    "Each juice box must come with at least $3$ granola bars.",
+    "Let $j$ be the juice boxes and $b$ the bars, with $b \\ge 3j$ and $0.80b + 1.20j \\le 90$. To make $j$ as large as possible, buy as few bars as allowed.",
+    "With $b = 3j$ the cost is $0.80(3j) + 1.20j = 3.60j$, so $3.60j \\le 90$."
+  ],
+  "solutions": {
+    "reliable": "Let $j$ be the number of juice boxes and $b$ the number of granola bars. The conditions are $b \\ge 3j$ and $0.80b + 1.20j \\le 90$. Since bars cost money, the most juice boxes are possible when $b = 3j$, giving $2.40j + 1.20j = 3.60j \\le 90$, so $j \\le 25$. Check: $j = 25$, $b = 75$ costs $60 + 30 = 90$ dollars. For $j = 26$ the club needs at least $78$ bars, costing at least $62.40 + 31.20 = 93.60 > 90$ dollars.",
+    "elegant": "Think of a bundle of $1$ juice box and $3$ bars, costing $1.20 + 2.40 = 3.60$ dollars. The budget buys $90 / 3.60 = 25$ bundles."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

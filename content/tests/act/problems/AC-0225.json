@@ -1,0 +1,56 @@
+{
+  "id": "AC-0225",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-02",
+  "difficulty": "hard",
+  "statement": "A roof truss is shaped like a right triangle, with the right angle at the peak and the bottom beam as the hypotenuse. A vertical post runs from the peak straight down to the beam, meeting it at a right angle and dividing it into pieces $4$ feet and $9$ feet long. How long, in feet, is the longer of the two sloped rafters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found the height of the post, $\\sqrt{4 \\cdot 9} = 6$, and gave that instead of the length of a rafter."
+    },
+    {
+      "key": "B",
+      "text": "$2\\sqrt{13}$",
+      "correct": false,
+      "misconception": "I found the post height $6$ and then used the $4$-foot piece, so $\\sqrt{6^2 + 4^2} = 2\\sqrt{13}$, which is the shorter rafter."
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I took the longer piece of the beam, $9$ feet, as the length of the longer rafter, but the rafter is the hypotenuse of a smaller triangle."
+    },
+    {
+      "key": "D",
+      "text": "$3\\sqrt{13}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The post splits the truss into two smaller right triangles. How are they related to the whole truss?",
+    "All three right triangles are similar. The longer rafter is the hypotenuse of the small triangle that contains the $9$-foot piece, and its square equals $9$ times the whole beam.",
+    "The whole beam is $4 + 9 = 13$ feet, so the longer rafter squared is $9 \\cdot 13 = 117$."
+  ],
+  "solutions": {
+    "reliable": "The post is the altitude to the hypotenuse, so the two small right triangles are similar to each other, and the post height $h$ satisfies $\\frac{h}{4} = \\frac{9}{h}$, giving $h^2 = 36$ and $h = 6$. The longer rafter is the hypotenuse of the right triangle with legs $6$ and $9$, so it is $\\sqrt{36 + 81} = \\sqrt{117} = 3\\sqrt{13} \\approx 10.8$ feet. Check: the shorter rafter is $\\sqrt{36 + 16} = \\sqrt{52}$, and $52 + 117 = 169 = 13^2$.",
+    "elegant": "The triangle with the longer rafter as hypotenuse is similar to the whole truss, so $\\frac{9}{\\text{rafter}} = \\frac{\\text{rafter}}{13}$. Then $\\text{rafter}^2 = 117$ and the rafter is $3\\sqrt{13}$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

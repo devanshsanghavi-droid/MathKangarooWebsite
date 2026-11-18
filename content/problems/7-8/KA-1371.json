@@ -1,0 +1,67 @@
+{
+  "id": "KA-1371",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A row has 20 seats, numbered 1 to 20. Seats 8 and 15 are already taken. A family of four wants four empty seats next to each other. How many different blocks of four seats could they choose?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I cut each stretch of empty seats into separate groups of four that do not overlap, instead of sliding the block along one seat at a time."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought there are $20 - 4 = 16$ positions for a block in the whole row instead of 17, then removed the 8 blocked ones."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "11",
+      "correct": false,
+      "misconception": "I thought only 3 blocks contain each taken seat, so I removed 6 blocks from 17 instead of 8."
+    },
+    {
+      "key": "E",
+      "text": "17",
+      "correct": false,
+      "misconception": "I counted every block of four in the row and forgot that seats 8 and 15 are taken."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-12",
+    "secondary": [
+      "CNT-09"
+    ]
+  },
+  "hints": [
+    "Which runs of empty seats are there between the taken seats?",
+    "Split the row into runs of empty seats. In a run of n seats, a block of four can start at any seat that leaves room for three more, so slide it along one seat at a time.",
+    "The empty runs are seats 1 to 7, 9 to 14 and 16 to 20, of lengths 7, 6 and 5."
+  ],
+  "solutions": {
+    "reliable": "The empty seats form three runs: 1 to 7 (7 seats), 9 to 14 (6 seats) and 16 to 20 (5 seats). A run of n seats holds $n - 3$ blocks of four, one starting at each seat that leaves room for three more. That gives $4 + 3 + 2 = 9$ blocks. The transferable idea: count by sliding a window one step at a time, and a window of length k fits $n - k + 1$ times in a run of n.",
+    "elegant": "The whole row has $20 - 4 + 1 = 17$ blocks of four. Each taken seat lies in 4 of them (the blocks starting 3, 2, 1 or 0 seats before it), and no block contains both 8 and 15. So $17 - 4 - 4 = 9$."
+  },
+  "whyOnTest": "Sliding-window counting tests the off-by-one rule n - k + 1 and the urge to cut a row into separate pieces instead of sliding.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

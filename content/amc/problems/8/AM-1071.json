@@ -1,0 +1,67 @@
+{
+  "id": "AM-1071",
+  "contest": "AMC8",
+  "slot": 24,
+  "area": "ALG",
+  "topic": "ALG-09",
+  "types": [
+    "T-EXTREME",
+    "T-BOUNDING"
+  ],
+  "statement": "Positive integers $a$, $b$ and $c$ satisfy $a + b + c = 20$. What is the largest possible value of $ab + bc - ca$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$35$",
+      "correct": false,
+      "misconception": "I made $a$ and $c$ as small as possible, $a = c = 1$, so $b = 18$, which gives $18 + 18 - 1 = 35$."
+    },
+    {
+      "key": "B",
+      "text": "$75$",
+      "correct": false,
+      "misconception": "I took $b = 10$ and split the rest evenly, $a = c = 5$, which gives $50 + 50 - 25 = 75$."
+    },
+    {
+      "key": "C",
+      "text": "$91$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$100$",
+      "correct": false,
+      "misconception": "I saw that $ab + bc = b(a + c)$ is at most $10 \\times 10 = 100$, but forgot to subtract $ca$, which is at least $9$ when $b = 10$."
+    },
+    {
+      "key": "E",
+      "text": "$133$",
+      "correct": false,
+      "misconception": "I read the expression as $ab + bc + ca$ and found its largest value, $133$, at $7$, $7$ and $6$."
+    }
+  ],
+  "hints": [
+    "Group the first two terms: $ab + bc = b(a + c)$.",
+    "Let $s = a + c$, so the expression is $bs - ac$ with $b + s = 20$. For a fixed $s$, make $ac$ as small as possible.",
+    "The smallest $ac$ with $a + c = s$ is $1 \\cdot (s - 1)$. So the value is $b(20 - b) - (19 - b)$. Try $b = 10$ and $b = 11$."
+  ],
+  "solutions": {
+    "reliable": "Write $ab + bc - ca = b(a + c) - ac$, and let $s = a + c = 20 - b$. For a fixed $s$, the product $ac$ of two positive integers with sum $s$ is smallest when one of them is $1$, so $ac \\ge s - 1$. Then the value is at most $bs - (s - 1) = b(20 - b) - (19 - b) = 21b - b^2 - 19$. Trying values: $b = 9$ gives $89$, $b = 10$ gives $91$, $b = 11$ gives $91$ and $b = 12$ gives $89$, and the values keep falling as $b$ moves farther from $10.5$. So the largest value is $91$, reached for example by $a = 1$, $b = 10$, $c = 9$: $10 + 90 - 9 = 91$.",
+    "elegant": "After the first step the value is at most $21b - b^2 - 19 = 91 - (b - 10)(b - 11)$. For every integer $b$, the numbers $b - 10$ and $b - 11$ are both at least $0$ or both at most $0$, so their product is never negative. So the value is at most $91$, with equality at $b = 10$ or $b = 11$ and $a = 1$."
+  },
+  "formulas": [],
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

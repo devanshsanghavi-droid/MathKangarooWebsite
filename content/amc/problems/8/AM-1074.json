@@ -1,0 +1,69 @@
+{
+  "id": "AM-1074",
+  "contest": "AMC8",
+  "slot": 25,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": [
+    "T-BOUNDING",
+    "T-SMALL-CASES"
+  ],
+  "statement": "The positive integers are written in rows: row $1$ is $1$; row $2$ is $2, 3$; row $3$ is $4, 5, 6$; and in general, row $n$ contains the next $n$ integers. What is the first number in the first row whose numbers add up to more than $10{,}000$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I found that row $28$ is the first row with a sum over $10{,}000$ and gave the row number instead of its first number."
+    },
+    {
+      "key": "B",
+      "text": "$352$",
+      "correct": false,
+      "misconception": "I gave the first number of row $27$, but row $27$ adds up to $9855$, which is still less than $10{,}000$."
+    },
+    {
+      "key": "C",
+      "text": "$378$",
+      "correct": false,
+      "misconception": "I gave the last number of row $27$, which is one less than the first number of the row I needed."
+    },
+    {
+      "key": "D",
+      "text": "$379$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$406$",
+      "correct": false,
+      "misconception": "I found the right row, row $28$, but gave its last number instead of its first number."
+    }
+  ],
+  "hints": [
+    "Row $n$ ends at $1 + 2 + \\cdots + n = \\frac{n(n+1)}{2}$, so it starts at $\\frac{n(n-1)}{2} + 1$.",
+    "The sum of row $n$ is $n$ times the average of its first and last numbers, which works out to $\\frac{n(n^2 + 1)}{2}$. That is roughly $\\frac{n^3}{2}$.",
+    "Row $27$ adds up to $\\frac{27 \\cdot 730}{2} = 9855$ and row $28$ adds up to $\\frac{28 \\cdot 785}{2} = 10{,}990$."
+  ],
+  "solutions": {
+    "reliable": "Row $n$ ends at $1 + 2 + \\cdots + n = \\frac{n(n+1)}{2}$ and begins at $\\frac{n(n-1)}{2} + 1$. Its sum is $n$ times the average of its first and last numbers, $n \\cdot \\frac12\\left(\\frac{n(n-1)}{2} + 1 + \\frac{n(n+1)}{2}\\right) = \\frac{n(n^2 + 1)}{2}$. This is a little more than $\\frac{n^3}{2}$, so look near $n^3 = 20{,}000$, where $n$ is about $27$. Row $27$ adds up to $\\frac{27 \\cdot 730}{2} = 9855$, which is not enough, and row $28$ adds up to $\\frac{28 \\cdot 785}{2} = 10{,}990$. Row $28$ begins at $\\frac{28 \\cdot 27}{2} + 1 = 379$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-ALG-03"
+  ],
+  "estSeconds": 240,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

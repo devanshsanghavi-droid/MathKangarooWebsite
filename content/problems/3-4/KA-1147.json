@@ -1,0 +1,68 @@
+{
+  "id": "KA-1147",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Ana, Ben and Cleo each always tell the truth or always lie. Ana: \"Ben tells the truth.\" Ben: \"Exactly one of Ana and me lies.\" Cleo: \"Ben lies.\" How many of them lie?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I believed everyone without checking, but if Ana and Ben both told the truth, Ben's sentence would be false."
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I found that Ana must lie, but I still thought Ben could tell the truth, even though Ana's lie means Ben lies."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found that Ana and Ben lie, and then thought Cleo must lie too, but she says Ben lies, which is true."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be decided",
+      "correct": false,
+      "misconception": "I tried Ana telling the truth, reached a contradiction, and gave up instead of trying Ana as a liar."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-01",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Suppose Ana tells the truth. What follows?",
+    "Truth-tellers and liars: assume one person is a truth-teller and follow the consequences. If you reach a contradiction, that person must be a liar. Then go through the others.",
+    "If Ana told the truth, Ben would tell the truth, so Ana and Ben would be the same kind, and Ben's sentence would be false. So Ana lies."
+  ],
+  "solutions": {
+    "reliable": "Suppose Ana tells the truth. Then Ben tells the truth. But then Ana and Ben are the same kind, so Ben's sentence is false, which a truth-teller cannot say. So Ana lies. Then her sentence is false, so Ben lies. Check Ben: Ana and Ben are both liars, so they are not different, and his sentence is false, as a liar's should be. Cleo says Ben lies, which is true, so Cleo tells the truth. Ana and Ben lie: 2 liars. The transferable idea: assume, follow, and throw away any assumption that leads to a contradiction.",
+    "elegant": "Ana says Ben tells the truth. If Ana is truthful, Ben is truthful; if Ana lies, Ben lies. Either way they are the same kind, so Ben's sentence is false and Ben lies. Then Ana lies too, and Cleo is right: 2 liars."
+  },
+  "whyOnTest": "Assuming a speaker is truthful and following it to a contradiction is the standard method for truth-teller and liar puzzles.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

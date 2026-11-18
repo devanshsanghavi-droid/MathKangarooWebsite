@@ -1,0 +1,56 @@
+{
+  "id": "AC-0256",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-01",
+  "difficulty": "hard",
+  "statement": "A book club has $9$ members. Their mean age is $32$ years and their median age is $30$ years. The $4$ youngest members have a mean age of $20$ years. What is the mean age, in years, of the $4$ oldest members?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$41.6$",
+      "correct": false,
+      "misconception": "I subtracted the 4 youngest ages from the total and divided the remaining 208 by 5, so I counted the median member as one of the oldest."
+    },
+    {
+      "key": "B",
+      "text": "$44$",
+      "correct": false,
+      "misconception": "I reasoned by symmetry: the youngest four average 12 below the mean of 32, so I put the oldest four 12 above it."
+    },
+    {
+      "key": "C",
+      "text": "$44.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$52$",
+      "correct": false,
+      "misconception": "I subtracted the youngest four's 80 years from the total of 288 but forgot to also take out the median member's 30 years."
+    }
+  ],
+  "hints": [
+    "With $9$ members in order of age, the median is the age of the 5th member.",
+    "Split the total age into three parts: the $4$ youngest, the median member and the $4$ oldest.",
+    "The total age is $9 \\cdot 32 = 288$. The $4$ youngest total $4 \\cdot 20 = 80$, and the middle member is $30$."
+  ],
+  "solutions": {
+    "reliable": "The total of all $9$ ages is $9 \\cdot 32 = 288$. In order of age, the 5th member is the median, $30$. The $4$ youngest total $4 \\cdot 20 = 80$. So the $4$ oldest total $288 - 80 - 30 = 178$, and their mean age is $\\dfrac{178}{4} = 44.5$ years.",
+    "elegant": null
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

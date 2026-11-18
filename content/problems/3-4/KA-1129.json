@@ -1,0 +1,68 @@
+{
+  "id": "KA-1129",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Five teams play a tournament; every two teams meet once. A win gives 2 points, a loss 0, and a draw 1 point each. What is the total of all teams' points at the end?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I worked out the most points one team can get, 4 games times 2 points, instead of the total for all teams."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted the 10 games correctly but gave only 1 point for each game."
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "30",
+      "correct": false,
+      "misconception": "I counted the games as $5 + 4 + 3 + 2 + 1 = 15$, starting from 5 instead of 4, and then gave 2 points for each game."
+    },
+    {
+      "key": "E",
+      "text": "40",
+      "correct": false,
+      "misconception": "I said each team plays 4 games, so $5 \\times 4 = 20$ games, but that counts every game twice."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-08",
+    "secondary": [
+      "CFT-01",
+      "MOD-10"
+    ]
+  },
+  "hints": [
+    "Look at one single game. How many points does it hand out?",
+    "Every game gives out the same number of points whatever happens, so the total depends only on how many games there are. Count the pairs of teams.",
+    "A win hands out $2 + 0 = 2$ points and a draw $1 + 1 = 2$ points. The number of pairs of 5 teams is $4 + 3 + 2 + 1 = 10$."
+  ],
+  "solutions": {
+    "reliable": "In every game, 2 points are handed out: 2 and 0 for a win, or 1 and 1 for a draw. So the total is 2 times the number of games. The first team plays 4 others, the second plays 3 new ones, the third 2, the fourth 1: $4 + 3 + 2 + 1 = 10$ games. The total is $10 \\times 2 = 20$ points. The transferable idea: find something every game shares, then the results of the games do not matter.",
+    "elegant": "Each team plays 4 games, which looks like $5 \\times 4 = 20$ games, but every game has two teams, so it was counted twice: 10 games, and $10 \\times 2 = 20$ points."
+  },
+  "whyOnTest": "It tests counting pairs and spotting that every game gives the same points, so the total does not depend on who won.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

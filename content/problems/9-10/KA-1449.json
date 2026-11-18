@@ -1,0 +1,67 @@
+{
+  "id": "KA-1449",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A secret rule turns three numbers into one: $(2, 3, 4) \\to 10$, $(1, 5, 2) \\to 7$, $(3, 3, 1) \\to 10$ and $(5, 1, 3) \\to 8$. What does the same rule turn $(4, 2, 5)$ into?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I used 'add the three numbers, then add 1', which only works for the first example."
+    },
+    {
+      "key": "B",
+      "text": "21",
+      "correct": false,
+      "misconception": "I used 'multiply the first and third numbers, add the second and subtract 1', which only works for the first example."
+    },
+    {
+      "key": "C",
+      "text": "13",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I used 'multiply the second and third numbers and subtract the first', which only works for the first example."
+    },
+    {
+      "key": "E",
+      "text": "11",
+      "correct": false,
+      "misconception": "I guessed the rule was simply adding the three numbers, without checking it against the examples."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Test any rule you guess on every example, not just the first.",
+    "Compare the second and fourth examples, where the first two numbers swap places. What does that suggest about how the first two numbers are combined, and about the third?",
+    "Try multiplying two of the numbers and adding the third."
+  ],
+  "solutions": {
+    "reliable": "Try 'multiply the first two numbers, then add the third': $2 \\times 3 + 4 = 10$, $1 \\times 5 + 2 = 7$, $3 \\times 3 + 1 = 10$ and $5 \\times 1 + 3 = 8$. All four match. So $(4, 2, 5) \\to 4 \\times 2 + 5 = 13$. The transferable idea: a rule is only found when it fits every example, since many rules fit just one.",
+    "elegant": null
+  },
+  "whyOnTest": "Inferring a rule tests checking a guess against all of the evidence, since many different rules fit a single example.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

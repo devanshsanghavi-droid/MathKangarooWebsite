@@ -1,0 +1,56 @@
+{
+  "id": "AC-0277",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-01",
+  "difficulty": "easy",
+  "statement": "A town surveyed $25$ households about how many pets they own. The results are shown in the table. $$\\begin{array}{c|c} \\text{Number of pets} & \\text{Number of households} \\\\ \\hline 0 & 7 \\\\ 1 & 9 \\\\ 2 & 6 \\\\ 3 & 2 \\\\ 4 & 1 \\end{array}$$ What is the median number of pets per household?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$1.24$",
+      "correct": false,
+      "misconception": "I added up all the pets, 31, and divided by the 25 households, which gives the mean, not the median."
+    },
+    {
+      "key": "C",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I took the middle of the list 0, 1, 2, 3, 4 in the first column, without counting how many households had each number."
+    },
+    {
+      "key": "D",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found the median of the household counts 7, 9, 6, 2 and 1, which is 6, instead of the median number of pets."
+    }
+  ],
+  "hints": [
+    "The median is the middle value when all $25$ households are listed in order.",
+    "With $25$ values, the median is the $13$th value. Count down the table to see which row the $13$th household falls in.",
+    "The first $7$ households have $0$ pets and households $8$ through $16$ have $1$ pet. Where is household $13$?"
+  ],
+  "solutions": {
+    "reliable": "There are $25$ households, so the median is the $13$th value in order. Households $1$ to $7$ have $0$ pets and households $8$ to $16$ have $1$ pet. The $13$th household has $1$ pet, so the median is $1$.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

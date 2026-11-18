@@ -1,0 +1,56 @@
+{
+  "id": "SA-0113",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-03",
+  "difficulty": "hard",
+  "statement": "The function $g$ is defined by $g(x) = x^2 + bx + 31$, where $b$ is a positive constant. The minimum value of $g(x)$ is $6$. What is the $x$-coordinate of the vertex of the graph of $y = g(x)$ in the $xy$-plane?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-10$",
+      "correct": false,
+      "misconception": "I found $b = 10$ and took the vertex to be at $x = -b$ instead of $x = -\\frac{b}{2}$."
+    },
+    {
+      "key": "B",
+      "text": "$-5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I found $b = 10$ but used $x = \\frac{b}{2}$, losing the negative sign."
+    },
+    {
+      "key": "D",
+      "text": "$25$",
+      "correct": false,
+      "misconception": "I set $\\frac{b^2}{4} = 31 - 6 = 25$ and gave 25 instead of solving for $b$ and then the vertex."
+    }
+  ],
+  "hints": [
+    "Write the minimum value of $g$ in terms of $b$.",
+    "Complete the square: $g(x) = \\left(x + \\frac{b}{2}\\right)^2 + 31 - \\frac{b^2}{4}$. Set the minimum equal to $6$ and solve for $b$.",
+    "$31 - \\frac{b^2}{4} = 6$ gives $b^2 = 100$, so $b = 10$ because $b$ is positive. The vertex is at $x = -\\frac{b}{2}$."
+  ],
+  "solutions": {
+    "reliable": "Completing the square, $g(x) = \\left(x + \\frac{b}{2}\\right)^2 + 31 - \\frac{b^2}{4}$, so the minimum value is $31 - \\frac{b^2}{4}$ at $x = -\\frac{b}{2}$. Setting $31 - \\frac{b^2}{4} = 6$ gives $b^2 = 100$, and since $b > 0$, $b = 10$. The vertex is at $x = -5$. Check: $g(-5) = 25 - 50 + 31 = 6$.",
+    "elegant": null
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

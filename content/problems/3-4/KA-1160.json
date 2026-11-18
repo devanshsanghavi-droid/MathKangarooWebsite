@@ -1,0 +1,67 @@
+{
+  "id": "KA-1160",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Six children sit round a table. Each child always tells the truth or always lies. Every child says: \"The child on my left is a liar.\" How many liars are at the table?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I assumed everyone was telling the truth because they all said the same thing."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I checked only what the liars said and used the pattern liar, truth-teller, truth-teller, which gives 2 liars."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I checked only what the truth-tellers said and used the pattern truth-teller, liar, liar, which gives 4 liars."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought that if everyone says the same thing, they must all be liars."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "What is true about the child to the left of a truth-teller? Of a liar?",
+    "Check both kinds of child. A truth-teller's claim must be true, and a liar's claim must be false. Work out what each one says about its left neighbour, then go round the table.",
+    "A truth-teller has a liar on its left. A liar's claim is false, so a liar has a truth-teller on its left. So the children must alternate all the way round the table."
+  ],
+  "solutions": {
+    "reliable": "Take any child. If the child tells the truth, the child on the left really is a liar. If the child lies, the statement is false, so the child on the left tells the truth. So going round the table the children alternate: truth-teller, liar, truth-teller, liar, and so on. With 6 seats this works and gives 3 liars and 3 truth-tellers. Check that all six statements fit: each truth-teller has a liar on the left and each liar has a truth-teller on the left. The transferable idea: test both kinds of speaker and look for the pattern they force.",
+    "elegant": "Two liars cannot sit side by side, and nor can two truth-tellers, so the two kinds must alternate. Six seats in a circle split evenly: 3 liars."
+  },
+  "whyOnTest": "Truth-teller puzzles check whether you test both cases, true and false, instead of trusting the statement; a circle adds a pattern to spot.",
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

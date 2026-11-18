@@ -1,0 +1,69 @@
+{
+  "id": "AM-1292",
+  "contest": "AMC8",
+  "slot": 22,
+  "area": "CP",
+  "topic": "CP-09",
+  "types": [
+    "T-RECURSION",
+    "T-CASEWORK"
+  ],
+  "statement": "A parking meter accepts only nickels ($5$ cents), dimes ($10$ cents) and quarters ($25$ cents). Lucia puts coins in one at a time until she has paid exactly $40$ cents. The order matters: for example, a dime followed by a nickel is a different sequence from a nickel followed by a dime. How many different sequences of coins pay exactly $40$ cents?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I counted collections of coins without caring about order, like four dimes, or a quarter, a dime and a nickel."
+    },
+    {
+      "key": "B",
+      "text": "$34$",
+      "correct": false,
+      "misconception": "I counted the sequences of nickels and dimes correctly but forgot the sequences that use a quarter."
+    },
+    {
+      "key": "C",
+      "text": "$37$",
+      "correct": false,
+      "misconception": "I added the 3 ways to order the other 15 cents in a quarter sequence, but I did not count the different places the quarter could go."
+    },
+    {
+      "key": "D",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I placed the quarter only first or last, so I added 2 times 3 = 6 quarter sequences to the other 34."
+    },
+    {
+      "key": "E",
+      "text": "$44$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Work in units of 5 cents. You need to make 8 using parts of size 1, 2 and 5, in order.",
+    "Let w(n) be the number of ordered ways to make n. The last coin is worth 1, 2 or 5, so w(n) = w(n - 1) + w(n - 2) + w(n - 5).",
+    "Start with w(0) = 1 and build up: 1, 1, 2, 3, 5, 9, 15, 26, 44."
+  ],
+  "solutions": {
+    "reliable": "Measure in nickels, so the coins are worth $1$, $2$ and $5$ and the total is $8$. Let $w(n)$ be the number of ordered ways to pay $n$, with $w(0) = 1$ and $w(n) = 0$ for negative $n$. Looking at the last coin, $w(n) = w(n-1) + w(n-2) + w(n-5)$. So $w(1) = 1$, $w(2) = 2$, $w(3) = 3$, $w(4) = 5$, $w(5) = 5 + 3 + 1 = 9$, $w(6) = 9 + 5 + 1 = 15$, $w(7) = 15 + 9 + 2 = 26$ and $w(8) = 26 + 15 + 3 = 44$.",
+    "elegant": "Split by quarters. Two quarters are too much. With no quarter, the ordered sequences of nickels and dimes follow the Fibonacci pattern $1, 1, 2, 3, 5, 8, 13, 21, 34$ for $0, 5, 10, \\ldots, 40$ cents, giving $34$. With one quarter, the other $15$ cents is three nickels or a nickel and a dime. A quarter and three nickels: the quarter goes in one of $4$ places, so $4$ sequences. A quarter, a dime and a nickel: $3! = 6$ sequences. The total is $34 + 4 + 6 = 44$."
+  },
+  "formulas": [
+    "F-CP-19"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

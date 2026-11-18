@@ -1,0 +1,56 @@
+{
+  "id": "AC-0241",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-06",
+  "difficulty": "hard",
+  "statement": "Two water bottles have exactly the same shape, but one is larger than the other. The ratio of the surface area of the smaller bottle to the surface area of the larger bottle is $9 : 16$. The smaller bottle holds $540$ milliliters. How many milliliters does the larger bottle hold?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$960$",
+      "correct": false,
+      "misconception": "I multiplied 540 by 16/9, using the surface area ratio for the volumes, but volumes scale by the cube of the length ratio."
+    },
+    {
+      "key": "B",
+      "text": "$720$",
+      "correct": false,
+      "misconception": "I found the length ratio 3 : 4 and multiplied 540 by 4/3, but that ratio is for lengths, not volumes."
+    },
+    {
+      "key": "C",
+      "text": "$1{,}707$",
+      "correct": false,
+      "misconception": "I squared the area ratio and multiplied 540 by 256/81, getting about 1,707, but volume uses the cube of the length ratio, not the square of the area ratio."
+    },
+    {
+      "key": "D",
+      "text": "$1{,}280$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "For similar solids, lengths, areas and volumes scale in different ways. Start by finding the ratio of lengths.",
+    "The area ratio is the square of the length ratio, and the volume ratio is the cube of the length ratio.",
+    "The length ratio is $\\sqrt{9} : \\sqrt{16} = 3 : 4$, so the volume ratio is $27 : 64$. Compute $540 \\cdot \\frac{64}{27}$."
+  ],
+  "solutions": {
+    "reliable": "For similar solids with length ratio $k$, the area ratio is $k^2$ and the volume ratio is $k^3$. Here $k^2 = \\frac{9}{16}$, so $k = \\frac{3}{4}$ and the volume ratio is $\\frac{27}{64}$. The larger bottle holds $540 \\cdot \\frac{64}{27} = 20 \\cdot 64 = 1{,}280$ milliliters.",
+    "elegant": "Think in steps of the length factor $\\frac{4}{3}$: volume grows by $\\left(\\frac{4}{3}\\right)^3$. $540 \\to 720 \\to 960 \\to 1{,}280$, multiplying by $\\frac{4}{3}$ three times."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

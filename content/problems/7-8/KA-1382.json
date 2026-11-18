@@ -1,0 +1,71 @@
+{
+  "id": "KA-1382",
+  "band": "7-8",
+  "points": 4,
+  "statement": "The pie chart shows how the 120 pupils of a school travel there. The angle for the bus is not marked. How many more pupils come by bus than by bike?",
+  "figure": {
+    "component": "TravelPieChart",
+    "alt": "A pie chart with four sectors. Going clockwise from the top: Walk, marked 105 degrees; Bus, with no angle marked; Car, marked 75 degrees; Bike, marked 45 degrees."
+  },
+  "choices": [
+    {
+      "key": "A",
+      "text": "90",
+      "correct": false,
+      "misconception": "I found the difference between the bus and bike angles in degrees and gave that, as if each degree were one pupil."
+    },
+    {
+      "key": "B",
+      "text": "45",
+      "correct": false,
+      "misconception": "I found how many pupils come by bus but did not subtract the bike pupils."
+    },
+    {
+      "key": "C",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "25",
+      "correct": false,
+      "misconception": "I saw the difference was a quarter of the circle and gave 25, thinking of 25 percent."
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": false,
+      "misconception": "I found how many pupils come by bike and stopped there."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-09",
+    "secondary": [
+      "NUM-09",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "The four angles of a pie chart add up to 360 degrees.",
+    "First find the bus angle from the other three. Then turn angles into pupils: the whole 360 degrees stands for 120 pupils, so work out how many degrees stand for one pupil.",
+    "The bus angle is 360 - 105 - 75 - 45 = 135 degrees. Each pupil is 3 degrees."
+  ],
+  "solutions": {
+    "reliable": "The angles add up to 360 degrees, so the bus angle is 360 - 105 - 75 - 45 = 135 degrees. The 120 pupils fill 360 degrees, so each pupil is 3 degrees. Bus: 135 / 3 = 45 pupils. Bike: 45 / 3 = 15 pupils. The difference is 45 - 15 = 30 pupils. The transferable idea: a pie chart shows fractions of a whole, so convert angles to a fraction of 360 before converting to people.",
+    "elegant": "The difference in angle is 135 - 45 = 90 degrees, a quarter of the circle, and a quarter of 120 pupils is 30."
+  },
+  "whyOnTest": "Reading a pie chart: find a missing angle from the 360-degree total, then turn an angle difference into a number of people.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

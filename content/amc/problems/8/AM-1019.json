@@ -1,0 +1,66 @@
+{
+  "id": "AM-1019",
+  "contest": "AMC8",
+  "slot": 7,
+  "area": "ALG",
+  "topic": "ALG-11",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A parking garage charges $\\$3$ for the first hour or any part of it, plus $\\$2$ for each additional half hour or any part of a half hour. The most it ever charges for one day is $\\$20$. Ana parks from 8:50 a.m. to 1:15 p.m. on the same day. How many dollars does she pay?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$17$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I charged 2 dollars for every half hour of the whole stay, which is 9 half hours, and forgot that the first hour costs 3 dollars."
+    },
+    {
+      "key": "C",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I rounded the whole stay up to 5 hours first, so I charged 3 dollars plus 8 extra half hours, 3 + 16 = 19, but only the leftover part of the last half hour gets rounded up."
+    },
+    {
+      "key": "D",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I charged the first hour and then also charged every half hour of the whole stay, including the first hour, which came to 21 dollars, so I used the 20 dollar maximum."
+    },
+    {
+      "key": "E",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I charged 3 dollars for the first hour and then 2 dollars for every half hour of the whole stay, including the first hour, 3 + 18 = 21, and forgot about the maximum too."
+    }
+  ],
+  "hints": [
+    "First find exactly how long Ana parked.",
+    "She parked $4$ hours $25$ minutes. The first hour is $\\$3$. How many half hours, or parts of one, are in the remaining time?",
+    "After the first hour there are $3$ hours $25$ minutes, which is $6$ full half hours plus $25$ more minutes. That makes $7$ charged half hours."
+  ],
+  "solutions": {
+    "reliable": "From 8:50 a.m. to 12:50 p.m. is $4$ hours, and to 1:15 p.m. is $25$ minutes more, so the stay is $4$ hours $25$ minutes. The first hour costs $\\$3$. The remaining $3$ hours $25$ minutes is $205$ minutes, and $205 = 6 \\cdot 30 + 25$, so it counts as $7$ half hours, costing $7 \\cdot 2 = 14$ dollars. The total is $3 + 14 = 17$ dollars, which is under the $\\$20$ maximum.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

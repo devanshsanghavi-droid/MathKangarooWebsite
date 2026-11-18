@@ -1,0 +1,56 @@
+{
+  "id": "AC-0146",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-06",
+  "difficulty": "easy",
+  "statement": "The point $(1, 5)$ lies on the graph of $y = f(x)$. The function $g$ is defined by $g(x) = f(x - 4) + 2$. Which of the following points must lie on the graph of $y = g(x)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$(-3, 3)$",
+      "correct": false,
+      "misconception": "I moved the point the wrong way in both directions, 4 to the left and 2 down."
+    },
+    {
+      "key": "B",
+      "text": "$(-3, 7)$",
+      "correct": false,
+      "misconception": "I moved the point 4 to the left because I saw minus 4, but subtracting 4 inside the function shifts the graph to the right."
+    },
+    {
+      "key": "C",
+      "text": "$(5, 3)$",
+      "correct": false,
+      "misconception": "I shifted the point 4 to the right correctly, but I moved it down 2 instead of up 2."
+    },
+    {
+      "key": "D",
+      "text": "$(5, 7)$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Ask which input to $g$ makes the expression inside $f$ equal to $1$.",
+    "$x - 4 = 1$ when $x = 5$. Then $g(5) = f(1) + 2$.",
+    "$f(1) = 5$, so $g(5) = 5 + 2$."
+  ],
+  "solutions": {
+    "reliable": "We need the input of $f$ to be $1$: $x - 4 = 1$ gives $x = 5$. Then $g(5) = f(1) + 2 = 5 + 2 = 7$, so the point $(5, 7)$ is on the graph of $g$.",
+    "elegant": "$f(x - 4)$ shifts the graph $4$ units right, and adding $2$ shifts it $2$ units up, so $(1, 5)$ moves to $(5, 7)$."
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

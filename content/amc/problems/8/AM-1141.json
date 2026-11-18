@@ -1,0 +1,68 @@
+{
+  "id": "AM-1141",
+  "contest": "AMC8",
+  "slot": 22,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-AREA-RATIO"
+  ],
+  "statement": "Regular hexagon $ABCDEF$ has area $72$. Point $M$ is the midpoint of side $\\overline{CD}$. What is the area of triangle $AMF$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I split the triangle at the center $O$ of the hexagon and added triangle $OAF$ (area $12$) and triangle $OMA$ (area $6$), but forgot triangle $OFM$."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I thought any triangle with one side of the hexagon as its base and its third vertex on the opposite side must be half of the hexagon."
+    },
+    {
+      "key": "D",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I found the area of the two pieces of the hexagon outside triangle $AMF$, $24 + 24$, and gave that instead."
+    },
+    {
+      "key": "E",
+      "text": "$54$",
+      "correct": false,
+      "misconception": "I subtracted only triangle $ABM$, which has area $18$, from the hexagon, forgetting the piece on the other side of $\\overline{FM}$."
+    }
+  ],
+  "hints": [
+    "Which side of the hexagon is parallel to $\\overline{AF}$?",
+    "Side $\\overline{CD}$ is parallel to $\\overline{AF}$, so the height of triangle $AMF$ from $M$ is the distance between these two opposite sides, wherever $M$ sits on $\\overline{CD}$.",
+    "Slide $M$ to $D$; the area does not change. If $O$ is the center, segment $\\overline{FO}$ splits triangle $ADF$ into triangles $OAF$ and $ODF$, and each has the same area as one of the six equilateral triangles of area $12$."
+  ],
+  "solutions": {
+    "reliable": "Split the hexagon into six equilateral triangles of area $12$ around its center $O$; let $s$ be the side and $h$ the height of each, so $\\frac{1}{2}sh = 12$. In a regular hexagon opposite sides are parallel, so $\\overline{CD} \\parallel \\overline{AF}$, and the distance between them is $2h$ (the hexagon is two rows of these triangles tall in that direction). Triangle $AMF$ has base $AF = s$ and height $2h$, so its area is $\\frac{1}{2} \\cdot s \\cdot 2h = 2 \\cdot \\frac{1}{2}sh = 24$.",
+    "elegant": "Because $\\overline{CD} \\parallel \\overline{AF}$, moving $M$ along $\\overline{CD}$ does not change the area of triangle $AMF$. Move it to $D$. Segment $\\overline{FO}$ is a median of triangle $ADF$ (since $O$ is the midpoint of $\\overline{AD}$), so it splits $ADF$ into two triangles of equal area. One of them, $OAF$, is one of the six equilateral triangles, with area $12$. So triangle $AMF$ has area $24$."
+  },
+  "formulas": [
+    "F-GEO-20"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0004",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-01",
+  "difficulty": "hard",
+  "statement": "How many positive integers less than $200$ have exactly $3$ positive divisors?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I counted every perfect square below 200, from $1^2$ up to $14^2$, since squares have an odd number of divisors."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I counted the perfect squares from $2^2 = 4$ to $14^2 = 196$, thinking every square other than 1 has exactly 3 divisors."
+    },
+    {
+      "key": "C",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I counted squares of primes, but I treated 1 as a prime, so I also counted $1^2 = 1$."
+    },
+    {
+      "key": "D",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Try a few numbers. What do $4$, $9$ and $25$ have in common, and why does $36$ fail?",
+    "Divisors come in pairs $d$ and $\\frac{n}{d}$. An odd count means $n$ is a perfect square, and exactly $3$ divisors means the square of a prime.",
+    "List $p^2 < 200$ for primes $p$: $p$ can be $2, 3, 5, 7, 11$ or $13$."
+  ],
+  "solutions": {
+    "reliable": "Divisors of $n$ pair up as $d$ and $\\frac{n}{d}$, so the count is odd only when $n$ is a perfect square, $n = k^2$. The divisors $1$, $k$ and $k^2$ are already three, so there can be no others, which forces $k$ to be prime (if $k = ab$ with $1 < a < k$, then $a$ is a fourth divisor). We need primes $p$ with $p^2 < 200$, so $p \\le 14$: $2, 3, 5, 7, 11, 13$. Their squares $4, 9, 25, 49, 121, 169$ give $6$ integers.",
+    "elegant": "If $n = p^{a}q^{b}\\cdots$, the number of divisors is $(a + 1)(b + 1)\\cdots$. For this to equal the prime $3$, $n$ must be $p^2$. Since $\\sqrt{200} \\approx 14.1$, count the primes up to $14$: there are $6$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

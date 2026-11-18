@@ -1,0 +1,68 @@
+{
+  "id": "KA-1374",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Rita has 12 minutes for four 5-point questions (5 choices, no penalty, unsolved ones guessed) and is stuck on one. Plan 1: spend all 12 minutes on it, for a 1 in 2 chance of solving it. Plan 2: guess it, then surely solve the other three in 4 minutes each. What is the better plan's average advantage in points?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I assumed she would surely solve the first question if she stayed on it."
+    },
+    {
+      "key": "B",
+      "text": "$10\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I forgot that if she stays on the first question and fails, she can still guess it."
+    },
+    {
+      "key": "C",
+      "text": "$12\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I left out the points that guessing earns on average."
+    },
+    {
+      "key": "D",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I gave the expected score of the better plan instead of how many more points it earns."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-08",
+    "secondary": [
+      "CFT-09",
+      "CFT-12"
+    ]
+  },
+  "hints": [
+    "What is a guess on a 5-point question worth on average?",
+    "Work out each plan's average score over all four questions. A guess is right one time in five, and every question gets answered somehow, solved or guessed.",
+    "A guess is worth $\\frac{1}{5} \\times 5 = 1$ point on average. Staying: the first question is worth $\\frac{1}{2} \\times 5 + \\frac{1}{2} \\times 1 = 3$, plus 3 guesses."
+  ],
+  "solutions": {
+    "reliable": "A guess on a 5-point question is right one time in five, so it is worth $\\frac{1}{5} \\times 5 = 1$ point on average. Plan 1, stay on the first question: half the time she solves it (5 points) and half the time she guesses it (1 point), worth $2.5 + 0.5 = 3$; the other three are guesses worth 3. Total 6. Plan 2, move on: guess the first (1 point) and solve the other three (15 points). Total 16. The better plan earns $16 - 6 = 10$ points more on average. The transferable idea: when stuck, compare what the minutes are worth on the stuck question against fresh questions you can surely solve.",
+    "elegant": null
+  },
+  "whyOnTest": "Time triage is a scoring skill: leaving a stuck question for quick sure points beats sunk-cost persistence, and guesses still count.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1327",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A lock code is 3 letters long. Each letter is one of A, B, C, D and E, and letters may repeat, so AAB and CEC are both codes. How many codes contain at least one vowel (A or E)?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "27",
+      "correct": false,
+      "misconception": "I counted the codes with no vowel at all, $3 \\times 3 \\times 3 = 27$, and forgot to subtract them from the total."
+    },
+    {
+      "key": "B",
+      "text": "54",
+      "correct": false,
+      "misconception": "I counted only the codes with exactly one vowel and missed the codes with two or three vowels."
+    },
+    {
+      "key": "C",
+      "text": "117",
+      "correct": false,
+      "misconception": "I took away the codes made only of vowels, $2 \\times 2 \\times 2 = 8$, instead of the codes with no vowels: 125 - 8 = 117."
+    },
+    {
+      "key": "D",
+      "text": "98",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "150",
+      "correct": false,
+      "misconception": "I chose a place for a vowel, a vowel, and any letters for the other two places, $3 \\times 2 \\times 25 = 150$, so codes with several vowels were counted more than once."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-09",
+    "secondary": [
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Which codes are the easy ones to count here?",
+    "Counting 'at least one' directly needs several cases. Instead count all the codes, count the codes with no vowel at all, and subtract.",
+    "There are $5 \\times 5 \\times 5 = 125$ codes in all, and $3 \\times 3 \\times 3$ codes that use only B, C and D."
+  ],
+  "solutions": {
+    "reliable": "All codes: $5^3 = 125$. A code with no vowel uses only B, C and D in each place: $3^3 = 27$ codes. Every other code has at least one vowel, so the answer is 125 - 27 = 98. Check by cases: exactly one vowel $3 \\times 2 \\times 9 = 54$, exactly two vowels $3 \\times 4 \\times 3 = 36$, exactly three $2^3 = 8$, and 54 + 36 + 8 = 98. The transferable idea: when a condition says 'at least one', count the opposite and subtract from the total.",
+    "elegant": null
+  },
+  "whyOnTest": "Tests complementary counting: 'at least one' is messy to count directly but easy as everything minus none.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

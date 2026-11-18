@@ -1,0 +1,56 @@
+{
+  "id": "AC-0297",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-08",
+  "difficulty": "hard",
+  "statement": "On a quiz show, a contestant answers Question 1, which she gets right with probability $0.8$. If she gets it wrong, she leaves with $\\$0$. If she gets it right, she has $\\$100$ and must go on to Question 2, which she gets right with probability $0.5$, independent of Question 1. If she gets Question 2 right, she wins $\\$400$ more and leaves with $\\$500$ in total. If she gets Question 2 wrong, she loses everything and leaves with $\\$0$. What is the expected amount, in dollars, that she leaves with?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$160$",
+      "correct": false,
+      "misconception": "I used the 0.4 chance of answering both right but multiplied it by only the 400 dollar Question 2 prize instead of the full 500 dollars."
+    },
+    {
+      "key": "B",
+      "text": "$200$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$240$",
+      "correct": false,
+      "misconception": "I let her keep the 100 dollars when she misses Question 2, but the rules say a miss on Question 2 sends her home with nothing."
+    },
+    {
+      "key": "D",
+      "text": "$280$",
+      "correct": false,
+      "misconception": "I multiplied each question's chance by its prize, 0.8 times 100 plus 0.5 times 400, as if she kept every prize no matter what came next."
+    }
+  ],
+  "hints": [
+    "List every way the game can end and how much she leaves with each time.",
+    "She leaves with $\\$500$ only if she gets both questions right. Every other ending pays $\\$0$.",
+    "Both right has probability $0.8 \\times 0.5 = 0.4$, so the expected amount is $0.4 \\times 500$."
+  ],
+  "solutions": {
+    "reliable": "There are three endings. Wrong on Question 1: probability $0.2$, $\\$0$. Right then wrong: probability $0.8 \\times 0.5 = 0.4$, $\\$0$. Right then right: probability $0.4$, $\\$500$. The expected amount is $0.4 \\times 500 = 200$ dollars.",
+    "elegant": null
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

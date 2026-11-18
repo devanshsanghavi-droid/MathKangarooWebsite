@@ -1,0 +1,68 @@
+{
+  "id": "KA-1516",
+  "band": "11-12",
+  "points": 3,
+  "statement": "With no time left, Leo guesses on three questions, each with 5 choices and no penalty. On the first he has ruled out 3 choices, on the second 1 choice, and on the third none. What is the probability that he gets at least one of the three right?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.95$",
+      "correct": false,
+      "misconception": "I added the three chances, $\\frac{1}{2} + \\frac{1}{4} + \\frac{1}{5}$, which counts the cases with two or three right more than once."
+    },
+    {
+      "key": "B",
+      "text": "$0.7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$0.025$",
+      "correct": false,
+      "misconception": "I found the chance that all three guesses are right, $\\frac{1}{2} \\cdot \\frac{1}{4} \\cdot \\frac{1}{5}$, instead of at least one."
+    },
+    {
+      "key": "D",
+      "text": "$0.3$",
+      "correct": false,
+      "misconception": "I found the chance that all three guesses are wrong and gave that instead of subtracting it from 1."
+    },
+    {
+      "key": "E",
+      "text": "$0.488$",
+      "correct": false,
+      "misconception": "I used a chance of $\\frac{1}{5}$ on every question, ignoring the choices he had ruled out, and found $1 - 0.8^3$."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-09",
+    "secondary": [
+      "CNT-09",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "At least one right is the opposite of all three wrong.",
+    "Find each question's chance of a correct guess from the number of choices left. The chance of at least one right is 1 minus the chance that every guess is wrong.",
+    "Chances of a wrong guess: $\\frac{1}{2}$, $\\frac{3}{4}$ and $\\frac{4}{5}$. Multiply them and subtract from 1."
+  ],
+  "solutions": {
+    "reliable": "With 2, 4 and 5 choices left, the chances of a wrong guess are $\\frac{1}{2}$, $\\frac{3}{4}$ and $\\frac{4}{5}$. The guesses are independent, so all three are wrong with probability $\\frac{1}{2} \\cdot \\frac{3}{4} \\cdot \\frac{4}{5} = \\frac{3}{10}$. So the probability of at least one right is $1 - \\frac{3}{10} = 0.7$. Leaving the three blank would score nothing for certain. The transferable idea: with no penalty, guesses only add, and ruling out choices first makes them add more.",
+    "elegant": null
+  },
+  "whyOnTest": "With no penalty a blank scores nothing, while three guesses give a 70% chance of points; the traps are the usual probability slips.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

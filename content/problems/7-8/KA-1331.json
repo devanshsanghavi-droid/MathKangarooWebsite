@@ -1,0 +1,68 @@
+{
+  "id": "KA-1331",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A solid 4 by 4 by 4 cube of 64 unit cubes sits in a corner of a room, with its bottom on the floor and two side faces flat against the two walls. A unit cube is hidden if none of its faces can be seen from anywhere in the room. How many unit cubes are hidden?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted only the cubes that are not on the outside of the big cube at all, a 2 by 2 by 2 block, and forgot that the floor and walls hide faces too."
+    },
+    {
+      "key": "B",
+      "text": "37",
+      "correct": false,
+      "misconception": "I counted the unit cubes that can be seen instead of the ones that are hidden."
+    },
+    {
+      "key": "C",
+      "text": "27",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": false,
+      "misconception": "I took away 16 cubes for each of the three faces that can be seen, 64 - 48 = 16, but cubes on the shared edges were taken away more than once."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I forgot the two walls and only treated the floor as hiding faces, which left a 2 by 2 by 3 block hidden."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-14",
+    "secondary": [
+      "GEO-13",
+      "CNT-09"
+    ]
+  },
+  "hints": [
+    "Which of the big cube's six faces can actually be seen?",
+    "Only three faces of the big cube are open: the top and two sides. A unit cube is hidden exactly when it touches none of these three faces. Peel off those three layers and see what block is left.",
+    "Removing the top layer and the two open side layers leaves a block that is 3 cubes long in each direction."
+  ],
+  "solutions": {
+    "reliable": "The floor and the two walls cover three faces of the big cube, so only the top, the front and the open side can be seen. A unit cube can be seen exactly when it is in the top layer, the front layer or the open side layer. Remove those three layers: what remains is a block 3 cubes long, 3 wide and 3 tall, tucked against the floor and both walls. None of its cubes shows a face, so $3 \\times 3 \\times 3 = 27$ cubes are hidden. Check by counting the visible cubes: the three open faces hold 16 + 16 + 16 cubes, minus 4 + 4 + 4 counted twice along the shared edges, plus the 1 corner cube taken away three times, which gives 48 - 12 + 1 = 37, and 64 - 37 = 27. The transferable idea: a hidden region is what is left after peeling away every layer that can be seen.",
+    "elegant": null
+  },
+  "whyOnTest": "Tests counting hidden cubes, where faces against a floor or wall are hidden too, and peeling the visible layers avoids double counting.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

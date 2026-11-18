@@ -1,0 +1,56 @@
+{
+  "id": "AC-0181",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-07",
+  "difficulty": "medium",
+  "statement": "A factory's cost, in thousands of dollars, to remove $p$ percent of a pollutant from its wastewater is modeled by $C(p) = \\dfrac{120p}{100 - p}$ for $0 \\le p < 100$. According to the model, how many thousand dollars more does it cost to remove $90\\%$ of the pollutant than to remove $80\\%$ of it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "about $13$",
+      "correct": false,
+      "misconception": "I subtracted the percents first and computed $C(10) = \\frac{1{,}200}{90} \\approx 13$, but $C(90) - C(80)$ is not the same as $C(90 - 80)$."
+    },
+    {
+      "key": "B",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I found $C(80) = 480$, which is $6$ per percent, and assumed every extra percent costs the same $6$, so $10$ more percent costs $60$. The denominator shrinks as $p$ nears $100$, so the cost climbs faster and faster."
+    },
+    {
+      "key": "C",
+      "text": "$600$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$1{,}080$",
+      "correct": false,
+      "misconception": "I computed $C(90) = 1{,}080$, the whole cost of removing $90\\%$, but forgot to subtract the cost of removing $80\\%$."
+    }
+  ],
+  "hints": [
+    "Find the cost at each of the two percents, then compare them.",
+    "$C(90) = \\dfrac{120 \\cdot 90}{100 - 90}$ and $C(80) = \\dfrac{120 \\cdot 80}{100 - 80}$.",
+    "$C(90) = \\dfrac{10{,}800}{10} = 1{,}080$ and $C(80) = \\dfrac{9{,}600}{20} = 480$. Subtract."
+  ],
+  "solutions": {
+    "reliable": "Evaluate the model at both percents: $C(90) = \\dfrac{120 \\cdot 90}{100 - 90} = \\dfrac{10{,}800}{10} = 1{,}080$ and $C(80) = \\dfrac{120 \\cdot 80}{100 - 80} = \\dfrac{9{,}600}{20} = 480$. The difference is $1{,}080 - 480 = 600$ thousand dollars.",
+    "elegant": "The graph of $C$ has a vertical asymptote at $p = 100$, which is why the last few percent are so expensive. Going from $80\\%$ to $90\\%$ cuts the denominator in half, from $20$ to $10$, while the numerator grows, so the cost more than doubles, from $480$ to $1{,}080$. The extra cost is $1{,}080 - 480 = 600$ thousand dollars."
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

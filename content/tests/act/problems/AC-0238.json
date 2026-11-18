@@ -1,0 +1,56 @@
+{
+  "id": "AC-0238",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "medium",
+  "statement": "A $4$-inch by $6$-inch photo is enlarged so that its shape stays the same and its area increases by $125\\%$. To the nearest tenth of an inch, how long is the longer side of the enlarged photo?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13.5$",
+      "correct": false,
+      "misconception": "I found that the new area is 2.25 times the old area and multiplied the 6 inch side by 2.25, but lengths grow by the square root of the area factor."
+    },
+    {
+      "key": "B",
+      "text": "$9.0$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$7.5$",
+      "correct": false,
+      "misconception": "I treated an increase of 125 percent as multiplying by 1.25 and multiplied the 6 inch side by 1.25 to get 7.5."
+    },
+    {
+      "key": "D",
+      "text": "$6.7$",
+      "correct": false,
+      "misconception": "I treated an increase of 125 percent as making the area 1.25 times as big, then multiplied 6 by the square root of 1.25 to get about 6.7."
+    }
+  ],
+  "hints": [
+    "An increase of $125\\%$ means the new area is the old area plus $125\\%$ of it. What is the new area as a multiple of the old one?",
+    "The new area is $2.25$ times the old area. When a shape is scaled by a factor $k$, its area is multiplied by $k^2$.",
+    "$k^2 = 2.25$ gives $k = 1.5$. Multiply the longer side, $6$ inches, by $1.5$."
+  ],
+  "solutions": {
+    "reliable": "The original area is $4 \\cdot 6 = 24$ square inches. An increase of $125\\%$ makes the new area $24 + 1.25(24) = 54$ square inches, which is $2.25$ times as big. For similar rectangles the area ratio is the square of the length ratio, so the length ratio is $\\sqrt{2.25} = 1.5$. The longer side becomes $6 \\cdot 1.5 = 9.0$ inches. Check: the new photo is $6$ by $9$, with area $54$.",
+    "elegant": "Let the enlarged photo be $4k$ by $6k$. Then $24k^2 = 54$, so $k^2 = 2.25$, $k = 1.5$ and the longer side is $6k = 9.0$ inches."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

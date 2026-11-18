@@ -1,0 +1,56 @@
+{
+  "id": "SA-0208",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-02",
+  "difficulty": "easy",
+  "statement": "The tank of a school water cooler is a rectangular box that measures $60$ centimeters long, $30$ centimeters wide and $40$ centimeters tall on the inside. The tank is refilled from bottles that each hold $4$ liters of water. How many full bottles are needed to fill the empty tank completely? ($1$ liter $= 1{,}000$ cubic centimeters)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$18$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$180$",
+      "correct": false,
+      "misconception": "I used 100 cubic centimeters per liter instead of 1,000, so I got 720 liters and 180 bottles."
+    },
+    {
+      "key": "C",
+      "text": "$288$",
+      "correct": false,
+      "misconception": "I found the volume, 72 liters, but multiplied it by the 4 liters in each bottle instead of dividing by it."
+    },
+    {
+      "key": "D",
+      "text": "$18{,}000$",
+      "correct": false,
+      "misconception": "I divided 72,000 cubic centimeters by 4 without first changing cubic centimeters into liters."
+    }
+  ],
+  "hints": [
+    "Start with the volume of the tank in cubic centimeters.",
+    "Change the volume to liters, then divide by the number of liters that one bottle holds.",
+    "The volume is $60 \\cdot 30 \\cdot 40 = 72{,}000$ cubic centimeters, which is $72{,}000 \\div 1{,}000 = 72$ liters."
+  ],
+  "solutions": {
+    "reliable": "The tank holds $60 \\cdot 30 \\cdot 40 = 72{,}000$ cubic centimeters, or $72$ liters. Each bottle holds $4$ liters, so it takes $72 \\div 4 = 18$ full bottles.",
+    "elegant": "Each bottle holds $4 \\cdot 1{,}000 = 4{,}000$ cubic centimeters, and $72{,}000 \\div 4{,}000 = 18$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

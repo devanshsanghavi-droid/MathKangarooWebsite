@@ -1,0 +1,68 @@
+{
+  "id": "KA-1237",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Six runners, Ana, Bea, Cal, Dov, Eli and Fin, finish a race with no ties. Fin finishes right after Ana. Bea finishes behind Eli but ahead of Dov. Fin finishes ahead of Eli. Cal is not last, and exactly two runners finish between Cal and Eli. Who finishes fourth?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Bea",
+      "correct": false,
+      "misconception": "I read 'exactly two runners between Cal and Eli' as Cal finishing two places after Eli, giving Ana, Fin, Eli, Bea, Cal, Dov, but that leaves only one runner between them."
+    },
+    {
+      "key": "B",
+      "text": "Cal",
+      "correct": false,
+      "misconception": "I put Eli first and Cal fourth, which ignores the clue that Fin finishes ahead of Eli."
+    },
+    {
+      "key": "C",
+      "text": "Dov",
+      "correct": false,
+      "misconception": "I mixed up ahead and behind in the clue about Bea, putting Dov before Bea and Bea before Eli, which gave Ana, Fin, Cal, Dov, Bea, Eli."
+    },
+    {
+      "key": "D",
+      "text": "Fin",
+      "correct": false,
+      "misconception": "I found the right order but counted fourth from the back, which lands on Fin."
+    },
+    {
+      "key": "E",
+      "text": "Eli",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "LOG-04",
+    "secondary": [
+      "LOG-09",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Which runners are stuck together as a block?",
+    "Ana and Fin move together as a pair. Eli is behind that pair and ahead of both Bea and Dov, which limits where Eli can be. Then use the gap between Cal and Eli to place Cal.",
+    "Ana and Fin are ahead of Eli, and Bea and Dov are behind, so Eli is third or fourth. Try each and check where Cal could go."
+  ],
+  "solutions": {
+    "reliable": "Ana and Fin form a block, Ana then Fin. Fin is ahead of Eli, and Eli is ahead of Bea, who is ahead of Dov. So at least two runners are ahead of Eli and at least two are behind: Eli is third or fourth. If Eli were third, Ana and Fin would be first and second, and Cal would have to be sixth to have two runners between Cal and Eli, but Cal is not last. So Eli is fourth, and Cal must be first. Then Ana is second, Fin third, Eli fourth, Bea fifth and Dov sixth, and every clue checks. The transferable idea: glue together runners who must be side by side, then trap the middle runner between those known to be ahead and behind.",
+    "elegant": null
+  },
+  "whyOnTest": "Ranking puzzles reward pinning down the runner with the most clues first; ruling out one case often settles everything else.",
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

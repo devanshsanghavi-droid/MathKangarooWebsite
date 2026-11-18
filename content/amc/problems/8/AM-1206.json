@@ -1,0 +1,67 @@
+{
+  "id": "AM-1206",
+  "contest": "AMC8",
+  "slot": 19,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-CYCLE",
+    "T-MODULAR"
+  ],
+  "statement": "What is the remainder when $1^2 + 2^2 + 3^2 + \\cdots + 100^2$ is divided by $7$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I thought the $100$ squares split into complete groups of $7$, and each group of remainders $1 + 4 + 2 + 2 + 4 + 1 + 0 = 14$ is a multiple of $7$."
+    },
+    {
+      "key": "B",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I divided $100$ by $7$ and got remainder $1$ instead of $2$, so after the complete groups I added only one leftover square, $1^2$."
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I used the remainders of the numbers themselves instead of their squares, so the two leftover terms gave $1 + 2 = 3$."
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found that $100$ leaves remainder $2$ when divided by $7$ and squared that remainder, getting $4$."
+    },
+    {
+      "key": "E",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The remainder of $n^2$ when divided by $7$ depends only on the remainder of $n$. Write down the remainders of $1^2, 2^2, \\ldots, 7^2$.",
+    "Those remainders are $1, 4, 2, 2, 4, 1, 0$, which add up to $14$, a multiple of $7$. The pattern repeats every $7$ numbers.",
+    "$100 = 7 \\cdot 14 + 2$, so after $14$ complete groups there are two more terms, $99^2$ and $100^2$, with the same remainders as $1^2$ and $2^2$."
+  ],
+  "solutions": {
+    "reliable": "If $n$ and $m$ leave the same remainder when divided by $7$, so do $n^2$ and $m^2$. The squares $1^2, 2^2, \\ldots, 7^2 = 1, 4, 9, 16, 25, 36, 49$ leave remainders $1, 4, 2, 2, 4, 1, 0$, which sum to $14$, a multiple of $7$. Since $100 = 7 \\cdot 14 + 2$, the terms $1^2$ through $98^2$ form $14$ complete groups and contribute a multiple of $7$. The remaining terms $99^2$ and $100^2$ leave the same remainders as $1^2$ and $2^2$, that is, $1$ and $4$. So the remainder is $1 + 4 = 5$.",
+    "elegant": "Use $1^2 + 2^2 + \\cdots + n^2 = \\frac{n(n+1)(2n+1)}{6}$. For $n = 100$ this is $\\frac{100 \\cdot 101 \\cdot 201}{6} = 338350$. Since $7 \\cdot 48335 = 338345$, the remainder is $5$."
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

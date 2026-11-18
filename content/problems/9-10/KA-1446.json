@@ -1,0 +1,68 @@
+{
+  "id": "KA-1446",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A sequence starts with $x_1 = 2$, and each later term is found from the one before by the rule $x_{n+1} = \\frac{1 + x_n}{1 - x_n}$. What is the product $x_1 \\times x_2 \\times \\dots \\times x_{2027}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I found the 2027th term, $-\\frac{1}{2}$, instead of the product of the first 2027 terms."
+    },
+    {
+      "key": "B",
+      "text": "$-6$",
+      "correct": false,
+      "misconception": "I counted only 2026 terms, so my product stopped one term too early."
+    },
+    {
+      "key": "C",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I saw that each block of four terms multiplies to 1 and assumed the whole product is 1, forgetting the leftover terms."
+    },
+    {
+      "key": "D",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I worked out the remainder of 2027 divided by 4 as 1, so I kept only one leftover term."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "PAT-03",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Work out the first five terms.",
+    "The rule comes back to its starting value after a few steps, so the sequence repeats. Find the product of one full block, then deal with the terms left over.",
+    "The terms are $2, -3, -\\frac{1}{2}, \\frac{1}{3}, 2, \\dots$, and one block of four terms multiplies to 1."
+  ],
+  "solutions": {
+    "reliable": "$x_1 = 2$, $x_2 = \\frac{3}{-1} = -3$, $x_3 = \\frac{-2}{4} = -\\frac{1}{2}$, $x_4 = \\frac{1/2}{3/2} = \\frac{1}{3}$, $x_5 = \\frac{4/3}{2/3} = 2$. So the sequence repeats every 4 terms, and each block multiplies to $2 \\times (-3) \\times (-\\frac{1}{2}) \\times \\frac{1}{3} = 1$. Since $2027 = 4 \\times 506 + 3$, the product is $1^{506} \\times 2 \\times (-3) \\times (-\\frac{1}{2}) = 3$. The transferable idea: for a recursive rule, compute terms until one repeats; from then on the sequence cycles.",
+    "elegant": null
+  },
+  "whyOnTest": "Recursive rules often hide a cycle, and the test is to find it and then handle the terms left over after the last full cycle.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

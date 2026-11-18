@@ -1,0 +1,56 @@
+{
+  "id": "AC-0122",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "hard",
+  "statement": "For which values of the constant $c$ does the equation $x^2 + 6x + c = 2x - 3$ have two distinct real solutions?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$c < 1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$c > 1$",
+      "correct": false,
+      "misconception": "I found the discriminant correctly and reached $-4c > -4$, but I divided by $-4$ without reversing the inequality sign."
+    },
+    {
+      "key": "C",
+      "text": "$c < 7$",
+      "correct": false,
+      "misconception": "I moved $2x - 3$ to the left side but wrote the constant as $c - 3$ instead of $c + 3$, so I solved $16 - 4(c - 3) > 0$."
+    },
+    {
+      "key": "D",
+      "text": "$c < 9$",
+      "correct": false,
+      "misconception": "I used the discriminant of $x^2 + 6x + c$ and ignored the $2x - 3$ on the right side, so I solved $36 - 4c > 0$."
+    }
+  ],
+  "hints": [
+    "Move everything to one side so the equation equals zero.",
+    "Rewrite it as $x^2 + 4x + (c + 3) = 0$. Two distinct real solutions means the discriminant is positive.",
+    "$16 - 4(c + 3) > 0$ simplifies to $4 - 4c > 0$."
+  ],
+  "solutions": {
+    "reliable": "Subtract $2x - 3$ from both sides: $x^2 + 4x + (c + 3) = 0$. The discriminant is $4^2 - 4(1)(c + 3) = 16 - 4c - 12 = 4 - 4c$. Two distinct real solutions require $4 - 4c > 0$, so $c < 1$.",
+    "elegant": "Complete the square: $x^2 + 4x + c + 3 = 0$ becomes $(x + 2)^2 = 1 - c$. There are two distinct real solutions exactly when the right side is positive, so $c < 1$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

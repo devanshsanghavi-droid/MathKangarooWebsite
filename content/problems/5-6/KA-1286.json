@@ -1,0 +1,68 @@
+{
+  "id": "KA-1286",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Kai's mean score on his tests so far is 14. If he scores 20 on his next test, his mean will go up to 15. What score would he need on that next test to make his mean 16 instead?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "16",
+      "correct": false,
+      "misconception": "I thought he only needs to score the new mean, 16, on the next test."
+    },
+    {
+      "key": "B",
+      "text": "21",
+      "correct": false,
+      "misconception": "I thought each extra point on the mean needs just one extra point on the test, so 20 + 1."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I found he has taken 5 tests, but I added 5 extra points to 20 instead of 6, forgetting the new test counts too."
+    },
+    {
+      "key": "D",
+      "text": "26",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "96",
+      "correct": false,
+      "misconception": "I found the total he needs over all six tests, 96, and gave that instead of the score on the new test."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-15",
+    "secondary": [
+      "MOD-01",
+      "LOG-08"
+    ]
+  },
+  "hints": [
+    "First work out how many tests Kai has already taken.",
+    "Scoring 20 instead of 14 lifts every test's share of the mean. Use that to find the number of tests. Then work out the total needed for the new mean and subtract what he already has.",
+    "The 6 extra points above 14 raise the mean by 1 for all the tests including the new one, so there are 6 tests in all, 5 so far. For a mean of 16 over 6 tests he needs a total of 96, and he has 5 × 14 = 70."
+  ],
+  "solutions": {
+    "reliable": "Say Kai has taken n tests, with total 14n. After a score of 20 there are n + 1 tests with mean 15, so 14n + 20 = 15(n + 1) = 15n + 15, which gives n = 5. So far his total is 5 × 14 = 70. For a mean of 16 over 6 tests he needs 6 × 16 = 96 in total, so the next score must be 96 - 70 = 26. Check: (70 + 26) ÷ 6 = 16. The transferable idea: work with totals, because a mean is a total shared out.",
+    "elegant": "Every point above the old mean of 14 is shared among all 6 tests. Raising the mean by 1 takes 6 extra points (20 = 14 + 6), so raising it by 2 takes 12: he needs 14 + 12 = 26."
+  },
+  "whyOnTest": "Means at 5 points: the count of tests is hidden, and you have to recover it from how one score moves the mean.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

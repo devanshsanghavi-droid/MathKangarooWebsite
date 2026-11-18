@@ -1,0 +1,67 @@
+{
+  "id": "KA-1095",
+  "band": "1-2",
+  "points": 5,
+  "statement": "A lift starts on floor 5. It makes 3 moves. Each move takes it up 1 floor or down 1 floor. On how many different floors could it finish?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I listed the floors 2, 4, 6 and 8 and also counted floor 5, where it started."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted floors 2 to 8 but left out floor 5, without checking which floors can really be reached."
+    },
+    {
+      "key": "D",
+      "text": "7",
+      "correct": false,
+      "misconception": "I counted every floor from 2 to 8."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted the different ways the lift can move, not the floors where it can finish."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "Draw a tree: after each move, write the floor.",
+    "A tree diagram shows every way the moves can go. Different paths can end on the same floor, so list the end floors and count each floor only once.",
+    "After 1 move it is on 4 or 6. After 2 moves it is on 3, 5 or 7. Do one more move from each."
+  ],
+  "solutions": {
+    "reliable": "Use a tree. After 1 move: 4 or 6. After 2 moves: 3, 5 or 7. After 3 moves: 2, 4, 6 or 8. There are 8 paths, but they finish on only 4 different floors: 2, 4, 6 and 8. The idea to keep: a tree counts paths, and then you check how many different endings those paths share.",
+    "elegant": "Three moves of 1 floor change the floor by an odd number, and 5 plus an odd number is even. The lift is also at most 3 floors away from 5. The even floors from 2 to 8 are 2, 4, 6 and 8, so 4 floors."
+  },
+  "whyOnTest": "Counting end points instead of paths shows whether a solver can read a tree diagram, not just draw one.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

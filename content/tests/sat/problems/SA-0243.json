@@ -1,0 +1,56 @@
+{
+  "id": "SA-0243",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-06",
+  "difficulty": "easy",
+  "statement": "A jar contains $18$ red marbles, $12$ blue marbles and some green marbles, and nothing else. If one marble is chosen at random from the jar, the probability that it is green is $\\frac{1}{6}$. How many green marbles are in the jar?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I took one sixth of the 18 red marbles, but the probability compares the green marbles with all the marbles in the jar."
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I took one sixth of the 30 red and blue marbles, but the total also includes the green marbles themselves."
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I found the total number of marbles in the jar, 36, instead of the number of green ones."
+    }
+  ],
+  "hints": [
+    "Let $g$ be the number of green marbles. What is the total?",
+    "The probability of green is the number of green marbles divided by the total, $30 + g$. Set that equal to $\\frac{1}{6}$.",
+    "Solve $\\frac{g}{30 + g} = \\frac{1}{6}$, which gives $6g = 30 + g$."
+  ],
+  "solutions": {
+    "reliable": "With $g$ green marbles the jar has $30 + g$ marbles. Then $\\frac{g}{30 + g} = \\frac{1}{6}$, so $6g = 30 + g$, $5g = 30$ and $g = 6$. Check: $\\frac{6}{36} = \\frac{1}{6}$.",
+    "elegant": "If green is $\\frac{1}{6}$ of the jar, red and blue together are $\\frac{5}{6}$ of it. So $30$ marbles are five sixths, one sixth is $6$ marbles, and that is the number of green marbles."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

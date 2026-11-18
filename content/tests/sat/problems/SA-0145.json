@@ -1,0 +1,56 @@
+{
+  "id": "SA-0145",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-07",
+  "difficulty": "medium",
+  "statement": "A rectangular tablet screen has a diagonal of $25$ centimeters and a perimeter of $70$ centimeters. What is the area of the screen, in square centimeters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$600$",
+      "correct": false,
+      "misconception": "I found that twice the product of the length and width is $1{,}225 - 625 = 600$ and forgot to divide by $2$."
+    },
+    {
+      "key": "B",
+      "text": "$925$",
+      "correct": false,
+      "misconception": "I added $625$ to $1{,}225$ instead of subtracting it before dividing by $2$."
+    },
+    {
+      "key": "C",
+      "text": "$300$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$2{,}137.5$",
+      "correct": false,
+      "misconception": "I used the whole perimeter $70$ as the sum of the length and width, so I computed $\\frac{70^2 - 625}{2}$."
+    }
+  ],
+  "hints": [
+    "Let the length be $l$ and the width be $w$. Write one equation from the perimeter and one from the diagonal.",
+    "$l + w = 35$ and $l^2 + w^2 = 625$. Square the first equation.",
+    "$(l + w)^2 = l^2 + 2lw + w^2$, so $1{,}225 = 625 + 2lw$."
+  ],
+  "solutions": {
+    "reliable": "Let the length and width be $l$ and $w$. The perimeter gives $2l + 2w = 70$, so $l + w = 35$, and the Pythagorean theorem gives $l^2 + w^2 = 625$. Squaring $l + w = 35$ gives $l^2 + 2lw + w^2 = 1225$, so $625 + 2lw = 1225$, $2lw = 600$ and the area is $lw = 300$. Check: $l$ and $w$ solve $t^2 - 35t + 300 = 0$, so they are $20$ and $15$, and $20^2 + 15^2 = 625$.",
+    "elegant": "Guess and check with the familiar $3$-$4$-$5$ shape scaled by $5$: a $15$ by $20$ rectangle has diagonal $25$ and perimeter $70$, so the area is $300$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,65 @@
+{
+  "id": "KA-1042",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Ben writes 10 as a sum of three different numbers, none of them 0, like 1 + 2 + 7. Changing the order does not make a new sum. How many sums can he write?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I only looked for sums that start with 1 and missed 2 + 3 + 5."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I also counted sums with two equal numbers, like 2 + 4 + 4."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted each sum three times, once starting with each of its numbers."
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted every order of the numbers as a new sum."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": []
+  },
+  "hints": [
+    "Write each sum with the smallest number first.",
+    "Always write the numbers from smallest to largest so each sum is written only one way. Start with the smallest number 1, then try 2, and so on.",
+    "Smallest number 1: 1 + 2 + 7, 1 + 3 + 6, 1 + 4 + 5. Smallest number 2: try 2 + 3 + 5. Can the smallest number be 3?"
+  ],
+  "solutions": {
+    "reliable": "Write each sum from smallest to largest. Smallest 1: 1 + 2 + 7, 1 + 3 + 6, 1 + 4 + 5. Smallest 2: 2 + 3 + 5 (2 + 4 + 4 repeats a number). Smallest 3: the other two would be at least 4 and 5, and 3 + 4 + 5 = 12 is too big. So there are 4 sums. The idea to keep: put each list in order, smallest first, and go through the smallest number one value at a time.",
+    "elegant": null
+  },
+  "whyOnTest": "Listing in a fixed order is the skill that makes counting reliable, and it stops repeats from sneaking in.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

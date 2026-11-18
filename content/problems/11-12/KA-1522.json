@@ -1,0 +1,68 @@
+{
+  "id": "KA-1522",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Three of the 12 corners of a regular 12-sided polygon are chosen and joined to make a triangle. For how many of these triangles is at least one side also a side of the polygon?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I counted 10 triangles on each of the 12 sides of the polygon, $12 \\times 10$, without noticing that a triangle using two sides of the polygon was counted twice."
+    },
+    {
+      "key": "B",
+      "text": "$96$",
+      "correct": false,
+      "misconception": "I saw that the 12 triangles using two sides of the polygon were counted twice, but I took away both counts, $120 - 24$, so those triangles were not counted at all."
+    },
+    {
+      "key": "C",
+      "text": "$220$",
+      "correct": false,
+      "misconception": "I counted every triangle, $\\binom{12}{3} = 220$, without checking that at least one side lies along the polygon."
+    },
+    {
+      "key": "D",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I divided 120 by 3, thinking every triangle was counted once for each of its sides, but most of these triangles have only one side on the polygon."
+    },
+    {
+      "key": "E",
+      "text": "$108$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-06",
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Count by the side of the polygon that the triangle uses.",
+    "Each side of the polygon, together with any third corner, makes a triangle. Then ask which triangles use two sides of the polygon, and how many times they were counted.",
+    "Each of the 12 sides goes with 10 third corners: $12 \\times 10 = 120$ counts. A triangle made of three neighbouring corners uses two sides, so it was counted twice; there are 12 of them."
+  ],
+  "solutions": {
+    "reliable": "For each of the 12 sides of the polygon, any of the other 10 corners completes a triangle, giving $12 \\times 10 = 120$ counts. A triangle with exactly one side on the polygon is counted once. A triangle with two sides on the polygon is made of three neighbouring corners, and it is counted twice, once for each of those sides; there are 12 such triangles, one for each middle corner. No triangle uses three sides, because the polygon has more than 3 sides. Removing the extra count for each of the 12 gives $120 - 12 = 108$. The transferable idea: when you count by a feature that some objects have more than once, find exactly how many times each was counted and correct for that.",
+    "elegant": "Sort the triangles by how many polygon sides they use. Two sides: three neighbouring corners, 12 triangles. Exactly one side: a side together with a third corner that is not next to either of its ends, $12 \\times 8 = 96$ triangles. In total $96 + 12 = 108$."
+  },
+  "whyOnTest": "Counting by sides is quick, and the 5-point step is spotting which triangles were counted twice and correcting by exactly that much.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

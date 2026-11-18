@@ -1,0 +1,56 @@
+{
+  "id": "SA-0175",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-04",
+  "difficulty": "hard",
+  "statement": "A chemical spilled into a pond breaks down so that the amount remaining decreases exponentially over time. At the start of a study, the pond contains $320$ grams of the chemical, and $6$ days later it contains $80$ grams. If the chemical continues to break down in the same way, how many more days after that will it take until only $10$ grams remain?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I worked out that $10$ grams remain $15$ days after the start of the study, but the question asks how many days after the $80$-gram measurement."
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I thought $6$ days was the time for the amount to halve, so I counted three halvings from $80$ to $10$ grams as $3 \\times 6 = 18$ days."
+    },
+    {
+      "key": "D",
+      "text": "$1.75$",
+      "correct": false,
+      "misconception": "I treated the decrease as linear, losing $240$ grams in $6$ days or $40$ grams per day, so going from $80$ to $10$ grams took $70 / 40 = 1.75$ days."
+    }
+  ],
+  "hints": [
+    "In $6$ days the amount went from $320$ to $80$ grams. What fraction of the chemical is left?",
+    "Going from $320$ to $80$ is two halvings, so find how long one halving takes.",
+    "Each halving takes $3$ days. From $80$ grams: $80 \\to 40 \\to 20 \\to 10$ is three more halvings."
+  ],
+  "solutions": {
+    "reliable": "Model the amount as $A(t) = 320 \\cdot r^{t}$, with $t$ in days. From $A(6) = 80$, $r^6 = \\frac{80}{320} = \\frac{1}{4}$, so $r^3 = \\frac{1}{2}$: the amount halves every $3$ days. We need $320 \\cdot r^t = 10$, so $r^t = \\frac{10}{320} = \\frac{1}{32} = \\left(\\frac{1}{2}\\right)^5$, which means $t = 5 \\times 3 = 15$ days after the start. That is $15 - 6 = 9$ days after the $80$-gram measurement.",
+    "elegant": "$320 \\to 80$ is a factor of $\\frac{1}{4}$, or two halvings in $6$ days, so one halving every $3$ days. $80 \\to 10$ is a factor of $\\frac{1}{8}$, or three halvings, which takes $3 \\times 3 = 9$ days."
+  },
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

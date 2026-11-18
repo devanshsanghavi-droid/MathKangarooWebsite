@@ -1,0 +1,56 @@
+{
+  "id": "SA-0299",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-06",
+  "difficulty": "medium",
+  "statement": "Points $A$, $B$ and $C$ lie on a circle. Inscribed angle $ACB$ measures $35^\\circ$ and intercepts minor arc $AB$. The length of minor arc $AB$ is $7\\pi$ centimeters. What is the radius of the circle, in centimeters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3.5$",
+      "correct": false,
+      "misconception": "I treated the arc length $7\\pi$ as the whole circumference, so I solved $2\\pi r = 7\\pi$ and got $3.5$."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I found the central angle $70^\\circ$ but used the sector area formula, $\\frac{70}{360}\\pi r^2 = 7\\pi$, which gave $r^2 = 36$ and $r = 6$."
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I doubled the angle twice and used a central angle of $140^\\circ$, so $\\frac{140}{360} \\cdot 2\\pi r = 7\\pi$ gave $r = 9$."
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "How does an inscribed angle compare with the central angle on the same arc?",
+    "The central angle is twice the inscribed angle, so it is $70^\\circ$. Arc length is $\\frac{\\theta}{360} \\cdot 2\\pi r$.",
+    "$\\frac{70}{360} \\cdot 2\\pi r = 7\\pi$ simplifies to $\\frac{7}{18} r = 7$."
+  ],
+  "solutions": {
+    "reliable": "An inscribed angle is half the central angle that intercepts the same arc, so the central angle for arc $AB$ is $2 \\cdot 35^\\circ = 70^\\circ$. The arc length is $\\frac{70}{360} \\cdot 2\\pi r = \\frac{7\\pi r}{18}$. Setting $\\frac{7\\pi r}{18} = 7\\pi$ gives $r = 18$ centimeters. Check: the circumference is $36\\pi$, and $\\frac{70}{360}$ of $36\\pi$ is $7\\pi$.",
+    "elegant": "Arc $AB$ is $\\frac{70}{360} = \\frac{7}{36}$ of the circle, so the circumference is $7\\pi \\cdot \\frac{36}{7} = 36\\pi$, and the radius is $18$."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

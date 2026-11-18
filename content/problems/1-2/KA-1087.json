@@ -1,0 +1,67 @@
+{
+  "id": "KA-1087",
+  "band": "1-2",
+  "points": 3,
+  "statement": "Kai goes swimming on a Monday. After that, he swims again 3 days after each swim. On which day of the week does he swim for the 3rd time?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Wednesday",
+      "correct": false,
+      "misconception": "I jumped 3 days three times instead of two times, so I found his 4th swim."
+    },
+    {
+      "key": "B",
+      "text": "Thursday",
+      "correct": false,
+      "misconception": "I found his 2nd swim, not his 3rd."
+    },
+    {
+      "key": "C",
+      "text": "Friday",
+      "correct": false,
+      "misconception": "I counted Monday as one of the 3 days, so I went Monday, Wednesday, Friday."
+    },
+    {
+      "key": "D",
+      "text": "Saturday",
+      "correct": false,
+      "misconception": "I counted on 6 days but called Monday day 1, so I landed one day short."
+    },
+    {
+      "key": "E",
+      "text": "Sunday",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-01",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "The first swim is already on Monday. Count the jumps after it.",
+    "The 3rd swim needs only two jumps of 3 days after the first swim. Count each jump starting from the day after a swim.",
+    "Three days after Monday is Thursday. Now count three days after Thursday."
+  ],
+  "solutions": {
+    "reliable": "The 1st swim is Monday. Three days later, Tuesday, Wednesday, Thursday, is the 2nd swim. Three days after that, Friday, Saturday, Sunday, is the 3rd swim. So he swims on Sunday. The idea to keep: the 3rd event needs only two jumps, because the first event is the start.",
+    "elegant": "Two jumps of 3 days is 6 days, and 6 days after Monday is the day before the next Monday, which is Sunday."
+  },
+  "whyOnTest": "Counting events versus counting the gaps between them is the off-by-one trap behind many calendar questions.",
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

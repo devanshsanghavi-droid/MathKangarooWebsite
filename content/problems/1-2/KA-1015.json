@@ -1,0 +1,67 @@
+{
+  "id": "KA-1015",
+  "band": "1-2",
+  "points": 4,
+  "statement": "The number 121 reads the same forwards and backwards. How many three-digit numbers read the same forwards and backwards and have every digit equal to 1, 2 or 3?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found only 111, 222 and 333, where all three digits are the same."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I thought the middle digit had to be different from the first and last digits."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I listed 111, 222 and 333 first and then counted them again in my list of all the numbers."
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I counted every three-digit number made of 1s, 2s and 3s, not only the ones that read the same backwards."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-01",
+    "secondary": [
+      "NUM-01"
+    ]
+  },
+  "hints": [
+    "The first digit and the last digit must be the same.",
+    "Choose the first digit, which decides the last digit too. Then choose the middle digit. List the numbers in order so none are missed or counted twice.",
+    "If the first digit is 1, the number looks like 1?1, and the middle digit can be 1, 2 or 3."
+  ],
+  "solutions": {
+    "reliable": "First digit 1: 111, 121 and 131. First digit 2: 212, 222 and 232. First digit 3: 313, 323 and 333. That is 3 + 3 + 3 = 9 numbers. The idea to keep: list by the first digit, then by the middle digit, so the list is complete and has no repeats.",
+    "elegant": "Only the first digit and the middle digit are free, and each can be 1, 2 or 3, so there are 3 x 3 = 9 numbers. The idea to keep: in a number that reads the same backwards, the last digit is decided for you."
+  },
+  "whyOnTest": "Systematic listing: fixing the first digit, then the middle one, finds every number with no repeats and no misses.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

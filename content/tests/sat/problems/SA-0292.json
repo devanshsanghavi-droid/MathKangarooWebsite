@@ -1,0 +1,56 @@
+{
+  "id": "SA-0292",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "medium",
+  "statement": "The minute hand of a clock turns from pointing at the $12$ at exactly 3:00 to its position at exactly 3:42. Through what angle, in radians, does the minute hand turn?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{7}{5}$",
+      "correct": false,
+      "misconception": "I found the angle, $252^\\circ$, and divided by $180$ but forgot to multiply by $\\pi$, so I got $\\frac{7}{5}$."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{7\\pi}{10}$",
+      "correct": false,
+      "misconception": "I converted $252^\\circ$ by multiplying by $\\frac{\\pi}{360}$ instead of $\\frac{\\pi}{180}$, so I got $\\frac{7\\pi}{10}$."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{5\\pi}{7}$",
+      "correct": false,
+      "misconception": "I flipped the conversion and computed $\\frac{180}{252} \\cdot \\pi = \\frac{5\\pi}{7}$."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{7\\pi}{5}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "In $60$ minutes the minute hand makes one full turn, which is $2\\pi$ radians.",
+    "$42$ minutes is $\\frac{42}{60}$ of a full turn. Multiply that fraction by $2\\pi$.",
+    "$\\frac{42}{60} \\cdot 2\\pi = \\frac{7}{10} \\cdot 2\\pi$."
+  ],
+  "solutions": {
+    "reliable": "The minute hand turns $360^\\circ$ in $60$ minutes, so in $42$ minutes it turns $\\frac{42}{60} \\cdot 360^\\circ = 252^\\circ$. Converting, $252^\\circ \\cdot \\frac{\\pi}{180^\\circ} = \\frac{252\\pi}{180} = \\frac{7\\pi}{5}$ radians.",
+    "elegant": "Work in radians from the start: a full turn is $2\\pi$, and $42$ minutes is $\\frac{7}{10}$ of an hour, so the angle is $\\frac{7}{10} \\cdot 2\\pi = \\frac{7\\pi}{5}$."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

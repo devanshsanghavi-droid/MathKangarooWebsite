@@ -1,0 +1,56 @@
+{
+  "id": "AC-0281",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-03",
+  "difficulty": "medium",
+  "statement": "A health survey asked $40$ adults how many minutes they exercised yesterday. The results are summarized in the table. $$\\begin{array}{c|c} \\text{Minutes} & \\text{Number of adults} \\\\ \\hline 0 \\text{ to less than } 10 & 5 \\\\ 10 \\text{ to less than } 20 & 8 \\\\ 20 \\text{ to less than } 30 & 6 \\\\ 30 \\text{ to less than } 40 & 9 \\\\ 40 \\text{ to less than } 50 & 12 \\end{array}$$ Which interval contains the median number of minutes?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$ to less than $20$",
+      "correct": false,
+      "misconception": "I found the median of the counts 5, 8, 6, 9 and 12, which is 8, and picked the row with 8 adults instead of finding the middle adult."
+    },
+    {
+      "key": "B",
+      "text": "$20$ to less than $30$",
+      "correct": false,
+      "misconception": "I picked the middle row of the table, but the median is the middle adult, and the rows do not hold equal numbers of adults."
+    },
+    {
+      "key": "C",
+      "text": "$30$ to less than $40$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$40$ to less than $50$",
+      "correct": false,
+      "misconception": "I picked the row with the most adults, 12, but that is the modal interval, not the one holding the median."
+    }
+  ],
+  "hints": [
+    "The median of $40$ values is halfway between the $20$th and $21$st values in order.",
+    "Keep a running total down the table until you pass $20$ adults.",
+    "The running totals are $5$, $13$, $19$, $28$, $40$. The $20$th and $21$st adults come after the first $19$."
+  ],
+  "solutions": {
+    "reliable": "The median of $40$ values is the average of the $20$th and $21$st values. The running totals are $5, 13, 19, 28, 40$. The first $19$ adults are in the first three intervals, and adults $20$ through $28$ are in the interval $30$ to less than $40$. Both middle values are there, so the median is in $30$ to less than $40$ minutes.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

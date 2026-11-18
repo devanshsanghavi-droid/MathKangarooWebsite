@@ -1,0 +1,68 @@
+{
+  "id": "KA-1201",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A lift starts on floor 60 of a very tall building. It goes up 1 floor, then down 2 floors, then up 3, then down 4, and so on, each trip 1 floor longer than the one before. Which floor is the lift on after its 51st trip?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "26",
+      "correct": false,
+      "misconception": "I found how many floors the lift ends up above where it started and gave that instead of the floor number."
+    },
+    {
+      "key": "B",
+      "text": "34",
+      "correct": false,
+      "misconception": "I made one trip too many, stopping after the 52nd trip, which goes down."
+    },
+    {
+      "key": "C",
+      "text": "35",
+      "correct": false,
+      "misconception": "I worked out where the lift is after 50 trips and forgot to make the 51st trip."
+    },
+    {
+      "key": "D",
+      "text": "86",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "111",
+      "correct": false,
+      "misconception": "I thought each up trip and the down trip after it cancel out, so only the last trip of 51 floors counted."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "NUM-13",
+      "NUM-08"
+    ]
+  },
+  "hints": [
+    "Work out which floor the lift is on after each of its first six trips.",
+    "Try small cases first. List the floors after trips 1 to 6 and look for a rule for the odd-numbered trips, since trip 51 is odd.",
+    "After trips 1, 3 and 5 the lift is on floors 61, 62 and 63. After trip 2k + 1 it is on floor 60 + (k + 1), and 51 = 2 × 25 + 1."
+  ],
+  "solutions": {
+    "reliable": "The floors after trips 1 to 6 are 61, 59, 62, 58, 63, 57. Each down trip is 1 longer than the up trip before it, so every pair (up, then down) takes the lift 1 floor lower. After 50 trips, which is 25 pairs, the lift is on floor 60 - 25 = 35. Trip 51 goes up 51 floors, to 35 + 51 = 86. The small cases agree: after trip 2k + 1 the lift is on floor 60 + k + 1, and k = 25 gives 86. The transferable idea: when a process runs for many steps, do the first few by hand and let the pattern tell you the rule.",
+    "elegant": "Keep trip 1 on its own and pair the rest as (down 2, up 3), (down 4, up 5), and so on up to (down 50, up 51). That is 25 pairs, each taking the lift 1 floor higher. So the lift ends on floor 60 + 1 + 25 = 86."
+  },
+  "whyOnTest": "Trying small cases turns a 51-step process into a pattern; the trap is pairing the trips in a way that leaves the last one out.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

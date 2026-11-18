@@ -1,0 +1,67 @@
+{
+  "id": "KA-1478",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A course grade is worked out as 40% of the homework score plus 60% of the exam score. Lina's homework score is 90. What exam score does she need for a course grade of 75?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "60",
+      "correct": false,
+      "misconception": "I treated the grade as the plain average of homework and exam, so I solved $(90 + x) \\div 2 = 75$."
+    },
+    {
+      "key": "B",
+      "text": "52.5",
+      "correct": false,
+      "misconception": "I swapped the weights and used 60% for the homework and 40% for the exam."
+    },
+    {
+      "key": "C",
+      "text": "39",
+      "correct": false,
+      "misconception": "I worked out how many points of the 75 the exam must supply, 39, and gave that instead of the exam score."
+    },
+    {
+      "key": "D",
+      "text": "75",
+      "correct": false,
+      "misconception": "I thought she needs 75 on the exam to get 75 overall, whatever her homework score."
+    },
+    {
+      "key": "E",
+      "text": "65",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "MOD-08",
+    "secondary": [
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "How many of the 75 points come from her homework?",
+    "A weighted grade adds each score times its weight. Find the homework's share of the grade, then work out what exam score, times 0.6, makes up the rest.",
+    "The homework supplies $0.4 \\times 90 = 36$ points, so the exam must supply $75 - 36 = 39$ points."
+  ],
+  "solutions": {
+    "reliable": "The grade is $0.4 \\times 90 + 0.6x = 36 + 0.6x$. Setting $36 + 0.6x = 75$ gives $0.6x = 39$, so $x = 65$. Check: $0.4 \\times 90 + 0.6 \\times 65 = 36 + 39 = 75$. The transferable idea: in a weighted average, each part counts in proportion to its weight.",
+    "elegant": "Her homework is 15 points above the target of 75 with weight 0.4, worth $0.4 \\times 15 = 6$ points. The exam, with weight 0.6, must be 6 points' worth below 75: $6 \\div 0.6 = 10$ below, so 65. The transferable idea: weighted deviations from the target must balance."
+  },
+  "whyOnTest": "Weighted averages appear in grades, mixtures and prices; this checks you weight each part instead of taking a plain average.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

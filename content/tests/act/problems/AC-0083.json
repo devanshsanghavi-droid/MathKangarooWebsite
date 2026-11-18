@@ -1,0 +1,56 @@
+{
+  "id": "AC-0083",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "medium",
+  "statement": "The equation $2x^2 + bx - 15 = 0$, where $b$ is a constant, has $x = 3$ as one of its solutions. What is the other solution?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-5$",
+      "correct": false,
+      "misconception": "I used the product of the solutions as $-15$, forgetting to divide by the leading coefficient 2, so I solved $3x = -15$ and got $-5$."
+    },
+    {
+      "key": "B",
+      "text": "$-\\tfrac{5}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I substituted $x = 3$, found $b = -1$, and gave the value of $b$ as the answer."
+    },
+    {
+      "key": "D",
+      "text": "$\\tfrac{5}{2}$",
+      "correct": false,
+      "misconception": "I took the product of the solutions to be $\\tfrac{15}{2}$, dropping the negative sign, so I solved $3x = \\tfrac{15}{2}$ and got $\\tfrac{5}{2}$."
+    }
+  ],
+  "hints": [
+    "Substitute the solution you know into the equation. What does that tell you about $b$?",
+    "Once you know $b$, factor the quadratic, or use the fact that the product of the solutions of $ax^2 + bx + c = 0$ is $\\tfrac{c}{a}$.",
+    "With $x = 3$: $18 + 3b - 15 = 0$, so $b = -1$ and the equation is $2x^2 - x - 15 = 0$, which factors as $(2x + 5)(x - 3) = 0$."
+  ],
+  "solutions": {
+    "reliable": "Substituting $x = 3$ gives $2(9) + 3b - 15 = 0$, so $3b = -3$ and $b = -1$. The equation is $2x^2 - x - 15 = 0$, which factors as $(2x + 5)(x - 3) = 0$. The solutions are $3$ and $-\\tfrac{5}{2}$. Check: $2 \\cdot \\tfrac{25}{4} + \\tfrac{5}{2} - 15 = 12.5 + 2.5 - 15 = 0$.",
+    "elegant": "The product of the two solutions is $\\tfrac{-15}{2}$. One solution is $3$, so the other is $-\\tfrac{15}{2} \\div 3 = -\\tfrac{5}{2}$, and $b$ is never needed."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "AM-1170",
+  "contest": "AMC8",
+  "slot": 7,
+  "area": "NT",
+  "topic": "NT-06",
+  "types": [
+    "T-CASEWORK",
+    "T-BIJECTION"
+  ],
+  "statement": "How many three-digit positive integers have digits that are in strictly increasing order from left to right and add up to $12$? (For example, the digits of $247$ are in strictly increasing order, but they add up to $13$.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I also counted digit groups containing $0$, such as $0, 3, 9$, but a number whose digits increase from left to right cannot start with $0$."
+    },
+    {
+      "key": "C",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I allowed repeated digits, so I also counted $228$, $255$, $336$ and $444$, whose digits never decrease but are not strictly increasing."
+    },
+    {
+      "key": "D",
+      "text": "$42$",
+      "correct": false,
+      "misconception": "I found the $7$ groups of three different digits but counted all $3! = 6$ orders of each group, even though only one order is increasing."
+    },
+    {
+      "key": "E",
+      "text": "$54$",
+      "correct": false,
+      "misconception": "I counted every three-digit number whose three digits are different and add up to $12$, in any order, not only the increasing ones."
+    }
+  ],
+  "hints": [
+    "Once you choose three different digits, there is exactly one way to write them in increasing order.",
+    "So count the groups of three different digits that add up to $12$. Can $0$ be one of them?",
+    "$0$ cannot be used, since it would have to come first. Sort by the smallest digit: if it is $1$, the other two digits add up to $11$."
+  ],
+  "solutions": {
+    "reliable": "Each group of three different digits gives exactly one number with increasing digits, and $0$ cannot be used because it would have to be the first digit. So we count groups $a < b < c$ of digits from $1$ to $9$ with $a + b + c = 12$. If $a = 1$, then $b + c = 11$: $\\{2, 9\\}, \\{3, 8\\}, \\{4, 7\\}, \\{5, 6\\}$. If $a = 2$, then $b + c = 10$ with $b \\ge 3$: $\\{3, 7\\}, \\{4, 6\\}$. If $a = 3$, then $b + c = 9$ with $b \\ge 4$: $\\{4, 5\\}$. If $a \\ge 4$, the sum is at least $4 + 5 + 6 = 15$. That gives $4 + 2 + 1 = 7$ numbers: $129, 138, 147, 156, 237, 246, 345$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

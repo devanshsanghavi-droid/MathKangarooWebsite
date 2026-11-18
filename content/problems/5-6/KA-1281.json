@@ -1,0 +1,68 @@
+{
+  "id": "KA-1281",
+  "band": "5-6",
+  "points": 4,
+  "statement": "What is the units digit of $2^1 + 2^2 + 2^3 + \\dots + 2^{10}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I added the units digits in groups of four, 2 + 4 + 8 + 6 = 20 each, and forgot the two powers left over."
+    },
+    {
+      "key": "B",
+      "text": "2",
+      "correct": false,
+      "misconception": "I added the units digits of only the first nine powers."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I gave the units digit of the last power, $2^{10}$, instead of the whole sum."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought the sum was equal to $2^{11}$, which ends in 8."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-07",
+    "secondary": [
+      "PAT-03",
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "Write down the units digits of the first few powers of 2.",
+    "The units digits of powers of 2 repeat in a short cycle. Add the units digits of one full cycle, count how many full cycles there are and what is left over.",
+    "The units digits go 2, 4, 8, 6, 2, 4, 8, 6, 2, 4. Two full cycles give 20 + 20 = 40, and the last two terms add 2 + 4 = 6."
+  ],
+  "solutions": {
+    "reliable": "Only units digits matter. The units digits of $2^1$ to $2^{10}$ are 2, 4, 8, 6, 2, 4, 8, 6, 2, 4, because the cycle 2, 4, 8, 6 repeats. Their sum is 20 + 20 + 2 + 4 = 46, so the units digit of the whole sum is 6. Check: the actual sum is 2 + 4 + 8 + ... + 1024 = 2046, which ends in 6. The transferable idea: for last digits, keep only last digits and use the repeating cycle.",
+    "elegant": "Doubling the sum and taking it away from itself: the sum equals $2^{11} - 2 = 2048 - 2 = 2046$, so the units digit is 6."
+  },
+  "whyOnTest": "Last-digit cycles at 4 points: here the cycle must be summed, and the leftover terms are the trap.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

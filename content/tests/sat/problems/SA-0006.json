@@ -1,0 +1,56 @@
+{
+  "id": "SA-0006",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "hard",
+  "statement": "In the equation $\\frac{k}{2}(4x - 6) + 9 = 6x - 3k$, $k$ is a constant. For what value of $k$ does the equation have no solution?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I read the coefficient of $x$ on the left as $k$ instead of $\\frac{k}{2} \\cdot 4 = 2k$, so I set $k = 6$."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I multiplied $\\frac{k}{2}$ by $x$ but not by the $4$, so I set $\\frac{k}{2} = 6$ and got $k = 12$."
+    },
+    {
+      "key": "D",
+      "text": "There is no such value of $k$.",
+      "correct": false,
+      "misconception": "I saw $-3k$ on both sides and cancelled it, and I thought that meant the equation always has a solution whatever $k$ is."
+    }
+  ],
+  "hints": [
+    "No solution means the $x$ terms vanish but the constants do not agree.",
+    "Expand the left side, then compare the coefficient of $x$ on each side and the constant terms on each side.",
+    "The left side is $2kx - 3k + 9$, so the equation becomes $(2k - 6)x + 9 = 0$ after the $-3k$ terms cancel."
+  ],
+  "solutions": {
+    "reliable": "Expand: $\\frac{k}{2}(4x - 6) = 2kx - 3k$, so the equation is $2kx - 3k + 9 = 6x - 3k$. Add $3k$ to both sides and subtract $6x$: $(2k - 6)x + 9 = 0$. If $2k - 6 \\ne 0$ there is exactly one solution, $x = \\frac{-9}{2k - 6}$. If $2k - 6 = 0$, that is $k = 3$, the equation reads $9 = 0$, which is never true, so there is no solution. Check: with $k = 3$ the equation is $6x - 9 + 9 = 6x - 9$, that is $6x = 6x - 9$, which has no solution.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

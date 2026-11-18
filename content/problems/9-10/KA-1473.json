@@ -1,0 +1,68 @@
+{
+  "id": "KA-1473",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Two joggers start together from opposite ends of a straight 400 m path and run towards each other at 5 metres per second and 3 metres per second. On reaching an end, each jogger turns round at once and keeps the same speed. After how many seconds do they meet for the second time?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "150",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "50",
+      "correct": false,
+      "misconception": "I found the first meeting, when together they have covered 400 m, and stopped there."
+    },
+    {
+      "key": "C",
+      "text": "80",
+      "correct": false,
+      "misconception": "I thought they would meet again when the faster jogger reached the far end and turned round."
+    },
+    {
+      "key": "D",
+      "text": "100",
+      "correct": false,
+      "misconception": "I doubled the time of the first meeting, as if together they covered only one more path length before meeting again."
+    },
+    {
+      "key": "E",
+      "text": "200",
+      "correct": false,
+      "misconception": "I thought the faster jogger had to catch the slower one from behind, so I worked out 400 ÷ (5 - 3)."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-03",
+    "secondary": [
+      "CFT-02",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Between two meetings, how far do the two joggers run altogether?",
+    "Draw a time line. Before the first meeting they cover one path length together. After it, each runs on to an end and turns back, so together they cover more before meeting again.",
+    "From the first meeting to the second, together they cover two path lengths, 800 m, at a combined 8 metres per second."
+  ],
+  "solutions": {
+    "reliable": "Together the joggers cover 8 m every second, so they first meet after 400 ÷ 8 = 50 s. After that, each runs on to the end ahead and turns back, and they meet again when together they have covered two more path lengths, 800 m, which takes 100 s. So the second meeting is at 150 s. Check positions: at 150 s the faster jogger has run 750 m, that is 400 m out and 350 m back, so it is 50 m from where it started; the slower one has run 450 m, that is 400 m and then 50 m back, so it is also 50 m from the faster one's starting end. Could the faster one catch the slower one from behind earlier? From 80 s both head for the same end, but the slower one turns at about 133 s, long before it could be caught. The transferable idea: for meetings on a back-and-forth path, track the total distance the two cover together.",
+    "elegant": "Unfold the path: meeting head-on happens when together they have covered 1, 3, 5, ... path lengths. The second time is at 3 × 400 = 1200 m together, which at 8 metres per second is 150 s."
+  },
+  "whyOnTest": "Meeting questions on a back-and-forth path test combined distance: after the first meeting the joggers must together cover two more path lengths.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

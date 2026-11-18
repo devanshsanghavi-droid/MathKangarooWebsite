@@ -1,0 +1,66 @@
+{
+  "id": "AM-1070",
+  "contest": "AMC8",
+  "slot": 23,
+  "area": "ALG",
+  "topic": "ALG-07",
+  "types": [
+    "T-CYCLE"
+  ],
+  "statement": "List P is the arithmetic sequence $3, 10, 17, 24, \\ldots$ with $100$ terms. List Q is the arithmetic sequence $5, 16, 27, 38, \\ldots$ with $100$ terms. How many numbers appear in both lists?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I found the common numbers $38, 115, \\ldots, 654$ and divided the gap $654 - 38$ by $77$ to get $8$, forgetting to count the first one."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I used List Q's last term, $1094$, as the cutoff and divided $1094 - 38$ by $77$ to get $13$. But a common number must also be in List P, which stops at $696$, and I also forgot to count $38$ itself."
+    },
+    {
+      "key": "D",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I counted the common numbers $38, 115, \\ldots$ all the way up to List Q's last term, $1094$, forgetting that List P stops at $696$."
+    },
+    {
+      "key": "E",
+      "text": "$37$",
+      "correct": false,
+      "misconception": "I thought the common numbers repeat every $7 + 11 = 18$, so I counted $38, 56, 74, \\ldots$ up to $696$. The common numbers repeat every $7 \\times 11 = 77$."
+    }
+  ],
+  "hints": [
+    "Find the smallest number in both lists by checking the first few terms of List Q against List P.",
+    "A number is in List P when it is $3$ more than a multiple of $7$. Check $5, 16, 27, 38$. After the first common number, they repeat every $7 \\times 11 = 77$.",
+    "The common numbers are $38, 115, 192, \\ldots$, and they can be no bigger than $696$, the last term of List P."
+  ],
+  "solutions": {
+    "reliable": "List P is the numbers $7k + 3$ for $k = 0, 1, \\ldots, 99$, ending at $696$. List Q is the numbers $11j + 5$ for $j = 0, 1, \\ldots, 99$, ending at $1094$. Checking Q's terms $5, 16, 27, 38$ against P, we find $38 = 7 \\cdot 5 + 3$, so $38$ is the first common number. Since $7$ and $11$ share no factor, adding $77$ keeps a number in both patterns, and nothing smaller does, so the common numbers are $38, 115, 192, 269, 346, 423, 500, 577, 654$. The next one, $731$, is past $696$, the end of List P. So $9$ numbers appear in both lists.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

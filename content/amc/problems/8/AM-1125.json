@@ -1,0 +1,66 @@
+{
+  "id": "AM-1125",
+  "contest": "AMC8",
+  "slot": 17,
+  "area": "GEO",
+  "topic": "GEO-10",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "Square $ABCD$ has side length $6$. The square is rotated $90^\\circ$ counterclockwise about vertex $A$, staying flat in its plane. What is the area of the region that the square passes over during the rotation, including the places where it starts and where it ends?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9\\pi$",
+      "correct": false,
+      "misconception": "I used only the quarter circle traced by vertex B, which has radius 6. Most of the region lies outside it."
+    },
+    {
+      "key": "B",
+      "text": "$18\\pi$",
+      "correct": false,
+      "misconception": "I used only the quarter circle traced by the far corner C, radius 6 sqrt 2, and left out the two triangles that stick out of it at the start and at the end."
+    },
+    {
+      "key": "C",
+      "text": "$36 + 9\\pi$",
+      "correct": false,
+      "misconception": "I added the starting square to the quarter circle traced by vertex B, but the far corner C reaches much farther than B."
+    },
+    {
+      "key": "D",
+      "text": "$18 + 18\\pi$",
+      "correct": false,
+      "misconception": "I added one triangle of area 18 to the quarter circle traced by C, but there is one such triangle at the start and another at the end."
+    },
+    {
+      "key": "E",
+      "text": "$36 + 18\\pi$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The point of the square farthest from $A$ is $C$, at distance $6\\sqrt{2}$. As the square turns, $C$ sweeps out a quarter circle.",
+    "The quarter circle traced by $C$ does not cover everything: half of the starting square and half of the final square stick out of it.",
+    "Put $A$ at the origin and $B$ at $(6, 0)$. The swept region is triangle $ABC$, then a quarter circle of radius $6\\sqrt{2}$ from the direction of $C$ at the start to the direction of $C$ at the end, then half of the final square."
+  ],
+  "solutions": {
+    "reliable": "Put $A = (0, 0)$, $B = (6, 0)$, $C = (6, 6)$, $D = (0, 6)$, and measure directions as angles from the positive $x$-axis. The diagonal $\\overline{AC}$ starts at $45^\\circ$ and turns to $135^\\circ$, and every point of it is in the square, so every direction between $45^\\circ$ and $135^\\circ$ is covered out to distance $6\\sqrt{2}$; no point of the square is farther than $6\\sqrt{2}$ from $A$. That gives a quarter circle of area $\\frac{1}{4}\\pi(6\\sqrt{2})^2 = 18\\pi$. In directions between $0^\\circ$ and $45^\\circ$ the square only turns away, so the most it ever covers is at the start: triangle $ABC$, area $18$. Likewise, directions between $135^\\circ$ and $180^\\circ$ are covered by half of the final square, area $18$. These three pieces do not overlap, so the total area is $36 + 18\\pi$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

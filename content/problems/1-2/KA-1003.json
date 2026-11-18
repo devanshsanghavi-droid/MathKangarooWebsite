@@ -1,0 +1,67 @@
+{
+  "id": "KA-1003",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Lea's birthday is 10 days after Sam's birthday. Sam's birthday is on a Friday. Lea's party is on the day before her birthday. On which day of the week is the party?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Thursday",
+      "correct": false,
+      "misconception": "I thought 10 days later lands on the same day of the week, like 7 days later does, so the birthday was a Friday and the party a Thursday."
+    },
+    {
+      "key": "B",
+      "text": "Saturday",
+      "correct": false,
+      "misconception": "I counted Friday itself as the first of the 10 days, so I got Sunday for the birthday and then went back one day."
+    },
+    {
+      "key": "C",
+      "text": "Sunday",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "Monday",
+      "correct": false,
+      "misconception": "I found the day of Lea's birthday and forgot that her party is the day before."
+    },
+    {
+      "key": "E",
+      "text": "Tuesday",
+      "correct": false,
+      "misconception": "I went one day after Lea's birthday instead of one day before."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-01",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "What day of the week is it 7 days after a Friday?",
+    "A whole week later is always the same day of the week. Jump most of the 10 days at once, count the rest one day at a time, then step back one day for the party.",
+    "7 days after Friday is Friday again. Count the 3 days that are left: Saturday, Sunday, then one more. Then step back one day."
+  ],
+  "solutions": {
+    "reliable": "7 days after Friday is Friday again, so 7 of the 10 days bring us back to Friday. Count the other 3 days: Saturday is 1, Sunday is 2 and Monday is 3. So Lea's birthday is on a Monday. The party is the day before, which is Sunday. The idea to keep: a whole week later is always the same day of the week, so jump in weeks first.",
+    "elegant": "10 days forward and then 1 day back is the same as 9 days forward. 9 days is one week and 2 more days, so the party is 2 days after a Friday, which is Sunday. The idea to keep: join the moves into one, then take out the whole weeks."
+  },
+  "whyOnTest": "Days of the week repeat every 7 days: jumping a whole week first makes 10 days easy, and the question is about the party, not the birthday.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

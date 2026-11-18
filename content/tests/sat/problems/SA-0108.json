@@ -1,0 +1,56 @@
+{
+  "id": "SA-0108",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-02",
+  "difficulty": "hard",
+  "statement": "In the equation $x^2 - 10x + k = 0$, $k$ is a constant. The two solutions of the equation differ by $4$. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I placed each solution 4 away from 5, using $1$ and $9$, so they differed by 8, and got $k = 1 \\cdot 9 = 9$."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I worked out that the discriminant $100 - 4k$ must equal 16 and gave 16 instead of solving for $k$."
+    },
+    {
+      "key": "C",
+      "text": "$21$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I set the discriminant equal to 4 instead of $4^2$, so $100 - 4k = 4$ gave $k = 24$."
+    }
+  ],
+  "hints": [
+    "Without solving, what do the two solutions add up to?",
+    "The solutions add to $10$, so they sit symmetrically around $5$. If they differ by $4$, how far is each one from $5$?",
+    "The solutions are $5 - 2 = 3$ and $5 + 2 = 7$. For $x^2 + bx + k$, the constant $k$ is the product of the solutions."
+  ],
+  "solutions": {
+    "reliable": "For $x^2 - 10x + k = 0$ the solutions $r$ and $s$ satisfy $r + s = 10$ and $rs = k$. With $s - r = 4$, adding gives $2s = 14$, so $s = 7$ and $r = 3$. Then $k = 3 \\cdot 7 = 21$. Check: $x^2 - 10x + 21 = (x - 3)(x - 7)$, whose roots differ by $4$.",
+    "elegant": "By the quadratic formula the two solutions differ by $\\sqrt{b^2 - 4ac} = \\sqrt{100 - 4k}$. Setting $\\sqrt{100 - 4k} = 4$ gives $100 - 4k = 16$, so $k = 21$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "AM-1207",
+  "contest": "AMC8",
+  "slot": 20,
+  "area": "NT",
+  "topic": "NT-08",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "What is the largest whole number $n$ such that $12^n$ divides $30! = 1 \\cdot 2 \\cdot 3 \\cdots 30$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I counted the multiples of $12$ from $1$ to $30$, which are $12$ and $24$, as if each one gave exactly one factor of $12$."
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I counted the multiples of $4$ up to $30$ as the number of $4$s available, which is $7$, and since there are more $3$s than that, I answered $7$."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I counted the multiples of $3$ from $1$ to $30$ as the number of $3$s, which is $10$, and assumed there were plenty of $2$s."
+    },
+    {
+      "key": "D",
+      "text": "$13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I found the $14$ factors of $3$ in $30!$ and forgot that each $12$ also needs two factors of $2$, which run out first."
+    }
+  ],
+  "hints": [
+    "Write $12 = 2^2 \\cdot 3$. Count how many factors of $2$ and how many factors of $3$ appear in $30!$.",
+    "For factors of $3$: count the multiples of $3$, then add one more for each multiple of $9$ and one more for each multiple of $27$. Do the same for $2$ using $2, 4, 8, 16$.",
+    "$30!$ has $15 + 7 + 3 + 1 = 26$ factors of $2$ and $10 + 3 + 1 = 14$ factors of $3$. Each $12$ uses two $2$s and one $3$."
+  ],
+  "solutions": {
+    "reliable": "Since $12 = 2^2 \\cdot 3$, we need to count the factors of $2$ and $3$ in $30!$. Factors of $2$: there are $15$ multiples of $2$, $7$ multiples of $4$, $3$ multiples of $8$ and $1$ multiple of $16$ up to $30$, for $15 + 7 + 3 + 1 = 26$. Factors of $3$: $10$ multiples of $3$, $3$ multiples of $9$ and $1$ multiple of $27$, for $10 + 3 + 1 = 14$. So $30! = 2^{26} \\cdot 3^{14} \\cdot m$ with $m$ not divisible by $2$ or $3$. Then $12^n = 2^{2n} \\cdot 3^n$ divides $30!$ exactly when $2n \\le 26$ and $n \\le 14$, so the largest $n$ is $13$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

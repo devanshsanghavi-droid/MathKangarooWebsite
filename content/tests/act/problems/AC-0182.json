@@ -1,0 +1,56 @@
+{
+  "id": "AC-0182",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-07",
+  "difficulty": "hard",
+  "statement": "For the polynomial $p(x) = -3x(x + 2)(x - 5)^2$, which of the following is the solution set of the inequality $p(x) \\ge 0$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$x \\le -2$ or $x \\ge 0$",
+      "correct": false,
+      "misconception": "I made a sign chart for $x(x + 2)(x - 5)^2$ but forgot the leading factor of $-3$, so every sign I found was flipped."
+    },
+    {
+      "key": "B",
+      "text": "$-2 \\le x \\le 0$",
+      "correct": false,
+      "misconception": "I found where $-3x(x + 2)$ is positive or zero, but I forgot that $p(5) = 0$, so $x = 5$ also satisfies $p(x) \\ge 0$."
+    },
+    {
+      "key": "C",
+      "text": "$x \\le -2$ or $0 \\le x \\le 5$",
+      "correct": false,
+      "misconception": "I let the sign change at every zero, including $x = 5$, but the squared factor $(x - 5)^2$ is never negative, so the sign does not change there."
+    },
+    {
+      "key": "D",
+      "text": "$-2 \\le x \\le 0$ or $x = 5$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The zeros $-2$, $0$ and $5$ split the number line into intervals. Find the sign of $p$ on each one, and remember that $\\ge$ also allows $p(x) = 0$.",
+    "The factor $(x - 5)^2$ is positive except at $x = 5$, so away from $5$ the sign of $p$ is the sign of $-3x(x + 2)$.",
+    "$-3x(x + 2) \\ge 0$ exactly when $x(x + 2) \\le 0$, which is $-2 \\le x \\le 0$. Then check $x = 5$ on its own."
+  ],
+  "solutions": {
+    "reliable": "For $x \\ne 5$, $(x - 5)^2 > 0$, so $p(x)$ has the same sign as $-3x(x + 2)$. That is positive or zero exactly when $x(x + 2) \\le 0$, which happens for $-2 \\le x \\le 0$. At $x = 5$, $p(5) = 0$, which satisfies $p(x) \\ge 0$. So the solution set is $-2 \\le x \\le 0$ or $x = 5$. Check with $x = -1$: $p(-1) = -3(-1)(1)(36) = 108 \\ge 0$; with $x = 3$: $p(3) = -3(3)(5)(4) = -180 < 0$.",
+    "elegant": "End behavior: the degree is $4$ and the leading coefficient is $-3$, so $p$ is negative far to the left and far to the right. The sign flips at the single zeros $-2$ and $0$, making $p$ positive between them, but not at the double zero $5$, where the graph only touches the axis from below. So $p(x) \\ge 0$ on $-2 \\le x \\le 0$ and at the single point $x = 5$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

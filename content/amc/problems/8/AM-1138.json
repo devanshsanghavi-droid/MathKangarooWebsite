@@ -1,0 +1,66 @@
+{
+  "id": "AM-1138",
+  "contest": "AMC8",
+  "slot": 21,
+  "area": "GEO",
+  "topic": "GEO-06",
+  "types": [
+    "T-COORD"
+  ],
+  "statement": "Three wells are at the points $(0, 0)$, $(8, 0)$ and $(2, 6)$ on a map. A pump is to be placed at the one point that is the same distance from all three wells. What is that distance?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I found that the pump goes at $(4, 2)$, and then I gave its $y$-coordinate as the distance."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{2\\sqrt{34}}{3}$",
+      "correct": false,
+      "misconception": "I put the pump at the average of the three points, $\\left(\\frac{10}{3}, 2\\right)$, and measured its distance to $(0, 0)$."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I only made the pump the same distance from $(0, 0)$ and $(8, 0)$, put it at $(4, 0)$, and gave that distance."
+    },
+    {
+      "key": "D",
+      "text": "$3\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I assumed the triangle had a right angle, so the point would be the midpoint of the longest side, and I used half of that side, $\\frac{\\sqrt{72}}{2}$."
+    },
+    {
+      "key": "E",
+      "text": "$2\\sqrt{5}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Every point that is the same distance from $(0, 0)$ and $(8, 0)$ lies on one particular vertical line.",
+    "That line is $x = 4$. Now find the point $(4, y)$ whose distance to $(0, 0)$ equals its distance to $(2, 6)$.",
+    "Set $4^2 + y^2 = (4 - 2)^2 + (y - 6)^2$. This simplifies to $16 = 4 - 12y + 36$, so $y = 2$. Then find the distance from $(4, 2)$ to $(0, 0)$."
+  ],
+  "solutions": {
+    "reliable": "The points equally far from $(0, 0)$ and $(8, 0)$ form the perpendicular bisector of the segment joining them, the line $x = 4$. So the pump is at $(4, y)$. Being equally far from $(0, 0)$ and $(2, 6)$ means $4^2 + y^2 = 2^2 + (y - 6)^2$, that is $16 + y^2 = 4 + y^2 - 12y + 36$, so $12y = 24$ and $y = 2$. The pump is at $(4, 2)$, and its distance to $(0, 0)$ is $\\sqrt{16 + 4} = \\sqrt{20} = 2\\sqrt{5}$. Check: the distance to $(8, 0)$ is $\\sqrt{16 + 4}$ and the distance to $(2, 6)$ is $\\sqrt{4 + 16}$, both $\\sqrt{20}$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

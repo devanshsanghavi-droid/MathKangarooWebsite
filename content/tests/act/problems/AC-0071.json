@@ -1,0 +1,56 @@
+{
+  "id": "AC-0071",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-06",
+  "difficulty": "easy",
+  "statement": "A computer repair shop charges a flat diagnostic fee of $\\$60$, plus $\\$30$ per hour of labor, plus the cost of any parts. Jordan's total bill was $\\$240$, and $\\$90$ of that was for parts. How many hours of labor was Jordan charged for?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I subtracted the parts but forgot the $\\$60$ diagnostic fee, so I divided $150$ by $30$."
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I subtracted the diagnostic fee but forgot the $\\$90$ for parts, so I divided $180$ by $30$."
+    },
+    {
+      "key": "D",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I divided the whole bill, $\\$240$, by $\\$30$ per hour without taking out the fee or the parts."
+    }
+  ],
+  "hints": [
+    "Only part of the bill is for labor.",
+    "Take the fee and the parts out of the bill first. What is left is $\\$30$ times the number of hours.",
+    "Solve $60 + 30h + 90 = 240$, which gives $30h = 90$."
+  ],
+  "solutions": {
+    "reliable": "Let $h$ be the hours of labor. Then $60 + 30h + 90 = 240$, so $30h = 90$ and $h = 3$. Check: $60 + 90 + 90 = 240$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

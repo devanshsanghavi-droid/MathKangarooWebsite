@@ -1,0 +1,56 @@
+{
+  "id": "AC-0193",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-04",
+  "difficulty": "hard",
+  "statement": "A food truck sells $240$ smoothies per day when the price is $\\$5.00$ each. For each $\\$0.25$ increase in price, it expects to sell $8$ fewer smoothies per day. What price per smoothie gives the greatest daily revenue?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$1.25$",
+      "correct": false,
+      "misconception": "I found that $5$ price increases of $\\$0.25$ give the most revenue, but I reported the increase, $\\$1.25$, instead of the new price."
+    },
+    {
+      "key": "B",
+      "text": "$\\$6.25$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\$8.75$",
+      "correct": false,
+      "misconception": "I put the maximum halfway between $0$ and $30$ increases, but revenue is zero at $-20$ and $30$ increases, so the vertex is halfway between those."
+    },
+    {
+      "key": "D",
+      "text": "$\\$12.50$",
+      "correct": false,
+      "misconception": "I found that sales drop to zero after $30$ increases and used that price, but selling zero smoothies earns zero revenue."
+    }
+  ],
+  "hints": [
+    "Let $n$ be the number of $\\$0.25$ increases. Write the price and the number sold in terms of $n$.",
+    "Revenue is $R(n) = (5 + 0.25n)(240 - 8n)$. Find the zeros of each factor; the maximum is halfway between them.",
+    "The zeros are $n = -20$ and $n = 30$, so the best $n$ is $5$, and the price is $5 + 0.25 \\cdot 5$."
+  ],
+  "solutions": {
+    "reliable": "With $n$ increases of $\\$0.25$, the price is $5 + 0.25n$ and the number sold is $240 - 8n$, so the revenue is $R(n) = (5 + 0.25n)(240 - 8n)$. This parabola opens downward and is zero at $n = -20$ and $n = 30$, so its maximum is at $n = \\frac{-20 + 30}{2} = 5$. The price is $5 + 0.25 \\cdot 5 = \\$6.25$, which sells $200$ smoothies for $\\$1{,}250$. Check: at $\\$6.00$ ($n = 4$) revenue is $6 \\cdot 208 = \\$1{,}248$, and at $\\$6.50$ ($n = 6$) it is $6.5 \\cdot 192 = \\$1{,}248$, both less.",
+    "elegant": "In terms of the price $p$, each dollar of increase costs $32$ sales, so the number sold is $240 - 32(p - 5) = 400 - 32p$ and $R = p(400 - 32p)$. This is zero at $p = 0$ and $p = 12.5$, so the maximum is at $p = 6.25$."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

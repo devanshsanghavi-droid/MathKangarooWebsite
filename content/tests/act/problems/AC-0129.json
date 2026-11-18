@@ -1,0 +1,56 @@
+{
+  "id": "AC-0129",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-01",
+  "difficulty": "medium",
+  "statement": "Let $f(x) = 2x - 3$. For what value of $k$ is $f(f(f(k))) = 13$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4.25$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I thought applying f three times would cube each part of the rule, so I solved 8k - 27 = 13 and got k = 5."
+    },
+    {
+      "key": "C",
+      "text": "$6.875$",
+      "correct": false,
+      "misconception": "I undid f by halving and then adding 3 each time, getting 13, 9.5, 7.75 and 6.875, but to undo f I should add 3 first and then halve."
+    },
+    {
+      "key": "D",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I applied f only once and solved 2k - 3 = 13 to get k = 8, but the equation has f used three times."
+    }
+  ],
+  "hints": [
+    "Either build a formula for $f(f(f(x)))$ or work backward from $13$ one step at a time.",
+    "To undo $f$, reverse its steps in reverse order: add $3$, then divide by $2$.",
+    "Working backward from $13$: $13 \\to 8 \\to 5.5 \\to \\ldots$, one more step to go."
+  ],
+  "solutions": {
+    "reliable": "$f(f(x)) = 2(2x - 3) - 3 = 4x - 9$, so $f(f(f(x))) = 2(4x - 9) - 3 = 8x - 21$. Setting $8k - 21 = 13$ gives $8k = 34$, so $k = 4.25$.",
+    "elegant": "Undo $f$ three times. The inverse of $f$ is $f^{-1}(y) = \\frac{y + 3}{2}$, so $13 \\to 8 \\to 5.5 \\to 4.25$. Check: $f(4.25) = 5.5$, $f(5.5) = 8$ and $f(8) = 13$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

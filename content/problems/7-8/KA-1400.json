@@ -1,0 +1,68 @@
+{
+  "id": "KA-1400",
+  "band": "7-8",
+  "points": 3,
+  "statement": "The mean of ten numbers is 12. Each of the ten numbers is increased by 3, and then each result is doubled. What is the mean of the ten new numbers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "30",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "27",
+      "correct": false,
+      "misconception": "I doubled first and then added 3, doing the steps in the wrong order."
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": false,
+      "misconception": "I doubled the mean but forgot to add 3."
+    },
+    {
+      "key": "D",
+      "text": "24.6",
+      "correct": false,
+      "misconception": "I added 3 just once to the total of all ten numbers, doubled, and then divided by 10."
+    },
+    {
+      "key": "E",
+      "text": "15",
+      "correct": false,
+      "misconception": "I added 3 to the mean but forgot to double."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-15",
+    "secondary": [
+      "MOD-01",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "What happens to the total when each number goes up by 3?",
+    "Whatever you do to every number in the same way, you do to the mean. Follow the two steps in order: add 3, then double.",
+    "The mean goes from 12 to 12 + 3 = 15, and then to 2 x 15."
+  ],
+  "solutions": {
+    "reliable": "The total of the ten numbers is 10 x 12 = 120. Adding 3 to each of the ten numbers adds 30, making 150. Doubling each number doubles the total, making 300. The new mean is 300 / 10 = 30. The transferable idea: adding the same amount to every number adds it to the mean, and multiplying every number multiplies the mean.",
+    "elegant": "Do the same steps to the mean directly: 12 + 3 = 15, then 2 x 15 = 30."
+  },
+  "whyOnTest": "Means: a change applied to every number applies to the mean in the same order, which is quicker than rebuilding the total.",
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

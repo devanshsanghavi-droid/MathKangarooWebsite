@@ -1,0 +1,68 @@
+{
+  "id": "AM-1246",
+  "contest": "AMC8",
+  "slot": 7,
+  "area": "CP",
+  "topic": "CP-01",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "How many three-digit positive integers have digits that add up to $5$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I listed the digit groups 5-0-0, 4-1-0, 3-2-0, 3-1-1 and 2-2-1, but forgot that each group can be arranged in more than one order."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I only counted numbers with no zero digit, like 311 and 221, and forgot numbers such as 104 and 500."
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I allowed 0 as the first digit, so I also counted things like 041 and 005, which are not three-digit numbers."
+    },
+    {
+      "key": "E",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I treated equal digits as different, so I counted 500 twice, 311 and its rearrangements 6 times, and 221 and its rearrangements 6 times."
+    }
+  ],
+  "hints": [
+    "List the groups of three digits that add to $5$, then count the ways to order each group.",
+    "The groups are $\\{5,0,0\\}$, $\\{4,1,0\\}$, $\\{3,2,0\\}$, $\\{3,1,1\\}$ and $\\{2,2,1\\}$. Remember that the first digit cannot be $0$.",
+    "Counts: $\\{5,0,0\\}$ gives $1$; $\\{4,1,0\\}$ gives $4$; $\\{3,2,0\\}$ gives $4$; $\\{3,1,1\\}$ gives $3$; $\\{2,2,1\\}$ gives $3$. Add them."
+  ],
+  "solutions": {
+    "reliable": "The digit groups adding to $5$ are $\\{5,0,0\\}$, $\\{4,1,0\\}$, $\\{3,2,0\\}$, $\\{3,1,1\\}$ and $\\{2,2,1\\}$. Count orders with a nonzero first digit. $\\{5,0,0\\}$: only $500$, so $1$. $\\{4,1,0\\}$: $3! = 6$ orders, minus the $2$ that start with $0$, so $4$. $\\{3,2,0\\}$: likewise $4$. $\\{3,1,1\\}$: $3$ orders. $\\{2,2,1\\}$: $3$ orders. Total $1 + 4 + 4 + 3 + 3 = 15$.",
+    "elegant": "Fix the hundreds digit $a$ from $1$ to $5$. The tens and units digits must add to $5 - a$, which can be done in $6 - a$ ways. So the total is $5 + 4 + 3 + 2 + 1 = 15$."
+  },
+  "formulas": [
+    "F-CP-04"
+  ],
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

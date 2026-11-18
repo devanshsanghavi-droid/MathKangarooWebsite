@@ -1,0 +1,67 @@
+{
+  "id": "KA-1576",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A convex polygon has one interior angle of $90^\\circ$, and every other interior angle is $150^\\circ$. How many sides does the polygon have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": false,
+      "misconception": "I wrote the angle sum as $180(n-1)$ instead of $180(n-2)$, which gave $30(n-1) = 90$."
+    },
+    {
+      "key": "B",
+      "text": "9",
+      "correct": false,
+      "misconception": "I found that nine angles of $150^\\circ$ are needed but forgot to count the $90^\\circ$ corner as a side too."
+    },
+    {
+      "key": "C",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "11",
+      "correct": false,
+      "misconception": "I worked out $(360 - 90) \\div 30 = 9$ and then added 2, because the angle-sum formula has an $n - 2$ in it."
+    },
+    {
+      "key": "E",
+      "text": "12",
+      "correct": false,
+      "misconception": "I ignored the $90^\\circ$ angle and used a regular polygon with all angles $150^\\circ$, which has 12 sides."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "Look at the angle outside each corner instead of inside it.",
+    "The exterior angles of any convex polygon add up to $360^\\circ$. Turn each interior angle into its exterior angle, then count how many of each kind you need.",
+    "The $90^\\circ$ corner has an exterior angle of $90^\\circ$ and each $150^\\circ$ corner has an exterior angle of $30^\\circ$. So $90 + 30k = 360$, where $k$ is the number of $150^\\circ$ corners."
+  ],
+  "solutions": {
+    "reliable": "Each exterior angle is $180^\\circ$ minus the interior angle, so the polygon has one exterior angle of $90^\\circ$ and the rest are $30^\\circ$. Exterior angles of a convex polygon add up to $360^\\circ$, so $90 + 30k = 360$, giving $k = 9$. With the $90^\\circ$ corner the polygon has $9 + 1 = 10$ sides. Check with interior angles: $90 + 9 \\times 150 = 1440 = 180 \\times (10 - 2)$. The transferable idea: exterior angles always total $360^\\circ$, which is often quicker than the interior-angle formula.",
+    "elegant": "Using the interior sum directly: $90 + 150(n-1) = 180(n-2)$ gives $30n = 300$, so $n = 10$. The exterior-angle route avoids the algebra because $360^\\circ$ does not depend on $n$."
+  },
+  "whyOnTest": "Exterior angles total $360^\\circ$ for every convex polygon, a fixed number that turns a polygon with mixed angles into a one-line count.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

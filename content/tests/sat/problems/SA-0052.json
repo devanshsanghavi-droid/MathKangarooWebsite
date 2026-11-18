@@ -1,0 +1,56 @@
+{
+  "id": "SA-0052",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "easy",
+  "statement": "What value of $x$ satisfies the equation $0.4(x + 15) = 0.25x + 9$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-40$",
+      "correct": false,
+      "misconception": "I multiplied only the $x$ by 0.4 and left the 15 alone, so I solved $0.4x + 15 = 0.25x + 9$, which gave $0.15x = -6$ and $x = -40$."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I got to $0.15x = 3$ but slipped a decimal place and divided 3 by 1.5, which gave 2."
+    },
+    {
+      "key": "C",
+      "text": "$20$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$100$",
+      "correct": false,
+      "misconception": "I moved the 6 to the right side by adding it instead of subtracting it, so I got $0.15x = 15$ and $x = 100$."
+    }
+  ],
+  "hints": [
+    "Distribute the 0.4 to both terms inside the parentheses.",
+    "After distributing, collect the $x$-terms on one side and the constants on the other. Multiplying everything by 100 removes the decimals if you prefer.",
+    "$0.4x + 6 = 0.25x + 9$, so $0.15x = 3$."
+  ],
+  "solutions": {
+    "reliable": "Distribute: $0.4x + 6 = 0.25x + 9$. Subtract $0.25x$ and $6$ from both sides: $0.15x = 3$, so $x = \\frac{3}{0.15} = 20$. Check: $0.4(35) = 14$ and $0.25(20) + 9 = 5 + 9 = 14$.",
+    "elegant": "Multiply both sides by $20$ to clear the decimals: $8(x + 15) = 5x + 180$, so $8x + 120 = 5x + 180$, $3x = 60$ and $x = 20$."
+  },
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

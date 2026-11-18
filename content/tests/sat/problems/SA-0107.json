@@ -1,0 +1,56 @@
+{
+  "id": "SA-0107",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-02",
+  "difficulty": "medium",
+  "statement": "A ball is tossed upward from a balcony. The height of the ball above the ground, in feet, $t$ seconds after it is tossed is given by $h(t) = -16t^2 + 40t + 24$. How many seconds after it is tossed does the ball hit the ground?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0.5$",
+      "correct": false,
+      "misconception": "I factored $2t^2 - 5t - 3$ as $(2t - 1)(t + 3)$, with the signs swapped, and kept the positive root $\\frac{1}{2}$."
+    },
+    {
+      "key": "B",
+      "text": "$1.25$",
+      "correct": false,
+      "misconception": "I found when the ball is highest, $t = \\frac{40}{2 \\cdot 16} = 1.25$, instead of when it lands."
+    },
+    {
+      "key": "C",
+      "text": "$2.5$",
+      "correct": false,
+      "misconception": "I ignored the 24-foot starting height and solved $-16t^2 + 40t = 0$, which gave $t = 2.5$."
+    },
+    {
+      "key": "D",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The ball hits the ground when its height is $0$.",
+    "Solve $-16t^2 + 40t + 24 = 0$. Dividing every term by $-8$ first makes the numbers much smaller.",
+    "Dividing by $-8$ gives $2t^2 - 5t - 3 = 0$, which factors as $(2t + 1)(t - 3) = 0$. Only one root is positive."
+  ],
+  "solutions": {
+    "reliable": "Set $h(t) = 0$: $-16t^2 + 40t + 24 = 0$. Divide by $-8$: $2t^2 - 5t - 3 = 0$, so $(2t + 1)(t - 3) = 0$ and $t = -\\frac{1}{2}$ or $t = 3$. Time after the toss cannot be negative, so the ball lands after $3$ seconds. Check: $h(3) = -144 + 120 + 24 = 0$.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

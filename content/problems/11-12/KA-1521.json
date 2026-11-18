@@ -1,0 +1,68 @@
+{
+  "id": "KA-1521",
+  "band": "11-12",
+  "points": 5,
+  "statement": "Exactly two of the nine squares of a 3 by 3 grid are shaded. Two shadings count as the same if one can be turned in its plane, through a quarter, half or three-quarter turn, to give the other. Flipping over is not allowed. How many different shadings are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I divided the 36 shadings by 4, the number of turns, without noticing that some shadings look the same after a half turn."
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I counted all the ways to choose two squares and forgot that turned copies count as the same."
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I divided 36 by 2, thinking only the half turn could make two shadings match."
+    },
+    {
+      "key": "E",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I also treated mirror images as the same, but flipping the grid over is not allowed."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-16",
+      "GEO-09"
+    ]
+  },
+  "hints": [
+    "Which shadings look the same after a half turn?",
+    "There are 36 shadings in all. Most come in groups of 4 that turn into each other, but a shading that is unchanged by a half turn is in a smaller group. Count those separately.",
+    "A shading unchanged by a half turn uses two squares opposite each other through the centre: there are 4 such shadings. They form groups of 2. The other 32 form groups of 4."
+  ],
+  "solutions": {
+    "reliable": "There are $\\binom{9}{2} = 36$ ways to shade two squares. A quarter turn cannot leave any of them unchanged, since the centre is alone and the other squares move in cycles of 4. A half turn leaves a shading unchanged exactly when the two squares are opposite through the centre: corner and opposite corner (2 ways) or edge and opposite edge (2 ways), 4 shadings, which fall into $4 / 2 = 2$ groups. The other 32 shadings fall into $32 / 4 = 8$ groups of four. In total $8 + 2 = 10$. Burnside's count agrees: $\\frac{36 + 0 + 4 + 0}{4} = 10$. The transferable idea: dividing by the number of symmetries works only for objects with no symmetry of their own; count the symmetric ones separately.",
+    "elegant": "Average the number of shadings each turn leaves unchanged: $36$ for no turn, 0 for each quarter turn, and 4 for the half turn, so $\\frac{36 + 0 + 4 + 0}{4} = 10$."
+  },
+  "whyOnTest": "Dividing by the number of turns is the tempting shortcut, and it fails exactly because a few shadings have symmetry of their own.",
+  "estSeconds": 170,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

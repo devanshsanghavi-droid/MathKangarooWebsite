@@ -1,0 +1,56 @@
+{
+  "id": "SA-0064",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "hard",
+  "statement": "A science class invents a temperature scale, measured in degrees N, on which water freezes at $30^\\circ\\text{N}$ and boils at $180^\\circ\\text{N}$. On the Celsius scale, water freezes at $0^\\circ\\text{C}$ and boils at $100^\\circ\\text{C}$. The relationship between the two scales is linear. At what Celsius temperature do the two scales show the same number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-60$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-37.5$",
+      "correct": false,
+      "misconception": "I divided 180 by 100 for the slope, forgetting that the N scale starts at 30, so I used $N = 1.8C + 30$ and got $-37.5$."
+    },
+    {
+      "key": "C",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I set up $C = 1.5C + 30$ correctly but lost the negative sign when solving, so I got 60."
+    },
+    {
+      "key": "D",
+      "text": "$90$",
+      "correct": false,
+      "misconception": "I flipped the slope and used $\\frac{100}{150} = \\frac{2}{3}$, so $C = \\frac{2}{3}C + 30$ gave 90."
+    }
+  ],
+  "hints": [
+    "Treat the two freezing and boiling points as two points on a line.",
+    "Use the points $(0, 30)$ and $(100, 180)$ to write $N$ in terms of $C$. Then set $N = C$ and solve.",
+    "The slope is $\\frac{180 - 30}{100 - 0} = 1.5$, so $N = 1.5C + 30$. Solve $C = 1.5C + 30$."
+  ],
+  "solutions": {
+    "reliable": "The points $(C, N) = (0, 30)$ and $(100, 180)$ are on the line, so the slope is $\\frac{150}{100} = 1.5$ and $N = 1.5C + 30$. The scales agree when $N = C$: $C = 1.5C + 30$, so $-0.5C = 30$ and $C = -60$. Check: $1.5(-60) + 30 = -90 + 30 = -60$.",
+    "elegant": "Each Celsius degree is $1.5$ N degrees, so going down from freezing, N falls $0.5$ degree faster than C. The scales start $30$ apart at freezing, so they meet after $30 \\div 0.5 = 60$ Celsius degrees below $0$, at $-60^\\circ\\text{C}$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0209",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "easy",
+  "statement": "A rectangular city park is $240$ meters long and $100$ meters wide. Jada usually walks from one corner to the opposite corner along two edges of the park. How many meters shorter is the trip if she walks straight along the diagonal instead?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$80$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$140$",
+      "correct": false,
+      "misconception": "I subtracted the width from the length, $240 - 100 = 140$, instead of comparing the two routes."
+    },
+    {
+      "key": "C",
+      "text": "$260$",
+      "correct": false,
+      "misconception": "I found the length of the diagonal, $260$ meters, and gave that instead of how much shorter it is."
+    },
+    {
+      "key": "D",
+      "text": "$340$",
+      "correct": false,
+      "misconception": "I gave the length of the trip along the two edges, $240 + 100 = 340$, instead of the difference between the routes."
+    }
+  ],
+  "hints": [
+    "The diagonal is the hypotenuse of a right triangle.",
+    "Find the diagonal with the Pythagorean theorem, then compare it with the walk along the two edges, $240 + 100$ meters.",
+    "The diagonal is $\\sqrt{240^2 + 100^2} = \\sqrt{67{,}600} = 260$ meters."
+  ],
+  "solutions": {
+    "reliable": "Walking along two edges covers $240 + 100 = 340$ meters. The diagonal is $\\sqrt{240^2 + 100^2} = \\sqrt{57{,}600 + 10{,}000} = \\sqrt{67{,}600} = 260$ meters. The diagonal trip is $340 - 260 = 80$ meters shorter.",
+    "elegant": "Since $240 = 20 \\cdot 12$ and $100 = 20 \\cdot 5$, the diagonal is $20 \\cdot 13 = 260$ by the $5$-$12$-$13$ right triangle, and $340 - 260 = 80$."
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1518",
+  "band": "11-12",
+  "points": 4,
+  "statement": "What is the value of $1 \\cdot 1! + 2 \\cdot 2! + 3 \\cdot 3! + \\cdots + 9 \\cdot 9!$? (Here $n! = 1 \\cdot 2 \\cdot 3 \\cdots n$, so for example $4! = 24$.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10!$",
+      "correct": false,
+      "misconception": "I saw that the first sums 1, 5 and 23 sit just below 2, 6 and 24 and answered $10!$, forgetting that each sum is exactly one less than a factorial."
+    },
+    {
+      "key": "B",
+      "text": "$9! - 1$",
+      "correct": false,
+      "misconception": "I found that each sum is one less than a factorial, but I used the factorial of the last number, 9, instead of the next number, 10."
+    },
+    {
+      "key": "C",
+      "text": "$10! - 1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$45 \\cdot 9!$",
+      "correct": false,
+      "misconception": "I took $9!$ out of every term as if each factorial were $9!$, and was left with $1 + 2 + \\cdots + 9 = 45$."
+    },
+    {
+      "key": "E",
+      "text": "$9 \\cdot 9!$",
+      "correct": false,
+      "misconception": "I thought the earlier terms were too small to matter and kept only the last term, $9 \\cdot 9!$."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "PAT-07",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Work out the sum with just one term, then with two, three and four terms.",
+    "The first few sums are 1, 5, 23 and 119. Compare each one with a nearby factorial. To trust the pattern, look for a way to write $k \\cdot k!$ as a difference of two factorials.",
+    "Each sum is one less than a factorial: $1 = 2! - 1$, $5 = 3! - 1$, $23 = 4! - 1$, $119 = 5! - 1$. Also $k \\cdot k! = (k + 1) \\cdot k! - k! = (k + 1)! - k!$."
+  ],
+  "solutions": {
+    "reliable": "Try small cases: $1 \\cdot 1! = 1$, then $1 + 4 = 5$, then $5 + 18 = 23$, then $23 + 96 = 119$. These are $2! - 1$, $3! - 1$, $4! - 1$ and $5! - 1$, which suggests that the sum up to $n \\cdot n!$ is $(n + 1)! - 1$. To prove it, write $k \\cdot k! = (k + 1) \\cdot k! - k! = (k + 1)! - k!$. Then the sum is $(2! - 1!) + (3! - 2!) + \\cdots + (10! - 9!)$, and everything cancels except $10! - 1! = 10! - 1$. The transferable idea: small cases suggest the pattern, and a short argument confirms it before you commit.",
+    "elegant": "Add 1 to the sum and watch it collapse: $1 + 1 \\cdot 1! = 2 = 2!$, then $2! + 2 \\cdot 2! = 3 \\cdot 2! = 3!$, then $3! + 3 \\cdot 3! = 4!$, and so on, until $9! + 9 \\cdot 9! = 10!$. So the sum is $10! - 1$."
+  },
+  "whyOnTest": "Nine factorials are too big to add by hand in a contest; four small cases reveal the pattern, and a one-line identity proves it.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

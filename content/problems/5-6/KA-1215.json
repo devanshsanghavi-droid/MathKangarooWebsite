@@ -1,0 +1,68 @@
+{
+  "id": "KA-1215",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Each of the 9 lamps in a 3 by 3 grid is either on or off. In every row and in every column, an odd number of lamps is on. How many different patterns of lamps are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "7",
+      "correct": false,
+      "misconception": "I counted the 6 patterns with exactly one lamp on in each row and column, plus all nine on, and missed the mixed patterns."
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "27",
+      "correct": false,
+      "misconception": "I gave each row exactly one lamp on, 3 × 3 × 3 ways, and never checked the columns."
+    },
+    {
+      "key": "D",
+      "text": "64",
+      "correct": false,
+      "misconception": "I let each row have an odd number of lamps on in 4 ways and multiplied 4 × 4 × 4, without checking the columns."
+    },
+    {
+      "key": "E",
+      "text": "512",
+      "correct": false,
+      "misconception": "I counted every pattern of 9 lamps, 2 multiplied by itself 9 times, ignoring the odd rule."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-03",
+    "secondary": [
+      "NUM-03",
+      "LOG-05"
+    ]
+  },
+  "hints": [
+    "Choose the four lamps in the top-left 2 by 2 block freely. What happens next?",
+    "Make free choices where you can, then see which lamps are forced. Multiply the number of ways to set the free lamps.",
+    "The top-left 2 by 2 block can be set in 2 × 2 × 2 × 2 ways. Then the last lamp of each of the first two rows, and the bottom lamp of each of the first two columns, is forced. Check that the corner lamp works for both its row and its column."
+  ],
+  "solutions": {
+    "reliable": "Set the four lamps in the top-left 2 by 2 block in any way: 2 × 2 × 2 × 2 = 16 ways. The third lamp in row 1 must make that row odd, so it is forced; the same holds for row 2, column 1 and column 2. The bottom-right lamp is forced by the bottom row, and it also makes the right column odd: the three rows are odd, so the total number of lamps on is odd, and taking away the odd first two columns leaves an odd number for the right column. So every free choice gives exactly one pattern, and there are 16. The transferable idea: count the free choices and multiply, after checking that the forced cells never clash.",
+    "elegant": "Each pattern is fixed by its top-left 2 by 2 block, and every one of the 16 blocks can be completed. So the count is 2 × 2 × 2 × 2 = 16."
+  },
+  "whyOnTest": "The multiplication principle needs an idea here: only four lamps are truly free, and the rule forces all the others.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

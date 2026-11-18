@@ -1,0 +1,56 @@
+{
+  "id": "SA-0285",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "easy",
+  "statement": "A graphic designer draws triangle $JKL$ similar to triangle $PQR$, with $J$, $K$ and $L$ corresponding to $P$, $Q$ and $R$. In the drawing, $JK = x + 2$, $KL = 12$, $PQ = 10$ and $QR = 15$. What is the value of $x$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I set up $\\frac{x + 2}{10} = \\frac{12}{15}$ and got $x + 2 = 8$, then gave $8$ as the value of $x$."
+    },
+    {
+      "key": "C",
+      "text": "$10.5$",
+      "correct": false,
+      "misconception": "I flipped one of the ratios and wrote $\\frac{x + 2}{10} = \\frac{15}{12}$, so $x + 2 = 12.5$ and $x = 10.5$."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I matched $\\overline{JK}$ with $\\overline{QR}$ and wrote $\\frac{x + 2}{15} = \\frac{12}{10}$, so $x + 2 = 18$ and $x = 16$."
+    }
+  ],
+  "hints": [
+    "Corresponding sides of similar triangles are proportional. Which side matches $\\overline{JK}$?",
+    "$\\overline{JK}$ matches $\\overline{PQ}$ and $\\overline{KL}$ matches $\\overline{QR}$, so $\\frac{JK}{PQ} = \\frac{KL}{QR}$.",
+    "$\\frac{x + 2}{10} = \\frac{12}{15} = \\frac{4}{5}$, so $x + 2 = 8$."
+  ],
+  "solutions": {
+    "reliable": "Since $J \\leftrightarrow P$, $K \\leftrightarrow Q$ and $L \\leftrightarrow R$, we have $\\frac{JK}{PQ} = \\frac{KL}{QR}$, so $\\frac{x + 2}{10} = \\frac{12}{15} = \\frac{4}{5}$. Then $x + 2 = 8$ and $x = 6$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

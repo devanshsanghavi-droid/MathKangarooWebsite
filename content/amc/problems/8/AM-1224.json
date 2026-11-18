@@ -1,0 +1,67 @@
+{
+  "id": "AM-1224",
+  "contest": "AMC8",
+  "slot": 25,
+  "area": "NT",
+  "topic": "NT-07",
+  "types": [
+    "T-MODULAR",
+    "T-SMALL-CASES"
+  ],
+  "statement": "In a board game, each move scores either $5$ points or $8$ points, and a player's score is the total of all her moves. For example, a score of $21$ is possible, since $21 = 5 + 8 + 8$, but a score of $4$ is not. How many positive whole numbers are impossible scores?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I only checked scores up to $15$ and assumed every score above that was possible, so I missed $17$, $19$, $22$ and $27$."
+    },
+    {
+      "key": "B",
+      "text": "$14$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I thought a score is possible only if it is a multiple of $5$ or a multiple of $8$, so I counted the numbers from $1$ to $27$ that are neither, stopping at $27$, the largest impossible score."
+    },
+    {
+      "key": "D",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I found the largest impossible score, $27$, and gave it instead of the number of impossible scores."
+    },
+    {
+      "key": "E",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I used $(5 - 1)(8 - 1) = 28$ and forgot that only half of those numbers are impossible."
+    }
+  ],
+  "hints": [
+    "Sort the numbers by their remainder when divided by $5$. Adding a $5$-point move never changes the remainder.",
+    "Using $0, 1, 2, 3, 4$ eight-point moves gives $0, 8, 16, 24, 32$, one in each remainder class. Once a class has a possible score, every score $5$ more than it is possible too.",
+    "The smallest possible scores in the classes with remainder $0, 1, 2, 3, 4$ are $0$, $16$, $32$, $8$ and $24$. Count the positive numbers below each of these in its class."
+  ],
+  "solutions": {
+    "reliable": "A score is $5a + 8b$ with whole numbers $a, b \\ge 0$. Group the numbers by remainder when divided by $5$. The scores $8b$ for $b = 0, 1, 2, 3, 4$ are $0, 8, 16, 24, 32$, with remainders $0, 3, 1, 4, 2$, and in each class this is the smallest possible score: a score $5a + 8b$ in the same class uses a number of eights $b$ that leaves the same remainder when divided by $5$ as the value $b_0$ from that list, so $b \\ge b_0$ and the score is at least $8b_0$. After that first score, adding $5$s reaches every larger number in the class. So the impossible scores are: remainder $3$: $3$; remainder $1$: $1, 6, 11$; remainder $4$: $4, 9, 14, 19$; remainder $2$: $2, 7, 12, 17, 22, 27$; remainder $0$: none. That is $1 + 3 + 4 + 6 = 14$ impossible scores: $1, 2, 3, 4, 6, 7, 9, 11, 12, 14, 17, 19, 22, 27$.",
+    "elegant": "For each $s$ from $0$ to $27$, exactly one of $s$ and $27 - s$ is a possible score (for instance $0$ is possible and $27$ is not, $8$ is possible and $19$ is not). Every number above $27$ is possible. So exactly half of the $28$ numbers from $0$ to $27$ are impossible, which is $14$."
+  },
+  "formulas": [],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

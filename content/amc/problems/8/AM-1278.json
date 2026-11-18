@@ -1,0 +1,69 @@
+{
+  "id": "AM-1278",
+  "contest": "AMC8",
+  "slot": 18,
+  "area": "CP",
+  "topic": "CP-01",
+  "types": [
+    "T-CASEWORK",
+    "T-COMPLEMENT"
+  ],
+  "statement": "How many three-digit positive integers have an even product of digits and an odd sum of digits? For example, $230$ counts, because $2 \\cdot 3 \\cdot 0 = 0$ is even and $2 + 3 + 0 = 5$ is odd.",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$125$",
+      "correct": false,
+      "misconception": "I only counted the numbers whose first digit is odd and whose other two digits are even, 5 times 5 times 5 = 125, and forgot the cases where the odd digit is in the middle or at the end."
+    },
+    {
+      "key": "B",
+      "text": "$240$",
+      "correct": false,
+      "misconception": "I thought 0 could not be used as a digit at all, so I used only 2, 4, 6 and 8 as even digits and got 80 + 80 + 80 = 240."
+    },
+    {
+      "key": "C",
+      "text": "$325$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$375$",
+      "correct": false,
+      "misconception": "I counted 5 times 5 times 5 = 125 for each of the three places the odd digit could go, forgetting that the first digit cannot be 0 when it is one of the even digits."
+    },
+    {
+      "key": "E",
+      "text": "$450$",
+      "correct": false,
+      "misconception": "I counted all three-digit numbers with an odd digit sum, 450, and forgot that the product of the digits must also be even."
+    }
+  ],
+  "hints": [
+    "Only whether each digit is odd or even matters. What does an odd digit sum say about how many of the three digits are odd?",
+    "An odd sum needs exactly one odd digit or three odd digits. An even product needs at least one even digit, so exactly one digit is odd.",
+    "Count by where the odd digit sits. Remember that the first digit cannot be 0, so an even first digit has only 4 choices: 2, 4, 6 or 8."
+  ],
+  "solutions": {
+    "reliable": "The sum of three digits is odd exactly when one or three of the digits are odd. The product is even exactly when at least one digit is even. Both hold exactly when one digit is odd and the other two are even. There are $5$ odd digits and $5$ even digits, but an even first digit cannot be $0$, so it has only $4$ choices. Odd first digit: $5 \\cdot 5 \\cdot 5 = 125$. Odd middle digit: $4 \\cdot 5 \\cdot 5 = 100$. Odd last digit: $4 \\cdot 5 \\cdot 5 = 100$. The total is $125 + 100 + 100 = 325$.",
+    "elegant": "Pair up the three-digit numbers that share their first two digits and whose last digits are $0$ and $1$, or $2$ and $3$, or $4$ and $5$, or $6$ and $7$, or $8$ and $9$. The two numbers in a pair have digit sums that differ by $1$, so exactly one of them has an odd digit sum. That makes $450$ of the $900$ three-digit numbers. A number with an odd digit sum and an odd product has all three digits odd, and there are $5^3 = 125$ of those. So $450 - 125 = 325$ numbers have an odd sum and an even product."
+  },
+  "formulas": [
+    "F-CP-06"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1314",
+  "band": "7-8",
+  "points": 5,
+  "statement": "A 3-digit code uses the digits 0 to 9 and may start with 0. The code must contain at least one 7, and no digit may appear twice in a row: 737 is allowed, but 377 is not. How many such codes are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "234",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "243",
+      "correct": false,
+      "misconception": "I placed the 7 in one of the 3 positions and gave each other position 9 choices, $3 \\times 9 \\times 9$, ignoring the rule about repeats."
+    },
+    {
+      "key": "C",
+      "text": "271",
+      "correct": false,
+      "misconception": "I counted the codes with at least one 7, $1000 - 729$, and forgot the rule that no digit appears twice in a row."
+    },
+    {
+      "key": "D",
+      "text": "81",
+      "correct": false,
+      "misconception": "I fixed the 7 in the first position and counted only $1 \\times 9 \\times 9$ codes."
+    },
+    {
+      "key": "E",
+      "text": "810",
+      "correct": false,
+      "misconception": "I counted all codes with no digit twice in a row, $10 \\times 9 \\times 9$, and forgot that a 7 is required."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-11",
+    "secondary": [
+      "CNT-09",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Think about the codes that break only the 'at least one 7' rule.",
+    "Counting with restrictions: first count all codes with no digit twice in a row, then subtract those that contain no 7 at all. Both counts come from the multiplication principle.",
+    "No digit twice in a row: $10 \\times 9 \\times 9 = 810$ codes. No digit twice in a row and no 7: $9 \\times 8 \\times 8 = 576$ codes."
+  ],
+  "solutions": {
+    "reliable": "Codes with no digit twice in a row: 10 choices for the first digit, then 9 for each later digit (anything except the digit before), so $10 \\times 9 \\times 9 = 810$. Of these, the codes with no 7 have 9 choices for the first digit, then 8 for each later digit (not 7 and not the digit before), so $9 \\times 8 \\times 8 = 576$. The codes with at least one 7 number $810 - 576 = 234$. The transferable idea: when 'at least one' meets another rule, count everything that obeys the other rule and subtract the ones with none.",
+    "elegant": "Casework on where the 7s are. Exactly one 7 in the middle: $9 \\times 9 = 81$. Exactly one 7 at the start: the middle is not 7 (9 ways) and the last digit is neither 7 nor the middle digit (8 ways), so 72. Exactly one 7 at the end: also 72. Two 7s must be 7, then a non-7, then 7: 9 codes. Total $81 + 72 + 72 + 9 = 234$."
+  },
+  "whyOnTest": "Two rules interact here; the reliable move is to count the codes obeying one rule and subtract the unwanted ones.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

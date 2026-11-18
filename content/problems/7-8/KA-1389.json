@@ -1,0 +1,68 @@
+{
+  "id": "KA-1389",
+  "band": "7-8",
+  "points": 4,
+  "statement": "The decimal for 1/13 is 0.076923076923..., where the block of digits 076923 repeats forever. Ola adds up the digits after the decimal point one at a time, starting with the first: 0, then 0 + 7 = 7, then 7 + 6 = 13, and so on. After how many digits does her running total first become greater than 2026?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "450",
+      "correct": false,
+      "misconception": "I counted the digits in 75 whole blocks and stopped there, but the total after them is 2025, which is not yet greater than 2026."
+    },
+    {
+      "key": "B",
+      "text": "451",
+      "correct": false,
+      "misconception": "I took the first digit of the next block to be 7, forgetting that every block starts with 0."
+    },
+    {
+      "key": "C",
+      "text": "452",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "75",
+      "correct": false,
+      "misconception": "I found the number of whole blocks, 75, and gave that instead of the number of digits."
+    },
+    {
+      "key": "E",
+      "text": "456",
+      "correct": false,
+      "misconception": "I thought the total could only pass 2026 at the end of a whole block, so I counted 76 whole blocks of six digits."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-03",
+    "secondary": [
+      "NUM-06",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "What do the six digits of one block add up to?",
+    "Each block adds 27 to the total. Find how many whole blocks keep the total at or below 2026, then add the digits of the next block one at a time, starting from its first digit.",
+    "75 x 27 = 2025, so after 75 blocks, that is 450 digits, the total is 2025. The next block begins 0, 7, ..."
+  ],
+  "solutions": {
+    "reliable": "Each block 076923 adds 0 + 7 + 6 + 9 + 2 + 3 = 27. Since 75 x 27 = 2025, after 75 whole blocks, which is 75 x 6 = 450 digits, the total is 2025, still not greater than 2026. The next block starts with 0, so after 451 digits the total is still 2025. The 452nd digit is 7, which takes the total to 2032. So the answer is 452. The transferable idea: for a repeating cycle, jump ahead by whole cycles, then step through the next cycle digit by digit from its start.",
+    "elegant": null
+  },
+  "whyOnTest": "Jumping ahead by whole cycles is quick, but the leading 0 of each block and the strict 'greater than' both have to be handled with care.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

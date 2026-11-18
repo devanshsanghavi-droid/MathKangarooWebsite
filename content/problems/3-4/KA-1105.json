@@ -1,0 +1,67 @@
+{
+  "id": "KA-1105",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Children stand in a line. Zoe is 7th from the front. Sam is behind Zoe, with exactly 3 children between them. Sam is 6th from the back. How many children are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": false,
+      "misconception": "I added 7 and 6 and took away 1, as if Zoe and Sam were the same child."
+    },
+    {
+      "key": "B",
+      "text": "13",
+      "correct": false,
+      "misconception": "I added Zoe's place from the front and Sam's place from the back, 7 and 6, without thinking about the children between them."
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": false,
+      "misconception": "I added the 3 children between them to Zoe's place and forgot the extra step to reach Sam, so I put him 10th from the front and worked out 10 + 6 - 1."
+    },
+    {
+      "key": "D",
+      "text": "16",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "17",
+      "correct": false,
+      "misconception": "I found that Sam is 11th from the front, then added the 6 from the back without taking away 1, so I counted Sam twice."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-02",
+    "secondary": [
+      "LOG-04"
+    ]
+  },
+  "hints": [
+    "Draw the line of children and mark Zoe first.",
+    "Mark Zoe's place from the front, then the 3 children behind her, then Sam. His place from the front and his place from the back overlap in one child: Sam himself.",
+    "Zoe is 7th, the next 3 children are 8th, 9th and 10th, so Sam is 11th from the front. He is also 6th from the back, so there are 11 + 6 - 1 = 16 children, since Sam is counted twice."
+  ],
+  "solutions": {
+    "reliable": "Number the places from the front. Zoe is in place 7 and the 3 children between are in places 8, 9 and 10, so Sam is in place 11. Sam is 6th from the back, so 5 children stand behind him, and there are 11 + 5 = 16 children. Check: Zoe, in place 7 of 16, is 10th from the back. The transferable idea: a quick sketch of positions shows overlaps that simply adding the numbers hides.",
+    "elegant": null
+  },
+  "whyOnTest": "Adding the given numbers ignores where the children really stand; drawing the line is the reliable way to handle places counted from both ends.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0084",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "medium",
+  "statement": "A jar contains red and blue marbles in the ratio $3 : 5$. After $12$ red marbles are added and no blue marbles are added or removed, the ratio of red marbles to blue marbles is $3 : 4$. How many blue marbles are in the jar?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I found the multiplier correctly and then gave the original number of red marbles, 48, instead of the blue marbles."
+    },
+    {
+      "key": "B",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I found the number of red marbles after the 12 were added, 60, instead of the number of blue marbles."
+    },
+    {
+      "key": "C",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I added the 12 marbles to both colors, so I solved $\\frac{3k + 12}{5k + 12} = \\frac{3}{4}$, which gave $k = 4$ and 20 blue marbles."
+    },
+    {
+      "key": "D",
+      "text": "$80$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Write the original numbers of red and blue marbles using one multiplier.",
+    "Let there be $3k$ red and $5k$ blue marbles at first. After the red marbles are added, $\\frac{3k + 12}{5k} = \\frac{3}{4}$. Cross-multiply and solve.",
+    "Cross-multiplying gives $12k + 48 = 15k$, so $3k = 48$. Then find $5k$."
+  ],
+  "solutions": {
+    "reliable": "Let the jar start with $3k$ red and $5k$ blue marbles. After $12$ red are added, $\\frac{3k + 12}{5k} = \\frac{3}{4}$. Cross-multiplying: $4(3k + 12) = 3(5k)$, so $12k + 48 = 15k$ and $k = 16$. There are $5(16) = 80$ blue marbles. Check: red goes from $48$ to $60$, and $60 : 80 = 3 : 4$. Key idea: a ratio becomes an equation once each part is written as a multiple of one unknown.",
+    "elegant": "The blue count does not change, so rewrite both ratios with the same blue part: $3 : 5 = 12 : 20$ and $3 : 4 = 15 : 20$. The red part grew from $12$ units to $15$ units, so $3$ units are $12$ marbles and one unit is $4$. Blue is $20 \\times 4 = 80$."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

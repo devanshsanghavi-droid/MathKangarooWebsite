@@ -1,0 +1,56 @@
+{
+  "id": "SA-0154",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-05",
+  "difficulty": "hard",
+  "statement": "The polynomial function $p$ is defined by $p(x) = x^3 + ax^2 + bx - 12$, where $a$ and $b$ are constants. If $p(2) = 0$ and $p(-3) = 0$, what is the third zero of $p$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I assumed the three zeros of a cubic always add up to $0$, so I solved $2 + (-3) + r = 0$ and got $r = 1$."
+    },
+    {
+      "key": "B",
+      "text": "$-2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I found that the remaining factor is $x + 2$, but I read its zero as $+2$ instead of $-2$."
+    },
+    {
+      "key": "D",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I solved the system and found $a = 3$ and $b = -4$, then gave $a = 3$ as the answer, thinking it was the missing zero."
+    }
+  ],
+  "hints": [
+    "Each of the two given zeros gives you one equation in $a$ and $b$.",
+    "Write $p(2) = 0$ and $p(-3) = 0$ as two linear equations, solve for $a$ and $b$, then factor $p(x)$.",
+    "$p(2) = 0$ gives $2a + b = 2$ and $p(-3) = 0$ gives $3a - b = 13$, so $a = 3$, $b = -4$ and $p(x) = x^3 + 3x^2 - 4x - 12$. Now factor by grouping."
+  ],
+  "solutions": {
+    "reliable": "From $p(2) = 8 + 4a + 2b - 12 = 0$ we get $4a + 2b = 4$, or $2a + b = 2$. From $p(-3) = -27 + 9a - 3b - 12 = 0$ we get $9a - 3b = 39$, or $3a - b = 13$. Adding, $5a = 15$, so $a = 3$ and $b = -4$. Then $p(x) = x^3 + 3x^2 - 4x - 12 = x^2(x + 3) - 4(x + 3) = (x + 3)(x - 2)(x + 2)$. The zeros are $-3$, $2$ and $-2$, so the third zero is $-2$.",
+    "elegant": "Since $p$ has leading coefficient $1$, it is $(x - 2)(x + 3)(x - r)$. Its constant term is $(-2)(3)(-r) = 6r$, and this must equal $-12$, so $r = -2$."
+  },
+  "estSeconds": 140,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

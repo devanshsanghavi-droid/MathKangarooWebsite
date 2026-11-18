@@ -1,0 +1,68 @@
+{
+  "id": "KA-1406",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Omar has 26 minutes left for ten 5-point questions. Reading all ten first takes 3 minutes. He learns they would take him 8, 3, 11, 5, 9, 4, 12, 6, 10 and 7 minutes to solve correctly. A random guess takes no time and is worth 1 point on average. What is his largest expected score from these ten?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20",
+      "correct": false,
+      "misconception": "I chose the four quickest questions correctly but left the other six blank instead of guessing, losing the 6 points the guesses are worth on average."
+    },
+    {
+      "key": "B",
+      "text": "22",
+      "correct": false,
+      "misconception": "I worked through the questions in printed order, 8, 3 and 11 minutes, until time ran out, so I solved only three and guessed seven."
+    },
+    {
+      "key": "C",
+      "text": "25",
+      "correct": false,
+      "misconception": "I forgot the 3 minutes of reading, so I fitted five questions into 26 minutes, and then I also forgot to guess on the other five."
+    },
+    {
+      "key": "D",
+      "text": "26",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": false,
+      "misconception": "I forgot to take off the 3 minutes of reading, so I fitted five questions, 3 + 4 + 5 + 6 + 7 = 25 minutes, into the time and guessed the other five."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-12",
+    "secondary": [
+      "CFT-08",
+      "CFT-09"
+    ]
+  },
+  "hints": [
+    "After reading, how many minutes are really left for solving?",
+    "With 23 minutes, solving the quickest questions first fits in the most. Every question you do not solve should still be answered, because a guess is worth something on average.",
+    "The quickest take 3, 4, 5 and 6 minutes, 18 in all; adding the 7-minute one would need 25. So four are solved for 20 points and six are guessed for about 6 points."
+  ],
+  "solutions": {
+    "reliable": "Reading uses 3 of the 26 minutes, leaving 23. Every solved question is worth the same 5 points, so he should solve as many as possible, quickest first: $3 + 4 + 5 + 6 = 18$ minutes, while adding the next one (7 minutes) would need 25 > 23. So the most he can solve is four, for 20 points. The other six are guessed, worth $6 \\times 1 = 6$ points on average. Total: 26. The transferable idea: in the 5-point block, read everything first, take the quickest wins, and never leave a blank.",
+    "elegant": null
+  },
+  "whyOnTest": "The 5-point block rewards reading all of it first, choosing the quickest wins and guessing the rest; each step you skip costs points here.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

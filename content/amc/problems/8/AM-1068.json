@@ -1,0 +1,66 @@
+{
+  "id": "AM-1068",
+  "contest": "AMC8",
+  "slot": 23,
+  "area": "ALG",
+  "topic": "ALG-05",
+  "types": [
+    "T-BOUNDING"
+  ],
+  "statement": "What is the smallest positive integer $n$ for which the number $2^n \\cdot 5^{15}$ has more than $20$ digits?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I worked out that $2^{n-15}$ needs at least $6$ digits and found $n - 15 = 17$, but then forgot to add the $15$ back."
+    },
+    {
+      "key": "B",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I thought $2^n \\cdot 5^{15}$ would have about $n$ digits, so I picked $n = 21$, the first number above $20$."
+    },
+    {
+      "key": "C",
+      "text": "$29$",
+      "correct": false,
+      "misconception": "I thought $2^{n-15}$ needed at least $5$ digits instead of $6$, which gives $2^{14} = 16384$ and $n = 29$."
+    },
+    {
+      "key": "D",
+      "text": "$31$",
+      "correct": false,
+      "misconception": "I found that $2^{31} \\cdot 5^{15}$ has exactly $20$ digits and gave that, but the question asks for more than $20$."
+    },
+    {
+      "key": "E",
+      "text": "$32$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Pair each factor of 5 with a factor of 2 to make factors of 10.",
+    "For $n \\ge 15$, $2^n \\cdot 5^{15} = 2^{n-15} \\cdot 10^{15}$, which is $2^{n-15}$ followed by $15$ zeros.",
+    "You need $2^{n-15}$ to have at least $6$ digits. $2^{16} = 65{,}536$ has $5$ digits and $2^{17} = 131{,}072$ has $6$."
+  ],
+  "solutions": {
+    "reliable": "For $n \\ge 15$, $2^n \\cdot 5^{15} = 2^{n-15} \\cdot 10^{15}$, which is the number $2^{n-15}$ followed by $15$ zeros. Its number of digits is $15$ plus the number of digits of $2^{n-15}$, so we need $2^{n-15}$ to have at least $6$ digits, that is, $2^{n-15} \\ge 100{,}000$. Since $2^{16} = 65{,}536$ and $2^{17} = 131{,}072$, the smallest choice is $n - 15 = 17$, so $n = 32$. For $n < 15$ the number is less than $2^{15} \\cdot 5^{15} = 10^{15}$, so it has at most $15$ digits, and no smaller $n$ works.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

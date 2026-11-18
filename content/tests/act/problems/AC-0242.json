@@ -1,0 +1,56 @@
+{
+  "id": "AC-0242",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-06",
+  "difficulty": "medium",
+  "statement": "A glass skylight is shaped like a square pyramid with no bottom. Its square base has sides of $10$ feet, and its peak is $12$ feet directly above the center of the base. Glass covers only the four triangular faces. What is the total area of glass, in square feet?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$260$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$240$",
+      "correct": false,
+      "misconception": "I used the 12 foot height of the pyramid as the height of each triangle, so I got 4 times one half times 10 times 12 = 240."
+    },
+    {
+      "key": "C",
+      "text": "$360$",
+      "correct": false,
+      "misconception": "I found the four triangles correctly, 260 square feet, but then added the 100 square foot base, even though the skylight has no bottom."
+    },
+    {
+      "key": "D",
+      "text": "$520$",
+      "correct": false,
+      "misconception": "I found the slant height of 13 but forgot the one half in the triangle area formula, so I computed 4 times 10 times 13 = 520."
+    }
+  ],
+  "hints": [
+    "Each face is a triangle with base $10$. Its height is the slant height, measured along the face, not the height of the pyramid.",
+    "The slant height is the hypotenuse of a right triangle with legs $12$ (the pyramid's height) and $5$ (from the center of the base to the middle of a side).",
+    "The slant height is $\\sqrt{12^2 + 5^2} = 13$, so each face has area $\\frac{1}{2}(10)(13)$. Multiply by $4$."
+  ],
+  "solutions": {
+    "reliable": "The height of each triangular face is the slant height $s$, from the peak to the midpoint of a base edge. The center of the base is $5$ feet from that midpoint, so $s = \\sqrt{12^2 + 5^2} = \\sqrt{169} = 13$ feet. Each face has area $\\frac{1}{2} \\cdot 10 \\cdot 13 = 65$ square feet, and the four faces have area $4 \\cdot 65 = 260$ square feet.",
+    "elegant": null
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "AM-1022",
+  "contest": "AMC8",
+  "slot": 8,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Four volunteers, all working at the same steady rate, can plant $3$ garden beds in $6$ hours. At that rate, how many hours would it take $6$ volunteers to plant $5$ garden beds?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I used the extra volunteers, 6 times 4/6 = 4 hours, but forgot that there are more garden beds to plant."
+    },
+    {
+      "key": "B",
+      "text": "$6\\frac{2}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I scaled up for the extra beds, 6 times 5/3 = 10 hours, but forgot that more volunteers finish faster."
+    },
+    {
+      "key": "D",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I multiplied by both 6/4 and 5/3, but more volunteers should make the job take less time, not more."
+    },
+    {
+      "key": "E",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I found that 5 beds need 40 volunteer-hours, but forgot to share those hours among the 6 volunteers."
+    }
+  ],
+  "hints": [
+    "Measure the work in volunteer-hours: one volunteer working for one hour.",
+    "Four volunteers for $6$ hours is $24$ volunteer-hours, and that plants $3$ beds. How many volunteer-hours does one bed take?",
+    "One bed takes $8$ volunteer-hours, so $5$ beds take $40$. Six volunteers share those $40$ hours."
+  ],
+  "solutions": {
+    "reliable": "Four volunteers working $6$ hours give $24$ volunteer-hours for $3$ beds, so one bed takes $8$ volunteer-hours. Five beds take $40$ volunteer-hours, and $6$ volunteers do that in $\\frac{40}{6} = 6\\frac{2}{3}$ hours, which is $6$ hours $40$ minutes.",
+    "elegant": "Change one thing at a time. With $6$ volunteers instead of $4$, the $3$ beds take $6 \\cdot \\frac{4}{6} = 4$ hours. Then $5$ beds instead of $3$ take $4 \\cdot \\frac{5}{3} = \\frac{20}{3} = 6\\frac{2}{3}$ hours."
+  },
+  "formulas": [],
+  "estSeconds": 130,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

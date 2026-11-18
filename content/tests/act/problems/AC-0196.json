@@ -1,0 +1,56 @@
+{
+  "id": "AC-0196",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-01",
+  "difficulty": "hard",
+  "statement": "Let $f(x) = \\dfrac{2x + 5}{x - 3}$ for $x \\ne 3$, and let $f^{-1}$ be the inverse function of $f$. What is the value of $f^{-1}\\big(f(2) + 2\\big)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{10}{9}$",
+      "correct": false,
+      "misconception": "I treated $f^{-1}$ as the reciprocal $\\frac{1}{f}$, so I computed $\\frac{1}{f(-7)} = \\frac{10}{9}$ instead of solving $f(a) = -7$."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{16}{9}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I thought $f^{-1}$ cancels $f$, so I just added $2$ to the input $2$, but the $2$ is added after $f$, so the inverse cannot undo it that way."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{38}{9}$",
+      "correct": false,
+      "misconception": "I computed $f(2)$ as $9$ instead of $-9$ by ignoring the negative denominator, and then I solved $f(a) = 11$."
+    }
+  ],
+  "hints": [
+    "Compute the inside first: what is $f(2) + 2$?",
+    "$f(2) + 2 = -7$. The value of $f^{-1}(-7)$ is the number $a$ with $f(a) = -7$.",
+    "Solve $\\dfrac{2a + 5}{a - 3} = -7$: $2a + 5 = -7a + 21$."
+  ],
+  "solutions": {
+    "reliable": "First $f(2) = \\frac{4 + 5}{2 - 3} = -9$, so $f(2) + 2 = -7$. Now $f^{-1}(-7)$ is the number $a$ with $f(a) = -7$: $\\frac{2a + 5}{a - 3} = -7$ gives $2a + 5 = -7a + 21$, so $9a = 16$ and $a = \\frac{16}{9}$. Check: $f\\left(\\frac{16}{9}\\right) = \\frac{32/9 + 45/9}{16/9 - 27/9} = \\frac{77/9}{-11/9} = -7$.",
+    "elegant": "Find the inverse once: from $y = \\frac{2x + 5}{x - 3}$, $xy - 3y = 2x + 5$, so $x = \\frac{3y + 5}{y - 2}$ and $f^{-1}(y) = \\frac{3y + 5}{y - 2}$. Then $f^{-1}(-7) = \\frac{-21 + 5}{-9} = \\frac{16}{9}$."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

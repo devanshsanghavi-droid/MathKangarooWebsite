@@ -1,0 +1,56 @@
+{
+  "id": "SA-0115",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-04",
+  "difficulty": "easy",
+  "statement": "A patient takes a $300$-milligram dose of a medication. The amount of the medication in the patient's body decreases by $20\\%$ each hour. How many milligrams of the medication remain in the body $3$ hours after the dose?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2.4$",
+      "correct": false,
+      "misconception": "I multiplied by 0.2 each hour, which is the part that leaves the body, instead of 0.8, the part that stays."
+    },
+    {
+      "key": "B",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I subtracted 20% of the original 300, which is 60, three times, as if the same amount left every hour."
+    },
+    {
+      "key": "C",
+      "text": "$153.6$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$192$",
+      "correct": false,
+      "misconception": "I multiplied by 0.8 only twice, as if 3 hours meant only 2 decreases."
+    }
+  ],
+  "hints": [
+    "What fraction of the medication stays in the body each hour?",
+    "Losing $20\\%$ means keeping $80\\%$, so each hour the amount is multiplied by $0.8$. Do that once for each hour.",
+    "After $3$ hours the amount is $300(0.8)^3 = 300 \\cdot 0.512$."
+  ],
+  "solutions": {
+    "reliable": "Each hour $80\\%$ of the medication remains, so the amount after $t$ hours is $300(0.8)^t$. After $3$ hours: $300(0.8)^3 = 300(0.512) = 153.6$ milligrams. Step by step: $300 \\to 240 \\to 192 \\to 153.6$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

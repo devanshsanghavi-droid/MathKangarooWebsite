@@ -1,0 +1,56 @@
+{
+  "id": "AC-0079",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "easy",
+  "statement": "If $5x + 3y = 29$ and $3x + 5y = 35$, what is the value of $x + y$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I subtracted the second equation from the first, got $2x - 2y = -6$, and gave $x - y = -3$ as if it were $x + y$."
+    },
+    {
+      "key": "B",
+      "text": "$5.5$",
+      "correct": false,
+      "misconception": "I solved the system, got $x = 2.5$ and $y = 5.5$, and gave only the value of $y$."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I added the two equations to get $8x + 8y = 64$ and stopped at 64 without dividing by 8."
+    }
+  ],
+  "hints": [
+    "You may not need $x$ and $y$ separately. Look at the coefficients.",
+    "Add the two equations together. What do you notice about the coefficients of $x$ and $y$?",
+    "Adding gives $8x + 8y = 64$. Divide both sides by 8."
+  ],
+  "solutions": {
+    "reliable": "Multiply the first equation by $5$ and the second by $3$: $25x + 15y = 145$ and $9x + 15y = 105$. Subtracting gives $16x = 40$, so $x = 2.5$. Then $3y = 29 - 12.5 = 16.5$, so $y = 5.5$, and $x + y = 8$. Check in the second equation: $7.5 + 27.5 = 35$.",
+    "elegant": "Adding the equations gives $8x + 8y = 64$, so $x + y = 8$ at once."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

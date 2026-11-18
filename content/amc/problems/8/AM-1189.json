@@ -1,0 +1,67 @@
+{
+  "id": "AM-1189",
+  "contest": "AMC8",
+  "slot": 13,
+  "area": "NT",
+  "topic": "NT-05",
+  "types": [
+    "T-CYCLE",
+    "T-MODULAR"
+  ],
+  "statement": "Lin computes each of the numbers $2^1, 2^2, 2^3, \\ldots, 2^{100}$ and divides it by $7$. For how many of these numbers is the remainder $2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I thought the remainders when dividing by 7 repeat every 7 powers, so I used 100 / 7, which is about 14."
+    },
+    {
+      "key": "B",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I saw the remainders repeat 2, 4, 1 and took 100 / 3 = 33 with the remainder dropped, missing 2 to the 100th power, which starts a new cycle with remainder 2."
+    },
+    {
+      "key": "C",
+      "text": "$34$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$50$",
+      "correct": false,
+      "misconception": "I saw 2 to the 1st leaves 2 and 2 to the 2nd leaves 4, and I thought the remainders just alternate, so half of the 100 powers leave 2."
+    },
+    {
+      "key": "E",
+      "text": "$67$",
+      "correct": false,
+      "misconception": "I counted every exponent that is not a multiple of 3, but those leave a remainder of 2 or 4, not only 2."
+    }
+  ],
+  "hints": [
+    "Find the remainders of the first few powers of $2$ when divided by $7$.",
+    "The remainders go $2, 4, 1, 2, 4, 1, \\ldots$: each one is double the last, reduced by $7$. Which exponents give remainder $2$?",
+    "Remainder $2$ happens for exponents $1, 4, 7, \\ldots$, that is, one more than a multiple of $3$. The last such exponent up to $100$ is $100$ itself."
+  ],
+  "solutions": {
+    "reliable": "The remainders of $2^1, 2^2, 2^3$ are $2, 4, 1$. Since $2^3 = 8$ leaves remainder $1$, multiplying by $8$ does not change the remainder, so the pattern $2, 4, 1$ repeats every three powers. The remainder is $2$ exactly when the exponent is $1, 4, 7, \\ldots$, that is, $3k + 1$. From $1$ to $100$ these are $1, 4, \\ldots, 100$, and there are $\\dfrac{100 - 1}{3} + 1 = 34$ of them.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

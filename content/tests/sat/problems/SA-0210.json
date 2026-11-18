@@ -1,0 +1,56 @@
+{
+  "id": "SA-0210",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-03",
+  "difficulty": "easy",
+  "statement": "During a sale, the price of a jacket is reduced by $30\\%$. The sale price of the jacket is $\\$56$. What was the price of the jacket before the sale?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$39.20$",
+      "correct": false,
+      "misconception": "I took $30\\%$ off the sale price, computing $0.70 \\times 56$, instead of working backward to the original price."
+    },
+    {
+      "key": "B",
+      "text": "$\\$72.80$",
+      "correct": false,
+      "misconception": "I added $30\\%$ of the sale price back on, computing $1.30 \\times 56$, but the $30\\%$ was taken from the original price, not from the sale price."
+    },
+    {
+      "key": "C",
+      "text": "$\\$80.00$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$186.67$",
+      "correct": false,
+      "misconception": "I treated $\\$56$ as $30\\%$ of the original price and divided 56 by 0.30."
+    }
+  ],
+  "hints": [
+    "After a $30\\%$ reduction, what percent of the original price is left?",
+    "The sale price is $70\\%$ of the original price. Write an equation with the original price as the unknown.",
+    "If the original price is $p$ dollars, then $0.70p = 56$."
+  ],
+  "solutions": {
+    "reliable": "Let the original price be $p$ dollars. The sale price is $70\\%$ of $p$, so $0.70p = 56$ and $p = 56 \\div 0.70 = 80$. Check: $30\\%$ of $80$ is $24$, and $80 - 24 = 56$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

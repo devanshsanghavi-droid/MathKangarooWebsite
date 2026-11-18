@@ -1,0 +1,67 @@
+{
+  "id": "AM-1024",
+  "contest": "AMC8",
+  "slot": 8,
+  "area": "ALG",
+  "topic": "ALG-11",
+  "types": [
+    "T-CASEWORK",
+    "T-BOUNDING"
+  ],
+  "statement": "When a positive integer $n$ is divided by $3$, the whole-number quotient (ignoring any remainder) is the same as the whole-number quotient when $n$ is divided by $4$. For example, $n = 5$ works, because $5 \\div 3$ and $5 \\div 4$ both have quotient $1$. How many positive integers $n$ have this property?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I listed 1, 2, 4, 5 and 8 correctly, but I also counted 0, which is not a positive integer."
+    },
+    {
+      "key": "C",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I thought the two quotients stay equal until 12, where 3 and 4 first line up, so I counted 1 through 11."
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I thought the quotients stay equal until 12, where 3 and 4 first line up, and I counted 0 through 11."
+    },
+    {
+      "key": "E",
+      "text": "infinitely many",
+      "correct": false,
+      "misconception": "I thought dividing by 3 and by 4 give nearly the same quotient, so they would keep matching forever, but the quotient by 3 pulls ahead and never comes back."
+    }
+  ],
+  "hints": [
+    "Try the first dozen values of $n$ and write down both quotients.",
+    "If the common quotient is $q$, then $n$ is at least $4q$ (to reach quotient $q$ when dividing by $4$) and at most $3q + 2$ (to stay below $q + 1$ when dividing by $3$).",
+    "So $4q \\le n \\le 3q + 2$, which is only possible when $q \\le 2$. Check $q = 0, 1, 2$ one at a time."
+  ],
+  "solutions": {
+    "reliable": "Let the common quotient be $q$. Dividing by $4$ gives quotient $q$ exactly when $4q \\le n \\le 4q + 3$, and dividing by $3$ gives quotient $q$ exactly when $3q \\le n \\le 3q + 2$. Both hold when $4q \\le n \\le 3q + 2$, which needs $q \\le 2$. For $q = 0$: $n = 1, 2$ (positive only). For $q = 1$: $4 \\le n \\le 5$. For $q = 2$: $8 \\le n \\le 8$. That is $n = 1, 2, 4, 5, 8$, so $5$ integers.",
+    "elegant": "Dividing by $3$ throws away a remainder of at most $2$, so the quotient by $3$ is at least $\\frac{n - 2}{3}$, while the quotient by $4$ is at most $\\frac{n}{4}$. When $n > 8$ we have $4(n - 2) > 3n$, so $\\frac{n - 2}{3} > \\frac{n}{4}$ and the quotient by $3$ is strictly bigger. So only $n \\le 8$ can work, and checking $1$ to $8$ finds $1, 2, 4, 5, 8$."
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

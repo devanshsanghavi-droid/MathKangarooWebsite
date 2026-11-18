@@ -1,0 +1,67 @@
+{
+  "id": "AM-1115",
+  "contest": "AMC8",
+  "slot": 13,
+  "area": "GEO",
+  "topic": "GEO-06",
+  "types": [
+    "T-CASEWORK",
+    "T-COORD"
+  ],
+  "statement": "Three vertices of a parallelogram are $(1, 1)$, $(4, 2)$ and $(2, 5)$. The fourth vertex could be at more than one point. Over all possible locations $(x, y)$ of the fourth vertex, what is the greatest possible value of $x + y$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I only built the parallelogram with (2, 5) opposite the new vertex, which gives (3, -2), and missed the other two possibilities."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I assumed the vertices go around the parallelogram in the order given, which gives only (-1, 4), and missed the other two possibilities."
+    },
+    {
+      "key": "C",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I added the first two points, (1, 1) + (4, 2) = (5, 3), and forgot to subtract the third point."
+    },
+    {
+      "key": "D",
+      "text": "$11$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I added up all six coordinates of the three given points."
+    }
+  ],
+  "hints": [
+    "In a parallelogram the two diagonals have the same midpoint, so the two pairs of opposite vertices add up to the same point, adding $x$ to $x$ and $y$ to $y$.",
+    "Any one of the three given points can be the vertex opposite the missing one. That gives three cases.",
+    "The missing vertex is the sum of two given points minus the third: $(3, -2)$, $(-1, 4)$ or $(5, 6)$."
+  ],
+  "solutions": {
+    "reliable": "Opposite vertices of a parallelogram share a midpoint, so if $V$ is opposite a given point $Z$ and the other two given points are $X$ and $Y$, then $V + Z = X + Y$ and $V = X + Y - Z$. With $(2, 5)$ opposite: $V = (1, 1) + (4, 2) - (2, 5) = (3, -2)$, so $x + y = 1$. With $(4, 2)$ opposite: $V = (1, 1) + (2, 5) - (4, 2) = (-1, 4)$, so $x + y = 3$. With $(1, 1)$ opposite: $V = (4, 2) + (2, 5) - (1, 1) = (5, 6)$, so $x + y = 11$. None of these four-point sets has three points on a line, so all three are real parallelograms, and the greatest value is $11$.",
+    "elegant": "Work only with the sums $x + y$: the given points have sums $2$, $6$ and $7$, and the missing vertex has sum (one of them) $+$ (another) $-$ (the third). To make it largest, subtract the smallest: $6 + 7 - 2 = 11$."
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1123",
+  "band": "3-4",
+  "points": 4,
+  "statement": "A rectangle 8 cm by 5 cm is cut into two rectangles by one straight cut parallel to the 5 cm sides. What do the two perimeters add up to, in cm?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "18",
+      "correct": false,
+      "misconception": "I assumed the cut was in the middle and gave the perimeter of only one of the pieces."
+    },
+    {
+      "key": "B",
+      "text": "26",
+      "correct": false,
+      "misconception": "I thought cutting does not change the total distance around, so I gave the big rectangle's perimeter."
+    },
+    {
+      "key": "C",
+      "text": "31",
+      "correct": false,
+      "misconception": "I added the 5 cm cut only once, but it is an edge of both pieces."
+    },
+    {
+      "key": "D",
+      "text": "36",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "42",
+      "correct": false,
+      "misconception": "I added the cut as if it were 8 cm long, parallel to the long sides, and counted it twice."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Think about which edges are new after the cut.",
+    "Each piece keeps part of the old outline, and the cut becomes an edge of both pieces. Start from the big perimeter and add what the cut creates.",
+    "The old outline, 8 + 5 + 8 + 5 = 26 cm, is shared between the pieces. The 5 cm cut is an edge of both pieces, so add 5 twice: 26 + 10 = 36 cm."
+  ],
+  "solutions": {
+    "reliable": "Try a cut 3 cm from one end: the pieces are 3 by 5 and 5 by 5, with perimeters 16 cm and 20 cm, which add up to 36 cm. Any other position gives the same total, because the old outline of 26 cm is shared between the pieces and the cut adds 5 cm to each. The transferable idea: when a shape is cut, the old outline is shared and every cut line is counted twice.",
+    "elegant": "The cut appears in both perimeters, so the total is 26 + 2 x 5 = 36 cm wherever the cut is made."
+  },
+  "whyOnTest": "Cutting a shape changes the total perimeter; seeing that the cut counts twice is the idea, and it works wherever the cut is made.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

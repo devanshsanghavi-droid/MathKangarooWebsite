@@ -1,0 +1,68 @@
+{
+  "id": "KA-1507",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A right triangle has legs 20 and 21. What is the length of the height drawn from the right angle to the hypotenuse?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{41}{2}$",
+      "correct": false,
+      "misconception": "I took the height to be the average of the two legs."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{29}{2}$",
+      "correct": false,
+      "misconception": "I took the height to be half the hypotenuse, which is the length of the median from the right angle, not the height."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{420}{29}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\sqrt{420}$",
+      "correct": false,
+      "misconception": "I took the height to be the geometric mean of the two legs, but that rule uses the two pieces of the hypotenuse, not the legs."
+    },
+    {
+      "key": "E",
+      "text": "$\\dfrac{210}{29}$",
+      "correct": false,
+      "misconception": "I divided the area 210 by the hypotenuse and forgot that the area is half of base times height."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-05",
+    "secondary": [
+      "GEO-06",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Can the height be longer than a leg?",
+    "Before calculating, bound the height: it is shorter than each leg, and no longer than the median to the hypotenuse, which is half the hypotenuse. Cross out what fails, then compute the area two ways.",
+    "The hypotenuse is $\\sqrt{400 + 441} = 29$. The area is $\\frac{1}{2} \\cdot 20 \\cdot 21 = 210$, and also $\\frac{1}{2} \\cdot 29 \\cdot h$."
+  ],
+  "solutions": {
+    "reliable": "The hypotenuse is $\\sqrt{20^2 + 21^2} = \\sqrt{841} = 29$. The area is $\\frac{1}{2} \\cdot 20 \\cdot 21 = 210$. Using the hypotenuse as the base, $\\frac{1}{2} \\cdot 29 \\cdot h = 210$, so $h = \\frac{420}{29}$, about 14.48. Bounding checks it: the height is less than the shorter leg 20, which rules out $\\frac{41}{2}$ and $\\sqrt{420}$, both about 20.5; and the height is strictly less than the median $\\frac{29}{2}$ unless the triangle is isosceles, which it is not. The transferable idea: bound the answer first, since impossible choices can go before any arithmetic.",
+    "elegant": "Put the right angle at $C$, with $CA = 20$ and $CB = 21$. The height from $C$ is $CA \\sin A$, and $\\sin A = \\frac{CB}{AB} = \\frac{21}{29}$, so $h = \\frac{20 \\cdot 21}{29} = \\frac{420}{29}$. As a quick check, angle $A$ is just over $45^\\circ$, so $h$ is a little more than $20 \\times 0.707 \\approx 14.1$, which rules out $\\frac{210}{29} \\approx 7.2$."
+  },
+  "whyOnTest": "Three of the choices break simple bounds on a height, so a student who bounds first is left with a clean decision before calculating.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

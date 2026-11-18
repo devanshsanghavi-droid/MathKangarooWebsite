@@ -1,0 +1,67 @@
+{
+  "id": "AM-1290",
+  "contest": "AMC8",
+  "slot": 23,
+  "area": "CP",
+  "topic": "CP-08",
+  "types": [
+    "T-SYMMETRY",
+    "T-CASEWORK"
+  ],
+  "statement": "A box holds $5$ cards, $3$ blank cards and $2$ prize cards, shuffled in random order. Kai turns over the cards one at a time, without putting any back, until he turns over the first prize card. What is the expected number of cards he turns over, counting the prize card?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I found the expected number of blank cards before the first prize card, which is 1, and forgot to count the prize card itself."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{3}{2}$",
+      "correct": false,
+      "misconception": "I thought each blank card has a 1/2 chance to come before the first prize card, so I expected 3/2 blank cards, and I forgot to count the prize card itself."
+    },
+    {
+      "key": "C",
+      "text": "$2$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{5}{2}$",
+      "correct": false,
+      "misconception": "I averaged the possible stopping points 1, 2, 3 and 4 as if they were equally likely."
+    },
+    {
+      "key": "E",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I used the worst case, 3 blank cards and then a prize card, instead of the average."
+    }
+  ],
+  "hints": [
+    "The first prize card could be card 1, 2, 3 or 4. Find the probability of each.",
+    "Imagine the 5 cards laid in a row. There are C(5, 2) = 10 equally likely ways to place the 2 prize cards. In how many of them is the first prize card in position 1? In position 2? 3? 4?",
+    "The counts are 4, 3, 2 and 1 out of 10. Compute (1 times 4 + 2 times 3 + 3 times 2 + 4 times 1) divided by 10."
+  ],
+  "solutions": {
+    "reliable": "Lay the cards in a row. The $\\binom{5}{2} = 10$ choices of positions for the two prize cards are equally likely. The first prize card is in position $1$ for $4$ of them (the other prize card can be anywhere after it), in position $2$ for $3$, in position $3$ for $2$, and in position $4$ for $1$. The expected number of cards is $\\frac{1 \\cdot 4 + 2 \\cdot 3 + 3 \\cdot 2 + 4 \\cdot 1}{10} = \\frac{20}{10} = 2$.",
+    "elegant": "The $2$ prize cards cut the $3$ blank cards into $3$ groups: before the first prize card, between the prize cards, and after the second prize card. For any one blank card, it is equally likely to be first, second or third among itself and the two prize cards, so it lands before the first prize card with probability $\\frac{1}{3}$. On average, then, $3 \\cdot \\frac{1}{3} = 1$ blank card comes before the first prize card, and adding the prize card itself gives $2$."
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0166",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-06",
+  "difficulty": "medium",
+  "statement": "The function $f$ is odd, meaning $f(-x) = -f(x)$ for every real number $x$, and $f(3) = -7$. The function $g$ is defined by $g(x) = f(x) + 4$. What is the value of $g(-3)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I mixed up odd and even and thought $f(-3) = f(3) = -7$, so I got $-7 + 4 = -3$."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I assumed $g$ is also odd, so I found $g(3) = -3$ and said $g(-3) = 3$, but adding $4$ breaks the odd symmetry."
+    },
+    {
+      "key": "C",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I found $f(-3) = 7$ correctly but forgot to add the $4$ in the definition of $g$."
+    },
+    {
+      "key": "D",
+      "text": "$11$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Use the definition of odd to find $f(-3)$ first.",
+    "Since $f(-x) = -f(x)$, $f(-3) = -f(3)$. Then substitute into $g(-3) = f(-3) + 4$.",
+    "$f(-3) = -(-7) = 7$, so $g(-3) = 7 + 4$."
+  ],
+  "solutions": {
+    "reliable": "Because $f$ is odd, $f(-3) = -f(3) = -(-7) = 7$. Then $g(-3) = f(-3) + 4 = 7 + 4 = 11$.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

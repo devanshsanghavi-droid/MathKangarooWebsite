@@ -1,0 +1,66 @@
+{
+  "id": "AM-1252",
+  "contest": "AMC8",
+  "slot": 9,
+  "area": "CP",
+  "topic": "CP-12",
+  "types": [
+    "T-BACKWARDS"
+  ],
+  "statement": "Every student at a school chose exactly one lunch option, and the results are shown in a pie chart. The pizza sector has a central angle of $126^\\circ$ and the salad sector has a central angle of $54^\\circ$. Exactly $36$ more students chose pizza than chose salad. How many students are at the school?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I worked out how many students chose salad, 72 degrees for 36 students means 54 degrees is 27 students, and I stopped there."
+    },
+    {
+      "key": "B",
+      "text": "$63$",
+      "correct": false,
+      "misconception": "I worked out how many students chose pizza, 126 degrees is 36 x 126 / 72 = 63 students, and I stopped there."
+    },
+    {
+      "key": "C",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I added the angles, 126 + 54 = 180 degrees, and matched that to the 36 students, so 360 degrees became 72."
+    },
+    {
+      "key": "D",
+      "text": "$90$",
+      "correct": false,
+      "misconception": "I found 63 pizza students and 27 salad students and added them, forgetting the students who chose other options."
+    },
+    {
+      "key": "E",
+      "text": "$180$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The difference in the number of students matches the difference in the angles.",
+    "The pizza sector is $126^\\circ - 54^\\circ = 72^\\circ$ larger than the salad sector, and that extra slice stands for $36$ students.",
+    "A $72^\\circ$ slice is one fifth of the whole circle, so $36$ students are one fifth of the school."
+  ],
+  "solutions": {
+    "reliable": "In a pie chart the angle of a sector is proportional to the number of students it represents. The pizza sector is $126^\\circ - 54^\\circ = 72^\\circ$ larger than the salad sector, so $72^\\circ$ stands for $36$ students. The whole circle is $360^\\circ = 5 \\times 72^\\circ$, so the school has $5 \\times 36 = 180$ students. Check: pizza is $\\frac{126}{360} \\times 180 = 63$ students and salad is $\\frac{54}{360} \\times 180 = 27$, and $63 - 27 = 36$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

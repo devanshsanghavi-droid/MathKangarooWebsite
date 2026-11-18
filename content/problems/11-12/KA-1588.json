@@ -1,0 +1,68 @@
+{
+  "id": "KA-1588",
+  "band": "11-12",
+  "points": 4,
+  "statement": "How many triangles have their three vertices among the vertices of a regular 10-sided polygon, but share no side with the polygon?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "40",
+      "correct": false,
+      "misconception": "I subtracted 80 triangles with a side of the polygon, but that counted each triangle with two such sides twice."
+    },
+    {
+      "key": "B",
+      "text": "50",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "60",
+      "correct": false,
+      "misconception": "I counted the triangles with exactly one side of the polygon instead of those with none."
+    },
+    {
+      "key": "D",
+      "text": "70",
+      "correct": false,
+      "misconception": "I counted the triangles with at least one side of the polygon, which are the ones to remove."
+    },
+    {
+      "key": "E",
+      "text": "110",
+      "correct": false,
+      "misconception": "I only removed the 10 triangles made of three neighbouring vertices and forgot the triangles with just one side of the polygon."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-16",
+    "secondary": [
+      "CNT-09",
+      "CNT-06"
+    ]
+  },
+  "hints": [
+    "Count all triangles first, then the ones you do not want.",
+    "Count triangles that use a side of the polygon by choosing the side and then the third vertex. Some triangles use two sides, so they are counted twice; correct for that before subtracting from the total.",
+    "There are $\\binom{10}{3} = 120$ triangles. Side first, then third vertex gives $10 \\times 8 = 80$, but the 10 triangles of three neighbouring vertices were counted twice."
+  ],
+  "solutions": {
+    "reliable": "There are $\\binom{10}{3} = 120$ triangles in total. Choose one of the 10 sides and any of the other 8 vertices: $10 \\times 8 = 80$. A triangle made of three neighbouring vertices uses two sides and was counted twice; there are 10 of these. So $80 - 10 = 70$ triangles use at least one side, and $120 - 70 = 50$ use none. The transferable idea: when a count by 'choose this, then that' can reach the same object twice, find exactly which objects are double counted and subtract them once.",
+    "elegant": "Count directly: pick the first vertex in 10 ways, and the other two must leave gaps of at least one vertex. The 7 non-neighbours split into choices of two non-adjacent vertices in a line of 7, giving $\\binom{6}{2} = 15$ ways; each triangle is counted 3 times, so $10 \\times 15 \\div 3 = 50$."
+  },
+  "whyOnTest": "Counting by sides counts some triangles twice, and the 4-point step is spotting exactly which ones before using the complement.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

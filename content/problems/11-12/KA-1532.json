@@ -1,0 +1,67 @@
+{
+  "id": "KA-1532",
+  "band": "11-12",
+  "points": 4,
+  "statement": "A balloon stays exactly spherical as it is blown up. Its surface area increases by 44%. By what percentage does its volume increase?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "20%",
+      "correct": false,
+      "misconception": "I found how much the radius grows and gave that."
+    },
+    {
+      "key": "B",
+      "text": "44%",
+      "correct": false,
+      "misconception": "I thought the volume grows by the same percentage as the surface area."
+    },
+    {
+      "key": "C",
+      "text": "66%",
+      "correct": false,
+      "misconception": "I multiplied 44% by 3/2, as if percentages scale like the powers 2 and 3."
+    },
+    {
+      "key": "D",
+      "text": "72.8%",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "172.8%",
+      "correct": false,
+      "misconception": "I worked out that the new volume is 172.8% of the old one and gave that instead of the increase."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-10",
+    "secondary": [
+      "GEO-16"
+    ]
+  },
+  "hints": [
+    "How much longer is the radius?",
+    "Area grows with the square of the length scale, volume with its cube. Find the length factor from the area factor, cube it, then re-read the question: it asks for the increase.",
+    "The area factor is $1.44 = 1.2^2$, so lengths grow by a factor $1.2$ and volume by $1.2^3$."
+  ],
+  "solutions": {
+    "reliable": "The surface area is multiplied by $1.44$, and area scales with the square of lengths, so the radius is multiplied by $\\sqrt{1.44} = 1.2$. Volume scales with the cube, so it is multiplied by $1.2^3 = 1.728$. The new volume is $172.8\\%$ of the old one, so the increase is $72.8\\%$. The transferable idea: convert between area and volume through the length factor, and check whether the question wants the new amount or the increase.",
+    "elegant": null
+  },
+  "whyOnTest": "Scaling needs the length factor, and the final trap is giving the new total instead of the percentage increase.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

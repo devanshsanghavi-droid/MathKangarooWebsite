@@ -1,0 +1,56 @@
+{
+  "id": "SA-0198",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-02",
+  "difficulty": "hard",
+  "statement": "The solutions to the equation $x^2 - 7x + 3 = 0$ are $r$ and $s$. What is the value of $(r - s)^2$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$37$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$43$",
+      "correct": false,
+      "misconception": "I computed $(r + s)^2 - 2rs = 49 - 6$, but that is $r^2 + s^2$, not $(r - s)^2$."
+    },
+    {
+      "key": "C",
+      "text": "$49$",
+      "correct": false,
+      "misconception": "I thought $(r - s)^2$ equals $(r + s)^2$, so I squared the sum $7$."
+    },
+    {
+      "key": "D",
+      "text": "$61$",
+      "correct": false,
+      "misconception": "I added $4rs$ to $(r + s)^2$ instead of subtracting it, so I got $49 + 12 = 61$."
+    }
+  ],
+  "hints": [
+    "You do not need $r$ and $s$ themselves; their sum and product are enough.",
+    "For $x^2 - 7x + 3 = 0$, $r + s = 7$ and $rs = 3$. How is $(r - s)^2$ related to $(r + s)^2$?",
+    "$(r + s)^2 = r^2 + 2rs + s^2$ and $(r - s)^2 = r^2 - 2rs + s^2$, so $(r - s)^2 = (r + s)^2 - 4rs$."
+  ],
+  "solutions": {
+    "reliable": "Since $x^2 - 7x + 3 = (x - r)(x - s)$, the sum of the solutions is $r + s = 7$ and the product is $rs = 3$. Then $(r - s)^2 = (r + s)^2 - 4rs = 49 - 12 = 37$. Check with the quadratic formula: $r, s = \\frac{7 \\pm \\sqrt{37}}{2}$, so $r - s = \\pm\\sqrt{37}$ and $(r - s)^2 = 37$.",
+    "elegant": "By the quadratic formula, the two solutions are $\\frac{7 + \\sqrt{37}}{2}$ and $\\frac{7 - \\sqrt{37}}{2}$, which differ by $\\sqrt{37}$. In general, for $x^2 + bx + c = 0$ the value of $(r - s)^2$ is the discriminant $b^2 - 4c$, here $49 - 12 = 37$."
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

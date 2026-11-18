@@ -1,0 +1,68 @@
+{
+  "id": "KA-1391",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A square sheet of paper with sides 16 cm is folded in half, then in half again, making a square with sides 8 cm. A 2 cm by 2 cm square is cut off at the corner where the two folds meet. Unfolded, what is the total length of all the paper's edges, including the edges of any hole?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "64",
+      "correct": false,
+      "misconception": "I thought the cut corner was a corner of the original sheet, and cutting a square notch from a corner does not change the perimeter."
+    },
+    {
+      "key": "B",
+      "text": "72",
+      "correct": false,
+      "misconception": "I thought the hole would be 2 cm by 2 cm, and added its 8 cm of edge to the 64 cm outside."
+    },
+    {
+      "key": "C",
+      "text": "96",
+      "correct": false,
+      "misconception": "I thought the cut would make four separate 2 cm by 2 cm holes, each adding 8 cm of edge."
+    },
+    {
+      "key": "D",
+      "text": "48",
+      "correct": false,
+      "misconception": "I subtracted the 16 cm of edge around the hole from the 64 cm outside instead of adding it."
+    },
+    {
+      "key": "E",
+      "text": "80",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-15",
+    "secondary": [
+      "GEO-01",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Where on the big square is the corner where both folds meet?",
+    "Unfold step by step. The corner where both folds meet is the centre of the original sheet. Each unfolding reflects the cut across a fold line, so work out the shape and size of the hole.",
+    "The four cut pieces join up around the centre into one square hole 4 cm by 4 cm. The outer edge of the sheet is untouched."
+  ],
+  "solutions": {
+    "reliable": "Folding in half and in half again brings the centre of the sheet to the corner where the two folds meet. Cutting a 2 cm by 2 cm square there removes a 2 by 2 square from each of the four layers, and these four squares sit together around the centre. Unfolded, they form one square hole of side 4 cm. The outside edge is still 4 x 16 = 64 cm, and the hole adds 4 x 4 = 16 cm of edge. The total is 64 + 16 = 80 cm. The transferable idea: to unfold, reflect every cut across each fold line, undoing the folds in reverse order.",
+    "elegant": null
+  },
+  "whyOnTest": "Paper folding: locating where the folds meet and reflecting the cut back out to see the true hole.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

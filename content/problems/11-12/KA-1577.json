@@ -1,0 +1,68 @@
+{
+  "id": "KA-1577",
+  "band": "11-12",
+  "points": 5,
+  "statement": "The six interior angles of a convex hexagon, measured in degrees, are whole numbers. Listed from smallest to largest, each angle is the same amount bigger than the one before. What is the largest possible size of the biggest angle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$175^\\circ$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$177^\\circ$",
+      "correct": false,
+      "misconception": "I treated the average angle, $120^\\circ$, as the third angle in the list, so I used $120 + 3d < 180$ and got $d = 19$."
+    },
+    {
+      "key": "C",
+      "text": "$177.5^\\circ$",
+      "correct": false,
+      "misconception": "I let the step be any whole number and took $d = 23$, the largest with $120 + 2.5d < 180$, without checking that the angles are then not whole numbers."
+    },
+    {
+      "key": "D",
+      "text": "$179^\\circ$",
+      "correct": false,
+      "misconception": "I only made sure the biggest angle was a whole number less than $180^\\circ$ and did not check that the six angles could fit the pattern."
+    },
+    {
+      "key": "E",
+      "text": "$180^\\circ$",
+      "correct": false,
+      "misconception": "I allowed the biggest angle to be $180^\\circ$, but a convex polygon has every interior angle smaller than $180^\\circ$."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-05",
+    "secondary": [
+      "NUM-03",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "What do the six angles of any hexagon add up to?",
+    "Call the smallest angle $a$ and the step $d$. The angle sum gives one equation. Check whether it allows $d$ to be odd, then push the biggest angle as close to $180^\\circ$ as allowed.",
+    "The angles are $a, a + d, \\dots, a + 5d$ with sum $6a + 15d = 720$, so $2a + 5d = 240$. That forces $d$ to be even. Write $d = 2e$: then $a = 120 - 5e$ and the biggest angle is $120 + 5e$."
+  ],
+  "solutions": {
+    "reliable": "The angles of a hexagon add up to $720^\\circ$. With smallest angle $a$ and step $d$: $6a + 15d = 720$, so $2a + 5d = 240$. Since $2a$ and $240$ are even, $5d$ is even, so $d$ is even, say $d = 2e$. Then $a = 120 - 5e$ and the biggest angle is $a + 5d = 120 + 5e$. Convexity needs $120 + 5e < 180$, so $e < 12$ and $e \\le 11$. With $e = 11$ the angles are $65, 87, 109, 131, 153, 175$, which add up to $720$. The biggest angle is $175^\\circ$. The transferable idea: when the unknowns must be whole numbers, check what the equation says about parity before maximising.",
+    "elegant": "The angles are symmetric about their mean $120^\\circ$: the biggest is $120 + 2.5d$. For this to be a whole number, $2.5d$ must be whole, so $d$ is even. The largest even $d$ with $120 + 2.5d < 180$ is $d = 22$, giving $175^\\circ$."
+  },
+  "whyOnTest": "An angle-sum fact meets a whole-number condition, and the 5-point idea is noticing the parity restriction before pushing the biggest angle up to the limit.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

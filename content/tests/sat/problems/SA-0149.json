@@ -1,0 +1,56 @@
+{
+  "id": "SA-0149",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-08",
+  "difficulty": "hard",
+  "statement": "The function $f$ is defined by $f(x) = ax + 3$, where $a$ is a positive constant. If $f(f(2)) = 30$, what is the value of $a$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6.75$",
+      "correct": false,
+      "misconception": "I treated $f(f(2))$ as $f(2 \\cdot 2) = f(4)$, so I solved $4a + 3 = 30$."
+    },
+    {
+      "key": "B",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I added $f(2)$ to itself instead of putting it into $f$, so I solved $2(2a + 3) = 30$."
+    },
+    {
+      "key": "C",
+      "text": "$3$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$4.5$",
+      "correct": false,
+      "misconception": "I reached $2a^2 + 3a - 27 = 0$ but factored it as $(2a - 9)(a + 3)$ and took the positive root."
+    }
+  ],
+  "hints": [
+    "Work from the inside out: first find $f(2)$ in terms of $a$.",
+    "$f(2) = 2a + 3$. Then $f(f(2)) = f(2a + 3) = a(2a + 3) + 3$.",
+    "Set $2a^2 + 3a + 3 = 30$, so $2a^2 + 3a - 27 = 0$, which factors as $(2a + 9)(a - 3) = 0$."
+  ],
+  "solutions": {
+    "reliable": "First, $f(2) = 2a + 3$. Then $f(f(2)) = a(2a + 3) + 3 = 2a^2 + 3a + 3$. Setting this equal to $30$ gives $2a^2 + 3a - 27 = 0$, which factors as $(2a + 9)(a - 3) = 0$. So $a = 3$ or $a = -4.5$, and since $a$ is positive, $a = 3$. Check: $f(x) = 3x + 3$, so $f(2) = 9$ and $f(9) = 30$.",
+    "elegant": "Test the choices from the inside out. With $a = 3$, $f(2) = 9$ and $f(9) = 27 + 3 = 30$, which matches."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

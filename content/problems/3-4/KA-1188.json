@@ -1,0 +1,68 @@
+{
+  "id": "KA-1188",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Using each of the digits 1, 2, 3 and 4 exactly once, Max makes four-digit numbers. How many of these numbers can be divided exactly by 4?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found the three possible endings, 12, 24 and 32, but forgot the first two digits can be swapped."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I found the endings 12 and 32 but missed 24, then swapped the first two digits."
+    },
+    {
+      "key": "C",
+      "text": "12",
+      "correct": false,
+      "misconception": "I counted the even numbers, the ones ending in 2 or 4, as if every even number divides by 4."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "24",
+      "correct": false,
+      "misconception": "I counted all the numbers that can be made, without checking which divide by 4."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "CNT-01",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "Only the last two digits matter for 4.",
+    "A number divides by 4 when its last two digits make a multiple of 4. List the possible endings from these digits, then count the ways to fill the front.",
+    "The endings can be 12, 24 or 32. Each leaves two digits for the front."
+  ],
+  "solutions": {
+    "reliable": "The last two digits must be a multiple of 4 made from two different digits of 1, 2, 3, 4: that gives 12, 24 and 32 (but not 14, 34, 42 or the others). For each ending, the two leftover digits can go in front in 2 orders. Total: $3 \\times 2 = 6$. They are 3412, 4312, 1324, 3124, 1432, 4132. The transferable idea: use the divisibility rule to fix the end, then multiply by the ways to fill the rest.",
+    "elegant": null
+  },
+  "whyOnTest": "The last-two-digits rule for 4 turns a long list into a short count: fix the ending, then multiply.",
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "AM-1233",
+  "contest": "AMC8",
+  "slot": 3,
+  "area": "CP",
+  "topic": "CP-02",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "Five students, all of different heights, line up in a row for a photo. The tallest student must not stand at either end of the row, and the shortest student must stand at one of the two ends. In how many different orders can the five students line up?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I counted 2 spots for the shortest student and 3 for the tallest, 2 times 3 = 6, and forgot to arrange the other three students."
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I only used the rule for the shortest student: 2 end spots, then 4 times 3 times 2 times 1 = 24 orders for the rest, so 48."
+    },
+    {
+      "key": "D",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I only used the rule for the tallest student: 3 middle spots, then 24 orders for the rest, so 72."
+    },
+    {
+      "key": "E",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I ignored both rules and counted every order of five students, 5 times 4 times 3 times 2 times 1 = 120."
+    }
+  ],
+  "hints": [
+    "Place the students with rules first, then everyone else.",
+    "The shortest student has $2$ possible spots. The tallest has $3$ middle spots, and none of those is an end, so the two never compete for a spot.",
+    "Shortest: $2$ choices. Tallest: $3$ choices. The other three students fill the remaining $3$ spots in $3! = 6$ ways. Multiply."
+  ],
+  "solutions": {
+    "reliable": "Put the shortest student at an end: $2$ choices. Put the tallest student in one of the $3$ middle spots: $3$ choices, and none of them is taken, since the shortest student is at an end. The remaining $3$ students fill the remaining $3$ spots in $3 \\cdot 2 \\cdot 1 = 6$ ways. In all there are $2 \\cdot 3 \\cdot 6 = 36$ orders.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-02"
+  ],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

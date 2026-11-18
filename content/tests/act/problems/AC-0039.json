@@ -1,0 +1,56 @@
+{
+  "id": "AC-0039",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-05",
+  "difficulty": "medium",
+  "statement": "Carpet costs $\\$28$ per square yard, installed. A rectangular room measures $15$ feet by $12$ feet. What is the cost to carpet the entire floor of the room? ($1$ yard $= 3$ feet)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$5{,}040$",
+      "correct": false,
+      "misconception": "I multiplied the area in square feet, 180, by the price per square yard without converting units."
+    },
+    {
+      "key": "B",
+      "text": "$\\$1{,}680$",
+      "correct": false,
+      "misconception": "I divided the 180 square feet by 3 to get square yards, but one square yard is $3 \\cdot 3 = 9$ square feet."
+    },
+    {
+      "key": "C",
+      "text": "$\\$560$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$504$",
+      "correct": false,
+      "misconception": "I changed the sides to 5 yards and 4 yards but found the perimeter, 18 yards, instead of the area."
+    }
+  ],
+  "hints": [
+    "The price is per square yard, but the room is measured in feet.",
+    "Convert each side to yards first, or find the area in square feet and divide by the number of square feet in one square yard.",
+    "The room is $5$ yards by $4$ yards, so its area is $20$ square yards."
+  ],
+  "solutions": {
+    "reliable": "Convert the sides: $15$ ft $= 5$ yd and $12$ ft $= 4$ yd. The area is $5 \\cdot 4 = 20$ square yards, and the cost is $20 \\cdot 28 = \\$560$. Check another way: $15 \\cdot 12 = 180$ square feet, and $180 \\div 9 = 20$ square yards. The idea: an area conversion uses the square of the length conversion factor.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0249",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-08",
+  "difficulty": "hard",
+  "statement": "In the $xy$-plane, a dilation maps point $A(1, 2)$ to $A'(7, 11)$ and point $B(3, 2)$ to $B'(11, 11)$. What are the coordinates of the center of the dilation?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$(5, 7)$",
+      "correct": false,
+      "misconception": "I found the scale factor 2 but then computed A' minus 2A instead of 2A minus A', so every sign came out flipped."
+    },
+    {
+      "key": "B",
+      "text": "$(4, 6.5)$",
+      "correct": false,
+      "misconception": "I thought the center of a dilation is halfway between a point and its image, so I took the midpoint of A and A'."
+    },
+    {
+      "key": "C",
+      "text": "$(13, 20)$",
+      "correct": false,
+      "misconception": "I wrote the dilation equation backward as A - C = 2(A' - C), as if A were the image of A', which gave C = 2A' - A = (13, 20)."
+    },
+    {
+      "key": "D",
+      "text": "$(-5, -7)$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Compare $AB$ with $A'B'$ to find the scale factor first.",
+    "$AB = 2$ and $A'B' = 4$, so the scale factor is $k = 2$. A dilation with center $C$ satisfies $A' - C = k(A - C)$.",
+    "$A' - C = 2(A - C)$ gives $C = 2A - A'$. Compute it and check it with $B$ and $B'$."
+  ],
+  "solutions": {
+    "reliable": "Segment $\\overline{AB}$ has length $2$ and its image $\\overline{A'B'}$ has length $4$, so the scale factor is $k = 2$ (the image points in the same direction, so $k$ is positive). For center $C$, the dilation satisfies $A' - C = 2(A - C)$, so $C = 2A - A' = (2 - 7, 4 - 11) = (-5, -7)$. Check with $B$: $2B - B' = (6 - 11, 4 - 11) = (-5, -7)$.",
+    "elegant": "The center lies on line $AA'$ and on line $BB'$. Line $AA'$ has slope $\\frac{9}{6} = \\frac{3}{2}$ through $(1, 2)$, and line $BB'$ has slope $\\frac{9}{8}$ through $(3, 2)$. Setting $2 + \\frac{3}{2}(x - 1) = 2 + \\frac{9}{8}(x - 3)$ gives $x = -5$, and then $y = -7$."
+  },
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

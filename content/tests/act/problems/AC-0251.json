@@ -1,0 +1,56 @@
+{
+  "id": "AC-0251",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-01",
+  "difficulty": "easy",
+  "statement": "A food truck recorded the number of tacos it sold on each of $8$ days: $$42,\\ 57,\\ 38,\\ 61,\\ 45,\\ 50,\\ 57,\\ 44$$ What is the median number of tacos sold per day?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$45$",
+      "correct": false,
+      "misconception": "I sorted the list and took the 4th value, 45, forgetting that with 8 values the median is halfway between the 4th and 5th values."
+    },
+    {
+      "key": "B",
+      "text": "$47.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$49.25$",
+      "correct": false,
+      "misconception": "I added all 8 numbers to get 394 and divided by 8, which gives the mean, not the median."
+    },
+    {
+      "key": "D",
+      "text": "$53$",
+      "correct": false,
+      "misconception": "I took the two middle numbers of the list as written, 61 and 45, and averaged them without sorting first."
+    }
+  ],
+  "hints": [
+    "The median is the middle of the data once it is in order.",
+    "Sort the $8$ values. With an even number of values, the median is the mean of the two middle values.",
+    "Sorted: $38, 42, 44, 45, 50, 57, 57, 61$. The two middle values are $45$ and $50$."
+  ],
+  "solutions": {
+    "reliable": "In order, the values are $38, 42, 44, 45, 50, 57, 57, 61$. There are $8$ values, so the median is the mean of the 4th and 5th values: $\\dfrac{45 + 50}{2} = 47.5$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

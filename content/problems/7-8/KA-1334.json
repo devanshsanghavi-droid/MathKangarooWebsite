@@ -1,0 +1,67 @@
+{
+  "id": "KA-1334",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Square ABCD has side 12 cm, with its corners in the order A, B, C, D around the square. Point E lies on side BC with BE = 8 cm, and point F lies on side CD with DF = 3 cm. What is the area of triangle AEF, in square centimetres?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "84",
+      "correct": false,
+      "misconception": "I found the total area of the three corner triangles and gave that instead of what is left."
+    },
+    {
+      "key": "B",
+      "text": "72",
+      "correct": false,
+      "misconception": "I assumed that a triangle drawn from a corner of the square always takes up half of it."
+    },
+    {
+      "key": "C",
+      "text": "42",
+      "correct": false,
+      "misconception": "I forgot to halve the 4 by 9 rectangle for the triangle at corner C, so I took away 36 there instead of 18."
+    },
+    {
+      "key": "D",
+      "text": "60",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "66",
+      "correct": false,
+      "misconception": "I mixed up BE and EC and used BE = 4 cm, which changes two of the corner triangles."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-04",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Triangle AEF is the square with three right-angled triangles cut off.",
+    "Draw the square and mark E and F. The three corner triangles at B, C and D are right-angled, so their areas are easy. Subtract them from the area of the square.",
+    "The corner triangles have legs 12 and 8, then 12 and 3, then EC = 4 and FC = 9."
+  ],
+  "solutions": {
+    "reliable": "The square has area 144. Around triangle AEF are three right-angled triangles: ABE with legs 12 and 8, area 48; ADF with legs 12 and 3, area 18; and ECF with legs EC = 12 - 8 = 4 and FC = 12 - 3 = 9, area 18. So triangle AEF has area 144 - 48 - 18 - 18 = 60 square centimetres. The transferable idea: a slanted triangle inside a rectangle is often easiest as the rectangle minus right-angled corner pieces.",
+    "elegant": null
+  },
+  "whyOnTest": "Tests area by subtraction: a tilted triangle is hard to measure directly but easy as a square minus three right-angled corners.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

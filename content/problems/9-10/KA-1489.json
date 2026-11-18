@@ -1,0 +1,68 @@
+{
+  "id": "KA-1489",
+  "band": "9-10",
+  "points": 3,
+  "statement": "Five numbers have a mean of 20. If one of them is removed, the other four have a mean of 18. If instead a different one of the five is removed, the other four have a mean of 23. What is the difference between the two numbers that were removed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I found the difference between the two new means and stopped there."
+    },
+    {
+      "key": "B",
+      "text": "25",
+      "correct": false,
+      "misconception": "I multiplied the 5-point difference in means by 5, the original count, instead of by 4."
+    },
+    {
+      "key": "C",
+      "text": "28",
+      "correct": false,
+      "misconception": "I only found the first number that was removed."
+    },
+    {
+      "key": "D",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I only found the second number that was removed."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-15",
+    "secondary": [
+      "MOD-01",
+      "CFT-07"
+    ]
+  },
+  "hints": [
+    "Turn each mean into a total.",
+    "Mean times count gives a total. Subtracting each removed number from the total of all five gives a total of four numbers; compare the two four-number totals.",
+    "The five numbers total 100, and the two groups of four total 72 and 92."
+  ],
+  "solutions": {
+    "reliable": "The five numbers total $5 \\times 20 = 100$. Removing the first leaves $4 \\times 18 = 72$, so it was 28. Removing the second leaves $4 \\times 23 = 92$, so it was 8. The difference is $28 - 8 = 20$. The transferable idea: convert means to totals before adding or removing items.",
+    "elegant": "Both groups of four come from the same five numbers, so the difference between the removed numbers equals the difference between the four-number totals: $4 \\times (23 - 18) = 20$. The transferable idea: when two cases share the same total, compare their differences directly."
+  },
+  "whyOnTest": "Means questions test that you convert to totals; this one rewards spotting that only the difference of the two four-number totals matters.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

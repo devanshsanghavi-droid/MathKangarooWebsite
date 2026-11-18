@@ -1,0 +1,56 @@
+{
+  "id": "SA-0076",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "easy",
+  "statement": "A car ferry has deck space for the equivalent of $40$ cars. The inequality $c + 3t \\le 40$ describes the numbers of cars, $c$, and trucks, $t$, that the ferry can carry on one trip. What is the best interpretation of the number $3$ in this context?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "The ferry can carry at most $3$ trucks on one trip.",
+      "correct": false,
+      "misconception": "I read the 3 as a limit on the number of trucks, but it multiplies $t$, so it describes how much space each truck uses."
+    },
+    {
+      "key": "B",
+      "text": "Each truck takes up as much deck space as $3$ cars.",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "The ferry carries $3$ more trucks than cars on every trip.",
+      "correct": false,
+      "misconception": "I thought the 3 compared the numbers of trucks and cars, but it is a coefficient on $t$, not an amount added to $c$."
+    },
+    {
+      "key": "D",
+      "text": "Each car takes up as much deck space as $3$ trucks.",
+      "correct": false,
+      "misconception": "I reversed the comparison: the 3 is attached to $t$, so it is each truck that counts as 3 cars, not each car that counts as 3 trucks."
+    }
+  ],
+  "hints": [
+    "The left side measures deck space in units of one car.",
+    "Ask how much the left side grows when one more car boards, and how much it grows when one more truck boards.",
+    "One more car adds $1$ to $c + 3t$, and one more truck adds $3$. Compare those two amounts of space."
+  ],
+  "solutions": {
+    "reliable": "The expression $c + 3t$ counts deck space in car-sized units: each car adds $1$ unit and each truck adds $3$ units, and the total can be at most $40$ units. So the coefficient $3$ means that one truck uses the same deck space as $3$ cars. For example, $10$ trucks and $10$ cars use $10(3) + 10 = 40$ units, a full deck. Key idea: in a constraint like $c + 3t \\le 40$, each coefficient is the amount of the shared resource used by one unit of that variable.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

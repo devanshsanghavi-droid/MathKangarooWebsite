@@ -1,0 +1,62 @@
+{
+  "id": "AM-1998",
+  "contest": "AMC8",
+  "slot": 12,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": ["T-SMALL-CASES"],
+  "statement": "Priya rides her bike up a hill road at $12$ kilometers per hour, then turns around and rides back down the same road at $24$ kilometers per hour. What is her average speed, in kilometers per hour, for the whole trip?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I thought the slow uphill leg sets the pace for the whole trip, so I answered the uphill speed, 12."
+    },
+    {
+      "key": "B",
+      "text": "$16$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": false,
+      "misconception": "I averaged the two speeds, (12 + 24) / 2 = 18, but she spends more time going up than coming down."
+    },
+    {
+      "key": "D",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I knew one leg takes twice as long, but I counted the downhill speed twice: (12 + 24 + 24) / 3 = 20. It is the uphill leg that takes twice as long."
+    },
+    {
+      "key": "E",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I added the two speeds, 12 + 24 = 36, as if she rode both legs at the same time."
+    }
+  ],
+  "hints": [
+    "The answer does not depend on how long the road is, so pick a length that makes the times easy.",
+    "Average speed is total distance divided by total time. Try a road 24 kilometers long.",
+    "With a 24 km road, going up takes 2 hours and coming down takes 1 hour. She rides 48 km in 3 hours."
+  ],
+  "solutions": {
+    "reliable": "Average speed is total distance over total time, and the road length cancels, so choose a road $24$ km long. Uphill takes $24 / 12 = 2$ hours and downhill takes $24 / 24 = 1$ hour. She rides $48$ km in $3$ hours, so her average speed is $48 / 3 = 16$ km per hour. It is less than $18$, the plain average of the speeds, because she spends twice as long on the slow leg.",
+    "elegant": "For two legs of equal length at speeds $u$ and $v$, the average speed is $\\frac{2uv}{u + v}$. Here that is $\\frac{2 \\cdot 12 \\cdot 24}{36} = 16$."
+  },
+  "formulas": ["F-ALG-20"],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": ["pending-review"],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

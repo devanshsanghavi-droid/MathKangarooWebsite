@@ -1,0 +1,66 @@
+{
+  "id": "AM-1168",
+  "contest": "AMC8",
+  "slot": 6,
+  "area": "NT",
+  "topic": "NT-08",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "The product $1 \\times 2 \\times 3 \\times \\cdots \\times 40$ is written out in full as an ordinary whole number. How many zeros are at the end of this number?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I only counted the multiples of $10$, which are $10, 20, 30, 40$, so I got $4$ zeros."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I counted one factor of $5$ for each multiple of $5$ up to $40$, but forgot that $25 = 5 \\cdot 5$ gives an extra $5$."
+    },
+    {
+      "key": "C",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I counted one zero for each of the $8$ multiples of $5$ and another zero for each of the $4$ multiples of $10$, counting those $5$s twice."
+    },
+    {
+      "key": "E",
+      "text": "$38$",
+      "correct": false,
+      "misconception": "I counted the factors of $2$ in the product, $20 + 10 + 5 + 2 + 1 = 38$, instead of the factors of $5$."
+    }
+  ],
+  "hints": [
+    "Each zero at the end comes from a factor of $10 = 2 \\cdot 5$.",
+    "There are far more factors of $2$ than of $5$, so count the factors of $5$ in the product.",
+    "The multiples of $5$ up to $40$ are $5, 10, 15, 20, 25, 30, 35, 40$, and $25$ contains $5$ twice."
+  ],
+  "solutions": {
+    "reliable": "Each trailing zero needs one factor of $2$ and one factor of $5$. Factors of $2$ are plentiful, so the count is set by the factors of $5$. The multiples of $5$ from $1$ to $40$ are $5, 10, 15, 20, 25, 30, 35, 40$; each gives one $5$, and $25 = 5^2$ gives one extra. That is $8 + 1 = 9$ factors of $5$, so the number ends in $9$ zeros.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1520",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Two different numbers are chosen from $1, 2, 3, \\ldots, 30$. For how many of the possible pairs is the product of the two numbers a multiple of 4?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$210$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$182$",
+      "correct": false,
+      "misconception": "I counted only the pairs that contain a multiple of 4, missing pairs such as 2 and 6 whose product is a multiple of 4 anyway."
+    },
+    {
+      "key": "C",
+      "text": "$225$",
+      "correct": false,
+      "misconception": "I counted the pairs whose product is not a multiple of 4 and forgot to subtract them from the total."
+    },
+    {
+      "key": "D",
+      "text": "$330$",
+      "correct": false,
+      "misconception": "I removed only the pairs of two odd numbers, forgetting that an odd number times 2, 6, 10, ... is not a multiple of 4 either."
+    },
+    {
+      "key": "E",
+      "text": "$315$",
+      "correct": false,
+      "misconception": "I removed the pairs of an odd number with 2, 6, 10, ... but forgot the pairs of two odd numbers."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-06",
+    "secondary": [
+      "CNT-09",
+      "NUM-04"
+    ]
+  },
+  "hints": [
+    "When is a product of two numbers NOT a multiple of 4?",
+    "Sort the numbers by how many factors of 2 they have: odd, even but not a multiple of 4, and multiples of 4. Count the pairs whose product fails, and subtract from all pairs.",
+    "There are 15 odd numbers and 8 numbers of the form $4k + 2$. A product fails when both are odd, or one is odd and the other is of the form $4k + 2$."
+  ],
+  "solutions": {
+    "reliable": "There are $\\binom{30}{2} = 435$ pairs. The numbers 1 to 30 split into 15 odd numbers, 8 numbers that are even but not multiples of 4 (2, 6, ..., 30), and 7 multiples of 4. The product is not a multiple of 4 exactly when both numbers are odd, $\\binom{15}{2} = 105$ pairs, or one is odd and the other is of the form $4k + 2$, $15 \\times 8 = 120$ pairs. So $435 - 105 - 120 = 210$ pairs work. Check directly: pairs with a multiple of 4 number $435 - \\binom{23}{2} = 182$, and pairs of two $4k + 2$ numbers add $\\binom{8}{2} = 28$, giving 210. The transferable idea: count the failures by cases, then subtract.",
+    "elegant": null
+  },
+  "whyOnTest": "Counting the good pairs directly invites missing a case; sorting by factors of 2 and counting the complement is clean.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0227",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-01",
+  "difficulty": "medium",
+  "statement": "Regular polygon $P$ has twice as many sides as regular polygon $Q$. Each interior angle of $P$ is $30^\\circ$ larger than each interior angle of $Q$. What is the measure of each interior angle of $P$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$120^\\circ$",
+      "correct": false,
+      "misconception": "I solved and found that Q is a hexagon, then I gave the interior angle of Q, 120 degrees, instead of the angle of P."
+    },
+    {
+      "key": "B",
+      "text": "$30^\\circ$",
+      "correct": false,
+      "misconception": "I found that P has 12 sides and computed 360 divided by 12 = 30, but that is the exterior angle of P, not the interior angle."
+    },
+    {
+      "key": "C",
+      "text": "$1{,}800^\\circ$",
+      "correct": false,
+      "misconception": "I found that P has 12 sides and computed (12 - 2) times 180 = 1,800, which is the sum of all the interior angles, not one angle."
+    },
+    {
+      "key": "D",
+      "text": "$150^\\circ$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "It is easier to compare exterior angles. How is an exterior angle of a regular $n$-gon related to $n$?",
+    "If $Q$ has $n$ sides, its exterior angle is $\\frac{360}{n}$ and the exterior angle of $P$ is $\\frac{360}{2n}$. A larger interior angle means a smaller exterior angle, by the same $30^\\circ$.",
+    "$\\frac{360}{n} - \\frac{360}{2n} = \\frac{180}{n} = 30$, so $n = 6$ and $P$ has $12$ sides. Its exterior angle is $30^\\circ$, so its interior angle is $180^\\circ - 30^\\circ$."
+  ],
+  "solutions": {
+    "reliable": "Let $Q$ have $n$ sides, so $P$ has $2n$ sides. Each interior angle of a regular $k$-gon is $180 - \\frac{360}{k}$. The condition is $\\left(180 - \\frac{360}{2n}\\right) - \\left(180 - \\frac{360}{n}\\right) = 30$, which simplifies to $\\frac{180}{n} = 30$, so $n = 6$. Then $P$ has $12$ sides and each interior angle is $180 - \\frac{360}{12} = 150^\\circ$. Check: $Q$ is a hexagon with interior angle $120^\\circ$, and $150 - 120 = 30$.",
+    "elegant": "Doubling the number of sides halves the exterior angle. The exterior angle drops by half of its value, and that drop is $30^\\circ$, so $Q$'s exterior angle is $60^\\circ$ and $P$'s is $30^\\circ$. Each interior angle of $P$ is $180^\\circ - 30^\\circ = 150^\\circ$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

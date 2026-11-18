@@ -1,0 +1,68 @@
+{
+  "id": "KA-1569",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A bag holds 3 red balls and 2 blue balls. Two balls are taken out at random, one after the other, without putting the first one back. What is the probability that the two balls have different colours?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{3}{10}$",
+      "correct": false,
+      "misconception": "I counted the 6 pairs of one red and one blue ball but divided by the 20 ordered draws, mixing unordered and ordered counting."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{2}{5}$",
+      "correct": false,
+      "misconception": "I worked out the probability that the two balls have the same colour, which is the opposite of what was asked."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{12}{25}$",
+      "correct": false,
+      "misconception": "I treated the draws as if the first ball were put back before the second, so I used $2 \\times \\frac35 \\times \\frac25$."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{1}{2}$",
+      "correct": false,
+      "misconception": "I thought that same colour and different colours are two outcomes and so must be equally likely."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{3}{5}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CFT-11",
+    "secondary": [
+      "CNT-09",
+      "CNT-06"
+    ]
+  },
+  "hints": [
+    "Count pairs of balls, or think of the two draws in order.",
+    "Solve it two ways to be safe: count unordered pairs directly, and separately find the chance of the same colour and subtract it from 1. Use the same kind of counting in the top and bottom of each fraction.",
+    "There are $\\binom52 = 10$ pairs of balls, and $3 \\times 2 = 6$ of them are one red and one blue."
+  ],
+  "solutions": {
+    "reliable": "There are $\\binom52 = 10$ equally likely pairs. A mixed pair is one of the 3 red balls with one of the 2 blue balls: 6 pairs. The probability is $\\frac{6}{10} = \\frac35$. Check by complement: two reds, $\\binom32 = 3$ pairs; two blues, 1 pair; so the same colour has probability $\\frac{4}{10}$ and different colours $1 - \\frac{4}{10} = \\frac35$. The transferable idea: confirm a probability with a second method, and keep ordered and unordered counting consistent.",
+    "elegant": "In order: red then blue has probability $\\frac35 \\times \\frac24 = \\frac{3}{10}$, and blue then red $\\frac25 \\times \\frac34 = \\frac{3}{10}$, so the total is $\\frac35$. The transferable idea: when the order of events matters, add the orders separately."
+  },
+  "whyOnTest": "Two quick methods, direct and complement, agree only if ordered and unordered counts are not mixed, which is the classic slip.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

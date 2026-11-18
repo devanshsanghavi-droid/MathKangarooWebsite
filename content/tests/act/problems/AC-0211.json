@@ -1,0 +1,56 @@
+{
+  "id": "AC-0211",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "hard",
+  "statement": "Three buoys mark the corners of a triangular sailing course. The three legs of the course are $7$, $8$ and $13$ kilometers long. To the nearest degree, what is the measure of the largest angle of the triangle? (Note: in any triangle with sides $a$, $b$ and $c$, where angle $C$ is opposite side $c$, $c^2 = a^2 + b^2 - 2ab \\cos C$.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$60^\\circ$",
+      "correct": false,
+      "misconception": "I wrote $\\cos C = \\frac{13^2 - 7^2 - 8^2}{2(7)(8)}$ with the subtraction reversed, so I got $\\frac{1}{2}$ and $C = 60^\\circ$."
+    },
+    {
+      "key": "B",
+      "text": "$84^\\circ$",
+      "correct": false,
+      "misconception": "I split $180^\\circ$ in proportion to the side lengths $7 : 8 : 13$, so the largest angle was $\\frac{13}{28} \\cdot 180^\\circ \\approx 84^\\circ$, but angles are not proportional to sides."
+    },
+    {
+      "key": "C",
+      "text": "$120^\\circ$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$150^\\circ$",
+      "correct": false,
+      "misconception": "I found $\\cos C = -\\frac{1}{2}$ correctly, but I misremembered the special values and thought $\\cos 150^\\circ = -\\frac{1}{2}$, so I chose $150^\\circ$. In fact $\\cos 150^\\circ = -\\frac{\\sqrt{3}}{2}$."
+    }
+  ],
+  "hints": [
+    "The largest angle is opposite the longest side, the $13$-kilometer leg.",
+    "Solve the law of cosines for $\\cos C$: $\\cos C = \\frac{a^2 + b^2 - c^2}{2ab}$ with $c = 13$.",
+    "$\\cos C = \\frac{49 + 64 - 169}{2(7)(8)} = \\frac{-56}{112}$."
+  ],
+  "solutions": {
+    "reliable": "The largest angle $C$ is opposite the longest side, $c = 13$. From the law of cosines, $169 = 49 + 64 - 2(7)(8)\\cos C$, so $112\\cos C = -56$ and $\\cos C = -\\frac{1}{2}$. The angle between $0^\\circ$ and $180^\\circ$ with cosine $-\\frac{1}{2}$ is $120^\\circ$.",
+    "elegant": "Since $13^2 = 169$ is greater than $7^2 + 8^2 = 113$, the largest angle is obtuse, which rules out $60^\\circ$ and $84^\\circ$ at once. Then $\\cos C = \\frac{113 - 169}{112} = -\\frac{1}{2}$ picks $120^\\circ$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

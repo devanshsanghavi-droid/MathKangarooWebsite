@@ -1,0 +1,68 @@
+{
+  "id": "KA-1471",
+  "band": "9-10",
+  "points": 5,
+  "statement": "Twenty children stand in a circle, numbered 1 to 20 clockwise. Going clockwise round and round, starting with child 1, the children still standing are passed in turn and every second one sits down: child 1 stays up, child 2 sits, child 3 stays up, child 4 sits, and so on. Which child is the last one standing?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "child 1",
+      "correct": false,
+      "misconception": "I tried 2, 4 and 8 children, where child 1 is always the last one standing, and assumed the same happens with 20."
+    },
+    {
+      "key": "B",
+      "text": "child 7",
+      "correct": false,
+      "misconception": "I knew child 1 is last with 16 children, but I started adding 2 from 17 children instead of from 16, so I added only three steps of 2."
+    },
+    {
+      "key": "C",
+      "text": "child 9",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "child 15",
+      "correct": false,
+      "misconception": "I treated each trip round the circle separately, and from the second trip on I started by sitting down the first child still standing."
+    },
+    {
+      "key": "E",
+      "text": "child 19",
+      "correct": false,
+      "misconception": "I saw that all the even-numbered children sit down on the first trip round and assumed the last odd number, 19, would be left."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-03",
+    "secondary": [
+      "PAT-07",
+      "CFT-11"
+    ]
+  },
+  "hints": [
+    "Play the same game with fewer children first.",
+    "Find the last child standing for 1, 2, 3, up to about 10 children, and look for a pattern. Pay special attention to what happens with 2, 4, 8 and 16 children.",
+    "For 1 to 8 children the last one standing is child 1, 1, 3, 1, 3, 5, 7, 1. The answer is child 1 whenever the number of children is a power of 2, and it goes up by 2 for each extra child after that."
+  ],
+  "solutions": {
+    "reliable": "Small cases give, for 1 to 8 children, the winners 1, 1, 3, 1, 3, 5, 7, 1. Here is why the powers of 2 matter. If an even number of children are standing and child 1 is next to be passed, one trip round sits down every second child and comes back to child 1, who is passed again, with half as many children left. Starting from 16, this halves to 8, 4, 2 and 1, and child 1 is never the one who sits. Now take 20 = 16 + 4 children. After four children sit down (children 2, 4, 6 and 8), 16 remain and the next child to be passed, staying up, is child 9. From here the game is exactly a game of 16 starting with child 9, so child 9 is last. The transferable idea: small cases reveal the pattern, but check enough of them, because a pattern can reset, as this one does at each power of 2.",
+    "elegant": "Write the number of children as a power of 2 plus a remainder: 20 = 16 + 4. Once 4 children have sat down, 16 remain and child 2 × 4 + 1 = 9 is first in line, and in a game with a power of 2 children the first in line always wins. So child 9 is last."
+  },
+  "whyOnTest": "Small cases reveal a pattern that resets at each power of 2, and a student who stops after 2, 4 and 8 children falls into the trap.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

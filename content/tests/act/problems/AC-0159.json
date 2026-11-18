@@ -1,0 +1,56 @@
+{
+  "id": "AC-0159",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-05",
+  "difficulty": "easy",
+  "statement": "The function $f$ is defined by $f(x) = 5 \\cdot 2^x$. For a certain number $a$, $f(a) = 40$. What is the value of $f(a + 3)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$43$",
+      "correct": false,
+      "misconception": "I thought adding $3$ to the input adds $3$ to the output, so I computed $40 + 3$."
+    },
+    {
+      "key": "B",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I knew $2^3 = 8$ was involved, but I added $8$ to $40$ instead of multiplying."
+    },
+    {
+      "key": "C",
+      "text": "$120$",
+      "correct": false,
+      "misconception": "I thought increasing the input by $3$ multiplies the output by $3$, so I computed $40 \\cdot 3$."
+    },
+    {
+      "key": "D",
+      "text": "$320$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "What happens to $2^x$ when $x$ goes up by 1?",
+    "Use $2^{a + 3} = 2^a \\cdot 2^3$. That means $f(a + 3) = f(a) \\cdot 2^3$.",
+    "$f(a + 3) = 5 \\cdot 2^a \\cdot 8 = 40 \\cdot 8$."
+  ],
+  "solutions": {
+    "reliable": "$f(a + 3) = 5 \\cdot 2^{a + 3} = 5 \\cdot 2^a \\cdot 2^3 = f(a) \\cdot 8 = 40 \\cdot 8 = 320$. (Directly: $5 \\cdot 2^a = 40$ gives $2^a = 8$, so $a = 3$ and $f(6) = 5 \\cdot 64 = 320$.)",
+    "elegant": "Each increase of $1$ in $x$ doubles the output, so three increases double it three times: $40 \\to 80 \\to 160 \\to 320$."
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0300",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-06",
+  "difficulty": "hard",
+  "statement": "A fan-shaped piece of paper is a sector of a circle with radius $6$ centimeters. The perimeter of the sector, including both straight edges and the curved edge, is $30$ centimeters. What is the area of the sector, in square centimeters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$54$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I subtracted only one radius from the perimeter, so the arc was $24$, the angle was $4$ radians and the area was $\\frac{1}{2} \\cdot 36 \\cdot 4 = 72$."
+    },
+    {
+      "key": "C",
+      "text": "$90$",
+      "correct": false,
+      "misconception": "I treated the whole $30$ centimeters as the arc, so the angle was $5$ radians and the area was $\\frac{1}{2} \\cdot 36 \\cdot 5 = 90$."
+    },
+    {
+      "key": "D",
+      "text": "$108$",
+      "correct": false,
+      "misconception": "I found the angle $3$ radians correctly but used area $= r^2 \\theta$ without the $\\frac{1}{2}$, so I got $36 \\cdot 3 = 108$."
+    }
+  ],
+  "hints": [
+    "The perimeter of a sector is two radii plus the arc.",
+    "The arc length is $30 - 2 \\cdot 6 = 18$. In radians, arc length $= r\\theta$, and sector area $= \\frac{1}{2} r^2 \\theta$.",
+    "$6\\theta = 18$ gives $\\theta = 3$ radians. The area is $\\frac{1}{2} \\cdot 36 \\cdot 3$."
+  ],
+  "solutions": {
+    "reliable": "The perimeter is two radii plus the arc, so the arc is $30 - 12 = 18$ centimeters. With the angle $\\theta$ in radians, arc length $= r\\theta$, so $6\\theta = 18$ and $\\theta = 3$. The sector's area is $\\frac{1}{2} r^2 \\theta = \\frac{1}{2} \\cdot 36 \\cdot 3 = 54$ square centimeters. Check in degrees: $3$ radians is about $171.9^\\circ$, and $\\frac{171.9}{360} \\cdot 36\\pi \\approx 54$.",
+    "elegant": "The area of a sector equals $\\frac{1}{2} \\cdot \\text{arc} \\cdot r$, like a triangle with base the arc and height the radius. So the area is $\\frac{1}{2} \\cdot 18 \\cdot 6 = 54$, with no need to find the angle."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1217",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Streets form a square grid. Jo walks from home to a library 5 blocks east and 3 blocks north, always going east or north along the streets. She must pass the fountain at the corner 2 blocks east and 2 blocks north of her home. How many different routes can she take?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted only the routes from home to the fountain and forgot the part from the fountain to the library."
+    },
+    {
+      "key": "B",
+      "text": "10",
+      "correct": false,
+      "misconception": "I added the 6 routes to the fountain and the 4 routes from it, instead of multiplying."
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "32",
+      "correct": false,
+      "misconception": "I counted the routes that miss the fountain instead of the routes that pass it."
+    },
+    {
+      "key": "E",
+      "text": "56",
+      "correct": false,
+      "misconception": "I counted all routes from home to the library, forgetting that she must pass the fountain."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-07",
+    "secondary": [
+      "CNT-03",
+      "GEO-02"
+    ]
+  },
+  "hints": [
+    "Split the walk into two parts at the fountain.",
+    "Count the routes from home to the fountain, and from the fountain to the library, separately. Any first part can be followed by any second part.",
+    "Home to fountain is 2 east and 2 north: 6 routes. Fountain to library is 3 east and 1 north: 4 routes."
+  ],
+  "solutions": {
+    "reliable": "From home to the fountain Jo walks 2 blocks east and 2 north in some order: EENN, ENEN, ENNE, NEEN, NENE, NNEE, which is 6 routes. From the fountain to the library she walks 3 east and 1 north, and the one north block can come 1st, 2nd, 3rd or 4th, so 4 routes. Each first part can be joined to each second part, giving 6 × 4 = 24 routes. The transferable idea: a route forced through a point splits into two independent parts, and the counts multiply.",
+    "elegant": null
+  },
+  "whyOnTest": "Grid paths through a checkpoint test whether a student splits the walk and multiplies the two counts rather than adding them.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

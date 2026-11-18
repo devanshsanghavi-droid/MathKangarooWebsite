@@ -1,0 +1,56 @@
+{
+  "id": "SA-0291",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-05",
+  "difficulty": "easy",
+  "statement": "A $20$-foot ladder leans against a vertical wall on level ground. The ladder makes an angle of $20^\\circ$ with the wall. To the nearest tenth of a foot, how far is the foot of the ladder from the base of the wall?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6.8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$7.3$",
+      "correct": false,
+      "misconception": "I used tangent and computed $20 \\tan 20^\\circ \\approx 7.3$, treating the $20$-foot ladder as if it were the side along the wall."
+    },
+    {
+      "key": "C",
+      "text": "$18.8$",
+      "correct": false,
+      "misconception": "I used cosine and computed $20 \\cos 20^\\circ \\approx 18.8$, which is the height the ladder reaches on the wall, not the distance along the ground."
+    },
+    {
+      "key": "D",
+      "text": "$58.5$",
+      "correct": false,
+      "misconception": "I divided instead of multiplied and computed $\\frac{20}{\\sin 20^\\circ} \\approx 58.5$."
+    }
+  ],
+  "hints": [
+    "Sketch the right triangle formed by the wall, the ground and the ladder. Which side is opposite the $20^\\circ$ angle?",
+    "The $20^\\circ$ angle is at the top, between the ladder and the wall. The ground distance is opposite that angle, and the ladder is the hypotenuse, so use sine.",
+    "Distance $= 20 \\sin 20^\\circ$. Make sure your calculator is in degree mode."
+  ],
+  "solutions": {
+    "reliable": "The wall, the ground and the ladder form a right triangle with the right angle at the base of the wall. The $20^\\circ$ angle is at the top of the ladder, between the ladder and the wall. The distance along the ground is the side opposite this angle, and the ladder is the hypotenuse, so the distance is $20 \\sin 20^\\circ \\approx 20(0.342) \\approx 6.84$, or $6.8$ feet.",
+    "elegant": "The angle between the ladder and the ground is $90^\\circ - 20^\\circ = 70^\\circ$, and the ground distance is adjacent to it, so the distance is $20 \\cos 70^\\circ \\approx 6.8$ feet, the same value because $\\sin 20^\\circ = \\cos 70^\\circ$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

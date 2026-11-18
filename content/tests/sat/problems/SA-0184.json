@@ -1,0 +1,56 @@
+{
+  "id": "SA-0184",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-07",
+  "difficulty": "medium",
+  "statement": "In the system of equations $y = -x^2 + 6x - 4$ and $y = c$, $c$ is a constant. The system has at least one real solution. What is the greatest possible value of $c$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-4$",
+      "correct": false,
+      "misconception": "I used the $y$-intercept, $-4$, as the highest point of the parabola."
+    },
+    {
+      "key": "B",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found the axis of symmetry, $x = 3$, and gave that instead of the greatest value of $y$."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$23$",
+      "correct": false,
+      "misconception": "I evaluated $-x^2$ at $x = 3$ as $+9$, so I got $9 + 18 - 4 = 23$ for the highest point."
+    }
+  ],
+  "hints": [
+    "The graph of $y = c$ is a horizontal line. When does a horizontal line meet a downward-opening parabola?",
+    "The line meets the parabola only if $c$ is at most the maximum value of $-x^2 + 6x - 4$. The maximum occurs at $x = -\\frac{6}{2(-1)} = 3$.",
+    "The maximum value is $-(3)^2 + 6(3) - 4 = -9 + 18 - 4$."
+  ],
+  "solutions": {
+    "reliable": "The parabola $y = -x^2 + 6x - 4$ opens downward, with its vertex at $x = -\\frac{6}{2(-1)} = 3$ and maximum value $-9 + 18 - 4 = 5$. A horizontal line $y = c$ meets it when $c \\le 5$: twice when $c < 5$ and once, at the vertex, when $c = 5$. So the greatest possible value of $c$ is $5$.",
+    "elegant": "Complete the square: $-x^2 + 6x - 4 = -(x - 3)^2 + 5$. Since $-(x - 3)^2 \\le 0$, the expression is never more than $5$, and it equals $5$ at $x = 3$."
+  },
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

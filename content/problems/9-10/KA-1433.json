@@ -1,0 +1,68 @@
+{
+  "id": "KA-1433",
+  "band": "9-10",
+  "points": 5,
+  "statement": "A square tile is divided into a 3 by 3 grid of nine equal cells, and exactly two of the cells are painted black. Two tiles count as the same if one can be turned (rotated in its own plane) to look exactly like the other. Tiles cannot be flipped over. How many different tiles are there?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "36",
+      "correct": false,
+      "misconception": "I counted every choice of two cells and forgot that tiles which are turns of each other are the same."
+    },
+    {
+      "key": "C",
+      "text": "9",
+      "correct": false,
+      "misconception": "I divided 36 by 4 for the four turns, but some paintings look the same after a half turn, so their groups have only two members."
+    },
+    {
+      "key": "D",
+      "text": "18",
+      "correct": false,
+      "misconception": "I divided 36 by 2, thinking each tile appears exactly twice."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I also treated mirror images as the same, but the tiles cannot be flipped over."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-15",
+    "secondary": [
+      "CNT-16",
+      "GEO-09"
+    ]
+  },
+  "hints": [
+    "Group the 36 ways of painting two cells by turning the tile.",
+    "Most groups contain 4 paintings, one for each quarter turn. Find the paintings that look the same after a half turn, because their groups are smaller.",
+    "A painting looks the same after a half turn exactly when its two black cells are opposite each other through the centre. There are 4 such pairs."
+  ],
+  "solutions": {
+    "reliable": "There are $\\binom{9}{2} = 36$ ways to paint two cells. A quarter turn never leaves a painting unchanged, because the cells other than the centre move around in groups of four. A half turn leaves a painting unchanged exactly when the two black cells are opposite each other through the centre, which happens for 4 pairs (two pairs of opposite corners, two pairs of opposite edge cells). Those 4 paintings fall into groups of 2, giving 2 tiles. The other 32 paintings fall into groups of 4, giving 8 tiles. Total $8 + 2 = 10$. The transferable idea: before dividing by the number of symmetries, find the objects that some symmetry leaves unchanged.",
+    "elegant": "Average the number of paintings each turn leaves unchanged. No turn: 36. Quarter turn: 0. Half turn: 4. Three-quarter turn: 0. So there are $\\frac{36 + 0 + 4 + 0}{4} = 10$ different tiles."
+  },
+  "whyOnTest": "Counting up to symmetry punishes simply dividing by the number of turns, because symmetric patterns have smaller groups.",
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1348",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A 5 by 5 table is filled in with numbers. Every square in the top row and every square in the left column holds 1. Every other square holds the sum of the number directly above it and the number directly to its left. What number is in the bottom right square?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "35",
+      "correct": false,
+      "misconception": "I stopped one square too early and gave the number just to the left of the bottom right square."
+    },
+    {
+      "key": "B",
+      "text": "25",
+      "correct": false,
+      "misconception": "I thought each square holds its row number times its column number, so I gave $5 \\times 5 = 25$."
+    },
+    {
+      "key": "C",
+      "text": "70",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "126",
+      "correct": false,
+      "misconception": "I added up the whole bottom row, 1 + 5 + 15 + 35 + 70 = 126, instead of taking only its last square."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I thought every step right or down adds just 1, so the bottom right square holds 5 + 5 - 1 = 9."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-06",
+    "secondary": [
+      "PAT-05",
+      "CNT-07"
+    ]
+  },
+  "hints": [
+    "Start filling in the table, one row at a time.",
+    "Each row is built from the row above it: every square adds the number above to the number on its left. Work along each row from left to right, and look for a pattern in the rows as they grow.",
+    "The first three rows are 1, 1, 1, 1, 1, then 1, 2, 3, 4, 5, then 1, 3, 6, 10, 15."
+  ],
+  "solutions": {
+    "reliable": "Fill the table row by row, working from left to right, since each square needs the square above it and the square to its left. Row 1 is 1, 1, 1, 1, 1. Row 2 is 1, 2, 3, 4, 5. Row 3 is 1, 3, 6, 10, 15. Row 4 is 1, 4, 10, 20, 35. Row 5 is 1, 5, 15, 35, 70. So the bottom right square holds 70. The transferable idea: when a table is defined by a rule, fill it in a careful order so that every square you need is already known.",
+    "elegant": "The number in each square counts the routes from the top left square to it, moving one square right or down at a time: every route arrives from the square above or the square to the left, so the counts add, just like the rule. A route to the bottom right square makes 4 moves right and 4 moves down, 8 moves in all, and is fixed by choosing which 4 of the 8 are moves right: $\\frac{8 \\times 7 \\times 6 \\times 5}{4 \\times 3 \\times 2 \\times 1} = 70$."
+  },
+  "whyOnTest": "Tests filling a table from a rule and spotting its structure: each row is built from the row above, and every entry counts routes through the grid.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

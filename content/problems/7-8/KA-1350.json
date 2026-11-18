@@ -1,0 +1,67 @@
+{
+  "id": "KA-1350",
+  "band": "7-8",
+  "points": 3,
+  "statement": "The table shows how many goals a hockey team scored in each of its 16 matches this season. $$\\begin{array}{l|ccccc} \\text{Goals in a match} & 0 & 1 & 2 & 3 & 4 \\\\ \\hline \\text{Number of matches} & 2 & 6 & 3 & 1 & 4 \\end{array}$$ What is the median number of goals per match?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I gave the number of goals that happened most often, which is the mode, not the median."
+    },
+    {
+      "key": "B",
+      "text": "1.5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I took the 9th match on its own as the middle, instead of averaging the 8th and 9th of the 16."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found the median of the bottom row, 1, 2, 3, 4 and 6, instead of the median number of goals."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": false,
+      "misconception": "I gave the largest number in the bottom row, which is how many matches had the most common score."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-09",
+    "secondary": [
+      "NUM-15"
+    ]
+  },
+  "hints": [
+    "Imagine all 16 scores written in order from smallest to largest.",
+    "With 16 values, the median is halfway between the 8th and 9th values in order. Use the table to find which score sits in each of those places, counting through the columns.",
+    "The first 2 values are 0, the next 6 (places 3 to 8) are 1, and the next 3 (places 9 to 11) are 2."
+  ],
+  "solutions": {
+    "reliable": "List the 16 scores in order: places 1 and 2 are 0, places 3 to 8 are 1, places 9 to 11 are 2, place 12 is 3, and places 13 to 16 are 4. With an even number of values, the median is the mean of the two middle ones, the 8th and the 9th: (1 + 2) / 2 = 1.5. The transferable idea: in a frequency table, count through the columns to find the middle places, and with an even count average the two middle values.",
+    "elegant": null
+  },
+  "whyOnTest": "Tests reading a frequency table: the median is a position among all 16 matches, not a value read straight off one row.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

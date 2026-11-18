@@ -1,0 +1,68 @@
+{
+  "id": "KA-1355",
+  "band": "7-8",
+  "points": 5,
+  "statement": "Nine people sit around a round table. Each is either a knight, who always tells the truth, or a knave, who always lies. At least one of them is a knight. Every one of them says: \"Exactly one of my two neighbours is a knave.\" How many knights are at the table?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I found that a table of only knaves works and did not use the fact that at least one person is a knight."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I found the right pattern but counted the knaves instead of the knights."
+    },
+    {
+      "key": "C",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I seated one knave among eight knights and checked only the two knights sitting next to the knave."
+    },
+    {
+      "key": "E",
+      "text": "9",
+      "correct": false,
+      "misconception": "I took everyone's statement as true without checking that someone would then have to be a knave."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-02",
+    "secondary": [
+      "LOG-09",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Start with a knight. What must its two neighbours be?",
+    "Each knight has one knight and one knave beside it. A knave's sentence is false, so its neighbours are both knights or both knaves. Build the seating around the table from one knight and see what repeats.",
+    "Next to a knight sit one knight and one knave. Those two knights then need a knave on their other sides, so the pattern knight, knight, knave starts repeating."
+  ],
+  "solutions": {
+    "reliable": "Take a knight K. One neighbour is a knave and the other a knight, say K K N. The second knight also needs exactly one knave beside it, so its other neighbour is a knave: N K K N. A knave cannot have exactly one knave beside it, and it already has a knight on one side, so its other neighbour is a knight too. The seating repeats knight, knight, knave, and 9 seats hold three full blocks, so the pattern closes up correctly. Check: each knight has one knight and one knave beside it (true), and each knave has two knights beside it, so its sentence is false. That gives 6 knights. A table with no knights also fits (each knave has two knave neighbours), but the question says there is at least one knight. The transferable idea: in truth-teller puzzles, fix one person's type, follow what it forces, and check the pattern closes up round the circle.",
+    "elegant": null
+  },
+  "whyOnTest": "Knights-and-knaves puzzles test chasing consequences: one knight forces a repeating block, and the circle must close up exactly.",
+  "estSeconds": 200,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

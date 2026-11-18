@@ -1,0 +1,56 @@
+{
+  "id": "SA-0215",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-04",
+  "difficulty": "easy",
+  "statement": "The times, in minutes, that seven students took to finish a puzzle were $12$, $15$, $14$, $13$, $16$, $14$ and $42$. If the time of $42$ minutes is removed from the list, by how many minutes does the mean of the times decrease?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I looked at the median, which stays at 14 minutes, and assumed that the mean would not change either."
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I divided the removed time of 42 minutes by the original 7 students and called that the decrease."
+    },
+    {
+      "key": "D",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I divided the removed time of 42 minutes by the 6 remaining students and called that the decrease."
+    }
+  ],
+  "hints": [
+    "Find the mean before the removal and the mean after it.",
+    "Add all seven times and divide by $7$. Then add the six remaining times and divide by $6$.",
+    "The seven times add to $126$, so the first mean is $18$. The six remaining times add to $84$."
+  ],
+  "solutions": {
+    "reliable": "The sum of all seven times is $126$, so the mean is $126 \\div 7 = 18$ minutes. Without the $42$, the sum is $84$ and the mean is $84 \\div 6 = 14$ minutes. The mean decreases by $18 - 14 = 4$ minutes.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

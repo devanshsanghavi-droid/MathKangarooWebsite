@@ -1,0 +1,68 @@
+{
+  "id": "KA-1313",
+  "band": "7-8",
+  "points": 4,
+  "statement": "Five students, including Ana and Ben, stand in a row for a photo. In how many of the possible orders is Ana somewhere to the left of Ben? (They do not have to stand next to each other.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I chose the 2 places for Ana and Ben, 10 ways, but forgot that the other three students can stand in different orders."
+    },
+    {
+      "key": "B",
+      "text": "24",
+      "correct": false,
+      "misconception": "I only counted orders where Ana stands right next to Ben on his left, treating them as one block: $4 \\times 3 \\times 2 \\times 1 = 24$."
+    },
+    {
+      "key": "C",
+      "text": "60",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "72",
+      "correct": false,
+      "misconception": "I took all 120 orders and removed the 48 orders where Ana and Ben stand next to each other."
+    },
+    {
+      "key": "E",
+      "text": "120",
+      "correct": false,
+      "misconception": "I counted all the possible orders of the five students and forgot the condition about Ana and Ben."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-05",
+    "secondary": [
+      "CNT-16",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "First ignore Ana and Ben: how many orders of the five students are there?",
+    "Arrangements of a few objects: count all the orders of five students, then use the symmetry between Ana and Ben instead of listing cases.",
+    "There are $5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$ orders. Swapping Ana and Ben turns every order with Ana on the left into one with Ana on the right."
+  ],
+  "solutions": {
+    "reliable": "Choose the 2 places for Ana and Ben: there are 10 pairs of places, and in each pair Ana must take the left place, so there is only 1 way to put them in. The other three students fill the remaining 3 places in $3 \\times 2 \\times 1 = 6$ ways. That gives $10 \\times 6 = 60$ orders. The transferable idea: place the people with a condition first, then arrange everyone else.",
+    "elegant": "All $5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$ orders split into pairs by swapping Ana and Ben, and in each pair exactly one order has Ana on the left. So the answer is $120 \\div 2 = 60$."
+  },
+  "whyOnTest": "Symmetry halves the count instantly; the traps are forgetting the other students or treating Ana and Ben as a block.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0228",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-02",
+  "difficulty": "medium",
+  "statement": "A contractor is pouring a rectangular concrete patio that is $12$ feet long, $9$ feet wide and $4$ inches thick. Concrete is ordered by the cubic yard. How many cubic yards of concrete are needed for the patio? ($1$ yard $= 3$ feet $= 36$ inches)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{4}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found 36 cubic feet but divided by 9, the number of square feet in a square yard, instead of by 27 for a cubic yard."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found 36 cubic feet and divided by 3, as if a cubic yard were only 3 cubic feet."
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I multiplied 12 by 9 by 4 without changing the 4 inches into feet, so I got 432 and divided that by 27."
+    }
+  ],
+  "hints": [
+    "The thickness is in inches, but the other measurements are in feet.",
+    "Write all three dimensions in the same unit, find the volume, then convert to cubic yards. A cubic yard is $3 \\times 3 \\times 3$ cubic feet.",
+    "$4$ inches is $\\frac{1}{3}$ foot, so the volume is $12 \\times 9 \\times \\frac{1}{3} = 36$ cubic feet."
+  ],
+  "solutions": {
+    "reliable": "Convert the thickness: $4$ inches $= \\frac{4}{12} = \\frac{1}{3}$ foot. The volume is $12 \\times 9 \\times \\frac{1}{3} = 36$ cubic feet. One cubic yard is $3 \\times 3 \\times 3 = 27$ cubic feet, so the patio needs $36 \\div 27 = \\frac{4}{3}$ cubic yards.",
+    "elegant": "Work in yards from the start: $12$ feet $= 4$ yards, $9$ feet $= 3$ yards and $4$ inches $= \\frac{4}{36} = \\frac{1}{9}$ yard. The volume is $4 \\times 3 \\times \\frac{1}{9} = \\frac{4}{3}$ cubic yards."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

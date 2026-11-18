@@ -1,0 +1,66 @@
+{
+  "id": "AM-1126",
+  "contest": "AMC8",
+  "slot": 18,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-COORD"
+  ],
+  "statement": "Rectangle $ABCD$ has $AB = 12$ and $BC = 8$, with its vertices labeled in order around the rectangle. Point $F$ lies on side $\\overline{BC}$ with $BF = 2$, and point $E$ lies on side $\\overline{CD}$. The area of triangle $AEF$ is $43$. What is $DE$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I wrote the area of triangle $ADE$ as $8 \\cdot DE$, forgetting the $\\frac{1}{2}$, so my equation became $48 - 5x = 43$ and gave $x = 1$."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{5}{3}$",
+      "correct": false,
+      "misconception": "I measured the $2$ from $C$ instead of from $B$, so I put $F$ with $CF = 2$. Then the area came out as $48 - 3x$, and $48 - 3x = 43$ gave $\\frac{5}{3}$."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I let $x$ stand for $EC$ instead of $DE$, so the $7$ I found is the length of $\\overline{EC}$, not $\\overline{DE}$."
+    },
+    {
+      "key": "E",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I cut off the corner triangles $ADE$ and $ECF$ but forgot to cut off triangle $ABF$, so I solved $60 - x = 43$ and got $17$."
+    }
+  ],
+  "hints": [
+    "Triangle $AEF$ is what is left of the rectangle after three right triangles are cut off at the corners.",
+    "Let $DE = x$. Then $EC = 12 - x$ and $FC = 8 - 2 = 6$. Write the areas of right triangles $ADE$, $ECF$ and $ABF$ in terms of $x$.",
+    "The area of $AEF$ is $96 - \\frac{1}{2}(8)(x) - \\frac{1}{2}(12 - x)(6) - \\frac{1}{2}(12)(2) = 48 - x$. Set this equal to $43$."
+  ],
+  "solutions": {
+    "reliable": "Let $DE = x$, so $EC = 12 - x$, and $FC = BC - BF = 6$. The rectangle has area $12 \\cdot 8 = 96$. Cutting off the three right triangles at the corners leaves triangle $AEF$: triangle $ADE$ has area $\\frac{1}{2} \\cdot 8 \\cdot x = 4x$, triangle $ECF$ has area $\\frac{1}{2} \\cdot (12 - x) \\cdot 6 = 36 - 3x$, and triangle $ABF$ has area $\\frac{1}{2} \\cdot 12 \\cdot 2 = 12$. So the area of $AEF$ is $96 - 4x - (36 - 3x) - 12 = 48 - x$. Setting $48 - x = 43$ gives $x = 5$, so $DE = 5$.",
+    "elegant": "Put $A = (0, 0)$, $B = (12, 0)$, $C = (12, 8)$ and $D = (0, 8)$. Then $F = (12, 2)$ and $E = (x, 8)$ with $x = DE$. With one corner at the origin, the area of triangle $AEF$ is $\\frac{1}{2}\\left|x \\cdot 2 - 8 \\cdot 12\\right| = \\frac{1}{2}(96 - 2x) = 48 - x$. So $48 - x = 43$ and $DE = 5$."
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1119",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Each domino shows two numbers from 0 to 4, maybe equal, like 2 and 2. Order does not matter. A full set has every possible domino once. How many dominoes is that?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I counted the pairs of different numbers and forgot the doubles, like 2 and 2."
+    },
+    {
+      "key": "B",
+      "text": "14",
+      "correct": false,
+      "misconception": "I left out the 0 and 0 domino, thinking a domino that shows nothing does not count."
+    },
+    {
+      "key": "C",
+      "text": "15",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "20",
+      "correct": false,
+      "misconception": "I counted 1 and 3 and 3 and 1 as different dominoes, and I forgot the doubles."
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": false,
+      "misconception": "I paired every number with every number in order, 5 x 5, so I counted most dominoes twice."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-08",
+    "secondary": [
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Count dominoes with two different numbers and doubles separately.",
+    "Two different numbers on a domino are like two people shaking hands: count each pair once, not in both orders. Then add the dominoes that show the same number twice.",
+    "Pairs of different numbers from 0 to 4: 4 + 3 + 2 + 1 = 10. Doubles, from 0 and 0 up to 4 and 4: 5. Total 10 + 5 = 15."
+  ],
+  "solutions": {
+    "reliable": "List by the smaller number. Smallest 0: (0, 0), (0, 1), (0, 2), (0, 3), (0, 4), which is 5. Smallest 1: (1, 1) to (1, 4), which is 4. Smallest 2: 3. Smallest 3: 2. Smallest 4: only (4, 4), which is 1. Total 5 + 4 + 3 + 2 + 1 = 15. The transferable idea: count pairs like handshakes, each one once, and then add any special cases such as doubles.",
+    "elegant": "The 5 numbers make 5 x 5 = 25 ordered pairs. The 5 doubles appear once each, and the other 20 appear twice, as 1 then 3 and 3 then 1. So there are 5 + 20 ÷ 2 = 15 dominoes."
+  },
+  "whyOnTest": "It is the handshake count in disguise, with a twist: a domino can pair a number with itself, which a handshake cannot.",
+  "estSeconds": 95,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

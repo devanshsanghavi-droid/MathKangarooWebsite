@@ -1,0 +1,69 @@
+{
+  "id": "AM-1121",
+  "contest": "AMC8",
+  "slot": 15,
+  "area": "GEO",
+  "topic": "GEO-02",
+  "types": [
+    "T-SIMILAR",
+    "T-ANGLE-CHASE"
+  ],
+  "statement": "In triangle $ABC$, $AB = 9$ and $AC = 12$. Point $D$ lies on side $\\overline{AB}$ with $AD = 4$, and point $E$ lies on side $\\overline{AC}$ so that $\\angle AED = \\angle ABC$. What is the length of $\\overline{EC}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found AE = 3 correctly but gave it as the answer instead of EC = 12 - 3."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{16}{3}$",
+      "correct": false,
+      "misconception": "I assumed DE is parallel to BC, which gives AE = 12 times 4/9 = 16/3, and I gave AE. But the angle equal to angle B is at E, not at D, so DE is not parallel to BC."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{20}{3}$",
+      "correct": false,
+      "misconception": "I assumed DE is parallel to BC, so AE = 16/3 and EC = 12 - 16/3 = 20/3. With DE parallel to BC the angle equal to angle B would be at D, but here it is at E."
+    },
+    {
+      "key": "D",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I assumed AE = AD = 4, as if triangle ADE were isosceles, and got EC = 12 - 4 = 8."
+    },
+    {
+      "key": "E",
+      "text": "$9$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Triangles $AED$ and $ABC$ share angle $A$ and have another pair of equal angles, so they are similar.",
+    "Match vertices by equal angles: $A$ goes with $A$ and $E$ goes with $B$, so $D$ goes with $C$.",
+    "Matching sides gives $\\frac{AE}{AB} = \\frac{AD}{AC}$, that is, $\\frac{AE}{9} = \\frac{4}{12}$."
+  ],
+  "solutions": {
+    "reliable": "Triangles $AED$ and $ABC$ share $\\angle A$, and $\\angle AED = \\angle ABC$, so triangle $AED$ is similar to triangle $ABC$ with $A \\to A$, $E \\to B$, $D \\to C$. Corresponding sides give $\\frac{AE}{AB} = \\frac{AD}{AC}$, so $AE = \\frac{9 \\cdot 4}{12} = 3$. Then $EC = AC - AE = 12 - 3 = 9$.",
+    "elegant": "The similarity also says $AE \\cdot AC = AD \\cdot AB$: here $AE \\cdot 12 = 4 \\cdot 9 = 36$, so $AE = 3$ and $EC = 9$. (This product equation means $B$, $C$, $D$, $E$ lie on one circle.)"
+  },
+  "formulas": [
+    "F-GEO-11"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

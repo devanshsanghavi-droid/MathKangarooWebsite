@@ -1,0 +1,56 @@
+{
+  "id": "SA-0022",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-04",
+  "difficulty": "hard",
+  "statement": "In the $xy$-plane, the lines $y = 2x + k$ and $y = -x + 8$, where $k$ is a constant, intersect at a point in Quadrant I, where $x > 0$ and $y > 0$. Which of the following describes all possible values of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$k < 8$",
+      "correct": false,
+      "misconception": "I made sure the $x$-coordinate of the intersection was positive but forgot to check that the $y$-coordinate was positive too."
+    },
+    {
+      "key": "B",
+      "text": "$k > -16$",
+      "correct": false,
+      "misconception": "I made sure the $y$-coordinate of the intersection was positive but forgot to check that the $x$-coordinate was positive too."
+    },
+    {
+      "key": "C",
+      "text": "$8 < k < 32$",
+      "correct": false,
+      "misconception": "I moved $k$ across with the wrong sign and got $x = \\frac{k - 8}{3}$, which led me to $8 < k < 32$."
+    },
+    {
+      "key": "D",
+      "text": "$-16 < k < 8$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Find the intersection point in terms of $k$.",
+    "Set $2x + k = -x + 8$ to get $x$ in terms of $k$, then find $y$. Require both coordinates to be positive.",
+    "The intersection is $x = \\frac{8 - k}{3}$ and $y = \\frac{16 + k}{3}$."
+  ],
+  "solutions": {
+    "reliable": "Setting $2x + k = -x + 8$ gives $3x = 8 - k$, so $x = \\frac{8 - k}{3}$. Then $y = -x + 8 = \\frac{-8 + k + 24}{3} = \\frac{16 + k}{3}$. For Quadrant I we need $8 - k > 0$, so $k < 8$, and $16 + k > 0$, so $k > -16$. Together, $-16 < k < 8$. Check: $k = 2$ gives $(2, 6)$ in Quadrant I; $k = 8$ gives $(0, 8)$ on an axis; $k = -16$ gives $(8, 0)$ on an axis.",
+    "elegant": "The line $y = -x + 8$ is in Quadrant I between $(0, 8)$ and $(8, 0)$. The line $y = 2x + k$ passes through $(0, 8)$ when $k = 8$ and through $(8, 0)$ when $k = -16$, so $k$ must lie strictly between these values."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

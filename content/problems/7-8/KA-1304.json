@@ -1,0 +1,68 @@
+{
+  "id": "KA-1304",
+  "band": "7-8",
+  "points": 4,
+  "statement": "A shop sells pencils in small packs of 3 for 2 euros and in big packs of 5 for 3 euros. Tom bought 41 pencils and paid 26 euros. How many big packs did he buy?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": false,
+      "misconception": "I used only the money: 4 small packs and 6 big packs cost 26 euros, and I did not check that they hold 42 pencils, not 41."
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I worked out the packs correctly but gave the number of small packs instead of the number of big packs."
+    },
+    {
+      "key": "D",
+      "text": "8",
+      "correct": false,
+      "misconception": "I used only the money: 1 small pack and 8 big packs cost 26 euros, and I did not check that they hold 43 pencils."
+    },
+    {
+      "key": "E",
+      "text": "11",
+      "correct": false,
+      "misconception": "I found 7 small packs and 4 big packs and then gave the total number of packs."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-04",
+    "secondary": [
+      "MOD-01",
+      "MOD-10"
+    ]
+  },
+  "hints": [
+    "Each answer choice is a number of big packs. Test one.",
+    "Back-solve: pick a choice for the number of big packs, work out how many pencils are left for small packs, and check whether the cost comes to 26 euros. Both conditions must hold.",
+    "Try 7 big packs: 35 pencils, leaving 6 pencils for 2 small packs, costing $21 + 4 = 25$ euros, 1 euro short. Choices 6 and 8 leave a number of pencils that small packs cannot make, and 11 big packs are already too many pencils. Check 4."
+  ],
+  "solutions": {
+    "reliable": "Test the choices. 11 big packs hold 55 pencils, too many. 8 big packs leave 1 pencil and 6 big packs leave 11 pencils, and neither is a whole number of packs of 3. 7 big packs leave 6 pencils, so 2 small packs, costing $7 \\times 3 + 2 \\times 2 = 25$ euros, not 26. 4 big packs leave 21 pencils, so 7 small packs, costing $4 \\times 3 + 7 \\times 2 = 12 + 14 = 26$ euros. So Tom bought 4 big packs. The transferable idea: when solving forwards needs two equations, testing the five choices is often faster and safer.",
+    "elegant": "Forwards: with $s$ small and $b$ big packs, $3s + 5b = 41$ and $2s + 3b = 26$. Doubling the first gives $6s + 10b = 82$ and tripling the second gives $6s + 9b = 78$. Subtracting, $b = 4$, and then $s = 7$."
+  },
+  "whyOnTest": "Two conditions must both hold; testing the choices against both is quicker than algebra and catches answers that satisfy only one.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

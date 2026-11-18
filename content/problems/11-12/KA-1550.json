@@ -1,0 +1,68 @@
+{
+  "id": "KA-1550",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Two hoses together fill a pool in 12 hours. On its own, the first hose would take 10 hours longer than the second hose on its own. How many hours would the second hose take on its own?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "1",
+      "correct": false,
+      "misconception": "I added the two times instead of the two rates and solved $x + (x + 10) = 12$."
+    },
+    {
+      "key": "B",
+      "text": "19",
+      "correct": false,
+      "misconception": "I thought the two times average to twice 12, which is 24, so the faster one takes 5 hours less."
+    },
+    {
+      "key": "C",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I thought each hose did half the job in the 12 hours, so either one alone would take twice as long."
+    },
+    {
+      "key": "E",
+      "text": "30",
+      "correct": false,
+      "misconception": "I found the time for the first hose instead of the second."
+    }
+  ],
+  "skills": {
+    "primary": "MOD-04",
+    "secondary": [
+      "CFT-04",
+      "MOD-01"
+    ]
+  },
+  "hints": [
+    "Think in pools per hour, not hours per pool.",
+    "If the second hose takes $x$ hours, the hoses fill $\\frac{1}{x}$ and $\\frac{1}{x + 10}$ of the pool per hour, and together $\\frac{1}{12}$. Solve, or test the choices in this equation.",
+    "$\\frac{1}{x} + \\frac{1}{x + 10} = \\frac{1}{12}$ leads to $x^2 - 14x - 120 = 0$, that is $(x - 20)(x + 6) = 0$."
+  ],
+  "solutions": {
+    "reliable": "Let the second hose take $x$ hours, so the first takes $x + 10$. Rates add: $\\frac{1}{x} + \\frac{1}{x + 10} = \\frac{1}{12}$. Multiply by $12x(x + 10)$: $12(x + 10) + 12x = x(x + 10)$, so $x^2 - 14x - 120 = 0$ and $(x - 20)(x + 6) = 0$. Time is positive, so $x = 20$. Check: $\\frac{1}{20} + \\frac{1}{30} = \\frac{3}{60} + \\frac{2}{60} = \\frac{1}{12}$. The transferable idea: add rates, never times.",
+    "elegant": "Back-solve: 20 and 30 hours give $\\frac{1}{20} + \\frac{1}{30} = \\frac{1}{12}$ immediately, while 24 and 34, or 19 and 29, do not."
+  },
+  "whyOnTest": "Combined work needs rates, not times, and the distractors are the classic slips of adding times or answering for the wrong hose.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

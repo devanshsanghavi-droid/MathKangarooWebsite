@@ -1,0 +1,56 @@
+{
+  "id": "SA-0222",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-06",
+  "difficulty": "easy",
+  "statement": "The table shows the results of a survey that asked $100$ students in grades 9 and 10 which lunch option they prefer. $$\\begin{array}{l|c|c|c} & \\text{Pizza} & \\text{Salad} & \\text{Total} \\\\ \\hline \\text{Grade 9} & 34 & 16 & 50 \\\\ \\text{Grade 10} & 27 & 23 & 50 \\\\ \\hline \\text{Total} & 61 & 39 & 100 \\end{array}$$ If one of the students who prefer salad is chosen at random, what is the probability that the student is in grade 10?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{23}{100}$",
+      "correct": false,
+      "misconception": "I divided the 23 grade 10 students who prefer salad by all 100 students instead of by only the 39 who prefer salad."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{39}{100}$",
+      "correct": false,
+      "misconception": "I found the probability that a random student prefers salad and ignored the grade."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{23}{50}$",
+      "correct": false,
+      "misconception": "I divided by the 50 grade 10 students, which gives the chance that a grade 10 student prefers salad, the reverse of the question."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{23}{39}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The student is chosen only from the students who prefer salad. How many students is that?",
+    "Use the Salad column only: the denominator is the salad total, and the numerator is the grade 10 entry in that column.",
+    "There are $39$ students who prefer salad, and $23$ of them are in grade 10."
+  ],
+  "solutions": {
+    "reliable": "The student is chosen from the $39$ students who prefer salad, so the sample space has $39$ equally likely students. Of these, $23$ are in grade 10. The probability is $\\dfrac{23}{39}$.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

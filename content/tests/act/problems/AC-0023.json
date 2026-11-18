@@ -1,0 +1,56 @@
+{
+  "id": "AC-0023",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-06",
+  "difficulty": "hard",
+  "statement": "For $i = \\sqrt{-1}$, what is the value of $(1 + i)^{6}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I raised each term to the sixth power separately, so I got $1^{6} + i^{6} = 1 - 1 = 0$."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I squared $1 + i$ term by term and used $i^{2} = 1$, getting 2, so I said $(1 + i)^{6} = 2^{3} = 8$."
+    },
+    {
+      "key": "C",
+      "text": "$8i$",
+      "correct": false,
+      "misconception": "I found $(1 + i)^{2} = 2i$ and $(2i)^{3} = 8i^{3}$, but then I used $i^{3} = i$ instead of $i^{3} = -i$."
+    },
+    {
+      "key": "D",
+      "text": "$-8i$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Expanding six factors is slow. Start with $(1 + i)^{2}$.",
+    "$(1 + i)^{2} = 1 + 2i + i^{2} = 2i$, and $(1 + i)^{6} = \\left((1 + i)^{2}\\right)^{3}$.",
+    "$(2i)^{3} = 8i^{3}$. What is $i^{3}$?"
+  ],
+  "solutions": {
+    "reliable": "First, $(1 + i)^{2} = 1 + 2i + i^{2} = 1 + 2i - 1 = 2i$. Then $(1 + i)^{6} = \\left((1 + i)^{2}\\right)^{3} = (2i)^{3} = 8i^{3}$. Since $i^{3} = i^{2} \\cdot i = -i$, the value is $-8i$.",
+    "elegant": "In polar form, $1 + i$ has length $\\sqrt{2}$ and angle $45^\\circ$. Its sixth power has length $(\\sqrt{2})^{6} = 8$ and angle $6 \\cdot 45^\\circ = 270^\\circ$, which points straight down: $-8i$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

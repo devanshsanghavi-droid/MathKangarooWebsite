@@ -1,0 +1,56 @@
+{
+  "id": "SA-0058",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "medium",
+  "statement": "A sunflower is $14$ centimeters tall when a student first measures it. After that, its height increases by $5$ centimeters every $2$ days. If the height $h(d)$, in centimeters, $d$ days after the first measurement is a linear function of $d$, what is $h(9)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$17.6$",
+      "correct": false,
+      "misconception": "I read the rate the wrong way round as 2 centimeters every 5 days, so I used 0.4 per day and got $14 + 3.6 = 17.6$."
+    },
+    {
+      "key": "B",
+      "text": "$22.5$",
+      "correct": false,
+      "misconception": "I used the correct rate of 2.5 centimeters per day for 9 days but forgot to add the starting height of 14."
+    },
+    {
+      "key": "C",
+      "text": "$36.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$59$",
+      "correct": false,
+      "misconception": "I added 5 centimeters for each of the 9 days, but 5 centimeters is the growth over 2 days."
+    }
+  ],
+  "hints": [
+    "How much does the sunflower grow in one day?",
+    "Turn \"5 centimeters every 2 days\" into a rate per day, then write $h(d)$ as starting height plus rate times $d$.",
+    "The rate is $\\frac{5}{2} = 2.5$ centimeters per day, so $h(d) = 14 + 2.5d$."
+  ],
+  "solutions": {
+    "reliable": "The slope is $\\frac{5}{2} = 2.5$ centimeters per day and the intercept is $14$, so $h(d) = 14 + 2.5d$. Then $h(9) = 14 + 22.5 = 36.5$.",
+    "elegant": null
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

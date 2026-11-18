@@ -1,0 +1,56 @@
+{
+  "id": "AC-0104",
+  "test": "ACT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "medium",
+  "statement": "A pool care guide says the pH of the water, $p$, should be at least $6.2$ and at most $7.8$. Which of the following inequalities describes exactly the recommended values of $p$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$|p - 7| \\le 0.8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$|p - 7| \\le 1.6$",
+      "correct": false,
+      "misconception": "I used the midpoint $7$ correctly but used the whole width of the range, $7.8 - 6.2 = 1.6$, as the allowed distance instead of half of it."
+    },
+    {
+      "key": "C",
+      "text": "$|p - 6.2| \\le 1.6$",
+      "correct": false,
+      "misconception": "I started from the lowest allowed value, $6.2$, and used the full width $1.6$, but the number inside the absolute value has to be the center of the range."
+    },
+    {
+      "key": "D",
+      "text": "$|p - 0.8| \\le 7$",
+      "correct": false,
+      "misconception": "I found the midpoint $7$ and the half-width $0.8$, but I put them in each other's places in the inequality."
+    }
+  ],
+  "hints": [
+    "$|p - c| \\le d$ means $p$ is within $d$ of $c$.",
+    "Find the midpoint of $6.2$ and $7.8$, and how far each end is from that midpoint.",
+    "The midpoint is $7$, and each end is $0.8$ away from it."
+  ],
+  "solutions": {
+    "reliable": "The inequality $|p - c| \\le d$ means $c - d \\le p \\le c + d$. We need $c - d = 6.2$ and $c + d = 7.8$. Adding these gives $2c = 14$, so $c = 7$, and then $d = 0.8$. The inequality is $|p - 7| \\le 0.8$. Check: it allows exactly $6.2 \\le p \\le 7.8$.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

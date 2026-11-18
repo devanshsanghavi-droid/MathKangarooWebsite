@@ -1,0 +1,68 @@
+{
+  "id": "KA-1415",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Which of these is closest to $\\sqrt{2026^2 + 2026}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2026",
+      "correct": false,
+      "misconception": "I thought adding 2026 to a number as huge as 2026 squared makes no visible difference to the square root."
+    },
+    {
+      "key": "B",
+      "text": "2026.25",
+      "correct": false,
+      "misconception": "I estimated the extra as 2026 divided by $4 \\times 2026$, but squaring $2026 + h$ adds about $2 \\times 2026 \\times h$, so the divisor should be $2 \\times 2026$."
+    },
+    {
+      "key": "C",
+      "text": "2026.5",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "2027",
+      "correct": false,
+      "misconception": "I thought $2026^2 + 2026$ is nearer to $2027^2$ than to $2026^2$, but $2027^2$ is $2026^2 + 4053$."
+    },
+    {
+      "key": "E",
+      "text": "2071",
+      "correct": false,
+      "misconception": "I took the square root of each part separately, getting 2026 plus about 45, but the square root of a sum is not the sum of the square roots."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-12",
+    "secondary": [
+      "CFT-06",
+      "CFT-05"
+    ]
+  },
+  "hints": [
+    "Compare the number under the root with $2026^2$ and $2027^2$.",
+    "Write $2027^2 = 2026^2 + 2 \\cdot 2026 + 1$ to see where $2026^2 + 2026$ sits between the two squares. Then test the midpoint 2026.5 by squaring it.",
+    "$2026.5^2 = 2026^2 + 2026 + 0.25$, only 0.25 more than the number under the root."
+  ],
+  "solutions": {
+    "reliable": "Since $2026^2 < 2026^2 + 2026 < 2027^2 = 2026^2 + 4053$, the root lies between 2026 and 2027, which rules out 2071. Now $2026.5^2 = 2026^2 + 2026 + 0.25$, just 0.25 more than the number under the root, so the root is a tiny bit below 2026.5 (by about $0.25 \\div 4053$, roughly 0.00006). So 2026.5 is by far the closest choice. The transferable idea: to estimate a square root, square nearby friendly numbers rather than guessing.",
+    "elegant": "$n^2 + n = (n + \\frac12)^2 - \\frac14$, so $\\sqrt{n^2 + n}$ is just below $n + \\frac12$ for every whole number $n$."
+  },
+  "whyOnTest": "A rough size check says the root is about 2026; a sharper estimate is needed to choose among close choices, and squaring 2026.5 settles it.",
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

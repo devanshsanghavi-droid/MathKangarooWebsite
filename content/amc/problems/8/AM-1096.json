@@ -1,0 +1,68 @@
+{
+  "id": "AM-1096",
+  "contest": "AMC8",
+  "slot": 17,
+  "area": "GEO",
+  "topic": "GEO-10",
+  "types": [
+    "T-SYMMETRY"
+  ],
+  "statement": "On a map measured in kilometers, Sofia starts at the point $(0, 5)$ and her camp is at $(12, 4)$. A straight river runs along the $x$-axis. She will walk in a straight line to some point on the river to fill her water bottle, and then walk in a straight line to her camp. What is the length of the shortest such route, in kilometers?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\sqrt{145}$",
+      "correct": false,
+      "misconception": "I measured straight from her starting point to her camp, $\\sqrt{12^2 + 1^2} = \\sqrt{145}$, forgetting that she has to stop at the river."
+    },
+    {
+      "key": "B",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I measured from her start to the river point straight below the camp, 13 km, and forgot the last 4 km up to the camp."
+    },
+    {
+      "key": "C",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I walked diagonally to the river point straight below the camp, 13 km, and then straight up 4 km, but that corner makes the route longer than it needs to be."
+    },
+    {
+      "key": "E",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I walked straight down to the river, 12 km along it and then straight up to camp: 5 + 12 + 4 = 21."
+    }
+  ],
+  "hints": [
+    "Reflect the camp across the river.",
+    "For any point $P$ on the river, the distance from $P$ to the camp equals the distance from $P$ to the camp's mirror image $(12, -4)$. So the route has the same length as a route from $(0, 5)$ to $(12, -4)$ through $P$.",
+    "The shortest path from $(0, 5)$ to $(12, -4)$ is a straight line, with length $\\sqrt{12^2 + 9^2}$."
+  ],
+  "solutions": {
+    "reliable": "Reflect the camp across the $x$-axis to $C' = (12, -4)$. For any point $P$ on the river, $PC = PC'$, so the length of the route $SP + PC$ equals $SP + PC'$. That sum is smallest when $P$ lies on the straight segment from $S = (0, 5)$ to $C'$, which does cross the river. The shortest length is $\\sqrt{(12 - 0)^2 + (5 - (-4))^2} = \\sqrt{144 + 81} = \\sqrt{225} = 15$ km.",
+    "elegant": "The segment from $(0, 5)$ to $(12, -4)$ crosses the $x$-axis $\\frac{5}{9}$ of the way along, at $\\left(\\frac{20}{3}, 0\\right)$. The two legs are then $\\frac{5}{9}$ and $\\frac{4}{9}$ of $15$, that is $\\frac{25}{3}$ and $\\frac{20}{3}$, each a $3$-$4$-$5$ right triangle, and they add to $15$."
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

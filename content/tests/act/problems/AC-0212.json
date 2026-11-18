@@ -1,0 +1,56 @@
+{
+  "id": "AC-0212",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "easy",
+  "statement": "The ladder of a playground slide is $8$ feet long. It leans against the slide's platform and makes a $60^\\circ$ angle with the level ground. How many feet above the ground is the top of the ladder?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I used the short leg of the $30^\\circ$-$60^\\circ$-$90^\\circ$ triangle, which is opposite the $30^\\circ$ angle, but the height is opposite the $60^\\circ$ angle."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{8\\sqrt{3}}{3}$",
+      "correct": false,
+      "misconception": "I thought the long leg was the hypotenuse divided by $\\sqrt{3}$, so I got $\\frac{8}{\\sqrt{3}} = \\frac{8\\sqrt{3}}{3}$."
+    },
+    {
+      "key": "C",
+      "text": "$4\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I used the $45^\\circ$-$45^\\circ$-$90^\\circ$ ratio and divided $8$ by $\\sqrt{2}$, but this triangle has a $60^\\circ$ angle."
+    },
+    {
+      "key": "D",
+      "text": "$4\\sqrt{3}$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The ladder, the ground and the platform form a right triangle with a $60^\\circ$ angle.",
+    "In a $30^\\circ$-$60^\\circ$-$90^\\circ$ triangle, the short leg is half the hypotenuse and the long leg is $\\sqrt{3}$ times the short leg. Which leg is the height?",
+    "The short leg is $8 \\div 2 = 4$, and the height is the long leg, the one opposite the $60^\\circ$ angle."
+  ],
+  "solutions": {
+    "reliable": "The ladder is the hypotenuse of a $30^\\circ$-$60^\\circ$-$90^\\circ$ triangle, and the height is opposite the $60^\\circ$ angle. So the height is $8 \\sin 60^\\circ = 8 \\cdot \\frac{\\sqrt{3}}{2} = 4\\sqrt{3} \\approx 6.9$ feet.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

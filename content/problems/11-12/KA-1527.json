@@ -1,0 +1,68 @@
+{
+  "id": "KA-1527",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Let $f(x) = \\dfrac{x^2}{x^2 + (1 - x)^2}$. What is $f\\left(\\frac{1}{20}\\right) + f\\left(\\frac{2}{20}\\right) + f\\left(\\frac{3}{20}\\right) + \\dots + f\\left(\\frac{19}{20}\\right)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{247}{40}$",
+      "correct": false,
+      "misconception": "I simplified the denominator to $x^2 + 1 - x^2 = 1$, treating $(1 - x)^2$ as $1 - x^2$, so I added the squares $\\frac{k^2}{400}$ for $k = 1$ to $19$."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I found the 9 pairs that each add up to 1 but forgot the middle term $f\\left(\\frac{1}{2}\\right)$."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{19}{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I counted the middle term $f\\left(\\frac{1}{2}\\right)$ as a whole pair worth 1 instead of $\\frac{1}{2}$."
+    },
+    {
+      "key": "E",
+      "text": "$19$",
+      "correct": false,
+      "misconception": "I paired every term with its partner and counted 19 pairs worth 1 each, so I counted every term twice."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-07",
+    "secondary": [
+      "NUM-08",
+      "CFT-03"
+    ]
+  },
+  "hints": [
+    "Work out $f\\left(\\frac{1}{20}\\right) + f\\left(\\frac{19}{20}\\right)$ before anything else.",
+    "Computing nineteen fractions is slow. Compare $f(x)$ with $f(1 - x)$: they have the same denominator. Pair the first term with the last, the second with the second last, and so on.",
+    "$f(x) + f(1 - x) = \\dfrac{x^2 + (1 - x)^2}{x^2 + (1 - x)^2} = 1$. That gives 9 pairs, and the middle term $f\\left(\\frac{10}{20}\\right)$ is left on its own."
+  ],
+  "solutions": {
+    "reliable": "Replacing $x$ by $1 - x$ swaps the two squares in the denominator, so $f(1 - x) = \\dfrac{(1 - x)^2}{x^2 + (1 - x)^2}$ and $f(x) + f(1 - x) = 1$. The nineteen terms pair up as $f\\left(\\frac{k}{20}\\right) + f\\left(\\frac{20 - k}{20}\\right) = 1$ for $k = 1, \\dots, 9$, which is 9 pairs, and the middle term is $f\\left(\\frac{1}{2}\\right) = \\dfrac{\\frac{1}{4}}{\\frac{1}{4} + \\frac{1}{4}} = \\frac{1}{2}$. The sum is $9 + \\frac{1}{2} = \\frac{19}{2}$. The transferable idea: before grinding through a long sum, test whether terms from opposite ends combine into something simple.",
+    "elegant": "Write the sum $S$ forwards and backwards and add: each of the 19 columns is $f(x) + f(1 - x) = 1$, so $2S = 19$ and $S = \\frac{19}{2}$."
+  },
+  "whyOnTest": "Nineteen awkward fractions or one line of algebra: noticing that $f(x) + f(1 - x) = 1$ is the trick that makes grinding unnecessary.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

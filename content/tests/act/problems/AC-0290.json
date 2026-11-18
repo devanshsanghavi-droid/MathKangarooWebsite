@@ -1,0 +1,56 @@
+{
+  "id": "AC-0290",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-06",
+  "difficulty": "hard",
+  "statement": "A drawer holds $10$ batteries, and $3$ of them are dead. Jamal picks $2$ batteries at random without replacement. What is the probability that exactly $1$ of the $2$ batteries he picks is dead?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{7}{30}$",
+      "correct": false,
+      "misconception": "I found the chance of dead first and good second, 3/10 times 7/9, and forgot the other order, good first and dead second."
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{21}{50}$",
+      "correct": false,
+      "misconception": "I treated the picks as if the first battery went back into the drawer, using 2 times 3/10 times 7/10."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{7}{15}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{8}{15}$",
+      "correct": false,
+      "misconception": "I found the chance of at least one dead battery, 1 minus 7/10 times 6/9, which also counts picking 2 dead ones."
+    }
+  ],
+  "hints": [
+    "Exactly one dead can happen in two orders: dead then good, or good then dead.",
+    "Without replacement, the second probability uses $9$ batteries. Find both orders and add, or count pairs with combinations.",
+    "Dead then good is $\\frac{3}{10}\\cdot\\frac{7}{9}$ and good then dead is $\\frac{7}{10}\\cdot\\frac{3}{9}$. Each is $\\frac{21}{90}$."
+  ],
+  "solutions": {
+    "reliable": "Dead then good: $\\frac{3}{10} \\cdot \\frac{7}{9} = \\frac{21}{90}$. Good then dead: $\\frac{7}{10} \\cdot \\frac{3}{9} = \\frac{21}{90}$. The total is $\\frac{42}{90} = \\frac{7}{15}$.",
+    "elegant": "Count pairs: there are $\\binom{10}{2} = 45$ equally likely pairs, and $3 \\cdot 7 = 21$ of them have one dead and one good battery. The probability is $\\frac{21}{45} = \\frac{7}{15}$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "AM-1135",
+  "contest": "AMC8",
+  "slot": 20,
+  "area": "GEO",
+  "topic": "GEO-02",
+  "types": [
+    "T-SIMILAR",
+    "T-AREA-RATIO"
+  ],
+  "statement": "Triangle $ABC$ has area $100$. Four points divide side $\\overline{AB}$ into five equal parts, and through each of these points a line is drawn parallel to side $\\overline{BC}$. The four lines cut the triangle into five strips. The two strips closest to side $\\overline{BC}$ are painted. What is the total painted area?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I saw that the two painted strips take up $\\frac{2}{5}$ of side $\\overline{AB}$, and I squared that to get $\\frac{4}{25}$ of the area."
+    },
+    {
+      "key": "B",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I found the area of the unpainted triangle at the top, $\\left(\\frac{3}{5}\\right)^2 \\cdot 100 = 36$, and gave that instead of the area below it."
+    },
+    {
+      "key": "C",
+      "text": "$40$",
+      "correct": false,
+      "misconception": "I thought the five strips all have the same area, so two of them make $\\frac{2}{5}$ of $100$."
+    },
+    {
+      "key": "D",
+      "text": "$60$",
+      "correct": false,
+      "misconception": "I thought the strip areas grow like $1, 2, 3, 4, 5$, so I took the bottom two as $\\frac{4 + 5}{15}$ of the triangle."
+    },
+    {
+      "key": "E",
+      "text": "$64$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Each line cuts off a smaller triangle at $A$ that is similar to triangle $ABC$.",
+    "The unpainted part is the triangle at $A$ cut off by the line through the third point. Its sides are $\\frac{3}{5}$ of the sides of $ABC$, so its area is $\\left(\\frac{3}{5}\\right)^2$ of $100$.",
+    "The unpainted triangle has area $\\frac{9}{25} \\cdot 100 = 36$. The painted area is everything else."
+  ],
+  "solutions": {
+    "reliable": "The painted region is triangle $ABC$ minus the part above the line through the third division point. That part is a triangle similar to $ABC$, because its base is parallel to $\\overline{BC}$, and its sides are $\\frac{3}{5}$ as long as those of $ABC$. Areas of similar figures scale by the square of the length ratio, so its area is $\\left(\\frac{3}{5}\\right)^2 \\cdot 100 = 36$. The painted area is $100 - 36 = 64$.",
+    "elegant": "The triangles cut off at $A$ by the four lines and by $\\overline{BC}$ have areas proportional to $1^2, 2^2, 3^2, 4^2, 5^2$, so the strips have areas proportional to the differences $1, 3, 5, 7, 9$, which add to $25$. The bottom two strips are $\\frac{7 + 9}{25} = \\frac{16}{25}$ of the triangle, which is $64$."
+  },
+  "formulas": [
+    "F-GEO-11"
+  ],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

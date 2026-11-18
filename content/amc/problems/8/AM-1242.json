@@ -1,0 +1,69 @@
+{
+  "id": "AM-1242",
+  "contest": "AMC8",
+  "slot": 6,
+  "area": "CP",
+  "topic": "CP-06",
+  "types": [
+    "T-COMPLEMENT",
+    "T-CASEWORK"
+  ],
+  "statement": "Two fair six-sided dice, one red and one blue, are rolled. What is the probability that the larger of the two numbers rolled is exactly $5$? (If both dice show the same number, that number counts as the larger.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{1}{4}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{5}{18}$",
+      "correct": false,
+      "misconception": "I counted 5 rolls with a 5 on the red die and 5 with a 5 on the blue die, 10 in all, but (5, 5) got counted twice."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{11}{36}$",
+      "correct": false,
+      "misconception": "I counted every roll with at least one 5, but that includes (5, 6) and (6, 5), where the larger number is 6."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{5}{9}$",
+      "correct": false,
+      "misconception": "I only took away the 16 rolls where both dice are 4 or less, so I also kept the rolls whose larger number is 6."
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{25}{36}$",
+      "correct": false,
+      "misconception": "I counted all 25 rolls with no 6, but some of those, like (2, 3), have a larger number below 5."
+    }
+  ],
+  "hints": [
+    "The larger number is exactly $5$ when neither die is above $5$ and at least one die equals $5$.",
+    "Count the rolls with both dice at most $5$, then take away the rolls with both dice at most $4$.",
+    "Both dice at most $5$: $5 \\cdot 5 = 25$ rolls. Both at most $4$: $4 \\cdot 4 = 16$ rolls. That leaves $25 - 16 = 9$ out of $36$."
+  ],
+  "solutions": {
+    "reliable": "There are $36$ equally likely rolls. The larger number is at most $5$ in $5 \\cdot 5 = 25$ rolls, and at most $4$ in $4 \\cdot 4 = 16$ rolls. So the larger number is exactly $5$ in $25 - 16 = 9$ rolls, and the probability is $\\frac{9}{36} = \\frac{1}{4}$.",
+    "elegant": "List them: red $5$ with blue $1$ to $5$ gives $5$ rolls, and blue $5$ with red $1$ to $4$ gives $4$ more, for $9$ out of $36$, which is $\\frac{1}{4}$."
+  },
+  "formulas": [
+    "F-CP-06"
+  ],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "AM-1291",
+  "contest": "AMC8",
+  "slot": 22,
+  "area": "CP",
+  "topic": "CP-08",
+  "types": [
+    "T-LINEARITY"
+  ],
+  "statement": "A fair coin is flipped $6$ times, and the results are written in a row, such as $HTTHHT$. Call a place where an $H$ is immediately followed by a $T$ a drop. For example, $HTTHHT$ has $2$ drops. What is the expected number of drops?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{3}{4}$",
+      "correct": false,
+      "misconception": "I split the 6 flips into 3 separate pairs, flips 1 and 2, 3 and 4, and 5 and 6, and missed the pairs that overlap, like flips 2 and 3."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{5}{4}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{3}{2}$",
+      "correct": false,
+      "misconception": "I thought there were 6 places where an H followed by a T could start, so I used 6 times 1/4."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{5}{2}$",
+      "correct": false,
+      "misconception": "I counted any change, H then T or T then H, so I gave each of the 5 neighboring pairs a chance of 1/2."
+    },
+    {
+      "key": "E",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I thought every head would be followed by a tail, so I used the expected number of heads, 3."
+    }
+  ],
+  "hints": [
+    "Do not try to list all 64 outcomes. Look at each pair of neighboring flips separately.",
+    "There are 5 neighboring pairs: flips 1 and 2, flips 2 and 3, and so on. What is the chance that one given pair reads H then T?",
+    "Each pair reads HT with probability 1/4. Expected values add, even though the pairs overlap, so the answer is 5 times 1/4."
+  ],
+  "solutions": {
+    "reliable": "For each of the $5$ neighboring pairs of flips (flips $1$ and $2$, flips $2$ and $3$, and so on up to flips $5$ and $6$), the chance that the pair reads $H$ then $T$ is $\\frac{1}{2} \\cdot \\frac{1}{2} = \\frac{1}{4}$. The number of drops is the sum, over these $5$ pairs, of $1$ if the pair reads $HT$ and $0$ if it does not. The expected value of a sum is the sum of the expected values, even when the pairs overlap, so the answer is $5 \\cdot \\frac{1}{4} = \\frac{5}{4}$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-09"
+  ],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

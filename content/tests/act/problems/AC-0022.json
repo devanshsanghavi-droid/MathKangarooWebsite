@@ -1,0 +1,56 @@
+{
+  "id": "AC-0022",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-06",
+  "difficulty": "easy",
+  "statement": "For $i = \\sqrt{-1}$, which of the following is equal to $(4 - 3i) - (-2 + 5i)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6 - 8i$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$6 + 2i$",
+      "correct": false,
+      "misconception": "I subtracted the $-2$ correctly but did not distribute the minus sign to the $5i$, so I added it to $-3i$."
+    },
+    {
+      "key": "C",
+      "text": "$2 + 2i$",
+      "correct": false,
+      "misconception": "I added the two complex numbers instead of subtracting the second one from the first."
+    },
+    {
+      "key": "D",
+      "text": "$2 - 8i$",
+      "correct": false,
+      "misconception": "I subtracted the $5i$ correctly but did not distribute the minus sign to the $-2$, so I added it to 4."
+    }
+  ],
+  "hints": [
+    "Subtracting a complex number means subtracting both its real part and its imaginary part.",
+    "Distribute the minus sign: $-(-2 + 5i) = 2 - 5i$.",
+    "Now combine $4 - 3i + 2 - 5i$, real parts with real parts and imaginary parts with imaginary parts."
+  ],
+  "solutions": {
+    "reliable": "Distribute the minus sign: $(4 - 3i) - (-2 + 5i) = 4 - 3i + 2 - 5i$. The real parts give $4 + 2 = 6$ and the imaginary parts give $-3i - 5i = -8i$, so the result is $6 - 8i$.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

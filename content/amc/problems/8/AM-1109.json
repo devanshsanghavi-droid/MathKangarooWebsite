@@ -1,0 +1,66 @@
+{
+  "id": "AM-1109",
+  "contest": "AMC8",
+  "slot": 11,
+  "area": "GEO",
+  "topic": "GEO-05",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "A circular pond with radius $10$ meters is surrounded by a stone path of the same width all the way around, so the path forms a ring. The outer edge of the path is $12\\pi$ meters longer than the inner edge. What is the area of the path, in square meters?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$36\\pi$",
+      "correct": false,
+      "misconception": "I found the width, 6, and computed pi times 6 squared, as if the path were a circle whose radius is the width."
+    },
+    {
+      "key": "B",
+      "text": "$60\\pi$",
+      "correct": false,
+      "misconception": "I multiplied pi by the inner radius 10 and the width 6, leaving out the factor of 2 in the circumference."
+    },
+    {
+      "key": "C",
+      "text": "$120\\pi$",
+      "correct": false,
+      "misconception": "I unrolled the path into a strip as long as the inner edge, 20 pi, and 6 wide. But the outer edge is longer, so that strip is too short."
+    },
+    {
+      "key": "D",
+      "text": "$156\\pi$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$192\\pi$",
+      "correct": false,
+      "misconception": "I unrolled the path into a strip as long as the outer edge, 32 pi, and 6 wide. But the inner edge is shorter, so that strip is too long."
+    }
+  ],
+  "hints": [
+    "Circumference is $2\\pi r$, so a difference in circumferences tells you a difference in radii.",
+    "If the path has width $w$, the outer radius is $10 + w$, and $2\\pi(10 + w) - 2\\pi \\cdot 10 = 12\\pi$.",
+    "The width is $6$, so the outer radius is $16$. The path is the big disk with the pond removed."
+  ],
+  "solutions": {
+    "reliable": "If the path has width $w$, then $2\\pi(10 + w) - 2\\pi(10) = 2\\pi w = 12\\pi$, so $w = 6$ and the outer radius is $16$. The path's area is $\\pi \\cdot 16^2 - \\pi \\cdot 10^2 = 256\\pi - 100\\pi = 156\\pi$.",
+    "elegant": "Unroll the ring into a strip. Its length is the circumference of the middle circle, radius $13$, which is $26\\pi$, and its width is $6$, so the area is $26\\pi \\cdot 6 = 156\\pi$. This works because the ring's area is $\\pi(R - r)(R + r) = (R - r) \\cdot 2\\pi \\cdot \\frac{R + r}{2}$."
+  },
+  "formulas": [],
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

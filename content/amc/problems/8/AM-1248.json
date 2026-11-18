@@ -1,0 +1,67 @@
+{
+  "id": "AM-1248",
+  "contest": "AMC8",
+  "slot": 8,
+  "area": "CP",
+  "topic": "CP-09",
+  "types": [
+    "T-RECURSION",
+    "T-SMALL-CASES"
+  ],
+  "statement": "Ana, Ben and Cy are tossing a frisbee. Ana makes the first throw. Each throw goes from the person holding the frisbee to one of the other two people. In how many different ways can $5$ throws be made so that Ana is holding the frisbee after the fifth throw?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$11$",
+      "correct": false,
+      "misconception": "I mixed up the columns of my table and gave the count for Ben holding the frisbee after 5 throws instead of Ana."
+    },
+    {
+      "key": "C",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I thought exactly half of the 32 possible throw sequences end with Ana holding the frisbee."
+    },
+    {
+      "key": "D",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I carried my table one row too far and gave the count for Ana holding the frisbee after 6 throws."
+    },
+    {
+      "key": "E",
+      "text": "$32$",
+      "correct": false,
+      "misconception": "I counted all 2 times 2 times 2 times 2 times 2 = 32 throw sequences, not just the ones that end with Ana."
+    }
+  ],
+  "hints": [
+    "Keep track, after each throw, of how many sequences leave the frisbee with Ana and how many leave it with someone else.",
+    "Ana can only get the frisbee from someone else, and each other person has exactly one way to throw it to her.",
+    "If $a_n$ sequences end with Ana after $n$ throws, then $a_{n+1} = 2^n - a_n$. Start from $a_1 = 0$ and work up to $a_5$."
+  ],
+  "solutions": {
+    "reliable": "Let $a_n$ be the number of $n$-throw sequences that end with Ana. All $n$-throw sequences number $2^n$, and $2^n - a_n$ of them end with Ben or Cy. Ana has the frisbee after the next throw exactly when someone else held it and threw it to her, which can happen in one way, so $a_{n+1} = 2^n - a_n$. Since Ana throws first, $a_1 = 0$. Then $a_2 = 2 - 0 = 2$, $a_3 = 4 - 2 = 2$, $a_4 = 8 - 2 = 6$ and $a_5 = 16 - 6 = 10$.",
+    "elegant": "The numbers $a_n = \\frac{2^n + 2(-1)^n}{3}$ fit the rule: they give $0, 2, 2, 6$ for $n = 1, 2, 3, 4$, and $a_n + a_{n+1} = \\frac{2^n + 2^{n+1}}{3} = 2^n$ because the $(-1)^n$ parts cancel. So $a_5 = \\frac{32 - 2}{3} = 10$."
+  },
+  "formulas": [],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

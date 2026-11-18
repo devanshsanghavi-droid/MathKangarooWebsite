@@ -1,0 +1,56 @@
+{
+  "id": "AC-0128",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-01",
+  "difficulty": "medium",
+  "statement": "On a spring day, the outdoor temperature $T$, in degrees Fahrenheit, $t$ hours after 6:00 a.m. is modeled by $T(t) = -0.5t^2 + 6t + 50$ for $0 \\le t \\le 12$. According to the model, what is the change in temperature, in degrees Fahrenheit, from 7:00 a.m. to 10:00 a.m.?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$10.5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$13.5$",
+      "correct": false,
+      "misconception": "I treated 7:00 a.m. as t = 0 and 10:00 a.m. as t = 3, so I found T(3) - T(0) = 63.5 - 50 = 13.5, but t counts hours after 6:00 a.m."
+    },
+    {
+      "key": "C",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I found T(4) - T(0) = 66 - 50 = 16, which is the change since 6:00 a.m., but the interval starts at 7:00 a.m., which is t = 1."
+    },
+    {
+      "key": "D",
+      "text": "$21.75$",
+      "correct": false,
+      "misconception": "I read -0.5t^2 as (-0.5t)^2, which made the squared term positive, so I got T(4) - T(1) = 78 - 56.25 = 21.75."
+    }
+  ],
+  "hints": [
+    "Turn each clock time into a value of $t$, the number of hours after 6:00 a.m.",
+    "7:00 a.m. is $t = 1$ and 10:00 a.m. is $t = 4$. Find $T(4) - T(1)$.",
+    "$T(4) = -8 + 24 + 50 = 66$ and $T(1) = -0.5 + 6 + 50 = 55.5$."
+  ],
+  "solutions": {
+    "reliable": "7:00 a.m. is $1$ hour after 6:00 a.m. and 10:00 a.m. is $4$ hours after, so compute $T(1)$ and $T(4)$. $T(1) = -0.5(1) + 6(1) + 50 = 55.5$ and $T(4) = -0.5(16) + 6(4) + 50 = 66$. The change is $66 - 55.5 = 10.5$ degrees.",
+    "elegant": "$T(4) - T(1) = -0.5(16 - 1) + 6(4 - 1) = -7.5 + 18 = 10.5$. The constant $50$ cancels, so it never needs to be added."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

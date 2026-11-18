@@ -1,0 +1,56 @@
+{
+  "id": "SA-0082",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "medium",
+  "statement": "Which of the following equations has a graph in the $xy$-plane with a negative slope and a positive $y$-intercept?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3x + 2y = 8$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$3x - 2y = 8$",
+      "correct": false,
+      "misconception": "I thought the minus sign in front of $2y$ made the slope negative, but solving gives $y = \\frac{3}{2}x - 4$, with a positive slope and a negative intercept."
+    },
+    {
+      "key": "C",
+      "text": "$3x + 2y = -8$",
+      "correct": false,
+      "misconception": "I checked that the slope, $-\\frac{3}{2}$, is negative but did not check the intercept, which is $-4$."
+    },
+    {
+      "key": "D",
+      "text": "$2y - 3x = 8$",
+      "correct": false,
+      "misconception": "I saw the $-3x$ and assumed the slope is negative, but solving for $y$ gives $y = \\frac{3}{2}x + 4$, so the slope is positive."
+    }
+  ],
+  "hints": [
+    "Solve each equation for $y$.",
+    "In the form $y = mx + b$, the slope is $m$ and the $y$-intercept is $b$. You need $m < 0$ and $b > 0$ at the same time.",
+    "$3x + 2y = 8$ becomes $y = -\\frac{3}{2}x + 4$. Rewrite the other three the same way and compare."
+  ],
+  "solutions": {
+    "reliable": "Solve each equation for $y$. $3x + 2y = 8$ gives $y = -\\frac{3}{2}x + 4$: slope $-\\frac{3}{2} < 0$ and intercept $4 > 0$. $3x - 2y = 8$ gives $y = \\frac{3}{2}x - 4$. $2y - 3x = 8$ gives $y = \\frac{3}{2}x + 4$. $3x + 2y = -8$ gives $y = -\\frac{3}{2}x - 4$. Only the first has both properties. Key idea: for $ax + by = c$ the slope is $-\\frac{a}{b}$ and the $y$-intercept is $\\frac{c}{b}$, so the signs of all three numbers matter.",
+    "elegant": "For $ax + by = c$, the slope is $-\\frac{a}{b}$ and the $y$-intercept is $\\frac{c}{b}$. A negative slope needs $a$ and $b$ with the same sign, and a positive intercept needs $c$ and $b$ with the same sign. Only $3x + 2y = 8$ has $a$, $b$ and $c$ all of one sign."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

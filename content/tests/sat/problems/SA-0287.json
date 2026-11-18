@@ -1,0 +1,56 @@
+{
+  "id": "SA-0287",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-04",
+  "difficulty": "medium",
+  "statement": "A corner shelf is cut in the shape of an isosceles right triangle. The two equal sides fit against the walls, and the long front edge is the hypotenuse. The area of the shelf is $50$ square inches. What is the length of the front edge, in inches?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5\\sqrt{2}$",
+      "correct": false,
+      "misconception": "I took the square root of the area, $\\sqrt{50} = 5\\sqrt{2}$, as if the shelf were a square, and gave that as the edge."
+    },
+    {
+      "key": "B",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I solved $\\frac{1}{2}a^2 = 50$ to get $a = 10$, then gave the length of a leg instead of the front edge."
+    },
+    {
+      "key": "C",
+      "text": "$10\\sqrt{2}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I found the leg $a = 10$ and doubled it, thinking the hypotenuse is twice a leg as in a $30^\\circ$-$60^\\circ$-$90^\\circ$ triangle."
+    }
+  ],
+  "hints": [
+    "Let each equal side be $a$. Write the area in terms of $a$.",
+    "The area of a right triangle is half the product of its legs, so $\\frac{1}{2}a^2 = 50$. Then use the $45^\\circ$-$45^\\circ$-$90^\\circ$ ratio.",
+    "$a^2 = 100$ gives $a = 10$. In an isosceles right triangle, the hypotenuse is $a\\sqrt{2}$."
+  ],
+  "solutions": {
+    "reliable": "Let each leg be $a$. The area is $\\frac{1}{2}a^2 = 50$, so $a^2 = 100$ and $a = 10$ inches. In a $45^\\circ$-$45^\\circ$-$90^\\circ$ triangle the hypotenuse is $a\\sqrt{2}$, so the front edge is $10\\sqrt{2} \\approx 14.1$ inches. Check with the Pythagorean theorem: $10^2 + 10^2 = 200 = (10\\sqrt{2})^2$.",
+    "elegant": "The hypotenuse squared is $a^2 + a^2 = 2a^2$, and the area is $\\frac{1}{2}a^2$, so the hypotenuse squared is $4$ times the area: $4 \\cdot 50 = 200$. The front edge is $\\sqrt{200} = 10\\sqrt{2}$."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1245",
+  "band": "5-6",
+  "points": 5,
+  "statement": "A list of numbers starts with 3. To get each next number: if the number is even, halve it; if it is odd, add 7. So the list begins 3, 10, 5, and so on. What is the sum of the first 48 numbers in the list?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "312",
+      "correct": false,
+      "misconception": "I counted the second 3 as part of the block, so I used 3, 10, 5, 12, 6, 3 with sum 39 and took 8 such blocks of six, but that second 3 starts the next block."
+    },
+    {
+      "key": "B",
+      "text": "324",
+      "correct": false,
+      "misconception": "I added the 9 full blocks of five numbers, $9 \\times 36 = 324$, and forgot the 3 numbers left over."
+    },
+    {
+      "key": "C",
+      "text": "337",
+      "correct": false,
+      "misconception": "I added the 9 full blocks and the next two numbers, 3 and 10, but forgot the 48th number, 5."
+    },
+    {
+      "key": "D",
+      "text": "342",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "360",
+      "correct": false,
+      "misconception": "I rounded up to 10 full blocks, $10 \\times 36$, which adds two numbers that are not among the first 48."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "PAT-03",
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "Write the next few numbers until something repeats.",
+    "The rule only looks at the current number, so once a number comes back, the whole list repeats. Find the repeating block and its sum, count how many full blocks fit into 50 numbers, and handle the leftover.",
+    "The list goes 3, 10, 5, 12, 6, 3, ... so the block 3, 10, 5, 12, 6 repeats, and its sum is 36."
+  ],
+  "solutions": {
+    "reliable": "The list is 3, 10, 5, 12, 6, and then 6 is even, so the next number is 3 again. Since each number depends only on the one before it, the block 3, 10, 5, 12, 6 repeats forever. Its sum is 36. Forty-eight numbers are 9 full blocks (45 numbers) and 3 more. The 9 blocks add up to $9 \\times 36 = 324$, and the next three numbers are 3, 10 and 5. The sum is $324 + 3 + 10 + 5 = 342$. The transferable idea: a rule that uses only the previous term must cycle once a value repeats; then count whole cycles plus the leftover.",
+    "elegant": null
+  },
+  "whyOnTest": "Recursive rules on a test usually cycle: spotting the repeating block turns a long sum into whole blocks plus a short leftover.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

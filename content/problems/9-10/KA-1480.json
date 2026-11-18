@@ -1,0 +1,68 @@
+{
+  "id": "KA-1480",
+  "band": "9-10",
+  "points": 4,
+  "statement": "How many six-digit numbers that use each of the digits 1, 2, 3, 4, 5 and 6 exactly once are divisible by 12?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "360",
+      "correct": false,
+      "misconception": "I only checked that the number is even, so I counted every arrangement ending in 2, 4 or 6."
+    },
+    {
+      "key": "B",
+      "text": "72",
+      "correct": false,
+      "misconception": "I thought the last two digits had to form a multiple of 12, so I only used the endings 12, 24 and 36."
+    },
+    {
+      "key": "C",
+      "text": "720",
+      "correct": false,
+      "misconception": "I checked only divisibility by 3, which every arrangement passes, so I counted all the arrangements."
+    },
+    {
+      "key": "D",
+      "text": "192",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "120",
+      "correct": false,
+      "misconception": "I thought a number is divisible by 4 when its last digit is 4, so I counted the arrangements ending in 4."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-04",
+    "secondary": [
+      "CNT-03",
+      "CNT-11"
+    ]
+  },
+  "hints": [
+    "Split 12 into two divisibility tests that are easier to check.",
+    "A number is divisible by 12 exactly when it is divisible by 3 and by 4. See what the digit sum tells you, then count the possible last two digits.",
+    "The digit sum is 21, so divisibility by 3 is automatic. List the two-digit endings made of different digits from 1 to 6 that are multiples of 4."
+  ],
+  "solutions": {
+    "reliable": "Since $12 = 3 \\times 4$ and 3 and 4 share no factor, the number must be divisible by 3 and by 4. The digit sum is $1 + 2 + \\dots + 6 = 21$, so every arrangement is divisible by 3. For 4, the last two digits must form a multiple of 4 using two different digits from 1 to 6: 12, 16, 24, 32, 36, 52, 56, 64, which is 8 endings. The other four digits can go in front in $4! = 24$ ways, so there are $8 \\times 24 = 192$ numbers. The transferable idea: test divisibility by a composite number through factors that share nothing and have simple rules.",
+    "elegant": null
+  },
+  "whyOnTest": "Divisibility by 12 needs two rules at once, for 3 and for 4; this probes whether you pick the right pair and apply the last-two-digits rule fully.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

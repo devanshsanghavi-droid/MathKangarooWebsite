@@ -24,7 +24,8 @@ export const dynamic = 'force-static';
 
 const TITLE = 'AMC problem bank (beta)';
 const DESCRIPTION =
-  'Original AMC 10 and AMC 12 style problems, filterable by contest, area, topic, problem ' +
+  'Original AMC 8, AMC 10 and AMC 12 style problems, filterable by contest, area, topic, ' +
+  'problem ' +
   'type and paper position. Every wrong answer explains the mistake that produces it.';
 
 export function generateMetadata(): Metadata {
@@ -49,11 +50,11 @@ export default function AmcProblemsPage() {
       <PageHeader
         eyebrow={
           <>
-            AMC 10 and AMC 12 <BetaBadge />
+            AMC 8, AMC 10 and AMC 12 <BetaBadge />
           </>
         }
         title="AMC problem bank"
-        description={`${problems.length} problems written from scratch in the style of the AMC 10 and AMC 12. Pick a contest, a few topics or a problem type, then start a set.`}
+        description={`${problems.length} problems written from scratch in the style of the AMC 8, AMC 10 and AMC 12. Pick a contest, a few topics or a problem type, then start a set.`}
       />
       <MathProvider>
         <QuestionBank

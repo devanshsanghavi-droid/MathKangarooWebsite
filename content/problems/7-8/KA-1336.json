@@ -1,0 +1,67 @@
+{
+  "id": "KA-1336",
+  "band": "7-8",
+  "points": 3,
+  "statement": "In a 4 by 4 grid, rows are numbered 1 to 4 from the top and columns 1 to 4 from the left. The squares at row 1, column 1 and row 1, column 2 are shaded. At least how many more squares must be shaded so the pattern looks the same after a quarter turn about the grid's centre?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I made the pattern look the same after a half turn only, which needs just the 2 squares opposite the shaded ones."
+    },
+    {
+      "key": "B",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted all 8 squares of the finished pattern, including the 2 that were already shaded."
+    },
+    {
+      "key": "C",
+      "text": "3",
+      "correct": false,
+      "misconception": "I only copied the corner square to the other three corners and forgot that the second shaded square needs copies too."
+    },
+    {
+      "key": "D",
+      "text": "4",
+      "correct": false,
+      "misconception": "I turned the pattern a quarter turn twice and shaded the new squares each time, but forgot the third quarter turn."
+    },
+    {
+      "key": "E",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "GEO-08",
+    "secondary": [
+      "GEO-09"
+    ]
+  },
+  "hints": [
+    "Where does each shaded square go after one, two and three quarter turns?",
+    "For the pattern to survive a quarter turn, every shaded square must come with the three squares it lands on after one, two and three quarter turns. Track each shaded square around the grid.",
+    "The corner square lands on the other three corners. The square in row 1, column 2 lands on row 2, column 4, then row 4, column 3, then row 3, column 1."
+  ],
+  "solutions": {
+    "reliable": "Turn the grid clockwise a quarter turn at a time. The corner square in row 1, column 1 visits the other three corners, so 3 more squares are needed. The square in row 1, column 2 visits row 2, column 4, then row 4, column 3, then row 3, column 1, so 3 more again. These six squares are all different, so 6 further squares must be shaded, and the finished 8-square pattern does look the same after a quarter turn. The transferable idea: under quarter-turn symmetry, squares come in groups of four (apart from a centre square), so complete every group.",
+    "elegant": null
+  },
+  "whyOnTest": "Tests rotational symmetry: every shaded square must come with all of its images under a quarter turn, and it is easy to stop short.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

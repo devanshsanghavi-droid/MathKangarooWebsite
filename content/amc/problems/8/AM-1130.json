@@ -1,0 +1,68 @@
+{
+  "id": "AM-1130",
+  "contest": "AMC8",
+  "slot": 19,
+  "area": "GEO",
+  "topic": "GEO-03",
+  "types": [
+    "T-AUXILIARY"
+  ],
+  "statement": "A convex kite has two sides of length $10$ and two sides of length $17$. The diagonal that joins the two vertices where a side of length $10$ meets a side of length $17$ has length $16$. What is the area of the kite?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I subtracted instead of adding, using $15 - 6 = 9$ for the other diagonal. That is the area of the dart-shaped figure with these sides, not the convex kite."
+    },
+    {
+      "key": "B",
+      "text": "$84$",
+      "correct": false,
+      "misconception": "I found the area of one of the two triangles with sides $10$, $17$ and $21$ that make up the kite, and forgot the other one."
+    },
+    {
+      "key": "C",
+      "text": "$168$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$170$",
+      "correct": false,
+      "misconception": "I multiplied the two side lengths, $10 \\cdot 17$, as if the kite were a rectangle."
+    },
+    {
+      "key": "E",
+      "text": "$336$",
+      "correct": false,
+      "misconception": "I found the diagonals $16$ and $21$ and multiplied them, forgetting to divide by $2$."
+    }
+  ],
+  "hints": [
+    "The diagonals of a kite are perpendicular, and the diagonal of length $16$ is cut in half by the other one.",
+    "Each half is $8$. Use right triangles with hypotenuse $10$ and with hypotenuse $17$ to find the two pieces of the other diagonal.",
+    "The pieces are $\\sqrt{10^2 - 8^2} = 6$ and $\\sqrt{17^2 - 8^2} = 15$, so the other diagonal is $6 + 15 = 21$. The area of a kite is half the product of its diagonals."
+  ],
+  "solutions": {
+    "reliable": "The long diagonal of a kite is a line of symmetry, so it crosses the diagonal of length $16$ at a right angle and cuts it into two halves of length $8$. On one side of the crossing point, the right triangle with hypotenuse $10$ and leg $8$ has other leg $6$; on the other side, the right triangle with hypotenuse $17$ and leg $8$ has other leg $15$. Because the kite is convex, these pieces lie on opposite sides of the crossing point, so the long diagonal is $6 + 15 = 21$. The area is $\\frac{1}{2} \\cdot 16 \\cdot 21 = 168$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-GEO-02"
+  ],
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

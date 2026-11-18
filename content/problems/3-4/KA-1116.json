@@ -1,0 +1,67 @@
+{
+  "id": "KA-1116",
+  "band": "3-4",
+  "points": 4,
+  "statement": "Three lily pads are called A, B and C. A frog on A makes 3 jumps, each time to one of the other two pads. In how many ways can it finish on B?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted only the trips whose first jump goes to B."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": false,
+      "misconception": "I thought exactly half of all the trips must end on B."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted every trip that does not end back on A, including the ones ending on C."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I counted every possible trip of 3 jumps, wherever it ends."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-04"
+    ]
+  },
+  "hints": [
+    "Draw a tree starting at A, with two branches for each jump.",
+    "Each jump gives two branches, so 3 jumps make a small tree. Write the pad reached at each step and count only the branches that finish on B.",
+    "The trips that finish on B are A, B, A, B and A, B, C, B and A, C, A, B. That is 3 ways."
+  ],
+  "solutions": {
+    "reliable": "Tree from A. Jump 1 goes to B or C. From B the frog can go to A or C, and from C to A or B. Jump 3 can land on B only if jump 2 did not. The trips are A, B, A, B and A, B, C, B and A, C, A, B. A trip that is on B after 2 jumps, A, C, B, must leave B on jump 3. So there are 3 ways. The transferable idea: draw the whole tree and keep only the branches that finish where the question asks.",
+    "elegant": "Work backwards: just before the last jump the frog must be on A or C. After 2 jumps it is on A in 2 ways (A, B, A and A, C, A) and on C in 1 way (A, B, C). Each can then jump to B, so 2 + 1 = 3."
+  },
+  "whyOnTest": "A tree of 8 trips is small enough to draw but too big to hold in your head, exactly when a tree diagram earns its place.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

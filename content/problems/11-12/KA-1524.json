@@ -1,0 +1,68 @@
+{
+  "id": "KA-1524",
+  "band": "11-12",
+  "points": 4,
+  "statement": "Consider the 2026 numbers $1, 11, 111, 1111, \\ldots$, where the last one is written with 2026 ones. How many of them are divisible by 7?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$338$",
+      "correct": false,
+      "misconception": "I found that the remainders repeat every 6 numbers but divided 2026 by 6 and rounded up instead of down."
+    },
+    {
+      "key": "B",
+      "text": "$289$",
+      "correct": false,
+      "misconception": "I assumed every seventh number in the list is a multiple of 7, giving about $2026 / 7$."
+    },
+    {
+      "key": "C",
+      "text": "$337$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$675$",
+      "correct": false,
+      "misconception": "I mixed up 7 with 3: a number of ones is a multiple of 3 when the count of ones is, which gives $2026 / 3$ rounded down."
+    },
+    {
+      "key": "E",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I tested 1, 11, 111 and 1111, found none divisible by 7, and concluded that none of them ever are."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-06",
+    "secondary": [
+      "PAT-03",
+      "PAT-05"
+    ]
+  },
+  "hints": [
+    "Track only the remainder on division by 7.",
+    "Each number is ten times the previous one plus 1, so its remainder depends only on the previous remainder. Compute remainders until they repeat, then count full cycles.",
+    "Remainders: 1, 4, 6, 5, 2, 0, then 1 again. So the number with $k$ ones is divisible by 7 exactly when $k$ is a multiple of 6."
+  ],
+  "solutions": {
+    "reliable": "If $r$ is the remainder of one number, the next is $10r + 1$ reduced mod 7. Starting from 1: 1, $11 \\to 4$, $41 \\to 6$, $61 \\to 5$, $51 \\to 2$, $21 \\to 0$, $1 \\to 1$. The remainders repeat every 6, and are 0 exactly when the number of ones is a multiple of 6. (Indeed $111111 = 7 \\times 15873$.) The multiples of 6 from 1 to 2026 number $\\lfloor 2026 / 6 \\rfloor = 337$, since $6 \\times 337 = 2022$. The transferable idea: a recursive rule mod $m$ must cycle, so find the cycle and count.",
+    "elegant": null
+  },
+  "whyOnTest": "Remainders follow a short cycle even when the numbers become enormous, and counting full cycles is where off-by-one errors live.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

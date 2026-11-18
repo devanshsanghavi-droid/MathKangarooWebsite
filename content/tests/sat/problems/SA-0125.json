@@ -1,0 +1,56 @@
+{
+  "id": "SA-0125",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-08",
+  "difficulty": "medium",
+  "statement": "The function $f$ is defined by $f(x) = x^2 - 6x + 4$. In the $xy$-plane, what are the coordinates of the vertex of the graph of $y = f(x + 2) - 3$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$(1, -8)$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$(1, -2)$",
+      "correct": false,
+      "misconception": "I moved the vertex 2 to the left correctly, but I moved it 3 up instead of 3 down."
+    },
+    {
+      "key": "C",
+      "text": "$(5, -8)$",
+      "correct": false,
+      "misconception": "I thought replacing $x$ with $x + 2$ moves the graph 2 to the right, so I added 2 to the $x$-coordinate."
+    },
+    {
+      "key": "D",
+      "text": "$(5, -2)$",
+      "correct": false,
+      "misconception": "I shifted the vertex 2 to the right and 3 up, reading both signs backwards."
+    }
+  ],
+  "hints": [
+    "Find the vertex of the graph of $y = f(x)$ first.",
+    "Complete the square to find the vertex of $f$. Replacing $x$ with $x + 2$ shifts the graph left 2, and subtracting 3 shifts it down 3.",
+    "$f(x) = (x - 3)^2 - 5$, so its vertex is $(3, -5)$. Move it 2 left and 3 down."
+  ],
+  "solutions": {
+    "reliable": "Completing the square, $f(x) = (x - 3)^2 - 5$, with vertex $(3, -5)$. The graph of $y = f(x + 2) - 3$ is the graph of $f$ moved $2$ units left and $3$ units down, so its vertex is $(3 - 2, -5 - 3) = (1, -8)$. Check directly: $f(x + 2) - 3 = (x + 2 - 3)^2 - 5 - 3 = (x - 1)^2 - 8$.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

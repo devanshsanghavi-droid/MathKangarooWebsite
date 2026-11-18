@@ -1,0 +1,56 @@
+{
+  "id": "SA-0129",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-05",
+  "difficulty": "medium",
+  "statement": "A small company that prints custom phone cases paid $2{,}400$ dollars for a printing machine, and the materials for each case cost $4$ dollars. The average cost per case, in dollars, of printing $n$ cases is $A(n) = \\dfrac{2{,}400 + 4n}{n}$. How many cases must the company print for the average cost to be $10$ dollars per case?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$240$",
+      "correct": false,
+      "misconception": "I ignored the $4$ dollars of materials per case and solved $\\frac{2{,}400}{n} = 10$."
+    },
+    {
+      "key": "B",
+      "text": "$400$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$600$",
+      "correct": false,
+      "misconception": "I got to $2{,}400 = 10n - 4n$ but then divided $2{,}400$ by $4$ instead of by $6$."
+    },
+    {
+      "key": "D",
+      "text": "$236$",
+      "correct": false,
+      "misconception": "I read the formula as $\\frac{2{,}400}{n + 4}$, so I solved $2{,}400 = 10(n + 4)$."
+    }
+  ],
+  "hints": [
+    "Set $A(n)$ equal to $10$.",
+    "Multiply both sides by $n$ to clear the fraction, then collect the terms with $n$ on one side.",
+    "$2{,}400 + 4n = 10n$, so $2{,}400 = 6n$."
+  ],
+  "solutions": {
+    "reliable": "Set $\\frac{2400 + 4n}{n} = 10$. Multiplying both sides by $n$ gives $2400 + 4n = 10n$, so $6n = 2400$ and $n = 400$. Check: $\\frac{2400 + 4(400)}{400} = \\frac{4000}{400} = 10$.",
+    "elegant": "Split the fraction: $A(n) = \\frac{2400}{n} + 4$. The machine's share of the cost per case must be $10 - 4 = 6$ dollars, so $n = \\frac{2400}{6} = 400$."
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

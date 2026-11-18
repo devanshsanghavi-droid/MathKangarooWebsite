@@ -1,0 +1,68 @@
+{
+  "id": "KA-1137",
+  "band": "3-4",
+  "points": 5,
+  "statement": "Ana draws a rectangle that is longer than it is tall, so not a square. She adds one diagonal, from a corner to the opposite corner. How many lines of symmetry does her drawing have?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "1",
+      "correct": false,
+      "misconception": "I thought the diagonal itself is a mirror line, but folding a long rectangle along its diagonal does not make the corners meet."
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I counted the two lines of symmetry of the rectangle, but forgot that each one moves the diagonal to the other corner pair."
+    },
+    {
+      "key": "D",
+      "text": "3",
+      "correct": false,
+      "misconception": "I counted the rectangle's two lines and added the diagonal as a third."
+    },
+    {
+      "key": "E",
+      "text": "4",
+      "correct": false,
+      "misconception": "I counted the two middle lines and both diagonals of the rectangle as mirror lines."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-08",
+    "secondary": [
+      "GEO-09",
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "A rectangle alone has two mirror lines. Does each one still work?",
+    "Test every possible line: reflect the whole drawing, including the diagonal, and see whether you get exactly the same drawing. Remember that a long rectangle is not symmetric about its own diagonal.",
+    "Reflecting in the up-and-down middle line sends a diagonal from top left to bottom right onto the other diagonal, from top right to bottom left."
+  ],
+  "solutions": {
+    "reliable": "A rectangle that is not a square has exactly two lines of symmetry: the up-and-down middle line and the across middle line. Say the diagonal joins the top-left and bottom-right corners. Reflecting in the up-and-down line sends it to the line from top right to bottom left, which is not drawn, so that line no longer works. Reflecting in the across line does the same. The diagonal is not a mirror line either: folding a long rectangle along a diagonal does not make the corners land on each other. So the drawing has 0 lines of symmetry. The transferable idea: adding a line to a shape can destroy symmetries, so test each mirror line on the whole drawing.",
+    "elegant": "The drawing still looks the same after a half turn, but a half turn is not a mirror line. Every mirror line of the rectangle swaps the two diagonals, so none of them keeps the drawing the same: 0."
+  },
+  "whyOnTest": "It checks that symmetry is tested on the whole figure, and that a diagonal is not a mirror line of a long rectangle.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

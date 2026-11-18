@@ -1,0 +1,56 @@
+{
+  "id": "SA-0012",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "hard",
+  "statement": "A banquet hall's total charge $C(n)$, in dollars, for an event with $n$ guests is a linear function of $n$. The charge is $\\$1{,}400$ for $50$ guests and $\\$2{,}060$ for $80$ guests. For an event with $100$ guests, what is the total charge divided by the number of guests, in dollars per guest?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I gave the slope, the extra charge for each additional guest, but the charge per guest for $100$ guests also shares out the fixed part of the charge."
+    },
+    {
+      "key": "B",
+      "text": "$25$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$25.75$",
+      "correct": false,
+      "misconception": "I assumed the charge per guest stays the same as for $80$ guests, $\\frac{2{,}060}{80} = 25.75$, but a linear charge with a fixed part is not proportional."
+    },
+    {
+      "key": "D",
+      "text": "$28$",
+      "correct": false,
+      "misconception": "I assumed the charge per guest stays the same as for $50$ guests, $\\frac{1{,}400}{50} = 28$, but a linear charge with a fixed part is not proportional."
+    }
+  ],
+  "hints": [
+    "Find how much the charge goes up for each additional guest.",
+    "Use the two given charges to write $C(n) = mn + b$, find $C(100)$, and then divide by $100$.",
+    "The slope is $\\frac{2{,}060 - 1{,}400}{80 - 50} = 22$, and $C(50) = 1{,}400$ gives a fixed part of $b = 300$."
+  ],
+  "solutions": {
+    "reliable": "The slope is $\\frac{2{,}060 - 1{,}400}{80 - 50} = \\frac{660}{30} = 22$ dollars per guest. From $1{,}400 = 22(50) + b$, the fixed part is $b = 300$, so $C(n) = 22n + 300$. Then $C(100) = 2{,}200 + 300 = 2{,}500$, and $\\frac{2{,}500}{100} = 25$ dollars per guest. Check: $C(80) = 1{,}760 + 300 = 2{,}060$.",
+    "elegant": "Going from $80$ to $100$ guests adds $20$ guests at $22$ dollars each, so $C(100) = 2{,}060 + 440 = 2{,}500$, which is $25$ dollars per guest."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

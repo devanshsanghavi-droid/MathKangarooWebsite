@@ -1,0 +1,56 @@
+{
+  "id": "AC-0210",
+  "test": "ACT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "medium",
+  "statement": "A drone hovers directly above a spot on level ground. Rosa stands $120$ feet from that spot and looks up at the drone at a $52^\\circ$ angle of elevation. Ignoring Rosa's height, how many feet above the ground is the drone, to the nearest foot? (Use $\\sin 52^\\circ \\approx 0.788$, $\\cos 52^\\circ \\approx 0.616$ and $\\tan 52^\\circ \\approx 1.280$.)",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$74$",
+      "correct": false,
+      "misconception": "I used $120 \\cos 52^\\circ$, but cosine compares the adjacent side to the hypotenuse, and the height is neither of those."
+    },
+    {
+      "key": "B",
+      "text": "$95$",
+      "correct": false,
+      "misconception": "I used $120 \\sin 52^\\circ$, treating the $120$ feet along the ground as the hypotenuse, but it is the leg next to the angle."
+    },
+    {
+      "key": "C",
+      "text": "$154$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$195$",
+      "correct": false,
+      "misconception": "I divided $120$ by $\\cos 52^\\circ$, which gives the straight-line distance from Rosa to the drone, not its height."
+    }
+  ],
+  "hints": [
+    "Sketch the right triangle: the $120$ feet along the ground is next to the $52^\\circ$ angle, and the height is opposite it.",
+    "Which trigonometric ratio compares the opposite side with the adjacent side? Set up an equation with that ratio.",
+    "$\\tan 52^\\circ = \\frac{h}{120}$, so $h = 120 \\tan 52^\\circ$."
+  ],
+  "solutions": {
+    "reliable": "Rosa, the spot on the ground and the drone form a right triangle. The $120$-foot ground distance is adjacent to the $52^\\circ$ angle and the height $h$ is opposite it, so $\\tan 52^\\circ = \\frac{h}{120}$. Then $h = 120 \\cdot 1.280 = 153.6$, which rounds to $154$ feet.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

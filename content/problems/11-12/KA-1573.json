@@ -1,0 +1,68 @@
+{
+  "id": "KA-1573",
+  "band": "11-12",
+  "points": 5,
+  "statement": "For which of these values of $n$ does the equation $x^2 - 3y^2 = n$ have NO solution in integers $x$ and $y$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-2$",
+      "correct": false,
+      "misconception": "I thought $x^2 - 3y^2$ can never be negative because squares are never negative, but $1^2 - 3 \\times 1^2 = -2$."
+    },
+    {
+      "key": "B",
+      "text": "$7$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$22$",
+      "correct": false,
+      "misconception": "I thought $x^2 - 3y^2$, like a square, can never be 2 more than a multiple of 4, but $5^2 - 3 \\times 1^2 = 22$."
+    },
+    {
+      "key": "D",
+      "text": "$33$",
+      "correct": false,
+      "misconception": "I thought a multiple of 3 forces both $x$ and $y$ to be multiples of 3, making the left side a multiple of 9, but $6^2 - 3 \\times 1^2 = 33$."
+    },
+    {
+      "key": "E",
+      "text": "$37$",
+      "correct": false,
+      "misconception": "I listed the remainders of $x^2 - 3y^2$ on division by 8 and missed 5, which comes from $0 - 3$, but $7^2 - 3 \\times 2^2 = 37$."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-09",
+    "secondary": [
+      "NUM-06",
+      "LOG-05"
+    ]
+  },
+  "hints": [
+    "Squares leave only a few possible remainders when divided by a small number.",
+    "Argue by contradiction: assume a solution exists and compare the remainders of both sides on division by a small number. Division by 3 rules out none of the choices, so try division by 4.",
+    "On division by 4, $-3y^2$ leaves the same remainder as $y^2$, so $x^2 - 3y^2$ behaves like $x^2 + y^2$, which leaves 0, 1 or 2."
+  ],
+  "solutions": {
+    "reliable": "Every square leaves remainder 0 or 1 on division by 4. Since $-3y^2 = y^2 - 4y^2$, the number $x^2 - 3y^2$ leaves the same remainder as $x^2 + y^2$, which is 0, 1 or 2, never 3. As $7 = 4 + 3$ leaves remainder 3, the equation $x^2 - 3y^2 = 7$ has no integer solution. The others do: $1^2 - 3 \\times 1^2 = -2$, $5^2 - 3 \\times 1^2 = 22$, $6^2 - 3 \\times 1^2 = 33$ and $7^2 - 3 \\times 2^2 = 37$. The transferable idea: when one divisor gives no contradiction, try another small one.",
+    "elegant": null
+  },
+  "whyOnTest": "Remainders on division by 3 do not separate the choices, so the student must find the divisor, here 4, that gives a contradiction.",
+  "estSeconds": 210,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

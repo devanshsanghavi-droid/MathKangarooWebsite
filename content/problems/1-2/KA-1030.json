@@ -1,0 +1,67 @@
+{
+  "id": "KA-1030",
+  "band": "1-2",
+  "points": 4,
+  "statement": "Sam throws a ball at a basket until one goes in, but he stops after 3 throws anyway. Each throw goes in or misses. In how many different ways can his throws go?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2",
+      "correct": false,
+      "misconception": "I only looked at the first throw: in or miss."
+    },
+    {
+      "key": "B",
+      "text": "3",
+      "correct": false,
+      "misconception": "I only counted the ways that end with the ball going in and forgot that all 3 throws could miss."
+    },
+    {
+      "key": "C",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I counted 2 ways for each of the 3 throws and added them, 2 + 2 + 2."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought Sam always throws 3 times, so I counted every way 3 throws can go."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-02",
+    "secondary": [
+      "CNT-01"
+    ]
+  },
+  "hints": [
+    "Can Sam stop after just one throw?",
+    "Draw a tree. Each throw has two branches, in or miss. A branch that goes in stops there. Only a miss carries on, and the tree stops after 3 throws.",
+    "In stops at once. Miss then in stops after two throws. After two misses, the third throw can go in or miss, and both end the turn. Count the branch ends."
+  ],
+  "solutions": {
+    "reliable": "Write I for in and M for a miss. If the first throw goes in, Sam stops: I. If it misses, he throws again, and a second throw that goes in stops him: MI. After two misses he throws a third time, and that ends his turn either way: MMI or MMM. That is 4 ways. The idea to keep: in a tree diagram, stop a branch as soon as the rule says stop.",
+    "elegant": "Each way is fixed by when the first ball goes in: on throw 1, throw 2, throw 3, or never. That is 4 ways. The idea to keep: sometimes you can count the stopping points instead of drawing every branch."
+  },
+  "whyOnTest": "A tree whose branches stop early tests whether students follow the stopping rule or just multiply by 2 for every throw.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

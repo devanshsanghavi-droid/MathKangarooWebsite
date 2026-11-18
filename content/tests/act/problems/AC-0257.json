@@ -1,0 +1,56 @@
+{
+  "id": "AC-0257",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-02",
+  "difficulty": "easy",
+  "statement": "The overnight low temperatures, in degrees Fahrenheit, in a mountain town for one week were: $$-4,\\ 3,\\ -9,\\ 1,\\ 6,\\ -2,\\ 0$$ What is the range of these temperatures, in degrees Fahrenheit?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I treated 6 - (-9) as 6 - 9, got -3, and since a range cannot be negative I wrote 3."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I dropped all the negative signs, so the values ran from 0 to 9 and I said the range was 9."
+    },
+    {
+      "key": "C",
+      "text": "$10$",
+      "correct": false,
+      "misconception": "I used the first temperature, -4, as the lowest one and subtracted it from the highest, 6."
+    },
+    {
+      "key": "D",
+      "text": "$15$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "The range is the greatest value minus the least value.",
+    "Find the least temperature carefully: which negative number is farthest below $0$?",
+    "The greatest value is $6$ and the least is $-9$. Compute $6 - (-9)$."
+  ],
+  "solutions": {
+    "reliable": "The greatest temperature is $6$ and the least is $-9$. The range is $6 - (-9) = 6 + 9 = 15$ degrees Fahrenheit.",
+    "elegant": "On a number line, $-9$ is $9$ units below $0$ and $6$ is $6$ units above it, so they are $9 + 6 = 15$ units apart."
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

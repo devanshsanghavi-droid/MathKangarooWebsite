@@ -1,0 +1,68 @@
+{
+  "id": "KA-1484",
+  "band": "9-10",
+  "points": 4,
+  "statement": "What are the last two digits of $7^{2026}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "09",
+      "correct": false,
+      "misconception": "I only tracked the last digit, 9, and assumed the tens digit would be 0."
+    },
+    {
+      "key": "B",
+      "text": "49",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "01",
+      "correct": false,
+      "misconception": "I noticed that $7^4 = 2401$ ends in 01 and assumed every large power of 7 ends in 01."
+    },
+    {
+      "key": "D",
+      "text": "07",
+      "correct": false,
+      "misconception": "I listed the cycle 01, 07, 49, 43 starting from $7^0$ and took its second entry because 2026 leaves remainder 2 when divided by 4."
+    },
+    {
+      "key": "E",
+      "text": "43",
+      "correct": false,
+      "misconception": "I counted the powers left over after $7^{2024}$ as three instead of two."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-07",
+    "secondary": [
+      "PAT-03",
+      "NUM-06"
+    ]
+  },
+  "hints": [
+    "Work out the last two digits of the first few powers of 7.",
+    "Only the last two digits matter when you keep multiplying by 7. Look for a power of 7 whose last two digits are 01; after that the pattern of last two digits repeats.",
+    "$7^4 = 2401$ ends in 01, so the last two digits repeat every 4 powers: 07, 49, 43, 01."
+  ],
+  "solutions": {
+    "reliable": "The last two digits of $7^1, 7^2, 7^3, 7^4$ are 07, 49, 43, 01. Since $7^4$ ends in 01, multiplying by $7^4$ does not change the last two digits, so they repeat every 4 powers. As $2026 = 4 \\times 506 + 2$, $7^{2026}$ ends in the same two digits as $7^2 = 49$. The transferable idea: a power ending in 01 makes the last two digits cycle.",
+    "elegant": "$7^{2026} = (7^4)^{506} \\times 7^2 = 2401^{506} \\times 49$. Every power of 2401 ends in 01, and a number ending in 01 times 49 ends in 49. The transferable idea: split the exponent around a power that ends in 01."
+  },
+  "whyOnTest": "Last-digit cycles extend to the last two digits once you find a power ending in 01; the trap is tracking only the final digit.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

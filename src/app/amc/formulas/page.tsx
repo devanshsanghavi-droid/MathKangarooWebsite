@@ -13,7 +13,7 @@ export const dynamic = 'force-static';
 
 const TITLE = 'AMC formula sheet (beta)';
 const DESCRIPTION =
-  'The formulas worth knowing cold for the AMC 10 and AMC 12, by area and must-know first, ' +
+  'The formulas worth knowing cold for the AMC 8, AMC 10 and AMC 12, by area and must-know first, ' +
   'each with when to use it, a worked example and the usual pitfall. Printable.';
 
 export function generateMetadata(): Metadata {
@@ -42,7 +42,7 @@ export default function AmcFormulasPage() {
       <PageHeader
         eyebrow={
           <>
-            AMC 10 and AMC 12 <BetaBadge />
+            AMC 8, AMC 10 and AMC 12 <BetaBadge />
           </>
         }
         title="Formula sheet"

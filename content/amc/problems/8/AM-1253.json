@@ -1,0 +1,70 @@
+{
+  "id": "AM-1253",
+  "contest": "AMC8",
+  "slot": 9,
+  "area": "CP",
+  "topic": "CP-04",
+  "types": [
+    "T-PIE",
+    "T-COMPLEMENT"
+  ],
+  "statement": "How many of the integers from $1$ to $200$, inclusive, are neither a perfect square nor a perfect cube?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$17$",
+      "correct": false,
+      "misconception": "I found the 17 numbers that are a perfect square or a perfect cube and gave that instead of the numbers that are neither."
+    },
+    {
+      "key": "B",
+      "text": "$181$",
+      "correct": false,
+      "misconception": "I subtracted 14 squares and 5 cubes from 200 and forgot that 1 and 64 are both, so they were taken away twice."
+    },
+    {
+      "key": "C",
+      "text": "$182$",
+      "correct": false,
+      "misconception": "I noticed that 64 is both a square and a cube but forgot that 1 is too, so I only took away 14 + 5 - 1 = 18 numbers."
+    },
+    {
+      "key": "D",
+      "text": "$183$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$185$",
+      "correct": false,
+      "misconception": "I subtracted the 2 numbers that are both a square and a cube twice, so I only took away 14 + 5 - 4 = 15 numbers."
+    }
+  ],
+  "hints": [
+    "Count the numbers you do not want, the squares and the cubes, and subtract from $200$.",
+    "There are $14$ perfect squares up to $200$ (the largest is $14^2 = 196$) and $5$ perfect cubes (the largest is $5^3 = 125$).",
+    "Some numbers are both a square and a cube. Which numbers up to $200$ are sixth powers?"
+  ],
+  "solutions": {
+    "reliable": "The perfect squares from $1$ to $200$ are $1^2, 2^2, \\ldots, 14^2$, since $14^2 = 196$ and $15^2 = 225$, so there are $14$. The perfect cubes are $1^3, \\ldots, 5^3$, since $5^3 = 125$ and $6^3 = 216$, so there are $5$. A number is both exactly when it is a sixth power, and the sixth powers up to $200$ are $1$ and $64$. By inclusion-exclusion, $14 + 5 - 2 = 17$ numbers are a square or a cube, so $200 - 17 = 183$ are neither.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-CP-01",
+    "F-CP-06"
+  ],
+  "estSeconds": 85,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

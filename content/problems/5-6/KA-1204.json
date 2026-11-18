@@ -1,0 +1,68 @@
+{
+  "id": "KA-1204",
+  "band": "5-6",
+  "points": 5,
+  "statement": "Four children have different whole-number ages that add up to 30. The youngest is 3 years old. Which of these could be the age of the oldest?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "9",
+      "correct": false,
+      "misconception": "I spread the ages out as 3, 7, 8 and 9 without checking the total; they only add up to 27, not 30."
+    },
+    {
+      "key": "B",
+      "text": "18",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "19",
+      "correct": false,
+      "misconception": "I let the two middle children both be 4, giving 3, 4, 4 and 19, but the ages must all be different."
+    },
+    {
+      "key": "D",
+      "text": "24",
+      "correct": false,
+      "misconception": "I made the two middle children 1 and 2, forgetting that nobody can be younger than the youngest, who is 3."
+    },
+    {
+      "key": "E",
+      "text": "27",
+      "correct": false,
+      "misconception": "I subtracted only the youngest child's age from 30 and forgot about the two middle children."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-05",
+    "secondary": [
+      "CNT-18",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "How old can the oldest be at most? And at least?",
+    "Bound the answer from both sides. For the oldest to be as old as possible, make the middle two as young as allowed; for the oldest to be as young as possible, make them as old as allowed.",
+    "Most: 3 + 4 + 5 + 18 = 30, so the oldest is at most 18. Least: if the oldest is k, the total is at most 3 + (k - 2) + (k - 1) + k = 3k, and 3k must reach 30."
+  ],
+  "solutions": {
+    "reliable": "Upper bound: the middle two are at least 4 and 5, so the oldest is at most 30 - 3 - 4 - 5 = 18, and 3, 4, 5, 18 works. Lower bound: if the oldest is k, the other two are at most k - 1 and k - 2, so the total is at most 3 + (k - 2) + (k - 1) + k = 3k. This must be at least 30, so k is at least 10. The oldest is between 10 and 18. Only 18 lies in that range: 9 is too small, and 19, 24 and 27 are too big. The transferable idea: bounding from both sides narrows five choices to one without trying any particular set of ages.",
+    "elegant": "Total = 3 + (the other three). The other three are different and bigger than 3, so they add up to at least 4 + 5 + k and at most (k - 2) + (k - 1) + k. So 12 + k is at most 30 and 3k is at least 30, giving k between 10 and 18."
+  },
+  "whyOnTest": "Asking how big and how small the answer can be is often faster than solving, and here it leaves exactly one choice standing.",
+  "estSeconds": 160,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

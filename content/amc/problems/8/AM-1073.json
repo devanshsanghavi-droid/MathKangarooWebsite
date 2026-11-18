@@ -1,0 +1,66 @@
+{
+  "id": "AM-1073",
+  "contest": "AMC8",
+  "slot": 24,
+  "area": "ALG",
+  "topic": "ALG-12",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "At a certain moment between 2:00 and 3:00, the hour hand of a clock points exactly halfway between the $12$ and the minute hand, so that it splits the angle between them into two equal parts. What time is it?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "2:05",
+      "correct": false,
+      "misconception": "I mixed up the hands and put the minute hand halfway between the $12$ and the hour hand, and I also kept the hour hand fixed on the $2$."
+    },
+    {
+      "key": "B",
+      "text": "2:20",
+      "correct": false,
+      "misconception": "I kept the hour hand fixed on the $2$, at $60^\\circ$, so I put the minute hand at $120^\\circ$, which is 2:20. But the hour hand moves forward as the minutes pass."
+    },
+    {
+      "key": "C",
+      "text": "2:24",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "2:30",
+      "correct": false,
+      "misconception": "I thought the hour hand moves $1^\\circ$ per minute instead of $\\frac12^\\circ$, so I solved $6m = 2(60 + m)$ and got $30$ minutes."
+    },
+    {
+      "key": "E",
+      "text": "2:40",
+      "correct": false,
+      "misconception": "I made the minute hand twice as far from the hour hand as the hour hand is from the $12$, instead of equally far, and got 2:40."
+    }
+  ],
+  "hints": [
+    "Measure each hand's angle clockwise from the 12.",
+    "At $m$ minutes after 2:00, the minute hand is at $6m$ degrees and the hour hand is at $60 + \\frac{m}{2}$ degrees.",
+    "Halfway means the minute hand's angle is twice the hour hand's angle: $6m = 2\\left(60 + \\frac{m}{2}\\right)$."
+  ],
+  "solutions": {
+    "reliable": "Let the time be $m$ minutes after 2:00. The minute hand turns $6^\\circ$ per minute, so it is $6m$ degrees past the $12$. The hour hand turns $30^\\circ$ per hour, which is $\\frac12^\\circ$ per minute, and it starts at $60^\\circ$, so it is at $60 + \\frac{m}{2}$ degrees. The hour hand is halfway between the $12$ and the minute hand when $6m = 2\\left(60 + \\frac{m}{2}\\right) = 120 + m$, so $5m = 120$ and $m = 24$. Check: at 2:24 the hour hand is at $72^\\circ$ and the minute hand is at $144^\\circ$, which is twice as far around.",
+    "elegant": "Count in minute marks. The hour hand moves $\\frac{1}{12}$ as fast as the minute hand and starts at mark $10$, so at $m$ minutes past 2:00 it is at mark $10 + \\frac{m}{12}$. We need $m = 2\\left(10 + \\frac{m}{12}\\right) = 20 + \\frac{m}{6}$, so $\\frac{5m}{6} = 20$ and $m = 24$."
+  },
+  "formulas": [],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

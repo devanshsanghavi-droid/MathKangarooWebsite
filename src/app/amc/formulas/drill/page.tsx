@@ -15,7 +15,7 @@ export const dynamic = 'force-static';
 
 const TITLE = 'AMC formula flashcards (beta)';
 const DESCRIPTION =
-  'Spaced-repetition flashcards for the AMC 10 and AMC 12 formula sheet. Grade your own ' +
+  'Spaced-repetition flashcards for the AMC 8, AMC 10 and AMC 12 formula sheet. Grade your own ' +
   'recall and each card comes back just before you would forget it. No account needed.';
 
 export function generateMetadata(): Metadata {

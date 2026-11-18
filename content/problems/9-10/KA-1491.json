@@ -1,0 +1,67 @@
+{
+  "id": "KA-1491",
+  "band": "9-10",
+  "points": 3,
+  "statement": "In an arithmetic sequence, the 3rd term is 20 and the 8th term is 5. Which term is the first negative term of the sequence?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "the 9th",
+      "correct": false,
+      "misconception": "I wrote the $n$th term as $26 - 3n$ instead of $26 - 3(n - 1)$, which made the 9th term look negative."
+    },
+    {
+      "key": "B",
+      "text": "the 11th",
+      "correct": false,
+      "misconception": "I stepped down from the 8th term but counted three steps to get from 5 to $-1$ instead of two."
+    },
+    {
+      "key": "C",
+      "text": "the 12th",
+      "correct": false,
+      "misconception": "I counted 6 steps from the 3rd term to the 8th, so I used a step of 2.5 instead of 3, and stepping down from 20 at the 3rd term I reached 0 at the 11th term."
+    },
+    {
+      "key": "D",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I found the value of the first negative term instead of its position in the sequence."
+    },
+    {
+      "key": "E",
+      "text": "the 10th",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "PAT-02",
+    "secondary": [
+      "CFT-10"
+    ]
+  },
+  "hints": [
+    "How many steps are there from the 3rd term to the 8th?",
+    "Between two terms, the number of steps is the difference of their positions. Find the size of each step, then keep stepping down from a known term until you go below zero.",
+    "Five steps take 20 down to 5, so each step is $-3$: the terms go 20, 17, 14, 11, 8, 5, ..."
+  ],
+  "solutions": {
+    "reliable": "From the 3rd to the 8th term is 5 steps, and $5 - 20 = -15$, so each step is $-3$. Continuing from the 8th term: the 9th is 2 and the 10th is $-1$, the first negative term. Check with the first term: $20 + 2 \\times 3 = 26$, and $26 - 3(n - 1) < 0$ first holds for $n = 10$. The transferable idea: the number of steps from term $m$ to term $n$ is $n - m$, and the answer should be the kind of quantity asked for.",
+    "elegant": null
+  },
+  "whyOnTest": "Arithmetic sequence questions test counting steps between positions correctly and answering with a position when a position is asked for.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

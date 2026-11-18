@@ -1,0 +1,56 @@
+{
+  "id": "SA-0080",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-05",
+  "difficulty": "medium",
+  "statement": "In the inequality $5 - kx < 17$, $k$ is a positive constant. The solution set of the inequality is $x > -3$. What is the value of $k$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{22}{3}$",
+      "correct": false,
+      "misconception": "I added $5$ to both sides instead of subtracting it, so I got $-kx < 22$, and setting $-\\frac{22}{k} = -3$ gave $k = \\frac{22}{3}$."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{1}{4}$",
+      "correct": false,
+      "misconception": "I reached $-kx < 12$ but then wrote the boundary as $-12k$ instead of $-\\frac{12}{k}$, so $-12k = -3$ gave $k = \\frac{1}{4}$."
+    },
+    {
+      "key": "D",
+      "text": "$-4$",
+      "correct": false,
+      "misconception": "I substituted the boundary value $x = -3$ but wrote $-k(-3)$ as $-3k$, so $5 - 3k = 17$ gave $k = -4$."
+    }
+  ],
+  "hints": [
+    "Solve the inequality for $x$ in terms of $k$, keeping in mind that $k$ is positive.",
+    "Subtract $5$ from both sides, then divide by $-k$. Dividing by a negative number reverses the inequality sign.",
+    "You should get $x > -\\frac{12}{k}$. Set $-\\frac{12}{k}$ equal to $-3$."
+  ],
+  "solutions": {
+    "reliable": "Subtract $5$ from both sides: $-kx < 12$. Because $k$ is positive, $-k$ is negative, so dividing both sides by $-k$ reverses the sign: $x > -\\frac{12}{k}$. This must be the same as $x > -3$, so $\\frac{12}{k} = 3$ and $k = 4$. Check: $5 - 4x < 17$ gives $-4x < 12$, so $x > -3$. Key idea: when an inequality's solution set is given, solve it with the constant still in place and match the boundary, remembering that dividing by a negative quantity flips the sign.",
+    "elegant": "The boundary of the solution set is the value of $x$ where the two sides are equal, so $5 - k(-3) = 17$. That gives $5 + 3k = 17$ and $k = 4$. The direction checks too: $x = 0$ satisfies $5 < 17$ and also satisfies $x > -3$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

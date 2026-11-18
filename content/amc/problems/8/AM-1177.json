@@ -1,0 +1,66 @@
+{
+  "id": "AM-1177",
+  "contest": "AMC8",
+  "slot": 10,
+  "area": "NT",
+  "topic": "NT-04",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "When each of the numbers $247$ and $175$ is divided by the positive integer $d$, the remainder is $7$. What is the largest possible value of $d$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I factored 240 = 2^4 times 3 times 5 and 168 = 2^3 times 3 times 7 but only took 2^2 times 3 = 12, missing one shared factor of 2."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$48$",
+      "correct": false,
+      "misconception": "I took the larger power of 2, 2^4, from 240 instead of the power 2^3 that both numbers share, so I got 2^4 times 3 = 48, which does not divide 168."
+    },
+    {
+      "key": "D",
+      "text": "$72$",
+      "correct": false,
+      "misconception": "I subtracted the two numbers, 247 - 175 = 72, and answered that, but 247 divided by 72 leaves a remainder of 31."
+    },
+    {
+      "key": "E",
+      "text": "$1680$",
+      "correct": false,
+      "misconception": "I found the least common multiple of 240 and 168 instead of their greatest common divisor."
+    }
+  ],
+  "hints": [
+    "If $247$ leaves a remainder of $7$ when divided by $d$, what can you say about $247 - 7$?",
+    "Both $240$ and $168$ must be multiples of $d$. The largest number that divides both is their greatest common divisor.",
+    "$240 = 2^4 \\cdot 3 \\cdot 5$ and $168 = 2^3 \\cdot 3 \\cdot 7$, so their greatest common divisor is $2^3 \\cdot 3 = 24$."
+  ],
+  "solutions": {
+    "reliable": "A remainder of $7$ means $d$ divides $247 - 7 = 240$ and $175 - 7 = 168$, and also $d > 7$. The largest number dividing both is $\\gcd(240, 168)$. From $240 = 2^4 \\cdot 3 \\cdot 5$ and $168 = 2^3 \\cdot 3 \\cdot 7$, the shared part is $2^3 \\cdot 3 = 24$, which is greater than $7$. Check: $247 = 10 \\cdot 24 + 7$ and $175 = 7 \\cdot 24 + 7$. So the largest $d$ is $24$.",
+    "elegant": "Subtract repeatedly: $\\gcd(240, 168) = \\gcd(168, 72) = \\gcd(72, 24) = 24$, since $72 = 3 \\cdot 24$."
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "KA-1309",
+  "band": "7-8",
+  "points": 4,
+  "statement": "On the last four questions of a test, each with 5 choices, Mia has no idea of the answers. Wrong answers cost nothing, so she guesses at random on all four instead of leaving them blank. What is the probability that she gets at least one of them right?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{1}{625}$",
+      "correct": false,
+      "misconception": "I worked out the chance of getting all four right, $\\left(\\frac{1}{5}\\right)^4$, instead of at least one."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{1}{5}$",
+      "correct": false,
+      "misconception": "I thought each guess has a 1 in 5 chance, so the chance for the four questions together is also 1 in 5."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{256}{625}$",
+      "correct": false,
+      "misconception": "I found the chance that all four guesses are wrong, $\\left(\\frac{4}{5}\\right)^4$, and forgot to take it away from 1."
+    },
+    {
+      "key": "D",
+      "text": "$\\frac{369}{625}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$\\frac{4}{5}$",
+      "correct": false,
+      "misconception": "I added $\\frac{1}{5}$ four times, which counts the outcomes with two or more right answers more than once."
+    }
+  ],
+  "skills": {
+    "primary": "CFT-09",
+    "secondary": [
+      "CNT-09",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "'At least one right' has many cases. What is the only case that fails?",
+    "Use the complement: find the chance that every guess is wrong, then subtract it from 1. The four guesses are independent, so their chances multiply.",
+    "Each guess is wrong with probability $\\frac{4}{5}$, so all four are wrong with probability $\\left(\\frac{4}{5}\\right)^4 = \\frac{256}{625}$."
+  ],
+  "solutions": {
+    "reliable": "Each guess is wrong with probability $\\frac{4}{5}$. All four are wrong with probability $\\frac{4}{5} \\times \\frac{4}{5} \\times \\frac{4}{5} \\times \\frac{4}{5} = \\frac{256}{625}$. Every other outcome has at least one right answer, so the probability is $1 - \\frac{256}{625} = \\frac{369}{625}$, a little more than a half. The transferable idea: four blind guesses with no penalty give better than an even chance of at least one extra correct answer, so a blank is never the better choice.",
+    "elegant": "Count outcomes: the four answers can be filled in $5^4 = 625$ ways, and $4^4 = 256$ of them avoid every correct choice. So $625 - 256 = 369$ of the 625 equally likely ways get at least one right."
+  },
+  "whyOnTest": "With no penalty, guessing has only upside; this puts a number on it using the complement of all wrong.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

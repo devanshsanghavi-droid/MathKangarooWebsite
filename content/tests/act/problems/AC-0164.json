@@ -1,0 +1,56 @@
+{
+  "id": "AC-0164",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-06",
+  "difficulty": "easy",
+  "statement": "The graph of $y = x^2$ is translated so that its vertex moves from $(0, 0)$ to $(-3, 4)$. Which of the following is an equation of the translated graph?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$y = x^2 + 13$",
+      "correct": false,
+      "misconception": "I wrote $y = (x + 3)^2 + 4$ but expanded $(x + 3)^2$ as $x^2 + 9$, leaving out the middle term $6x$."
+    },
+    {
+      "key": "B",
+      "text": "$y = x^2 + 6x + 5$",
+      "correct": false,
+      "misconception": "I thought moving up $4$ means subtracting $4$, just as moving left $3$ means adding $3$ inside, so I expanded $(x + 3)^2 - 4$."
+    },
+    {
+      "key": "C",
+      "text": "$y = x^2 + 6x + 13$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$y = x^2 - 6x + 13$",
+      "correct": false,
+      "misconception": "I thought moving $3$ units left means writing $x - 3$, so I expanded $(x - 3)^2 + 4$."
+    }
+  ],
+  "hints": [
+    "Start from vertex form $y = (x - h)^2 + k$ with vertex $(h, k)$.",
+    "With vertex $(-3, 4)$, the equation is $y = (x - (-3))^2 + 4$. Simplify the inside, then expand.",
+    "$y = (x + 3)^2 + 4 = x^2 + 6x + 9 + 4$."
+  ],
+  "solutions": {
+    "reliable": "A parabola $y = x^2$ with its vertex moved to $(h, k)$ is $y = (x - h)^2 + k$. With $(h, k) = (-3, 4)$: $y = (x + 3)^2 + 4 = x^2 + 6x + 9 + 4 = x^2 + 6x + 13$. Check: at $x = -3$, $y = 9 - 18 + 13 = 4$.",
+    "elegant": "Test the vertex in each choice. Only $x^2 + 6x + 13$ gives $y = 4$ at $x = -3$ and has its vertex at $x = -\\frac{6}{2} = -3$."
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

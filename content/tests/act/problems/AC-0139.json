@@ -1,0 +1,56 @@
+{
+  "id": "AC-0139",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-04",
+  "difficulty": "medium",
+  "statement": "A quadratic function $f$ has zeros at $x = 1$ and $x = 7$, and the graph of $y = f(x)$ passes through the point $(3, -16)$. What is the minimum value of $f$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-18$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$-16$",
+      "correct": false,
+      "misconception": "I assumed the given point (3, -16) was the vertex, so I said the minimum is -16, but the vertex is halfway between the zeros, at x = 4."
+    },
+    {
+      "key": "C",
+      "text": "$-9$",
+      "correct": false,
+      "misconception": "I wrote f(x) = (x - 1)(x - 7) without a leading coefficient, so at the vertex x = 4 I got 3 times -3 = -9."
+    },
+    {
+      "key": "D",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found the vertex at x = 4, halfway between the zeros, and gave that x-value instead of the minimum value of f."
+    }
+  ],
+  "hints": [
+    "Knowing the zeros lets you write $f(x) = a(x - 1)(x - 7)$ for some constant $a$.",
+    "Use the point $(3, -16)$ to find $a$. The minimum is at the vertex, halfway between the zeros.",
+    "$a(2)(-4) = -16$ gives $a = 2$, and the vertex is at $x = 4$."
+  ],
+  "solutions": {
+    "reliable": "Write $f(x) = a(x - 1)(x - 7)$. Since $f(3) = -16$, $a(2)(-4) = -16$, so $a = 2$. The vertex is midway between the zeros, at $x = 4$, and $f(4) = 2(3)(-3) = -18$. Because $a > 0$ the parabola opens upward, so $-18$ is the minimum.",
+    "elegant": "The basic shape $(x - 1)(x - 7)$ equals $-8$ at $x = 3$, but $f(3) = -16$, so $f$ is that shape scaled by $2$. The shape's minimum is $(3)(-3) = -9$ at $x = 4$, so the minimum of $f$ is $2(-9) = -18$."
+  },
+  "estSeconds": 90,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

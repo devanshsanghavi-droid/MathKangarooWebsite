@@ -1,0 +1,67 @@
+{
+  "id": "AM-1197",
+  "contest": "AMC8",
+  "slot": 16,
+  "area": "NT",
+  "topic": "NT-08",
+  "types": [
+    "T-SMALL-CASES",
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "For how many positive integers $n$ does $n! = 1 \\cdot 2 \\cdot 3 \\cdots n$ end in exactly $6$ zeros?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$0$",
+      "correct": false,
+      "misconception": "I counted 5 zeros from the five multiples of 5 up to 25 and then added 2 more for 25 = 5 times 5, so I thought the count jumps from 4 straight to 7 and never equals 6."
+    },
+    {
+      "key": "B",
+      "text": "$1$",
+      "correct": false,
+      "misconception": "I found that 25! ends in 6 zeros and stopped, but 26!, 27!, 28! and 29! end in 6 zeros too."
+    },
+    {
+      "key": "C",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I counted 26, 27, 28 and 29, the factorials after 25!, but forgot to count 25! itself."
+    },
+    {
+      "key": "D",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I counted 25 through 30, but 30! gets a seventh zero from the new factor of 5 in 30."
+    }
+  ],
+  "hints": [
+    "The number of zeros at the end of $n!$ equals the number of factors of $5$ in $1 \\cdot 2 \\cdots n$, since there are always more $2$s.",
+    "The count only changes when $n$ reaches a multiple of $5$, and it jumps by $2$ at $25 = 5^2$.",
+    "$24!$ ends in $4$ zeros, $25!$ ends in $6$, and $30!$ ends in $7$."
+  ],
+  "solutions": {
+    "reliable": "Each trailing zero of $n!$ uses a $2$ and a $5$, and $2$s are always more plentiful, so the number of zeros equals the number of factors of $5$ among $1, 2, \\ldots, n$. Up to $24$ the multiples of $5$ are $5, 10, 15, 20$, so $24!$ ends in $4$ zeros. The factor $25 = 5^2$ adds two more fives, so $25!$ ends in $6$ zeros. Nothing changes until $30$, which adds a seventh five. So $n!$ ends in exactly $6$ zeros for $n = 25, 26, 27, 28, 29$: $5$ values.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

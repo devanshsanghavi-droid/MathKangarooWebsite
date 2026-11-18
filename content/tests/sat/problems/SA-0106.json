@@ -1,0 +1,56 @@
+{
+  "id": "SA-0106",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-02",
+  "difficulty": "medium",
+  "statement": "In the equation $2x^2 - 12x + c = 0$, $c$ is a constant. For what value of $c$ does the equation have exactly one real solution?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3$",
+      "correct": false,
+      "misconception": "I found the single solution, $x = \\frac{12}{4} = 3$, and gave that instead of the value of $c$."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I divided by 2 to get $x^2 - 6x + \\frac{c}{2}$, matched it to $(x - 3)^2 = x^2 - 6x + 9$, and forgot to double the 9."
+    },
+    {
+      "key": "C",
+      "text": "$18$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$36$",
+      "correct": false,
+      "misconception": "I set $b^2 - 4c = 0$ and forgot the leading coefficient 2, so $144 = 4c$ gave $c = 36$."
+    }
+  ],
+  "hints": [
+    "What does the discriminant equal when a quadratic has exactly one real solution?",
+    "Set $b^2 - 4ac = 0$ with $a = 2$, $b = -12$ and the unknown $c$, then solve for $c$.",
+    "$(-12)^2 - 4(2)(c) = 0$ means $144 - 8c = 0$."
+  ],
+  "solutions": {
+    "reliable": "A quadratic $ax^2 + bx + c = 0$ has exactly one real solution when $b^2 - 4ac = 0$. Here $(-12)^2 - 4(2)c = 144 - 8c = 0$, so $c = 18$. Check: $2x^2 - 12x + 18 = 2(x - 3)^2$, which is $0$ only at $x = 3$.",
+    "elegant": "For one solution the left side must be a constant times a perfect square. Since $2x^2 - 12x = 2(x^2 - 6x)$, it must be $2(x - 3)^2 = 2x^2 - 12x + 18$, so $c = 18$."
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "AC-0180",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-07",
+  "difficulty": "easy",
+  "statement": "An electric company charges a household $C(k)$ dollars for using $k$ kilowatt-hours of electricity in a month, where $$C(k) = \\begin{cases} 0.12k & \\text{if } 0 \\le k \\le 500 \\\\ 60 + 0.18(k - 500) & \\text{if } k > 500 \\end{cases}$$ What is the charge for a month in which the household uses $740$ kilowatt-hours?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$43.20$",
+      "correct": false,
+      "misconception": "I found the charge for the hours above $500$, $0.18 \\cdot 240 = 43.20$, but I forgot to add the $\\$60$ for the first $500$ kilowatt-hours."
+    },
+    {
+      "key": "B",
+      "text": "$\\$88.80$",
+      "correct": false,
+      "misconception": "I used the first rule, $0.12 \\cdot 740$, without checking that $740$ is more than $500$."
+    },
+    {
+      "key": "C",
+      "text": "$\\$103.20$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$\\$133.20$",
+      "correct": false,
+      "misconception": "I charged $\\$0.18$ for all $740$ kilowatt-hours, but only the kilowatt-hours above $500$ cost that higher rate."
+    }
+  ],
+  "hints": [
+    "Which rule applies? Compare $740$ with $500$.",
+    "Since $740 > 500$, use the second rule. Only the kilowatt-hours above $500$ are charged at $\\$0.18$.",
+    "$C(740) = 60 + 0.18(740 - 500) = 60 + 0.18 \\cdot 240$."
+  ],
+  "solutions": {
+    "reliable": "Because $740 > 500$, the second rule applies: $C(740) = 60 + 0.18(740 - 500) = 60 + 0.18 \\cdot 240 = 60 + 43.20 = 103.20$. The charge is $\\$103.20$. (The $60$ is the cost of the first $500$ kilowatt-hours at $\\$0.12$ each.)",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

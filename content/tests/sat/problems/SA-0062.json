@@ -1,0 +1,56 @@
+{
+  "id": "SA-0062",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "hard",
+  "statement": "A florist spends exactly $96$ dollars on roses that cost $2.40$ dollars each and tulips that cost $1.60$ dollars each, and buys at least one of each kind of flower. How many different combinations of numbers of roses and tulips are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$19$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I counted the even numbers of roses from 2 to 40, but 40 roses would use all the money and leave no tulips."
+    },
+    {
+      "key": "C",
+      "text": "$21$",
+      "correct": false,
+      "misconception": "I counted every even number of roses from 0 to 40, including the two cases where the florist buys none of one flower."
+    },
+    {
+      "key": "D",
+      "text": "$39$",
+      "correct": false,
+      "misconception": "I counted every number of roses from 1 to 39 without checking that the number of tulips comes out to a whole number."
+    }
+  ],
+  "hints": [
+    "Write an equation for the money spent and clear the decimals.",
+    "Multiply $2.4r + 1.6t = 96$ by 5 to get whole numbers. Then ask which values of $r$ make $t$ a positive whole number.",
+    "The equation becomes $3r + 2t = 120$, so $t = 60 - 1.5r$. That needs $r$ even and $t > 0$, so $r < 40$."
+  ],
+  "solutions": {
+    "reliable": "Let $r$ be the number of roses and $t$ the number of tulips. Then $2.4r + 1.6t = 96$; multiplying by $5$ gives $12r + 8t = 480$, or $3r + 2t = 120$. Solving, $t = 60 - \\frac{3}{2}r$. For $t$ to be a whole number $r$ must be even, and $t \\ge 1$ needs $r < 40$, while $r \\ge 1$. So $r \\in \\{2, 4, 6, \\ldots, 38\\}$, which is $19$ values, each giving a positive whole number $t$ (from $57$ down to $3$).",
+    "elegant": "Start from $r = 2$, $t = 57$. Trading $2$ roses for $3$ tulips keeps the cost the same (both cost $4.80$ dollars), so the combinations step by $(+2, -3)$ until $t$ would reach $0$. That happens after $t$ goes $57, 54, \\ldots, 3$, which is $\\frac{57 - 3}{3} + 1 = 19$ combinations."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

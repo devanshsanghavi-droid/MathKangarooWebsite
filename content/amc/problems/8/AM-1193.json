@@ -1,0 +1,66 @@
+{
+  "id": "AM-1193",
+  "contest": "AMC8",
+  "slot": 12,
+  "area": "NT",
+  "topic": "NT-09",
+  "types": [
+    "T-BOUNDING"
+  ],
+  "statement": "How many perfect squares are greater than $2^{10}$ and less than $2^{16}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I only counted the powers of 2 in between that are perfect squares, 2^12 and 2^14."
+    },
+    {
+      "key": "B",
+      "text": "$222$",
+      "correct": false,
+      "misconception": "I found that the square roots run from 33 to 255 and subtracted, 255 - 33 = 222, forgetting to add 1."
+    },
+    {
+      "key": "C",
+      "text": "$223$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$224$",
+      "correct": false,
+      "misconception": "I took the square roots 2^5 = 32 and 2^8 = 256 and subtracted, 256 - 32 = 224, which still counts one of the two endpoints."
+    },
+    {
+      "key": "E",
+      "text": "$225$",
+      "correct": false,
+      "misconception": "I counted every square from 32^2 to 256^2, but 32^2 = 2^10 and 256^2 = 2^16 are not strictly between them."
+    }
+  ],
+  "hints": [
+    "Both $2^{10}$ and $2^{16}$ are perfect squares themselves. Squares of what?",
+    "$2^{10} = 32^2$ and $2^{16} = 256^2$. A square $k^2$ lies strictly between them exactly when $32 < k < 256$.",
+    "Count the whole numbers from $33$ to $255$."
+  ],
+  "solutions": {
+    "reliable": "Since $2^{10} = (2^5)^2 = 32^2$ and $2^{16} = (2^8)^2 = 256^2$, a perfect square $k^2$ with $k > 0$ lies strictly between them exactly when $32 < k < 256$, that is, $33 \\le k \\le 255$. That is $255 - 33 + 1 = 223$ values of $k$, so there are $223$ perfect squares.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

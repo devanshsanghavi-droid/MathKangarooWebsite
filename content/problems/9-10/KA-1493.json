@@ -1,0 +1,68 @@
+{
+  "id": "KA-1493",
+  "band": "9-10",
+  "points": 4,
+  "statement": "A sequence starts with 1. Each later term is the previous term plus the last digit of the previous term, so the sequence begins 1, 2, 4, 8, 16, 22, 24, ... What is the 100th term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "488",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "484",
+      "correct": false,
+      "misconception": "I stopped one step early and gave the 99th term."
+    },
+    {
+      "key": "C",
+      "text": "496",
+      "correct": false,
+      "misconception": "I thought each step adds 5 on average, so I worked out $1 + 99 \\times 5$."
+    },
+    {
+      "key": "D",
+      "text": "501",
+      "correct": false,
+      "misconception": "I counted 25 full blocks of four steps, each adding 20, starting from the first term 1."
+    },
+    {
+      "key": "E",
+      "text": "482",
+      "correct": false,
+      "misconception": "I lined the blocks of four up from the second term but stopped at the start of a block, which is the 98th term."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "PAT-03",
+      "NUM-07"
+    ]
+  },
+  "hints": [
+    "Look at the last digits of the terms from 2 onwards.",
+    "From the second term on, the last digits cycle 2, 4, 8, 6, so every four steps add the same amount. Find that amount, then count carefully how many full blocks fit before the 100th term.",
+    "The terms 2, 22, 42, ... are the 2nd, 6th, 10th, ... terms: every four steps add $2 + 4 + 8 + 6 = 20$."
+  ],
+  "solutions": {
+    "reliable": "From the 2nd term, the last digits repeat 2, 4, 8, 6, and each block of four steps adds $2 + 4 + 8 + 6 = 20$. So the 2nd, 6th, 10th, ... terms are 2, 22, 42, ..., and the $(4k + 2)$th term is $2 + 20k$. The 98th term ($k = 24$) is 482; then 484 is the 99th and 488 the 100th. The transferable idea: when a rule depends on the last digit, look for a cycle in the last digits and the fixed growth per cycle.",
+    "elegant": null
+  },
+  "whyOnTest": "Recursive rules often settle into a cycle after a few terms; the test is spotting where the cycle starts and counting the terms exactly.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

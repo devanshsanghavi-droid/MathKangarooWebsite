@@ -1,0 +1,66 @@
+{
+  "id": "AM-1251",
+  "contest": "AMC8",
+  "slot": 9,
+  "area": "CP",
+  "topic": "CP-01",
+  "types": [
+    "T-CASEWORK"
+  ],
+  "statement": "A bike lock opens with a $3$-digit code, where each digit is one of $0$ through $9$. Jada wants a code whose first digit is odd, whose last digit is even, and whose three digits are all different. How many codes can she choose from?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$160$",
+      "correct": false,
+      "misconception": "I forgot that 0 is an even digit, so I gave the last digit only 4 choices: 5 x 4 x 8 = 160."
+    },
+    {
+      "key": "B",
+      "text": "$175$",
+      "correct": false,
+      "misconception": "I did not let the middle digit be 0, so it had only 7 choices: 5 x 5 x 7 = 175."
+    },
+    {
+      "key": "C",
+      "text": "$180$",
+      "correct": false,
+      "misconception": "I counted 720 codes with three different digits and assumed exactly a quarter of them start odd and end even."
+    },
+    {
+      "key": "D",
+      "text": "$200$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$225$",
+      "correct": false,
+      "misconception": "I only made the middle digit different from the first digit, so it had 9 choices: 5 x 5 x 9 = 225."
+    }
+  ],
+  "hints": [
+    "Choose the digits with the most restrictions first.",
+    "The first digit has $5$ odd choices and the last digit has $5$ even choices. Can those two ever be equal?",
+    "An odd digit and an even digit are always different, so the middle digit just has to avoid those $2$ digits."
+  ],
+  "solutions": {
+    "reliable": "Choose the first digit from $1, 3, 5, 7, 9$ ($5$ ways) and the last digit from $0, 2, 4, 6, 8$ ($5$ ways). These are automatically different, since one is odd and one is even. The middle digit must differ from both, leaving $10 - 2 = 8$ choices. The total is $5 \\times 5 \\times 8 = 200$.",
+    "elegant": null
+  },
+  "formulas": [],
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

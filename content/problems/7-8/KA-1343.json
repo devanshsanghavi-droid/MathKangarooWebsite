@@ -1,0 +1,67 @@
+{
+  "id": "KA-1343",
+  "band": "7-8",
+  "points": 3,
+  "statement": "A flag has 3 horizontal stripes. Each stripe is coloured with one of 5 colours, and two stripes that touch must have different colours. The top and bottom stripes may match. How many different flags are possible?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "60",
+      "correct": false,
+      "misconception": "I made all three stripes different colours, $5 \\times 4 \\times 3 = 60$, though the top and bottom stripes may match."
+    },
+    {
+      "key": "B",
+      "text": "125",
+      "correct": false,
+      "misconception": "I let every stripe be any of the 5 colours and ignored the rule about touching stripes."
+    },
+    {
+      "key": "C",
+      "text": "80",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "100",
+      "correct": false,
+      "misconception": "I remembered that the middle stripe must differ from the top one, but gave the bottom stripe all 5 colours: $5 \\times 4 \\times 5 = 100$."
+    },
+    {
+      "key": "E",
+      "text": "13",
+      "correct": false,
+      "misconception": "I added the choices for the stripes, 5 + 4 + 4, instead of multiplying them."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-03",
+    "secondary": [
+      "CNT-11"
+    ]
+  },
+  "hints": [
+    "Colour the stripes from top to bottom.",
+    "Count the choices for each stripe in turn, given the stripe just above it. Each stripe only has to avoid one colour, and the choices multiply.",
+    "Top: 5 choices. Middle: anything except the top colour. Bottom: anything except the middle colour."
+  ],
+  "solutions": {
+    "reliable": "Colour from the top. The top stripe has 5 choices. The middle must differ from the top: 4 choices. The bottom must differ only from the middle (it may match the top): 4 choices. So there are $5 \\times 4 \\times 4 = 80$ flags. The transferable idea: when each choice only has to avoid its neighbour, count the choices in order and multiply.",
+    "elegant": null
+  },
+  "whyOnTest": "Tests the multiplication principle when each choice depends only on the one before it, without overcounting or overrestricting.",
+  "estSeconds": 55,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

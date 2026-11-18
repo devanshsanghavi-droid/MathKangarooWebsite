@@ -1,0 +1,56 @@
+{
+  "id": "AC-0020",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-05",
+  "difficulty": "medium",
+  "statement": "A rectangular fish tank is $3$ feet long, $1.5$ feet wide and $2$ feet deep. One cubic foot holds about $7.5$ gallons of water. A hose fills the empty tank at a rate of $2.5$ gallons per minute. About how many minutes does it take to fill the tank?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3.6$",
+      "correct": false,
+      "misconception": "I found the volume, 9 cubic feet, and divided it by 2.5 without first changing cubic feet to gallons."
+    },
+    {
+      "key": "B",
+      "text": "$19.5$",
+      "correct": false,
+      "misconception": "I added the three dimensions to get 6.5 cubic feet instead of multiplying them, then converted to gallons and divided by 2.5."
+    },
+    {
+      "key": "C",
+      "text": "$27$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$168.75$",
+      "correct": false,
+      "misconception": "I found that the tank holds 67.5 gallons and multiplied by 2.5 gallons per minute instead of dividing."
+    }
+  ],
+  "hints": [
+    "Find the volume of the tank in cubic feet, then change it to gallons.",
+    "The volume is $3 \\cdot 1.5 \\cdot 2 = 9$ cubic feet, which is $9 \\cdot 7.5$ gallons.",
+    "The tank holds $67.5$ gallons. Divide by $2.5$ gallons per minute."
+  ],
+  "solutions": {
+    "reliable": "The volume is $3 \\cdot 1.5 \\cdot 2 = 9$ cubic feet, which holds $9 \\cdot 7.5 = 67.5$ gallons. At $2.5$ gallons per minute, filling takes $67.5 \\div 2.5 = 27$ minutes.",
+    "elegant": "Each cubic foot takes $7.5 \\div 2.5 = 3$ minutes to fill, so $9$ cubic feet take $9 \\cdot 3 = 27$ minutes."
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

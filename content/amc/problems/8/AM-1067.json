@@ -1,0 +1,66 @@
+{
+  "id": "AM-1067",
+  "contest": "AMC8",
+  "slot": 21,
+  "area": "ALG",
+  "topic": "ALG-02",
+  "types": [
+    "T-SUBSTITUTION"
+  ],
+  "statement": "Over her first $5$ games, a basketball player scored some average number of points per game. In game $6$ she scored enough points to raise her average by exactly $2$ points. In game $7$ she scored $10$ fewer points than in game $6$. Her average over all $7$ games was $15$ points per game. How many points did she score in game $6$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$13$",
+      "correct": false,
+      "misconception": "I found her average for the first $5$ games, $13$, and gave that instead of her game $6$ score."
+    },
+    {
+      "key": "B",
+      "text": "$15$",
+      "correct": false,
+      "misconception": "I thought her game $6$ score had to equal her final average of $15$."
+    },
+    {
+      "key": "C",
+      "text": "$23$",
+      "correct": false,
+      "misconception": "I thought raising the average of $5$ games by $2$ takes $2 \\times 5 = 10$ points more than the old average, so I used $13 + 10 = 23$. But game $6$ must also be $2$ above the old average itself, so it needs $12$ more."
+    },
+    {
+      "key": "D",
+      "text": "$25$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I thought the extra points had to raise the average of all $7$ games, so I added $2 \\times 7 = 14$ to her old average of $13$ and got $27$."
+    }
+  ],
+  "hints": [
+    "Let $m$ be her average for the first $5$ games. How many more points than $m$ must game $6$ be to raise the average by $2$?",
+    "Game $6$ must be $m + 2$ (the new average) plus $2$ extra for each of the $5$ earlier games, so it is $m + 12$. Then game $7$ is $m + 2$.",
+    "The seven-game total is $5m + (m + 12) + (m + 2) = 7 \\times 15 = 105$."
+  ],
+  "solutions": {
+    "reliable": "Let $m$ be the average of the first $5$ games and $x$ the game $6$ score. Raising the average by $2$ means $\\frac{5m + x}{6} = m + 2$, so $x = m + 12$. Game $7$ is $x - 10 = m + 2$. The seven-game total is $5m + (m + 12) + (m + 2) = 7m + 14$, and it equals $7 \\times 15 = 105$, so $m = 13$ and $x = 25$. Check: after $6$ games the average is $\\frac{65 + 25}{6} = 15$, and game $7$ was $15$ points, so the average stays $15$.",
+    "elegant": "Game $7$ scored $m + 2$, which is exactly the six-game average, so game $7$ does not change the average. So the six-game average was already $15$, which makes $m = 13$, and game $6$ was $m + 12 = 25$."
+  },
+  "formulas": [],
+  "estSeconds": 150,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

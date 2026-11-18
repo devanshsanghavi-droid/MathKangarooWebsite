@@ -1,0 +1,67 @@
+{
+  "id": "KA-1263",
+  "band": "5-6",
+  "points": 4,
+  "statement": "A bag holds 7 red, 5 blue and 2 green marbles. Without looking, Leo takes marbles out one at a time. What is the smallest number of marbles he must take to be sure of having at least one marble of each colour?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "3",
+      "correct": false,
+      "misconception": "I thought 3 marbles are enough because there are 3 colours, but all 3 could be red."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": false,
+      "misconception": "I used one more than the number of colours, which is how many you need to be sure of two marbles of the same colour, not one of each."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I only imagined taking all 7 reds first, and forgot that the next marble could be blue rather than green."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I found the unluckiest case, all 7 red and all 5 blue marbles, but forgot that he needs one more marble to get a green one."
+    },
+    {
+      "key": "E",
+      "text": "13",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "skills": {
+    "primary": "CNT-18",
+    "secondary": [
+      "CNT-17"
+    ]
+  },
+  "hints": [
+    "Imagine Leo is as unlucky as possible.",
+    "Find the largest number of marbles he could take and still be missing a colour. To be sure, he needs one more than that.",
+    "The unluckiest start is all of the two biggest colours: 7 red and 5 blue marbles, and still no green."
+  ],
+  "solutions": {
+    "reliable": "In the unluckiest case Leo first takes all 7 red and all 5 blue marbles: 12 marbles and no green. The next marble must be green, so 13 marbles are enough. Fewer are not: with 12 marbles he might still have no green. Any 13 marbles must contain every colour, because leaving out one colour leaves at most 7 + 5 = 12 marbles. The transferable idea: to guarantee something, build the unluckiest case that avoids it, then add one.",
+    "elegant": null
+  },
+  "whyOnTest": "Guarantee questions test worst-case thinking: find the unluckiest run that avoids the goal, then add one.",
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

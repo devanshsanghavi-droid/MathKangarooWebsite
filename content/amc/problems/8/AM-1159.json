@@ -1,0 +1,66 @@
+{
+  "id": "AM-1159",
+  "contest": "AMC8",
+  "slot": 3,
+  "area": "NT",
+  "topic": "NT-03",
+  "types": [
+    "T-PRIME-FACTOR"
+  ],
+  "statement": "What is the sum of all the positive divisors of $28$ that are less than $28$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$7$",
+      "correct": false,
+      "misconception": "I only listed the divisors up to the square root of $28$, which are $1$, $2$ and $4$, and forgot their partners, so I got $7$."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I added only the prime divisors, $2 + 7 = 9$."
+    },
+    {
+      "key": "C",
+      "text": "$14$",
+      "correct": false,
+      "misconception": "I listed $1$, $2$, $4$ and $7$ but forgot $14$, the partner of $2$, so I got $1 + 2 + 4 + 7 = 14$."
+    },
+    {
+      "key": "D",
+      "text": "$27$",
+      "correct": false,
+      "misconception": "I left out $1$ because I did not think of it as a divisor, so I got $2 + 4 + 7 + 14 = 27$."
+    },
+    {
+      "key": "E",
+      "text": "$28$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Divisors come in pairs that multiply to $28$.",
+    "Find every pair $a \\times b = 28$, then list each number once and leave out $28$ itself.",
+    "The pairs are $1 \\times 28$, $2 \\times 14$ and $4 \\times 7$. Add $1, 2, 4, 7, 14$."
+  ],
+  "solutions": {
+    "reliable": "The divisors of $28$ come in pairs: $1 \\times 28$, $2 \\times 14$, $4 \\times 7$. So the divisors less than $28$ are $1, 2, 4, 7, 14$, and their sum is $1 + 2 + 4 + 7 + 14 = 28$.",
+    "elegant": "Since $28 = 2^2 \\cdot 7$, the sum of all its divisors is $(1 + 2 + 4)(1 + 7) = 56$. Leaving out $28$ itself gives $56 - 28 = 28$. (A number equal to the sum of its smaller divisors is called perfect.)"
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

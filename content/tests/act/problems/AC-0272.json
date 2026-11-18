@@ -1,0 +1,56 @@
+{
+  "id": "AC-0272",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-06",
+  "difficulty": "medium",
+  "statement": "A square dartboard is $20$ inches on each side. Painted on it is a circle with a radius of $5$ inches, completely inside the square. A dart hits the board at a random point, with every point on the board equally likely. What is the probability that the dart lands inside the circle?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\dfrac{\\pi}{16}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\dfrac{1}{4}$",
+      "correct": false,
+      "misconception": "I compared lengths instead of areas, dividing the radius of 5 inches by the side of 20 inches."
+    },
+    {
+      "key": "C",
+      "text": "$\\dfrac{1}{2}$",
+      "correct": false,
+      "misconception": "I compared lengths instead of areas, dividing the circle's diameter of 10 inches by the side of 20 inches."
+    },
+    {
+      "key": "D",
+      "text": "$\\dfrac{\\pi}{4}$",
+      "correct": false,
+      "misconception": "I used the diameter, 10, as the radius, so I found the circle's area as 100 pi and divided by 400."
+    }
+  ],
+  "hints": [
+    "For a random point, probability is a ratio of areas.",
+    "Divide the area of the circle by the area of the square.",
+    "The circle's area is $\\pi \\cdot 5^2 = 25\\pi$ and the square's area is $20^2 = 400$."
+  ],
+  "solutions": {
+    "reliable": "The circle's area is $\\pi \\cdot 5^2 = 25\\pi$ square inches and the board's area is $20^2 = 400$ square inches. The probability is $\\dfrac{25\\pi}{400} = \\dfrac{\\pi}{16} \\approx 0.196$.",
+    "elegant": null
+  },
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

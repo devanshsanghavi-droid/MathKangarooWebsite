@@ -1,0 +1,68 @@
+{
+  "id": "KA-1571",
+  "band": "11-12",
+  "points": 3,
+  "statement": "A café sells 12 kinds of drink and 7 kinds of pastry. Each of 1000 customers buys exactly one drink and one pastry. What is the largest number $k$ for which we can be certain that at least $k$ customers chose exactly the same drink and pastry?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "12",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "13",
+      "correct": false,
+      "misconception": "I added one to my answer, as in the usual pigeonhole rule, but that step belongs to finding how many customers are needed, not how many must share."
+    },
+    {
+      "key": "C",
+      "text": "53",
+      "correct": false,
+      "misconception": "I added the 12 drinks and 7 pastries to get 19 combinations instead of multiplying, then divided 1000 by 19 and rounded up."
+    },
+    {
+      "key": "D",
+      "text": "84",
+      "correct": false,
+      "misconception": "I gave the number of different drink and pastry combinations instead of how many customers must share one."
+    },
+    {
+      "key": "E",
+      "text": "85",
+      "correct": false,
+      "misconception": "I worked out how many customers guarantee that two share a combination, which answers a different question."
+    }
+  ],
+  "skills": {
+    "primary": "CNT-17",
+    "secondary": [
+      "CFT-01",
+      "CNT-03"
+    ]
+  },
+  "hints": [
+    "How many different drink and pastry combinations are there?",
+    "Pigeonhole: the combinations are the boxes and the customers are the objects. If every box held fewer than $k$ customers, how many customers could there be at most?",
+    "There are $12 \\times 7 = 84$ combinations, and $84 \\times 11 = 924$."
+  ],
+  "solutions": {
+    "reliable": "There are $12 \\times 7 = 84$ combinations. If every combination were chosen by at most 11 customers, there would be at most $84 \\times 11 = 924 < 1000$ customers, so some combination is chosen by at least 12. And 12 is the most we can promise: the 1000 customers could be spread with 76 combinations chosen 12 times and 8 chosen 11 times, since $76 \\times 12 + 8 \\times 11 = 912 + 88 = 1000$, and then no combination has 13. The transferable idea: with $N$ objects in $B$ boxes, some box holds at least $N / B$ rounded up.",
+    "elegant": null
+  },
+  "whyOnTest": "The general pigeonhole principle needs the right number of boxes, here a product, and rounding up rather than down.",
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

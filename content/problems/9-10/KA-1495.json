@@ -1,0 +1,67 @@
+{
+  "id": "KA-1495",
+  "band": "9-10",
+  "points": 3,
+  "statement": "A machine turns whole numbers into other numbers. The inputs 1, 2, 3, 4 and 5 give the outputs 5, 7, 11, 17 and 25. The gaps between the outputs keep growing in the same pattern. What output does the input 10 give?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "65",
+      "correct": false,
+      "misconception": "I kept adding the last gap, 8, instead of letting the gaps keep growing."
+    },
+    {
+      "key": "B",
+      "text": "95",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "77",
+      "correct": false,
+      "misconception": "I continued the gaps but stopped one step early, which gave the output for the input 9."
+    },
+    {
+      "key": "D",
+      "text": "50",
+      "correct": false,
+      "misconception": "I thought doubling the input doubles the output, so I doubled 25."
+    },
+    {
+      "key": "E",
+      "text": "101",
+      "correct": false,
+      "misconception": "I guessed the rule 'square and add 1' from the input 4 alone, without checking it against the others."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-07",
+    "secondary": [
+      "PAT-04"
+    ]
+  },
+  "hints": [
+    "Look at the gaps between the outputs.",
+    "The gaps are 2, 4, 6, 8: they grow by 2 each time. Either keep adding the next gaps up to the input 10, or find a formula that fits every example and check it.",
+    "The next gaps are 10, 12, 14, 16 and 18."
+  ],
+  "solutions": {
+    "reliable": "The gaps are 2, 4, 6, 8, so the next gaps, for the inputs 6 to 10, are 10, 12, 14, 16, 18. The output for 10 is $25 + 10 + 12 + 14 + 16 + 18 = 95$. The transferable idea: when the gaps grow steadily, list them until you reach the term you need.",
+    "elegant": "The rule $n^2 - n + 5$ fits every example: 5, 7, 11, 17, 25. For $n = 10$ it gives $100 - 10 + 5 = 95$. The transferable idea: steadily growing gaps point to a squared term, and a formula must be checked against all the examples."
+  },
+  "whyOnTest": "Rule-finding questions check whether you test a guessed rule against every example and follow how the gaps change instead of assuming they stay constant.",
+  "estSeconds": 70,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

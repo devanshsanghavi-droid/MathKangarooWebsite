@@ -1,0 +1,56 @@
+{
+  "id": "SA-0141",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-06",
+  "difficulty": "medium",
+  "statement": "What value of $x$ satisfies the equation $\\sqrt{3x + 1} = 2\\sqrt{x - 1}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$-3$",
+      "correct": false,
+      "misconception": "I squared both sides but did not square the $2$, so I solved $3x + 1 = 2(x - 1)$."
+    },
+    {
+      "key": "B",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I squared the right side as $4x - 1$, multiplying only the $x$ by $4$, so I solved $3x + 1 = 4x - 1$."
+    },
+    {
+      "key": "C",
+      "text": "$5$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$-1$",
+      "correct": false,
+      "misconception": "I dropped both square roots and the $2$, so I solved $3x + 1 = x - 1$."
+    }
+  ],
+  "hints": [
+    "Square both sides to remove the square roots.",
+    "$(2\\sqrt{x - 1})^2 = 4(x - 1)$, so the equation becomes $3x + 1 = 4(x - 1)$.",
+    "$3x + 1 = 4x - 4$. Solve, then check your answer in the original equation."
+  ],
+  "solutions": {
+    "reliable": "Squaring both sides gives $3x + 1 = 4(x - 1) = 4x - 4$, so $x = 5$. Check: $\\sqrt{3(5) + 1} = \\sqrt{16} = 4$ and $2\\sqrt{5 - 1} = 2 \\cdot 2 = 4$, so $x = 5$ works.",
+    "elegant": "Write $2\\sqrt{x - 1} = \\sqrt{4(x - 1)}$. Two square roots of nonnegative numbers are equal exactly when the numbers are equal, so $3x + 1 = 4x - 4$ and $x = 5$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

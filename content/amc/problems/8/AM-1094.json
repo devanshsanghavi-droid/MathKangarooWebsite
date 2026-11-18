@@ -1,0 +1,66 @@
+{
+  "id": "AM-1094",
+  "contest": "AMC8",
+  "slot": 6,
+  "area": "GEO",
+  "topic": "GEO-04",
+  "types": [
+    "T-CHOICES"
+  ],
+  "statement": "A trapezoid has height $6$ and area $48$. One of its parallel sides is $3$ times as long as the other. What is the length of the longer parallel side?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$6$",
+      "correct": false,
+      "misconception": "I forgot to divide by 2 in the area formula, so (a + 3a) times 6 = 48 gave a = 2 and a longer side of 6."
+    },
+    {
+      "key": "B",
+      "text": "$8$",
+      "correct": false,
+      "misconception": "I divided the area by the height, 48 / 6 = 8, but that is the average of the two parallel sides, not the longer one."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I found both parallel sides, 4 and 12, and gave their sum, 16, instead of the longer side."
+    },
+    {
+      "key": "E",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I found 48 / 6 = 8 and treated it as the shorter side, so I tripled it to get 24, but 8 is the average of the two parallel sides."
+    }
+  ],
+  "hints": [
+    "The area of a trapezoid is the average of its two parallel sides times its height.",
+    "Call the shorter parallel side $a$, so the longer one is $3a$. Then $\\frac{a + 3a}{2} \\cdot 6 = 48$.",
+    "The left side simplifies to $12a$, so $12a = 48$ and $a = 4$. The longer side is $3a$."
+  ],
+  "solutions": {
+    "reliable": "Let the shorter parallel side be $a$, so the longer one is $3a$. The area is $\\frac{a + 3a}{2} \\cdot 6 = 2a \\cdot 6 = 12a$. Setting $12a = 48$ gives $a = 4$, so the longer side is $3 \\cdot 4 = 12$. Check: $\\frac{4 + 12}{2} \\cdot 6 = 8 \\cdot 6 = 48$.",
+    "elegant": "Area divided by height gives the average of the parallel sides: $48 \\div 6 = 8$. The sides are $a$ and $3a$, whose average is $2a$, so $2a = 8$, $a = 4$, and the longer side is $3a = 12$."
+  },
+  "formulas": [],
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

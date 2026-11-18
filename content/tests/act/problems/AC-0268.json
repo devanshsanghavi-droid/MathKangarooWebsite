@@ -1,0 +1,56 @@
+{
+  "id": "AC-0268",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-04",
+  "difficulty": "hard",
+  "statement": "A coach recorded the weekly practice hours $x$ and the number of free throws made out of $20$, $y$, for $6$ players. $$\\begin{array}{c|cccccc} x & 1 & 2 & 3 & 4 & 5 & 6 \\\\ \\hline y & 6 & 8 & 9 & 11 & 13 & 4 \\end{array}$$ The coach finds the least-squares regression line and the correlation coefficient $r$ for all $6$ players. Then the coach removes the player with $x = 6$ and $y = 4$ and recalculates both using the other $5$ players. Compared with the original results, which of the following describes the new results?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "The slope decreases, and $r$ moves closer to $1$.",
+      "correct": false,
+      "misconception": "I saw that the low point was hurting the fit, so r moves closer to 1, but I thought removing a point at the right end would flatten the line, even though that point was dragging the right side of the line down."
+    },
+    {
+      "key": "B",
+      "text": "The slope decreases, and $r$ moves closer to $0$.",
+      "correct": false,
+      "misconception": "I thought having fewer points always makes the line flatter and the correlation weaker."
+    },
+    {
+      "key": "C",
+      "text": "The slope increases, and $r$ moves closer to $1$.",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "The slope increases, and $r$ moves closer to $0$.",
+      "correct": false,
+      "misconception": "I saw that the line gets steeper, but I thought removing any data point always weakens the correlation."
+    }
+  ],
+  "hints": [
+    "Picture the points. Which one does not follow the pattern of the others?",
+    "The first $5$ points rise steadily. The point $(6, 4)$ sits far below that trend at the right end. What does it do to the line and to how well a line fits?",
+    "Without $(6, 4)$, the points rise about $1.7$ per hour and lie almost on a line. With it, the line is pulled down at the right and the points scatter."
+  ],
+  "solutions": {
+    "reliable": "The first five points rise steadily, by about $1.7$ free throws per hour, and lie very close to a line, so for them $r$ is close to $1$ (about $0.99$). The point $(6, 4)$ is far below that trend at the far right, so it pulls the right end of the line down, making the slope much smaller (about $0.2$), and it makes the points fit a line poorly (about $r = 0.11$). Removing it makes the slope increase and moves $r$ closer to $1$.",
+    "elegant": null
+  },
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

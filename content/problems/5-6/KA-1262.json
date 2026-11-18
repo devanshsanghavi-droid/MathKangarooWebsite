@@ -1,0 +1,68 @@
+{
+  "id": "KA-1262",
+  "band": "5-6",
+  "points": 4,
+  "statement": "Ava, Ben, Cy, Dot and Eli all have different heights. Eli is taller than Ben, and Ben is taller than Cy. Dot is taller than Ben. Exactly two of the others are taller than Ava. Eli is not the tallest. Who is the second tallest?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "Eli",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "Dot",
+      "correct": false,
+      "misconception": "I found the tallest person, Dot, instead of the second tallest."
+    },
+    {
+      "key": "C",
+      "text": "Ava",
+      "correct": false,
+      "misconception": "I thought having exactly two people taller than her put Ava in second place, but it puts her third."
+    },
+    {
+      "key": "D",
+      "text": "Ben",
+      "correct": false,
+      "misconception": "I counted second from the wrong end and gave the second shortest person."
+    },
+    {
+      "key": "E",
+      "text": "It cannot be decided",
+      "correct": false,
+      "misconception": "I thought the order of Dot and Eli is not fixed because no clue compares them directly, but the clue that Eli is not the tallest settles it."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-04",
+    "secondary": [
+      "LOG-03",
+      "CFT-01"
+    ]
+  },
+  "hints": [
+    "One clue fixes Ava's place exactly.",
+    "Ava is third. Ben has at least Eli and Dot above him, so think about where Ben and Cy can go. Then decide who is on top.",
+    "Ben must be fourth and Cy fifth, so Dot and Eli fill first and second place. Eli is not the tallest."
+  ],
+  "solutions": {
+    "reliable": "Exactly two people are taller than Ava, so Ava is third. Eli and Dot are both taller than Ben, and Ava is third, so Ben is fourth or fifth; since Ben is taller than Cy, Ben is fourth and Cy is fifth. Dot and Eli take first and second place, and Eli is not the tallest, so the order from tallest is Dot, Eli, Ava, Ben, Cy. The second tallest is Eli. The transferable idea: start with the clue that pins someone to an exact place, then fill in around it.",
+    "elegant": null
+  },
+  "whyOnTest": "Ordering puzzles test whether you start from the clue that fixes an exact position, then let the other clues squeeze everyone else into place.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

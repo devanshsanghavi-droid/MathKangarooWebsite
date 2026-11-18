@@ -1,0 +1,56 @@
+{
+  "id": "AC-0175",
+  "test": "ACT",
+  "domain": "FUN",
+  "skill": "FUN-08",
+  "difficulty": "medium",
+  "statement": "What is the smallest positive value of $x$ at which the graph of $y = 2\\sin\\left(3x - \\frac{\\pi}{2}\\right)$ reaches its maximum value?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{\\pi}{3}$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{\\pi}{6}$",
+      "correct": false,
+      "misconception": "I set the angle $3x - \\frac{\\pi}{2}$ equal to $0$, thinking sine is largest when its angle is $0$, and got $x = \\frac{\\pi}{6}$."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{\\pi}{2}$",
+      "correct": false,
+      "misconception": "I remembered that sine peaks at $\\frac{\\pi}{2}$ and gave that as the answer, ignoring the $3$ and the shift inside."
+    },
+    {
+      "key": "D",
+      "text": "$\\pi$",
+      "correct": false,
+      "misconception": "I set $3x - \\frac{\\pi}{2} = \\frac{\\pi}{2}$ correctly, getting $3x = \\pi$, but forgot to divide by $3$."
+    }
+  ],
+  "hints": [
+    "Sine reaches its maximum, $1$, when its angle is $\\frac{\\pi}{2}$.",
+    "Set $3x - \\frac{\\pi}{2} = \\frac{\\pi}{2}$ and solve for $x$. Check that no smaller positive $x$ gives a maximum.",
+    "$3x - \\frac{\\pi}{2} = \\frac{\\pi}{2}$ gives $3x = \\pi$."
+  ],
+  "solutions": {
+    "reliable": "The maximum value $2$ occurs when $\\sin\\left(3x - \\frac{\\pi}{2}\\right) = 1$, that is when $3x - \\frac{\\pi}{2} = \\frac{\\pi}{2} + 2\\pi k$ for an integer $k$. Then $3x = \\pi + 2\\pi k$ and $x = \\frac{\\pi}{3} + \\frac{2\\pi k}{3}$. The smallest positive value is $x = \\frac{\\pi}{3}$ (with $k = 0$; $k = -1$ gives a negative $x$). Check: $2\\sin\\left(\\pi - \\frac{\\pi}{2}\\right) = 2\\sin\\frac{\\pi}{2} = 2$.",
+    "elegant": "Since $\\sin\\left(\\theta - \\frac{\\pi}{2}\\right) = -\\cos\\theta$, the function is $y = -2\\cos(3x)$. It is lowest at $x = 0$ and highest half a period later. The period is $\\frac{2\\pi}{3}$, so the first maximum is at $\\frac{\\pi}{3}$."
+  },
+  "estSeconds": 65,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

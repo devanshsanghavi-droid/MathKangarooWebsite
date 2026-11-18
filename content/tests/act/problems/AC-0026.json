@@ -1,0 +1,56 @@
+{
+  "id": "AC-0026",
+  "test": "ACT",
+  "domain": "NQ",
+  "skill": "NQ-01",
+  "difficulty": "easy",
+  "statement": "At a harbor, the red ferry leaves every $35$ minutes and the blue ferry leaves every $50$ minutes. Both ferries leave together at 6:00 a.m. How many minutes after 6:00 a.m. will the two ferries next leave at the same time?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$5$",
+      "correct": false,
+      "misconception": "I found the greatest common factor of 35 and 50, which is 5, but that tells how the gaps divide, not when the departures line up again."
+    },
+    {
+      "key": "B",
+      "text": "$85$",
+      "correct": false,
+      "misconception": "I added 35 and 50, thinking the two ferries line up again once each has made one more trip."
+    },
+    {
+      "key": "C",
+      "text": "$350$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$1{,}750$",
+      "correct": false,
+      "misconception": "I multiplied 35 by 50. That is a common multiple, but not the smallest one, because 35 and 50 share a factor of 5."
+    }
+  ],
+  "hints": [
+    "Each ferry leaves at multiples of its own gap.",
+    "You want the smallest number of minutes that is a multiple of both 35 and 50, the least common multiple.",
+    "$35 = 5 \\cdot 7$ and $50 = 2 \\cdot 5^2$, so the least common multiple is $2 \\cdot 5^2 \\cdot 7$."
+  ],
+  "solutions": {
+    "reliable": "The red ferry leaves at multiples of $35$ minutes after 6:00 a.m. and the blue ferry at multiples of $50$ minutes. They next leave together at the least common multiple. Since $35 = 5 \\cdot 7$ and $50 = 2 \\cdot 5^2$, the least common multiple is $2 \\cdot 5^2 \\cdot 7 = 350$ minutes. The idea: events that repeat on fixed cycles line up again at the least common multiple of the cycle lengths.",
+    "elegant": "Because $\\gcd(35, 50) = 5$, $\\operatorname{lcm}(35, 50) = \\dfrac{35 \\cdot 50}{5} = \\dfrac{1750}{5} = 350$."
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

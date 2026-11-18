@@ -1,0 +1,56 @@
+{
+  "id": "SA-0155",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-05",
+  "difficulty": "easy",
+  "statement": "The time $t$, in hours, that a delivery van takes to drive a $240$-kilometer route at a constant speed of $v$ kilometers per hour is $t = \\dfrac{240}{v}$. If the van's speed increases from $48$ to $60$ kilometers per hour, how many fewer hours does the route take?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$4$",
+      "correct": false,
+      "misconception": "I found the time at the new speed, $\\frac{240}{60} = 4$ hours, and gave that instead of the difference between the two times."
+    },
+    {
+      "key": "B",
+      "text": "$1$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$20$",
+      "correct": false,
+      "misconception": "I divided $240$ by the change in speed, $60 - 48 = 12$, as if the time saved were $\\frac{240}{12}$."
+    },
+    {
+      "key": "D",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I subtracted the two speeds, $60 - 48 = 12$, and gave that as the number of hours saved."
+    }
+  ],
+  "hints": [
+    "Find the time at each speed separately.",
+    "Compute $\\dfrac{240}{48}$ and $\\dfrac{240}{60}$, then subtract.",
+    "$\\dfrac{240}{48} = 5$ hours and $\\dfrac{240}{60} = 4$ hours."
+  ],
+  "solutions": {
+    "reliable": "At $48$ kilometers per hour the route takes $\\frac{240}{48} = 5$ hours. At $60$ kilometers per hour it takes $\\frac{240}{60} = 4$ hours. The route takes $5 - 4 = 1$ fewer hour.",
+    "elegant": null
+  },
+  "estSeconds": 45,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

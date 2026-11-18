@@ -1,0 +1,56 @@
+{
+  "id": "AC-0274",
+  "test": "ACT",
+  "domain": "STAT",
+  "skill": "STAT-08",
+  "difficulty": "medium",
+  "statement": "A store offers a $\\$40$ extended warranty on a blender. Without the warranty, during the warranty period the owner would pay for any repair. The store estimates that there is a $0.12$ probability the blender needs a $\\$150$ repair, a $0.20$ probability it needs a $\\$60$ repair, and otherwise it needs no repair. Assume at most one repair is needed. By how many dollars does the price of the warranty exceed the expected repair cost?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\$10$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$\\$22$",
+      "correct": false,
+      "misconception": "I counted only the 150-dollar repair, so I found an expected cost of 18 dollars and subtracted it from 40."
+    },
+    {
+      "key": "C",
+      "text": "$\\$30$",
+      "correct": false,
+      "misconception": "I found the expected repair cost, 30 dollars, and gave that as the answer without comparing it with the 40-dollar price."
+    },
+    {
+      "key": "D",
+      "text": "$\\$65$",
+      "correct": false,
+      "misconception": "I averaged the two repair costs, 150 and 60, to get 105 without weighting them by their probabilities, and subtracted 40."
+    }
+  ],
+  "hints": [
+    "Expected cost means each possible cost times its probability, all added up.",
+    "The no-repair case contributes $0$. Add $0.12 \\cdot 150$ and $0.20 \\cdot 60$, then compare with $\\$40$.",
+    "$0.12 \\cdot 150 = 18$ and $0.20 \\cdot 60 = 12$, so the expected repair cost is $\\$30$."
+  ],
+  "solutions": {
+    "reliable": "The expected repair cost is $0.12(150) + 0.20(60) + 0.68(0) = 18 + 12 + 0 = \\$30$. The warranty costs $\\$40$, which is $40 - 30 = \\$10$ more than the expected repair cost.",
+    "elegant": null
+  },
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

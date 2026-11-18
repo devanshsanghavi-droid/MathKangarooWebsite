@@ -1,0 +1,68 @@
+{
+  "id": "KA-1394",
+  "band": "7-8",
+  "points": 4,
+  "statement": "What is the last digit of the sum $4^1 + 4^2 + 4^3 + \\dots + 4^{2027}$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "0",
+      "correct": false,
+      "misconception": "I paired the terms so each pair ends in 4 + 6 = 10, and forgot the one term left over."
+    },
+    {
+      "key": "B",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "2",
+      "correct": false,
+      "misconception": "I thought every power of 4 ends in 6, like 16, and took the last digit of 2027 x 6."
+    },
+    {
+      "key": "D",
+      "text": "6",
+      "correct": false,
+      "misconception": "I paired the terms but thought the leftover term had an even power, ending in 6."
+    },
+    {
+      "key": "E",
+      "text": "8",
+      "correct": false,
+      "misconception": "I thought every power of 4 ends in 4, and took the last digit of 2027 x 4."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-07",
+    "secondary": [
+      "PAT-03",
+      "NUM-03"
+    ]
+  },
+  "hints": [
+    "Write down the last digits of the first few powers in the sum.",
+    "The last digits of powers of 4 repeat in a short cycle. Pair the terms so each pair's last digits add to a round number, and check whether any term is left over.",
+    "Powers of 4 end in 4, 6, 4, 6, ...: odd powers end in 4 and even powers in 6. There are 2027 terms, so 1013 pairs and one extra term."
+  ],
+  "solutions": {
+    "reliable": "The last digits of 4, 16, 64, 256, ... go 4, 6, 4, 6, ...: odd powers end in 4 and even powers end in 6. Pair the powers 1 and 2, 3 and 4, and so on up to 2025 and 2026: that is 1013 pairs, each with last digits adding to 4 + 6 = 10, so they contribute last digit 0. The power 2027 is left over, and it is odd, so it ends in 4. The last digit of the whole sum is 4. The transferable idea: last digits of powers cycle, so pair or group terms by the cycle and look at what is left over.",
+    "elegant": null
+  },
+  "whyOnTest": "Last-digit behaviour: powers cycle through a few endings, and a long sum reduces to whole cycles plus a remainder.",
+  "estSeconds": 80,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

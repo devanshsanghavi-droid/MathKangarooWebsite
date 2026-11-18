@@ -1,0 +1,69 @@
+{
+  "id": "AM-1215",
+  "contest": "AMC8",
+  "slot": 22,
+  "area": "NT",
+  "topic": "NT-01",
+  "types": [
+    "T-EXTREME",
+    "T-CASEWORK"
+  ],
+  "statement": "What is the smallest positive integer that is divisible by $36$, has only the digits $4$ and $7$, and uses each of these two digits at least once?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$744$",
+      "correct": false,
+      "misconception": "I made the number divisible by $4$ and by $3$, which only makes it a multiple of $12$, not $36$."
+    },
+    {
+      "key": "B",
+      "text": "$774$",
+      "correct": false,
+      "misconception": "I thought a number is divisible by $4$ whenever it ends in $4$, so I took $774$, whose digit sum $18$ is a multiple of $9$."
+    },
+    {
+      "key": "C",
+      "text": "$444744$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "$744444$",
+      "correct": false,
+      "misconception": "I found the right digits, five $4$s and one $7$, but put the $7$ in front instead of as far to the right as possible."
+    },
+    {
+      "key": "E",
+      "text": "$777744$",
+      "correct": false,
+      "misconception": "I thought the digit sum had to be exactly $36$, so I used two $4$s and four $7$s."
+    }
+  ],
+  "hints": [
+    "Divisible by $36$ means divisible by both $4$ and $9$. What do those rules say about the last two digits and about the digit sum?",
+    "The last two digits must form a multiple of $4$; of $44$, $47$, $74$, $77$, only $44$ works. The digit sum must be a multiple of $9$.",
+    "With $f$ fours and $s$ sevens, you need $4f + 7s$ to be a multiple of $9$, with $f \\ge 2$ and $s \\ge 1$. Find the fewest digits first, then put the digits in the smallest order that still ends in $44$."
+  ],
+  "solutions": {
+    "reliable": "The number must be divisible by $4$ and by $9$. For $4$, the last two digits form one of $44$, $47$, $74$, $77$, and only $44$ is a multiple of $4$, so the number ends in $44$. For $9$, if it has $f$ fours and $s$ sevens, then $4f + 7s = 4(f + s) + 3s$ must be a multiple of $9$, with $f \\ge 2$ and $s \\ge 1$. Try the total number of digits $n = f + s$. For $n = 3$ we need $12 + 3s$ divisible by $9$, so $s = 2$, but then $f = 1$, too few $4$s. For $n = 4$ and $n = 5$, $16 + 3s$ and $20 + 3s$ are never multiples of $9$, since $16$ and $20$ are not multiples of $3$. For $n = 6$ we need $24 + 3s$ divisible by $9$, so $s = 1$ or $s = 4$. The smallest six-digit choice is five $4$s and one $7$ with the $7$ as far right as possible while ending in $44$: $444744$. Check: $444744 = 36 \\cdot 12354$.",
+    "elegant": null
+  },
+  "formulas": [
+    "F-NT-07"
+  ],
+  "estSeconds": 180,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SA-0264",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-03",
+  "difficulty": "hard",
+  "statement": "In triangle $ABC$, point $D$ lies on side $\\overline{AB}$ and point $E$ lies on side $\\overline{AC}$ so that $\\overline{DE}$ is parallel to $\\overline{BC}$. If $AE = 8$, $EC = 4$ and the area of quadrilateral $DBCE$ is $45$, what is the area of triangle $ADE$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$36$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$81$",
+      "correct": false,
+      "misconception": "I found the area of the whole triangle $ABC$, which is $81$, and reported it instead of the area of triangle $ADE$."
+    },
+    {
+      "key": "C",
+      "text": "$90$",
+      "correct": false,
+      "misconception": "I scaled the area by the length ratio $AE : AC = 8 : 12$, so the quadrilateral was $\\frac{4}{12} = \\frac{1}{3}$ of the whole, the whole was $135$, and triangle $ADE$ was $\\frac{2}{3}$ of $135$, which is $90$."
+    },
+    {
+      "key": "D",
+      "text": "$180$",
+      "correct": false,
+      "misconception": "I compared triangle $ADE$ with the quadrilateral using $\\left(\\frac{AE}{EC}\\right)^2 = 2^2 = 4$, so I got $45 \\times 4 = 180$."
+    }
+  ],
+  "hints": [
+    "Triangle $ADE$ is similar to triangle $ABC$. What is the scale factor?",
+    "With $AC = 12$, the scale factor is $\\frac{8}{12} = \\frac{2}{3}$, so triangle $ADE$ has $\\frac{4}{9}$ of the area of triangle $ABC$. The quadrilateral is the rest.",
+    "The quadrilateral is $\\frac{5}{9}$ of triangle $ABC$, so triangle $ABC$ has area $45 \\div \\frac{5}{9} = 81$."
+  ],
+  "solutions": {
+    "reliable": "Because $\\overline{DE} \\parallel \\overline{BC}$, triangle $ADE$ is similar to triangle $ABC$ with scale factor $\\frac{AE}{AC} = \\frac{8}{12} = \\frac{2}{3}$, so their areas are in the ratio $\\left(\\frac{2}{3}\\right)^2 = \\frac{4}{9}$. Let the area of triangle $ABC$ be $T$. Then triangle $ADE$ has area $\\frac{4}{9}T$ and the quadrilateral has area $T - \\frac{4}{9}T = \\frac{5}{9}T = 45$, so $T = 81$ and the area of triangle $ADE$ is $\\frac{4}{9} \\times 81 = 36$.",
+    "elegant": "The areas of triangles $ADE$ and $ABC$ are in the ratio $8^2 : 12^2 = 4 : 9$, so triangle $ADE$ and the quadrilateral are in the ratio $4 : 5$. The quadrilateral has area $45 = 5 \\times 9$, so triangle $ADE$ has area $4 \\times 9 = 36$."
+  },
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

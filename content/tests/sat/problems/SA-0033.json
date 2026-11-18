@@ -1,0 +1,56 @@
+{
+  "id": "SA-0033",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "medium",
+  "statement": "The graph of the linear function $h$ in the $xy$-plane passes through the point $(4, 10)$ and has an $x$-intercept of $9$. What is the value of $h(0)$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$2$",
+      "correct": false,
+      "misconception": "I found the slope $-2$ but moved the wrong way: going from $x = 4$ to $x = 0$ I subtracted 8 instead of adding it, so I got $10 - 8 = 2$."
+    },
+    {
+      "key": "B",
+      "text": "$9$",
+      "correct": false,
+      "misconception": "I thought the $y$-intercept had to equal the $x$-intercept, so I gave $h(0) = 9$."
+    },
+    {
+      "key": "C",
+      "text": "$12$",
+      "correct": false,
+      "misconception": "I found the slope as run over rise, $\\dfrac{5}{-10} = -\\dfrac{1}{2}$, so going back 4 units I added only 2 and got $h(0) = 12$."
+    },
+    {
+      "key": "D",
+      "text": "$18$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "An $x$-intercept of $9$ means the graph passes through $(9, 0)$.",
+    "Find the slope from $(4, 10)$ and $(9, 0)$, then move from $x = 4$ to $x = 0$.",
+    "The slope is $\\dfrac{0 - 10}{9 - 4} = -2$. Going left 4 units, the line rises $2 \\times 4 = 8$."
+  ],
+  "solutions": {
+    "reliable": "The graph passes through $(4, 10)$ and $(9, 0)$, so the slope is $\\dfrac{0 - 10}{9 - 4} = -2$ and $h(x) = -2x + b$. From $h(9) = 0$, $b = 18$, so $h(0) = 18$. Check: $h(4) = -8 + 18 = 10$.",
+    "elegant": null
+  },
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

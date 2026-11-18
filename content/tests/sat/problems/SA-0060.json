@@ -1,0 +1,56 @@
+{
+  "id": "SA-0060",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-03",
+  "difficulty": "easy",
+  "statement": "An art teacher buys $x$ sketchbooks that cost $3$ dollars each and $y$ paint sets that cost $5$ dollars each. The order also has a delivery fee of $15$ dollars, and the total cost is exactly $240$ dollars. Which equation represents this situation?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$3x + 5y = 240$",
+      "correct": false,
+      "misconception": "I left out the delivery fee, so I set the cost of the sketchbooks and paint sets equal to the whole 240 dollars."
+    },
+    {
+      "key": "B",
+      "text": "$3x + 5y = 255$",
+      "correct": false,
+      "misconception": "I added the 15-dollar fee to the total instead of taking it away, so I got 255."
+    },
+    {
+      "key": "C",
+      "text": "$5x + 3y = 225$",
+      "correct": false,
+      "misconception": "I handled the fee correctly but put each price on the wrong variable, giving the sketchbooks the 5-dollar price."
+    },
+    {
+      "key": "D",
+      "text": "$3x + 5y = 225$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "What do the sketchbooks and paint sets cost, not counting the fee?",
+    "Write the cost of $x$ sketchbooks plus the cost of $y$ paint sets plus the fee, and set it equal to 240. Then simplify.",
+    "$3x + 5y + 15 = 240$. Subtract 15 from both sides."
+  ],
+  "solutions": {
+    "reliable": "The sketchbooks cost $3x$ dollars, the paint sets cost $5y$ dollars and the fee is $15$ dollars, so $3x + 5y + 15 = 240$. Subtracting $15$ from both sides gives $3x + 5y = 225$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

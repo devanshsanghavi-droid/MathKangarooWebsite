@@ -1,0 +1,68 @@
+{
+  "id": "KA-1474",
+  "band": "9-10",
+  "points": 4,
+  "statement": "Some cells of a 5 by 5 grid are painted so that every row and every column contains an even number of painted cells (zero counts as even). What is the largest possible number of painted cells?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "10",
+      "correct": false,
+      "misconception": "I thought an even number of painted cells in a row meant exactly two."
+    },
+    {
+      "key": "B",
+      "text": "16",
+      "correct": false,
+      "misconception": "I left one whole row and one whole column empty and painted the 4 by 4 block that remains, which works but is not the most."
+    },
+    {
+      "key": "C",
+      "text": "24",
+      "correct": false,
+      "misconception": "I left out a single cell, which fixes its own row and column but leaves the other four rows and columns with 5 painted cells."
+    },
+    {
+      "key": "D",
+      "text": "20",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "25",
+      "correct": false,
+      "misconception": "I painted every cell, forgetting that 5 is an odd number."
+    }
+  ],
+  "skills": {
+    "primary": "LOG-05",
+    "secondary": [
+      "CNT-18",
+      "LOG-11"
+    ]
+  },
+  "hints": [
+    "How many painted cells can one row hold at most?",
+    "Each row has 5 cells and needs an even number painted, so at most 4. That gives an upper bound for the whole grid. Then try to reach it while keeping every column even too.",
+    "At most 4 per row gives at most 20. Try leaving exactly one unpainted cell in each row and in each column."
+  ],
+  "solutions": {
+    "reliable": "A row has 5 cells and must contain an even number of painted ones, so it has at most 4. Five rows give at most 20 painted cells. Twenty is possible: leave the five cells of one diagonal unpainted and paint all the others. Then every row and every column has exactly 4 painted cells, which is even. The transferable idea: a parity condition can cap each line, giving a bound; then a symmetric construction shows the bound is reached.",
+    "elegant": "Count the unpainted cells instead: each row and each column needs an odd number of unpainted cells, so at least 1, which means at least 5 unpainted cells. The 5 cells of a diagonal are enough, leaving 20 painted."
+  },
+  "whyOnTest": "Parity questions test turning 'even in every row' into a bound, at most 4 of 5, and then finding a grid that reaches it.",
+  "estSeconds": 120,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

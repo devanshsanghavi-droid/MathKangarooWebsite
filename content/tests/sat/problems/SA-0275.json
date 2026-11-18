@@ -1,0 +1,56 @@
+{
+  "id": "SA-0275",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-06",
+  "difficulty": "hard",
+  "statement": "A wedge-shaped flower bed is a sector of a circle with radius $10$ feet. The area of the flower bed is $35\\pi$ square feet. What is the length, in feet, of the curved edge of the flower bed?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$\\frac{7\\pi}{10}$",
+      "correct": false,
+      "misconception": "I found the central angle, $\\frac{7\\pi}{10}$ radians, and reported it instead of the arc length."
+    },
+    {
+      "key": "B",
+      "text": "$\\frac{7\\pi}{4}$",
+      "correct": false,
+      "misconception": "I divided the area by the diameter, $\\frac{35\\pi}{20}$, thinking that gives the arc length."
+    },
+    {
+      "key": "C",
+      "text": "$\\frac{7\\pi}{2}$",
+      "correct": false,
+      "misconception": "I divided the area by the radius, $\\frac{35\\pi}{10}$, forgetting that sector area is $\\frac{1}{2}$ times the radius times the arc length."
+    },
+    {
+      "key": "D",
+      "text": "$7\\pi$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "What fraction of the full circle does the sector cover?",
+    "The full circle has area $100\\pi$. The arc is the same fraction of the circumference, $20\\pi$.",
+    "The sector is $\\frac{35\\pi}{100\\pi} = \\frac{7}{20}$ of the circle, so the arc is $\\frac{7}{20}$ of $20\\pi$."
+  ],
+  "solutions": {
+    "reliable": "The full circle has area $\\pi(10)^2 = 100\\pi$, so the sector is $\\frac{35\\pi}{100\\pi} = \\frac{7}{20}$ of the circle. Its arc is the same fraction of the circumference: $\\frac{7}{20} \\times 2\\pi(10) = \\frac{7}{20} \\times 20\\pi = 7\\pi$ feet.",
+    "elegant": "The area of a sector is $\\frac{1}{2} r L$, where $L$ is the arc length. So $\\frac{1}{2}(10)L = 35\\pi$, which gives $L = 7\\pi$ feet."
+  },
+  "estSeconds": 100,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "KA-1024",
+  "band": "1-2",
+  "points": 4,
+  "statement": "On a number line, Kim starts at 23. She jumps back 2 steps at a time and lands exactly on 15. How many jumps does she make?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "4",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "5",
+      "correct": false,
+      "misconception": "I counted the numbers Kim stands on, including 23 where she starts."
+    },
+    {
+      "key": "C",
+      "text": "8",
+      "correct": false,
+      "misconception": "I found the distance from 23 to 15 and forgot that each jump is 2 steps."
+    },
+    {
+      "key": "D",
+      "text": "9",
+      "correct": false,
+      "misconception": "I counted all the numbers from 15 to 23, including both ends."
+    },
+    {
+      "key": "E",
+      "text": "16",
+      "correct": false,
+      "misconception": "I multiplied the distance 8 by 2 instead of sharing it into jumps of 2."
+    }
+  ],
+  "skills": {
+    "primary": "NUM-13",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "How far is it from 23 back to 15?",
+    "Find the distance between the start and the end first. Each jump covers 2 of those steps, so share the distance into jumps of 2. Be careful not to count the numbers she lands on.",
+    "From 23 back to 15 is 8 steps. Each jump is 2 steps."
+  ],
+  "solutions": {
+    "reliable": "Write the landings: start at 23, then 21, 19, 17, 15. Kim makes one jump to each of 21, 19, 17 and 15, which is 4 jumps. The idea to keep: count jumps, not landing spots, because the starting spot is not a jump.",
+    "elegant": "From 23 to 15 is 23 - 15 = 8 steps. Jumps of 2 cover that in 4 jumps, since 2 + 2 + 2 + 2 = 8. The idea to keep: the distance shared into the jump size gives the number of jumps."
+  },
+  "whyOnTest": "Number lines: a jump is a gap between two numbers, so counting the numbers landed on, including the start, gives one too many.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

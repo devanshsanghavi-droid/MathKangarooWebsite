@@ -1,0 +1,56 @@
+{
+  "id": "SA-0002",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-01",
+  "difficulty": "easy",
+  "statement": "A prepaid phone plan charges a flat fee of $\\$18$ per month plus $\\$0.05$ for each text message sent. Last month Imani's bill was $\\$31.40$. How many text messages did Imani send last month?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$26.8$",
+      "correct": false,
+      "misconception": "I subtracted the fee correctly but wrote $5$ cents as $0.5$ dollars, so I divided $13.40$ by $0.5$ and got $26.8$."
+    },
+    {
+      "key": "B",
+      "text": "$268$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "$628$",
+      "correct": false,
+      "misconception": "I divided the whole bill, $31.40$, by $0.05$ and forgot that $18$ dollars of it is the flat fee, not texts."
+    },
+    {
+      "key": "D",
+      "text": "$988$",
+      "correct": false,
+      "misconception": "I added the flat fee to the bill instead of subtracting it, so I divided $49.40$ by $0.05$ and got $988$."
+    }
+  ],
+  "hints": [
+    "Only part of the bill comes from text messages.",
+    "Write an equation with the flat fee plus $0.05$ times the number of texts equal to the bill, then solve it.",
+    "The equation is $18 + 0.05t = 31.40$, so the texts cost $31.40 - 18 = 13.40$ dollars at $0.05$ dollars each."
+  ],
+  "solutions": {
+    "reliable": "Let $t$ be the number of texts. Then $18 + 0.05t = 31.40$. Subtract $18$: $0.05t = 13.40$. Divide by $0.05$: $t = 268$. Check: $0.05 \\cdot 268 = 13.40$ and $18 + 13.40 = 31.40$.",
+    "elegant": null
+  },
+  "estSeconds": 50,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

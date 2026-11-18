@@ -1,0 +1,67 @@
+{
+  "id": "KA-1231",
+  "band": "5-6",
+  "points": 3,
+  "statement": "Each word below is printed in plain capital letters on a card. Zoe stands the card upright on a flat mirror lying on the table, and looks at the reflection of the word in the mirror below the card. For which word does the reflection look exactly the same as the word on the card?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "TOOT",
+      "correct": false,
+      "misconception": "I used the test for a mirror standing upright: TOOT reads the same backwards and T and O have up-and-down lines of symmetry. But a mirror lying flat flips each letter top to bottom, so each T comes out upside down."
+    },
+    {
+      "key": "B",
+      "text": "MOM",
+      "correct": false,
+      "misconception": "I thought the mirror reverses the order of the letters, so a word that reads the same backwards would survive. This mirror keeps the order and flips each letter top to bottom, so M turns into W."
+    },
+    {
+      "key": "C",
+      "text": "DICE",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "D",
+      "text": "SIDE",
+      "correct": false,
+      "misconception": "I thought S is symmetric top to bottom because it looks the same after a half turn, but a half turn is not a flip, and flipped top to bottom S comes out backwards."
+    },
+    {
+      "key": "E",
+      "text": "DUE",
+      "correct": false,
+      "misconception": "I treated U like O, but U is open at the top, so flipped top to bottom it comes out open at the bottom."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-08",
+    "secondary": [
+      "GEO-09"
+    ]
+  },
+  "hints": [
+    "A mirror lying flat under the card flips the word in which direction?",
+    "A flat mirror below the card flips each letter top to bottom, but it does not change the order of the letters from left to right. So every letter needs a line of symmetry going straight across it.",
+    "Letters such as H, O and X have a line of symmetry across the middle. Check every letter of each word for such a line."
+  ],
+  "solutions": {
+    "reliable": "A flat mirror under the card flips the picture top to bottom: each letter is turned upside down as in a flip, while the letters stay in the same left-to-right order. So the word looks the same only if every letter has a horizontal line of symmetry. D, I, C and E each have one, so DICE looks the same. TOOT and MOM fail because T and M only have up-and-down lines of symmetry (M even turns into W). S comes out backwards, so SIDE fails, and U ends up open at the bottom, so DUE fails. The transferable idea: first decide which way a mirror flips, then check each shape for a line of symmetry in that direction.",
+    "elegant": null
+  },
+  "whyOnTest": "Mirror questions check which way the mirror flips: a mirror lying flat turns each letter upside down but keeps the order of the letters.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

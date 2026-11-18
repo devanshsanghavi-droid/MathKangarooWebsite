@@ -5,7 +5,13 @@ import Link from '@/components/AppLink';
 import { useProgress } from '@/components/mastery/useProgress';
 import { Button, ButtonLink, Card, ProgressBar, SegmentedControl, StatTile } from '@/components/ui';
 import type { AmcFormulaContest } from '@/lib/amc-schemas';
-import { AMC_TIERS, AMC_TIER_POINTS, AMC_TIER_SLOTS } from '@/lib/amc-tier';
+import {
+  AMC_FORMULA_CONTESTS,
+  AMC_TIERS,
+  AMC_TIER_POINTS,
+  AMC_TIER_SLOTS,
+  amcContestLabel,
+} from '@/lib/amc-tier';
 import { mixedSetIds, onPaper, MIXED_SET_SIZE, type AmcHomeProblem } from '@/lib/amc-home';
 import { amcBankProgress, amcStatusOf } from '@/lib/progress-summary';
 import { practiceSetHref } from '@/lib/practice-item';
@@ -23,7 +29,7 @@ const PAPER_KEY = 'ka-amc-paper';
 function readPaper(): AmcFormulaContest | null {
   try {
     const value = window.localStorage.getItem(PAPER_KEY);
-    return value === 'AMC10' || value === 'AMC12' ? value : null;
+    return AMC_FORMULA_CONTESTS.find((paper) => paper === value) ?? null;
   } catch {
     return null;
   }
@@ -38,7 +44,8 @@ function writePaper(value: AmcFormulaContest): void {
 }
 
 /**
- * The AMC beta landing's interactive half (docs/06 §5): an AMC 10 / AMC 12 switch, the
+ * The AMC beta landing's interactive half (docs/06 §5, docs/07 section 2): an AMC 8 / AMC 10 /
+ * AMC 12 switch, links to the mock and section tests (docs/07 section 4), the
  * student's progress on that paper overall and by tier, one card per area with its topics'
  * solved counts, and "Start a mixed set". Everything is computed in the browser from the
  * problem list the server baked in and the signed-out progress store, so the page stays
@@ -72,7 +79,7 @@ export function AmcHome({
 
   const onThisPaper = useMemo(() => problems.filter((p) => onPaper(p, paper)), [problems, paper]);
   const overall = amcBankProgress(file, onThisPaper);
-  const paperName = paper === 'AMC10' ? 'AMC 10' : 'AMC 12';
+  const paperName = amcContestLabel(paper);
 
   const startMixed = () => {
     const statuses = new Map(onThisPaper.map((p) => [p.id, amcStatusOf(file, p.id)]));
@@ -88,14 +95,16 @@ export function AmcHome({
           <SegmentedControl
             label="Paper"
             showLabel
-            options={[
-              { value: 'AMC10', label: 'AMC 10' },
-              { value: 'AMC12', label: 'AMC 12' },
-            ]}
+            options={AMC_FORMULA_CONTESTS.map((value) => ({
+              value,
+              label: amcContestLabel(value),
+            }))}
             value={paper}
             onChange={choose}
           />
           <div className="flex flex-wrap gap-2">
+            <ButtonLink href="/amc/mock">Mock test</ButtonLink>
+            <ButtonLink href="/amc/section">Section test</ButtonLink>
             <ButtonLink href="/amc/problems">Browse the bank</ButtonLink>
             <Button variant="primary" onClick={startMixed} disabled={onThisPaper.length === 0}>
               Start a mixed set ({Math.min(MIXED_SET_SIZE, onThisPaper.length)})

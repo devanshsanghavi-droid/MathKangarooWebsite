@@ -1,0 +1,68 @@
+{
+  "id": "KA-1583",
+  "band": "11-12",
+  "points": 3,
+  "statement": "The first term of a sequence is 2. Each later term is found by doubling the term before it and then subtracting 1. What is the 10th term?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "47",
+      "correct": false,
+      "misconception": "I saw the differences 1 and 2 between the first terms and assumed they go up by 1 each time, so I added $1 + 2 + \\dots + 9 = 45$ to 2."
+    },
+    {
+      "key": "B",
+      "text": "257",
+      "correct": false,
+      "misconception": "I saw that each term is 1 more than a power of 2, but I used $2^8 + 1$, which is the 9th term."
+    },
+    {
+      "key": "C",
+      "text": "512",
+      "correct": false,
+      "misconception": "I saw the powers of 2 and used $2^9$, but forgot that every term is 1 more than a power of 2."
+    },
+    {
+      "key": "D",
+      "text": "513",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "E",
+      "text": "1025",
+      "correct": false,
+      "misconception": "I matched the power to the term number and used $2^{10} + 1$, which is the 11th term."
+    }
+  ],
+  "skills": {
+    "primary": "PAT-05",
+    "secondary": [
+      "CFT-03",
+      "PAT-07"
+    ]
+  },
+  "hints": [
+    "Write out the first five terms before looking for a pattern.",
+    "Compare each term with a nearby power of 2. Once you have a formula, test it on the first few terms so that the power matches the position in the sequence.",
+    "The terms are $2, 3, 5, 9, 17, \\dots$, each 1 more than $1, 2, 4, 8, 16$. So the $n$th term is $2^{n-1} + 1$."
+  ],
+  "solutions": {
+    "reliable": "The terms are $2$, $2 \\times 2 - 1 = 3$, $2 \\times 3 - 1 = 5$, $9$, $17$, $33$, $65$, $129$, $257$, $513$. Each is 1 more than a power of 2: the $n$th term is $2^{n-1} + 1$, so the 10th term is $2^9 + 1 = 513$. The transferable idea: when a rule doubles and then adjusts, subtract the number the rule leaves unchanged (here 1, since $2 \\times 1 - 1 = 1$), and only the doubling remains.",
+    "elegant": "Let $b_n = a_n - 1$. Then $a_{n+1} - 1 = 2a_n - 2 = 2(a_n - 1)$, so $b_{n+1} = 2b_n$. With $b_1 = 1$, $b_{10} = 2^9 = 512$, and $a_{10} = 513$."
+  },
+  "whyOnTest": "A double-and-adjust rule hides a pure doubling sequence once you shift by the number the rule leaves unchanged.",
+  "estSeconds": 60,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

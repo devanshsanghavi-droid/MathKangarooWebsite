@@ -1,0 +1,56 @@
+{
+  "id": "SA-0032",
+  "test": "SAT",
+  "domain": "ALG",
+  "skill": "ALG-02",
+  "difficulty": "easy",
+  "statement": "The monthly cost $M$, in dollars, for a climbing gym membership is given by $M(v) = 12v + 25$, where $v$ is the number of visits that month. Rosa visited the gym $4$ more times in May than in April. How many more dollars did she pay for May than for April?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$48$",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "B",
+      "text": "$73$",
+      "correct": false,
+      "misconception": "I worked out $M(4) = 12(4) + 25 = 73$, which is the cost of a month with 4 visits, not the extra cost of 4 more visits."
+    },
+    {
+      "key": "C",
+      "text": "$100$",
+      "correct": false,
+      "misconception": "I mixed up the two numbers and charged the 25 dollars for each extra visit, so I got $4 \\times 25 = 100$."
+    },
+    {
+      "key": "D",
+      "text": "$148$",
+      "correct": false,
+      "misconception": "I added the 12 and the 25 and treated $37$ dollars as the cost of each extra visit, so I got $4 \\times 37 = 148$."
+    }
+  ],
+  "hints": [
+    "Which part of $12v + 25$ changes when $v$ changes?",
+    "The 25 dollars is paid every month no matter how many visits. Only the $12v$ part grows.",
+    "Each extra visit adds $12$ dollars, so $4$ extra visits add $4 \\times 12$ dollars."
+  ],
+  "solutions": {
+    "reliable": "The fee of $25$ dollars is the same every month, so it cancels: $M(v + 4) - M(v) = 12(v + 4) + 25 - (12v + 25) = 48$. May cost $48$ dollars more than April, whatever the April number of visits was.",
+    "elegant": null
+  },
+  "estSeconds": 40,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

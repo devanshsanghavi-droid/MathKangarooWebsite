@@ -1,0 +1,56 @@
+{
+  "id": "SA-0204",
+  "test": "SAT",
+  "domain": "PSD",
+  "skill": "PSD-01",
+  "difficulty": "medium",
+  "statement": "On a floor plan, $2$ inches represents $15$ feet. A rectangular room on the floor plan measures $5.2$ inches by $3.6$ inches. What is the actual floor area of the room, in square feet?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$132$",
+      "correct": false,
+      "misconception": "I converted both sides correctly to 39 feet and 27 feet, but then I found the perimeter, $2(39 + 27) = 132$, instead of the area."
+    },
+    {
+      "key": "B",
+      "text": "$140.4$",
+      "correct": false,
+      "misconception": "I found the area on the plan, 18.72 square inches, and multiplied it by the scale factor 7.5 only once, even though area grows by the scale factor twice."
+    },
+    {
+      "key": "C",
+      "text": "$280.8$",
+      "correct": false,
+      "misconception": "I multiplied the area on the plan, 18.72 square inches, by 15, as if each square inch on the plan stood for 15 square feet."
+    },
+    {
+      "key": "D",
+      "text": "$1{,}053$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "How many feet does $1$ inch on the floor plan represent?",
+    "Convert each side of the room to feet first, then multiply the two actual lengths.",
+    "Each inch represents $15 \\div 2 = 7.5$ feet, so the room is $5.2 \\cdot 7.5 = 39$ feet by $3.6 \\cdot 7.5 = 27$ feet."
+  ],
+  "solutions": {
+    "reliable": "One inch on the plan represents $7.5$ feet. The room is $5.2(7.5) = 39$ feet long and $3.6(7.5) = 27$ feet wide, so its area is $39 \\cdot 27 = 1{,}053$ square feet.",
+    "elegant": "The area on the plan is $5.2 \\cdot 3.6 = 18.72$ square inches. Each square inch stands for $7.5^2 = 56.25$ square feet, and $18.72 \\cdot 56.25 = 1{,}053$."
+  },
+  "estSeconds": 75,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

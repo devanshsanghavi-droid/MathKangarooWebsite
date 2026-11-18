@@ -1,0 +1,56 @@
+{
+  "id": "SA-0277",
+  "test": "SAT",
+  "domain": "GEO",
+  "skill": "GEO-01",
+  "difficulty": "medium",
+  "statement": "A storage box is a rectangular prism that measures $2$ inches by $4$ inches by $8$ inches. A cube has the same volume as this box. What is the total surface area of the cube, in square inches?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$16$",
+      "correct": false,
+      "misconception": "I found the cube's side length, $4$, and squared it to get $16$, which is the area of only one face."
+    },
+    {
+      "key": "B",
+      "text": "$24$",
+      "correct": false,
+      "misconception": "I found the side length $4$ and multiplied it by the $6$ faces, so I got $24$ without squaring the side."
+    },
+    {
+      "key": "C",
+      "text": "$64$",
+      "correct": false,
+      "misconception": "I found the volume of the box, $64$ cubic inches, and gave that as the surface area of the cube."
+    },
+    {
+      "key": "D",
+      "text": "$96$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Start with the volume of the box. The cube must hold the same amount.",
+    "The box's volume is $2 \\cdot 4 \\cdot 8$. Find the side length $s$ of the cube with $s^3$ equal to that volume.",
+    "The volume is $64$, so $s = 4$. A cube has $6$ square faces, each with area $s^2$."
+  ],
+  "solutions": {
+    "reliable": "The box has volume $2 \\cdot 4 \\cdot 8 = 64$ cubic inches. A cube with side $s$ has volume $s^3$, so $s^3 = 64$ and $s = 4$ inches. Each of the cube's $6$ faces is a $4 \\times 4$ square with area $16$, so the total surface area is $6 \\cdot 16 = 96$ square inches.",
+    "elegant": null
+  },
+  "estSeconds": 65,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

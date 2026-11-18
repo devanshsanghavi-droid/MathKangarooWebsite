@@ -1,0 +1,56 @@
+{
+  "id": "SA-0199",
+  "test": "SAT",
+  "domain": "ADV",
+  "skill": "ADV-01",
+  "difficulty": "easy",
+  "statement": "Which expression is equivalent to $9x^2 - 16$?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "$(3x - 4)^2$",
+      "correct": false,
+      "misconception": "I wrote the difference of squares as a perfect square, but $(3x - 4)^2$ has a middle term of $-24x$."
+    },
+    {
+      "key": "B",
+      "text": "$(3x - 8)(3x + 8)$",
+      "correct": false,
+      "misconception": "I halved $16$ instead of taking its square root, so I used $8$ instead of $4$."
+    },
+    {
+      "key": "C",
+      "text": "$(9x - 4)(x + 4)$",
+      "correct": false,
+      "misconception": "I took the square root of $16$ but not of $9x^2$, so I split $9x^2$ into $9x$ times $x$."
+    },
+    {
+      "key": "D",
+      "text": "$(3x - 4)(3x + 4)$",
+      "correct": true,
+      "misconception": null
+    }
+  ],
+  "hints": [
+    "Both terms are perfect squares: $9x^2 = (3x)^2$ and $16 = 4^2$.",
+    "A difference of squares factors as $a^2 - b^2 = (a - b)(a + b)$.",
+    "Use $a = 3x$ and $b = 4$."
+  ],
+  "solutions": {
+    "reliable": "Since $9x^2 = (3x)^2$ and $16 = 4^2$, the difference of squares rule gives $9x^2 - 16 = (3x - 4)(3x + 4)$. Check by expanding: $9x^2 + 12x - 12x - 16 = 9x^2 - 16$.",
+    "elegant": null
+  },
+  "estSeconds": 35,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

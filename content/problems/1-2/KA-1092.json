@@ -1,0 +1,67 @@
+{
+  "id": "KA-1092",
+  "band": "1-2",
+  "points": 5,
+  "statement": "Square tiles with 1 cm sides are laid in one straight row to make a rectangle. The distance all the way round it is 14 cm. How many tiles are in the row?",
+  "figure": null,
+  "choices": [
+    {
+      "key": "A",
+      "text": "5",
+      "correct": false,
+      "misconception": "I took away 4 cm for the two ends and then shared the rest between the two long sides."
+    },
+    {
+      "key": "B",
+      "text": "6",
+      "correct": true,
+      "misconception": null
+    },
+    {
+      "key": "C",
+      "text": "7",
+      "correct": false,
+      "misconception": "I halved 14 and forgot that the two short ends are part of the distance round."
+    },
+    {
+      "key": "D",
+      "text": "12",
+      "correct": false,
+      "misconception": "I took away the two short ends and gave the length of both long sides, not the number of tiles."
+    },
+    {
+      "key": "E",
+      "text": "14",
+      "correct": false,
+      "misconception": "I thought each tile adds 1 cm to the distance round."
+    }
+  ],
+  "skills": {
+    "primary": "GEO-01",
+    "secondary": [
+      "CFT-02"
+    ]
+  },
+  "hints": [
+    "Draw rows of 1, 2 and 3 tiles and measure round each.",
+    "The distance round is made of the top, the bottom and the two short ends. The two ends are always 1 cm each, and the top and bottom are as long as the number of tiles.",
+    "The two ends use 2 cm, leaving 12 cm for the top and the bottom together. Share that between top and bottom."
+  ],
+  "solutions": {
+    "reliable": "The two short ends are 1 cm each, 2 cm together. That leaves $14 - 2 = 12$ cm for the top and the bottom, so each is 6 cm long. A row 6 cm long has 6 tiles. Check: $6 + 6 + 1 + 1 = 14$. The idea to keep: split the distance round into its sides and work back from the total.",
+    "elegant": "Each extra tile adds 2 cm to the distance round, one on top and one below. One tile has a distance round of 4 cm, and from 4 to 14 is 5 more tiles, so there are 6 tiles."
+  },
+  "whyOnTest": "Working backwards from the distance round to a side length is the reverse of the usual perimeter step and needs a picture.",
+  "estSeconds": 110,
+  "calibration": {
+    "pValue": null,
+    "medianMs": null,
+    "n": 0
+  },
+  "author": "Devansh Sanghavi",
+  "reviewedBy": [
+    "pending-review"
+  ],
+  "createdAt": "2026-11-17",
+  "license": "CC-BY-NC-SA-4.0"
+}

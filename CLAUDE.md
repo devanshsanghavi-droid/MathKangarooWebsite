@@ -40,11 +40,13 @@ These are hard rules. If a task appears to require breaking one, stop and say so
 - **Accessibility is not a phase.** WCAG 2.1 AA contrast, full keyboard operation, visible
   focus, `prefers-reduced-motion` respected. A component that fails this is not done.
 - **No scope creep.** Forums, leaderboards, video courses, AI tutors: all out of scope. If it
-  isn't in `docs/00-SPEC.md`, `docs/06-V3-REDESIGN.md` or `docs/07-EXAMS-PROGRESS-MOCKS.md`, it
+  isn't in `docs/00-SPEC.md`, `docs/06-V3-REDESIGN.md`, `docs/07-EXAMS-PROGRESS-MOCKS.md` or
+  `docs/08-ONE-STOP.md`, it
   doesn't get built. The owner overrules this when they ask for something specific; record the
   approval in a doc. Approved so far: the AMC 10/12 beta under `/amc` (2026-11-14, docs/06 §5),
   and on 2026-11-17 AMC 8, SAT Math, ACT Math, the `/progress` analytics page, mock and section
-  tests, and an account count on `/admin` (docs/07). All problems are original, never official
+  tests, and an account count on `/admin` (docs/07); on 2026-11-20 the exam catalog, exam
+  pages, grade map, demo student, richer progress analytics and saved questions (docs/08). All problems are original, never official
   AMC, SAT or ACT problems.
 
 ## Stack
@@ -115,6 +117,8 @@ docs/                              the specs below - read before building
   beta. Supersedes page layouts in `00-SPEC.md` and shape/layout in `05`. Palette rule stands.
 - `docs/07-EXAMS-PROGRESS-MOCKS.md` - AMC 8, SAT, ACT, `/progress`, mock and section tests,
   account count.
+- `docs/08-ONE-STOP.md` - exam catalog, exam pages, home repositioning, grade map, demo
+  student, progress upgrades, saved questions; and what was deliberately skipped.
 
 ## Conventions
 

@@ -1,10 +1,11 @@
 import type { MetadataRoute } from 'next';
-import { SITE } from '@/lib/site';
+import { SITE, TESTS_HUB } from '@/lib/site';
 import { contentIndex, paperKey } from '@/lib/content';
 import { STRANDS } from '@/lib/schemas';
 import { getAllAmcProblems, getAmcTaxonomy } from '@/lib/amc-content';
 import { getAllTestProblems } from '@/lib/test-content';
 import { STD_TESTS, TEST_SLUG } from '@/lib/test-meta';
+import { EXAMS } from '@/lib/exams';
 
 /**
  * The sitemap is generated from content, not hand-listed: adding a skill file adds its page
@@ -51,6 +52,7 @@ export const EXAM_ROUTES = [
  * preselects a choice. Low priority, because they are tools.
  */
 export const TIMED_TEST_ROUTES = [
+  { path: TESTS_HUB, priority: 0.5 },
   { path: '/practice/section', priority: 0.4 },
   { path: '/amc/mock', priority: 0.5 },
   { path: '/amc/section', priority: 0.4 },
@@ -152,6 +154,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE.url}${route.path}`,
       changeFrequency: 'weekly',
       priority: route.priority,
+    });
+  }
+
+  // docs/08 item 3: one page per catalog exam. A coming-soon page is short but real (format,
+  // scoring, a pointer to the related exam), so it is listed at a lower priority.
+  for (const exam of EXAMS) {
+    entries.push({
+      url: `${SITE.url}${exam.routes.page}`,
+      changeFrequency: 'monthly',
+      priority: exam.status === 'live' ? 0.7 : 0.4,
     });
   }
 

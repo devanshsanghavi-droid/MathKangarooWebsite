@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { ChoiceList } from '@/components/ChoiceList';
-import { FeedbackPanel } from '@/components/FeedbackPanel';
 import { HintLadder, type HintRevealDetail } from '@/components/HintLadder';
 import { SolutionTabs } from '@/components/SolutionTabs';
 import { FigureRenderer } from '@/components/FigureRenderer';
@@ -15,10 +14,13 @@ import type { Surface } from '@/lib/telemetry/events';
 import { recordPracticeAttempt } from '@/lib/practice-record';
 import { QuestionNavigator } from './QuestionNavigator';
 import { SessionSummary } from './SessionSummary';
+import { PracticeFeedback } from './PracticeFeedback';
+import { SaveButton } from './SaveButton';
+import { shortcutAction } from './shortcuts';
 import {
   formatClock,
   initialSession,
-  isAnswered,
+  isDone,
   sessionReducer,
   spokenDuration,
   summarize,
@@ -57,9 +59,13 @@ export interface PracticeSessionProps {
  * Answering is pick, then Check. The first Check is the attempt: it is scored for the set and
  * recorded through `saveAttempt` / `saveAmcAttempt` exactly as the problem page always has,
  * with the same telemetry event, and nothing after it is. Feedback is the existing reserved
- * trio: <ChoiceList> marks the judged pick, <FeedbackPanel> gives the misconception for that
+ * trio: <ChoiceList> marks the judged pick, <PracticeFeedback> gives the misconception for that
  * exact wrong letter, <HintLadder> draws a taken hint in amber. This file adds no colour of its
  * own beyond the teal accent and neutrals.
+ *
+ * docs/08: a Save toggle on every question (item 10); keyboard shortcuts A-E / 1-5 to pick and
+ * Enter to check or go on (item 11, rules in shortcuts.ts); and one second try after a wrong
+ * first check, with the misconception as the nudge, before the answer and solution show.
  *
  * Everything the server needs for a no-JS reader and a crawler renders on the first pass: the
  * statement, the figure and the five choices. The timer starts in an effect, so the server and
@@ -84,6 +90,10 @@ export function PracticeSession({
   const headingRef = useRef<HTMLHeadingElement>(null);
   const rootRef = useRef<HTMLDivElement>(null);
   const moved = useRef(false);
+  // docs/08 item 9: when each question first came on screen and when it was first picked,
+  // by index, so the recorded attempt carries the time from seeing it to the first pick.
+  const shownAt = useRef(new Map<number, number>());
+  const pickedAt = useRef(new Map<number, number>());
 
   const item = items[state.index];
   const question = state.questions[state.index];
@@ -101,6 +111,12 @@ export function PracticeSession({
     const id = window.setInterval(tick, 1000);
     return () => window.clearInterval(id);
   }, [state.finished]);
+
+  // Stamp the first time each question is shown (after mount, so the server never runs it).
+  useEffect(() => {
+    if (state.finished || shownAt.current.has(state.index)) return;
+    shownAt.current.set(state.index, Date.now());
+  }, [state.index, state.finished]);
 
   // After moving to another question (not on first render), put focus on its heading so a
   // screen reader announces where it landed, and bring the question into view.
@@ -131,6 +147,17 @@ export function PracticeSession({
     onFinish?.(summarize(items, state));
   }, [items, onFinish, state]);
 
+  // docs/08 item 11: keyboard shortcuts. One listener on the document; the latest handler is
+  // kept in a ref so the listener never goes stale and is never re-added per render.
+  const onShortcut = useRef<(event: KeyboardEvent) => void>(() => {});
+  useEffect(() => {
+    const listener = (event: KeyboardEvent) => onShortcut.current(event);
+    document.addEventListener('keydown', listener);
+    return () => document.removeEventListener('keydown', listener);
+  }, []);
+  // Off unless a question is on screen; set again below once it is.
+  onShortcut.current = () => {};
+
   if (!item || !question) {
     return (
       <Card>
@@ -160,10 +187,13 @@ export function PracticeSession({
     );
   }
 
-  const pendingPick = question.selected !== null && question.selected !== question.checked;
+  const done = isDone(question);
+  const pendingPick = !done && question.selected !== null && question.selected !== question.checked;
   const canCheck = pendingPick;
   const last = state.index === items.length - 1;
   const Heading = headingLevel === 1 ? 'h1' : 'h2';
+  // "A-E" for five choices, "A-D" for the four of an SAT or ACT question.
+  const lastKey = item.choices[item.choices.length - 1]?.key ?? 'E';
   const headingId = `question-${item.id}`;
 
   function check() {
@@ -171,10 +201,43 @@ export function PracticeSession({
     const key: ChoiceKey = question.selected;
     const correct = item.choices.some((choice) => choice.key === key && choice.correct);
     if (question.firstCorrect === null) {
-      recordPracticeAttempt(item, { choiceKey: key, correct, hintsUsed: question.hints, surface });
+      const now = Date.now();
+      const shown = shownAt.current.get(state.index) ?? now;
+      const picked = pickedAt.current.get(state.index) ?? now;
+      recordPracticeAttempt(item, {
+        choiceKey: key,
+        correct,
+        hintsUsed: question.hints,
+        surface,
+        ms: Math.max(0, picked - shown),
+        mode: 'practice',
+      });
     }
     dispatch({ type: 'check', correct });
   }
+
+  function pick(key: ChoiceKey) {
+    if (!question || isDone(question)) return;
+    if (!pickedAt.current.has(state.index)) pickedAt.current.set(state.index, Date.now());
+    dispatch({ type: 'pick', key });
+  }
+
+  onShortcut.current = (event: KeyboardEvent) => {
+    const action = shortcutAction(event, {
+      choiceKeys: item.choices.map((choice) => choice.key),
+      choiceIdPrefix: `choice-${item.id}-`,
+      selected: question.selected,
+      canCheck,
+      done,
+      canContinue: !single,
+    });
+    if (!action) return;
+    event.preventDefault();
+    if (action.type === 'pick') pick(action.key);
+    else if (action.type === 'check') check();
+    else if (last) finish();
+    else go(state.index + 1);
+  };
 
   return (
     <div ref={rootRef} className="scroll-mt-20">
@@ -203,6 +266,7 @@ export function PracticeSession({
             {timerHidden ? 'Show timer' : 'Hide timer'}
           </Button>
         </div>
+        <SaveButton problemId={item.id} />
         {single ? null : (
           <Button
             size="sm"
@@ -257,8 +321,8 @@ export function PracticeSession({
             key={item.id}
             choices={item.choices}
             selected={question.selected}
-            onSelect={(key) => dispatch({ type: 'pick', key })}
-            revealAnswer={question.solved}
+            onSelect={pick}
+            revealAnswer={done}
             pending={pendingPick}
             idPrefix={`choice-${item.id}`}
             math={item.math}
@@ -276,9 +340,16 @@ export function PracticeSession({
                 ? 'Solved.'
                 : null}
           </p>
+          {/* Not a live region: a standing hint, read in order, never announced. */}
+          <p
+            className="ui m-0 basis-full text-xs text-ink-3 sm:ml-auto sm:basis-auto"
+            data-shortcut-hint
+          >
+            {`Keyboard: A-${lastKey} to choose, Enter to check`}
+          </p>
         </div>
 
-        <FeedbackPanel problem={item} selectedKey={question.checked} math={item.math} />
+        <PracticeFeedback item={item} checkedKey={question.checked} done={done} />
 
         <HintLadder
           key={`hints-${item.id}`}
@@ -290,7 +361,7 @@ export function PracticeSession({
           math={item.math}
         />
 
-        {isAnswered(question) ? (
+        {done ? (
           <SolutionTabs
             key={`solution-${item.id}`}
             reliable={item.solutions.reliable}
@@ -299,7 +370,7 @@ export function PracticeSession({
           />
         ) : null}
 
-        {isAnswered(question) && item.whyOnTest ? (
+        {done && item.whyOnTest ? (
           <p className="mt-6 mb-0 border-t border-rule pt-4 text-sm text-ink-2">
             <span className="font-medium text-ink">Why this is on the test: </span>
             {item.whyOnTest}

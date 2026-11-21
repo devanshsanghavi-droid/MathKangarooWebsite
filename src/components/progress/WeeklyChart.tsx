@@ -2,7 +2,7 @@ import { percentLabel, type WeekStat } from '@/lib/progress-analytics';
 
 /**
  * The "over time" block of /progress: weekly accuracy as a line and weekly answers as bars,
- * last twelve weeks, hand-drawn SVG coloured only through tokens.
+ * last eight (or twelve) weeks, hand-drawn SVG coloured only through tokens.
  *
  * Both charts are role="img" with a sentence naming what they show, and the same numbers sit
  * in a visually hidden table for a screen reader, which reads a table far better than a path.
@@ -55,8 +55,8 @@ function AccuracyChart({ weeks }: { weeks: readonly WeekStat[] }) {
   const last = shown.at(-1);
   const label =
     shown.length === 0
-      ? 'Weekly accuracy, last 12 weeks: no answers yet.'
-      : `Weekly accuracy, last 12 weeks. ${shown.length} weeks with answers, from ${percentLabel(
+      ? `Weekly accuracy, last ${weeks.length} weeks: no answers yet.`
+      : `Weekly accuracy, last ${weeks.length} weeks. ${shown.length} weeks with answers, from ${percentLabel(
           shown[0]?.accuracy ?? null,
         )} to ${percentLabel(last?.accuracy ?? null)} in the most recent.`;
 
@@ -118,7 +118,7 @@ function AnsweredChart({ weeks }: { weeks: readonly WeekStat[] }) {
   const barWidth = Math.max(4, step * 0.6);
   const total = weeks.reduce((n, w) => n + w.attempts, 0);
   const busiest = Math.max(0, ...weeks.map((w) => w.attempts));
-  const label = `Questions answered each week, last 12 weeks: ${total} in all, at most ${busiest} in one week.`;
+  const label = `Questions answered each week, last ${weeks.length} weeks: ${total} in all, at most ${busiest} in one week.`;
 
   return (
     <svg viewBox={`0 0 ${W} ${h}`} width="100%" role="img" aria-label={label} className="block">

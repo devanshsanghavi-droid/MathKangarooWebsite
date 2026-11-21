@@ -82,11 +82,12 @@ describe('answering', () => {
     await user.click(choiceButton(wrong.key));
     await user.click(screen.getByRole('button', { name: 'Check' }));
     const feedback = screen.getByTestId('feedback');
-    expect(feedback).toHaveAttribute('data-outcome', 'incorrect');
+    // docs/08 item 11: a wrong first check is a nudge with one more try, not the solution.
+    expect(feedback).toHaveAttribute('data-outcome', 'retry');
     expect(feedback.textContent).toContain(wrong.misconception ?? '');
-    // The hints and the solution are there after the first check.
+    expect(feedback.textContent).toContain('Try once more.');
     expect(screen.getByRole('heading', { name: 'Hints' })).toBeInTheDocument();
-    expect(screen.getByText('Solution')).toBeInTheDocument();
+    expect(screen.queryByText('Solution')).toBeNull();
   });
 
   it('marks a right answer correct and reveals it', async () => {

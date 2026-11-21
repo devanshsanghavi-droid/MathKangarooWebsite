@@ -11,23 +11,82 @@ import { BANDS } from '@/lib/schemas';
 import { resetProgressCache } from '@/components/mastery/useProgress';
 import { resetLevelMemory } from '@/lib/level-pref';
 import { DISCLAIMER } from '@/lib/site';
+import { liveExams, soonExams } from '@/lib/exams';
 
 const stats = getContentStats();
 
-describe('/ - the Practice home', () => {
+describe('/ - the home page', () => {
   beforeEach(() => {
     window.localStorage.clear();
     resetProgressCache();
     resetLevelMemory();
   });
 
-  it('opens a first visit with a short, plain introduction', () => {
+  it('opens a first visit with the every-exam headline and its two buttons', () => {
     render(HomePage());
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
-      'Get ready for Math Kangaroo, one skill at a time.',
+      'Practice for every math exam in one place.',
     );
-    const how = screen.getByRole('region', { name: 'Three steps, no sign-up' });
-    expect(within(how).getAllByRole('heading', { level: 3 })).toHaveLength(3);
+    expect(screen.getByRole('link', { name: 'Start practicing' })).toHaveAttribute(
+      'href',
+      '#start',
+    );
+    expect(screen.getAllByRole('link', { name: 'Explore a demo student' })[0]).toHaveAttribute(
+      'href',
+      '/progress?demo=1',
+    );
+    // The button's target exists on the page.
+    expect(document.getElementById('start')).not.toBeNull();
+  });
+
+  it('has a shortcut chip for every live exam and quieter chips for the soon ones', () => {
+    render(HomePage());
+    const chips = screen.getByRole('navigation', { name: 'Exam shortcuts' });
+    for (const exam of liveExams()) {
+      const link = within(chips).getByRole('link', { name: exam.shortName });
+      expect(link).toHaveAttribute('href', exam.routes.page);
+      expect(link.className).toContain(exam.classes.fill.split(' ')[0]);
+    }
+    for (const exam of soonExams()) {
+      expect(
+        within(chips).getByRole('link', { name: new RegExp(`${exam.shortName}.*soon`) }),
+      ).toHaveAttribute('href', exam.routes.page);
+    }
+  });
+
+  it('shows a compact card per live exam in the exam chooser', () => {
+    render(HomePage());
+    const start = screen.getByRole('region', { name: 'Choose your exam' });
+    for (const exam of liveExams()) {
+      expect(
+        within(start).getByRole('link', { name: new RegExp(`^${exam.name}`) }),
+      ).toHaveAttribute('href', exam.routes.page);
+    }
+  });
+
+  it('explains how it works in four steps: learn, practice, test, track', () => {
+    render(HomePage());
+    const how = screen.getByRole('region', { name: 'Learn, practice, test, track' });
+    expect(
+      within(how)
+        .getAllByRole('heading', { level: 3 })
+        .map((h) => h.textContent?.replace(/^Step \d: /, '')),
+    ).toEqual(['Learn', 'Practice', 'Test', 'Track']);
+  });
+
+  it('has a grade map, a labelled example chart and the more-subjects strip', () => {
+    render(HomePage());
+    expect(screen.getByRole('region', { name: 'Which exams fit your grade?' })).toBeInTheDocument();
+    const preview = screen.getByRole('region', { name: 'See your progress at a glance' });
+    expect(within(preview).getByText('Example data')).toBeInTheDocument();
+    expect(within(preview).getByRole('img', { name: /Example chart, not real data/ })).toBeTruthy();
+    expect(within(preview).getByRole('link', { name: 'Explore a demo student' })).toHaveAttribute(
+      'href',
+      '/progress?demo=1',
+    );
+    expect(
+      screen.getByRole('region', { name: /More subjects coming: science, reading and writing/ }),
+    ).toBeInTheDocument();
   });
 
   it('does not show the progress dashboard to a first-time visitor', () => {
@@ -36,9 +95,9 @@ describe('/ - the Practice home', () => {
     expect(screen.queryByRole('region', { name: 'Quick start' })).toBeNull();
   });
 
-  it('has a level picker that remembers the level and then offers where to start', async () => {
+  it('keeps the Kangaroo level step: it remembers the level and then offers where to start', async () => {
     const { container } = render(HomePage());
-    const levels = screen.getByRole('region', { name: 'Which level are you?' });
+    const levels = screen.getByRole('region', { name: 'Math Kangaroo: which level are you?' });
     const button = within(levels).getByRole('button', { name: /Level 5-6/ });
     expect(button).toHaveAttribute('aria-pressed', 'false');
     expect(within(levels).queryByRole('button', { name: /quick problems/ })).toBeNull();
@@ -57,7 +116,7 @@ describe('/ - the Practice home', () => {
 
   it('shows every level with its problem count, counted from the bank', () => {
     render(HomePage());
-    const levels = screen.getByRole('region', { name: 'Which level are you?' });
+    const levels = screen.getByRole('region', { name: 'Math Kangaroo: which level are you?' });
     for (const band of BANDS) {
       const total = getAllProblems().filter((p) => p.band === band).length;
       expect(
@@ -66,10 +125,24 @@ describe('/ - the Practice home', () => {
     }
   });
 
-  it('shows a problem of the day that links to the problem', () => {
+  it('shows a puzzle of the day that can be answered on the page and links to the problem', () => {
     render(HomePage());
-    const card = screen.getByRole('region', { name: 'Problem of the day' });
+    const card = screen.getByRole('region', { name: 'Puzzle of the day' });
+    expect(within(card).getAllByRole('button', { name: /^[A-E]/ })).toHaveLength(5);
     expect(card.querySelector('a[href^="/problem/KA-"]')).not.toBeNull();
+  });
+
+  it('keeps the welcome view after the puzzle of the day is answered', async () => {
+    render(HomePage());
+    const card = screen.getByRole('region', { name: 'Puzzle of the day' });
+    const [first] = within(card).getAllByRole('button', { name: /^[A-E]/ });
+    if (!first) throw new Error('no choices');
+    await userEvent.click(first);
+    expect(window.localStorage.getItem('ka-progress')).toContain('"problemId"');
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
+      'Practice for every math exam in one place.',
+    );
+    expect(screen.getByTestId('feedback')).toBeInTheDocument();
   });
 
   it('counts only what it can count, from the content files', () => {
@@ -84,7 +157,7 @@ describe('/ - the Practice home', () => {
     expect(container.textContent).not.toMatch(/students (served|helped)/i);
   });
 
-  it('greets a returning student with a Continue card and their own counts', () => {
+  it('greets a returning student with a Continue card, their own counts and exam chips', () => {
     const problem = getAllProblems()[0];
     if (!problem) throw new Error('empty bank');
     const at = new Date().toISOString();
@@ -113,6 +186,9 @@ describe('/ - the Practice home', () => {
     expect(
       within(screen.getByRole('region', { name: 'Seven strands' })).getAllByRole('progressbar'),
     ).toHaveLength(7);
+    const chips = screen.getByRole('navigation', { name: 'Your exams' });
+    expect(within(chips).getAllByRole('link')).toHaveLength(liveExams().length);
+    expect(screen.getByRole('region', { name: 'Puzzle of the day' })).toBeInTheDocument();
     // Counts, never points or badges.
     expect(document.body.textContent).not.toMatch(/\bXP\b|badge|leaderboard/i);
   });

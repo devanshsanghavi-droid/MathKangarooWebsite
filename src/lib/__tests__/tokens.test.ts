@@ -15,6 +15,17 @@ const darkExplicit = extractTokenBlock(css, ":root[data-theme='dark']");
  * difficulty pair, every mastery step, and every reserved feedback colour on its own tint.
  */
 
+/** One colour per exam (docs/08 item 4), plus the neutral for "coming soon". */
+const EXAM_TOKENS = [
+  '--exam-ka',
+  '--exam-amc8',
+  '--exam-amc10',
+  '--exam-amc12',
+  '--exam-sat',
+  '--exam-act',
+  '--exam-soon',
+] as const;
+
 /** Tokens that hold a color and must therefore exist in the light palette. */
 const COLOR_TOKENS = [
   '--ground',
@@ -72,6 +83,9 @@ const COLOR_TOKENS = [
   '--amber-100',
   '--amber-500',
   '--amber-700',
+  // exam colours (docs/08 item 4)
+  ...EXAM_TOKENS,
+  '--on-exam',
 ] as const;
 
 /** The tokens v2 retired. Their continued absence is part of the contract. */
@@ -183,6 +197,15 @@ const PAIRS: Array<[string, string, number, string]> = [
   ['--d1-fg', '--d1-bg', 4.5, '3-point difficulty pill'],
   ['--d2-fg', '--d2-bg', 4.5, '4-point difficulty pill'],
   ['--d3-fg', '--d3-bg', 4.5, '5-point difficulty pill'],
+
+  // --- exam colours (docs/08 item 4): fill, label and chart line ------------
+  ...EXAM_TOKENS.flatMap((token): Array<[string, string, number, string]> => [
+    ['--on-exam', token, 4.5, `text on a solid ${token} chip or card`],
+    [token, '--surface', 4.5, `${token} as a label on a card`],
+    [token, '--ground', 4.5, `${token} as a label on the page`],
+    [token, '--surface-2', 3, `${token} as a chart line or bar in a well`],
+    [token, '--track', 3, `${token} as a grade-map bar on its empty track`],
+  ]),
 ];
 
 describe('tokens.css', () => {
@@ -213,6 +236,13 @@ describe('tokens.css', () => {
     for (const [token, value] of Object.entries(light)) {
       if (!/^--(correct|wrong|hint)-/.test(token)) continue;
       expect(value, `${token} must be a literal colour, not an alias`).not.toMatch(/var\(/);
+    }
+  });
+
+  it('gives every exam its own colour in both themes (docs/08 item 4)', () => {
+    for (const palette of [light, { ...light, ...darkExplicit }]) {
+      const values = EXAM_TOKENS.map((token) => palette[token]);
+      expect(new Set(values).size).toBe(EXAM_TOKENS.length);
     }
   });
 
@@ -330,6 +360,11 @@ describe('tokens.css', () => {
           Number(contrastRatio(ramp[index] ?? '', ramp[index + 1] ?? '').toFixed(2)),
         ).toBeGreaterThanOrEqual(1.35);
       }
+    });
+
+    it('prints every exam colour as black, with white text on it', () => {
+      for (const token of EXAM_TOKENS) expect(print[token]).toBe('#000000');
+      expect(print['--on-exam']).toBe('#ffffff');
     });
 
     it('drops the reserved hues entirely - a photocopy has no green or red', () => {

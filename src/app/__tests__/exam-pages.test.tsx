@@ -241,10 +241,12 @@ describe('/sat/practice', () => {
 });
 
 describe('/exams', () => {
-  it('lists every exam with its way in, the past papers and progress', () => {
+  it('is the catalog: every live exam with its way in, then the coming-soon row', () => {
     render(ExamsPage());
-    expect(screen.getByRole('heading', { level: 1, name: 'Choose an exam' })).toBeInTheDocument();
-    for (const name of ['Math Kangaroo', /^AMC 8/, /^AMC 10 and AMC 12/, 'SAT Math', 'ACT Math']) {
+    expect(
+      screen.getByRole('heading', { level: 1, name: 'Every math exam in one place' }),
+    ).toBeInTheDocument();
+    for (const name of ['Math Kangaroo', 'AMC 8', 'AMC 10', 'AMC 12', 'SAT Math', 'ACT Math']) {
       expect(screen.getByRole('heading', { level: 2, name })).toBeInTheDocument();
     }
     expect(screen.getByRole('link', { name: 'Practice SAT Math' })).toHaveAttribute('href', '/sat');
@@ -254,12 +256,24 @@ describe('/exams', () => {
       'href',
       '/papers',
     );
+    expect(screen.getByRole('link', { name: 'SAT Math: Format and tips' })).toHaveAttribute(
+      'href',
+      '/exams/sat',
+    );
     expect(screen.getByRole('link', { name: 'See my progress' })).toHaveAttribute(
       'href',
       '/progress',
     );
     const satCard = screen.getByRole('heading', { level: 2, name: 'SAT Math' }).closest('article');
     expect(satCard).toHaveTextContent(`${sat.length} problems`);
+    const soon = screen.getByRole('region', { name: 'Coming soon' });
+    for (const name of ['AIME', 'MATHCOUNTS', 'PSAT Math']) {
+      expect(within(soon).getByRole('heading', { level: 3, name })).toBeInTheDocument();
+    }
+    expect(within(soon).getByRole('link', { name: 'Practise AMC 12 meanwhile' })).toHaveAttribute(
+      'href',
+      '/exams/amc12',
+    );
   });
 });
 
@@ -267,14 +281,27 @@ describe('the home page', () => {
   it('points first-time visitors to the other exams', () => {
     pathname.current = '/';
     render(HomePage());
-    expect(screen.getByRole('link', { name: /Other exams/ })).toHaveAttribute('href', '/exams');
+    expect(screen.getByRole('link', { name: /All exams side by side/ })).toHaveAttribute(
+      'href',
+      '/exams',
+    );
   });
 });
 
 describe('the sitemap', () => {
   it('lists the exams hub, the SAT and ACT pages and every question, not the practice runners', () => {
     const urls = new Set(sitemap().map((entry) => entry.url));
-    for (const path of ['/exams', '/sat', '/sat/problems', '/act', '/act/problems']) {
+    for (const path of [
+      '/exams',
+      '/exams/tests',
+      '/exams/ka',
+      '/exams/amc10',
+      '/exams/aime',
+      '/sat',
+      '/sat/problems',
+      '/act',
+      '/act/problems',
+    ]) {
       expect(urls.has(`${SITE.url}${path}`), path).toBe(true);
     }
     for (const problem of sat) expect(urls.has(`${SITE.url}/sat/problem/${problem.id}`)).toBe(true);

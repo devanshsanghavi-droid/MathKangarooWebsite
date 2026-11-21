@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState, useSyncExternalStore, type ReactNode } from 'react';
+import { useMemo, useState, useSyncExternalStore } from 'react';
 import Link from '@/components/AppLink';
 import { useProgress } from '@/components/mastery/useProgress';
 import { activeDaysOf, localDay, streakFrom } from '@/lib/progress-summary';
@@ -16,7 +16,18 @@ import {
 } from '@/lib/practice-home';
 import { LEVEL_EVENT, LEVEL_KEY, readLevel, writeLevel } from '@/lib/level-pref';
 import { Button, ButtonLink, Card, CardHeader, ProgressBar, StatTile, cx } from '@/components/ui';
-import { HowItWorks, LevelChooser, MoreToExplore, WelcomeHero, type SiteStats } from './Welcome';
+import {
+  ExamCatalog,
+  HowItWorks,
+  LevelChooser,
+  MoreSubjects,
+  ProgressPreview,
+  WelcomeHero,
+  type SiteStats,
+} from './Welcome';
+import { ExamChips } from './ExamChips';
+import { GradeMap } from './GradeMap';
+import { InlinePotd, type PotdPick } from './InlinePotd';
 
 /** What the server hands the Practice home: counts and ids, computed at build time. */
 export interface HomeSkill {
@@ -38,8 +49,10 @@ export interface PracticeHomeProps {
   problems: readonly string[];
   skills: readonly HomeSkill[];
   strands: readonly HomeStrand[];
-  /** The Problem of the day card, rendered by the server page and slotted in. */
-  potd: ReactNode;
+  /** Puzzle-of-the-day picks: potd[i] is the puzzle for day `potdStartDay + i`. */
+  potd: readonly PotdPick[];
+  /** The build day, as a UTC day number (lib/potd.ts). */
+  potdStartDay: number;
   /** Counted from the content files at build time, for the first-visit hero. */
   stats: SiteStats;
 }
@@ -74,8 +87,19 @@ function useLevel(): Band | null {
  * same quick starts. Nothing here asks for an account, and every number is a count of the
  * student's own solved problems: no points, no badges, no comparison with anyone else.
  */
-export function PracticeHome({ problems: rows, skills, strands, potd, stats }: PracticeHomeProps) {
+export function PracticeHome({
+  problems: rows,
+  skills,
+  strands,
+  potd,
+  potdStartDay,
+  stats,
+}: PracticeHomeProps) {
   const file = useProgress();
+  // Answering the puzzle of the day records an attempt, which would turn a first visit into a
+  // returning one mid-answer and swap the whole page out from under the feedback. Once the
+  // visitor answers here, the welcome view stays for the rest of this page view.
+  const [keepWelcome, setKeepWelcome] = useState(false);
   const chosenLevel = useLevel();
   const problems = useMemo(
     () => rows.map(decodeHomeProblem).filter((p): p is HomeProblem => p !== null),
@@ -86,13 +110,27 @@ export function PracticeHome({ problems: rows, skills, strands, potd, stats }: P
   const skillById = useMemo(() => new Map(skills.map((skill) => [skill.id, skill])), [skills]);
 
   // First visit (and the server render): a calm, one-idea-per-section introduction.
-  if (!summary.returning) {
+  if (!summary.returning || keepWelcome) {
     return (
       <div className="grid gap-16 sm:gap-20">
-        <WelcomeHero stats={stats} />
+        <WelcomeHero
+          stats={stats}
+          potd={
+            <InlinePotd
+              picks={potd}
+              startDay={potdStartDay}
+              onAttempt={() => setKeepWelcome(true)}
+            />
+          }
+        />
+        <GradeMap />
+        <div className="grid gap-8">
+          <ExamCatalog />
+          <LevelChooser problems={problems} summary={summary} chosen={chosenLevel} />
+        </div>
         <HowItWorks />
-        <LevelChooser problems={problems} summary={summary} chosen={chosenLevel} />
-        <MoreToExplore potd={potd} />
+        <ProgressPreview />
+        <MoreSubjects />
       </div>
     );
   }
@@ -101,11 +139,15 @@ export function PracticeHome({ problems: rows, skills, strands, potd, stats }: P
     <div className="grid gap-6">
       <ReturningTop summary={summary} problems={problems} skillById={skillById} streak={streak} />
 
+      <ExamChips label="Your exams" showSoon={false} />
+
       <QuickStarts problems={problems} summary={summary} skills={skills} level={chosenLevel} />
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
         <LevelPanel summary={summary} chosen={chosenLevel} returning={summary.returning} />
-        <div className="grid">{potd}</div>
+        <div className="grid">
+          <InlinePotd picks={potd} startDay={potdStartDay} />
+        </div>
       </div>
 
       <StrandPanel strands={strands} summary={summary} />

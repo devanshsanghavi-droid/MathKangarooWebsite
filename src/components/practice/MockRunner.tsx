@@ -105,7 +105,8 @@ export function MockRunner({
     const at = state.finishedAt;
     for (const id of state.problemIds) {
       const problem = problemsById.get(id);
-      const chosen = state.answers[id]?.chosenKey ?? null;
+      const answer = state.answers[id];
+      const chosen = answer?.chosenKey ?? null;
       if (!problem || chosen === null) continue;
       saveAttempt([problem.skills.primary, ...problem.skills.secondary], {
         problemId: id,
@@ -113,6 +114,9 @@ export function MockRunner({
         correct: problem.choices.some((choice) => choice.key === chosen && choice.correct),
         hintsUsed: 0,
         at,
+        // docs/08 item 9: time this question was on screen across visits; capped on save.
+        ms: answer?.msSpent ?? 0,
+        mode: 'test',
       });
     }
     saveSession({

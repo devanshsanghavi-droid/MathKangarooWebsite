@@ -1,11 +1,14 @@
 /**
- * Line icons for the nav destinations (docs/06 §2, docs/07 section 4), drawn in currentColor
+ * Line icons for the nav destinations (docs/06 §2, docs/08 item 13), drawn in currentColor
  * so they follow the link's ink in both themes and print black. Always decorative: the label beside each one
  * is the accessible name.
  */
 const PATHS: Record<string, string> = {
-  // Practice: a target.
-  '/': 'M10 3.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Zm0 3.25a3.25 3.25 0 1 0 0 6.5 3.25 3.25 0 0 0 0-6.5Zm0 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z',
+  // Home: a house.
+  '/': 'M3.5 9.25 10 4l6.5 5.25M5.5 8v8.5h3.25V12.5h2.5v4h3.25V8',
+  // Practice (the exam catalog): a target.
+  '/exams':
+    'M10 3.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Zm0 3.25a3.25 3.25 0 1 0 0 6.5 3.25 3.25 0 0 0 0-6.5Zm0 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z',
   // Question bank: a list.
   '/problems': 'M7 5.5h9M7 10h9M7 14.5h9M3.75 5.5h.5M3.75 10h.5M3.75 14.5h.5',
   // Skill Atlas: three linked nodes.
@@ -16,8 +19,9 @@ const PATHS: Record<string, string> = {
   // AMC: a summation sign. (It was a triangle with a bar and a dot, which reads as a warning
   // sign, the wrong message beside a nav item.)
   '/amc': 'M14.5 4.5h-9l5 5.5-5 5.5h9',
-  // Exams: two stacked sheets.
-  '/exams': 'M6 5.5h8.5V16H6V5.5ZM8 3.5h8.5V14M8.5 9h3.5M8.5 12h3.5',
+  // Tests: a stopwatch.
+  '/exams/tests':
+    'M10 17.25a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM10 8.25v3l2 1.5M8.25 2.75h3.5M10 2.75v2.5',
   // Progress: a rising line over a baseline.
   '/progress': 'M3.5 16.5h13M4.5 13l3.5-3.5 3 2.5 4.5-5.5M12.5 6.5h3v3',
 };

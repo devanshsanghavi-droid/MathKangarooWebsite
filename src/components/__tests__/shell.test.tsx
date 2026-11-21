@@ -15,6 +15,7 @@ import {
   DISCLAIMER,
   MOBILE_NAV,
   PRIMARY_NAV,
+  activeNavHref,
   isActivePath,
   isNavItemActive,
 } from '@/lib/site';
@@ -71,7 +72,7 @@ describe('NavLinks', () => {
     render(<NavLinks items={PRIMARY_NAV} />);
     const atlas = screen.getByRole('link', { name: 'Skill Atlas' });
     expect(atlas).toHaveAttribute('aria-current', 'page');
-    expect(screen.getByRole('link', { name: 'Past papers' })).not.toHaveAttribute('aria-current');
+    expect(screen.getByRole('link', { name: 'Practice' })).not.toHaveAttribute('aria-current');
     expect(atlas.className).toContain('font-semibold');
   });
 
@@ -84,70 +85,68 @@ describe('NavLinks', () => {
     );
   });
 
-  it('renders the destinations in order, papers and exams folding into Exams below lg', () => {
+  it('renders the destinations in order (docs/08 item 13)', () => {
     render(<NavLinks items={PRIMARY_NAV} />);
     const links = screen.getAllByRole('link');
     expect(links.map((link) => link.getAttribute('href'))).toEqual([
-      '/',
+      '/exams',
       '/problems',
       '/atlas',
-      '/papers',
-      '/exams',
-      '/amc',
-      '/sat',
-      '/act',
+      '/exams/tests',
       '/progress',
     ]);
-    expect(screen.getByRole('link', { name: 'Practice' })).toHaveAttribute('href', '/');
+    expect(screen.getByRole('link', { name: 'Practice' })).toHaveAttribute('href', '/exams');
     expect(screen.getByRole('link', { name: 'Question bank' })).toHaveAttribute(
       'href',
       '/problems',
     );
-    // Only one of the two forms is on screen at a time, and the other is display:none, so a
-    // screen reader meets one or the other, never both.
-    const item = (name: string) => screen.getByRole('link', { name }).closest('li');
-    expect(item('Exams')?.className).toBe('lg:hidden');
-    for (const name of ['Past papers', 'AMC (Beta)', 'SAT', 'ACT']) {
-      expect(item(name)?.className).toBe('hidden lg:block');
-    }
-    expect(item('Progress')?.className ?? '').toBe('');
+    expect(screen.getByRole('link', { name: 'Tests' })).toHaveAttribute('href', '/exams/tests');
   });
 
-  it('highlights Exams inside every exam area', () => {
-    for (const path of ['/exams', '/amc/problems', '/sat', '/act/problem/AC-0001', '/papers']) {
+  it('highlights Practice inside every exam area, and Tests inside every sitting', () => {
+    for (const path of ['/exams', '/exams/amc10', '/amc', '/sat', '/papers', '/practice/set']) {
       pathname.current = path;
       const { unmount } = render(<NavLinks items={PRIMARY_NAV} />);
-      expect(screen.getByRole('link', { name: 'Exams' }), path).toHaveAttribute(
+      expect(screen.getByRole('link', { name: 'Practice' }), path).toHaveAttribute(
         'aria-current',
         'page',
       );
+      expect(screen.getByRole('link', { name: 'Tests' }), path).not.toHaveAttribute('aria-current');
       unmount();
     }
-    pathname.current = '/sat/problems';
-    render(<NavLinks items={PRIMARY_NAV} />);
-    expect(screen.getByRole('link', { name: 'SAT' })).toHaveAttribute('aria-current', 'page');
-    expect(screen.getByRole('link', { name: 'ACT' })).not.toHaveAttribute('aria-current');
+    for (const path of ['/exams/tests', '/practice/mock', '/amc/mock', '/sat/section']) {
+      pathname.current = path;
+      const { unmount } = render(<NavLinks items={PRIMARY_NAV} />);
+      expect(screen.getByRole('link', { name: 'Tests' }), path).toHaveAttribute(
+        'aria-current',
+        'page',
+      );
+      expect(screen.getByRole('link', { name: 'Practice' }), path).not.toHaveAttribute(
+        'aria-current',
+      );
+      unmount();
+    }
   });
 
-  it('carries a visible Beta pill on AMC, and says so to a screen reader', () => {
+  it('marks at most one item, and none on the home page (the wordmark is home)', () => {
     render(<NavLinks items={PRIMARY_NAV} />);
-    const amc = screen.getByRole('link', { name: 'AMC (Beta)' });
-    expect(amc).toHaveAttribute('href', '/amc');
-    expect(amc).toHaveTextContent('Beta');
+    for (const link of screen.getAllByRole('link'))
+      expect(link).not.toHaveAttribute('aria-current');
   });
 
-  it('highlights Practice on the practice sessions and the bank on a single problem', () => {
-    pathname.current = '/practice/diagnostic';
-    const { unmount } = render(<NavLinks items={PRIMARY_NAV} />);
-    expect(screen.getByRole('link', { name: 'Practice' })).toHaveAttribute('aria-current', 'page');
-    unmount();
-    pathname.current = '/problem/KA-0001';
-    render(<NavLinks items={PRIMARY_NAV} />);
-    expect(screen.getByRole('link', { name: 'Question bank' })).toHaveAttribute(
-      'aria-current',
-      'page',
-    );
-    expect(screen.getByRole('link', { name: 'Practice' })).not.toHaveAttribute('aria-current');
+  it('highlights the bank on every bank and single problem, not Practice', () => {
+    for (const path of ['/problem/KA-0001', '/amc/problems', '/act/problem/AC-0001']) {
+      pathname.current = path;
+      const { unmount } = render(<NavLinks items={PRIMARY_NAV} />);
+      expect(screen.getByRole('link', { name: 'Question bank' }), path).toHaveAttribute(
+        'aria-current',
+        'page',
+      );
+      expect(screen.getByRole('link', { name: 'Practice' }), path).not.toHaveAttribute(
+        'aria-current',
+      );
+      unmount();
+    }
   });
 });
 
@@ -171,7 +170,7 @@ describe('Header', () => {
 describe('isNavItemActive', () => {
   const [practice, bank, atlas] = PRIMARY_NAV;
   it.each([
-    ['/', practice, true],
+    ['/exams', practice, true],
     ['/practice/mock', practice, true],
     ['/problems', practice, false],
     ['/problem/KA-0002', bank, true],
@@ -180,6 +179,28 @@ describe('isNavItemActive', () => {
   ])('isNavItemActive(%s, %o)', (path, item, expected) => {
     expect(item).toBeDefined();
     if (item) expect(isNavItemActive(path, item)).toBe(expected);
+  });
+});
+
+describe('activeNavHref', () => {
+  it.each([
+    ['/', '/'],
+    ['/exams', '/exams'],
+    ['/exams/ka', '/exams'],
+    ['/exams/tests', '/exams/tests'],
+    ['/amc/formulas', '/exams'],
+    ['/amc/mock', '/exams/tests'],
+    ['/amc/problems', '/problems'],
+    ['/atlas/GEO', '/exams'],
+    ['/progress', '/progress'],
+    ['/about', null],
+  ])('on mobile, %s lights %s', (path, href) => {
+    expect(activeNavHref(path, MOBILE_NAV)).toBe(href);
+  });
+
+  it('lights the Atlas, not Practice, on the top bar', () => {
+    expect(activeNavHref('/skill/CNT-12', PRIMARY_NAV)).toBe('/atlas');
+    expect(activeNavHref('/', PRIMARY_NAV)).toBeNull();
   });
 });
 
@@ -211,31 +232,61 @@ describe('MobileTabBar', () => {
     expect(screen.getByRole('navigation', { name: 'Sections' })).toBeInTheDocument();
   });
 
-  it('keeps five tabs, with every exam behind one Exams tab (docs/07 section 4)', () => {
+  it('has five tabs: Home, Practice, Bank, Tests, Progress (docs/08 item 13)', () => {
     render(<MobileTabBar />);
     expect(MOBILE_NAV).toHaveLength(5);
     expect(screen.getAllByRole('link').map((link) => link.getAttribute('href'))).toEqual([
       '/',
-      '/problems',
-      '/atlas',
       '/exams',
+      '/problems',
+      '/exams/tests',
       '/progress',
+    ]);
+    expect(MOBILE_NAV.map((item) => item.short)).toEqual([
+      'Home',
+      'Practice',
+      'Bank',
+      'Tests',
+      'Progress',
     ]);
   });
 
-  it('marks Exams as the active tab inside an exam area', () => {
-    pathname.current = '/act/problems';
-    render(<MobileTabBar />);
-    expect(screen.getByRole('link', { name: 'Exams' })).toHaveAttribute('aria-current', 'page');
+  it('fits 360px: five equal tabs whose labels truncate rather than widen the row', () => {
+    const { container } = render(<MobileTabBar />);
+    for (const item of container.querySelectorAll('li')) expect(item.className).toContain('flex-1');
+    for (const label of container.querySelectorAll('a > span:last-child')) {
+      expect(label.className).toContain('truncate');
+    }
+    // 72px a tab at 360px; the longest short label is "Progress", 8 characters at 11px.
+    expect(
+      Math.max(...MOBILE_NAV.map((item) => (item.short ?? item.label).length)),
+    ).toBeLessThanOrEqual(8);
   });
 
-  it('marks the active tab', () => {
-    pathname.current = '/problems';
+  it('marks Practice as the active tab inside an exam area, and Tests inside a mock', () => {
+    pathname.current = '/act';
+    const { unmount } = render(<MobileTabBar />);
+    expect(screen.getByRole('link', { name: 'Practice' })).toHaveAttribute('aria-current', 'page');
+    unmount();
+    pathname.current = '/act/mock';
+    render(<MobileTabBar />);
+    expect(screen.getByRole('link', { name: 'Tests' })).toHaveAttribute('aria-current', 'page');
+    expect(screen.getByRole('link', { name: 'Practice' })).not.toHaveAttribute('aria-current');
+  });
+
+  it('marks Home only on the home page', () => {
+    render(<MobileTabBar />);
+    expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('aria-current', 'page');
+  });
+
+  it('marks the bank tab inside any bank', () => {
+    pathname.current = '/act/problems';
     render(<MobileTabBar />);
     expect(screen.getByRole('link', { name: 'Question bank' })).toHaveAttribute(
       'aria-current',
       'page',
     );
+    expect(screen.getByRole('link', { name: 'Home' })).not.toHaveAttribute('aria-current');
   });
 });
 

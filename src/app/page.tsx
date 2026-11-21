@@ -7,8 +7,8 @@ import {
   getStrandSummaries,
 } from '@/lib/content';
 import { dayNumber } from '@/lib/potd';
-import { encodeHomeProblem, potdWindow, previewText } from '@/lib/practice-home';
-import { ProblemOfTheDay } from '@/components/ProblemOfTheDay';
+import { encodeHomeProblem, potdWindow } from '@/lib/practice-home';
+import { kaPracticeItem } from '@/lib/practice-item';
 import { PracticeHome } from '@/components/home/PracticeHome';
 import { PageContainer } from '@/components/ui';
 import { SITE } from '@/lib/site';
@@ -24,11 +24,16 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-static';
 
-/** How many days of Problem-of-the-day picks the page carries (see ProblemOfTheDay). */
-const POTD_DAYS = 60;
+/**
+ * How many days of puzzle-of-the-day picks the page carries (see InlinePotd). Each pick is a
+ * whole practice item (choices, misconceptions, hints, solution) so it can be answered on the
+ * page, about 2 KB each; two weeks keeps that small. The site redeploys far more often than
+ * that, and if it ever does not, the window simply repeats: still one stable puzzle per day.
+ */
+const POTD_DAYS = 14;
 
 /**
- * The Practice home (docs/06-V3-REDESIGN.md §4).
+ * The home page (docs/06-V3-REDESIGN.md §4, repositioned for every exam by docs/08 item 5).
  *
  * Fully static: everything the student-specific parts need (problem ids, levels, strands,
  * primary skills) is worked out here at build time and handed to <PracticeHome>, which reads
@@ -56,12 +61,17 @@ export default function HomePage() {
       : [];
   });
 
-  const picks = potdWindow(problems, today, POTD_DAYS).map((problem) => ({
-    id: problem.id,
-    points: problem.points,
-    band: problem.band,
-    statement: previewText(problem.statement),
-    skillName: getSkill(problem.skills.primary)?.name ?? null,
+  // Problems with a figure are left out of the daily pool: drawing one on the home page would
+  // ship the whole figure registry to every visitor. They are 3% of the bank, all still in
+  // practice and the question bank.
+  const skillName = (id: string): string | undefined => getSkill(id)?.name;
+  const picks = potdWindow(
+    problems.filter((problem) => problem.figure === null),
+    today,
+    POTD_DAYS,
+  ).map((problem) => ({
+    item: kaPracticeItem(problem, skillName),
+    skillName: skillName(problem.skills.primary) ?? null,
   }));
 
   return (
@@ -81,7 +91,8 @@ export default function HomePage() {
           name: strand.name,
           skillCount: strand.skillCount,
         }))}
-        potd={<ProblemOfTheDay picks={picks} startDay={today} />}
+        potd={picks}
+        potdStartDay={today}
         stats={{
           problems: stats.problems,
           skills: stats.skills,

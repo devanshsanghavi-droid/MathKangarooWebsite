@@ -3,17 +3,19 @@
 import { useEffect, useRef } from 'react';
 import type { MasteryState } from '@/lib/mastery';
 import type { Points } from '@/lib/schemas';
-import type { StatusBucket } from '@/lib/progress-summary';
-import { bucketOf } from '@/lib/progress-summary';
 import {
+  EMPTY_FILTERS,
   facetCount,
+  hasStatus,
   groupCounts,
   isFiltered,
   sectionCount,
   STATUS_OPTIONS,
   toggleValue,
   type BankFilters,
+  type BankMarks,
   type BankRow,
+  type BankStatus,
   type BankTaxonomy,
 } from '@/lib/bank-filter';
 import {
@@ -31,7 +33,7 @@ const DOTS: Record<Points, string> = { 3: '●○○', 4: '●●○', 5: '●�
 /**
  * The bank's left column (docs/06 §4): level (none for SAT and ACT), then one accordion per
  * strand (AMC area, SAT or ACT domain) with a checkbox per skill (or topic) showing solved / total, then difficulty, problem types (AMC),
- * status and "Has a figure".
+ * status (with Saved and Missed, docs/08 item 10) and "Has a figure".
  *
  * Every control is a button or a checkbox, never a link, so a crawler finds no filter URLs
  * (docs/06 §3). The parent mirrors the state into the address bar with replaceState.
@@ -45,6 +47,7 @@ export function BankFilterPanel({
   idPrefix,
   showHeading = true,
   pending = false,
+  marks = {},
 }: {
   taxonomy: BankTaxonomy;
   filters: BankFilters;
@@ -62,6 +65,8 @@ export function BankFilterPanel({
    * whole areas missing). While pending, every group is listed and no number is shown.
    */
   pending?: boolean;
+  /** Saved and missed sets and search text, for the Saved / Missed counts and the query. */
+  marks?: BankMarks;
 }) {
   const set = (patch: Partial<BankFilters>) => onChange({ ...filters, ...patch, page: 1 });
   const counts = groupCounts(rows, filters, statuses);
@@ -72,14 +77,16 @@ export function BankFilterPanel({
     'points',
     (row, points: Points) => row.points === points,
     taxonomy.difficulty.options.map((option) => option.points),
+    marks,
   );
   const statusCounts = facetCount(
     rows,
     filters,
     statuses,
     'status',
-    (row, bucket: StatusBucket) => bucketOf(statuses.get(row.id) ?? 'unseen') === bucket,
+    (row, status: BankStatus) => hasStatus(row, status, statuses, marks),
     STATUS_OPTIONS.map((option) => option.value),
+    marks,
   );
   const tagCounts = taxonomy.tags
     ? facetCount(
@@ -89,33 +96,26 @@ export function BankFilterPanel({
         'tags',
         (row, tag: string) => row.tags.includes(tag),
         taxonomy.tags.items.map((tag) => tag.id),
+        marks,
       )
     : new Map<string, number>();
   const figureCount =
-    facetCount(rows, filters, statuses, 'figure', (row, _: true) => row.hasFigure, [true]).get(
-      true,
-    ) ?? 0;
+    facetCount(
+      rows,
+      filters,
+      statuses,
+      'figure',
+      (row, _: true) => row.hasFigure,
+      [true],
+      marks,
+    ).get(true) ?? 0;
 
   return (
     <div className="ui grid grid-cols-1 gap-5">
       <div className="flex min-h-9 items-center justify-between gap-2">
         {showHeading ? <h2 className="m-0 text-base font-semibold text-ink">Filters</h2> : <span />}
         {isFiltered(filters) ? (
-          <Button
-            size="sm"
-            variant="ghost"
-            onClick={() =>
-              onChange({
-                level: 'all',
-                groups: [],
-                tags: [],
-                points: [],
-                status: [],
-                figure: false,
-                page: 1,
-              })
-            }
-          >
+          <Button size="sm" variant="ghost" onClick={() => onChange(EMPTY_FILTERS)}>
             Clear all
           </Button>
         ) : null}

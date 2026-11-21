@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { MAX_ATTEMPTS_PER_SKILL, type ProgressFile } from '../local-progress';
+import { MAX_ATTEMPTS_PER_SKILL, MAX_SAVED, type ProgressFile } from '../local-progress';
 import { MAX_SYNC_BYTES, mergeProgress, parseUpload, sameProgress } from '../progress-sync';
 import { hasSignedInHint } from '../signed-in-hint';
 
@@ -67,5 +67,53 @@ describe('hasSignedInHint', () => {
     expect(hasSignedInHint('ka_signed_in=0')).toBe(false);
     expect(hasSignedInHint('xka_signed_in=1')).toBe(false);
     expect(hasSignedInHint('')).toBe(false);
+  });
+});
+
+describe('mergeProgress: timing and saved questions (docs/08 items 9 and 10)', () => {
+  it('keeps valid ms and mode, and drops invalid ones', () => {
+    const a = file({ S1: [{ ...attempt('KA-0001', '2026-11-01'), ms: 3000, mode: 'practice' }] });
+    const b = file({
+      S1: [{ ...attempt('KA-0002', '2026-11-02'), ms: -4, mode: 'nope' } as never],
+    });
+    const merged = mergeProgress(a, b);
+    expect(merged.attempts.S1?.[0]).toMatchObject({ ms: 3000, mode: 'practice' });
+    expect(merged.attempts.S1?.[1]).not.toHaveProperty('ms');
+    expect(merged.attempts.S1?.[1]).not.toHaveProperty('mode');
+  });
+
+  it('prefers the timed copy of the same attempt, whichever side has it', () => {
+    const plain = file({ S1: [attempt('KA-0001', '2026-11-01')] });
+    const timed = file({ S1: [{ ...attempt('KA-0001', '2026-11-01'), ms: 9000, mode: 'test' }] });
+    for (const merged of [mergeProgress(plain, timed), mergeProgress(timed, plain)]) {
+      expect(merged.attempts.S1).toHaveLength(1);
+      expect(merged.attempts.S1?.[0]).toMatchObject({ ms: 9000, mode: 'test' });
+    }
+  });
+
+  it('unions saved ids, dedupes, validates, and leaves the key out when empty', () => {
+    const a: ProgressFile = { version: 1, attempts: {}, saved: ['KA-0001', 'AM-0002'] };
+    const b: ProgressFile = { version: 1, attempts: {}, saved: ['AM-0002', 'SA-0003', 'evil'] };
+    expect(mergeProgress(a, b).saved).toEqual(['KA-0001', 'AM-0002', 'SA-0003']);
+    expect(mergeProgress(file({}), file({}))).not.toHaveProperty('saved');
+  });
+
+  it('caps the merged saved list', () => {
+    const ids = (from: number) =>
+      Array.from({ length: 400 }, (_, i) => `KA-${String(from + i).padStart(4, '0')}`);
+    const merged = mergeProgress(
+      { version: 1, attempts: {}, saved: ids(0) },
+      { version: 1, attempts: {}, saved: ids(400) },
+    );
+    expect(merged.saved).toHaveLength(MAX_SAVED);
+  });
+
+  it('round-trips saved ids and timing through an upload', () => {
+    const upload: ProgressFile = {
+      version: 1,
+      attempts: { S1: [{ ...attempt('KA-0001', '2026-11-01'), ms: 100, mode: 'practice' }] },
+      saved: ['KA-0001'],
+    };
+    expect(parseUpload(JSON.stringify(upload))).toEqual(upload);
   });
 });

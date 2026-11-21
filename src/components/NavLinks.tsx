@@ -2,7 +2,7 @@
 
 import Link from '@/components/AppLink';
 import { usePathname } from 'next/navigation';
-import { isNavItemActive, type NavItem } from '@/lib/site';
+import { activeNavHref, type NavItem } from '@/lib/site';
 import { BetaBadge } from '@/components/ui/Badge';
 
 /** "AMC (Beta)": what a screen reader hears for a nav item, whichever label is on screen. */
@@ -11,30 +11,23 @@ export function navAccessibleName(item: NavItem): string {
 }
 
 /**
- * The top-bar nav (docs/06 §2, docs/07 section 4). Client-side only because it needs the
- * current pathname to mark the active section. The active item carries `aria-current="page"`,
- * a heavier weight and the teal tint, so the state is never colour alone. Between `sm` and
- * `xl` the short labels show; the accessible name is always the full label. An item marked
- * `only: 'wide'` shows from `lg` up and one marked `only: 'compact'` below it (see NavItem).
+ * The top-bar nav (docs/06 §2, docs/08 item 13). Client-side only because it needs the
+ * current pathname to mark the active section. At most one item is active, the one whose
+ * prefix matches the pathname most closely (activeNavHref), and it carries
+ * `aria-current="page"`, a heavier weight and the accent tint, so the state is never colour
+ * alone. Between `sm` and `xl` the short labels show; the accessible name is always the full
+ * label.
  */
 export function NavLinks({ items }: { items: NavItem[] }) {
   const pathname = usePathname() ?? '/';
+  const activeHref = activeNavHref(pathname, items);
 
   return (
     <ul className="m-0 flex list-none items-center gap-0.5 p-0 lg:gap-1">
       {items.map((item) => {
-        const active = isNavItemActive(pathname, item);
+        const active = item.href === activeHref;
         return (
-          <li
-            key={item.href}
-            className={
-              item.only === 'wide'
-                ? 'hidden lg:block'
-                : item.only === 'compact'
-                  ? 'lg:hidden'
-                  : undefined
-            }
-          >
+          <li key={item.href}>
             <Link
               href={item.href}
               aria-current={active ? 'page' : undefined}

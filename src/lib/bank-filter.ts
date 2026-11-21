@@ -7,7 +7,14 @@ import {
   testStatusOf,
   type StatusBucket,
 } from './progress-summary';
-import type { ProgressFile } from './local-progress';
+import {
+  amcAttemptsFor,
+  attemptsFor,
+  savedIds,
+  testAttemptsFor,
+  type ProgressFile,
+} from './local-progress';
+import type { AttemptRecord } from './mastery';
 import type { AmcIndexFile, AmcLookups, KaIndexFile, KaLookups, TestIndexFile } from './bank-data';
 import { amcContestLabel, isTestBank, kaLevelLabel, type PracticeBank } from './practice-item';
 import {
@@ -90,10 +97,20 @@ export interface BankTaxonomy {
   params: { group: string; tag: string };
 }
 
-export const STATUS_OPTIONS: ReadonlyArray<{ value: StatusBucket; label: string }> = [
+/**
+ * The status filter's values: the three progress buckets, plus (docs/08 item 10) `saved`, the
+ * questions the student saved, and `missed`, the questions whose LAST attempt was wrong. A
+ * question answered wrong and later right is not missed any more; one answered right and later
+ * wrong is. Ticking several values matches a question that fits any of them.
+ */
+export type BankStatus = StatusBucket | 'saved' | 'missed';
+
+export const STATUS_OPTIONS: ReadonlyArray<{ value: BankStatus; label: string }> = [
   { value: 'todo', label: 'To do' },
   { value: 'attempted', label: 'Attempted' },
   { value: 'solved', label: 'Solved' },
+  { value: 'saved', label: 'Saved' },
+  { value: 'missed', label: 'Missed' },
 ];
 
 export interface BankFilters {
@@ -102,8 +119,10 @@ export interface BankFilters {
   groups: string[];
   tags: string[];
   points: Points[];
-  status: StatusBucket[];
+  status: BankStatus[];
   figure: boolean;
+  /** Keyword search (docs/08 item 11). Empty for none. */
+  query: string;
   page: number;
 }
 
@@ -114,8 +133,23 @@ export const EMPTY_FILTERS: BankFilters = {
   points: [],
   status: [],
   figure: false,
+  query: '',
   page: 1,
 };
+
+/**
+ * What a row is matched on besides its own fields: the saved and missed sets (from the progress
+ * file) and each row's search text. Every field is optional, so a caller with no progress, and
+ * the AMC type pages that never filter, pass nothing.
+ */
+export interface BankMarks {
+  saved?: ReadonlySet<string>;
+  missed?: ReadonlySet<string>;
+  /** id -> searchText(...) output. Rows missing from it are searched on statement and name. */
+  text?: ReadonlyMap<string, string>;
+}
+
+const NO_MARKS: BankMarks = {};
 
 /* -------------------------------------------------------------------------- */
 /* Status                                                                      */
@@ -136,17 +170,111 @@ export function statusMap(
   return new Map(rows.map((row) => [row.id, rowState(bank, file, row)]));
 }
 
+/** One row's attempts, oldest first, read the way its bank stores them. */
+export function rowAttempts(
+  bank: PracticeBank,
+  file: ProgressFile,
+  row: Pick<BankRow, 'id' | 'groups'>,
+): AttemptRecord[] {
+  if (bank === 'amc') return [...amcAttemptsFor(file, row.id)];
+  if (isTestBank(bank)) return [...testAttemptsFor(file, row.id)];
+  // A Kangaroo attempt is stored once per skill the problem tags: deduplicate on the time.
+  const seen = new Set<string>();
+  return row.groups
+    .flatMap((skillId) => attemptsFor(file, skillId))
+    .filter((attempt) => {
+      if (attempt.problemId !== row.id || seen.has(attempt.at)) return false;
+      seen.add(attempt.at);
+      return true;
+    })
+    .sort((a, b) => a.at.localeCompare(b.at));
+}
+
+/** Ids whose most recent attempt was wrong (the "Missed" status, docs/08 item 10). */
+export function missedSet(
+  bank: PracticeBank,
+  file: ProgressFile,
+  rows: readonly BankRow[],
+): Set<string> {
+  const missed = new Set<string>();
+  for (const row of rows) {
+    const attempts = rowAttempts(bank, file, row);
+    const last = attempts[attempts.length - 1];
+    if (last && !last.correct) missed.add(row.id);
+  }
+  return missed;
+}
+
+/** The saved ids, as a set. */
+export function savedSet(file: ProgressFile): Set<string> {
+  return new Set(savedIds(file));
+}
+
+/* -------------------------------------------------------------------------- */
+/* Keyword search (docs/08 item 11)                                            */
+/* -------------------------------------------------------------------------- */
+
+/** Search keys stay short; nothing longer is a keyword. */
+export const BANK_QUERY_MAX = 80;
+
+/**
+ * Lower-case words only: KaTeX markup (`$`, `\frac`, braces) and punctuation become spaces,
+ * so "frac" or "triangle" match what a student reads, not the source.
+ */
+export function normalizeSearch(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/\\[a-z]+/g, ' ')
+    .replace(/[^a-z0-9.]+/g, ' ')
+    .trim();
+}
+
+/**
+ * The text one row is searched on: its id, its statement preview (the static index's first
+ * 220 characters, bank-data.ts), and the names of every skill or topic and tag it carries.
+ */
+export function searchText(row: BankRow, names: ReadonlyMap<string, string>): string {
+  return normalizeSearch(
+    [
+      row.id,
+      row.statement,
+      row.primaryName ?? '',
+      ...row.groups.map((group) => names.get(group) ?? ''),
+      ...row.tags.map((tag) => names.get(tag) ?? ''),
+    ].join(' '),
+  );
+}
+
+/** Every word of the query must appear somewhere in the row's text. */
+export function matchesQuery(text: string, query: string): boolean {
+  const words = normalizeSearch(query).split(' ').filter(Boolean);
+  return words.every((word) => text.includes(word));
+}
+
 /* -------------------------------------------------------------------------- */
 /* Matching and counting                                                       */
 /* -------------------------------------------------------------------------- */
 
-type Facet = 'level' | 'groups' | 'tags' | 'points' | 'status' | 'figure';
+type Facet = 'level' | 'groups' | 'tags' | 'points' | 'status' | 'figure' | 'query';
+
+/** Does a row fit one status value? */
+export function hasStatus(
+  row: BankRow,
+  status: BankStatus,
+  statuses: ReadonlyMap<string, MasteryState>,
+  marks: BankMarks = NO_MARKS,
+): boolean {
+  if (status === 'saved') return marks.saved?.has(row.id) ?? false;
+  if (status === 'missed') return marks.missed?.has(row.id) ?? false;
+  return bucketOf(statuses.get(row.id) ?? 'unseen') === status;
+}
 
 function passes(
   row: BankRow,
   filters: BankFilters,
   statuses: ReadonlyMap<string, MasteryState>,
   skip: ReadonlySet<Facet> = new Set(),
+  marks: BankMarks = NO_MARKS,
 ): boolean {
   if (!skip.has('level') && filters.level !== 'all' && !row.levels.includes(filters.level))
     return false;
@@ -159,10 +287,15 @@ function passes(
   if (!skip.has('points') && filters.points.length > 0 && !filters.points.includes(row.points))
     return false;
   if (!skip.has('status') && filters.status.length > 0) {
-    const bucket = bucketOf(statuses.get(row.id) ?? 'unseen');
-    if (!filters.status.includes(bucket)) return false;
+    if (!filters.status.some((status) => hasStatus(row, status, statuses, marks))) return false;
   }
   if (!skip.has('figure') && filters.figure && !row.hasFigure) return false;
+  if (!skip.has('query') && filters.query.trim() !== '') {
+    const text =
+      marks.text?.get(row.id) ??
+      normalizeSearch(`${row.id} ${row.statement} ${row.primaryName ?? ''}`);
+    if (!matchesQuery(text, filters.query)) return false;
+  }
   return true;
 }
 
@@ -170,8 +303,34 @@ export function filterRows(
   rows: readonly BankRow[],
   filters: BankFilters,
   statuses: ReadonlyMap<string, MasteryState>,
+  marks: BankMarks = NO_MARKS,
 ): BankRow[] {
-  return rows.filter((row) => passes(row, filters, statuses));
+  return rows.filter((row) => passes(row, filters, statuses, new Set(), marks));
+}
+
+/**
+ * Rows matching every filter except status: the pool "Practice missed" and "Practice saved"
+ * draw from, so a level or a skill the student picked still applies.
+ */
+export function rowsIgnoringStatus(
+  rows: readonly BankRow[],
+  filters: BankFilters,
+  statuses: ReadonlyMap<string, MasteryState>,
+  marks: BankMarks = NO_MARKS,
+): BankRow[] {
+  return rows.filter((row) => passes(row, filters, statuses, new Set(['status']), marks));
+}
+
+/** The ids in `rows` that are in `wanted`, in list order, cut to `max`. */
+export function idsIn(
+  rows: readonly BankRow[],
+  wanted: ReadonlySet<string>,
+  max: number,
+): string[] {
+  return rows
+    .filter((row) => wanted.has(row.id))
+    .slice(0, max)
+    .map((row) => row.id);
 }
 
 export interface SolvedCount {
@@ -230,8 +389,9 @@ export function facetCount<T>(
   facet: Facet,
   test: (row: BankRow, value: T) => boolean,
   values: readonly T[],
+  marks: BankMarks = NO_MARKS,
 ): Map<T, number> {
-  const base = rows.filter((row) => passes(row, filters, statuses, new Set([facet])));
+  const base = rows.filter((row) => passes(row, filters, statuses, new Set([facet]), marks));
   return new Map(values.map((value) => [value, base.filter((row) => test(row, value)).length]));
 }
 
@@ -256,7 +416,8 @@ export function isFiltered(filters: BankFilters): boolean {
     filters.tags.length > 0 ||
     filters.points.length > 0 ||
     filters.status.length > 0 ||
-    filters.figure
+    filters.figure ||
+    filters.query.trim() !== ''
   );
 }
 
@@ -304,7 +465,7 @@ export function randomUnsolved(
 /* URL mirroring                                                               */
 /* -------------------------------------------------------------------------- */
 
-const STATUS_VALUES = new Set<string>(['todo', 'attempted', 'solved']);
+const STATUS_VALUES = new Set<string>(STATUS_OPTIONS.map((option) => option.value));
 
 function listParam(params: URLSearchParams, key: string): string[] {
   return params
@@ -347,11 +508,10 @@ export function parseBankFilters(search: string, taxonomy: BankTaxonomy): BankFi
       ),
     ],
     status: [
-      ...new Set(
-        listParam(params, 'status').filter((s): s is StatusBucket => STATUS_VALUES.has(s)),
-      ),
+      ...new Set(listParam(params, 'status').filter((s): s is BankStatus => STATUS_VALUES.has(s))),
     ],
     figure: params.get('figure') === '1',
+    query: (params.get('q') ?? '').trim().slice(0, BANK_QUERY_MAX),
     page: Number.isInteger(page) && page > 0 ? page : 1,
   };
 }
@@ -373,6 +533,7 @@ export function bankFiltersToSearch(filters: BankFilters, taxonomy: BankTaxonomy
     );
   }
   if (filters.figure) params.set('figure', '1');
+  if (filters.query.trim()) params.set('q', filters.query.trim().slice(0, BANK_QUERY_MAX));
   if (filters.page > 1) params.set('page', String(filters.page));
   const query = params.toString().replace(/%2C/g, ',');
   return query ? `?${query}` : '';

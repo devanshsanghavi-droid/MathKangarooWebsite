@@ -7,11 +7,11 @@
 
 export const SITE = {
   name: 'Kangaroo Atlas',
-  tagline: 'Math Kangaroo preparation organised by skill, not by year.',
+  tagline: 'Practice for every math exam in one place.',
   description:
-    'A free, open platform for Math Kangaroo preparation. ~91 named skills in a prerequisite ' +
-    'graph, an original problem bank, and an explanation written for the specific mistake you ' +
-    'made. No account required, nothing paywalled.',
+    'Free practice for Math Kangaroo, AMC 8, AMC 10, AMC 12, SAT Math and ACT Math: original ' +
+    'questions with an explanation written for the specific mistake you made, timed mock tests ' +
+    'in the real format, and progress you can see. No account required, nothing paywalled.',
   /**
    * The live origin. Every canonical URL, the sitemap, robots.txt and the JSON-LD are built
    * from it, so it must be a host that actually serves the site: when it pointed at an unused
@@ -32,6 +32,18 @@ export const SITE = {
  */
 export const DISCLAIMER =
   'Independent project. Not affiliated with or endorsed by Math Kangaroo in USA, NFP.';
+
+/**
+ * docs/08 item 12: every trademark owner named once, site-wide, in the footer under
+ * DISCLAIMER (which stays as written). Area-specific notices below may also appear.
+ */
+export const TRADEMARK_NOTICE =
+  'Math Kangaroo is a trademark of Math Kangaroo in USA, NFP. AMC 8, AMC 10, AMC 12 and AIME ' +
+  'are trademarks of the Mathematical Association of America (MAA). SAT and PSAT are ' +
+  'trademarks registered by the College Board. ACT is a registered trademark of ACT ' +
+  'Education Corp. MATHCOUNTS is a registered trademark of the MATHCOUNTS Foundation. None of ' +
+  'these organizations is affiliated with, or endorses, this site. All problems here are ' +
+  'original.';
 
 /**
  * The MAA notice docs/06-V3-REDESIGN.md §2 requires on every page under /amc, rendered by
@@ -62,56 +74,80 @@ export interface NavItem {
   beta?: boolean;
   /**
    * Other route prefixes that count as inside this section for highlighting, e.g. Practice
-   * (`/`) also owns `/practice/*`, and the Question bank owns `/problem/*`.
+   * (`/exams`) also owns `/amc` and `/practice/*`, and the Question bank owns `/problem/*`.
+   * Where two items' prefixes overlap, the longer match wins (activeNavHref).
    */
   also?: readonly string[];
-  /**
-   * Top bar only. `wide` items show from `lg` up, `compact` items only below it: Past papers,
-   * AMC, SAT and ACT each get their own link on a wide screen, and fold into one "Exams" link
-   * (the /exams hub, which links all four) where eight links would not fit. Hidden with
-   * display:none, so a screen reader never meets the copy that is not on screen.
-   */
-  only?: 'wide' | 'compact';
 }
 
-/** Every exam area, for the Exams entry's highlighting. */
+/** Every exam area: the catalog, its exam pages and the three area homes. */
 export const EXAM_AREAS: readonly string[] = ['/exams', '/amc', '/sat', '/act'];
 
+/** Every question bank and single-question page, so "Bank" stays lit inside any of them. */
+export const BANK_ROUTES: readonly string[] = [
+  '/problem',
+  '/amc/problems',
+  '/amc/problem',
+  '/sat/problems',
+  '/sat/problem',
+  '/act/problems',
+  '/act/problem',
+];
+
+/** The tests hub and every mock and section test, so "Tests" stays lit inside a sitting. */
+export const TEST_ROUTES: readonly string[] = [
+  '/practice/mock',
+  '/practice/section',
+  '/amc/mock',
+  '/amc/section',
+  '/sat/mock',
+  '/sat/section',
+  '/act/mock',
+  '/act/section',
+];
+
+/** The tests hub (docs/08 item 13): every exam's mock and section tests on one page. */
+export const TESTS_HUB = '/exams/tests';
+
 /**
- * docs/06-V3-REDESIGN.md §2, extended by docs/07 section 4: the top bar. On a wide screen it
- * reads Practice, Question bank, Skill Atlas, Past papers, AMC, SAT, ACT, Progress. Below `lg`
- * Past papers and the three exam links fold into one "Exams" link to the /exams hub, so the
- * row is no wider than the old five-item one and still fits at 640px (a 1280px window at the
- * 200% zoom CLAUDE.md requires). Measured in Figtree at 15px: about 570px of 592 at 640px,
- * 950px of 976 at 1024px, and 1110px of 1152 with the full labels from `xl`.
+ * docs/08 item 13, top bar: Practice (the exam catalog), Question bank, Skill Atlas, Tests,
+ * Progress. The same destinations as the mobile tab bar, plus the Atlas, which has the room
+ * here; the wordmark is the way home. The per-exam AMC, SAT and ACT links and Past papers are
+ * one click away on the catalog. Five items, the same count and about the same width as the
+ * five-item compact row docs/07 measured at 640px (a 1280px window at the 200% zoom CLAUDE.md
+ * requires), and shorter than it with the full labels from `xl`.
+ *
+ * Highlighting is by the longest matching prefix (activeNavHref), so /amc/mock lights Tests
+ * and /amc/problems lights the bank, while /amc itself lights Practice.
  */
 export const PRIMARY_NAV: NavItem[] = [
-  { href: '/', label: 'Practice', short: 'Practice', also: ['/practice'] },
-  { href: '/problems', label: 'Question bank', short: 'Bank', also: ['/problem'] },
-  { href: '/atlas', label: 'Skill Atlas', short: 'Atlas', also: ['/skill'] },
-  { href: '/papers', label: 'Past papers', short: 'Papers', only: 'wide' },
   {
     href: '/exams',
-    label: 'Exams',
-    short: 'Exams',
-    also: [...EXAM_AREAS, '/papers'],
-    only: 'compact',
+    label: 'Practice',
+    short: 'Practice',
+    also: [...EXAM_AREAS, '/practice', '/papers'],
   },
-  { href: '/amc', label: 'AMC', short: 'AMC', beta: true, only: 'wide' },
-  { href: '/sat', label: 'SAT', short: 'SAT', only: 'wide' },
-  { href: '/act', label: 'ACT', short: 'ACT', only: 'wide' },
+  { href: '/problems', label: 'Question bank', short: 'Bank', also: BANK_ROUTES },
+  { href: '/atlas', label: 'Skill Atlas', short: 'Atlas', also: ['/skill'] },
+  { href: TESTS_HUB, label: 'Tests', short: 'Tests', also: TEST_ROUTES },
   { href: '/progress', label: 'Progress', short: 'Progress' },
 ];
 
 /**
- * The mobile bottom bar keeps five tabs (docs/07 section 4): the exams sit behind one "Exams"
- * tab, the /exams hub, which also links the Kangaroo past papers.
+ * docs/08 item 13, the mobile bottom bar: Home, Practice, Bank, Tests, Progress. Learn (the
+ * Atlas, formula sheets) is reached from Practice and the exam pages, so the Atlas and skill
+ * pages light Practice. Five tabs of at most "Progress" width fit 360px: 72px each.
  */
 export const MOBILE_NAV: NavItem[] = [
-  { href: '/', label: 'Practice', short: 'Practice', also: ['/practice'] },
-  { href: '/problems', label: 'Question bank', short: 'Bank', also: ['/problem'] },
-  { href: '/atlas', label: 'Skill Atlas', short: 'Atlas', also: ['/skill'] },
-  { href: '/exams', label: 'Exams', short: 'Exams', also: [...EXAM_AREAS, '/papers'] },
+  { href: '/', label: 'Home', short: 'Home' },
+  {
+    href: '/exams',
+    label: 'Practice',
+    short: 'Practice',
+    also: [...EXAM_AREAS, '/practice', '/papers', '/atlas', '/skill'],
+  },
+  { href: '/problems', label: 'Question bank', short: 'Bank', also: BANK_ROUTES },
+  { href: TESTS_HUB, label: 'Tests', short: 'Tests', also: TEST_ROUTES },
   { href: '/progress', label: 'Progress', short: 'Progress' },
 ];
 
@@ -154,4 +190,34 @@ export function isActivePath(pathname: string, href: string): boolean {
 export function isNavItemActive(pathname: string, item: NavItem): boolean {
   if (isActivePath(pathname, item.href)) return true;
   return (item.also ?? []).some((prefix) => isActivePath(pathname, prefix));
+}
+
+/**
+ * How closely `pathname` matches this item: the length of its longest matching prefix (href
+ * or `also`), or -1 for no match. The home item ('/') matches only '/' itself.
+ */
+export function navMatchLength(pathname: string, item: NavItem): number {
+  let best = -1;
+  for (const prefix of [item.href, ...(item.also ?? [])]) {
+    if (isActivePath(pathname, prefix)) best = Math.max(best, prefix.length);
+  }
+  return best;
+}
+
+/**
+ * The one item of a nav that `pathname` belongs to: the item with the longest matching prefix,
+ * the earlier item on a tie, or null when none matches. Prefixes overlap on purpose (/amc is
+ * Practice, /amc/mock is Tests), and the most specific one wins.
+ */
+export function activeNavHref(pathname: string, items: readonly NavItem[]): string | null {
+  let best: NavItem | null = null;
+  let bestLength = -1;
+  for (const item of items) {
+    const length = navMatchLength(pathname, item);
+    if (length > bestLength) {
+      best = item;
+      bestLength = length;
+    }
+  }
+  return best?.href ?? null;
 }

@@ -116,6 +116,24 @@
   --amber-500: #f59e0b;
   --amber-700: #8a5300;
 
+  /* --- exam colours (docs/08 item 4) --------------------------------------- */
+  /*
+   * One hue per exam, for chips, cards, grade-map bars and chart lines. Each is BOTH a fill
+   * and a line: --on-exam text clears 4.5:1 on every one, and every one clears 4.5:1 on
+   * --surface and --ground, so it can also be a label or a 3:1 chart line. Light is the dark
+   * end of each hue (white text on it), dark is the pale end (near-black text on it). Hues:
+   * blue, teal, violet, pink, orange, indigo, plus a slate for "coming soon". An exam colour
+   * is never the only carrier: chips and legends always print the exam's name.
+   */
+  --exam-ka: #0369a1;
+  --exam-amc8: #0f766e;
+  --exam-amc10: #7e22ce;
+  --exam-amc12: #be185d;
+  --exam-sat: #c2410c;
+  --exam-act: #4338ca;
+  --exam-soon: #5b6472;
+  --on-exam: #ffffff; /* text and icons on a solid --exam-* fill */
+
   /* --- RESERVED - feedback only. See the rule at the top of this file. ------ */
   --correct-700: #146c43; /* "Correct" text            5.7:1 on --correct-100 */
   --correct-600: #1a8a55; /* solid correct fill */
@@ -270,6 +288,14 @@
     --amber-100: #3a2a08;
     --amber-500: #f5a524;
     --amber-700: #fcd27a;
+    --exam-ka: #7cc4fa;
+    --exam-amc8: #5eead4;
+    --exam-amc10: #c4a1ff;
+    --exam-amc12: #f9a8d4;
+    --exam-sat: #fdba74;
+    --exam-act: #a5b4fc;
+    --exam-soon: #9aa3af;
+    --on-exam: #12151a;
 
     --correct-700: #6fd39b;
     --correct-600: #1a8a55;
@@ -345,6 +371,14 @@
   --amber-100: #3a2a08;
   --amber-500: #f5a524;
   --amber-700: #fcd27a;
+  --exam-ka: #7cc4fa;
+  --exam-amc8: #5eead4;
+  --exam-amc10: #c4a1ff;
+  --exam-amc12: #f9a8d4;
+  --exam-sat: #fdba74;
+  --exam-act: #a5b4fc;
+  --exam-soon: #9aa3af;
+  --on-exam: #12151a;
 
   --correct-700: #6fd39b;
   --correct-600: #1a8a55;
@@ -427,6 +461,14 @@
     --amber-100: #ffffff;
     --amber-500: #000000;
     --amber-700: #000000;
+    --exam-ka: #000000;
+    --exam-amc8: #000000;
+    --exam-amc10: #000000;
+    --exam-amc12: #000000;
+    --exam-sat: #000000;
+    --exam-act: #000000;
+    --exam-soon: #000000;
+    --on-exam: #ffffff;
 
     --correct-700: #000000;
     --correct-600: #000000;

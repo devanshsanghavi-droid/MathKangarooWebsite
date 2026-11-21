@@ -4,19 +4,25 @@ import { useState, type ReactNode } from 'react';
 import Link from '@/components/AppLink';
 import { BANDS, type Band } from '@/lib/schemas';
 import { writeLevel } from '@/lib/level-pref';
+import { examById, liveExams, soonExams, type Exam } from '@/lib/exams';
 import {
   pickUnsolved,
   practiceSetHref,
   type HomeProblem,
   type HomeSummary,
 } from '@/lib/practice-home';
-import { Button, ButtonLink, cx } from '@/components/ui';
+import { Badge, Button, ButtonLink, cx } from '@/components/ui';
+import { ExamChips } from './ExamChips';
 
 /**
- * The first-visit home (docs/06 §4, revised 2026-11-17 after owner feedback that the old home
- * was "too clustered"). One idea per section, top to bottom: what this is, how it works, pick
- * your level, then a couple of extras. The student-progress panels only appear once there is
- * progress to show (see PracticeHome).
+ * The first-visit home (docs/08 item 5, building on docs/06 §4). The owner rejected a cluttered
+ * home before, so each section carries one idea and only the hero raises its voice:
+ *
+ *   hero (headline, two buttons, exam chips, puzzle of the day) - grade map - start practicing
+ *   (exam cards, then the Kangaroo level step) - how it works - progress preview - more
+ *   subjects coming.
+ *
+ * The student-progress panels only appear once there is progress to show (see PracticeHome).
  */
 
 export interface SiteStats {
@@ -25,7 +31,7 @@ export interface SiteStats {
   misconceptions: number;
 }
 
-/** The four decorative tints, in the order the level tiles cycle through them. */
+/** The decorative tints, in the order the level tiles cycle through them. */
 type Tint = 'sky' | 'violet' | 'rose' | 'mint' | 'amber';
 
 const TINT: Record<Tint, { bg: string; fg: string; ring: string }> = {
@@ -38,18 +44,48 @@ const TINT: Record<Tint, { bg: string; fg: string; ring: string }> = {
 
 const LEVEL_TINTS: readonly Tint[] = ['sky', 'mint', 'amber', 'rose', 'violet', 'sky'];
 
+/** Where "Explore a demo student" goes: /progress renders sample data, never stored (docs/08 item 7). */
+export const DEMO_HREF = '/progress?demo=1';
+
+/** Section headings share one size and spacing so no section shouts louder than another. */
+function SectionHeading({
+  id,
+  eyebrow,
+  title,
+  lede,
+}: {
+  id: string;
+  eyebrow?: string;
+  title: string;
+  lede?: string;
+}) {
+  return (
+    <div className="text-center">
+      {eyebrow ? (
+        <p className="ui m-0 text-xs font-semibold tracking-wide text-accent-700 uppercase">
+          {eyebrow}
+        </p>
+      ) : null}
+      <h2 id={id} className={cx('mb-0 text-2xl sm:text-3xl', eyebrow ? 'mt-2' : 'mt-0')}>
+        {title}
+      </h2>
+      {lede ? <p className="mx-auto mt-2 mb-0 max-w-lg text-base text-ink-2">{lede}</p> : null}
+    </div>
+  );
+}
+
 /* -------------------------------------------------------------------------- */
 /* Hero                                                                        */
 /* -------------------------------------------------------------------------- */
 
-export function WelcomeHero({ stats }: { stats: SiteStats }) {
+export function WelcomeHero({ stats, potd }: { stats: SiteStats; potd: ReactNode }) {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="hero-glow overflow-hidden rounded-[24px] border border-rule px-5 py-10 sm:px-10 sm:py-14"
+      className="hero-glow overflow-hidden rounded-[24px] border border-rule px-4 py-10 sm:px-10 sm:py-14"
     >
-      <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
-        <div>
+      <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+        <div className="lg:pt-4">
           <p className="ui m-0 inline-flex items-center gap-2 rounded-pill border border-rule bg-surface px-3 py-1 text-xs font-semibold text-accent-700">
             <span aria-hidden="true">✦</span> Free forever. No account needed.
           </p>
@@ -57,27 +93,28 @@ export function WelcomeHero({ stats }: { stats: SiteStats }) {
             id="hero-heading"
             className="mt-5 mb-0 max-w-xl text-3xl leading-tight sm:text-4xl sm:leading-[1.1]"
           >
-            Get ready for Math Kangaroo, one skill at a time.
+            Practice for every math exam in one place.
           </h1>
           <p className="mt-5 mb-0 max-w-lg text-lg text-ink-2">
-            Short practice sets that explain every mistake you make. Pick your level and start in
-            seconds.
+            Original questions that explain every mistake, timed mock tests in the real format, and
+            progress you can see.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink href="#pick-level" variant="primary" size="lg">
+            <ButtonLink href="#start" variant="primary" size="lg">
               Start practicing
             </ButtonLink>
-            <ButtonLink href="#how" variant="secondary" size="lg">
-              How it works
+            <ButtonLink href={DEMO_HREF} variant="secondary" size="lg">
+              Explore a demo student
             </ButtonLink>
           </div>
-          <dl className="ui m-0 mt-10 flex flex-wrap gap-x-8 gap-y-4">
+          <ExamChips className="mt-8" label="Exam shortcuts" />
+          <dl className="ui m-0 mt-8 flex flex-wrap gap-x-8 gap-y-4">
             <HeroStat value={stats.problems} label="original problems" />
             <HeroStat value={stats.skills} label="skills" />
             <HeroStat value={stats.misconceptions} label="mistakes explained" />
           </dl>
         </div>
-        <SampleCard />
+        <div className="grid">{potd}</div>
       </div>
     </section>
   );
@@ -94,131 +131,78 @@ function HeroStat({ value, label }: { value: number; label: string }) {
   );
 }
 
-/**
- * A picture of the product, not a working problem: a small original question with the wrong
- * answer a student might pick and the explanation they would get. Decorative, so it is hidden
- * from assistive technology; the paragraph beside it already says what it shows. It uses the
- * accent and a decorative tint, never the reserved feedback colours, because nobody here has
- * actually answered anything.
- */
-function SampleCard() {
-  const choices = ['8', '9', '10', '12'];
-  return (
-    <div aria-hidden="true" className="relative mx-auto w-full max-w-md select-none">
-      <div className="rounded-card border border-rule bg-surface p-5 shadow-lg">
-        <p className="ui m-0 flex items-center gap-2 text-2xs text-ink-3">
-          <span className="rounded-pill bg-sky-100 px-2 py-0.5 font-semibold text-sky-700">
-            Level 3-4
-          </span>
-          Counting
-        </p>
-        <p className="mt-3 mb-0 text-base text-ink">
-          A ribbon is cut into 9 equal pieces. How many cuts were made?
-        </p>
-        <ul className="m-0 mt-4 grid list-none grid-cols-2 gap-2 p-0">
-          {choices.map((choice, i) => (
-            <li
-              key={choice}
-              className={cx(
-                'ui flex items-center gap-2 rounded-control border px-3 py-2 text-sm',
-                choice === '9' ? 'border-accent-600 bg-accent-100' : 'border-rule',
-              )}
-            >
-              <span className="mono text-2xs text-ink-3">{String.fromCharCode(65 + i)}</span>
-              {choice}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="relative -mt-3 ml-6 rounded-card border border-rule bg-violet-100 p-4 shadow-lg sm:ml-12">
-        <p className="ui m-0 text-xs font-semibold text-violet-700">Why you might pick 9</p>
-        <p className="mt-1 mb-0 text-sm text-ink">
-          I counted the pieces, not the cuts. The last piece needs no cut after it, so 9 pieces take
-          8 cuts.
-        </p>
-      </div>
-    </div>
-  );
+/* -------------------------------------------------------------------------- */
+/* Start practicing: exam catalog cards                                        */
+/* -------------------------------------------------------------------------- */
+
+function formatLine(exam: Exam): string {
+  if (exam.tracks.length > 0) {
+    return `${exam.tracks.length} levels, ${exam.format.minutes} minutes each`;
+  }
+  return exam.format.summary;
 }
 
-/* -------------------------------------------------------------------------- */
-/* How it works                                                                */
-/* -------------------------------------------------------------------------- */
-
-const STEPS: ReadonlyArray<{ tint: Tint; title: string; body: string; icon: ReactNode }> = [
-  {
-    tint: 'sky',
-    title: 'Pick your level',
-    body: 'Levels follow the contest: 1-2 up to 11-12. Every problem is written for one of them.',
-    icon: <path d="M4 17l8 4 8-4M4 12l8 4 8-4M12 3l8 4-8 4-8-4 8-4z" strokeLinejoin="round" />,
-  },
-  {
-    tint: 'mint',
-    title: 'Practice by skill',
-    body: 'Problems are grouped into small skills, so you know exactly what you are getting better at.',
-    icon: <path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" strokeLinejoin="round" />,
-  },
-  {
-    tint: 'rose',
-    title: 'Learn from each mistake',
-    body: 'Pick a wrong answer and you see the exact slip that leads to it, plus hints and a full solution.',
-    icon: (
-      <path
-        d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"
-        strokeLinejoin="round"
-      />
-    ),
-  },
-];
-
-export function HowItWorks() {
+export function ExamCatalog() {
+  const soon = soonExams();
   return (
-    <section aria-labelledby="how-heading" id="how" className="scroll-mt-24">
-      <div className="text-center">
-        <p className="ui m-0 text-xs font-semibold tracking-wide text-accent-700 uppercase">
-          How it works
-        </p>
-        <h2 id="how-heading" className="mt-2 mb-0 text-2xl sm:text-3xl">
-          Three steps, no sign-up
-        </h2>
-      </div>
-      <ol className="m-0 mt-8 grid list-none gap-4 p-0 md:grid-cols-3">
-        {STEPS.map((step, i) => (
-          <li key={step.title} className="rounded-card border border-rule bg-surface p-6 shadow-xs">
-            <span
-              aria-hidden="true"
+    <section aria-labelledby="start-heading" id="start" className="scroll-mt-24">
+      <SectionHeading
+        id="start-heading"
+        eyebrow="Start practicing"
+        title="Choose your exam"
+        lede="Each exam has its own practice, timed mock tests and question bank."
+      />
+      <ul className="m-0 mt-8 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-3">
+        {liveExams().map((exam) => (
+          <li key={exam.id}>
+            <Link
+              href={exam.routes.page}
               className={cx(
-                'flex h-12 w-12 items-center justify-center rounded-[14px]',
-                TINT[step.tint].bg,
-                TINT[step.tint].fg,
+                'group flex h-full flex-col gap-1 rounded-card border border-rule border-l-4 bg-surface p-4 no-underline shadow-xs transition-shadow hover:shadow-lg motion-reduce:transition-none',
+                exam.classes.border,
               )}
             >
-              <svg
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-              >
-                {step.icon}
-              </svg>
-            </span>
-            <h3 className="mt-4 mb-0 text-lg">
-              <span className="visually-hidden">Step {i + 1}: </span>
-              {step.title}
-            </h3>
-            <p className="mt-2 mb-0 text-sm text-ink-2">{step.body}</p>
+              <span className="flex items-baseline justify-between gap-2">
+                <span className={cx('ui text-base font-semibold', exam.classes.text)}>
+                  {exam.name}
+                </span>
+                <span className="ui text-2xs text-ink-3 tabular-nums">
+                  Grades {exam.grades.min}-{exam.grades.max}
+                </span>
+              </span>
+              <span className="text-sm text-ink-2">{exam.blurb}</span>
+              <span className="ui mt-auto pt-2 text-2xs text-ink-3">{formatLine(exam)}</span>
+            </Link>
           </li>
         ))}
-      </ol>
+      </ul>
+      {soon.length > 0 ? (
+        <p className="ui mx-auto mt-5 mb-0 max-w-2xl text-center text-xs text-ink-3">
+          Coming soon:{' '}
+          {soon.map((exam, i) => {
+            const related = exam.related ? examById(exam.related) : undefined;
+            return (
+              <span key={exam.id}>
+                {i > 0 ? '; ' : ''}
+                <Link href={exam.routes.page} className="text-ink-2">
+                  {exam.shortName}
+                </Link>
+                {related ? ` (try ${related.shortName} meanwhile)` : ''}
+              </span>
+            );
+          })}
+          .
+        </p>
+      ) : null}
+      <p className="ui mt-3 mb-0 text-center text-sm">
+        <Link href="/exams">All exams side by side</Link>
+      </p>
     </section>
   );
 }
 
 /* -------------------------------------------------------------------------- */
-/* Level chooser                                                               */
+/* Math Kangaroo level step                                                    */
 /* -------------------------------------------------------------------------- */
 
 /** How many problems the "Start" button on the level chooser puts in a set. */
@@ -249,14 +233,14 @@ export function LevelChooser({
     <section
       aria-labelledby="pick-level-heading"
       id="pick-level"
-      className="scroll-mt-24 rounded-[24px] border border-rule bg-surface px-5 py-10 shadow-xs sm:px-10"
+      className="scroll-mt-24 rounded-[24px] border border-rule bg-surface px-4 py-10 shadow-xs sm:px-10"
     >
       <div className="text-center">
-        <h2 id="pick-level-heading" className="m-0 text-2xl sm:text-3xl">
-          Which level are you?
+        <h2 id="pick-level-heading" className="m-0 text-xl sm:text-2xl">
+          Math Kangaroo: which level are you?
         </h2>
         <p className="mx-auto mt-2 mb-0 max-w-md text-base text-ink-2">
-          Math Kangaroo levels match school grades. We will remember your choice on this device.
+          Kangaroo levels match school grades. We will remember your choice on this device.
         </p>
       </div>
 
@@ -321,80 +305,198 @@ export function LevelChooser({
         ) : (
           <p className="m-0 text-sm text-ink-3">Choose a level to see where to start.</p>
         )}
+        <p className="ui mt-6 mb-0 text-xs text-ink-3">
+          Also for Kangaroo: <Link href="/atlas">the Skill Atlas</Link> and{' '}
+          <Link href="/papers">past papers matched to skills</Link>.
+        </p>
       </div>
     </section>
   );
 }
 
 /* -------------------------------------------------------------------------- */
-/* Extras                                                                      */
+/* How it works                                                                */
 /* -------------------------------------------------------------------------- */
 
-export function MoreToExplore({ potd }: { potd: ReactNode }) {
+const STEPS: ReadonlyArray<{ tint: Tint; title: string; body: string; icon: ReactNode }> = [
+  {
+    tint: 'sky',
+    title: 'Learn',
+    body: 'Short lessons by skill, and formula sheets for the AMC, before you start.',
+    icon: (
+      <path d="M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4zM20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6z" />
+    ),
+  },
+  {
+    tint: 'mint',
+    title: 'Practice',
+    body: 'Original questions by topic. Pick a wrong answer and see the exact slip behind it.',
+    icon: (
+      <path
+        d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"
+        strokeLinejoin="round"
+      />
+    ),
+  },
+  {
+    tint: 'violet',
+    title: 'Test',
+    body: 'Timed mock and section tests in the real format, with a report on every question.',
+    icon: <path d="M12 8v4l3 2M12 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM9 2h6" />,
+  },
+  {
+    tint: 'rose',
+    title: 'Track',
+    body: 'Scores, accuracy and weak spots over time. Kept in your browser, no account needed.',
+    icon: <path d="M4 20V4M4 20h16M8 16l4-5 3 3 5-6" strokeLinejoin="round" />,
+  },
+];
+
+export function HowItWorks() {
   return (
-    <section aria-labelledby="more-heading">
-      <h2 id="more-heading" className="m-0 text-center text-2xl sm:text-3xl">
-        More to explore
-      </h2>
-      <div className="mt-8 grid gap-4 lg:grid-cols-2">
-        <div className="grid">{potd}</div>
-        <div className="flex flex-col gap-4">
-          <ExploreCard
-            tint="violet"
-            href="/atlas"
-            title="The Skill Atlas"
-            body="See every skill on one map, and which ones lead into which."
-          />
-          <ExploreCard
-            tint="amber"
-            href="/exams"
-            title="Other exams"
-            body="AMC 8, 10 and 12, SAT Math and ACT Math: the same kind of practice, with mock tests."
-          />
-          <ExploreCard
-            tint="rose"
-            href="/papers"
-            title="Past papers"
-            body="Links to the official free papers, with every question matched to its skill."
-          />
+    <section aria-labelledby="how-heading" id="how" className="scroll-mt-24">
+      <SectionHeading
+        id="how-heading"
+        eyebrow="How it works"
+        title="Learn, practice, test, track"
+      />
+      <ol className="m-0 mt-8 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-4">
+        {STEPS.map((step, i) => (
+          <li key={step.title} className="rounded-card border border-rule bg-surface p-5 shadow-xs">
+            <span
+              aria-hidden="true"
+              className={cx(
+                'flex h-11 w-11 items-center justify-center rounded-[14px]',
+                TINT[step.tint].bg,
+                TINT[step.tint].fg,
+              )}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+              >
+                {step.icon}
+              </svg>
+            </span>
+            <h3 className="mt-4 mb-0 text-lg">
+              <span className="visually-hidden">Step {i + 1}: </span>
+              {step.title}
+            </h3>
+            <p className="mt-2 mb-0 text-sm text-ink-2">{step.body}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/* Progress preview                                                            */
+/* -------------------------------------------------------------------------- */
+
+/** Made-up weekly mock scores for the example chart. Labelled as an example on the page. */
+const EXAMPLE_SCORES = [72, 75, 74, 81, 84, 83, 90, 96] as const;
+const CHART = { width: 320, height: 120, pad: 12, min: 60, max: 100 } as const;
+
+function yFor(score: number): number {
+  return (
+    CHART.pad + ((CHART.max - score) / (CHART.max - CHART.min)) * (CHART.height - CHART.pad * 2)
+  );
+}
+
+function xFor(index: number): number {
+  return CHART.pad + index * ((CHART.width - CHART.pad * 2) / (EXAMPLE_SCORES.length - 1));
+}
+
+export function ProgressPreview() {
+  const exam = examById('amc10');
+  const first = EXAMPLE_SCORES[0];
+  const last = EXAMPLE_SCORES[EXAMPLE_SCORES.length - 1] ?? first;
+  const points = EXAMPLE_SCORES.map(
+    (score, i) => `${xFor(i).toFixed(1)},${yFor(score).toFixed(1)}`,
+  ).join(' ');
+  const colour = exam ? `var(${exam.color})` : 'var(--accent-600)';
+  return (
+    <section
+      aria-labelledby="preview-heading"
+      className="grid items-center gap-8 rounded-[24px] border border-rule bg-surface px-4 py-8 shadow-xs sm:px-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]"
+    >
+      <div>
+        <h2 id="preview-heading" className="m-0 text-2xl">
+          See your progress at a glance
+        </h2>
+        <p className="mt-3 mb-0 text-base text-ink-2">
+          Mock scores over time, accuracy by topic and the weak spots to work on next, all from your
+          own practice in this browser.
+        </p>
+        <div className="mt-6">
+          <ButtonLink href={DEMO_HREF} variant="secondary">
+            Explore a demo student
+          </ButtonLink>
         </div>
       </div>
+      <figure className="m-0 rounded-card border border-rule bg-surface-2 p-4">
+        <figcaption className="ui flex flex-wrap items-center justify-between gap-2 text-xs text-ink-2">
+          <span>{exam ? `${exam.shortName} mock scores, 8 weeks` : 'Mock scores, 8 weeks'}</span>
+          <Badge tone="outline">Example data</Badge>
+        </figcaption>
+        <svg
+          role="img"
+          aria-label={`Example chart, not real data: a mock score rising from ${first} to ${last} over eight weeks.`}
+          viewBox={`0 0 ${CHART.width} ${CHART.height}`}
+          className="mt-3 block h-auto w-full"
+        >
+          {[70, 80, 90].map((score) => {
+            const y = yFor(score);
+            return (
+              <line
+                key={score}
+                x1={CHART.pad}
+                x2={CHART.width - CHART.pad}
+                y1={y}
+                y2={y}
+                stroke="var(--grid)"
+                strokeWidth="1"
+              />
+            );
+          })}
+          <polyline
+            points={points}
+            fill="none"
+            stroke={colour}
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <circle cx={xFor(EXAMPLE_SCORES.length - 1)} cy={yFor(last)} r="4.5" fill={colour} />
+        </svg>
+        <p className="ui mt-2 mb-0 text-2xs text-ink-3">
+          Week 1: {first}. Week 8: {last}.
+        </p>
+      </figure>
     </section>
   );
 }
 
-function ExploreCard({
-  tint,
-  href,
-  title,
-  body,
-}: {
-  tint: Tint;
-  href: string;
-  title: string;
-  body: string;
-}) {
+/* -------------------------------------------------------------------------- */
+/* More subjects                                                               */
+/* -------------------------------------------------------------------------- */
+
+export function MoreSubjects() {
   return (
-    <Link
-      href={href}
-      className={cx(
-        'group flex items-center gap-4 rounded-card border border-rule p-5 no-underline transition-shadow hover:shadow-lg motion-reduce:transition-none',
-        TINT[tint].bg,
-      )}
+    <section
+      aria-labelledby="subjects-heading"
+      className="rounded-card border border-dashed border-rule-strong px-4 py-4 text-center"
     >
-      <span className="flex-1">
-        <span className={cx('ui block text-base font-semibold', TINT[tint].fg)}>{title}</span>
-        <span className="mt-1 block text-sm text-ink-2">{body}</span>
-      </span>
-      <span
-        aria-hidden="true"
-        className={cx(
-          'text-xl transition-transform motion-safe:group-hover:translate-x-1',
-          TINT[tint].fg,
-        )}
-      >
-        →
-      </span>
-    </Link>
+      <h2 id="subjects-heading" className="ui m-0 text-sm font-semibold text-ink-2">
+        More subjects coming: science, reading and writing
+      </h2>
+      <p className="ui mt-1 mb-0 text-xs text-ink-3">Math comes first. The rest will follow.</p>
+    </section>
   );
 }

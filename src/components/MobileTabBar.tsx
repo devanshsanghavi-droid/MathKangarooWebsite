@@ -2,19 +2,23 @@
 
 import Link from '@/components/AppLink';
 import { usePathname } from 'next/navigation';
-import { isNavItemActive, MOBILE_NAV } from '@/lib/site';
+import { activeNavHref, MOBILE_NAV } from '@/lib/site';
 import { NavIcon } from './shell/NavIcon';
 import { navAccessibleName } from './NavLinks';
 
 /**
- * The bottom tab bar, shown only below the `sm` breakpoint: five tabs (docs/07 section 4),
- * with every exam area behind one "Exams" tab, the /exams hub. Its row is --tabbar-height
- * tall, which fixed bottom bars such as the ladder's action bar sit on top of. `pb-[env(safe-area-inset-bottom)]` keeps it clear
- * of the iOS home indicator. The active tab carries aria-current, a teal bar above the icon
- * and a heavier label, so the state is never colour alone.
+ * The bottom tab bar, shown only below the `sm` breakpoint: Home, Practice, Bank, Tests and
+ * Progress (docs/08 item 13). Practice is the exam catalog, Tests the hub of every exam's mock
+ * and section tests. Five equal tabs of 72px fit a 360px screen; a label that ever outgrew
+ * its tab truncates rather than pushing the row wider. Its row is --tabbar-height tall, which
+ * fixed bottom bars such as the ladder's action bar sit on top of.
+ * `pb-[env(safe-area-inset-bottom)]` keeps it clear of the iOS home indicator. Exactly one tab
+ * is active, the closest prefix match (activeNavHref), and it carries aria-current, an accent
+ * bar above the icon and a heavier label, so the state is never colour alone.
  */
 export function MobileTabBar() {
   const pathname = usePathname() ?? '/';
+  const activeHref = activeNavHref(pathname, MOBILE_NAV);
 
   return (
     <nav
@@ -23,7 +27,7 @@ export function MobileTabBar() {
     >
       <ul className="m-0 flex h-[var(--tabbar-height)] list-none p-0">
         {MOBILE_NAV.map((item) => {
-          const active = isNavItemActive(pathname, item);
+          const active = item.href === activeHref;
           return (
             <li key={item.href} className="min-w-0 flex-1">
               <Link

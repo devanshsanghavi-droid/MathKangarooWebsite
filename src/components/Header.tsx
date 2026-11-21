@@ -11,9 +11,8 @@ import { BrandMark } from './shell/NavIcon';
  *
  * Its height is fixed at --header-height so the skill rail can stick directly beneath it.
  * Below `sm` the nav moves to the bottom tab bar; between `sm` and `md` the wordmark shows
- * only its glyph, and below `lg` AMC, SAT and ACT fold into one "Exams" link (docs/07
- * section 4), so six items plus the toggle fit at 640px, which is a 1280px window at the 200%
- * zoom CLAUDE.md requires.
+ * only its glyph and the nav its short labels (docs/08 item 13), so five items plus the
+ * toggle fit at 640px, which is a 1280px window at the 200% zoom CLAUDE.md requires.
  */
 export function Header() {
   return (

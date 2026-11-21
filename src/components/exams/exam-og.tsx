@@ -12,6 +12,8 @@ export interface ExamOgOptions {
   detail?: string;
   /** The right half of the footer: the area's trademark notice, in short. */
   notice: string;
+  /** The accent token for the edge and the badge; an exam page passes its exam colour. */
+  accentToken?: string;
 }
 
 /**
@@ -30,11 +32,12 @@ export function examOgImage({
   title,
   detail,
   notice,
+  accentToken = '--accent-700',
 }: ExamOgOptions): ImageResponse {
   const paper = themeColor('--ground');
   const ink = themeColor('--ink');
   const ink3 = themeColor('--ink-3');
-  const accent = themeColor('--accent-700');
+  const accent = themeColor(accentToken);
   const rule = themeColor('--rule');
 
   return new ImageResponse(

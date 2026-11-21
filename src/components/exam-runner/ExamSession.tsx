@@ -191,6 +191,8 @@ export function ExamSession({
         hintsUsed: 0,
         surface: 'mock',
         at,
+        ms: result.msSpent,
+        mode: 'test',
       });
     }
     const record = toSessionRecord(state, report);

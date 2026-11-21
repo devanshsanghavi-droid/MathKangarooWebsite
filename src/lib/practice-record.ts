@@ -1,5 +1,5 @@
 import type { ChoiceKey } from './schemas';
-import { saveAmcAttempt, saveAttempt, saveTestAttempt } from './local-progress';
+import { saveAmcAttempt, saveAttempt, saveTestAttempt, type AttemptMode } from './local-progress';
 import { track } from './telemetry/client';
 import type { Surface } from './telemetry/events';
 import type { PracticeItem } from './practice-item';
@@ -16,6 +16,10 @@ import type { PracticeItem } from './practice-item';
  *
  * The caller decides WHEN to call this. <PracticeSession> calls it once per question, on the
  * first Check, so changing an answer after feedback can never farm a correct attempt.
+ *
+ * Timing (docs/08 item 9): `ms` is the time on the question before the recorded pick and
+ * `mode` is 'practice' (PracticeSession) or 'test' (the exam engine). Both optional; `ms` is
+ * rounded and capped at 30 minutes by local-progress, never trusted as given.
  */
 export function recordPracticeAttempt(
   item: PracticeItem,
@@ -25,17 +29,27 @@ export function recordPracticeAttempt(
     hintsUsed,
     surface,
     at = new Date(),
+    ms,
+    mode,
   }: {
     choiceKey: ChoiceKey;
     correct: boolean;
     hintsUsed: number;
     surface: Surface;
     at?: Date;
+    ms?: number;
+    mode?: AttemptMode;
   },
 ): void {
   const hints = Math.max(0, Math.min(3, Math.round(hintsUsed)));
+  const timing = { ...(ms === undefined ? {} : { ms }), ...(mode === undefined ? {} : { mode }) };
   if (item.bank === 'amc') {
-    saveAmcAttempt(item.id, item.slot, { correct, hintsUsed: hints, at: at.toISOString() });
+    saveAmcAttempt(item.id, item.slot, {
+      correct,
+      hintsUsed: hints,
+      at: at.toISOString(),
+      ...timing,
+    });
     return;
   }
   // SAT or ACT. (Compared against 'ka' because TS narrows a two-literal discriminant this way.)
@@ -44,6 +58,7 @@ export function recordPracticeAttempt(
       correct,
       hintsUsed: hints,
       at: at.toISOString(),
+      ...timing,
     });
     return;
   }
@@ -53,6 +68,7 @@ export function recordPracticeAttempt(
     correct,
     hintsUsed: hints,
     at: at.toISOString(),
+    ...timing,
   });
   track('choice_select', {
     surface,

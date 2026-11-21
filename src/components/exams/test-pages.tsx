@@ -92,7 +92,16 @@ export function TestHomePage({ test }: { test: StdTest }) {
   }));
   return (
     <PageContainer>
-      <PageHeader eyebrow={area.name} title={homeCopy(test).title} description={area.intro} />
+      <PageHeader
+        eyebrow={area.name}
+        title={homeCopy(test).title}
+        description={area.intro}
+        actions={
+          <Link href={`/exams/${TEST_SLUG[test]}`} className="ui text-sm">
+            Format and tips
+          </Link>
+        }
+      />
       <TestHome
         test={test}
         problems={problems}

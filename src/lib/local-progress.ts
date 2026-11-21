@@ -1,5 +1,8 @@
 import {
+  ATTEMPT_MODES,
+  MAX_ATTEMPT_MS,
   computeMastery,
+  type AttemptMode,
   type AttemptRecord,
   type MasteryResult,
   type MasteryState,
@@ -25,8 +28,9 @@ import {
  * mastery and a signed-in student's mastery are then the same computation over the same data,
  * and the only difference is where the attempts live.
  *
- * What is stored: problem id, point value, right or wrong, hints used, and a timestamp.
- * Nothing else. No name, no identifier, nothing that leaves this browser - there is no
+ * What is stored: problem id, point value, right or wrong, hints used, a timestamp and,
+ * optionally, the time spent on the question and whether it was practice or a test (docs/08
+ * item 9), plus the ids of saved questions (docs/08 item 10). Nothing else. No name, no identifier, nothing that leaves this browser - there is no
  * network call anywhere in this file, and that is a COPPA constraint, not a preference.
  *
  * Every read and write is wrapped: Safari private browsing throws on localStorage access, and
@@ -49,7 +53,15 @@ export interface ProgressFile {
    * 5). Optional so every older file, and every writer that predates it, stays valid.
    */
   sessions?: SessionRecord[];
+  /**
+   * docs/08 item 10: problem ids the student saved, oldest first, deduplicated, newest
+   * MAX_SAVED kept. Optional, and left out entirely when empty, like `sessions`.
+   */
+  saved?: string[];
 }
+
+export type { AttemptMode };
+export { ATTEMPT_MODES, MAX_ATTEMPT_MS };
 
 /* -------------------------------------------------------------------------- */
 /* Test sessions (docs/07 section 5)                                           */
@@ -143,29 +155,129 @@ export function normalizeSessions(sessions: readonly SessionRecord[]): SessionRe
     .slice(-MAX_SESSIONS);
 }
 
-/** The file with `sessions` set, or the key left out entirely when there are none. */
-function withSessions(
+/**
+ * The file with `sessions` and `saved` set, each key left out entirely when it would be
+ * empty, so a file that never used them serialises exactly as it always has.
+ */
+export function buildProgressFile(
   version: number,
   attempts: ProgressFile['attempts'],
-  sessions: readonly SessionRecord[] | undefined,
+  sessions?: readonly SessionRecord[],
+  saved?: readonly string[],
 ): ProgressFile {
-  return sessions && sessions.length > 0
-    ? { version, attempts, sessions: [...sessions] }
-    : { version, attempts };
+  const file: ProgressFile = { version, attempts };
+  if (sessions && sessions.length > 0) file.sessions = [...sessions];
+  if (saved && saved.length > 0) file.saved = [...saved];
+  return file;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Saved questions (docs/08 item 10)                                           */
+/* -------------------------------------------------------------------------- */
+
+/** Saved ids kept, in the browser and in the synced copy. */
+export const MAX_SAVED = 500;
+
+/**
+ * Every problem id a student can save: Kangaroo KA-, AMC AM-, SAT SA-, ACT AC-. Written out
+ * here rather than imported from schemas.ts, which would pull Zod into the browser bundle; the
+ * four prefixes match PROBLEM_ID_RE, AMC_PROBLEM_ID_RE and TEST_PROBLEM_ID_RE.
+ */
+export const SAVABLE_PROBLEM_ID_RE = /^(KA|AM|SA|AC)-\d{4}$/;
+
+/**
+ * Validates an untrusted list: known id shapes only, first copy of each id kept in order,
+ * newest MAX_SAVED kept. Shared with progress-sync.ts.
+ */
+export function normalizeSaved(ids: readonly unknown[]): string[] {
+  const seen = new Set<string>();
+  for (const id of ids) {
+    if (typeof id === 'string' && SAVABLE_PROBLEM_ID_RE.test(id)) seen.add(id);
+  }
+  return [...seen].slice(-MAX_SAVED);
+}
+
+/** Saved problem ids, oldest first. */
+export function savedIds(file: ProgressFile = readProgress()): readonly string[] {
+  return file.saved ?? [];
+}
+
+export function isSaved(problemId: string, file: ProgressFile = readProgress()): boolean {
+  return (file.saved ?? []).includes(problemId);
+}
+
+/**
+ * The file with `problemId` saved or unsaved. `save` forces a direction; left out, it flips.
+ * An id that is not a known problem id is ignored (the file comes back unchanged). Pure: use
+ * toggleSaved to also write it.
+ */
+export function withSaved(
+  file: ProgressFile,
+  problemId: string,
+  save: boolean = !isSaved(problemId, file),
+): ProgressFile {
+  if (!SAVABLE_PROBLEM_ID_RE.test(problemId)) return file;
+  const rest = (file.saved ?? []).filter((id) => id !== problemId);
+  return buildProgressFile(
+    file.version,
+    file.attempts,
+    file.sessions,
+    normalizeSaved(save ? [...rest, problemId] : rest),
+  );
+}
+
+/**
+ * Saves or unsaves one question in this browser (and so, when signed in, in the synced copy)
+ * and fires PROGRESS_EVENT. Returns whether it is saved afterwards.
+ */
+export function toggleSaved(problemId: string, save?: boolean): boolean {
+  const before = readProgress();
+  const next = withSaved(before, problemId, save);
+  if (next !== before) writeProgress(next);
+  return isSaved(problemId, next);
 }
 
 export const EMPTY_PROGRESS: ProgressFile = { version: VERSION, attempts: {} };
 
-function isAttempt(value: unknown): value is AttemptRecord {
-  if (typeof value !== 'object' || value === null) return false;
-  const record = value as Record<string, unknown>;
-  return (
-    typeof record.problemId === 'string' &&
-    typeof record.correct === 'boolean' &&
-    typeof record.at === 'string' &&
-    (record.points === 3 || record.points === 4 || record.points === 5) &&
-    typeof record.hintsUsed === 'number'
-  );
+/**
+ * A recorder's raw milliseconds as a storable value: rounded, capped at MAX_ATTEMPT_MS, or
+ * undefined when it is not a usable number (a negative clock skew, NaN).
+ */
+export function attemptMs(ms: number | undefined): number | undefined {
+  if (ms === undefined || !Number.isFinite(ms) || ms < 0) return undefined;
+  return Math.min(MAX_ATTEMPT_MS, Math.round(ms));
+}
+
+/**
+ * Validates one untrusted attempt and returns a copy holding only the known fields (strings
+ * capped), or null. Optional `ms` and `mode` are kept only when valid (an integer
+ * 0..MAX_ATTEMPT_MS, and 'practice' or 'test'); an invalid one is dropped, not the attempt.
+ * Shared with progress-sync.ts so an upload cannot smuggle extra fields in.
+ */
+export function cleanAttempt(value: unknown): AttemptRecord | null {
+  if (typeof value !== 'object' || value === null) return null;
+  const r = value as Record<string, unknown>;
+  if (
+    typeof r.problemId !== 'string' ||
+    typeof r.correct !== 'boolean' ||
+    typeof r.at !== 'string' ||
+    !(r.points === 3 || r.points === 4 || r.points === 5) ||
+    typeof r.hintsUsed !== 'number'
+  ) {
+    return null;
+  }
+  const attempt: AttemptRecord = {
+    problemId: r.problemId.slice(0, 32),
+    points: r.points,
+    correct: r.correct,
+    hintsUsed: r.hintsUsed,
+    at: r.at.slice(0, 40),
+  };
+  if (typeof r.ms === 'number' && Number.isInteger(r.ms) && r.ms >= 0 && r.ms <= MAX_ATTEMPT_MS) {
+    attempt.ms = r.ms;
+  }
+  if ((ATTEMPT_MODES as readonly unknown[]).includes(r.mode)) attempt.mode = r.mode as AttemptMode;
+  return attempt;
 }
 
 /** Parses whatever is in storage, discarding anything that does not match the shape. */
@@ -181,7 +293,7 @@ export function parseProgress(raw: string | null): ProgressFile {
     const attempts: Record<string, AttemptRecord[]> = {};
     for (const [skillId, list] of Object.entries(file.attempts)) {
       if (!Array.isArray(list)) continue;
-      const clean = list.filter(isAttempt);
+      const clean = list.map(cleanAttempt).filter((a): a is AttemptRecord => a !== null);
       if (clean.length > 0) attempts[skillId] = clean.slice(-MAX_ATTEMPTS_PER_SKILL);
     }
     const sessions = Array.isArray(file.sessions)
@@ -191,7 +303,8 @@ export function parseProgress(raw: string | null): ProgressFile {
             .filter((s): s is SessionRecord => s !== null),
         )
       : undefined;
-    return withSessions(VERSION, attempts, sessions);
+    const saved = Array.isArray(file.saved) ? normalizeSaved(file.saved as unknown[]) : undefined;
+    return buildProgressFile(VERSION, attempts, sessions, saved);
   } catch {
     // Corrupt JSON is treated as "no progress yet". Throwing here would break every page that
     // renders a mastery bar, which is most of them.
@@ -225,19 +338,28 @@ export const PROGRESS_EVENT = 'ka:progress';
 /**
  * Records one attempt against every skill the problem is tagged with - primary and secondary.
  * A problem that exercises three skills is evidence about all three.
+ *
+ * Optional `ms` is rounded and capped at MAX_ATTEMPT_MS (dropped when unusable), and `mode`
+ * is kept only when it is 'practice' or 'test', so every writer stores what parseProgress
+ * accepts.
  */
 export function recordAttempt(
   skillIds: readonly string[],
   attempt: AttemptRecord,
   file: ProgressFile = readProgress(),
 ): ProgressFile {
+  const { ms, mode, ...base } = attempt;
+  const stored: AttemptRecord = { ...base };
+  const cleanMs = attemptMs(ms);
+  if (cleanMs !== undefined) stored.ms = cleanMs;
+  if (mode !== undefined && ATTEMPT_MODES.includes(mode)) stored.mode = mode;
   const attempts = { ...file.attempts };
   for (const skillId of skillIds) {
     const existing = attempts[skillId] ?? [];
-    attempts[skillId] = [...existing, attempt].slice(-MAX_ATTEMPTS_PER_SKILL);
+    attempts[skillId] = [...existing, stored].slice(-MAX_ATTEMPTS_PER_SKILL);
   }
-  // Keep the sessions: a plain attempt must never drop the test history.
-  return withSessions(VERSION, attempts, file.sessions);
+  // Keep the sessions and saved ids: a plain attempt must never drop either.
+  return buildProgressFile(VERSION, attempts, file.sessions, file.saved);
 }
 
 export function saveAttempt(skillIds: readonly string[], attempt: AttemptRecord): ProgressFile {
@@ -274,6 +396,9 @@ export interface AmcAttemptInput {
   hintsUsed: number;
   /** ISO timestamp. */
   at: string;
+  /** Time on the question, ms (docs/08 item 9). Rounded and capped by recordAttempt. */
+  ms?: number;
+  mode?: AttemptMode;
 }
 
 export function recordAmcAttempt(
@@ -330,6 +455,9 @@ export interface TestAttemptInput {
   hintsUsed: number;
   /** ISO timestamp. */
   at: string;
+  /** Time on the question, ms (docs/08 item 9). Rounded and capped by recordAttempt. */
+  ms?: number;
+  mode?: AttemptMode;
 }
 
 export function recordTestAttempt(
@@ -384,10 +512,11 @@ export function recordSession(
 ): ProgressFile {
   const clean = cleanSession(session);
   if (!clean) return file;
-  return withSessions(
+  return buildProgressFile(
     file.version,
     file.attempts,
     normalizeSessions([...(file.sessions ?? []), clean]),
+    file.saved,
   );
 }
 

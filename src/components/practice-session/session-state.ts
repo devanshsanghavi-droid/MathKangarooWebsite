@@ -7,8 +7,11 @@ import type { PracticeItem } from '@/lib/practice-item';
  *
  *   pick       choose a letter. Not an answer yet: nothing is judged until Check.
  *   check      judge the current pick. The FIRST check of a question is the attempt that is
- *              scored and recorded; later checks only give feedback, so changing an answer
- *              after reading the misconception cannot turn a miss into a solve.
+ *              scored and recorded; the second only gives feedback, so changing an answer
+ *              after reading the misconception cannot turn a miss into a solve. docs/08 item
+ *              11: a wrong first check earns one more try (MAX_TRIES) before the answer and
+ *              the solution are revealed; after that, or after a right check, the question
+ *              is done and further picks and checks are ignored.
  *   hint       a rung of the hint ladder was opened.
  *   mark       flag the question for review (test-style), unrelated to correctness.
  *   go         move to another question.
@@ -26,6 +29,8 @@ export interface QuestionState {
   hintsAtFirstCheck: number;
   /** Has any Check been correct. */
   solved: boolean;
+  /** Checks made, 0..MAX_TRIES. */
+  tries: number;
   /** Hint rungs opened, 0-3. */
   hints: number;
   marked: boolean;
@@ -52,6 +57,7 @@ export const EMPTY_QUESTION: QuestionState = {
   firstCorrect: null,
   hintsAtFirstCheck: 0,
   solved: false,
+  tries: 0,
   hints: 0,
   marked: false,
 };
@@ -78,13 +84,15 @@ function updateCurrent(
 export function sessionReducer(state: SessionState, action: SessionAction): SessionState {
   switch (action.type) {
     case 'pick':
-      return updateCurrent(state, (q) => ({ ...q, selected: action.key }));
+      return updateCurrent(state, (q) => (isDone(q) ? q : { ...q, selected: action.key }));
     case 'check':
       return updateCurrent(state, (q) => {
-        if (q.selected === null) return q;
+        // Nothing picked, the same letter judged again, or no tries left: nothing to judge.
+        if (q.selected === null || q.selected === q.checked || isDone(q)) return q;
         const first = q.firstCorrect === null;
         return {
           ...q,
+          tries: q.tries + 1,
           checked: q.selected,
           firstCorrect: first ? action.correct : q.firstCorrect,
           hintsAtFirstCheck: first ? q.hints : q.hintsAtFirstCheck,
@@ -120,6 +128,19 @@ export function sessionReducer(state: SessionState, action: SessionAction): Sess
 /** Has this question been answered (checked at least once)? */
 export const isAnswered = (question: QuestionState): boolean => question.firstCorrect !== null;
 
+/** docs/08 item 11: the first check, plus one second try after a wrong one. */
+export const MAX_TRIES = 2;
+
+/** Right, or out of tries: the answer and the solution are shown and the choices lock. */
+export function isDone(question: QuestionState): boolean {
+  return question.solved || question.tries >= MAX_TRIES;
+}
+
+/** Wrong on the first check with the second try still to take. */
+export function onSecondTry(question: QuestionState): boolean {
+  return question.firstCorrect !== null && !isDone(question);
+}
+
 export type QuestionOutcome = 'first-try' | 'after-miss' | 'missed' | 'unanswered';
 
 export function outcomeOf(question: QuestionState): QuestionOutcome {
@@ -130,7 +151,7 @@ export function outcomeOf(question: QuestionState): QuestionOutcome {
 
 export const OUTCOME_LABEL: Record<QuestionOutcome, string> = {
   'first-try': 'Right first time',
-  'after-miss': 'Right after a miss',
+  'after-miss': 'Right on the second try',
   missed: 'Missed',
   unanswered: 'Not answered',
 };

@@ -1,12 +1,13 @@
 import Link from '@/components/AppLink';
-import { DISCLAIMER, FOOTER_LINKS, SITE } from '@/lib/site';
+import { DISCLAIMER, FOOTER_LINKS, SITE, TRADEMARK_NOTICE } from '@/lib/site';
 import { BrandMark } from './shell/NavIcon';
 
 /**
  * The disclaimer in here is a hard requirement from CLAUDE.md: it appears on every page.
  * It is marked up as its own paragraph rather than folded into the licence line so it reads
  * as a statement rather than as small print. Pages under /amc add the MAA notice above this
- * footer through <AmcDisclaimer>, rendered by src/app/amc/layout.tsx (docs/06 §2).
+ * footer through <AmcDisclaimer>, rendered by src/app/amc/layout.tsx (docs/06 §2). Below the
+ * disclaimer, TRADEMARK_NOTICE names every exam's trademark owner once (docs/08 item 12).
  *
  * The bottom padding below `sm` clears the fixed mobile tab bar.
  */
@@ -47,6 +48,7 @@ export function Footer() {
           </p>
 
           <p className="m-0 max-w-prose text-xs font-medium text-ink">{DISCLAIMER}</p>
+          <p className="m-0 max-w-prose text-xs">{TRADEMARK_NOTICE}</p>
         </div>
       </div>
     </footer>

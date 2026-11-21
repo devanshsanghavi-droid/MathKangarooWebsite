@@ -13,17 +13,25 @@ import {
 import { fetchStaticJson } from '@/lib/bank-client';
 import {
   BANK_PAGE_SIZE,
+  BANK_QUERY_MAX,
   EMPTY_FILTERS,
   bankFiltersToSearch,
   bankRowsFromIndex,
   countBy,
   filterRows,
+  idsIn,
   isFiltered,
+  missedSet,
   parseBankFilters,
   practiceIds,
   randomUnsolved,
+  rowsIgnoringStatus,
+  savedSet,
+  searchText,
   statusMap,
+  taxonomyGroupNames,
   type BankFilters,
+  type BankMarks,
   type BankRow,
   type BankTaxonomy,
 } from '@/lib/bank-filter';
@@ -70,6 +78,11 @@ export interface QuestionBankProps {
  * contests instead of levels, areas and topics instead of strands and skills, problem-type
  * chips, and Early / Middle / Late tiers. The SAT and ACT banks pass `testBankTaxonomy(...)`:
  * no level control, domains and skills, Easy / Medium / Hard.
+ *
+ * docs/08 items 10-11: a keyword search box (statement preview, skill / topic and type names,
+ * id; every word must match), Saved and Missed in the status filter, and "Practice missed" /
+ * "Practice saved", which start a set of those questions within the current selection (every
+ * filter but status applies), up to PRACTICE_SET_MAX.
  */
 export function QuestionBank({
   taxonomy,
@@ -123,10 +136,33 @@ export function QuestionBank({
     () => statusMap(taxonomy.bank, file, allRows),
     [taxonomy.bank, file, allRows],
   );
-  const filtered = useMemo(
-    () => filterRows(allRows, filters, statuses),
-    [allRows, filters, statuses],
+  const names = useMemo(() => {
+    const map = taxonomyGroupNames(taxonomy);
+    for (const tag of taxonomy.tags?.items ?? []) map.set(tag.id, tag.name);
+    return map;
+  }, [taxonomy]);
+  const text = useMemo(
+    () => new Map(allRows.map((row) => [row.id, searchText(row, names)])),
+    [allRows, names],
   );
+  const marks = useMemo<BankMarks>(
+    () => ({
+      saved: savedSet(file),
+      missed: missedSet(taxonomy.bank, file, allRows),
+      text,
+    }),
+    [file, taxonomy.bank, allRows, text],
+  );
+  const filtered = useMemo(
+    () => filterRows(allRows, filters, statuses, marks),
+    [allRows, filters, statuses, marks],
+  );
+  const pool = useMemo(
+    () => rowsIgnoringStatus(allRows, filters, statuses, marks),
+    [allRows, filters, statuses, marks],
+  );
+  const missedIds = idsIn(pool, marks.missed ?? new Set(), PRACTICE_SET_MAX);
+  const savedPracticeIds = idsIn(pool, marks.saved ?? new Set(), PRACTICE_SET_MAX);
   const selectionTotal = loaded ? filtered.length : total;
   const tally = countBy(filtered, statuses);
   const pageCount = Math.max(1, Math.ceil(filtered.length / BANK_PAGE_SIZE));
@@ -175,6 +211,7 @@ export function QuestionBank({
       statuses={statuses}
       idPrefix={idPrefix}
       pending={!loaded}
+      marks={marks}
     />
   );
 
@@ -231,6 +268,36 @@ export function QuestionBank({
                 </Button>
               )}
             </div>
+          </div>
+          <div className="mt-4 flex flex-wrap items-end gap-2">
+            <div className="ui grid min-w-0 flex-1 basis-56 gap-1">
+              <label htmlFor="bank-search" className="text-xs font-semibold text-ink-2">
+                Search {taxonomy.noun}s
+              </label>
+              <input
+                id="bank-search"
+                type="search"
+                value={filters.query}
+                maxLength={BANK_QUERY_MAX}
+                autoComplete="off"
+                spellCheck={false}
+                placeholder="Words from the question, or a skill"
+                onChange={(event) => update({ ...filters, query: event.target.value, page: 1 })}
+                className="tap-target w-full min-w-0 rounded-md border-2 border-rule-strong bg-surface px-3 py-2 text-base text-ink placeholder:text-ink-3 focus-visible:border-accent-600"
+              />
+            </div>
+            <QuickPracticeLink
+              label="Practice missed"
+              ids={missedIds}
+              bank={taxonomy.bank}
+              ready={loaded}
+            />
+            <QuickPracticeLink
+              label="Practice saved"
+              ids={savedPracticeIds}
+              bank={taxonomy.bank}
+              ready={loaded}
+            />
           </div>
           <ProgressBar
             className="mt-4"
@@ -310,5 +377,35 @@ export function QuestionBank({
         {panel('bank-sheet', false)}
       </Sheet>
     </div>
+  );
+}
+
+/**
+ * "Practice missed (3)" / "Practice saved (5)": a link to a set of exactly those ids, or a
+ * disabled button saying there are none yet (and while the index is still loading).
+ */
+function QuickPracticeLink({
+  label,
+  ids,
+  bank,
+  ready,
+}: {
+  label: string;
+  ids: readonly string[];
+  bank: PracticeBank;
+  ready: boolean;
+}) {
+  if (!ready || ids.length === 0) {
+    return (
+      <Button disabled>
+        {label}
+        {ready ? ' (0)' : ''}
+      </Button>
+    );
+  }
+  return (
+    <ButtonLink href={practiceSetHref({ bank, ids, name: label })}>
+      {label} ({ids.length})
+    </ButtonLink>
   );
 }

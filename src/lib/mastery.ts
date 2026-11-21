@@ -39,7 +39,20 @@ export interface AttemptRecord {
   hintsUsed: number;
   /** ISO timestamp. */
   at: string;
+  /**
+   * docs/08 item 9. Milliseconds on the question before the recorded pick, an integer
+   * 0..MAX_ATTEMPT_MS (30 minutes). Optional: attempts recorded before timing existed have none.
+   */
+  ms?: number;
+  /** docs/08 item 9. Where the attempt came from: a practice session or a timed test. */
+  mode?: AttemptMode;
 }
+
+export const ATTEMPT_MODES = ['practice', 'test'] as const;
+export type AttemptMode = (typeof ATTEMPT_MODES)[number];
+
+/** docs/08 item 9: time on one question is capped at 30 minutes. */
+export const MAX_ATTEMPT_MS = 1_800_000;
 
 export interface MasteryResult {
   state: MasteryState;

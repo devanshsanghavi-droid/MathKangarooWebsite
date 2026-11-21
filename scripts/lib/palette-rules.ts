@@ -38,6 +38,12 @@ export const FEEDBACK_FILES: ReadonlyArray<{ path: string; because: string }> = 
     because: 'the distractor-specific feedback panel - the reason the site exists',
   },
   {
+    path: 'src/components/practice-session/PracticeFeedback.tsx',
+    because:
+      "the practice engine's feedback panel: right, or the misconception behind the wrong " +
+      'letter just checked, with the second-try nudge (docs/08 item 11)',
+  },
+  {
     path: 'src/components/ChoiceList.tsx',
     because: 'an answer choice shown as correct or as the wrong one the student picked',
   },

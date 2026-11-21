@@ -1,6 +1,9 @@
 import {
   MAX_ATTEMPTS_PER_SKILL,
+  buildProgressFile,
+  cleanAttempt,
   cleanSession,
+  normalizeSaved,
   normalizeSessions,
   parseProgress,
   type ProgressFile,
@@ -19,6 +22,14 @@ import {
  * Test sessions (docs/07 section 5) merge the same way: union by `kind|exam|at`, known fields
  * only, oldest first, newest MAX_SESSIONS kept. A file with no sessions on either side merges
  * to a file with no `sessions` key, so older copies compare equal to themselves.
+ *
+ * Attempt timing (docs/08 item 9): `ms` and `mode` are known fields and survive the merge
+ * when valid. When both copies hold the same attempt and only one has timing, the timed copy
+ * wins, so a device that predates timing cannot strip it.
+ *
+ * Saved questions (docs/08 item 10): the union of both lists, `a`'s order first, deduplicated,
+ * newest MAX_SAVED kept, and the key left out when both are empty. Unsaving on one device is
+ * therefore undone by a merge with a copy that still has the id; docs/08 accepts that.
  */
 
 type Attempt = ProgressFile['attempts'][string][number];
@@ -35,14 +46,13 @@ export function mergeProgress(a: ProgressFile, b: ProgressFile): ProgressFile {
     const byKey = new Map<string, Attempt>();
     for (const attempt of [...(a.attempts[skill] ?? []), ...(b.attempts[skill] ?? [])]) {
       // Copy only the known fields, so an upload cannot smuggle anything else into storage.
-      const clean: Attempt = {
-        problemId: attempt.problemId.slice(0, 32),
-        points: attempt.points,
-        correct: attempt.correct,
-        hintsUsed: attempt.hintsUsed,
-        at: attempt.at.slice(0, 40),
-      };
-      if (!byKey.has(attemptKey(clean))) byKey.set(attemptKey(clean), clean);
+      const clean = cleanAttempt(attempt);
+      if (!clean) continue;
+      const key = attemptKey(clean);
+      const held = byKey.get(key);
+      if (!held || (held.ms === undefined && held.mode === undefined && hasTiming(clean))) {
+        byKey.set(key, clean);
+      }
     }
     const merged = [...byKey.values()].sort((x, y) =>
       x.at === y.at ? x.problemId.localeCompare(y.problemId) : x.at < y.at ? -1 : 1,
@@ -55,7 +65,12 @@ export function mergeProgress(a: ProgressFile, b: ProgressFile): ProgressFile {
       .map(cleanSession)
       .filter((s): s is SessionRecord => s !== null),
   );
-  return sessions.length > 0 ? { version, attempts, sessions } : { version, attempts };
+  const saved = normalizeSaved([...(a.saved ?? []), ...(b.saved ?? [])]);
+  return buildProgressFile(version, attempts, sessions, saved);
+}
+
+function hasTiming(attempt: Attempt): boolean {
+  return attempt.ms !== undefined || attempt.mode !== undefined;
 }
 
 /** Same attempts in both? Cheap enough at this size to compare canonical JSON. */

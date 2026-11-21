@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getAllAmcProblems, getAmcFormulas, getAmcTaxonomy } from '@/lib/amc-content';
+import Link from '@/components/AppLink';
 import { AmcHome, type AmcHomeArea } from '@/components/amc/AmcHome';
 import { BetaBadge, PageContainer, PageHeader } from '@/components/ui';
 
@@ -57,6 +58,22 @@ export default function AmcPage() {
         }
         title="AMC practice"
         description="Original problems in the style of the AMC 8, AMC 10 and AMC 12, organised by area, topic and the recurring problem types, with feedback written for the mistake you made. This area is new: expect gaps, and tell us what is wrong."
+        actions={
+          <p className="ui m-0 text-sm text-ink-2">
+            Format and tips:{' '}
+            <Link href="/exams/amc8" aria-label="AMC 8 format and tips">
+              AMC 8
+            </Link>
+            ,{' '}
+            <Link href="/exams/amc10" aria-label="AMC 10 format and tips">
+              AMC 10
+            </Link>
+            ,{' '}
+            <Link href="/exams/amc12" aria-label="AMC 12 format and tips">
+              AMC 12
+            </Link>
+          </p>
+        }
       />
       <AmcHome
         problems={problems}
